@@ -1,0 +1,152 @@
+import { motion } from "framer-motion";
+import { Check } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+const plans = [
+  {
+    tier: "STARTER",
+    name: "Business Listing",
+    price: "$10",
+    unit: "one-time",
+    subtitle: "Lifetime Listing • No Link",
+    featured: false,
+    features: [
+      "Business name on directory",
+      "Phone & address listed",
+      "Service area shown",
+      "Lifetime placement",
+    ],
+    cta: "GET LISTED",
+  },
+  {
+    tier: "SEO TERRITORY",
+    name: "City Commander",
+    price: "$10",
+    unit: "/month",
+    subtitle: "per 100K population • Exclusive",
+    featured: true,
+    badge: "LOCK OUT COMPETITORS",
+    features: [
+      "1 contractor per trade",
+      "Established domain authority",
+      "City landing page",
+      "EyeSpyR verified badge",
+      "IAM Chat AI assistant",
+      "Cancel anytime",
+    ],
+    cta: "CLAIM YOUR TERRITORY",
+  },
+  {
+    tier: "AUTHORITY",
+    name: "Guest Posting",
+    price: "$10",
+    unit: "/post",
+    subtitle: "Dofollow Backlink • High DA",
+    featured: false,
+    features: [
+      "Post on industry domain",
+      "Dofollow backlink",
+      "Established domain authority",
+      "Permanent placement",
+    ],
+    cta: "CLAIM $10 GUEST POST",
+  },
+];
+
+const PricingSection = () => {
+  return (
+    <section id="pricing" className="py-20 md:py-32 bg-background">
+      <div className="container mx-auto px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <h2 className="font-display text-5xl md:text-7xl text-foreground">
+            CONTRACTOR <span className="text-primary">PRICING</span>
+          </h2>
+          <p className="text-muted-foreground mt-3 text-lg">
+            $10 per 100K population / month
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto items-start">
+          {plans.map((plan, i) => (
+            <motion.div
+              key={plan.name}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.15 }}
+              className={`relative rounded-lg border p-6 flex flex-col ${
+                plan.featured
+                  ? "border-primary shadow-[0_0_20px_hsl(var(--primary)/0.2)] bg-surface-elevated"
+                  : "border-border bg-card"
+              }`}
+            >
+              {plan.badge && (
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded">
+                  {plan.badge}
+                </div>
+              )}
+
+              <p className="text-xs tracking-[0.2em] text-muted-foreground uppercase mb-1">
+                {plan.tier}
+              </p>
+              <h3 className="font-display text-2xl text-foreground mb-4">
+                {plan.name}
+              </h3>
+
+              <div className="flex items-baseline gap-1 mb-1">
+                <span className="font-display text-5xl text-primary">{plan.price}</span>
+                <span className="text-muted-foreground text-sm">{plan.unit}</span>
+              </div>
+              <p className="text-xs text-muted-foreground mb-6">{plan.subtitle}</p>
+
+              <div className="border-t border-border my-2" />
+
+              <ul className="space-y-3 mt-4 mb-8 flex-1">
+                {plan.features.map((f) => (
+                  <li key={f} className="flex items-start gap-2 text-sm text-foreground">
+                    <Check className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                    {f}
+                  </li>
+                ))}
+              </ul>
+
+              <Button
+                variant={plan.featured ? "hero" : "heroOutline"}
+                className="w-full"
+              >
+                {plan.cta}
+              </Button>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Enterprise banner */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="mt-16 max-w-5xl mx-auto rounded-lg border border-border bg-surface-elevated p-10 text-center"
+        >
+          <h3 className="font-display text-2xl md:text-3xl text-foreground">
+            WE FIT ANY BUDGET • ANY SIZE •
+          </h3>
+          <h3 className="font-display text-2xl md:text-3xl text-primary mt-1">
+            ENTERPRISE LEVEL DOMINATION
+          </h3>
+          <p className="text-muted-foreground mt-4 max-w-lg mx-auto text-sm">
+            Custom marketing packages available for multi-location contractors, franchises, and enterprise accounts.
+          </p>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+export default PricingSection;
