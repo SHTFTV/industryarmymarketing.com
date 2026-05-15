@@ -17,6 +17,13 @@ on:
         description: "Override Bun install cache directory (leave blank for default ~/.bun/install/cache)"
         type: string
         default: ""
+      debug_verbosity:
+        description: "Bun cache debug verbosity (only used when debug_bun_cache is enabled)"
+        type: choice
+        options:
+          - values
+          - assertions
+        default: values
 
 permissions:
   contents: read
@@ -50,9 +57,13 @@ jobs:
         env:
           NORMALIZED: ${{ steps.normalize_bun_cache_dir.outputs.bun_cache_dir_normalized }}
           RESOLVED: ${{ steps.normalize_bun_cache_dir.outputs.bun_cache_dir_resolved }}
+          VERBOSITY: ${{ inputs.debug_verbosity }}
         run: |
           echo "bun_cache_dir_normalized='${NORMALIZED}'"
           echo "bun_cache_dir_resolved='${RESOLVED}'"
+          if [ "$VERBOSITY" != "assertions" ]; then
+            exit 0
+          fi
           if [ -z "$NORMALIZED" ]; then
             DEFAULT="$HOME/.bun/install/cache"
             echo "input was blank → using fallback default: $DEFAULT"
