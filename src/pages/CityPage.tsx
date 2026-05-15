@@ -271,7 +271,7 @@ const CityPage = () => {
             <h2 className="font-display text-4xl md:text-5xl text-foreground">Direct Answers</h2>
           </div>
           <div className="space-y-4">
-            {faqs(data.name, data.rate).map((f, i) => (
+            {faqList.map((f, i) => (
               <motion.div
                 key={f.q}
                 initial={{ opacity: 0, y: 10 }}
