@@ -11,8 +11,7 @@ const StepList = ({ steps }: { steps: Step[] }) => (
       <motion.div
         key={s.title}
         initial={{ opacity: 0, x: -12 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
+        animate={{ opacity: 1, x: 0 }}
         transition={{ delay: i * 0.06 }}
         className="flex gap-5 p-6 rounded-lg bg-card border border-border"
       >

@@ -7,8 +7,7 @@ const CitiesPreview = () => (
     <div className="container mx-auto px-4">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        animate={{ opacity: 1, y: 0 }}
         className="text-center mb-14"
       >
         <p className="text-primary uppercase tracking-[0.3em] text-xs font-semibold mb-3">Worldwide Coverage</p>
@@ -19,8 +18,7 @@ const CitiesPreview = () => (
           <motion.div
             key={c.slug}
             initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ delay: i * 0.05 }}
           >
             <Link

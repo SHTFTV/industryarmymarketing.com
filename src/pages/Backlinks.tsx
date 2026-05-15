@@ -53,8 +53,7 @@ const Backlinks = () => (
             <motion.div
               key={f.title}
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.05 }}
               className="p-6 rounded-lg bg-card border border-border hover:border-primary/40 transition-all"
             >
@@ -81,8 +80,7 @@ const Backlinks = () => (
             <motion.div
               key={d.domain}
               initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
+              animate={{ opacity: 1 }}
               transition={{ delay: i * 0.02 }}
               className="p-5 rounded-lg bg-card border border-border hover:border-primary/40 transition-all"
             >
@@ -117,8 +115,7 @@ const Backlinks = () => (
             <motion.div
               key={s.n}
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.08 }}
               className="p-7 rounded-lg bg-card border border-border"
             >

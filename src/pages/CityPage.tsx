@@ -209,8 +209,7 @@ const CityPage = () => {
                 <motion.div
                   key={t}
                   initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
+                  animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.02 }}
                   className={`flex items-center justify-between gap-3 px-4 py-3 rounded-md border ${
                     taken
@@ -245,8 +244,7 @@ const CityPage = () => {
               <motion.div
                 key={d.domain}
                 initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.03 }}
                 className="p-5 rounded-lg bg-card border border-border hover:border-primary/40 transition-all flex items-center justify-between gap-4"
               >
@@ -275,8 +273,7 @@ const CityPage = () => {
               <motion.div
                 key={f.q}
                 initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.05 }}
                 className="p-6 rounded-lg bg-card border border-border"
               >

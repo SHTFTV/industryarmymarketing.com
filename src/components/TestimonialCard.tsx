@@ -10,8 +10,7 @@ export interface Testimonial {
 const TestimonialCard = ({ t, index = 0 }: { t: Testimonial; index?: number }) => (
   <motion.figure
     initial={{ opacity: 0, y: 12 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
+    animate={{ opacity: 1, y: 0 }}
     transition={{ delay: index * 0.05 }}
     className="p-6 rounded-lg bg-card border border-border h-full flex flex-col"
   >

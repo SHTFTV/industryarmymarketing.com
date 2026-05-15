@@ -204,8 +204,7 @@ const DofollowBacklinks = () => {
         <motion.div
           key={d.domain}
           initial={{ opacity: 0, y: 8 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ delay: Math.min(i * 0.015, 0.4) }}
           className="group p-4 rounded-lg bg-card border border-border hover:border-primary/50 transition-all flex items-center justify-between gap-3"
         >

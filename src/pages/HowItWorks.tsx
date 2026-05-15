@@ -52,8 +52,7 @@ const HowItWorks = () => (
             <motion.div
               key={s.n}
               initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              animate={{ opacity: 1, x: 0 }}
               transition={{ delay: i * 0.08 }}
               className="flex flex-col md:flex-row gap-6 p-8 rounded-lg bg-card border border-border hover:border-primary/40 transition-colors"
             >

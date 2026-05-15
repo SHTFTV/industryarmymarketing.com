@@ -104,8 +104,7 @@ const CityClaimForm = ({ cityName, cityRate, takenTrades = [] }: Props) => {
       <div className="container mx-auto px-4 max-w-3xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          animate={{ opacity: 1, y: 0 }}
           className="text-center mb-10"
         >
           <p className="text-primary uppercase tracking-[0.3em] text-xs font-semibold mb-3">
@@ -122,8 +121,7 @@ const CityClaimForm = ({ cityName, cityRate, takenTrades = [] }: Props) => {
         <motion.form
           onSubmit={handleSubmit}
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          animate={{ opacity: 1, y: 0 }}
           className="rounded-lg bg-card border border-border p-6 md:p-8 space-y-5"
           noValidate
         >

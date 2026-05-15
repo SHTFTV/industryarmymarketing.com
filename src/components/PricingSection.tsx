@@ -59,8 +59,7 @@ const PricingSection = () => {
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
@@ -77,8 +76,7 @@ const PricingSection = () => {
             <motion.div
               key={plan.name}
               initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: i * 0.15 }}
               className={`relative rounded-lg border p-6 flex flex-col ${
                 plan.featured
@@ -129,8 +127,7 @@ const PricingSection = () => {
         {/* Enterprise banner */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
           className="mt-16 max-w-5xl mx-auto rounded-lg border border-border bg-surface-elevated p-10 text-center"
         >
