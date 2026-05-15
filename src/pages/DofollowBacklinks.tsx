@@ -84,7 +84,9 @@ const DofollowBacklinks = () => {
 
   const [copiedAll, setCopiedAll] = useState(false);
   const [copyFormat, setCopyFormat] = useState<"plain" | "url">("plain");
-  const [copySeparator, setCopySeparator] = useState<"newline" | "csv" | "tsv" | "ssv">("newline");
+  const [copySeparator, setCopySeparator] = useState<
+    "newline" | "csv" | "tsv" | "ssv" | "scsv"
+  >("newline");
   const [quoteItems, setQuoteItems] = useState(false);
   const onCopyAll = async () => {
     if (visibleDomains.length === 0) return;
@@ -103,6 +105,8 @@ const DofollowBacklinks = () => {
         ? "\t"
         : copySeparator === "ssv"
         ? " "
+        : copySeparator === "scsv"
+        ? ";"
         : "\n";
     const text = items.join(joiner);
     try {
@@ -116,6 +120,8 @@ const DofollowBacklinks = () => {
           ? quoteItems ? "tab-separated, quoted" : "tab-separated"
           : copySeparator === "ssv"
           ? quoteItems ? "space-separated, quoted" : "space-separated"
+          : copySeparator === "scsv"
+          ? quoteItems ? "semicolon-separated, quoted" : "semicolon-separated"
           : "newline-separated";
       toast({
         title: `Copied ${visibleDomains.length} domain${visibleDomains.length === 1 ? "" : "s"}`,
@@ -271,6 +277,7 @@ const DofollowBacklinks = () => {
                 { value: "csv", label: "CSV" },
                 { value: "tsv", label: "TSV" },
                 { value: "ssv", label: "SSV" },
+                { value: "scsv", label: "Semi" },
               ] as const).map((opt) => {
                 const active = copySeparator === opt.value;
                 return (
@@ -301,7 +308,7 @@ const DofollowBacklinks = () => {
               title={
                 copySeparator !== "newline"
                   ? "Wrap each item in double quotes"
-                  : "Switch to CSV, TSV, or SSV to enable quoting"
+                  : "Switch to CSV, TSV, SSV, or Semi to enable quoting"
               }
               className={`h-9 px-3 inline-flex items-center rounded-md border text-xs uppercase tracking-widest font-semibold transition-all disabled:opacity-40 disabled:cursor-not-allowed ${
                 quoteItems && copySeparator !== "newline"
