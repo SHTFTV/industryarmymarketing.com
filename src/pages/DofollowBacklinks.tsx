@@ -16,10 +16,12 @@ import { useMemo, useState } from "react";
 import { dofollowDomains } from "@/data/dofollowDomains";
 
 type SortMode = "newest" | "oldest" | "az" | "za";
+type HostFilter = "all" | "Netlify" | "WordPress";
 
 const DofollowBacklinks = () => {
   const [query, setQuery] = useState("");
   const [sort, setSort] = useState<SortMode>("newest");
+  const [host, setHost] = useState<HostFilter>("all");
   const total = dofollowDomains.length;
 
   const filtered = useMemo(() => {
@@ -43,6 +45,16 @@ const DofollowBacklinks = () => {
 
   const netlify = filtered.filter((d) => d.host === "Netlify");
   const wordpress = filtered.filter((d) => d.host === "WordPress");
+
+  const showNetlify = host === "all" || host === "Netlify";
+  const showWordpress = host === "all" || host === "WordPress";
+  const visibleCount = (showNetlify ? netlify.length : 0) + (showWordpress ? wordpress.length : 0);
+
+  const hostOptions: { value: HostFilter; label: string; count: number }[] = [
+    { value: "all", label: "All Hosts", count: total },
+    { value: "Netlify", label: "Netlify", count: dofollowDomains.filter((d) => d.host === "Netlify").length },
+    { value: "WordPress", label: "WordPress", count: dofollowDomains.filter((d) => d.host === "WordPress").length },
+  ];
 
   const renderGrid = (list: typeof dofollowDomains) => (
     <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
@@ -113,12 +125,35 @@ const DofollowBacklinks = () => {
               </SelectContent>
             </Select>
           </div>
+          <div className="flex flex-wrap justify-center gap-2 mt-3">
+            {hostOptions.map((opt) => {
+              const active = host === opt.value;
+              return (
+                <button
+                  key={opt.value}
+                  type="button"
+                  onClick={() => setHost(opt.value)}
+                  aria-pressed={active}
+                  className={`px-4 h-9 rounded-md border text-xs uppercase tracking-widest font-semibold transition-all ${
+                    active
+                      ? "bg-primary text-primary-foreground border-primary shadow-[0_0_20px_hsl(var(--primary)/0.4)]"
+                      : "bg-card text-muted-foreground border-border hover:border-primary/50 hover:text-foreground"
+                  }`}
+                >
+                  {opt.label} <span className="opacity-70">· {opt.count}</span>
+                </button>
+              );
+            })}
+          </div>
           <p className="text-xs text-muted-foreground mt-2 text-center">
-            {query ? `${filtered.length} of ${total} domains match` : `${total} live domains`}
+            {query
+              ? `${visibleCount} of ${total} domains match`
+              : `${visibleCount} live domains`}
           </p>
         </div>
       </section>
 
+      {showNetlify && (
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="flex items-center gap-3 mb-6">
@@ -135,7 +170,9 @@ const DofollowBacklinks = () => {
           )}
         </div>
       </section>
+      )}
 
+      {showWordpress && (
       <section className="py-16 gradient-tactical border-y border-border">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="flex items-center gap-3 mb-6">
@@ -152,6 +189,7 @@ const DofollowBacklinks = () => {
           )}
         </div>
       </section>
+      )}
 
       <section className="py-20">
         <div className="container mx-auto px-4 text-center max-w-2xl">
