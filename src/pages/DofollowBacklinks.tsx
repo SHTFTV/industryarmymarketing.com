@@ -85,11 +85,12 @@ const DofollowBacklinks = () => {
   const [copiedAll, setCopiedAll] = useState(false);
   const [copyFormat, setCopyFormat] = useState<"plain" | "url">("plain");
   const [copySeparator, setCopySeparator] = useState<
-    "newline" | "csv" | "tsv" | "ssv" | "scsv" | "json" | "xml"
+    "newline" | "csv" | "tsv" | "ssv" | "scsv" | "json" | "xml" | "html"
   >("newline");
   const [quoteItems, setQuoteItems] = useState(false);
   const [jsonCompact, setJsonCompact] = useState(false);
   const [xmlCompact, setXmlCompact] = useState(false);
+  const [htmlCompact, setHtmlCompact] = useState(false);
 
   const formattedOutput = useMemo(() => {
     const values = visibleDomains.map((d) =>
@@ -113,6 +114,22 @@ const DofollowBacklinks = () => {
         return `<domains>${tags.join("")}</domains>`;
       }
       return `<domains>\n${tags.map((t) => `  ${t}`).join("\n")}\n</domains>`;
+    }
+    if (copySeparator === "html") {
+      const escapeHtml = (raw: string) =>
+        raw
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;");
+      const items = visibleDomains.map((d) => {
+        const text = copyFormat === "url" ? `https://${d}` : d;
+        return `<li><a href="https://${escapeHtml(d)}">${escapeHtml(text)}</a></li>`;
+      });
+      if (htmlCompact) {
+        return `<ul>${items.join("")}</ul>`;
+      }
+      return `<ul>\n${items.map((t) => `  ${t}`).join("\n")}\n</ul>`;
     }
     const joiner =
       copySeparator === "csv"
@@ -140,7 +157,7 @@ const DofollowBacklinks = () => {
     };
     const items = values.map((s) => (isDelimited ? escapeForDelimited(s) : s));
     return items.join(joiner);
-  }, [visibleDomains, copyFormat, copySeparator, quoteItems, jsonCompact, xmlCompact]);
+  }, [visibleDomains, copyFormat, copySeparator, quoteItems, jsonCompact, xmlCompact, htmlCompact]);
 
   const onCopyAll = async () => {
     if (visibleDomains.length === 0) return;
@@ -161,6 +178,8 @@ const DofollowBacklinks = () => {
           ? jsonCompact ? "JSON array, compact" : "JSON array, pretty"
           : copySeparator === "xml"
           ? xmlCompact ? "XML <domains>, compact" : "XML <domains>, pretty"
+          : copySeparator === "html"
+          ? htmlCompact ? "HTML <ul>, compact" : "HTML <ul>, pretty"
           : "newline-separated";
       toast({
         title: `Copied ${visibleDomains.length} domain${visibleDomains.length === 1 ? "" : "s"}`,
@@ -319,6 +338,7 @@ const DofollowBacklinks = () => {
                 { value: "scsv", label: "Semi" },
                 { value: "json", label: "JSON" },
                 { value: "xml", label: "XML" },
+                { value: "html", label: "HTML" },
               ] as const).map((opt) => {
                 const active = copySeparator === opt.value;
                 return (
@@ -348,13 +368,16 @@ const DofollowBacklinks = () => {
               disabled={
                 copySeparator === "newline" ||
                 copySeparator === "json" ||
-                copySeparator === "xml"
+                copySeparator === "xml" ||
+                copySeparator === "html"
               }
               title={
                 copySeparator === "json"
                   ? "JSON output is always properly quoted"
                   : copySeparator === "xml"
                   ? "XML output is always properly escaped"
+                  : copySeparator === "html"
+                  ? "HTML output is always properly escaped"
                   : copySeparator !== "newline"
                   ? "Wrap each item in double quotes"
                   : "Switch to CSV, TSV, SSV, or Semi to enable quoting"
@@ -363,7 +386,8 @@ const DofollowBacklinks = () => {
                 quoteItems &&
                 copySeparator !== "newline" &&
                 copySeparator !== "json" &&
-                copySeparator !== "xml"
+                copySeparator !== "xml" &&
+                copySeparator !== "html"
                   ? "bg-primary text-primary-foreground border-primary"
                   : "bg-card text-muted-foreground border-border hover:text-foreground hover:border-primary/50"
               }`}
@@ -372,12 +396,19 @@ const DofollowBacklinks = () => {
             </button>
             {(() => {
               const supportsCompact =
-                copySeparator === "json" || copySeparator === "xml";
+                copySeparator === "json" ||
+                copySeparator === "xml" ||
+                copySeparator === "html";
               const compactActive =
-                copySeparator === "json" ? jsonCompact : xmlCompact;
+                copySeparator === "json"
+                  ? jsonCompact
+                  : copySeparator === "xml"
+                  ? xmlCompact
+                  : htmlCompact;
               const toggle = () => {
                 if (copySeparator === "json") setJsonCompact((c) => !c);
                 else if (copySeparator === "xml") setXmlCompact((c) => !c);
+                else if (copySeparator === "html") setHtmlCompact((c) => !c);
               };
               return (
                 <button
@@ -392,7 +423,7 @@ const DofollowBacklinks = () => {
                       ? compactActive
                         ? "Switch to pretty-printed output"
                         : "Switch to single-line compact output"
-                      : "Switch to JSON or XML to toggle compact output"
+                      : "Switch to JSON, XML, or HTML to toggle compact output"
                   }
                   className={`h-9 px-3 inline-flex items-center rounded-md border text-xs uppercase tracking-widest font-semibold transition-all disabled:opacity-40 disabled:cursor-not-allowed ${
                     compactActive && supportsCompact
