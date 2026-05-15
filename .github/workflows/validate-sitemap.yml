@@ -60,33 +60,45 @@ jobs:
               echo "::error title=Invalid input::bun_cache_dir exceeds 4096 characters"
               exit 1
             fi
-            echo "bun_cache_dir='$DIR_TRIMMED' ✓"
+            # Normalize: expand leading ~, collapse repeated /, strip trailing /
+            NORMALIZED="$DIR_TRIMMED"
+            case "$NORMALIZED" in
+              "~"|"~/"*) NORMALIZED="$HOME${NORMALIZED#~}" ;;
+            esac
+            while [[ "$NORMALIZED" == *//* ]]; do
+              NORMALIZED="${NORMALIZED//\/\//\/}"
+            done
+            while [ "${#NORMALIZED}" -gt 1 ] && [ "${NORMALIZED: -1}" = "/" ]; do
+              NORMALIZED="${NORMALIZED%/}"
+            done
+            # Validate normalized value: must be absolute, no '..' segments
+            case "$NORMALIZED" in
+              /*) ;;
+              *)
+                echo "::error title=Invalid input::bun_cache_dir must resolve to an absolute path (got normalized: '$NORMALIZED')"
+                exit 1
+                ;;
+            esac
+            case "/$NORMALIZED/" in
+              */../*)
+                echo "::error title=Invalid input::bun_cache_dir must not contain '..' segments (got normalized: '$NORMALIZED')"
+                exit 1
+                ;;
+            esac
+            echo "BUN_INSTALL_CACHE_DIR=$NORMALIZED" >> "$GITHUB_ENV"
+            echo "bun_cache_dir='$NORMALIZED' ✓"
           else
             echo "bun_cache_dir=<default> ✓"
           fi
       - name: Resolve Bun cache path
         id: bun_cache
         run: |
-          RAW="$BUN_INSTALL_CACHE_DIR"
-          TRIMMED="${RAW#"${RAW%%[![:space:]]*}"}"
-          TRIMMED="${TRIMMED%"${TRIMMED##*[![:space:]]}"}"
-          if [ -n "$TRIMMED" ]; then
-            case "$TRIMMED" in
-              "~"|"~/"*) TRIMMED="$HOME${TRIMMED#~}" ;;
-            esac
-            RESOLVED="$TRIMMED"
+          if [ -n "$BUN_INSTALL_CACHE_DIR" ]; then
+            RESOLVED="$BUN_INSTALL_CACHE_DIR"
           else
             RESOLVED="$HOME/.bun/install/cache"
+            echo "BUN_INSTALL_CACHE_DIR=$RESOLVED" >> "$GITHUB_ENV"
           fi
-          # Collapse repeated separators (preserve leading // only if POSIX-significant — we don't need that here)
-          while [[ "$RESOLVED" == *//* ]]; do
-            RESOLVED="${RESOLVED//\/\//\/}"
-          done
-          # Strip trailing slashes (but keep "/" itself)
-          while [ "${#RESOLVED}" -gt 1 ] && [ "${RESOLVED: -1}" = "/" ]; do
-            RESOLVED="${RESOLVED%/}"
-          done
-          echo "BUN_INSTALL_CACHE_DIR=$RESOLVED" >> "$GITHUB_ENV"
           mkdir -p "$RESOLVED"
           echo "path=$RESOLVED" >> "$GITHUB_OUTPUT"
           echo "Using Bun cache dir: $RESOLVED"
