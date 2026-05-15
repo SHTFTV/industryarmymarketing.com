@@ -133,6 +133,10 @@ jobs:
                   attempt += 1;
                   if (attempt > retries || !isRetryable(err)) {
                     flush('failed');
+                    // Tag the error so callers (e.g. the update→create
+                    // fallback) can reference the same correlation ID in
+                    // their own log lines.
+                    try { err.corrId = corrId; err.corrPrefix = corrPrefix; } catch {}
                     throw err;
                   }
                   const retryAfter = parseInt(err?.response?.headers?.['retry-after'] || '0', 10);
@@ -171,7 +175,10 @@ jobs:
                 // Fallback: prior comment may have been deleted (404),
                 // edited by a different account (403), or otherwise
                 // unreachable — post a fresh comment instead of failing.
-                await createNew(`Update of comment #${prior.id} failed (${err.status || 'error'}: ${err.message}); posting a new comment instead.`);
+                const upstreamCorr = err.corrId
+                  ? `[corr=${err.corrId} ${err.corrPrefix} op=updateComment]`
+                  : `[${corrPrefix} op=updateComment]`;
+                await createNew(`${upstreamCorr} update of comment #${prior.id} failed (${err.status || 'error'}: ${err.message}); falling back to createComment.`);
               }
             } else {
               await createNew();
