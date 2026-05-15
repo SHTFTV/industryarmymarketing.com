@@ -1,0 +1,37 @@
+name: Validate sitemap
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-sitemap:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Build site
+        run: npm run build
+      - name: Start preview server
+        run: |
+          npx vite preview --port 4173 --strictPort > preview.log 2>&1 &
+          echo $! > preview.pid
+          for i in $(seq 1 30); do
+            curl -sf http://localhost:4173/ > /dev/null && break || sleep 1
+          done
+          curl -sf http://localhost:4173/ > /dev/null
+      - name: Validate sitemap
+        run: npx tsx scripts/validate-sitemap.ts http://localhost:4173
+      - name: Stop preview server
+        if: always()
+        run: |
+          if [ -f preview.pid ]; then kill "$(cat preview.pid)" 2>/dev/null || true; fi
+          if [ -f preview.log ]; then echo "── preview.log ──"; cat preview.log; fi
