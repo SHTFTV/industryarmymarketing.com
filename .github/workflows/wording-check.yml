@@ -8,10 +8,76 @@ on:
 jobs:
   wording-check:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
       - name: Run wording check
-        run: node scripts/check-wording.mjs
+        id: check
+        run: |
+          set +e
+          OUTPUT=$(node scripts/check-wording.mjs 2>&1)
+          STATUS=$?
+          echo "$OUTPUT"
+          {
+            echo "report<<EOF"
+            echo "$OUTPUT"
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+          exit $STATUS
+
+      - name: Comment on PR (with cooldown)
+        if: failure() && github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        env:
+          REPORT: ${{ steps.check.outputs.report }}
+          ISSUE_COOLDOWN_HOURS: ${{ vars.ISSUE_COOLDOWN_HOURS }}
+        with:
+          script: |
+            const crypto = require('crypto');
+            const report = process.env.REPORT || '';
+            const cooldownH = parseInt(process.env.ISSUE_COOLDOWN_HOURS || '0', 10);
+            const fingerprint = crypto.createHash('sha256').update(report).digest('hex').slice(0, 16);
+            const marker = `<!-- wording-check:fp=${fingerprint} -->`;
+            const tsRe = /<!-- wording-check:ts=(\d+) -->/;
+            const { owner, repo } = context.repo;
+            const prNumber = context.payload.pull_request.number;
+
+            // Look for an existing bot comment with the same fingerprint.
+            const comments = await github.paginate(github.rest.issues.listComments, {
+              owner, repo, issue_number: prNumber, per_page: 100,
+            });
+            const prior = comments.find(c => (c.body || '').includes(marker));
+
+            if (cooldownH > 0 && prior) {
+              const m = (prior.body || '').match(tsRe);
+              const last = m ? parseInt(m[1], 10) : Math.floor(new Date(prior.created_at).getTime() / 1000);
+              const ageMin = Math.floor((Date.now() / 1000 - last) / 60);
+              if (ageMin < cooldownH * 60) {
+                core.notice(`PR comment suppressed — same failure already commented ${ageMin}m ago (cooldown: ${cooldownH}h, fingerprint: ${fingerprint}).`);
+                return;
+              }
+            }
+
+            const truncated = report.length > 5000 ? report.slice(0, 5000) + '\n…(truncated)' : report;
+            const runUrl = `${context.serverUrl}/${owner}/${repo}/actions/runs/${context.runId}`;
+            const body = [
+              `❌ **Wording check failed** on \`${context.sha.slice(0, 7)}\`.`,
+              '',
+              '```',
+              truncated,
+              '```',
+              '',
+              `[View workflow run](${runUrl})`,
+              '',
+              marker,
+              `<!-- wording-check:ts=${Math.floor(Date.now() / 1000)} -->`,
+            ].join('\n');
+
+            await github.rest.issues.createComment({
+              owner, repo, issue_number: prNumber, body,
+            });
