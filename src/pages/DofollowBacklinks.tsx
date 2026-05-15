@@ -11,12 +11,39 @@ import {
 } from "@/components/ui/select";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ExternalLink, Server, Globe, Search } from "lucide-react";
+import { ExternalLink, Server, Globe, Search, Copy, Check } from "lucide-react";
 import { useMemo, useState } from "react";
+import { toast } from "@/hooks/use-toast";
 import { dofollowDomains } from "@/data/dofollowDomains";
 
 type SortMode = "newest" | "oldest" | "az" | "za";
 type HostFilter = "all" | "Netlify" | "WordPress";
+
+const CopyButton = ({ domain }: { domain: string }) => {
+  const [copied, setCopied] = useState(false);
+  const onCopy = async (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    try {
+      await navigator.clipboard.writeText(domain);
+      setCopied(true);
+      toast({ title: "Copied", description: domain });
+      setTimeout(() => setCopied(false), 1500);
+    } catch {
+      toast({ title: "Copy failed", description: domain, variant: "destructive" });
+    }
+  };
+  return (
+    <button
+      type="button"
+      onClick={onCopy}
+      aria-label={`Copy ${domain} to clipboard`}
+      className="shrink-0 h-8 w-8 inline-flex items-center justify-center rounded-md border border-border bg-background/50 text-muted-foreground hover:text-primary hover:border-primary/50 transition-colors"
+    >
+      {copied ? <Check className="w-4 h-4 text-primary" /> : <Copy className="w-4 h-4" />}
+    </button>
+  );
+};
 
 const DofollowBacklinks = () => {
   const [query, setQuery] = useState("");
@@ -59,25 +86,30 @@ const DofollowBacklinks = () => {
   const renderGrid = (list: typeof dofollowDomains) => (
     <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
       {list.map((d, i) => (
-        <motion.a
+        <motion.div
           key={d.domain}
-          href={`https://${d.domain}`}
-          target="_blank"
-          rel="noopener"
           initial={{ opacity: 0, y: 8 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: Math.min(i * 0.015, 0.4) }}
-          className="group p-4 rounded-lg bg-card border border-border hover:border-primary/50 transition-all flex items-center justify-between"
+          className="group p-4 rounded-lg bg-card border border-border hover:border-primary/50 transition-all flex items-center justify-between gap-3"
         >
-          <div className="min-w-0">
-            <div className="font-mono text-primary text-glow truncate group-hover:underline">
-              {d.domain}
+          <a
+            href={`https://${d.domain}`}
+            target="_blank"
+            rel="noopener"
+            className="flex items-center gap-3 min-w-0 flex-1"
+          >
+            <div className="min-w-0">
+              <div className="font-mono text-primary text-glow truncate group-hover:underline">
+                {d.domain}
+              </div>
+              <div className="text-xs text-muted-foreground mt-1">{d.published}</div>
             </div>
-            <div className="text-xs text-muted-foreground mt-1">{d.published}</div>
-          </div>
-          <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary shrink-0 ml-3" />
-        </motion.a>
+            <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary shrink-0" />
+          </a>
+          <CopyButton domain={d.domain} />
+        </motion.div>
       ))}
     </div>
   );
