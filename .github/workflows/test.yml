@@ -187,6 +187,55 @@ jobs:
             echo ""
           } >> "$GITHUB_STEP_SUMMARY"
 
+      - name: Search for exact cache key match
+        if: steps.cache-report.outputs.status == 'miss'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          CURRENT_KEY: ${{ steps.cache-report.outputs.key }}
+        run: |
+          set -e
+          # Look for an entry whose key === composed key. If one exists
+          # despite setup-node reporting a miss, the cause is almost
+          # always scope/ref isolation: caches created on a feature
+          # branch are not readable from another branch (only the base
+          # branch + the branch itself can read them).
+          JSON=$(gh cache list --limit 100 \
+                   --key "$CURRENT_KEY" \
+                   --json id,key,ref,sizeInBytes,createdAt,lastAccessedAt \
+                   2>/dev/null || echo '[]')
+          COUNT=$(echo "$JSON" | jq 'length')
+
+          echo "── exact cache key search ──"
+          echo "looking for key: ${CURRENT_KEY}"
+          echo "matches: ${COUNT}"
+          if [ "$COUNT" -gt 0 ]; then
+            echo "$JSON" | jq -r '.[] |
+              "  id=\(.id)  ref=\(.ref)  size=\(.sizeInBytes)B  created=\(.createdAt)  last_accessed=\(.lastAccessedAt)"'
+            echo "::warning title=npm cache scope mismatch::Exact key '${CURRENT_KEY}' exists on a different ref/branch and is not readable from this run. Caches are scoped to their creating ref + the repo's default branch."
+          else
+            echo "  (no exact-key entry exists in this repo)"
+          fi
+          echo "────────────────────────────"
+
+          {
+            echo "### Exact cache key search — Node ${{ matrix.node-version }}"
+            echo ""
+            echo "Looking for key: \`${CURRENT_KEY}\`  "
+            echo "Matches: **${COUNT}**"
+            echo ""
+            if [ "$COUNT" -gt 0 ]; then
+              echo "> ⚠️ Exact key exists but was not restored — likely a **scope/ref mismatch** (caches are only readable from their creating ref or the default branch)."
+              echo ""
+              echo "| ID | Ref | Size (B) | Created | Last accessed |"
+              echo "| --- | --- | --- | --- | --- |"
+              echo "$JSON" | jq -r '.[] |
+                "| \(.id) | `\(.ref)` | \(.sizeInBytes) | \(.createdAt) | \(.lastAccessedAt) |"'
+            else
+              echo "_No exact-key entry exists. The miss is due to the key never having been saved (first run, lockfile change, or eviction) — not a scope issue._"
+            fi
+            echo ""
+          } >> "$GITHUB_STEP_SUMMARY"
+
       - name: Write cache report to summary
         env:
           LOCK_HASH: ${{ steps.lockhash.outputs.hash }}
