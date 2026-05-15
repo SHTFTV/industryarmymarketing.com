@@ -336,6 +336,19 @@ const DofollowBacklinks = () => {
               {copiedAll ? "Copied" : `Copy all ${visibleDomains.length}`}
             </Button>
           </div>
+          {visibleDomains.length > 0 && (
+            <details className="mt-3 max-w-3xl mx-auto" open>
+              <summary className="text-xs uppercase tracking-widest text-muted-foreground cursor-pointer hover:text-primary transition-colors">
+                Output preview
+              </summary>
+              <pre
+                aria-label="Copy all output preview"
+                className="mt-2 p-3 rounded-md bg-card border border-border text-xs font-mono text-foreground max-h-40 overflow-auto whitespace-pre-wrap break-all"
+              >
+                {formattedOutput}
+              </pre>
+            </details>
+          )}
         </div>
       </section>
 
