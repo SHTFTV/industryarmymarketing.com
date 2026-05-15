@@ -17,6 +17,11 @@ const reasons = [
 
 const Contractors = () => (
   <Layout>
+    <Seo
+      title="Contractor Marketing | Exclusive Trade & City Territories"
+      description="Construction and trades marketing on premium 20+ year-old industry domains. One contractor per trade per city. Lock your category from $10/month."
+      path="/contractors"
+    />
     <PageHeader
       eyebrow="Built By Contractors · For Contractors"
       title="Construction &"
