@@ -24,6 +24,16 @@ jobs:
             bun-${{ runner.os }}-
       - name: Install dependencies
         run: bun install --frozen-lockfile
+      - name: Cache Vite build output
+        uses: actions/cache@v4
+        with:
+          path: |
+            dist
+            node_modules/.vite
+          key: vite-build-${{ runner.os }}-${{ hashFiles('bun.lock', 'bun.lockb', 'vite.config.ts', 'tsconfig*.json', 'tailwind.config.ts', 'postcss.config.js', 'index.html') }}-${{ hashFiles('src/**', 'public/**') }}
+          restore-keys: |
+            vite-build-${{ runner.os }}-${{ hashFiles('bun.lock', 'bun.lockb', 'vite.config.ts', 'tsconfig*.json', 'tailwind.config.ts', 'postcss.config.js', 'index.html') }}-
+            vite-build-${{ runner.os }}-
       - name: Build site
         run: bun run build
       - name: Start preview server
