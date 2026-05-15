@@ -35,6 +35,36 @@ jobs:
           echo "hash=$HASH" >> "$GITHUB_OUTPUT"
           echo "short=$SHORT" >> "$GITHUB_OUTPUT"
           echo "package-lock.json sha256: $HASH"
+      - name: Print cache key inputs
+        env:
+          LOCK_HASH: ${{ steps.lockhash.outputs.hash }}
+        run: |
+          NODE_ACTUAL=$(node --version)
+          # Each component on its own line so a miss can be diffed against
+          # the previous run at a glance (OS, arch, Node major, lockfile).
+          echo "── npm cache key inputs ─────────────────────────"
+          echo "  os               = ${RUNNER_OS}"
+          echo "  arch             = ${RUNNER_ARCH}"
+          echo "  node_matrix      = ${{ matrix.node-version }}"
+          echo "  node_actual      = ${NODE_ACTUAL}"
+          echo "  lockfile         = package-lock.json"
+          echo "  lockfile_sha256  = ${LOCK_HASH}"
+          echo "  composed_key     = node-cache-${RUNNER_OS}-${RUNNER_ARCH}-npm-${LOCK_HASH}"
+          echo "─────────────────────────────────────────────────"
+          {
+            echo "### Cache key inputs — Node ${{ matrix.node-version }}"
+            echo ""
+            echo "| Input | Value |"
+            echo "| --- | --- |"
+            echo "| OS | \`${RUNNER_OS}\` |"
+            echo "| Architecture | \`${RUNNER_ARCH}\` |"
+            echo "| Node (matrix) | \`${{ matrix.node-version }}\` |"
+            echo "| Node (actual) | \`${NODE_ACTUAL}\` |"
+            echo "| Lockfile | \`package-lock.json\` |"
+            echo "| Lockfile sha256 | \`${LOCK_HASH}\` |"
+            echo "| Composed key | \`node-cache-${RUNNER_OS}-${RUNNER_ARCH}-npm-${LOCK_HASH}\` |"
+            echo ""
+          } >> "$GITHUB_STEP_SUMMARY"
       - name: Report npm cache restore result
         id: cache-report
         env:
