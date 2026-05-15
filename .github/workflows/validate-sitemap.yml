@@ -45,32 +45,19 @@ jobs:
       - name: Validate & normalize bun_cache_dir
         id: normalize_bun_cache_dir
         run: node .github/workflows/lib/run-normalize-bun-cache-dir.cjs
-      - name: Resolve Bun cache path
-        id: bun_cache
-        env:
-          BUN_CACHE_DIR_NORMALIZED: ${{ steps.normalize_bun_cache_dir.outputs.bun_cache_dir_normalized }}
-        run: |
-          if [ -n "$BUN_CACHE_DIR_NORMALIZED" ]; then
-            RESOLVED="$BUN_CACHE_DIR_NORMALIZED"
-          else
-            RESOLVED="$HOME/.bun/install/cache"
-            echo "BUN_INSTALL_CACHE_DIR=$RESOLVED" >> "$GITHUB_ENV"
-          fi
-          mkdir -p "$RESOLVED"
-          echo "path=$RESOLVED" >> "$GITHUB_OUTPUT"
-          echo "Using Bun cache dir: $RESOLVED"
       - name: Cache Bun dependencies
         uses: actions/cache@v4
         with:
-          path: ${{ steps.bun_cache.outputs.path }}
+          path: ${{ steps.normalize_bun_cache_dir.outputs.bun_cache_dir_resolved }}
           key: bun-${{ runner.os }}-${{ hashFiles('bun.lock', 'bun.lockb') }}
           restore-keys: |
             bun-${{ runner.os }}-
       - name: Debug Bun cache (before install)
         if: inputs.debug_bun_cache == true
+        env:
+          CACHE_DIR: ${{ steps.normalize_bun_cache_dir.outputs.bun_cache_dir_resolved }}
         run: |
-          CACHE_DIR="$BUN_INSTALL_CACHE_DIR"
-          echo "BUN_INSTALL_CACHE_DIR=$CACHE_DIR"
+          echo "Bun cache dir: $CACHE_DIR"
           if [ -d "$CACHE_DIR" ]; then
             echo "── cache size ──"; du -sh "$CACHE_DIR" || true
             echo "── top entries ──"; ls -lah "$CACHE_DIR" | head -n 20 || true
@@ -81,8 +68,9 @@ jobs:
       - name: Install dependencies
         run: bun install --frozen-lockfile
       - name: Verify Bun cache populated
+        env:
+          CACHE_DIR: ${{ steps.normalize_bun_cache_dir.outputs.bun_cache_dir_resolved }}
         run: |
-          CACHE_DIR="$BUN_INSTALL_CACHE_DIR"
           if [ ! -d "$CACHE_DIR" ]; then
             echo "::error::Bun cache directory missing at $CACHE_DIR after install"
             exit 1
@@ -100,8 +88,9 @@ jobs:
           fi
       - name: Debug Bun cache (after install)
         if: inputs.debug_bun_cache == true
+        env:
+          CACHE_DIR: ${{ steps.normalize_bun_cache_dir.outputs.bun_cache_dir_resolved }}
         run: |
-          CACHE_DIR="$BUN_INSTALL_CACHE_DIR"
           if [ -d "$CACHE_DIR" ]; then
             echo "── cache size ──"; du -sh "$CACHE_DIR" || true
             echo "── top entries ──"; ls -lah "$CACHE_DIR" | head -n 20 || true
