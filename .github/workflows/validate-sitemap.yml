@@ -30,7 +30,6 @@ jobs:
           path: |
             node_modules/.vite/deps
             node_modules/.vite/deps_temp_*
-himself
           key: vite-deps-${{ runner.os }}-${{ hashFiles('bun.lock', 'bun.lockb', 'vite.config.ts') }}-${{ hashFiles('package.json') }}
           restore-keys: |
             vite-deps-${{ runner.os }}-${{ hashFiles('bun.lock', 'bun.lockb', 'vite.config.ts') }}-
