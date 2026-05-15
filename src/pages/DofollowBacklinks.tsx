@@ -85,18 +85,28 @@ const DofollowBacklinks = () => {
   const [copiedAll, setCopiedAll] = useState(false);
   const [copyFormat, setCopyFormat] = useState<"plain" | "url">("plain");
   const [copySeparator, setCopySeparator] = useState<"newline" | "csv">("newline");
+  const [quoteItems, setQuoteItems] = useState(false);
   const onCopyAll = async () => {
     if (visibleDomains.length === 0) return;
-    const items = visibleDomains.map((d) =>
-      copyFormat === "url" ? `https://${d}` : d,
-    );
+    const items = visibleDomains
+      .map((d) => (copyFormat === "url" ? `https://${d}` : d))
+      .map((s) =>
+        copySeparator === "csv" && quoteItems
+          ? `"${s.replace(/"/g, '""')}"`
+          : s,
+      );
     const text =
       copySeparator === "csv" ? items.join(",") : items.join("\n");
     try {
       await navigator.clipboard.writeText(text);
       setCopiedAll(true);
       const formatLabel = copyFormat === "url" ? "Full URLs" : "Plain domains";
-      const sepLabel = copySeparator === "csv" ? "comma-separated" : "newline-separated";
+      const sepLabel =
+        copySeparator === "csv"
+          ? quoteItems
+            ? "comma-separated, quoted"
+            : "comma-separated"
+          : "newline-separated";
       toast({
         title: `Copied ${visibleDomains.length} domain${visibleDomains.length === 1 ? "" : "s"}`,
         description: `${formatLabel}, ${sepLabel}.`,
@@ -269,6 +279,26 @@ const DofollowBacklinks = () => {
                 );
               })}
             </div>
+            <button
+              type="button"
+              role="switch"
+              aria-checked={quoteItems}
+              aria-label="Wrap CSV items in quotes"
+              onClick={() => setQuoteItems((q) => !q)}
+              disabled={copySeparator !== "csv"}
+              title={
+                copySeparator === "csv"
+                  ? "Wrap each CSV item in double quotes"
+                  : "Switch to CSV to enable quoting"
+              }
+              className={`h-9 px-3 inline-flex items-center rounded-md border text-xs uppercase tracking-widest font-semibold transition-all disabled:opacity-40 disabled:cursor-not-allowed ${
+                quoteItems && copySeparator === "csv"
+                  ? "bg-primary text-primary-foreground border-primary"
+                  : "bg-card text-muted-foreground border-border hover:text-foreground hover:border-primary/50"
+              }`}
+            >
+              "Quoted"
+            </button>
             <Button
               type="button"
               variant="heroOutline"
