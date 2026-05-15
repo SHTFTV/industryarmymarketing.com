@@ -39,6 +39,10 @@ jobs:
         with:
           script: |
             const crypto = require('crypto');
+            const path = require('path');
+            const { normalizeRunAttempt } = require(
+              path.join(process.env.GITHUB_WORKSPACE, '.github/workflows/lib/normalize-run-attempt.js')
+            );
             const report = process.env.REPORT || '';
             const cooldownH = parseInt(process.env.ISSUE_COOLDOWN_HOURS || '0', 10);
             const fingerprint = crypto.createHash('sha256').update(report).digest('hex').slice(0, 16);
@@ -91,17 +95,10 @@ jobs:
             // Deep links + stable per-run/PR correlation prefix so
             // coalesced retry warnings can be grepped back to (and clicked
             // through to) the exact workflow run and pull request.
-            // Normalize attempt: GITHUB_RUN_ATTEMPT is unset locally and
-            // can be empty/non-numeric in odd runner states. Always coerce
-            // to a positive integer (default 1) so the deep link points to
-            // a valid /attempts/<n> URL in every code path — including the
-            // update→create fallback ::notice::. Centralized here so every
-            // retry and fallback log path shares the exact same fallback
-            // logic; never inline parseInt(GITHUB_RUN_ATTEMPT) elsewhere.
-            const normalizeRunAttempt = (raw = process.env.GITHUB_RUN_ATTEMPT) => {
-              const parsed = parseInt(raw || '', 10);
-              return String(Number.isFinite(parsed) && parsed > 0 ? parsed : 1);
-            };
+            // Normalize attempt via the shared helper so every retry and
+            // fallback log path uses the exact same attempt=1 fallback
+            // logic. Never inline parseInt(GITHUB_RUN_ATTEMPT) elsewhere —
+            // import normalizeRunAttempt instead.
             const runAttempt = normalizeRunAttempt();
             const runLink = `${context.serverUrl}/${owner}/${repo}/actions/runs/${context.runId}/attempts/${runAttempt}`;
             const prLink = `${context.serverUrl}/${owner}/${repo}/pull/${prNumber}`;
