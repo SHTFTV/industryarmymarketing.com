@@ -54,9 +54,10 @@ jobs:
             bun-${{ runner.os }}-
       - name: Debug Bun cache (before install)
         if: inputs.debug_bun_cache == true
+        env:
+          CACHE_DIR: ${{ steps.normalize_bun_cache_dir.outputs.bun_cache_dir_resolved }}
         run: |
-          CACHE_DIR="$BUN_INSTALL_CACHE_DIR"
-          echo "BUN_INSTALL_CACHE_DIR=$CACHE_DIR"
+          echo "Bun cache dir: $CACHE_DIR"
           if [ -d "$CACHE_DIR" ]; then
             echo "── cache size ──"; du -sh "$CACHE_DIR" || true
             echo "── top entries ──"; ls -lah "$CACHE_DIR" | head -n 20 || true
@@ -67,8 +68,9 @@ jobs:
       - name: Install dependencies
         run: bun install --frozen-lockfile
       - name: Verify Bun cache populated
+        env:
+          CACHE_DIR: ${{ steps.normalize_bun_cache_dir.outputs.bun_cache_dir_resolved }}
         run: |
-          CACHE_DIR="$BUN_INSTALL_CACHE_DIR"
           if [ ! -d "$CACHE_DIR" ]; then
             echo "::error::Bun cache directory missing at $CACHE_DIR after install"
             exit 1
@@ -86,8 +88,9 @@ jobs:
           fi
       - name: Debug Bun cache (after install)
         if: inputs.debug_bun_cache == true
+        env:
+          CACHE_DIR: ${{ steps.normalize_bun_cache_dir.outputs.bun_cache_dir_resolved }}
         run: |
-          CACHE_DIR="$BUN_INSTALL_CACHE_DIR"
           if [ -d "$CACHE_DIR" ]; then
             echo "── cache size ──"; du -sh "$CACHE_DIR" || true
             echo "── top entries ──"; ls -lah "$CACHE_DIR" | head -n 20 || true
