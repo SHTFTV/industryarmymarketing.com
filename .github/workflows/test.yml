@@ -138,6 +138,55 @@ jobs:
           echo "detail=$DETAIL" >> "$GITHUB_OUTPUT"
           echo "::warning title=npm cache miss reason::${REASON}: ${DETAIL}"
 
+      - name: List existing caches matching key prefix
+        if: steps.cache-report.outputs.status == 'miss'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          KEY_PREFIX: ${{ steps.cache-report.outputs.key_prefix }}
+          CURRENT_KEY: ${{ steps.cache-report.outputs.key }}
+        run: |
+          set -e
+          # Pull cache entries with structured fields so we can print
+          # IDs and timestamps for every entry whose key starts with the
+          # composed prefix (node-cache-<os>-<arch>-npm-).
+          JSON=$(gh cache list --limit 100 \
+                   --json id,key,ref,sizeInBytes,createdAt,lastAccessedAt \
+                   2>/dev/null || echo '[]')
+
+          MATCHES=$(echo "$JSON" | jq --arg p "$KEY_PREFIX" \
+            '[.[] | select(.key | startswith($p))]
+             | sort_by(.lastAccessedAt) | reverse')
+          COUNT=$(echo "$MATCHES" | jq 'length')
+
+          echo "── caches matching prefix: ${KEY_PREFIX} ──"
+          echo "current key: ${CURRENT_KEY}"
+          echo "matches found: ${COUNT}"
+          if [ "$COUNT" -gt 0 ]; then
+            echo "$MATCHES" | jq -r '.[] |
+              "  id=\(.id)  size=\(.sizeInBytes)B  created=\(.createdAt)  last_accessed=\(.lastAccessedAt)  ref=\(.ref)\n    key=\(.key)"'
+          else
+            echo "  (no entries — first run for this prefix or all evicted)"
+          fi
+          echo "─────────────────────────────────────────────"
+
+          {
+            echo "### Existing caches matching prefix — Node ${{ matrix.node-version }}"
+            echo ""
+            echo "Prefix: \`${KEY_PREFIX}\`  "
+            echo "Current key: \`${CURRENT_KEY}\`  "
+            echo "Matches: **${COUNT}**"
+            echo ""
+            if [ "$COUNT" -gt 0 ]; then
+              echo "| ID | Size (B) | Created | Last accessed | Ref | Key |"
+              echo "| --- | --- | --- | --- | --- | --- |"
+              echo "$MATCHES" | jq -r '.[] |
+                "| \(.id) | \(.sizeInBytes) | \(.createdAt) | \(.lastAccessedAt) | `\(.ref)` | `\(.key)` |"'
+            else
+              echo "_No entries — first run for this prefix or all evicted (GitHub 7-day TTL / 10GB repo limit)._"
+            fi
+            echo ""
+          } >> "$GITHUB_STEP_SUMMARY"
+
       - name: Write cache report to summary
         env:
           LOCK_HASH: ${{ steps.lockhash.outputs.hash }}
