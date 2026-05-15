@@ -24,6 +24,17 @@ jobs:
             bun-${{ runner.os }}-
       - name: Install dependencies
         run: bun install --frozen-lockfile
+      - name: Cache Vite dependency prebundle
+        uses: actions/cache@v4
+        with:
+          path: |
+            node_modules/.vite/deps
+            node_modules/.vite/deps_temp_*
+himself
+          key: vite-deps-${{ runner.os }}-${{ hashFiles('bun.lock', 'bun.lockb', 'vite.config.ts') }}-${{ hashFiles('package.json') }}
+          restore-keys: |
+            vite-deps-${{ runner.os }}-${{ hashFiles('bun.lock', 'bun.lockb', 'vite.config.ts') }}-
+            vite-deps-${{ runner.os }}-
       - name: Cache Vite build output
         uses: actions/cache@v4
         with:
