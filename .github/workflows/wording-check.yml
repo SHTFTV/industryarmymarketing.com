@@ -88,9 +88,24 @@ jobs:
               const code = err && (err.code || (err.cause && err.cause.code));
               return ['ECONNRESET', 'ETIMEDOUT', 'EAI_AGAIN', 'ENOTFOUND', 'ECONNREFUSED', 'EPIPE'].includes(code);
             };
+            // Stable per-run/PR correlation prefix so coalesced retry
+            // warnings can be grepped back to the exact workflow run and
+            // pull request in the Actions logs.
+            const corrPrefix = [
+              `run=${context.runId}`,
+              `attempt=${process.env.GITHUB_RUN_ATTEMPT || '1'}`,
+              `repo=${owner}/${repo}`,
+              `pr=#${prNumber}`,
+              `fp=${fingerprint}`,
+            ].join(' ');
+
             // Coalesce per-retry warnings into a single ::warning:: per
             // burst so the Actions log isn't flooded when GitHub is flaky.
             const withRetry = async (label, fn, { retries = 5, baseMs = 1000, capMs = 30000 } = {}) => {
+              // Per-call correlation ID (8 hex chars) — distinguishes
+              // overlapping bursts for the same PR (e.g. update + create).
+              const corrId = crypto.randomBytes(4).toString('hex');
+              const corr = `[corr=${corrId} ${corrPrefix} op=${label}]`;
               let attempt = 0;
               const burst = []; // { attempt, status, message, waitMs }
               const flush = (outcome) => {
@@ -100,7 +115,7 @@ jobs:
                 const totalWait = burst.reduce((s, b) => s + b.waitMs, 0);
                 const reasons = [...new Set(burst.map(b => `${b.status}: ${b.message}`))];
                 const summary =
-                  `${label}: ${burst.length} retry attempt(s) coalesced — ` +
+                  `${corr} ${burst.length} retry attempt(s) coalesced — ` +
                   `outcome=${outcome}, ` +
                   `attempts=${first.attempt}-${last.attempt}/${retries}, ` +
                   `total_backoff=${totalWait}ms, ` +
