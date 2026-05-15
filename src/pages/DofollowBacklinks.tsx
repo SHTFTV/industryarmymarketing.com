@@ -88,15 +88,13 @@ const DofollowBacklinks = () => {
     "newline" | "csv" | "tsv" | "ssv" | "scsv"
   >("newline");
   const [quoteItems, setQuoteItems] = useState(false);
-  const onCopyAll = async () => {
-    if (visibleDomains.length === 0) return;
+
+  const formattedOutput = useMemo(() => {
     const isDelimited = copySeparator !== "newline";
     const items = visibleDomains
       .map((d) => (copyFormat === "url" ? `https://${d}` : d))
       .map((s) =>
-        isDelimited && quoteItems
-          ? `"${s.replace(/"/g, '""')}"`
-          : s,
+        isDelimited && quoteItems ? `"${s.replace(/"/g, '""')}"` : s,
       );
     const joiner =
       copySeparator === "csv"
@@ -108,9 +106,13 @@ const DofollowBacklinks = () => {
         : copySeparator === "scsv"
         ? ";"
         : "\n";
-    const text = items.join(joiner);
+    return items.join(joiner);
+  }, [visibleDomains, copyFormat, copySeparator, quoteItems]);
+
+  const onCopyAll = async () => {
+    if (visibleDomains.length === 0) return;
     try {
-      await navigator.clipboard.writeText(text);
+      await navigator.clipboard.writeText(formattedOutput);
       setCopiedAll(true);
       const formatLabel = copyFormat === "url" ? "Full URLs" : "Plain domains";
       const sepLabel =
@@ -334,6 +336,19 @@ const DofollowBacklinks = () => {
               {copiedAll ? "Copied" : `Copy all ${visibleDomains.length}`}
             </Button>
           </div>
+          {visibleDomains.length > 0 && (
+            <details className="mt-3 max-w-3xl mx-auto" open>
+              <summary className="text-xs uppercase tracking-widest text-muted-foreground cursor-pointer hover:text-primary transition-colors">
+                Output preview
+              </summary>
+              <pre
+                aria-label="Copy all output preview"
+                className="mt-2 p-3 rounded-md bg-card border border-border text-xs font-mono text-foreground max-h-40 overflow-auto whitespace-pre-wrap break-all"
+              >
+                {formattedOutput}
+              </pre>
+            </details>
+          )}
         </div>
       </section>
 
