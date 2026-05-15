@@ -20,36 +20,63 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
+      - name: Compute lockfile hash
+        id: lockhash
+        run: |
+          # hashFiles() in GitHub expressions uses SHA-256 of file contents;
+          # for a single lockfile, sha256sum produces the same digest used
+          # in the setup-node cache key.
+          HASH=$(sha256sum package-lock.json | awk '{print $1}')
+          SHORT="${HASH:0:12}"
+          echo "hash=$HASH" >> "$GITHUB_OUTPUT"
+          echo "short=$SHORT" >> "$GITHUB_OUTPUT"
+          echo "package-lock.json sha256: $HASH"
       - name: Report npm cache restore result
         id: cache-report
+        env:
+          LOCK_HASH: ${{ steps.lockhash.outputs.hash }}
+          LOCK_SHORT: ${{ steps.lockhash.outputs.short }}
         run: |
           HIT='${{ steps.setup-node.outputs.cache-hit }}'
+          # Reconstruct the setup-node cache key. setup-node v4 uses:
+          #   node-cache-<os>-<arch>-npm-<hashFiles(package-lock.json)>
+          CACHE_KEY="node-cache-${RUNNER_OS}-${RUNNER_ARCH}-npm-${LOCK_HASH}"
           echo "setup-node cache-hit output: '${HIT:-<empty>}'"
+          echo "reconstructed cache key: $CACHE_KEY"
           if [ "$HIT" = "true" ]; then
             STATUS="hit"
-            echo "::notice title=npm cache::HIT — restored ~/.npm from cache key (lockfile unchanged)."
+            ICON="✅ HIT"
+            echo "::notice title=npm cache::HIT key=$CACHE_KEY"
           else
             STATUS="miss"
-            echo "::notice title=npm cache::MISS — no exact key match; cache will be saved at job end."
+            ICON="❌ MISS"
+            echo "::notice title=npm cache::MISS key=$CACHE_KEY (no exact match — will save at job end)"
           fi
           echo "status=$STATUS" >> "$GITHUB_OUTPUT"
-          echo "npm cache directory: $(npm config get cache)"
-          du -sh "$(npm config get cache)" 2>/dev/null || echo "(cache dir not present yet)"
-          # Per-job summary row
+          echo "key=$CACHE_KEY" >> "$GITHUB_OUTPUT"
+          # Per-job summary with traceability fields
           {
             echo "### npm cache — Node ${{ matrix.node-version }}"
             echo ""
-            echo "| Node | Result |"
+            echo "| Field | Value |"
             echo "| --- | --- |"
-            if [ "$STATUS" = "hit" ]; then
-              echo "| ${{ matrix.node-version }} | ✅ HIT |"
-            else
-              echo "| ${{ matrix.node-version }} | ❌ MISS |"
-            fi
+            echo "| Result | $ICON |"
+            echo "| Node | ${{ matrix.node-version }} |"
+            echo "| Runner | \`${RUNNER_OS}/${RUNNER_ARCH}\` |"
+            echo "| Lockfile sha256 | \`${LOCK_HASH}\` |"
+            echo "| Cache key | \`${CACHE_KEY}\` |"
+            echo ""
           } >> "$GITHUB_STEP_SUMMARY"
-          # Persist per-job result for the aggregate summary job
+          # Persist for the aggregate summary job
           mkdir -p cache-report
-          echo "$STATUS" > "cache-report/node-${{ matrix.node-version }}.txt"
+          {
+            echo "status=$STATUS"
+            echo "node=${{ matrix.node-version }}"
+            echo "runner=${RUNNER_OS}/${RUNNER_ARCH}"
+            echo "lock_hash=$LOCK_HASH"
+            echo "lock_short=$LOCK_SHORT"
+            echo "key=$CACHE_KEY"
+          } > "cache-report/node-${{ matrix.node-version }}.env"
       - name: Upload cache report
         uses: actions/upload-artifact@v4
         with:
@@ -58,8 +85,6 @@ jobs:
           retention-days: 1
       - name: Install dependencies
         run: npm ci
-      - name: Report npm cache size after install
-        run: du -sh "$(npm config get cache)" 2>/dev/null || true
       - name: Run vitest
         run: npm test
 
@@ -78,20 +103,29 @@ jobs:
       - name: Aggregate hit rate
         run: |
           shopt -s nullglob
-          files=(cache-reports/node-*.txt)
+          files=(cache-reports/node-*.env)
           total=${#files[@]}
           hits=0
           rows=""
           for f in "${files[@]}"; do
-            node=$(basename "$f" .txt | sed 's/^node-//')
-            status=$(cat "$f" | tr -d '[:space:]')
+            # shellcheck disable=SC1090
+            status="" node="" runner="" lock_short="" key=""
+            while IFS='=' read -r k v; do
+              case "$k" in
+                status) status="$v" ;;
+                node) node="$v" ;;
+                runner) runner="$v" ;;
+                lock_short) lock_short="$v" ;;
+                key) key="$v" ;;
+              esac
+            done < "$f"
             if [ "$status" = "hit" ]; then
               hits=$((hits + 1))
               icon="✅ HIT"
             else
               icon="❌ MISS"
             fi
-            rows+="| $node | $icon |"$'\n'
+            rows+="| ${node} | ${icon} | \`${runner}\` | \`${lock_short}\` | \`${key}\` |"$'\n'
           done
           if [ "$total" -gt 0 ]; then
             rate=$(awk -v h="$hits" -v t="$total" 'BEGIN{printf "%.0f", (h/t)*100}')
@@ -104,8 +138,8 @@ jobs:
             echo "**${hits}/${total} jobs hit the cache (${rate}%)**"
             echo ""
             if [ "$total" -gt 0 ]; then
-              echo "| Node | Result |"
-              echo "| --- | --- |"
+              echo "| Node | Result | Runner | Lock (short) | Cache key |"
+              echo "| --- | --- | --- | --- | --- |"
               printf "%s" "$rows"
             else
               echo "_No cache reports found._"
