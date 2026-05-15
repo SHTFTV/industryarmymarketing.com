@@ -2,27 +2,34 @@ import { Link } from "react-router-dom";
 
 const cols = [
   {
-    title: "Marketing",
+    title: "Platform",
     links: [
+      { label: "Domain Network", to: "/network" },
       { label: "How It Works", to: "/how-it-works" },
       { label: "Pricing", to: "/pricing" },
-      { label: "Industries", to: "/industries" },
-      { label: "Backlinks", to: "/backlinks" },
-    ],
-  },
-  {
-    title: "Who We Help",
-    links: [
-      { label: "Contractors", to: "/contractors" },
-      { label: "Service Pros", to: "/service-professionals" },
-      { label: "Vancouver", to: "/cities/vancouver" },
+      { label: "Free Scan", to: "/scan-wizard" },
+      { label: "EyeSpyr", to: "/eyespyr" },
     ],
   },
   {
     title: "Company",
     links: [
+      { label: "Site Builder", to: "/builder" },
+      { label: "Investors", to: "/investors" },
+      { label: "Blog", to: "/blog" },
+      { label: "Wall of Love", to: "/wall-of-love" },
+      { label: "Contractors", to: "/contractors" },
+      { label: "Service Pros", to: "/service-professionals" },
+    ],
+  },
+  {
+    title: "Local & Legal",
+    links: [
+      { label: "Vancouver", to: "/local/vancouver" },
+      { label: "Surrey", to: "/local/surrey" },
+      { label: "Langley", to: "/local/langley" },
+      { label: "Legal Hub", to: "/legal" },
       { label: "Contact", to: "/contact" },
-      { label: "Phone: 604-761-1518", to: "/contact" },
     ],
   },
 ];

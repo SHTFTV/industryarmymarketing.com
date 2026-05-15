@@ -7,10 +7,11 @@ const navLinks = [
   { label: "Home", to: "/" },
   { label: "How It Works", to: "/how-it-works" },
   { label: "Pricing", to: "/pricing" },
-  { label: "Contractors", to: "/contractors" },
-  { label: "Service Pros", to: "/service-professionals" },
-  { label: "Backlinks", to: "/backlinks" },
-  { label: "Industries", to: "/industries" },
+  { label: "Network", to: "/network" },
+  { label: "EyeSpyr", to: "/eyespyr" },
+  { label: "Wall of Love", to: "/wall-of-love" },
+  { label: "Blog", to: "/blog" },
+  { label: "Free Scan", to: "/scan-wizard" },
   { label: "Contact", to: "/contact" },
 ];
 

@@ -14,6 +14,20 @@ import Industries from "./pages/Industries.tsx";
 import Contact from "./pages/Contact.tsx";
 import CityPage from "./pages/CityPage.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import Network from "./pages/Network.tsx";
+import EyeSpyr from "./pages/EyeSpyr.tsx";
+import Builder from "./pages/Builder.tsx";
+import Blog from "./pages/Blog.tsx";
+import Investors from "./pages/Investors.tsx";
+import Dashboard from "./pages/Dashboard.tsx";
+import WallOfLove from "./pages/WallOfLove.tsx";
+import Legal from "./pages/Legal.tsx";
+import SteelStud from "./pages/SteelStud.tsx";
+import MiningLogistics from "./pages/MiningLogistics.tsx";
+import ScanWizard from "./pages/ScanWizard.tsx";
+import LocalVancouver from "./pages/local/Vancouver.tsx";
+import LocalSurrey from "./pages/local/Surrey.tsx";
+import LocalLangley from "./pages/local/Langley.tsx";
 
 const queryClient = new QueryClient();
 
@@ -34,6 +48,20 @@ const App = () => (
           <Route path="/industries" element={<Industries />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/cities/:city" element={<CityPage />} />
+          <Route path="/scan-wizard" element={<ScanWizard />} />
+          <Route path="/network" element={<Network />} />
+          <Route path="/eyespyr" element={<EyeSpyr />} />
+          <Route path="/builder" element={<Builder />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/investors" element={<Investors />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/wall-of-love" element={<WallOfLove />} />
+          <Route path="/legal" element={<Legal />} />
+          <Route path="/niches/steel-stud" element={<SteelStud />} />
+          <Route path="/niches/mining-logistics" element={<MiningLogistics />} />
+          <Route path="/local/vancouver" element={<LocalVancouver />} />
+          <Route path="/local/surrey" element={<LocalSurrey />} />
+          <Route path="/local/langley" element={<LocalLangley />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
