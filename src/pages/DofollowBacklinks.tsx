@@ -2,21 +2,44 @@ import Layout from "@/components/Layout";
 import PageHeader from "@/components/PageHeader";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ExternalLink, Server, Globe, Search } from "lucide-react";
 import { useMemo, useState } from "react";
 import { dofollowDomains } from "@/data/dofollowDomains";
 
+type SortMode = "newest" | "oldest" | "az" | "za";
+
 const DofollowBacklinks = () => {
   const [query, setQuery] = useState("");
+  const [sort, setSort] = useState<SortMode>("newest");
   const total = dofollowDomains.length;
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
-    if (!q) return dofollowDomains;
-    return dofollowDomains.filter((d) => d.domain.toLowerCase().includes(q));
-  }, [query]);
+    const base = q
+      ? dofollowDomains.filter((d) => d.domain.toLowerCase().includes(q))
+      : [...dofollowDomains];
+
+    const byDate = (s: string) => new Date(s).getTime();
+    switch (sort) {
+      case "newest":
+        return base.sort((a, b) => byDate(b.published) - byDate(a.published));
+      case "oldest":
+        return base.sort((a, b) => byDate(a.published) - byDate(b.published));
+      case "az":
+        return base.sort((a, b) => a.domain.localeCompare(b.domain));
+      case "za":
+        return base.sort((a, b) => b.domain.localeCompare(a.domain));
+    }
+  }, [query, sort]);
 
   const netlify = filtered.filter((d) => d.host === "Netlify");
   const wordpress = filtered.filter((d) => d.host === "WordPress");
@@ -62,17 +85,33 @@ const DofollowBacklinks = () => {
       </PageHeader>
 
       <section className="py-8 bg-background border-b border-border sticky top-16 z-30 backdrop-blur-lg bg-background/80">
-        <div className="container mx-auto px-4 max-w-3xl">
-          <div className="relative">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground pointer-events-none" />
-            <Input
-              type="search"
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              placeholder="Filter domains... (e.g. roofers, .ca, weddings)"
-              className="pl-11 h-12 font-mono bg-card border-border focus-visible:ring-primary"
-              aria-label="Filter dofollow backlink domains"
-            />
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="flex flex-col sm:flex-row gap-3">
+            <div className="relative flex-1">
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground pointer-events-none" />
+              <Input
+                type="search"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder="Filter domains... (e.g. roofers, .ca, weddings)"
+                className="pl-11 h-12 font-mono bg-card border-border focus-visible:ring-primary"
+                aria-label="Filter dofollow backlink domains"
+              />
+            </div>
+            <Select value={sort} onValueChange={(v) => setSort(v as SortMode)}>
+              <SelectTrigger
+                className="h-12 w-full sm:w-56 bg-card border-border uppercase tracking-widest text-xs font-semibold"
+                aria-label="Sort dofollow backlinks"
+              >
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="newest">Newest published</SelectItem>
+                <SelectItem value="oldest">Oldest published</SelectItem>
+                <SelectItem value="az">Domain A → Z</SelectItem>
+                <SelectItem value="za">Domain Z → A</SelectItem>
+              </SelectContent>
+            </Select>
           </div>
           <p className="text-xs text-muted-foreground mt-2 text-center">
             {query ? `${filtered.length} of ${total} domains match` : `${total} live domains`}
