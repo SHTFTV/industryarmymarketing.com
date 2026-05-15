@@ -45,12 +45,18 @@ jobs:
       - name: Resolve Bun cache path
         id: bun_cache
         run: |
-          if [ -n "$BUN_INSTALL_CACHE_DIR" ]; then
-            RESOLVED="$BUN_INSTALL_CACHE_DIR"
+          RAW="$BUN_INSTALL_CACHE_DIR"
+          TRIMMED="${RAW#"${RAW%%[![:space:]]*}"}"
+          TRIMMED="${TRIMMED%"${TRIMMED##*[![:space:]]}"}"
+          if [ -n "$TRIMMED" ]; then
+            case "$TRIMMED" in
+              "~"|"~/"*) TRIMMED="$HOME${TRIMMED#~}" ;;
+            esac
+            RESOLVED="$TRIMMED"
           else
             RESOLVED="$HOME/.bun/install/cache"
-            echo "BUN_INSTALL_CACHE_DIR=$RESOLVED" >> "$GITHUB_ENV"
           fi
+          echo "BUN_INSTALL_CACHE_DIR=$RESOLVED" >> "$GITHUB_ENV"
           mkdir -p "$RESOLVED"
           echo "path=$RESOLVED" >> "$GITHUB_OUTPUT"
           echo "Using Bun cache dir: $RESOLVED"
