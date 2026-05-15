@@ -41,7 +41,7 @@ jobs:
             const crypto = require('crypto');
             const path = require('path');
             const { normalizeRunAttempt } = require(
-              path.join(process.env.GITHUB_WORKSPACE, '.github/workflows/lib/normalize-run-attempt.js')
+              path.join(process.env.GITHUB_WORKSPACE, '.github/workflows/lib/normalize-run-attempt.cjs')
             );
             const report = process.env.REPORT || '';
             const cooldownH = parseInt(process.env.ISSUE_COOLDOWN_HOURS || '0', 10);
