@@ -12,6 +12,8 @@ interface SitemapEntry {
 }
 
 const cities = ["vancouver", "surrey", "calgary", "edmonton", "toronto", "kelowna"];
+const localCities = ["vancouver", "surrey", "langley"];
+const niches = ["steel-stud", "mining-logistics"];
 
 const entries: SitemapEntry[] = [
   { path: "/", changefreq: "weekly", priority: "1.0" },
@@ -23,6 +25,17 @@ const entries: SitemapEntry[] = [
   { path: "/dofollow-backlinks", changefreq: "weekly", priority: "0.7" },
   { path: "/industries", changefreq: "monthly", priority: "0.6" },
   { path: "/contact", changefreq: "yearly", priority: "0.5" },
+  { path: "/scan-wizard", changefreq: "monthly", priority: "0.9" },
+  { path: "/network", changefreq: "monthly", priority: "0.8" },
+  { path: "/eyespyr", changefreq: "monthly", priority: "0.8" },
+  { path: "/builder", changefreq: "monthly", priority: "0.7" },
+  { path: "/blog", changefreq: "weekly", priority: "0.7" },
+  { path: "/investors", changefreq: "monthly", priority: "0.5" },
+  { path: "/dashboard", changefreq: "monthly", priority: "0.5" },
+  { path: "/wall-of-love", changefreq: "weekly", priority: "0.7" },
+  { path: "/legal", changefreq: "monthly", priority: "0.5" },
+  ...niches.map((n) => ({ path: `/niches/${n}`, changefreq: "monthly" as const, priority: "0.7" })),
+  ...localCities.map((c) => ({ path: `/local/${c}`, changefreq: "monthly" as const, priority: "0.7" })),
   ...cities.map((c) => ({
     path: `/cities/${c}`,
     changefreq: "monthly" as const,
