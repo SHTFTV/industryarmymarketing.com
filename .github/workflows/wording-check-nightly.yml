@@ -53,9 +53,13 @@ jobs:
         uses: actions/cache/restore@v4
         with:
           path: ${{ runner.temp }}/slack-cooldown
-          key: slack-cooldown-v1-${{ github.run_id }}
+          # Primary key is stable (never matches a prior save, since saves
+          # use a unique suffix), so restore always falls through to
+          # restore-keys and pulls the most recent cooldown state from any
+          # previous run.
+          key: slack-cooldown-v2-restore
           restore-keys: |
-            slack-cooldown-v1-
+            slack-cooldown-v2-
 
       - name: Notify Slack on failure
         if: failure() && env.SLACK_WEBHOOK_URL != ''
@@ -163,4 +167,6 @@ jobs:
         uses: actions/cache/save@v4
         with:
           path: ${{ runner.temp }}/slack-cooldown
-          key: slack-cooldown-v1-${{ github.run_id }}
+          # Unique per run/attempt so each save succeeds; the restore step
+          # uses the `slack-cooldown-v2-` prefix to find the latest entry.
+          key: slack-cooldown-v2-${{ github.run_id }}-${{ github.run_attempt }}
