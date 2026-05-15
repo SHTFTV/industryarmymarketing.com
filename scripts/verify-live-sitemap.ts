@@ -7,6 +7,8 @@ const SITE_URL = "https://industryarmymarketing.com";
 const SITEMAP_URL = `${SITE_URL}/sitemap.xml`;
 
 const cities = ["vancouver", "surrey", "calgary", "edmonton", "toronto", "kelowna"];
+const localCities = ["vancouver", "surrey", "langley"];
+const niches = ["steel-stud", "mining-logistics"];
 
 const expectedPaths: string[] = [
   "/",
@@ -18,6 +20,17 @@ const expectedPaths: string[] = [
   "/dofollow-backlinks",
   "/industries",
   "/contact",
+  "/scan-wizard",
+  "/network",
+  "/eyespyr",
+  "/builder",
+  "/blog",
+  "/investors",
+  "/dashboard",
+  "/wall-of-love",
+  "/legal",
+  ...niches.map((n) => `/niches/${n}`),
+  ...localCities.map((c) => `/local/${c}`),
   ...cities.map((c) => `/cities/${c}`),
 ];
 
