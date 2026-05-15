@@ -43,7 +43,7 @@ describe("normalizeBunCacheDir", () => {
     it("does not expand ~user (treated as relative → fails)", () => {
       const r = norm("~bob/cache");
       expect(r.ok).toBe(false);
-      if (!r.ok) expect(r.error).toMatch(/absolute path/);
+      if (r.ok === false) expect(r.error).toMatch(/absolute path/);
     });
   });
 
@@ -69,7 +69,7 @@ describe("normalizeBunCacheDir", () => {
       (raw) => {
         const r = norm(raw);
         expect(r.ok).toBe(false);
-        if (!r.ok) expect(r.error).toMatch(/absolute path/);
+        if (r.ok === false) expect(r.error).toMatch(/absolute path/);
       }
     );
   });
@@ -84,7 +84,7 @@ describe("normalizeBunCacheDir", () => {
     ])("rejects %j", (raw) => {
       const r = norm(raw);
       expect(r.ok).toBe(false);
-      if (!r.ok) expect(r.error).toMatch(/'\.\.'/);
+      if (r.ok === false) expect(r.error).toMatch(/'\.\.'/);
     });
 
     it("allows '..' as a substring inside a segment", () => {
@@ -97,25 +97,25 @@ describe("normalizeBunCacheDir", () => {
     it("rejects null bytes", () => {
       const r = norm("/var/cache\0/bun");
       expect(r.ok).toBe(false);
-      if (!r.ok) expect(r.error).toMatch(/null byte/);
+      if (r.ok === false) expect(r.error).toMatch(/null byte/);
     });
 
     it("rejects embedded newlines", () => {
       const r = norm("/var/cache\n/bun");
       expect(r.ok).toBe(false);
-      if (!r.ok) expect(r.error).toMatch(/newlines/);
+      if (r.ok === false) expect(r.error).toMatch(/newlines/);
     });
 
     it("rejects embedded carriage returns", () => {
       const r = norm("/var/cache\r/bun");
       expect(r.ok).toBe(false);
-      if (!r.ok) expect(r.error).toMatch(/newlines/);
+      if (r.ok === false) expect(r.error).toMatch(/newlines/);
     });
 
     it("rejects paths > 4096 chars", () => {
       const r = norm("/" + "a".repeat(4096));
       expect(r.ok).toBe(false);
-      if (!r.ok) expect(r.error).toMatch(/4096/);
+      if (r.ok === false) expect(r.error).toMatch(/4096/);
     });
 
     it("accepts paths at exactly 4096 chars", () => {

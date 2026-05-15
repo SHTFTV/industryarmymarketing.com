@@ -42,54 +42,8 @@ jobs:
           fi
           echo "MIN_CACHE_KB=$TRIMMED" >> "$GITHUB_ENV"
           echo "min_cache_kb=$TRIMMED ✓"
-          DIR_RAW="$BUN_INSTALL_CACHE_DIR"
-          DIR_TRIMMED="${DIR_RAW#"${DIR_RAW%%[![:space:]]*}"}"
-          DIR_TRIMMED="${DIR_TRIMMED%"${DIR_TRIMMED##*[![:space:]]}"}"
-          if [ -n "$DIR_TRIMMED" ]; then
-            if printf '%s' "$DIR_TRIMMED" | LC_ALL=C grep -q $'\0'; then
-              echo "::error title=Invalid input::bun_cache_dir contains a null byte"
-              exit 1
-            fi
-            case "$DIR_TRIMMED" in
-              *$'\n'*|*$'\r'*)
-                echo "::error title=Invalid input::bun_cache_dir must not contain newlines"
-                exit 1
-                ;;
-            esac
-            if [ "${#DIR_TRIMMED}" -gt 4096 ]; then
-              echo "::error title=Invalid input::bun_cache_dir exceeds 4096 characters"
-              exit 1
-            fi
-            # Normalize: expand leading ~, collapse repeated /, strip trailing /
-            NORMALIZED="$DIR_TRIMMED"
-            case "$NORMALIZED" in
-              "~"|"~/"*) NORMALIZED="$HOME${NORMALIZED#~}" ;;
-            esac
-            while [[ "$NORMALIZED" == *//* ]]; do
-              NORMALIZED="${NORMALIZED//\/\//\/}"
-            done
-            while [ "${#NORMALIZED}" -gt 1 ] && [ "${NORMALIZED: -1}" = "/" ]; do
-              NORMALIZED="${NORMALIZED%/}"
-            done
-            # Validate normalized value: must be absolute, no '..' segments
-            case "$NORMALIZED" in
-              /*) ;;
-              *)
-                echo "::error title=Invalid input::bun_cache_dir must resolve to an absolute path (got normalized: '$NORMALIZED')"
-                exit 1
-                ;;
-            esac
-            case "/$NORMALIZED/" in
-              */../*)
-                echo "::error title=Invalid input::bun_cache_dir must not contain '..' segments (got normalized: '$NORMALIZED')"
-                exit 1
-                ;;
-            esac
-            echo "BUN_INSTALL_CACHE_DIR=$NORMALIZED" >> "$GITHUB_ENV"
-            echo "bun_cache_dir='$NORMALIZED' ✓"
-          else
-            echo "bun_cache_dir=<default> ✓"
-          fi
+      - name: Validate & normalize bun_cache_dir
+        run: node .github/workflows/lib/run-normalize-bun-cache-dir.cjs
       - name: Resolve Bun cache path
         id: bun_cache
         run: |
