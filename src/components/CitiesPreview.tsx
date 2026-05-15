@@ -11,7 +11,7 @@ const CitiesPreview = () => (
         viewport={{ once: true }}
         className="text-center mb-14"
       >
-        <p className="text-primary uppercase tracking-[0.3em] text-xs font-semibold mb-3">828 Canadian Cities</p>
+        <p className="text-primary uppercase tracking-[0.3em] text-xs font-semibold mb-3">Worldwide Coverage</p>
         <h2 className="font-display text-5xl md:text-6xl text-foreground">Featured Markets</h2>
       </motion.div>
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
