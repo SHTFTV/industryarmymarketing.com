@@ -1,0 +1,88 @@
+import Layout from "@/components/Layout";
+import PageHeader from "@/components/PageHeader";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { Lock, Globe, Network, Video, MapPin, Ban } from "lucide-react";
+
+const trades = [
+  "Roofing", "Plumbing", "Electrical", "HVAC", "Gas Fitting", "Drywall",
+  "Painting", "Framing", "Excavation", "Foundations", "Steel Stud", "Demolition",
+  "Remodeling", "Finish Carpentry", "General Contracting", "Concrete",
+];
+
+const reasons = [
+  { icon: Lock, title: "Exclusive Territory", body: "One roofer. One framer. One electrician. Per city. When your competitor tries to join, they can't. You locked them out." },
+  { icon: Globe, title: "Premium Domain Authority", body: "Domains like roofers.io and gasfitter.ca have been building SEO authority for 20+ years. You inherit that ranking power instantly." },
+  { icon: Network, title: "Network Of 150+ Sites", body: "Your content syndicates across our entire industry network. Every site links back to you, amplifying your reach." },
+  { icon: Video, title: "Done-For-You Content", body: "We create videos, social posts, and branded content for your business. You focus on the job site — we handle marketing." },
+  { icon: MapPin, title: "Local SEO Domination", body: "City-specific landing pages, Google Maps optimization, and hyper-local keyword targeting put you at the top for 'contractor near me' searches." },
+  { icon: Ban, title: "No Long-Term Contracts", body: "Cancel anytime. But when you leave, your territory opens up to your competition. Most contractors stay because the ROI is obvious from month one." },
+];
+
+const Contractors = () => (
+  <Layout>
+    <PageHeader
+      eyebrow="Built By Contractors · For Contractors"
+      title="Construction &"
+      highlight="Contractor Marketing"
+      description="Exclusive territory. One contractor per trade per city. Premium industry domains with 20+ years of authority. Lock out your competition today."
+    >
+      <div className="flex flex-wrap gap-3">
+        <Button variant="hero" asChild><Link to="/contact">Claim Your Trade</Link></Button>
+        <Button variant="heroOutline" asChild><Link to="/pricing">See Pricing</Link></Button>
+      </div>
+    </PageHeader>
+
+    <section className="py-20 bg-background">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-12">
+          <p className="text-primary uppercase tracking-[0.3em] text-xs font-semibold mb-3">50+ Construction Trades</p>
+          <h2 className="font-display text-4xl md:text-5xl text-foreground">Your Trade Is Here</h2>
+        </div>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 max-w-5xl mx-auto">
+          {trades.map((t, i) => (
+            <motion.div
+              key={t}
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.03 }}
+              className="px-4 py-3 rounded-md border border-border bg-card text-center text-sm font-semibold text-foreground hover:border-primary hover:text-primary transition-colors"
+            >
+              {t}
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section className="py-20 gradient-tactical border-y border-border">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-14">
+          <h2 className="font-display text-4xl md:text-5xl text-foreground">
+            Why Contractors <span className="text-primary">Choose IAM</span>
+          </h2>
+        </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          {reasons.map((r, i) => (
+            <motion.div
+              key={r.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.06 }}
+              className="p-7 rounded-lg bg-card border border-border hover:border-primary/40 hover:border-glow transition-all"
+            >
+              <r.icon className="w-9 h-9 text-primary mb-4" />
+              <h3 className="font-display text-xl text-foreground mb-2">{r.title}</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed">{r.body}</p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  </Layout>
+);
+
+export default Contractors;
