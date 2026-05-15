@@ -12,24 +12,30 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: oven-sh/setup-bun@v2
         with:
-          node-version: "20"
-          cache: "npm"
+          bun-version: latest
+      - name: Cache Bun dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.bun/install/cache
+          key: bun-${{ runner.os }}-${{ hashFiles('bun.lock', 'bun.lockb') }}
+          restore-keys: |
+            bun-${{ runner.os }}-
       - name: Install dependencies
-        run: npm ci
+        run: bun install --frozen-lockfile
       - name: Build site
-        run: npm run build
+        run: bun run build
       - name: Start preview server
         run: |
-          npx vite preview --port 4173 --strictPort > preview.log 2>&1 &
+          bunx vite preview --port 4173 --strictPort > preview.log 2>&1 &
           echo $! > preview.pid
           for i in $(seq 1 30); do
             curl -sf http://localhost:4173/ > /dev/null && break || sleep 1
           done
           curl -sf http://localhost:4173/ > /dev/null
       - name: Validate sitemap
-        run: npx tsx scripts/validate-sitemap.ts http://localhost:4173
+        run: bunx tsx scripts/validate-sitemap.ts http://localhost:4173
       - name: Stop preview server
         if: always()
         run: |
