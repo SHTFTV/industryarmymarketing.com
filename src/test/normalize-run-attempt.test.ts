@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach, afterEach } from "vitest";
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const { normalizeRunAttempt } = require("../../.github/workflows/lib/normalize-run-attempt.js") as {
+const { normalizeRunAttempt } = require("../../.github/workflows/lib/normalize-run-attempt.cjs") as {
   normalizeRunAttempt: (raw?: string) => string;
 };
 
