@@ -33,6 +33,11 @@ const steps = [
 
 const HowItWorks = () => (
   <Layout>
+    <Seo
+      title="How It Works | Industry Army Marketing"
+      description="Four steps to owning your trade in your city: choose city, lock category, get listed on 20+ year domains, and start fielding leads — from $10/month."
+      path="/how-it-works"
+    />
     <PageHeader
       eyebrow="The Process"
       title="How It"
