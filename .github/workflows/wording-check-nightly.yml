@@ -155,3 +155,12 @@ jobs:
           curl -sS -X POST -H 'Content-Type: application/json' --data "$PAYLOAD" "$SLACK_WEBHOOK_URL"
           # Record successful notification timestamp for cooldown.
           date +%s > "$STAMP_FILE"
+
+      - name: Save Slack cooldown state
+        if: failure() && env.SLACK_WEBHOOK_URL != ''
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        uses: actions/cache/save@v4
+        with:
+          path: ${{ runner.temp }}/slack-cooldown
+          key: slack-cooldown-v1-${{ github.run_id }}
