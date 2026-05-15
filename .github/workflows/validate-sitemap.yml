@@ -42,6 +42,26 @@ jobs:
           fi
       - name: Install dependencies
         run: bun install --frozen-lockfile
+      - name: Verify Bun cache populated
+        env:
+          MIN_CACHE_KB: "1024"
+        run: |
+          CACHE_DIR="${BUN_INSTALL_CACHE_DIR:-$HOME/.bun/install/cache}"
+          if [ ! -d "$CACHE_DIR" ]; then
+            echo "::error::Bun cache directory missing at $CACHE_DIR after install"
+            exit 1
+          fi
+          SIZE_KB=$(du -sk "$CACHE_DIR" | awk '{print $1}')
+          ENTRIES=$(find "$CACHE_DIR" -mindepth 1 -maxdepth 1 | wc -l)
+          echo "Bun cache: ${SIZE_KB} KB across ${ENTRIES} entries at $CACHE_DIR"
+          if [ "$ENTRIES" -lt 1 ]; then
+            echo "::error::Bun cache directory is empty after install"
+            exit 1
+          fi
+          if [ "$SIZE_KB" -lt "$MIN_CACHE_KB" ]; then
+            echo "::error::Bun cache size ${SIZE_KB} KB is below minimum ${MIN_CACHE_KB} KB"
+            exit 1
+          fi
       - name: Debug Bun cache (after install)
         if: inputs.debug_bun_cache == true
         run: |
