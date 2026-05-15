@@ -38,6 +38,11 @@ const stats = [
 
 const ServiceProfessionals = () => (
   <Layout>
+    <Seo
+      title="Service Professional Marketing | Exclusive City Territories"
+      description="Marketing for cleaners, movers, landscapers, designers and more on 20+ year-old niche domains. One pro per category per city, from $10/month."
+      path="/service-professionals"
+    />
     <PageHeader
       eyebrow="Industry Army Marketing · Service Professionals"
       title="I Am The Only"
