@@ -46,6 +46,17 @@ jobs:
               labels: ['wording-check', 'automated'],
             });
 
+      - name: Restore Slack cooldown state
+        if: failure() && env.SLACK_WEBHOOK_URL != ''
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        uses: actions/cache/restore@v4
+        with:
+          path: ${{ runner.temp }}/slack-cooldown
+          key: slack-cooldown-v1-${{ github.run_id }}
+          restore-keys: |
+            slack-cooldown-v1-
+
       - name: Notify Slack on failure
         if: failure() && env.SLACK_WEBHOOK_URL != ''
         env:
