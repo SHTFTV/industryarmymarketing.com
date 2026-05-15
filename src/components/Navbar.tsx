@@ -1,13 +1,17 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link, NavLink } from "react-router-dom";
 
 const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "Services", href: "#services" },
-  { label: "Brands", href: "#brands" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", to: "/" },
+  { label: "How It Works", to: "/how-it-works" },
+  { label: "Pricing", to: "/pricing" },
+  { label: "Contractors", to: "/contractors" },
+  { label: "Service Pros", to: "/service-professionals" },
+  { label: "Backlinks", to: "/backlinks" },
+  { label: "Industries", to: "/industries" },
+  { label: "Contact", to: "/contact" },
 ];
 
 const Navbar = () => {
@@ -16,25 +20,30 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
       <div className="container mx-auto flex items-center justify-between h-16 px-4">
-        <a href="#home" className="font-display text-2xl tracking-wider text-primary text-glow">
+        <Link to="/" className="font-display text-2xl tracking-wider text-primary text-glow">
           IAM
-        </a>
+        </Link>
 
         {/* Desktop */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-6">
           {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors uppercase tracking-widest"
+            <NavLink
+              key={link.to}
+              to={link.to}
+              end={link.to === "/"}
+              className={({ isActive }) =>
+                `text-xs font-medium hover:text-primary transition-colors uppercase tracking-widest ${
+                  isActive ? "text-primary" : "text-muted-foreground"
+                }`
+              }
             >
               {link.label}
-            </a>
+            </NavLink>
           ))}
         </div>
 
         {/* Mobile toggle */}
-        <button onClick={() => setOpen(!open)} className="md:hidden text-foreground">
+        <button onClick={() => setOpen(!open)} className="lg:hidden text-foreground">
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
@@ -46,18 +55,23 @@ const Navbar = () => {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            className="md:hidden bg-background border-b border-border overflow-hidden"
+            className="lg:hidden bg-background border-b border-border overflow-hidden"
           >
             <div className="flex flex-col px-4 pb-4 gap-3">
               {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
+                <NavLink
+                  key={link.to}
+                  to={link.to}
+                  end={link.to === "/"}
                   onClick={() => setOpen(false)}
-                  className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors uppercase tracking-widest py-2"
+                  className={({ isActive }) =>
+                    `text-sm font-medium hover:text-primary transition-colors uppercase tracking-widest py-2 ${
+                      isActive ? "text-primary" : "text-muted-foreground"
+                    }`
+                  }
                 >
                   {link.label}
-                </a>
+                </NavLink>
               ))}
             </div>
           </motion.div>
