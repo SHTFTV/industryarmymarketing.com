@@ -19,6 +19,32 @@ import { dofollowDomains } from "@/data/dofollowDomains";
 type SortMode = "newest" | "oldest" | "az" | "za";
 type HostFilter = "all" | "Netlify" | "WordPress";
 
+const CopyButton = ({ domain }: { domain: string }) => {
+  const [copied, setCopied] = useState(false);
+  const onCopy = async (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    try {
+      await navigator.clipboard.writeText(domain);
+      setCopied(true);
+      toast({ title: "Copied", description: domain });
+      setTimeout(() => setCopied(false), 1500);
+    } catch {
+      toast({ title: "Copy failed", description: domain, variant: "destructive" });
+    }
+  };
+  return (
+    <button
+      type="button"
+      onClick={onCopy}
+      aria-label={`Copy ${domain} to clipboard`}
+      className="shrink-0 h-8 w-8 inline-flex items-center justify-center rounded-md border border-border bg-background/50 text-muted-foreground hover:text-primary hover:border-primary/50 transition-colors"
+    >
+      {copied ? <Check className="w-4 h-4 text-primary" /> : <Copy className="w-4 h-4" />}
+    </button>
+  );
+};
+
 const DofollowBacklinks = () => {
   const [query, setQuery] = useState("");
   const [sort, setSort] = useState<SortMode>("newest");
