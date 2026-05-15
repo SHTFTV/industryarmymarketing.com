@@ -84,28 +84,30 @@ const DofollowBacklinks = () => {
 
   const [copiedAll, setCopiedAll] = useState(false);
   const [copyFormat, setCopyFormat] = useState<"plain" | "url">("plain");
-  const [copySeparator, setCopySeparator] = useState<"newline" | "csv">("newline");
+  const [copySeparator, setCopySeparator] = useState<"newline" | "csv" | "tsv">("newline");
   const [quoteItems, setQuoteItems] = useState(false);
   const onCopyAll = async () => {
     if (visibleDomains.length === 0) return;
+    const isDelimited = copySeparator === "csv" || copySeparator === "tsv";
     const items = visibleDomains
       .map((d) => (copyFormat === "url" ? `https://${d}` : d))
       .map((s) =>
-        copySeparator === "csv" && quoteItems
+        isDelimited && quoteItems
           ? `"${s.replace(/"/g, '""')}"`
           : s,
       );
-    const text =
-      copySeparator === "csv" ? items.join(",") : items.join("\n");
+    const joiner =
+      copySeparator === "csv" ? "," : copySeparator === "tsv" ? "\t" : "\n";
+    const text = items.join(joiner);
     try {
       await navigator.clipboard.writeText(text);
       setCopiedAll(true);
       const formatLabel = copyFormat === "url" ? "Full URLs" : "Plain domains";
       const sepLabel =
         copySeparator === "csv"
-          ? quoteItems
-            ? "comma-separated, quoted"
-            : "comma-separated"
+          ? quoteItems ? "comma-separated, quoted" : "comma-separated"
+          : copySeparator === "tsv"
+          ? quoteItems ? "tab-separated, quoted" : "tab-separated"
           : "newline-separated";
       toast({
         title: `Copied ${visibleDomains.length} domain${visibleDomains.length === 1 ? "" : "s"}`,
@@ -259,6 +261,7 @@ const DofollowBacklinks = () => {
               {([
                 { value: "newline", label: "Newline" },
                 { value: "csv", label: "CSV" },
+                { value: "tsv", label: "TSV" },
               ] as const).map((opt) => {
                 const active = copySeparator === opt.value;
                 return (
@@ -283,16 +286,16 @@ const DofollowBacklinks = () => {
               type="button"
               role="switch"
               aria-checked={quoteItems}
-              aria-label="Wrap CSV items in quotes"
+              aria-label="Wrap items in quotes"
               onClick={() => setQuoteItems((q) => !q)}
-              disabled={copySeparator !== "csv"}
+              disabled={copySeparator === "newline"}
               title={
-                copySeparator === "csv"
-                  ? "Wrap each CSV item in double quotes"
-                  : "Switch to CSV to enable quoting"
+                copySeparator !== "newline"
+                  ? "Wrap each item in double quotes"
+                  : "Switch to CSV or TSV to enable quoting"
               }
               className={`h-9 px-3 inline-flex items-center rounded-md border text-xs uppercase tracking-widest font-semibold transition-all disabled:opacity-40 disabled:cursor-not-allowed ${
-                quoteItems && copySeparator === "csv"
+                quoteItems && copySeparator !== "newline"
                   ? "bg-primary text-primary-foreground border-primary"
                   : "bg-card text-muted-foreground border-border hover:text-foreground hover:border-primary/50"
               }`}
