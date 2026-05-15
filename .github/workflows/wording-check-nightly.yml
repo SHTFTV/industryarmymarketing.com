@@ -55,6 +55,7 @@ jobs:
           SLACK_ICON_EMOJI: ${{ vars.SLACK_ICON_EMOJI }}
           SLACK_HEADER_TEXT: ${{ vars.SLACK_HEADER_TEXT }}
           SLACK_MESSAGE_TEXT: ${{ vars.SLACK_MESSAGE_TEXT }}
+          SLACK_MENTION: ${{ vars.SLACK_MENTION }}
           REPORT: ${{ steps.check.outputs.report }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
@@ -72,22 +73,45 @@ jobs:
             | sed "s|{run_url}|${RUN_URL}|g"; }
           HEADER_TEXT=$(render "$HEADER_RAW")
           MESSAGE_TEXT=$(render "$MESSAGE_RAW")
+          # Build a Slack mention from SLACK_MENTION variable.
+          # Accepted values:
+          #   @channel | @here | @everyone        -> broadcast
+          #   U12345 / W12345 / S12345            -> raw user/usergroup ID
+          #   <@U12345> / <!subteam^S12345>       -> pre-formatted mention (used as-is)
+          #   anything else                       -> sent as plain text
+          MENTION=""
+          if [ -n "${SLACK_MENTION:-}" ]; then
+            case "$SLACK_MENTION" in
+              "@channel"|"@here"|"@everyone")
+                MENTION="<!${SLACK_MENTION#@}>" ;;
+              "<@"*|"<!"*)
+                MENTION="$SLACK_MENTION" ;;
+              U*|W*)
+                MENTION="<@${SLACK_MENTION}>" ;;
+              S*)
+                MENTION="<!subteam^${SLACK_MENTION}>" ;;
+              *)
+                MENTION="$SLACK_MENTION" ;;
+            esac
+          fi
           PAYLOAD=$(jq -n \
             --arg text "$MESSAGE_TEXT" \
             --arg header "$HEADER_TEXT" \
             --arg channel "${SLACK_CHANNEL:-}" \
             --arg username "${SLACK_USERNAME:-}" \
             --arg icon "${SLACK_ICON_EMOJI:-}" \
+            --arg mention "$MENTION" \
             --arg report "$TRUNCATED" \
             --arg url "$RUN_URL" \
             '{
-              text: $text,
+              text: (if $mention != "" then ($mention + " " + $text) else $text end),
               blocks: [
                 { type: "header", text: { type: "plain_text", text: $header } },
                 { type: "section", text: { type: "mrkdwn", text: ("*Repo:* `" + env.GITHUB_REPOSITORY + "`\n*Commit:* `" + env.GITHUB_SHA[0:7] + "`") } },
                 { type: "section", text: { type: "mrkdwn", text: ("*Offending lines:*\n```" + $report + "```") } },
                 { type: "actions", elements: [ { type: "button", text: { type: "plain_text", text: "View run" }, url: $url } ] }
               ]
+              | (if $mention != "" then [{ type: "section", text: { type: "mrkdwn", text: $mention } }] + . else . end)
             }
             | (if $channel  != "" then . + { channel: $channel }   else . end)
             | (if $username != "" then . + { username: $username } else . end)
