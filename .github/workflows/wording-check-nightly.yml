@@ -45,3 +45,27 @@ jobs:
               body,
               labels: ['wording-check', 'automated'],
             });
+
+      - name: Notify Slack on failure
+        if: failure() && env.SLACK_WEBHOOK_URL != ''
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          REPORT: ${{ steps.check.outputs.report }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          # Truncate report to keep Slack payload under limits
+          TRUNCATED=$(printf '%s' "$REPORT" | head -c 2500)
+          PAYLOAD=$(jq -n \
+            --arg text "🚨 Nightly wording check failed on \`${GITHUB_REPOSITORY}\`" \
+            --arg report "$TRUNCATED" \
+            --arg url "$RUN_URL" \
+            '{
+              text: $text,
+              blocks: [
+                { type: "header", text: { type: "plain_text", text: "🚨 Wording check failed" } },
+                { type: "section", text: { type: "mrkdwn", text: ("*Repo:* `" + env.GITHUB_REPOSITORY + "`\n*Commit:* `" + env.GITHUB_SHA[0:7] + "`") } },
+                { type: "section", text: { type: "mrkdwn", text: ("*Offending lines:*\n```" + $report + "```") } },
+                { type: "actions", elements: [ { type: "button", text: { type: "plain_text", text: "View run" }, url: $url } ] }
+              ]
+            }')
+          curl -sS -X POST -H 'Content-Type: application/json' --data "$PAYLOAD" "$SLACK_WEBHOOK_URL"
