@@ -78,6 +78,14 @@ jobs:
           else
             RESOLVED="$HOME/.bun/install/cache"
           fi
+          # Collapse repeated separators (preserve leading // only if POSIX-significant — we don't need that here)
+          while [[ "$RESOLVED" == *//* ]]; do
+            RESOLVED="${RESOLVED//\/\//\/}"
+          done
+          # Strip trailing slashes (but keep "/" itself)
+          while [ "${#RESOLVED}" -gt 1 ] && [ "${RESOLVED: -1}" = "/" ]; do
+            RESOLVED="${RESOLVED%/}"
+          done
           echo "BUN_INSTALL_CACHE_DIR=$RESOLVED" >> "$GITHUB_ENV"
           mkdir -p "$RESOLVED"
           echo "path=$RESOLVED" >> "$GITHUB_OUTPUT"
