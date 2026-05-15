@@ -85,7 +85,7 @@ const DofollowBacklinks = () => {
   const [copiedAll, setCopiedAll] = useState(false);
   const [copyFormat, setCopyFormat] = useState<"plain" | "url">("plain");
   const [copySeparator, setCopySeparator] = useState<
-    "newline" | "csv" | "tsv" | "ssv" | "scsv" | "json"
+    "newline" | "csv" | "tsv" | "ssv" | "scsv" | "json" | "xml"
   >("newline");
   const [quoteItems, setQuoteItems] = useState(false);
   const [jsonCompact, setJsonCompact] = useState(false);
@@ -98,6 +98,19 @@ const DofollowBacklinks = () => {
       return jsonCompact
         ? JSON.stringify(values)
         : JSON.stringify(values, null, 2);
+    }
+    if (copySeparator === "xml") {
+      const escapeXml = (raw: string) =>
+        raw
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;")
+          .replace(/'/g, "&apos;");
+      const inner = values
+        .map((v) => `  <domain>${escapeXml(v)}</domain>`)
+        .join("\n");
+      return `<domains>\n${inner}\n</domains>`;
     }
     const joiner =
       copySeparator === "csv"
@@ -144,6 +157,8 @@ const DofollowBacklinks = () => {
           ? quoteItems ? "semicolon-separated, quoted" : "semicolon-separated"
           : copySeparator === "json"
           ? jsonCompact ? "JSON array, compact" : "JSON array, pretty"
+          : copySeparator === "xml"
+          ? "XML <domains>"
           : "newline-separated";
       toast({
         title: `Copied ${visibleDomains.length} domain${visibleDomains.length === 1 ? "" : "s"}`,
@@ -301,6 +316,7 @@ const DofollowBacklinks = () => {
                 { value: "ssv", label: "SSV" },
                 { value: "scsv", label: "Semi" },
                 { value: "json", label: "JSON" },
+                { value: "xml", label: "XML" },
               ] as const).map((opt) => {
                 const active = copySeparator === opt.value;
                 return (
@@ -327,16 +343,25 @@ const DofollowBacklinks = () => {
               aria-checked={quoteItems}
               aria-label="Wrap items in quotes"
               onClick={() => setQuoteItems((q) => !q)}
-              disabled={copySeparator === "newline" || copySeparator === "json"}
+              disabled={
+                copySeparator === "newline" ||
+                copySeparator === "json" ||
+                copySeparator === "xml"
+              }
               title={
                 copySeparator === "json"
                   ? "JSON output is always properly quoted"
+                  : copySeparator === "xml"
+                  ? "XML output is always properly escaped"
                   : copySeparator !== "newline"
                   ? "Wrap each item in double quotes"
                   : "Switch to CSV, TSV, SSV, or Semi to enable quoting"
               }
               className={`h-9 px-3 inline-flex items-center rounded-md border text-xs uppercase tracking-widest font-semibold transition-all disabled:opacity-40 disabled:cursor-not-allowed ${
-                quoteItems && copySeparator !== "newline" && copySeparator !== "json"
+                quoteItems &&
+                copySeparator !== "newline" &&
+                copySeparator !== "json" &&
+                copySeparator !== "xml"
                   ? "bg-primary text-primary-foreground border-primary"
                   : "bg-card text-muted-foreground border-border hover:text-foreground hover:border-primary/50"
               }`}
