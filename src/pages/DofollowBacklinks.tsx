@@ -85,11 +85,17 @@ const DofollowBacklinks = () => {
   const [copiedAll, setCopiedAll] = useState(false);
   const [copyFormat, setCopyFormat] = useState<"plain" | "url">("plain");
   const [copySeparator, setCopySeparator] = useState<
-    "newline" | "csv" | "tsv" | "ssv" | "scsv"
+    "newline" | "csv" | "tsv" | "ssv" | "scsv" | "json"
   >("newline");
   const [quoteItems, setQuoteItems] = useState(false);
 
   const formattedOutput = useMemo(() => {
+    const values = visibleDomains.map((d) =>
+      copyFormat === "url" ? `https://${d}` : d,
+    );
+    if (copySeparator === "json") {
+      return JSON.stringify(values, null, 2);
+    }
     const joiner =
       copySeparator === "csv"
         ? ","
@@ -114,9 +120,7 @@ const DofollowBacklinks = () => {
       if (!needsQuotes) return raw;
       return `"${raw.replace(/"/g, '""')}"`;
     };
-    const items = visibleDomains
-      .map((d) => (copyFormat === "url" ? `https://${d}` : d))
-      .map((s) => (isDelimited ? escapeForDelimited(s) : s));
+    const items = values.map((s) => (isDelimited ? escapeForDelimited(s) : s));
     return items.join(joiner);
   }, [visibleDomains, copyFormat, copySeparator, quoteItems]);
 
@@ -135,6 +139,8 @@ const DofollowBacklinks = () => {
           ? quoteItems ? "space-separated, quoted" : "space-separated"
           : copySeparator === "scsv"
           ? quoteItems ? "semicolon-separated, quoted" : "semicolon-separated"
+          : copySeparator === "json"
+          ? "JSON array"
           : "newline-separated";
       toast({
         title: `Copied ${visibleDomains.length} domain${visibleDomains.length === 1 ? "" : "s"}`,
@@ -291,6 +297,7 @@ const DofollowBacklinks = () => {
                 { value: "tsv", label: "TSV" },
                 { value: "ssv", label: "SSV" },
                 { value: "scsv", label: "Semi" },
+                { value: "json", label: "JSON" },
               ] as const).map((opt) => {
                 const active = copySeparator === opt.value;
                 return (
@@ -317,14 +324,16 @@ const DofollowBacklinks = () => {
               aria-checked={quoteItems}
               aria-label="Wrap items in quotes"
               onClick={() => setQuoteItems((q) => !q)}
-              disabled={copySeparator === "newline"}
+              disabled={copySeparator === "newline" || copySeparator === "json"}
               title={
-                copySeparator !== "newline"
+                copySeparator === "json"
+                  ? "JSON output is always properly quoted"
+                  : copySeparator !== "newline"
                   ? "Wrap each item in double quotes"
                   : "Switch to CSV, TSV, SSV, or Semi to enable quoting"
               }
               className={`h-9 px-3 inline-flex items-center rounded-md border text-xs uppercase tracking-widest font-semibold transition-all disabled:opacity-40 disabled:cursor-not-allowed ${
-                quoteItems && copySeparator !== "newline"
+                quoteItems && copySeparator !== "newline" && copySeparator !== "json"
                   ? "bg-primary text-primary-foreground border-primary"
                   : "bg-card text-muted-foreground border-border hover:text-foreground hover:border-primary/50"
               }`}
