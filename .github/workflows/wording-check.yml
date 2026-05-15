@@ -88,15 +88,20 @@ jobs:
               const code = err && (err.code || (err.cause && err.cause.code));
               return ['ECONNRESET', 'ETIMEDOUT', 'EAI_AGAIN', 'ENOTFOUND', 'ECONNREFUSED', 'EPIPE'].includes(code);
             };
-            // Stable per-run/PR correlation prefix so coalesced retry
-            // warnings can be grepped back to the exact workflow run and
-            // pull request in the Actions logs.
+            // Deep links + stable per-run/PR correlation prefix so
+            // coalesced retry warnings can be grepped back to (and clicked
+            // through to) the exact workflow run and pull request.
+            const runAttempt = process.env.GITHUB_RUN_ATTEMPT || '1';
+            const runLink = `${context.serverUrl}/${owner}/${repo}/actions/runs/${context.runId}/attempts/${runAttempt}`;
+            const prLink = `${context.serverUrl}/${owner}/${repo}/pull/${prNumber}`;
             const corrPrefix = [
               `run=${context.runId}`,
-              `attempt=${process.env.GITHUB_RUN_ATTEMPT || '1'}`,
+              `attempt=${runAttempt}`,
               `repo=${owner}/${repo}`,
               `pr=#${prNumber}`,
               `fp=${fingerprint}`,
+              `run_url=${runLink}`,
+              `pr_url=${prLink}`,
             ].join(' ');
 
             // Coalesce per-retry warnings into a single ::warning:: per
@@ -119,7 +124,8 @@ jobs:
                   `outcome=${outcome}, ` +
                   `attempts=${first.attempt}-${last.attempt}/${retries}, ` +
                   `total_backoff=${totalWait}ms, ` +
-                  `reasons=[${reasons.join(' | ')}]`;
+                  `reasons=[${reasons.join(' | ')}], ` +
+                  `run=${runLink}, pr=${prLink}`;
                 if (outcome === 'recovered') core.warning(summary);
                 else core.error(summary);
                 burst.length = 0;
@@ -178,7 +184,11 @@ jobs:
                 const upstreamCorr = err.corrId
                   ? `[corr=${err.corrId} ${err.corrPrefix} op=updateComment]`
                   : `[${corrPrefix} op=updateComment]`;
-                await createNew(`${upstreamCorr} update of comment #${prior.id} failed (${err.status || 'error'}: ${err.message}); falling back to createComment.`);
+                await createNew(
+                  `${upstreamCorr} update of comment #${prior.id} failed ` +
+                  `(${err.status || 'error'}: ${err.message}); ` +
+                  `falling back to createComment. run=${runLink} pr=${prLink}`
+                );
               }
             } else {
               await createNew();
