@@ -78,6 +78,13 @@ jobs:
               `<!-- wording-check:ts=${Math.floor(Date.now() / 1000)} -->`,
             ].join('\n');
 
-            await github.rest.issues.createComment({
-              owner, repo, issue_number: prNumber, body,
-            });
+            if (prior) {
+              await github.rest.issues.updateComment({
+                owner, repo, comment_id: prior.id, body,
+              });
+              core.notice(`Updated existing wording-check comment #${prior.id} (fingerprint: ${fingerprint}).`);
+            } else {
+              await github.rest.issues.createComment({
+                owner, repo, issue_number: prNumber, body,
+              });
+            }
