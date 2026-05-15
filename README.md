@@ -1,3 +1,15 @@
-# Welcome to your Lovable project
+# Industry Army Marketing
 
-TODO: Document your project here
+Marketing site for Industry Army Marketing. React + Vite + Tailwind.
+
+## Develop
+```
+bun install
+bun run dev
+```
+
+## Build
+```
+bun run build
+```
+Output is in `dist/`. Deploy that directory to any static host (Netlify, Vercel, Cloudflare Pages).
