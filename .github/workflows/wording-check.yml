@@ -78,13 +78,25 @@ jobs:
               `<!-- wording-check:ts=${Math.floor(Date.now() / 1000)} -->`,
             ].join('\n');
 
-            if (prior) {
-              await github.rest.issues.updateComment({
-                owner, repo, comment_id: prior.id, body,
-              });
-              core.notice(`Updated existing wording-check comment #${prior.id} (fingerprint: ${fingerprint}).`);
-            } else {
+            const createNew = async (reason) => {
+              if (reason) core.notice(reason);
               await github.rest.issues.createComment({
                 owner, repo, issue_number: prNumber, body,
               });
+            };
+
+            if (prior) {
+              try {
+                await github.rest.issues.updateComment({
+                  owner, repo, comment_id: prior.id, body,
+                });
+                core.notice(`Updated existing wording-check comment #${prior.id} (fingerprint: ${fingerprint}).`);
+              } catch (err) {
+                // Fallback: prior comment may have been deleted (404),
+                // edited by a different account (403), or otherwise
+                // unreachable — post a fresh comment instead of failing.
+                await createNew(`Update of comment #${prior.id} failed (${err.status || 'error'}: ${err.message}); posting a new comment instead.`);
+              }
+            } else {
+              await createNew();
             }
