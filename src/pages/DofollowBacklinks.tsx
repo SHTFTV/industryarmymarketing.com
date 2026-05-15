@@ -88,13 +88,16 @@ const DofollowBacklinks = () => {
     "newline" | "csv" | "tsv" | "ssv" | "scsv" | "json"
   >("newline");
   const [quoteItems, setQuoteItems] = useState(false);
+  const [jsonCompact, setJsonCompact] = useState(false);
 
   const formattedOutput = useMemo(() => {
     const values = visibleDomains.map((d) =>
       copyFormat === "url" ? `https://${d}` : d,
     );
     if (copySeparator === "json") {
-      return JSON.stringify(values, null, 2);
+      return jsonCompact
+        ? JSON.stringify(values)
+        : JSON.stringify(values, null, 2);
     }
     const joiner =
       copySeparator === "csv"
@@ -122,7 +125,7 @@ const DofollowBacklinks = () => {
     };
     const items = values.map((s) => (isDelimited ? escapeForDelimited(s) : s));
     return items.join(joiner);
-  }, [visibleDomains, copyFormat, copySeparator, quoteItems]);
+  }, [visibleDomains, copyFormat, copySeparator, quoteItems, jsonCompact]);
 
   const onCopyAll = async () => {
     if (visibleDomains.length === 0) return;
@@ -140,7 +143,7 @@ const DofollowBacklinks = () => {
           : copySeparator === "scsv"
           ? quoteItems ? "semicolon-separated, quoted" : "semicolon-separated"
           : copySeparator === "json"
-          ? "JSON array"
+          ? jsonCompact ? "JSON array, compact" : "JSON array, pretty"
           : "newline-separated";
       toast({
         title: `Copied ${visibleDomains.length} domain${visibleDomains.length === 1 ? "" : "s"}`,
@@ -339,6 +342,28 @@ const DofollowBacklinks = () => {
               }`}
             >
               "Quoted"
+            </button>
+            <button
+              type="button"
+              role="switch"
+              aria-checked={jsonCompact}
+              aria-label="Compact JSON output"
+              onClick={() => setJsonCompact((c) => !c)}
+              disabled={copySeparator !== "json"}
+              title={
+                copySeparator === "json"
+                  ? jsonCompact
+                    ? "Switch to pretty-printed JSON"
+                    : "Switch to single-line compact JSON"
+                  : "Switch to JSON to toggle compact output"
+              }
+              className={`h-9 px-3 inline-flex items-center rounded-md border text-xs uppercase tracking-widest font-semibold transition-all disabled:opacity-40 disabled:cursor-not-allowed ${
+                jsonCompact && copySeparator === "json"
+                  ? "bg-primary text-primary-foreground border-primary"
+                  : "bg-card text-muted-foreground border-border hover:text-foreground hover:border-primary/50"
+              }`}
+            >
+              Compact
             </button>
             <Button
               type="button"
