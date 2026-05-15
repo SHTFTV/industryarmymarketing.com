@@ -88,19 +88,48 @@ jobs:
               const code = err && (err.code || (err.cause && err.cause.code));
               return ['ECONNRESET', 'ETIMEDOUT', 'EAI_AGAIN', 'ENOTFOUND', 'ECONNREFUSED', 'EPIPE'].includes(code);
             };
+            // Coalesce per-retry warnings into a single ::warning:: per
+            // burst so the Actions log isn't flooded when GitHub is flaky.
             const withRetry = async (label, fn, { retries = 5, baseMs = 1000, capMs = 30000 } = {}) => {
               let attempt = 0;
+              const burst = []; // { attempt, status, message, waitMs }
+              const flush = (outcome) => {
+                if (!burst.length) return;
+                const first = burst[0];
+                const last = burst[burst.length - 1];
+                const totalWait = burst.reduce((s, b) => s + b.waitMs, 0);
+                const reasons = [...new Set(burst.map(b => `${b.status}: ${b.message}`))];
+                const summary =
+                  `${label}: ${burst.length} retry attempt(s) coalesced — ` +
+                  `outcome=${outcome}, ` +
+                  `attempts=${first.attempt}-${last.attempt}/${retries}, ` +
+                  `total_backoff=${totalWait}ms, ` +
+                  `reasons=[${reasons.join(' | ')}]`;
+                if (outcome === 'recovered') core.warning(summary);
+                else core.error(summary);
+                burst.length = 0;
+              };
               for (;;) {
                 try {
-                  return await fn();
+                  const result = await fn();
+                  flush('recovered');
+                  return result;
                 } catch (err) {
                   attempt += 1;
-                  if (attempt > retries || !isRetryable(err)) throw err;
+                  if (attempt > retries || !isRetryable(err)) {
+                    flush('failed');
+                    throw err;
+                  }
                   const retryAfter = parseInt(err?.response?.headers?.['retry-after'] || '0', 10);
                   const backoff = Math.min(capMs, baseMs * 2 ** (attempt - 1));
                   const jitter = Math.floor(Math.random() * 250);
                   const waitMs = (retryAfter > 0 ? retryAfter * 1000 : backoff) + jitter;
-                  core.warning(`${label} failed (${err.status || err.code || 'error'}: ${err.message}); retry ${attempt}/${retries} in ${waitMs}ms.`);
+                  burst.push({
+                    attempt,
+                    status: err.status || err.code || 'error',
+                    message: err.message,
+                    waitMs,
+                  });
                   await sleep(waitMs);
                 }
               }
