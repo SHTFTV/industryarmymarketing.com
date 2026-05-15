@@ -59,39 +59,40 @@ jobs:
           RESOLVED: ${{ steps.normalize_bun_cache_dir.outputs.bun_cache_dir_resolved }}
           VERBOSITY: ${{ inputs.debug_verbosity }}
         run: |
+          set -euo pipefail
           echo "bun_cache_dir_normalized='${NORMALIZED}'"
           echo "bun_cache_dir_resolved='${RESOLVED}'"
-          if [ "$VERBOSITY" != "assertions" ]; then
+          if [ "${VERBOSITY}" != "assertions" ]; then
             exit 0
           fi
           # Precheck: resolved dir must exist and be writable before assertions.
-          if [ ! -d "$RESOLVED" ]; then
-            echo "::error::resolved cache dir does not exist: $RESOLVED"
+          if [ ! -d "${RESOLVED}" ]; then
+            echo "::error::resolved cache dir does not exist: ${RESOLVED}"
             exit 1
           fi
-          PROBE="$RESOLVED/.write-probe.$$"
-          if ! ( : > "$PROBE" ) 2>/dev/null; then
-            echo "::error::resolved cache dir is not writable: $RESOLVED"
+          PROBE="${RESOLVED}/.write-probe.$$"
+          if ! ( : > "${PROBE}" ) 2>/dev/null; then
+            echo "::error::resolved cache dir is not writable: ${RESOLVED}"
             exit 1
           fi
           # Only arm cleanup once PROBE was actually created by us.
-          trap '[ -n "$PROBE" ] && [ -f "$PROBE" ] && rm -f "$PROBE"' EXIT
+          trap '[ -n "${PROBE:-}" ] && [ -f "${PROBE}" ] && rm -f "${PROBE}"' EXIT
           echo "✓ resolved cache dir exists and is writable"
-          if [ -z "$NORMALIZED" ]; then
-            DEFAULT="$HOME/.bun/install/cache"
-            echo "input was blank → using fallback default: $DEFAULT"
-            if [ "$RESOLVED" = "$DEFAULT" ]; then
+          if [ -z "${NORMALIZED}" ]; then
+            DEFAULT="${HOME}/.bun/install/cache"
+            echo "input was blank → using fallback default: ${DEFAULT}"
+            if [ "${RESOLVED}" = "${DEFAULT}" ]; then
               echo "✓ resolved matches expected default"
             else
-              echo "::error::resolved ($RESOLVED) does not match expected default ($DEFAULT)"
+              echo "::error::resolved (${RESOLVED}) does not match expected default (${DEFAULT})"
               exit 1
             fi
           else
             echo "input was provided → resolved equals normalized"
-            if [ "$RESOLVED" = "$NORMALIZED" ]; then
+            if [ "${RESOLVED}" = "${NORMALIZED}" ]; then
               echo "✓ resolved matches normalized"
             else
-              echo "::error::resolved ($RESOLVED) does not match normalized ($NORMALIZED)"
+              echo "::error::resolved (${RESOLVED}) does not match normalized (${NORMALIZED})"
               exit 1
             fi
           fi
