@@ -3,8 +3,7 @@
 import { writeFileSync } from "fs";
 import { resolve } from "path";
 
-// TODO: replace with your project URL once a project name or custom domain is set.
-const BASE_URL = "";
+const BASE_URL = "https://industryarmymarketing.com";
 
 interface SitemapEntry {
   path: string;
