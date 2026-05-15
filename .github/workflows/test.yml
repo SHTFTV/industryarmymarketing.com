@@ -5,6 +5,10 @@ on:
     branches: [main]
   pull_request:
 
+permissions:
+  contents: read
+  actions: read
+
 jobs:
   vitest:
     runs-on: ubuntu-latest
@@ -38,9 +42,8 @@ jobs:
           LOCK_SHORT: ${{ steps.lockhash.outputs.short }}
         run: |
           HIT='${{ steps.setup-node.outputs.cache-hit }}'
-          # Reconstruct the setup-node cache key. setup-node v4 uses:
-          #   node-cache-<os>-<arch>-npm-<hashFiles(package-lock.json)>
           CACHE_KEY="node-cache-${RUNNER_OS}-${RUNNER_ARCH}-npm-${LOCK_HASH}"
+          KEY_PREFIX="node-cache-${RUNNER_OS}-${RUNNER_ARCH}-npm-"
           echo "setup-node cache-hit output: '${HIT:-<empty>}'"
           echo "reconstructed cache key: $CACHE_KEY"
           if [ "$HIT" = "true" ]; then
@@ -54,7 +57,66 @@ jobs:
           fi
           echo "status=$STATUS" >> "$GITHUB_OUTPUT"
           echo "key=$CACHE_KEY" >> "$GITHUB_OUTPUT"
-          # Per-job summary with traceability fields
+          echo "key_prefix=$KEY_PREFIX" >> "$GITHUB_OUTPUT"
+          echo "icon=$ICON" >> "$GITHUB_OUTPUT"
+
+      - name: Diagnose cache miss reason
+        id: miss-reason
+        if: steps.cache-report.outputs.status == 'miss'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          CURRENT_KEY: ${{ steps.cache-report.outputs.key }}
+          KEY_PREFIX: ${{ steps.cache-report.outputs.key_prefix }}
+          LOCK_HASH: ${{ steps.lockhash.outputs.hash }}
+        run: |
+          set -e
+          # List existing caches in this repo. Requires actions:read.
+          # Output: KEY<tab>SIZE<tab>REF<tab>LAST_ACCESSED
+          ALL=$(gh cache list --limit 100 --ref "${GITHUB_REF}" 2>/dev/null \
+                || gh cache list --limit 100 2>/dev/null \
+                || true)
+
+          MATCH_PREFIX=$(echo "$ALL" | awk -v p="$KEY_PREFIX" '$1 ~ "^"p {print $1}' || true)
+          MATCH_LOCK=$(echo "$ALL" | awk -v h="$LOCK_HASH" 'index($1, h) {print $1}' || true)
+
+          # General cross-OS/arch caches built from the same lockfile.
+          NPM_ANY_LOCK=$(echo "$ALL" | awk -v h="$LOCK_HASH" '$1 ~ /^node-cache-/ && index($1, h) {print $1}' || true)
+
+          REASON=""
+          DETAIL=""
+
+          if [ -z "$ALL" ]; then
+            REASON="no_cache_api_access"
+            DETAIL="Could not list repo caches (missing actions:read or empty cache store). Cache will be saved at job end."
+          elif [ -z "$MATCH_PREFIX" ] && [ -z "$NPM_ANY_LOCK" ]; then
+            REASON="first_run"
+            DETAIL="No prior npm cache exists for this OS/arch/Node combo or this lockfile hash. Expected on first run after enabling caching or after cache eviction (7-day GitHub TTL / 10GB repo limit)."
+          elif [ -z "$MATCH_PREFIX" ] && [ -n "$NPM_ANY_LOCK" ]; then
+            REASON="runner_changed"
+            DETAIL="Caches with the same lockfile hash exist but for a different OS/arch. Current runner=${RUNNER_OS}/${RUNNER_ARCH}. Found: $(echo "$NPM_ANY_LOCK" | tr '\n' ' ')"
+          elif [ -n "$MATCH_PREFIX" ] && [ -z "$MATCH_LOCK" ]; then
+            REASON="lockfile_changed"
+            PRIOR=$(echo "$MATCH_PREFIX" | head -n1)
+            PRIOR_HASH="${PRIOR##${KEY_PREFIX}}"
+            DETAIL="A prior cache exists for this OS/arch/Node combo with a different lockfile hash. current=${LOCK_HASH:0:12}… prior=${PRIOR_HASH:0:12}… (key=${PRIOR}). Likely cause: package-lock.json was modified."
+          else
+            REASON="key_mismatch_unknown"
+            DETAIL="Caches with the expected prefix exist (e.g. $(echo "$MATCH_PREFIX" | head -n1)) but setup-node still reported a miss. Possible causes: cache being uploaded by a parallel run, scope/ref mismatch (caches are scoped to base branch), or eviction in flight."
+          fi
+
+          echo "reason=$REASON" >> "$GITHUB_OUTPUT"
+          echo "detail=$DETAIL" >> "$GITHUB_OUTPUT"
+          echo "::warning title=npm cache miss reason::${REASON}: ${DETAIL}"
+
+      - name: Write cache report to summary
+        env:
+          LOCK_HASH: ${{ steps.lockhash.outputs.hash }}
+          STATUS: ${{ steps.cache-report.outputs.status }}
+          ICON: ${{ steps.cache-report.outputs.icon }}
+          CACHE_KEY: ${{ steps.cache-report.outputs.key }}
+          MISS_REASON: ${{ steps.miss-reason.outputs.reason }}
+          MISS_DETAIL: ${{ steps.miss-reason.outputs.detail }}
+        run: |
           {
             echo "### npm cache — Node ${{ matrix.node-version }}"
             echo ""
@@ -65,24 +127,32 @@ jobs:
             echo "| Runner | \`${RUNNER_OS}/${RUNNER_ARCH}\` |"
             echo "| Lockfile sha256 | \`${LOCK_HASH}\` |"
             echo "| Cache key | \`${CACHE_KEY}\` |"
+            if [ "$STATUS" = "miss" ]; then
+              echo "| Miss reason | \`${MISS_REASON:-unknown}\` |"
+              echo ""
+              echo "> ${MISS_DETAIL:-No diagnosis available.}"
+            fi
             echo ""
           } >> "$GITHUB_STEP_SUMMARY"
-          # Persist for the aggregate summary job
           mkdir -p cache-report
           {
             echo "status=$STATUS"
             echo "node=${{ matrix.node-version }}"
             echo "runner=${RUNNER_OS}/${RUNNER_ARCH}"
             echo "lock_hash=$LOCK_HASH"
-            echo "lock_short=$LOCK_SHORT"
+            echo "lock_short=${LOCK_HASH:0:12}"
             echo "key=$CACHE_KEY"
+            echo "miss_reason=${MISS_REASON}"
+            echo "miss_detail=${MISS_DETAIL}"
           } > "cache-report/node-${{ matrix.node-version }}.env"
+
       - name: Upload cache report
         uses: actions/upload-artifact@v4
         with:
           name: cache-report-node-${{ matrix.node-version }}
           path: cache-report/
           retention-days: 1
+
       - name: Install dependencies
         run: npm ci
       - name: Run vitest
@@ -107,9 +177,9 @@ jobs:
           total=${#files[@]}
           hits=0
           rows=""
+          miss_rows=""
           for f in "${files[@]}"; do
-            # shellcheck disable=SC1090
-            status="" node="" runner="" lock_short="" key=""
+            status="" node="" runner="" lock_short="" key="" miss_reason="" miss_detail=""
             while IFS='=' read -r k v; do
               case "$k" in
                 status) status="$v" ;;
@@ -117,15 +187,20 @@ jobs:
                 runner) runner="$v" ;;
                 lock_short) lock_short="$v" ;;
                 key) key="$v" ;;
+                miss_reason) miss_reason="$v" ;;
+                miss_detail) miss_detail="$v" ;;
               esac
             done < "$f"
             if [ "$status" = "hit" ]; then
               hits=$((hits + 1))
               icon="✅ HIT"
+              reason_cell="—"
             else
               icon="❌ MISS"
+              reason_cell="\`${miss_reason:-unknown}\`"
+              miss_rows+="- **Node ${node}** (\`${miss_reason:-unknown}\`): ${miss_detail:-No diagnosis available.}"$'\n'
             fi
-            rows+="| ${node} | ${icon} | \`${runner}\` | \`${lock_short}\` | \`${key}\` |"$'\n'
+            rows+="| ${node} | ${icon} | \`${runner}\` | \`${lock_short}\` | ${reason_cell} |"$'\n'
           done
           if [ "$total" -gt 0 ]; then
             rate=$(awk -v h="$hits" -v t="$total" 'BEGIN{printf "%.0f", (h/t)*100}')
@@ -138,9 +213,15 @@ jobs:
             echo "**${hits}/${total} jobs hit the cache (${rate}%)**"
             echo ""
             if [ "$total" -gt 0 ]; then
-              echo "| Node | Result | Runner | Lock (short) | Cache key |"
+              echo "| Node | Result | Runner | Lock (short) | Miss reason |"
               echo "| --- | --- | --- | --- | --- |"
               printf "%s" "$rows"
+              if [ -n "$miss_rows" ]; then
+                echo ""
+                echo "### Miss details"
+                echo ""
+                printf "%s" "$miss_rows"
+              fi
             else
               echo "_No cache reports found._"
             fi
