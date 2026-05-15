@@ -1,15 +1,25 @@
 import Layout from "@/components/Layout";
 import PageHeader from "@/components/PageHeader";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ExternalLink, Server, Globe } from "lucide-react";
+import { ExternalLink, Server, Globe, Search } from "lucide-react";
+import { useMemo, useState } from "react";
 import { dofollowDomains } from "@/data/dofollowDomains";
 
 const DofollowBacklinks = () => {
-  const netlify = dofollowDomains.filter((d) => d.host === "Netlify");
-  const wordpress = dofollowDomains.filter((d) => d.host === "WordPress");
+  const [query, setQuery] = useState("");
   const total = dofollowDomains.length;
+
+  const filtered = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    if (!q) return dofollowDomains;
+    return dofollowDomains.filter((d) => d.domain.toLowerCase().includes(q));
+  }, [query]);
+
+  const netlify = filtered.filter((d) => d.host === "Netlify");
+  const wordpress = filtered.filter((d) => d.host === "WordPress");
 
   const renderGrid = (list: typeof dofollowDomains) => (
     <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
@@ -51,6 +61,25 @@ const DofollowBacklinks = () => {
         </div>
       </PageHeader>
 
+      <section className="py-8 bg-background border-b border-border sticky top-16 z-30 backdrop-blur-lg bg-background/80">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <div className="relative">
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground pointer-events-none" />
+            <Input
+              type="search"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="Filter domains... (e.g. roofers, .ca, weddings)"
+              className="pl-11 h-12 font-mono bg-card border-border focus-visible:ring-primary"
+              aria-label="Filter dofollow backlink domains"
+            />
+          </div>
+          <p className="text-xs text-muted-foreground mt-2 text-center">
+            {query ? `${filtered.length} of ${total} domains match` : `${total} live domains`}
+          </p>
+        </div>
+      </section>
+
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="flex items-center gap-3 mb-6">
@@ -62,7 +91,9 @@ const DofollowBacklinks = () => {
           <p className="text-muted-foreground mb-8 max-w-3xl">
             Hand-built static sites on premium .io / .ltd / .ca / .tv / .com TLDs. Fast, lightweight, and indexed — your post is added as a permanent dofollow placement.
           </p>
-          {renderGrid(netlify)}
+          {netlify.length > 0 ? renderGrid(netlify) : (
+            <p className="text-muted-foreground text-sm italic">No static domains match "{query}".</p>
+          )}
         </div>
       </section>
 
@@ -77,7 +108,9 @@ const DofollowBacklinks = () => {
           <p className="text-muted-foreground mb-8 max-w-3xl">
             Managed WordPress sites with editorial-grade publishing. Ideal for guest posts with images, embedded video, and long-form anchor copy.
           </p>
-          {renderGrid(wordpress)}
+          {wordpress.length > 0 ? renderGrid(wordpress) : (
+            <p className="text-muted-foreground text-sm italic">No WordPress domains match "{query}".</p>
+          )}
         </div>
       </section>
 
