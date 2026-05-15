@@ -50,22 +50,47 @@ jobs:
         if: failure() && env.SLACK_WEBHOOK_URL != ''
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_CHANNEL: ${{ vars.SLACK_CHANNEL }}
+          SLACK_USERNAME: ${{ vars.SLACK_USERNAME }}
+          SLACK_ICON_EMOJI: ${{ vars.SLACK_ICON_EMOJI }}
+          SLACK_HEADER_TEXT: ${{ vars.SLACK_HEADER_TEXT }}
+          SLACK_MESSAGE_TEXT: ${{ vars.SLACK_MESSAGE_TEXT }}
           REPORT: ${{ steps.check.outputs.report }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           # Truncate report to keep Slack payload under limits
           TRUNCATED=$(printf '%s' "$REPORT" | head -c 2500)
+          # Defaults; override via repo/org Variables (Settings → Variables → Actions).
+          # Supported tokens in SLACK_HEADER_TEXT / SLACK_MESSAGE_TEXT:
+          #   {repo} {sha} {run_url}
+          HEADER_RAW="${SLACK_HEADER_TEXT:-🚨 Wording check failed}"
+          MESSAGE_RAW="${SLACK_MESSAGE_TEXT:-🚨 Nightly wording check failed on \`{repo}\`}"
+          SHORT_SHA="${GITHUB_SHA:0:7}"
+          render() { printf '%s' "$1" \
+            | sed "s|{repo}|${GITHUB_REPOSITORY}|g" \
+            | sed "s|{sha}|${SHORT_SHA}|g" \
+            | sed "s|{run_url}|${RUN_URL}|g"; }
+          HEADER_TEXT=$(render "$HEADER_RAW")
+          MESSAGE_TEXT=$(render "$MESSAGE_RAW")
           PAYLOAD=$(jq -n \
-            --arg text "🚨 Nightly wording check failed on \`${GITHUB_REPOSITORY}\`" \
+            --arg text "$MESSAGE_TEXT" \
+            --arg header "$HEADER_TEXT" \
+            --arg channel "${SLACK_CHANNEL:-}" \
+            --arg username "${SLACK_USERNAME:-}" \
+            --arg icon "${SLACK_ICON_EMOJI:-}" \
             --arg report "$TRUNCATED" \
             --arg url "$RUN_URL" \
             '{
               text: $text,
               blocks: [
-                { type: "header", text: { type: "plain_text", text: "🚨 Wording check failed" } },
+                { type: "header", text: { type: "plain_text", text: $header } },
                 { type: "section", text: { type: "mrkdwn", text: ("*Repo:* `" + env.GITHUB_REPOSITORY + "`\n*Commit:* `" + env.GITHUB_SHA[0:7] + "`") } },
                 { type: "section", text: { type: "mrkdwn", text: ("*Offending lines:*\n```" + $report + "```") } },
                 { type: "actions", elements: [ { type: "button", text: { type: "plain_text", text: "View run" }, url: $url } ] }
               ]
-            }')
+            }
+            | (if $channel  != "" then . + { channel: $channel }   else . end)
+            | (if $username != "" then . + { username: $username } else . end)
+            | (if $icon     != "" then . + { icon_emoji: $icon }   else . end)
+            ')
           curl -sS -X POST -H 'Content-Type: application/json' --data "$PAYLOAD" "$SLACK_WEBHOOK_URL"
