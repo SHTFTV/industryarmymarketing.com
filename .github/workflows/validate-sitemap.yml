@@ -34,11 +34,14 @@ jobs:
           bun-version: latest
       - name: Validate inputs
         run: |
-          if ! [[ "$MIN_CACHE_KB" =~ ^[1-9][0-9]*$ ]]; then
+          TRIMMED="${MIN_CACHE_KB#"${MIN_CACHE_KB%%[![:space:]]*}"}"
+          TRIMMED="${TRIMMED%"${TRIMMED##*[![:space:]]}"}"
+          if ! [[ "$TRIMMED" =~ ^[1-9][0-9]*$ ]]; then
             echo "::error title=Invalid input::min_cache_kb must be a positive integer (got: '$MIN_CACHE_KB')"
             exit 1
           fi
-          echo "min_cache_kb=$MIN_CACHE_KB ✓"
+          echo "MIN_CACHE_KB=$TRIMMED" >> "$GITHUB_ENV"
+          echo "min_cache_kb=$TRIMMED ✓"
       - name: Resolve Bun cache path
         id: bun_cache
         run: |
