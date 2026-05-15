@@ -91,7 +91,14 @@ jobs:
             // Deep links + stable per-run/PR correlation prefix so
             // coalesced retry warnings can be grepped back to (and clicked
             // through to) the exact workflow run and pull request.
-            const runAttempt = process.env.GITHUB_RUN_ATTEMPT || '1';
+            // Normalize attempt: GITHUB_RUN_ATTEMPT is unset locally and
+            // can be empty/non-numeric in odd runner states. Always coerce
+            // to a positive integer (default 1) so the deep link points to
+            // a valid /attempts/<n> URL in every code path — including the
+            // update→create fallback ::notice::.
+            const rawAttempt = process.env.GITHUB_RUN_ATTEMPT;
+            const parsedAttempt = parseInt(rawAttempt || '', 10);
+            const runAttempt = String(Number.isFinite(parsedAttempt) && parsedAttempt > 0 ? parsedAttempt : 1);
             const runLink = `${context.serverUrl}/${owner}/${repo}/actions/runs/${context.runId}/attempts/${runAttempt}`;
             const prLink = `${context.serverUrl}/${owner}/${repo}/pull/${prNumber}`;
             const corrPrefix = [
