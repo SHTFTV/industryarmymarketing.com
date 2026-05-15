@@ -70,11 +70,11 @@ jobs:
             exit 1
           fi
           PROBE="$RESOLVED/.write-probe.$$"
+          trap 'rm -f "$PROBE"' EXIT
           if ! ( : > "$PROBE" ) 2>/dev/null; then
             echo "::error::resolved cache dir is not writable: $RESOLVED"
             exit 1
           fi
-          rm -f "$PROBE"
           echo "✓ resolved cache dir exists and is writable"
           if [ -z "$NORMALIZED" ]; then
             DEFAULT="$HOME/.bun/install/cache"
