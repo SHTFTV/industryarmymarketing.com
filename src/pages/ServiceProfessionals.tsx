@@ -28,7 +28,7 @@ const categories = [
 ];
 
 const stats = [
-  { v: "828", l: "Canadian Cities" },
+  { v: "∞", l: "Worldwide Cities" },
   { v: "1", l: "Per Trade Per City" },
   { v: "$10", l: "Per 100K Pop / Mo" },
   { v: "4.8", l: "EyeSpyR Score" },
