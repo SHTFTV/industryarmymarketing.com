@@ -21,19 +21,94 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
       - name: Report npm cache restore result
+        id: cache-report
         run: |
           HIT='${{ steps.setup-node.outputs.cache-hit }}'
           echo "setup-node cache-hit output: '${HIT:-<empty>}'"
           if [ "$HIT" = "true" ]; then
+            STATUS="hit"
             echo "::notice title=npm cache::HIT — restored ~/.npm from cache key (lockfile unchanged)."
           else
+            STATUS="miss"
             echo "::notice title=npm cache::MISS — no exact key match; cache will be saved at job end."
           fi
+          echo "status=$STATUS" >> "$GITHUB_OUTPUT"
           echo "npm cache directory: $(npm config get cache)"
           du -sh "$(npm config get cache)" 2>/dev/null || echo "(cache dir not present yet)"
+          # Per-job summary row
+          {
+            echo "### npm cache — Node ${{ matrix.node-version }}"
+            echo ""
+            echo "| Node | Result |"
+            echo "| --- | --- |"
+            if [ "$STATUS" = "hit" ]; then
+              echo "| ${{ matrix.node-version }} | ✅ HIT |"
+            else
+              echo "| ${{ matrix.node-version }} | ❌ MISS |"
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
+          # Persist per-job result for the aggregate summary job
+          mkdir -p cache-report
+          echo "$STATUS" > "cache-report/node-${{ matrix.node-version }}.txt"
+      - name: Upload cache report
+        uses: actions/upload-artifact@v4
+        with:
+          name: cache-report-node-${{ matrix.node-version }}
+          path: cache-report/
+          retention-days: 1
       - name: Install dependencies
         run: npm ci
       - name: Report npm cache size after install
         run: du -sh "$(npm config get cache)" 2>/dev/null || true
       - name: Run vitest
         run: npm test
+
+  cache-summary:
+    name: npm cache hit rate
+    runs-on: ubuntu-latest
+    needs: vitest
+    if: always()
+    steps:
+      - name: Download all cache reports
+        uses: actions/download-artifact@v4
+        with:
+          path: cache-reports
+          pattern: cache-report-node-*
+          merge-multiple: true
+      - name: Aggregate hit rate
+        run: |
+          shopt -s nullglob
+          files=(cache-reports/node-*.txt)
+          total=${#files[@]}
+          hits=0
+          rows=""
+          for f in "${files[@]}"; do
+            node=$(basename "$f" .txt | sed 's/^node-//')
+            status=$(cat "$f" | tr -d '[:space:]')
+            if [ "$status" = "hit" ]; then
+              hits=$((hits + 1))
+              icon="✅ HIT"
+            else
+              icon="❌ MISS"
+            fi
+            rows+="| $node | $icon |"$'\n'
+          done
+          if [ "$total" -gt 0 ]; then
+            rate=$(awk -v h="$hits" -v t="$total" 'BEGIN{printf "%.0f", (h/t)*100}')
+          else
+            rate=0
+          fi
+          {
+            echo "## npm cache hit rate"
+            echo ""
+            echo "**${hits}/${total} jobs hit the cache (${rate}%)**"
+            echo ""
+            if [ "$total" -gt 0 ]; then
+              echo "| Node | Result |"
+              echo "| --- | --- |"
+              printf "%s" "$rows"
+            else
+              echo "_No cache reports found._"
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
+          echo "npm cache hit rate: ${hits}/${total} (${rate}%)"
