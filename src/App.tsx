@@ -1,5 +1,6 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { MotionConfig } from "framer-motion";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -33,12 +34,20 @@ import AdminLeads from "./pages/admin/AdminLeads.tsx";
 
 const queryClient = new QueryClient();
 
+// Detect headless/automation (screenshot tools, crawlers) so motion components
+// render at their final `animate` state instead of waiting on IntersectionObserver.
+const isHeadless =
+  typeof navigator !== "undefined" &&
+  (/HeadlessChrome|Puppeteer|Playwright|Lighthouse|bot|crawler|spider/i.test(navigator.userAgent) ||
+    (navigator as Navigator & { webdriver?: boolean }).webdriver === true);
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
+    <MotionConfig reducedMotion={isHeadless ? "always" : "user"}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/how-it-works" element={<HowItWorks />} />
@@ -67,10 +76,11 @@ const App = () => (
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route path="/admin/leads" element={<AdminLeads />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </TooltipProvider>
+    </MotionConfig>
   </QueryClientProvider>
 );
 
