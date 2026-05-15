@@ -231,6 +231,11 @@ const DofollowBacklinks = () => {
 
   return (
     <Layout>
+      <Seo
+        title="Dofollow Backlinks — $10 Forever | Industry Army Marketing"
+        description="The full IAM network of live, indexable, dofollow-friendly domains. One $10 payment places your post on any domain — permanent, no monthly fee."
+        path="/dofollow-backlinks"
+      />
       <PageHeader
         eyebrow={`${total} Live Domains · Permanent Placement`}
         title="Dofollow Backlinks"
