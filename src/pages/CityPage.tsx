@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, Lock, Check, Crown } from "lucide-react";
 import { domains } from "@/data/domains";
+import CityClaimForm from "@/components/CityClaimForm";
 
 type CityRecord = {
   name: string;
@@ -269,6 +270,9 @@ const CityPage = () => {
           </div>
         </div>
       </section>
+
+      {/* Prefilled claim form */}
+      <CityClaimForm cityName={data.name} cityRate={data.rate} takenTrades={data.taken} />
 
       {/* Final CTA */}
       <section className="py-24 bg-background border-t border-border relative overflow-hidden">
