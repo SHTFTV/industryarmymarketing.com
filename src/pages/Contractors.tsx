@@ -4,12 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Lock, Globe, Network, Video, MapPin, Ban } from "lucide-react";
-
-const trades = [
-  "Roofing", "Plumbing", "Electrical", "HVAC", "Gas Fitting", "Drywall",
-  "Painting", "Framing", "Excavation", "Foundations", "Steel Stud", "Demolition",
-  "Remodeling", "Finish Carpentry", "General Contracting", "Concrete",
-];
+import ContractorTradesGrid from "@/components/ContractorTradesGrid";
 
 const reasons = [
   { icon: Lock, title: "Exclusive Territory", body: "One roofer. One framer. One electrician. Per city. When your competitor tries to join, they can't. You locked them out." },
@@ -34,28 +29,11 @@ const Contractors = () => (
       </div>
     </PageHeader>
 
-    <section className="py-20 bg-background">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <p className="text-primary uppercase tracking-[0.3em] text-xs font-semibold mb-3">50+ Construction Trades</p>
-          <h2 className="font-display text-4xl md:text-5xl text-foreground">Your Trade Is Here</h2>
-        </div>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 max-w-5xl mx-auto">
-          {trades.map((t, i) => (
-            <motion.div
-              key={t}
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.03 }}
-              className="px-4 py-3 rounded-md border border-border bg-card text-center text-sm font-semibold text-foreground hover:border-primary hover:text-primary transition-colors"
-            >
-              {t}
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
+    <ContractorTradesGrid
+      eyebrow="50+ Construction Trades · Live Availability"
+      title={<>Your Trade <span className="text-primary">Is Here</span></>}
+      description="Premium industry domains, one contractor per trade per city. Lock yours before your competition does."
+    />
 
     <section className="py-20 gradient-tactical border-y border-border">
       <div className="container mx-auto px-4">
