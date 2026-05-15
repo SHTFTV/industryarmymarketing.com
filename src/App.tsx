@@ -34,16 +34,13 @@ import AdminLeads from "./pages/admin/AdminLeads.tsx";
 
 const queryClient = new QueryClient();
 
-// Detect headless/automation (screenshot tools, crawlers) so motion components
-// render at their final `animate` state instead of waiting on IntersectionObserver.
-const isHeadless =
-  typeof navigator !== "undefined" &&
-  (/HeadlessChrome|Puppeteer|Playwright|Lighthouse|bot|crawler|spider/i.test(navigator.userAgent) ||
-    (navigator as Navigator & { webdriver?: boolean }).webdriver === true);
-
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <MotionConfig reducedMotion={isHeadless ? "always" : "user"}>
+    {/* reducedMotion="always" forces motion components to skip their initial
+        hidden state and render at the final `animate` state immediately.
+        This guarantees content is visible on first paint and in full-page
+        captures (screenshots, crawlers) regardless of IntersectionObserver. */}
+    <MotionConfig reducedMotion="always">
       <TooltipProvider>
         <Toaster />
         <Sonner />
