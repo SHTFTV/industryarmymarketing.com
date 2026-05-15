@@ -34,8 +34,16 @@ jobs:
             eslint-${{ runner.os }}-
       - name: Lint
         run: bun run lint -- --cache --cache-location .eslintcache --cache-strategy content
+      - name: Cache TypeScript build info
+        uses: actions/cache@v4
+        with:
+          path: .tsbuildinfo
+          key: tsc-${{ runner.os }}-${{ hashFiles('tsconfig*.json', 'bun.lock', 'bun.lockb') }}-${{ hashFiles('src/**', 'scripts/**', '*.ts', '*.tsx') }}
+          restore-keys: |
+            tsc-${{ runner.os }}-${{ hashFiles('tsconfig*.json', 'bun.lock', 'bun.lockb') }}-
+            tsc-${{ runner.os }}-
       - name: Typecheck
-        run: bunx tsc --noEmit
+        run: bunx tsc --noEmit --incremental --tsBuildInfoFile .tsbuildinfo
       - name: Cache Vite dependency prebundle
         uses: actions/cache@v4
         with:
