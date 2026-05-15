@@ -9,6 +9,14 @@ on:
         description: "Print Bun cache contents before/after install"
         type: boolean
         default: false
+      min_cache_kb:
+        description: "Minimum Bun cache size (KB) required after install"
+        type: string
+        default: "1024"
+      bun_cache_dir:
+        description: "Override Bun install cache directory (leave blank for default ~/.bun/install/cache)"
+        type: string
+        default: ""
 
 permissions:
   contents: read
@@ -16,23 +24,38 @@ permissions:
 jobs:
   validate-sitemap:
     runs-on: ubuntu-latest
+    env:
+      BUN_INSTALL_CACHE_DIR: ${{ inputs.bun_cache_dir || '' }}
+      MIN_CACHE_KB: ${{ inputs.min_cache_kb || '1024' }}
     steps:
       - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
+      - name: Resolve Bun cache path
+        id: bun_cache
+        run: |
+          if [ -n "$BUN_INSTALL_CACHE_DIR" ]; then
+            RESOLVED="$BUN_INSTALL_CACHE_DIR"
+          else
+            RESOLVED="$HOME/.bun/install/cache"
+            echo "BUN_INSTALL_CACHE_DIR=$RESOLVED" >> "$GITHUB_ENV"
+          fi
+          mkdir -p "$RESOLVED"
+          echo "path=$RESOLVED" >> "$GITHUB_OUTPUT"
+          echo "Using Bun cache dir: $RESOLVED"
       - name: Cache Bun dependencies
         uses: actions/cache@v4
         with:
-          path: ~/.bun/install/cache
+          path: ${{ steps.bun_cache.outputs.path }}
           key: bun-${{ runner.os }}-${{ hashFiles('bun.lock', 'bun.lockb') }}
           restore-keys: |
             bun-${{ runner.os }}-
       - name: Debug Bun cache (before install)
         if: inputs.debug_bun_cache == true
         run: |
-          echo "BUN_INSTALL_CACHE_DIR=${BUN_INSTALL_CACHE_DIR:-~/.bun/install/cache (default)}"
-          CACHE_DIR="${BUN_INSTALL_CACHE_DIR:-$HOME/.bun/install/cache}"
+          CACHE_DIR="$BUN_INSTALL_CACHE_DIR"
+          echo "BUN_INSTALL_CACHE_DIR=$CACHE_DIR"
           if [ -d "$CACHE_DIR" ]; then
             echo "── cache size ──"; du -sh "$CACHE_DIR" || true
             echo "── top entries ──"; ls -lah "$CACHE_DIR" | head -n 20 || true
@@ -43,10 +66,8 @@ jobs:
       - name: Install dependencies
         run: bun install --frozen-lockfile
       - name: Verify Bun cache populated
-        env:
-          MIN_CACHE_KB: "1024"
         run: |
-          CACHE_DIR="${BUN_INSTALL_CACHE_DIR:-$HOME/.bun/install/cache}"
+          CACHE_DIR="$BUN_INSTALL_CACHE_DIR"
           if [ ! -d "$CACHE_DIR" ]; then
             echo "::error::Bun cache directory missing at $CACHE_DIR after install"
             exit 1
@@ -65,7 +86,7 @@ jobs:
       - name: Debug Bun cache (after install)
         if: inputs.debug_bun_cache == true
         run: |
-          CACHE_DIR="${BUN_INSTALL_CACHE_DIR:-$HOME/.bun/install/cache}"
+          CACHE_DIR="$BUN_INSTALL_CACHE_DIR"
           if [ -d "$CACHE_DIR" ]; then
             echo "── cache size ──"; du -sh "$CACHE_DIR" || true
             echo "── top entries ──"; ls -lah "$CACHE_DIR" | head -n 20 || true
