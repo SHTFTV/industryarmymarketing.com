@@ -46,6 +46,17 @@ jobs:
               labels: ['wording-check', 'automated'],
             });
 
+      - name: Restore Slack cooldown state
+        if: failure() && env.SLACK_WEBHOOK_URL != ''
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        uses: actions/cache/restore@v4
+        with:
+          path: ${{ runner.temp }}/slack-cooldown
+          key: slack-cooldown-v1-${{ github.run_id }}
+          restore-keys: |
+            slack-cooldown-v1-
+
       - name: Notify Slack on failure
         if: failure() && env.SLACK_WEBHOOK_URL != ''
         env:
@@ -56,11 +67,35 @@ jobs:
           SLACK_HEADER_TEXT: ${{ vars.SLACK_HEADER_TEXT }}
           SLACK_MESSAGE_TEXT: ${{ vars.SLACK_MESSAGE_TEXT }}
           SLACK_MENTION: ${{ vars.SLACK_MENTION }}
+          SLACK_COOLDOWN_HOURS: ${{ vars.SLACK_COOLDOWN_HOURS }}
           REPORT: ${{ steps.check.outputs.report }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        id: slack
         run: |
           # Truncate report to keep Slack payload under limits
           TRUNCATED=$(printf '%s' "$REPORT" | head -c 2500)
+          # ── Cooldown ──────────────────────────────────────────────────
+          # Suppress duplicate Slack alerts for the same report within a
+          # rolling window (default 24h). Override via SLACK_COOLDOWN_HOURS
+          # repo/org Variable. Set to 0 to disable.
+          COOLDOWN_HOURS="${SLACK_COOLDOWN_HOURS:-24}"
+          FINGERPRINT=$(printf '%s' "$REPORT" | sha256sum | awk '{print $1}' | head -c 16)
+          STAMP_DIR="$RUNNER_TEMP/slack-cooldown"
+          STAMP_FILE="$STAMP_DIR/${FINGERPRINT}.ts"
+          mkdir -p "$STAMP_DIR"
+          echo "fingerprint=$FINGERPRINT" >> "$GITHUB_OUTPUT"
+          echo "stamp_dir=$STAMP_DIR"     >> "$GITHUB_OUTPUT"
+          echo "stamp_file=$STAMP_FILE"   >> "$GITHUB_OUTPUT"
+          if [ "$COOLDOWN_HOURS" != "0" ] && [ -f "$STAMP_FILE" ]; then
+            LAST=$(cat "$STAMP_FILE" 2>/dev/null || echo 0)
+            NOW=$(date +%s)
+            AGE=$(( NOW - LAST ))
+            MAX=$(( COOLDOWN_HOURS * 3600 ))
+            if [ "$AGE" -lt "$MAX" ]; then
+              echo "::notice::Slack alert suppressed — same failure already notified $((AGE/60))m ago (cooldown: ${COOLDOWN_HOURS}h, fingerprint: ${FINGERPRINT})."
+              exit 0
+            fi
+          fi
           # Defaults; override via repo/org Variables (Settings → Variables → Actions).
           # Supported tokens in SLACK_HEADER_TEXT / SLACK_MESSAGE_TEXT:
           #   {repo} {sha} {run_url}
@@ -118,3 +153,14 @@ jobs:
             | (if $icon     != "" then . + { icon_emoji: $icon }   else . end)
             ')
           curl -sS -X POST -H 'Content-Type: application/json' --data "$PAYLOAD" "$SLACK_WEBHOOK_URL"
+          # Record successful notification timestamp for cooldown.
+          date +%s > "$STAMP_FILE"
+
+      - name: Save Slack cooldown state
+        if: failure() && env.SLACK_WEBHOOK_URL != ''
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        uses: actions/cache/save@v4
+        with:
+          path: ${{ runner.temp }}/slack-cooldown
+          key: slack-cooldown-v1-${{ github.run_id }}
