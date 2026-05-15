@@ -39,9 +39,9 @@ const ServiceProfessionals = () => (
   <Layout>
     <PageHeader
       eyebrow="Industry Army Marketing · Service Professionals"
-      title='I Am The Only'
+      title="I Am The Only"
       highlight="Cleaner In Vancouver"
-      description='Replace "cleaner" with your trade. Replace "Vancouver" with your city. That\'s the IAM model — exclusive territory so you are the only one in your niche in your city across 150+ premium domains.'
+      description={`Replace "cleaner" with your trade. Replace "Vancouver" with your city. That's the IAM model — exclusive territory so you are the only one in your niche in your city across 150+ premium domains.`}
     >
       <div className="flex flex-wrap gap-3">
         <Button variant="hero" asChild><Link to="/contact">Claim My Territory</Link></Button>
