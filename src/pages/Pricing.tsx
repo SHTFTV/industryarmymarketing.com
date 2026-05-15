@@ -22,7 +22,7 @@ const Pricing = () => (
         <h2 className="font-display text-4xl md:text-5xl text-foreground text-center mb-3">
           City <span className="text-primary">Rates</span>
         </h2>
-        <p className="text-muted-foreground text-center mb-12">A few examples — every Canadian city is available.</p>
+        <p className="text-muted-foreground text-center mb-12">A few examples — every city worldwide is available.</p>
 
         <div className="rounded-lg border border-border bg-card overflow-hidden">
           <table className="w-full text-left">
