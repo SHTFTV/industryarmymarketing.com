@@ -45,8 +45,7 @@ const Pricing = () => (
                 <motion.tr
                   key={c.name}
                   initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
+                  animate={{ opacity: 1 }}
                   transition={{ delay: i * 0.04 }}
                   className="border-t border-border hover:bg-secondary/40 transition-colors"
                 >

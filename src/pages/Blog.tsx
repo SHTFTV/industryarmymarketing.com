@@ -77,8 +77,7 @@ const Blog = () => {
           <p className="text-primary uppercase tracking-[0.3em] text-xs font-semibold mb-3">Featured Post</p>
           <motion.article
             initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            animate={{ opacity: 1, y: 0 }}
             className="p-8 md:p-12 rounded-lg bg-card border border-primary/30"
           >
             <p className="text-muted-foreground text-xs uppercase tracking-widest mb-3">
@@ -102,8 +101,7 @@ const Blog = () => {
               <motion.article
                 key={p.title}
                 initial={{ opacity: 0, y: 12 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.05 }}
                 className="p-6 rounded-lg bg-card border border-border hover:border-primary/40 transition-colors"
               >

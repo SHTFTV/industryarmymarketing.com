@@ -125,8 +125,7 @@ const Network = () => (
           <motion.div
             key={g.title}
             initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ delay: gi * 0.05 }}
           >
             <p className="text-primary uppercase tracking-[0.3em] text-xs font-semibold mb-2">

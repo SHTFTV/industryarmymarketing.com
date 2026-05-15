@@ -14,8 +14,7 @@ const AboutSection = () => {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            animate={{ opacity: 1, x: 0 }}
           >
             <p className="text-primary uppercase tracking-[0.3em] text-sm font-semibold mb-3">About IAM</p>
             <h2 className="font-display text-5xl md:text-6xl text-foreground mb-6">
@@ -37,8 +36,7 @@ const AboutSection = () => {
 
           <motion.div
             initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            animate={{ opacity: 1, x: 0 }}
             className="grid grid-cols-1 gap-6"
           >
             {stats.map((stat) => (

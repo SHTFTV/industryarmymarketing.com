@@ -80,8 +80,7 @@ const ContractorTradesGrid = ({
             <motion.div
               key={t.name}
               initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ delay: Math.min(i * 0.02, 0.3) }}
               className="p-6 rounded-lg bg-card border border-border hover:border-primary/40 hover:border-glow transition-all flex flex-col items-center text-center"
             >

@@ -114,8 +114,7 @@ const ContactSection = () => {
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          animate={{ opacity: 1, y: 0 }}
           className="text-center mb-16"
         >
           <p className="text-primary uppercase tracking-[0.3em] text-sm font-semibold mb-3">Get In Touch</p>
@@ -126,8 +125,7 @@ const ContactSection = () => {
           {/* Info */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            animate={{ opacity: 1, x: 0 }}
             className="flex flex-col gap-8"
           >
             <p className="text-muted-foreground leading-relaxed">
@@ -150,8 +148,7 @@ const ContactSection = () => {
           {/* Form */}
           <motion.form
             initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            animate={{ opacity: 1, x: 0 }}
             onSubmit={handleSubmit}
             noValidate
             className="flex flex-col gap-4"

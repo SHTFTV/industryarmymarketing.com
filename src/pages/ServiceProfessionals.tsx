@@ -80,8 +80,7 @@ const ServiceProfessionals = () => (
             <motion.div
               key={c.name}
               initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.03 }}
               className="p-5 rounded-lg bg-card border border-border hover:border-primary/40 hover:border-glow transition-all"
             >

@@ -21,8 +21,7 @@ const Industries = () => (
               target="_blank"
               rel="noreferrer"
               initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ delay: Math.min(i * 0.02, 0.3) }}
               className="group p-5 rounded-lg bg-card border border-border hover:border-primary/50 hover:border-glow transition-all"
             >

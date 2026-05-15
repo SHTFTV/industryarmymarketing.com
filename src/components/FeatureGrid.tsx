@@ -19,8 +19,7 @@ const FeatureGrid = ({ features, columns = 3 }: FeatureGridProps) => {
         <motion.div
           key={f.title}
           initial={{ opacity: 0, y: 12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ delay: i * 0.05 }}
           className="p-6 rounded-lg bg-card border border-border hover:border-primary/40 transition-colors"
         >
