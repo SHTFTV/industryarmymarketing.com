@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import Seo from "@/components/Seo";
 import PageHeader from "@/components/PageHeader";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -17,6 +18,11 @@ const reasons = [
 
 const Contractors = () => (
   <Layout>
+    <Seo
+      title="Contractor Marketing | Exclusive Trade & City Territories"
+      description="Construction and trades marketing on premium 20+ year-old industry domains. One contractor per trade per city. Lock your category from $10/month."
+      path="/contractors"
+    />
     <PageHeader
       eyebrow="Built By Contractors · For Contractors"
       title="Construction &"

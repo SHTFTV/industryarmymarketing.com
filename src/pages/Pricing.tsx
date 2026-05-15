@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import Seo from "@/components/Seo";
 import PageHeader from "@/components/PageHeader";
 import PricingSection from "@/components/PricingSection";
 import { cities } from "@/data/domains";
@@ -8,6 +9,11 @@ import { Button } from "@/components/ui/button";
 
 const Pricing = () => (
   <Layout>
+    <Seo
+      title="Pricing | $10 Per 100K Population — Industry Army Marketing"
+        description="Transparent contractor marketing pricing: $10 per 100,000 residents per month. Minimum $10/month. Cancel anytime. See city-by-city rates."
+      path="/pricing"
+    />
     <PageHeader
       eyebrow="Transparent Pricing"
       title="$10 Per 100K"

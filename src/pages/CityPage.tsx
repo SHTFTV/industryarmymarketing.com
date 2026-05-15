@@ -1,5 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import Layout from "@/components/Layout";
+import Seo from "@/components/Seo";
 import PageHeader from "@/components/PageHeader";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
@@ -114,9 +115,25 @@ const CityPage = () => {
     };
 
   const openTrades = TRADES.filter((t) => !data.taken.includes(t));
+  const faqList = faqs(data.name, data.rate);
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqList.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  };
 
   return (
     <Layout>
+      <Seo
+        title={`${data.name} Contractor Marketing | ${data.rate} Exclusive Territory`}
+        description={`Lock your trade in ${data.name}, ${data.province}. ${openTrades.length}+ trades open today. ${data.rate}. One contractor per trade per city — permanent.`}
+        path={`/cities/${slug}`}
+        jsonLd={faqJsonLd}
+      />
       <PageHeader
         eyebrow={`${data.name}, ${data.province} · IAM Territory`}
         title={`Own Your Trade In`}
@@ -254,7 +271,7 @@ const CityPage = () => {
             <h2 className="font-display text-4xl md:text-5xl text-foreground">Direct Answers</h2>
           </div>
           <div className="space-y-4">
-            {faqs(data.name, data.rate).map((f, i) => (
+            {faqList.map((f, i) => (
               <motion.div
                 key={f.q}
                 initial={{ opacity: 0, y: 10 }}

@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import Seo from "@/components/Seo";
 import PageHeader from "@/components/PageHeader";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -24,6 +25,11 @@ const steps = [
 
 const Backlinks = () => (
   <Layout>
+    <Seo
+      title="Backlinks | $10 Permanent Dofollow Backlinks"
+      description="One-time $10 permanent dofollow backlinks on 20+ year-old IAM domains. Niche-relevant, white-hat, 48-hour placement, no monthly fee."
+      path="/backlinks"
+    />
     <PageHeader
       eyebrow="The Three Tens · Guest Posting"
       title="Permanent Dofollow"
