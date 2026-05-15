@@ -84,17 +84,22 @@ const DofollowBacklinks = () => {
 
   const [copiedAll, setCopiedAll] = useState(false);
   const [copyFormat, setCopyFormat] = useState<"plain" | "url">("plain");
+  const [copySeparator, setCopySeparator] = useState<"newline" | "csv">("newline");
   const onCopyAll = async () => {
     if (visibleDomains.length === 0) return;
-    const text = visibleDomains
-      .map((d) => (copyFormat === "url" ? `https://${d}` : d))
-      .join("\n");
+    const items = visibleDomains.map((d) =>
+      copyFormat === "url" ? `https://${d}` : d,
+    );
+    const text =
+      copySeparator === "csv" ? items.join(",") : items.join("\n");
     try {
       await navigator.clipboard.writeText(text);
       setCopiedAll(true);
+      const formatLabel = copyFormat === "url" ? "Full URLs" : "Plain domains";
+      const sepLabel = copySeparator === "csv" ? "comma-separated" : "newline-separated";
       toast({
         title: `Copied ${visibleDomains.length} domain${visibleDomains.length === 1 ? "" : "s"}`,
-        description: copyFormat === "url" ? "Full URLs, newline-separated." : "Plain domains, newline-separated.",
+        description: `${formatLabel}, ${sepLabel}.`,
       });
       setTimeout(() => setCopiedAll(false), 1800);
     } catch {
@@ -225,6 +230,34 @@ const DofollowBacklinks = () => {
                     role="radio"
                     aria-checked={active}
                     onClick={() => setCopyFormat(opt.value)}
+                    className={`px-3 text-xs uppercase tracking-widest font-semibold transition-colors ${
+                      active
+                        ? "bg-primary text-primary-foreground"
+                        : "text-muted-foreground hover:text-foreground"
+                    }`}
+                  >
+                    {opt.label}
+                  </button>
+                );
+              })}
+            </div>
+            <div
+              role="radiogroup"
+              aria-label="Copy separator"
+              className="inline-flex rounded-md border border-border bg-card overflow-hidden h-9"
+            >
+              {([
+                { value: "newline", label: "Newline" },
+                { value: "csv", label: "CSV" },
+              ] as const).map((opt) => {
+                const active = copySeparator === opt.value;
+                return (
+                  <button
+                    key={opt.value}
+                    type="button"
+                    role="radio"
+                    aria-checked={active}
+                    onClick={() => setCopySeparator(opt.value)}
                     className={`px-3 text-xs uppercase tracking-widest font-semibold transition-colors ${
                       active
                         ? "bg-primary text-primary-foreground"
