@@ -167,4 +167,6 @@ jobs:
         uses: actions/cache/save@v4
         with:
           path: ${{ runner.temp }}/slack-cooldown
-          key: slack-cooldown-v1-${{ github.run_id }}
+          # Unique per run/attempt so each save succeeds; the restore step
+          # uses the `slack-cooldown-v2-` prefix to find the latest entry.
+          key: slack-cooldown-v2-${{ github.run_id }}-${{ github.run_attempt }}
