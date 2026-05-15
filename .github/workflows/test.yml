@@ -15,11 +15,25 @@ jobs:
     name: vitest (Node ${{ matrix.node-version }})
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - id: setup-node
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
+      - name: Report npm cache restore result
+        run: |
+          HIT='${{ steps.setup-node.outputs.cache-hit }}'
+          echo "setup-node cache-hit output: '${HIT:-<empty>}'"
+          if [ "$HIT" = "true" ]; then
+            echo "::notice title=npm cache::HIT — restored ~/.npm from cache key (lockfile unchanged)."
+          else
+            echo "::notice title=npm cache::MISS — no exact key match; cache will be saved at job end."
+          fi
+          echo "npm cache directory: $(npm config get cache)"
+          du -sh "$(npm config get cache)" 2>/dev/null || echo "(cache dir not present yet)"
       - name: Install dependencies
         run: npm ci
+      - name: Report npm cache size after install
+        run: du -sh "$(npm config get cache)" 2>/dev/null || true
       - name: Run vitest
         run: npm test
