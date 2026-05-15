@@ -90,12 +90,6 @@ const DofollowBacklinks = () => {
   const [quoteItems, setQuoteItems] = useState(false);
 
   const formattedOutput = useMemo(() => {
-    const isDelimited = copySeparator !== "newline";
-    const items = visibleDomains
-      .map((d) => (copyFormat === "url" ? `https://${d}` : d))
-      .map((s) =>
-        isDelimited && quoteItems ? `"${s.replace(/"/g, '""')}"` : s,
-      );
     const joiner =
       copySeparator === "csv"
         ? ","
@@ -106,6 +100,23 @@ const DofollowBacklinks = () => {
         : copySeparator === "scsv"
         ? ";"
         : "\n";
+    const isDelimited = copySeparator !== "newline";
+    // RFC 4180-style escaping, applied consistently to CSV/TSV/SSV/SCSV.
+    // A value is wrapped in double quotes when the user opts in, or when it
+    // contains the active delimiter, a double quote, or a line break.
+    const escapeForDelimited = (raw: string) => {
+      const needsQuotes =
+        quoteItems ||
+        raw.includes(joiner) ||
+        raw.includes('"') ||
+        raw.includes("\n") ||
+        raw.includes("\r");
+      if (!needsQuotes) return raw;
+      return `"${raw.replace(/"/g, '""')}"`;
+    };
+    const items = visibleDomains
+      .map((d) => (copyFormat === "url" ? `https://${d}` : d))
+      .map((s) => (isDelimited ? escapeForDelimited(s) : s));
     return items.join(joiner);
   }, [visibleDomains, copyFormat, copySeparator, quoteItems]);
 
