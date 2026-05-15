@@ -29,7 +29,7 @@ const DofollowBacklinks = () => {
             <div className="font-mono text-primary text-glow truncate group-hover:underline">
               {d.domain}
             </div>
-            <div className="text-xs text-muted-foreground mt-1">Live · {d.published}</div>
+            <div className="text-xs text-muted-foreground mt-1">{d.published}</div>
           </div>
           <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary shrink-0 ml-3" />
         </motion.a>
