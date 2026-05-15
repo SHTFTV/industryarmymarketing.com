@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { z } from "zod";
+import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -78,16 +79,17 @@ const ContactSection = () => {
     setSubmitting(true);
     try {
       const { website: _hp, ...clean } = parsed.data;
-      const payload: LeadPayload = {
-        ...clean,
+      const { error } = await supabase.from("leads").insert({
+        name: clean.name,
+        email: clean.email,
+        phone: clean.phone || null,
+        trade: clean.trade,
+        city: clean.city,
+        message: clean.message,
         source: "contact-page",
-        submittedAt: new Date().toISOString(),
-      };
-      // No CRM/notifications destination wired yet — log the validated lead
-      // so it's inspectable in the browser console. Replace this block with
-      // an Edge Function invoke once a destination is chosen.
-      console.info("[lead]", payload);
-      await new Promise((r) => setTimeout(r, 350));
+        user_agent: typeof navigator !== "undefined" ? navigator.userAgent : null,
+      });
+      if (error) throw error;
 
       toast({
         title: "Message received",
