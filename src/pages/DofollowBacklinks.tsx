@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/select";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ExternalLink, Server, Globe, Search, Copy, Check } from "lucide-react";
+import { ExternalLink, Server, Globe, Search, Copy, Check, ClipboardList } from "lucide-react";
 import { useMemo, useState } from "react";
 import { toast } from "@/hooks/use-toast";
 import { dofollowDomains } from "@/data/dofollowDomains";
@@ -76,6 +76,28 @@ const DofollowBacklinks = () => {
   const showNetlify = host === "all" || host === "Netlify";
   const showWordpress = host === "all" || host === "WordPress";
   const visibleCount = (showNetlify ? netlify.length : 0) + (showWordpress ? wordpress.length : 0);
+
+  const visibleDomains = [
+    ...(showNetlify ? netlify : []),
+    ...(showWordpress ? wordpress : []),
+  ].map((d) => d.domain);
+
+  const [copiedAll, setCopiedAll] = useState(false);
+  const onCopyAll = async () => {
+    if (visibleDomains.length === 0) return;
+    const text = visibleDomains.join("\n");
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopiedAll(true);
+      toast({
+        title: `Copied ${visibleDomains.length} domain${visibleDomains.length === 1 ? "" : "s"}`,
+        description: "Pasted as newline-separated list.",
+      });
+      setTimeout(() => setCopiedAll(false), 1800);
+    } catch {
+      toast({ title: "Copy failed", variant: "destructive" });
+    }
+  };
 
   const hostOptions: { value: HostFilter; label: string; count: number }[] = [
     { value: "all", label: "All Hosts", count: total },
@@ -182,6 +204,23 @@ const DofollowBacklinks = () => {
               ? `${visibleCount} of ${total} domains match`
               : `${visibleCount} live domains`}
           </p>
+          <div className="flex justify-center mt-3">
+            <Button
+              type="button"
+              variant="heroOutline"
+              size="sm"
+              onClick={onCopyAll}
+              disabled={visibleDomains.length === 0}
+              className="gap-2"
+            >
+              {copiedAll ? (
+                <Check className="w-4 h-4" />
+              ) : (
+                <ClipboardList className="w-4 h-4" />
+              )}
+              {copiedAll ? "Copied" : `Copy all ${visibleDomains.length}`}
+            </Button>
+          </div>
         </div>
       </section>
 
