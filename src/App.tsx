@@ -28,6 +28,8 @@ import ScanWizard from "./pages/ScanWizard.tsx";
 import LocalVancouver from "./pages/local/Vancouver.tsx";
 import LocalSurrey from "./pages/local/Surrey.tsx";
 import LocalLangley from "./pages/local/Langley.tsx";
+import AdminLogin from "./pages/admin/AdminLogin.tsx";
+import AdminLeads from "./pages/admin/AdminLeads.tsx";
 
 const queryClient = new QueryClient();
 
@@ -62,6 +64,8 @@ const App = () => (
           <Route path="/local/vancouver" element={<LocalVancouver />} />
           <Route path="/local/surrey" element={<LocalSurrey />} />
           <Route path="/local/langley" element={<LocalLangley />} />
+          <Route path="/admin/login" element={<AdminLogin />} />
+          <Route path="/admin/leads" element={<AdminLeads />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
