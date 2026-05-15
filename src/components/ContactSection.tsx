@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin, Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const contactInfo = [
@@ -12,21 +13,98 @@ const contactInfo = [
   { icon: MapPin, label: "Address", value: "3645 Kingsway, Vancouver, BC V5R 5M1, Canada" },
 ];
 
+const trades = [
+  "Roofing","Framing","Drywall","Plumbing","Electrical","HVAC","Excavation",
+  "Painting","Steel Stud","Foundations","Landscaping","Snow Removal",
+  "Interior Design","General Contracting","Mining / Logistics","Health & Wellness","Other",
+];
+
+const leadSchema = z.object({
+  name: z.string().trim().min(2, "Name is too short").max(100, "Name is too long"),
+  email: z.string().trim().email("Enter a valid email").max(255),
+  phone: z
+    .string()
+    .trim()
+    .max(40, "Phone is too long")
+    .regex(/^[+()\-\s\d]*$/, "Phone has invalid characters")
+    .optional()
+    .or(z.literal("")),
+  trade: z.string().trim().min(1, "Pick your trade").max(60),
+  city: z.string().trim().min(2, "City is required").max(80),
+  message: z.string().trim().min(10, "Tell us a bit more (min 10 characters)").max(2000),
+  // Honeypot — must be empty
+  website: z.string().max(0, "Spam detected").optional().or(z.literal("")),
+});
+
+export type LeadPayload = Omit<z.infer<typeof leadSchema>, "website"> & {
+  source: string;
+  submittedAt: string;
+};
+
+const fieldCls = "bg-card border-border focus:border-primary";
+const errCls = "text-destructive text-xs mt-1";
+
 const ContactSection = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+  const [form, setForm] = useState({
+    name: "", email: "", phone: "", trade: "", city: "", message: "", website: "",
+  });
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [submitting, setSubmitting] = useState(false);
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const set = <K extends keyof typeof form>(k: K, v: string) => {
+    setForm((f) => ({ ...f, [k]: v }));
+    if (errors[k]) setErrors((e) => ({ ...e, [k]: "" }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Message sent!",
-      description: "We'll get back to you within 24 hours.",
-    });
-    setName("");
-    setEmail("");
-    setMessage("");
+    const parsed = leadSchema.safeParse(form);
+    if (!parsed.success) {
+      const fieldErrors: Record<string, string> = {};
+      for (const issue of parsed.error.issues) {
+        const k = String(issue.path[0] ?? "");
+        if (k && !fieldErrors[k]) fieldErrors[k] = issue.message;
+      }
+      setErrors(fieldErrors);
+      toast({
+        title: "Please fix the highlighted fields",
+        description: "A few fields need your attention before we can send.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setSubmitting(true);
+    try {
+      const { website: _hp, ...clean } = parsed.data;
+      const payload: LeadPayload = {
+        ...clean,
+        source: "contact-page",
+        submittedAt: new Date().toISOString(),
+      };
+      // No CRM/notifications destination wired yet — log the validated lead
+      // so it's inspectable in the browser console. Replace this block with
+      // an Edge Function invoke once a destination is chosen.
+      console.info("[lead]", payload);
+      await new Promise((r) => setTimeout(r, 350));
+
+      toast({
+        title: "Message received",
+        description: "We'll confirm availability in your city within 24 hours.",
+      });
+      setForm({ name: "", email: "", phone: "", trade: "", city: "", message: "", website: "" });
+      setErrors({});
+    } catch (err) {
+      console.error("[lead] submit failed", err);
+      toast({
+        title: "Something went wrong",
+        description: "Please try again or call 1-604-761-1518.",
+        variant: "destructive",
+      });
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -73,35 +151,88 @@ const ContactSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             onSubmit={handleSubmit}
+            noValidate
             className="flex flex-col gap-4"
           >
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <Input
-                placeholder="Name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                required
-                className="bg-card border-border focus:border-primary"
-              />
-              <Input
-                type="email"
-                placeholder="Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                className="bg-card border-border focus:border-primary"
-              />
+              <div>
+                <Input
+                  placeholder="Full name *"
+                  value={form.name}
+                  onChange={(e) => set("name", e.target.value)}
+                  aria-invalid={!!errors.name}
+                  className={fieldCls}
+                />
+                {errors.name && <p className={errCls}>{errors.name}</p>}
+              </div>
+              <div>
+                <Input
+                  type="email"
+                  placeholder="Email *"
+                  value={form.email}
+                  onChange={(e) => set("email", e.target.value)}
+                  aria-invalid={!!errors.email}
+                  className={fieldCls}
+                />
+                {errors.email && <p className={errCls}>{errors.email}</p>}
+              </div>
+              <div>
+                <Input
+                  type="tel"
+                  placeholder="Phone (optional)"
+                  value={form.phone}
+                  onChange={(e) => set("phone", e.target.value)}
+                  aria-invalid={!!errors.phone}
+                  className={fieldCls}
+                />
+                {errors.phone && <p className={errCls}>{errors.phone}</p>}
+              </div>
+              <div>
+                <Input
+                  placeholder="City *"
+                  value={form.city}
+                  onChange={(e) => set("city", e.target.value)}
+                  aria-invalid={!!errors.city}
+                  className={fieldCls}
+                />
+                {errors.city && <p className={errCls}>{errors.city}</p>}
+              </div>
             </div>
-            <Textarea
-              placeholder="Your message..."
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              required
-              rows={6}
-              className="bg-card border-border focus:border-primary resize-none"
+            <div>
+              <select
+                value={form.trade}
+                onChange={(e) => set("trade", e.target.value)}
+                aria-invalid={!!errors.trade}
+                className="w-full h-10 rounded-md bg-card border border-border focus:border-primary focus:outline-none px-3 text-sm text-foreground"
+              >
+                <option value="">Select your trade *</option>
+                {trades.map((t) => <option key={t} value={t}>{t}</option>)}
+              </select>
+              {errors.trade && <p className={errCls}>{errors.trade}</p>}
+            </div>
+            <div>
+              <Textarea
+                placeholder="Tell us about your business and what you're looking for... *"
+                value={form.message}
+                onChange={(e) => set("message", e.target.value)}
+                aria-invalid={!!errors.message}
+                rows={6}
+                className={`${fieldCls} resize-none`}
+              />
+              {errors.message && <p className={errCls}>{errors.message}</p>}
+            </div>
+            {/* Honeypot — hidden from users, bots will fill it */}
+            <input
+              type="text"
+              tabIndex={-1}
+              autoComplete="off"
+              value={form.website}
+              onChange={(e) => set("website", e.target.value)}
+              className="hidden"
+              aria-hidden="true"
             />
-            <Button variant="hero" size="lg" type="submit" className="self-end">
-              Send Message
+            <Button variant="hero" size="lg" type="submit" disabled={submitting} className="self-end">
+              {submitting ? <><Loader2 className="w-4 h-4 mr-2 animate-spin" />Sending...</> : "Send Message"}
             </Button>
           </motion.form>
         </div>
