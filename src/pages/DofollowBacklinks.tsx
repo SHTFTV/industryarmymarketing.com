@@ -89,6 +89,7 @@ const DofollowBacklinks = () => {
   >("newline");
   const [quoteItems, setQuoteItems] = useState(false);
   const [jsonCompact, setJsonCompact] = useState(false);
+  const [xmlCompact, setXmlCompact] = useState(false);
 
   const formattedOutput = useMemo(() => {
     const values = visibleDomains.map((d) =>
@@ -107,10 +108,11 @@ const DofollowBacklinks = () => {
           .replace(/>/g, "&gt;")
           .replace(/"/g, "&quot;")
           .replace(/'/g, "&apos;");
-      const inner = values
-        .map((v) => `  <domain>${escapeXml(v)}</domain>`)
-        .join("\n");
-      return `<domains>\n${inner}\n</domains>`;
+      const tags = values.map((v) => `<domain>${escapeXml(v)}</domain>`);
+      if (xmlCompact) {
+        return `<domains>${tags.join("")}</domains>`;
+      }
+      return `<domains>\n${tags.map((t) => `  ${t}`).join("\n")}\n</domains>`;
     }
     const joiner =
       copySeparator === "csv"
@@ -138,7 +140,7 @@ const DofollowBacklinks = () => {
     };
     const items = values.map((s) => (isDelimited ? escapeForDelimited(s) : s));
     return items.join(joiner);
-  }, [visibleDomains, copyFormat, copySeparator, quoteItems, jsonCompact]);
+  }, [visibleDomains, copyFormat, copySeparator, quoteItems, jsonCompact, xmlCompact]);
 
   const onCopyAll = async () => {
     if (visibleDomains.length === 0) return;
@@ -158,7 +160,7 @@ const DofollowBacklinks = () => {
           : copySeparator === "json"
           ? jsonCompact ? "JSON array, compact" : "JSON array, pretty"
           : copySeparator === "xml"
-          ? "XML <domains>"
+          ? xmlCompact ? "XML <domains>, compact" : "XML <domains>, pretty"
           : "newline-separated";
       toast({
         title: `Copied ${visibleDomains.length} domain${visibleDomains.length === 1 ? "" : "s"}`,
@@ -368,28 +370,40 @@ const DofollowBacklinks = () => {
             >
               "Quoted"
             </button>
-            <button
-              type="button"
-              role="switch"
-              aria-checked={jsonCompact}
-              aria-label="Compact JSON output"
-              onClick={() => setJsonCompact((c) => !c)}
-              disabled={copySeparator !== "json"}
-              title={
-                copySeparator === "json"
-                  ? jsonCompact
-                    ? "Switch to pretty-printed JSON"
-                    : "Switch to single-line compact JSON"
-                  : "Switch to JSON to toggle compact output"
-              }
-              className={`h-9 px-3 inline-flex items-center rounded-md border text-xs uppercase tracking-widest font-semibold transition-all disabled:opacity-40 disabled:cursor-not-allowed ${
-                jsonCompact && copySeparator === "json"
-                  ? "bg-primary text-primary-foreground border-primary"
-                  : "bg-card text-muted-foreground border-border hover:text-foreground hover:border-primary/50"
-              }`}
-            >
-              Compact
-            </button>
+            {(() => {
+              const supportsCompact =
+                copySeparator === "json" || copySeparator === "xml";
+              const compactActive =
+                copySeparator === "json" ? jsonCompact : xmlCompact;
+              const toggle = () => {
+                if (copySeparator === "json") setJsonCompact((c) => !c);
+                else if (copySeparator === "xml") setXmlCompact((c) => !c);
+              };
+              return (
+                <button
+                  type="button"
+                  role="switch"
+                  aria-checked={compactActive}
+                  aria-label="Compact structured output"
+                  onClick={toggle}
+                  disabled={!supportsCompact}
+                  title={
+                    supportsCompact
+                      ? compactActive
+                        ? "Switch to pretty-printed output"
+                        : "Switch to single-line compact output"
+                      : "Switch to JSON or XML to toggle compact output"
+                  }
+                  className={`h-9 px-3 inline-flex items-center rounded-md border text-xs uppercase tracking-widest font-semibold transition-all disabled:opacity-40 disabled:cursor-not-allowed ${
+                    compactActive && supportsCompact
+                      ? "bg-primary text-primary-foreground border-primary"
+                      : "bg-card text-muted-foreground border-border hover:text-foreground hover:border-primary/50"
+                  }`}
+                >
+                  Compact
+                </button>
+              );
+            })()}
             <Button
               type="button"
               variant="heroOutline"
