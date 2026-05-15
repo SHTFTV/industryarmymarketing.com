@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <circle cx="32" cy="32" r="30" fill="#1a7a1a" stroke="#0d0d0d" stroke-width="2"/>
+  <circle cx="32" cy="32" r="22" fill="#2eaa2e"/>
+  <text x="32" y="42" text-anchor="middle" font-family="Impact, 'Bebas Neue', sans-serif" font-size="28" font-weight="900" fill="#ffffff">IA</text>
+</svg>
