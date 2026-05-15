@@ -92,6 +92,11 @@ const Backlinks = () => (
         <p className="text-center text-muted-foreground mt-8 text-sm">
           150+ more available — Medical, legal, events, media and more. Email for the full list.
         </p>
+        <div className="text-center mt-6">
+          <Button variant="heroOutline" asChild>
+            <Link to="/dofollow-backlinks">View All Live Domains →</Link>
+          </Button>
+        </div>
       </div>
     </section>
 
