@@ -63,7 +63,7 @@ const Footer = () => {
       <div className="border-t border-border">
         <div className="container mx-auto px-4 py-5 flex flex-col md:flex-row items-center justify-between gap-3">
           <p className="text-muted-foreground text-xs">© {new Date().getFullYear()} Industry Army Marketing · Vancouver, BC</p>
-          <p className="text-muted-foreground text-xs uppercase tracking-widest">The $10 Marketing Revolution · Est. 2004</p>
+          <p className="text-muted-foreground text-xs uppercase tracking-widest">The $10 Marketing Revolution · Est. 2011</p>
         </div>
       </div>
     </footer>
