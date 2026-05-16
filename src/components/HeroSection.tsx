@@ -57,6 +57,24 @@ const HeroSection = () => {
             <a href="#services">Our Services</a>
           </Button>
         </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          className="mt-12 mx-auto w-full max-w-[320px]"
+        >
+          <div className="relative w-full overflow-hidden rounded-lg border border-border" style={{ paddingBottom: "177.78%" }}>
+            <iframe
+              className="absolute inset-0 w-full h-full"
+              src="https://www.youtube.com/embed/mSofh5znBUA"
+              title="Industry Army Marketing"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
+          </div>
+        </motion.div>
       </div>
 
       {/* Bottom gradient line */}
