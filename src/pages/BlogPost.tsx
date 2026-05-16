@@ -1,7 +1,7 @@
 import { Link, useParams, Navigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import Layout from "@/components/Layout";
-import Seo from "@/components/Seo";
+import Seo, { SITE_URL } from "@/components/Seo";
 import { Button } from "@/components/ui/button";
 import { getPost, blogPosts } from "@/data/blogPosts";
 
@@ -63,20 +63,30 @@ const BlogPost = () => {
     },
   ];
 
+  const monthMap: Record<string, string> = {
+    January: "01", February: "02", March: "03", April: "04",
+    May: "05", June: "06", July: "07", August: "08",
+    September: "09", October: "10", November: "11", December: "12",
+  };
+  const [mName, yStr] = post.date.split(" ");
+  const isoDate = monthMap[mName] && yStr ? `${yStr}-${monthMap[mName]}-01` : post.date;
+  const absoluteImage = /^https?:\/\//i.test(post.image) ? post.image : `${SITE_URL}${post.image}`;
+
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: post.title,
     description: post.metaDescription,
-    image: post.image,
-    datePublished: post.date,
+    image: absoluteImage,
+    datePublished: isoDate,
+    dateModified: isoDate,
     author: { "@type": "Organization", name: "Industry Army Marketing" },
     publisher: {
       "@type": "Organization",
       name: "Industry Army Marketing",
-      logo: { "@type": "ImageObject", url: "/favicon.svg" },
+      logo: { "@type": "ImageObject", url: `${SITE_URL}/favicon.svg` },
     },
-    mainEntityOfPage: { "@type": "WebPage", "@id": `/blog/${post.slug}` },
+    mainEntityOfPage: { "@type": "WebPage", "@id": `${SITE_URL}/blog/${post.slug}` },
   };
 
   const faqSchema = {
@@ -93,9 +103,9 @@ const BlogPost = () => {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "/" },
-      { "@type": "ListItem", position: 2, name: "Blog", item: "/blog" },
-      { "@type": "ListItem", position: 3, name: post.trade, item: `/blog/${post.slug}` },
+      { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
+      { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE_URL}/blog` },
+      { "@type": "ListItem", position: 3, name: post.trade, item: `${SITE_URL}/blog/${post.slug}` },
     ],
   };
 
@@ -106,7 +116,7 @@ const BlogPost = () => {
         name: `${post.trade} in ${post.city} — ${post.brand}`,
         description: `Video overview of the ${post.brand} exclusive territory program for ${post.trade} contractors in ${post.city}, ${post.province}.`,
         thumbnailUrl: `https://i.ytimg.com/vi/${post.video}/maxresdefault.jpg`,
-        uploadDate: "2026-01-01T00:00:00Z",
+        uploadDate: `${isoDate}T00:00:00Z`,
         contentUrl: `https://www.youtube.com/watch?v=${post.video}`,
         embedUrl: `https://www.youtube.com/embed/${post.video}`,
       }
