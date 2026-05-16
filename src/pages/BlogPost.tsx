@@ -91,14 +91,23 @@ const BlogPost = () => {
     "@type": "Article",
     headline: post.title,
     description: post.metaDescription,
-    image: absoluteImage,
+    image: {
+      "@type": "ImageObject",
+      url: absoluteImage,
+      caption: heroImageAlt,
+      description: heroImageAlt,
+    },
     datePublished: isoDate,
     dateModified: isoDate,
     author: { "@type": "Organization", name: "Industry Army Marketing" },
     publisher: {
       "@type": "Organization",
       name: "Industry Army Marketing",
-      logo: { "@type": "ImageObject", url: `${SITE_URL}/favicon.svg` },
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE_URL}/favicon.svg`,
+        caption: "Industry Army Marketing logo",
+      },
     },
     mainEntityOfPage: { "@type": "WebPage", "@id": `${SITE_URL}/blog/${post.slug}` },
   };
@@ -130,6 +139,11 @@ const BlogPost = () => {
         name: `${post.trade} in ${post.city} — ${post.brand}`,
         description: `Video overview of the ${post.brand} exclusive territory program for ${post.trade} contractors in ${post.city}, ${post.province}.`,
         thumbnailUrl: `https://i.ytimg.com/vi/${post.video}/maxresdefault.jpg`,
+        thumbnail: {
+          "@type": "ImageObject",
+          url: `https://i.ytimg.com/vi/${post.video}/maxresdefault.jpg`,
+          caption: heroImageAlt,
+        },
         uploadDate: `${isoDate}T00:00:00Z`,
         contentUrl: `https://www.youtube.com/watch?v=${post.video}`,
         embedUrl: `https://www.youtube.com/embed/${post.video}`,
@@ -172,9 +186,9 @@ const BlogPost = () => {
           </p>
 
           <img
-            src={post.image}
-            alt={`Premium ${post.trade} services in ${post.city}, ${post.province} — verified ${post.brand} partner project image`}
-            title={`${post.trade} ${post.city} — ${post.brand} territory partner`}
+            src={heroImage}
+            alt={heroImageAlt}
+            title={heroImageAlt}
             width={1280}
             height={720}
             className="w-full rounded-lg border border-border mb-10"
