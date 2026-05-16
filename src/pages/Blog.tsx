@@ -4,113 +4,99 @@ import PageHeader from "@/components/PageHeader";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-
-const posts = [
-  {
-    category: "Marketing Strategy",
-    title: "Why Exclusive Territory Marketing Beats Google Ads for Contractors",
-    date: "March 2026",
-    read: "8 min read",
-    excerpt:
-      "Every year BC contractors pour thousands into Google Ads — only to bid against each other, watch costs climb, and share leads with three competitors. Exclusive territory marketing changes the equation entirely.",
-    featured: true,
-  },
-  {
-    category: "Reputation",
-    title: "The 5-Minute Review Response: Why Speed Is Your Competitive Edge",
-    date: "February 2026",
-    read: "5 min read",
-    excerpt:
-      "Contractors who respond to negative reviews within an hour recover customer trust at 3x the rate of those who wait 24 hours. I-Spy-R's WhatsApp alerts make the 5-minute response standard.",
-  },
-  {
-    category: "SEO",
-    title: "Premium .io and .tv Domains: Why They Rank Faster Than .com for Trades",
-    date: "February 2026",
-    read: "6 min read",
-    excerpt:
-      "Generic .com domains are crowded. Trade-specific .io and .tv domains carry stronger topical authority signals and they're far less competitive.",
-  },
-  {
-    category: "Business",
-    title: "How a Langley Electrician Locked 4 Cities and Doubled Inbound Calls",
-    date: "January 2026",
-    read: "4 min read",
-    excerpt:
-      "Mike C. had been spending $800/month on shared leads. He switched to four IAM exclusive territories on sparkys.tv. Within 60 days his inbound call volume had doubled.",
-  },
-  {
-    category: "Legal",
-    title: "PIPEDA and Your Client Data: What Canadian Contractors Need to Know in 2026",
-    date: "January 2026",
-    read: "7 min read",
-    excerpt:
-      "Canada's privacy law applies to any business collecting customer information — including lead forms on your website. Most contractors are non-compliant without knowing it.",
-  },
-  {
-    category: "Marketing",
-    title: "Guest Posts That Actually Work: The IAM Backlink Strategy for Trade SEO",
-    date: "December 2025",
-    read: "5 min read",
-    excerpt:
-      "A $10 guest post on a premium trade domain isn't just content — it's a do-follow backlink from a topically relevant, high-authority domain.",
-  },
-];
+import { blogPosts } from "@/data/blogPosts";
 
 const Blog = () => {
-  const [featured, ...rest] = posts;
+  const [featured, ...rest] = blogPosts;
   return (
     <Layout>
       <Seo
-        title="Blog — Industry Army Intel | IAM"
-        description="Trade marketing tactics, reputation management tips, contractor business advice, and IAM network updates. No filler."
+        title="Blog — Industry Army Intel | $10 Exclusive Trade Territories"
+        description="2,000-word guides to exclusive territory marketing for contractors, trades, and service pros across BC and Canada. One trade per city. $10/month."
         path="/blog"
       />
       <PageHeader
         eyebrow="Industry Army Intel"
         title="The"
         highlight="Blog"
-        description="Trade marketing tactics, reputation management tips, contractor business advice, and IAM network updates. No filler."
+        description="Deep dives on $10 exclusive territory marketing — one guide per trade domain. SEO, AEO, GEO, and the math behind the model."
       />
-      <section className="py-20">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <p className="text-primary uppercase tracking-[0.3em] text-xs font-semibold mb-3">Featured Post</p>
+
+      <section className="py-16">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <p className="text-primary uppercase tracking-[0.3em] text-xs font-semibold mb-3">Featured</p>
           <motion.article
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            className="p-8 md:p-12 rounded-lg bg-card border border-primary/30"
+            className="grid md:grid-cols-2 gap-8 p-6 md:p-8 rounded-lg bg-card border border-primary/30"
           >
-            <p className="text-muted-foreground text-xs uppercase tracking-widest mb-3">
-              {featured.date} · {featured.category} · {featured.read}
-            </p>
-            <h2 className="font-display text-3xl md:text-5xl text-foreground mb-4">
-              {featured.title}
-            </h2>
-            <p className="text-muted-foreground leading-relaxed mb-6">{featured.excerpt}</p>
-            <Button variant="hero" asChild>
-              <Link to="/contact">Get Your Territory</Link>
-            </Button>
+            <Link to={`/blog/${featured.slug}`} className="block">
+              <img
+                src={featured.image}
+                alt={`${featured.trade} in ${featured.city} — ${featured.brand}`}
+                width={1280}
+                height={720}
+                className="w-full rounded-md border border-border"
+              />
+            </Link>
+            <div className="flex flex-col justify-center">
+              <p className="text-muted-foreground text-xs uppercase tracking-widest mb-3">
+                {featured.date} · {featured.category} · {featured.brand}
+              </p>
+              <h2 className="font-display text-3xl md:text-4xl text-foreground mb-3 leading-tight">
+                {featured.trade} in {featured.city}: The $10 Exclusive Territory Guide
+              </h2>
+              <p className="text-muted-foreground leading-relaxed mb-5">{featured.pain}</p>
+              <Button variant="hero" asChild className="self-start">
+                <Link to={`/blog/${featured.slug}`}>Read the guide</Link>
+              </Button>
+            </div>
           </motion.article>
 
-          <p className="text-primary uppercase tracking-[0.3em] text-xs font-semibold mt-16 mb-3">
-            Latest Intel
-          </p>
-          <h3 className="font-display text-3xl text-foreground mb-8">Recent Articles</h3>
-          <div className="grid md:grid-cols-2 gap-5">
+          <p className="text-primary uppercase tracking-[0.3em] text-xs font-semibold mt-16 mb-3">All Intel</p>
+          <h3 className="font-display text-3xl text-foreground mb-8">Every trade. Every territory.</h3>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {rest.map((p, i) => (
               <motion.article
-                key={p.title}
+                key={p.slug}
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.05 }}
-                className="p-6 rounded-lg bg-card border border-border hover:border-primary/40 transition-colors"
+                transition={{ delay: Math.min(i * 0.03, 0.3) }}
+                className="rounded-lg bg-card border border-border hover:border-primary/40 transition-colors overflow-hidden flex flex-col"
               >
-                <p className="text-primary text-xs uppercase tracking-widest mb-2">{p.category}</p>
-                <h4 className="font-display text-xl text-foreground mb-2 leading-tight">{p.title}</h4>
-                <p className="text-muted-foreground text-xs uppercase tracking-widest mb-3">
-                  {p.date} · {p.read}
-                </p>
-                <p className="text-muted-foreground text-sm leading-relaxed">{p.excerpt}</p>
+                <Link to={`/blog/${p.slug}`} className="block">
+                  <img
+                    src={p.image}
+                    alt={`${p.trade} in ${p.city} — ${p.brand}`}
+                    loading="lazy"
+                    width={1280}
+                    height={720}
+                    className="w-full aspect-video object-cover"
+                  />
+                </Link>
+                <div className="p-5 flex flex-col flex-1">
+                  <p className="text-primary text-xs uppercase tracking-widest mb-2">
+                    {p.category} · {p.brand}
+                  </p>
+                  <h4 className="font-display text-xl text-foreground mb-2 leading-tight">
+                    <Link to={`/blog/${p.slug}`} className="hover:text-primary transition-colors">
+                      {p.trade} in {p.city}
+                    </Link>
+                  </h4>
+                  <p className="text-muted-foreground text-xs uppercase tracking-widest mb-3">
+                    {p.date} · 10 min read
+                  </p>
+                  <p className="text-muted-foreground text-sm leading-relaxed line-clamp-3 mb-4">
+                    {p.pain}
+                  </p>
+                  <Link
+                    to={`/blog/${p.slug}`}
+                    className="text-primary text-sm uppercase tracking-widest mt-auto self-start hover:underline"
+                  >
+                    Read →
+                  </Link>
+                </div>
               </motion.article>
             ))}
           </div>
