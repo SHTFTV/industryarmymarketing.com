@@ -31,6 +31,7 @@ import LocalSurrey from "./pages/local/Surrey.tsx";
 import LocalLangley from "./pages/local/Langley.tsx";
 import AdminLogin from "./pages/admin/AdminLogin.tsx";
 import AdminLeads from "./pages/admin/AdminLeads.tsx";
+import PwaCheck from "./pages/PwaCheck.tsx";
 
 const queryClient = new QueryClient();
 
@@ -72,6 +73,7 @@ const App = () => (
           <Route path="/local/langley" element={<LocalLangley />} />
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route path="/admin/leads" element={<AdminLeads />} />
+          <Route path="/pwa-check" element={<PwaCheck />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
