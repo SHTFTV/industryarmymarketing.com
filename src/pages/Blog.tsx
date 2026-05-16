@@ -5,9 +5,44 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { blogPosts } from "@/data/blogPosts";
+import { useMemo, useState } from "react";
+import { Input } from "@/components/ui/input";
+import { Search, X } from "lucide-react";
 
 const Blog = () => {
   const [featured, ...rest] = blogPosts;
+  const [query, setQuery] = useState("");
+  const [city, setCity] = useState<string>("all");
+  const [category, setCategory] = useState<string>("all");
+
+  const cities = useMemo(
+    () => Array.from(new Set(blogPosts.map((p) => p.city))).sort(),
+    []
+  );
+  const categories = useMemo(
+    () => Array.from(new Set(blogPosts.map((p) => p.category))).sort(),
+    []
+  );
+
+  const filtered = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    return rest.filter((p) => {
+      if (city !== "all" && p.city !== city) return false;
+      if (category !== "all" && p.category !== category) return false;
+      if (!q) return true;
+      return (
+        p.trade.toLowerCase().includes(q) ||
+        p.brand.toLowerCase().includes(q) ||
+        p.city.toLowerCase().includes(q) ||
+        p.category.toLowerCase().includes(q) ||
+        p.excerpt.toLowerCase().includes(q) ||
+        p.pain.toLowerCase().includes(q)
+      );
+    });
+  }, [rest, query, city, category]);
+
+  const hasFilters = query !== "" || city !== "all" || category !== "all";
+
   return (
     <Layout>
       <Seo
@@ -56,8 +91,61 @@ const Blog = () => {
           <p className="text-primary uppercase tracking-[0.3em] text-xs font-semibold mt-16 mb-3">All Intel</p>
           <h3 className="font-display text-3xl text-foreground mb-8">Every trade. Every territory.</h3>
 
+          <div className="grid md:grid-cols-[1fr_auto_auto_auto] gap-3 mb-8 items-center">
+            <div className="relative">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+              <Input
+                type="search"
+                placeholder="Search trades, cities, keywords…"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                className="pl-9"
+                aria-label="Search blog posts"
+              />
+            </div>
+            <select
+              value={city}
+              onChange={(e) => setCity(e.target.value)}
+              aria-label="Filter by city"
+              className="h-10 rounded-md border border-input bg-background px-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-ring"
+            >
+              <option value="all">All cities</option>
+              {cities.map((c) => (
+                <option key={c} value={c}>{c}</option>
+              ))}
+            </select>
+            <select
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}
+              aria-label="Filter by niche"
+              className="h-10 rounded-md border border-input bg-background px-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-ring"
+            >
+              <option value="all">All niches</option>
+              {categories.map((c) => (
+                <option key={c} value={c}>{c}</option>
+              ))}
+            </select>
+            {hasFilters && (
+              <button
+                onClick={() => { setQuery(""); setCity("all"); setCategory("all"); }}
+                className="inline-flex items-center gap-1 text-xs uppercase tracking-widest text-muted-foreground hover:text-primary transition-colors px-2"
+              >
+                <X className="h-3 w-3" /> Clear
+              </button>
+            )}
+          </div>
+
+          <p className="text-muted-foreground text-xs uppercase tracking-widest mb-5">
+            {filtered.length} {filtered.length === 1 ? "guide" : "guides"}
+          </p>
+
+          {filtered.length === 0 ? (
+            <div className="rounded-lg border border-border bg-card p-10 text-center">
+              <p className="text-muted-foreground">No guides match those filters. Try clearing them.</p>
+            </div>
+          ) : (
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {rest.map((p, i) => (
+            {filtered.map((p, i) => (
               <motion.article
                 key={p.slug}
                 initial={{ opacity: 0, y: 12 }}
@@ -100,6 +188,7 @@ const Blog = () => {
               </motion.article>
             ))}
           </div>
+          )}
         </div>
       </section>
     </Layout>
