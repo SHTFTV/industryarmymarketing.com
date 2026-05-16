@@ -186,9 +186,9 @@ const BlogPost = () => {
           </p>
 
           <img
-            src={post.image}
-            alt={`Premium ${post.trade} services in ${post.city}, ${post.province} — verified ${post.brand} partner project image`}
-            title={`${post.trade} ${post.city} — ${post.brand} territory partner`}
+            src={heroImage}
+            alt={heroImageAlt}
+            title={heroImageAlt}
             width={1280}
             height={720}
             className="w-full rounded-lg border border-border mb-10"
