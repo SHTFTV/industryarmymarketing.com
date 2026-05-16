@@ -15,6 +15,26 @@ const cities = ["vancouver", "surrey", "calgary", "edmonton", "toronto", "kelown
 const localCities = ["vancouver", "surrey", "langley"];
 const niches = ["steel-stud", "mining-logistics"];
 
+const blogSlugs = [
+  "kitchen-cabinets-vancouver",
+  "weddings-vancouver",
+  "tractors-bc",
+  "framers-vancouver",
+  "hvacr-vancouver",
+  "excavators-bc",
+  "painters-vancouver",
+  "roofers-vancouver",
+  "drywallers-vancouver",
+  "plumbers-vancouver",
+  "demolition-vancouver",
+  "interior-designers-vancouver",
+  "backhaul-bc",
+  "snow-removal-bc",
+  "videographers-vancouver",
+  "errands-vancouver",
+  "ten-dollar-territories-explained",
+];
+
 const entries: SitemapEntry[] = [
   { path: "/", changefreq: "weekly", priority: "1.0" },
   { path: "/how-it-works", changefreq: "monthly", priority: "0.7" },
@@ -38,6 +58,11 @@ const entries: SitemapEntry[] = [
   ...localCities.map((c) => ({ path: `/local/${c}`, changefreq: "monthly" as const, priority: "0.7" })),
   ...cities.map((c) => ({
     path: `/cities/${c}`,
+    changefreq: "monthly" as const,
+    priority: "0.7",
+  })),
+  ...blogSlugs.map((s) => ({
+    path: `/blog/${s}`,
     changefreq: "monthly" as const,
     priority: "0.7",
   })),

@@ -19,6 +19,7 @@ import Network from "./pages/Network.tsx";
 import EyeSpyr from "./pages/EyeSpyr.tsx";
 import Builder from "./pages/Builder.tsx";
 import Blog from "./pages/Blog.tsx";
+import BlogPost from "./pages/BlogPost.tsx";
 import Investors from "./pages/Investors.tsx";
 import Dashboard from "./pages/Dashboard.tsx";
 import WallOfLove from "./pages/WallOfLove.tsx";
@@ -62,6 +63,7 @@ const App = () => (
           <Route path="/eyespyr" element={<EyeSpyr />} />
           <Route path="/builder" element={<Builder />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/investors" element={<Investors />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/wall-of-love" element={<WallOfLove />} />
