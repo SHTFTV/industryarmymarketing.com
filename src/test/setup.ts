@@ -1,4 +1,8 @@
 import "@testing-library/jest-dom";
+import { expect } from "vitest";
+import { jsonLdSerializer } from "./jsonLdSerializer";
+
+expect.addSnapshotSerializer(jsonLdSerializer);
 
 Object.defineProperty(window, "matchMedia", {
   writable: true,
