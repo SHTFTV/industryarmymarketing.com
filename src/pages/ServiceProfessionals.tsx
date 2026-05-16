@@ -18,13 +18,8 @@ const categories = [
   { emoji: "💍", name: "Wedding Planners", domain: "weddings.io" },
   { emoji: "🔑", name: "Real Estate", domain: "loveourlistings.com" },
   { emoji: "⚖️", name: "Legal", domain: "lawyersadvice.co" },
-  { emoji: "💆", name: "Massage Therapy", domain: "massagetherapy.tv" },
   { emoji: "🌱", name: "Naturopaths", domain: "naturopaths.io" },
   { emoji: "🦷", name: "Dentists", domain: "dentists.ltd" },
-  { emoji: "🧘", name: "Yoga Studios", domain: "yoga.io" },
-  { emoji: "🥗", name: "Nutritionists", domain: "nutritionists.io" },
-  { emoji: "🏥", name: "Physiotherapists", domain: "physiotherapists.io" },
-  { emoji: "🧠", name: "Counselors", domain: "counselors.io" },
   { emoji: "🪵", name: "Log Cabins", domain: "logcabin.ltd" },
 ];
 
