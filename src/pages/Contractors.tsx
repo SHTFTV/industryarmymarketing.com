@@ -41,6 +41,26 @@ const Contractors = () => (
       description="Premium industry domains, one contractor per trade per city. Lock yours before your competition does."
     />
 
+    <section className="py-20 border-y border-border bg-background">
+      <div className="container mx-auto px-4 max-w-5xl">
+        <div className="text-center mb-10">
+          <h2 className="font-display text-4xl md:text-5xl text-foreground">
+            See It <span className="text-primary">In Action</span>
+          </h2>
+        </div>
+        <div className="relative w-full overflow-hidden rounded-lg border border-border" style={{ paddingBottom: "56.25%" }}>
+          <iframe
+            className="absolute inset-0 w-full h-full"
+            src="https://www.youtube.com/embed/VQxS3STSLHA"
+            title="Industry Army Contractors"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          />
+        </div>
+      </div>
+    </section>
+
     <section className="py-20 gradient-tactical border-y border-border">
       <div className="container mx-auto px-4">
         <div className="text-center mb-14">
