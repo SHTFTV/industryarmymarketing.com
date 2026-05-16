@@ -16,21 +16,29 @@ const renderPost = (slug: string) =>
     </HelmetProvider>
   );
 
-const collectFaqSchemaQuestions = (): string[] => {
+type FaqSchema = {
+  "@context"?: string;
+  "@type": string;
+  mainEntity: Array<{
+    "@type": string;
+    name: string;
+    acceptedAnswer?: { "@type": string; text: string };
+  }>;
+};
+
+const getFaqSchema = (): FaqSchema | null => {
   const scripts = Array.from(
     document.querySelectorAll('script[type="application/ld+json"]')
   );
   for (const s of scripts) {
     try {
       const json = JSON.parse(s.textContent || "");
-      if (json["@type"] === "FAQPage" && Array.isArray(json.mainEntity)) {
-        return json.mainEntity.map((q: { name: string }) => q.name);
-      }
+      if (json["@type"] === "FAQPage") return json as FaqSchema;
     } catch {
       /* ignore */
     }
   }
-  return [];
+  return null;
 };
 
 describe("BlogPost FAQ rendering matches FAQPage JSON-LD", () => {
@@ -56,9 +64,22 @@ describe("BlogPost FAQ rendering matches FAQPage JSON-LD", () => {
         within(faqSection).getAllByRole("heading", { level: 3 })
       ).map((h) => h.textContent?.trim() ?? "");
 
-      const schemaQuestions = collectFaqSchemaQuestions();
-      const dataQuestions = post.faqs.map((f) => f.q);
+      const schema = getFaqSchema();
+      expect(schema, `FAQPage JSON-LD missing on /blog/${post.slug}`).toBeTruthy();
+      expect(schema!["@type"]).toBe("FAQPage");
+      expect(Array.isArray(schema!.mainEntity)).toBe(true);
+      expect(schema!.mainEntity.length).toBe(post.faqs.length);
 
+      for (const [i, entity] of schema!.mainEntity.entries()) {
+        expect(entity["@type"]).toBe("Question");
+        expect(entity.name).toBe(post.faqs[i].q);
+        expect(entity.acceptedAnswer).toBeDefined();
+        expect(entity.acceptedAnswer!["@type"]).toBe("Answer");
+        expect(entity.acceptedAnswer!.text).toBe(post.faqs[i].a);
+      }
+
+      const schemaQuestions = schema!.mainEntity.map((q) => q.name);
+      const dataQuestions = post.faqs.map((f) => f.q);
       expect(renderedQuestions).toEqual(dataQuestions);
       expect(schemaQuestions).toEqual(dataQuestions);
       expect(renderedQuestions).toEqual(schemaQuestions);
