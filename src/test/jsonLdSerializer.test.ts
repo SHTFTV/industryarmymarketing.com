@@ -40,7 +40,34 @@ describe("jsonLdSerializer.test predicate", () => {
     expect(jsonLdSerializer.test("@type")).toBe(false);
     expect(jsonLdSerializer.test(42)).toBe(false);
     expect(jsonLdSerializer.test(true)).toBe(false);
-    expect(jsonLdSerializer.test([{ "@type": "Thing" }])).toBe(false);
+  });
+
+  it("does NOT match arrays of arbitrary plain objects", () => {
+    expect(jsonLdSerializer.test([])).toBe(false);
+    expect(jsonLdSerializer.test([{ foo: "bar" }, { baz: 1 }])).toBe(false);
+    expect(
+      jsonLdSerializer.test([
+        { nested: { a: 1, b: [2, 3] } },
+        { other: "value" },
+      ])
+    ).toBe(false);
+    expect(jsonLdSerializer.test([1, "two", null, true])).toBe(false);
+  });
+
+  it("matches arrays containing a JSON-LD object", () => {
+    expect(jsonLdSerializer.test([{ "@type": "Thing" }])).toBe(true);
+    expect(
+      jsonLdSerializer.test([{ foo: "bar" }, { "@context": "https://schema.org" }])
+    ).toBe(true);
+  });
+
+  it("matches arrays containing a deeply nested JSON-LD object", () => {
+    expect(
+      jsonLdSerializer.test([
+        { foo: "bar" },
+        { wrapper: { inner: { "@type": "Question" } } },
+      ])
+    ).toBe(true);
   });
 
   it("does NOT match objects whose keys merely resemble JSON-LD", () => {
