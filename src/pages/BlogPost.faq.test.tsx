@@ -85,4 +85,41 @@ describe("BlogPost FAQ rendering matches FAQPage JSON-LD", () => {
       expect(renderedQuestions).toEqual(schemaQuestions);
     });
   }
+
+  for (const post of blogPosts) {
+    it(`/${post.slug}: a FAQPage JSON-LD script is present with correct @type`, async () => {
+      renderPost(post.slug);
+      await new Promise((r) => setTimeout(r, 0));
+
+      const scripts = Array.from(
+        document.querySelectorAll('script[type="application/ld+json"]')
+      );
+      expect(
+        scripts.length,
+        `No JSON-LD scripts emitted on /blog/${post.slug}`
+      ).toBeGreaterThan(0);
+
+      const parsed = scripts
+        .map((s) => {
+          try {
+            return JSON.parse(s.textContent || "");
+          } catch {
+            return null;
+          }
+        })
+        .filter(Boolean);
+
+      const faqSchemas = parsed.filter((j) => j["@type"] === "FAQPage");
+      expect(
+        faqSchemas.length,
+        `Expected exactly one FAQPage JSON-LD on /blog/${post.slug}, found ${faqSchemas.length}`
+      ).toBe(1);
+
+      const faq = faqSchemas[0];
+      expect(faq["@context"]).toBe("https://schema.org");
+      expect(faq["@type"]).toBe("FAQPage");
+      expect(faq["@type"]).not.toBe("FAQ");
+      expect(faq["@type"]).not.toBe("QAPage");
+    });
+  }
 });
