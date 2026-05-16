@@ -74,6 +74,18 @@ const BlogPost = () => {
   const heroImage = post.image && post.image.trim() ? post.image : FALLBACK_OG_IMAGE;
   const absoluteImage = /^https?:\/\//i.test(heroImage) ? heroImage : `${SITE_URL}${heroImage}`;
 
+  const FALLBACK_IMAGE_ALT =
+    "Industry Army Marketing — $10 exclusive territory program for contractors and trades";
+  const hasHero = post.image && post.image.trim();
+  const trade = post.trade?.trim();
+  const city = post.city?.trim();
+  const province = post.province?.trim();
+  const brand = post.brand?.trim();
+  const heroImageAlt =
+    hasHero && trade && city && province && brand
+      ? `${trade} in ${city}, ${province} — ${brand} exclusive territory partner`
+      : FALLBACK_IMAGE_ALT;
+
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -136,7 +148,7 @@ const BlogPost = () => {
         path={`/blog/${post.slug}`}
         type="article"
         image={heroImage}
-        imageAlt={`${post.trade} in ${post.city}, ${post.province} — ${post.brand} exclusive territory partner`}
+        imageAlt={heroImageAlt}
         jsonLd={schemas}
       />
 
