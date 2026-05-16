@@ -9,51 +9,51 @@ exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /backhaul-bc: FAQPage 
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A backhaul is the return load on an outbound trip. Filling backhauls cuts deadhead miles, drops cost per mile 25 to 40 percent, and improves the carrier P&L by 8 to 12 percent.",
+        "text": "A backhaul is the return load on an outbound trip. Filling backhauls cuts deadhead miles, drops cost per mile 25 to 40 percent, and improves the carrier P&L by 8 to 12 percent."
       },
-      "name": "What is a backhaul and why does it matter?",
+      "name": "What is a backhaul and why does it matter?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "One verified carrier per metro pair (Vancouver-Calgary, Vancouver-Edmonton, etc.). Shippers see one trusted carrier, not 40 broker postings.",
+        "text": "One verified carrier per metro pair (Vancouver-Calgary, Vancouver-Edmonton, etc.). Shippers see one trusted carrier, not 40 broker postings."
       },
-      "name": "How does the exclusive lane work?",
+      "name": "How does the exclusive lane work?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "BC carriers must hold an NSC certificate. Territory partners maintain Satisfactory rating minimum with current CVOR record.",
+        "text": "BC carriers must hold an NSC certificate. Territory partners maintain Satisfactory rating minimum with current CVOR record."
       },
-      "name": "What NSC rating is required?",
+      "name": "What NSC rating is required?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Both. Carrier profiles publish equipment (dry van, reefer, flatbed) and minimum/maximum weight thresholds.",
+        "text": "Both. Carrier profiles publish equipment (dry van, reefer, flatbed) and minimum/maximum weight thresholds."
       },
-      "name": "Do you cover LTL and FTL?",
+      "name": "Do you cover LTL and FTL?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Direct rate from carrier — no broker markup. Spot rates publish daily, contract rates available on quarterly agreements.",
+        "text": "Direct rate from carrier — no broker markup. Spot rates publish daily, contract rates available on quarterly agreements."
       },
-      "name": "How are loads priced?",
+      "name": "How are loads priced?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Load boards are auctions. Backhaul.io is direct relationship with the verified carrier holding the lane.",
+        "text": "Load boards are auctions. Backhaul.io is direct relationship with the verified carrier holding the lane."
       },
-      "name": "Why backhaul.io vs DAT or Loadlink?",
-    },
-  ],
+      "name": "Why backhaul.io vs DAT or Loadlink?"
+    }
+  ]
 }
 `;
 
@@ -66,51 +66,51 @@ exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /demolition-vancouver:
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "$28,000 to $48,000 for a standard pre-war SFH including deconstruction, hazmat, disposal, and salvage credit.",
+        "text": "$28,000 to $48,000 for a standard pre-war SFH including deconstruction, hazmat, disposal, and salvage credit."
       },
-      "name": "What does house demolition cost in Vancouver in 2026?",
+      "name": "What does house demolition cost in Vancouver in 2026?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Demolition smashes and disposes. Deconstruction dismantles in reverse — required by City of Vancouver bylaw for homes built before 1950, with 75 percent material diversion mandatory.",
+        "text": "Demolition smashes and disposes. Deconstruction dismantles in reverse — required by City of Vancouver bylaw for homes built before 1950, with 75 percent material diversion mandatory."
       },
-      "name": "Whats the difference between demolition and deconstruction?",
+      "name": "Whats the difference between demolition and deconstruction?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Deconstruction: 14 to 21 working days. Standard demo: 3 to 5 days. Hazmat abatement adds 5 to 10 days.",
+        "text": "Deconstruction: 14 to 21 working days. Standard demo: 3 to 5 days. Hazmat abatement adds 5 to 10 days."
       },
-      "name": "How long does the process take?",
+      "name": "How long does the process take?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes — WorkSafeBC mandates pre-demo hazmat survey for any structure built before 1990. Lab turnaround 5 to 10 business days.",
+        "text": "Yes — WorkSafeBC mandates pre-demo hazmat survey for any structure built before 1990. Lab turnaround 5 to 10 business days."
       },
-      "name": "Asbestos testing — do I need it?",
+      "name": "Asbestos testing — do I need it?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "One verified deconstruction contractor per metro. Generals stop losing permits at City Hall and start passing inspection on the first walk-through.",
+        "text": "One verified deconstruction contractor per metro. Generals stop losing permits at City Hall and start passing inspection on the first walk-through."
       },
-      "name": "Why demolition.io exclusive territory?",
+      "name": "Why demolition.io exclusive territory?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes — landfill manifest, salvage receipts, and hazmat disposal docs all uploaded to the listing for the GC to download.",
+        "text": "Yes — landfill manifest, salvage receipts, and hazmat disposal docs all uploaded to the listing for the GC to download."
       },
-      "name": "Do you handle the disposal manifest?",
-    },
-  ],
+      "name": "Do you handle the disposal manifest?"
+    }
+  ]
 }
 `;
 
@@ -123,51 +123,51 @@ exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /drywallers-vancouver:
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "$2.20 to $3.10 per sq ft for board plus tape Level-4 finish. Level-5 adds $0.40. Steel stud framing adds $1.10 to $1.60.",
+        "text": "$2.20 to $3.10 per sq ft for board plus tape Level-4 finish. Level-5 adds $0.40. Steel stud framing adds $1.10 to $1.60."
       },
-      "name": "What does drywall installed cost per square foot in 2026?",
+      "name": "What does drywall installed cost per square foot in 2026?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Level 4 is paint-ready under matte finishes. Level 5 adds a skim coat across the entire surface — required for satin/semi-gloss and critical lighting conditions.",
+        "text": "Level 4 is paint-ready under matte finishes. Level 5 adds a skim coat across the entire surface — required for satin/semi-gloss and critical lighting conditions."
       },
-      "name": "What is the difference between Level 4 and Level 5 finish?",
+      "name": "What is the difference between Level 4 and Level 5 finish?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Hang: 2 days. Tape and mud: 5 to 7 days with dry time. Total 8 to 10 working days for a typical condo unit.",
+        "text": "Hang: 2 days. Tape and mud: 5 to 7 days with dry time. Total 8 to 10 working days for a typical condo unit."
       },
-      "name": "How long does a 1,500 sq ft drywall job take?",
+      "name": "How long does a 1,500 sq ft drywall job take?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes — RSIC clips, resilient channel, and STC-55 demising walls are standard for territory partners doing multi-family.",
+        "text": "Yes — RSIC clips, resilient channel, and STC-55 demising walls are standard for territory partners doing multi-family."
       },
-      "name": "Do you cover sound-rated assemblies?",
+      "name": "Do you cover sound-rated assemblies?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "One verified shop per metro. Developers stop chasing three quotes and book the partner with verified projects and BBB status.",
+        "text": "One verified shop per metro. Developers stop chasing three quotes and book the partner with verified projects and BBB status."
       },
-      "name": "Why drywallers.io exclusive territory?",
+      "name": "Why drywallers.io exclusive territory?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Lead crews handle the commercial work, smaller crews slot in residential patches. Both routed through the same listing.",
+        "text": "Lead crews handle the commercial work, smaller crews slot in residential patches. Both routed through the same listing."
       },
-      "name": "Can you do quick repairs too?",
-    },
-  ],
+      "name": "Can you do quick repairs too?"
+    }
+  ]
 }
 `;
 
@@ -180,51 +180,51 @@ exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /errands-vancouver: FA
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Bike: $12 to $22 per stop downtown core. E-bike: $18 to $32. Van: $35 to $75 plus per-km. Multi-stop discounts standard.",
+        "text": "Bike: $12 to $22 per stop downtown core. E-bike: $18 to $32. Van: $35 to $75 plus per-km. Multi-stop discounts standard."
       },
-      "name": "What does same-day delivery cost in Vancouver?",
+      "name": "What does same-day delivery cost in Vancouver?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "For court filings and certain legal docs, yes. Territory partners maintain a $5,000 minimum bond and chain-of-custody documentation.",
+        "text": "For court filings and certain legal docs, yes. Territory partners maintain a $5,000 minimum bond and chain-of-custody documentation."
       },
-      "name": "Do I need a bonded courier for legal documents?",
+      "name": "Do I need a bonded courier for legal documents?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sub-2 hour standard inside Vancouver/Burnaby/Richmond. 4-hour to North Shore. 6-hour to Surrey/Coquitlam.",
+        "text": "Sub-2 hour standard inside Vancouver/Burnaby/Richmond. 4-hour to North Shore. 6-hour to Surrey/Coquitlam."
       },
-      "name": "How fast is same-day?",
+      "name": "How fast is same-day?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Errands.io operators are local, bonded, insured, and contracted — not gig drivers. Your business builds a relationship with one verified company.",
+        "text": "Errands.io operators are local, bonded, insured, and contracted — not gig drivers. Your business builds a relationship with one verified company."
       },
-      "name": "Whats the difference from Uber Direct?",
+      "name": "Whats the difference from Uber Direct?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes — daily bank runs, weekly distribution routes, and pharmacy delivery loops all routed through the listing.",
+        "text": "Yes — daily bank runs, weekly distribution routes, and pharmacy delivery loops all routed through the listing."
       },
-      "name": "Can you handle scheduled recurring runs?",
+      "name": "Can you handle scheduled recurring runs?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "One operator per metro. SMBs stop shuffling between five gig apps and book one trusted local courier.",
+        "text": "One operator per metro. SMBs stop shuffling between five gig apps and book one trusted local courier."
       },
-      "name": "Why errands.io exclusive territory?",
-    },
-  ],
+      "name": "Why errands.io exclusive territory?"
+    }
+  ]
 }
 `;
 
@@ -237,51 +237,51 @@ exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /excavators-bc: FAQPag
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "$45 to $75 per cubic yard for standard residential. Add $15 to $25 for rock, hard-pan, or contaminated soil disposal.",
+        "text": "$45 to $75 per cubic yard for standard residential. Add $15 to $25 for rock, hard-pan, or contaminated soil disposal."
       },
-      "name": "What does basement excavation cost in Vancouver?",
+      "name": "What does basement excavation cost in Vancouver?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "For sites within 30 metres of a stream, yes — DFO and provincial environmental approvals add 4 to 8 weeks to the timeline.",
+        "text": "For sites within 30 metres of a stream, yes — DFO and provincial environmental approvals add 4 to 8 weeks to the timeline."
       },
-      "name": "Do I need an environmental permit?",
+      "name": "Do I need an environmental permit?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Mid-size 8 to 12 tonne excavator runs the dig. Mini-ex (3 tonne) handles trenching and finish work.",
+        "text": "Mid-size 8 to 12 tonne excavator runs the dig. Mini-ex (3 tonne) handles trenching and finish work."
       },
-      "name": "How big a machine do I need for a 2,500 sq ft basement?",
+      "name": "How big a machine do I need for a 2,500 sq ft basement?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Class 1 (clean) disposal runs $35 to $55 per cubic yard. Contaminated soil clears $180 plus, with lab testing required.",
+        "text": "Class 1 (clean) disposal runs $35 to $55 per cubic yard. Contaminated soil clears $180 plus, with lab testing required."
       },
-      "name": "What about soil disposal?",
+      "name": "What about soil disposal?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "One licensed excavation contractor per metro. Generals avoid the unlicensed-bobcat race and book the verified shop with WorkSafeBC clearance.",
+        "text": "One licensed excavation contractor per metro. Generals avoid the unlicensed-bobcat race and book the verified shop with WorkSafeBC clearance."
       },
-      "name": "Why an excavators.tv exclusive partner?",
+      "name": "Why an excavators.tv exclusive partner?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Engineered shoring requires P.Eng stamp. Territory partners pre-qualify with structural engineers so the shoring drawings drop in 2 weeks not 8.",
+        "text": "Engineered shoring requires P.Eng stamp. Territory partners pre-qualify with structural engineers so the shoring drawings drop in 2 weeks not 8."
       },
-      "name": "Can you handle shoring and underpinning?",
-    },
-  ],
+      "name": "Can you handle shoring and underpinning?"
+    }
+  ]
 }
 `;
 
@@ -294,51 +294,51 @@ exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /framers-vancouver: FA
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "$11 to $16 per sq ft for stick-built single family, $18 to $24 for steel stud commercial. Lumber surcharges add 5 to 10 percent in Q2.",
+        "text": "$11 to $16 per sq ft for stick-built single family, $18 to $24 for steel stud commercial. Lumber surcharges add 5 to 10 percent in Q2."
       },
-      "name": "What does framing cost per square foot in Vancouver in 2026?",
+      "name": "What does framing cost per square foot in Vancouver in 2026?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "BC Building Code now allows wood frame up to 12 storeys. Steel still dominates podiums, parkades, and demising walls.",
+        "text": "BC Building Code now allows wood frame up to 12 storeys. Steel still dominates podiums, parkades, and demising walls."
       },
-      "name": "Wood frame or steel stud for Vancouver multi-family?",
+      "name": "Wood frame or steel stud for Vancouver multi-family?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "IAM territory partners carry minimum $5M general liability and WorkSafeBC clearance. Both documents auto-display on the framers.io listing.",
+        "text": "IAM territory partners carry minimum $5M general liability and WorkSafeBC clearance. Both documents auto-display on the framers.io listing."
       },
-      "name": "Do you carry liability insurance the GC will accept?",
+      "name": "Do you carry liability insurance the GC will accept?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Lead crew of 4 mobilizes within 5 to 10 business days for projects over 2,000 sq ft. Smaller jobs slot in 2 to 3 weeks out.",
+        "text": "Lead crew of 4 mobilizes within 5 to 10 business days for projects over 2,000 sq ft. Smaller jobs slot in 2 to 3 weeks out."
       },
-      "name": "How fast can a crew mobilize?",
+      "name": "How fast can a crew mobilize?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "One framer per city. Listings carry verified BBB, BCCSA SECOR or COR, and live project photos. Generals book the verified shop, not the cheapest bid.",
+        "text": "One framer per city. Listings carry verified BBB, BCCSA SECOR or COR, and live project photos. Generals book the verified shop, not the cheapest bid."
       },
-      "name": "What sets framers.io territory partners apart?",
+      "name": "What sets framers.io territory partners apart?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes — the listing publishes a project pipeline so drywall, electrical, and plumbing subs know when to slot in.",
+        "text": "Yes — the listing publishes a project pipeline so drywall, electrical, and plumbing subs know when to slot in."
       },
-      "name": "Can subs and finishers see your live schedule?",
-    },
-  ],
+      "name": "Can subs and finishers see your live schedule?"
+    }
+  ]
 }
 `;
 
@@ -351,51 +351,51 @@ exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /hvacr-vancouver: FAQP
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Class B gas-fitter minimum for boilers under 400,000 BTU. Class A for everything above. Refrigeration mechanics also need TQ provincial ticket.",
+        "text": "Class B gas-fitter minimum for boilers under 400,000 BTU. Class A for everything above. Refrigeration mechanics also need TQ provincial ticket."
       },
-      "name": "What gas ticket is required for commercial Vancouver HVAC?",
+      "name": "What gas ticket is required for commercial Vancouver HVAC?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "BC Step Code now incentivizes heat pumps in all new builds. Retrofit market grew 47 percent in 2025 with CleanBC rebates up to $11,000.",
+        "text": "BC Step Code now incentivizes heat pumps in all new builds. Retrofit market grew 47 percent in 2025 with CleanBC rebates up to $11,000."
       },
-      "name": "Are heat pumps replacing gas furnaces in BC?",
+      "name": "Are heat pumps replacing gas furnaces in BC?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "5-ton commercial rooftop unit installed runs $14,000 to $22,000 in 2026. 10-ton units clear $35,000 with crane lift included.",
+        "text": "5-ton commercial rooftop unit installed runs $14,000 to $22,000 in 2026. 10-ton units clear $35,000 with crane lift included."
       },
-      "name": "What does a commercial RTU replacement cost?",
+      "name": "What does a commercial RTU replacement cost?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "IAM hvacr.tv partners hold the refrigeration mechanic ticket for ammonia (NH3) and CO2 (R744) systems used in cold-storage and ice rinks.",
+        "text": "IAM hvacr.tv partners hold the refrigeration mechanic ticket for ammonia (NH3) and CO2 (R744) systems used in cold-storage and ice rinks."
       },
-      "name": "Do you cover ammonia and CO2 refrigeration?",
+      "name": "Do you cover ammonia and CO2 refrigeration?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sub-2 hour response is the standard for territory partners. WhatsApp alerts include equipment age, refrigerant type, and last service date.",
+        "text": "Sub-2 hour response is the standard for territory partners. WhatsApp alerts include equipment age, refrigerant type, and last service date."
       },
-      "name": "How fast is emergency dispatch?",
+      "name": "How fast is emergency dispatch?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Trust. Hvacr.tv signals to a property manager that the shop owns the territory and stakes its reputation on every call.",
+        "text": "Trust. Hvacr.tv signals to a property manager that the shop owns the territory and stakes its reputation on every call."
       },
-      "name": "Why only one HVAC shop per city?",
-    },
-  ],
+      "name": "Why only one HVAC shop per city?"
+    }
+  ]
 }
 `;
 
@@ -408,51 +408,51 @@ exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /interior-designers-va
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Full-service design starts at $150/hr or 12 to 18 percent of project budget. Flat-fee packages run $4,500 to $25,000 depending on scope.",
+        "text": "Full-service design starts at $150/hr or 12 to 18 percent of project budget. Flat-fee packages run $4,500 to $25,000 depending on scope."
       },
-      "name": "What does interior design cost in Vancouver?",
+      "name": "What does interior design cost in Vancouver?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes for commercial work. IDIBC-registered designers can stamp interior construction drawings for permit submission. Residential is not regulated.",
+        "text": "Yes for commercial work. IDIBC-registered designers can stamp interior construction drawings for permit submission. Residential is not regulated."
       },
-      "name": "IDIBC registration — does it matter?",
+      "name": "IDIBC registration — does it matter?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "4 to 6 weeks from discovery call to final construction drawings including 3D renderings and millwork specs.",
+        "text": "4 to 6 weeks from discovery call to final construction drawings including 3D renderings and millwork specs."
       },
-      "name": "How long does a kitchen design package take?",
+      "name": "How long does a kitchen design package take?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Both. Territory partners offer design-only, design-build, and turnkey models with verified contractor referrals.",
+        "text": "Both. Territory partners offer design-only, design-build, and turnkey models with verified contractor referrals."
       },
-      "name": "Do designers work with the contractor or directly with the client?",
+      "name": "Do designers work with the contractor or directly with the client?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "One verified designer per metro. Premium clients skip the directory swamp and book the verified portfolio with IDIBC credentials.",
+        "text": "One verified designer per metro. Premium clients skip the directory swamp and book the verified portfolio with IDIBC credentials."
       },
-      "name": "Why interiordesigners.io exclusive territory?",
+      "name": "Why interiordesigners.io exclusive territory?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes — territory partners hold IDIBC stamps required for permit drawings on offices, retail, and hospitality interiors.",
+        "text": "Yes — territory partners hold IDIBC stamps required for permit drawings on offices, retail, and hospitality interiors."
       },
-      "name": "Can you handle commercial fit-outs?",
-    },
-  ],
+      "name": "Can you handle commercial fit-outs?"
+    }
+  ]
 }
 `;
 
@@ -465,51 +465,51 @@ exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /kitchen-cabinets-vanc
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Tear-out runs 1 day, install runs 3 to 5 days, and finishing trim plus crown takes another 1 to 2 days. Most projects close inside 10 working days when the cabinets are on-site.",
+        "text": "Tear-out runs 1 day, install runs 3 to 5 days, and finishing trim plus crown takes another 1 to 2 days. Most projects close inside 10 working days when the cabinets are on-site."
       },
-      "name": "How long does a full Vancouver kitchen cabinet replacement take?",
+      "name": "How long does a full Vancouver kitchen cabinet replacement take?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Frameless gives 10 to 15 percent more interior storage and fits the modern Vancouver build aesthetic. Framed survives heavier dish loads and is preferred in older Kerrisdale and Shaughnessy renovations.",
+        "text": "Frameless gives 10 to 15 percent more interior storage and fits the modern Vancouver build aesthetic. Framed survives heavier dish loads and is preferred in older Kerrisdale and Shaughnessy renovations."
       },
-      "name": "Are framed or frameless cabinets better for BC homes?",
+      "name": "Are framed or frameless cabinets better for BC homes?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Lower mainland averages run $180 to $260 per linear foot installed for mid-range MDF shaker, and $400 plus for plywood box with custom paint. Exclusive territory partners publish flat pricing.",
+        "text": "Lower mainland averages run $180 to $260 per linear foot installed for mid-range MDF shaker, and $400 plus for plywood box with custom paint. Exclusive territory partners publish flat pricing."
       },
-      "name": "What does a cabinet install cost in 2026?",
+      "name": "What does a cabinet install cost in 2026?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Not for like-for-like cabinet swap. You do need an electrical permit if you move under-cabinet lights, and a plumbing permit if the sink relocates.",
+        "text": "Not for like-for-like cabinet swap. You do need an electrical permit if you move under-cabinet lights, and a plumbing permit if the sink relocates."
       },
-      "name": "Do I need a permit?",
+      "name": "Do I need a permit?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "One installer per city. You skip the bid race and get the verified shop that already owns the rankings for "kitchen cabinets Vancouver".",
+        "text": "One installer per city. You skip the bid race and get the verified shop that already owns the rankings for \\"kitchen cabinets Vancouver\\"."
       },
-      "name": "Why book the kitchencabinets.io territory partner?",
+      "name": "Why book the kitchencabinets.io territory partner?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes — every IAM partner publishes geo-tagged install photos to their listing within 48 hours of completion. EyeSpyr confirms the address is real.",
+        "text": "Yes — every IAM partner publishes geo-tagged install photos to their listing within 48 hours of completion. EyeSpyr confirms the address is real."
       },
-      "name": "Can I see live project photos before booking?",
-    },
-  ],
+      "name": "Can I see live project photos before booking?"
+    }
+  ]
 }
 `;
 
@@ -522,51 +522,51 @@ exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /painters-vancouver: F
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "$5,500 to $9,500 for a 2,200 sq ft two-storey. Cedar shake adds 25 percent. Stucco runs cheaper at $4,000 to $6,500.",
+        "text": "$5,500 to $9,500 for a 2,200 sq ft two-storey. Cedar shake adds 25 percent. Stucco runs cheaper at $4,000 to $6,500."
       },
-      "name": "What does it cost to paint a Vancouver house exterior in 2026?",
+      "name": "What does it cost to paint a Vancouver house exterior in 2026?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Premium 100 percent acrylic lasts 8 to 12 years on properly prepped wood. South-facing walls fade 2 years earlier.",
+        "text": "Premium 100 percent acrylic lasts 8 to 12 years on properly prepped wood. South-facing walls fade 2 years earlier."
       },
-      "name": "How long does exterior paint last in BC weather?",
+      "name": "How long does exterior paint last in BC weather?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Refinish at $80 to $140 per door. Replacement runs 4 to 6 times more. Refinish on solid wood lasts 7 to 10 years before yellowing.",
+        "text": "Refinish at $80 to $140 per door. Replacement runs 4 to 6 times more. Refinish on solid wood lasts 7 to 10 years before yellowing."
       },
-      "name": "Cabinet refinishing vs replacement?",
+      "name": "Cabinet refinishing vs replacement?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. BC moved to low-VOC by default in 2023. Premium lines (Aura, Emerald) are zero-VOC and BC Step Code preferred.",
+        "text": "Yes. BC moved to low-VOC by default in 2023. Premium lines (Aura, Emerald) are zero-VOC and BC Step Code preferred."
       },
-      "name": "Are low-VOC paints standard now?",
+      "name": "Are low-VOC paints standard now?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "One legit shop per city. Homeowners stop choosing on price and start choosing on warranty and verified reviews.",
+        "text": "One legit shop per city. Homeowners stop choosing on price and start choosing on warranty and verified reviews."
       },
-      "name": "Why painters.tv exclusive territory?",
+      "name": "Why painters.tv exclusive territory?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "IAM territory partners can plug a financing partner (Affirm, Financeit) into the listing — homeowner books with monthly payment shown upfront.",
+        "text": "IAM territory partners can plug a financing partner (Affirm, Financeit) into the listing — homeowner books with monthly payment shown upfront."
       },
-      "name": "Do you offer financing?",
-    },
-  ],
+      "name": "Do you offer financing?"
+    }
+  ]
 }
 `;
 
@@ -579,51 +579,51 @@ exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /plumbers-vancouver: F
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "$8,500 to $24,000 depending on length and method. Trenchless pipe-bursting runs 25 to 40 percent more than open-cut but saves the landscaping.",
+        "text": "$8,500 to $24,000 depending on length and method. Trenchless pipe-bursting runs 25 to 40 percent more than open-cut but saves the landscaping."
       },
-      "name": "What does a sewer line replacement cost in Vancouver?",
+      "name": "What does a sewer line replacement cost in Vancouver?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Standard retrofit: 6 to 9 hours. New construction rough-in: 2 to 3 hours. Gas line upgrade adds 2 to 4 hours.",
+        "text": "Standard retrofit: 6 to 9 hours. New construction rough-in: 2 to 3 hours. Gas line upgrade adds 2 to 4 hours."
       },
-      "name": "How long does a tankless install take?",
+      "name": "How long does a tankless install take?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "CleanBC rebates cover up to $1,500. Lifecycle savings 35 to 50 percent vs electric resistance. ROI inside 5 years.",
+        "text": "CleanBC rebates cover up to $1,500. Lifecycle savings 35 to 50 percent vs electric resistance. ROI inside 5 years."
       },
-      "name": "Are heat-pump water heaters worth it?",
+      "name": "Are heat-pump water heaters worth it?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes — territory partners hold the cross-connection control ticket and handle commercial backflow testing required by Metro Vancouver bylaw.",
+        "text": "Yes — territory partners hold the cross-connection control ticket and handle commercial backflow testing required by Metro Vancouver bylaw."
       },
-      "name": "Do you cover commercial drains and grease traps?",
+      "name": "Do you cover commercial drains and grease traps?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "One licensed shop per city beats the lead-share bidding war. Homeowners get verified Red Seal, not a referral middleman.",
+        "text": "One licensed shop per city beats the lead-share bidding war. Homeowners get verified Red Seal, not a referral middleman."
       },
-      "name": "Why plumbers.ltd exclusive?",
+      "name": "Why plumbers.ltd exclusive?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sub-90-minute on emergency calls within metro core. WhatsApp confirmation with ETA included.",
+        "text": "Sub-90-minute on emergency calls within metro core. WhatsApp confirmation with ETA included."
       },
-      "name": "Whats the average emergency response time?",
-    },
-  ],
+      "name": "Whats the average emergency response time?"
+    }
+  ]
 }
 `;
 
@@ -636,51 +636,51 @@ exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /roofers-vancouver: FA
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "$11,000 to $18,000 for a 1,800 sq ft asphalt re-roof including tear-off. Standing-seam metal runs $26,000 to $42,000.",
+        "text": "$11,000 to $18,000 for a 1,800 sq ft asphalt re-roof including tear-off. Standing-seam metal runs $26,000 to $42,000."
       },
-      "name": "What does a Vancouver re-roof cost in 2026?",
+      "name": "What does a Vancouver re-roof cost in 2026?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Architectural asphalt: 25 to 30 years. Standing-seam metal: 50 plus. Cedar: 25 to 35 years with maintenance. Metal wins on lifecycle cost.",
+        "text": "Architectural asphalt: 25 to 30 years. Standing-seam metal: 50 plus. Cedar: 25 to 35 years with maintenance. Metal wins on lifecycle cost."
       },
-      "name": "Asphalt vs metal vs cedar for the wet coast?",
+      "name": "Asphalt vs metal vs cedar for the wet coast?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "City of Vancouver requires a permit for re-roofs over 10 squares (1,000 sq ft). Cost $190 to $400 depending on scope.",
+        "text": "City of Vancouver requires a permit for re-roofs over 10 squares (1,000 sq ft). Cost $190 to $400 depending on scope."
       },
-      "name": "Do I need a permit?",
+      "name": "Do I need a permit?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "GAF Master Elite gives 50-year non-prorated material plus 25-year workmanship. Only 3 percent of roofers qualify. Territory partners do.",
+        "text": "GAF Master Elite gives 50-year non-prorated material plus 25-year workmanship. Only 3 percent of roofers qualify. Territory partners do."
       },
-      "name": "What is a manufacturer warranty actually worth?",
+      "name": "What is a manufacturer warranty actually worth?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "It blocks the storm chaser from ranking and gives the homeowner one verified, warranted, WCB-cleared shop to call.",
+        "text": "It blocks the storm chaser from ranking and gives the homeowner one verified, warranted, WCB-cleared shop to call."
       },
-      "name": "Why one roofer per city on roofers.io?",
+      "name": "Why one roofer per city on roofers.io?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sub-4 hour emergency tarp is the territory partner standard, year-round.",
+        "text": "Sub-4 hour emergency tarp is the territory partner standard, year-round."
       },
-      "name": "How fast can you tarp a leak?",
-    },
-  ],
+      "name": "How fast can you tarp a leak?"
+    }
+  ]
 }
 `;
 
@@ -693,51 +693,51 @@ exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /snow-removal-bc: FAQP
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "$3,500 to $12,000 per strata building depending on size, lots, and sidewalks. Per-push pricing runs $150 to $400 per event.",
+        "text": "$3,500 to $12,000 per strata building depending on size, lots, and sidewalks. Per-push pricing runs $150 to $400 per event."
       },
-      "name": "What does commercial snow removal cost per season?",
+      "name": "What does commercial snow removal cost per season?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Territory partners commit to plow start within 2 hours of trigger snowfall (typically 5 cm). De-icing within 1 hour for hospitals and seniors residences.",
+        "text": "Territory partners commit to plow start within 2 hours of trigger snowfall (typically 5 cm). De-icing within 1 hour for hospitals and seniors residences."
       },
-      "name": "Whats the response-time SLA?",
+      "name": "Whats the response-time SLA?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Pre-treatment with liquid brine cuts salt use 30 percent. Most BC partners run brine pre-event plus rock salt post-event for hardpack.",
+        "text": "Pre-treatment with liquid brine cuts salt use 30 percent. Most BC partners run brine pre-event plus rock salt post-event for hardpack."
       },
-      "name": "Do you use brine or rock salt?",
+      "name": "Do you use brine or rock salt?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "$5M general liability minimum, plus slip-and-fall endorsement. Territory partners publish certificate on the listing.",
+        "text": "$5M general liability minimum, plus slip-and-fall endorsement. Territory partners publish certificate on the listing."
       },
-      "name": "What insurance is required?",
+      "name": "What insurance is required?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "One verified shop per metro. Strata managers stop scrambling in November and lock in November-to-March coverage with one trusted call.",
+        "text": "One verified shop per metro. Strata managers stop scrambling in November and lock in November-to-March coverage with one trusted call."
       },
-      "name": "Why plowwow.com exclusive territory?",
+      "name": "Why plowwow.com exclusive territory?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Some territory partners run residential routes alongside commercial. Listing filters by service type.",
+        "text": "Some territory partners run residential routes alongside commercial. Listing filters by service type."
       },
-      "name": "Do you handle residential too?",
-    },
-  ],
+      "name": "Do you handle residential too?"
+    }
+  ]
 }
 `;
 
@@ -750,51 +750,51 @@ exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /ten-dollar-territorie
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We are not building you a custom site or running ads on your behalf. We are renting one slot on a domain that already ranks. The marginal cost to add one verified contractor is near zero.",
+        "text": "We are not building you a custom site or running ads on your behalf. We are renting one slot on a domain that already ranks. The marginal cost to add one verified contractor is near zero."
       },
-      "name": "How is $10/month even possible?",
+      "name": "How is $10/month even possible?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "One contractor per trade per city. Once your territory is locked, no one else can buy it. You either grab it or watch a competitor grab it.",
+        "text": "One contractor per trade per city. Once your territory is locked, no one else can buy it. You either grab it or watch a competitor grab it."
       },
-      "name": "Whats the catch?",
+      "name": "Whats the catch?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Month-to-month. Cancel any time. Your slot opens to the next contractor in queue.",
+        "text": "Month-to-month. Cancel any time. Your slot opens to the next contractor in queue."
       },
-      "name": "What if I cancel?",
+      "name": "What if I cancel?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. It is a directory listing on a high-authority trade-specific domain. The SEO comes from the domain authority, not from a service we sell you.",
+        "text": "No. It is a directory listing on a high-authority trade-specific domain. The SEO comes from the domain authority, not from a service we sell you."
       },
-      "name": "Is this an SEO service?",
+      "name": "Is this an SEO service?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Varies by city and trade. Vancouver plumbers see 15 to 40 qualified inbounds per month. Smaller markets see 5 to 15. We do not guarantee volume — we guarantee exclusivity.",
+        "text": "Varies by city and trade. Vancouver plumbers see 15 to 40 qualified inbounds per month. Smaller markets see 5 to 15. We do not guarantee volume — we guarantee exclusivity."
       },
-      "name": "How many leads will I get?",
+      "name": "How many leads will I get?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Stack a city (Vancouver), a trade (plumbing), and a niche (commercial). Most multi-territory partners run 3 to 6 listings for $30 to $60 a month total.",
+        "text": "Yes. Stack a city (Vancouver), a trade (plumbing), and a niche (commercial). Most multi-territory partners run 3 to 6 listings for $30 to $60 a month total."
       },
-      "name": "Can I buy multiple territories?",
-    },
-  ],
+      "name": "Can I buy multiple territories?"
+    }
+  ]
 }
 `;
 
@@ -807,51 +807,51 @@ exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /tractors-bc: FAQPage 
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "25 to 35 HP sub-compact runs mowing, light tilling, and snow removal. Step up to 40 to 50 HP if you bale hay or load round bales.",
+        "text": "25 to 35 HP sub-compact runs mowing, light tilling, and snow removal. Step up to 40 to 50 HP if you bale hay or load round bales."
       },
-      "name": "What size tractor for a 5-acre Fraser Valley hobby farm?",
+      "name": "What size tractor for a 5-acre Fraser Valley hobby farm?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Tier 4 Final diesel remains 90 percent of new sales. Electric sub-compacts are growing 30 percent year over year and arrive in BC dealerships 2026 onward.",
+        "text": "Tier 4 Final diesel remains 90 percent of new sales. Electric sub-compacts are growing 30 percent year over year and arrive in BC dealerships 2026 onward."
       },
-      "name": "Are diesel tractors still the standard?",
+      "name": "Are diesel tractors still the standard?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A clean 5-year-old 30 HP runs $18,000 to $24,000 in BC. New 2025 models start at $22,500 with 0 percent financing through major brands.",
+        "text": "A clean 5-year-old 30 HP runs $18,000 to $24,000 in BC. New 2025 models start at $22,500 with 0 percent financing through major brands."
       },
-      "name": "What about used tractor pricing?",
+      "name": "What about used tractor pricing?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Every kongtractors.com territory partner publishes a service-bay schedule and parts availability. Mobile service for 60 km is standard.",
+        "text": "Every kongtractors.com territory partner publishes a service-bay schedule and parts availability. Mobile service for 60 km is standard."
       },
-      "name": "Do you service what you sell?",
+      "name": "Do you service what you sell?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "One dealer per metro region. You own the rankings, the listing, and the inbound leads for "tractors Fraser Valley" and 40 related long-tail queries.",
+        "text": "One dealer per metro region. You own the rankings, the listing, and the inbound leads for \\"tractors Fraser Valley\\" and 40 related long-tail queries."
       },
-      "name": "How does the exclusive territory work?",
+      "name": "How does the exclusive territory work?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes — your inventory grid covers tractors, loaders, mowers, augers, and snow blowers. Cross-sell baked into the listing.",
+        "text": "Yes — your inventory grid covers tractors, loaders, mowers, augers, and snow blowers. Cross-sell baked into the listing."
       },
-      "name": "Can I bundle implements too?",
-    },
-  ],
+      "name": "Can I bundle implements too?"
+    }
+  ]
 }
 `;
 
@@ -864,51 +864,51 @@ exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /videographers-vancouv
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Half-day shoot plus edit: $2,500 to $5,500. Full-day with two cameras: $5,500 to $12,000. Aerial drone adds $800 to $2,000.",
+        "text": "Half-day shoot plus edit: $2,500 to $5,500. Full-day with two cameras: $5,500 to $12,000. Aerial drone adds $800 to $2,000."
       },
-      "name": "What does corporate video cost in Vancouver?",
+      "name": "What does corporate video cost in Vancouver?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes — Transport Canada Advanced RPAS is required for commercial flight near people or built environments. Territory partners hold current certification.",
+        "text": "Yes — Transport Canada Advanced RPAS is required for commercial flight near people or built environments. Territory partners hold current certification."
       },
-      "name": "Do I need a drone licence in BC?",
+      "name": "Do I need a drone licence in BC?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "First cut in 5 to 10 business days for corporate. 48-hour turnaround available for real estate listings.",
+        "text": "First cut in 5 to 10 business days for corporate. 48-hour turnaround available for real estate listings."
       },
-      "name": "How fast is turnaround on a finished edit?",
+      "name": "How fast is turnaround on a finished edit?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Master 4K file, social cuts (vertical, square), thumbnails, captions, and a YouTube-optimized cut with chapters.",
+        "text": "Master 4K file, social cuts (vertical, square), thumbnails, captions, and a YouTube-optimized cut with chapters."
       },
-      "name": "What deliverables come with a package?",
+      "name": "What deliverables come with a package?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "One verified shop per metro. Marketing directors stop screening 40 Vimeo reels and book the verified shop with the gear and the licence.",
+        "text": "One verified shop per metro. Marketing directors stop screening 40 Vimeo reels and book the verified shop with the gear and the licence."
       },
-      "name": "Why videographers.io exclusive territory?",
+      "name": "Why videographers.io exclusive territory?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes — territory partners run up to 6-camera switched live with streaming output for conferences and product launches.",
+        "text": "Yes — territory partners run up to 6-camera switched live with streaming output for conferences and product launches."
       },
-      "name": "Can you handle live event multi-cam?",
-    },
-  ],
+      "name": "Can you handle live event multi-cam?"
+    }
+  ]
 }
 `;
 
@@ -921,50 +921,50 @@ exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /weddings-vancouver: F
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Full coordination ranges $8,000 to $18,000. Month-of starts at $2,500. Premium destination weddings on Vancouver Island clear $30,000.",
+        "text": "Full coordination ranges $8,000 to $18,000. Month-of starts at $2,500. Premium destination weddings on Vancouver Island clear $30,000."
       },
-      "name": "What does a full-service planner cost in Vancouver?",
+      "name": "What does a full-service planner cost in Vancouver?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Peak Saturday venues in Stanley Park and the Sea-to-Sky corridor book 14 to 22 months out. Off-season Friday weddings can land 4 months out.",
+        "text": "Peak Saturday venues in Stanley Park and the Sea-to-Sky corridor book 14 to 22 months out. Off-season Friday weddings can land 4 months out."
       },
-      "name": "How early should couples book?",
+      "name": "How early should couples book?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes — Park Board issues a special-use permit that runs $230 to $470 depending on group size. Apply 6 months ahead.",
+        "text": "Yes — Park Board issues a special-use permit that runs $230 to $470 depending on group size. Apply 6 months ahead."
       },
-      "name": "Do I need a permit for a Stanley Park ceremony?",
+      "name": "Do I need a permit for a Stanley Park ceremony?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Exclusivity protects rankings and protects the bride from a bidding circus. One verified planner per metro means the territory partner gets the call, not five competitors.",
+        "text": "Exclusivity protects rankings and protects the bride from a bidding circus. One verified planner per metro means the territory partner gets the call, not five competitors."
       },
-      "name": "Why only one planner per city on weddings.io?",
+      "name": "Why only one planner per city on weddings.io?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Inquiry form, WhatsApp click-to-chat, and a phone-call CTA all land in your inbox within 60 seconds. The lead is yours alone.",
+        "text": "Inquiry form, WhatsApp click-to-chat, and a phone-call CTA all land in your inbox within 60 seconds. The lead is yours alone."
       },
-      "name": "How are leads routed?",
+      "name": "How are leads routed?"
     },
     {
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes — adjacent territories stack. Many planners run Vancouver plus Whistler plus Tofino for $30 a month total.",
+        "text": "Yes — adjacent territories stack. Many planners run Vancouver plus Whistler plus Tofino for $30 a month total."
       },
-      "name": "Can I upgrade to a Vancouver Island or Whistler territory too?",
-    },
-  ],
+      "name": "Can I upgrade to a Vancouver Island or Whistler territory too?"
+    }
+  ]
 }
 `;
