@@ -8,6 +8,7 @@ import CitiesPreview from "@/components/CitiesPreview";
 import AboutSection from "@/components/AboutSection";
 import ContactSection from "@/components/ContactSection";
 import ContractorTradesGrid from "@/components/ContractorTradesGrid";
+import LatestBlogPosts from "@/components/LatestBlogPosts";
 
 const Index = () => {
   return (
@@ -39,6 +40,7 @@ const Index = () => {
       <CitiesPreview />
       <BrandsSection />
       <AboutSection />
+      <LatestBlogPosts />
       <ContactSection />
     </Layout>
   );
