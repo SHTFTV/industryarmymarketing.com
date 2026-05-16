@@ -85,8 +85,7 @@ const groups = [
     domains: [
       ["weddings.io", "Weddings"],
       ["caterers.tv", "Catering"],
-      ["cleaners.io", "Cleaning"],
-      ["movers.io", "Moving"],
+      ["mover.ltd", "Moving"],
       ["lawyersadvice.co", "Legal Advice"],
       ["loveourlistings.com", "Real Estate"],
       ["videographers.io", "Video"],

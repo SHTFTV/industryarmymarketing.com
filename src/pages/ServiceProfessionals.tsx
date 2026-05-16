@@ -6,8 +6,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 const categories = [
-  { emoji: "🧹", name: "Cleaners", domain: "cleaners.io" },
-  { emoji: "🚛", name: "Movers", domain: "movers.io" },
+  { emoji: "🚛", name: "Movers", domain: "mover.ltd" },
   { emoji: "🌿", name: "Landscapers", domain: "landscapers.ca" },
   { emoji: "🌨️", name: "Snow Removal", domain: "plowwow.com" },
   { emoji: "🌱", name: "Lawn Care", domain: "promows.com" },
