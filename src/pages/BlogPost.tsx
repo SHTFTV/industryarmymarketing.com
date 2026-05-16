@@ -70,7 +70,9 @@ const BlogPost = () => {
   };
   const [mName, yStr] = post.date.split(" ");
   const isoDate = monthMap[mName] && yStr ? `${yStr}-${monthMap[mName]}-01` : post.date;
-  const absoluteImage = /^https?:\/\//i.test(post.image) ? post.image : `${SITE_URL}${post.image}`;
+  const FALLBACK_OG_IMAGE = "/og-image.jpg";
+  const heroImage = post.image && post.image.trim() ? post.image : FALLBACK_OG_IMAGE;
+  const absoluteImage = /^https?:\/\//i.test(heroImage) ? heroImage : `${SITE_URL}${heroImage}`;
 
   const articleSchema = {
     "@context": "https://schema.org",
@@ -133,7 +135,7 @@ const BlogPost = () => {
         description={post.metaDescription}
         path={`/blog/${post.slug}`}
         type="article"
-        image={post.image}
+        image={heroImage}
         imageAlt={`${post.trade} in ${post.city}, ${post.province} — ${post.brand} exclusive territory partner`}
         jsonLd={schemas}
       />
