@@ -148,7 +148,7 @@ const BlogPost = () => {
         path={`/blog/${post.slug}`}
         type="article"
         image={heroImage}
-        imageAlt={`${post.trade} in ${post.city}, ${post.province} — ${post.brand} exclusive territory partner`}
+        imageAlt={heroImageAlt}
         jsonLd={schemas}
       />
 
