@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach } from "vitest";
-import { render, cleanup, within } from "@testing-library/react";
+import { render, cleanup, within, waitFor } from "@testing-library/react";
 import { MemoryRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import BlogPost from "./BlogPost";
@@ -83,6 +83,45 @@ describe("BlogPost FAQ rendering matches FAQPage JSON-LD", () => {
       expect(renderedQuestions).toEqual(dataQuestions);
       expect(schemaQuestions).toEqual(dataQuestions);
       expect(renderedQuestions).toEqual(schemaQuestions);
+    });
+  }
+
+  for (const post of blogPosts) {
+    it(`/${post.slug}: a FAQPage JSON-LD script is present with correct @type`, async () => {
+      renderPost(post.slug);
+
+      const scripts = await waitFor(() => {
+        const found = Array.from(
+          document.querySelectorAll('script[type="application/ld+json"]')
+        );
+        expect(
+          found.length,
+          `No JSON-LD scripts emitted on /blog/${post.slug}`
+        ).toBeGreaterThan(0);
+        return found;
+      });
+
+      const parsed = scripts
+        .map((s) => {
+          try {
+            return JSON.parse(s.textContent || "");
+          } catch {
+            return null;
+          }
+        })
+        .filter(Boolean);
+
+      const faqSchemas = parsed.filter((j) => j["@type"] === "FAQPage");
+      expect(
+        faqSchemas.length,
+        `Expected exactly one FAQPage JSON-LD on /blog/${post.slug}, found ${faqSchemas.length}`
+      ).toBe(1);
+
+      const faq = faqSchemas[0];
+      expect(faq["@context"]).toBe("https://schema.org");
+      expect(faq["@type"]).toBe("FAQPage");
+      expect(faq["@type"]).not.toBe("FAQ");
+      expect(faq["@type"]).not.toBe("QAPage");
     });
   }
 });
