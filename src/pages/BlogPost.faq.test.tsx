@@ -124,4 +124,30 @@ describe("BlogPost FAQ rendering matches FAQPage JSON-LD", () => {
       expect(faq["@type"]).not.toBe("QAPage");
     });
   }
+
+  for (const post of blogPosts) {
+    it(`/${post.slug}: FAQPage JSON-LD matches stored snapshot`, async () => {
+      renderPost(post.slug);
+
+      const faq = await waitFor(() => {
+        const scripts = Array.from(
+          document.querySelectorAll('script[type="application/ld+json"]')
+        );
+        const parsed = scripts
+          .map((s) => {
+            try {
+              return JSON.parse(s.textContent || "");
+            } catch {
+              return null;
+            }
+          })
+          .filter(Boolean);
+        const match = parsed.find((j) => j["@type"] === "FAQPage");
+        expect(match, `FAQPage JSON-LD missing on /blog/${post.slug}`).toBeTruthy();
+        return match;
+      });
+
+      expect(faq).toMatchSnapshot();
+    });
+  }
 });
