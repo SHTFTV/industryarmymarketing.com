@@ -35,8 +35,9 @@ const PwaCheck = () => {
       const out: Row[] = [];
       // 1. fetch manifest
       let mf: any = null;
+      const manifestUrl = new URL("/site.webmanifest", window.location.href);
       try {
-        const res = await fetch("/site.webmanifest", { cache: "no-cache" });
+        const res = await fetch(manifestUrl.href, { cache: "no-cache" });
         const ct = res.headers.get("content-type") || "";
         if (!res.ok) {
           out.push({ label: "GET /site.webmanifest", status: "fail", detail: `HTTP ${res.status}` });
@@ -71,7 +72,8 @@ const PwaCheck = () => {
         out.push({ label: "maskable icon present", status: hasMaskable ? "ok" : "warn", detail: hasMaskable ? "" : "recommended for Android adaptive icons" });
 
         for (const icon of icons) {
-          const url = icon.src.startsWith("http") ? icon.src : icon.src;
+          // Resolve icon.src against the manifest URL per W3C manifest spec
+          const url = new URL(icon.src, manifestUrl).href;
           let status: Status = "ok";
           const detail: string[] = [];
           try {
