@@ -70,6 +70,44 @@ describe("jsonLdSerializer.test predicate", () => {
     ).toBe(true);
   });
 
+  it("matches when JSON-LD lives inside an array nested in a plain object", () => {
+    expect(
+      jsonLdSerializer.test({
+        items: [{ "@type": "Question", name: "Q1" }],
+      })
+    ).toBe(true);
+  });
+
+  it("matches when JSON-LD lives inside an array nested several levels deep", () => {
+    expect(
+      jsonLdSerializer.test({
+        page: {
+          sections: [
+            { title: "Intro", blocks: [{ kind: "text" }] },
+            {
+              title: "FAQ",
+              blocks: [
+                { kind: "text" },
+                { kind: "schema", payload: { "@context": "https://schema.org" } },
+              ],
+            },
+          ],
+        },
+      })
+    ).toBe(true);
+  });
+
+  it("does NOT match plain objects whose arrays only contain plain objects", () => {
+    expect(
+      jsonLdSerializer.test({
+        items: [
+          { id: 1, label: "a" },
+          { id: 2, label: "b", meta: { tags: ["x", "y"] } },
+        ],
+      })
+    ).toBe(false);
+  });
+
   it("does NOT match objects whose keys merely resemble JSON-LD", () => {
     expect(jsonLdSerializer.test({ type: "FAQPage", context: "x" })).toBe(false);
     expect(jsonLdSerializer.test({ "@id": "https://example.com" })).toBe(false);
