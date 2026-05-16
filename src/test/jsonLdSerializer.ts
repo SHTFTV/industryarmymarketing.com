@@ -9,6 +9,7 @@ const isPlainObject = (v: unknown): v is Record<string, unknown> =>
   typeof v === "object" && v !== null && !Array.isArray(v);
 
 const looksLikeJsonLd = (v: unknown): boolean => {
+  if (Array.isArray(v)) return v.some(looksLikeJsonLd);
   if (!isPlainObject(v)) return false;
   if ("@type" in v || "@context" in v) return true;
   return Object.values(v).some(looksLikeJsonLd);
