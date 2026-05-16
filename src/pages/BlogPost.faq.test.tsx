@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach } from "vitest";
-import { render, cleanup, within } from "@testing-library/react";
+import { render, cleanup, within, waitFor } from "@testing-library/react";
 import { MemoryRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import BlogPost from "./BlogPost";
@@ -89,15 +89,17 @@ describe("BlogPost FAQ rendering matches FAQPage JSON-LD", () => {
   for (const post of blogPosts) {
     it(`/${post.slug}: a FAQPage JSON-LD script is present with correct @type`, async () => {
       renderPost(post.slug);
-      await new Promise((r) => setTimeout(r, 0));
 
-      const scripts = Array.from(
-        document.querySelectorAll('script[type="application/ld+json"]')
-      );
-      expect(
-        scripts.length,
-        `No JSON-LD scripts emitted on /blog/${post.slug}`
-      ).toBeGreaterThan(0);
+      const scripts = await waitFor(() => {
+        const found = Array.from(
+          document.querySelectorAll('script[type="application/ld+json"]')
+        );
+        expect(
+          found.length,
+          `No JSON-LD scripts emitted on /blog/${post.slug}`
+        ).toBeGreaterThan(0);
+        return found;
+      });
 
       const parsed = scripts
         .map((s) => {
