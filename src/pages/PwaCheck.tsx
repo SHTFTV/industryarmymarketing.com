@@ -75,7 +75,7 @@ const PwaCheck = () => {
           // Resolve icon.src against the manifest URL per W3C manifest spec
           const url = new URL(icon.src, manifestUrl).href;
           let status: Status = "ok";
-          const detail: string[] = [];
+          const detail: string[] = [`→ ${url}`];
           try {
             const res = await headOrGet(url);
             if (!res.ok) {
