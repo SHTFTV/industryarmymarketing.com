@@ -43,6 +43,57 @@ const industries: { label: string; specialties: string[] }[] = [
     specialties: [],
   },
 ];
+
+// Extra keywords per specialty so we can match free-text fields (business
+// name, website, notes) against a specific trade. Keep keys aligned with
+// the specialty labels above.
+const specialtyKeywords: Record<string, string[]> = {
+  Roofing: ["roof", "roofer", "shingle"],
+  Framing: ["framing", "framer"],
+  Drywall: ["drywall", "gyproc", "gypsum"],
+  Plumbing: ["plumb", "plumber"],
+  Electrical: ["electric", "electrician", "wiring"],
+  HVAC: ["hvac", "heating", "cooling", "furnace", "air conditioning", "a/c"],
+  Excavation: ["excavation", "excavator", "digging"],
+  Painting: ["paint", "painter"],
+  "Steel Stud": ["steel stud", "metal stud"],
+  Foundations: ["foundation", "footing"],
+  "General Contracting": ["general contractor", "gc ", "renovation", "remodel"],
+  Concrete: ["concrete", "cement"],
+  Flooring: ["flooring", "hardwood", "tile", "laminate"],
+  "Windows & Doors": ["window", "door"],
+  Landscaping: ["landscap", "lawn", "garden"],
+  "Snow Removal": ["snow"],
+  "Interior Design": ["interior design", "decorator"],
+  "Pool & Spa": ["pool", "spa", "hot tub"],
+  "Fencing & Decks": ["fence", "fencing", "deck"],
+  "Cleaning Services": ["cleaning", "janitor", "maid"],
+  Mining: ["mining", "mine "],
+  "Trucking & Logistics": ["trucking", "logistics", "freight", "haul"],
+  "Heavy Equipment": ["heavy equipment", "machinery"],
+  "Oil & Gas Services": ["oil", "gas", "wellsite", "pipeline"],
+  "Health & Wellness": ["wellness", "massage", "yoga", "fitness", "gym"],
+  Dental: ["dental", "dentist", "ortho"],
+  Chiropractic: ["chiro"],
+  Legal: ["law ", "lawyer", "legal", "attorney"],
+  Accounting: ["accounting", "accountant", "bookkeep", "tax"],
+  "Real Estate": ["real estate", "realtor", "realty"],
+};
+
+const detectSpecialty = (
+  industryLabel: string,
+  ...haystacks: string[]
+): string | null => {
+  const industry = industries.find((i) => i.label === industryLabel);
+  if (!industry || industry.specialties.length === 0) return null;
+  const text = haystacks.join(" ").toLowerCase();
+  if (!text.trim()) return null;
+  for (const s of industry.specialties) {
+    const keys = [s.toLowerCase(), ...(specialtyKeywords[s] ?? [])];
+    if (keys.some((k) => k && text.includes(k))) return s;
+  }
+  return null;
+};
 const yearsOptions = ["Less than 1","1–3","3–5","5–10","10+"];
 const provinces = ["BC","AB","ON","MB","SK","QC","NS","Other"];
 const popOptions = ["Under 100K","100K – 500K","500K – 1M","Over 1M"];
@@ -117,11 +168,40 @@ const ScanWizard = () => {
                   <div className="grid gap-4">
                     <div>
                       <label className={labelCls}>Business Name *</label>
-                      <input className={inputCls} value={data.business} onChange={(e) => set("business", e.target.value)} />
+                      <input
+                        className={inputCls}
+                        value={data.business}
+                        onChange={(e) => {
+                          const business = e.target.value;
+                          setData((d) => {
+                            // If industry is already set and trade is blank,
+                            // try to auto-pick a specialty from the new name.
+                            const auto =
+                              d.industry && !d.trade
+                                ? detectSpecialty(d.industry, business, d.website, d.notes)
+                                : null;
+                            return { ...d, business, trade: auto ?? d.trade };
+                          });
+                        }}
+                      />
                     </div>
                     <div>
                       <label className={labelCls}>Your Website</label>
-                      <input className={inputCls} value={data.website} onChange={(e) => set("website", e.target.value)} placeholder="https://" />
+                      <input
+                        className={inputCls}
+                        value={data.website}
+                        onChange={(e) => {
+                          const website = e.target.value;
+                          setData((d) => {
+                            const auto =
+                              d.industry && !d.trade
+                                ? detectSpecialty(d.industry, d.business, website, d.notes)
+                                : null;
+                            return { ...d, website, trade: auto ?? d.trade };
+                          });
+                        }}
+                        placeholder="https://"
+                      />
                     </div>
                     <div>
                       <label className={labelCls}>Your Industry *</label>
@@ -129,8 +209,21 @@ const ScanWizard = () => {
                         className={inputCls}
                         value={data.industry}
                         onChange={(e) => {
-                          set("industry", e.target.value);
-                          set("trade", "");
+                          const nextIndustry = e.target.value;
+                          const auto = detectSpecialty(
+                            nextIndustry,
+                            data.business,
+                            data.website,
+                            data.notes,
+                          );
+                          setData((d) => ({
+                            ...d,
+                            industry: nextIndustry,
+                            trade: auto ?? "",
+                          }));
+                          if (auto) {
+                            toast.success(`Pre-selected ${auto} from your details.`);
+                          }
                         }}
                       >
                         <option value="">Select your industry…</option>
