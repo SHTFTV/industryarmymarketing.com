@@ -79,6 +79,14 @@ test.describe(`Programmatic SEO banner (${routes.length} routes × ${viewports.l
       }, testInfo) => {
         await page.setViewportSize({ width: vp.width, height: vp.height });
 
+        // Which component renders the banner on this route. ContractorCityPage
+        // uses <ContractorHero> (image + overlay + headline); everything else
+        // uses the plain <SeoBanner>. Surface this in failure annotations so
+        // a regression is traceable to the right component.
+        const bannerVariant = route.startsWith("/contractors/")
+          ? "ContractorHero"
+          : "SeoBanner";
+
         const imgResponses: { url: string; status: number }[] = [];
         page.on("response", (res) => {
           const url = res.url();
@@ -170,14 +178,25 @@ test.describe(`Programmatic SEO banner (${routes.length} routes × ${viewports.l
           });
         } catch (err) {
           // Surface a human-readable annotation pointing at the offending
-          // route + viewport, and attach the expected/actual/diff PNGs so
-          // the diff regions are visible directly in the HTML report.
+          // route, viewport, full page URL, and banner variant, then attach
+          // the expected/actual/diff PNGs so the highlighted diff regions are
+          // visible directly in the HTML report.
+          const pageUrl = page.url();
           testInfo.annotations.push({
             type: "visual-regression",
             description:
               `Banner pixel-diff exceeded threshold on ${route} @ ${vp.name} ` +
-              `(${vp.width}x${vp.height}). See attached *-diff.png to inspect ` +
-              `highlighted pixel regions.`,
+              `(${vp.width}x${vp.height}).\n` +
+              `Variant: ${bannerVariant}\n` +
+              `URL: ${pageUrl}\n` +
+              `See attached *-diff.png for highlighted pixel regions.`,
+          });
+          testInfo.annotations.push({ type: "url", description: pageUrl });
+          testInfo.annotations.push({ type: "variant", description: bannerVariant });
+          testInfo.annotations.push({ type: "route", description: route });
+          testInfo.annotations.push({
+            type: "viewport",
+            description: `${vp.name} (${vp.width}x${vp.height})`,
           });
 
           if (fs.existsSync(testInfo.outputDir)) {
