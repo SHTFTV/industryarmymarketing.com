@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Layout from "@/components/Layout";
 import Seo from "@/components/Seo";
@@ -146,6 +146,42 @@ const empty: FormState = {
   name: "", email: "", phone: "", notes: "",
 };
 
+// Persist the user's accepted/overridden industry + trade so the next scan
+// starts pre-filled. Kept intentionally minimal — no PII.
+const TRADE_PREF_KEY = "iam.scanWizard.tradePref.v1";
+type TradePref = { industry: string; trade: string };
+
+const loadTradePref = (): TradePref | null => {
+  if (typeof window === "undefined") return null;
+  try {
+    const raw = window.localStorage.getItem(TRADE_PREF_KEY);
+    if (!raw) return null;
+    const parsed = JSON.parse(raw) as Partial<TradePref>;
+    if (typeof parsed.industry !== "string") return null;
+    return { industry: parsed.industry, trade: parsed.trade ?? "" };
+  } catch {
+    return null;
+  }
+};
+
+const saveTradePref = (pref: TradePref) => {
+  if (typeof window === "undefined") return;
+  try {
+    window.localStorage.setItem(TRADE_PREF_KEY, JSON.stringify(pref));
+  } catch {
+    /* storage disabled — silently ignore */
+  }
+};
+
+const clearTradePref = () => {
+  if (typeof window === "undefined") return;
+  try {
+    window.localStorage.removeItem(TRADE_PREF_KEY);
+  } catch {
+    /* noop */
+  }
+};
+
 const inputCls = "w-full bg-background border border-border rounded-md px-4 py-3 text-foreground focus:border-primary focus:outline-none transition-colors";
 const labelCls = "block text-muted-foreground text-xs uppercase tracking-widest mb-2";
 
@@ -154,6 +190,16 @@ const ScanWizard = () => {
   const [data, setData] = useState<FormState>(empty);
   const [suggestion, setSuggestion] = useState<SpecialtySuggestion | null>(null);
   const [tradeLocked, setTradeLocked] = useState(false); // user accepted or chose manually
+  const [preloadedFromPref, setPreloadedFromPref] = useState(false);
+
+  // Preload last saved industry/trade on first mount.
+  useEffect(() => {
+    const pref = loadTradePref();
+    if (!pref) return;
+    setData((d) => ({ ...d, industry: pref.industry, trade: pref.trade }));
+    setTradeLocked(true); // treat preloaded as user's confirmed choice
+    setPreloadedFromPref(true);
+  }, []);
   const set = <K extends keyof FormState>(k: K, v: FormState[K]) =>
     setData((d) => ({ ...d, [k]: v }));
 
@@ -254,6 +300,12 @@ const ScanWizard = () => {
                           setTradeLocked(false);
                           setData(next);
                           refreshSuggestion(next);
+                          if (e.target.value) {
+                            saveTradePref({ industry: e.target.value, trade: "" });
+                          } else {
+                            clearTradePref();
+                          }
+                          setPreloadedFromPref(false);
                         }}
                       >
                         <option value="">Select your industry…</option>
@@ -300,6 +352,8 @@ const ScanWizard = () => {
                               onChange={(e) => {
                                 setTradeLocked(true);
                                 set("trade", e.target.value);
+                                saveTradePref({ industry: data.industry, trade: e.target.value });
+                                setPreloadedFromPref(false);
                               }}
                             >
                               <option value="">Any / not listed</option>
@@ -336,6 +390,8 @@ const ScanWizard = () => {
                                       onClick={() => {
                                         setTradeLocked(true);
                                         toast.success(`Locked in ${suggestion.specialty}.`);
+                                        saveTradePref({ industry: data.industry, trade: suggestion.specialty });
+                                        setPreloadedFromPref(false);
                                       }}
                                     >
                                       ✓ Accept {suggestion.specialty}
@@ -348,6 +404,8 @@ const ScanWizard = () => {
                                       onClick={() => {
                                         setTradeLocked(false);
                                         set("trade", suggestion.specialty);
+                                        saveTradePref({ industry: data.industry, trade: suggestion.specialty });
+                                        setPreloadedFromPref(false);
                                       }}
                                     >
                                       Use suggestion
@@ -360,12 +418,32 @@ const ScanWizard = () => {
                                     onClick={() => {
                                       setTradeLocked(true);
                                       set("trade", "");
+                                      saveTradePref({ industry: data.industry, trade: "" });
+                                      setPreloadedFromPref(false);
                                     }}
                                   >
                                     Override / pick myself
                                   </Button>
                                 </div>
                               </div>
+                            )}
+                            {preloadedFromPref && (
+                              <p className="mt-2 text-[11px] text-muted-foreground">
+                                Preloaded from your last scan.{" "}
+                                <button
+                                  type="button"
+                                  className="underline hover:text-primary"
+                                  onClick={() => {
+                                    clearTradePref();
+                                    setPreloadedFromPref(false);
+                                    setTradeLocked(false);
+                                    setData((d) => ({ ...d, industry: "", trade: "" }));
+                                    setSuggestion(null);
+                                  }}
+                                >
+                                  Clear
+                                </button>
+                              </p>
                             )}
                           </>
                         );
@@ -464,7 +542,24 @@ const ScanWizard = () => {
                     </div>
                     <div className="mt-8 flex flex-wrap justify-center gap-3">
                       <Button variant="hero" size="lg" onClick={() => window.location.assign("/contact")}>Claim My Territory</Button>
-                      <Button variant="outline" size="lg" onClick={() => { setStep(0); setData(empty); }}>Run Another Scan</Button>
+                      <Button
+                        variant="outline"
+                        size="lg"
+                        onClick={() => {
+                          const pref = loadTradePref();
+                          setStep(0);
+                          setData({
+                            ...empty,
+                            industry: pref?.industry ?? "",
+                            trade: pref?.trade ?? "",
+                          });
+                          setTradeLocked(!!pref);
+                          setPreloadedFromPref(!!pref);
+                          setSuggestion(null);
+                        }}
+                      >
+                        Run Another Scan
+                      </Button>
                     </div>
                   </div>
                 </motion.div>
