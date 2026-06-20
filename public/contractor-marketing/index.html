@@ -553,7 +553,7 @@ footer.site{background:#050505;padding:32px 0;color:#666;font-size:13px;text-ali
       b.className='iam-qr-px-preset';
       b.setAttribute('data-px',String(v));
       b.setAttribute('data-custom','1');
-      b.title=name+' — '+v+'px (shift-click to remove)';
+      b.title=name+' — '+v+'px (alt-click to rename, shift-click to remove)';
       b.textContent=name;
       b.style.cssText='background:#111;border:1px solid #caff00;color:#caff00;padding:6px 8px;border-radius:3px;font:inherit;font-size:11px;cursor:pointer';
       host.appendChild(b);
@@ -586,6 +586,28 @@ footer.site{background:#050505;padding:32px 0;color:#666;font-size:13px;text-ali
       if(e.shiftKey && t.getAttribute('data-custom')==='1'){
         var arr=loadCustomPx().filter(function(n){return String(n.px)!==px;});
         saveCustomPx(arr); renderCustomPx();
+        return;
+      }
+      if(e.altKey && t.getAttribute('data-custom')==='1'){
+        e.preventDefault();
+        var list2=loadCustomPx();
+        var idx2=-1;
+        for(var j=0;j<list2.length;j++){if(String(list2[j].px)===px){idx2=j;break;}}
+        if(idx2<0) return;
+        var current=list2[idx2].name;
+        var next=window.prompt('Rename preset ('+px+'px):',current);
+        if(next===null) return;
+        next=(next||'').trim().slice(0,24);
+        if(!next||next===current) return;
+        var lower2=next.toLowerCase();
+        for(var k=0;k<list2.length;k++){
+          if(k!==idx2 && String(list2[k].name).toLowerCase()===lower2){
+            alert('A preset named "'+next+'" already exists.');
+            return;
+          }
+        }
+        list2[idx2].name=next;
+        saveCustomPx(list2); renderCustomPx();
         return;
       }
       pxEl.value=px; applyPx(); saveQrPrefs(); syncPxPresetActive();
