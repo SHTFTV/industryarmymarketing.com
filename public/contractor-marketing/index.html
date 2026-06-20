@@ -614,33 +614,7 @@ footer.site{background:#050505;padding:32px 0;color:#666;font-size:13px;text-ali
             alert('Import failed — no valid presets.\n\n'+(errors.join('\n')||'File contained 0 items.'));
             return;
           }
-          var existing=loadCustomPx();
-          var existingByName={}; existing.forEach(function(p){existingByName[String(p.name).toLowerCase()]=p;});
-          var collisions=clean.filter(function(p){return existingByName[p.name.toLowerCase()];});
-          var summary='Found '+clean.length+' valid preset(s)';
-          if(errors.length) summary+=', '+errors.length+' skipped';
-          if(collisions.length) summary+=', '+collisions.length+' will overwrite existing name(s)';
-          summary+='.\n\nOK = Merge with existing\nCancel = Replace all';
-          if(errors.length) summary+='\n\nSkipped:\n- '+errors.slice(0,8).join('\n- ')+(errors.length>8?'\n- …and '+(errors.length-8)+' more':'');
-          var merge=window.confirm(summary);
-          var next;
-          if(!merge){next=clean.slice();}
-          else{
-            next=existing.slice();
-            clean.forEach(function(it){
-              var lower=it.name.toLowerCase();
-              var idx=-1;
-              for(var i=0;i<next.length;i++){if(String(next[i].name).toLowerCase()===lower){idx=i;break;}}
-              if(idx>=0) next[idx]=it; else next.push(it);
-            });
-          }
-          next.sort(function(a,b){return a.px-b.px;});
-          saveCustomPx(next); renderCustomPx();
-          var done='Imported '+clean.length+' preset(s)';
-          if(merge && collisions.length) done+=' ('+collisions.length+' overwritten)';
-          if(errors.length) done+='; '+errors.length+' skipped';
-          done+='.';
-          alert(done);
+          openImportPreview(clean,errors);
         };
         r.onerror=function(){alert('Import failed — could not read file.');};
         r.readAsText(f);
