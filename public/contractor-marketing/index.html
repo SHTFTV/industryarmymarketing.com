@@ -412,6 +412,7 @@ footer.site{background:#050505;padding:32px 0;color:#666;font-size:13px;text-ali
     qrModal.classList.add('open');
     applyPx();
     checkContrast();
+    if(typeof syncPxPresetActive==='function') syncPxPresetActive();
   }
   function closeQr(){qrModal.classList.remove('open');}
   qrBtn.addEventListener('click',openQr);
@@ -424,6 +425,7 @@ footer.site{background:#050505;padding:32px 0;color:#666;font-size:13px;text-ali
     document.getElementById('iam-qr-px').value='320';
     applyPx();
     checkContrast();
+    if(typeof syncPxPresetActive==='function') syncPxPresetActive();
     var b=this.target||document.getElementById('iam-qr-reset');
     var orig=b.textContent; b.textContent='Reset ✓'; b.style.color='#caff00'; b.style.borderColor='#caff00';
     setTimeout(function(){b.textContent=orig;b.style.color='';b.style.borderColor='';},1200);
