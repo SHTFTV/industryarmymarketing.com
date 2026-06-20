@@ -371,9 +371,13 @@ footer.site{background:#050505;padding:32px 0;color:#666;font-size:13px;text-ali
     var orig=qrDl.textContent; qrDl.textContent='Downloading…';
     fetch(url).then(function(r){return r.blob();}).then(function(blob){
       var slugSrc=(window.location.search||'').replace(/[^a-z0-9]+/gi,'-').replace(/^-|-$/g,'')||'all';
+      var suggested='iam-contractor-marketing-'+slugSrc;
+      var input=window.prompt('Save QR as (filename, .png added automatically):',suggested);
+      if(input===null){qrDl.textContent=orig;return;}
+      var name=(input.trim()||suggested).replace(/\.png$/i,'').replace(/[\\/:*?"<>|]+/g,'-');
       var a=document.createElement('a');
       var obj=URL.createObjectURL(blob);
-      a.href=obj; a.download='iam-contractor-marketing-'+slugSrc+'.png';
+      a.href=obj; a.download=name+'.png';
       document.body.appendChild(a); a.click(); document.body.removeChild(a);
       setTimeout(function(){URL.revokeObjectURL(obj);},1000);
       qrDl.textContent=orig;
