@@ -78,6 +78,7 @@ export const groups = [
       ["remodelers.io", "Remodeling"],
       ["buildershaus.com", "Trade Hub"],
       ["kongtractors.com", "Contracting"],
+      ["logcabin.ltd", "Log Cabins"],
     ],
   },
   {
@@ -97,6 +98,7 @@ export const groups = [
       ["excavators.tv", "Excavation"],
       ["hardscapes.io", "Hardscaping"],
       ["painters.tv", "Painting"],
+      ["landscapers.ca", "Landscaping"],
       ["promows.com", "Lawn Care"],
       ["plowwow.com", "Snow Plowing"],
       ["snowremoval.tv", "Snow Removal"],
