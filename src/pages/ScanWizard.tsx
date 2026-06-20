@@ -180,8 +180,21 @@ const ScanWizard = () => {
                         className={inputCls}
                         value={data.industry}
                         onChange={(e) => {
-                          set("industry", e.target.value);
-                          set("trade", "");
+                          const nextIndustry = e.target.value;
+                          const auto = detectSpecialty(
+                            nextIndustry,
+                            data.business,
+                            data.website,
+                            data.notes,
+                          );
+                          setData((d) => ({
+                            ...d,
+                            industry: nextIndustry,
+                            trade: auto ?? "",
+                          }));
+                          if (auto) {
+                            toast.success(`Pre-selected ${auto} from your details.`);
+                          }
                         }}
                       >
                         <option value="">Select your industry…</option>
