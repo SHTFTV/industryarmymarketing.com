@@ -683,6 +683,60 @@ footer.site{background:#050505;padding:32px 0;color:#666;font-size:13px;text-ali
     }
   }
   function escapeHtml(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+  function openExportDialog(json){
+    var prev=document.getElementById('iam-qr-export-modal'); if(prev) prev.remove();
+    var ov=document.createElement('div');
+    ov.id='iam-qr-export-modal';
+    ov.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:10001;display:flex;align-items:center;justify-content:center;padding:24px';
+    var box=document.createElement('div');
+    box.style.cssText='background:#0a0a0a;border:1px solid #333;border-radius:6px;max-width:760px;width:100%;max-height:85vh;display:flex;flex-direction:column;color:#eee;font:13px/1.4 inherit';
+    var head=document.createElement('div');
+    head.style.cssText='padding:16px 20px;border-bottom:1px solid #222';
+    head.innerHTML='<div style="font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:#caff00;margin-bottom:4px">Export presets</div>'+
+      '<div style="color:#aaa;font-size:12px">Copy the JSON below, or download it as a file.</div>';
+    box.appendChild(head);
+    var ta=document.createElement('textarea');
+    ta.readOnly=true; ta.value=json;
+    ta.style.cssText='flex:1;min-height:280px;margin:16px 20px;padding:12px;background:#000;color:#caff00;border:1px solid #222;border-radius:4px;font:12px/1.5 JetBrains Mono,Menlo,monospace;resize:vertical;outline:none';
+    box.appendChild(ta);
+    var foot=document.createElement('div');
+    foot.style.cssText='padding:14px 20px;border-top:1px solid #222;display:flex;gap:8px;align-items:center;justify-content:flex-end;flex-wrap:wrap';
+    function btn(label,style,onclick){
+      var b=document.createElement('button');
+      b.type='button'; b.textContent=label;
+      b.style.cssText='padding:8px 14px;border-radius:3px;font:inherit;font-size:12px;text-transform:uppercase;letter-spacing:.05em;cursor:pointer;'+style;
+      b.addEventListener('click',onclick);
+      return b;
+    }
+    foot.appendChild(btn('Close','background:transparent;color:#888;border:1px solid #333',function(){ov.remove();}));
+    foot.appendChild(btn('Download .json','background:transparent;color:#caff00;border:1px solid #caff00',function(){
+      var blob=new Blob([json],{type:'application/json'});
+      var url=URL.createObjectURL(blob);
+      var a=document.createElement('a');
+      a.href=url;
+      a.download='iam-qr-px-presets-'+new Date().toISOString().slice(0,10)+'.json';
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(function(){URL.revokeObjectURL(url);},1000);
+    }));
+    var copyBtn=btn('Copy JSON','background:#caff00;color:#0a0a0a;border:1px solid #caff00;font-weight:700',function(){
+      var done=function(ok){
+        var orig='Copy JSON';
+        copyBtn.textContent=ok?'Copied ✓':'Copy failed';
+        setTimeout(function(){copyBtn.textContent=orig;},1200);
+      };
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(json).then(function(){done(true);},function(){fallback();});
+      } else { fallback(); }
+      function fallback(){
+        try{ta.focus();ta.select();var ok=document.execCommand('copy');done(!!ok);}catch(e){done(false);}
+      }
+    });
+    foot.appendChild(copyBtn);
+    box.appendChild(foot);
+    ov.appendChild(box);
+    ov.addEventListener('click',function(e){if(e.target===ov) ov.remove();});
+    document.body.appendChild(ov);
+  }
   pxGroup.addEventListener('click',function(e){
     var t=e.target;
     if(!(t&&t.classList)) return;
@@ -693,13 +747,7 @@ footer.site{background:#050505;padding:32px 0;color:#666;font-size:13px;text-ali
       var ecc=(document.getElementById('iam-qr-ecc')||{}).value||'Q';
       var enriched=data.map(function(p){return {name:p.name,px:p.px,fg:fg,bg:bg,ecc:ecc};});
       var payload={kind:'iam.qr.px-presets',version:2,exportedAt:new Date().toISOString(),settings:{fg:fg,bg:bg,ecc:ecc},presets:enriched};
-      var blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});
-      var url=URL.createObjectURL(blob);
-      var a=document.createElement('a');
-      a.href=url;
-      a.download='iam-qr-px-presets-'+new Date().toISOString().slice(0,10)+'.json';
-      document.body.appendChild(a); a.click(); a.remove();
-      setTimeout(function(){URL.revokeObjectURL(url);},1000);
+      openExportDialog(JSON.stringify(payload,null,2));
       return;
     }
     if(t.id==='iam-qr-px-import'){
