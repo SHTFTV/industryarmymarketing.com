@@ -23,11 +23,11 @@ const cols = [
     ],
   },
   {
-    title: "Local & Legal",
+    title: "Resources",
     links: [
-      { label: "Vancouver", to: "/local/vancouver" },
-      { label: "Surrey", to: "/local/surrey" },
-      { label: "Langley", to: "/local/langley" },
+      { label: "Backlinks", to: "/backlinks" },
+      { label: "Industries", to: "/industries" },
+      { label: "Dofollow Network", to: "/dofollow-backlinks" },
       { label: "Legal Hub", to: "/legal" },
       { label: "Contact", to: "/contact" },
     ],
