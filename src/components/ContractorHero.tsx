@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { SEO_BANNER_VERSION } from "@/components/SeoBanner";
 
 interface ContractorHeroProps {
   imageSrc: string;
@@ -17,9 +18,12 @@ const ContractorHero = ({
   rate,
   overlayColor = "from-black/85 via-black/55 to-black/20",
 }: ContractorHeroProps) => (
-  <section className="relative w-full min-h-[200px] md:min-h-[320px] overflow-hidden border-b border-border">
+  <section
+    data-testid="seo-banner"
+    className="relative w-full min-h-[200px] md:min-h-[320px] overflow-hidden border-b border-border"
+  >
     <img
-      src={imageSrc}
+      src={imageSrc.includes("?") ? imageSrc : `${imageSrc}?${SEO_BANNER_VERSION}`}
       alt={`${trade} marketing in ${city}`}
       fetchPriority="high"
       loading="eager"
