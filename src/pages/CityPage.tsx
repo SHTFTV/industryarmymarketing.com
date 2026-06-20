@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import Seo from "@/components/Seo";
 import PageHeader from "@/components/PageHeader";
+import SeoBanner from "@/components/SeoBanner";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Mail, MapPin, Lock, Check, Crown } from "lucide-react";
@@ -137,6 +138,7 @@ const CityPage = () => {
         path={`/cities/${slug}`}
         jsonLd={faqJsonLd}
       />
+      <SeoBanner alt={`Contractor SEO & AEO marketing in ${data.name}`} />
       <PageHeader
         eyebrow={`${data.name}, ${data.province} · IAM Territory`}
         title={`Own Your Trade In`}
