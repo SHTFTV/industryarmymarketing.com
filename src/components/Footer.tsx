@@ -26,6 +26,7 @@ const cols = [
     title: "Resources",
     links: [
       { label: "Backlinks", to: "/backlinks" },
+      { label: "Guest Post", to: "/guest-post" },
       { label: "Industries", to: "/industries" },
       { label: "Dofollow Network", to: "/dofollow-backlinks" },
       { label: "Legal Hub", to: "/legal" },

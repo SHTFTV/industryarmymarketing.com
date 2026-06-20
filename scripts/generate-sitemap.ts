@@ -59,6 +59,7 @@ const entries: SitemapEntry[] = [
   { path: "/service-professionals", changefreq: "monthly", priority: "0.8" },
   { path: "/backlinks", changefreq: "monthly", priority: "0.8" },
   { path: "/dofollow-backlinks", changefreq: "weekly", priority: "0.7" },
+  { path: "/guest-post", changefreq: "weekly", priority: "0.8" },
   { path: "/industries", changefreq: "monthly", priority: "0.6" },
   { path: "/contact", changefreq: "yearly", priority: "0.5" },
   { path: "/scan-wizard", changefreq: "monthly", priority: "0.9" },
