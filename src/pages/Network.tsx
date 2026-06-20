@@ -12,6 +12,58 @@ import {
   type DomainSyncReport,
 } from "@/lib/domain-sync";
 
+function DomainSyncBanner({ report }: { report: DomainSyncReport }) {
+  const sections: Array<[string, string[]]> = [
+    ["Duplicates in domains.ts", report.dupesInData],
+    ["Duplicates in Network.tsx", report.dupesInNetwork],
+    ["Duplicate mentions in FAQ blurb", report.dupesInFaq],
+    ["In Network.tsx but missing from domains.ts", report.inNetworkNotInData],
+    ["In domains.ts but missing from Network.tsx", report.inDataNotInNetwork],
+    ["Mentioned in FAQ but missing from domains.ts", report.faqNotInData],
+  ];
+  const ok = report.ok;
+  return (
+    <div
+      className={`border-y px-4 py-3 text-sm ${
+        ok
+          ? "border-emerald-500/30 bg-emerald-500/10 text-emerald-300"
+          : "border-orange-500/40 bg-orange-500/10 text-orange-200"
+      }`}
+      role="status"
+      aria-live="polite"
+    >
+      <div className="container mx-auto max-w-6xl">
+        <div className="flex items-center justify-between gap-4">
+          <strong className="font-display tracking-wider uppercase text-xs">
+            [dev] Domain Sync: {ok ? "OK" : "Out of sync"}
+          </strong>
+          <span className="text-xs opacity-70">
+            domains.ts · Network.tsx · FAQ blurb
+          </span>
+        </div>
+        {!ok && (
+          <ul className="mt-2 space-y-1">
+            {sections
+              .filter(([, items]) => items.length > 0)
+              .map(([label, items]) => (
+                <li key={label} className="text-xs">
+                  <span className="font-semibold">{label} ({items.length}):</span>{" "}
+                  <span className="font-mono opacity-90">{items.join(", ")}</span>
+                </li>
+              ))}
+          </ul>
+        )}
+        {report.faqIgnored.length > 0 && (
+          <p className="mt-2 text-[11px] opacity-60">
+            FAQ candidates ignored (subdomains/unknown TLDs):{" "}
+            <span className="font-mono">{report.faqIgnored.join(", ")}</span>
+          </p>
+        )}
+      </div>
+    </div>
+  );
+}
+
 export const groups = [
   {
     title: "The Build Army",
