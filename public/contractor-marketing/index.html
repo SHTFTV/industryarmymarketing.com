@@ -529,7 +529,16 @@ footer.site{background:#050505;padding:32px 0;color:#666;font-size:13px;text-ali
   }
   var IAM_QR_PX_KEY='iam.qr.px-presets.v1';
   function loadCustomPx(){
-    try{var raw=localStorage.getItem(IAM_QR_PX_KEY); return raw?JSON.parse(raw):[];}catch(e){return [];}
+    try{
+      var raw=localStorage.getItem(IAM_QR_PX_KEY); if(!raw) return [];
+      var arr=JSON.parse(raw)||[];
+      // migrate legacy: array of numbers -> [{name,px}]
+      return arr.map(function(item){
+        if(typeof item==='number') return {name:item+'px',px:item};
+        if(item && typeof item==='object' && item.px!=null) return {name:String(item.name||(item.px+'px')),px:+item.px};
+        return null;
+      }).filter(Boolean);
+    }catch(e){return [];}
   }
   function saveCustomPx(arr){
     try{localStorage.setItem(IAM_QR_PX_KEY,JSON.stringify(arr));}catch(e){}
@@ -537,14 +546,15 @@ footer.site{background:#050505;padding:32px 0;color:#666;font-size:13px;text-ali
   function renderCustomPx(){
     var host=document.getElementById('iam-qr-px-custom'); if(!host) return;
     host.innerHTML='';
-    loadCustomPx().forEach(function(v){
+    loadCustomPx().forEach(function(item){
+      var v=item.px, name=item.name;
       var b=document.createElement('button');
       b.type='button';
       b.className='iam-qr-px-preset';
       b.setAttribute('data-px',String(v));
       b.setAttribute('data-custom','1');
-      b.title='Custom preset '+v+'px (shift-click to remove)';
-      b.textContent=v;
+      b.title=name+' — '+v+'px (shift-click to remove)';
+      b.textContent=name;
       b.style.cssText='background:#111;border:1px solid #caff00;color:#caff00;padding:6px 8px;border-radius:3px;font:inherit;font-size:11px;cursor:pointer';
       host.appendChild(b);
     });
@@ -558,20 +568,23 @@ footer.site{background:#050505;padding:32px 0;color:#666;font-size:13px;text-ali
       var v=currentPx();
       if(!v||v<50||v>4000){alert('Pixel size must be 50–4000.');return;}
       var list=loadCustomPx();
-      // dedupe against built-ins and existing custom
-      var builtin=['200','320','512','800','1000'];
-      if(builtin.indexOf(String(v))!==-1||list.indexOf(v)!==-1){
-        pxEl.value=String(v); applyPx(); saveQrPrefs(); syncPxPresetActive();
-        return;
-      }
-      list.push(v); list.sort(function(a,b){return a-b;});
+      var suggested=v+'px';
+      var name=window.prompt('Name this preset:',suggested);
+      if(name===null) return;
+      name=(name||'').trim().slice(0,24)||suggested;
+      // dedupe by name (case-insensitive): overwrite px
+      var lower=name.toLowerCase();
+      var idx=-1;
+      for(var i=0;i<list.length;i++){if(String(list[i].name).toLowerCase()===lower){idx=i;break;}}
+      if(idx>=0) list[idx]={name:name,px:v}; else list.push({name:name,px:v});
+      list.sort(function(a,b){return a.px-b.px;});
       saveCustomPx(list); renderCustomPx();
       return;
     }
     if(t.classList.contains('iam-qr-px-preset')){
       var px=t.getAttribute('data-px'); if(!px) return;
       if(e.shiftKey && t.getAttribute('data-custom')==='1'){
-        var arr=loadCustomPx().filter(function(n){return String(n)!==px;});
+        var arr=loadCustomPx().filter(function(n){return String(n.px)!==px;});
         saveCustomPx(arr); renderCustomPx();
         return;
       }
