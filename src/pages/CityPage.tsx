@@ -4,7 +4,7 @@ import Seo from "@/components/Seo";
 import PageHeader from "@/components/PageHeader";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Phone, Mail, MapPin, Lock, Check, Crown } from "lucide-react";
+import { Mail, MapPin, Lock, Check, Crown } from "lucide-react";
 import { domains } from "@/data/domains";
 import CityClaimForm from "@/components/CityClaimForm";
 
