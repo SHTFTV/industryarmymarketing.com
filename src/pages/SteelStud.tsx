@@ -9,7 +9,7 @@ const features = [
   { icon: "🔍", title: "Trade-Specific SEO", body: "steelstud.ca ranks for 'steel stud framing [city]' searches. Your profile is the result they find first." },
   { icon: "🛡️", title: "EyeSpyr Verified", body: "Every contractor is verified through the I-Spy-R system. Your EyeSpyr badge tells customers you're the real deal." },
   { icon: "🔗", title: "Do-Follow Backlinks", body: "Your listing on steelstud.ca sends SEO authority back to your own website. $10 per guest post, unlimited." },
-  { icon: "📞", title: "Direct Contact: Colin", body: "604-761-1518 · colin@steelstud.ca. Direct line. No call centres." },
+  { icon: "✉️", title: "Direct Contact: Colin", body: "colin@steelstud.ca. Direct line to the founder. No call centres." },
   { icon: "🔓", title: "No Contract", body: "Month-to-month. Cancel anytime. Flat $10/month per territory across the IAM network — no per-population markup." },
 ];
 

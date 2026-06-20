@@ -21,7 +21,6 @@ const Index = () => {
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
           name: "Industry Army Marketing",
-          telephone: "+1-604-761-1518",
           email: "colin@industryarmymarketing.com",
           priceRange: "$10+",
           address: {

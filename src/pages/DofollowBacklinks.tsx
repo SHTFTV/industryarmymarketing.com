@@ -516,11 +516,11 @@ const DofollowBacklinks = () => {
             Lock In Your <span className="text-primary text-glow">Dofollow Backlink</span>
           </h2>
           <p className="text-muted-foreground mt-4">
-            One flat $10 payment. Permanent placement. 48-hour turnaround. Email <span className="text-primary">colin@industryarmymarketing.com</span> or call 604-761-1518.
+            One flat $10 payment. Permanent placement. 48-hour turnaround. Email <span className="text-primary">colin@industryarmymarketing.com</span>.
           </p>
           <div className="mt-8 flex justify-center gap-3 flex-wrap">
             <Button variant="hero" asChild><Link to="/contact">Get My Backlink</Link></Button>
-            <Button variant="heroOutline" asChild><a href="tel:6047611518">Call 604-761-1518</a></Button>
+            <Button variant="heroOutline" asChild><a href="mailto:colin@industryarmymarketing.com">Email Colin</a></Button>
           </div>
         </div>
       </section>

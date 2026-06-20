@@ -4,7 +4,7 @@ import Seo from "@/components/Seo";
 import PageHeader from "@/components/PageHeader";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Phone, Mail, MapPin, Lock, Check, Crown } from "lucide-react";
+import { Mail, MapPin, Lock, Check, Crown } from "lucide-react";
 import { domains } from "@/data/domains";
 import CityClaimForm from "@/components/CityClaimForm";
 
@@ -145,7 +145,7 @@ const CityPage = () => {
             <Link to="/contact">Claim {data.name} — {data.rate}</Link>
           </Button>
           <Button variant="heroOutline" asChild>
-            <a href="tel:6047611518">Call 604-761-1518</a>
+            <Link to="/contact">Contact Us</Link>
           </Button>
         </div>
       </PageHeader>
@@ -309,11 +309,6 @@ const CityPage = () => {
           <div className="mt-10 flex flex-col sm:flex-row gap-3 justify-center">
             <Button variant="hero" size="lg" asChild>
               <Link to="/contact">Claim {data.name} Now</Link>
-            </Button>
-            <Button variant="heroOutline" size="lg" asChild>
-              <a href="tel:6047611518" className="flex items-center gap-2">
-                <Phone className="w-4 h-4" /> 604-761-1518
-              </a>
             </Button>
             <Button variant="heroOutline" size="lg" asChild>
               <a href="mailto:colin@industryarmymarketing.com" className="flex items-center gap-2">

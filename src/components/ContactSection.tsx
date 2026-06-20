@@ -5,11 +5,10 @@ import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Phone, Mail, MapPin, Loader2 } from "lucide-react";
+import { Mail, MapPin, Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const contactInfo = [
-  { icon: Phone, label: "Phone", value: "1-604-761-1518" },
   { icon: Mail, label: "Email", value: "colin@industryarmymarketing.com" },
   { icon: MapPin, label: "Address", value: "3645 Kingsway, Vancouver, BC V5R 5M1, Canada" },
 ];
@@ -101,7 +100,7 @@ const ContactSection = () => {
       console.error("[lead] submit failed", err);
       toast({
         title: "Something went wrong",
-        description: "Please try again or call 1-604-761-1518.",
+        description: "Please try again or email colin@industryarmymarketing.com.",
         variant: "destructive",
       });
     } finally {
