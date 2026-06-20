@@ -14,7 +14,6 @@ const groups = [
       ["drywallers.io", "Drywall"],
       ["finishingcarpenters.com", "Finish Carpentry"],
       ["demolition.io", "Demolition"],
-      ["gasfitter.ca", "Gas Fitting"],
       ["rebar.tv", "Rebar"],
       ["remodelers.io", "Remodeling"],
       ["buildershaus.com", "Trade Hub"],
@@ -42,6 +41,7 @@ const groups = [
       ["plowwow.com", "Snow Plowing"],
       ["snowremoval.tv", "Snow Removal"],
       ["arborists.io", "Arborists"],
+      ["bugout.tv", "Bugout & Survival"],
     ],
   },
   {
@@ -84,7 +84,6 @@ const groups = [
     domains: [
       ["weddings.io", "Weddings"],
       ["caterers.tv", "Catering"],
-      ["mover.ltd", "Moving"],
       ["lawyersadvice.co", "Legal Advice"],
       ["loveourlistings.com", "Real Estate"],
       ["videographers.io", "Video"],
@@ -92,6 +91,15 @@ const groups = [
       ["eyespyr.com", "Verification"],
       ["promptagent.ca", "AI Marketing"],
       ["pitchdeck.tv", "Pitch Decks"],
+    ],
+  },
+  {
+    title: "The Transportation Army",
+    subtitle: "Logistics, Moving & Errands",
+    domains: [
+      ["errands.io", "Errands & Delivery"],
+      ["backhaul.io", "Backhaul & Freight"],
+      ["mover.ltd", "Moving"],
     ],
   },
 ];

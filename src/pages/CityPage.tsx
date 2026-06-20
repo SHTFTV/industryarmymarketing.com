@@ -91,7 +91,7 @@ const TRADES = [
 const faqs = (city: string, rate: string) => [
   { q: `How much does contractor marketing cost in ${city}?`, a: `${city} is ${rate}. The rate is fixed for exclusive territory holders and calculated at $10 per 100,000 population — minimum $10/month.` },
   { q: `What does exclusive territory mean in ${city}?`, a: `One contractor per trade per city — permanently. No other roofer, plumber, or electrician can claim ${city} once you do. Your competition is locked out for as long as you stay.` },
-  { q: "What domains will my listing live on?", a: "150+ premium industry domains — roofers.io, gasfitter.ca, sparkys.tv, plumbers.ltd, hvacr.tv, drywallers.io, painters.tv, excavators.tv, rebar.tv and more. All 20+ years old." },
+  { q: "What domains will my listing live on?", a: "150+ premium industry domains — roofers.io, sparkys.tv, plumbers.ltd, hvacr.tv, drywallers.io, painters.tv, excavators.tv, rebar.tv and more. All 20+ years old." },
   { q: `How long before I see leads in ${city}?`, a: "Most contractors see lead flow within 30 to 60 days. IAM domains already rank — you skip the years it takes a new site to build authority." },
   { q: "Is there a contract?", a: `No contract. Cancel anytime. The moment you cancel, your ${city} territory opens to your competitors immediately.` },
 ];

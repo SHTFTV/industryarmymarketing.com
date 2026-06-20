@@ -1,6 +1,5 @@
 export const domains = [
   { domain: "roofers.io", niche: "Residential & Commercial Roofing", emoji: "🏠" },
-  { domain: "gasfitter.ca", niche: "Gas Fitting & HVAC", emoji: "🔥" },
   { domain: "plumbers.ltd", niche: "Plumbing Contractors", emoji: "🚿" },
   { domain: "sparkys.tv", niche: "Electrical Contractors", emoji: "⚡" },
   { domain: "hvacr.tv", niche: "HVAC & Refrigeration", emoji: "❄️" },
@@ -31,6 +30,8 @@ export const domains = [
   { domain: "logcabin.ltd", niche: "Log Cabins", emoji: "🪵" },
   { domain: "pitchdeck.tv", niche: "Investor Pitch Decks", emoji: "📊" },
   { domain: "errands.io", niche: "Drone & Video Services", emoji: "🚁" },
+  { domain: "backhaul.io", niche: "Backhaul & Freight", emoji: "🚚" },
+  { domain: "bugout.tv", niche: "Bugout & Survival", emoji: "🎒" },
 ];
 
 export const cities = [
