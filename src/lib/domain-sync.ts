@@ -10,6 +10,7 @@ export type DomainSyncReport = {
   ok: boolean;
   dupesInData: string[];
   dupesInNetwork: string[];
+  dupesInFaq: string[];
   inNetworkNotInData: string[];
   inDataNotInNetwork: string[];
   faqDomains: string[];
@@ -42,6 +43,8 @@ export function buildDomainSyncReport(input: {
   const faqDomains = Array.from(
     new Set((input.faqText.match(DOMAIN_RE) ?? []).map((d) => d.toLowerCase())),
   ).sort();
+  const faqDomainsRaw = (input.faqText.match(DOMAIN_RE) ?? []).map((d) => d.toLowerCase());
+  const dupesInFaq = findDupes(faqDomainsRaw);
 
   const inNetworkNotInData = Array.from(netSet).filter((d) => !dataSet.has(d)).sort();
   const inDataNotInNetwork = Array.from(dataSet).filter((d) => !netSet.has(d)).sort();
@@ -53,6 +56,7 @@ export function buildDomainSyncReport(input: {
   const ok =
     dupesInData.length === 0 &&
     dupesInNetwork.length === 0 &&
+    dupesInFaq.length === 0 &&
     inNetworkNotInData.length === 0 &&
     inDataNotInNetwork.length === 0 &&
     faqNotInData.length === 0;
@@ -61,6 +65,7 @@ export function buildDomainSyncReport(input: {
     ok,
     dupesInData,
     dupesInNetwork,
+    dupesInFaq,
     inNetworkNotInData,
     inDataNotInNetwork,
     faqDomains,
@@ -71,11 +76,18 @@ export function buildDomainSyncReport(input: {
 export function logDomainSyncReport(r: DomainSyncReport) {
   if (r.ok) {
     // eslint-disable-next-line no-console
-    console.info("[domain-sync] OK — Network.tsx, domains.ts, and FAQ are in sync.");
+    console.info(
+      "%c[domain-sync] OK%c — Network.tsx, domains.ts, and FAQ are in sync.",
+      "color:#4CAF50;font-weight:bold",
+      "color:inherit",
+    );
     return;
   }
   // eslint-disable-next-line no-console
-  console.group("[domain-sync] ⚠️ Out of sync");
+  console.group(
+    "%c⚠️ [domain-sync] Out of sync",
+    "color:#FF5722;font-weight:bold;font-size:12px",
+  );
   const row = (label: string, items: string[]) => {
     if (items.length) {
       // eslint-disable-next-line no-console
@@ -84,6 +96,7 @@ export function logDomainSyncReport(r: DomainSyncReport) {
   };
   row("Duplicates in domains.ts", r.dupesInData);
   row("Duplicates in Network.tsx", r.dupesInNetwork);
+  row("Duplicate mentions in FAQ blurb", r.dupesInFaq);
   row("In Network.tsx but missing from domains.ts", r.inNetworkNotInData);
   row("In domains.ts but missing from Network.tsx", r.inDataNotInNetwork);
   row("Mentioned in FAQ but missing from domains.ts", r.faqNotInData);
