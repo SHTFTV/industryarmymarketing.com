@@ -382,6 +382,7 @@ footer.site{background:#050505;padding:32px 0;color:#666;font-size:13px;text-ali
     qrImg.src=buildQrUrl(320,'png');
     // also expose current url for download/print handlers via location.href
     qrModal.classList.add('open');
+    checkContrast();
   }
   function closeQr(){qrModal.classList.remove('open');}
   qrBtn.addEventListener('click',openQr);
@@ -423,9 +424,40 @@ footer.site{background:#050505;padding:32px 0;color:#666;font-size:13px;text-ali
   document.getElementById('iam-qr-ecc').addEventListener('change',function(){
     if(qrModal.classList.contains('open')) qrImg.src=buildQrUrl(320,'png');
   });
+
+  function _lum(hex){
+    hex=hex.replace('#','');
+    var r=parseInt(hex.substr(0,2),16)/255,g=parseInt(hex.substr(2,2),16)/255,b=parseInt(hex.substr(4,2),16)/255;
+    function c(v){return v<=0.03928?v/12.92:Math.pow((v+0.055)/1.055,2.4);}
+    return 0.2126*c(r)+0.7152*c(g)+0.0722*c(b);
+  }
+  function checkContrast(){
+    var fg=document.getElementById('iam-qr-fg').value,
+        bg=document.getElementById('iam-qr-bg').value,
+        warn=document.getElementById('iam-qr-warn');
+    var lf=_lum(fg), lb=_lum(bg);
+    var ratio=(Math.max(lf,lb)+0.05)/(Math.min(lf,lb)+0.05);
+    var inverted=lf>lb; // QR scanners expect dark modules on light background
+    if(inverted){
+      warn.style.display='block';
+      warn.style.background='#3a0a0a';warn.style.color='#ff8a8a';warn.style.border='1px solid #ff4d4d';
+      warn.innerHTML='⚠ Inverted colors. Most scanners read DARK on LIGHT only — your FG is lighter than BG. Swap them or this QR likely won\'t scan.';
+    } else if(ratio<3){
+      warn.style.display='block';
+      warn.style.background='#3a1a00';warn.style.color='#ffb070';warn.style.border='1px solid #ff8800';
+      warn.innerHTML='⚠ Very low contrast ('+ratio.toFixed(1)+':1). Will likely fail to scan. Aim for 4:1 or higher.';
+    } else if(ratio<4){
+      warn.style.display='block';
+      warn.style.background='#2a2200';warn.style.color='#ffe070';warn.style.border='1px solid #ccaa00';
+      warn.innerHTML='⚠ Marginal contrast ('+ratio.toFixed(1)+':1). May fail on small prints or worn signage. Bump EC to Q or H, or boost contrast.';
+    } else {
+      warn.style.display='none';
+    }
+  }
   ['iam-qr-fg','iam-qr-bg'].forEach(function(id){
     document.getElementById(id).addEventListener('input',function(){
       if(qrModal.classList.contains('open')) qrImg.src=buildQrUrl(320,'png');
+      checkContrast();
     });
   });
 
@@ -442,6 +474,7 @@ footer.site{background:#050505;padding:32px 0;color:#666;font-size:13px;text-ali
   <div class="box">
     <h3>Scan this link</h3>
     <p id="iam-qr-url"></p>
+    <div id="iam-qr-warn" style="display:none;font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding:8px 10px;border-radius:3px;margin:0 0 12px;text-align:left;line-height:1.4"></div>
     <img id="iam-qr-img" alt="QR code">
     <button class="close" type="button" id="iam-qr-download" style="margin-right:8px">Download PNG</button>
     <button class="close" type="button" id="iam-qr-download-svg" style="margin-right:8px;background:transparent;color:#caff00;border:1px solid #caff00">Download SVG</button>
