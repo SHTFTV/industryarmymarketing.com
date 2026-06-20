@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
+import type { User } from "@supabase/supabase-js";
 import Layout from "@/components/Layout";
 import Seo from "@/components/Seo";
 import PageHeader from "@/components/PageHeader";
 import { Button } from "@/components/ui/button";
 import { toast } from "@/components/ui/sonner";
+import { supabase } from "@/integrations/supabase/client";
 
 // Two-level taxonomy: pick a broad industry first, then narrow to a specific
 // trade/service. The second level is optional so anyone can submit without
@@ -191,6 +194,66 @@ const ScanWizard = () => {
   const [suggestion, setSuggestion] = useState<SpecialtySuggestion | null>(null);
   const [tradeLocked, setTradeLocked] = useState(false); // user accepted or chose manually
   const [preloadedFromPref, setPreloadedFromPref] = useState(false);
+  const [user, setUser] = useState<User | null>(null);
+  const [syncedFromCloud, setSyncedFromCloud] = useState(false);
+
+  // Watch auth state so we can show sync status and load cloud preferences.
+  useEffect(() => {
+    const { data: sub } = supabase.auth.onAuthStateChange((_e, session) => {
+      setUser(session?.user ?? null);
+    });
+    supabase.auth.getSession().then(({ data }) => {
+      setUser(data.session?.user ?? null);
+    });
+    return () => sub.subscription.unsubscribe();
+  }, []);
+
+  // When the user signs in, pull their saved trade from the cloud. If they have
+  // a local pref but no cloud row yet, push the local pref up so it survives.
+  useEffect(() => {
+    if (!user) return;
+    let cancelled = false;
+    (async () => {
+      const { data: row, error } = await supabase
+        .from("user_trade_preferences")
+        .select("industry, trade")
+        .eq("user_id", user.id)
+        .maybeSingle();
+      if (cancelled || error) return;
+      if (row && (row.industry || row.trade)) {
+        setData((d) => ({ ...d, industry: row.industry, trade: row.trade }));
+        setTradeLocked(true);
+        setPreloadedFromPref(true);
+        setSyncedFromCloud(true);
+        saveTradePref({ industry: row.industry, trade: row.trade });
+      } else {
+        // No cloud row yet — seed it from whatever's local so future devices pick it up.
+        const local = loadTradePref();
+        if (local && (local.industry || local.trade)) {
+          await supabase.from("user_trade_preferences").upsert({
+            user_id: user.id,
+            industry: local.industry,
+            trade: local.trade,
+          });
+          setSyncedFromCloud(true);
+        }
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [user]);
+
+  // Single source of truth for persisting the trade pref. Always writes local;
+  // additionally pushes to the cloud when the user is signed in.
+  const persistPref = (pref: TradePref) => {
+    saveTradePref(pref);
+    if (user) {
+      void supabase
+        .from("user_trade_preferences")
+        .upsert({ user_id: user.id, industry: pref.industry, trade: pref.trade });
+    }
+  };
 
   // Preload last saved industry/trade on first mount.
   useEffect(() => {
