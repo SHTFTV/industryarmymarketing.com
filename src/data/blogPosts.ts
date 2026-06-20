@@ -781,6 +781,726 @@ export const blogPosts: BlogPost[] = [
     ]
   },
   {
+    "slug": "gasfitter-bc",
+    "brand": "gasfitter.ca",
+    "trade": "Licensed Gas Fitting",
+    "tradeShort": "gas fitting",
+    "plural": "gas fitters",
+    "city": "British Columbia",
+    "province": "BC",
+    "category": "Licensed Trades",
+    "imageKey": "hvacr",
+    "pain": "Licensed gas fitters in BC spend $5–$12 per click on Google Ads, share every HomeStars lead with three competitors, and watch unlicensed handymen undercut them on Kijiji. Meanwhile the highest-intent search — gasfitter.ca — has been a 19-year-aged authority domain quietly sitting on page one for the entire province.",
+    "detail": "BC Safety Authority regulates every gas line in the province, so gas fitting is not a search a homeowner does casually — it is a permit-driven, ticket-required call that converts at 4x the rate of a generic plumbing query. gasfitter.ca was registered in 2007 (a corporation, Gasfitter Canada Group Corp., not a hobby) and carries 19 years of compounding inbound authority. In SEO terms that is unreplicable land.",
+    "process": "Your gasfitter.ca territory carries Class A or Class B ticket display, EyeSpyr address verification, BCSA license number, and 24/7 WhatsApp dispatch routing. The page is structured for AEO (Answer Engine Optimization) and GEO (Generative Engine Optimization) — schema.org LocalBusiness + ProfessionalService + FAQPage are all baked in so ChatGPT, Perplexity, and Google AI Overviews surface your listing when someone asks 'who is the best licensed gas fitter in BC?'.",
+    "faqs": [
+      {
+        "q": "Why is a 19-year-old domain valuable for SEO?",
+        "a": "Google weights domain age as a trust proxy. gasfitter.ca was indexed in 2007, has 19 years of inbound citations from BC trades directories, and ranks for keyword stacks that a new domain would need 3–5 years to approach."
+      },
+      {
+        "q": "What ticket do I need for residential gas in BC?",
+        "a": "Class B gas fitter ticket covers appliances up to 400,000 BTU input — residential furnaces, water heaters, ranges, dryers. Class A covers commercial boilers and process heat above that threshold."
+      },
+      {
+        "q": "How does gasfitter.ca rank in AI search?",
+        "a": "The listing exposes structured data (LocalBusiness, FAQPage, schema.org ContactPoint) that LLMs like ChatGPT and Perplexity parse. When someone asks an AI 'find me a licensed gas fitter in Vancouver', the verified territory partner is the cited source."
+      },
+      {
+        "q": "What does the $10/month subscription include?",
+        "a": "One-contractor-per-city listing on gasfitter.ca, EyeSpyr verification badge, WhatsApp lead routing, schema-marked profile, inclusion in the BuildersHaus sitemap, and quarterly TALC.TV content syndication across the IAM network."
+      },
+      {
+        "q": "Can I bundle gasfitter.ca with plumbers.ltd?",
+        "a": "Yes — most multi-ticket shops stack gasfitter.ca + plumbers.ltd + hvacr.tv for $30/month total. Each domain captures a different keyword stack and routes leads to the same WhatsApp."
+      },
+      {
+        "q": "How fast does a new listing get indexed?",
+        "a": "Google indexes new gasfitter.ca pages within 24 hours via our sitemap ping and IndexNow API integration. AI Overviews typically cite within 7–14 days as the page accumulates topical signals."
+      }
+    ],
+    "date": "June 2026",
+    "video": null,
+    "title": "Licensed Gas Fitting in British Columbia: The $10 Exclusive Territory Guide (gasfitter.ca)",
+    "metaDescription": "Licensed Gas Fitting in British Columbia, BC. Lock your trade on gasfitter.ca for $10/month. EyeSpyr verified. One contractor per city. SEO + AEO + GEO baked i",
+    "excerpt": "Licensed gas fitters in BC spend $5–$12 per click on Google Ads, share every HomeStars lead with three competitors, and watch unlicensed handymen undercut th…"
+  },
+  {
+    "slug": "steel-stud-contractors-bc",
+    "brand": "steelstudcontractors.com",
+    "trade": "Commercial Steel Stud Framing",
+    "tradeShort": "steel stud",
+    "plural": "steel stud contractors",
+    "city": "British Columbia",
+    "province": "BC",
+    "category": "Commercial Construction",
+    "imageKey": "framers",
+    "pain": "Steel stud contractors bid commercial drywall packages worth $80,000–$400,000 but get their leads from cold-calling GCs and the occasional referral. The exact-match domain that captures the search 'steel stud contractors' is steelstudcontractors.com — and most shops do not even know it exists.",
+    "detail": "Exact-match domains are the most powerful single SEO asset a niche can own. steelstudcontractors.com is a literal keyword-as-URL — when a GC types 'steel stud contractors near me', Google reads the domain itself as a relevance signal. Pair that with 15 years of aged authority on the sibling steelstud.ca domain and the keyword cluster is locked.",
+    "process": "Your steelstudcontractors.com territory carries WorkSafeBC clearance, SECOR/COR certification badge, BCCSA membership, crew-size and equipment-fleet display, and an upload-the-drawings RFQ form that routes to your estimator inside 5 minutes. AEO-optimized FAQ schema captures 'how much does steel stud framing cost per square foot' type queries.",
+    "faqs": [
+      {
+        "q": "Why does an exact-match domain still matter in 2026?",
+        "a": "Google's algorithm reduced EMD weighting in 2012 but never eliminated it. Combined with 15+ years of topical authority, an exact-match domain in a low-competition vertical like steel stud framing remains one of the top three ranking factors."
+      },
+      {
+        "q": "What does commercial steel stud framing cost in 2026?",
+        "a": "BC averages $18–$28 per sq ft installed for 20-gauge interior partitions, $32–$48 for load-bearing 16-gauge. Tenant improvements run lower; podium and parkade work runs higher."
+      },
+      {
+        "q": "Do you handle full drywall and finish too?",
+        "a": "Most steelstudcontractors.com territory partners are framer-only specialists and partner with drywallers.io territory partners for tape and mud. The IAM network handoff is built into the lead routing."
+      },
+      {
+        "q": "How does the GC find me on AI search?",
+        "a": "ChatGPT, Perplexity, and Google AI Overviews pull from structured data and topical authority. steelstudcontractors.com is the named source when an estimator asks 'find me a SECOR-certified steel stud framer in the Lower Mainland'."
+      },
+      {
+        "q": "What about LinkedIn distribution?",
+        "a": "Every TALC.TV content feature is auto-syndicated to your LinkedIn company page with project photos, geo tags, and the GC tagged. Construction LinkedIn is a B2B goldmine for commercial framing leads."
+      },
+      {
+        "q": "Is there a single-contractor exclusivity?",
+        "a": "Yes — one steel stud contractor per metro region. Once Vancouver, Burnaby, Surrey, or Richmond is locked, no other shop can claim it on steelstudcontractors.com."
+      }
+    ],
+    "date": "May 2026",
+    "video": null,
+    "title": "Commercial Steel Stud Framing in British Columbia: The $10 Exclusive Territory Guide (steelstudcontractors.com)",
+    "metaDescription": "Commercial Steel Stud Framing in British Columbia, BC. Lock your trade on steelstudcontractors.com for $10/month. EyeSpyr verified. One contractor per city. SE",
+    "excerpt": "Steel stud contractors bid commercial drywall packages worth $80,000–$400,000 but get their leads from cold-calling GCs and the occasional referral. The exac…"
+  },
+  {
+    "slug": "eyespyr-trust-layer",
+    "brand": "eyespyr.com",
+    "trade": "Contractor Verification & Trust",
+    "tradeShort": "verification",
+    "plural": "verified contractors",
+    "city": "Canada-wide",
+    "province": "BC",
+    "category": "Platform",
+    "imageKey": "ten-dollar",
+    "pain": "Every contractor directory in Canada has the same problem: anyone can list. Fake reviews, expired insurance, lapsed licenses, and ghost addresses turn the homeowner experience into a coin flip. The trust layer is missing — and that absence is exactly what EyeSpyr was built to fix.",
+    "detail": "EyeSpyr is the verification and reputation infrastructure that sits underneath every BuildersHaus and IAM trade-domain listing. License verification, insurance expiry tracking, WCB/WorkSafe clearance, background check, address confirmation (a human actually visits the listed location), and accumulated verified reviews compound into a Trust Score that homeowners and AI search engines both consume.",
+    "process": "Your EyeSpyr profile auto-pulls license status from BC, AB, and ON provincial registries, monitors insurance expiry with 30-day renewal alerts, aggregates Google + Facebook + BBB reviews into a single verified score, and exposes the whole package as schema.org Review + AggregateRating markup that Perplexity and ChatGPT cite directly in AI answers.",
+    "faqs": [
+      {
+        "q": "Why do AI search engines care about verification?",
+        "a": "LLMs like ChatGPT and Perplexity prioritize sources with verifiable credentials. A profile with structured Review, AggregateRating, and ProfessionalService schema, plus third-party verification badges, is exactly the source signal AI Overviews surface first."
+      },
+      {
+        "q": "What does the Trust Score actually measure?",
+        "a": "Six components: license validity, insurance/WCB currency, review aggregate (Google + Facebook + BBB + EyeSpyr direct), years in business, address verification, and dispute-resolution history. Each scored 0–100 then weighted into a composite."
+      },
+      {
+        "q": "How is EyeSpyr different from BBB or HomeStars?",
+        "a": "BBB is opt-in pay-to-play with no license verification. HomeStars is a lead-share directory that does not verify insurance currency. EyeSpyr verifies every credential in real time against provincial registries and physically confirms the address."
+      },
+      {
+        "q": "Does EyeSpyr help with Google indexing?",
+        "a": "Yes — verified profiles publish to the BuildersHaus sitemap with structured data that Google reads on first crawl. New EyeSpyr profiles typically index within 24–48 hours and appear in local pack results within 2–4 weeks."
+      },
+      {
+        "q": "What about social proof distribution?",
+        "a": "EyeSpyr verified badges auto-export to your LinkedIn company page, Facebook business page, and Twitter/X bio. The verification compounds across every social surface a buyer might check before hiring."
+      },
+      {
+        "q": "What does EyeSpyr cost?",
+        "a": "Included with every $10 IAM territory subscription. No separate verification fee. The platform is the moat — we want every territory partner verified so the network compounds."
+      }
+    ],
+    "date": "April 2026",
+    "video": null,
+    "title": "Contractor Verification & Trust in Canada-wide: The $10 Exclusive Territory Guide (eyespyr.com)",
+    "metaDescription": "Contractor Verification & Trust in Canada-wide, BC. Lock your trade on eyespyr.com for $10/month. EyeSpyr verified. One contractor per city. SEO + AEO + GEO ba",
+    "excerpt": "Every contractor directory in Canada has the same problem: anyone can list. Fake reviews, expired insurance, lapsed licenses, and ghost addresses turn the ho…"
+  },
+  {
+    "slug": "buildershaus-front-door",
+    "brand": "buildershaus.com",
+    "trade": "Canadian Contractor Network",
+    "tradeShort": "contractor network",
+    "plural": "network contractors",
+    "city": "Canada-wide",
+    "province": "BC",
+    "category": "Platform",
+    "imageKey": "kitchen-cabinets",
+    "pain": "Canadian contractors are stuck choosing between US-based directories (Angi, Thumbtack) that barely operate here, or paying HomeStars for shared leads that arrive in three competing inboxes. Nobody owns the Canadian contractor map — and that is the white space BuildersHaus was built to fill.",
+    "detail": "BuildersHaus.com is the consumer-facing front door of the IAM network — one verified contractor per trade per city, EyeSpyr-backed, TALC.TV-promoted, and indexed by every trade-domain feeder in the portfolio (roofers.io, drywallers.io, finishingcarpenters.com, gasfitter.ca, etc.). The model is GEO + AEO + traditional SEO stacked: the same listing wins local pack, AI Overviews, and direct-search traffic simultaneously.",
+    "process": "Your BuildersHaus city listing carries hero gallery, project portfolio, EyeSpyr Trust Score, direct WhatsApp lead routing, click-to-call CTA, and structured schema.org LocalBusiness + Service + AggregateRating markup. The page is cross-linked from every relevant trade domain, compounding internal link equity across 150+ properties.",
+    "faqs": [
+      {
+        "q": "How is BuildersHaus different from Angi or HomeStars?",
+        "a": "Angi shrinks Canadian ops every quarter; HomeStars sells the same lead to three contractors. BuildersHaus enforces one-contractor-per-city exclusivity, verifies through EyeSpyr, and feeds 150+ aged trade domains into the same listing."
+      },
+      {
+        "q": "What is the local pack and how do I win it?",
+        "a": "The local pack is the 3-result Google Maps box that appears for any 'near me' or city-qualified search. BuildersHaus listings carry NAP consistency, schema.org markup, and EyeSpyr review aggregation — the three signals Google's local algorithm weights highest."
+      },
+      {
+        "q": "Does BuildersHaus appear in AI Overviews?",
+        "a": "Yes — BuildersHaus pages are explicitly structured for Generative Engine Optimization (GEO). The schema, FAQ markup, and verified-source signals are exactly what Google's AI Overviews and Perplexity prioritize when generating contractor recommendations."
+      },
+      {
+        "q": "How does the sitemap work?",
+        "a": "BuildersHaus auto-generates a sitemap.xml with every contractor listing, pings Google + Bing via IndexNow on every update, and submits to Google Search Console daily. New listings typically index in under 48 hours."
+      },
+      {
+        "q": "What about LinkedIn and Twitter/X distribution?",
+        "a": "Every contractor profile auto-generates a LinkedIn project post and a Twitter/X card on every TALC.TV feature. The social signals feed back into search authority as inbound brand mentions."
+      },
+      {
+        "q": "How do I claim my city?",
+        "a": "$10/month, one contractor per trade per city, month-to-month, cancel anytime. Once claimed, no competitor can take the same trade+city combination on BuildersHaus or the underlying trade domain."
+      }
+    ],
+    "date": "March 2026",
+    "video": null,
+    "title": "Canadian Contractor Network in Canada-wide: The $10 Exclusive Territory Guide (buildershaus.com)",
+    "metaDescription": "Canadian Contractor Network in Canada-wide, BC. Lock your trade on buildershaus.com for $10/month. EyeSpyr verified. One contractor per city. SEO + AEO + GEO b",
+    "excerpt": "Canadian contractors are stuck choosing between US-based directories (Angi, Thumbtack) that barely operate here, or paying HomeStars for shared leads that ar…"
+  },
+  {
+    "slug": "healthwealthhome-content-engine",
+    "brand": "healthwealthhome.com",
+    "trade": "Multi-Vertical Content Authority",
+    "tradeShort": "content",
+    "plural": "content partners",
+    "city": "Canada-wide",
+    "province": "BC",
+    "category": "Content & SEO",
+    "imageKey": "interior-designers",
+    "pain": "Most contractor websites publish three blog posts in 2019 and then go silent. The content well dries up, rankings decay, and the site slides off page one. Solo shops do not have time to publish weekly. The fix is not hiring a writer — it is plugging into a 14-year-aged content authority that already publishes.",
+    "detail": "HealthWealthHome.com was registered January 2012 — 14 years of aged domain authority across three pillars (Health, Wealth, Home) that perfectly map to every IAM vertical. Every trade story, contractor project, and EyeSpyr feature is republished on HWH with canonical links pointing back to the trade domain, compounding topical authority across the entire network.",
+    "process": "Your trade content (project photos, case studies, before-and-afters) is curated by TALC.TV, polished by AIBuildr, and syndicated to HealthWealthHome.com with proper canonical tags and schema.org Article + Author markup. The 14-year domain authority lifts the trade-domain page in Google's eyes via the canonical link relationship.",
+    "faqs": [
+      {
+        "q": "What is canonical syndication and why does it help SEO?",
+        "a": "Canonical tags tell Google 'this is the original source' so duplicate content syndicated across domains does not penalize either site. HWH publishes with rel=canonical pointing back to your trade domain, lifting your authority without duplicate-content risk."
+      },
+      {
+        "q": "Why is a 14-year-old content domain valuable?",
+        "a": "Domain age compounds. HWH has 14 years of inbound links, citations, and topical authority across Health, Wealth, Home — exactly the three pillars contractors, financial advisors, and dentists.ltd professionals all need."
+      },
+      {
+        "q": "How often is content published?",
+        "a": "TALC.TV produces 100+ pieces per month across the IAM network. Each territory partner gets quarterly featured content syndicated to HWH plus 8–10 sibling trade domains."
+      },
+      {
+        "q": "Does HWH content rank in AI Overviews?",
+        "a": "Yes — 14 years of topical authority plus Article schema makes HWH a frequent citation source in Google AI Overviews, Perplexity, and ChatGPT search. Your trade story gets cited via the canonical chain."
+      },
+      {
+        "q": "What about LinkedIn and Twitter/X distribution?",
+        "a": "Every HWH article auto-cross-posts to LinkedIn (long-form), Twitter/X (thread + card), and Facebook (link preview with structured OG tags). The social signals compound the SEO."
+      },
+      {
+        "q": "How do I get featured?",
+        "a": "Submit your project to BuildersHaus — TALC.TV picks the best monthly features for HWH syndication. Active territory partners average 1 HWH feature per quarter."
+      }
+    ],
+    "date": "February 2026",
+    "video": null,
+    "title": "Multi-Vertical Content Authority in Canada-wide: The $10 Exclusive Territory Guide (healthwealthhome.com)",
+    "metaDescription": "Multi-Vertical Content Authority in Canada-wide, BC. Lock your trade on healthwealthhome.com for $10/month. EyeSpyr verified. One contractor per city. SEO + AE",
+    "excerpt": "Most contractor websites publish three blog posts in 2019 and then go silent. The content well dries up, rankings decay, and the site slides off page one. So…"
+  },
+  {
+    "slug": "talc-tv-ai-content",
+    "brand": "talc.tv",
+    "trade": "AI Content & Video Production",
+    "tradeShort": "AI content",
+    "plural": "content partners",
+    "city": "Canada-wide",
+    "province": "BC",
+    "category": "Content & AI",
+    "imageKey": "videographers",
+    "pain": "Contractors know they need video, blog content, and social proof — but nobody has time to produce it. Hiring a videographer is $2,000 per shoot. Hiring a content marketer is $4,000/month. The math does not work for a $10/month territory model. Unless the production engine is AI-powered.",
+    "detail": "TALC.TV is the AI-powered content and distribution engine for the IAM network. One contractor submission (project photos, 60-second voice memo, address) becomes a polished article, a 90-second vertical video, three social cards, a LinkedIn long-form post, and a Twitter/X thread — all in under 10 minutes of contractor time and zero of contractor budget.",
+    "process": "Submit a project via the BuildersHaus app: photos, location, scope. TALC.TV pipes it through AIBuildr (AI writing + image enhancement + voiceover), packages it into an article + video + social bundle, and syndicates across 8–10 IAM domains plus your LinkedIn, Facebook, Instagram, Twitter/X, and YouTube. Each piece is schema-marked for LLM citation.",
+    "faqs": [
+      {
+        "q": "What is LLM-optimized content?",
+        "a": "Content structured so large language models (ChatGPT, Claude, Perplexity, Gemini) parse, attribute, and cite it. Key elements: FAQ schema, clear Q&A structure, named entities (your business, your city, your trade), and verifiable claims with source links."
+      },
+      {
+        "q": "How long does a TALC.TV feature take to produce?",
+        "a": "Contractor time: 5–10 minutes (upload + voice memo). Production turnaround: 24–48 hours. Distribution: instant across the IAM network and your social channels."
+      },
+      {
+        "q": "What about video SEO?",
+        "a": "Every TALC.TV video carries schema.org VideoObject markup, transcript, chapter timestamps, and a video sitemap entry. Google indexes the video in the video search vertical and surfaces it in standard search via rich-result thumbnails."
+      },
+      {
+        "q": "How does this help me on LinkedIn and Twitter/X?",
+        "a": "Each TALC.TV bundle auto-publishes a LinkedIn long-form post (1,200 words with project photos), a Twitter/X thread (6–8 tweets with images), and an Instagram carousel. Native posting beats link-sharing for algorithm reach on every platform."
+      },
+      {
+        "q": "Does the content get indexed by Google fast?",
+        "a": "Yes — every TALC.TV publish pings Google + Bing via IndexNow, updates the sitemap, and submits to Search Console. Average index time is under 6 hours for new pages across the IAM network."
+      },
+      {
+        "q": "What does TALC.TV cost?",
+        "a": "Included with every $10 IAM territory subscription. One quarterly feature per territory minimum, with additional features available on a per-feature basis ($50–$200 depending on production depth)."
+      }
+    ],
+    "date": "January 2026",
+    "video": null,
+    "title": "AI Content & Video Production in Canada-wide: The $10 Exclusive Territory Guide (talc.tv)",
+    "metaDescription": "AI Content & Video Production in Canada-wide, BC. Lock your trade on talc.tv for $10/month. EyeSpyr verified. One contractor per city. SEO + AEO + GEO baked in",
+    "excerpt": "Contractors know they need video, blog content, and social proof — but nobody has time to produce it. Hiring a videographer is $2,000 per shoot. Hiring a con…"
+  },
+  {
+    "slug": "aibuildr-geo-engine",
+    "brand": "aibuildr.io",
+    "trade": "Generative Engine Optimization (GEO)",
+    "tradeShort": "GEO",
+    "plural": "GEO partners",
+    "city": "Canada-wide",
+    "province": "BC",
+    "category": "AI & SEO",
+    "imageKey": "ten-dollar",
+    "pain": "SEO is no longer just about Google's blue links. 47% of high-intent searches now end inside an AI answer engine — Perplexity, ChatGPT, Claude, Google AI Overviews, Gemini. If your business is not cited inside those answers, you are invisible to half the buying market. Traditional SEO does not solve this. GEO does.",
+    "detail": "AIBuildr.io is the GEO (Generative Engine Optimization) layer of the IAM network. GEO is the practice of structuring content so LLMs cite it as a primary source in AI-generated answers. AIBuildr handles the schema, the FAQ structuring, the named-entity reinforcement, the citation-friendly formatting, and the answer-engine-ping submissions across every IAM territory listing.",
+    "process": "Your AIBuildr layer auto-generates: JSON-LD schema (LocalBusiness, FAQPage, Service, Review), citation-ready FAQ blocks, named-entity reinforcement (business name + city + trade repeated in structured-data semantics), and direct submission to Perplexity, ChatGPT search, and Bing's AI index via available APIs.",
+    "faqs": [
+      {
+        "q": "What is GEO and how is it different from SEO?",
+        "a": "SEO optimizes for ranking in Google's blue links. GEO (Generative Engine Optimization) optimizes for citation in AI-generated answers (Perplexity, ChatGPT, Claude, Google AI Overviews). GEO requires structured data, verifiable claims, and citation-friendly formatting — overlapping but distinct from classical SEO."
+      },
+      {
+        "q": "What is AEO and how is it different from GEO?",
+        "a": "AEO (Answer Engine Optimization) is the broader umbrella covering all answer surfaces: voice assistants (Alexa, Siri, Google Assistant), featured snippets, People Also Ask, and AI Overviews. GEO is the LLM-specific subset of AEO focused on generative-AI citation."
+      },
+      {
+        "q": "Do AI engines actually cite specific contractors?",
+        "a": "Yes — Perplexity, ChatGPT search, and Google AI Overviews routinely cite named businesses with linked sources. The IAM network's structured-data approach and aged-domain authority makes its territory partners frequent citation targets."
+      },
+      {
+        "q": "What about LinkedIn and Twitter/X for GEO?",
+        "a": "LLMs index public LinkedIn posts and Twitter/X content as training and retrieval signals. AIBuildr cross-posts every territory content piece to both platforms with consistent named-entity formatting, reinforcing the citation chain."
+      },
+      {
+        "q": "How do you measure GEO performance?",
+        "a": "We track citations in Perplexity and ChatGPT search responses for territory-relevant queries, monitor AI Overview appearances for trade+city searches, and report monthly on AI-channel referral traffic in your analytics."
+      },
+      {
+        "q": "What does AIBuildr cost?",
+        "a": "Included with every $10 IAM territory subscription. The GEO layer applies automatically to your listing across every IAM domain you claim."
+      }
+    ],
+    "date": "December 2025",
+    "video": null,
+    "title": "Generative Engine Optimization (GEO) in Canada-wide: The $10 Exclusive Territory Guide (aibuildr.io)",
+    "metaDescription": "Generative Engine Optimization (GEO) in Canada-wide, BC. Lock your trade on aibuildr.io for $10/month. EyeSpyr verified. One contractor per city. SEO + AEO + G",
+    "excerpt": "SEO is no longer just about Google's blue links. 47% of high-intent searches now end inside an AI answer engine — Perplexity, ChatGPT, Claude, Google AI Over…"
+  },
+  {
+    "slug": "financial-advisors-bc",
+    "brand": "financialadvisors.io",
+    "trade": "Financial Advisory",
+    "tradeShort": "financial advisor",
+    "plural": "financial advisors",
+    "city": "British Columbia",
+    "province": "BC",
+    "category": "Professional Services",
+    "imageKey": "ten-dollar",
+    "pain": "Financial advisors pay $80–$200 per lead on Google Ads, $300–$500 per qualified appointment from referral networks, and split their LinkedIn time between 'thought leadership' nobody reads and prospecting that nobody answers. The $200–$2,000 per-lead value of this vertical demands a better acquisition channel.",
+    "detail": "FinancialAdvisors.io is one of the highest lead-value verticals in the IAM portfolio. A single converted lead — a household wealth-management onboarding — can yield $5,000–$50,000 in annual fee revenue. The .io extension signals professional, B2B-adjacent, and tech-forward — exactly the brand cues a 35–55 year-old high-net-worth prospect is looking for.",
+    "process": "Your financialadvisors.io territory carries IIROC/MFDA registration verification (via EyeSpyr), CFP/CIM/CFA designation badges, compliance disclaimers auto-inserted, schema.org FinancialService + Person markup for the lead advisor, and direct calendar-booking integration. Lead routing goes to your CRM with KYC pre-fill where compliant.",
+    "faqs": [
+      {
+        "q": "How does an advisor get LinkedIn distribution from IAM?",
+        "a": "Every TALC.TV financial-planning article auto-publishes to your LinkedIn as a long-form thought-leadership post with your bio, designations, and a calendar-booking CTA. LinkedIn is the dominant B2B and HNW prospecting channel in 2026."
+      },
+      {
+        "q": "What about compliance with provincial regulators?",
+        "a": "IAM templates include the mandatory IIROC/MFDA/CIRO disclaimer language and exclude prohibited promissory claims. Your compliance officer reviews and approves the template once; subsequent content stays within bounds."
+      },
+      {
+        "q": "Does the .io extension hurt consumer trust?",
+        "a": "Not for this audience. HNW prospects (35–55, technical literacy) read .io as 'modern, tech-forward, professional'. The brand cue actually reinforces credibility versus a generic .com directory listing."
+      },
+      {
+        "q": "How does AI search affect financial advisor lead-gen?",
+        "a": "Perplexity and ChatGPT search are increasingly the first stop for affluent prospects researching 'best fee-only financial advisor in Vancouver'. IAM's GEO structuring makes financialadvisors.io territory partners the cited source."
+      },
+      {
+        "q": "What is the realistic lead volume?",
+        "a": "Vancouver and Toronto territories average 4–12 qualified inbound inquiries per month. Smaller markets see 1–4. Conversion to fee-paying client is typically 15–25% over 90 days."
+      },
+      {
+        "q": "Can I claim multiple cities?",
+        "a": "Yes — most established advisory practices claim Vancouver + Burnaby + Richmond + Surrey for $40/month total. Single advisors typically start with one metro and expand once the lead flow proves out."
+      }
+    ],
+    "date": "November 2025",
+    "video": null,
+    "title": "Financial Advisory in British Columbia: The $10 Exclusive Territory Guide (financialadvisors.io)",
+    "metaDescription": "Financial Advisory in British Columbia, BC. Lock your trade on financialadvisors.io for $10/month. EyeSpyr verified. One contractor per city. SEO + AEO + GEO b",
+    "excerpt": "Financial advisors pay $80–$200 per lead on Google Ads, $300–$500 per qualified appointment from referral networks, and split their LinkedIn time between 'th…"
+  },
+  {
+    "slug": "insurance-brokers-bc",
+    "brand": "insurancebrokers.io",
+    "trade": "Insurance Brokerage",
+    "tradeShort": "insurance broker",
+    "plural": "insurance brokers",
+    "city": "British Columbia",
+    "province": "BC",
+    "category": "Professional Services",
+    "imageKey": "ten-dollar",
+    "pain": "Independent insurance brokers compete against direct writers (TD, Aviva, Intact) that outspend them 100-to-1 on Google Ads, and against aggregator sites (Ratehub, LowestRates) that monetize the same brokers' commissions through lead resale. The independent broker needs an owned channel — not a rented one.",
+    "detail": "InsuranceBrokers.io is the IAM channel for independent property, casualty, life, and commercial brokers. The .io domain ranks for broker-intent queries ('insurance broker near me', 'commercial insurance broker Vancouver', 'fleet insurance broker BC') that direct writers ignore because they cannibalize their own direct-to-consumer pipeline.",
+    "process": "Your insurancebrokers.io territory carries provincial licensing verification (CAIB, CIP, FCIP designations), errors-and-omissions coverage proof, EyeSpyr trust score, line-of-business filtering (P&C, life, commercial, fleet), and a quote-request form that pre-routes to your underwriting team via WhatsApp or email.",
+    "faqs": [
+      {
+        "q": "Why do I need a niche broker domain when I have a website?",
+        "a": "Your own site is one URL competing against thousands. insurancebrokers.io aggregates the broker-intent traffic across the entire province into a directory that ranks for high-intent queries, then routes to your verified profile."
+      },
+      {
+        "q": "How does this play with my carrier appointments?",
+        "a": "IAM is a directory and lead-routing layer, not a carrier or MGA. Your existing appointments with Aviva, Intact, Wawanesa, Northbridge, etc. stay intact. The territory just sends qualified inbound prospects to your existing quoting process."
+      },
+      {
+        "q": "What about Twitter/X distribution for B2B insurance content?",
+        "a": "TALC.TV publishes commercial-insurance education content (cyber coverage, D&O, professional liability) to your Twitter/X with thread format. B2B insurance buyers actively follow these topics on X — it is a surprisingly high-conversion channel for commercial lines."
+      },
+      {
+        "q": "Does AI search cite insurance brokers?",
+        "a": "Yes — Perplexity routinely cites named brokers in answers to 'best commercial insurance broker for a construction company in Vancouver'. The IAM schema and EyeSpyr verification make territory partners frequent citation targets."
+      },
+      {
+        "q": "How fast does the listing index in Google?",
+        "a": "Under 48 hours via sitemap ping and IndexNow. Local pack appearance typically within 3–6 weeks as reviews and signals accumulate."
+      },
+      {
+        "q": "Can I limit lead types?",
+        "a": "Yes — filter by line of business (P&C, life, commercial, fleet, marine, etc.) and minimum premium threshold ($2,500/yr minimum, $10,000/yr minimum, etc.) to avoid time-wasters."
+      }
+    ],
+    "date": "October 2025",
+    "video": null,
+    "title": "Insurance Brokerage in British Columbia: The $10 Exclusive Territory Guide (insurancebrokers.io)",
+    "metaDescription": "Insurance Brokerage in British Columbia, BC. Lock your trade on insurancebrokers.io for $10/month. EyeSpyr verified. One contractor per city. SEO + AEO + GEO b",
+    "excerpt": "Independent insurance brokers compete against direct writers (TD, Aviva, Intact) that outspend them 100-to-1 on Google Ads, and against aggregator sites (Rat…"
+  },
+  {
+    "slug": "fabricators-bc",
+    "brand": "fabricators.io",
+    "trade": "Metal Fabrication",
+    "tradeShort": "fabrication",
+    "plural": "fabricators",
+    "city": "British Columbia",
+    "province": "BC",
+    "category": "Industrial",
+    "imageKey": "framers",
+    "pain": "Metal fabricators bid B2B contracts worth $50,000–$500,000 but get their leads from cold calls, the rare trade-show booth, and word-of-mouth from one project manager to another. The exact-match domain fabricators.io captures the entire B2B procurement search funnel — and the GC, the architect, and the spec writer all use it.",
+    "detail": "Fabricators.io is built for B2B industrial procurement. The .io extension signals 'engineering-grade, professional, technical' — exactly the cues a project manager or spec writer is looking for. Schema.org ProfessionalService + Manufacturer markup makes the listing AI-citable when a GC asks Perplexity 'find me a CWB-certified structural steel fabricator in the Lower Mainland'.",
+    "process": "Your fabricators.io territory displays CWB certification class (W47.1 Division 1, 2, or 2.1), CSA W178.2 weld inspector tickets, ISO certifications, equipment list (CNC plasma, press brake tonnage, max plate thickness), drawing-upload RFQ form, and Project Gallery with verified addresses via EyeSpyr.",
+    "faqs": [
+      {
+        "q": "Why does B2B industrial need a different SEO approach?",
+        "a": "B2B buyers (project managers, spec writers, GCs) search differently — longer queries, more technical terms, multi-stakeholder decisions. fabricators.io is structured for this with technical schema, equipment-list filtering, and capability-based search rather than location-only."
+      },
+      {
+        "q": "What CWB certification do most projects require?",
+        "a": "Structural projects typically require CWB W47.1 Division 1 or 2. Pressure vessel work requires ABSA registration. Architectural and miscellaneous metal can run under W47.1 Division 2.1."
+      },
+      {
+        "q": "How fast does fabricators.io appear in Google for B2B queries?",
+        "a": "The exact-match domain + aged authority + technical schema typically secures page-one rankings for 'metal fabricators [city]' within 8–16 weeks of listing claim. Long-tail technical queries index faster — often within 2–4 weeks."
+      },
+      {
+        "q": "What about LinkedIn for industrial fabrication leads?",
+        "a": "LinkedIn is the dominant B2B channel for fabrication. Every TALC.TV project feature auto-publishes to your LinkedIn with finished-product photos, GC tagged, and project specs called out. Project managers actively follow this content."
+      },
+      {
+        "q": "Does AI search work for B2B procurement?",
+        "a": "Increasingly yes. Procurement and estimating teams use Perplexity and ChatGPT to shortlist vendors before sending RFQs. IAM's GEO layer makes territory partners the cited shortlist source."
+      },
+      {
+        "q": "Can I bundle with steelstudcontractors.com?",
+        "a": "Yes — many shops do structural fabrication + steel stud framing. Stack fabricators.io + steelstudcontractors.com + steelstud.ca for $30/month total and cover the entire commercial-construction keyword stack."
+      }
+    ],
+    "date": "September 2025",
+    "video": null,
+    "title": "Metal Fabrication in British Columbia: The $10 Exclusive Territory Guide (fabricators.io)",
+    "metaDescription": "Metal Fabrication in British Columbia, BC. Lock your trade on fabricators.io for $10/month. EyeSpyr verified. One contractor per city. SEO + AEO + GEO baked in",
+    "excerpt": "Metal fabricators bid B2B contracts worth $50,000–$500,000 but get their leads from cold calls, the rare trade-show booth, and word-of-mouth from one project…"
+  },
+  {
+    "slug": "arborists-bc",
+    "brand": "arborists.io",
+    "trade": "Certified Arboriculture",
+    "tradeShort": "arborist",
+    "plural": "certified arborists",
+    "city": "British Columbia",
+    "province": "BC",
+    "category": "Outdoor Services",
+    "imageKey": "demolition",
+    "pain": "Certified arborists compete against chainsaw-and-pickup operators who undercut on price, damage trees, and create the liability nightmares the real arborists then get blamed for. Municipal bylaws in Vancouver, Burnaby, and West Vancouver now require ISA certification for protected trees — but homeowners do not know the difference.",
+    "detail": "Arborists.io is the licensed-professional channel for ISA Certified Arborists, BCMAFL TQ ticket holders, and tree-risk-assessment qualified (TRAQ) professionals. The .io extension and schema.org ProfessionalService + Certification markup make the listing the cited source for 'certified arborist near me' AI queries.",
+    "process": "Your arborists.io territory carries ISA certification number, BCMAFL TQ ticket display, TRAQ qualification badge, WCB clearance, equipment list (climbing rigs, bucket truck reach, stump grinder capacity), and a tree-assessment booking form with municipal-permit checking baked in.",
+    "faqs": [
+      {
+        "q": "What is ISA certification and why does it matter for SEO?",
+        "a": "International Society of Arboriculture (ISA) certification is the professional standard. Vancouver, Burnaby, West Van, and most Lower Mainland municipalities require ISA-certified arborists for work on protected trees. The certification badge is a trust signal Google and AI engines weight heavily."
+      },
+      {
+        "q": "How does the local pack work for arborists?",
+        "a": "Google's local pack (the 3-result map box) for 'arborist near me' weights NAP consistency, review aggregation, and schema.org markup. EyeSpyr-verified arborists.io listings consistently win the pack within 6–12 weeks."
+      },
+      {
+        "q": "What about Google Business Profile sync?",
+        "a": "Your arborists.io listing auto-syncs NAP and category data to Google Business Profile via API. Inconsistent NAP across directories is the #1 killer of local pack rankings — IAM handles this automatically."
+      },
+      {
+        "q": "Does Twitter/X help arborist lead-gen?",
+        "a": "Twitter/X is the dominant channel for storm-response and emergency tree-removal calls. Real-time posting of after-storm availability captures urgent leads other directories miss."
+      },
+      {
+        "q": "How does AI search cite arborists?",
+        "a": "Perplexity and ChatGPT cite named, ISA-certified arborists when users ask 'who can remove a hazardous tree in Burnaby this week?'. IAM's GEO structuring + EyeSpyr verification = frequent citation."
+      },
+      {
+        "q": "Can I bundle with demolition.io?",
+        "a": "Yes — large lot-clearing projects often combine tree removal, stump grinding, and demolition. Stack arborists.io + demolition.io for $20/month and capture the full site-prep keyword stack."
+      }
+    ],
+    "date": "August 2025",
+    "video": null,
+    "title": "Certified Arboriculture in British Columbia: The $10 Exclusive Territory Guide (arborists.io)",
+    "metaDescription": "Certified Arboriculture in British Columbia, BC. Lock your trade on arborists.io for $10/month. EyeSpyr verified. One contractor per city. SEO + AEO + GEO bake",
+    "excerpt": "Certified arborists compete against chainsaw-and-pickup operators who undercut on price, damage trees, and create the liability nightmares the real arborists…"
+  },
+  {
+    "slug": "rebar-tv-construction-media",
+    "brand": "rebar.tv",
+    "trade": "Construction Video Media",
+    "tradeShort": "construction video",
+    "plural": "construction video partners",
+    "city": "Canada-wide",
+    "province": "BC",
+    "category": "Media",
+    "imageKey": "framers",
+    "pain": "Construction is one of the most visual industries on earth and one of the least-documented online. Project drone footage, time-lapse pours, finish reveals — the content exists on contractor phones and never makes it to the audiences (homeowners, GCs, manufacturers) that drive the next contract.",
+    "detail": "Rebar.tv is the construction video media flagship of the IAM network. Short, memorable, .tv extension, international reach. Every contractor project becomes a 60–90 second vertical video with schema.org VideoObject markup, full transcript, chapter timestamps, and a video sitemap entry that Google indexes within hours.",
+    "process": "Your project content (drone footage, time-lapse, finish reveal, interview) is produced by TALC.TV, distributed to rebar.tv with full VideoObject schema, syndicated to YouTube (with chapter markers and end-screen CTAs), Instagram Reels, TikTok, LinkedIn native video, and Twitter/X video card. Each surface optimized for its native algorithm.",
+    "faqs": [
+      {
+        "q": "Why does video schema matter for SEO?",
+        "a": "schema.org VideoObject markup makes Google eligible to display your video as a rich result (with thumbnail and duration) in standard search. It also enables a video sitemap entry that surfaces your content in Google's video search vertical."
+      },
+      {
+        "q": "What is a video sitemap and how does it help?",
+        "a": "A video sitemap is a separate XML file listing every video on your site with metadata (title, description, thumbnail, duration, upload date, content URL). Google uses it to discover and index video content faster than crawl-only discovery."
+      },
+      {
+        "q": "Do AI Overviews cite video content?",
+        "a": "Yes — Google's AI Overviews increasingly include video thumbnails as cited sources, especially for how-to and 'show me' queries. Rebar.tv content is structured for exactly this citation pattern."
+      },
+      {
+        "q": "How does YouTube fit into the strategy?",
+        "a": "Every rebar.tv video also uploads to YouTube with optimized title, description, chapter markers, end-screen CTAs, and pinned comment with location + trade keywords. YouTube is the #2 search engine globally and a major referral source."
+      },
+      {
+        "q": "What about Instagram and TikTok?",
+        "a": "Vertical 9:16 cuts auto-publish to Instagram Reels and TikTok with captions, location tags, and trade hashtags. Algorithm reach on Reels and TikTok dwarfs static-image posts for construction content."
+      },
+      {
+        "q": "How long is a typical rebar.tv feature?",
+        "a": "60–90 seconds vertical for social, 3–5 minutes horizontal for YouTube. Both cut from the same contractor-submitted source footage."
+      }
+    ],
+    "date": "July 2025",
+    "video": null,
+    "title": "Construction Video Media in Canada-wide: The $10 Exclusive Territory Guide (rebar.tv)",
+    "metaDescription": "Construction Video Media in Canada-wide, BC. Lock your trade on rebar.tv for $10/month. EyeSpyr verified. One contractor per city. SEO + AEO + GEO baked in.",
+    "excerpt": "Construction is one of the most visual industries on earth and one of the least-documented online. Project drone footage, time-lapse pours, finish reveals — …"
+  },
+  {
+    "slug": "sparkys-tv-electricians",
+    "brand": "sparkys.tv",
+    "trade": "Licensed Electricians",
+    "tradeShort": "electrician",
+    "plural": "electricians",
+    "city": "British Columbia",
+    "province": "BC",
+    "category": "Licensed Trades",
+    "imageKey": "hvacr",
+    "pain": "Electricians juggle Class A and Class B FSR tickets, EV charger installations growing 60% year-over-year, panel upgrades for heat-pump conversions, and the constant pressure of permit-pulling contractors who undercut by skipping the BC Safety Authority paperwork. The licensed electrician needs a channel that screens for it.",
+    "detail": "Sparkys.tv (Sparky is universal trade slang for electrician) is the IAM channel for FSR-ticketed electricians in BC and Red Seal electricians across Canada. The .tv extension supports the video-heavy content strategy that EV chargers, panel upgrades, and smart-home installs naturally generate.",
+    "process": "Your sparkys.tv territory carries FSR ticket display (Class A, B, or 2 Restricted), permit-pulling status with BC Safety Authority, EV-charger manufacturer certifications (Tesla, ChargePoint, Wallbox), TECK 90 cable expertise badge, and 24/7 emergency-call WhatsApp dispatch.",
+    "faqs": [
+      {
+        "q": "What FSR class do I need for residential service work?",
+        "a": "Field Safety Representative Class B covers residential up to 750V. Class A covers commercial/industrial above 750V. Class 2 Restricted is single-contractor self-employed and is the most common for owner-operator shops."
+      },
+      {
+        "q": "How fast is the EV charger market growing in BC?",
+        "a": "Level 2 home charger installs grew 60% year-over-year in 2025. CleanBC rebates and the 2030 ZEV mandate are pulling the curve forward. EV-certified electricians command premium pricing."
+      },
+      {
+        "q": "Why is video so important for electricians?",
+        "a": "Panel-upgrade reveals, EV charger installs, and smart-home walkthroughs are inherently visual. A 60-second sparkys.tv video shows the work, the cleanliness, and the finish — three things photos cannot convey."
+      },
+      {
+        "q": "How does sparkys.tv rank in Google for emergency calls?",
+        "a": "Emergency 'electrician near me now' queries weight local pack heavily. Sparkys.tv listings carry NAP consistency, schema.org EmergencyService markup, and Google Business Profile sync that wins these queries within 4–8 weeks of claim."
+      },
+      {
+        "q": "Does AI search route emergency electrical calls?",
+        "a": "Yes — Perplexity and Google AI Overviews routinely cite named electricians for emergency-call queries with verified 24/7 availability schema. The schema markup is the citation trigger."
+      },
+      {
+        "q": "Can I bundle with gasfitter.ca and hvacr.tv?",
+        "a": "Yes — multi-ticket mechanical shops stack sparkys.tv + gasfitter.ca + hvacr.tv for $30/month total. Each domain captures a different keyword stack but routes to the same dispatch."
+      }
+    ],
+    "date": "June 2025",
+    "video": null,
+    "title": "Licensed Electricians in British Columbia: The $10 Exclusive Territory Guide (sparkys.tv)",
+    "metaDescription": "Licensed Electricians in British Columbia, BC. Lock your trade on sparkys.tv for $10/month. EyeSpyr verified. One contractor per city. SEO + AEO + GEO baked in",
+    "excerpt": "Electricians juggle Class A and Class B FSR tickets, EV charger installations growing 60% year-over-year, panel upgrades for heat-pump conversions, and the c…"
+  },
+  {
+    "slug": "jewellers-luxury-retail",
+    "brand": "jewellers.ltd",
+    "trade": "Luxury Jewellers & Custom Design",
+    "tradeShort": "jeweller",
+    "plural": "jewellers",
+    "city": "Canada-wide",
+    "province": "BC",
+    "category": "Luxury Retail",
+    "imageKey": "weddings",
+    "pain": "Independent luxury jewellers compete against Tiffany, Birks, and the diamond-district aggregators that all outspend them on AdWords. Custom engagement-ring design, estate-piece restoration, and bespoke commissions are where independents win — but the SEO budget required to compete on 'engagement ring [city]' is prohibitive.",
+    "detail": "Jewellers.ltd uses the .ltd extension to signal premium, established, incorporated luxury — the brand cues a HNW or affianced couple is looking for. The exact-match plural domain ranks for 'jewellers [city]' searches that the singular 'jeweller' SEO crowd does not target, and the .ltd cue elevates perceived prestige.",
+    "process": "Your jewellers.ltd territory carries CJA (Canadian Jewellers Association) membership badge, GIA-certified gemologist credentials, custom-design portfolio with provenance documentation, EyeSpyr address verification, and a private-consultation booking form. Schema.org JewelryStore + Service + Person (for the master jeweller) markup feeds AI citation.",
+    "faqs": [
+      {
+        "q": "Why does the .ltd extension work for luxury retail?",
+        "a": ".ltd reads as 'established, incorporated, premium' — particularly in British-Canadian markets. For luxury verticals (jewellers, brides, chalet) the extension reinforces brand prestige rather than fighting it like .io would."
+      },
+      {
+        "q": "How does Instagram fit into luxury jewellery SEO?",
+        "a": "Instagram is the dominant visual channel for engagement rings and custom-design work. Every TALC.TV piece auto-publishes to Instagram with carousel format, location tags, and shoppable product tagging where available."
+      },
+      {
+        "q": "Does AI search affect luxury retail discovery?",
+        "a": "Increasingly yes. Couples researching engagement rings now ask Perplexity and ChatGPT 'best custom jewellers in Vancouver for emerald-cut diamond' — and the GIA-certified, schema-marked jewellers.ltd listing is the cited source."
+      },
+      {
+        "q": "What about Pinterest distribution?",
+        "a": "Pinterest drives high-intent visual traffic for engagement rings, wedding bands, and custom design. Every TALC.TV jewellery feature publishes to Pinterest with rich pins, schema-marked product data, and direct booking links."
+      },
+      {
+        "q": "How fast does jewellers.ltd appear in Google?",
+        "a": "The .ltd extension is fully indexed by Google and treated identically to .com for ranking purposes. Exact-match plural domain + aged authority typically secures page-one rankings within 8–12 weeks."
+      },
+      {
+        "q": "Can I bundle with brides.ltd and weddings.io?",
+        "a": "Yes — most luxury jewellers serve heavy bridal traffic. Stack jewellers.ltd + brides.ltd + weddings.io for $30/month and capture the entire pre-wedding decision funnel."
+      }
+    ],
+    "date": "May 2025",
+    "video": null,
+    "title": "Luxury Jewellers & Custom Design in Canada-wide: The $10 Exclusive Territory Guide (jewellers.ltd)",
+    "metaDescription": "Luxury Jewellers & Custom Design in Canada-wide, BC. Lock your trade on jewellers.ltd for $10/month. EyeSpyr verified. One contractor per city. SEO + AEO + GEO",
+    "excerpt": "Independent luxury jewellers compete against Tiffany, Birks, and the diamond-district aggregators that all outspend them on AdWords. Custom engagement-ring d…"
+  },
+  {
+    "slug": "promows-lawn-care",
+    "brand": "promows.com",
+    "trade": "Professional Lawn Care",
+    "tradeShort": "lawn care",
+    "plural": "lawn care pros",
+    "city": "British Columbia",
+    "province": "BC",
+    "category": "Recurring Services",
+    "imageKey": "snow-removal",
+    "pain": "Lawn care is a $176 billion global industry where most independent operators run on Kijiji, door hangers, and the occasional Facebook post. Recurring weekly-service contracts are the most profitable model on earth — but the lead-gen channels to fill the route are the most fragmented in the trades.",
+    "detail": "ProMows.com is the IAM channel for professional lawn care, landscape maintenance, and recurring property-service operators. Recurring-service SEO is fundamentally different from one-off service SEO: schema.org RecurringService markup, route-density mapping, and seasonal-content velocity are the key signals.",
+    "process": "Your promows.com territory carries service-area mapping (route density by postal code), recurring-package pricing display (weekly, bi-weekly, monthly), seasonal availability calendar (mowing season, fall cleanup, spring startup), and a route-density-optimized inquiry form that prioritizes leads in your existing routes.",
+    "faqs": [
+      {
+        "q": "Why is recurring-service SEO different from one-off?",
+        "a": "Recurring buyers want predictability and route density. Schema.org Service + Offer with frequency attributes signals to Google this is a subscription service, not a one-time call. Route-density mapping in the listing keeps your CAC down by clustering leads geographically."
+      },
+      {
+        "q": "How does seasonal content velocity help rankings?",
+        "a": "Lawn care has predictable seasonal search peaks (spring startup, mid-summer maintenance, fall cleanup, leaf removal). TALC.TV publishes seasonal content 4–6 weeks ahead of the search peak so your listing accumulates topical signals before the wave hits."
+      },
+      {
+        "q": "Does AI search cite lawn care services?",
+        "a": "Yes — 'best lawn care service in [city]' is a frequent Perplexity query in spring. IAM's GEO layer + EyeSpyr verification + recurring-service schema makes promows.com partners the cited source."
+      },
+      {
+        "q": "What about Twitter/X for weather-driven services?",
+        "a": "Twitter/X is the dominant channel for weather-driven service alerts (frost warnings, heat advisories, drought restrictions). Auto-posting service-availability updates during weather events captures urgent route fills."
+      },
+      {
+        "q": "Can I bundle with plowwow.com for year-round routing?",
+        "a": "Yes — most operators run lawn care April–October and snow removal November–March. Stack promows.com + plowwow.com for $20/month and capture year-round route density on the same client base."
+      },
+      {
+        "q": "How does Google Business Profile sync work?",
+        "a": "Your promows.com listing auto-syncs NAP, hours, service categories, and recurring-package details to Google Business Profile via API. NAP consistency across directories is the #1 local-pack ranking factor."
+      }
+    ],
+    "date": "April 2025",
+    "video": null,
+    "title": "Professional Lawn Care in British Columbia: The $10 Exclusive Territory Guide (promows.com)",
+    "metaDescription": "Professional Lawn Care in British Columbia, BC. Lock your trade on promows.com for $10/month. EyeSpyr verified. One contractor per city. SEO + AEO + GEO baked ",
+    "excerpt": "Lawn care is a $176 billion global industry where most independent operators run on Kijiji, door hangers, and the occasional Facebook post. Recurring weekly-…"
+  },
+  {
+    "slug": "dentists-medical-aeo",
+    "brand": "dentists.ltd",
+    "trade": "Family & Cosmetic Dentistry",
+    "tradeShort": "dentist",
+    "plural": "dentists",
+    "city": "British Columbia",
+    "province": "BC",
+    "category": "Healthcare",
+    "imageKey": "interior-designers",
+    "pain": "Dental practices compete in one of the most expensive Google Ads verticals in Canada — $15–$40 per click for 'dentist near me'. Insurance directories (Pacific Blue Cross, Sun Life) send leads but capture the patient relationship. Independent dentists need an owned, AI-citable channel that converts at consultation, not at click.",
+    "detail": "Dentists.ltd uses the premium .ltd extension to signal established practice, professional credibility, and incorporated business — exactly the trust cues a new-patient prospect looks for. Medical AEO (Answer Engine Optimization) is distinct from other verticals: E-E-A-T signals (Experience, Expertise, Authoritativeness, Trustworthiness) are weighted especially heavily for YMYL (Your Money Your Life) content.",
+    "process": "Your dentists.ltd territory carries CDSBC registration verification, specialty designation badges (general, ortho, perio, endo, prostho), languages spoken, insurance carriers accepted, EyeSpyr address verification, and a HIPAA/PIPA-compliant new-patient booking form. Schema.org MedicalBusiness + Dentist + MedicalProcedure markup feeds Perplexity and ChatGPT medical citations.",
+    "faqs": [
+      {
+        "q": "What is YMYL and why does it matter for dental SEO?",
+        "a": "YMYL (Your Money Your Life) is Google's classification for content that affects health or finances. YMYL pages are held to the highest E-E-A-T standard — every claim needs verifiable expertise, every author needs credentials. Medical AEO requires this rigor."
+      },
+      {
+        "q": "How do dentists get cited in Perplexity and ChatGPT?",
+        "a": "Medical AI engines prioritize sources with verifiable professional credentials, structured MedicalBusiness schema, and citation-friendly FAQ formatting. Dentists.ltd territory partners with CDSBC verification consistently appear as cited sources."
+      },
+      {
+        "q": "What about Google Business Profile for dental?",
+        "a": "GBP is the #1 driver of new-patient inquiries for independent dental practices. Your dentists.ltd listing auto-syncs to GBP with insurance carriers, services, languages, and booking links pulled into the rich profile."
+      },
+      {
+        "q": "Does LinkedIn matter for dental practices?",
+        "a": "Less than for B2B verticals, but LinkedIn drives professional-network referrals and recruitment. TALC.TV publishes practice-spotlight content to LinkedIn for hygienist recruitment and specialist referral network building."
+      },
+      {
+        "q": "How does the local pack work for 'dentist near me'?",
+        "a": "Local pack weights review aggregation, NAP consistency, schema markup, and proximity. Dentists.ltd listings carry all four, plus EyeSpyr verification — a combination that consistently wins the pack within 6–10 weeks of claim."
+      },
+      {
+        "q": "Can I bundle with chiropractors.ltd or animalhospitals.io?",
+        "a": "Yes — if you operate a medical/wellness building with multiple practices, bundle dentists.ltd + chiropractors.ltd for $20/month and capture cross-referral keywords ('dentist and chiropractor same building Vancouver')."
+      }
+    ],
+    "date": "March 2025",
+    "video": null,
+    "title": "Family & Cosmetic Dentistry in British Columbia: The $10 Exclusive Territory Guide (dentists.ltd)",
+    "metaDescription": "Family & Cosmetic Dentistry in British Columbia, BC. Lock your trade on dentists.ltd for $10/month. EyeSpyr verified. One contractor per city. SEO + AEO + GEO ",
+    "excerpt": "Dental practices compete in one of the most expensive Google Ads verticals in Canada — $15–$40 per click for 'dentist near me'. Insurance directories (Pacifi…"
+  },
+  {
     "slug": "ten-dollar-territories-explained",
     "brand": "industryarmymarketing.com",
     "trade": "IAM $10 Exclusive Territories",
