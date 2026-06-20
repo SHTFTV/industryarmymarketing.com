@@ -53,6 +53,27 @@ export type Database = {
         }
         Relationships: []
       }
+      user_trade_preferences: {
+        Row: {
+          industry: string
+          trade: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          industry?: string
+          trade?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          industry?: string
+          trade?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
