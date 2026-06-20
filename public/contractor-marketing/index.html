@@ -583,32 +583,66 @@ footer.site{background:#050505;padding:32px 0;color:#666;font-size:13px;text-ali
         var f=inp.files && inp.files[0]; if(!f) return;
         var r=new FileReader();
         r.onload=function(){
-          try{
-            var parsed=JSON.parse(String(r.result||''));
-            var incoming=Array.isArray(parsed)?parsed:(parsed&&parsed.presets);
-            if(!Array.isArray(incoming)) throw new Error('No presets array');
-            var clean=incoming.map(function(it){
-              if(typeof it==='number') return {name:it+'px',px:it};
-              if(it&&typeof it==='object'&&it.px!=null){var px=+it.px;if(!(px>=50&&px<=4000))return null;return {name:String(it.name||(px+'px')).trim().slice(0,24)||(px+'px'),px:px};}
-              return null;
-            }).filter(Boolean);
-            if(!clean.length){alert('No valid presets found.');return;}
-            var mode=window.confirm('Import '+clean.length+' preset(s)?\n\nOK = Merge with existing\nCancel = Replace all')?'merge':'replace';
-            var next;
-            if(mode==='replace'){next=clean;}
-            else{
-              next=loadCustomPx().slice();
-              clean.forEach(function(it){
-                var lower=it.name.toLowerCase();
-                var idx=-1;
-                for(var i=0;i<next.length;i++){if(String(next[i].name).toLowerCase()===lower){idx=i;break;}}
-                if(idx>=0) next[idx]=it; else next.push(it);
-              });
-            }
-            next.sort(function(a,b){return a.px-b.px;});
-            saveCustomPx(next); renderCustomPx();
-          }catch(err){alert('Import failed: '+(err&&err.message||err));}
+          var raw=String(r.result||'');
+          var parsed;
+          try{parsed=JSON.parse(raw);}
+          catch(err){alert('Import failed — invalid JSON:\n'+(err&&err.message||err));return;}
+          var incoming=Array.isArray(parsed)?parsed:(parsed&&parsed.presets);
+          if(!Array.isArray(incoming)){
+            alert('Import failed — expected a JSON array of presets, or an object with a "presets" array.');
+            return;
+          }
+          var clean=[], errors=[], seenInFile={};
+          incoming.forEach(function(it,i){
+            var label='Item '+(i+1);
+            var name, px;
+            if(typeof it==='number'){px=it; name=it+'px';}
+            else if(it && typeof it==='object'){
+              if(it.px==null){errors.push(label+': missing "px"');return;}
+              px=Number(it.px);
+              name=(it.name==null?(px+'px'):String(it.name)).trim().slice(0,24);
+              if(!name) name=px+'px';
+            } else {errors.push(label+': not a number or object');return;}
+            if(!isFinite(px)||Math.floor(px)!==px){errors.push(label+' ("'+name+'"): px must be an integer');return;}
+            if(px<50||px>4000){errors.push(label+' ("'+name+'"): px '+px+' is out of range (50–4000)');return;}
+            var lower=name.toLowerCase();
+            if(seenInFile[lower]){errors.push(label+' ("'+name+'"): duplicate name in file');return;}
+            seenInFile[lower]=true;
+            clean.push({name:name,px:px});
+          });
+          if(!clean.length){
+            alert('Import failed — no valid presets.\n\n'+(errors.join('\n')||'File contained 0 items.'));
+            return;
+          }
+          var existing=loadCustomPx();
+          var existingByName={}; existing.forEach(function(p){existingByName[String(p.name).toLowerCase()]=p;});
+          var collisions=clean.filter(function(p){return existingByName[p.name.toLowerCase()];});
+          var summary='Found '+clean.length+' valid preset(s)';
+          if(errors.length) summary+=', '+errors.length+' skipped';
+          if(collisions.length) summary+=', '+collisions.length+' will overwrite existing name(s)';
+          summary+='.\n\nOK = Merge with existing\nCancel = Replace all';
+          if(errors.length) summary+='\n\nSkipped:\n- '+errors.slice(0,8).join('\n- ')+(errors.length>8?'\n- …and '+(errors.length-8)+' more':'');
+          var merge=window.confirm(summary);
+          var next;
+          if(!merge){next=clean.slice();}
+          else{
+            next=existing.slice();
+            clean.forEach(function(it){
+              var lower=it.name.toLowerCase();
+              var idx=-1;
+              for(var i=0;i<next.length;i++){if(String(next[i].name).toLowerCase()===lower){idx=i;break;}}
+              if(idx>=0) next[idx]=it; else next.push(it);
+            });
+          }
+          next.sort(function(a,b){return a.px-b.px;});
+          saveCustomPx(next); renderCustomPx();
+          var done='Imported '+clean.length+' preset(s)';
+          if(merge && collisions.length) done+=' ('+collisions.length+' overwritten)';
+          if(errors.length) done+='; '+errors.length+' skipped';
+          done+='.';
+          alert(done);
         };
+        r.onerror=function(){alert('Import failed — could not read file.');};
         r.readAsText(f);
       });
       inp.click();
