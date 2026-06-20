@@ -1,6 +1,7 @@
 import { test, expect } from "../playwright-fixture";
 import fs from "node:fs";
 import path from "node:path";
+import { PNG } from "pngjs";
 
 // ---------------------------------------------------------------------------
 // Auto-discovery of programmatic SEO routes.
@@ -24,6 +25,7 @@ function appendFailureRecord(record: {
   expected?: string;
   actual?: string;
   diff?: string;
+  overlay?: string;
 }) {
   try {
     fs.mkdirSync(path.dirname(FAILURE_LOG), { recursive: true });
