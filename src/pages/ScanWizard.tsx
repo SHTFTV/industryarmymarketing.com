@@ -321,6 +321,42 @@ const ScanWizard = () => {
             ))}
           </ol>
 
+          <div className="mb-4 p-3 rounded-md border border-border bg-card/60 flex flex-wrap items-center justify-between gap-3 text-xs">
+            {user ? (
+              <>
+                <span className="text-muted-foreground">
+                  <span className="text-primary">●</span> Syncing trade as{" "}
+                  <span className="text-foreground font-semibold">{user.email}</span>
+                  {syncedFromCloud && (
+                    <span className="ml-2 text-muted-foreground/70">· loaded from cloud</span>
+                  )}
+                </span>
+                <button
+                  type="button"
+                  className="text-muted-foreground hover:text-primary underline"
+                  onClick={async () => {
+                    await supabase.auth.signOut();
+                    setSyncedFromCloud(false);
+                    toast.success("Signed out. Local trade still saved on this device.");
+                  }}
+                >
+                  Sign out
+                </button>
+              </>
+            ) : (
+              <>
+                <span className="text-muted-foreground">
+                  Want your trade saved on every device?
+                </span>
+                <Link
+                  to="/sync-account"
+                  className="text-primary hover:underline font-semibold uppercase tracking-widest"
+                >
+                  Sign in to sync →
+                </Link>
+              </>
+            )}
+          </div>
           <div className="p-8 rounded-lg bg-card border border-border">
             <AnimatePresence mode="wait">
               {step === 0 && (
