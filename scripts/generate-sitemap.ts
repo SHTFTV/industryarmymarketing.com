@@ -2,6 +2,7 @@
 
 import { writeFileSync } from "fs";
 import { resolve } from "path";
+import contractorSlugs from "./contractor-slugs.json" with { type: "json" };
 
 const BASE_URL = "https://industryarmymarketing.com";
 
@@ -82,6 +83,11 @@ const entries: SitemapEntry[] = [
     path: `/blog/${s}`,
     changefreq: "monthly" as const,
     priority: "0.7",
+  })),
+  ...(contractorSlugs as string[]).map((s) => ({
+    path: `/contractor-marketing/${s}/`,
+    changefreq: "monthly" as const,
+    priority: "0.6",
   })),
 ];
 
