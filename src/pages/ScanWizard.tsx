@@ -168,11 +168,40 @@ const ScanWizard = () => {
                   <div className="grid gap-4">
                     <div>
                       <label className={labelCls}>Business Name *</label>
-                      <input className={inputCls} value={data.business} onChange={(e) => set("business", e.target.value)} />
+                      <input
+                        className={inputCls}
+                        value={data.business}
+                        onChange={(e) => {
+                          const business = e.target.value;
+                          setData((d) => {
+                            // If industry is already set and trade is blank,
+                            // try to auto-pick a specialty from the new name.
+                            const auto =
+                              d.industry && !d.trade
+                                ? detectSpecialty(d.industry, business, d.website, d.notes)
+                                : null;
+                            return { ...d, business, trade: auto ?? d.trade };
+                          });
+                        }}
+                      />
                     </div>
                     <div>
                       <label className={labelCls}>Your Website</label>
-                      <input className={inputCls} value={data.website} onChange={(e) => set("website", e.target.value)} placeholder="https://" />
+                      <input
+                        className={inputCls}
+                        value={data.website}
+                        onChange={(e) => {
+                          const website = e.target.value;
+                          setData((d) => {
+                            const auto =
+                              d.industry && !d.trade
+                                ? detectSpecialty(d.industry, d.business, website, d.notes)
+                                : null;
+                            return { ...d, website, trade: auto ?? d.trade };
+                          });
+                        }}
+                        placeholder="https://"
+                      />
                     </div>
                     <div>
                       <label className={labelCls}>Your Industry *</label>
