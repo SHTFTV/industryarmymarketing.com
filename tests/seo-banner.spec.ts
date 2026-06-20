@@ -202,10 +202,24 @@ test.describe(`Programmatic SEO banner (${routes.length} routes × ${viewports.l
           if (fs.existsSync(testInfo.outputDir)) {
             const stem = snapshotName.replace(/\.png$/, "");
             const variants = [
-              { suffix: "-expected.png", label: "expected" },
-              { suffix: "-actual.png", label: "actual" },
-              { suffix: "-diff.png", label: "diff (highlighted regions)" },
+              { suffix: "-expected.png", label: "expected", type: "expected-image" },
+              { suffix: "-actual.png", label: "actual", type: "actual-image" },
+              { suffix: "-diff.png", label: "diff (highlighted regions)", type: "diff-image" },
             ];
+
+            // Build a CI-aware base URL so annotations can deep-link to the
+            // artifact files. GitHub Actions exposes the run, and most CI
+            // providers upload the `test-results/` folder; we surface paths
+            // relative to repo root + a best-effort artifact URL when known.
+            const ghServer = process.env.GITHUB_SERVER_URL;
+            const ghRepo = process.env.GITHUB_REPOSITORY;
+            const ghRunId = process.env.GITHUB_RUN_ID;
+            const ghRunAttempt = process.env.GITHUB_RUN_ATTEMPT ?? "1";
+            const runUrl =
+              ghServer && ghRepo && ghRunId
+                ? `${ghServer}/${ghRepo}/actions/runs/${ghRunId}/attempts/${ghRunAttempt}#artifacts`
+                : null;
+
             for (const v of variants) {
               const file = path.join(testInfo.outputDir, `${stem}${v.suffix}`);
               if (fs.existsSync(file)) {
@@ -213,6 +227,28 @@ test.describe(`Programmatic SEO banner (${routes.length} routes × ${viewports.l
                   path: file,
                   contentType: "image/png",
                 });
+
+                // Direct link annotation: a repo-relative path that CI
+                // reporters can render, plus the artifacts URL when running
+                // on GitHub Actions.
+                const relPath = path.relative(repoRoot, file);
+                testInfo.annotations.push({
+                  type: v.type,
+                  description: runUrl
+                    ? `${relPath}  ·  ${runUrl}`
+                    : relPath,
+                });
+
+                // GitHub Actions inline notice — clickable in the run log.
+                if (process.env.GITHUB_ACTIONS === "true") {
+                  const msg =
+                    `${vp.name} ${v.label} for ${route}: ${relPath}` +
+                    (runUrl ? `  (artifacts: ${runUrl})` : "");
+                  // eslint-disable-next-line no-console
+                  console.log(
+                    `::notice file=${relPath},title=Visual regression ${v.label}::${msg}`,
+                  );
+                }
               }
             }
           }
