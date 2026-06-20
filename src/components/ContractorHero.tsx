@@ -25,6 +25,8 @@ const ContractorHero = ({
     <img
       src={imageSrc.includes("?") ? imageSrc : `${imageSrc}?${SEO_BANNER_VERSION}`}
       alt={`${trade} marketing in ${city}`}
+      width={1000}
+      height={600}
       fetchPriority="high"
       loading="eager"
       decoding="async"
