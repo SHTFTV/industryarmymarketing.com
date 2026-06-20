@@ -1,3 +1,17 @@
+import { test, expect } from "../playwright-fixture";
+import fs from "node:fs";
+import path from "node:path";
+
+// ---------------------------------------------------------------------------
+// Auto-discovery of programmatic SEO routes.
+//
+// Rather than hard-coding a sample per template, we scan the source tree so
+// new contractor data files, city records, and LocalCity pages get tested
+// automatically the moment they're added.
+// ---------------------------------------------------------------------------
+
+const repoRoot = path.resolve(__dirname, "..");
+
 // Aggregated failure log written by the catch block below. CI consumes this
 // to post a PR comment with clickable links to expected/actual/diff images.
 const FAILURE_LOG = path.join(repoRoot, "test-results", "visual-regression-failures.json");
@@ -22,20 +36,6 @@ function appendFailureRecord(record: {
     // Logging is best-effort; never let it mask the original assertion error.
   }
 }
-
-import { test, expect } from "../playwright-fixture";
-import fs from "node:fs";
-import path from "node:path";
-
-// ---------------------------------------------------------------------------
-// Auto-discovery of programmatic SEO routes.
-//
-// Rather than hard-coding a sample per template, we scan the source tree so
-// new contractor data files, city records, and LocalCity pages get tested
-// automatically the moment they're added.
-// ---------------------------------------------------------------------------
-
-const repoRoot = path.resolve(__dirname, "..");
 
 function discoverContractorRoutes(): string[] {
   const dir = path.join(repoRoot, "src/data/contractors");
