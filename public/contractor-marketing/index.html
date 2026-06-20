@@ -527,16 +527,58 @@ footer.site{background:#050505;padding:32px 0;color:#666;font-size:13px;text-ali
       if(on) b.setAttribute('aria-pressed','true'); else b.removeAttribute('aria-pressed');
     });
   }
-  Array.prototype.forEach.call(document.querySelectorAll('.iam-qr-px-preset'),function(btn){
-    btn.addEventListener('click',function(){
-      var v=this.getAttribute('data-px');
-      if(!v) return;
-      pxEl.value=v;
-      applyPx();
-      saveQrPrefs();
-      syncPxPresetActive();
+  var IAM_QR_PX_KEY='iam.qr.px-presets.v1';
+  function loadCustomPx(){
+    try{var raw=localStorage.getItem(IAM_QR_PX_KEY); return raw?JSON.parse(raw):[];}catch(e){return [];}
+  }
+  function saveCustomPx(arr){
+    try{localStorage.setItem(IAM_QR_PX_KEY,JSON.stringify(arr));}catch(e){}
+  }
+  function renderCustomPx(){
+    var host=document.getElementById('iam-qr-px-custom'); if(!host) return;
+    host.innerHTML='';
+    loadCustomPx().forEach(function(v){
+      var b=document.createElement('button');
+      b.type='button';
+      b.className='iam-qr-px-preset';
+      b.setAttribute('data-px',String(v));
+      b.setAttribute('data-custom','1');
+      b.title='Custom preset '+v+'px (shift-click to remove)';
+      b.textContent=v;
+      b.style.cssText='background:#111;border:1px solid #caff00;color:#caff00;padding:6px 8px;border-radius:3px;font:inherit;font-size:11px;cursor:pointer';
+      host.appendChild(b);
     });
+    syncPxPresetActive();
+  }
+  var pxGroup=document.getElementById('iam-qr-px-group');
+  pxGroup.addEventListener('click',function(e){
+    var t=e.target;
+    if(!(t&&t.classList)) return;
+    if(t.id==='iam-qr-px-save'){
+      var v=currentPx();
+      if(!v||v<50||v>4000){alert('Pixel size must be 50–4000.');return;}
+      var list=loadCustomPx();
+      // dedupe against built-ins and existing custom
+      var builtin=['200','320','512','800','1000'];
+      if(builtin.indexOf(String(v))!==-1||list.indexOf(v)!==-1){
+        pxEl.value=String(v); applyPx(); saveQrPrefs(); syncPxPresetActive();
+        return;
+      }
+      list.push(v); list.sort(function(a,b){return a-b;});
+      saveCustomPx(list); renderCustomPx();
+      return;
+    }
+    if(t.classList.contains('iam-qr-px-preset')){
+      var px=t.getAttribute('data-px'); if(!px) return;
+      if(e.shiftKey && t.getAttribute('data-custom')==='1'){
+        var arr=loadCustomPx().filter(function(n){return String(n)!==px;});
+        saveCustomPx(arr); renderCustomPx();
+        return;
+      }
+      pxEl.value=px; applyPx(); saveQrPrefs(); syncPxPresetActive();
+    }
   });
+  renderCustomPx();
   pxEl.addEventListener('input',syncPxPresetActive);
   syncPxPresetActive();
   ['iam-qr-fg','iam-qr-bg'].forEach(function(id){
