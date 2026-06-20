@@ -95,6 +95,7 @@ footer.site{background:#050505;padding:32px 0;color:#666;font-size:13px;text-ali
 <input id="iam-search" type="search" placeholder="Search a trade or city (e.g. plumbing, calgary, edmonton)" autocomplete="off">
 <select id="iam-region"><option value="">All regions</option><option value="AB, CA">AB, CA</option><option value="BC, CA">BC, CA</option><option value="MB, CA">MB, CA</option><option value="NB, CA">NB, CA</option><option value="NL, CA">NL, CA</option><option value="NS, CA">NS, CA</option><option value="ON, CA">ON, CA</option><option value="QC, CA">QC, CA</option><option value="SK, CA">SK, CA</option><option value="AE, INT">AE, INT</option><option value="AK, US">AK, US</option><option value="AL, US">AL, US</option><option value="AR, US">AR, US</option><option value="AU, INT">AU, INT</option><option value="AZ, US">AZ, US</option><option value="CA, US">CA, US</option><option value="CO, US">CO, US</option><option value="CT, US">CT, US</option><option value="DC, US">DC, US</option><option value="DE, US">DE, US</option><option value="FL, US">FL, US</option><option value="GA, US">GA, US</option><option value="HI, US">HI, US</option><option value="HK, INT">HK, INT</option><option value="IA, US">IA, US</option><option value="ID, US">ID, US</option><option value="IL, US">IL, US</option><option value="IN, US">IN, US</option><option value="JP, INT">JP, INT</option><option value="KS, US">KS, US</option><option value="KY, US">KY, US</option><option value="LA, US">LA, US</option><option value="MA, US">MA, US</option><option value="MD, US">MD, US</option><option value="ME, US">ME, US</option><option value="MI, US">MI, US</option><option value="MN, US">MN, US</option><option value="MO, US">MO, US</option><option value="MS, US">MS, US</option><option value="MT, US">MT, US</option><option value="NC, US">NC, US</option><option value="ND, US">ND, US</option><option value="NE, US">NE, US</option><option value="NH, US">NH, US</option><option value="NJ, US">NJ, US</option><option value="NM, US">NM, US</option><option value="NV, US">NV, US</option><option value="NY, US">NY, US</option><option value="NZ, INT">NZ, INT</option><option value="OH, US">OH, US</option><option value="OK, US">OK, US</option><option value="OR, US">OR, US</option><option value="PA, US">PA, US</option><option value="RI, US">RI, US</option><option value="SC, US">SC, US</option><option value="SD, US">SD, US</option><option value="SG, INT">SG, INT</option><option value="TN, US">TN, US</option><option value="TX, US">TX, US</option><option value="UT, US">UT, US</option><option value="VA, US">VA, US</option><option value="VT, US">VT, US</option><option value="WA, US">WA, US</option><option value="WI, US">WI, US</option><option value="WV, US">WV, US</option></select>
 <button class="clear" id="iam-clear" type="button">Clear</button>
+<button class="clear" id="iam-copy" type="button">Copy link</button>
 <span class="count"><b id="iam-trade-n">8</b> TRADES &middot; <b id="iam-city-n">0</b> CITIES</span>
 </div></div></div>
 
@@ -322,6 +323,23 @@ footer.site{background:#050505;padding:32px 0;color:#666;font-size:13px;text-ali
   q.addEventListener('input',function(){apply();clearTimeout(t);t=setTimeout(syncUrl,200);});
   r.addEventListener('change',function(){apply();syncUrl();});
   c.addEventListener('click',function(){q.value='';r.value='';apply();syncUrl();q.focus();});
+  var cp=document.getElementById('iam-copy');
+  cp.addEventListener('click',function(){
+    syncUrl();
+    var url=window.location.href;
+    var done=function(){var t=cp.textContent;cp.textContent='Copied!';cp.style.borderColor='#caff00';cp.style.color='#caff00';setTimeout(function(){cp.textContent=t;cp.style.borderColor='';cp.style.color='';},1500);};
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(url).then(done).catch(function(){
+        var ta=document.createElement('textarea');ta.value=url;document.body.appendChild(ta);ta.select();
+        try{document.execCommand('copy');done();}catch(e){}
+        document.body.removeChild(ta);
+      });
+    } else {
+      var ta=document.createElement('textarea');ta.value=url;document.body.appendChild(ta);ta.select();
+      try{document.execCommand('copy');done();}catch(e){}
+      document.body.removeChild(ta);
+    }
+  });
   window.addEventListener('popstate',function(){hydrate();apply();});
   hydrate();
   apply();
