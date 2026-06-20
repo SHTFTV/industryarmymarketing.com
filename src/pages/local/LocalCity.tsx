@@ -4,6 +4,7 @@ import Seo from "@/components/Seo";
 import PageHeader from "@/components/PageHeader";
 import FeatureGrid from "@/components/FeatureGrid";
 import CtaBanner from "@/components/CtaBanner";
+import SeoBanner from "@/components/SeoBanner";
 import { Button } from "@/components/ui/button";
 
 export interface LocalCityData {
@@ -57,6 +58,7 @@ const LocalCity = ({ data }: { data: LocalCityData }) => (
         url: `https://industryarmymarketing.com/local/${data.slug}`,
       }}
     />
+    <SeoBanner alt={`Contractor SEO & AEO marketing in ${data.city}`} />
     <PageHeader
       eyebrow={`${data.city}, ${data.province} · Population ${data.population}`}
       title={`Contractor Marketing`}
