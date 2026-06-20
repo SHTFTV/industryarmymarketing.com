@@ -17,7 +17,7 @@ const features = [
 ];
 
 const steps = [
-  { n: "01", t: "Email or Call", b: "Tell us your URL, target anchor text, and which domain category fits your niche. Phone 604-761-1518 or email colin@industryarmymarketing.com." },
+  { n: "01", t: "Email Us", b: "Tell us your URL, target anchor text, and which domain category fits your niche. Email colin@industryarmymarketing.com." },
   { n: "02", t: "Pay $10", b: "One flat payment of $10 CAD. No subscription, no monthly fee, no expiry. E-transfer, credit card or PayPal." },
   { n: "03", t: "Link Goes Live", b: "Your dofollow backlink is placed within 48 hours. You receive a confirmation email with the live URL of your post." },
   { n: "04", t: "It Stays Forever", b: "Your link is permanent. It stays live as long as the IAM domain is active — all domains have been running 20+ years." },
