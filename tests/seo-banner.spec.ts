@@ -117,6 +117,37 @@ test.describe(`Programmatic SEO banner (${routes.length} routes × ${viewports.l
         }));
         expect(natural.w, "image failed to decode (naturalWidth=0)").toBeGreaterThan(0);
         expect(natural.h, "image failed to decode (naturalHeight=0)").toBeGreaterThan(0);
+
+        // Accessibility + CLS-prevention attributes.
+        const attrs = await img.evaluate((el) => {
+          const i = el as HTMLImageElement;
+          return {
+            alt: i.getAttribute("alt"),
+            width: i.getAttribute("width"),
+            height: i.getAttribute("height"),
+            loading: i.getAttribute("loading"),
+            decoding: i.getAttribute("decoding"),
+            // React renders `fetchPriority` as the lowercase HTML attribute.
+            fetchpriority:
+              i.getAttribute("fetchpriority") ?? i.getAttribute("fetchPriority"),
+          };
+        });
+
+        // Alt text: must exist, be non-empty, and not be a generic placeholder.
+        expect(attrs.alt, "img is missing alt text").toBeTruthy();
+        expect(attrs.alt!.trim().length).toBeGreaterThan(3);
+        expect(attrs.alt!.toLowerCase()).not.toMatch(/^(image|photo|picture)$/);
+
+        // Explicit width/height attrs prevent layout shift.
+        expect(attrs.width, "img missing width attribute").toBeTruthy();
+        expect(attrs.height, "img missing height attribute").toBeTruthy();
+        expect(Number(attrs.width)).toBeGreaterThan(0);
+        expect(Number(attrs.height)).toBeGreaterThan(0);
+
+        // Performance attributes for a hero/LCP image.
+        expect(attrs.loading).toBe("eager");
+        expect(attrs.decoding).toBe("async");
+        expect(attrs.fetchpriority).toBe("high");
       });
     }
   }

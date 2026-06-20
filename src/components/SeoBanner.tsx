@@ -12,6 +12,8 @@ const SeoBanner = ({ alt }: { alt: string }) => (
     <img
       src={SEO_BANNER_SRC}
       alt={alt}
+      width={1000}
+      height={600}
       fetchPriority="high"
       loading="eager"
       decoding="async"
