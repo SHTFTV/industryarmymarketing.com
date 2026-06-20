@@ -29,6 +29,7 @@ const Pricing = () => (
           City <span className="text-primary">Rates</span>
         </h2>
         <p className="text-muted-foreground text-center mb-12">Examples from Canada, the US, UK, Europe, the Middle East, Asia and Oceania — every city worldwide is available at the same $10 per 100K formula.</p>
+        <p className="text-xs uppercase tracking-[0.3em] text-primary text-center -mt-8 mb-12">All Prices in USD</p>
 
         <div className="rounded-lg border border-border bg-card overflow-hidden">
           <table className="w-full text-left">
