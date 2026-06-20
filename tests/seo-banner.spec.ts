@@ -1,3 +1,28 @@
+// Aggregated failure log written by the catch block below. CI consumes this
+// to post a PR comment with clickable links to expected/actual/diff images.
+const FAILURE_LOG = path.join(repoRoot, "test-results", "visual-regression-failures.json");
+
+function appendFailureRecord(record: {
+  route: string;
+  viewport: string;
+  variant: string;
+  url: string;
+  expected?: string;
+  actual?: string;
+  diff?: string;
+}) {
+  try {
+    fs.mkdirSync(path.dirname(FAILURE_LOG), { recursive: true });
+    const existing: unknown[] = fs.existsSync(FAILURE_LOG)
+      ? JSON.parse(fs.readFileSync(FAILURE_LOG, "utf8"))
+      : [];
+    existing.push(record);
+    fs.writeFileSync(FAILURE_LOG, JSON.stringify(existing, null, 2));
+  } catch {
+    // Logging is best-effort; never let it mask the original assertion error.
+  }
+}
+
 import { test, expect } from "../playwright-fixture";
 import fs from "node:fs";
 import path from "node:path";
