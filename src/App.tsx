@@ -35,6 +35,7 @@ import AdminLeads from "./pages/admin/AdminLeads.tsx";
 import PwaCheck from "./pages/PwaCheck.tsx";
 import GuestPost from "./pages/GuestPost.tsx";
 import ContractorCityPage from "./pages/ContractorCityPage.tsx";
+import SyncAccount from "./pages/SyncAccount.tsx";
 
 const queryClient = new QueryClient();
 
@@ -63,6 +64,7 @@ const App = () => (
           <Route path="/cities/:city" element={<CityPage />} />
           <Route path="/contractors/:trade/:city" element={<ContractorCityPage />} />
           <Route path="/scan-wizard" element={<ScanWizard />} />
+          <Route path="/sync-account" element={<SyncAccount />} />
           <Route path="/network" element={<Network />} />
           <Route path="/eyespyr" element={<EyeSpyr />} />
           <Route path="/builder" element={<Builder />} />
