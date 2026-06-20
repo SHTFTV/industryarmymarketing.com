@@ -6,32 +6,41 @@ import PageHeader from "@/components/PageHeader";
 import { Button } from "@/components/ui/button";
 import { toast } from "@/components/ui/sonner";
 
-// Grouped by industry so non-trade businesses (mining ops, wellness clinics,
-// designers, etc.) see themselves in the list instead of hunting under "Trade".
-const industryGroups: { label: string; options: string[] }[] = [
+// Two-level taxonomy: pick a broad industry first, then narrow to a specific
+// trade/service. The second level is optional so anyone can submit without
+// hunting for the exact match.
+const industries: { label: string; specialties: string[] }[] = [
   {
     label: "Construction Trades",
-    options: [
+    specialties: [
       "Roofing", "Framing", "Drywall", "Plumbing", "Electrical", "HVAC",
       "Excavation", "Painting", "Steel Stud", "Foundations",
-      "General Contracting",
+      "General Contracting", "Concrete", "Flooring", "Windows & Doors",
     ],
   },
   {
     label: "Property & Outdoor Services",
-    options: ["Landscaping", "Snow Removal", "Interior Design"],
+    specialties: [
+      "Landscaping", "Snow Removal", "Interior Design", "Pool & Spa",
+      "Fencing & Decks", "Cleaning Services",
+    ],
   },
   {
     label: "Industrial & Logistics",
-    options: ["Mining / Logistics"],
+    specialties: [
+      "Mining", "Trucking & Logistics", "Heavy Equipment", "Oil & Gas Services",
+    ],
   },
   {
     label: "Health & Professional Services",
-    options: ["Health & Wellness"],
+    specialties: [
+      "Health & Wellness", "Dental", "Chiropractic", "Legal", "Accounting",
+      "Real Estate",
+    ],
   },
   {
     label: "Something Else",
-    options: ["Other industry — tell us in notes"],
+    specialties: [],
   },
 ];
 const yearsOptions = ["Less than 1","1–3","3–5","5–10","10+"];
@@ -39,13 +48,13 @@ const provinces = ["BC","AB","ON","MB","SK","QC","NS","Other"];
 const popOptions = ["Under 100K","100K – 500K","500K – 1M","Over 1M"];
 
 interface FormState {
-  business: string; website: string; trade: string; years: string;
+  business: string; website: string; industry: string; trade: string; years: string;
   city: string; province: string; population: string;
   name: string; email: string; phone: string; notes: string;
 }
 
 const empty: FormState = {
-  business: "", website: "", trade: "", years: "",
+  business: "", website: "", industry: "", trade: "", years: "",
   city: "", province: "BC", population: "",
   name: "", email: "", phone: "", notes: "",
 };
@@ -115,21 +124,61 @@ const ScanWizard = () => {
                       <input className={inputCls} value={data.website} onChange={(e) => set("website", e.target.value)} placeholder="https://" />
                     </div>
                     <div>
-                      <label className={labelCls}>Your Industry or Trade *</label>
+                      <label className={labelCls}>Your Industry *</label>
                       <select
                         className={inputCls}
-                        value={data.trade}
-                        onChange={(e) => set("trade", e.target.value)}
+                        value={data.industry}
+                        onChange={(e) => {
+                          set("industry", e.target.value);
+                          set("trade", "");
+                        }}
                       >
                         <option value="">Select your industry…</option>
-                        {industryGroups.map((g) => (
-                          <optgroup key={g.label} label={g.label}>
-                            {g.options.map((o) => (
-                              <option key={o}>{o}</option>
-                            ))}
-                          </optgroup>
+                        {industries.map((g) => (
+                          <option key={g.label} value={g.label}>{g.label}</option>
                         ))}
                       </select>
+                    </div>
+                    <div>
+                      <label className={labelCls}>
+                        Specific Trade or Service <span className="normal-case tracking-normal text-[10px] text-muted-foreground/70">(optional)</span>
+                      </label>
+                      {(() => {
+                        const selected = industries.find((i) => i.label === data.industry);
+                        const specialties = selected?.specialties ?? [];
+                        if (!data.industry) {
+                          return (
+                            <input
+                              className={`${inputCls} opacity-60`}
+                              placeholder="Pick an industry first…"
+                              disabled
+                            />
+                          );
+                        }
+                        if (specialties.length === 0) {
+                          return (
+                            <input
+                              className={inputCls}
+                              value={data.trade}
+                              onChange={(e) => set("trade", e.target.value)}
+                              placeholder="Describe your trade or service"
+                            />
+                          );
+                        }
+                        return (
+                          <select
+                            className={inputCls}
+                            value={data.trade}
+                            onChange={(e) => set("trade", e.target.value)}
+                          >
+                            <option value="">Any / not listed</option>
+                            {specialties.map((s) => (
+                              <option key={s}>{s}</option>
+                            ))}
+                            <option value="Other">Other — tell us in notes</option>
+                          </select>
+                        );
+                      })()}
                     </div>
                     <div>
                       <label className={labelCls}>Years in Business</label>
@@ -140,7 +189,7 @@ const ScanWizard = () => {
                     </div>
                   </div>
                   <div className="mt-8 flex justify-end">
-                    <Button variant="hero" onClick={() => setStep(1)} disabled={!data.business || !data.trade}>
+                    <Button variant="hero" onClick={() => setStep(1)} disabled={!data.business || !data.industry}>
                       Next: Your Location →
                     </Button>
                   </div>
