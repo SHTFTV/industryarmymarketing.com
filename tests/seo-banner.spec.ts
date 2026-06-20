@@ -245,6 +245,21 @@ test.describe(`Programmatic SEO banner (${routes.length} routes × ${viewports.l
                 ? `${ghServer}/${ghRepo}/actions/runs/${ghRunId}/attempts/${ghRunAttempt}#artifacts`
                 : null;
 
+            const record: {
+              route: string;
+              viewport: string;
+              variant: string;
+              url: string;
+              expected?: string;
+              actual?: string;
+              diff?: string;
+            } = {
+              route,
+              viewport: `${vp.name} (${vp.width}x${vp.height})`,
+              variant: bannerVariant,
+              url: pageUrl,
+            };
+
             for (const v of variants) {
               const file = path.join(testInfo.outputDir, `${stem}${v.suffix}`);
               if (fs.existsSync(file)) {
@@ -264,6 +279,10 @@ test.describe(`Programmatic SEO banner (${routes.length} routes × ${viewports.l
                     : relPath,
                 });
 
+                if (v.type === "expected-image") record.expected = relPath;
+                if (v.type === "actual-image") record.actual = relPath;
+                if (v.type === "diff-image") record.diff = relPath;
+
                 // GitHub Actions inline notice — clickable in the run log.
                 if (process.env.GITHUB_ACTIONS === "true") {
                   const msg =
@@ -276,6 +295,8 @@ test.describe(`Programmatic SEO banner (${routes.length} routes × ${viewports.l
                 }
               }
             }
+
+            appendFailureRecord(record);
           }
           throw err;
         }
