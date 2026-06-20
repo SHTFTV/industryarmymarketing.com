@@ -3,8 +3,12 @@ import Seo from "@/components/Seo";
 import PageHeader from "@/components/PageHeader";
 import CtaBanner from "@/components/CtaBanner";
 import { motion } from "framer-motion";
+import { useEffect } from "react";
+import { domains as dataDomains } from "@/data/domains";
+import { FAQ_DOMAIN_BLURB } from "@/pages/CityPage";
+import { buildDomainSyncReport, logDomainSyncReport } from "@/lib/domain-sync";
 
-const groups = [
+export const groups = [
   {
     title: "The Build Army",
     subtitle: "Construction & Trades",
@@ -104,7 +108,17 @@ const groups = [
   },
 ];
 
-const Network = () => (
+const Network = () => {
+  useEffect(() => {
+    if (!import.meta.env.DEV) return;
+    const report = buildDomainSyncReport({
+      dataDomains: dataDomains.map((d) => d.domain),
+      networkDomains: groups.flatMap((g) => g.domains.map(([d]) => d)),
+      faqText: FAQ_DOMAIN_BLURB,
+    });
+    logDomainSyncReport(report);
+  }, []);
+  return (
   <Layout>
     <Seo
       title="Domain Network — 80+ Premium Trade Domains | IAM"
@@ -159,6 +173,7 @@ const Network = () => (
       secondaryTo="/pricing"
     />
   </Layout>
-);
+  );
+};
 
 export default Network;
