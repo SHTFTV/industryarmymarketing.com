@@ -403,9 +403,13 @@ footer.site{background:#050505;padding:32px 0;color:#666;font-size:13px;text-ali
   var qrPrintBtn=document.getElementById('iam-qr-print'),
       printImg=document.getElementById('iam-print-img'),
       printUrl=document.getElementById('iam-print-url');
+  var qrSize=document.getElementById('iam-qr-size');
   qrPrintBtn.addEventListener('click',function(){
     if(!qrImg.src) return;
+    var mm=parseInt(qrSize.value,10)||100;
     printImg.src=qrImg.src;
+    printImg.style.width=mm+'mm';
+    printImg.style.height=mm+'mm';
     printUrl.textContent=window.location.href;
     setTimeout(function(){window.print();},80);
   });
@@ -425,6 +429,7 @@ footer.site{background:#050505;padding:32px 0;color:#666;font-size:13px;text-ali
     <img id="iam-qr-img" alt="QR code">
     <button class="close" type="button" id="iam-qr-download" style="margin-right:8px">Download PNG</button>
     <button class="close" type="button" id="iam-qr-download-svg" style="margin-right:8px;background:transparent;color:#caff00;border:1px solid #caff00">Download SVG</button>
+    <select id="iam-qr-size" style="margin-right:8px;background:#111;border:1px solid #333;color:#fff;padding:10px 12px;border-radius:3px;font:inherit;font-size:12px;text-transform:uppercase;letter-spacing:.05em;cursor:pointer"><option value="50">50 mm</option><option value="75">75 mm</option><option value="100" selected>100 mm</option><option value="125">125 mm</option><option value="150">150 mm</option></select>
     <button class="close" type="button" id="iam-qr-print" style="margin-right:8px;background:transparent;color:#caff00;border:1px solid #caff00">Print</button>
     <button class="close" type="button" id="iam-qr-close" style="background:transparent;color:#caff00;border:1px solid #caff00">Close</button>
   </div>
