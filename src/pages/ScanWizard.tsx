@@ -364,7 +364,7 @@ const ScanWizard = () => {
                           setData(next);
                           refreshSuggestion(next);
                           if (e.target.value) {
-                            saveTradePref({ industry: e.target.value, trade: "" });
+                            persistPref({ industry: e.target.value, trade: "" });
                           } else {
                             clearTradePref();
                           }
@@ -415,7 +415,7 @@ const ScanWizard = () => {
                               onChange={(e) => {
                                 setTradeLocked(true);
                                 set("trade", e.target.value);
-                                saveTradePref({ industry: data.industry, trade: e.target.value });
+                                persistPref({ industry: data.industry, trade: e.target.value });
                                 setPreloadedFromPref(false);
                               }}
                             >
@@ -453,7 +453,7 @@ const ScanWizard = () => {
                                       onClick={() => {
                                         setTradeLocked(true);
                                         toast.success(`Locked in ${suggestion.specialty}.`);
-                                        saveTradePref({ industry: data.industry, trade: suggestion.specialty });
+                                        persistPref({ industry: data.industry, trade: suggestion.specialty });
                                         setPreloadedFromPref(false);
                                       }}
                                     >
@@ -467,7 +467,7 @@ const ScanWizard = () => {
                                       onClick={() => {
                                         setTradeLocked(false);
                                         set("trade", suggestion.specialty);
-                                        saveTradePref({ industry: data.industry, trade: suggestion.specialty });
+                                        persistPref({ industry: data.industry, trade: suggestion.specialty });
                                         setPreloadedFromPref(false);
                                       }}
                                     >
@@ -481,7 +481,7 @@ const ScanWizard = () => {
                                     onClick={() => {
                                       setTradeLocked(true);
                                       set("trade", "");
-                                      saveTradePref({ industry: data.industry, trade: "" });
+                                      persistPref({ industry: data.industry, trade: "" });
                                       setPreloadedFromPref(false);
                                     }}
                                   >
