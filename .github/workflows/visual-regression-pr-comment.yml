@@ -1,0 +1,111 @@
+name: Visual regression PR comment
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  visual-regression:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+
+      - name: Run Playwright (banner visual regression)
+        id: pw
+        continue-on-error: true
+        run: npx playwright test tests/seo-banner.spec.ts
+
+      - name: Upload test-results artifact
+        id: upload
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: visual-regression-results
+          path: test-results/
+          if-no-files-found: ignore
+          retention-days: 14
+
+      - name: Build PR comment body
+        id: comment
+        if: always() && hashFiles('test-results/visual-regression-failures.json') != ''
+        env:
+          ARTIFACT_URL: ${{ steps.upload.outputs.artifact-url }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          COMMIT_SHA: ${{ github.event.pull_request.head.sha }}
+          REPO: ${{ github.repository }}
+        run: |
+          node <<'JS' > pr-comment.md
+          const fs = require('node:fs');
+          const failures = JSON.parse(
+            fs.readFileSync('test-results/visual-regression-failures.json', 'utf8'),
+          );
+          const artifactUrl = process.env.ARTIFACT_URL || '';
+          const runUrl = process.env.RUN_URL;
+          const sha = (process.env.COMMIT_SHA || '').slice(0, 7);
+          const repo = process.env.REPO;
+
+          // Per-file blob URL (works once the PR branch contains the file —
+          // mainly useful for the *expected* baseline that lives in repo).
+          const blob = (p) =>
+            `https://github.com/${repo}/blob/${process.env.COMMIT_SHA}/${p}`;
+
+          const link = (label, p) => {
+            if (!p) return `_${label}: n/a_`;
+            // Artifact zip is the reliable source for actual + diff (not in repo).
+            const target = artifactUrl || blob(p);
+            return `[${label}](${target} "${p}")`;
+          };
+
+          let out = '';
+          out += '<!-- visual-regression-bot -->\n';
+          out += `### 🖼️ Visual regression failures (${failures.length})\n\n`;
+          out += `Commit \`${sha}\` · [Workflow run](${runUrl})`;
+          if (artifactUrl) out += ` · [📦 Download artifact](${artifactUrl})`;
+          out += '\n\n';
+          out += '| Route | Variant | Viewport | Expected | Actual | Diff |\n';
+          out += '| --- | --- | --- | --- | --- | --- |\n';
+          for (const f of failures) {
+            out += `| \`${f.route}\` | ${f.variant} | ${f.viewport} | `;
+            out += `${link('expected', f.expected)} | `;
+            out += `${link('actual', f.actual)} | `;
+            out += `${link('🔍 diff', f.diff)} |\n`;
+          }
+          out += '\n';
+          out += '> Download the artifact above to view `*-actual.png` and ';
+          out += '`*-diff.png` (highlighted pixel regions). The `*-expected.png` ';
+          out += "links resolve in the repo once the baseline is committed.\n";
+          process.stdout.write(out);
+          JS
+
+      - name: Post or update PR comment
+        if: always() && hashFiles('pr-comment.md') != ''
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          header: visual-regression-bot
+          path: pr-comment.md
+
+      - name: Remove stale PR comment when all green
+        if: always() && hashFiles('test-results/visual-regression-failures.json') == ''
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          header: visual-regression-bot
+          delete: true
+
+      - name: Fail job if Playwright failed
+        if: steps.pw.outcome == 'failure'
+        run: exit 1

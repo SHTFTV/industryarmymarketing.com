@@ -12,6 +12,31 @@ import path from "node:path";
 
 const repoRoot = path.resolve(__dirname, "..");
 
+// Aggregated failure log written by the catch block below. CI consumes this
+// to post a PR comment with clickable links to expected/actual/diff images.
+const FAILURE_LOG = path.join(repoRoot, "test-results", "visual-regression-failures.json");
+
+function appendFailureRecord(record: {
+  route: string;
+  viewport: string;
+  variant: string;
+  url: string;
+  expected?: string;
+  actual?: string;
+  diff?: string;
+}) {
+  try {
+    fs.mkdirSync(path.dirname(FAILURE_LOG), { recursive: true });
+    const existing: unknown[] = fs.existsSync(FAILURE_LOG)
+      ? JSON.parse(fs.readFileSync(FAILURE_LOG, "utf8"))
+      : [];
+    existing.push(record);
+    fs.writeFileSync(FAILURE_LOG, JSON.stringify(existing, null, 2));
+  } catch {
+    // Logging is best-effort; never let it mask the original assertion error.
+  }
+}
+
 function discoverContractorRoutes(): string[] {
   const dir = path.join(repoRoot, "src/data/contractors");
   if (!fs.existsSync(dir)) return [];
@@ -220,6 +245,21 @@ test.describe(`Programmatic SEO banner (${routes.length} routes × ${viewports.l
                 ? `${ghServer}/${ghRepo}/actions/runs/${ghRunId}/attempts/${ghRunAttempt}#artifacts`
                 : null;
 
+            const record: {
+              route: string;
+              viewport: string;
+              variant: string;
+              url: string;
+              expected?: string;
+              actual?: string;
+              diff?: string;
+            } = {
+              route,
+              viewport: `${vp.name} (${vp.width}x${vp.height})`,
+              variant: bannerVariant,
+              url: pageUrl,
+            };
+
             for (const v of variants) {
               const file = path.join(testInfo.outputDir, `${stem}${v.suffix}`);
               if (fs.existsSync(file)) {
@@ -239,6 +279,10 @@ test.describe(`Programmatic SEO banner (${routes.length} routes × ${viewports.l
                     : relPath,
                 });
 
+                if (v.type === "expected-image") record.expected = relPath;
+                if (v.type === "actual-image") record.actual = relPath;
+                if (v.type === "diff-image") record.diff = relPath;
+
                 // GitHub Actions inline notice — clickable in the run log.
                 if (process.env.GITHUB_ACTIONS === "true") {
                   const msg =
@@ -251,6 +295,8 @@ test.describe(`Programmatic SEO banner (${routes.length} routes × ${viewports.l
                 }
               }
             }
+
+            appendFailureRecord(record);
           }
           throw err;
         }
