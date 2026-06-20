@@ -416,6 +416,18 @@ footer.site{background:#050505;padding:32px 0;color:#666;font-size:13px;text-ali
   function closeQr(){qrModal.classList.remove('open');}
   qrBtn.addEventListener('click',openQr);
   qrClose.addEventListener('click',closeQr);
+  document.getElementById('iam-qr-reset').addEventListener('click',function(btn){
+    try{localStorage.removeItem(IAM_QR_KEY);}catch(e){}
+    document.getElementById('iam-qr-fg').value='#000000';
+    document.getElementById('iam-qr-bg').value='#ffffff';
+    document.getElementById('iam-qr-ecc').value='Q';
+    document.getElementById('iam-qr-px').value='320';
+    applyPx();
+    checkContrast();
+    var b=this.target||document.getElementById('iam-qr-reset');
+    var orig=b.textContent; b.textContent='Reset ✓'; b.style.color='#caff00'; b.style.borderColor='#caff00';
+    setTimeout(function(){b.textContent=orig;b.style.color='';b.style.borderColor='';},1200);
+  });
   function qrDownload(btn,ext){
     if(!qrImg.src) return;
     var url=buildQrUrl(currentPx(),ext);
@@ -544,6 +556,7 @@ footer.site{background:#050505;padding:32px 0;color:#666;font-size:13px;text-ali
     <select id="iam-qr-size" style="margin-right:8px;background:#111;border:1px solid #333;color:#fff;padding:10px 12px;border-radius:3px;font:inherit;font-size:12px;text-transform:uppercase;letter-spacing:.05em;cursor:pointer"><option value="50">50 mm</option><option value="75">75 mm</option><option value="100" selected>100 mm</option><option value="125">125 mm</option><option value="150">150 mm</option></select>
     <button class="close" type="button" id="iam-qr-print" style="margin-right:8px;background:transparent;color:#caff00;border:1px solid #caff00">Print</button>
     <button class="close" type="button" id="iam-qr-close" style="background:transparent;color:#caff00;border:1px solid #caff00">Close</button>
+    <button class="close" type="button" id="iam-qr-reset" style="margin-left:8px;background:transparent;color:#888;border:1px solid #333" title="Clear saved colors, EC, and pixel size">Reset settings</button>
   </div>
   <div class="iam-print-sheet" aria-hidden="true">
     <div class="ttl">Industry Army Marketing</div>
