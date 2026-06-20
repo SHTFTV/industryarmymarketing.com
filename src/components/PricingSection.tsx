@@ -137,8 +137,8 @@ const PricingSection = () => {
           <h3 className="font-display text-2xl md:text-3xl text-primary mt-1">
             ENTERPRISE LEVEL DOMINATION
           </h3>
-          <p className="text-muted-foreground mt-4 max-w-lg mx-auto text-sm">
-            Custom marketing packages available for multi-location contractors, franchises, and enterprise accounts.
+          <p className="text-muted-foreground mt-4 max-w-2xl mx-auto text-sm">
+            We offer custom pricing for individual packages, websites, product sales, and full marketing builds — not just the $10 population-based SEO. Multi-location contractors, franchises, and enterprise accounts welcome.
           </p>
         </motion.div>
       </div>
