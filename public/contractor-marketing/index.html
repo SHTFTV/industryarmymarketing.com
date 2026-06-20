@@ -412,6 +412,7 @@ footer.site{background:#050505;padding:32px 0;color:#666;font-size:13px;text-ali
     qrModal.classList.add('open');
     applyPx();
     checkContrast();
+    if(typeof syncPxPresetActive==='function') syncPxPresetActive();
   }
   function closeQr(){qrModal.classList.remove('open');}
   qrBtn.addEventListener('click',openQr);
@@ -424,6 +425,7 @@ footer.site{background:#050505;padding:32px 0;color:#666;font-size:13px;text-ali
     document.getElementById('iam-qr-px').value='320';
     applyPx();
     checkContrast();
+    if(typeof syncPxPresetActive==='function') syncPxPresetActive();
     var b=this.target||document.getElementById('iam-qr-reset');
     var orig=b.textContent; b.textContent='Reset ✓'; b.style.color='#caff00'; b.style.borderColor='#caff00';
     setTimeout(function(){b.textContent=orig;b.style.color='';b.style.borderColor='';},1200);
@@ -515,6 +517,16 @@ footer.site{background:#050505;padding:32px 0;color:#666;font-size:13px;text-ali
     if(qrModal.classList.contains('open')) qrImg.src=buildQrUrl(px,'png');
   }
   pxEl.addEventListener('input',function(){applyPx();saveQrPrefs();});
+  function syncPxPresetActive(){
+    var cur=String(currentPx());
+    Array.prototype.forEach.call(document.querySelectorAll('.iam-qr-px-preset'),function(b){
+      var on=b.getAttribute('data-px')===cur;
+      b.style.background=on?'#caff00':'#111';
+      b.style.color=on?'#0a0a0a':'#aaa';
+      b.style.borderColor=on?'#caff00':'#333';
+      if(on) b.setAttribute('aria-pressed','true'); else b.removeAttribute('aria-pressed');
+    });
+  }
   Array.prototype.forEach.call(document.querySelectorAll('.iam-qr-px-preset'),function(btn){
     btn.addEventListener('click',function(){
       var v=this.getAttribute('data-px');
@@ -522,8 +534,11 @@ footer.site{background:#050505;padding:32px 0;color:#666;font-size:13px;text-ali
       pxEl.value=v;
       applyPx();
       saveQrPrefs();
+      syncPxPresetActive();
     });
   });
+  pxEl.addEventListener('input',syncPxPresetActive);
+  syncPxPresetActive();
   ['iam-qr-fg','iam-qr-bg'].forEach(function(id){
     document.getElementById(id).addEventListener('input',function(){
       if(qrModal.classList.contains('open')) qrImg.src=buildQrUrl(currentPx(),'png');
