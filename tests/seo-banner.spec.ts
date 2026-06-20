@@ -63,30 +63,61 @@ if (routes.length === 0) {
   );
 }
 
-test.describe(`Programmatic SEO banner (${routes.length} discovered routes)`, () => {
+// Representative viewport per form factor. Sizes match common device
+// breakpoints so the test catches layout regressions in real-world widths.
+const viewports = [
+  { name: "mobile", width: 375, height: 812 },
+  { name: "tablet", width: 768, height: 1024 },
+  { name: "desktop", width: 1440, height: 900 },
+] as const;
+
+test.describe(`Programmatic SEO banner (${routes.length} routes × ${viewports.length} viewports)`, () => {
   for (const route of routes) {
-    test(`renders SeoBanner on ${route}`, async ({ page }) => {
-      const imgResponses: { url: string; status: number }[] = [];
-      page.on("response", (res) => {
-        const url = res.url();
-        if (url.includes("CONTRACTOR_SEO.png")) {
-          imgResponses.push({ url, status: res.status() });
+    for (const vp of viewports) {
+      test(`renders SeoBanner on ${route} @ ${vp.name} (${vp.width}x${vp.height})`, async ({
+        page,
+      }) => {
+        await page.setViewportSize({ width: vp.width, height: vp.height });
+
+        const imgResponses: { url: string; status: number }[] = [];
+        page.on("response", (res) => {
+          const url = res.url();
+          if (url.includes("CONTRACTOR_SEO.png")) {
+            imgResponses.push({ url, status: res.status() });
+          }
+        });
+
+        await page.goto(route, { waitUntil: "networkidle" });
+
+        const banner = page.locator('[data-testid="seo-banner"]').first();
+        await expect(banner).toBeVisible();
+
+        // Cache-bust query string must be present in the DOM.
+        const img = banner.locator("img").first();
+        await expect(img).toHaveAttribute("src", /CONTRACTOR_SEO\.png\?v=/);
+
+        // The image must actually load (no 404s / broken assets).
+        expect(imgResponses.length).toBeGreaterThan(0);
+        for (const r of imgResponses) {
+          expect(r.status, `bad status for ${r.url}`).toBeLessThan(400);
         }
+
+        // Layout sanity: banner must span the viewport width (allowing for
+        // scrollbar) and have non-zero height so it never collapses.
+        const box = await banner.boundingBox();
+        expect(box, "banner has no bounding box").not.toBeNull();
+        expect(box!.width).toBeGreaterThanOrEqual(vp.width - 20);
+        expect(box!.height).toBeGreaterThan(0);
+
+        // The rendered image must have natural dimensions (i.e. actually
+        // decoded, not a broken-image placeholder).
+        const natural = await img.evaluate((el) => ({
+          w: (el as HTMLImageElement).naturalWidth,
+          h: (el as HTMLImageElement).naturalHeight,
+        }));
+        expect(natural.w, "image failed to decode (naturalWidth=0)").toBeGreaterThan(0);
+        expect(natural.h, "image failed to decode (naturalHeight=0)").toBeGreaterThan(0);
       });
-
-      await page.goto(route, { waitUntil: "networkidle" });
-
-      const banner = page.locator('[data-testid="seo-banner"]').first();
-      await expect(banner).toBeVisible();
-
-      const img = banner.locator("img").first();
-      await expect(img).toHaveAttribute("src", /CONTRACTOR_SEO\.png\?v=/);
-
-      // The image must actually load (no 404s / broken assets).
-      expect(imgResponses.length).toBeGreaterThan(0);
-      for (const r of imgResponses) {
-        expect(r.status, `bad status for ${r.url}`).toBeLessThan(400);
-      }
-    });
+    }
   }
 });
