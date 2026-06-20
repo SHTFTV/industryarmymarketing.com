@@ -64,6 +64,19 @@ footer.site{background:#050505;padding:32px 0;color:#666;font-size:13px;text-ali
 .toc{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
 .toc a{padding:6px 14px;background:#111;border:1px solid #222;border-radius:99px;font-size:12px;color:#ccc;text-transform:uppercase;letter-spacing:.1em}
 .toc a:hover{border-color:#caff00;color:#caff00;text-decoration:none}
+
+.filter-bar{position:sticky;top:65px;z-index:9;background:#0a0a0a;border-bottom:1px solid #222;padding:18px 0}
+.filter-bar .row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.filter-bar input,.filter-bar select{flex:1;min-width:220px;background:#111;border:1px solid #222;color:#fff;padding:12px 16px;border-radius:4px;font:inherit;font-size:14px}
+.filter-bar input:focus,.filter-bar select:focus{outline:none;border-color:#caff00}
+.filter-bar .count{color:#888;font-family:JetBrains Mono,Menlo,monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
+.filter-bar .count b{color:#caff00}
+.filter-bar .clear{background:transparent;border:1px solid #333;color:#aaa;padding:12px 16px;border-radius:4px;cursor:pointer;font:inherit;font-size:12px;text-transform:uppercase;letter-spacing:.1em}
+.filter-bar .clear:hover{border-color:#caff00;color:#caff00}
+.region-block.is-hidden,.card.is-hidden,.city-list>*.is-hidden,.region-block .city-list>span.is-hidden{display:none !important}
+.empty-state{display:none;text-align:center;padding:48px 0;color:#888}
+.empty-state.show{display:block}
+
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebPage", "@id": "https://industryarmymarketing.com/contractor-marketing/#webpage", "url": "https://industryarmymarketing.com/contractor-marketing/", "name": "Contractor Marketing | Master Hub | Industry Army Marketing", "description": "Master hub for tactical contractor SEO across 797 cities and 8 trades. Exclusive locked territories from $10/month.", "breadcrumb": {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://industryarmymarketing.com/"}, {"@type": "ListItem", "position": 2, "name": "Contractor Marketing", "item": "https://industryarmymarketing.com/contractor-marketing/"}]}}, {"@type": "CollectionPage", "name": "Contractor Marketing Territories", "numberOfItems": 6376, "about": [{"@type": "Service", "name": "Plumbing Contractor Marketing"}, {"@type": "Service", "name": "Roofing Contractor Marketing"}, {"@type": "Service", "name": "Electrical Contractor Marketing"}, {"@type": "Service", "name": "HVAC Contractor Marketing"}, {"@type": "Service", "name": "Framing Contractor Marketing"}, {"@type": "Service", "name": "Demolition Contractor Marketing"}, {"@type": "Service", "name": "Excavation Contractor Marketing"}, {"@type": "Service", "name": "Painting Contractor Marketing"}]}, {"@type": "Organization", "name": "Industry Army Marketing", "url": "https://industryarmymarketing.com", "foundingDate": "2011", "email": "colin@industryarmymarketing.com"}]}</script>
 </head>
@@ -77,6 +90,14 @@ footer.site{background:#050505;padding:32px 0;color:#666;font-size:13px;text-ali
 <a href="/scan-wizard">Free Scan</a>
 </nav>
 </div></header>
+
+<div class="filter-bar"><div class="container"><div class="row">
+<input id="iam-search" type="search" placeholder="Search a trade or city (e.g. plumbing, calgary, edmonton)" autocomplete="off">
+<select id="iam-region"><option value="">All regions</option><option value="AB, CA">AB, CA</option><option value="BC, CA">BC, CA</option><option value="MB, CA">MB, CA</option><option value="NB, CA">NB, CA</option><option value="NL, CA">NL, CA</option><option value="NS, CA">NS, CA</option><option value="ON, CA">ON, CA</option><option value="QC, CA">QC, CA</option><option value="SK, CA">SK, CA</option><option value="AE, INT">AE, INT</option><option value="AK, US">AK, US</option><option value="AL, US">AL, US</option><option value="AR, US">AR, US</option><option value="AU, INT">AU, INT</option><option value="AZ, US">AZ, US</option><option value="CA, US">CA, US</option><option value="CO, US">CO, US</option><option value="CT, US">CT, US</option><option value="DC, US">DC, US</option><option value="DE, US">DE, US</option><option value="FL, US">FL, US</option><option value="GA, US">GA, US</option><option value="HI, US">HI, US</option><option value="HK, INT">HK, INT</option><option value="IA, US">IA, US</option><option value="ID, US">ID, US</option><option value="IL, US">IL, US</option><option value="IN, US">IN, US</option><option value="JP, INT">JP, INT</option><option value="KS, US">KS, US</option><option value="KY, US">KY, US</option><option value="LA, US">LA, US</option><option value="MA, US">MA, US</option><option value="MD, US">MD, US</option><option value="ME, US">ME, US</option><option value="MI, US">MI, US</option><option value="MN, US">MN, US</option><option value="MO, US">MO, US</option><option value="MS, US">MS, US</option><option value="MT, US">MT, US</option><option value="NC, US">NC, US</option><option value="ND, US">ND, US</option><option value="NE, US">NE, US</option><option value="NH, US">NH, US</option><option value="NJ, US">NJ, US</option><option value="NM, US">NM, US</option><option value="NV, US">NV, US</option><option value="NY, US">NY, US</option><option value="NZ, INT">NZ, INT</option><option value="OH, US">OH, US</option><option value="OK, US">OK, US</option><option value="OR, US">OR, US</option><option value="PA, US">PA, US</option><option value="RI, US">RI, US</option><option value="SC, US">SC, US</option><option value="SD, US">SD, US</option><option value="SG, INT">SG, INT</option><option value="TN, US">TN, US</option><option value="TX, US">TX, US</option><option value="UT, US">UT, US</option><option value="VA, US">VA, US</option><option value="VT, US">VT, US</option><option value="WA, US">WA, US</option><option value="WI, US">WI, US</option><option value="WV, US">WV, US</option></select>
+<button class="clear" id="iam-clear" type="button">Clear</button>
+<span class="count"><b id="iam-trade-n">8</b> TRADES &middot; <b id="iam-city-n">0</b> CITIES</span>
+</div></div></div>
+
 
 <section class="hero"><div class="container">
 <span class="eyebrow">The Master Builder House</span>
@@ -152,6 +173,7 @@ footer.site{background:#050505;padding:32px 0;color:#666;font-size:13px;text-ali
 </div></section>
 
 <section><div class="container">
+<div id="iam-empty" class="empty-state">No matches. Try a different search or clear the filter.</div>
 <h2><span class="num">03</span>Geographic Coverage &middot; By Region</h2>
 <p style="max-width:820px;color:#bbb">Every city listed below has 8 trade territories available (one per vertical). Click into a trade silo above to lock a specific city.</p>
 <div class="region-block"><h3>AB, CA &middot; 4 cities</h3>
@@ -232,4 +254,57 @@ footer.site{background:#050505;padding:32px 0;color:#666;font-size:13px;text-ali
 &copy; Industry Army Marketing &middot; Tactical SEO &amp; Local Dominance for Contractors &middot;
 <a href="/">Home</a> &middot; <a href="/pricing">Pricing</a> &middot; <a href="/contact">Contact</a>
 </div></footer>
+
+<script>
+(function(){
+  var q=document.getElementById('iam-search'),
+      r=document.getElementById('iam-region'),
+      c=document.getElementById('iam-clear'),
+      tn=document.getElementById('iam-trade-n'),
+      cn=document.getElementById('iam-city-n');
+  var tradeCards=Array.prototype.slice.call(document.querySelectorAll('.grid-trades > .card'));
+  var regionBlocks=Array.prototype.slice.call(document.querySelectorAll('.region-block'));
+  // index city items inside master hub region blocks (they're spans, not links)
+  var cityIndex=regionBlocks.map(function(block){
+    var h3=block.querySelector('h3');
+    var label=h3?h3.textContent.split('·')[0].trim().toLowerCase():'';
+    var items=Array.prototype.slice.call(block.querySelectorAll('.city-list > *'));
+    return {block:block,label:label,items:items.map(function(el){return {el:el,name:(el.firstChild?el.firstChild.textContent:el.textContent).trim().toLowerCase()};})};
+  });
+  function apply(){
+    var term=(q.value||'').trim().toLowerCase();
+    var region=(r.value||'').trim().toLowerCase();
+    // Trades: filter by term against trade card text
+    var tc=0;
+    tradeCards.forEach(function(card){
+      var txt=card.textContent.toLowerCase();
+      var match=!term||txt.indexOf(term)!==-1;
+      card.classList.toggle('is-hidden',!match);
+      if(match) tc++;
+    });
+    tn.textContent=tc;
+    // Cities: filter region blocks by region select, and items by term
+    var cc=0, anyBlock=false;
+    cityIndex.forEach(function(g){
+      var regionMatch=!region||g.label===region;
+      var visible=0;
+      g.items.forEach(function(it){
+        var match=regionMatch && (!term||it.name.indexOf(term)!==-1||g.label.indexOf(term)!==-1);
+        it.el.classList.toggle('is-hidden',!match);
+        if(match){visible++;cc++;}
+      });
+      var showBlock=regionMatch && visible>0;
+      g.block.classList.toggle('is-hidden',!showBlock);
+      if(showBlock) anyBlock=true;
+    });
+    cn.textContent=cc.toLocaleString();
+    var empty=document.getElementById('iam-empty');
+    if(empty) empty.classList.toggle('show', tc===0 && cc===0);
+  }
+  q.addEventListener('input',apply);
+  r.addEventListener('change',apply);
+  c.addEventListener('click',function(){q.value='';r.value='';apply();q.focus();});
+  apply();
+})();
+</script>
 </body></html>
