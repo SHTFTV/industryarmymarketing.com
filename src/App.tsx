@@ -33,6 +33,7 @@ import LocalLangley from "./pages/local/Langley.tsx";
 import AdminLogin from "./pages/admin/AdminLogin.tsx";
 import AdminLeads from "./pages/admin/AdminLeads.tsx";
 import PwaCheck from "./pages/PwaCheck.tsx";
+import GuestPost from "./pages/GuestPost.tsx";
 
 const queryClient = new QueryClient();
 
@@ -55,6 +56,7 @@ const App = () => (
           <Route path="/service-professionals" element={<ServiceProfessionals />} />
           <Route path="/backlinks" element={<Backlinks />} />
           <Route path="/dofollow-backlinks" element={<DofollowBacklinks />} />
+          <Route path="/guest-post" element={<GuestPost />} />
           <Route path="/industries" element={<Industries />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/cities/:city" element={<CityPage />} />

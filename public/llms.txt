@@ -15,6 +15,7 @@ Industry Army Marketing (IAM) operates a network of premium, aged, niche-relevan
 - [Network](/network): The full 80+ premium trade domain network.
 - [Backlinks](/backlinks): One-time $10 permanent dofollow backlinks on aged domains.
 - [Dofollow Backlinks](/dofollow-backlinks): Full list of live, indexable, dofollow-friendly IAM domains.
+- [Guest Post Service](/guest-post): $10 editorial guest post with permanent dofollow backlinks on aged domains.
 - [EyeSpyr](/eyespyr): Proprietary contractor verification badge.
 - [Scan Wizard](/scan-wizard): Free 60-second EyeSpyr scan.
 - [Builder](/builder): IAM-built and hosted contractor websites.
