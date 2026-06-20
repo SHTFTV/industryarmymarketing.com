@@ -6,8 +6,33 @@ import PageHeader from "@/components/PageHeader";
 import { Button } from "@/components/ui/button";
 import { toast } from "@/components/ui/sonner";
 
-const trades = [
-  "Roofing","Framing","Drywall","Plumbing","Electrical","HVAC","Excavation","Painting","Steel Stud","Foundations","Landscaping","Snow Removal","Interior Design","General Contracting","Mining / Logistics","Health & Wellness","Other",
+// Grouped by industry so non-trade businesses (mining ops, wellness clinics,
+// designers, etc.) see themselves in the list instead of hunting under "Trade".
+const industryGroups: { label: string; options: string[] }[] = [
+  {
+    label: "Construction Trades",
+    options: [
+      "Roofing", "Framing", "Drywall", "Plumbing", "Electrical", "HVAC",
+      "Excavation", "Painting", "Steel Stud", "Foundations",
+      "General Contracting",
+    ],
+  },
+  {
+    label: "Property & Outdoor Services",
+    options: ["Landscaping", "Snow Removal", "Interior Design"],
+  },
+  {
+    label: "Industrial & Logistics",
+    options: ["Mining / Logistics"],
+  },
+  {
+    label: "Health & Professional Services",
+    options: ["Health & Wellness"],
+  },
+  {
+    label: "Something Else",
+    options: ["Other industry — tell us in notes"],
+  },
 ];
 const yearsOptions = ["Less than 1","1–3","3–5","5–10","10+"];
 const provinces = ["BC","AB","ON","MB","SK","QC","NS","Other"];
@@ -90,10 +115,20 @@ const ScanWizard = () => {
                       <input className={inputCls} value={data.website} onChange={(e) => set("website", e.target.value)} placeholder="https://" />
                     </div>
                     <div>
-                      <label className={labelCls}>Your Trade *</label>
-                      <select className={inputCls} value={data.trade} onChange={(e) => set("trade", e.target.value)}>
-                        <option value="">Select trade...</option>
-                        {trades.map((t) => <option key={t}>{t}</option>)}
+                      <label className={labelCls}>Your Industry or Trade *</label>
+                      <select
+                        className={inputCls}
+                        value={data.trade}
+                        onChange={(e) => set("trade", e.target.value)}
+                      >
+                        <option value="">Select your industry…</option>
+                        {industryGroups.map((g) => (
+                          <optgroup key={g.label} label={g.label}>
+                            {g.options.map((o) => (
+                              <option key={o}>{o}</option>
+                            ))}
+                          </optgroup>
+                        ))}
                       </select>
                     </div>
                     <div>
