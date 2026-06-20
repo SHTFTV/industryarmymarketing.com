@@ -15,6 +15,7 @@ interface SitemapEntry {
 const cities = ["vancouver", "surrey", "calgary", "edmonton", "toronto", "kelowna"];
 const localCities = ["vancouver", "surrey", "langley"];
 const niches = ["steel-stud", "mining-logistics"];
+const trades = ["plumbing","roofing","electrical","hvac","framing","demolition","excavation","painting"];
 
 const blogSlugs = [
   "kitchen-cabinets-vancouver",
@@ -72,6 +73,12 @@ const entries: SitemapEntry[] = [
   { path: "/dashboard", changefreq: "monthly", priority: "0.5" },
   { path: "/wall-of-love", changefreq: "weekly", priority: "0.7" },
   { path: "/legal", changefreq: "monthly", priority: "0.5" },
+  { path: "/contractor-marketing/", changefreq: "weekly", priority: "0.9" },
+  ...trades.map((t) => ({
+    path: `/contractor-marketing/${t}/`,
+    changefreq: "weekly" as const,
+    priority: "0.8",
+  })),
   ...niches.map((n) => ({ path: `/niches/${n}`, changefreq: "monthly" as const, priority: "0.7" })),
   ...localCities.map((c) => ({ path: `/local/${c}`, changefreq: "monthly" as const, priority: "0.7" })),
   ...cities.map((c) => ({
