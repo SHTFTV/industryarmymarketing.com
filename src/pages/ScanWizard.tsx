@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
+import type { User } from "@supabase/supabase-js";
 import Layout from "@/components/Layout";
 import Seo from "@/components/Seo";
 import PageHeader from "@/components/PageHeader";
 import { Button } from "@/components/ui/button";
 import { toast } from "@/components/ui/sonner";
+import { supabase } from "@/integrations/supabase/client";
 
 // Two-level taxonomy: pick a broad industry first, then narrow to a specific
 // trade/service. The second level is optional so anyone can submit without
@@ -191,6 +194,66 @@ const ScanWizard = () => {
   const [suggestion, setSuggestion] = useState<SpecialtySuggestion | null>(null);
   const [tradeLocked, setTradeLocked] = useState(false); // user accepted or chose manually
   const [preloadedFromPref, setPreloadedFromPref] = useState(false);
+  const [user, setUser] = useState<User | null>(null);
+  const [syncedFromCloud, setSyncedFromCloud] = useState(false);
+
+  // Watch auth state so we can show sync status and load cloud preferences.
+  useEffect(() => {
+    const { data: sub } = supabase.auth.onAuthStateChange((_e, session) => {
+      setUser(session?.user ?? null);
+    });
+    supabase.auth.getSession().then(({ data }) => {
+      setUser(data.session?.user ?? null);
+    });
+    return () => sub.subscription.unsubscribe();
+  }, []);
+
+  // When the user signs in, pull their saved trade from the cloud. If they have
+  // a local pref but no cloud row yet, push the local pref up so it survives.
+  useEffect(() => {
+    if (!user) return;
+    let cancelled = false;
+    (async () => {
+      const { data: row, error } = await supabase
+        .from("user_trade_preferences")
+        .select("industry, trade")
+        .eq("user_id", user.id)
+        .maybeSingle();
+      if (cancelled || error) return;
+      if (row && (row.industry || row.trade)) {
+        setData((d) => ({ ...d, industry: row.industry, trade: row.trade }));
+        setTradeLocked(true);
+        setPreloadedFromPref(true);
+        setSyncedFromCloud(true);
+        saveTradePref({ industry: row.industry, trade: row.trade });
+      } else {
+        // No cloud row yet — seed it from whatever's local so future devices pick it up.
+        const local = loadTradePref();
+        if (local && (local.industry || local.trade)) {
+          await supabase.from("user_trade_preferences").upsert({
+            user_id: user.id,
+            industry: local.industry,
+            trade: local.trade,
+          });
+          setSyncedFromCloud(true);
+        }
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [user]);
+
+  // Single source of truth for persisting the trade pref. Always writes local;
+  // additionally pushes to the cloud when the user is signed in.
+  const persistPref = (pref: TradePref) => {
+    saveTradePref(pref);
+    if (user) {
+      void supabase
+        .from("user_trade_preferences")
+        .upsert({ user_id: user.id, industry: pref.industry, trade: pref.trade });
+    }
+  };
 
   // Preload last saved industry/trade on first mount.
   useEffect(() => {
@@ -258,6 +321,42 @@ const ScanWizard = () => {
             ))}
           </ol>
 
+          <div className="mb-4 p-3 rounded-md border border-border bg-card/60 flex flex-wrap items-center justify-between gap-3 text-xs">
+            {user ? (
+              <>
+                <span className="text-muted-foreground">
+                  <span className="text-primary">●</span> Syncing trade as{" "}
+                  <span className="text-foreground font-semibold">{user.email}</span>
+                  {syncedFromCloud && (
+                    <span className="ml-2 text-muted-foreground/70">· loaded from cloud</span>
+                  )}
+                </span>
+                <button
+                  type="button"
+                  className="text-muted-foreground hover:text-primary underline"
+                  onClick={async () => {
+                    await supabase.auth.signOut();
+                    setSyncedFromCloud(false);
+                    toast.success("Signed out. Local trade still saved on this device.");
+                  }}
+                >
+                  Sign out
+                </button>
+              </>
+            ) : (
+              <>
+                <span className="text-muted-foreground">
+                  Want your trade saved on every device?
+                </span>
+                <Link
+                  to="/sync-account"
+                  className="text-primary hover:underline font-semibold uppercase tracking-widest"
+                >
+                  Sign in to sync →
+                </Link>
+              </>
+            )}
+          </div>
           <div className="p-8 rounded-lg bg-card border border-border">
             <AnimatePresence mode="wait">
               {step === 0 && (
@@ -301,7 +400,7 @@ const ScanWizard = () => {
                           setData(next);
                           refreshSuggestion(next);
                           if (e.target.value) {
-                            saveTradePref({ industry: e.target.value, trade: "" });
+                            persistPref({ industry: e.target.value, trade: "" });
                           } else {
                             clearTradePref();
                           }
@@ -352,7 +451,7 @@ const ScanWizard = () => {
                               onChange={(e) => {
                                 setTradeLocked(true);
                                 set("trade", e.target.value);
-                                saveTradePref({ industry: data.industry, trade: e.target.value });
+                                persistPref({ industry: data.industry, trade: e.target.value });
                                 setPreloadedFromPref(false);
                               }}
                             >
@@ -390,7 +489,7 @@ const ScanWizard = () => {
                                       onClick={() => {
                                         setTradeLocked(true);
                                         toast.success(`Locked in ${suggestion.specialty}.`);
-                                        saveTradePref({ industry: data.industry, trade: suggestion.specialty });
+                                        persistPref({ industry: data.industry, trade: suggestion.specialty });
                                         setPreloadedFromPref(false);
                                       }}
                                     >
@@ -404,7 +503,7 @@ const ScanWizard = () => {
                                       onClick={() => {
                                         setTradeLocked(false);
                                         set("trade", suggestion.specialty);
-                                        saveTradePref({ industry: data.industry, trade: suggestion.specialty });
+                                        persistPref({ industry: data.industry, trade: suggestion.specialty });
                                         setPreloadedFromPref(false);
                                       }}
                                     >
@@ -418,7 +517,7 @@ const ScanWizard = () => {
                                     onClick={() => {
                                       setTradeLocked(true);
                                       set("trade", "");
-                                      saveTradePref({ industry: data.industry, trade: "" });
+                                      persistPref({ industry: data.industry, trade: "" });
                                       setPreloadedFromPref(false);
                                     }}
                                   >
