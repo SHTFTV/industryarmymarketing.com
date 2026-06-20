@@ -3,10 +3,14 @@ import Seo from "@/components/Seo";
 import PageHeader from "@/components/PageHeader";
 import CtaBanner from "@/components/CtaBanner";
 import { motion } from "framer-motion";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { domains as dataDomains } from "@/data/domains";
 import { FAQ_DOMAIN_BLURB } from "@/pages/CityPage";
-import { buildDomainSyncReport, logDomainSyncReport } from "@/lib/domain-sync";
+import {
+  buildDomainSyncReport,
+  logDomainSyncReport,
+  type DomainSyncReport,
+} from "@/lib/domain-sync";
 
 export const groups = [
   {
@@ -109,14 +113,16 @@ export const groups = [
 ];
 
 const Network = () => {
+  const [report, setReport] = useState<DomainSyncReport | null>(null);
   useEffect(() => {
     if (!import.meta.env.DEV) return;
-    const report = buildDomainSyncReport({
+    const r = buildDomainSyncReport({
       dataDomains: dataDomains.map((d) => d.domain),
       networkDomains: groups.flatMap((g) => g.domains.map(([d]) => d)),
       faqText: FAQ_DOMAIN_BLURB,
     });
-    logDomainSyncReport(report);
+    logDomainSyncReport(r);
+    setReport(r);
   }, []);
   return (
   <Layout>
@@ -131,6 +137,7 @@ const Network = () => {
       highlight="Network"
       description="Over 80 premium trade and niche domains across construction, wellness, mining, law, and more. One exclusive contractor per city, per domain."
     />
+    {import.meta.env.DEV && report && <DomainSyncBanner report={report} />}
     <section className="py-20">
       <div className="container mx-auto px-4 max-w-6xl space-y-16">
         {groups.map((g, gi) => (
