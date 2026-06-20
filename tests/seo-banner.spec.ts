@@ -148,6 +148,27 @@ test.describe(`Programmatic SEO banner (${routes.length} routes × ${viewports.l
         expect(attrs.loading).toBe("eager");
         expect(attrs.decoding).toBe("async");
         expect(attrs.fetchpriority).toBe("high");
+
+        // ---------------------------------------------------------------
+        // Visual regression snapshot.
+        //
+        // Wait until the underlying <img> has fully decoded so the snapshot
+        // is deterministic, then compare against the per-viewport baseline.
+        // Run with `--update-snapshots` to refresh baselines after an
+        // intentional design change.
+        // ---------------------------------------------------------------
+        await img.evaluate((el) => (el as HTMLImageElement).decode());
+
+        await expect(banner).toHaveScreenshot(
+          `seo-banner-${vp.name}.png`,
+          {
+            // Allow ≤0.5% of pixels to differ (anti-aliasing across runs)
+            // but anything larger — crop shifts, layout breaks, missing
+            // overlay — will fail the test.
+            maxDiffPixelRatio: 0.005,
+            animations: "disabled",
+          },
+        );
       });
     }
   }
