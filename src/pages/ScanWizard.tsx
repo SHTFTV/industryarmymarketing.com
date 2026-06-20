@@ -542,7 +542,24 @@ const ScanWizard = () => {
                     </div>
                     <div className="mt-8 flex flex-wrap justify-center gap-3">
                       <Button variant="hero" size="lg" onClick={() => window.location.assign("/contact")}>Claim My Territory</Button>
-                      <Button variant="outline" size="lg" onClick={() => { setStep(0); setData(empty); }}>Run Another Scan</Button>
+                      <Button
+                        variant="outline"
+                        size="lg"
+                        onClick={() => {
+                          const pref = loadTradePref();
+                          setStep(0);
+                          setData({
+                            ...empty,
+                            industry: pref?.industry ?? "",
+                            trade: pref?.trade ?? "",
+                          });
+                          setTradeLocked(!!pref);
+                          setPreloadedFromPref(!!pref);
+                          setSuggestion(null);
+                        }}
+                      >
+                        Run Another Scan
+                      </Button>
                     </div>
                   </div>
                 </motion.div>
