@@ -30,7 +30,6 @@ export const domains = [
   { domain: "promows.com", niche: "Lawn Care", emoji: "🌱" },
   { domain: "logcabin.ltd", niche: "Log Cabins", emoji: "🪵" },
   { domain: "pitchdeck.tv", niche: "Investor Pitch Decks", emoji: "📊" },
-  { domain: "rebar.tv", niche: "Towers & Mega Projects", emoji: "🏙️" },
   { domain: "errands.io", niche: "Drone & Video Services", emoji: "🚁" },
 ];
 
