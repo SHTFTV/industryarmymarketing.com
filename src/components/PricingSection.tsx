@@ -69,6 +69,7 @@ const PricingSection = () => {
           <p className="text-muted-foreground mt-3 text-lg">
             $10 per 100K population / month
           </p>
+          <p className="text-xs uppercase tracking-[0.3em] text-primary mt-2">All Pricing in USD</p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto items-start">
