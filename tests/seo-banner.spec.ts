@@ -39,6 +39,56 @@ function appendFailureRecord(record: {
   }
 }
 
+/**
+ * Produce a single PNG that makes pixel diffs obvious at a glance:
+ *   - Start from the *actual* screenshot, desaturated to ~40% so it reads
+ *     as a muted backdrop.
+ *   - Overlay every pixel flagged by Playwright's diff (any non-near-white
+ *     pixel in -diff.png) with bright red at full opacity.
+ * Returns the output path, or null if inputs are missing / mismatched.
+ */
+function buildOverlay(actualPath: string, diffPath: string, outPath: string): string | null {
+  try {
+    if (!fs.existsSync(actualPath) || !fs.existsSync(diffPath)) return null;
+    const actual = PNG.sync.read(fs.readFileSync(actualPath));
+    const diff = PNG.sync.read(fs.readFileSync(diffPath));
+    if (actual.width !== diff.width || actual.height !== diff.height) return null;
+
+    const out = new PNG({ width: actual.width, height: actual.height });
+    const a = actual.data;
+    const d = diff.data;
+    const o = out.data;
+    for (let i = 0; i < a.length; i += 4) {
+      // Muted backdrop: 40% mix toward gray to push the eye to red overlays.
+      const r = a[i], g = a[i + 1], b = a[i + 2];
+      const gray = (r * 0.299 + g * 0.587 + b * 0.114) | 0;
+      const mr = (r * 0.4 + gray * 0.6) | 0;
+      const mg = (g * 0.4 + gray * 0.6) | 0;
+      const mb = (b * 0.4 + gray * 0.6) | 0;
+
+      // Playwright's diff image paints changed pixels in bright colors and
+      // leaves unchanged pixels near-white. Anything not near-white = changed.
+      const dr = d[i], dg = d[i + 1], db = d[i + 2];
+      const changed = !(dr > 240 && dg > 240 && db > 240);
+
+      if (changed) {
+        o[i] = 255;
+        o[i + 1] = 0;
+        o[i + 2] = 0;
+      } else {
+        o[i] = mr;
+        o[i + 1] = mg;
+        o[i + 2] = mb;
+      }
+      o[i + 3] = 255;
+    }
+    fs.writeFileSync(outPath, PNG.sync.write(out));
+    return outPath;
+  } catch {
+    return null;
+  }
+}
+
 function discoverContractorRoutes(): string[] {
   const dir = path.join(repoRoot, "src/data/contractors");
   if (!fs.existsSync(dir)) return [];
