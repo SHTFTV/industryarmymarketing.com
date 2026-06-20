@@ -364,6 +364,32 @@ footer.site{background:#050505;padding:32px 0;color:#666;font-size:13px;text-ali
       document.body.removeChild(ta);
     }
   });
+  var IAM_QR_KEY='iam.qr.settings.v1';
+  function loadQrPrefs(){
+    try{
+      var raw=localStorage.getItem(IAM_QR_KEY); if(!raw) return;
+      var s=JSON.parse(raw);
+      var map={'iam-qr-fg':s.fg,'iam-qr-bg':s.bg,'iam-qr-ecc':s.ecc,'iam-qr-px':s.px};
+      Object.keys(map).forEach(function(id){
+        var v=map[id]; if(v==null) return;
+        var el=document.getElementById(id); if(!el) return;
+        el.value=v;
+      });
+      var pxLbl=document.getElementById('iam-qr-px-val');
+      if(pxLbl && s.px) pxLbl.textContent=s.px+'px';
+    }catch(e){}
+  }
+  function saveQrPrefs(){
+    try{
+      localStorage.setItem(IAM_QR_KEY, JSON.stringify({
+        fg:(document.getElementById('iam-qr-fg')||{}).value,
+        bg:(document.getElementById('iam-qr-bg')||{}).value,
+        ecc:(document.getElementById('iam-qr-ecc')||{}).value,
+        px:(document.getElementById('iam-qr-px')||{}).value
+      }));
+    }catch(e){}
+  }
+  loadQrPrefs();
   function currentPx(){return parseInt((document.getElementById('iam-qr-px')||{}).value||320,10);}
   function buildQrUrl(size,ext){
     size=size||currentPx();
@@ -426,6 +452,7 @@ footer.site{background:#050505;padding:32px 0;color:#666;font-size:13px;text-ali
   });
   document.getElementById('iam-qr-ecc').addEventListener('change',function(){
     if(qrModal.classList.contains('open')) qrImg.src=buildQrUrl(currentPx(),'png');
+    saveQrPrefs();
   });
 
   function _lum(hex){
@@ -441,6 +468,7 @@ footer.site{background:#050505;padding:32px 0;color:#666;font-size:13px;text-ali
       fgEl.value=fg; bgEl.value=bg;
       if(qrModal.classList.contains('open')) qrImg.src=buildQrUrl(currentPx(),'png');
       checkContrast();
+      saveQrPrefs();
     });
   });
   function checkContrast(){
@@ -474,11 +502,12 @@ footer.site{background:#050505;padding:32px 0;color:#666;font-size:13px;text-ali
     qrImg.style.height=Math.min(px,320)+'px';
     if(qrModal.classList.contains('open')) qrImg.src=buildQrUrl(px,'png');
   }
-  pxEl.addEventListener('input',applyPx);
+  pxEl.addEventListener('input',function(){applyPx();saveQrPrefs();});
   ['iam-qr-fg','iam-qr-bg'].forEach(function(id){
     document.getElementById(id).addEventListener('input',function(){
       if(qrModal.classList.contains('open')) qrImg.src=buildQrUrl(currentPx(),'png');
       checkContrast();
+      saveQrPrefs();
     });
   });
 
