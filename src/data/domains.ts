@@ -8,8 +8,7 @@ export const domains = [
   { domain: "painters.tv", niche: "Interior & Exterior Painting", emoji: "🎨" },
   { domain: "framers.io", niche: "Wood & Steel Framing", emoji: "🪵" },
   { domain: "excavators.tv", niche: "Excavation & Site Prep", emoji: "🚜" },
-  { domain: "foundations.io", niche: "Foundation Contractors", emoji: "🏗️" },
-  { domain: "steelstud.ca", niche: "Steel Stud Framing", emoji: "🔩" },
+  { domain: "rebar.tv", niche: "Rebar & Concrete Reinforcement", emoji: "🏗️" },
   { domain: "demolition.io", niche: "Demolition Contractors", emoji: "💥" },
   { domain: "remodelers.io", niche: "Remodeling & Renovation", emoji: "🛠️" },
   { domain: "finishingcarpenters.com", niche: "Finish Carpentry", emoji: "🪚" },
@@ -31,7 +30,6 @@ export const domains = [
   { domain: "promows.com", niche: "Lawn Care", emoji: "🌱" },
   { domain: "logcabin.ltd", niche: "Log Cabins", emoji: "🪵" },
   { domain: "pitchdeck.tv", niche: "Investor Pitch Decks", emoji: "📊" },
-  { domain: "rebar.tv", niche: "Towers & Mega Projects", emoji: "🏙️" },
   { domain: "errands.io", niche: "Drone & Video Services", emoji: "🚁" },
 ];
 
