@@ -305,6 +305,7 @@ test.describe(`Programmatic SEO banner (${routes.length} routes × ${viewports.l
               expected?: string;
               actual?: string;
               diff?: string;
+              overlay?: string;
             } = {
               route,
               viewport: `${vp.name} (${vp.width}x${vp.height})`,
@@ -345,6 +346,32 @@ test.describe(`Programmatic SEO banner (${routes.length} routes × ${viewports.l
                     `::notice file=${relPath},title=Visual regression ${v.label}::${msg}`,
                   );
                 }
+              }
+            }
+
+            // Build a combined overlay (muted actual + red diff regions) for
+            // at-a-glance triage. Attach it, annotate it, and record its
+            // relative path so CI can deep-link.
+            const actualFile = path.join(testInfo.outputDir, `${stem}-actual.png`);
+            const diffFile = path.join(testInfo.outputDir, `${stem}-diff.png`);
+            const overlayFile = path.join(testInfo.outputDir, `${stem}-overlay.png`);
+            const built = buildOverlay(actualFile, diffFile, overlayFile);
+            if (built) {
+              await testInfo.attach(`${vp.name} overlay (red = changed)`, {
+                path: built,
+                contentType: "image/png",
+              });
+              const relOverlay = path.relative(repoRoot, built);
+              record.overlay = relOverlay;
+              testInfo.annotations.push({
+                type: "overlay-image",
+                description: runUrl ? `${relOverlay}  ·  ${runUrl}` : relOverlay,
+              });
+              if (process.env.GITHUB_ACTIONS === "true") {
+                // eslint-disable-next-line no-console
+                console.log(
+                  `::notice file=${relOverlay},title=Visual regression overlay::${vp.name} overlay for ${route}: ${relOverlay}`,
+                );
               }
             }
 
