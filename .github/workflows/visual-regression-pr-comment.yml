@@ -77,18 +77,20 @@ jobs:
           out += `Commit \`${sha}\` · [Workflow run](${runUrl})`;
           if (artifactUrl) out += ` · [📦 Download artifact](${artifactUrl})`;
           out += '\n\n';
-          out += '| Route | Variant | Viewport | Expected | Actual | Diff |\n';
-          out += '| --- | --- | --- | --- | --- | --- |\n';
+          out += '| Route | Variant | Viewport | Expected | Actual | Diff | Overlay |\n';
+          out += '| --- | --- | --- | --- | --- | --- | --- |\n';
           for (const f of failures) {
             out += `| \`${f.route}\` | ${f.variant} | ${f.viewport} | `;
             out += `${link('expected', f.expected)} | `;
             out += `${link('actual', f.actual)} | `;
-            out += `${link('🔍 diff', f.diff)} |\n`;
+            out += `${link('🔍 diff', f.diff)} | `;
+            out += `${link('🎯 overlay', f.overlay)} |\n`;
           }
           out += '\n';
-          out += '> Download the artifact above to view `*-actual.png` and ';
-          out += '`*-diff.png` (highlighted pixel regions). The `*-expected.png` ';
-          out += "links resolve in the repo once the baseline is committed.\n";
+          out += '> 🎯 **Overlay** = the actual screenshot, desaturated, with ';
+          out += 'every changed pixel painted bright red — the fastest way to ';
+          out += 'spot where the regression is. Download the artifact above to ';
+          out += 'view `*-actual.png`, `*-diff.png`, and `*-overlay.png`.\n';
           process.stdout.write(out);
           JS
 
