@@ -152,8 +152,25 @@ const labelCls = "block text-muted-foreground text-xs uppercase tracking-widest 
 const ScanWizard = () => {
   const [step, setStep] = useState(0);
   const [data, setData] = useState<FormState>(empty);
+  const [suggestion, setSuggestion] = useState<SpecialtySuggestion | null>(null);
+  const [tradeLocked, setTradeLocked] = useState(false); // user accepted or chose manually
   const set = <K extends keyof FormState>(k: K, v: FormState[K]) =>
     setData((d) => ({ ...d, [k]: v }));
+
+  // Re-score against the latest fields. Updates the suggestion meter and,
+  // when the user hasn't locked their choice yet, pre-fills the trade.
+  const refreshSuggestion = (next: FormState) => {
+    const s = scoreSpecialty(next.industry, {
+      business: next.business,
+      website: next.website,
+      notes: next.notes,
+    });
+    setSuggestion(s);
+    if (s && !tradeLocked) {
+      setData((d) => ({ ...d, trade: s.specialty }));
+    }
+    return s;
+  };
 
   const submit = () => {
     if (!data.name || !data.email) {
@@ -208,16 +225,9 @@ const ScanWizard = () => {
                         className={inputCls}
                         value={data.business}
                         onChange={(e) => {
-                          const business = e.target.value;
-                          setData((d) => {
-                            // If industry is already set and trade is blank,
-                            // try to auto-pick a specialty from the new name.
-                            const auto =
-                              d.industry && !d.trade
-                                ? detectSpecialty(d.industry, business, d.website, d.notes)
-                                : null;
-                            return { ...d, business, trade: auto ?? d.trade };
-                          });
+                          const next = { ...data, business: e.target.value };
+                          setData(next);
+                          refreshSuggestion(next);
                         }}
                       />
                     </div>
@@ -227,14 +237,9 @@ const ScanWizard = () => {
                         className={inputCls}
                         value={data.website}
                         onChange={(e) => {
-                          const website = e.target.value;
-                          setData((d) => {
-                            const auto =
-                              d.industry && !d.trade
-                                ? detectSpecialty(d.industry, d.business, website, d.notes)
-                                : null;
-                            return { ...d, website, trade: auto ?? d.trade };
-                          });
+                          const next = { ...data, website: e.target.value };
+                          setData(next);
+                          refreshSuggestion(next);
                         }}
                         placeholder="https://"
                       />
@@ -245,21 +250,10 @@ const ScanWizard = () => {
                         className={inputCls}
                         value={data.industry}
                         onChange={(e) => {
-                          const nextIndustry = e.target.value;
-                          const auto = detectSpecialty(
-                            nextIndustry,
-                            data.business,
-                            data.website,
-                            data.notes,
-                          );
-                          setData((d) => ({
-                            ...d,
-                            industry: nextIndustry,
-                            trade: auto ?? "",
-                          }));
-                          if (auto) {
-                            toast.success(`Pre-selected ${auto} from your details.`);
-                          }
+                          const next = { ...data, industry: e.target.value, trade: "" };
+                          setTradeLocked(false);
+                          setData(next);
+                          refreshSuggestion(next);
                         }}
                       >
                         <option value="">Select your industry…</option>
@@ -294,18 +288,86 @@ const ScanWizard = () => {
                             />
                           );
                         }
+                        const isAutoPick =
+                          !!suggestion &&
+                          !tradeLocked &&
+                          data.trade === suggestion.specialty;
                         return (
-                          <select
-                            className={inputCls}
-                            value={data.trade}
-                            onChange={(e) => set("trade", e.target.value)}
-                          >
-                            <option value="">Any / not listed</option>
-                            {specialties.map((s) => (
-                              <option key={s}>{s}</option>
-                            ))}
-                            <option value="Other">Other — tell us in notes</option>
-                          </select>
+                          <>
+                            <select
+                              className={inputCls}
+                              value={data.trade}
+                              onChange={(e) => {
+                                setTradeLocked(true);
+                                set("trade", e.target.value);
+                              }}
+                            >
+                              <option value="">Any / not listed</option>
+                              {specialties.map((s) => (
+                                <option key={s}>{s}</option>
+                              ))}
+                              <option value="Other">Other — tell us in notes</option>
+                            </select>
+                            {suggestion && (
+                              <div className="mt-3 p-3 rounded-md border border-primary/30 bg-primary/5">
+                                <div className="flex items-center justify-between gap-3 text-xs">
+                                  <span className="text-muted-foreground uppercase tracking-widest">
+                                    {isAutoPick ? "Auto-picked" : "Suggested"}: <span className="text-foreground font-semibold normal-case tracking-normal">{suggestion.specialty}</span>
+                                  </span>
+                                  <span className="font-display text-primary">{suggestion.confidence}%</span>
+                                </div>
+                                <div className="mt-2 h-1.5 rounded-full bg-border overflow-hidden">
+                                  <div
+                                    className="h-full bg-primary transition-all"
+                                    style={{ width: `${suggestion.confidence}%` }}
+                                  />
+                                </div>
+                                {suggestion.reasons.length > 0 && (
+                                  <p className="mt-2 text-[11px] text-muted-foreground">
+                                    Based on: {suggestion.reasons.join("; ")}
+                                  </p>
+                                )}
+                                <div className="mt-3 flex flex-wrap gap-2">
+                                  {isAutoPick ? (
+                                    <Button
+                                      type="button"
+                                      variant="hero"
+                                      size="sm"
+                                      onClick={() => {
+                                        setTradeLocked(true);
+                                        toast.success(`Locked in ${suggestion.specialty}.`);
+                                      }}
+                                    >
+                                      ✓ Accept {suggestion.specialty}
+                                    </Button>
+                                  ) : (
+                                    <Button
+                                      type="button"
+                                      variant="outline"
+                                      size="sm"
+                                      onClick={() => {
+                                        setTradeLocked(false);
+                                        set("trade", suggestion.specialty);
+                                      }}
+                                    >
+                                      Use suggestion
+                                    </Button>
+                                  )}
+                                  <Button
+                                    type="button"
+                                    variant="ghost"
+                                    size="sm"
+                                    onClick={() => {
+                                      setTradeLocked(true);
+                                      set("trade", "");
+                                    }}
+                                  >
+                                    Override / pick myself
+                                  </Button>
+                                </div>
+                              </div>
+                            )}
+                          </>
                         );
                       })()}
                     </div>
