@@ -365,6 +365,23 @@ footer.site{background:#050505;padding:32px 0;color:#666;font-size:13px;text-ali
   function closeQr(){qrModal.classList.remove('open');}
   qrBtn.addEventListener('click',openQr);
   qrClose.addEventListener('click',closeQr);
+  var qrDl=document.getElementById('iam-qr-download');
+  qrDl.addEventListener('click',function(){
+    var url=qrImg.src; if(!url) return;
+    var orig=qrDl.textContent; qrDl.textContent='Downloading…';
+    fetch(url).then(function(r){return r.blob();}).then(function(blob){
+      var slugSrc=(window.location.search||'').replace(/[^a-z0-9]+/gi,'-').replace(/^-|-$/g,'')||'all';
+      var a=document.createElement('a');
+      var obj=URL.createObjectURL(blob);
+      a.href=obj; a.download='iam-contractor-marketing-'+slugSrc+'.png';
+      document.body.appendChild(a); a.click(); document.body.removeChild(a);
+      setTimeout(function(){URL.revokeObjectURL(obj);},1000);
+      qrDl.textContent=orig;
+    }).catch(function(){
+      // Fallback: open in new tab
+      window.open(url,'_blank'); qrDl.textContent=orig;
+    });
+  });
   qrModal.addEventListener('click',function(e){if(e.target===qrModal) closeQr();});
   document.addEventListener('keydown',function(e){if(e.key==='Escape') closeQr();});
   window.addEventListener('popstate',function(){hydrate();apply();});
@@ -378,7 +395,8 @@ footer.site{background:#050505;padding:32px 0;color:#666;font-size:13px;text-ali
     <h3>Scan this link</h3>
     <p id="iam-qr-url"></p>
     <img id="iam-qr-img" alt="QR code">
-    <button class="close" type="button" id="iam-qr-close">Close</button>
+    <button class="close" type="button" id="iam-qr-download" style="margin-right:8px">Download PNG</button>
+    <button class="close" type="button" id="iam-qr-close" style="background:transparent;color:#caff00;border:1px solid #caff00">Close</button>
   </div>
 </div>
 
