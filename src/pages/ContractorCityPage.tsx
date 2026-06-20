@@ -105,8 +105,8 @@ const ContractorCityPage = () => {
       <Helmet>
         <title>{meta.title}</title>
         <meta name="description" content={meta.description} />
+        <meta name="robots" content="noindex, nofollow" />
         <link rel="canonical" href={meta.canonical} />
-        <meta name="robots" content={meta.robots} />
         <meta property="og:title" content={meta.og_title} />
         <meta property="og:description" content={meta.og_description} />
         <meta property="og:image" content={meta.og_image} />
