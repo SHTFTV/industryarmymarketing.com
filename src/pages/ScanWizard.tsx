@@ -300,6 +300,12 @@ const ScanWizard = () => {
                           setTradeLocked(false);
                           setData(next);
                           refreshSuggestion(next);
+                          if (e.target.value) {
+                            saveTradePref({ industry: e.target.value, trade: "" });
+                          } else {
+                            clearTradePref();
+                          }
+                          setPreloadedFromPref(false);
                         }}
                       >
                         <option value="">Select your industry…</option>
@@ -346,6 +352,8 @@ const ScanWizard = () => {
                               onChange={(e) => {
                                 setTradeLocked(true);
                                 set("trade", e.target.value);
+                                saveTradePref({ industry: data.industry, trade: e.target.value });
+                                setPreloadedFromPref(false);
                               }}
                             >
                               <option value="">Any / not listed</option>
@@ -382,6 +390,8 @@ const ScanWizard = () => {
                                       onClick={() => {
                                         setTradeLocked(true);
                                         toast.success(`Locked in ${suggestion.specialty}.`);
+                                        saveTradePref({ industry: data.industry, trade: suggestion.specialty });
+                                        setPreloadedFromPref(false);
                                       }}
                                     >
                                       ✓ Accept {suggestion.specialty}
@@ -394,6 +404,8 @@ const ScanWizard = () => {
                                       onClick={() => {
                                         setTradeLocked(false);
                                         set("trade", suggestion.specialty);
+                                        saveTradePref({ industry: data.industry, trade: suggestion.specialty });
+                                        setPreloadedFromPref(false);
                                       }}
                                     >
                                       Use suggestion
@@ -406,12 +418,32 @@ const ScanWizard = () => {
                                     onClick={() => {
                                       setTradeLocked(true);
                                       set("trade", "");
+                                      saveTradePref({ industry: data.industry, trade: "" });
+                                      setPreloadedFromPref(false);
                                     }}
                                   >
                                     Override / pick myself
                                   </Button>
                                 </div>
                               </div>
+                            )}
+                            {preloadedFromPref && (
+                              <p className="mt-2 text-[11px] text-muted-foreground">
+                                Preloaded from your last scan.{" "}
+                                <button
+                                  type="button"
+                                  className="underline hover:text-primary"
+                                  onClick={() => {
+                                    clearTradePref();
+                                    setPreloadedFromPref(false);
+                                    setTradeLocked(false);
+                                    setData((d) => ({ ...d, industry: "", trade: "" }));
+                                    setSuggestion(null);
+                                  }}
+                                >
+                                  Clear
+                                </button>
+                              </p>
                             )}
                           </>
                         );
