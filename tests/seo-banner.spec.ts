@@ -76,7 +76,7 @@ test.describe(`Programmatic SEO banner (${routes.length} routes × ${viewports.l
     for (const vp of viewports) {
       test(`renders SeoBanner on ${route} @ ${vp.name} (${vp.width}x${vp.height})`, async ({
         page,
-      }) => {
+      }, testInfo) => {
         await page.setViewportSize({ width: vp.width, height: vp.height });
 
         const imgResponses: { url: string; status: number }[] = [];
@@ -159,16 +159,46 @@ test.describe(`Programmatic SEO banner (${routes.length} routes × ${viewports.l
         // ---------------------------------------------------------------
         await img.evaluate((el) => (el as HTMLImageElement).decode());
 
-        await expect(banner).toHaveScreenshot(
-          `seo-banner-${vp.name}.png`,
-          {
+        const snapshotName = `seo-banner-${vp.name}.png`;
+        try {
+          await expect(banner).toHaveScreenshot(snapshotName, {
             // Allow ≤0.5% of pixels to differ (anti-aliasing across runs)
             // but anything larger — crop shifts, layout breaks, missing
             // overlay — will fail the test.
             maxDiffPixelRatio: 0.005,
             animations: "disabled",
-          },
-        );
+          });
+        } catch (err) {
+          // Surface a human-readable annotation pointing at the offending
+          // route + viewport, and attach the expected/actual/diff PNGs so
+          // the diff regions are visible directly in the HTML report.
+          testInfo.annotations.push({
+            type: "visual-regression",
+            description:
+              `Banner pixel-diff exceeded threshold on ${route} @ ${vp.name} ` +
+              `(${vp.width}x${vp.height}). See attached *-diff.png to inspect ` +
+              `highlighted pixel regions.`,
+          });
+
+          if (fs.existsSync(testInfo.outputDir)) {
+            const stem = snapshotName.replace(/\.png$/, "");
+            const variants = [
+              { suffix: "-expected.png", label: "expected" },
+              { suffix: "-actual.png", label: "actual" },
+              { suffix: "-diff.png", label: "diff (highlighted regions)" },
+            ];
+            for (const v of variants) {
+              const file = path.join(testInfo.outputDir, `${stem}${v.suffix}`);
+              if (fs.existsSync(file)) {
+                await testInfo.attach(`${vp.name} ${v.label}`, {
+                  path: file,
+                  contentType: "image/png",
+                });
+              }
+            }
+          }
+          throw err;
+        }
       });
     }
   }
