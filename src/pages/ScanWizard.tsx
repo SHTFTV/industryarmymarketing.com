@@ -43,6 +43,57 @@ const industries: { label: string; specialties: string[] }[] = [
     specialties: [],
   },
 ];
+
+// Extra keywords per specialty so we can match free-text fields (business
+// name, website, notes) against a specific trade. Keep keys aligned with
+// the specialty labels above.
+const specialtyKeywords: Record<string, string[]> = {
+  Roofing: ["roof", "roofer", "shingle"],
+  Framing: ["framing", "framer"],
+  Drywall: ["drywall", "gyproc", "gypsum"],
+  Plumbing: ["plumb", "plumber"],
+  Electrical: ["electric", "electrician", "wiring"],
+  HVAC: ["hvac", "heating", "cooling", "furnace", "air conditioning", "a/c"],
+  Excavation: ["excavation", "excavator", "digging"],
+  Painting: ["paint", "painter"],
+  "Steel Stud": ["steel stud", "metal stud"],
+  Foundations: ["foundation", "footing"],
+  "General Contracting": ["general contractor", "gc ", "renovation", "remodel"],
+  Concrete: ["concrete", "cement"],
+  Flooring: ["flooring", "hardwood", "tile", "laminate"],
+  "Windows & Doors": ["window", "door"],
+  Landscaping: ["landscap", "lawn", "garden"],
+  "Snow Removal": ["snow"],
+  "Interior Design": ["interior design", "decorator"],
+  "Pool & Spa": ["pool", "spa", "hot tub"],
+  "Fencing & Decks": ["fence", "fencing", "deck"],
+  "Cleaning Services": ["cleaning", "janitor", "maid"],
+  Mining: ["mining", "mine "],
+  "Trucking & Logistics": ["trucking", "logistics", "freight", "haul"],
+  "Heavy Equipment": ["heavy equipment", "machinery"],
+  "Oil & Gas Services": ["oil", "gas", "wellsite", "pipeline"],
+  "Health & Wellness": ["wellness", "massage", "yoga", "fitness", "gym"],
+  Dental: ["dental", "dentist", "ortho"],
+  Chiropractic: ["chiro"],
+  Legal: ["law ", "lawyer", "legal", "attorney"],
+  Accounting: ["accounting", "accountant", "bookkeep", "tax"],
+  "Real Estate": ["real estate", "realtor", "realty"],
+};
+
+const detectSpecialty = (
+  industryLabel: string,
+  ...haystacks: string[]
+): string | null => {
+  const industry = industries.find((i) => i.label === industryLabel);
+  if (!industry || industry.specialties.length === 0) return null;
+  const text = haystacks.join(" ").toLowerCase();
+  if (!text.trim()) return null;
+  for (const s of industry.specialties) {
+    const keys = [s.toLowerCase(), ...(specialtyKeywords[s] ?? [])];
+    if (keys.some((k) => k && text.includes(k))) return s;
+  }
+  return null;
+};
 const yearsOptions = ["Less than 1","1–3","3–5","5–10","10+"];
 const provinces = ["BC","AB","ON","MB","SK","QC","NS","Other"];
 const popOptions = ["Under 100K","100K – 500K","500K – 1M","Over 1M"];
