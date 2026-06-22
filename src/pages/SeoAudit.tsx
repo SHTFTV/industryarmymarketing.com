@@ -330,7 +330,7 @@ const SeoAudit = () => {
                 type="button"
                 variant="ghost"
                 size="sm"
-                onClick={() => { setFilters(defaultFilters); setSort(defaultSort); setPage(1); }}
+                onClick={() => updateParams({ q: null, score: null, deep: null, sort: null, page: null })}
                 disabled={!filtersActive && sort === defaultSort}
                 className="h-10"
               >
