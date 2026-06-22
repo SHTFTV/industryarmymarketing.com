@@ -33,6 +33,7 @@ import LocalLangley from "./pages/local/Langley.tsx";
 import AdminLogin from "./pages/admin/AdminLogin.tsx";
 import AdminLeads from "./pages/admin/AdminLeads.tsx";
 import PwaCheck from "./pages/PwaCheck.tsx";
+import RssPreview from "./pages/RssPreview.tsx";
 import GuestPost from "./pages/GuestPost.tsx";
 import ContractorCityPage from "./pages/ContractorCityPage.tsx";
 import SyncAccount from "./pages/SyncAccount.tsx";
@@ -86,6 +87,7 @@ const App = () => (
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route path="/admin/leads" element={<AdminLeads />} />
           <Route path="/pwa-check" element={<PwaCheck />} />
+          <Route path="/rss-preview" element={<RssPreview />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
