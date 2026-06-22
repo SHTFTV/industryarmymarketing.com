@@ -51,6 +51,10 @@ const blogSlugs = [
   "promows-lawn-care",
   "dentists-medical-aeo",
   "ten-dollar-territories-explained",
+  "chiropractors-vancouver",
+  "movers-calgary",
+  "landscapers-toronto",
+  "hardscapes-kelowna",
 ];
 
 const entries: SitemapEntry[] = [

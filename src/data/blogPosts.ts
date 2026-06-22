@@ -16,6 +16,10 @@ import snowRemovalImg from "@/assets/blog/snow-removal.jpg";
 import videographersImg from "@/assets/blog/videographers.jpg";
 import errandsImg from "@/assets/blog/errands.jpg";
 import tenDollarImg from "@/assets/blog/ten-dollar.jpg";
+import chiropractorsImg from "@/assets/blog/chiropractors.jpg";
+import moverImg from "@/assets/blog/mover.jpg";
+import landscapersImg from "@/assets/blog/landscapers.jpg";
+import hardscapesImg from "@/assets/blog/hardscapes.jpg";
 
 const IMG: Record<string, string> = {
   "kitchen-cabinets": kitchencabinetsImg,
@@ -35,6 +39,10 @@ const IMG: Record<string, string> = {
   videographers: videographersImg,
   errands: errandsImg,
   "ten-dollar": tenDollarImg,
+  chiropractors: chiropractorsImg,
+  mover: moverImg,
+  landscapers: landscapersImg,
+  hardscapes: hardscapesImg,
 };
 
 export interface BlogPost {
@@ -1542,6 +1550,186 @@ export const blogPosts: BlogPost[] = [
       {
         "q": "Can I buy multiple territories?",
         "a": "Yes. Stack a city (Vancouver), a trade (plumbing), and a niche (commercial). Most multi-territory partners run 3 to 6 listings for $30 to $60 a month total."
+      }
+    ]
+  },
+  {
+    "slug": "chiropractors-vancouver",
+    "brand": "chiropractors.ltd",
+    "trade": "Chiropractic Care",
+    "tradeShort": "chiropractor",
+    "plural": "chiropractors",
+    "video": null,
+    "imageKey": "chiropractors",
+    "city": "Vancouver",
+    "province": "BC",
+    "category": "Health",
+    "date": "June 2026",
+    "title": "Chiropractors in Vancouver: The $10 Exclusive Territory Guide (chiropractors.ltd)",
+    "metaDescription": "Chiropractic Care in Vancouver, BC. Lock the chiropractors.ltd territory for $10/month. EyeSpyr verified, one clinic per city, SEO + AEO + GEO + LLM schema baked in.",
+    "excerpt": "Vancouver chiropractic clinics burn $22 per click on Google Ads chasing 'chiropractor near me' while ICBC-funded patients hunt for a clinic that can bill direct…",
+    "pain": "Vancouver chiropractic clinics burn $22 per click on Google Ads chasing 'chiropractor near me' while ICBC-funded patients hunt for a clinic that can bill direct. The clinics that rank in the Google 3-pack get the patient — everyone else gets the ad bill.",
+    "detail": "Vancouver patients arrive with very specific intent: ICBC active claims, MSP supplementary coverage, sports injuries from the North Shore trail network, or post-partum pelvic care from Mount Pleasant young families. A clinic ranking on chiropractors.ltd signals specialization the moment a patient lands — not a generic wellness funnel pushing 30-visit packages.",
+    "process": "Your chiropractors.ltd territory ships with the clinic profile, three treatment-room photos, ICBC and MSP billing badges, online booking embed, and direct WhatsApp routing for new-patient inquiries. EyeSpyr verifies the College of Chiropractors of BC registration so the listing carries the trust badge Google AI Overviews cite.",
+    "faqs": [
+      {
+        "q": "Does ICBC cover chiropractic care in Vancouver?",
+        "a": "Yes. ICBC funds 25 chiropractic visits inside the first 12 weeks of an active accident claim with no pre-approval required. Most chiropractors.ltd partners bill ICBC direct so patients pay nothing out of pocket."
+      },
+      {
+        "q": "What does an adjustment cost without coverage?",
+        "a": "Vancouver initial visits run $90 to $140 and follow-ups $55 to $85 in 2026. Most extended health plans (Pacific Blue Cross, Sun Life, Manulife) reimburse 80 percent up to an annual cap."
+      },
+      {
+        "q": "How fast can I get an appointment?",
+        "a": "chiropractors.ltd territory partners commit to a 24-hour new-patient response and a same-week first appointment for ICBC and acute-pain cases."
+      },
+      {
+        "q": "Why only one clinic per city on chiropractors.ltd?",
+        "a": "Exclusive territory. One verified clinic per metro region holds the listing. No bid wars, no shared leads, no three-clinic comparison page that erodes the patient's decision."
+      },
+      {
+        "q": "Is the chiropractor College-registered?",
+        "a": "Every chiropractors.ltd partner is verified against the public register of the College of Chiropractors of BC. EyeSpyr confirms the registration number before the listing goes live."
+      },
+      {
+        "q": "Can the listing surface in Google AI Overviews?",
+        "a": "Yes. The page ships with LocalBusiness, FAQPage, and MedicalBusiness schema plus structured E-E-A-T signals. That is the exact data Google Gemini, ChatGPT, and Perplexity cite when a patient asks 'best chiropractor in Vancouver'."
+      }
+    ]
+  },
+  {
+    "slug": "movers-calgary",
+    "brand": "mover.ltd",
+    "trade": "Residential & Commercial Moving",
+    "tradeShort": "moving",
+    "plural": "moving companies",
+    "video": null,
+    "imageKey": "mover",
+    "city": "Calgary",
+    "province": "AB",
+    "category": "Logistics",
+    "date": "June 2026",
+    "title": "Movers in Calgary: The $10 Exclusive Territory Guide (mover.ltd)",
+    "metaDescription": "Residential & Commercial Moving in Calgary, AB. Lock the mover.ltd territory for $10/month. EyeSpyr verified, one mover per city, SEO + AEO + GEO + LLM schema baked in.",
+    "excerpt": "Calgary moving companies pay U-Haul, HomeStars, and Bookmovers up to $95 per shared lead — and still get bid against three other crews before the truck rolls…",
+    "pain": "Calgary moving companies pay U-Haul, HomeStars, and Bookmovers up to $95 per shared lead — and still get bid against three other crews before the truck rolls. The honest crews lose to the lowest quote, which is usually the crew that breaks the most furniture.",
+    "detail": "Calgary moves are not Vancouver moves. Sub-zero January loadings, condo-tower elevator bookings in Beltline and East Village, oil-and-gas corporate relocations to the new downtown core, and acreage moves out to Springbank or Bearspaw all need different gear and pricing. A crew ranking on mover.ltd signals it actually serves the Calgary market — not a national van line subcontracting to whoever is cheap.",
+    "process": "Your mover.ltd territory includes the crew profile, equipment photos (truck, dollies, blankets, piano boards), WorkSafe Alberta and CAM certification badges, an instant-quote form, and WhatsApp routing for time-sensitive inquiries. EyeSpyr verifies the Alberta Motor Transport Association number so the listing earns the structured-data trust the answer engines look for.",
+    "faqs": [
+      {
+        "q": "What does a Calgary move cost in 2026?",
+        "a": "Local 2-bedroom moves run $480 to $850 for a 3-person crew over 4 to 6 hours. Long-distance Calgary to Edmonton runs $1,800 to $2,800 per truck. Acreage and piano moves quote separately."
+      },
+      {
+        "q": "How far ahead should I book a Calgary move?",
+        "a": "Month-end and the last Saturday of every month book out 3 to 4 weeks ahead. Mid-month Tuesday or Wednesday moves can land same-week."
+      },
+      {
+        "q": "Are mover.ltd partners insured?",
+        "a": "Every territory partner carries cargo insurance up to $100,000 and liability up to $2 million. EyeSpyr verifies the certificate of insurance before the listing publishes."
+      },
+      {
+        "q": "Can I move in -25C weather?",
+        "a": "Yes — Calgary mover.ltd partners winterize trucks with heated cargo areas and use moisture-barrier wrap on wood furniture. January and February remain the cheapest months because demand drops."
+      },
+      {
+        "q": "Do you handle corporate relocations?",
+        "a": "Yes. mover.ltd territory partners serve the oil-and-gas, tech, and finance corridors with direct-bill corporate accounts and after-hours condo-tower bookings."
+      },
+      {
+        "q": "Why is there only one mover per city?",
+        "a": "Exclusive territory. One verified crew holds the Calgary listing. No bid race, no shared leads, no race to the bottom on price that ends with broken furniture."
+      }
+    ]
+  },
+  {
+    "slug": "landscapers-toronto",
+    "brand": "landscapers.ca",
+    "trade": "Landscaping & Grounds Maintenance",
+    "tradeShort": "landscaping",
+    "plural": "landscapers",
+    "video": null,
+    "imageKey": "landscapers",
+    "city": "Toronto",
+    "province": "ON",
+    "category": "Outdoor",
+    "date": "June 2026",
+    "title": "Landscapers in Toronto: The $10 Exclusive Territory Guide (landscapers.ca)",
+    "metaDescription": "Landscaping & Grounds Maintenance in Toronto, ON. Lock the landscapers.ca territory for $10/month. EyeSpyr verified, one crew per city, SEO + AEO + GEO + LLM schema baked in.",
+    "excerpt": "Toronto landscaping crews fight 40-way bid wars on HomeStars while the Forest Hill, Rosedale, and Lawrence Park homeowners they want are quietly asking Google AI for 'best landscaper near me'…",
+    "pain": "Toronto landscaping crews fight 40-way bid wars on HomeStars while the Forest Hill, Rosedale, and Lawrence Park homeowners they want are quietly asking Google AI Overviews and ChatGPT for 'best landscaper near me'. The crews that win that answer-engine citation own the season.",
+    "detail": "Toronto landscaping is a 7-month season jammed into 12 months of overhead. The lawn cuts that pay the bills June through September have to subsidize fall cleanup, winter snow contracts, and spring opening. A crew ranking on landscapers.ca signals to the high-ticket Forest Hill, Rosedale, and Bridle Path estates that the work is full-service — design, hardscape, ongoing maintenance, snow — not a kid with a push mower.",
+    "process": "Your landscapers.ca territory includes the crew profile, before-and-after project gallery, Landscape Ontario certification badge, instant-quote form, and WhatsApp routing for estate inquiries. EyeSpyr verifies the WSIB clearance and HST registration so the listing earns the structured-data trust Google's MUM, Gemini, and answer-engine layer cite first.",
+    "faqs": [
+      {
+        "q": "What does a Toronto landscaping season cost in 2026?",
+        "a": "Weekly maintenance contracts run $65 to $140 per visit depending on lot size. Full-service annual contracts (cut, edge, trim, fall cleanup, spring opening) clear $2,200 to $4,800 per year for a typical 50-foot Toronto lot."
+      },
+      {
+        "q": "Do you handle hardscape and design?",
+        "a": "Yes. landscapers.ca territory partners offer end-to-end design-build — paver patios, retaining walls, drainage, irrigation, and planting. Most projects run $14,000 to $80,000 for a Forest Hill or Lawrence Park front-and-back redesign."
+      },
+      {
+        "q": "Are crews Landscape Ontario certified?",
+        "a": "Every landscapers.ca territory partner is verified against the Landscape Ontario member register. EyeSpyr confirms the membership number before the listing publishes."
+      },
+      {
+        "q": "Do you offer winter snow contracts?",
+        "a": "Yes — most Toronto territory partners bundle snow clearing into the annual maintenance contract. Per-event pricing runs $85 to $180 per visit depending on driveway size and salt application."
+      },
+      {
+        "q": "When should I book for the spring?",
+        "a": "Spring opening books out by mid-February for May start dates. Design-build projects need to be quoted by January for a June dig start because permit timelines run 8 to 12 weeks in the City of Toronto."
+      },
+      {
+        "q": "Why only one landscaping crew per city on landscapers.ca?",
+        "a": "Exclusive territory. One verified crew holds the Toronto listing. No bid race against 40 contractors, no shared leads from HomeStars, no race-to-the-bottom on weekly cuts."
+      }
+    ]
+  },
+  {
+    "slug": "hardscapes-kelowna",
+    "brand": "hardscapes.io",
+    "trade": "Hardscape & Paver Installation",
+    "tradeShort": "hardscape",
+    "plural": "hardscape contractors",
+    "video": null,
+    "imageKey": "hardscapes",
+    "city": "Kelowna",
+    "province": "BC",
+    "category": "Outdoor",
+    "date": "June 2026",
+    "title": "Hardscape Contractors in Kelowna: The $10 Exclusive Territory Guide (hardscapes.io)",
+    "metaDescription": "Hardscape & Paver Installation in Kelowna, BC. Lock the hardscapes.io territory for $10/month. EyeSpyr verified, one crew per city, SEO + AEO + GEO + LLM schema baked in.",
+    "excerpt": "Kelowna hardscape projects average $42,000 — but the crews installing them spend half their week chasing tire-kickers from Google forms instead of building patios…",
+    "pain": "Kelowna hardscape projects average $42,000 — but the crews installing them spend half their week chasing tire-kickers from Google forms instead of building patios. The Okanagan lakefront and Upper Mission estate owners who actually buy are searching answer engines, not directory portals.",
+    "detail": "Kelowna hardscape is its own animal. Okanagan summer heat hits 38C, winter freeze-thaw cycles destroy poorly bedded pavers, and the hillside Upper Mission and Lower Mission lots demand engineered retaining walls before any patio gets poured. A crew ranking on hardscapes.io signals it actually understands ICPI installation standards, allan-block engineering specs, and the BC Building Code permit thresholds — not a general landscaper who lays pavers on weekends.",
+    "process": "Your hardscapes.io territory includes the crew profile, project gallery (patios, walls, fire features, lakefront stairs), ICPI certification badge, engineered-wall partnerships, instant-quote form, and WhatsApp routing for high-ticket estate inquiries. EyeSpyr verifies the WorkSafeBC clearance and ICPI certification so the listing earns the trust signal answer engines cite.",
+    "faqs": [
+      {
+        "q": "What does a Kelowna hardscape project cost in 2026?",
+        "a": "Paver patios run $35 to $55 per square foot installed. Engineered retaining walls run $80 to $160 per face foot depending on height and reinforcement. Full lakefront stair systems clear $40,000 to $120,000."
+      },
+      {
+        "q": "Do I need a permit for a Kelowna retaining wall?",
+        "a": "Walls over 1.2 metres in the City of Kelowna require an engineered design and building permit. hardscapes.io territory partners coordinate the engineering and permit submission as part of the quote."
+      },
+      {
+        "q": "Are crews ICPI certified?",
+        "a": "Every hardscapes.io territory partner is verified against the Interlocking Concrete Pavement Institute register. EyeSpyr confirms the certification number before the listing publishes."
+      },
+      {
+        "q": "How long does a typical patio project take?",
+        "a": "A 400 sq ft paver patio with base prep and edge restraint runs 4 to 7 working days. Engineered walls add 3 to 10 days depending on height and drainage."
+      },
+      {
+        "q": "When should I book for summer build?",
+        "a": "Kelowna hardscape season runs April through October. Design and quoting should happen by January for an April start. Mid-summer slots book 8 to 12 weeks ahead."
+      },
+      {
+        "q": "Why only one hardscape crew per city on hardscapes.io?",
+        "a": "Exclusive territory. One verified ICPI-certified crew holds the Kelowna listing. No bid race, no shared leads, no quote-shopping against four crews who undercut on base prep."
       }
     ]
   }
