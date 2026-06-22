@@ -328,6 +328,9 @@ const SeoAudit = () => {
                   <><Share2 size={14} className="mr-1.5" /> Share</>
                 )}
               </Button>
+              <span role="status" aria-live="polite" aria-atomic="true" className="sr-only">
+                {shareCopied ? "Link copied to clipboard" : ""}
+              </span>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_auto_auto_auto] gap-2 mb-5">
