@@ -99,6 +99,27 @@ const SeoAudit = () => {
     return () => clearTimeout(t);
   }, [shareCopied]);
 
+  const copyShareLink = useCallback(async () => {
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      toast.success("Link copied to clipboard");
+      setShareCopied(true);
+    } catch {
+      toast.error("Could not copy link");
+    }
+  }, []);
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.altKey && !e.ctrlKey && !e.metaKey && (e.key === "s" || e.key === "S")) {
+        e.preventDefault();
+        copyShareLink();
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [copyShareLink]);
+
   const filteredHistory = history.filter((a) => {
     if (filters.q.trim() && !a.url.toLowerCase().includes(filters.q.trim().toLowerCase())) return false;
     if (filters.score === "high" && a.score < 80) return false;
@@ -292,18 +313,10 @@ const SeoAudit = () => {
                 type="button"
                 size="sm"
                 variant="ghost"
-                onClick={async () => {
-                  const shareUrl = window.location.href;
-                  try {
-                    await navigator.clipboard.writeText(shareUrl);
-                    toast.success("Link copied to clipboard");
-                    setShareCopied(true);
-                  } catch {
-                    toast.error("Could not copy link");
-                  }
-                }}
+                onClick={copyShareLink}
                 className="ml-auto h-8"
-                aria-label="Copy shareable link to this audit history view"
+                aria-label="Copy shareable link to this audit history view (Alt+S)"
+                title="Copy link (Alt+S)"
               >
                 {shareCopied ? (
                   <><ClipboardCheck size={14} className="mr-1.5" /> Copied</>
