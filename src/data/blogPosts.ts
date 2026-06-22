@@ -16,6 +16,10 @@ import snowRemovalImg from "@/assets/blog/snow-removal.jpg";
 import videographersImg from "@/assets/blog/videographers.jpg";
 import errandsImg from "@/assets/blog/errands.jpg";
 import tenDollarImg from "@/assets/blog/ten-dollar.jpg";
+import chiropractorsImg from "@/assets/blog/chiropractors.jpg";
+import moverImg from "@/assets/blog/mover.jpg";
+import landscapersImg from "@/assets/blog/landscapers.jpg";
+import hardscapesImg from "@/assets/blog/hardscapes.jpg";
 
 const IMG: Record<string, string> = {
   "kitchen-cabinets": kitchencabinetsImg,
@@ -35,6 +39,10 @@ const IMG: Record<string, string> = {
   videographers: videographersImg,
   errands: errandsImg,
   "ten-dollar": tenDollarImg,
+  chiropractors: chiropractorsImg,
+  mover: moverImg,
+  landscapers: landscapersImg,
+  hardscapes: hardscapesImg,
 };
 
 export interface BlogPost {
