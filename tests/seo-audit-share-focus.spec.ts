@@ -458,6 +458,15 @@ test("Holding Enter on the Share button still produces exactly one toast and one
   await expect(statusRegion).toHaveCount(1);
   await expect(statusRegion).toHaveText(/^link copied to clipboard$/i);
 
+  // The toast's visible text must match the announced message exactly.
+  await expect(toastByText.first()).toHaveText(/link copied to clipboard/i);
+
+  // The clipboard now holds the current page URL — the value the Share
+  // button is meant to copy. Read it through the same async clipboard API
+  // the app uses; permissions were granted at the top of the test.
+  const clipboardText = await page.evaluate(() => navigator.clipboard.readText());
+  expect(clipboardText).toBe(page.url());
+
   // Hold one more brief settle window — any queued duplicate toasts would
   // surface here. Count must stay at one.
   await page.waitForTimeout(500);
