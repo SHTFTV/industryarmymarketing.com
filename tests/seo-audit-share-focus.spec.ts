@@ -905,6 +905,188 @@ test("navigator.clipboard.writeText throwing NotAllowedError surfaces the error 
   expect(pageErrors, `page errors: ${pageErrors.join("; ")}`).toEqual([]);
 });
 
+test("navigator.clipboard.writeText returning a rejected NotAllowedError promise surfaces the error toast and restores selection + focus", async ({
+  page,
+  context,
+}) => {
+  // Do NOT grant clipboard permissions; we want a hostile environment.
+  await context.clearPermissions();
+
+  await page.addInitScript(
+    ({ host, session }) => {
+      const projectRef = host.split(".")[0];
+      const key = `sb-${projectRef}-auth-token`;
+      try {
+        window.localStorage.setItem(key, JSON.stringify(session));
+      } catch {
+        /* ignore */
+      }
+    },
+    { host: SUPABASE_HOST, session: FAKE_SESSION },
+  );
+
+  // Stub navigator.clipboard.writeText so it returns a *rejected* Promise
+  // with NotAllowedError (the spec-compliant way browsers surface a
+  // permission refusal — distinct from a synchronous throw), and make
+  // document.execCommand("copy") return false so the share flow ends in
+  // the error branch. The component's fallback must still clean up its
+  // temp <textarea> and restore selection + focus inside its `finally`.
+  await page.addInitScript(() => {
+    const denied = () =>
+      Promise.reject(
+        new DOMException(
+          "Clipboard write denied by test (rejected promise)",
+          "NotAllowedError",
+        ),
+      );
+    try {
+      Object.defineProperty(navigator, "clipboard", {
+        configurable: true,
+        value: { writeText: denied, readText: denied },
+      });
+    } catch {
+      /* ignore */
+    }
+    const win = window as unknown as { __execCopyCalls: number };
+    win.__execCopyCalls = 0;
+    const origExec = document.execCommand.bind(document);
+    document.execCommand = ((cmd: string, ...rest: unknown[]) => {
+      if (cmd === "copy") {
+        win.__execCopyCalls += 1;
+        return false;
+      }
+      // @ts-expect-error - pass-through for unrelated commands
+      return origExec(cmd, ...rest);
+    }) as typeof document.execCommand;
+  });
+
+  await page.route(`https://${SUPABASE_HOST}/**`, async (route) => {
+    const url = route.request().url();
+    if (url.includes("/auth/v1/")) {
+      return route.fulfill({
+        status: 200,
+        contentType: "application/json",
+        body: JSON.stringify(FAKE_SESSION),
+      });
+    }
+    if (url.includes("/rest/v1/seo_audits")) {
+      return route.fulfill({
+        status: 200,
+        contentType: "application/json",
+        body: JSON.stringify([FAKE_AUDIT]),
+      });
+    }
+    return route.fulfill({ status: 200, contentType: "application/json", body: "[]" });
+  });
+
+  await page.goto("/seo-audit", { waitUntil: "domcontentloaded" });
+
+  const shareBtn = page.getByRole("button", {
+    name: /copy shareable link to this audit history view/i,
+  });
+  await expect(shareBtn).toBeVisible({ timeout: 10_000 });
+
+  const baselineTextareas = await page.locator("textarea").count();
+
+  // Focus the Share button so focus restoration is observable.
+  await shareBtn.focus();
+  await expect
+    .poll(() => page.evaluate(() => document.activeElement?.getAttribute("aria-label") ?? ""))
+    .toMatch(/copy shareable link/i);
+
+  // Select some on-page text so we can verify the fallback's selection
+  // restore still runs even though writeText rejected.
+  const selectionTarget = page.locator("h2", { hasText: /audit history/i }).first();
+  await expect(selectionTarget).toBeVisible();
+  await page.evaluate((el) => {
+    const range = document.createRange();
+    range.selectNodeContents(el as Node);
+    const sel = window.getSelection();
+    sel?.removeAllRanges();
+    sel?.addRange(range);
+  }, await selectionTarget.elementHandle());
+
+  const originalSelection = await page.evaluate(
+    () => window.getSelection()?.toString() ?? "",
+  );
+  expect(originalSelection.length).toBeGreaterThan(0);
+
+  const pageErrors: string[] = [];
+  page.on("pageerror", (err) => pageErrors.push(err.message));
+  // A rejected clipboard promise must not surface as an unhandled rejection.
+  const unhandledRejections: string[] = [];
+  page.on("console", (msg) => {
+    if (msg.type() === "error" && /unhandled.*rejection/i.test(msg.text())) {
+      unhandledRejections.push(msg.text());
+    }
+  });
+
+  // Use Alt+S so activating the shortcut doesn't itself disturb the
+  // selection (mouse/keyboard on the button itself would refocus it).
+  await page.keyboard.press("Alt+S");
+
+  // Accessible error toast surfaces with the expected copy and data-type.
+  const errorToast = page.locator("[data-sonner-toast]", {
+    hasText: /could not copy link/i,
+  });
+  await expect(errorToast).toHaveCount(1, { timeout: 3_000 });
+  await expect(errorToast.first()).toBeVisible();
+  expect(await errorToast.first().getAttribute("data-type")).toBe("error");
+
+  // The toast lives inside a screen-reader-announceable live region.
+  const liveWithError = page
+    .locator("[aria-live]")
+    .filter({ hasText: /could not copy link/i });
+  await expect(liveWithError.first()).toBeVisible({ timeout: 3_000 });
+  const liveValue = await liveWithError.first().getAttribute("aria-live");
+  expect(["polite", "assertive"]).toContain(liveValue);
+
+  // No success leakage anywhere.
+  await expect(
+    page.locator("[data-sonner-toast]", { hasText: /link copied to clipboard/i }),
+  ).toHaveCount(0);
+  await expect(
+    page.locator("[aria-live]").filter({ hasText: /link copied to clipboard/i }),
+  ).toHaveCount(0);
+  await expect(
+    page.getByRole("button", { name: /^link copied to clipboard$/i }),
+  ).toHaveCount(0);
+
+  // Button stays in the idle Share state — aria-pressed must not flip.
+  await expect(shareBtn).toHaveAttribute("aria-pressed", "false");
+  await expect(shareBtn).toHaveAccessibleName(
+    /copy shareable link to this audit history view/i,
+  );
+
+  // Rejected promise routed through the fallback exactly once.
+  const execCopyCalls = await page.evaluate(
+    () => (window as unknown as { __execCopyCalls: number }).__execCopyCalls,
+  );
+  expect(execCopyCalls).toBe(1);
+
+  // The fallback's `finally` must remove its temporary <textarea> even
+  // though writeText rejected first.
+  await expect.poll(() => page.locator("textarea").count()).toBe(baselineTextareas);
+
+  // Original on-page selection is restored by the fallback's finally block.
+  const restoredSelection = await page.evaluate(
+    () => window.getSelection()?.toString() ?? "",
+  );
+  expect(restoredSelection).toBe(originalSelection);
+
+  // Focus returns to the Share button, not the (now-removed) temp textarea.
+  await expect
+    .poll(() => page.evaluate(() => document.activeElement?.getAttribute("aria-label") ?? ""))
+    .toMatch(/copy shareable link to this audit history view/i);
+
+  // The rejected DOMException must be swallowed by the component.
+  expect(pageErrors, `page errors: ${pageErrors.join("; ")}`).toEqual([]);
+  expect(
+    unhandledRejections,
+    `unhandled rejections: ${unhandledRejections.join("; ")}`,
+  ).toEqual([]);
+});
+
 test("Insecure context with no navigator.clipboard falls back to execCommand and surfaces the success toast", async ({
   page,
   context,
