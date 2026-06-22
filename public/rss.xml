@@ -6,8 +6,13 @@
     <atom:link href="https://industryarmymarketing.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>2,000-word guides on exclusive $10 territory marketing for trade contractors and service pros across Canada.</description>
     <language>en-ca</language>
-    <lastBuildDate>Mon, 22 Jun 2026 18:25:02 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 22 Jun 2026 18:27:38 GMT</lastBuildDate>
     <generator>Industry Army Marketing build pipeline</generator>
+    <image>
+      <url>https://industryarmymarketing.com/og-image.jpg</url>
+      <title>Industry Army Marketing — Intel Blog</title>
+      <link>https://industryarmymarketing.com/blog</link>
+    </image>
     <item>
       <title>Kitchen Cabinet Installation in Vancouver: The $10 Exclusive Territory Guide (kitchencabinets.io)</title>
       <link>https://industryarmymarketing.com/blog/kitchen-cabinets-vancouver</link>
@@ -15,6 +20,7 @@
       <pubDate>Mon, 01 May 2026 09:00:00 +0000</pubDate>
       <category>Renovation</category>
       <description>Kitchen Cabinet Installation in Vancouver, BC. Lock your trade on kitchencabinets.io for $10/month. EyeSpyr verified. One contractor per city. A scoped instal</description>
+      <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
       <title>Wedding Planning in Vancouver: The $10 Exclusive Territory Guide (weddings.io)</title>
@@ -23,6 +29,7 @@
       <pubDate>Mon, 01 May 2026 09:00:00 +0000</pubDate>
       <category>Events</category>
       <description>Wedding Planning in Vancouver, BC. Lock your trade on weddings.io for $10/month. EyeSpyr verified. One contractor per city. Your weddings.</description>
+      <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
       <title>Tractor &amp; Heavy Equipment Sales in Fraser Valley: The $10 Exclusive Territory Guide (kongtractors.com)</title>
@@ -31,6 +38,7 @@
       <pubDate>Mon, 01 May 2026 09:00:00 +0000</pubDate>
       <category>Equipment</category>
       <description>Tractor &amp; Heavy Equipment Sales in Fraser Valley, BC. Lock your trade on kongtractors.com for $10/month. EyeSpyr verified. One contractor per city. Your kongt</description>
+      <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
       <title>Residential &amp; Commercial Framing in Vancouver: The $10 Exclusive Territory Guide (framers.io)</title>
@@ -39,6 +47,7 @@
       <pubDate>Mon, 01 May 2026 09:00:00 +0000</pubDate>
       <category>Construction</category>
       <description>Residential &amp; Commercial Framing in Vancouver, BC. Lock your trade on framers.io for $10/month. EyeSpyr verified. One contractor per city. Your framers.</description>
+      <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
       <title>HVAC &amp; Refrigeration in Vancouver: The $10 Exclusive Territory Guide (hvacr.tv)</title>
@@ -47,6 +56,7 @@
       <pubDate>Mon, 01 May 2026 09:00:00 +0000</pubDate>
       <category>Mechanical</category>
       <description>HVAC &amp; Refrigeration in Vancouver, BC. Lock your trade on hvacr.tv for $10/month. EyeSpyr verified. One contractor per city. Your hvacr.</description>
+      <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
       <title>Excavation &amp; Site Prep in Lower Mainland: The $10 Exclusive Territory Guide (excavators.tv)</title>
@@ -55,6 +65,7 @@
       <pubDate>Mon, 01 Apr 2026 09:00:00 +0000</pubDate>
       <category>Construction</category>
       <description>Excavation &amp; Site Prep in Lower Mainland, BC. Lock your trade on excavators.tv for $10/month. EyeSpyr verified. One contractor per city. Your excavators.</description>
+      <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
       <title>Residential &amp; Commercial Painting in Vancouver: The $10 Exclusive Territory Guide (painters.tv)</title>
@@ -63,6 +74,7 @@
       <pubDate>Mon, 01 Apr 2026 09:00:00 +0000</pubDate>
       <category>Renovation</category>
       <description>Residential &amp; Commercial Painting in Vancouver, BC. Lock your trade on painters.tv for $10/month. EyeSpyr verified. One contractor per city. Your painters.</description>
+      <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
       <title>Roofing &amp; Re-Roofing in Vancouver: The $10 Exclusive Territory Guide (roofers.io)</title>
@@ -71,6 +83,7 @@
       <pubDate>Mon, 01 Apr 2026 09:00:00 +0000</pubDate>
       <category>Construction</category>
       <description>Roofing &amp; Re-Roofing in Vancouver, BC. Lock your trade on roofers.io for $10/month. EyeSpyr verified. One contractor per city. Your roofers.</description>
+      <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
       <title>Drywall &amp; Taping in Vancouver: The $10 Exclusive Territory Guide (drywallers.io)</title>
@@ -79,6 +92,7 @@
       <pubDate>Mon, 01 Apr 2026 09:00:00 +0000</pubDate>
       <category>Construction</category>
       <description>Drywall &amp; Taping in Vancouver, BC. Lock your trade on drywallers.io for $10/month. EyeSpyr verified. One contractor per city. Your drywallers.</description>
+      <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
       <title>Plumbing &amp; Drainage in Vancouver: The $10 Exclusive Territory Guide (plumbers.ltd)</title>
@@ -87,6 +101,7 @@
       <pubDate>Mon, 01 Mar 2026 09:00:00 +0000</pubDate>
       <category>Mechanical</category>
       <description>Plumbing &amp; Drainage in Vancouver, BC. Lock your trade on plumbers.ltd for $10/month. EyeSpyr verified. One contractor per city. Your plumbers.</description>
+      <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
       <title>Demolition &amp; Deconstruction in Vancouver: The $10 Exclusive Territory Guide (demolition.io)</title>
@@ -95,6 +110,7 @@
       <pubDate>Mon, 01 Mar 2026 09:00:00 +0000</pubDate>
       <category>Construction</category>
       <description>Demolition &amp; Deconstruction in Vancouver, BC. Lock your trade on demolition.io for $10/month. EyeSpyr verified. One contractor per city. Your demolition.</description>
+      <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
       <title>Interior Design in Vancouver: The $10 Exclusive Territory Guide (interiordesigners.io)</title>
@@ -103,6 +119,7 @@
       <pubDate>Mon, 01 Mar 2026 09:00:00 +0000</pubDate>
       <category>Design</category>
       <description>Interior Design in Vancouver, BC. Lock your trade on interiordesigners.io for $10/month. EyeSpyr verified. One contractor per city. Your interiordesigners.</description>
+      <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
       <title>Backhaul &amp; Freight in BC: The $10 Exclusive Territory Guide (backhaul.io)</title>
@@ -111,6 +128,7 @@
       <pubDate>Mon, 01 Mar 2026 09:00:00 +0000</pubDate>
       <category>Logistics</category>
       <description>Backhaul &amp; Freight in BC, BC. Lock your trade on backhaul.io for $10/month. EyeSpyr verified. One contractor per city. Your backhaul.</description>
+      <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
       <title>Snow Removal &amp; De-Icing in BC Interior: The $10 Exclusive Territory Guide (plowwow.com)</title>
@@ -119,6 +137,7 @@
       <pubDate>Mon, 01 Feb 2026 09:00:00 +0000</pubDate>
       <category>Seasonal</category>
       <description>Snow Removal &amp; De-Icing in BC Interior, BC. Lock your trade on plowwow.com for $10/month. EyeSpyr verified. One contractor per city. Your plowwow.</description>
+      <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
       <title>Commercial Videography in Vancouver: The $10 Exclusive Territory Guide (videographers.io)</title>
@@ -127,6 +146,7 @@
       <pubDate>Mon, 01 Feb 2026 09:00:00 +0000</pubDate>
       <category>Creative</category>
       <description>Commercial Videography in Vancouver, BC. Lock your trade on videographers.io for $10/month. EyeSpyr verified. One contractor per city. Your videographers.</description>
+      <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
       <title>Errand &amp; Same-Day Delivery in Vancouver: The $10 Exclusive Territory Guide (errands.io)</title>
@@ -135,6 +155,7 @@
       <pubDate>Mon, 01 Feb 2026 09:00:00 +0000</pubDate>
       <category>Service</category>
       <description>Errand &amp; Same-Day Delivery in Vancouver, BC. Lock your trade on errands.io for $10/month. EyeSpyr verified. One contractor per city. Your errands.</description>
+      <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
       <title>Licensed Gas Fitting in British Columbia: The $10 Exclusive Territory Guide (gasfitter.ca)</title>
@@ -143,6 +164,7 @@
       <pubDate>Mon, 01 Jun 2026 09:00:00 +0000</pubDate>
       <category>Licensed Trades</category>
       <description>Licensed Gas Fitting in British Columbia, BC. Lock your trade on gasfitter.ca for $10/month. EyeSpyr verified. One contractor per city. SEO + AEO + GEO baked i</description>
+      <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
       <title>Commercial Steel Stud Framing in British Columbia: The $10 Exclusive Territory Guide (steelstudcontractors.com)</title>
@@ -151,6 +173,7 @@
       <pubDate>Mon, 01 May 2026 09:00:00 +0000</pubDate>
       <category>Commercial Construction</category>
       <description>Commercial Steel Stud Framing in British Columbia, BC. Lock your trade on steelstudcontractors.com for $10/month. EyeSpyr verified. One contractor per city. SE</description>
+      <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
       <title>Contractor Verification &amp; Trust in Canada-wide: The $10 Exclusive Territory Guide (eyespyr.com)</title>
@@ -159,6 +182,7 @@
       <pubDate>Mon, 01 Apr 2026 09:00:00 +0000</pubDate>
       <category>Platform</category>
       <description>Contractor Verification &amp; Trust in Canada-wide, BC. Lock your trade on eyespyr.com for $10/month. EyeSpyr verified. One contractor per city. SEO + AEO + GEO ba</description>
+      <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
       <title>Canadian Contractor Network in Canada-wide: The $10 Exclusive Territory Guide (buildershaus.com)</title>
@@ -167,6 +191,7 @@
       <pubDate>Mon, 01 Mar 2026 09:00:00 +0000</pubDate>
       <category>Platform</category>
       <description>Canadian Contractor Network in Canada-wide, BC. Lock your trade on buildershaus.com for $10/month. EyeSpyr verified. One contractor per city. SEO + AEO + GEO b</description>
+      <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
       <title>Multi-Vertical Content Authority in Canada-wide: The $10 Exclusive Territory Guide (healthwealthhome.com)</title>
@@ -175,6 +200,7 @@
       <pubDate>Mon, 01 Feb 2026 09:00:00 +0000</pubDate>
       <category>Content &amp; SEO</category>
       <description>Multi-Vertical Content Authority in Canada-wide, BC. Lock your trade on healthwealthhome.com for $10/month. EyeSpyr verified. One contractor per city. SEO + AE</description>
+      <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
       <title>AI Content &amp; Video Production in Canada-wide: The $10 Exclusive Territory Guide (talc.tv)</title>
@@ -183,6 +209,7 @@
       <pubDate>Mon, 01 Jan 2026 09:00:00 +0000</pubDate>
       <category>Content &amp; AI</category>
       <description>AI Content &amp; Video Production in Canada-wide, BC. Lock your trade on talc.tv for $10/month. EyeSpyr verified. One contractor per city. SEO + AEO + GEO baked in</description>
+      <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
       <title>Generative Engine Optimization (GEO) in Canada-wide: The $10 Exclusive Territory Guide (aibuildr.io)</title>
@@ -191,6 +218,7 @@
       <pubDate>Mon, 01 Dec 2025 09:00:00 +0000</pubDate>
       <category>AI &amp; SEO</category>
       <description>Generative Engine Optimization (GEO) in Canada-wide, BC. Lock your trade on aibuildr.io for $10/month. EyeSpyr verified. One contractor per city. SEO + AEO + G</description>
+      <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
       <title>Financial Advisory in British Columbia: The $10 Exclusive Territory Guide (financialadvisors.io)</title>
@@ -199,6 +227,7 @@
       <pubDate>Mon, 01 Nov 2025 09:00:00 +0000</pubDate>
       <category>Professional Services</category>
       <description>Financial Advisory in British Columbia, BC. Lock your trade on financialadvisors.io for $10/month. EyeSpyr verified. One contractor per city. SEO + AEO + GEO b</description>
+      <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
       <title>Insurance Brokerage in British Columbia: The $10 Exclusive Territory Guide (insurancebrokers.io)</title>
@@ -207,6 +236,7 @@
       <pubDate>Mon, 01 Oct 2025 09:00:00 +0000</pubDate>
       <category>Professional Services</category>
       <description>Insurance Brokerage in British Columbia, BC. Lock your trade on insurancebrokers.io for $10/month. EyeSpyr verified. One contractor per city. SEO + AEO + GEO b</description>
+      <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
       <title>Metal Fabrication in British Columbia: The $10 Exclusive Territory Guide (fabricators.io)</title>
@@ -215,6 +245,7 @@
       <pubDate>Mon, 01 Sep 2025 09:00:00 +0000</pubDate>
       <category>Industrial</category>
       <description>Metal Fabrication in British Columbia, BC. Lock your trade on fabricators.io for $10/month. EyeSpyr verified. One contractor per city. SEO + AEO + GEO baked in</description>
+      <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
       <title>Certified Arboriculture in British Columbia: The $10 Exclusive Territory Guide (arborists.io)</title>
@@ -223,6 +254,7 @@
       <pubDate>Mon, 01 Aug 2025 09:00:00 +0000</pubDate>
       <category>Outdoor Services</category>
       <description>Certified Arboriculture in British Columbia, BC. Lock your trade on arborists.io for $10/month. EyeSpyr verified. One contractor per city. SEO + AEO + GEO bake</description>
+      <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
       <title>Construction Video Media in Canada-wide: The $10 Exclusive Territory Guide (rebar.tv)</title>
@@ -231,6 +263,7 @@
       <pubDate>Mon, 01 Jul 2025 09:00:00 +0000</pubDate>
       <category>Media</category>
       <description>Construction Video Media in Canada-wide, BC. Lock your trade on rebar.tv for $10/month. EyeSpyr verified. One contractor per city. SEO + AEO + GEO baked in.</description>
+      <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
       <title>Licensed Electricians in British Columbia: The $10 Exclusive Territory Guide (sparkys.tv)</title>
@@ -239,6 +272,7 @@
       <pubDate>Mon, 01 Jun 2025 09:00:00 +0000</pubDate>
       <category>Licensed Trades</category>
       <description>Licensed Electricians in British Columbia, BC. Lock your trade on sparkys.tv for $10/month. EyeSpyr verified. One contractor per city. SEO + AEO + GEO baked in</description>
+      <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
       <title>Luxury Jewellers &amp; Custom Design in Canada-wide: The $10 Exclusive Territory Guide (jewellers.ltd)</title>
@@ -247,6 +281,7 @@
       <pubDate>Mon, 01 May 2025 09:00:00 +0000</pubDate>
       <category>Luxury Retail</category>
       <description>Luxury Jewellers &amp; Custom Design in Canada-wide, BC. Lock your trade on jewellers.ltd for $10/month. EyeSpyr verified. One contractor per city. SEO + AEO + GEO</description>
+      <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
       <title>Professional Lawn Care in British Columbia: The $10 Exclusive Territory Guide (promows.com)</title>
@@ -255,6 +290,7 @@
       <pubDate>Mon, 01 Apr 2025 09:00:00 +0000</pubDate>
       <category>Recurring Services</category>
       <description>Professional Lawn Care in British Columbia, BC. Lock your trade on promows.com for $10/month. EyeSpyr verified. One contractor per city. SEO + AEO + GEO baked </description>
+      <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
       <title>Family &amp; Cosmetic Dentistry in British Columbia: The $10 Exclusive Territory Guide (dentists.ltd)</title>
@@ -263,6 +299,7 @@
       <pubDate>Mon, 01 Mar 2025 09:00:00 +0000</pubDate>
       <category>Healthcare</category>
       <description>Family &amp; Cosmetic Dentistry in British Columbia, BC. Lock your trade on dentists.ltd for $10/month. EyeSpyr verified. One contractor per city. SEO + AEO + GEO </description>
+      <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
       <title>IAM $10 Exclusive Territories in Canada-wide: The $10 Exclusive Territory Guide (industryarmymarketing.com)</title>
@@ -271,6 +308,7 @@
       <pubDate>Mon, 01 Feb 2026 09:00:00 +0000</pubDate>
       <category>How It Works</category>
       <description>IAM $10 Exclusive Territories in Canada-wide, BC. Lock your trade on industryarmymarketing.com for $10/month. EyeSpyr verified. One contractor per city. You p</description>
+      <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
       <title>Chiropractors in Vancouver: The $10 Exclusive Territory Guide (chiropractors.ltd)</title>
@@ -279,6 +317,7 @@
       <pubDate>Mon, 01 Jun 2026 09:00:00 +0000</pubDate>
       <category>Health</category>
       <description>Chiropractic Care in Vancouver, BC. Lock the chiropractors.ltd territory for $10/month. EyeSpyr verified, one clinic per city, SEO + AEO + GEO + LLM schema baked in.</description>
+      <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
       <title>Movers in Calgary: The $10 Exclusive Territory Guide (mover.ltd)</title>
@@ -287,6 +326,7 @@
       <pubDate>Mon, 01 Jun 2026 09:00:00 +0000</pubDate>
       <category>Logistics</category>
       <description>Residential &amp; Commercial Moving in Calgary, AB. Lock the mover.ltd territory for $10/month. EyeSpyr verified, one mover per city, SEO + AEO + GEO + LLM schema baked in.</description>
+      <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
       <title>Landscapers in Toronto: The $10 Exclusive Territory Guide (landscapers.ca)</title>
@@ -295,6 +335,7 @@
       <pubDate>Mon, 01 Jun 2026 09:00:00 +0000</pubDate>
       <category>Outdoor</category>
       <description>Landscaping &amp; Grounds Maintenance in Toronto, ON. Lock the landscapers.ca territory for $10/month. EyeSpyr verified, one crew per city, SEO + AEO + GEO + LLM schema baked in.</description>
+      <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
       <title>Hardscape Contractors in Kelowna: The $10 Exclusive Territory Guide (hardscapes.io)</title>
@@ -303,6 +344,7 @@
       <pubDate>Mon, 01 Jun 2026 09:00:00 +0000</pubDate>
       <category>Outdoor</category>
       <description>Hardscape &amp; Paver Installation in Kelowna, BC. Lock the hardscapes.io territory for $10/month. EyeSpyr verified, one crew per city, SEO + AEO + GEO + LLM schema baked in.</description>
+      <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
   </channel>
 </rss>
