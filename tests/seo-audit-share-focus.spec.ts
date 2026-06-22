@@ -297,3 +297,75 @@ test("Toast exposes an aria-live region and the Share control has the correct ac
     page.locator("[aria-live]").filter({ hasText: /link copied to clipboard/i }),
   ).toHaveCount(0, { timeout: 6_000 });
 });
+
+test("Rapid clicks on the Share button collapse into a single toast and a single live-region announcement", async ({
+  page,
+  context,
+}) => {
+  await context.grantPermissions(["clipboard-read", "clipboard-write"]);
+
+  await page.addInitScript(
+    ({ host, session }) => {
+      const projectRef = host.split(".")[0];
+      const key = `sb-${projectRef}-auth-token`;
+      try {
+        window.localStorage.setItem(key, JSON.stringify(session));
+      } catch {
+        /* ignore */
+      }
+    },
+    { host: SUPABASE_HOST, session: FAKE_SESSION },
+  );
+
+  await page.route(`https://${SUPABASE_HOST}/**`, async (route) => {
+    const url = route.request().url();
+    if (url.includes("/auth/v1/")) {
+      return route.fulfill({
+        status: 200,
+        contentType: "application/json",
+        body: JSON.stringify(FAKE_SESSION),
+      });
+    }
+    if (url.includes("/rest/v1/seo_audits")) {
+      return route.fulfill({
+        status: 200,
+        contentType: "application/json",
+        body: JSON.stringify([FAKE_AUDIT]),
+      });
+    }
+    return route.fulfill({ status: 200, contentType: "application/json", body: "[]" });
+  });
+
+  await page.goto("/seo-audit", { waitUntil: "domcontentloaded" });
+
+  const shareBtn = page.getByRole("button", {
+    name: /copy shareable link to this audit history view/i,
+  });
+  await expect(shareBtn).toBeVisible({ timeout: 10_000 });
+
+  // Fire several rapid clicks in quick succession.
+  for (let i = 0; i < 6; i++) {
+    await shareBtn.click({ force: true });
+  }
+
+  // Exactly one visible Sonner toast carrying the success copy.
+  const toastByText = page.locator("[data-sonner-toast]", { hasText: /link copied to clipboard/i });
+  await expect(toastByText).toHaveCount(1, { timeout: 3_000 });
+
+  // Exactly one aria-live element on the page contains the announcement
+  // — Sonner's live region for the deduplicated toast plus the page's
+  // sr-only status region resolve to a single live announcement source
+  // (Sonner's portal nests its toast inside one live region).
+  const liveWithCopy = page.locator("[aria-live]").filter({ hasText: /link copied to clipboard/i });
+  await expect(liveWithCopy).toHaveCount(1, { timeout: 3_000 });
+
+  // The sr-only status region shows the message exactly once, not stacked.
+  const statusRegion = page.locator('[role="status"][aria-live="polite"]');
+  await expect(statusRegion).toHaveCount(1);
+  await expect(statusRegion).toHaveText(/^link copied to clipboard$/i);
+
+  // After auto-dismiss everything clears back to baseline.
+  await expect(toastByText).toHaveCount(0, { timeout: 6_000 });
+  await expect(liveWithCopy).toHaveCount(0);
+  await expect(statusRegion).toHaveText("");
+});
