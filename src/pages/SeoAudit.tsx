@@ -33,6 +33,20 @@ interface AuditRow {
   created_at: string;
 }
 
+const HISTORY_FILTERS_KEY = "seoAudit.historyFilters.v1";
+type ScoreFilter = "all" | "high" | "mid" | "low";
+type DeepFilter = "all" | "with" | "without";
+interface HistoryFilters { q: string; score: ScoreFilter; deep: DeepFilter; }
+const defaultFilters: HistoryFilters = { q: "", score: "all", deep: "all" };
+const loadFilters = (): HistoryFilters => {
+  if (typeof window === "undefined") return defaultFilters;
+  try {
+    const raw = sessionStorage.getItem(HISTORY_FILTERS_KEY);
+    if (!raw) return defaultFilters;
+    return { ...defaultFilters, ...(JSON.parse(raw) as Partial<HistoryFilters>) };
+  } catch { return defaultFilters; }
+};
+
 const SeoAudit = () => {
   const [url, setUrl] = useState("");
   const [email, setEmail] = useState("");
@@ -43,6 +57,22 @@ const SeoAudit = () => {
   const [user, setUser] = useState<User | null>(null);
   const [history, setHistory] = useState<AuditRow[]>([]);
   const [currentAuditId, setCurrentAuditId] = useState<string | null>(null);
+  const [filters, setFilters] = useState<HistoryFilters>(loadFilters);
+
+  useEffect(() => {
+    try { sessionStorage.setItem(HISTORY_FILTERS_KEY, JSON.stringify(filters)); } catch { /* ignore */ }
+  }, [filters]);
+
+  const filteredHistory = history.filter((a) => {
+    if (filters.q.trim() && !a.url.toLowerCase().includes(filters.q.trim().toLowerCase())) return false;
+    if (filters.score === "high" && a.score < 80) return false;
+    if (filters.score === "mid" && (a.score < 50 || a.score >= 80)) return false;
+    if (filters.score === "low" && a.score >= 50) return false;
+    if (filters.deep === "with" && !a.deep_dive) return false;
+    if (filters.deep === "without" && a.deep_dive) return false;
+    return true;
+  });
+  const filtersActive = filters.q !== "" || filters.score !== "all" || filters.deep !== "all";
 
   const loadHistory = useCallback(async (uid: string) => {
     const { data, error } = await supabase
@@ -199,13 +229,63 @@ const SeoAudit = () => {
 
         {user && history.length > 0 && (
           <Card className="p-6 md:p-8 border-border bg-card max-w-5xl mx-auto mt-6">
-            <div className="flex items-center gap-3 mb-4">
+            <div id="history" className="flex items-center gap-3 mb-4">
               <History size={18} className="text-primary" />
               <h2 className="font-display text-3xl text-foreground">Audit History</h2>
-              <span className="text-xs text-muted-foreground">({history.length})</span>
+              <span className="text-xs text-muted-foreground">
+                ({filteredHistory.length}{filtersActive ? ` of ${history.length}` : ""})
+              </span>
             </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_auto_auto] gap-2 mb-5">
+              <Input
+                type="search"
+                placeholder="Search URL…"
+                value={filters.q}
+                onChange={(e) => setFilters((f) => ({ ...f, q: e.target.value }))}
+                className="h-10"
+                aria-label="Search audit history by URL"
+              />
+              <select
+                value={filters.score}
+                onChange={(e) => setFilters((f) => ({ ...f, score: e.target.value as ScoreFilter }))}
+                className="h-10 rounded-md border border-border bg-background px-3 text-sm text-foreground"
+                aria-label="Filter by score"
+              >
+                <option value="all">All scores</option>
+                <option value="high">High (80+)</option>
+                <option value="mid">Mid (50–79)</option>
+                <option value="low">Low (&lt;50)</option>
+              </select>
+              <select
+                value={filters.deep}
+                onChange={(e) => setFilters((f) => ({ ...f, deep: e.target.value as DeepFilter }))}
+                className="h-10 rounded-md border border-border bg-background px-3 text-sm text-foreground"
+                aria-label="Filter by deep dive status"
+              >
+                <option value="all">Any deep dive</option>
+                <option value="with">With deep dive</option>
+                <option value="without">Without deep dive</option>
+              </select>
+              <Button
+                type="button"
+                variant="ghost"
+                size="sm"
+                onClick={() => setFilters(defaultFilters)}
+                disabled={!filtersActive}
+                className="h-10"
+              >
+                Clear
+              </Button>
+            </div>
+
             <ul className="divide-y divide-border">
-              {history.map((a) => {
+              {filteredHistory.length === 0 && (
+                <li className="py-6 text-sm text-muted-foreground text-center">
+                  No audits match your filters.
+                </li>
+              )}
+              {filteredHistory.map((a) => {
                 const sc = a.score >= 80 ? "text-primary" : a.score >= 50 ? "text-yellow-400" : "text-red-400";
                 const isCurrent = currentAuditId === a.id;
                 return (
