@@ -592,6 +592,109 @@ test("Share flow surfaces an accessible error toast when navigator.clipboard is 
   expect(pageErrors, `page errors: ${pageErrors.join("; ")}`).toEqual([]);
 });
 
+test("Insecure context with no navigator.clipboard still surfaces the accessible error toast", async ({
+  page,
+  context,
+}) => {
+  await context.clearPermissions();
+
+  await page.addInitScript(
+    ({ host, session }) => {
+      const projectRef = host.split(".")[0];
+      const key = `sb-${projectRef}-auth-token`;
+      try {
+        window.localStorage.setItem(key, JSON.stringify(session));
+      } catch {
+        /* ignore */
+      }
+    },
+    { host: SUPABASE_HOST, session: FAKE_SESSION },
+  );
+
+  // Simulate an insecure context (http://, embedded webview, old browser):
+  // navigator.clipboard is undefined entirely. The app must not throw an
+  // uncaught TypeError accessing `.writeText` on undefined.
+  await page.addInitScript(() => {
+    try {
+      Object.defineProperty(navigator, "clipboard", {
+        configurable: true,
+        get() {
+          return undefined;
+        },
+      });
+    } catch {
+      /* ignore */
+    }
+  });
+
+  await page.route(`https://${SUPABASE_HOST}/**`, async (route) => {
+    const url = route.request().url();
+    if (url.includes("/auth/v1/")) {
+      return route.fulfill({
+        status: 200,
+        contentType: "application/json",
+        body: JSON.stringify(FAKE_SESSION),
+      });
+    }
+    if (url.includes("/rest/v1/seo_audits")) {
+      return route.fulfill({
+        status: 200,
+        contentType: "application/json",
+        body: JSON.stringify([FAKE_AUDIT]),
+      });
+    }
+    return route.fulfill({ status: 200, contentType: "application/json", body: "[]" });
+  });
+
+  await page.goto("/seo-audit", { waitUntil: "domcontentloaded" });
+
+  // Sanity: the stub took effect — clipboard is actually undefined inside
+  // the page, not just hidden behind a permissions prompt.
+  expect(await page.evaluate(() => typeof (navigator as Navigator).clipboard)).toBe("undefined");
+
+  const shareBtn = page.getByRole("button", {
+    name: /copy shareable link to this audit history view/i,
+  });
+  await expect(shareBtn).toBeVisible({ timeout: 10_000 });
+
+  const pageErrors: string[] = [];
+  page.on("pageerror", (err) => pageErrors.push(err.message));
+
+  await shareBtn.click();
+
+  // Same accessible error toast as the permission-denied path.
+  const errorToast = page.locator("[data-sonner-toast]", {
+    hasText: /could not copy link/i,
+  });
+  await expect(errorToast).toHaveCount(1, { timeout: 3_000 });
+  await expect(errorToast.first()).toBeVisible();
+  expect(await errorToast.first().getAttribute("data-type")).toBe("error");
+
+  const liveWithError = page
+    .locator("[aria-live]")
+    .filter({ hasText: /could not copy link/i });
+  await expect(liveWithError.first()).toBeVisible({ timeout: 3_000 });
+  const liveValue = await liveWithError.first().getAttribute("aria-live");
+  expect(["polite", "assertive"]).toContain(liveValue);
+
+  // No success leakage anywhere.
+  await expect(
+    page.locator("[data-sonner-toast]", { hasText: /link copied to clipboard/i }),
+  ).toHaveCount(0);
+  await expect(
+    page.locator("[aria-live]").filter({ hasText: /link copied to clipboard/i }),
+  ).toHaveCount(0);
+
+  // Button stays idle.
+  await expect(shareBtn).toHaveAttribute("aria-pressed", "false");
+  await expect(shareBtn).toHaveAccessibleName(
+    /copy shareable link to this audit history view/i,
+  );
+
+  // And no uncaught TypeError ("Cannot read properties of undefined…") leaked.
+  expect(pageErrors, `page errors: ${pageErrors.join("; ")}`).toEqual([]);
+});
+
 test("Keyboard activation (Enter and Space) on the Share button fires the toast and live-region announcement", async ({
   page,
   context,
