@@ -96,7 +96,15 @@ const SeoAudit = () => {
   const shareButtonRef = useRef<HTMLButtonElement | null>(null);
   useEffect(() => {
     if (!shareCopied) return;
-    const t = setTimeout(() => setShareCopied(false), 2000);
+    const t = setTimeout(() => {
+      setShareCopied(false);
+      // Return focus to the Share button when the toast / Copied state auto-dismisses,
+      // but only if focus hasn't moved elsewhere by the user.
+      const active = document.activeElement;
+      if (active === document.body || active === null || active === shareButtonRef.current) {
+        shareButtonRef.current?.focus();
+      }
+    }, 2000);
     return () => clearTimeout(t);
   }, [shareCopied]);
 
