@@ -111,12 +111,14 @@ const SeoAudit = () => {
   const copyShareLink = useCallback(async () => {
     try {
       await navigator.clipboard.writeText(window.location.href);
-      toast.success("Link copied to clipboard");
+      // Stable id keeps rapid clicks collapsed into a single visible toast
+      // and a single aria-live announcement.
+      toast.success("Link copied to clipboard", { id: "seo-audit-share-copied" });
       setShareCopied(true);
       // Keep focus on the Share button so keyboard users stay in place.
       requestAnimationFrame(() => shareButtonRef.current?.focus());
     } catch {
-      toast.error("Could not copy link");
+      toast.error("Could not copy link", { id: "seo-audit-share-copied" });
     }
   }, []);
 
