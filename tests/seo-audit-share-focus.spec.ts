@@ -905,14 +905,6 @@ test("navigator.clipboard.writeText throwing NotAllowedError surfaces the error 
   expect(pageErrors, `page errors: ${pageErrors.join("; ")}`).toEqual([]);
 });
 
-test("Insecure context with no navigator.clipboard falls back to execCommand and surfaces the success toast", async ({
-  page,
-  context,
-}) => {
-  // Placeholder — real test body below. This stub is replaced by the
-  // following test() block.
-}) as never;
-
 test("navigator.clipboard.writeText returning a rejected NotAllowedError promise surfaces the error toast and restores selection + focus", async ({
   page,
   context,
