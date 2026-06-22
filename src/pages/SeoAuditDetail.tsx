@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Check, X, Loader2, Sparkles, ArrowLeft } from "lucide-react";
+import { Check, X, Loader2, Sparkles, ArrowLeft, ChevronRight } from "lucide-react";
 import Layout from "@/components/Layout";
 import PageHeader from "@/components/PageHeader";
 import Seo from "@/components/Seo";
@@ -64,6 +64,25 @@ const SeoAuditDetail = () => {
 
       <section className="container mx-auto px-4 py-12">
         <div className="max-w-5xl mx-auto mb-6">
+          <nav aria-label="Breadcrumb" className="mb-4">
+            <ol className="flex items-center gap-2 text-xs uppercase tracking-widest text-muted-foreground">
+              <li>
+                <Link to="/" className="hover:text-primary transition-colors">Home</Link>
+              </li>
+              <li aria-hidden="true"><ChevronRight size={12} /></li>
+              <li>
+                <Link to="/seo-audit" className="hover:text-primary transition-colors">SEO Audit</Link>
+              </li>
+              <li aria-hidden="true"><ChevronRight size={12} /></li>
+              <li>
+                <Link to="/seo-audit" className="hover:text-primary transition-colors">History</Link>
+              </li>
+              <li aria-hidden="true"><ChevronRight size={12} /></li>
+              <li className="text-foreground truncate max-w-[40ch]" aria-current="page">
+                {audit ? audit.url : "Details"}
+              </li>
+            </ol>
+          </nav>
           <Button asChild variant="secondary" size="sm" className="group">
             <Link to="/seo-audit" aria-label="Back to audit history">
               <ArrowLeft size={16} className="mr-2 transition-transform group-hover:-translate-x-0.5" />
