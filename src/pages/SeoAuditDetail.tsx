@@ -64,9 +64,12 @@ const SeoAuditDetail = () => {
 
       <section className="container mx-auto px-4 py-12">
         <div className="max-w-5xl mx-auto mb-6">
-          <Link to="/seo-audit" className="inline-flex items-center text-xs uppercase tracking-widest text-primary hover:text-glow">
-            <ArrowLeft size={14} className="mr-2" /> Back to audits
-          </Link>
+          <Button asChild variant="secondary" size="sm" className="group">
+            <Link to="/seo-audit" aria-label="Back to audit history">
+              <ArrowLeft size={16} className="mr-2 transition-transform group-hover:-translate-x-0.5" />
+              Back to Audit History
+            </Link>
+          </Button>
         </div>
 
         {loading && (
@@ -163,6 +166,15 @@ const SeoAuditDetail = () => {
                 <p className="text-sm text-muted-foreground">No AI deep dive was generated for this audit.</p>
               </Card>
             )}
+
+            <div className="pt-2">
+              <Button asChild variant="secondary" className="group">
+                <Link to="/seo-audit" aria-label="Back to audit history">
+                  <ArrowLeft size={16} className="mr-2 transition-transform group-hover:-translate-x-0.5" />
+                  Back to Audit History
+                </Link>
+              </Button>
+            </div>
           </motion.div>
         )}
       </section>
