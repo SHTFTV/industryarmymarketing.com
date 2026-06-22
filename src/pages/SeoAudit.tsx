@@ -319,8 +319,13 @@ const SeoAudit = () => {
                 variant="ghost"
                 onClick={copyShareLink}
                 className="ml-auto h-8"
-                aria-label="Copy shareable link to this audit history view (Alt+S)"
-                title="Copy link (Alt+S)"
+                aria-label={
+                  shareCopied
+                    ? "Link copied to clipboard"
+                    : "Copy shareable link to this audit history view (Alt+S)"
+                }
+                aria-pressed={shareCopied}
+                title={shareCopied ? "Link copied" : "Copy link (Alt+S)"}
               >
                 {shareCopied ? (
                   <><ClipboardCheck size={14} className="mr-1.5" /> Copied</>
