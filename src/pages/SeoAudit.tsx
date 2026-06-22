@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
 import { Check, X, Loader2, Search, Lock, Sparkles, History, Trash2, RotateCcw, ExternalLink } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import type { User } from "@supabase/supabase-js";
 import Layout from "@/components/Layout";
 import PageHeader from "@/components/PageHeader";
@@ -33,31 +33,56 @@ interface AuditRow {
   created_at: string;
 }
 
-const HISTORY_FILTERS_KEY = "seoAudit.historyFilters.v1";
-const HISTORY_PAGE_KEY = "seoAudit.historyPage.v1";
-const HISTORY_SORT_KEY = "seoAudit.historySort.v1";
 const PAGE_SIZE = 5;
 type SortOption = "newest" | "oldest" | "score-desc" | "score-asc" | "url-asc";
+const SORT_OPTIONS: SortOption[] = ["newest","oldest","score-desc","score-asc","url-asc"];
 const defaultSort: SortOption = "newest";
-const loadSort = (): SortOption => {
-  if (typeof window === "undefined") return defaultSort;
-  const v = sessionStorage.getItem(HISTORY_SORT_KEY) as SortOption | null;
-  return v && ["newest","oldest","score-desc","score-asc","url-asc"].includes(v) ? v : defaultSort;
-};
 type ScoreFilter = "all" | "high" | "mid" | "low";
+const SCORE_FILTERS: ScoreFilter[] = ["all","high","mid","low"];
 type DeepFilter = "all" | "with" | "without";
+const DEEP_FILTERS: DeepFilter[] = ["all","with","without"];
 interface HistoryFilters { q: string; score: ScoreFilter; deep: DeepFilter; }
 const defaultFilters: HistoryFilters = { q: "", score: "all", deep: "all" };
-const loadFilters = (): HistoryFilters => {
-  if (typeof window === "undefined") return defaultFilters;
-  try {
-    const raw = sessionStorage.getItem(HISTORY_FILTERS_KEY);
-    if (!raw) return defaultFilters;
-    return { ...defaultFilters, ...(JSON.parse(raw) as Partial<HistoryFilters>) };
-  } catch { return defaultFilters; }
-};
 
 const SeoAudit = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const filters: HistoryFilters = {
+    q: searchParams.get("q") ?? "",
+    score: (SCORE_FILTERS.includes(searchParams.get("score") as ScoreFilter)
+      ? (searchParams.get("score") as ScoreFilter) : "all"),
+    deep: (DEEP_FILTERS.includes(searchParams.get("deep") as DeepFilter)
+      ? (searchParams.get("deep") as DeepFilter) : "all"),
+  };
+  const sort: SortOption = SORT_OPTIONS.includes(searchParams.get("sort") as SortOption)
+    ? (searchParams.get("sort") as SortOption) : defaultSort;
+  const pageParam = parseInt(searchParams.get("page") ?? "1", 10);
+  const page = Number.isFinite(pageParam) && pageParam > 0 ? pageParam : 1;
+
+  const updateParams = (updates: Record<string, string | null>, opts: { resetPage?: boolean } = {}) => {
+    setSearchParams((prev) => {
+      const next = new URLSearchParams(prev);
+      for (const [k, v] of Object.entries(updates)) {
+        if (v === null || v === "" || v === "all" || (k === "sort" && v === defaultSort) || (k === "page" && v === "1")) {
+          next.delete(k);
+        } else {
+          next.set(k, v);
+        }
+      }
+      if (opts.resetPage) next.delete("page");
+      return next;
+    }, { replace: true });
+  };
+  const setFilters = (updater: HistoryFilters | ((f: HistoryFilters) => HistoryFilters)) => {
+    const nf = typeof updater === "function" ? (updater as (f: HistoryFilters) => HistoryFilters)(filters) : updater;
+    updateParams({ q: nf.q || null, score: nf.score, deep: nf.deep }, { resetPage: true });
+  };
+  const setSort = (s: SortOption) => updateParams({ sort: s }, { resetPage: true });
+  const setPage = (updater: number | ((p: number) => number)) => {
+    const np = typeof updater === "function" ? (updater as (p: number) => number)(page) : updater;
+    updateParams({ page: String(np) });
+  };
+
   const [url, setUrl] = useState("");
   const [email, setEmail] = useState("");
   const [scan, setScan] = useState<ScanResult | null>(null);
@@ -67,25 +92,6 @@ const SeoAudit = () => {
   const [user, setUser] = useState<User | null>(null);
   const [history, setHistory] = useState<AuditRow[]>([]);
   const [currentAuditId, setCurrentAuditId] = useState<string | null>(null);
-  const [filters, setFilters] = useState<HistoryFilters>(loadFilters);
-  const [sort, setSort] = useState<SortOption>(loadSort);
-  const [page, setPage] = useState<number>(() => {
-    if (typeof window === "undefined") return 1;
-    const n = parseInt(sessionStorage.getItem(HISTORY_PAGE_KEY) ?? "1", 10);
-    return Number.isFinite(n) && n > 0 ? n : 1;
-  });
-
-  useEffect(() => {
-    try { sessionStorage.setItem(HISTORY_FILTERS_KEY, JSON.stringify(filters)); } catch { /* ignore */ }
-  }, [filters]);
-
-  useEffect(() => {
-    try { sessionStorage.setItem(HISTORY_SORT_KEY, sort); } catch { /* ignore */ }
-  }, [sort]);
-
-  useEffect(() => {
-    try { sessionStorage.setItem(HISTORY_PAGE_KEY, String(page)); } catch { /* ignore */ }
-  }, [page]);
 
   const filteredHistory = history.filter((a) => {
     if (filters.q.trim() && !a.url.toLowerCase().includes(filters.q.trim().toLowerCase())) return false;
@@ -110,7 +116,8 @@ const SeoAudit = () => {
   const totalPages = Math.max(1, Math.ceil(filteredHistory.length / PAGE_SIZE));
   const safePage = Math.min(page, totalPages);
   useEffect(() => {
-    if (safePage !== page) setPage(safePage);
+    if (safePage !== page) updateParams({ page: safePage === 1 ? null : String(safePage) });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [safePage, page]);
   const pagedHistory = filteredHistory.slice((safePage - 1) * PAGE_SIZE, safePage * PAGE_SIZE);
 
@@ -323,7 +330,7 @@ const SeoAudit = () => {
                 type="button"
                 variant="ghost"
                 size="sm"
-                onClick={() => { setFilters(defaultFilters); setSort(defaultSort); setPage(1); }}
+                onClick={() => updateParams({ q: null, score: null, deep: null, sort: null, page: null })}
                 disabled={!filtersActive && sort === defaultSort}
                 className="h-10"
               >
