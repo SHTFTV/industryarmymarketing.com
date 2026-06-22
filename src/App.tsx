@@ -37,6 +37,7 @@ import GuestPost from "./pages/GuestPost.tsx";
 import ContractorCityPage from "./pages/ContractorCityPage.tsx";
 import SyncAccount from "./pages/SyncAccount.tsx";
 import SeoAudit from "./pages/SeoAudit.tsx";
+import SeoAuditDetail from "./pages/SeoAuditDetail.tsx";
 
 const queryClient = new QueryClient();
 
@@ -67,6 +68,7 @@ const App = () => (
           <Route path="/scan-wizard" element={<ScanWizard />} />
           <Route path="/sync-account" element={<SyncAccount />} />
           <Route path="/seo-audit" element={<SeoAudit />} />
+          <Route path="/seo-audit/:id" element={<SeoAuditDetail />} />
           <Route path="/network" element={<Network />} />
           <Route path="/eyespyr" element={<EyeSpyr />} />
           <Route path="/builder" element={<Builder />} />
