@@ -31,6 +31,7 @@ const cols = [
       { label: "Dofollow Network", to: "/dofollow-backlinks" },
       { label: "Legal Hub", to: "/legal" },
       { label: "Contact", to: "/contact" },
+      { label: "RSS Feed", to: "/rss.xml", external: true },
     ],
   },
 ];
@@ -52,9 +53,18 @@ const Footer = () => {
             <ul className="space-y-2">
               {c.links.map((l) => (
                 <li key={l.label}>
-                  <Link to={l.to} className="text-muted-foreground hover:text-primary text-sm transition-colors">
-                    {l.label}
-                  </Link>
+                  {"external" in l && l.external ? (
+                    <a
+                      href={l.to}
+                      className="text-muted-foreground hover:text-primary text-sm transition-colors"
+                    >
+                      {l.label}
+                    </a>
+                  ) : (
+                    <Link to={l.to} className="text-muted-foreground hover:text-primary text-sm transition-colors">
+                      {l.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
