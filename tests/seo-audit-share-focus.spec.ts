@@ -480,3 +480,81 @@ test("Keyboard activation (Enter and Space) on the Share button fires the toast 
   await expect(statusRegion).toHaveText("");
   await expect(shareBtn).toHaveAttribute("aria-pressed", "false");
 });
+
+test("Repeated Enter presses while the toast is visible never stack toasts or live-region announcements", async ({
+  page,
+  context,
+}) => {
+  await context.grantPermissions(["clipboard-read", "clipboard-write"]);
+
+  await page.addInitScript(
+    ({ host, session }) => {
+      const projectRef = host.split(".")[0];
+      const key = `sb-${projectRef}-auth-token`;
+      try {
+        window.localStorage.setItem(key, JSON.stringify(session));
+      } catch {
+        /* ignore */
+      }
+    },
+    { host: SUPABASE_HOST, session: FAKE_SESSION },
+  );
+
+  await page.route(`https://${SUPABASE_HOST}/**`, async (route) => {
+    const url = route.request().url();
+    if (url.includes("/auth/v1/")) {
+      return route.fulfill({
+        status: 200,
+        contentType: "application/json",
+        body: JSON.stringify(FAKE_SESSION),
+      });
+    }
+    if (url.includes("/rest/v1/seo_audits")) {
+      return route.fulfill({
+        status: 200,
+        contentType: "application/json",
+        body: JSON.stringify([FAKE_AUDIT]),
+      });
+    }
+    return route.fulfill({ status: 200, contentType: "application/json", body: "[]" });
+  });
+
+  await page.goto("/seo-audit", { waitUntil: "domcontentloaded" });
+
+  const shareBtn = page.getByRole("button", {
+    name: /copy shareable link to this audit history view/i,
+  });
+  await expect(shareBtn).toBeVisible({ timeout: 10_000 });
+
+  await shareBtn.focus();
+
+  // Hammer Enter while the toast is still visible.
+  for (let i = 0; i < 8; i++) {
+    await page.keyboard.press("Enter");
+  }
+
+  const toastByText = page.locator("[data-sonner-toast]", {
+    hasText: /link copied to clipboard/i,
+  });
+  const liveWithCopy = page
+    .locator("[aria-live]")
+    .filter({ hasText: /link copied to clipboard/i });
+  const statusRegion = page.locator('[role="status"][aria-live="polite"]');
+
+  // Single toast, single live-region container, single sr-only status node.
+  await expect(toastByText).toHaveCount(1, { timeout: 3_000 });
+  await expect(liveWithCopy).toHaveCount(1);
+  await expect(statusRegion).toHaveCount(1);
+  await expect(statusRegion).toHaveText(/^link copied to clipboard$/i);
+
+  // Even after waiting briefly (so any queued duplicate toasts would surface),
+  // the counts must remain at one.
+  await page.waitForTimeout(500);
+  await expect(toastByText).toHaveCount(1);
+  await expect(liveWithCopy).toHaveCount(1);
+
+  // After the 2s auto-dismiss everything clears back to baseline.
+  await expect(toastByText).toHaveCount(0, { timeout: 6_000 });
+  await expect(liveWithCopy).toHaveCount(0);
+  await expect(statusRegion).toHaveText("");
+});
