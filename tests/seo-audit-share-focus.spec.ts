@@ -942,6 +942,75 @@ test.describe("Safari/iOS emulation: execCommand('copy') unavailable", () => {
 
     expect(pageErrors, `page errors: ${pageErrors.join("; ")}`).toEqual([]);
   });
+
+  test("On iOS with no navigator.clipboard AND execCommand('copy') returning false, the accessible error toast appears", async ({
+    page,
+    context,
+  }) => {
+    await context.clearPermissions();
+    await stubSupabase(page);
+
+    // iOS Safari webview variant: navigator.clipboard is unavailable and the
+    // deprecated execCommand("copy") silently returns false (no throw, no
+    // copy). Both paths fail and the app must surface the error toast.
+    await page.addInitScript(() => {
+      try {
+        Object.defineProperty(navigator, "clipboard", {
+          configurable: true,
+          get() {
+            return undefined;
+          },
+        });
+      } catch {
+        /* ignore */
+      }
+      document.execCommand = ((cmd: string) => {
+        if (cmd === "copy") return false;
+        return false;
+      }) as typeof document.execCommand;
+    });
+
+    await page.goto("/seo-audit", { waitUntil: "domcontentloaded" });
+
+    const shareBtn = page.getByRole("button", {
+      name: /copy shareable link to this audit history view/i,
+    });
+    await expect(shareBtn).toBeVisible({ timeout: 10_000 });
+
+    const pageErrors: string[] = [];
+    page.on("pageerror", (err) => pageErrors.push(err.message));
+
+    await shareBtn.tap();
+
+    const errorToast = page.locator("[data-sonner-toast]", {
+      hasText: /could not copy link/i,
+    });
+    await expect(errorToast).toHaveCount(1, { timeout: 3_000 });
+    expect(await errorToast.first().getAttribute("data-type")).toBe("error");
+
+    const liveWithError = page
+      .locator("[aria-live]")
+      .filter({ hasText: /could not copy link/i });
+    await expect(liveWithError.first()).toBeVisible({ timeout: 3_000 });
+    const liveValue = await liveWithError.first().getAttribute("aria-live");
+    expect(["polite", "assertive"]).toContain(liveValue);
+
+    // No success leakage anywhere.
+    await expect(
+      page.locator("[data-sonner-toast]", { hasText: /link copied to clipboard/i }),
+    ).toHaveCount(0);
+    await expect(
+      page.locator("[aria-live]").filter({ hasText: /link copied to clipboard/i }),
+    ).toHaveCount(0);
+
+    // Button stays idle: no Copied state, accessible name unchanged.
+    await expect(shareBtn).toHaveAttribute("aria-pressed", "false");
+    await expect(shareBtn).toHaveAccessibleName(
+      /copy shareable link to this audit history view/i,
+    );
+
+    expect(pageErrors, `page errors: ${pageErrors.join("; ")}`).toEqual([]);
+  });
 });
 
 test("Keyboard activation (Enter and Space) on the Share button fires the toast and live-region announcement", async ({
