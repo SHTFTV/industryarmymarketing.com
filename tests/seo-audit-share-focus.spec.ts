@@ -370,6 +370,106 @@ test("Rapid clicks on the Share button collapse into a single toast and a single
   await expect(statusRegion).toHaveText("");
 });
 
+test("Holding Enter on the Share button still produces exactly one toast and one live-region announcement", async ({
+  page,
+  context,
+}) => {
+  await context.grantPermissions(["clipboard-read", "clipboard-write"]);
+
+  await page.addInitScript(
+    ({ host, session }) => {
+      const projectRef = host.split(".")[0];
+      const key = `sb-${projectRef}-auth-token`;
+      try {
+        window.localStorage.setItem(key, JSON.stringify(session));
+      } catch {
+        /* ignore */
+      }
+    },
+    { host: SUPABASE_HOST, session: FAKE_SESSION },
+  );
+
+  await page.route(`https://${SUPABASE_HOST}/**`, async (route) => {
+    const url = route.request().url();
+    if (url.includes("/auth/v1/")) {
+      return route.fulfill({
+        status: 200,
+        contentType: "application/json",
+        body: JSON.stringify(FAKE_SESSION),
+      });
+    }
+    if (url.includes("/rest/v1/seo_audits")) {
+      return route.fulfill({
+        status: 200,
+        contentType: "application/json",
+        body: JSON.stringify([FAKE_AUDIT]),
+      });
+    }
+    return route.fulfill({ status: 200, contentType: "application/json", body: "[]" });
+  });
+
+  await page.goto("/seo-audit", { waitUntil: "domcontentloaded" });
+
+  const shareBtn = page.getByRole("button", {
+    name: /copy shareable link to this audit history view/i,
+  });
+  await expect(shareBtn).toBeVisible({ timeout: 10_000 });
+
+  await shareBtn.focus();
+
+  // Simulate the user holding the Enter key down. Playwright's
+  // keyboard.down() fires a single non-repeat keydown, so we follow up
+  // with synthetic repeat events dispatched at the focused element —
+  // mirroring the OS auto-repeat behaviour every ~30ms for ~600ms.
+  await page.keyboard.down("Enter");
+  await page.evaluate(async () => {
+    const target = document.activeElement as HTMLElement | null;
+    if (!target) return;
+    for (let i = 0; i < 20; i++) {
+      target.dispatchEvent(
+        new KeyboardEvent("keydown", {
+          key: "Enter",
+          code: "Enter",
+          repeat: true,
+          bubbles: true,
+          cancelable: true,
+        }),
+      );
+      // A real "Enter held down" also re-fires click on the active button
+      // each repeat — mirror that so we exercise the copy handler the same
+      // way the browser would.
+      if (target instanceof HTMLButtonElement) target.click();
+      await new Promise((r) => setTimeout(r, 30));
+    }
+  });
+  await page.keyboard.up("Enter");
+
+  const toastByText = page.locator("[data-sonner-toast]", {
+    hasText: /link copied to clipboard/i,
+  });
+  const liveWithCopy = page
+    .locator("[aria-live]")
+    .filter({ hasText: /link copied to clipboard/i });
+  const statusRegion = page.locator('[role="status"][aria-live="polite"]');
+
+  // During the visible lifecycle: exactly one of each.
+  await expect(toastByText).toHaveCount(1, { timeout: 3_000 });
+  await expect(liveWithCopy).toHaveCount(1);
+  await expect(statusRegion).toHaveCount(1);
+  await expect(statusRegion).toHaveText(/^link copied to clipboard$/i);
+
+  // Hold one more brief settle window — any queued duplicate toasts would
+  // surface here. Count must stay at one.
+  await page.waitForTimeout(500);
+  await expect(toastByText).toHaveCount(1);
+  await expect(liveWithCopy).toHaveCount(1);
+
+  // After the 2s auto-dismiss everything clears.
+  await expect(toastByText).toHaveCount(0, { timeout: 6_000 });
+  await expect(liveWithCopy).toHaveCount(0);
+  await expect(statusRegion).toHaveText("");
+});
+
 test("Keyboard activation (Enter and Space) on the Share button fires the toast and live-region announcement", async ({
   page,
   context,
