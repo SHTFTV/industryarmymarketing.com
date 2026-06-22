@@ -1,4 +1,5 @@
 import { test, expect } from "../playwright-fixture";
+import { devices } from "@playwright/test";
 
 /**
  * E2E: the Share button on the SEO Audit history must regain keyboard focus
@@ -794,6 +795,153 @@ test("Share flow surfaces the accessible error toast when both clipboard and exe
 
   // No uncaught errors leaked from either copy path.
   expect(pageErrors, `page errors: ${pageErrors.join("; ")}`).toEqual([]);
+});
+
+test.describe("Safari/iOS emulation: execCommand('copy') unavailable", () => {
+  test.use({ ...devices["iPhone 13"] });
+
+  const stubSupabase = async (page: import("@playwright/test").Page) => {
+    await page.addInitScript(
+      ({ host, session }) => {
+        const projectRef = host.split(".")[0];
+        const key = `sb-${projectRef}-auth-token`;
+        try {
+          window.localStorage.setItem(key, JSON.stringify(session));
+        } catch {
+          /* ignore */
+        }
+      },
+      { host: SUPABASE_HOST, session: FAKE_SESSION },
+    );
+    await page.route(`https://${SUPABASE_HOST}/**`, async (route) => {
+      const url = route.request().url();
+      if (url.includes("/auth/v1/")) {
+        return route.fulfill({
+          status: 200,
+          contentType: "application/json",
+          body: JSON.stringify(FAKE_SESSION),
+        });
+      }
+      if (url.includes("/rest/v1/seo_audits")) {
+        return route.fulfill({
+          status: 200,
+          contentType: "application/json",
+          body: JSON.stringify([FAKE_AUDIT]),
+        });
+      }
+      return route.fulfill({ status: 200, contentType: "application/json", body: "[]" });
+    });
+  };
+
+  test("Primary navigator.clipboard path still succeeds on iOS when execCommand('copy') throws", async ({
+    page,
+    context,
+  }) => {
+    await context.grantPermissions(["clipboard-read", "clipboard-write"]);
+    await stubSupabase(page);
+
+    // Mirror Safari/iOS behaviour: execCommand("copy") throws (or returns
+    // false) inside a user-activated handler. Our fallback must not be
+    // reached because navigator.clipboard succeeds first.
+    await page.addInitScript(() => {
+      document.execCommand = ((cmd: string) => {
+        if (cmd === "copy") {
+          throw new DOMException("execCommand copy unsupported on iOS", "NotSupportedError");
+        }
+        return false;
+      }) as typeof document.execCommand;
+    });
+
+    await page.goto("/seo-audit", { waitUntil: "domcontentloaded" });
+
+    const shareBtn = page.getByRole("button", {
+      name: /copy shareable link to this audit history view/i,
+    });
+    await expect(shareBtn).toBeVisible({ timeout: 10_000 });
+
+    const pageErrors: string[] = [];
+    page.on("pageerror", (err) => pageErrors.push(err.message));
+
+    // Tap (iOS) instead of click to mirror the real interaction.
+    await shareBtn.tap();
+
+    const successToast = page.locator("[data-sonner-toast]", {
+      hasText: /link copied to clipboard/i,
+    });
+    await expect(successToast).toHaveCount(1, { timeout: 3_000 });
+    expect(await successToast.first().getAttribute("data-type")).toBe("success");
+
+    await expect(shareBtn).toHaveAttribute("aria-pressed", "true");
+    await expect(
+      page.locator("[data-sonner-toast]", { hasText: /could not copy link/i }),
+    ).toHaveCount(0);
+
+    const clipboardText = await page.evaluate(() => navigator.clipboard.readText());
+    expect(clipboardText).toBe(page.url());
+
+    expect(pageErrors, `page errors: ${pageErrors.join("; ")}`).toEqual([]);
+  });
+
+  test("On iOS with no navigator.clipboard AND execCommand('copy') throwing, the accessible error toast appears", async ({
+    page,
+    context,
+  }) => {
+    await context.clearPermissions();
+    await stubSupabase(page);
+
+    // Older iOS Safari: navigator.clipboard is absent and the deprecated
+    // execCommand("copy") throws inside a webview. Both copy paths fail.
+    await page.addInitScript(() => {
+      try {
+        Object.defineProperty(navigator, "clipboard", {
+          configurable: true,
+          get() {
+            return undefined;
+          },
+        });
+      } catch {
+        /* ignore */
+      }
+      document.execCommand = ((cmd: string) => {
+        if (cmd === "copy") {
+          throw new DOMException("execCommand copy unsupported on iOS", "NotSupportedError");
+        }
+        return false;
+      }) as typeof document.execCommand;
+    });
+
+    await page.goto("/seo-audit", { waitUntil: "domcontentloaded" });
+
+    const shareBtn = page.getByRole("button", {
+      name: /copy shareable link to this audit history view/i,
+    });
+    await expect(shareBtn).toBeVisible({ timeout: 10_000 });
+
+    const pageErrors: string[] = [];
+    page.on("pageerror", (err) => pageErrors.push(err.message));
+
+    await shareBtn.tap();
+
+    const errorToast = page.locator("[data-sonner-toast]", {
+      hasText: /could not copy link/i,
+    });
+    await expect(errorToast).toHaveCount(1, { timeout: 3_000 });
+    expect(await errorToast.first().getAttribute("data-type")).toBe("error");
+
+    const liveWithError = page
+      .locator("[aria-live]")
+      .filter({ hasText: /could not copy link/i });
+    await expect(liveWithError.first()).toBeVisible({ timeout: 3_000 });
+    const liveValue = await liveWithError.first().getAttribute("aria-live");
+    expect(["polite", "assertive"]).toContain(liveValue);
+
+    await expect(
+      page.locator("[data-sonner-toast]", { hasText: /link copied to clipboard/i }),
+    ).toHaveCount(0);
+    await expect(shareBtn).toHaveAttribute("aria-pressed", "false");
+
+    expect(pageErrors, `page errors: ${pageErrors.join("; ")}`).toEqual([]);
+  });
 });
 
 test("Keyboard activation (Enter and Space) on the Share button fires the toast and live-region announcement", async ({
