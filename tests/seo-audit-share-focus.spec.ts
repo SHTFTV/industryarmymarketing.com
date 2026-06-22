@@ -1,4 +1,5 @@
 import { test, expect } from "../playwright-fixture";
+import { devices } from "@playwright/test";
 
 /**
  * E2E: the Share button on the SEO Audit history must regain keyboard focus
