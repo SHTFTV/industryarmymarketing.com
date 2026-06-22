@@ -53,6 +53,45 @@ export type Database = {
         }
         Relationships: []
       }
+      seo_audits: {
+        Row: {
+          checks: Json
+          created_at: string
+          deep_dive: Json | null
+          id: string
+          meta: Json
+          score: number
+          status: number | null
+          ttfb: number | null
+          url: string
+          user_id: string
+        }
+        Insert: {
+          checks?: Json
+          created_at?: string
+          deep_dive?: Json | null
+          id?: string
+          meta?: Json
+          score?: number
+          status?: number | null
+          ttfb?: number | null
+          url: string
+          user_id: string
+        }
+        Update: {
+          checks?: Json
+          created_at?: string
+          deep_dive?: Json | null
+          id?: string
+          meta?: Json
+          score?: number
+          status?: number | null
+          ttfb?: number | null
+          url?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       user_trade_preferences: {
         Row: {
           industry: string
