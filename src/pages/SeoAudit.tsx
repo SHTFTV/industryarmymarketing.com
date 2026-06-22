@@ -126,8 +126,19 @@ const SeoAudit = () => {
     // in insecure contexts (http://, embedded webviews) and older browsers
     // where navigator.clipboard is unavailable or blocked.
     if (!copied) {
+      // Save the user's current selection + focus so we can restore them
+      // after the temporary textarea is removed.
+      const previousActive = document.activeElement as HTMLElement | null;
+      const selection = document.getSelection();
+      const savedRanges: Range[] = [];
+      if (selection) {
+        for (let i = 0; i < selection.rangeCount; i++) {
+          savedRanges.push(selection.getRangeAt(i).cloneRange());
+        }
+      }
+
+      const ta = document.createElement("textarea");
       try {
-        const ta = document.createElement("textarea");
         ta.value = text;
         ta.setAttribute("readonly", "");
         ta.style.position = "fixed";
@@ -140,9 +151,22 @@ const SeoAudit = () => {
         ta.select();
         ta.setSelectionRange(0, text.length);
         copied = document.execCommand("copy");
-        document.body.removeChild(ta);
       } catch {
         copied = false;
+      } finally {
+        if (ta.parentNode) ta.parentNode.removeChild(ta);
+        // Restore the previous selection ranges.
+        if (selection) {
+          selection.removeAllRanges();
+          for (const range of savedRanges) {
+            try { selection.addRange(range); } catch { /* ignore */ }
+          }
+        }
+        // Restore focus to the previously focused element (typically the
+        // Share button) so the user's keyboard position is preserved.
+        if (previousActive && typeof previousActive.focus === "function") {
+          previousActive.focus();
+        }
       }
     }
 
