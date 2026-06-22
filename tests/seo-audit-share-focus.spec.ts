@@ -833,6 +833,138 @@ test("Share flow surfaces the accessible error toast when both clipboard and exe
   expect(pageErrors, `page errors: ${pageErrors.join("; ")}`).toEqual([]);
 });
 
+test.describe("Firefox desktop: execCommand fallback cleanup and selection restoration", () => {
+  test.use({ browserName: "firefox" });
+
+  test("Temp textarea is removed and the previous selection is restored after execCommand('copy') succeeds in Firefox", async ({
+    page,
+    context,
+  }) => {
+    // Firefox does not currently honour Chromium's clipboard permission
+    // grants the same way, and we want to force the fallback path anyway,
+    // so we stub navigator.clipboard out entirely.
+    await context.clearPermissions();
+
+    await page.addInitScript(
+      ({ host, session }) => {
+        const projectRef = host.split(".")[0];
+        const key = `sb-${projectRef}-auth-token`;
+        try {
+          window.localStorage.setItem(key, JSON.stringify(session));
+        } catch {
+          /* ignore */
+        }
+      },
+      { host: SUPABASE_HOST, session: FAKE_SESSION },
+    );
+
+    await page.addInitScript(() => {
+      try {
+        Object.defineProperty(navigator, "clipboard", {
+          configurable: true,
+          get() {
+            return undefined;
+          },
+        });
+      } catch {
+        /* ignore */
+      }
+      // Make execCommand("copy") succeed and record the selection it was
+      // given so the test can assert the fallback ran with the right value.
+      (window as unknown as { __execCopyCalls: string[] }).__execCopyCalls = [];
+      document.execCommand = ((cmd: string) => {
+        if (cmd === "copy") {
+          const sel = window.getSelection()?.toString() ?? "";
+          (window as unknown as { __execCopyCalls: string[] }).__execCopyCalls.push(sel);
+          return true;
+        }
+        return false;
+      }) as typeof document.execCommand;
+    });
+
+    await page.route(`https://${SUPABASE_HOST}/**`, async (route) => {
+      const url = route.request().url();
+      if (url.includes("/auth/v1/")) {
+        return route.fulfill({
+          status: 200,
+          contentType: "application/json",
+          body: JSON.stringify(FAKE_SESSION),
+        });
+      }
+      if (url.includes("/rest/v1/seo_audits")) {
+        return route.fulfill({
+          status: 200,
+          contentType: "application/json",
+          body: JSON.stringify([FAKE_AUDIT]),
+        });
+      }
+      return route.fulfill({ status: 200, contentType: "application/json", body: "[]" });
+    });
+
+    await page.goto("/seo-audit", { waitUntil: "domcontentloaded" });
+
+    expect(await page.evaluate(() => typeof (navigator as Navigator).clipboard)).toBe(
+      "undefined",
+    );
+
+    const shareBtn = page.getByRole("button", {
+      name: /copy shareable link to this audit history view/i,
+    });
+    await expect(shareBtn).toBeVisible({ timeout: 10_000 });
+
+    // Baseline <textarea> count before the fallback runs.
+    const baselineTextareas = await page.locator("textarea").count();
+
+    // Select the "Audit History" heading text and trigger via Alt+S so the
+    // click doesn't clear the user's selection.
+    const selectionTarget = page.locator("h2", { hasText: /audit history/i }).first();
+    await expect(selectionTarget).toBeVisible();
+    await page.evaluate((el) => {
+      const range = document.createRange();
+      range.selectNodeContents(el as Node);
+      const sel = window.getSelection();
+      sel?.removeAllRanges();
+      sel?.addRange(range);
+    }, await selectionTarget.elementHandle());
+
+    const originalSelection = await page.evaluate(
+      () => window.getSelection()?.toString() ?? "",
+    );
+    expect(originalSelection.length).toBeGreaterThan(0);
+
+    const pageErrors: string[] = [];
+    page.on("pageerror", (err) => pageErrors.push(err.message));
+
+    await page.keyboard.press("Alt+S");
+
+    // Success toast appears (fallback handled the copy).
+    const successToast = page.locator("[data-sonner-toast]", {
+      hasText: /link copied to clipboard/i,
+    });
+    await expect(successToast).toHaveCount(1, { timeout: 3_000 });
+    expect(await successToast.first().getAttribute("data-type")).toBe("success");
+    await expect(shareBtn).toHaveAttribute("aria-pressed", "true");
+
+    // Fallback actually ran with the share URL selected in the textarea.
+    const execCalls = await page.evaluate(
+      () => (window as unknown as { __execCopyCalls: string[] }).__execCopyCalls,
+    );
+    expect(execCalls.length).toBeGreaterThanOrEqual(1);
+    expect(execCalls[0]).toBe(page.url());
+
+    // Cleanup: temp <textarea> removed.
+    await expect.poll(() => page.locator("textarea").count()).toBe(baselineTextareas);
+
+    // Selection restored to the original heading text.
+    const restoredSelection = await page.evaluate(
+      () => window.getSelection()?.toString() ?? "",
+    );
+    expect(restoredSelection).toBe(originalSelection);
+
+    expect(pageErrors, `page errors: ${pageErrors.join("; ")}`).toEqual([]);
+  });
+});
+
 test.describe("Safari/iOS emulation: execCommand('copy') unavailable", () => {
   test.use({ ...devices["iPhone 13"] });
 
