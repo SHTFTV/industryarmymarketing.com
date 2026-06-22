@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, NavLink } from "react-router-dom";
+import { Rss } from "lucide-react";
 
 const navLinks = [
   { label: "Home", to: "/" },
@@ -41,6 +42,14 @@ const Navbar = () => {
               {link.label}
             </NavLink>
           ))}
+          <a
+            href="/rss.xml"
+            aria-label="Subscribe to the Industry Army Marketing RSS feed"
+            title="RSS feed"
+            className="text-muted-foreground hover:text-primary transition-colors"
+          >
+            <Rss size={16} />
+          </a>
         </div>
 
         {/* Mobile toggle */}
