@@ -67,15 +67,21 @@ const SeoAuditDetail = () => {
           <nav aria-label="Breadcrumb" className="mb-4">
             <ol className="flex items-center gap-2 text-xs uppercase tracking-widest text-muted-foreground">
               <li>
-                <Link to="/" className="hover:text-primary transition-colors">Home</Link>
+                <Link to="/" className="hover:text-primary hover:underline underline-offset-4 transition-colors">
+                  Home
+                </Link>
               </li>
               <li aria-hidden="true"><ChevronRight size={12} /></li>
               <li>
-                <Link to="/seo-audit" className="hover:text-primary transition-colors">SEO Audit</Link>
+                <Link to="/seo-audit" className="hover:text-primary hover:underline underline-offset-4 transition-colors">
+                  SEO Audit
+                </Link>
               </li>
               <li aria-hidden="true"><ChevronRight size={12} /></li>
               <li>
-                <Link to="/seo-audit" className="hover:text-primary transition-colors">History</Link>
+                <Link to="/seo-audit#history" className="hover:text-primary hover:underline underline-offset-4 transition-colors">
+                  Audit History
+                </Link>
               </li>
               <li aria-hidden="true"><ChevronRight size={12} /></li>
               <li className="text-foreground truncate max-w-[40ch]" aria-current="page">
