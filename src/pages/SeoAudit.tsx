@@ -34,6 +34,8 @@ interface AuditRow {
 }
 
 const HISTORY_FILTERS_KEY = "seoAudit.historyFilters.v1";
+const HISTORY_PAGE_KEY = "seoAudit.historyPage.v1";
+const PAGE_SIZE = 5;
 type ScoreFilter = "all" | "high" | "mid" | "low";
 type DeepFilter = "all" | "with" | "without";
 interface HistoryFilters { q: string; score: ScoreFilter; deep: DeepFilter; }
@@ -58,10 +60,19 @@ const SeoAudit = () => {
   const [history, setHistory] = useState<AuditRow[]>([]);
   const [currentAuditId, setCurrentAuditId] = useState<string | null>(null);
   const [filters, setFilters] = useState<HistoryFilters>(loadFilters);
+  const [page, setPage] = useState<number>(() => {
+    if (typeof window === "undefined") return 1;
+    const n = parseInt(sessionStorage.getItem(HISTORY_PAGE_KEY) ?? "1", 10);
+    return Number.isFinite(n) && n > 0 ? n : 1;
+  });
 
   useEffect(() => {
     try { sessionStorage.setItem(HISTORY_FILTERS_KEY, JSON.stringify(filters)); } catch { /* ignore */ }
   }, [filters]);
+
+  useEffect(() => {
+    try { sessionStorage.setItem(HISTORY_PAGE_KEY, String(page)); } catch { /* ignore */ }
+  }, [page]);
 
   const filteredHistory = history.filter((a) => {
     if (filters.q.trim() && !a.url.toLowerCase().includes(filters.q.trim().toLowerCase())) return false;
@@ -73,6 +84,13 @@ const SeoAudit = () => {
     return true;
   });
   const filtersActive = filters.q !== "" || filters.score !== "all" || filters.deep !== "all";
+
+  const totalPages = Math.max(1, Math.ceil(filteredHistory.length / PAGE_SIZE));
+  const safePage = Math.min(page, totalPages);
+  useEffect(() => {
+    if (safePage !== page) setPage(safePage);
+  }, [safePage, page]);
+  const pagedHistory = filteredHistory.slice((safePage - 1) * PAGE_SIZE, safePage * PAGE_SIZE);
 
   const loadHistory = useCallback(async (uid: string) => {
     const { data, error } = await supabase
@@ -271,7 +289,7 @@ const SeoAudit = () => {
                 type="button"
                 variant="ghost"
                 size="sm"
-                onClick={() => setFilters(defaultFilters)}
+                onClick={() => { setFilters(defaultFilters); setPage(1); }}
                 disabled={!filtersActive}
                 className="h-10"
               >
@@ -280,12 +298,12 @@ const SeoAudit = () => {
             </div>
 
             <ul className="divide-y divide-border">
-              {filteredHistory.length === 0 && (
+              {pagedHistory.length === 0 && (
                 <li className="py-6 text-sm text-muted-foreground text-center">
                   No audits match your filters.
                 </li>
               )}
-              {filteredHistory.map((a) => {
+              {pagedHistory.map((a) => {
                 const sc = a.score >= 80 ? "text-primary" : a.score >= 50 ? "text-yellow-400" : "text-red-400";
                 const isCurrent = currentAuditId === a.id;
                 return (
@@ -317,6 +335,36 @@ const SeoAudit = () => {
                 );
               })}
             </ul>
+
+            {totalPages > 1 && (
+              <div className="flex items-center justify-between gap-3 mt-5 pt-4 border-t border-border">
+                <p className="text-xs text-muted-foreground">
+                  Page <span className="text-foreground">{safePage}</span> of {totalPages}
+                </p>
+                <div className="flex items-center gap-2">
+                  <Button
+                    type="button"
+                    size="sm"
+                    variant="secondary"
+                    onClick={() => setPage((p) => Math.max(1, p - 1))}
+                    disabled={safePage <= 1}
+                    className="h-8"
+                  >
+                    Previous
+                  </Button>
+                  <Button
+                    type="button"
+                    size="sm"
+                    variant="secondary"
+                    onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
+                    disabled={safePage >= totalPages}
+                    className="h-8"
+                  >
+                    Next
+                  </Button>
+                </div>
+              </div>
+            )}
           </Card>
         )}
 
