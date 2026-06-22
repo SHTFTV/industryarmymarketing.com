@@ -369,3 +369,114 @@ test("Rapid clicks on the Share button collapse into a single toast and a single
   await expect(liveWithCopy).toHaveCount(0);
   await expect(statusRegion).toHaveText("");
 });
+
+test("Keyboard activation (Enter and Space) on the Share button fires the toast and live-region announcement", async ({
+  page,
+  context,
+}) => {
+  await context.grantPermissions(["clipboard-read", "clipboard-write"]);
+
+  await page.addInitScript(
+    ({ host, session }) => {
+      const projectRef = host.split(".")[0];
+      const key = `sb-${projectRef}-auth-token`;
+      try {
+        window.localStorage.setItem(key, JSON.stringify(session));
+      } catch {
+        /* ignore */
+      }
+    },
+    { host: SUPABASE_HOST, session: FAKE_SESSION },
+  );
+
+  await page.route(`https://${SUPABASE_HOST}/**`, async (route) => {
+    const url = route.request().url();
+    if (url.includes("/auth/v1/")) {
+      return route.fulfill({
+        status: 200,
+        contentType: "application/json",
+        body: JSON.stringify(FAKE_SESSION),
+      });
+    }
+    if (url.includes("/rest/v1/seo_audits")) {
+      return route.fulfill({
+        status: 200,
+        contentType: "application/json",
+        body: JSON.stringify([FAKE_AUDIT]),
+      });
+    }
+    return route.fulfill({ status: 200, contentType: "application/json", body: "[]" });
+  });
+
+  await page.goto("/seo-audit", { waitUntil: "domcontentloaded" });
+
+  const shareBtn = page.getByRole("button", {
+    name: /copy shareable link to this audit history view/i,
+  });
+  await expect(shareBtn).toBeVisible({ timeout: 10_000 });
+
+  const statusRegion = page.locator('[role="status"][aria-live="polite"]');
+  const toastByText = page.locator("[data-sonner-toast]", {
+    hasText: /link copied to clipboard/i,
+  });
+  const liveWithCopy = page
+    .locator("[aria-live]")
+    .filter({ hasText: /link copied to clipboard/i });
+
+  // Tab forward from the document body until focus lands on the Share button.
+  // Capping at 50 Tabs prevents an infinite loop if the layout changes; in
+  // practice the Share button is reached well before that.
+  await page.evaluate(() => (document.activeElement as HTMLElement | null)?.blur());
+  for (let i = 0; i < 50; i++) {
+    const onShare = await page.evaluate(() => {
+      const el = document.activeElement as HTMLElement | null;
+      return !!el && el.getAttribute("aria-label")?.toLowerCase().includes("copy shareable link");
+    });
+    if (onShare) break;
+    await page.keyboard.press("Tab");
+  }
+  await expect
+    .poll(() => page.evaluate(() => document.activeElement?.getAttribute("aria-label") ?? ""))
+    .toMatch(/copy shareable link/i);
+
+  // --- Activate with Enter ---
+  await page.keyboard.press("Enter");
+
+  await expect(toastByText).toHaveCount(1, { timeout: 3_000 });
+  await expect(liveWithCopy.first()).toBeVisible();
+  await expect(statusRegion).toHaveText(/link copied to clipboard/i);
+  await expect(
+    page.getByRole("button", { name: /^link copied to clipboard$/i }),
+  ).toBeVisible();
+  await expect
+    .poll(() => page.evaluate(() => document.activeElement?.getAttribute("aria-label") ?? ""))
+    .toMatch(/link copied to clipboard/i);
+
+  // Let the 2s auto-dismiss complete so the next activation starts clean.
+  await expect(toastByText).toHaveCount(0, { timeout: 6_000 });
+  await expect(statusRegion).toHaveText("");
+  await expect(shareBtn).toHaveAttribute("aria-pressed", "false");
+
+  // Focus should still be on the Share button (auto-restore after dismiss).
+  await expect
+    .poll(() => page.evaluate(() => document.activeElement?.getAttribute("aria-label") ?? ""))
+    .toMatch(/copy shareable link/i);
+
+  // --- Activate with Space ---
+  await page.keyboard.press("Space");
+
+  await expect(toastByText).toHaveCount(1, { timeout: 3_000 });
+  await expect(liveWithCopy.first()).toBeVisible();
+  await expect(statusRegion).toHaveText(/link copied to clipboard/i);
+  await expect(
+    page.getByRole("button", { name: /^link copied to clipboard$/i }),
+  ).toBeVisible();
+  await expect
+    .poll(() => page.evaluate(() => document.activeElement?.getAttribute("aria-pressed") ?? ""))
+    .toBe("true");
+
+  // And again, everything clears after auto-dismiss.
+  await expect(toastByText).toHaveCount(0, { timeout: 6_000 });
+  await expect(statusRegion).toHaveText("");
+  await expect(shareBtn).toHaveAttribute("aria-pressed", "false");
+});
