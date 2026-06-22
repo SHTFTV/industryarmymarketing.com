@@ -1673,6 +1673,128 @@ test.describe("Safari/iOS emulation: execCommand('copy') unavailable", () => {
     // The NotAllowedError must be caught — no uncaught page errors.
     expect(pageErrors, `page errors: ${pageErrors.join("; ")}`).toEqual([]);
   });
+
+  test("On iOS with no navigator.clipboard, a successful execCommand('copy') fires the success toast and restores selection + focus", async ({
+    page,
+    context,
+  }) => {
+    await context.clearPermissions();
+    await stubSupabase(page);
+
+    // iOS Safari happy-path fallback: navigator.clipboard is unavailable
+    // but the hidden-textarea + document.execCommand("copy") path succeeds.
+    // After success the temp textarea must be removed, the user's
+    // original selection restored, and focus returned to the Share button.
+    await page.addInitScript(() => {
+      try {
+        Object.defineProperty(navigator, "clipboard", {
+          configurable: true,
+          get() {
+            return undefined;
+          },
+        });
+      } catch {
+        /* ignore */
+      }
+      (window as unknown as { __execCopyCalls: string[] }).__execCopyCalls = [];
+      document.execCommand = ((cmd: string) => {
+        if (cmd === "copy") {
+          const sel = window.getSelection()?.toString() ?? "";
+          (window as unknown as { __execCopyCalls: string[] }).__execCopyCalls.push(sel);
+          return true;
+        }
+        return false;
+      }) as typeof document.execCommand;
+    });
+
+    await page.goto("/seo-audit", { waitUntil: "domcontentloaded" });
+
+    const shareBtn = page.getByRole("button", {
+      name: /copy shareable link to this audit history view/i,
+    });
+    await expect(shareBtn).toBeVisible({ timeout: 10_000 });
+
+    const baselineTextareas = await page.locator("textarea").count();
+
+    // Focus the Share button first so we can verify focus is restored to it
+    // after the fallback's temp <textarea> mount/unmount cycle.
+    await shareBtn.focus();
+    await expect
+      .poll(() => page.evaluate(() => document.activeElement?.getAttribute("aria-label") ?? ""))
+      .toMatch(/copy shareable link/i);
+
+    // Select on-page text so we can verify selection restoration. Alt+S
+    // (not a tap) preserves the selection through the copy attempt.
+    const selectionTarget = page.locator("h2", { hasText: /audit history/i }).first();
+    await expect(selectionTarget).toBeVisible();
+    await page.evaluate((el) => {
+      const range = document.createRange();
+      range.selectNodeContents(el as Node);
+      const sel = window.getSelection();
+      sel?.removeAllRanges();
+      sel?.addRange(range);
+    }, await selectionTarget.elementHandle());
+
+    const originalSelection = await page.evaluate(
+      () => window.getSelection()?.toString() ?? "",
+    );
+    expect(originalSelection.length).toBeGreaterThan(0);
+
+    const pageErrors: string[] = [];
+    page.on("pageerror", (err) => pageErrors.push(err.message));
+
+    await page.keyboard.press("Alt+S");
+
+    // Accessible success toast — the fallback handled the copy.
+    const successToast = page.locator("[data-sonner-toast]", {
+      hasText: /link copied to clipboard/i,
+    });
+    await expect(successToast).toHaveCount(1, { timeout: 3_000 });
+    expect(await successToast.first().getAttribute("data-type")).toBe("success");
+
+    const liveWithCopy = page
+      .locator("[aria-live]")
+      .filter({ hasText: /link copied to clipboard/i });
+    await expect(liveWithCopy.first()).toBeVisible({ timeout: 3_000 });
+    const liveValue = await liveWithCopy.first().getAttribute("aria-live");
+    expect(["polite", "assertive"]).toContain(liveValue);
+
+    // Button flips to the Copied state with the right ARIA semantics.
+    await expect(
+      page.getByRole("button", { name: /^link copied to clipboard$/i }),
+    ).toBeVisible();
+    await expect(shareBtn).toHaveAttribute("aria-pressed", "true");
+
+    // No error toast leakage.
+    await expect(
+      page.locator("[data-sonner-toast]", { hasText: /could not copy link/i }),
+    ).toHaveCount(0);
+
+    // The fallback actually ran and selected the share URL inside the
+    // temp <textarea> before invoking execCommand("copy").
+    const execCalls = await page.evaluate(
+      () => (window as unknown as { __execCopyCalls: string[] }).__execCopyCalls,
+    );
+    expect(execCalls.length).toBeGreaterThanOrEqual(1);
+    expect(execCalls[0]).toBe(page.url());
+
+    // Cleanup: temp <textarea> removed after the successful copy.
+    await expect.poll(() => page.locator("textarea").count()).toBe(baselineTextareas);
+
+    // Original on-page selection restored — not left pointing at the
+    // (now-removed) temp textarea.
+    const restoredSelection = await page.evaluate(
+      () => window.getSelection()?.toString() ?? "",
+    );
+    expect(restoredSelection).toBe(originalSelection);
+
+    // Focus restored to the Share button (now in its Copied state).
+    await expect
+      .poll(() => page.evaluate(() => document.activeElement?.getAttribute("aria-label") ?? ""))
+      .toMatch(/link copied to clipboard|copy shareable link/i);
+
+    expect(pageErrors, `page errors: ${pageErrors.join("; ")}`).toEqual([]);
+  });
 });
 
 test("Keyboard activation (Enter and Space) on the Share button fires the toast and live-region announcement", async ({
