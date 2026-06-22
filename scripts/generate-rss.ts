@@ -1,9 +1,12 @@
 // Runs before `vite dev` and `vite build`; writes public/rss.xml from blogPosts.ts.
 
-import { readFileSync, writeFileSync } from "fs";
+import { readFileSync, statSync, writeFileSync } from "fs";
 import { resolve } from "path";
 
 const BASE_URL = "https://industryarmymarketing.com";
+const OG_IMAGE_PATH = "/og-image.jpg";
+const OG_IMAGE_URL = `${BASE_URL}${OG_IMAGE_PATH}`;
+const OG_IMAGE_BYTES = statSync(resolve(`public${OG_IMAGE_PATH}`)).size;
 const src = readFileSync(resolve("src/data/blogPosts.ts"), "utf8");
 
 // Each post is a JSON-style object literal; pull the fields we need.
@@ -59,6 +62,7 @@ const items = slugs
       `      <pubDate>${toRfc822(dates[i])}</pubDate>`,
       `      <category>${esc(categories[i])}</category>`,
       `      <description>${esc(descs[i] || excerpts[i])}</description>`,
+      `      <enclosure url="${OG_IMAGE_URL}" length="${OG_IMAGE_BYTES}" type="image/jpeg" />`,
       `    </item>`,
     ].join("\n");
   })
@@ -76,6 +80,11 @@ const xml = [
   `    <language>en-ca</language>`,
   `    <lastBuildDate>${now}</lastBuildDate>`,
   `    <generator>Industry Army Marketing build pipeline</generator>`,
+  `    <image>`,
+  `      <url>${OG_IMAGE_URL}</url>`,
+  `      <title>Industry Army Marketing — Intel Blog</title>`,
+  `      <link>${BASE_URL}/blog</link>`,
+  `    </image>`,
   items,
   `  </channel>`,
   `</rss>`,
