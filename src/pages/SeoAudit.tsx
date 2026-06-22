@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
-import { Check, X, Loader2, Search, Lock, Sparkles, History, Trash2, RotateCcw, ExternalLink, Share2 } from "lucide-react";
+import { Check, X, Loader2, Search, Lock, Sparkles, History, Trash2, RotateCcw, ExternalLink, Share2, ClipboardCheck } from "lucide-react";
 import { Link, useSearchParams } from "react-router-dom";
 import type { User } from "@supabase/supabase-js";
 import Layout from "@/components/Layout";
@@ -92,6 +92,12 @@ const SeoAudit = () => {
   const [user, setUser] = useState<User | null>(null);
   const [history, setHistory] = useState<AuditRow[]>([]);
   const [currentAuditId, setCurrentAuditId] = useState<string | null>(null);
+  const [shareCopied, setShareCopied] = useState(false);
+  useEffect(() => {
+    if (!shareCopied) return;
+    const t = setTimeout(() => setShareCopied(false), 2000);
+    return () => clearTimeout(t);
+  }, [shareCopied]);
 
   const filteredHistory = history.filter((a) => {
     if (filters.q.trim() && !a.url.toLowerCase().includes(filters.q.trim().toLowerCase())) return false;
@@ -291,6 +297,7 @@ const SeoAudit = () => {
                   try {
                     await navigator.clipboard.writeText(shareUrl);
                     toast.success("Link copied to clipboard");
+                    setShareCopied(true);
                   } catch {
                     toast.error("Could not copy link");
                   }
@@ -298,7 +305,11 @@ const SeoAudit = () => {
                 className="ml-auto h-8"
                 aria-label="Copy shareable link to this audit history view"
               >
-                <Share2 size={14} className="mr-1.5" /> Share
+                {shareCopied ? (
+                  <><ClipboardCheck size={14} className="mr-1.5" /> Copied</>
+                ) : (
+                  <><Share2 size={14} className="mr-1.5" /> Share</>
+                )}
               </Button>
             </div>
 
