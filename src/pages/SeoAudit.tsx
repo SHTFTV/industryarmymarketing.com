@@ -109,15 +109,51 @@ const SeoAudit = () => {
   }, [shareCopied]);
 
   const copyShareLink = useCallback(async () => {
+    const text = window.location.href;
+
+    // Primary path: async Clipboard API (secure contexts).
+    let copied = false;
     try {
-      await navigator.clipboard.writeText(window.location.href);
-      // Stable id keeps rapid clicks collapsed into a single visible toast
-      // and a single aria-live announcement.
+      if (navigator.clipboard && typeof navigator.clipboard.writeText === "function") {
+        await navigator.clipboard.writeText(text);
+        copied = true;
+      }
+    } catch {
+      copied = false;
+    }
+
+    // Fallback path: hidden <textarea> + document.execCommand("copy"). Works
+    // in insecure contexts (http://, embedded webviews) and older browsers
+    // where navigator.clipboard is unavailable or blocked.
+    if (!copied) {
+      try {
+        const ta = document.createElement("textarea");
+        ta.value = text;
+        ta.setAttribute("readonly", "");
+        ta.style.position = "fixed";
+        ta.style.top = "-1000px";
+        ta.style.left = "0";
+        ta.style.opacity = "0";
+        ta.style.pointerEvents = "none";
+        document.body.appendChild(ta);
+        ta.focus();
+        ta.select();
+        ta.setSelectionRange(0, text.length);
+        copied = document.execCommand("copy");
+        document.body.removeChild(ta);
+      } catch {
+        copied = false;
+      }
+    }
+
+    // Stable toast id keeps rapid activations collapsed into a single
+    // visible toast and a single aria-live announcement.
+    if (copied) {
       toast.success("Link copied to clipboard", { id: "seo-audit-share-copied" });
       setShareCopied(true);
       // Keep focus on the Share button so keyboard users stay in place.
       requestAnimationFrame(() => shareButtonRef.current?.focus());
-    } catch {
+    } else {
       toast.error("Could not copy link", { id: "seo-audit-share-copied" });
     }
   }, []);
