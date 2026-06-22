@@ -1053,10 +1053,35 @@ test.describe("Safari/iOS emulation: execCommand('copy') unavailable", () => {
     });
     await expect(shareBtn).toBeVisible({ timeout: 10_000 });
 
+    // Capture the count of <textarea> elements before the fallback runs so
+    // we can assert that no leftover temp textarea remains afterwards.
+    const baselineTextareas = await page.locator("textarea").count();
+
+    // Select some text on the page before triggering the copy, so we can
+    // verify the fallback restores the user's original selection. We use the
+    // Alt+S keyboard shortcut (instead of a tap) so the click doesn't clear
+    // the selection itself.
+    const selectionTarget = page.locator("h2", { hasText: /audit history/i }).first();
+    await expect(selectionTarget).toBeVisible();
+    await page.evaluate((el) => {
+      const range = document.createRange();
+      range.selectNodeContents(el as Node);
+      const sel = window.getSelection();
+      sel?.removeAllRanges();
+      sel?.addRange(range);
+    }, await selectionTarget.elementHandle());
+
+    const originalSelection = await page.evaluate(
+      () => window.getSelection()?.toString() ?? "",
+    );
+    expect(originalSelection.length).toBeGreaterThan(0);
+
     const pageErrors: string[] = [];
     page.on("pageerror", (err) => pageErrors.push(err.message));
 
-    await shareBtn.tap();
+    // Trigger via the Alt+S shortcut so the user's selection isn't cleared
+    // by a tap/click on the Share button itself.
+    await page.keyboard.press("Alt+S");
 
     // Success toast with the right semantics.
     const successToast = page.locator("[data-sonner-toast]", {
@@ -1091,6 +1116,17 @@ test.describe("Safari/iOS emulation: execCommand('copy') unavailable", () => {
     );
     expect(execCalls.length).toBeGreaterThanOrEqual(1);
     expect(execCalls[0]).toBe(page.url());
+
+    // The temporary <textarea> used by the fallback must be cleaned up —
+    // no stray textarea elements should remain in the DOM.
+    await expect.poll(() => page.locator("textarea").count()).toBe(baselineTextareas);
+
+    // The user's original text selection must be restored after the
+    // fallback completes, not left pointing at the (now-removed) textarea.
+    const restoredSelection = await page.evaluate(
+      () => window.getSelection()?.toString() ?? "",
+    );
+    expect(restoredSelection).toBe(originalSelection);
 
     expect(pageErrors, `page errors: ${pageErrors.join("; ")}`).toEqual([]);
   });
