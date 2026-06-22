@@ -3,8 +3,32 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { blogPosts } from "@/data/blogPosts";
 
+const monthOrder: Record<string, number> = {
+  January: 0,
+  February: 1,
+  March: 2,
+  April: 3,
+  May: 4,
+  June: 5,
+  July: 6,
+  August: 7,
+  September: 8,
+  October: 9,
+  November: 10,
+  December: 11,
+};
+
+const dateScore = (date: string) => {
+  const [month, year] = date.split(" ");
+  return (Number(year) || 0) * 12 + (monthOrder[month] ?? -1);
+};
+
 const LatestBlogPosts = () => {
-  const latest = blogPosts.slice(0, 4);
+  const latest = blogPosts
+    .map((post, index) => ({ post, index }))
+    .sort((a, b) => dateScore(b.post.date) - dateScore(a.post.date) || b.index - a.index)
+    .slice(0, 4)
+    .map(({ post }) => post);
 
   return (
     <section className="py-20 bg-background">
