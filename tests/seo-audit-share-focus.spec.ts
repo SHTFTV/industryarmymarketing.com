@@ -198,3 +198,85 @@ test("Shift+Tab and Enter keep focus correctly on the Share/Copied button during
     .poll(() => page.evaluate(() => document.activeElement?.getAttribute("aria-pressed") ?? ""))
     .toBe("false");
 });
+
+test("Toast exposes an aria-live region and the Share control has the correct accessible name while the toast is visible", async ({
+  page,
+  context,
+}) => {
+  await context.grantPermissions(["clipboard-read", "clipboard-write"]);
+
+  await page.addInitScript(
+    ({ host, session }) => {
+      const projectRef = host.split(".")[0];
+      const key = `sb-${projectRef}-auth-token`;
+      try {
+        window.localStorage.setItem(key, JSON.stringify(session));
+      } catch {
+        /* ignore */
+      }
+    },
+    { host: SUPABASE_HOST, session: FAKE_SESSION },
+  );
+
+  await page.route(`https://${SUPABASE_HOST}/**`, async (route) => {
+    const url = route.request().url();
+    if (url.includes("/auth/v1/")) {
+      return route.fulfill({
+        status: 200,
+        contentType: "application/json",
+        body: JSON.stringify(FAKE_SESSION),
+      });
+    }
+    if (url.includes("/rest/v1/seo_audits")) {
+      return route.fulfill({
+        status: 200,
+        contentType: "application/json",
+        body: JSON.stringify([FAKE_AUDIT]),
+      });
+    }
+    return route.fulfill({ status: 200, contentType: "application/json", body: "[]" });
+  });
+
+  await page.goto("/seo-audit", { waitUntil: "domcontentloaded" });
+
+  const shareBtn = page.getByRole("button", {
+    name: /copy shareable link to this audit history view/i,
+  });
+  await expect(shareBtn).toBeVisible({ timeout: 10_000 });
+
+  // Before copying: button accessible name is the idle "Copy shareable link…"
+  // form, and aria-pressed reports the non-copied state.
+  await expect(shareBtn).toHaveAttribute("aria-pressed", "false");
+  await expect(shareBtn).toHaveAccessibleName(/copy shareable link to this audit history view/i);
+
+  await shareBtn.click();
+
+  // Sonner renders a region with role="region" and aria-label="Notifications"
+  // that contains live-region children (status / aria-live="polite").
+  // Either the region itself or an inner [aria-live] element must be present
+  // and announce the success copy.
+  const liveRegion = page.locator('[aria-live]').first();
+  await expect(liveRegion).toHaveCount(1, { timeout: 5_000 });
+  const liveValue = await liveRegion.getAttribute("aria-live");
+  expect(["polite", "assertive"]).toContain(liveValue);
+
+  // The on-page sr-only status region next to the button announces the copy.
+  const statusRegion = page.locator('[role="status"][aria-live="polite"]');
+  await expect(statusRegion.first()).toContainText(/link copied to clipboard/i, { timeout: 3_000 });
+
+  // The toast itself surfaces the success message.
+  await expect(page.getByText(/link copied to clipboard/i).first()).toBeVisible();
+
+  // While the toast is visible the Share control's accessible name flips to
+  // the "Link copied to clipboard" form and aria-pressed becomes true.
+  const copiedBtn = page.getByRole("button", { name: /^link copied to clipboard$/i });
+  await expect(copiedBtn).toBeVisible();
+  await expect(copiedBtn).toHaveAttribute("aria-pressed", "true");
+  await expect(copiedBtn).toHaveAccessibleName(/^link copied to clipboard$/i);
+
+  // After the 2s auto-dismiss the accessible name reverts.
+  await expect(shareBtn).toHaveAccessibleName(/copy shareable link to this audit history view/i, {
+    timeout: 5_000,
+  });
+  await expect(shareBtn).toHaveAttribute("aria-pressed", "false");
+});
