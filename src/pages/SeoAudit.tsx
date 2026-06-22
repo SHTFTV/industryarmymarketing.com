@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
-import { Check, X, Loader2, Search, Lock, Sparkles } from "lucide-react";
+import { Check, X, Loader2, Search, Lock, Sparkles, History, Trash2, RotateCcw } from "lucide-react";
+import { Link } from "react-router-dom";
+import type { User } from "@supabase/supabase-js";
 import Layout from "@/components/Layout";
 import PageHeader from "@/components/PageHeader";
 import Seo from "@/components/Seo";
@@ -19,6 +21,17 @@ interface ScanResult {
 }
 interface DeepCheck { name: string; status: "pass" | "warn" | "fail"; finding: string; fix: string; }
 interface DeepResult { summary: string; checks: DeepCheck[]; quickWins: string[]; }
+interface AuditRow {
+  id: string;
+  url: string;
+  score: number;
+  status: number | null;
+  ttfb: number | null;
+  checks: CheckRow[];
+  meta: ScanResult["meta"];
+  deep_dive: DeepResult | null;
+  created_at: string;
+}
 
 const SeoAudit = () => {
   const [url, setUrl] = useState("");
@@ -27,16 +40,65 @@ const SeoAudit = () => {
   const [deep, setDeep] = useState<DeepResult | null>(null);
   const [scanning, setScanning] = useState(false);
   const [diving, setDiving] = useState(false);
+  const [user, setUser] = useState<User | null>(null);
+  const [history, setHistory] = useState<AuditRow[]>([]);
+  const [currentAuditId, setCurrentAuditId] = useState<string | null>(null);
+
+  const loadHistory = useCallback(async (uid: string) => {
+    const { data, error } = await supabase
+      .from("seo_audits")
+      .select("id,url,score,status,ttfb,checks,meta,deep_dive,created_at")
+      .eq("user_id", uid)
+      .order("created_at", { ascending: false })
+      .limit(25);
+    if (error) { toast.error("Could not load history"); return; }
+    setHistory((data as unknown as AuditRow[]) ?? []);
+  }, []);
+
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data }) => {
+      const u = data.session?.user ?? null;
+      setUser(u);
+      if (u) loadHistory(u.id);
+    });
+    const { data: sub } = supabase.auth.onAuthStateChange((_e, session) => {
+      const u = session?.user ?? null;
+      setUser(u);
+      if (u) loadHistory(u.id);
+      else { setHistory([]); setCurrentAuditId(null); }
+    });
+    return () => sub.subscription.unsubscribe();
+  }, [loadHistory]);
 
   const runScan = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!url.trim()) return;
-    setScanning(true); setScan(null); setDeep(null);
+    setScanning(true); setScan(null); setDeep(null); setCurrentAuditId(null);
     try {
       const { data, error } = await supabase.functions.invoke("audit-fetch-page", { body: { url } });
       if (error) throw error;
       if (data?.error) throw new Error(data.error);
-      setScan(data as ScanResult);
+      const result = data as ScanResult;
+      setScan(result);
+      if (user) {
+        const { data: row, error: insertErr } = await supabase
+          .from("seo_audits")
+          .insert({
+            user_id: user.id,
+            url: result.url,
+            score: result.score,
+            status: result.status,
+            ttfb: result.ttfb,
+            checks: result.checks as unknown as never,
+            meta: result.meta as unknown as never,
+          })
+          .select("id")
+          .single();
+        if (!insertErr && row) {
+          setCurrentAuditId(row.id);
+          loadHistory(user.id);
+        }
+      }
     } catch (err) {
       toast.error("Scan failed", { description: (err as Error).message });
     } finally { setScanning(false); }
@@ -52,11 +114,42 @@ const SeoAudit = () => {
       });
       if (error) throw error;
       if (data?.error) throw new Error(data.error);
-      setDeep(data.result as DeepResult);
+      const result = data.result as DeepResult;
+      setDeep(result);
+      if (user && currentAuditId) {
+        await supabase
+          .from("seo_audits")
+          .update({ deep_dive: result as unknown as never })
+          .eq("id", currentAuditId);
+        loadHistory(user.id);
+      }
       toast.success("Deep dive ready");
     } catch (err) {
       toast.error("Deep dive failed", { description: (err as Error).message });
     } finally { setDiving(false); }
+  };
+
+  const loadAudit = (a: AuditRow) => {
+    setUrl(a.url);
+    setScan({
+      url: a.url,
+      status: a.status ?? 0,
+      ttfb: a.ttfb ?? 0,
+      score: a.score,
+      checks: a.checks ?? [],
+      meta: a.meta,
+      bodySample: "",
+    });
+    setDeep(a.deep_dive ?? null);
+    setCurrentAuditId(a.id);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const deleteAudit = async (id: string) => {
+    const { error } = await supabase.from("seo_audits").delete().eq("id", id);
+    if (error) { toast.error("Delete failed"); return; }
+    if (currentAuditId === id) { setScan(null); setDeep(null); setCurrentAuditId(null); }
+    if (user) loadHistory(user.id);
   };
 
   const scoreColor = scan ? (scan.score >= 80 ? "text-primary" : scan.score >= 50 ? "text-yellow-400" : "text-red-400") : "";
@@ -76,7 +169,18 @@ const SeoAudit = () => {
       />
 
       <section className="container mx-auto px-4 py-12">
-        <Card className="p-6 md:p-8 border-border bg-card max-w-3xl mx-auto">
+        <div className="max-w-5xl mx-auto mb-6 flex items-center justify-between gap-3 flex-wrap">
+          <p className="text-xs uppercase tracking-widest text-muted-foreground">
+            {user ? <>Signed in as <span className="text-foreground">{user.email}</span> — history syncing</> : "Sign in to save your audit history"}
+          </p>
+          {!user && (
+            <Link to="/sync-account" className="text-xs uppercase tracking-widest text-primary hover:text-glow">
+              Sign in to save →
+            </Link>
+          )}
+        </div>
+
+        <Card className="p-6 md:p-8 border-border bg-card max-w-5xl mx-auto">
           <form onSubmit={runScan} className="flex flex-col md:flex-row gap-3">
             <Input
               type="url"
@@ -92,6 +196,44 @@ const SeoAudit = () => {
             </Button>
           </form>
         </Card>
+
+        {user && history.length > 0 && (
+          <Card className="p-6 md:p-8 border-border bg-card max-w-5xl mx-auto mt-6">
+            <div className="flex items-center gap-3 mb-4">
+              <History size={18} className="text-primary" />
+              <h2 className="font-display text-3xl text-foreground">Audit History</h2>
+              <span className="text-xs text-muted-foreground">({history.length})</span>
+            </div>
+            <ul className="divide-y divide-border">
+              {history.map((a) => {
+                const sc = a.score >= 80 ? "text-primary" : a.score >= 50 ? "text-yellow-400" : "text-red-400";
+                const isCurrent = currentAuditId === a.id;
+                return (
+                  <li key={a.id} className={`flex items-center justify-between gap-4 py-3 ${isCurrent ? "opacity-100" : ""}`}>
+                    <div className="flex items-center gap-4 min-w-0">
+                      <span className={`font-display text-3xl ${sc} leading-none w-12 text-right`}>{a.score}</span>
+                      <div className="min-w-0">
+                        <p className="text-sm text-foreground truncate">{a.url}</p>
+                        <p className="text-xs text-muted-foreground">
+                          {new Date(a.created_at).toLocaleString()} {a.deep_dive && "· deep dive ✓"}
+                          {isCurrent && " · viewing"}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-2 shrink-0">
+                      <Button size="sm" variant="secondary" onClick={() => loadAudit(a)} className="h-8">
+                        <RotateCcw size={14} className="mr-1.5" /> Load
+                      </Button>
+                      <Button size="sm" variant="ghost" onClick={() => deleteAudit(a.id)} className="h-8 text-muted-foreground hover:text-red-400">
+                        <Trash2 size={14} />
+                      </Button>
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
+          </Card>
+        )}
 
         {scan && (
           <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} className="mt-10 grid gap-6 max-w-5xl mx-auto">
