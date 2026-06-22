@@ -479,6 +479,119 @@ test("Holding Enter on the Share button still produces exactly one toast and one
   await expect(statusRegion).toHaveText("");
 });
 
+test("Share flow surfaces an accessible error toast when navigator.clipboard is denied", async ({
+  page,
+  context,
+}) => {
+  // Do NOT grant clipboard permissions. Additionally override
+  // navigator.clipboard.writeText to reject — covers browsers where
+  // permission denial throws and browsers where it returns a rejected
+  // promise.
+  await context.clearPermissions();
+
+  await page.addInitScript(
+    ({ host, session }) => {
+      const projectRef = host.split(".")[0];
+      const key = `sb-${projectRef}-auth-token`;
+      try {
+        window.localStorage.setItem(key, JSON.stringify(session));
+      } catch {
+        /* ignore */
+      }
+    },
+    { host: SUPABASE_HOST, session: FAKE_SESSION },
+  );
+
+  await page.addInitScript(() => {
+    // Stub the clipboard so writeText always rejects with NotAllowedError.
+    const denied = () =>
+      Promise.reject(
+        new DOMException("Clipboard write denied by test", "NotAllowedError"),
+      );
+    try {
+      Object.defineProperty(navigator, "clipboard", {
+        configurable: true,
+        value: { writeText: denied, readText: denied },
+      });
+    } catch {
+      /* ignore */
+    }
+  });
+
+  await page.route(`https://${SUPABASE_HOST}/**`, async (route) => {
+    const url = route.request().url();
+    if (url.includes("/auth/v1/")) {
+      return route.fulfill({
+        status: 200,
+        contentType: "application/json",
+        body: JSON.stringify(FAKE_SESSION),
+      });
+    }
+    if (url.includes("/rest/v1/seo_audits")) {
+      return route.fulfill({
+        status: 200,
+        contentType: "application/json",
+        body: JSON.stringify([FAKE_AUDIT]),
+      });
+    }
+    return route.fulfill({ status: 200, contentType: "application/json", body: "[]" });
+  });
+
+  await page.goto("/seo-audit", { waitUntil: "domcontentloaded" });
+
+  const shareBtn = page.getByRole("button", {
+    name: /copy shareable link to this audit history view/i,
+  });
+  await expect(shareBtn).toBeVisible({ timeout: 10_000 });
+
+  // Capture unhandled page errors — denial must NOT bubble out as an
+  // unhandled exception ("silent failure" tripwire).
+  const pageErrors: string[] = [];
+  page.on("pageerror", (err) => pageErrors.push(err.message));
+
+  await shareBtn.click();
+
+  // Error toast surfaces with the expected copy.
+  const errorToast = page.locator("[data-sonner-toast]", {
+    hasText: /could not copy link/i,
+  });
+  await expect(errorToast).toHaveCount(1, { timeout: 3_000 });
+  await expect(errorToast.first()).toBeVisible();
+
+  // The toast lives inside a screen-reader-announceable live region.
+  const liveWithError = page
+    .locator("[aria-live]")
+    .filter({ hasText: /could not copy link/i });
+  await expect(liveWithError.first()).toBeVisible({ timeout: 3_000 });
+  const liveValue = await liveWithError.first().getAttribute("aria-live");
+  expect(["polite", "assertive"]).toContain(liveValue);
+
+  // Sonner marks error toasts with a recognisable data attribute so AT
+  // and tests can differentiate from success.
+  const toastType = await errorToast.first().getAttribute("data-type");
+  expect(toastType).toBe("error");
+
+  // The success copy must NOT appear — neither in a toast nor in any
+  // aria-live element.
+  await expect(
+    page.locator("[data-sonner-toast]", { hasText: /link copied to clipboard/i }),
+  ).toHaveCount(0);
+  await expect(
+    page.locator("[aria-live]").filter({ hasText: /link copied to clipboard/i }),
+  ).toHaveCount(0);
+
+  // Button stays in the idle "Share" state — aria-pressed must not flip
+  // and the accessible name must not change to the copied form.
+  await expect(shareBtn).toHaveAttribute("aria-pressed", "false");
+  await expect(shareBtn).toHaveAccessibleName(/copy shareable link to this audit history view/i);
+  await expect(
+    page.getByRole("button", { name: /^link copied to clipboard$/i }),
+  ).toHaveCount(0);
+
+  // No unhandled errors leaked from the rejected clipboard promise.
+  expect(pageErrors, `page errors: ${pageErrors.join("; ")}`).toEqual([]);
+});
+
 test("Keyboard activation (Enter and Space) on the Share button fires the toast and live-region announcement", async ({
   page,
   context,
