@@ -279,4 +279,8 @@ test("Toast exposes an aria-live region and the Share control has the correct ac
     timeout: 5_000,
   });
   await expect(shareBtn).toHaveAttribute("aria-pressed", "false");
+
+  // And the sr-only status region empties out so it doesn't keep
+  // re-announcing the stale "copied" message to screen readers.
+  await expect(statusRegion.first()).toHaveText("", { timeout: 5_000 });
 });
