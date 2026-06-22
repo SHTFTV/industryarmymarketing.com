@@ -35,7 +35,15 @@ interface AuditRow {
 
 const HISTORY_FILTERS_KEY = "seoAudit.historyFilters.v1";
 const HISTORY_PAGE_KEY = "seoAudit.historyPage.v1";
+const HISTORY_SORT_KEY = "seoAudit.historySort.v1";
 const PAGE_SIZE = 5;
+type SortOption = "newest" | "oldest" | "score-desc" | "score-asc" | "url-asc";
+const defaultSort: SortOption = "newest";
+const loadSort = (): SortOption => {
+  if (typeof window === "undefined") return defaultSort;
+  const v = sessionStorage.getItem(HISTORY_SORT_KEY) as SortOption | null;
+  return v && ["newest","oldest","score-desc","score-asc","url-asc"].includes(v) ? v : defaultSort;
+};
 type ScoreFilter = "all" | "high" | "mid" | "low";
 type DeepFilter = "all" | "with" | "without";
 interface HistoryFilters { q: string; score: ScoreFilter; deep: DeepFilter; }
@@ -60,6 +68,7 @@ const SeoAudit = () => {
   const [history, setHistory] = useState<AuditRow[]>([]);
   const [currentAuditId, setCurrentAuditId] = useState<string | null>(null);
   const [filters, setFilters] = useState<HistoryFilters>(loadFilters);
+  const [sort, setSort] = useState<SortOption>(loadSort);
   const [page, setPage] = useState<number>(() => {
     if (typeof window === "undefined") return 1;
     const n = parseInt(sessionStorage.getItem(HISTORY_PAGE_KEY) ?? "1", 10);
@@ -69,6 +78,10 @@ const SeoAudit = () => {
   useEffect(() => {
     try { sessionStorage.setItem(HISTORY_FILTERS_KEY, JSON.stringify(filters)); } catch { /* ignore */ }
   }, [filters]);
+
+  useEffect(() => {
+    try { sessionStorage.setItem(HISTORY_SORT_KEY, sort); } catch { /* ignore */ }
+  }, [sort]);
 
   useEffect(() => {
     try { sessionStorage.setItem(HISTORY_PAGE_KEY, String(page)); } catch { /* ignore */ }
@@ -82,6 +95,15 @@ const SeoAudit = () => {
     if (filters.deep === "with" && !a.deep_dive) return false;
     if (filters.deep === "without" && a.deep_dive) return false;
     return true;
+  }).slice().sort((a, b) => {
+    switch (sort) {
+      case "oldest": return +new Date(a.created_at) - +new Date(b.created_at);
+      case "score-desc": return b.score - a.score;
+      case "score-asc": return a.score - b.score;
+      case "url-asc": return a.url.localeCompare(b.url);
+      case "newest":
+      default: return +new Date(b.created_at) - +new Date(a.created_at);
+    }
   });
   const filtersActive = filters.q !== "" || filters.score !== "all" || filters.deep !== "all";
 
@@ -255,7 +277,7 @@ const SeoAudit = () => {
               </span>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_auto_auto] gap-2 mb-5">
+            <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_auto_auto_auto] gap-2 mb-5">
               <Input
                 type="search"
                 placeholder="Search URL…"
@@ -264,6 +286,18 @@ const SeoAudit = () => {
                 className="h-10"
                 aria-label="Search audit history by URL"
               />
+              <select
+                value={sort}
+                onChange={(e) => { setSort(e.target.value as SortOption); setPage(1); }}
+                className="h-10 rounded-md border border-border bg-background px-3 text-sm text-foreground"
+                aria-label="Sort audit history"
+              >
+                <option value="newest">Newest first</option>
+                <option value="oldest">Oldest first</option>
+                <option value="score-desc">Score: high → low</option>
+                <option value="score-asc">Score: low → high</option>
+                <option value="url-asc">URL: A → Z</option>
+              </select>
               <select
                 value={filters.score}
                 onChange={(e) => setFilters((f) => ({ ...f, score: e.target.value as ScoreFilter }))}
@@ -289,8 +323,8 @@ const SeoAudit = () => {
                 type="button"
                 variant="ghost"
                 size="sm"
-                onClick={() => { setFilters(defaultFilters); setPage(1); }}
-                disabled={!filtersActive}
+                onClick={() => { setFilters(defaultFilters); setSort(defaultSort); setPage(1); }}
+                disabled={!filtersActive && sort === defaultSort}
                 className="h-10"
               >
                 Clear
