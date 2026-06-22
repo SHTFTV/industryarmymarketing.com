@@ -371,6 +371,148 @@ test("Rapid clicks on the Share button collapse into a single toast and a single
   await expect(statusRegion).toHaveText("");
 });
 
+test("navigator.clipboard.writeText success fires the toast and restores the original selection + focus", async ({
+  page,
+  context,
+}) => {
+  await context.grantPermissions(["clipboard-read", "clipboard-write"]);
+
+  await page.addInitScript(
+    ({ host, session }) => {
+      const projectRef = host.split(".")[0];
+      const key = `sb-${projectRef}-auth-token`;
+      try {
+        window.localStorage.setItem(key, JSON.stringify(session));
+      } catch {
+        /* ignore */
+      }
+    },
+    { host: SUPABASE_HOST, session: FAKE_SESSION },
+  );
+
+  await page.route(`https://${SUPABASE_HOST}/**`, async (route) => {
+    const url = route.request().url();
+    if (url.includes("/auth/v1/")) {
+      return route.fulfill({
+        status: 200,
+        contentType: "application/json",
+        body: JSON.stringify(FAKE_SESSION),
+      });
+    }
+    if (url.includes("/rest/v1/seo_audits")) {
+      return route.fulfill({
+        status: 200,
+        contentType: "application/json",
+        body: JSON.stringify([FAKE_AUDIT]),
+      });
+    }
+    return route.fulfill({ status: 200, contentType: "application/json", body: "[]" });
+  });
+
+  // Track navigator.clipboard.writeText calls so we can assert the primary
+  // path (not the execCommand fallback) is what ran.
+  await page.addInitScript(() => {
+    (window as unknown as { __clipboardCalls: string[] }).__clipboardCalls = [];
+    const orig = navigator.clipboard.writeText.bind(navigator.clipboard);
+    navigator.clipboard.writeText = (text: string) => {
+      (window as unknown as { __clipboardCalls: string[] }).__clipboardCalls.push(text);
+      return orig(text);
+    };
+  });
+
+  await page.goto("/seo-audit", { waitUntil: "domcontentloaded" });
+
+  const shareBtn = page.getByRole("button", {
+    name: /copy shareable link to this audit history view/i,
+  });
+  await expect(shareBtn).toBeVisible({ timeout: 10_000 });
+
+  const baselineTextareas = await page.locator("textarea").count();
+
+  // Focus the Share button first so focus restoration can be observed.
+  await shareBtn.focus();
+  await expect
+    .poll(() => page.evaluate(() => document.activeElement?.getAttribute("aria-label") ?? ""))
+    .toMatch(/copy shareable link/i);
+
+  // Select some on-page text so we can verify the primary clipboard path
+  // leaves the user's selection untouched.
+  const selectionTarget = page.locator("h2", { hasText: /audit history/i }).first();
+  await expect(selectionTarget).toBeVisible();
+  await page.evaluate((el) => {
+    const range = document.createRange();
+    range.selectNodeContents(el as Node);
+    const sel = window.getSelection();
+    sel?.removeAllRanges();
+    sel?.addRange(range);
+  }, await selectionTarget.elementHandle());
+
+  const originalSelection = await page.evaluate(
+    () => window.getSelection()?.toString() ?? "",
+  );
+  expect(originalSelection.length).toBeGreaterThan(0);
+
+  const pageErrors: string[] = [];
+  page.on("pageerror", (err) => pageErrors.push(err.message));
+
+  // Trigger via the Alt+S keyboard shortcut so the activation doesn't blow
+  // away the on-page text selection itself.
+  await page.keyboard.press("Alt+S");
+
+  // Accessible success toast.
+  const successToast = page.locator("[data-sonner-toast]", {
+    hasText: /link copied to clipboard/i,
+  });
+  await expect(successToast).toHaveCount(1, { timeout: 3_000 });
+  expect(await successToast.first().getAttribute("data-type")).toBe("success");
+
+  const liveWithCopy = page
+    .locator("[aria-live]")
+    .filter({ hasText: /link copied to clipboard/i });
+  await expect(liveWithCopy.first()).toBeVisible({ timeout: 3_000 });
+  const liveValue = await liveWithCopy.first().getAttribute("aria-live");
+  expect(["polite", "assertive"]).toContain(liveValue);
+
+  // Button flips to the Copied state with the right ARIA semantics.
+  await expect(
+    page.getByRole("button", { name: /^link copied to clipboard$/i }),
+  ).toBeVisible();
+  await expect(shareBtn).toHaveAttribute("aria-pressed", "true");
+
+  // No error toast leakage.
+  await expect(
+    page.locator("[data-sonner-toast]", { hasText: /could not copy link/i }),
+  ).toHaveCount(0);
+
+  // The primary navigator.clipboard.writeText path ran with the share URL.
+  const clipboardCalls = await page.evaluate(
+    () => (window as unknown as { __clipboardCalls: string[] }).__clipboardCalls,
+  );
+  expect(clipboardCalls.length).toBeGreaterThanOrEqual(1);
+  expect(clipboardCalls[0]).toBe(page.url());
+
+  // Clipboard contents match what was announced.
+  const clipboardText = await page.evaluate(() => navigator.clipboard.readText());
+  expect(clipboardText).toBe(page.url());
+
+  // The primary path never mounts a temp <textarea>; the count must stay
+  // at the pre-copy baseline.
+  await expect.poll(() => page.locator("textarea").count()).toBe(baselineTextareas);
+
+  // Original on-page selection preserved — the primary path doesn't touch it.
+  const restoredSelection = await page.evaluate(
+    () => window.getSelection()?.toString() ?? "",
+  );
+  expect(restoredSelection).toBe(originalSelection);
+
+  // Focus remains on the Share button (now in its Copied state).
+  await expect
+    .poll(() => page.evaluate(() => document.activeElement?.getAttribute("aria-label") ?? ""))
+    .toMatch(/link copied to clipboard|copy shareable link/i);
+
+  expect(pageErrors, `page errors: ${pageErrors.join("; ")}`).toEqual([]);
+});
+
 test("Holding Enter on the Share button still produces exactly one toast and one live-region announcement", async ({
   page,
   context,
