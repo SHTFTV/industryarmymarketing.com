@@ -1887,6 +1887,126 @@ test.describe("Android Chrome: clipboard rejection falls back to execCommand", (
     // The NotAllowedError rejection must be caught — no uncaught page errors.
     expect(pageErrors, `page errors: ${pageErrors.join("; ")}`).toEqual([]);
   });
+
+  test("On iOS, tapping the Share button when navigator.clipboard.writeText resolves fires the success toast without invoking execCommand('copy') and restores focus + selection", async ({
+    page,
+    context,
+  }) => {
+    await context.grantPermissions(["clipboard-read", "clipboard-write"]);
+    await stubSupabase(page);
+
+    // iOS Safari tap-triggered happy path: a real user tap (not Alt+S)
+    // activates the Share button. navigator.clipboard.writeText resolves
+    // so the primary path handles the copy. The execCommand("copy")
+    // fallback must NOT run, the success toast must surface, focus must
+    // land on the Share button (now in its Copied state), and the
+    // document selection state must be unchanged (empty stays empty).
+    await page.addInitScript(() => {
+      try {
+        Object.defineProperty(navigator, "clipboard", {
+          configurable: true,
+          value: {
+            writeText: (text: string) => {
+              (window as unknown as { __clipboardWrites: string[] }).__clipboardWrites ||= [];
+              (window as unknown as { __clipboardWrites: string[] }).__clipboardWrites.push(text);
+              return Promise.resolve();
+            },
+            readText: () => Promise.resolve(""),
+          },
+        });
+      } catch {
+        /* ignore */
+      }
+      (window as unknown as { __clipboardWrites: string[] }).__clipboardWrites = [];
+      (window as unknown as { __execCopyCalls: number }).__execCopyCalls = 0;
+      const realExec = document.execCommand.bind(document);
+      document.execCommand = ((cmd: string, ...rest: unknown[]) => {
+        if (cmd === "copy") {
+          (window as unknown as { __execCopyCalls: number }).__execCopyCalls += 1;
+          return true;
+        }
+        return realExec(cmd as never, ...(rest as []));
+      }) as typeof document.execCommand;
+    });
+
+    await page.goto("/seo-audit", { waitUntil: "domcontentloaded" });
+
+    const shareBtn = page.getByRole("button", {
+      name: /copy shareable link to this audit history view/i,
+    });
+    await expect(shareBtn).toBeVisible({ timeout: 10_000 });
+
+    const baselineTextareas = await page.locator("textarea").count();
+
+    // Snapshot the document selection state before the tap so we can
+    // assert it's unchanged afterwards. (No prior selection — tapping a
+    // button would clear it anyway in real iOS Safari, so the meaningful
+    // assertion is "selection state is unchanged across the copy".)
+    const selectionBefore = await page.evaluate(
+      () => window.getSelection()?.toString() ?? "",
+    );
+
+    const pageErrors: string[] = [];
+    page.on("pageerror", (err) => pageErrors.push(err.message));
+
+    // Real iOS gesture: tap (not keyboard).
+    await shareBtn.tap();
+
+    // Success toast with the right semantics.
+    const successToast = page.locator("[data-sonner-toast]", {
+      hasText: /link copied to clipboard/i,
+    });
+    await expect(successToast).toHaveCount(1, { timeout: 3_000 });
+    expect(await successToast.first().getAttribute("data-type")).toBe("success");
+
+    // Live region announces the success.
+    const liveWithCopy = page
+      .locator("[aria-live]")
+      .filter({ hasText: /link copied to clipboard/i });
+    await expect(liveWithCopy.first()).toBeVisible({ timeout: 3_000 });
+    const liveValue = await liveWithCopy.first().getAttribute("aria-live");
+    expect(["polite", "assertive"]).toContain(liveValue);
+
+    // Button flips to the Copied state.
+    await expect(
+      page.getByRole("button", { name: /^link copied to clipboard$/i }),
+    ).toBeVisible();
+    await expect(shareBtn).toHaveAttribute("aria-pressed", "true");
+
+    // No error toast leakage.
+    await expect(
+      page.locator("[data-sonner-toast]", { hasText: /could not copy link/i }),
+    ).toHaveCount(0);
+
+    // navigator.clipboard.writeText was invoked exactly once with the share URL.
+    const clipboardWrites = await page.evaluate(
+      () => (window as unknown as { __clipboardWrites: string[] }).__clipboardWrites,
+    );
+    expect(clipboardWrites).toEqual([page.url()]);
+
+    // execCommand("copy") must NEVER be called — primary path handled the copy.
+    const execCalls = await page.evaluate(
+      () => (window as unknown as { __execCopyCalls: number }).__execCopyCalls,
+    );
+    expect(execCalls).toBe(0);
+
+    // No temp <textarea> was ever mounted (fallback didn't run).
+    await expect.poll(() => page.locator("textarea").count()).toBe(baselineTextareas);
+
+    // Document selection state unchanged across the copy operation.
+    const selectionAfter = await page.evaluate(
+      () => window.getSelection()?.toString() ?? "",
+    );
+    expect(selectionAfter).toBe(selectionBefore);
+
+    // Focus landed on the Share button (now in its Copied state) — the
+    // tap activated it and nothing stole focus afterwards.
+    await expect
+      .poll(() => page.evaluate(() => document.activeElement?.getAttribute("aria-label") ?? ""))
+      .toMatch(/link copied to clipboard|copy shareable link/i);
+
+    expect(pageErrors, `page errors: ${pageErrors.join("; ")}`).toEqual([]);
+  });
 });
 
 test.describe("Android Chrome: clipboard rejection and execCommand failure", () => {
