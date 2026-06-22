@@ -255,10 +255,16 @@ test("Toast exposes an aria-live region and the Share control has the correct ac
   // that contains live-region children (status / aria-live="polite").
   // Either the region itself or an inner [aria-live] element must be present
   // and announce the success copy.
-  const liveRegion = page.locator('[aria-live]').first();
-  await expect(liveRegion).toHaveCount(1, { timeout: 5_000 });
-  const liveValue = await liveRegion.getAttribute("aria-live");
+  const liveRegions = page.locator("[aria-live]");
+  await expect(liveRegions.first()).toHaveCount(1, { timeout: 5_000 });
+  const liveValue = await liveRegions.first().getAttribute("aria-live");
   expect(["polite", "assertive"]).toContain(liveValue);
+
+  // While the toast is visible at least one aria-live element must contain
+  // the success copy so it actually gets announced.
+  await expect(
+    liveRegions.filter({ hasText: /link copied to clipboard/i }).first(),
+  ).toBeVisible({ timeout: 5_000 });
 
   // The on-page sr-only status region next to the button announces the copy.
   const statusRegion = page.locator('[role="status"][aria-live="polite"]');
@@ -283,4 +289,11 @@ test("Toast exposes an aria-live region and the Share control has the correct ac
   // And the sr-only status region empties out so it doesn't keep
   // re-announcing the stale "copied" message to screen readers.
   await expect(statusRegion.first()).toHaveText("", { timeout: 5_000 });
+
+  // No aria-live element on the page may still contain the stale "copied"
+  // text after the toast lifecycle ends — Sonner removes the toast node
+  // from its live region, and our sr-only status region empties out.
+  await expect(
+    page.locator("[aria-live]").filter({ hasText: /link copied to clipboard/i }),
+  ).toHaveCount(0, { timeout: 6_000 });
 });
