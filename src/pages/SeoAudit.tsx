@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
-import { Check, X, Loader2, Search, Lock, Sparkles, History, Trash2, RotateCcw } from "lucide-react";
+import { Check, X, Loader2, Search, Lock, Sparkles, History, Trash2, RotateCcw, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 import type { User } from "@supabase/supabase-js";
 import Layout from "@/components/Layout";
@@ -223,6 +223,11 @@ const SeoAudit = () => {
                     <div className="flex items-center gap-2 shrink-0">
                       <Button size="sm" variant="secondary" onClick={() => loadAudit(a)} className="h-8">
                         <RotateCcw size={14} className="mr-1.5" /> Load
+                      </Button>
+                      <Button size="sm" variant="secondary" asChild className="h-8">
+                        <Link to={`/seo-audit/${a.id}`}>
+                          <ExternalLink size={14} className="mr-1.5" /> Open
+                        </Link>
                       </Button>
                       <Button size="sm" variant="ghost" onClick={() => deleteAudit(a.id)} className="h-8 text-muted-foreground hover:text-red-400">
                         <Trash2 size={14} />
