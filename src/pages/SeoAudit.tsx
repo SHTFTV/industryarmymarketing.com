@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { motion } from "framer-motion";
 import { Check, X, Loader2, Search, Lock, Sparkles, History, Trash2, RotateCcw, ExternalLink, Share2, ClipboardCheck } from "lucide-react";
 import { Link, useSearchParams } from "react-router-dom";
@@ -93,6 +93,7 @@ const SeoAudit = () => {
   const [history, setHistory] = useState<AuditRow[]>([]);
   const [currentAuditId, setCurrentAuditId] = useState<string | null>(null);
   const [shareCopied, setShareCopied] = useState(false);
+  const shareButtonRef = useRef<HTMLButtonElement | null>(null);
   useEffect(() => {
     if (!shareCopied) return;
     const t = setTimeout(() => setShareCopied(false), 2000);
@@ -104,6 +105,8 @@ const SeoAudit = () => {
       await navigator.clipboard.writeText(window.location.href);
       toast.success("Link copied to clipboard");
       setShareCopied(true);
+      // Keep focus on the Share button so keyboard users stay in place.
+      requestAnimationFrame(() => shareButtonRef.current?.focus());
     } catch {
       toast.error("Could not copy link");
     }
@@ -118,6 +121,8 @@ const SeoAudit = () => {
       if (e.key === "Escape") {
         toast.dismiss();
         setShareCopied(false);
+        // Return focus to the Share button after dismissing.
+        shareButtonRef.current?.focus();
       }
     };
     window.addEventListener("keydown", onKey);
@@ -314,6 +319,7 @@ const SeoAudit = () => {
                 ({filteredHistory.length}{filtersActive ? ` of ${history.length}` : ""})
               </span>
               <Button
+                ref={shareButtonRef}
                 type="button"
                 size="sm"
                 variant="ghost"
