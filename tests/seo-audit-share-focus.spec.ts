@@ -658,10 +658,35 @@ test("Insecure context with no navigator.clipboard falls back to execCommand and
   });
   await expect(shareBtn).toBeVisible({ timeout: 10_000 });
 
+  // Baseline count of <textarea> elements before the fallback runs — used
+  // below to assert no leftover temp textarea remains.
+  const baselineTextareas = await page.locator("textarea").count();
+
+  // Select some on-page text before triggering the copy so we can verify
+  // the fallback restores the user's original selection. Triggering via
+  // Alt+S (instead of a click) avoids the click itself clearing the
+  // selection.
+  const selectionTarget = page.locator("h2", { hasText: /audit history/i }).first();
+  await expect(selectionTarget).toBeVisible();
+  await page.evaluate((el) => {
+    const range = document.createRange();
+    range.selectNodeContents(el as Node);
+    const sel = window.getSelection();
+    sel?.removeAllRanges();
+    sel?.addRange(range);
+  }, await selectionTarget.elementHandle());
+
+  const originalSelection = await page.evaluate(
+    () => window.getSelection()?.toString() ?? "",
+  );
+  expect(originalSelection.length).toBeGreaterThan(0);
+
   const pageErrors: string[] = [];
   page.on("pageerror", (err) => pageErrors.push(err.message));
 
-  await shareBtn.click();
+  // Trigger via the Alt+S shortcut so the user's text selection is preserved
+  // up to the moment the fallback runs.
+  await page.keyboard.press("Alt+S");
 
   // The execCommand fallback should succeed, so the success toast appears.
   const successToast = page.locator("[data-sonner-toast]", {
@@ -688,6 +713,17 @@ test("Insecure context with no navigator.clipboard falls back to execCommand and
   await expect(
     page.locator("[data-sonner-toast]", { hasText: /could not copy link/i }),
   ).toHaveCount(0);
+
+  // Cleanup: the temporary <textarea> used by the fallback is removed.
+  await expect.poll(() => page.locator("textarea").count()).toBe(baselineTextareas);
+
+  // Selection restoration: the user's original text selection is restored
+  // after the fallback completes, not left pointing at the (now-removed)
+  // temp textarea.
+  const restoredSelection = await page.evaluate(
+    () => window.getSelection()?.toString() ?? "",
+  );
+  expect(restoredSelection).toBe(originalSelection);
 
   // And no uncaught TypeError ("Cannot read properties of undefined…") leaked.
   expect(pageErrors, `page errors: ${pageErrors.join("; ")}`).toEqual([]);
