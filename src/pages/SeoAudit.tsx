@@ -115,6 +115,10 @@ const SeoAudit = () => {
         e.preventDefault();
         copyShareLink();
       }
+      if (e.key === "Escape") {
+        toast.dismiss();
+        setShareCopied(false);
+      }
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
