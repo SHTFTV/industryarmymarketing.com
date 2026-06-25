@@ -71,7 +71,7 @@ export const cities = [
   { name: "Singapore", population: "5,920,000", rate: "$500/mo", pricePerSlot: "$50", slots: 10, tier: "Diamond", status: "10 slots · Diamond", slug: "singapore" },
   { name: "Any City Under 250K", population: "Under 250,000", rate: "$30/mo", pricePerSlot: "$10", slots: 3, tier: "Standard", status: "3 slots · Standard", slug: "any" },
 ] as const;
-st domains = [
+export const domains = [
   { domain: "roofers.io", niche: "Residential & Commercial Roofing", emoji: "🏠" },
   { domain: "plumbers.ltd", niche: "Plumbing Contractors", emoji: "🚿" },
   { domain: "sparkys.tv", niche: "Electrical Contractors", emoji: "⚡" },
