@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Seo from "@/components/Seo";
 
 type Status = "ok" | "warn" | "fail";
 type Row = { label: string; status: Status; detail?: string };
@@ -34,6 +33,7 @@ const PwaCheck = () => {
     let cancelled = false;
     (async () => {
       const out: Row[] = [];
+      // 1. fetch manifest
       let mf: any = null;
       const manifestUrl = new URL("/site.webmanifest", window.location.href);
       try {
@@ -55,12 +55,14 @@ const PwaCheck = () => {
         out.push({ label: "GET /site.webmanifest", status: "fail", detail: e?.message ?? String(e) });
       }
 
+      // 2. required fields
       if (mf) {
         for (const f of REQUIRED_FIELDS) {
           const present = mf[f] !== undefined && mf[f] !== null && !(Array.isArray(mf[f]) && mf[f].length === 0);
           out.push({ label: `field: ${f}`, status: present ? "ok" : "fail", detail: present ? JSON.stringify(mf[f]).slice(0, 80) : "missing" });
         }
 
+        // 3. icon checks
         const icons: Array<{ src: string; sizes?: string; type?: string; purpose?: string }> = mf.icons || [];
         const has192 = icons.some((i) => /(^|\s)192x192(\s|$)/.test(i.sizes || ""));
         const has512 = icons.some((i) => /(^|\s)512x512(\s|$)/.test(i.sizes || ""));
@@ -70,6 +72,7 @@ const PwaCheck = () => {
         out.push({ label: "maskable icon present", status: hasMaskable ? "ok" : "warn", detail: hasMaskable ? "" : "recommended for Android adaptive icons" });
 
         for (const icon of icons) {
+          // Resolve icon.src against the manifest URL per W3C manifest spec
           const url = new URL(icon.src, manifestUrl).href;
           let status: Status = "ok";
           const detail: string[] = [`→ ${url}`];
@@ -91,6 +94,7 @@ const PwaCheck = () => {
             detail.push(e?.message ?? String(e));
           }
 
+          // dimensions for raster icons with explicit sizes (skip svg "any")
           if (icon.type !== "image/svg+xml" && icon.sizes && icon.sizes !== "any") {
             try {
               const { w, h } = await loadImageDims(url);
@@ -111,6 +115,7 @@ const PwaCheck = () => {
         }
       }
 
+      // 4. <link> tags in document head
       const links = Array.from(document.querySelectorAll('link[rel*="icon"], link[rel="manifest"], link[rel="apple-touch-icon"], link[rel="mask-icon"]')) as HTMLLinkElement[];
       for (const l of links) {
         try {
@@ -130,7 +135,9 @@ const PwaCheck = () => {
         setRunning(false);
       }
     })();
-    return () => { cancelled = true; };
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   const counts = rows.reduce(
@@ -140,11 +147,6 @@ const PwaCheck = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground p-8">
-      <Seo
-        title="PWA & Icon Validation | IAM Internal"
-        description="Internal PWA manifest and icon validation tool for Industry Army Marketing."
-        path="/pwa-check"
-      />
       <div className="max-w-3xl mx-auto">
         <h1 className="font-display text-4xl mb-2 text-primary">PWA / Icon Validation</h1>
         <p className="text-muted-foreground mb-6">

@@ -63,7 +63,26 @@ const EyeSpyr = () => (
       primaryLabel="Run Free Scan"
       primaryTo="/scan-wizard"
     />
-  </Layout>
+  
+      {/* EyeSpyR Pricing */}
+      <div className="mt-8 p-6 border border-green-500/20 rounded-xl bg-green-500/5">
+        <p className="text-xs uppercase tracking-widest text-green-400 mb-3">EyeSpyR Pricing</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <div className="text-2xl font-bold text-green-400">FREE</div>
+            <div className="text-xs text-muted-foreground mt-1">with all monthly territory locks ($10/mo+)</div>
+            <div className="text-sm text-muted-foreground mt-2">Full review scraping · credential verification · live Trust Badge · auto-monitoring</div>
+          </div>
+          <div>
+            <div className="text-2xl font-bold text-primary">$10/year</div>
+            <div className="text-xs text-muted-foreground mt-1">for guest post contributors</div>
+            <div className="text-sm text-muted-foreground mt-2">Green checkmark on posts · review monitoring · credential verification</div>
+          </div>
+        </div>
+        <p className="text-xs text-muted-foreground mt-4">Annual baseline ($10/year listing): EyeSpyR locked — upgrade to monthly to activate.</p>
+      </div>
+
+    </Layout>
 );
 
 export default EyeSpyr;

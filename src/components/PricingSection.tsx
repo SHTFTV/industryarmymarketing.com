@@ -4,17 +4,18 @@ import { Button } from "@/components/ui/button";
 
 const plans = [
   {
-    tier: "STARTER",
-    name: "Business Listing",
+    tier: "BASELINE",
+    name: "Annual Listing",
     price: "$10",
-    unit: "one-time",
-    subtitle: "Lifetime Listing • No Link",
+    unit: "/year",
+    subtitle: "Basic Listing • No EyeSpyR",
     featured: false,
     features: [
       "Business name on directory",
       "Phone & address listed",
       "Service area shown",
-      "Lifetime placement",
+      "Permanent placement",
+      "EyeSpyR locked (upgrade to monthly)",
     ],
     cta: "GET LISTED",
   },
@@ -27,32 +28,40 @@ const plans = [
     featured: true,
     badge: "LOCK OUT COMPETITORS",
     features: [
-      "1 contractor per trade",
-      "Established domain authority",
-      "City landing page",
-      "EyeSpyR verified badge",
-      "IAM Chat AI assistant",
-      "Cancel anytime",
+      "1 contractor per trade per city",
+      "The 250 Scale: 3–10 slots by population",
+      "City landing page with domain authority",
+      "EyeSpyR INCLUDED FREE — review scraping + credential verification",
+      "TALC.tv content blasts — $10/post",
+      "Backlink package — $25 one-time",
+      "Cancel anytime with 30 days notice",
     ],
     cta: "CLAIM YOUR TERRITORY",
   },
   {
-    tier: "AUTHORITY",
-    name: "Guest Posting",
+    tier: "CONTENT",
+    name: "TALC.tv Blast",
     price: "$10",
     unit: "/post",
-    subtitle: "Dofollow Backlink • High DA",
+    subtitle: "Anyone · Anytime · No Lock Required",
     featured: false,
     features: [
-      "Post on industry domain",
-      "Dofollow backlink",
-      "Established domain authority",
-      "Permanent placement",
+      "One completed project photo",
+      "AI generates 2,000-word SEO post",
+      "Auto-published to city page + GMB",
+      "Permanent backlink to your site",
+      "No retainer — pay per win",
     ],
-    cta: "CLAIM $10 GUEST POST",
+    cta: "SUBMIT A BLAST",
   },
 ];
 
+
+// IAM PRICING NOTE: All pricing follows The 250 Scale
+// Source of truth: industryarmymarketing.com/pricing/
+// Backlink Package: $25 one-time — anyone, anytime
+// EyeSpyR Badge (guest posts): $10/year
+// EyeSpyR Monitoring: FREE with all monthly locks
 const PricingSection = () => {
   return (
     <section id="pricing" className="py-20 md:py-32 bg-background">

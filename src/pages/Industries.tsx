@@ -1,16 +1,10 @@
 import Layout from "@/components/Layout";
 import PageHeader from "@/components/PageHeader";
-import Seo from "@/components/Seo";
 import { motion } from "framer-motion";
 import { domains } from "@/data/domains";
 
 const Industries = () => (
   <Layout>
-    <Seo
-      title="150+ Premium Industry Domains | The IAM Network"
-      description="Two decades of curated, niche-relevant domains across construction, trades, health, real estate, legal, and lifestyle. One contractor per trade per city — own your territory."
-      path="/industries"
-    />
     <PageHeader
       eyebrow="The IAM Network"
       title="150+ Premium"

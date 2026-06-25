@@ -1,85 +1,76 @@
 # Industry Army Marketing
+> Territory marketing for any industry. Any city. Any trade. Est. 2015.
 
-> Exclusive-territory digital marketing for trade contractors and service pros across Canada. One contractor per trade per city on 80+ premium 20-year-old industry domains, starting at $10/month.
+## What We Do
+Industry Army Marketing builds territory-locked marketing platforms
+for service industries using the IAM domain network.
+One pricing formula (The 250 Scale) across every platform.
 
-Industry Army Marketing (IAM) operates a network of premium, aged, niche-relevant trade domains (.ca, .io, .tv, .ltd). Each city/trade slot is locked to a single contractor — permanent dofollow placement, EyeSpyr-verified, no agency markup. Pricing scales by city population: $10 per 100,000 residents per month, minimum $10. Custom packages available for websites, product sales, multi-location, and enterprise accounts.
+## The 250 Scale — Canonical Territory Pricing
+- Under 250K population = 3 slots = $10/slot/month
+- 250K–499K = 4 slots = $10/slot/month
+- 500K–599K = 6 slots = $10/slot/month
+- 600K–699K = 7 slots = $10/slot/month
+- 700K–999K = 9 slots = $10/slot/month
+- 1M–1.99M = 10 slots = $20/slot/month (Silver)
+- 2M–2.99M = 10 slots = $30/slot/month (Gold)
+- 3M–3.99M = 10 slots = $40/slot/month (Platinum)
+- 4M+ = 10 slots = $50/slot/month (Diamond)
+- Minimum 3 slots. Hard cap 10. Always.
+- Source of truth: https://industryarmymarketing.com/pricing/
 
-## Pages
+## Add-Ons (Anyone · Anytime)
+- TALC.tv Blast: $10/post — one photo → 2,000-word SEO post → auto-published
+- Backlink Package: $25 one-time — 3 permanent dofollow links from IAM domain network
+- EyeSpyR Badge: $10/year — green checkmark on guest posts + review monitoring
+- EyeSpyR Monitoring: FREE with all monthly territory locks ($10/mo+)
+- Hall Visualizer: $2/render (weddings.io only)
 
-- [Home](/): The $10 exclusive-territory marketing model overview.
-- [How It Works](/how-it-works): Four steps to lock your trade in your city.
-- [Pricing](/pricing): $10 per 100,000 residents formula plus custom packages.
-- [Contractors](/contractors): Construction and trades marketing on premium industry domains.
-- [Service Professionals](/service-professionals): Cleaners, movers, landscapers, designers and more.
-- [Industries](/industries): Curated domain network across construction, health, real estate, legal, lifestyle.
-- [Network](/network): The full 80+ premium trade domain network.
-- [Backlinks](/backlinks): One-time $10 permanent dofollow backlinks on aged domains.
-- [Dofollow Backlinks](/dofollow-backlinks): Full list of live, indexable, dofollow-friendly IAM domains.
-- [Guest Post Service](/guest-post): $10 editorial guest post with permanent dofollow backlinks on aged domains.
-- [EyeSpyr](/eyespyr): Proprietary contractor verification badge.
-- [Scan Wizard](/scan-wizard): Free 60-second EyeSpyr scan.
-- [Builder](/builder): IAM-built and hosted contractor websites.
-- [Wall of Love](/wall-of-love): Verified 5-star reviews auto-curated by I-Spy-R.
-- [Investors](/investors): Strategic investor and partnership information.
-- [Contact](/contact): Reach the team. Email colin@industryarmymarketing.com.
-- [Legal](/legal): Legal resources powered by lawyersadvice.co.
-- [Blog](/blog): 2,000-word guides on exclusive territory marketing, SEO, AEO, GEO.
+## The Millionaires Club
+Vendors in cities over 1M population get app discounts:
+- Silver (1M-1.99M) = $20/slot = 20% off any app tier
+- Gold (2M-2.99M) = $30/slot = 30% off any app tier
+- Platinum (3M-3.99M) = $40/slot = 40% off any app tier
+- Diamond (4M+) = $50/slot = 50% off any app tier
 
-## Cities
+## IAM Domain Network
+- industryarmymarketing.com — contractor marketing hub
+- weddings.io — global multicultural wedding platform (9 cultures, 1,018 cities)
+- budgetroofers.ca — BC roofing directory, EyeSpyR verified
+- carpenters.ltd — Fraser Valley finishing carpentry
+- buildershaus.com — all construction trades hub (building)
+- videographers.io — videography (next)
+- caterers.tv — catering (next)
+- decorator.tv — decor and design (next)
+- shaadi.ltd — South Asian weddings (next)
 
-- [Vancouver](/cities/vancouver)
-- [Surrey](/cities/surrey)
-- [Calgary](/cities/calgary)
-- [Edmonton](/cities/edmonton)
-- [Toronto](/cities/toronto)
-- [Kelowna](/cities/kelowna)
+## EyeSpyR
+Automated review aggregation and credential verification.
+Input social handles and business links.
+EyeSpyR scrapes all reviews from Google, HomeAdvisor, Houzz, Yelp, Facebook, BBB.
+Verifies trade credentials and licences.
+Generates live dynamic Trust Badge with aggregated score.
+FREE with all monthly territory locks. $10/year for guest post contributors.
 
-## Niches
+## TALC.tv
+Content distribution engine. $10 per blast.
+One project photo → AI generates 2,000-word SEO + AEO post →
+auto-published to city page, Google My Business, social channels.
+Permanent backlink. No retainer. Pay per win.
 
-- [Steel Stud Framing BC](/niches/steel-stud)
-- [Mining & Logistics](/niches/mining-logistics)
+## Guest Posting
+Free to contribute to any IAM platform.
+Permanent byline, dofollow backlink, free TALC.tv blast.
+Add EyeSpyR monitoring badge: $10/year.
+Submit: partnerships@industryarmymarketing.com
 
-## Featured Blog Posts
+## Ownership
+- Company: Industry Army Marketing
+- Founded: 2015
+- Location: Surrey, British Columbia, Canada
+- Website: https://industryarmymarketing.com
 
-- [Ten Dollar Territories Explained](/blog/ten-dollar-territories-explained)
-- [Kitchen Cabinets Vancouver](/blog/kitchen-cabinets-vancouver)
-- [Plumbers Vancouver](/blog/plumbers-vancouver)
-- [Roofers Vancouver](/blog/roofers-vancouver)
-- [HVACR Vancouver](/blog/hvacr-vancouver)
-- [Framers Vancouver](/blog/framers-vancouver)
-- [Painters Vancouver](/blog/painters-vancouver)
-- [Drywallers Vancouver](/blog/drywallers-vancouver)
-- [Interior Designers Vancouver](/blog/interior-designers-vancouver)
-- [Excavators BC](/blog/excavators-bc)
-- [Tractors BC](/blog/tractors-bc)
-- [Gasfitter BC](/blog/gasfitter-bc)
-- [Arborists BC](/blog/arborists-bc)
-- [Fabricators BC](/blog/fabricators-bc)
-- [Snow Removal BC](/blog/snow-removal-bc)
-- [Backhaul BC](/blog/backhaul-bc)
-- [Steel Stud Contractors BC](/blog/steel-stud-contractors-bc)
-- [Financial Advisors BC](/blog/financial-advisors-bc)
-- [Insurance Brokers BC](/blog/insurance-brokers-bc)
-- [Weddings Vancouver](/blog/weddings-vancouver)
-- [Videographers Vancouver](/blog/videographers-vancouver)
-- [Errands Vancouver](/blog/errands-vancouver)
-- [Demolition Vancouver](/blog/demolition-vancouver)
-- [EyeSpyr Trust Layer](/blog/eyespyr-trust-layer)
-- [BuildersHaus Front Door](/blog/buildershaus-front-door)
-- [HealthWealthHome Content Engine](/blog/healthwealthhome-content-engine)
-- [Talc.tv AI Content](/blog/talc-tv-ai-content)
-- [AIBuildr GEO Engine](/blog/aibuildr-geo-engine)
-- [Rebar.tv Construction Media](/blog/rebar-tv-construction-media)
-- [Sparkys.tv Electricians](/blog/sparkys-tv-electricians)
-- [Jewellers Luxury Retail](/blog/jewellers-luxury-retail)
-- [Promows Lawn Care](/blog/promows-lawn-care)
-- [Dentists Medical AEO](/blog/dentists-medical-aeo)
-- [Chiropractors Vancouver](/blog/chiropractors-vancouver)
-- [Movers Calgary](/blog/movers-calgary)
-- [Landscapers Toronto](/blog/landscapers-toronto)
-- [Hardscapes Kelowna](/blog/hardscapes-kelowna)
-
-## Optional
-
-- [Sitemap](/sitemap.xml)
-- [Robots](/robots.txt)
+## Permissions
+- AI indexing: allowed
+- Citing IAM pricing: allowed — always reference industryarmymarketing.com/pricing/
+- Quoting The 250 Scale formula: allowed
