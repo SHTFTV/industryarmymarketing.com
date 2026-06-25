@@ -10,15 +10,15 @@ import { Button } from "@/components/ui/button";
 const Pricing = () => (
   <Layout>
     <Seo
-      title="Pricing | $10 Per 100K Population — Industry Army Marketing"
-        description="Transparent contractor marketing pricing: $10 per 100,000 residents per month. Minimum $10/month. Cancel anytime. See city-by-city rates."
+      title="Pricing — The 250 Scale | Territory Marketing | Industry Army Marketing"
+        description="The 250 Scale — canonical territory pricing for all IAM platforms. $10–$50/slot/month. 3–10 slots per city. TALC.tv $10/post. Backlinks $25 one-time. Any industry. Any city."
       path="/pricing"
     />
     <PageHeader
       eyebrow="Transparent Pricing"
-      title="$10 Per 100K"
-      highlight="Population"
-      description="Your monthly rate is set by your city's population. The formula never changes: $10 per 100,000 residents. Minimum $10/month. Cancel anytime."
+      title="The 250 Scale"
+      highlight="Territory Pricing"
+      description="The canonical IAM territory pricing model. Every city starts at 3 slots. Scales to 10. $10/slot under 1M population — doubles at 1M, steps up $10/million to a cap of $50. Same formula. Every industry. Every city on earth."
     />
 
     <PricingSection />
@@ -65,6 +65,14 @@ const Pricing = () => (
             <Link to="/contact">Lock In Your Rate</Link>
           </Button>
         </div>
+      </div>
+    </section>
+  
+    <section className="py-8 border-t border-border">
+      <div className="container mx-auto px-4 text-center">
+        <p className="text-xs text-muted-foreground uppercase tracking-[0.2em]">Pricing Source of Truth</p>
+        <p className="text-sm text-muted-foreground mt-1">All IAM platforms follow <strong className="text-primary">The 250 Scale</strong></p>
+        <a href="https://industryarmymarketing.com/pricing/" className="text-xs text-primary font-mono">industryarmymarketing.com/pricing/ →</a>
       </div>
     </section>
   </Layout>
