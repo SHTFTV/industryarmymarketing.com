@@ -6,7 +6,7 @@
     <atom:link href="https://industryarmymarketing.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>2,000-word guides on exclusive $10 territory marketing for trade contractors and service pros across Canada.</description>
     <language>en-ca</language>
-    <lastBuildDate>Tue, 23 Jun 2026 05:14:33 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 25 Jun 2026 15:56:33 GMT</lastBuildDate>
     <generator>Industry Army Marketing build pipeline</generator>
     <image>
       <url>https://industryarmymarketing.com/og-image.jpg</url>
@@ -14,7 +14,52 @@
       <link>https://industryarmymarketing.com/blog</link>
     </image>
     <item>
-      <title>Kitchen Cabinet Installation in Vancouver: The $10 Exclusive Territory Guide (kitchencabinets.io)</title>
+      <title>How Industry Army Marketing Is Disrupting Contractor Marketing — One Industry at a Time</title>
+      <link>https://industryarmymarketing.com/blog/contractor-marketing-disruptor</link>
+      <guid isPermaLink="true">https://industryarmymarketing.com/blog/contractor-marketing-disruptor</guid>
+      <pubDate>Mon, 01 Jun 2026 09:00:00 +0000</pubDate>
+      <category>Company</category>
+      <description>How IAM built territory-locked contractor marketing across every trade. One pricing formula. One verification system. One content engine. The 250 Scale explained.</description>
+      <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
+    </item>
+    <item>
+      <title>BuildersHaus: The IAM Hub for Every Trade and Service Sector</title>
+      <link>https://industryarmymarketing.com/blog/buildershaus-every-trade-one-platform</link>
+      <guid isPermaLink="true">https://industryarmymarketing.com/blog/buildershaus-every-trade-one-platform</guid>
+      <pubDate>Mon, 01 Jun 2026 09:00:00 +0000</pubDate>
+      <category>Company</category>
+      <description>BuildersHaus is the IAM hub for every construction trade. Same 250 Scale pricing. Same EyeSpyR verification. Same TALC.tv content engine. Roofing, plumbing, electrical, HVAC and more.</description>
+      <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
+    </item>
+    <item>
+      <title>Weddings.io: IAM&apos;s Premier Brand Since 2015 — And Why the Technology Finally Matches Our Vision</title>
+      <link>https://industryarmymarketing.com/blog/weddings-io-iam-premier-brand-since-2015</link>
+      <guid isPermaLink="true">https://industryarmymarketing.com/blog/weddings-io-iam-premier-brand-since-2015</guid>
+      <pubDate>Mon, 01 Jun 2026 09:00:00 +0000</pubDate>
+      <category>Company</category>
+      <description>Weddings.io has been the IAM flagship since 2015. 9 cultures, 1,018 cities, 24 countries. EyeSpyR verified. TALC.tv content. AI-first architecture. The wedding industry&apos;s disruptor.</description>
+      <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
+    </item>
+    <item>
+      <title>TALC.tv: The $10 Content Engine That Replaces Your Marketing Agency</title>
+      <link>https://industryarmymarketing.com/blog/talc-tv-content-engine-contractors</link>
+      <guid isPermaLink="true">https://industryarmymarketing.com/blog/talc-tv-content-engine-contractors</guid>
+      <pubDate>Mon, 01 Jun 2026 09:00:00 +0000</pubDate>
+      <category>Company</category>
+      <description>TALC.tv turns one job photo into a 2,000-word SEO and AEO blog post for $10. Auto-published to your city page, Google My Business, and social. No retainer. Pay per win.</description>
+      <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
+    </item>
+    <item>
+      <title>EyeSpyR: The Automated Trust Engine Every Contractor Needs in 2026</title>
+      <link>https://industryarmymarketing.com/blog/eyespyr-trust-engine</link>
+      <guid isPermaLink="true">https://industryarmymarketing.com/blog/eyespyr-trust-engine</guid>
+      <pubDate>Mon, 01 Jun 2026 09:00:00 +0000</pubDate>
+      <category>Company</category>
+      <description>EyeSpyR scrapes Google, HomeAdvisor, Houzz, Yelp, Facebook, and BBB automatically. Verifies BC Housing licence, WCB, and insurance. Generates a live Trust Badge. Free with every IAM territory lock.</description>
+      <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
+    </item>
+    <item>
+      <title>Kitchen Cabinet Installation in Vancouver — What Homeowners Pay in 2026</title>
       <link>https://industryarmymarketing.com/blog/kitchen-cabinets-vancouver</link>
       <guid isPermaLink="true">https://industryarmymarketing.com/blog/kitchen-cabinets-vancouver</guid>
       <pubDate>Mon, 01 May 2026 09:00:00 +0000</pubDate>
@@ -23,7 +68,7 @@
       <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
-      <title>Wedding Planning in Vancouver: The $10 Exclusive Territory Guide (weddings.io)</title>
+      <title>Wedding Vendors in Vancouver — Territory-Locked Wedding Planning with weddings.io</title>
       <link>https://industryarmymarketing.com/blog/weddings-vancouver</link>
       <guid isPermaLink="true">https://industryarmymarketing.com/blog/weddings-vancouver</guid>
       <pubDate>Mon, 01 May 2026 09:00:00 +0000</pubDate>
@@ -32,7 +77,7 @@
       <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
-      <title>Tractor &amp; Heavy Equipment Sales in Fraser Valley: The $10 Exclusive Territory Guide (kongtractors.com)</title>
+      <title>Tractor &amp; Heavy Equipment Services in Fraser Valley — Licensed Operators, Territory-Locked</title>
       <link>https://industryarmymarketing.com/blog/tractors-bc</link>
       <guid isPermaLink="true">https://industryarmymarketing.com/blog/tractors-bc</guid>
       <pubDate>Mon, 01 May 2026 09:00:00 +0000</pubDate>
@@ -41,7 +86,7 @@
       <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
-      <title>Residential &amp; Commercial Framing in Vancouver: The $10 Exclusive Territory Guide (framers.io)</title>
+      <title>Residential &amp; Commercial Framers in Vancouver — Licensed, Territory-Locked, Verified</title>
       <link>https://industryarmymarketing.com/blog/framers-vancouver</link>
       <guid isPermaLink="true">https://industryarmymarketing.com/blog/framers-vancouver</guid>
       <pubDate>Mon, 01 May 2026 09:00:00 +0000</pubDate>
@@ -50,7 +95,7 @@
       <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
-      <title>HVAC &amp; Refrigeration in Vancouver: The $10 Exclusive Territory Guide (hvacr.tv)</title>
+      <title>HVAC Contractors in Vancouver — How to Find Licensed, Insured Heating &amp; Cooling Pros</title>
       <link>https://industryarmymarketing.com/blog/hvacr-vancouver</link>
       <guid isPermaLink="true">https://industryarmymarketing.com/blog/hvacr-vancouver</guid>
       <pubDate>Mon, 01 May 2026 09:00:00 +0000</pubDate>
@@ -59,7 +104,7 @@
       <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
-      <title>Excavation &amp; Site Prep in Lower Mainland: The $10 Exclusive Territory Guide (excavators.tv)</title>
+      <title>Excavation Contractors in Lower Mainland BC — Site Prep, Grading &amp; Verified Operators</title>
       <link>https://industryarmymarketing.com/blog/excavators-bc</link>
       <guid isPermaLink="true">https://industryarmymarketing.com/blog/excavators-bc</guid>
       <pubDate>Mon, 01 Apr 2026 09:00:00 +0000</pubDate>
@@ -68,7 +113,7 @@
       <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
-      <title>Residential &amp; Commercial Painting in Vancouver: The $10 Exclusive Territory Guide (painters.tv)</title>
+      <title>Painting Contractors in Vancouver — What a Professional Repaint Actually Costs in 2026</title>
       <link>https://industryarmymarketing.com/blog/painters-vancouver</link>
       <guid isPermaLink="true">https://industryarmymarketing.com/blog/painters-vancouver</guid>
       <pubDate>Mon, 01 Apr 2026 09:00:00 +0000</pubDate>
@@ -77,7 +122,7 @@
       <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
-      <title>Roofing &amp; Re-Roofing in Vancouver: The $10 Exclusive Territory Guide (roofers.io)</title>
+      <title>Roofing Contractors in Vancouver — Territory-Locked, EyeSpyR Verified, Licensed</title>
       <link>https://industryarmymarketing.com/blog/roofers-vancouver</link>
       <guid isPermaLink="true">https://industryarmymarketing.com/blog/roofers-vancouver</guid>
       <pubDate>Mon, 01 Apr 2026 09:00:00 +0000</pubDate>
@@ -86,7 +131,7 @@
       <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
-      <title>Drywall &amp; Taping in Vancouver: The $10 Exclusive Territory Guide (drywallers.io)</title>
+      <title>Drywall Contractors in Vancouver — What Licensed Drywall &amp; Taping Actually Costs</title>
       <link>https://industryarmymarketing.com/blog/drywallers-vancouver</link>
       <guid isPermaLink="true">https://industryarmymarketing.com/blog/drywallers-vancouver</guid>
       <pubDate>Mon, 01 Apr 2026 09:00:00 +0000</pubDate>
@@ -95,7 +140,7 @@
       <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
-      <title>Plumbing &amp; Drainage in Vancouver: The $10 Exclusive Territory Guide (plumbers.ltd)</title>
+      <title>Plumbing &amp; Drainage Contractors in Vancouver — Licensed, Verified, Territory-Locked</title>
       <link>https://industryarmymarketing.com/blog/plumbers-vancouver</link>
       <guid isPermaLink="true">https://industryarmymarketing.com/blog/plumbers-vancouver</guid>
       <pubDate>Mon, 01 Mar 2026 09:00:00 +0000</pubDate>
@@ -104,7 +149,7 @@
       <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
-      <title>Demolition &amp; Deconstruction in Vancouver: The $10 Exclusive Territory Guide (demolition.io)</title>
+      <title>Demolition Contractors in Vancouver — BC Permits, Costs &amp; How to Find Verified Pros</title>
       <link>https://industryarmymarketing.com/blog/demolition-vancouver</link>
       <guid isPermaLink="true">https://industryarmymarketing.com/blog/demolition-vancouver</guid>
       <pubDate>Mon, 01 Mar 2026 09:00:00 +0000</pubDate>
@@ -113,7 +158,7 @@
       <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
-      <title>Interior Design in Vancouver: The $10 Exclusive Territory Guide (interiordesigners.io)</title>
+      <title>Interior Designers in Vancouver — Territory-Locked Design Services for Every Budget</title>
       <link>https://industryarmymarketing.com/blog/interior-designers-vancouver</link>
       <guid isPermaLink="true">https://industryarmymarketing.com/blog/interior-designers-vancouver</guid>
       <pubDate>Mon, 01 Mar 2026 09:00:00 +0000</pubDate>
@@ -122,7 +167,7 @@
       <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
-      <title>Backhaul &amp; Freight in BC: The $10 Exclusive Territory Guide (backhaul.io)</title>
+      <title>Backhaul &amp; Freight Services in BC — How Carriers Lock Territory for Consistent Loads</title>
       <link>https://industryarmymarketing.com/blog/backhaul-bc</link>
       <guid isPermaLink="true">https://industryarmymarketing.com/blog/backhaul-bc</guid>
       <pubDate>Mon, 01 Mar 2026 09:00:00 +0000</pubDate>
@@ -131,7 +176,7 @@
       <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
-      <title>Snow Removal &amp; De-Icing in BC Interior: The $10 Exclusive Territory Guide (plowwow.com)</title>
+      <title>Snow Removal Contractors in BC Interior — Seasonal Territory Locking for Reliable Service</title>
       <link>https://industryarmymarketing.com/blog/snow-removal-bc</link>
       <guid isPermaLink="true">https://industryarmymarketing.com/blog/snow-removal-bc</guid>
       <pubDate>Mon, 01 Feb 2026 09:00:00 +0000</pubDate>
@@ -140,7 +185,7 @@
       <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
-      <title>Commercial Videography in Vancouver: The $10 Exclusive Territory Guide (videographers.io)</title>
+      <title>Commercial Videographers in Vancouver — Territory-Locked Video Production for Any Industry</title>
       <link>https://industryarmymarketing.com/blog/videographers-vancouver</link>
       <guid isPermaLink="true">https://industryarmymarketing.com/blog/videographers-vancouver</guid>
       <pubDate>Mon, 01 Feb 2026 09:00:00 +0000</pubDate>
@@ -149,7 +194,7 @@
       <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
-      <title>Errand &amp; Same-Day Delivery in Vancouver: The $10 Exclusive Territory Guide (errands.io)</title>
+      <title>Errand &amp; Same-Day Delivery Services in Vancouver — Local Territory Locking for Courier Pros</title>
       <link>https://industryarmymarketing.com/blog/errands-vancouver</link>
       <guid isPermaLink="true">https://industryarmymarketing.com/blog/errands-vancouver</guid>
       <pubDate>Mon, 01 Feb 2026 09:00:00 +0000</pubDate>
@@ -158,7 +203,7 @@
       <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
-      <title>Licensed Gas Fitting in British Columbia: The $10 Exclusive Territory Guide (gasfitter.ca)</title>
+      <title>Licensed Gas Fitters in BC — What Homeowners Must Know Before Any Gas Line Work</title>
       <link>https://industryarmymarketing.com/blog/gasfitter-bc</link>
       <guid isPermaLink="true">https://industryarmymarketing.com/blog/gasfitter-bc</guid>
       <pubDate>Mon, 01 Jun 2026 09:00:00 +0000</pubDate>
@@ -167,7 +212,7 @@
       <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
-      <title>Commercial Steel Stud Framing in British Columbia: The $10 Exclusive Territory Guide (steelstudcontractors.com)</title>
+      <title>Commercial Steel Stud Framers in BC — Territory-Locked Steel Stud Contractors</title>
       <link>https://industryarmymarketing.com/blog/steel-stud-contractors-bc</link>
       <guid isPermaLink="true">https://industryarmymarketing.com/blog/steel-stud-contractors-bc</guid>
       <pubDate>Mon, 01 May 2026 09:00:00 +0000</pubDate>
@@ -176,7 +221,7 @@
       <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
-      <title>Contractor Verification &amp; Trust in Canada-wide: The $10 Exclusive Territory Guide (eyespyr.com)</title>
+      <title>EyeSpyR: How IAM Verifies Every Contractor Review and Credential Automatically</title>
       <link>https://industryarmymarketing.com/blog/eyespyr-trust-layer</link>
       <guid isPermaLink="true">https://industryarmymarketing.com/blog/eyespyr-trust-layer</guid>
       <pubDate>Mon, 01 Apr 2026 09:00:00 +0000</pubDate>
@@ -185,7 +230,7 @@
       <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
-      <title>Canadian Contractor Network in Canada-wide: The $10 Exclusive Territory Guide (buildershaus.com)</title>
+      <title>BuildersHaus: The IAM Network for Every Canadian Contractor Trade</title>
       <link>https://industryarmymarketing.com/blog/buildershaus-front-door</link>
       <guid isPermaLink="true">https://industryarmymarketing.com/blog/buildershaus-front-door</guid>
       <pubDate>Mon, 01 Mar 2026 09:00:00 +0000</pubDate>
@@ -194,7 +239,7 @@
       <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
-      <title>Multi-Vertical Content Authority in Canada-wide: The $10 Exclusive Territory Guide (healthwealthhome.com)</title>
+      <title>Multi-Vertical Content Authority — How IAM Builds Domain Networks Across Every Industry</title>
       <link>https://industryarmymarketing.com/blog/healthwealthhome-content-engine</link>
       <guid isPermaLink="true">https://industryarmymarketing.com/blog/healthwealthhome-content-engine</guid>
       <pubDate>Mon, 01 Feb 2026 09:00:00 +0000</pubDate>
@@ -203,7 +248,7 @@
       <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
-      <title>AI Content &amp; Video Production in Canada-wide: The $10 Exclusive Territory Guide (talc.tv)</title>
+      <title>TALC.tv: How AI Content Distribution Works for Contractors at $10 Per Post</title>
       <link>https://industryarmymarketing.com/blog/talc-tv-ai-content</link>
       <guid isPermaLink="true">https://industryarmymarketing.com/blog/talc-tv-ai-content</guid>
       <pubDate>Mon, 01 Jan 2026 09:00:00 +0000</pubDate>
@@ -212,7 +257,7 @@
       <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
-      <title>Generative Engine Optimization (GEO) in Canada-wide: The $10 Exclusive Territory Guide (aibuildr.io)</title>
+      <title>GEO vs SEO: How IAM Platforms Are Built for Generative Engine Optimization in 2026</title>
       <link>https://industryarmymarketing.com/blog/aibuildr-geo-engine</link>
       <guid isPermaLink="true">https://industryarmymarketing.com/blog/aibuildr-geo-engine</guid>
       <pubDate>Mon, 01 Dec 2025 09:00:00 +0000</pubDate>
@@ -221,7 +266,7 @@
       <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
-      <title>Financial Advisory in British Columbia: The $10 Exclusive Territory Guide (financialadvisors.io)</title>
+      <title>Financial Advisors in BC — Territory-Locked Marketing for Licensed Financial Professionals</title>
       <link>https://industryarmymarketing.com/blog/financial-advisors-bc</link>
       <guid isPermaLink="true">https://industryarmymarketing.com/blog/financial-advisors-bc</guid>
       <pubDate>Mon, 01 Nov 2025 09:00:00 +0000</pubDate>
@@ -230,7 +275,7 @@
       <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
-      <title>Insurance Brokerage in British Columbia: The $10 Exclusive Territory Guide (insurancebrokers.io)</title>
+      <title>Insurance Brokers in BC — Territory-Locked Marketing That Ends the Lead Auction</title>
       <link>https://industryarmymarketing.com/blog/insurance-brokers-bc</link>
       <guid isPermaLink="true">https://industryarmymarketing.com/blog/insurance-brokers-bc</guid>
       <pubDate>Mon, 01 Oct 2025 09:00:00 +0000</pubDate>
@@ -239,7 +284,7 @@
       <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
-      <title>Metal Fabrication in British Columbia: The $10 Exclusive Territory Guide (fabricators.io)</title>
+      <title>Metal Fabricators in BC — Custom Fabrication, Territory-Locked and EyeSpyR Verified</title>
       <link>https://industryarmymarketing.com/blog/fabricators-bc</link>
       <guid isPermaLink="true">https://industryarmymarketing.com/blog/fabricators-bc</guid>
       <pubDate>Mon, 01 Sep 2025 09:00:00 +0000</pubDate>
@@ -248,7 +293,7 @@
       <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
-      <title>Certified Arboriculture in British Columbia: The $10 Exclusive Territory Guide (arborists.io)</title>
+      <title>Certified Arborists in BC — What Tree Removal and Care Actually Costs in 2026</title>
       <link>https://industryarmymarketing.com/blog/arborists-bc</link>
       <guid isPermaLink="true">https://industryarmymarketing.com/blog/arborists-bc</guid>
       <pubDate>Mon, 01 Aug 2025 09:00:00 +0000</pubDate>
@@ -257,7 +302,7 @@
       <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
-      <title>Construction Video Media in Canada-wide: The $10 Exclusive Territory Guide (rebar.tv)</title>
+      <title>Construction Video &amp; Media — How IAM Documents Every Trade with TALC.tv</title>
       <link>https://industryarmymarketing.com/blog/rebar-tv-construction-media</link>
       <guid isPermaLink="true">https://industryarmymarketing.com/blog/rebar-tv-construction-media</guid>
       <pubDate>Mon, 01 Jul 2025 09:00:00 +0000</pubDate>
@@ -266,7 +311,7 @@
       <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
-      <title>Licensed Electricians in British Columbia: The $10 Exclusive Territory Guide (sparkys.tv)</title>
+      <title>Licensed Electricians in BC — How Territory Locking Ends the Lead-Sharing Race to the Bottom</title>
       <link>https://industryarmymarketing.com/blog/sparkys-tv-electricians</link>
       <guid isPermaLink="true">https://industryarmymarketing.com/blog/sparkys-tv-electricians</guid>
       <pubDate>Mon, 01 Jun 2025 09:00:00 +0000</pubDate>
@@ -275,7 +320,7 @@
       <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
-      <title>Luxury Jewellers &amp; Custom Design in Canada-wide: The $10 Exclusive Territory Guide (jewellers.ltd)</title>
+      <title>Luxury Jewellers &amp; Custom Design — Territory-Locked Marketing for Premium Jewellery</title>
       <link>https://industryarmymarketing.com/blog/jewellers-luxury-retail</link>
       <guid isPermaLink="true">https://industryarmymarketing.com/blog/jewellers-luxury-retail</guid>
       <pubDate>Mon, 01 May 2025 09:00:00 +0000</pubDate>
@@ -284,7 +329,7 @@
       <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
-      <title>Professional Lawn Care in British Columbia: The $10 Exclusive Territory Guide (promows.com)</title>
+      <title>Lawn Care Services in BC — How Territory Locking Works for Landscapers and Lawn Pros</title>
       <link>https://industryarmymarketing.com/blog/promows-lawn-care</link>
       <guid isPermaLink="true">https://industryarmymarketing.com/blog/promows-lawn-care</guid>
       <pubDate>Mon, 01 Apr 2025 09:00:00 +0000</pubDate>
@@ -293,7 +338,7 @@
       <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
-      <title>Family &amp; Cosmetic Dentistry in British Columbia: The $10 Exclusive Territory Guide (dentists.ltd)</title>
+      <title>Family &amp; Cosmetic Dentists in BC — Territory-Locked Marketing for Dental Practices</title>
       <link>https://industryarmymarketing.com/blog/dentists-medical-aeo</link>
       <guid isPermaLink="true">https://industryarmymarketing.com/blog/dentists-medical-aeo</guid>
       <pubDate>Mon, 01 Mar 2025 09:00:00 +0000</pubDate>
@@ -302,7 +347,7 @@
       <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
-      <title>IAM $10 Exclusive Territories in Canada-wide: The $10 Exclusive Territory Guide (industryarmymarketing.com)</title>
+      <title>The 250 Scale — How IAM Territory Locking Gives Contractors Exclusive City Placement</title>
       <link>https://industryarmymarketing.com/blog/ten-dollar-territories-explained</link>
       <guid isPermaLink="true">https://industryarmymarketing.com/blog/ten-dollar-territories-explained</guid>
       <pubDate>Mon, 01 Feb 2026 09:00:00 +0000</pubDate>
@@ -311,7 +356,7 @@
       <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
-      <title>Chiropractors in Vancouver: The $10 Exclusive Territory Guide (chiropractors.ltd)</title>
+      <title>Chiropractors in Vancouver — Territory-Locked Marketing for Licensed Chiropractic Clinics</title>
       <link>https://industryarmymarketing.com/blog/chiropractors-vancouver</link>
       <guid isPermaLink="true">https://industryarmymarketing.com/blog/chiropractors-vancouver</guid>
       <pubDate>Mon, 01 Jun 2026 09:00:00 +0000</pubDate>
@@ -320,7 +365,7 @@
       <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
-      <title>Movers in Calgary: The $10 Exclusive Territory Guide (mover.ltd)</title>
+      <title>Moving Companies in Calgary — How Territory Locking Beats Paying Per Lead</title>
       <link>https://industryarmymarketing.com/blog/movers-calgary</link>
       <guid isPermaLink="true">https://industryarmymarketing.com/blog/movers-calgary</guid>
       <pubDate>Mon, 01 Jun 2026 09:00:00 +0000</pubDate>
@@ -329,7 +374,7 @@
       <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
-      <title>Landscapers in Toronto: The $10 Exclusive Territory Guide (landscapers.ca)</title>
+      <title>Landscaping Contractors in Toronto — Territory-Locked, EyeSpyR Verified, Licensed</title>
       <link>https://industryarmymarketing.com/blog/landscapers-toronto</link>
       <guid isPermaLink="true">https://industryarmymarketing.com/blog/landscapers-toronto</guid>
       <pubDate>Mon, 01 Jun 2026 09:00:00 +0000</pubDate>
@@ -338,7 +383,7 @@
       <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
-      <title>Hardscape Contractors in Kelowna: The $10 Exclusive Territory Guide (hardscapes.io)</title>
+      <title>Hardscape Contractors in Kelowna — Patios, Driveways &amp; Retaining Walls in the Okanagan</title>
       <link>https://industryarmymarketing.com/blog/hardscapes-kelowna</link>
       <guid isPermaLink="true">https://industryarmymarketing.com/blog/hardscapes-kelowna</guid>
       <pubDate>Mon, 01 Jun 2026 09:00:00 +0000</pubDate>
