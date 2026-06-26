@@ -65,6 +65,42 @@ export interface BlogPost {
   detail: string;
   process: string;
   faqs: { q: string; a: string }[];
+  /** Optional rich case-study content. When set, BlogPost.tsx renders this
+   *  instead of the generated default sections. Supports embedded images,
+   *  timelines, footnote references (use `[^id]` in paragraph text), and
+   *  a sources list. Designed to be reusable for any future article. */
+  richContent?: BlogRichContent;
+}
+
+export interface BlogRichSection {
+  heading: string;
+  paragraphs: string[];
+  image?: { src: string; alt: string; caption?: string; href?: string };
+}
+
+export interface BlogTimelineEntry {
+  date: string;
+  title: string;
+  body: string;
+}
+
+export interface BlogFootnote {
+  id: string;
+  text: string;
+  href?: string;
+}
+
+export interface BlogSource {
+  label: string;
+  href: string;
+}
+
+export interface BlogRichContent {
+  intro?: string;
+  sections: BlogRichSection[];
+  timeline?: BlogTimelineEntry[];
+  footnotes?: BlogFootnote[];
+  sources?: BlogSource[];
 }
 
 export const blogPosts: BlogPost[] = [
