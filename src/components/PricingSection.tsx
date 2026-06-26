@@ -22,9 +22,9 @@ const plans = [
   {
     tier: "SEO TERRITORY",
     name: "City Commander",
-    price: "$10",
-    unit: "/month",
-    subtitle: "per 100K population • Exclusive",
+    price: "From $10",
+    unit: "/slot/mo",
+    subtitle: "Population-scaled · One contractor per trade per city",
     featured: true,
     badge: "LOCK OUT COMPETITORS",
     features: [
