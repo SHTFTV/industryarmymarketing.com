@@ -25,6 +25,10 @@ const dateScore = (date: string) => {
 };
 
 const LIMIT = 4;
+// Pin the Weddings.io case study to the front of the carousel for 3 months,
+// then let it rotate into the normal date-sorted loop.
+const PINNED_SLUG = "battle-for-the-brand-weddings-io";
+const PIN_UNTIL = new Date("2026-09-26T00:00:00Z");
 
 type Ranked = {
   slug: string;
@@ -94,8 +98,13 @@ const useBlogDebug = () => {
 const LatestBlogPosts = () => {
   const debug = useBlogDebug();
   const ranking = useMemo(buildRanking, []);
-  const latestSlugs = ranking.filter((r) => r.included).map((r) => r.slug);
-  const latest = latestSlugs
+  const pinActive = Date.now() < PIN_UNTIL.getTime();
+  const pinnedPost = pinActive ? blogPosts.find((p) => p.slug === PINNED_SLUG) : undefined;
+  const dateOrderedSlugs = ranking.filter((r) => r.included).map((r) => r.slug);
+  const orderedSlugs = pinnedPost
+    ? [PINNED_SLUG, ...dateOrderedSlugs.filter((s) => s !== PINNED_SLUG)].slice(0, LIMIT)
+    : dateOrderedSlugs;
+  const latest = orderedSlugs
     .map((slug) => blogPosts.find((p) => p.slug === slug))
     .filter((p): p is (typeof blogPosts)[number] => Boolean(p));
 

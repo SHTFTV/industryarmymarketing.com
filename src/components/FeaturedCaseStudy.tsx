@@ -76,13 +76,7 @@ const FeaturedCaseStudy = () => {
                 <Link to={`/blog/${post.slug}`}>Read the case study</Link>
               </Button>
               <Button variant="outline" asChild>
-                <a
-                  href="/blog/battle-for-the-brand-weddings-io.html"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  View the proof exhibits
-                </a>
+                <Link to={`/blog/${post.slug}#exhibits`}>Jump to the proof exhibits</Link>
               </Button>
             </div>
           </div>
