@@ -57,39 +57,6 @@ const HeroSection = () => {
             <a href="#services">Our Services</a>
           </Button>
         </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="mt-12 mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl"
-        >
-          <div>
-            <div className="relative w-full overflow-hidden rounded-lg border border-border" style={{ paddingBottom: "177.78%" }}>
-              <iframe
-                className="absolute inset-0 w-full h-full"
-                src="https://www.youtube.com/embed/mSofh5znBUA"
-                title="Industry Army Marketing"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-              />
-            </div>
-          </div>
-          <div>
-            <p className="text-primary uppercase tracking-[0.2em] text-xs font-semibold mb-3">What Is IAM · $10 SEO Explained</p>
-            <div className="relative w-full overflow-hidden rounded-lg border border-border" style={{ paddingBottom: "177.78%" }}>
-              <iframe
-                className="absolute inset-0 w-full h-full"
-                src="https://www.youtube.com/embed/QoeW39BxFT4"
-                title="What Is IAM — $10 SEO Explained"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-              />
-            </div>
-          </div>
-        </motion.div>
       </div>
 
       {/* Bottom gradient line */}

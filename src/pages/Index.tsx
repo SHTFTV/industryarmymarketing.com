@@ -14,8 +14,8 @@ const Index = () => {
   return (
     <Layout>
       <Seo
-        title="Industry Army Marketing | $10 SEO & Contractor Marketing"
-        description="Permanent dofollow backlinks and exclusive city-trade territories from $10. 20+ year-old domains, one contractor per trade per city."
+        title="Industry Army Marketing | Contractor SEO & Territory Marketing"
+        description="Permanent dofollow backlinks and exclusive city-trade territories on 20+ year-old industry domains. One contractor per trade per city — pricing scales with city population."
         path="/"
         jsonLd={{
           "@context": "https://schema.org",
