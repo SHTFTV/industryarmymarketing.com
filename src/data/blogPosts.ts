@@ -150,6 +150,32 @@ export const blogPosts: BlogPost[] = [
     ]
   },
   {
+    "slug": "battle-for-the-brand-weddings-io",
+    "brand": "weddings.io",
+    "trade": "Brand Defense",
+    "tradeShort": "wedding",
+    "plural": "wedding planners",
+    "video": null,
+    "imageKey": "weddings",
+    "city": "Global",
+    "province": "BC",
+    "category": "Company",
+    "date": "June 2026",
+    "title": "The Battle For the Brand: Weddings.io and the Story of the Creation of the Weddings Disruptor",
+    "metaDescription": "How weddings.io was conceived, registered in 2015, defended against copycats, and built into IAM's flagship wedding-industry disruptor — with WHOIS and Wayback Machine receipts.",
+    "excerpt": "Every disruptor has an origin story. This is ours — the receipts-backed history of how weddings.io was conceived, registered in 2015, defended through eleven quiet years, and turned into the engine that's now rewriting the wedding industry.",
+    "pain": "The wedding industry is a $300B global category dominated by directory middlemen who rent your traffic and sell the same lead to six planners. Couples can't tell who's verified, planners can't tell which leads are real, and the category-defining .io domain sat unclaimed by every legacy player until 2015. When we registered weddings.io, the battle for the brand began that day — and it hasn't stopped since.",
+    "detail": "Read the full origin story: https://www.industryarmymarketing.com/blog/battle-for-the-brand-weddings-io.html — registered May 13, 2015, 78 Wayback captures since, 9 cultures, 1,018 cities, 24 countries, and one defended .io domain. The story covers why .io beat .com for high-intent search, how copycats (including aiweddings.io) tried to plant flags on our hill, and what eleven years of quiet domain stewardship looks like once AI finally lets the vision ship.",
+    "process": "The rich version of this post — with WHOIS exhibits, Wayback Machine screenshots, footnotes, and source links — lives at /blog/battle-for-the-brand-weddings-io.html. It walks through the four eras: the 2015 registration, the 2016-2023 quiet build, the 2024 copycat wave, and the 2025-2026 AI-enabled relaunch as the wedding industry's category disruptor.",
+    "faqs": [
+      { "q": "When was weddings.io registered?", "a": "May 13, 2015. ICANN WHOIS confirms continuous ownership through 2027. The Internet Archive Wayback Machine has 78 captures dating to May 17, 2013 (under a prior placeholder), making it one of the oldest continuously-held wedding category domains on the public record." },
+      { "q": "Why .io instead of .com for weddings?", "a": "Weddings.com was locked up by a legacy directory in the late 1990s and effectively abandoned as an editorial property. The .io TLD signals modern tech, ranks identically for high-intent search ('weddings + city'), and was uncontested when we filed in 2015." },
+      { "q": "What is the 'battle for the brand'?", "a": "Three fronts: defending the trademark against copycats like aiweddings.io, defending search rankings against directory middlemen that rent traffic, and defending each metro's single-planner slot from being diluted by pay-to-play upsells." },
+      { "q": "How does this connect to the rest of the IAM network?", "a": "Weddings.io was the prototype. Every IAM playbook — territory locking, EyeSpyR verification, TALC.tv content engine, $10 flat slot pricing — was tested on weddings.io before rolling out to the trade network of gasfitter.ca, plowwow.com, kongtractors.com, and the rest." },
+      { "q": "Where are the receipts?", "a": "The full post embeds WHOIS records for weddings.io (2015) and gasfitter.ca (2007), plus Wayback Machine captures for weddings.io (since 2013) and hamiltonhomeservices.com (since 2004). All four are linked back to web.archive.org and CIRA so anyone can re-verify at source." }
+    ]
+  },
+  {
     "slug": "talc-tv-content-engine-contractors",
     "brand": "talc.tv",
     "trade": "Content Engine",
