@@ -10,12 +10,15 @@ const OG_IMAGE_BYTES = statSync(resolve(`public${OG_IMAGE_PATH}`)).size;
 const src = readFileSync(resolve("src/data/blogPosts.ts"), "utf8");
 
 // Each post is a JSON-style object literal; pull the fields we need.
-const slugs = [...src.matchAll(/"slug":\s*"([^"]+)"/g)].map((m) => m[1]);
-const titles = [...src.matchAll(/"title":\s*"([^"]+)"/g)].map((m) => m[1]);
-const descs = [...src.matchAll(/"metaDescription":\s*"([^"]+)"/g)].map((m) => m[1]);
-const excerpts = [...src.matchAll(/"excerpt":\s*"([^"]+)"/g)].map((m) => m[1]);
-const dates = [...src.matchAll(/"date":\s*"([^"]+)"/g)].map((m) => m[1]);
-const categories = [...src.matchAll(/"category":\s*"([^"]+)"/g)].map((m) => m[1]);
+// Match only top-level post fields (4-space indent), not nested richContent fields.
+const grab = (key: string) =>
+  [...src.matchAll(new RegExp(`^    "${key}":\\s*"([^"]+)"`, "gm"))].map((m) => m[1]);
+const slugs = grab("slug");
+const titles = grab("title");
+const descs = grab("metaDescription");
+const excerpts = grab("excerpt");
+const dates = grab("date");
+const categories = grab("category");
 
 if (
   slugs.length !== titles.length ||
