@@ -3,6 +3,7 @@ import Seo from "@/components/Seo";
 import PageHeader from "@/components/PageHeader";
 import PricingSection from "@/components/PricingSection";
 import { cities } from "@/data/domains";
+import { PRICING_MATRIX, ADDONS } from "@/data/pricingMatrix";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -22,6 +23,62 @@ const Pricing = () => (
     />
 
     <PricingSection />
+
+    <section className="py-20 bg-background border-t border-border">
+      <div className="container mx-auto px-4 max-w-5xl">
+        <h2 className="font-display text-4xl md:text-5xl text-foreground text-center mb-3">
+          Population <span className="text-primary">Slot Matrix</span>
+        </h2>
+        <p className="text-muted-foreground text-center mb-2">Exact slot counts and flat per-slot pricing. Every slot costs the same — slot 1 and the last slot are identical. A row only reads SOLD OUT when every slot in that population tier is filled.</p>
+        <p className="text-xs uppercase tracking-[0.3em] text-primary text-center mb-10">All Prices in USD · Hardcoded · No Formulas</p>
+        <div className="rounded-lg border border-border bg-card overflow-hidden">
+          <table className="w-full text-left">
+            <thead className="bg-secondary text-xs uppercase tracking-widest text-muted-foreground">
+              <tr>
+                <th className="px-6 py-4">Population Base</th>
+                <th className="px-6 py-4">Slots Available</th>
+                <th className="px-6 py-4 text-primary">Per Slot / Month</th>
+                <th className="px-6 py-4 hidden md:table-cell">Total If Sold Out</th>
+              </tr>
+            </thead>
+            <tbody>
+              {PRICING_MATRIX.map((row) => (
+                <tr key={row.population} className="border-t border-border hover:bg-secondary/40 transition-colors">
+                  <td className="px-6 py-4 font-semibold text-foreground">{row.populationLabel}</td>
+                  <td className="px-6 py-4 text-muted-foreground">{row.slots} slots</td>
+                  <td className="px-6 py-4 text-primary font-display text-xl">${row.pricePerSlot.toFixed(2)}/mo</td>
+                  <td className="px-6 py-4 text-muted-foreground text-sm hidden md:table-cell">${row.monthlyTotal.toFixed(2)}/mo</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <h3 className="font-display text-3xl text-foreground text-center mt-16 mb-6">Add-Ons & Upsells</h3>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="p-6 rounded-lg bg-card border border-border">
+            <p className="text-xs uppercase tracking-widest text-muted-foreground mb-2">Position #1 Feature</p>
+            <p className="font-display text-3xl text-primary">+{ADDONS.position1FeaturePercent * 100}%</p>
+            <p className="text-muted-foreground text-sm mt-2">Added to monthly billing — half your active slot cost.</p>
+          </div>
+          <div className="p-6 rounded-lg bg-card border border-border">
+            <p className="text-xs uppercase tracking-widest text-muted-foreground mb-2">High-Authority Backlink Pack</p>
+            <p className="font-display text-3xl text-primary">${ADDONS.backlinkPackOneTime.toFixed(2)}</p>
+            <p className="text-muted-foreground text-sm mt-2">One-time fee.</p>
+          </div>
+          <div className="p-6 rounded-lg bg-card border border-border">
+            <p className="text-xs uppercase tracking-widest text-muted-foreground mb-2">TALC.tv Visual Blast</p>
+            <p className="font-display text-3xl text-primary">${ADDONS.talcVisualBlastPerPost.toFixed(2)}</p>
+            <p className="text-muted-foreground text-sm mt-2">Per post — pay as you go.</p>
+          </div>
+          <div className="p-6 rounded-lg bg-card border border-border">
+            <p className="text-xs uppercase tracking-widest text-muted-foreground mb-2">Hall Visualizer (EyeSpyr)</p>
+            <p className="font-display text-3xl text-primary">${ADDONS.hallVisualizerPerRender.toFixed(2)}</p>
+            <p className="text-muted-foreground text-sm mt-2">Per render — pay as you go.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <section className="py-20 bg-background border-t border-border">
       <div className="container mx-auto px-4 max-w-5xl">
