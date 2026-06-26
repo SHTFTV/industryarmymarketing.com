@@ -1,7 +1,12 @@
 import { motion } from "framer-motion";
 import { Crown, Cpu, Truck, ExternalLink } from "lucide-react";
+import loveourlistingsImg from "@/assets/flagship/loveourlistings.png.asset.json";
+import weddingsImg from "@/assets/flagship/weddings.jpg.asset.json";
+import plowwowImg from "@/assets/flagship/plowwow.png.asset.json";
+import kongtractorsImg from "@/assets/flagship/kongtractors.png.asset.json";
+import promowsImg from "@/assets/flagship/promows.png.asset.json";
 
-type Brand = { name: string; url: string; tagline: string };
+type Brand = { name: string; url: string; tagline: string; image?: string };
 
 const groups: { icon: typeof Crown; eyebrow: string; title: string; blurb: string; brands: Brand[] }[] = [
   {
@@ -10,10 +15,11 @@ const groups: { icon: typeof Crown; eyebrow: string; title: string; blurb: strin
     title: "Category-Defining Properties",
     blurb: "Owned, operated, and ranking. Proof we don't just market brands — we build them.",
     brands: [
-      { name: "LoveOurListings", url: "https://loveourlistings.com", tagline: "Real Estate Showcase Network" },
-      { name: "Weddings.io", url: "https://weddings.io", tagline: "Premium Wedding Vendor Network" },
-      { name: "Plowwow.com", url: "https://plowwow.com", tagline: "Snow & Site Services Marketplace" },
-      { name: "Kongtractors.com", url: "https://kongtractors.com", tagline: "Heavy Trade Contractor Directory" },
+      { name: "LoveOurListings", url: "https://loveourlistings.com", tagline: "Real Estate Showcase Network", image: loveourlistingsImg.url },
+      { name: "Weddings.io", url: "https://weddings.io", tagline: "Premium Wedding Vendor Network", image: weddingsImg.url },
+      { name: "Plowwow.com", url: "https://plowwow.com", tagline: "Snow & Site Services Marketplace", image: plowwowImg.url },
+      { name: "Kongtractors.com", url: "https://kongtractors.com", tagline: "Heavy Trade Contractor Directory", image: kongtractorsImg.url },
+      { name: "ProMows.com", url: "https://promows.com", tagline: "Lawn Care & Grounds Network", image: promowsImg.url },
     ],
   },
   {
@@ -93,13 +99,25 @@ const FlagshipBrandsSection = () => {
                     href={brand.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group p-6 rounded-lg bg-card border border-border hover:border-primary/50 hover:border-glow transition-all duration-300 flex flex-col"
+                    className="group rounded-lg bg-card border border-border hover:border-primary/50 hover:border-glow transition-all duration-300 flex flex-col overflow-hidden"
                   >
-                    <div className="flex items-start justify-between mb-2">
-                      <h4 className="font-display text-2xl text-primary text-glow">{brand.name}</h4>
-                      <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0 mt-1" />
+                    {brand.image && (
+                      <div className="relative aspect-square overflow-hidden bg-background">
+                        <img
+                          src={brand.image}
+                          alt={`${brand.name} — ${brand.tagline}`}
+                          loading="lazy"
+                          className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
+                        />
+                      </div>
+                    )}
+                    <div className="p-5 flex flex-col">
+                      <div className="flex items-start justify-between mb-2">
+                        <h4 className="font-display text-2xl text-primary text-glow">{brand.name}</h4>
+                        <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0 mt-1" />
+                      </div>
+                      <p className="text-muted-foreground text-sm">{brand.tagline}</p>
                     </div>
-                    <p className="text-muted-foreground text-sm">{brand.tagline}</p>
                   </a>
                 ))}
               </div>
