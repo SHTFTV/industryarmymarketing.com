@@ -7,6 +7,7 @@ import kongtractorsImg from "@/assets/flagship/kongtractors.png.asset.json";
 import promowsImg from "@/assets/flagship/promows.png.asset.json";
 import buildershausImg from "@/assets/flagship/buildershaus-card.jpg.asset.json";
 import errandsImg from "@/assets/flagship/errands-card.jpg.asset.json";
+import treatmentsImg from "@/assets/flagship/treatments-card.jpg.asset.json";
 
 type Brand = { name: string; url: string; tagline: string; image?: string };
 
@@ -33,6 +34,7 @@ const groups: { icon: typeof Crown; eyebrow: string; title: string; blurb: strin
     brands: [
       { name: "EyeSpyR.com", url: "https://eyespyr.com", tagline: "AI Hall & Space Visualizer" },
       { name: "Talc.tv", url: "https://talc.tv", tagline: "Visual Blast Distribution Engine" },
+      { name: "Treatments.tv", url: "https://treatments.tv", tagline: "Health & Wellness Video Network", image: treatmentsImg.url },
     ],
   },
   {
