@@ -1,6 +1,7 @@
 import Layout from "@/components/Layout";
 import Seo from "@/components/Seo";
 import HeroSection from "@/components/HeroSection";
+import FlagshipBrandsSection from "@/components/FlagshipBrandsSection";
 import ServicesSection from "@/components/ServicesSection";
 import PricingSection from "@/components/PricingSection";
 import BrandsSection from "@/components/BrandsSection";
@@ -33,6 +34,7 @@ const Index = () => {
         }}
       />
       <HeroSection />
+      <FlagshipBrandsSection />
       <ServicesSection />
       <ContractorTradesGrid limit={12} showCta />
       <PricingSection />
