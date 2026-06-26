@@ -4,6 +4,7 @@ import Layout from "@/components/Layout";
 import Seo, { SITE_URL } from "@/components/Seo";
 import { Button } from "@/components/ui/button";
 import { getPost, blogPosts } from "@/data/blogPosts";
+import BlogRichContentView from "@/components/BlogRichContent";
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -213,11 +214,14 @@ const BlogPost = () => {
             </figure>
           )}
 
-          <p className="text-xl md:text-2xl text-foreground/90 leading-relaxed mb-12 font-medium">
-            {post.pain}
-          </p>
-
-          {sections.map((s) => (
+          {post.richContent ? (
+            <BlogRichContentView content={post.richContent} />
+          ) : (
+            <>
+              <p className="text-xl md:text-2xl text-foreground/90 leading-relaxed mb-12 font-medium">
+                {post.pain}
+              </p>
+              {sections.map((s) => (
             <section key={s.h} className="mb-12">
               <h2 className="font-display text-2xl md:text-3xl text-foreground mb-5 leading-tight">
                 {s.h}
@@ -228,7 +232,9 @@ const BlogPost = () => {
                 </p>
               ))}
             </section>
-          ))}
+              ))}
+            </>
+          )}
 
           <section className="mb-12">
             <h2 className="font-display text-2xl md:text-3xl text-foreground mb-6">
