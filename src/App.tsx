@@ -22,7 +22,6 @@ import Blog from "./pages/Blog.tsx";
 import BlogPost from "./pages/BlogPost.tsx";
 import Investors from "./pages/Investors.tsx";
 import Dashboard from "./pages/Dashboard.tsx";
-import WallOfLove from "./pages/WallOfLove.tsx";
 import Legal from "./pages/Legal.tsx";
 import SteelStud from "./pages/SteelStud.tsx";
 import MiningLogistics from "./pages/MiningLogistics.tsx";
@@ -78,7 +77,6 @@ const App = () => (
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/investors" element={<Investors />} />
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/wall-of-love" element={<WallOfLove />} />
           <Route path="/legal" element={<Legal />} />
           <Route path="/niches/steel-stud" element={<SteelStud />} />
           <Route path="/niches/mining-logistics" element={<MiningLogistics />} />

@@ -17,7 +17,6 @@ const cols = [
       { label: "Site Builder", to: "/builder" },
       { label: "Investors", to: "/investors" },
       { label: "Blog", to: "/blog" },
-      { label: "Wall of Love", to: "/wall-of-love" },
       { label: "Contractors", to: "/contractors" },
       { label: "Service Pros", to: "/service-professionals" },
     ],

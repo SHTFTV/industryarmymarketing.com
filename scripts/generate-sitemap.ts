@@ -75,7 +75,6 @@ const entries: SitemapEntry[] = [
   { path: "/blog", changefreq: "weekly", priority: "0.7" },
   { path: "/investors", changefreq: "monthly", priority: "0.5" },
   { path: "/dashboard", changefreq: "monthly", priority: "0.5" },
-  { path: "/wall-of-love", changefreq: "weekly", priority: "0.7" },
   { path: "/legal", changefreq: "monthly", priority: "0.5" },
   { path: "/contractor-marketing/", changefreq: "weekly", priority: "0.9" },
   ...trades.map((t) => ({

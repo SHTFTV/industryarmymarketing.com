@@ -27,7 +27,6 @@ const expectedPaths: string[] = [
   "/blog",
   "/investors",
   "/dashboard",
-  "/wall-of-love",
   "/legal",
   ...niches.map((n) => `/niches/${n}`),
   ...localCities.map((c) => `/local/${c}`),
