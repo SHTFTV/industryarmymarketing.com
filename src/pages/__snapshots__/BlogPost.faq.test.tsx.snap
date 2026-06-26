@@ -1271,7 +1271,7 @@ exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /landscapers-toronto: 
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. landscapers.ca territory partners offer end-to-end design-build — paver patios, retaining walls, drainage, irrigation, and planting. Most projects run $14,000 to $80,000 for a Forest Hill or Lawrence Park front-and-back redesign."
+        "text": "Yes. promows.ca territory partners offer end-to-end design-build — paver patios, retaining walls, drainage, irrigation, and planting. Most projects run $14,000 to $80,000 for a Forest Hill or Lawrence Park front-and-back redesign."
       },
       "name": "Do you handle hardscape and design?"
     },
@@ -1279,7 +1279,7 @@ exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /landscapers-toronto: 
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Every landscapers.ca territory partner is verified against the Landscape Ontario member register. EyeSpyr confirms the membership number before the listing publishes."
+        "text": "Every promows.ca territory partner is verified against the Landscape Ontario member register. EyeSpyr confirms the membership number before the listing publishes."
       },
       "name": "Are crews Landscape Ontario certified?"
     },
@@ -1305,7 +1305,7 @@ exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /landscapers-toronto: 
         "@type": "Answer",
         "text": "Exclusive territory. One verified crew holds the Toronto listing. No bid race against 40 contractors, no shared leads from HomeStars, no race-to-the-bottom on weekly cuts."
       },
-      "name": "Why only one landscaping crew per city on landscapers.ca?"
+      "name": "Why only one landscaping crew per city on promows.ca?"
     }
   ]
 }

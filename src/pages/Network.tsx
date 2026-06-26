@@ -98,7 +98,7 @@ export const groups = [
       ["excavators.tv", "Excavation"],
       ["hardscapes.io", "Hardscaping"],
       ["painters.tv", "Painting"],
-      ["landscapers.ca", "Landscaping"],
+      ["promows.ca", "Landscaping"],
       ["promows.com", "Lawn Care"],
       ["plowwow.com", "Snow Plowing"],
       ["snowremoval.tv", "Snow Removal"],

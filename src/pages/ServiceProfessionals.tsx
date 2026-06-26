@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 
 const categories = [
   { emoji: "🚛", name: "Movers", domain: "mover.ltd" },
-  { emoji: "🌿", name: "Landscapers", domain: "landscapers.ca" },
+  { emoji: "🌿", name: "Pro Mows", domain: "promows.ca" },
   { emoji: "🌨️", name: "Snow Removal", domain: "plowwow.com" },
   { emoji: "🌱", name: "Lawn Care", domain: "promows.com" },
   { emoji: "🛋️", name: "Decorators", domain: "decorator.tv" },
