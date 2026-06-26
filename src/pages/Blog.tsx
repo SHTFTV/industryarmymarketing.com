@@ -8,6 +8,7 @@ import { blogPosts } from "@/data/blogPosts";
 import { useMemo, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Search, X } from "lucide-react";
+import FeaturedCaseStudy from "@/components/FeaturedCaseStudy";
 
 const Blog = () => {
   const [featured, ...rest] = blogPosts;
@@ -56,6 +57,7 @@ const Blog = () => {
         highlight="Blog"
         description="Deep dives on $10 exclusive territory marketing — one guide per trade domain. SEO, AEO, GEO, and the math behind the model."
       />
+      <FeaturedCaseStudy />
 
       <section className="py-16">
         <div className="container mx-auto px-4 max-w-6xl">
