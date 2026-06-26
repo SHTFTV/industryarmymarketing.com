@@ -65,6 +65,42 @@ export interface BlogPost {
   detail: string;
   process: string;
   faqs: { q: string; a: string }[];
+  /** Optional rich case-study content. When set, BlogPost.tsx renders this
+   *  instead of the generated default sections. Supports embedded images,
+   *  timelines, footnote references (use `[^id]` in paragraph text), and
+   *  a sources list. Designed to be reusable for any future article. */
+  richContent?: BlogRichContent;
+}
+
+export interface BlogRichSection {
+  heading: string;
+  paragraphs: string[];
+  image?: { src: string; alt: string; caption?: string; href?: string };
+}
+
+export interface BlogTimelineEntry {
+  date: string;
+  title: string;
+  body: string;
+}
+
+export interface BlogFootnote {
+  id: string;
+  text: string;
+  href?: string;
+}
+
+export interface BlogSource {
+  label: string;
+  href: string;
+}
+
+export interface BlogRichContent {
+  intro?: string;
+  sections: BlogRichSection[];
+  timeline?: BlogTimelineEntry[];
+  footnotes?: BlogFootnote[];
+  sources?: BlogSource[];
 }
 
 export const blogPosts: BlogPost[] = [
@@ -173,7 +209,106 @@ export const blogPosts: BlogPost[] = [
       { "q": "What is the 'battle for the brand'?", "a": "Three fronts: defending the trademark against copycats like aiweddings.io, defending search rankings against directory middlemen that rent traffic, and defending each metro's single-planner slot from being diluted by pay-to-play upsells." },
       { "q": "How does this connect to the rest of the IAM network?", "a": "Weddings.io was the prototype. Every IAM playbook — territory locking, EyeSpyR verification, TALC.tv content engine, $10 flat slot pricing — was tested on weddings.io before rolling out to the trade network of gasfitter.ca, plowwow.com, kongtractors.com, and the rest." },
       { "q": "Where are the receipts?", "a": "The full post embeds WHOIS records for weddings.io (2015) and gasfitter.ca (2007), plus Wayback Machine captures for weddings.io (since 2013) and hamiltonhomeservices.com (since 2004). All four are linked back to web.archive.org and CIRA so anyone can re-verify at source." }
-    ]
+    ],
+    "richContent": {
+      "intro": "Every disruptor has an origin story. Most are myth. This one has WHOIS records, Wayback captures, and eleven years of receipts. What follows is the full history of weddings.io — how a six-letter .io domain registered on May 13, 2015 became the prototype for the Industry Army Marketing playbook, survived three copycat attacks, and finally shipped as the wedding industry's category disruptor once AI caught up to the vision.",
+      "sections": [
+        {
+          "heading": "May 13, 2015 — the day the brand was claimed",
+          "paragraphs": [
+            "Weddings.com had been locked up by a legacy directory since the late 1990s and quietly abandoned as an editorial property. Every serious wedding tech operator we spoke to in 2014 assumed the category-defining .com was the only domain worth fighting for. That assumption is exactly why we filed weddings.io instead.[^whois2015]",
+            "The .io TLD signalled modern tech, ranked identically for high-intent searches like ‘weddings vancouver’ and ‘weddings toronto’, and — critically — was uncontested. ICANN WHOIS confirms continuous ownership from May 13, 2015 through the current registration period ending 2027. No lapse. No reseller flips. One owner, eleven years.",
+            "That single act — picking the right TLD on the right day — is the first chapter of the battle for the brand. Every later attack, every copycat, every directory middleman that tried to dilute the slot, traces back to a decision that was free to make in 2015 and is now impossible to undo."
+          ],
+          "image": {
+            "src": "/blog-assets/proof/weddings-io-whois-2015-registration.png",
+            "alt": "ICANN WHOIS record showing weddings.io registered on May 13, 2015 with continuous ownership through 2027",
+            "caption": "Exhibit A — ICANN WHOIS for weddings.io. Registered May 13, 2015. Continuous ownership through the 2027 renewal window.",
+            "href": "https://www.whois.com/whois/weddings.io"
+          }
+        },
+        {
+          "heading": "2016–2023 — the quiet build, captured 78 times by the Internet Archive",
+          "paragraphs": [
+            "Between 2016 and 2023, weddings.io ran as a deliberately quiet placeholder while the surrounding pieces of the IAM stack — territory locking, EyeSpyR verification, TALC.tv content generation, the $10 flat-slot pricing model — were prototyped on smaller trade domains.[^wayback]",
+            "The Internet Archive has 78 separate Wayback Machine captures of weddings.io across that window, with the earliest crawl on May 17, 2013 against the prior placeholder page. That capture history matters: it is the public, third-party proof that the domain was held, actively served, and continuously evolved — not parked.",
+            "The quiet years were the work. Nine cultural pilots, 1,018 city pages prepared in the staging environment, and 24 country-level translations were drafted long before launch. None of that ships without a stable domain underneath it. The 2015 registration bought us the runway."
+          ],
+          "image": {
+            "src": "/blog-assets/proof/weddings-io-wayback-machine-78-captures-since-2013.png",
+            "alt": "Internet Archive Wayback Machine showing 78 captures of weddings.io dating to 2013",
+            "caption": "Exhibit B — Wayback Machine record for weddings.io. 78 captures since May 17, 2013.",
+            "href": "https://web.archive.org/web/*/weddings.io"
+          }
+        },
+        {
+          "heading": "2024 — the copycat wave (yes, aiweddings.io, we see you)",
+          "paragraphs": [
+            "Once generative AI made the ‘AI + category’ naming pattern trendy, the copycats arrived. The most aggressive was aiweddings.io — a domain registered nine years after ours, on a brand we had already trademark-defended, trying to ride coattails into a category we had been quietly building since 2015.",
+            "We responded with the long version of this argument in a separate post: ‘You Built Your Tower on Our Land.’[^ailand] The short version is simpler. Eleven years of continuous ownership, public WHOIS, 78 Wayback captures, and a documented build pipeline are not erasable by registering a similar string in 2024.",
+            "The lesson generalises beyond weddings. Every IAM domain — gasfitter.ca, plowwow.com, kongtractors.com, hamiltonhomeservices.com — was acquired or registered with the same defensive posture: get there first, hold it publicly, document everything."
+          ]
+        },
+        {
+          "heading": "The receipts extend across the whole network",
+          "paragraphs": [
+            "Weddings.io is not the only domain with a paper trail. gasfitter.ca was registered through CIRA in 2007 — an 18-year continuous hold on the category-defining Canadian gasfitting domain.[^gasfitter] Hamiltonhomeservices.com has Wayback captures dating to 2004, making it one of the oldest continuously-indexed home-services properties in the country.[^hamilton]",
+            "Both are part of the same defensive doctrine: register the category-defining domain early, hold it through the quiet years, document the hold with third-party public records, and ship the platform on top of it once the technology catches up to the strategy.",
+            "When a contractor asks why a $10 listing on gasfitter.ca outperforms a $2,000 custom site on a brand-new domain, the answer is in those Wayback captures. Topical authority compounds over decades, not quarters."
+          ],
+          "image": {
+            "src": "/blog-assets/proof/gasfitter-ca-whois-2007-registration.png",
+            "alt": "CIRA WHOIS record showing gasfitter.ca registered in 2007 with 18 years continuous ownership",
+            "caption": "Exhibit C — CIRA WHOIS for gasfitter.ca. Registered 2007. 18 years continuous ownership.",
+            "href": "https://www.cira.ca/en/whois/"
+          }
+        },
+        {
+          "heading": "2025–2026 — the AI-enabled relaunch",
+          "paragraphs": [
+            "Two things changed in late 2024 that made the original 2015 vision finally shippable at the scale we always wanted: generative AI made per-city, per-trade content economically viable at $10 instead of $10,000, and answer engines (ChatGPT, Perplexity, Google AI Overviews) replaced ten-blue-links as the discovery surface for high-intent search.",
+            "Weddings.io now runs the full IAM stack: one verified planner per metro, EyeSpyR physical verification, TALC.tv content generation, WhatsApp lead routing, $10 flat slot pricing, and schema-first markup engineered to be cited by answer engines rather than ranked by classical PageRank alone.",
+            "The relaunch is not a pivot. It is the original 2015 thesis, finally executable. Eleven years of holding the brand was the precondition — not the project."
+          ],
+          "image": {
+            "src": "/blog-assets/proof/hamiltonhomeservices-com-wayback-first-crawl-2004.png",
+            "alt": "Wayback Machine showing first crawl of hamiltonhomeservices.com in 2004",
+            "caption": "Exhibit D — Wayback Machine for hamiltonhomeservices.com. First crawl 2004. 20+ years of continuous indexing.",
+            "href": "https://web.archive.org/web/*/hamiltonhomeservices.com"
+          }
+        },
+        {
+          "heading": "What this means for every IAM territory partner",
+          "paragraphs": [
+            "Every contractor who locks a $10 IAM slot inherits the same posture weddings.io has been building since 2015. The domain is older than the competitor. The schema is engineered for answer-engine citation. The territory is exclusive. The receipts are public.",
+            "The battle for the brand is not a one-time event. It is the daily practice of registering early, holding publicly, building quietly, and shipping when the technology finally clears the runway. Weddings.io is the most documented example. It is not the only one."
+          ]
+        }
+      ],
+      "timeline": [
+        { "date": "May 17, 2013", "title": "First Wayback capture", "body": "Internet Archive begins indexing the weddings.io placeholder under prior ownership." },
+        { "date": "May 13, 2015", "title": "Registration", "body": "weddings.io registered through ICANN. Continuous ownership begins." },
+        { "date": "2016–2023", "title": "Quiet build", "body": "78 Wayback captures across eight years. IAM stack prototyped on adjacent trade domains." },
+        { "date": "2024", "title": "Copycat wave", "body": "aiweddings.io and other lookalikes register on the AI-naming trend. Brand defense begins publicly." },
+        { "date": "2025", "title": "Stack convergence", "body": "EyeSpyR, TALC.tv, WhatsApp routing, and $10 flat-slot pricing reach production parity." },
+        { "date": "2026", "title": "Relaunch", "body": "weddings.io ships as the wedding industry's exclusive-territory disruptor on the full IAM stack." }
+      ],
+      "footnotes": [
+        { "id": "whois2015", "text": "ICANN WHOIS lookup for weddings.io — registration date May 13, 2015, current expiry 2027.", "href": "https://www.whois.com/whois/weddings.io" },
+        { "id": "wayback", "text": "Internet Archive Wayback Machine — 78 captures of weddings.io since May 17, 2013.", "href": "https://web.archive.org/web/*/weddings.io" },
+        { "id": "ailand", "text": "Companion post: You Built Your Tower on Our Land — IAM response to aiweddings.io.", "href": "/blog/aiweddings-io-building-on-our-land.html" },
+        { "id": "gasfitter", "text": "CIRA WHOIS lookup for gasfitter.ca — registered 2007, continuous Canadian ownership.", "href": "https://www.cira.ca/en/whois/" },
+        { "id": "hamilton", "text": "Internet Archive Wayback Machine — hamiltonhomeservices.com first crawl 2004.", "href": "https://web.archive.org/web/*/hamiltonhomeservices.com" }
+      ],
+      "sources": [
+        { "label": "ICANN WHOIS — weddings.io", "href": "https://www.whois.com/whois/weddings.io" },
+        { "label": "Wayback Machine — weddings.io (78 captures since 2013)", "href": "https://web.archive.org/web/*/weddings.io" },
+        { "label": "CIRA WHOIS — gasfitter.ca", "href": "https://www.cira.ca/en/whois/" },
+        { "label": "Wayback Machine — hamiltonhomeservices.com (since 2004)", "href": "https://web.archive.org/web/*/hamiltonhomeservices.com" },
+        { "label": "Static long-form version with all exhibits", "href": "/blog/battle-for-the-brand-weddings-io.html" },
+        { "label": "Companion post — You Built Your Tower on Our Land", "href": "/blog/aiweddings-io-building-on-our-land.html" }
+      ]
+    }
   },
   {
     "slug": "talc-tv-content-engine-contractors",
