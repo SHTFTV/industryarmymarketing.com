@@ -85,7 +85,7 @@ export const blogPosts: BlogPost[] = [
     "excerpt": "HomeAdvisor sells the same lead to six contractors. Angi charges $300 for a quote that converts 20% of the time. Yelp bills monthly whether you win or not. Industry Army Marketing was built to end all three…",
     "pain": "HomeAdvisor sells the same lead to six contractors simultaneously. Angi charges $300 for a quote that converts 20% of the time. Yelp charges monthly whether you win or not. Industry Army Marketing was built to end all three — one industry at a time.",
     "detail": "IAM is a network of premium trade domains running on one infrastructure: The 250 Scale pricing formula, EyeSpyR verification, and the TALC.tv content engine. Every trade gets the same model — one operator per metro, $10 a month, territory locked, no bid wars.",
-    "process": "Pick your trade domain (roofers.io, plumbers.ltd, sparkys.tv, hvacr.tv, mover.ltd, landscapers.ca and 50+ more). Pick your city. Lock the territory. EyeSpyR verifies your credentials inside 24 hours. TALC.tv publishes your first SEO post the same week. You own the search result for that trade in that city until you cancel.",
+    "process": "Pick your trade domain (roofers.io, plumbers.ltd, sparkys.tv, hvacr.tv, mover.ltd, promows.ca and 50+ more). Pick your city. Lock the territory. EyeSpyR verifies your credentials inside 24 hours. TALC.tv publishes your first SEO post the same week. You own the search result for that trade in that city until you cancel.",
     "faqs": [
       { "q": "What is The 250 Scale?", "a": "IAM's universal pricing formula: $10 per slot per month, with slot counts scaled by city population. Vancouver gets 7 slots, Toronto gets 10, Kelowna gets 3. One operator per slot. Same math everywhere." },
       { "q": "Why one operator per city?", "a": "Exclusivity is the product. Bid wars destroy margins and homeowners. Territory locks protect both — you get the call, they get a verified specialist instead of a five-way quote race." },
@@ -1780,7 +1780,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     "slug": "landscapers-toronto",
-    "brand": "landscapers.ca",
+    "brand": "promows.ca",
     "trade": "Landscaping & Grounds Maintenance",
     "tradeShort": "landscaping",
     "plural": "landscapers",
@@ -1791,11 +1791,11 @@ export const blogPosts: BlogPost[] = [
     "category": "Outdoor",
     "date": "June 2026",
     "title": "Landscaping Contractors in Toronto — Territory-Locked, EyeSpyR Verified, Licensed",
-    "metaDescription": "Landscaping & Grounds Maintenance in Toronto, ON. Lock the landscapers.ca territory for $10/month. EyeSpyr verified, one crew per city, SEO + AEO + GEO + LLM schema baked in.",
+    "metaDescription": "Landscaping & Grounds Maintenance in Toronto, ON. Lock the promows.ca territory for $10/month. EyeSpyr verified, one crew per city, SEO + AEO + GEO + LLM schema baked in.",
     "excerpt": "Toronto landscaping crews fight 40-way bid wars on HomeStars while the Forest Hill, Rosedale, and Lawrence Park homeowners they want are quietly asking Google AI for 'best landscaper near me'…",
     "pain": "Toronto landscaping crews fight 40-way bid wars on HomeStars while the Forest Hill, Rosedale, and Lawrence Park homeowners they want are quietly asking Google AI Overviews and ChatGPT for 'best landscaper near me'. The crews that win that answer-engine citation own the season.",
-    "detail": "Toronto landscaping is a 7-month season jammed into 12 months of overhead. The lawn cuts that pay the bills June through September have to subsidize fall cleanup, winter snow contracts, and spring opening. A crew ranking on landscapers.ca signals to the high-ticket Forest Hill, Rosedale, and Bridle Path estates that the work is full-service — design, hardscape, ongoing maintenance, snow — not a kid with a push mower.",
-    "process": "Your landscapers.ca territory includes the crew profile, before-and-after project gallery, Landscape Ontario certification badge, instant-quote form, and WhatsApp routing for estate inquiries. EyeSpyr verifies the WSIB clearance and HST registration so the listing earns the structured-data trust Google's MUM, Gemini, and answer-engine layer cite first.",
+    "detail": "Toronto landscaping is a 7-month season jammed into 12 months of overhead. The lawn cuts that pay the bills June through September have to subsidize fall cleanup, winter snow contracts, and spring opening. A crew ranking on promows.ca signals to the high-ticket Forest Hill, Rosedale, and Bridle Path estates that the work is full-service — design, hardscape, ongoing maintenance, snow — not a kid with a push mower.",
+    "process": "Your promows.ca territory includes the crew profile, before-and-after project gallery, Landscape Ontario certification badge, instant-quote form, and WhatsApp routing for estate inquiries. EyeSpyr verifies the WSIB clearance and HST registration so the listing earns the structured-data trust Google's MUM, Gemini, and answer-engine layer cite first.",
     "faqs": [
       {
         "q": "What does a Toronto landscaping season cost in 2026?",
@@ -1803,11 +1803,11 @@ export const blogPosts: BlogPost[] = [
       },
       {
         "q": "Do you handle hardscape and design?",
-        "a": "Yes. landscapers.ca territory partners offer end-to-end design-build — paver patios, retaining walls, drainage, irrigation, and planting. Most projects run $14,000 to $80,000 for a Forest Hill or Lawrence Park front-and-back redesign."
+        "a": "Yes. promows.ca territory partners offer end-to-end design-build — paver patios, retaining walls, drainage, irrigation, and planting. Most projects run $14,000 to $80,000 for a Forest Hill or Lawrence Park front-and-back redesign."
       },
       {
         "q": "Are crews Landscape Ontario certified?",
-        "a": "Every landscapers.ca territory partner is verified against the Landscape Ontario member register. EyeSpyr confirms the membership number before the listing publishes."
+        "a": "Every promows.ca territory partner is verified against the Landscape Ontario member register. EyeSpyr confirms the membership number before the listing publishes."
       },
       {
         "q": "Do you offer winter snow contracts?",
@@ -1818,7 +1818,7 @@ export const blogPosts: BlogPost[] = [
         "a": "Spring opening books out by mid-February for May start dates. Design-build projects need to be quoted by January for a June dig start because permit timelines run 8 to 12 weeks in the City of Toronto."
       },
       {
-        "q": "Why only one landscaping crew per city on landscapers.ca?",
+        "q": "Why only one landscaping crew per city on promows.ca?",
         "a": "Exclusive territory. One verified crew holds the Toronto listing. No bid race against 40 contractors, no shared leads from HomeStars, no race-to-the-bottom on weekly cuts."
       }
     ]
