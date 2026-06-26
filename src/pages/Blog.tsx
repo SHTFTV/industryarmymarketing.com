@@ -11,7 +11,13 @@ import { Search, X } from "lucide-react";
 import FeaturedCaseStudy from "@/components/FeaturedCaseStudy";
 
 const Blog = () => {
-  const [featured, ...rest] = blogPosts;
+  // Pin the Weddings.io case study as featured for 3 months, then rotate.
+  const PINNED_SLUG = "battle-for-the-brand-weddings-io";
+  const PIN_UNTIL = new Date("2026-09-26T00:00:00Z");
+  const pinActive = Date.now() < PIN_UNTIL.getTime();
+  const pinnedPost = pinActive ? blogPosts.find((p) => p.slug === PINNED_SLUG) : undefined;
+  const featured = pinnedPost ?? blogPosts[0];
+  const rest = blogPosts.filter((p) => p.slug !== featured.slug);
   const [query, setQuery] = useState("");
   const [city, setCity] = useState<string>("all");
   const [category, setCategory] = useState<string>("all");
