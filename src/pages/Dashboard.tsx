@@ -3,6 +3,7 @@ import Seo from "@/components/Seo";
 import PageHeader from "@/components/PageHeader";
 import FeatureGrid from "@/components/FeatureGrid";
 import CtaBanner from "@/components/CtaBanner";
+import { ADDONS } from "@/data/pricingMatrix";
 
 const pillars = [
   { icon: "❤️", title: "Wall of Love", body: "Auto-hydrating 5-star review showcase. Every verified review displays in real time. Powered by EyeSpyr — no manual curation required." },
@@ -18,6 +19,13 @@ const alerts = [
   { sev: "HIGH", desc: "Sentiment 0.46–0.60 — <30 min WhatsApp", tone: "text-yellow-400" },
   { sev: "STANDARD", desc: "New review, any sentiment — <4 hr email", tone: "text-primary" },
   { sev: "LOW", desc: "Competitor activity — Daily report", tone: "text-muted-foreground" },
+];
+
+const addons = [
+  { name: "Position #1 Feature", price: `+${ADDONS.position1FeaturePercent * 100}% / mo`, body: "Pin your listing to the top of your city + trade page. Billed monthly at half of your active slot cost." },
+  { name: "High-Authority Backlink Pack", price: `$${ADDONS.backlinkPackOneTime.toFixed(2)} one-time`, body: "Curated dofollow backlinks from aged IAM network domains. One flat fee, permanent placement." },
+  { name: "TALC.tv Visual Blast", price: `$${ADDONS.talcVisualBlastPerPost.toFixed(2)} / post`, body: "Pay-as-you-go visual content blast to TALC.tv + your city page + GMB. Submit a project photo, we publish." },
+  { name: "Hall Visualizer (EyeSpyr)", price: `$${ADDONS.hallVisualizerPerRender.toFixed(2)} / render`, body: "Render a verified showcase visualization. Pay-as-you-go per render. No monthly minimum." },
 ];
 
 const Dashboard = () => (
@@ -52,6 +60,24 @@ const Dashboard = () => (
             <div key={a.sev} className="flex items-center justify-between gap-4 p-5 rounded-md bg-card border border-border">
               <span className={`font-display text-xl ${a.tone}`}>{a.sev}</span>
               <span className="text-muted-foreground text-sm text-right">{a.desc}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+    <section className="py-20 border-t border-border">
+      <div className="container mx-auto px-4 max-w-6xl">
+        <p className="text-primary uppercase tracking-[0.3em] text-xs font-semibold mb-3">Dashboard Add-Ons</p>
+        <h2 className="font-display text-4xl md:text-5xl text-foreground mb-2">Purchasable Upsells</h2>
+        <p className="text-muted-foreground mb-10 text-sm">Flat pricing. No surprises. Buy directly inside your dashboard.</p>
+        <div className="grid md:grid-cols-2 gap-4">
+          {addons.map((a) => (
+            <div key={a.name} className="p-6 rounded-lg bg-card border border-border">
+              <div className="flex items-baseline justify-between gap-3 mb-2">
+                <h3 className="font-display text-2xl text-foreground">{a.name}</h3>
+                <span className="font-display text-xl text-primary text-glow whitespace-nowrap">{a.price}</span>
+              </div>
+              <p className="text-muted-foreground text-sm leading-relaxed">{a.body}</p>
             </div>
           ))}
         </div>
