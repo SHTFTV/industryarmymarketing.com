@@ -10,7 +10,6 @@ const navLinks = [
   { label: "Pricing", to: "/pricing" },
   { label: "Network", to: "/network" },
   { label: "EyeSpyr", to: "/eyespyr" },
-  { label: "Wall of Love", to: "/wall-of-love" },
   { label: "Blog", to: "/blog" },
   { label: "Guest Post", to: "/guest-post" },
   { label: "Free Scan", to: "/scan-wizard" },
