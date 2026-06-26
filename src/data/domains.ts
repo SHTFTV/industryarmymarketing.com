@@ -31,7 +31,7 @@ export const domains = [
   { domain: "remodelers.io", niche: "Remodeling & Renovation", emoji: "🛠️" },
   { domain: "finishingcarpenters.com", niche: "Finish Carpentry", emoji: "🪚" },
   { domain: "mover.ltd", niche: "Moving Companies", emoji: "🚛" },
-  { domain: "landscapers.ca", niche: "Landscaping & Grounds", emoji: "🌿" },
+  { domain: "promows.ca", niche: "Landscaping & Grounds", emoji: "🌿" },
   { domain: "decorator.tv", niche: "Interior Decorating", emoji: "🛋️" },
   { domain: "interiordesigners.io", niche: "Interior Design", emoji: "✨" },
   { domain: "kongtractors.com", niche: "General Contracting", emoji: "🦍" },
