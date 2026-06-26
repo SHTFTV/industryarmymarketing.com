@@ -1,10 +1,12 @@
 import { motion } from "framer-motion";
 import { Crown, Cpu, Truck, ExternalLink } from "lucide-react";
 import loveourlistingsImg from "@/assets/flagship/loveourlistings.png.asset.json";
-import weddingsImg from "@/assets/flagship/weddings.jpg.asset.json";
-import plowwowImg from "@/assets/flagship/plowwow.png.asset.json";
+import weddingsImg from "@/assets/flagship/weddings-hero.jpg.asset.json";
+import plowwowImg from "@/assets/flagship/plowwow-mascot.png.asset.json";
 import kongtractorsImg from "@/assets/flagship/kongtractors.png.asset.json";
 import promowsImg from "@/assets/flagship/promows.png.asset.json";
+import buildershausImg from "@/assets/flagship/buildershaus-card.jpg.asset.json";
+import errandsImg from "@/assets/flagship/errands-card.jpg.asset.json";
 
 type Brand = { name: string; url: string; tagline: string; image?: string };
 
@@ -20,6 +22,7 @@ const groups: { icon: typeof Crown; eyebrow: string; title: string; blurb: strin
       { name: "Plowwow.com", url: "https://plowwow.com", tagline: "Snow & Site Services Marketplace", image: plowwowImg.url },
       { name: "Kongtractors.com", url: "https://kongtractors.com", tagline: "Heavy Trade Contractor Directory", image: kongtractorsImg.url },
       { name: "ProMows.com", url: "https://promows.com", tagline: "Lawn Care & Grounds Network", image: promowsImg.url },
+      { name: "BuildersHaus.com", url: "https://buildershaus.com", tagline: "Premium Builder & Renovation Hub", image: buildershausImg.url },
     ],
   },
   {
@@ -38,7 +41,7 @@ const groups: { icon: typeof Crown; eyebrow: string; title: string; blurb: strin
     title: "Logistics Reimagined",
     blurb: "Disrupting how goods, gear, and crews move — the same playbook we apply to your industry.",
     brands: [
-      { name: "Errands.io", url: "https://errands.io", tagline: "Drone & Last-Mile Services" },
+      { name: "Errands.io", url: "https://errands.io", tagline: "Drone & Last-Mile Services", image: errandsImg.url },
       { name: "Backhaul.io", url: "https://backhaul.io", tagline: "Smart Freight & Backhaul Network" },
     ],
   },
