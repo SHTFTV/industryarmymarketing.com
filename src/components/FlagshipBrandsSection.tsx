@@ -8,6 +8,7 @@ import promowsImg from "@/assets/flagship/promows.png.asset.json";
 import buildershausImg from "@/assets/flagship/buildershaus-card.jpg.asset.json";
 import errandsImg from "@/assets/flagship/errands-card.jpg.asset.json";
 import treatmentsImg from "@/assets/flagship/treatments-card.jpg.asset.json";
+import eyespyrImg from "@/assets/flagship/eyespyr-logo.png.asset.json";
 
 type Brand = { name: string; url: string; tagline: string; image?: string };
 
@@ -24,6 +25,7 @@ const groups: { icon: typeof Crown; eyebrow: string; title: string; blurb: strin
       { name: "Kongtractors.com", url: "https://kongtractors.com", tagline: "Heavy Trade Contractor Directory", image: kongtractorsImg.url },
       { name: "ProMows.com", url: "https://promows.com", tagline: "Lawn Care & Grounds Network", image: promowsImg.url },
       { name: "BuildersHaus.com", url: "https://buildershaus.com", tagline: "Premium Builder & Renovation Hub", image: buildershausImg.url },
+      { name: "Treatments.tv", url: "https://treatments.tv", tagline: "Health & Wellness Video Network", image: treatmentsImg.url },
     ],
   },
   {
@@ -32,9 +34,8 @@ const groups: { icon: typeof Crown; eyebrow: string; title: string; blurb: strin
     title: "Our In-House Stack",
     blurb: "Proprietary tools that power every campaign we run — and that you get access to inside the ecosystem.",
     brands: [
-      { name: "EyeSpyR.com", url: "https://eyespyr.com", tagline: "AI Hall & Space Visualizer" },
+      { name: "EyeSpyR.com", url: "https://eyespyr.com", tagline: "Contractor Verification & Trust Badge", image: eyespyrImg.url },
       { name: "Talc.tv", url: "https://talc.tv", tagline: "Visual Blast Distribution Engine" },
-      { name: "Treatments.tv", url: "https://treatments.tv", tagline: "Health & Wellness Video Network", image: treatmentsImg.url },
     ],
   },
   {
