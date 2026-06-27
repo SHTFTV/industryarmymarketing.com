@@ -11,6 +11,13 @@ import treatmentsImg from "@/assets/flagship/treatments-card.jpg.asset.json";
 import eyespyrImg from "@/assets/flagship/eyespyr-logo.png.asset.json";
 import dentistsImg from "@/assets/flagship/dentists-card.jpg.asset.json";
 import backhaulImg from "@/assets/flagship/backhaul-card.jpg.asset.json";
+import sparkysImg from "@/assets/flagship/sparkys-card.png.asset.json";
+import paintersImg from "@/assets/flagship/painters-card.png.asset.json";
+import floathomesImg from "@/assets/flagship/floathomes-card.png.asset.json";
+import excavatorsImg from "@/assets/flagship/excavators-card.png.asset.json";
+import caterersImg from "@/assets/flagship/caterers-card.png.asset.json";
+import ranchersImg from "@/assets/flagship/ranchers-card.png.asset.json";
+import decoratorImg from "@/assets/flagship/decorator-card.png.asset.json";
 
 type Brand = { name: string; url: string; tagline: string; image?: string; contain?: boolean };
 
@@ -29,6 +36,13 @@ const groups: { icon: typeof Crown; eyebrow: string; title: string; blurb: strin
       { name: "BuildersHaus.com", url: "https://buildershaus.com", tagline: "Premium Builder & Renovation Hub", image: buildershausImg.url },
       { name: "Treatments.tv", url: "https://treatments.tv", tagline: "Health & Wellness Video Network", image: treatmentsImg.url },
       { name: "Dentists.ltd", url: "https://dentists.ltd", tagline: "Premium Dental Network", image: dentistsImg.url },
+      { name: "Sparkys.tv", url: "https://sparkys.tv", tagline: "Electricians Video Network", image: sparkysImg.url, contain: true },
+      { name: "Painters.tv", url: "https://painters.tv", tagline: "Pro Painter Showcase Network", image: paintersImg.url, contain: true },
+      { name: "Decorator.tv", url: "https://decorator.tv", tagline: "Interior Decorator Studio Network", image: decoratorImg.url },
+      { name: "FloatHomes.tv", url: "https://floathomes.tv", tagline: "Floating Home Lifestyle Network", image: floathomesImg.url, contain: true },
+      { name: "Excavators.tv", url: "https://excavators.tv", tagline: "Heavy Excavation Video Network", image: excavatorsImg.url, contain: true },
+      { name: "Ranchers.tv", url: "https://ranchers.tv", tagline: "Ranch & Livestock Storytelling", image: ranchersImg.url },
+      { name: "Caterers.tv", url: "https://caterers.tv", tagline: "Premium Catering Showcase", image: caterersImg.url, contain: true },
     ],
   },
   {
