@@ -15,6 +15,7 @@ const streams = [
   { icon: "📍", title: "Territory Subscriptions", body: "Monthly recurring revenue from exclusive territory locks at $10/month. Churn is structurally low — cancelling means a competitor immediately claims the slot." },
   { icon: "📋", title: "Listing Fees", body: "One-time $10 setup per listing. Low barrier drives volume. As the network grows, listing fee revenue scales with contractor registrations across all domains." },
   { icon: "🔗", title: "Content & Backlinks", body: "$10 per guest post. No cap on volume per client. Content orders scale with client SEO budgets and drive compounding organic value on IAM's premium domains." },
+  { icon: "📱", title: "App Sales", body: "Revenue from the IAM flagship app portfolio — Weddings.io, PlowWow, Kongtractors, Errands.io, Backhaul.io and the broader vertical stack. One-time purchases, in-app upgrades, and white-label licensing compound on top of the recurring base." },
 ];
 
 const Investors = () => (
@@ -54,7 +55,7 @@ const Investors = () => (
     <section className="py-20 border-t border-border bg-card/30">
       <div className="container mx-auto px-4 max-w-6xl">
         <p className="text-primary uppercase tracking-[0.3em] text-xs font-semibold mb-3">Revenue Model</p>
-        <h2 className="font-display text-4xl md:text-5xl text-foreground mb-10">Three Recurring Streams</h2>
+        <h2 className="font-display text-4xl md:text-5xl text-foreground mb-10">Four Revenue Streams</h2>
         <FeatureGrid features={streams} />
       </div>
     </section>
