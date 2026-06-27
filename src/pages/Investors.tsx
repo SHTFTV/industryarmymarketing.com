@@ -61,7 +61,7 @@ const Investors = () => (
     <CtaBanner
       title="Investor"
       highlight="Inquiries"
-      description="We are selectively engaging with strategic investors and partners. Reach out directly for a pitch deck and financials. legal@industryarmymarketing.com"
+      description="We are selectively engaging with strategic investors and partners. Reach out directly for a pitch deck and financials. partnerships@industryarmymarketing.com"
       primaryLabel="Send Inquiry"
       primaryTo="/contact"
     />
