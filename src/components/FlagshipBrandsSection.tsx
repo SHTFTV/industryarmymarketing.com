@@ -48,7 +48,7 @@ const groups: { icon: typeof Crown; eyebrow: string; title: string; blurb: strin
     brands: [
       { name: "Treatments.tv", url: "https://treatments.tv", tagline: "Health & Wellness Video Network", image: treatmentsImg.url },
       { name: "Sparkys.tv", url: "https://sparkys.tv", tagline: "Electricians Video Network", image: sparkysImg.url },
-      { name: "Painters.tv", url: "https://painters.tv", tagline: "Pro Painter Showcase Network", image: paintersImg.url, contain: true },
+      { name: "Painters.tv", url: "https://painters.tv", tagline: "Pro Painter Showcase Network", image: paintersImg.url },
       { name: "Decorator.tv", url: "https://decorator.tv", tagline: "Interior Decorator Studio Network", image: decoratorImg.url },
       { name: "FloatHomes.tv", url: "https://floathomes.tv", tagline: "Floating Home Lifestyle Network", image: floathomesImg.url },
       { name: "Excavators.tv", url: "https://excavators.tv", tagline: "Heavy Excavation Video Network", image: excavatorsImg.url },
