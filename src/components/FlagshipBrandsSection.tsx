@@ -9,6 +9,7 @@ import buildershausImg from "@/assets/flagship/buildershaus-card.jpg.asset.json"
 import errandsImg from "@/assets/flagship/errands-card.jpg.asset.json";
 import treatmentsImg from "@/assets/flagship/treatments-card.jpg.asset.json";
 import eyespyrImg from "@/assets/flagship/eyespyr-logo.png.asset.json";
+import dentistsImg from "@/assets/flagship/dentists-card.jpg.asset.json";
 
 type Brand = { name: string; url: string; tagline: string; image?: string };
 
@@ -26,6 +27,7 @@ const groups: { icon: typeof Crown; eyebrow: string; title: string; blurb: strin
       { name: "ProMows.com", url: "https://promows.com", tagline: "Lawn Care & Grounds Network", image: promowsImg.url },
       { name: "BuildersHaus.com", url: "https://buildershaus.com", tagline: "Premium Builder & Renovation Hub", image: buildershausImg.url },
       { name: "Treatments.tv", url: "https://treatments.tv", tagline: "Health & Wellness Video Network", image: treatmentsImg.url },
+      { name: "Dentists.ltd", url: "https://dentists.ltd", tagline: "Premium Dental Network", image: dentistsImg.url },
     ],
   },
   {
