@@ -3,6 +3,7 @@ import Seo from "@/components/Seo";
 import PageHeader from "@/components/PageHeader";
 import FeatureGrid from "@/components/FeatureGrid";
 import CtaBanner from "@/components/CtaBanner";
+import RevenueBreakdownChart from "@/components/RevenueBreakdownChart";
 
 const stats = [
   { value: "80+", label: "Premium Trade Domains" },
@@ -59,6 +60,7 @@ const Investors = () => (
         <FeatureGrid features={streams} />
       </div>
     </section>
+    <RevenueBreakdownChart />
     <section className="py-12 border-t border-border">
       <div className="container mx-auto px-4 max-w-5xl text-center">
         <p className="text-primary uppercase tracking-[0.3em] text-xs font-semibold mb-3">Due Diligence</p>
