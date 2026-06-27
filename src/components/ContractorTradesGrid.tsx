@@ -8,6 +8,7 @@ import framersImg from "@/assets/flagship/framers-logo.png.asset.json";
 import roofersImg from "@/assets/flagship/roofers-hero.jpg.asset.json";
 import hvacrImg from "@/assets/flagship/hvacr-hero.jpg.asset.json";
 import finishingCarpentersImg from "@/assets/flagship/finishingcarpenters-logo.png.asset.json";
+import rebarImg from "@/assets/flagship/rebar-logo.png.asset.json";
 
 export type ContractorTrade = {
   name: string;
@@ -26,7 +27,7 @@ export const CONTRACTOR_TRADES: ContractorTrade[] = [
   { name: "Plumbing", domain: "plumbers.ltd", emoji: "💧", image: plumbersImg.url, contain: true },
   { name: "Finishing Carpentry", domain: "finishingcarpenters.com", emoji: "✏️", image: finishingCarpentersImg.url, contain: true },
   { name: "HVAC", domain: "hvacr.tv", emoji: "❄️", image: hvacrImg.url },
-  { name: "Excavation", domain: "excavators.tv", emoji: "🚜" },
+  { name: "Rebar & Reinforcing", domain: "rebar.tv", emoji: "🔗", image: rebarImg.url, contain: true },
   { name: "Painting", domain: "painters.tv", emoji: "🎨" },
   { name: "Steel Stud", domain: "steelstudcontractors.com", emoji: "🔩" },
   { name: "General Contracting", domain: "generalcontractors.ltd", emoji: "🏛️" },
