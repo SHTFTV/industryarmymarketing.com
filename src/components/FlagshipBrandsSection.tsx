@@ -10,6 +10,7 @@ import errandsImg from "@/assets/flagship/errands-card.jpg.asset.json";
 import treatmentsImg from "@/assets/flagship/treatments-card.jpg.asset.json";
 import eyespyrImg from "@/assets/flagship/eyespyr-logo.png.asset.json";
 import dentistsImg from "@/assets/flagship/dentists-card.jpg.asset.json";
+import backhaulImg from "@/assets/flagship/backhaul-card.jpg.asset.json";
 
 type Brand = { name: string; url: string; tagline: string; image?: string; contain?: boolean };
 
@@ -47,7 +48,7 @@ const groups: { icon: typeof Crown; eyebrow: string; title: string; blurb: strin
     blurb: "Disrupting how goods, gear, and crews move — the same playbook we apply to your industry.",
     brands: [
       { name: "Errands.io", url: "https://errands.io", tagline: "Drone & Last-Mile Services", image: errandsImg.url },
-      { name: "Backhaul.io", url: "https://backhaul.io", tagline: "Smart Freight & Backhaul Network" },
+      { name: "Backhaul.io", url: "https://backhaul.io", tagline: "Smart Freight & Backhaul Network", image: backhaulImg.url },
     ],
   },
 ];
