@@ -9,6 +9,7 @@ import roofersImg from "@/assets/flagship/roofers-hero.jpg.asset.json";
 import hvacrImg from "@/assets/flagship/hvacr-hero.jpg.asset.json";
 import finishingCarpentersImg from "@/assets/flagship/finishingcarpenters-logo.png.asset.json";
 import rebarImg from "@/assets/flagship/rebar-logo.png.asset.json";
+import kitchenCabinetsImg from "@/assets/flagship/kitchencabinets-card.png.asset.json";
 
 export type ContractorTrade = {
   name: string;
@@ -29,7 +30,7 @@ export const CONTRACTOR_TRADES: ContractorTrade[] = [
   { name: "HVAC", domain: "hvacr.tv", emoji: "❄️", image: hvacrImg.url },
   { name: "Rebar & Reinforcing", domain: "rebar.tv", emoji: "🔗", image: rebarImg.url, contain: true },
   { name: "Painting", domain: "painters.tv", emoji: "🎨" },
-  { name: "Steel Stud", domain: "steelstudcontractors.com", emoji: "🔩" },
+  { name: "Kitchen Cabinets", domain: "kitchencabinets.io", emoji: "🍳", image: kitchenCabinetsImg.url },
   { name: "General Contracting", domain: "generalcontractors.ltd", emoji: "🏛️" },
   { name: "Demolition", domain: "demolition.io", emoji: "💥", image: demolitionImg.url, contain: true },
   { name: "Remodeling", domain: "remodelers.io", emoji: "🔨" },
@@ -37,7 +38,6 @@ export const CONTRACTOR_TRADES: ContractorTrade[] = [
   { name: "Flooring", domain: "flooringinstallers.co", emoji: "🪵" },
   { name: "Fireproofing", domain: "fireproofing.ltd", emoji: "🔥" },
   { name: "Spray Foam", domain: "sprayfoamcontractors.ltd", emoji: "🧴" },
-  { name: "Kitchen Cabinets", domain: "kitchencabinets.io", emoji: "🍳" },
   { name: "Irrigation", domain: "irrigation.ltd", emoji: "🌊" },
   { name: "Junk Removal", domain: "junkremoval.ltd", emoji: "🗑️" },
   { name: "Custom Closets", domain: "customclosets.io", emoji: "🚪" },
