@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import plumbersImg from "@/assets/flagship/plumbers-mascot.png.asset.json";
 import drywallersImg from "@/assets/flagship/drywallers-mascot.png.asset.json";
-import demolitionImg from "@/assets/flagship/demolition-banner.png.asset.json";
+import demolitionImg from "@/assets/flagship/demolition-logo.png.asset.json";
 import framersImg from "@/assets/flagship/framers-logo.png.asset.json";
 import roofersImg from "@/assets/flagship/roofers-hero.jpg.asset.json";
 import hvacrImg from "@/assets/flagship/hvacr-hero.jpg.asset.json";
@@ -29,7 +29,7 @@ export const CONTRACTOR_TRADES: ContractorTrade[] = [
   { name: "Painting", domain: "painters.tv", emoji: "🎨" },
   { name: "Steel Stud", domain: "steelstudcontractors.com", emoji: "🔩" },
   { name: "General Contracting", domain: "generalcontractors.ltd", emoji: "🏛️" },
-  { name: "Demolition", domain: "demolition.io", emoji: "💥", image: demolitionImg.url },
+  { name: "Demolition", domain: "demolition.io", emoji: "💥", image: demolitionImg.url, contain: true },
   { name: "Remodeling", domain: "remodelers.io", emoji: "🔨" },
   { name: "Carpentry", domain: "carpenters.ltd", emoji: "🪚" },
   { name: "Flooring", domain: "flooringinstallers.co", emoji: "🪵" },
