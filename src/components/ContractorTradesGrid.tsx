@@ -5,7 +5,7 @@ import plumbersImg from "@/assets/flagship/plumbers-card.jpg.asset.json";
 import drywallersImg from "@/assets/flagship/drywallers-card.jpg.asset.json";
 import demolitionImg from "@/assets/flagship/demolition-card.jpg.asset.json";
 import framersImg from "@/assets/flagship/framers-card.jpg.asset.json";
-import roofersImg from "@/assets/flagship/roofers-hero.jpg.asset.json";
+import roofersImg from "@/assets/flagship/roofers-card.jpg.asset.json";
 import hvacrImg from "@/assets/flagship/hvacr-hero.jpg.asset.json";
 import finishingCarpentersImg from "@/assets/flagship/finishingcarpenters-card.jpg.asset.json";
 import rebarImg from "@/assets/flagship/rebar-card.jpg.asset.json";
