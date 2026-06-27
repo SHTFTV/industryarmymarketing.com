@@ -16,8 +16,10 @@ import paintersImg from "@/assets/flagship/painters-card.png.asset.json";
 import floathomesImg from "@/assets/flagship/floathomes-card.png.asset.json";
 import excavatorsImg from "@/assets/flagship/excavators-card.png.asset.json";
 import caterersImg from "@/assets/flagship/caterers-card.png.asset.json";
+import caterersHeroImg from "@/assets/flagship/caterers-hero.jpg.asset.json";
 import ranchersImg from "@/assets/flagship/ranchers-card.png.asset.json";
 import decoratorImg from "@/assets/flagship/decorator-card.png.asset.json";
+import pitchdecktvImg from "@/assets/flagship/pitchdecktv-logo.png.asset.json";
 
 type Brand = { name: string; url: string; tagline: string; image?: string; contain?: boolean };
 
@@ -42,7 +44,8 @@ const groups: { icon: typeof Crown; eyebrow: string; title: string; blurb: strin
       { name: "FloatHomes.tv", url: "https://floathomes.tv", tagline: "Floating Home Lifestyle Network", image: floathomesImg.url, contain: true },
       { name: "Excavators.tv", url: "https://excavators.tv", tagline: "Heavy Excavation Video Network", image: excavatorsImg.url, contain: true },
       { name: "Ranchers.tv", url: "https://ranchers.tv", tagline: "Ranch & Livestock Storytelling", image: ranchersImg.url },
-      { name: "Caterers.tv", url: "https://caterers.tv", tagline: "Premium Catering Showcase", image: caterersImg.url, contain: true },
+      { name: "Caterers.tv", url: "https://caterers.tv", tagline: "Premium Catering & Event Showcase Network", image: caterersHeroImg.url },
+      { name: "PitchDeck.tv", url: "https://pitchdeck.tv", tagline: "Founder Pitch & Investor Video Network", image: pitchdecktvImg.url, contain: true },
     ],
   },
   {
