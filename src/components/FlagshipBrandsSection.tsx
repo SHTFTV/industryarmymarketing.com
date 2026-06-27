@@ -12,7 +12,7 @@ import eyespyrImg from "@/assets/flagship/eyespyr-logo.png.asset.json";
 import dentistsImg from "@/assets/flagship/dentists-card.jpg.asset.json";
 import backhaulImg from "@/assets/flagship/backhaul-card-v2.jpg.asset.json";
 import sparkysImg from "@/assets/flagship/sparkys-hero.jpg.asset.json";
-import paintersImg from "@/assets/flagship/painters-card.png.asset.json";
+import paintersImg from "@/assets/flagship/painters-card-v2.jpg.asset.json";
 import floathomesImg from "@/assets/flagship/floathomes-hero.jpg.asset.json";
 import excavatorsImg from "@/assets/flagship/excavators-hero.jpg.asset.json";
 import caterersImg from "@/assets/flagship/caterers-card.png.asset.json";
