@@ -39,6 +39,7 @@ import ContractorCityPage from "./pages/ContractorCityPage.tsx";
 import SyncAccount from "./pages/SyncAccount.tsx";
 import SeoAudit from "./pages/SeoAudit.tsx";
 import SeoAuditDetail from "./pages/SeoAuditDetail.tsx";
+import WeddingsEcosystem from "./pages/WeddingsEcosystem.tsx";
 
 const queryClient = new QueryClient();
 
@@ -88,6 +89,7 @@ const App = () => (
           <Route path="/pwa-check" element={<PwaCheck />} />
           <Route path="/rss-preview" element={<RssPreview />} />
           <Route path="/domain-setup" element={<DomainSetup />} />
+          <Route path="/weddings-ecosystem" element={<WeddingsEcosystem />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
