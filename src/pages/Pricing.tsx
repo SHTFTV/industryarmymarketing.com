@@ -35,19 +35,21 @@ const Pricing = () => (
           <table className="w-full text-left">
             <thead className="bg-secondary text-xs uppercase tracking-widest text-muted-foreground">
               <tr>
-                <th className="px-6 py-4">Population Base</th>
+                <th className="px-6 py-4">Population Range</th>
                 <th className="px-6 py-4">Slots Available</th>
                 <th className="px-6 py-4 text-primary">Per Slot / Month</th>
                 <th className="px-6 py-4 hidden md:table-cell">Total If Sold Out</th>
+                <th className="px-6 py-4 hidden lg:table-cell">Territory Status</th>
               </tr>
             </thead>
             <tbody>
               {PRICING_MATRIX.map((row) => (
-                <tr key={row.population} className="border-t border-border hover:bg-secondary/40 transition-colors">
+                <tr key={row.lowerBound} className="border-t border-border hover:bg-secondary/40 transition-colors">
                   <td className="px-6 py-4 font-semibold text-foreground">{row.populationLabel}</td>
                   <td className="px-6 py-4 text-muted-foreground">{row.slots} slots</td>
                   <td className="px-6 py-4 text-primary font-display text-xl">${row.pricePerSlot.toFixed(2)}/mo</td>
                   <td className="px-6 py-4 text-muted-foreground text-sm hidden md:table-cell">${row.monthlyTotal.toFixed(2)}/mo</td>
+                  <td className="px-6 py-4 text-xs uppercase tracking-widest text-muted-foreground hidden lg:table-cell">{row.status}</td>
                 </tr>
               ))}
             </tbody>
