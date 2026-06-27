@@ -1,18 +1,18 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import plumbersImg from "@/assets/flagship/plumbers-mascot.png.asset.json";
-import drywallersImg from "@/assets/flagship/drywallers-mascot.png.asset.json";
-import demolitionImg from "@/assets/flagship/demolition-logo.png.asset.json";
-import framersImg from "@/assets/flagship/framers-logo.png.asset.json";
+import plumbersImg from "@/assets/flagship/plumbers-card.jpg.asset.json";
+import drywallersImg from "@/assets/flagship/drywallers-card.jpg.asset.json";
+import demolitionImg from "@/assets/flagship/demolition-card.jpg.asset.json";
+import framersImg from "@/assets/flagship/framers-card.jpg.asset.json";
 import roofersImg from "@/assets/flagship/roofers-hero.jpg.asset.json";
 import hvacrImg from "@/assets/flagship/hvacr-hero.jpg.asset.json";
-import finishingCarpentersImg from "@/assets/flagship/finishingcarpenters-logo.png.asset.json";
-import rebarImg from "@/assets/flagship/rebar-logo.png.asset.json";
+import finishingCarpentersImg from "@/assets/flagship/finishingcarpenters-card.jpg.asset.json";
+import rebarImg from "@/assets/flagship/rebar-card.jpg.asset.json";
 import kitchenCabinetsImg from "@/assets/flagship/kitchencabinets-card.png.asset.json";
-import estimatorsImg from "@/assets/flagship/estimators-logo.png.asset.json";
-import fabricatorsImg from "@/assets/flagship/fabricators-logo.png.asset.json";
-import hardscapesImg from "@/assets/flagship/hardscapes-logo.png.asset.json";
+import estimatorsImg from "@/assets/flagship/estimators-card.jpg.asset.json";
+import fabricatorsImg from "@/assets/flagship/fabricators-card.jpg.asset.json";
+import hardscapesImg from "@/assets/flagship/hardscapes-card.jpg.asset.json";
 import carpentryImg from "@/assets/flagship/trade-carpentry.jpg.asset.json";
 import flooringImg from "@/assets/flagship/trade-flooring.jpg.asset.json";
 import fireproofingImg from "@/assets/flagship/trade-fireproofing.jpg.asset.json";
@@ -35,17 +35,17 @@ export type ContractorTrade = {
 // emoji + trade name + premium domain + AVAILABLE pill.
 export const CONTRACTOR_TRADES: ContractorTrade[] = [
   { name: "Roofing", domain: "roofers.io", emoji: "🏠", image: roofersImg.url },
-  { name: "Framing", domain: "framers.io", emoji: "🏗️", image: framersImg.url, contain: true },
-  { name: "Drywall", domain: "drywallers.io", emoji: "🧱", image: drywallersImg.url, contain: true },
-  { name: "Plumbing", domain: "plumbers.ltd", emoji: "💧", image: plumbersImg.url, contain: true },
-  { name: "Finishing Carpentry", domain: "finishingcarpenters.com", emoji: "✏️", image: finishingCarpentersImg.url, contain: true },
+  { name: "Framing", domain: "framers.io", emoji: "🏗️", image: framersImg.url },
+  { name: "Drywall", domain: "drywallers.io", emoji: "🧱", image: drywallersImg.url },
+  { name: "Plumbing", domain: "plumbers.ltd", emoji: "💧", image: plumbersImg.url },
+  { name: "Finishing Carpentry", domain: "finishingcarpenters.com", emoji: "✏️", image: finishingCarpentersImg.url },
   { name: "HVAC", domain: "hvacr.tv", emoji: "❄️", image: hvacrImg.url },
-  { name: "Rebar & Reinforcing", domain: "rebar.tv", emoji: "🔗", image: rebarImg.url, contain: true },
-  { name: "Estimating", domain: "estimators.io", emoji: "📐", image: estimatorsImg.url, contain: true },
+  { name: "Rebar & Reinforcing", domain: "rebar.tv", emoji: "🔗", image: rebarImg.url },
+  { name: "Estimating", domain: "estimators.io", emoji: "📐", image: estimatorsImg.url },
   { name: "Kitchen Cabinets", domain: "kitchencabinets.io", emoji: "🍳", image: kitchenCabinetsImg.url },
-  { name: "Hardscapes", domain: "hardscapes.io", emoji: "🪨", image: hardscapesImg.url, contain: true },
-  { name: "Demolition", domain: "demolition.io", emoji: "💥", image: demolitionImg.url, contain: true },
-  { name: "Fabrication", domain: "fabricators.io", emoji: "⚙️", image: fabricatorsImg.url, contain: true },
+  { name: "Hardscapes", domain: "hardscapes.io", emoji: "🪨", image: hardscapesImg.url },
+  { name: "Demolition", domain: "demolition.io", emoji: "💥", image: demolitionImg.url },
+  { name: "Fabrication", domain: "fabricators.io", emoji: "⚙️", image: fabricatorsImg.url },
   { name: "Carpentry", domain: "carpenters.ltd", emoji: "🪚", image: carpentryImg.url },
   { name: "Flooring", domain: "flooringinstallers.co", emoji: "🪵", image: flooringImg.url },
   { name: "Fireproofing", domain: "fireproofing.ltd", emoji: "🔥", image: fireproofingImg.url },
