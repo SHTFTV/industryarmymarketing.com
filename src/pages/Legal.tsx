@@ -54,7 +54,7 @@ const Legal = () => (
           ))}
         </div>
         <p className="text-muted-foreground text-sm mt-10">
-          All legal inquiries: <span className="text-primary">legal@industryarmymarketing.com</span>
+          All legal inquiries: <span className="text-primary">partnerships@industryarmymarketing.com</span>
         </p>
       </div>
     </section>
