@@ -100,13 +100,33 @@ const ContractorTradesGrid = ({
               className="group p-6 rounded-lg bg-card border border-border hover:border-primary/60 hover:border-glow hover:-translate-y-1 transition-all flex flex-col items-center text-center"
             >
               {t.image ? (
-                <div className="w-full aspect-square mb-3 overflow-hidden rounded-md bg-background border border-border/50">
+                <div className="w-full aspect-square mb-3 overflow-hidden rounded-md border border-border/50 relative bg-gradient-to-br from-primary/20 via-background to-secondary/40">
+                  {t.contain && (
+                    <>
+                      <span
+                        aria-hidden="true"
+                        className="absolute inset-0 flex items-center justify-center text-[9rem] opacity-20 blur-[2px] select-none"
+                      >
+                        {t.emoji}
+                      </span>
+                      <span
+                        aria-hidden="true"
+                        className="absolute inset-0 bg-[radial-gradient(circle_at_center,hsl(var(--primary)/0.25),transparent_65%)]"
+                      />
+                    </>
+                  )}
                   <img
                     src={t.image}
                     alt={`${t.name} — ${t.domain}`}
                     loading="lazy"
-                    className={`w-full h-full transition-transform duration-500 group-hover:scale-105 ${t.contain ? "object-contain p-3" : "object-cover"}`}
+                    className={`relative w-full h-full transition-transform duration-500 group-hover:scale-110 ${t.contain ? "object-contain p-4 drop-shadow-[0_6px_18px_hsl(var(--primary)/0.45)]" : "object-cover"}`}
                   />
+                  {!t.contain && (
+                    <span
+                      aria-hidden="true"
+                      className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent"
+                    />
+                  )}
                 </div>
               ) : (
                 <div
