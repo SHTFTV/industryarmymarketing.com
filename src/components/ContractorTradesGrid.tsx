@@ -12,6 +12,7 @@ import rebarImg from "@/assets/flagship/rebar-logo.png.asset.json";
 import kitchenCabinetsImg from "@/assets/flagship/kitchencabinets-card.png.asset.json";
 import estimatorsImg from "@/assets/flagship/estimators-logo.png.asset.json";
 import fabricatorsImg from "@/assets/flagship/fabricators-logo.png.asset.json";
+import hardscapesImg from "@/assets/flagship/hardscapes-logo.png.asset.json";
 
 export type ContractorTrade = {
   name: string;
@@ -33,7 +34,7 @@ export const CONTRACTOR_TRADES: ContractorTrade[] = [
   { name: "Rebar & Reinforcing", domain: "rebar.tv", emoji: "🔗", image: rebarImg.url, contain: true },
   { name: "Estimating", domain: "estimators.io", emoji: "📐", image: estimatorsImg.url, contain: true },
   { name: "Kitchen Cabinets", domain: "kitchencabinets.io", emoji: "🍳", image: kitchenCabinetsImg.url },
-  { name: "General Contracting", domain: "generalcontractors.ltd", emoji: "🏛️" },
+  { name: "Hardscapes", domain: "hardscapes.io", emoji: "🪨", image: hardscapesImg.url, contain: true },
   { name: "Demolition", domain: "demolition.io", emoji: "💥", image: demolitionImg.url, contain: true },
   { name: "Fabrication", domain: "fabricators.io", emoji: "⚙️", image: fabricatorsImg.url, contain: true },
   { name: "Carpentry", domain: "carpenters.ltd", emoji: "🪚" },
@@ -87,12 +88,16 @@ const ContractorTradesGrid = ({
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
           {trades.map((t, i) => (
-            <motion.div
+            <motion.a
               key={t.name}
+              href={`https://${t.domain}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Visit ${t.domain}`}
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: Math.min(i * 0.02, 0.3) }}
-              className="p-6 rounded-lg bg-card border border-border hover:border-primary/40 hover:border-glow transition-all flex flex-col items-center text-center"
+              className="group p-6 rounded-lg bg-card border border-border hover:border-primary/60 hover:border-glow hover:-translate-y-1 transition-all flex flex-col items-center text-center"
             >
               {t.image ? (
                 <div className="w-full aspect-square mb-3 overflow-hidden rounded-md bg-background border border-border/50">
@@ -100,22 +105,30 @@ const ContractorTradesGrid = ({
                     src={t.image}
                     alt={`${t.name} — ${t.domain}`}
                     loading="lazy"
-                    className={`w-full h-full ${t.contain ? "object-contain p-3" : "object-cover"}`}
+                    className={`w-full h-full transition-transform duration-500 group-hover:scale-105 ${t.contain ? "object-contain p-3" : "object-cover"}`}
                   />
                 </div>
               ) : (
-                <div className="text-3xl mb-3" aria-hidden="true">
-                  {t.emoji}
+                <div
+                  className="w-full aspect-square mb-3 overflow-hidden rounded-md border border-border/50 relative flex items-center justify-center bg-gradient-to-br from-primary/15 via-background to-secondary/30"
+                  aria-hidden="true"
+                >
+                  <span className="absolute inset-0 flex items-center justify-center text-8xl opacity-30 blur-[1px] select-none">
+                    {t.emoji}
+                  </span>
+                  <span className="relative text-5xl drop-shadow-lg transition-transform duration-500 group-hover:scale-110">
+                    {t.emoji}
+                  </span>
                 </div>
               )}
-              <h3 className="font-display text-lg text-foreground">{t.name}</h3>
+              <h3 className="font-display text-lg text-foreground group-hover:text-primary transition-colors">{t.name}</h3>
               <div className="font-mono text-primary text-sm mt-1 break-all">
                 {t.domain}
               </div>
               <span className="mt-4 text-xs uppercase tracking-widest text-primary border border-primary/40 rounded-full px-3 py-1">
                 ✓ Available
               </span>
-            </motion.div>
+            </motion.a>
           ))}
         </div>
 
