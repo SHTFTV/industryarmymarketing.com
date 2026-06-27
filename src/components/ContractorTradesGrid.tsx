@@ -7,6 +7,7 @@ import demolitionImg from "@/assets/flagship/demolition-logo.png.asset.json";
 import framersImg from "@/assets/flagship/framers-logo.png.asset.json";
 import roofersImg from "@/assets/flagship/roofers-hero.jpg.asset.json";
 import hvacrImg from "@/assets/flagship/hvacr-hero.jpg.asset.json";
+import finishingCarpentersImg from "@/assets/flagship/finishingcarpenters-logo.png.asset.json";
 
 export type ContractorTrade = {
   name: string;
@@ -32,6 +33,7 @@ export const CONTRACTOR_TRADES: ContractorTrade[] = [
   { name: "Demolition", domain: "demolition.io", emoji: "💥", image: demolitionImg.url, contain: true },
   { name: "Remodeling", domain: "remodelers.io", emoji: "🔨" },
   { name: "Carpentry", domain: "carpenters.ltd", emoji: "🪚" },
+  { name: "Finishing Carpentry", domain: "finishingcarpenters.com", emoji: "✏️", image: finishingCarpentersImg.url, contain: true },
   { name: "Flooring", domain: "flooringinstallers.co", emoji: "🪵" },
   { name: "Fireproofing", domain: "fireproofing.ltd", emoji: "🔥" },
   { name: "Spray Foam", domain: "sprayfoamcontractors.ltd", emoji: "🧴" },
