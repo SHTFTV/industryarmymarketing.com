@@ -2,6 +2,7 @@ import Layout from "@/components/Layout";
 import Seo from "@/components/Seo";
 import PageHeader from "@/components/PageHeader";
 import CtaBanner from "@/components/CtaBanner";
+import LimitedSpotsWidget from "@/components/LimitedSpotsWidget";
 
 const costRows = [
   { line: "Domain portfolio (170 properties, 19-yr authority chain)", capex: "Acquired", opex: "$18K/yr renewals", note: "Sunk asset · mid-estimate $573K [1]" },
