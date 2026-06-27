@@ -1,27 +1,35 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import plumbersImg from "@/assets/flagship/plumbers-mascot.png.asset.json";
+import drywallersImg from "@/assets/flagship/drywallers-mascot.png.asset.json";
+import demolitionImg from "@/assets/flagship/demolition-banner.png.asset.json";
+import framersImg from "@/assets/flagship/framers-logo.png.asset.json";
+import roofersImg from "@/assets/flagship/roofers-hero.jpg.asset.json";
+import hvacrImg from "@/assets/flagship/hvacr-hero.jpg.asset.json";
 
 export type ContractorTrade = {
   name: string;
   domain: string;
   emoji: string;
+  image?: string;
+  contain?: boolean;
 };
 
 // Mirrors the trade-availability grid shown across contractor surfaces:
 // emoji + trade name + premium domain + AVAILABLE pill.
 export const CONTRACTOR_TRADES: ContractorTrade[] = [
-  { name: "Roofing", domain: "roofers.io", emoji: "🏠" },
-  { name: "Framing", domain: "framers.io", emoji: "🏗️" },
-  { name: "Drywall", domain: "drywallers.io", emoji: "🧱" },
-  { name: "Plumbing", domain: "plumbers.ltd", emoji: "💧" },
+  { name: "Roofing", domain: "roofers.io", emoji: "🏠", image: roofersImg.url },
+  { name: "Framing", domain: "framers.io", emoji: "🏗️", image: framersImg.url, contain: true },
+  { name: "Drywall", domain: "drywallers.io", emoji: "🧱", image: drywallersImg.url, contain: true },
+  { name: "Plumbing", domain: "plumbers.ltd", emoji: "💧", image: plumbersImg.url, contain: true },
   { name: "Electrical", domain: "sparkys.tv", emoji: "⚡" },
-  { name: "HVAC", domain: "hvacr.tv", emoji: "❄️" },
+  { name: "HVAC", domain: "hvacr.tv", emoji: "❄️", image: hvacrImg.url },
   { name: "Excavation", domain: "excavators.tv", emoji: "🚜" },
   { name: "Painting", domain: "painters.tv", emoji: "🎨" },
   { name: "Steel Stud", domain: "steelstudcontractors.com", emoji: "🔩" },
   { name: "General Contracting", domain: "generalcontractors.ltd", emoji: "🏛️" },
-  { name: "Demolition", domain: "demolition.io", emoji: "💥" },
+  { name: "Demolition", domain: "demolition.io", emoji: "💥", image: demolitionImg.url },
   { name: "Remodeling", domain: "remodelers.io", emoji: "🔨" },
   { name: "Carpentry", domain: "carpenters.ltd", emoji: "🪚" },
   { name: "Flooring", domain: "flooringinstallers.co", emoji: "🪵" },
@@ -84,9 +92,20 @@ const ContractorTradesGrid = ({
               transition={{ delay: Math.min(i * 0.02, 0.3) }}
               className="p-6 rounded-lg bg-card border border-border hover:border-primary/40 hover:border-glow transition-all flex flex-col items-center text-center"
             >
-              <div className="text-3xl mb-3" aria-hidden="true">
-                {t.emoji}
-              </div>
+              {t.image ? (
+                <div className="w-full aspect-square mb-3 overflow-hidden rounded-md bg-background border border-border/50">
+                  <img
+                    src={t.image}
+                    alt={`${t.name} — ${t.domain}`}
+                    loading="lazy"
+                    className={`w-full h-full ${t.contain ? "object-contain p-3" : "object-cover"}`}
+                  />
+                </div>
+              ) : (
+                <div className="text-3xl mb-3" aria-hidden="true">
+                  {t.emoji}
+                </div>
+              )}
               <h3 className="font-display text-lg text-foreground">{t.name}</h3>
               <div className="font-mono text-primary text-sm mt-1 break-all">
                 {t.domain}
