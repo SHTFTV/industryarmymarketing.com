@@ -2,6 +2,7 @@ import Layout from "@/components/Layout";
 import Seo from "@/components/Seo";
 import PageHeader from "@/components/PageHeader";
 import CtaBanner from "@/components/CtaBanner";
+import LimitedSpotsWidget from "@/components/LimitedSpotsWidget";
 
 const costRows = [
   { line: "Domain portfolio (170 properties, 19-yr authority chain)", capex: "Acquired", opex: "$18K/yr renewals", note: "Sunk asset · mid-estimate $573K [1]" },
@@ -134,6 +135,8 @@ const WeddingsEcosystem = () => (
     </section>
 
     {/* Why dollars compound */}
+    <LimitedSpotsWidget />
+
     <section className="py-16 border-t border-border">
       <div className="container mx-auto px-4 max-w-4xl">
         <p className="text-primary uppercase tracking-[0.3em] text-xs font-semibold mb-3">The Flywheel Effect</p>
