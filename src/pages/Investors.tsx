@@ -58,6 +58,23 @@ const Investors = () => (
         <FeatureGrid features={streams} />
       </div>
     </section>
+    <section className="py-12 border-t border-border">
+      <div className="container mx-auto px-4 max-w-5xl text-center">
+        <p className="text-primary uppercase tracking-[0.3em] text-xs font-semibold mb-3">Due Diligence</p>
+        <h2 className="font-display text-3xl md:text-4xl text-foreground mb-4">Technical Validation Memo — June 27, 2026</h2>
+        <p className="text-muted-foreground max-w-2xl mx-auto mb-6 text-sm leading-relaxed">
+          Independent technology, asset, and revenue validation. Source-verified from deployment archives, WHOIS records, Atom &amp; GoDaddy appraisals, and operator-reported financials.
+        </p>
+        <a
+          href="/validation/iam-technical-validation-2026-06-27.html"
+          target="_blank"
+          rel="noopener"
+          className="inline-block px-6 py-3 rounded-md bg-primary text-primary-foreground text-sm font-semibold uppercase tracking-widest hover:opacity-90 transition"
+        >
+          Read the Memo →
+        </a>
+      </div>
+    </section>
     <CtaBanner
       title="Investor"
       highlight="Inquiries"
