@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Crown, Cpu, Truck, Tv, ExternalLink, Rocket } from "lucide-react";
+import { Crown, Cpu, Truck, Tv, ExternalLink } from "lucide-react";
 import loveourlistingsImg from "@/assets/flagship/loveourlistings.png.asset.json";
 import weddingsImg from "@/assets/flagship/weddings-hero.jpg.asset.json";
 import plowwowImg from "@/assets/flagship/plowwow-mascot.png.asset.json";
@@ -22,14 +22,8 @@ import decoratorImg from "@/assets/flagship/decorator-card.png.asset.json";
 import pitchdecktvImg from "@/assets/flagship/pitchdecktv-hero.jpg.asset.json";
 import talcImg from "@/assets/flagship/talc-hero.jpg.asset.json";
 import videographersImg from "@/assets/flagship/videographers-card.png.asset.json";
-import financialAdvisorsImg from "@/assets/flagship/financialadvisors-card.jpg.asset.json";
-import miningMinuteImg from "@/assets/flagship/miningminute-card.jpg.asset.json";
-import bugoutImg from "@/assets/flagship/bugout-card.jpg.asset.json";
-import canabinoidImg from "@/assets/flagship/canabinoid-card.jpg.asset.json";
-import animalHospitalsImg from "@/assets/flagship/animalhospitals-card.jpg.asset.json";
-import solarSystemsImg from "@/assets/flagship/solarsystems-card.jpg.asset.json";
 
-type Brand = { name: string; url: string; tagline: string; image?: string; contain?: boolean; comingSoon?: boolean };
+type Brand = { name: string; url: string; tagline: string; image?: string; contain?: boolean };
 
 const groups: { icon: typeof Crown; eyebrow: string; title: string; blurb: string; brands: Brand[] }[] = [
   {
@@ -83,20 +77,6 @@ const groups: { icon: typeof Crown; eyebrow: string; title: string; blurb: strin
     brands: [
       { name: "Errands.io", url: "https://errands.io", tagline: "Drone & Last-Mile Services", image: errandsImg.url },
       { name: "Backhaul.io", url: "https://backhaul.io", tagline: "Smart Freight & Backhaul Network", image: backhaulImg.url },
-    ],
-  },
-  {
-    icon: Rocket,
-    eyebrow: "Brands Coming Soon",
-    title: "In Development · Launching Next",
-    blurb: "Premium category domains in active build. Early-access territory locks open before public launch.",
-    brands: [
-      { name: "FinancialAdvisors.io", url: "https://financialadvisors.io", tagline: "Vetted Advisor Network", image: financialAdvisorsImg.url, comingSoon: true },
-      { name: "Canabinoid.io", url: "https://canabinoid.io", tagline: "Cannabis Science & Industry Hub", image: canabinoidImg.url, comingSoon: true },
-      { name: "TheMiningMinute.com", url: "https://theminingminute.com", tagline: "Mining News In 60 Seconds", image: miningMinuteImg.url, comingSoon: true },
-      { name: "AnimalHospitals.io", url: "https://animalhospitals.io", tagline: "Vet Clinic Discovery Network", image: animalHospitalsImg.url, comingSoon: true },
-      { name: "BugOut.tv", url: "https://bugout.tv", tagline: "Survival & Prepper Video Network", image: bugoutImg.url, comingSoon: true },
-      { name: "SolarSystems.ltd", url: "https://solarsystems.ltd", tagline: "Residential & Commercial Solar Network", image: solarSystemsImg.url, comingSoon: true },
     ],
   },
 ];
@@ -168,11 +148,6 @@ const FlagshipBrandsSection = () => {
                             brand.contain ? "object-contain p-6" : "object-cover"
                           }`}
                         />
-                        {brand.comingSoon && (
-                          <span className="absolute top-2 right-2 px-2 py-1 rounded bg-primary/90 text-primary-foreground text-[10px] font-bold uppercase tracking-widest">
-                            Coming Soon
-                          </span>
-                        )}
                       </div>
                     )}
                     <div className="p-5 flex flex-col">
