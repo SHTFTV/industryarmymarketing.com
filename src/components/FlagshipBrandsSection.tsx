@@ -11,7 +11,7 @@ import treatmentsImg from "@/assets/flagship/treatments-card.jpg.asset.json";
 import eyespyrImg from "@/assets/flagship/eyespyr-logo.png.asset.json";
 import dentistsImg from "@/assets/flagship/dentists-card.jpg.asset.json";
 
-type Brand = { name: string; url: string; tagline: string; image?: string };
+type Brand = { name: string; url: string; tagline: string; image?: string; contain?: boolean };
 
 const groups: { icon: typeof Crown; eyebrow: string; title: string; blurb: string; brands: Brand[] }[] = [
   {
@@ -36,7 +36,7 @@ const groups: { icon: typeof Crown; eyebrow: string; title: string; blurb: strin
     title: "Our In-House Stack",
     blurb: "Proprietary tools that power every campaign we run — and that you get access to inside the ecosystem.",
     brands: [
-      { name: "EyeSpyR.com", url: "https://eyespyr.com", tagline: "Contractor Verification & Trust Badge", image: eyespyrImg.url },
+      { name: "EyeSpyR.com", url: "https://eyespyr.com", tagline: "Contractor Verification & Trust Badge", image: eyespyrImg.url, contain: true },
       { name: "Talc.tv", url: "https://talc.tv", tagline: "Visual Blast Distribution Engine" },
     ],
   },
@@ -115,7 +115,9 @@ const FlagshipBrandsSection = () => {
                           src={brand.image}
                           alt={`${brand.name} — ${brand.tagline}`}
                           loading="lazy"
-                          className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
+                          className={`w-full h-full group-hover:scale-[1.03] transition-transform duration-500 ${
+                            brand.contain ? "object-contain p-6" : "object-cover"
+                          }`}
                         />
                       </div>
                     )}
