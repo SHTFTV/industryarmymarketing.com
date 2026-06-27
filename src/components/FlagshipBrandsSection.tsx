@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Crown, Cpu, Truck, ExternalLink } from "lucide-react";
+import { Crown, Cpu, Truck, Tv, ExternalLink } from "lucide-react";
 import loveourlistingsImg from "@/assets/flagship/loveourlistings.png.asset.json";
 import weddingsImg from "@/assets/flagship/weddings-hero.jpg.asset.json";
 import plowwowImg from "@/assets/flagship/plowwow-mascot.png.asset.json";
@@ -37,8 +37,16 @@ const groups: { icon: typeof Crown; eyebrow: string; title: string; blurb: strin
       { name: "Kongtractors.com", url: "https://kongtractors.com", tagline: "Heavy Trade Contractor Directory", image: kongtractorsImg.url },
       { name: "ProMows.com", url: "https://promows.com", tagline: "Lawn Care & Grounds Network", image: promowsImg.url },
       { name: "BuildersHaus.com", url: "https://buildershaus.com", tagline: "Premium Builder & Renovation Hub", image: buildershausImg.url },
-      { name: "Treatments.tv", url: "https://treatments.tv", tagline: "Health & Wellness Video Network", image: treatmentsImg.url },
       { name: "Dentists.ltd", url: "https://dentists.ltd", tagline: "Premium Dental Network", image: dentistsImg.url },
+    ],
+  },
+  {
+    icon: Tv,
+    eyebrow: "TV Media Network",
+    title: "Our .TV Video Networks",
+    blurb: "Premium .tv domains built as full video showcases — long-form storytelling, vendor reels, and category authority.",
+    brands: [
+      { name: "Treatments.tv", url: "https://treatments.tv", tagline: "Health & Wellness Video Network", image: treatmentsImg.url },
       { name: "Sparkys.tv", url: "https://sparkys.tv", tagline: "Electricians Video Network", image: sparkysImg.url },
       { name: "Painters.tv", url: "https://painters.tv", tagline: "Pro Painter Showcase Network", image: paintersImg.url, contain: true },
       { name: "Decorator.tv", url: "https://decorator.tv", tagline: "Interior Decorator Studio Network", image: decoratorImg.url },
