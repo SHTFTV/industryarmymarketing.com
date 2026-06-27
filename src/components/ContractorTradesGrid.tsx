@@ -13,6 +13,15 @@ import kitchenCabinetsImg from "@/assets/flagship/kitchencabinets-card.png.asset
 import estimatorsImg from "@/assets/flagship/estimators-logo.png.asset.json";
 import fabricatorsImg from "@/assets/flagship/fabricators-logo.png.asset.json";
 import hardscapesImg from "@/assets/flagship/hardscapes-logo.png.asset.json";
+import carpentryImg from "@/assets/flagship/trade-carpentry.jpg.asset.json";
+import flooringImg from "@/assets/flagship/trade-flooring.jpg.asset.json";
+import fireproofingImg from "@/assets/flagship/trade-fireproofing.jpg.asset.json";
+import sprayfoamImg from "@/assets/flagship/trade-sprayfoam.jpg.asset.json";
+import irrigationImg from "@/assets/flagship/trade-irrigation.jpg.asset.json";
+import junkremovalImg from "@/assets/flagship/trade-junkremoval.jpg.asset.json";
+import customclosetsImg from "@/assets/flagship/trade-customclosets.jpg.asset.json";
+import strataroofingImg from "@/assets/flagship/trade-strataroofing.jpg.asset.json";
+import tenantimprovementImg from "@/assets/flagship/trade-tenantimprovement.jpg.asset.json";
 
 export type ContractorTrade = {
   name: string;
@@ -37,15 +46,15 @@ export const CONTRACTOR_TRADES: ContractorTrade[] = [
   { name: "Hardscapes", domain: "hardscapes.io", emoji: "🪨", image: hardscapesImg.url, contain: true },
   { name: "Demolition", domain: "demolition.io", emoji: "💥", image: demolitionImg.url, contain: true },
   { name: "Fabrication", domain: "fabricators.io", emoji: "⚙️", image: fabricatorsImg.url, contain: true },
-  { name: "Carpentry", domain: "carpenters.ltd", emoji: "🪚" },
-  { name: "Flooring", domain: "flooringinstallers.co", emoji: "🪵" },
-  { name: "Fireproofing", domain: "fireproofing.ltd", emoji: "🔥" },
-  { name: "Spray Foam", domain: "sprayfoamcontractors.ltd", emoji: "🧴" },
-  { name: "Irrigation", domain: "irrigation.ltd", emoji: "🌊" },
-  { name: "Junk Removal", domain: "junkremoval.ltd", emoji: "🗑️" },
-  { name: "Custom Closets", domain: "customclosets.io", emoji: "🚪" },
-  { name: "Strata Roofing", domain: "strataroofing.ca", emoji: "🏢" },
-  { name: "Tenant Improvement", domain: "tenantimprovement.ca", emoji: "🏬" },
+  { name: "Carpentry", domain: "carpenters.ltd", emoji: "🪚", image: carpentryImg.url },
+  { name: "Flooring", domain: "flooringinstallers.co", emoji: "🪵", image: flooringImg.url },
+  { name: "Fireproofing", domain: "fireproofing.ltd", emoji: "🔥", image: fireproofingImg.url },
+  { name: "Spray Foam", domain: "sprayfoamcontractors.ltd", emoji: "🧴", image: sprayfoamImg.url },
+  { name: "Irrigation", domain: "irrigation.ltd", emoji: "🌊", image: irrigationImg.url },
+  { name: "Junk Removal", domain: "junkremoval.ltd", emoji: "🗑️", image: junkremovalImg.url },
+  { name: "Custom Closets", domain: "customclosets.io", emoji: "🚪", image: customclosetsImg.url },
+  { name: "Strata Roofing", domain: "strataroofing.ca", emoji: "🏢", image: strataroofingImg.url },
+  { name: "Tenant Improvement", domain: "tenantimprovement.ca", emoji: "🏬", image: tenantimprovementImg.url },
 ];
 
 type Props = {
