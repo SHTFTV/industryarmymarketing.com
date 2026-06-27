@@ -135,6 +135,8 @@ const WeddingsEcosystem = () => (
     </section>
 
     {/* Why dollars compound */}
+    <LimitedSpotsWidget />
+
     <section className="py-16 border-t border-border">
       <div className="container mx-auto px-4 max-w-4xl">
         <p className="text-primary uppercase tracking-[0.3em] text-xs font-semibold mb-3">The Flywheel Effect</p>
