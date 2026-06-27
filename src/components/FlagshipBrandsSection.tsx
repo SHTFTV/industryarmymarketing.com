@@ -21,12 +21,6 @@ import ranchersImg from "@/assets/flagship/ranchers-card.png.asset.json";
 import decoratorImg from "@/assets/flagship/decorator-card.png.asset.json";
 import pitchdecktvImg from "@/assets/flagship/pitchdecktv-hero.jpg.asset.json";
 import talcImg from "@/assets/flagship/talc-hero.jpg.asset.json";
-import plumbersImg from "@/assets/flagship/plumbers-mascot.png.asset.json";
-import drywallersImg from "@/assets/flagship/drywallers-mascot.png.asset.json";
-import demolitionImg from "@/assets/flagship/demolition-banner.png.asset.json";
-import framersImg from "@/assets/flagship/framers-logo.png.asset.json";
-import roofersImg from "@/assets/flagship/roofers-hero.jpg.asset.json";
-import hvacrImg from "@/assets/flagship/hvacr-hero.jpg.asset.json";
 
 type Brand = { name: string; url: string; tagline: string; image?: string; contain?: boolean };
 
@@ -53,12 +47,6 @@ const groups: { icon: typeof Crown; eyebrow: string; title: string; blurb: strin
       { name: "Ranchers.tv", url: "https://ranchers.tv", tagline: "Ranch & Livestock Storytelling", image: ranchersImg.url },
       { name: "Caterers.tv", url: "https://caterers.tv", tagline: "Premium Catering & Event Showcase Network", image: caterersHeroImg.url },
       { name: "PitchDeck.tv", url: "https://pitchdeck.tv", tagline: "Founder Pitch & Investor Video Network", image: pitchdecktvImg.url },
-      { name: "Plumbers.ltd", url: "https://plumbers.ltd", tagline: "Premium Plumbing Pro Network", image: plumbersImg.url, contain: true },
-      { name: "Roofers.io", url: "https://roofers.io", tagline: "Roofing Pro Showcase Network", image: roofersImg.url },
-      { name: "Drywallers.org", url: "https://drywallers.org", tagline: "Drywall & Finishing Pro Network", image: drywallersImg.url, contain: true },
-      { name: "Demolition.io", url: "https://demolition.io", tagline: "Demolition & Wrecking Network", image: demolitionImg.url },
-      { name: "Framers.io", url: "https://framers.io", tagline: "Framing Contractor Network", image: framersImg.url, contain: true },
-      { name: "HVACR.tv", url: "https://hvacr.tv", tagline: "HVAC & Refrigeration Video Network", image: hvacrImg.url },
     ],
   },
   {
