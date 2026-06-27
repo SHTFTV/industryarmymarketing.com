@@ -16,7 +16,7 @@ const roiRows = [
   { ch: "Google Ads (wedding vendor, Tier-1 CA city)", cpc: "$3.80 – $8.20", cpl: "$95 – $240", note: "Rented attention. Stops the day you stop paying. [5]" },
   { ch: "The Knot / WeddingWire featured listing", cpc: "n/a", cpl: "$220 – $500/mo", note: "Shared lead auction. You compete with 40+ vendors. [6]" },
   { ch: "HomeStars / Houzz Pro (trades equivalent)", cpc: "n/a", cpl: "$199 – $499/mo", note: "Commoditised. Reviews held hostage to subscription." },
-  { ch: "weddings.io exclusive city-category slot", cpc: "$0", cpl: "$10 – $290/mo flat", note: "Owned position on 11-yr .io. One booking = decades of fees. [7]" },
+  { ch: "weddings.io limited city-category slot (3–10 per city)", cpc: "$0", cpl: "$10 – $290/mo flat", note: "Tight inventory — even Tier-1 global cities cap at 3–10 vendors per category. One booking = decades of fees. [7]" },
 ];
 
 const partnershipTracks = [
@@ -53,7 +53,7 @@ const WeddingsEcosystem = () => (
       <div className="container mx-auto px-4 max-w-4xl space-y-5 text-muted-foreground leading-relaxed">
         <p className="text-primary uppercase tracking-[0.3em] text-xs font-semibold">The Thesis, In One Paragraph</p>
         <p className="text-lg text-foreground">
-          Every dollar that leaves a vendor's account for Google Ads, The Knot, or a HomeStars subscription buys a <em>rented</em> impression that expires the moment the invoice stops. The Weddings.io ecosystem is engineered to do the opposite: convert marketing spend into a <strong className="text-primary">permanent, compounding position</strong> on a 19-year domain authority chain<sup><a href="#fn-1" className="text-primary">[1]</a></sup>, distributed across 170 vertical properties, and verified by an OCR-backed trust layer no competitor can replicate.
+          Every dollar that leaves a vendor's account for Google Ads, The Knot, or a HomeStars subscription buys a <em>rented</em> impression that expires the moment the invoice stops. The Weddings.io ecosystem is engineered to do the opposite: convert marketing spend into a <strong className="text-primary">permanent, compounding position</strong> on a 19-year domain authority chain<sup><a href="#fn-1" className="text-primary">[1]</a></sup>, distributed across 170 vertical properties, verified by an OCR-backed trust layer, and capped to just <strong className="text-foreground">3–10 vendor slots per category per city</strong> — even in the biggest markets in the world.
         </p>
         <p>
           The economics are not theoretical. The model is already proven in an adjacent vertical — <strong className="text-foreground">plowwow.com</strong> delivered $50K+ in snow-removal revenue in the last twelve months using the exact same domain + content + lead-routing stack we are scaling into weddings<sup><a href="#fn-8" className="text-primary">[8]</a></sup>. Weddings.io is that engine deployed at flagship scale, into a $70B+ North American category<sup><a href="#fn-9" className="text-primary">[9]</a></sup>.
