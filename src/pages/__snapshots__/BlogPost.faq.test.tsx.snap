@@ -171,6 +171,112 @@ exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /backhaul-bc: FAQPage 
 }
 `;
 
+exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /battle-for-the-brand-weddings-io: FAQPage JSON-LD matches stored snapshot 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "May 13, 2015. ICANN WHOIS confirms continuous ownership through 2027. The Internet Archive Wayback Machine has 78 captures dating to May 17, 2013 (under a prior placeholder), making it one of the oldest continuously-held wedding category domains on the public record."
+      },
+      "name": "When was weddings.io registered?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Weddings.com was locked up by a legacy directory in the late 1990s and effectively abandoned as an editorial property. The .io TLD signals modern tech, ranks identically for high-intent search ('weddings + city'), and was uncontested when we filed in 2015."
+      },
+      "name": "Why .io instead of .com for weddings?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Three fronts: defending the trademark against copycats like aiweddings.io, defending search rankings against directory middlemen that rent traffic, and defending each metro's single-planner slot from being diluted by pay-to-play upsells."
+      },
+      "name": "What is the 'battle for the brand'?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Weddings.io was the prototype. Every IAM playbook — territory locking, EyeSpyR verification, TALC.tv content engine, $10 flat slot pricing — was tested on weddings.io before rolling out to the trade network of gasfitter.ca, plowwow.com, kongtractors.com, and the rest."
+      },
+      "name": "How does this connect to the rest of the IAM network?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The full post embeds WHOIS records for weddings.io (2015) and gasfitter.ca (2007), plus Wayback Machine captures for weddings.io (since 2013) and hamiltonhomeservices.com (since 2004). All four are linked back to web.archive.org and CIRA so anyone can re-verify at source."
+      },
+      "name": "Where are the receipts?"
+    }
+  ]
+}
+`;
+
+exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /buildershaus-every-trade-one-platform: FAQPage JSON-LD matches stored snapshot 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Category domain authority. A standalone .com nobody searches for ranks nowhere. A territory listing on roofers.io or plumbers.ltd inherits 20+ years of topical signal."
+      },
+      "name": "What does BuildersHaus give me that a website doesn't?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — many GCs hold roofing, framing, and remodeling in the same metro. Each trade is its own $10 slot under The 250 Scale."
+      },
+      "name": "Can I lock more than one trade?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, it complements it. Your IAM listing links to and feeds your GBP with TALC.tv posts, photos, and EyeSpyR-verified citations."
+      },
+      "name": "Does BuildersHaus replace my Google Business Profile?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Never. Month to month. Cancel anytime. The territory unlocks for the next operator the day you cancel."
+      },
+      "name": "Is there a long-term contract?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Moving, landscaping, hardscaping, snow removal, arborists, kitchen cabinets, custom fabrication and growing. The model is sector-agnostic."
+      },
+      "name": "What service sectors are covered beyond construction?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "All IAM platform pricing follows The 250 Scale — industryarmymarketing.com/pricing."
+      },
+      "name": "Where is the master pricing?"
+    }
+  ]
+}
+`;
+
 exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /buildershaus-front-door: FAQPage JSON-LD matches stored snapshot 1`] = `
 {
   "@context": "https://schema.org",
@@ -280,6 +386,63 @@ exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /chiropractors-vancouv
         "text": "Yes. The page ships with LocalBusiness, FAQPage, and MedicalBusiness schema plus structured E-E-A-T signals. That is the exact data Google Gemini, ChatGPT, and Perplexity cite when a patient asks 'best chiropractor in Vancouver'."
       },
       "name": "Can the listing surface in Google AI Overviews?"
+    }
+  ]
+}
+`;
+
+exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /contractor-marketing-disruptor: FAQPage JSON-LD matches stored snapshot 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "IAM's universal pricing formula: $10 per slot per month, with slot counts scaled by city population. Vancouver gets 7 slots, Toronto gets 10, Kelowna gets 3. One operator per slot. Same math everywhere."
+      },
+      "name": "What is The 250 Scale?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Exclusivity is the product. Bid wars destroy margins and homeowners. Territory locks protect both — you get the call, they get a verified specialist instead of a five-way quote race."
+      },
+      "name": "Why one operator per city?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A premium category domain you rank on, EyeSpyR verification that builds trust automatically, and TALC.tv content that keeps your listing climbing. No shared leads, no per-lead fees, no monthly extortion."
+      },
+      "name": "What replaces HomeAdvisor, Angi, and Yelp here?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Roofing, plumbing, electrical, HVAC, drywall, painting, framing, excavation, demolition, remodeling, moving, landscaping, hardscaping, snow removal, arborists, kitchen cabinets, and growing weekly."
+      },
+      "name": "Which trades are live?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Same week. Lock the territory, EyeSpyR verifies in 24 hours, your first TALC.tv post publishes within 5 business days."
+      },
+      "name": "How fast can I launch?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "All IAM platform pricing follows The 250 Scale — industryarmymarketing.com/pricing."
+      },
+      "name": "Where do I see the full pricing?"
     }
   ]
 }
@@ -565,6 +728,63 @@ exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /excavators-bc: FAQPag
         "text": "Engineered shoring requires P.Eng stamp. Territory partners pre-qualify with structural engineers so the shoring drawings drop in 2 weeks not 8."
       },
       "name": "Can you handle shoring and underpinning?"
+    }
+  ]
+}
+`;
+
+exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /eyespyr-trust-engine: FAQPage JSON-LD matches stored snapshot 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Licence (BC Housing, equivalent provincial registries), WCB clearance, liability insurance, and aggregated reviews across Google, HomeAdvisor, Houzz, Yelp, Facebook, and BBB."
+      },
+      "name": "What does EyeSpyR verify?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — free with every IAM monthly territory lock. Standalone EyeSpyR access is also $10/month under The 250 Scale."
+      },
+      "name": "Is it really free?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every 24 hours. New reviews, expired insurance, lapsed WCB — all surface within a day."
+      },
+      "name": "How often does the Trust Badge update?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Your IAM listing, your own website, email signature, Google Business Profile, and printed marketing. It is a single embed snippet."
+      },
+      "name": "Where can I display the badge?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "EyeSpyR ships with a review-request workflow that triggers post-job. Most contractors double their public review count inside 90 days."
+      },
+      "name": "What if my review profile is weak?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "All IAM platform pricing follows The 250 Scale — industryarmymarketing.com/pricing."
+      },
+      "name": "Where is master pricing?"
     }
   ]
 }
@@ -1881,6 +2101,63 @@ exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /talc-tv-ai-content: F
 }
 `;
 
+exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /talc-tv-content-engine-contractors: FAQPage JSON-LD matches stored snapshot 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "TALC.tv. One agency retainer buys 300 TALC.tv posts. Most contractors publish 4 to 8 a month and still spend under $80."
+      },
+      "name": "What replaces a $3,000/month marketing agency here?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AEO-first structure: question-answer blocks, FAQ schema, citation-grade sourcing, and entity tagging. Built to be quoted by ChatGPT, Perplexity, and Google AI Overviews."
+      },
+      "name": "How is the content optimized for AI Overviews?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — each post is generated from your job photo, your trade, your neighbourhood. No template recycling, no spun copy."
+      },
+      "name": "Is the content unique?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Your IAM territory listing, Google My Business, Instagram, LinkedIn, and your RSS feed. One click, four destinations."
+      },
+      "name": "Where does it publish?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No subscription. Pay per post, $10 each. Bundled free with every IAM territory lock at one post per month."
+      },
+      "name": "Do I need a TALC.tv subscription?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "All IAM platform pricing follows The 250 Scale — industryarmymarketing.com/pricing."
+      },
+      "name": "Where is master pricing?"
+    }
+  ]
+}
+`;
+
 exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /ten-dollar-territories-explained: FAQPage JSON-LD matches stored snapshot 1`] = `
 {
   "@context": "https://schema.org",
@@ -2047,6 +2324,63 @@ exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /videographers-vancouv
         "text": "Yes — territory partners run up to 6-camera switched live with streaming output for conferences and product launches."
       },
       "name": "Can you handle live event multi-cam?"
+    }
+  ]
+}
+`;
+
+exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /weddings-io-iam-premier-brand-since-2015: FAQPage JSON-LD matches stored snapshot 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The .io domain, the global TAM, the multi-cultural scope, and the AI-first architecture — every IAM playbook was prototyped here before being rolled out to the trade network."
+      },
+      "name": "Why has weddings.io been IAM's flagship since 2015?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nine: South Asian, Persian, Chinese, Italian, Jewish, Christian, Hindu, Sikh, and secular. Each gets a culturally-specific TALC.tv content track."
+      },
+      "name": "Which cultures does the platform support?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "1,018 cities across 24 countries. Territory locks open in priority markets first."
+      },
+      "name": "How many cities and countries are live?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — same formula as every IAM brand. $10 per slot per month, slot counts scaled by city population."
+      },
+      "name": "Is weddings.io priced on The 250 Scale?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Inquiry triage, content generation, photo tagging, and lead routing run on AI. Planners spend time at venues, not in inboxes."
+      },
+      "name": "What does AI-first architecture mean here?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "All IAM platform pricing follows The 250 Scale — industryarmymarketing.com/pricing."
+      },
+      "name": "Where can I see master pricing?"
     }
   ]
 }
