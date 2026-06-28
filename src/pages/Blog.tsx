@@ -21,6 +21,24 @@ const Blog = () => {
   const [query, setQuery] = useState("");
   const [city, setCity] = useState<string>("all");
   const [category, setCategory] = useState<string>("all");
+  const companyCaseStudies = [
+    {
+      label: "Company Case Study",
+      title: "Brand Defense: Global Territory",
+      description:
+        "The full company case study on defending Weddings.io, territory ownership, receipts, source links, and the IAM brand-defense model.",
+      href: "/case-studies/brand-defense-global-territory",
+      image: featured.image,
+    },
+    {
+      label: "Companion Blog",
+      title: "You Built Your Tower on Our Land",
+      description:
+        "The aiweddings.io challenge article that backs the case study with the public timeline and proof trail.",
+      href: "/blog/aiweddings-tower-on-our-land",
+      image: featured.image,
+    },
+  ];
 
   const cities = useMemo(
     () => Array.from(new Set(blogPosts.map((p) => p.city))).sort(),
@@ -87,7 +105,7 @@ const Blog = () => {
                 {featured.date} · {featured.category} · {featured.brand}
               </p>
               <h2 className="font-display text-3xl md:text-4xl text-foreground mb-3 leading-tight">
-                {featured.trade} in {featured.city}: The $10 Exclusive Territory Guide
+                {featured.cardTitle || `${featured.trade} in ${featured.city}: The $10 Exclusive Territory Guide`}
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-5">{featured.pain}</p>
               <Button variant="hero" asChild className="self-start">
@@ -95,6 +113,46 @@ const Blog = () => {
               </Button>
             </div>
           </motion.article>
+
+          <div className="mt-12">
+            <p className="text-primary uppercase tracking-[0.3em] text-xs font-semibold mb-3">
+              Company Case Study Blog
+            </p>
+            <div className="grid md:grid-cols-2 gap-5">
+              {companyCaseStudies.map((item) => (
+                <article
+                  key={item.href}
+                  className="rounded-lg bg-card border border-primary/30 hover:border-primary/60 transition-colors overflow-hidden flex flex-col"
+                >
+                  <Link to={item.href} className="block">
+                    <img
+                      src={item.image}
+                      alt={`${item.title} — Industry Army Marketing case study`}
+                      loading="lazy"
+                      width={1280}
+                      height={720}
+                      className="w-full aspect-video object-cover"
+                    />
+                  </Link>
+                  <div className="p-5 flex flex-col flex-1">
+                    <p className="text-primary text-xs uppercase tracking-widest mb-2">{item.label}</p>
+                    <h3 className="font-display text-2xl text-foreground mb-3 leading-tight">
+                      <Link to={item.href} className="hover:text-primary transition-colors">
+                        {item.title}
+                      </Link>
+                    </h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed mb-5">{item.description}</p>
+                    <Link
+                      to={item.href}
+                      className="text-primary text-xs uppercase tracking-widest mt-auto self-start hover:underline"
+                    >
+                      Open case study →
+                    </Link>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
 
           <p className="text-primary uppercase tracking-[0.3em] text-xs font-semibold mt-16 mb-3">All Intel</p>
           <h3 className="font-display text-3xl text-foreground mb-8">Every trade. Every territory.</h3>
@@ -177,7 +235,7 @@ const Blog = () => {
                   </p>
                   <h4 className="font-display text-xl text-foreground mb-2 leading-tight">
                     <Link to={`/blog/${p.slug}`} className="hover:text-primary transition-colors">
-                      {p.trade} in {p.city}
+                      {p.cardTitle || `${p.trade} in ${p.city}`}
                     </Link>
                   </h4>
                   <p className="text-muted-foreground text-xs uppercase tracking-widest mb-3">
