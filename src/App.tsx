@@ -40,6 +40,7 @@ import SyncAccount from "./pages/SyncAccount.tsx";
 import SeoAudit from "./pages/SeoAudit.tsx";
 import SeoAuditDetail from "./pages/SeoAuditDetail.tsx";
 import WeddingsEcosystem from "./pages/WeddingsEcosystem.tsx";
+import StaticHtmlPage from "./pages/StaticHtmlPage.tsx";
 
 const queryClient = new QueryClient();
 
@@ -90,6 +91,24 @@ const App = () => (
           <Route path="/rss-preview" element={<RssPreview />} />
           <Route path="/domain-setup" element={<DomainSetup />} />
           <Route path="/weddings-ecosystem" element={<WeddingsEcosystem />} />
+          <Route
+            path="/case-studies/brand-defense-global-territory"
+            element={
+              <StaticHtmlPage
+                src="/case-studies/brand-defense-global-territory.html"
+                title="Brand Defense in Global: The $10 Exclusive Territory Guide — weddings.io Case Study"
+              />
+            }
+          />
+          <Route
+            path="/blog/aiweddings-tower-on-our-land"
+            element={
+              <StaticHtmlPage
+                src="/blog/aiweddings-tower-on-our-land.html"
+                title="You Built Your Tower on Our Land: aiweddings.io, weddings.io, and Why This Is a Risky Place to Plant a Flag"
+              />
+            }
+          />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
