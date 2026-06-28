@@ -76,6 +76,8 @@ const entries: SitemapEntry[] = [
   { path: "/investors", changefreq: "monthly", priority: "0.5" },
   { path: "/dashboard", changefreq: "monthly", priority: "0.5" },
   { path: "/legal", changefreq: "monthly", priority: "0.5" },
+  { path: "/case-studies/brand-defense-global-territory", changefreq: "monthly", priority: "0.9" },
+  { path: "/blog/aiweddings-tower-on-our-land", changefreq: "monthly", priority: "0.8" },
   { path: "/contractor-marketing/", changefreq: "weekly", priority: "0.9" },
   ...trades.map((t) => ({
     path: `/contractor-marketing/${t}/`,
@@ -108,6 +110,9 @@ function generateSitemap(entries: SitemapEntry[]) {
       `    <loc>${BASE_URL}${e.path}</loc>`,
       e.changefreq ? `    <changefreq>${e.changefreq}</changefreq>` : null,
       e.priority ? `    <priority>${e.priority}</priority>` : null,
+      e.path === "/case-studies/brand-defense-global-territory"
+        ? `    <image:image>\n      <image:loc>${BASE_URL}/__l5e/assets-v1/02af8a33-6818-4513-9a62-86ecc08b3910/weddings-io-hero.jpg</image:loc>\n      <image:caption>weddings.io WHOIS verification — IAM brand defense</image:caption>\n      <image:title>weddings.io domain WHOIS record — registered May 13 2015 — Industry Army Marketing brand defense case study</image:title>\n    </image:image>`
+        : null,
       `  </url>`,
     ]
       .filter(Boolean)
@@ -116,7 +121,7 @@ function generateSitemap(entries: SitemapEntry[]) {
 
   return [
     `<?xml version="1.0" encoding="UTF-8"?>`,
-    `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`,
+    `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">`,
     ...urls,
     `</urlset>`,
   ].join("\n");
