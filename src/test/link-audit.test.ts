@@ -79,6 +79,8 @@ for (const file of FILES) {
   for (const m of src.matchAll(EXTERNAL_A_RE)) {
     const attrs = (m[1] || "") + " " + (m[3] || "");
     const url = m[2];
+    // Skip dynamic template-literal URLs (e.g. copy-snippet generators)
+    if (url.includes("${")) continue;
     const hasBlank = /target\s*=\s*"_blank"/.test(attrs);
     const relMatch = attrs.match(/rel\s*=\s*"([^"]+)"/);
     const rel = relMatch ? relMatch[1] : "";
