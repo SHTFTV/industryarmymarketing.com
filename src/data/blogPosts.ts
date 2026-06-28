@@ -164,6 +164,7 @@ export const blogPosts: BlogPost[] = [
     "slug": "battle-for-the-brand-weddings-io",
     "brand": "weddings.io",
     "trade": "Brand Defense",
+    "cardTitle": "The Battle For the Brand: Weddings.io",
     "tradeShort": "wedding",
     "plural": "wedding planners",
     "video": null,
