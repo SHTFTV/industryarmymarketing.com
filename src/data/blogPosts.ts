@@ -167,7 +167,7 @@ export const blogPosts: BlogPost[] = [
     "tradeShort": "wedding",
     "plural": "wedding planners",
     "video": null,
-    "imageKey": "weddings",
+    "imageKey": "weddings-global",
     "city": "Global",
     "province": "BC",
     "category": "Company",
