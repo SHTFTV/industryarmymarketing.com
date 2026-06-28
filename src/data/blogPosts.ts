@@ -22,11 +22,14 @@ import chiropractorsImg from "@/assets/blog/chiropractors.jpg";
 import moverImg from "@/assets/blog/mover.jpg";
 import landscapersImg from "@/assets/blog/landscapers.jpg";
 import hardscapesImg from "@/assets/blog/hardscapes.jpg";
+import weddingsBattleAsset from "@/assets/blog/weddings-vs-aiweddings-battle.png.asset.json";
+const weddingsBattleImg = weddingsBattleAsset.url;
 
 const IMG: Record<string, string> = {
   "kitchen-cabinets": kitchencabinetsImg,
   weddings: weddingsImg,
   "weddings-global": weddingsGlobalImg,
+  "weddings-battle": weddingsBattleImg,
   tractors: tractorsImg,
   framers: framersImg,
   hvacr: hvacrImg,
@@ -71,6 +74,8 @@ export interface BlogPost {
   /** Optional override for the homepage carousel card title.
    *  Use when "{trade} in {city}" would not read naturally. */
   cardTitle?: string;
+  /** Optional override alt/title text for the hero image. */
+  imageAlt?: string;
   /** Optional rich case-study content. When set, BlogPost.tsx renders this
    *  instead of the generated default sections. Supports embedded images,
    *  timelines, footnote references (use `[^id]` in paragraph text), and
@@ -172,7 +177,8 @@ export const blogPosts: BlogPost[] = [
     "tradeShort": "wedding",
     "plural": "wedding planners",
     "video": null,
-    "imageKey": "weddings-global",
+    "imageKey": "weddings-battle",
+    "imageAlt": "weddings.io vs aiweddings.io — The Battle for the Domain Name: Industry Army Marketing's 2015-registered weddings.io case study versus the 2024 aiweddings.io AI-wrapper challenger",
     "city": "Global",
     "province": "BC",
     "category": "Company",
