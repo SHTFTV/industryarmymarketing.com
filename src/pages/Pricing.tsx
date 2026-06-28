@@ -134,7 +134,7 @@ const Pricing = () => (
       <div className="container mx-auto px-4 text-center">
         <p className="text-xs text-muted-foreground uppercase tracking-[0.2em]">Pricing Source of Truth</p>
         <p className="text-sm text-muted-foreground mt-1">All IAM platforms follow <strong className="text-primary">The 250 Scale</strong></p>
-        <a href="https://industryarmymarketing.com/pricing/" className="text-xs text-primary font-mono">industryarmymarketing.com/pricing/ →</a>
+        <a href="https://industryarmymarketing.com/pricing/" target="_blank" rel="noopener noreferrer" className="text-xs text-primary font-mono">industryarmymarketing.com/pricing/ →</a>
       </div>
     </section>
   </Layout>

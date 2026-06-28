@@ -296,7 +296,7 @@ export const blogPosts: BlogPost[] = [
       "footnotes": [
         { "id": "whois2015", "text": "ICANN WHOIS lookup for weddings.io — registration date May 13, 2015, current expiry 2027.", "href": "https://www.whois.com/whois/weddings.io" },
         { "id": "wayback", "text": "Internet Archive Wayback Machine — 78 captures of weddings.io since May 17, 2013.", "href": "https://web.archive.org/web/*/weddings.io" },
-        { "id": "ailand", "text": "Companion post: You Built Your Tower on Our Land — IAM response to aiweddings.io.", "href": "/blog/aiweddings-io-building-on-our-land.html" },
+        { "id": "ailand", "text": "Companion post: Battle for the Brand — IAM response to aiweddings.io.", "href": "/blog/battle-for-the-brand-weddings-io" },
         { "id": "gasfitter", "text": "CIRA WHOIS lookup for gasfitter.ca — registered 2007, continuous Canadian ownership.", "href": "https://www.cira.ca/en/whois/" },
         { "id": "hamilton", "text": "Internet Archive Wayback Machine — hamiltonhomeservices.com first crawl 2004.", "href": "https://web.archive.org/web/*/hamiltonhomeservices.com" }
       ],
@@ -305,7 +305,7 @@ export const blogPosts: BlogPost[] = [
         { "label": "Wayback Machine — weddings.io (78 captures since 2013)", "href": "https://web.archive.org/web/*/weddings.io" },
         { "label": "CIRA WHOIS — gasfitter.ca", "href": "https://www.cira.ca/en/whois/" },
         { "label": "Wayback Machine — hamiltonhomeservices.com (since 2004)", "href": "https://web.archive.org/web/*/hamiltonhomeservices.com" },
-        { "label": "Companion post — You Built Your Tower on Our Land", "href": "/blog/aiweddings-io-building-on-our-land.html" }
+        { "label": "Companion post — Battle for the Brand: Weddings.io", "href": "/blog/battle-for-the-brand-weddings-io" }
       ]
     }
   },

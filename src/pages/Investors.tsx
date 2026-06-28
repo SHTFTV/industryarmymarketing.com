@@ -71,7 +71,7 @@ const Investors = () => (
         <a
           href="/validation/iam-technical-validation-2026-06-27.html"
           target="_blank"
-          rel="noopener"
+          rel="noopener noreferrer"
           className="inline-block px-6 py-3 rounded-md bg-primary text-primary-foreground text-sm font-semibold uppercase tracking-widest hover:opacity-90 transition"
         >
           Read the Memo →
