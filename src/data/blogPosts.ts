@@ -1,7 +1,8 @@
 // AUTO-GENERATED. Edit /tmp/gen-posts.mjs and regen if you need to change content shape.
 import kitchencabinetsImg from "@/assets/blog/kitchen-cabinets.jpg";
 import weddingsImg from "@/assets/blog/weddings.jpg";
-import weddingsGlobalImg from "@/assets/blog/weddings-global.jpg";
+import weddingsGlobalAsset from "@/assets/blog/weddings-global.jpg.asset.json";
+const weddingsGlobalImg = weddingsGlobalAsset.url;
 import tractorsImg from "@/assets/blog/tractors.jpg";
 import framersImg from "@/assets/blog/framers.jpg";
 import hvacrImg from "@/assets/blog/hvacr.jpg";
