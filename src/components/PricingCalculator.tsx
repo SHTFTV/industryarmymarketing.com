@@ -3,14 +3,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { cities, domains } from "@/data/domains";
-import { PRICING_MATRIX, ADDONS, type PricingRow } from "@/data/pricingMatrix";
-
-const parsePop = (s: string): number => Number(String(s).replace(/[^\d]/g, "")) || 0;
-
-const lookupTier = (pop: number): PricingRow | null => {
-  if (!pop || pop < 0) return null;
-  return PRICING_MATRIX.find((r) => pop >= r.lowerBound && pop <= r.upperBound) ?? null;
-};
+import { ADDONS } from "@/data/pricingMatrix";
+import { lookupTierByPopulation, parsePopulation, formatSlotStatus } from "@/lib/pricing";
 
 const CITY_OPTIONS = cities.filter((c) => c.slug !== "any");
 
@@ -37,8 +31,9 @@ const PricingCalculator = () => {
     return CITY_OPTIONS.filter((c) => c.name.toLowerCase().includes(q)).slice(0, 5);
   }, [cityQuery, matchedCity]);
 
-  const effectivePop = matchedCity ? parsePop(matchedCity.population) : parsePop(manualPop);
-  const tier = lookupTier(effectivePop);
+  const effectivePop = matchedCity ? parsePopulation(matchedCity.population) : parsePopulation(manualPop);
+  const tierLookup = lookupTierByPopulation(effectivePop);
+  const tier = tierLookup?.row ?? null;
   const canCheck = Boolean(industry && (matchedCity || effectivePop > 0));
 
   const industryLabel = domains.find((d) => d.domain === industry);
@@ -165,7 +160,7 @@ const PricingCalculator = () => {
                         {industryLabel?.niche} · {industryLabel?.domain}
                       </p>
                       <p className="text-xs uppercase tracking-widest text-muted-foreground mt-2">
-                        {tier.populationLabel} · {tier.status}
+                        {tier.populationLabel} · {tier.status} · {formatSlotStatus(tier, 0)}
                       </p>
                     </div>
                     <div>
