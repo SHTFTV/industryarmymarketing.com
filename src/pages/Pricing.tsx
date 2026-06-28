@@ -2,6 +2,7 @@ import Layout from "@/components/Layout";
 import Seo from "@/components/Seo";
 import PageHeader from "@/components/PageHeader";
 import PricingSection from "@/components/PricingSection";
+import PricingCalculator from "@/components/PricingCalculator";
 import { cities } from "@/data/domains";
 import { PRICING_MATRIX, ADDONS } from "@/data/pricingMatrix";
 import { motion } from "framer-motion";
@@ -21,6 +22,8 @@ const Pricing = () => (
       highlight="Territory Pricing"
       description="The canonical IAM territory pricing model. Every city starts at 3 slots. Scales to 10. $10/slot under 1M population — doubles at 1M, steps up $10/million to a cap of $50. Same formula. Every industry. Every city on earth."
     />
+
+    <PricingCalculator />
 
     <PricingSection />
 
