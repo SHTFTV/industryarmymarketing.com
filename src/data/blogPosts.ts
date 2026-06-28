@@ -1,6 +1,7 @@
 // AUTO-GENERATED. Edit /tmp/gen-posts.mjs and regen if you need to change content shape.
 import kitchencabinetsImg from "@/assets/blog/kitchen-cabinets.jpg";
 import weddingsImg from "@/assets/blog/weddings.jpg";
+import weddingsGlobalImg from "@/assets/blog/weddings-global.jpg";
 import tractorsImg from "@/assets/blog/tractors.jpg";
 import framersImg from "@/assets/blog/framers.jpg";
 import hvacrImg from "@/assets/blog/hvacr.jpg";
@@ -24,6 +25,7 @@ import hardscapesImg from "@/assets/blog/hardscapes.jpg";
 const IMG: Record<string, string> = {
   "kitchen-cabinets": kitchencabinetsImg,
   weddings: weddingsImg,
+  "weddings-global": weddingsGlobalImg,
   tractors: tractorsImg,
   framers: framersImg,
   hvacr: hvacrImg,
