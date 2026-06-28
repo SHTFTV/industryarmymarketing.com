@@ -234,7 +234,8 @@ const LatestBlogPosts = () => {
                 </p>
                 <h3 className="font-display text-lg text-foreground mb-2 leading-tight">
                   <Link to={`/blog/${p.slug}`} className="hover:text-primary transition-colors">
-                    {p.trade} in {p.city}
+                    {("cardTitle" in p && (p as { cardTitle?: string }).cardTitle) ||
+                      `${p.trade} in ${p.city}`}
                   </Link>
                 </h3>
                 <p className="text-muted-foreground text-xs uppercase tracking-widest mb-3">

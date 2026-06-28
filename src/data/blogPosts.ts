@@ -67,6 +67,9 @@ export interface BlogPost {
   detail: string;
   process: string;
   faqs: { q: string; a: string }[];
+  /** Optional override for the homepage carousel card title.
+   *  Use when "{trade} in {city}" would not read naturally. */
+  cardTitle?: string;
   /** Optional rich case-study content. When set, BlogPost.tsx renders this
    *  instead of the generated default sections. Supports embedded images,
    *  timelines, footnote references (use `[^id]` in paragraph text), and
@@ -164,6 +167,7 @@ export const blogPosts: BlogPost[] = [
     "slug": "battle-for-the-brand-weddings-io",
     "brand": "weddings.io",
     "trade": "Brand Defense",
+    "cardTitle": "The Battle For the Brand: Weddings.io",
     "tradeShort": "wedding",
     "plural": "wedding planners",
     "video": null,
