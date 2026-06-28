@@ -593,7 +593,7 @@ const ScanWizard = () => {
                       <label className={labelCls}>Approximate City Population</label>
                       <select className={inputCls} value={data.population} onChange={(e) => set("population", e.target.value)}>
                         <option value="">Select...</option>
-                        {popOptions.map((p) => <option key={p}>{p}</option>)}
+                        {popOptions.map((p) => <option key={p.label} value={String(p.value)}>{p.label}</option>)}
                       </select>
                     </div>
                   </div>
