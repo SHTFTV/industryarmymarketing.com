@@ -637,6 +637,7 @@ const ScanWizard = () => {
 
               {step === 3 && (
                 <motion.div key="s3" initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }}>
+                  {(() => null)()}
                   <p className="text-primary uppercase tracking-[0.3em] text-xs font-semibold mb-3">Your Score</p>
                   <div className="text-center py-8">
                     <p className="font-display text-7xl text-primary text-glow">4.2</p>
@@ -645,10 +646,24 @@ const ScanWizard = () => {
                     <p className="text-muted-foreground max-w-md mx-auto mt-3 text-sm leading-relaxed">
                       Your business has solid fundamentals. Claiming your exclusive territory now locks out competitors in {data.city || "your city"} across the IAM domain network.
                     </p>
-                    <div className="mt-8 inline-block p-6 rounded-lg bg-background border border-primary/40">
-                      <p className="font-display text-4xl text-primary">$10 / month</p>
-                      <p className="text-muted-foreground text-xs uppercase tracking-widest mt-1">Your exclusive territory rate · No contract</p>
-                    </div>
+                    {(() => {
+                      const tier = lookupTierByPopulation(parsePopulation(data.population));
+                      if (!tier) {
+                        return (
+                          <div className="mt-8 inline-block p-6 rounded-lg bg-background border border-primary/40">
+                            <p className="font-display text-3xl text-primary">Select a population to see your rate</p>
+                          </div>
+                        );
+                      }
+                      return (
+                        <div className="mt-8 inline-block p-6 rounded-lg bg-background border border-primary/40 text-left">
+                          <p className="text-xs uppercase tracking-widest text-muted-foreground">{tier.row.populationLabel}</p>
+                          <p className="font-display text-5xl text-primary text-glow mt-1">${tier.row.pricePerSlot} <span className="text-base text-muted-foreground">/ slot / month</span></p>
+                          <p className="text-sm text-foreground mt-2">{formatSlotStatus(tier.row, 0)} · {tier.row.status}</p>
+                          <p className="text-xs text-muted-foreground mt-1">Hardcoded rate — slot 1 = slot {tier.row.slots}. SOLD OUT only when all {tier.row.slots} are filled.</p>
+                        </div>
+                      );
+                    })()}
                     <div className="mt-8 flex flex-wrap justify-center gap-3">
                       <Button variant="hero" size="lg" onClick={() => window.location.assign("/contact")}>Claim My Territory</Button>
                       <Button
