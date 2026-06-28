@@ -8,6 +8,7 @@ import PageHeader from "@/components/PageHeader";
 import { Button } from "@/components/ui/button";
 import { toast } from "@/components/ui/sonner";
 import { supabase } from "@/integrations/supabase/client";
+import { lookupTierByPopulation, parsePopulation, formatSlotStatus } from "@/lib/pricing";
 
 // Two-level taxonomy: pick a broad industry first, then narrow to a specific
 // trade/service. The second level is optional so anyone can submit without
@@ -135,7 +136,16 @@ const scoreSpecialty = (
 };
 const yearsOptions = ["Less than 1","1–3","3–5","5–10","10+"];
 const provinces = ["BC","AB","ON","MB","SK","QC","NS","Other"];
-const popOptions = ["Under 100K","100K – 500K","500K – 1M","Over 1M"];
+// Mid-bracket population samples — each falls inside a hardcoded matrix row.
+const popOptions: { label: string; value: number }[] = [
+  { label: "Under 100K", value: 50_000 },
+  { label: "100K – 250K", value: 200_000 },
+  { label: "250K – 500K", value: 400_000 },
+  { label: "500K – 1M", value: 750_000 },
+  { label: "1M – 2M", value: 1_500_000 },
+  { label: "2M – 5M", value: 3_500_000 },
+  { label: "Over 5M", value: 8_000_000 },
+];
 
 interface FormState {
   business: string; website: string; industry: string; trade: string; years: string;
