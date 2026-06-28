@@ -112,6 +112,8 @@ function generateSitemap(entries: SitemapEntry[]) {
       e.priority ? `    <priority>${e.priority}</priority>` : null,
       e.path === "/case-studies/brand-defense-global-territory"
         ? `    <image:image>\n      <image:loc>${BASE_URL}/__l5e/assets-v1/02af8a33-6818-4513-9a62-86ecc08b3910/weddings-io-hero.jpg</image:loc>\n      <image:caption>weddings.io WHOIS verification — IAM brand defense</image:caption>\n      <image:title>weddings.io domain WHOIS record — registered May 13 2015 — Industry Army Marketing brand defense case study</image:title>\n    </image:image>`
+        : e.path === "/blog/battle-for-the-brand-weddings-io"
+        ? `    <image:image>\n      <image:loc>${BASE_URL}/__l5e/assets-v1/5e8614a6-5da3-4243-b3e9-6f5bad84bd9c/weddings-vs-aiweddings-battle.png</image:loc>\n      <image:caption>weddings.io vs aiweddings.io — The Battle for the Domain Name (IAM case study)</image:caption>\n      <image:title>weddings.io vs aiweddings.io: The Battle for the Domain Name — Industry Army Marketing brand defense case study featured image</image:title>\n    </image:image>`
         : null,
       `  </url>`,
     ]
