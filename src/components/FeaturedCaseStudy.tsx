@@ -78,6 +78,16 @@ const FeaturedCaseStudy = () => {
               <Button variant="outline" asChild>
                 <Link to={`/blog/${post.slug}#exhibits`}>Jump to the proof exhibits</Link>
               </Button>
+              <Button variant="outline" asChild>
+                <Link to="/case-studies/brand-defense-global-territory">
+                  Brand Defense: Global Territory →
+                </Link>
+              </Button>
+              <Button variant="outline" asChild>
+                <Link to="/blog/aiweddings-tower-on-our-land">
+                  "You Built Your Tower on Our Land" →
+                </Link>
+              </Button>
             </div>
           </div>
         </motion.article>
