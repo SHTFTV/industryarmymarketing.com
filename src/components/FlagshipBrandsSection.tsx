@@ -21,7 +21,7 @@ import ranchersImg from "@/assets/flagship/ranchers-card.png.asset.json";
 import decoratorImg from "@/assets/flagship/decorator-card.png.asset.json";
 import pitchdecktvImg from "@/assets/flagship/pitchdecktv-hero.jpg.asset.json";
 import talcImg from "@/assets/flagship/talc-hero.jpg.asset.json";
-import videographersImg from "@/assets/flagship/videographers-card.png.asset.json";
+import videographersImg from "@/assets/flagship/videographers-card-v2.png.asset.json";
 
 type Brand = { name: string; url: string; tagline: string; image?: string; contain?: boolean };
 
@@ -65,7 +65,7 @@ const groups: { icon: typeof Crown; eyebrow: string; title: string; blurb: strin
     blurb: "Proprietary tools that power every campaign we run — and that you get access to inside the ecosystem.",
     brands: [
       { name: "EyeSpyR.com", url: "https://eyespyr.com", tagline: "Contractor Verification & Trust Badge", image: eyespyrImg.url, contain: true },
-      { name: "Videographers.io", url: "https://videographers.io", tagline: "Curated Talent For Your Next Project", image: videographersImg.url, contain: true },
+      { name: "Videographers.io", url: "https://videographers.io", tagline: "Curated Talent For Your Next Project", image: videographersImg.url },
       { name: "Talc.tv", url: "https://talc.tv", tagline: "Visual Blast Distribution Engine", image: talcImg.url },
     ],
   },
