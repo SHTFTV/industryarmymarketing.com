@@ -83,9 +83,11 @@ const BlogPost = () => {
   const province = post.province?.trim();
   const brand = post.brand?.trim();
   const heroImageAlt =
-    hasHero && trade && city && province && brand
-      ? `${trade} in ${city}, ${province} — ${brand} exclusive territory partner`
-      : FALLBACK_IMAGE_ALT;
+    (post.imageAlt && post.imageAlt.trim())
+      ? post.imageAlt
+      : hasHero && trade && city && province && brand
+        ? `${trade} in ${city}, ${province} — ${brand} exclusive territory partner`
+        : FALLBACK_IMAGE_ALT;
 
   const articleSchema = {
     "@context": "https://schema.org",
