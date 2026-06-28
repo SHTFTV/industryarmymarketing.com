@@ -50,8 +50,20 @@ describe("PricingChartSection", () => {
     expect(cta).toHaveAccessibleName(/full pricing/i);
   });
 
-  it("mobile snapshot is stable so layout regressions surface in CI", () => {
+  it("mobile layout snapshot is stable so overflow regressions surface in CI", () => {
     renderChart();
-    expect(screen.getByTestId("pricing-chart-mobile")).toMatchSnapshot();
+    const mobile = screen.getByTestId("pricing-chart-mobile");
+    // Snapshot the structural shape, not the live DOM node, so the JSON-LD
+    // serializer in the shared setup doesn't recurse into React fibers.
+    const structure = Array.from(mobile.children).map((li) => ({
+      tag: li.tagName.toLowerCase(),
+      text: (li.textContent ?? "").replace(/\s+/g, " ").trim(),
+    }));
+    expect({
+      containerTag: mobile.tagName.toLowerCase(),
+      hiddenAtSmAndUp: mobile.className.includes("sm:hidden"),
+      itemCount: structure.length,
+      firstThree: structure.slice(0, 3),
+    }).toMatchSnapshot();
   });
 });
