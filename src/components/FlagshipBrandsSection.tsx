@@ -148,6 +148,15 @@ const FlagshipBrandsSection = () => {
                             brand.contain ? "object-contain p-6" : "object-cover"
                           }`}
                         />
+                        {brand.seo && (
+                          <div
+                            className="absolute inset-0 flex items-end bg-gradient-to-t from-black/95 via-black/80 to-black/20 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 group-focus-within:opacity-100 group-focus-within:translate-y-0 transition-all duration-300 pointer-events-none"
+                          >
+                            <p className="text-white text-[13px] leading-snug p-4 font-medium drop-shadow-lg">
+                              {brand.seo}
+                            </p>
+                          </div>
+                        )}
                       </div>
                     )}
                     <div className="p-5 flex flex-col">
