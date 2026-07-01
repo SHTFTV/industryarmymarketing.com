@@ -29,32 +29,33 @@ export type ContractorTrade = {
   emoji: string;
   image?: string;
   contain?: boolean;
+  seo?: string;
 };
 
 // Mirrors the trade-availability grid shown across contractor surfaces:
 // emoji + trade name + premium domain + AVAILABLE pill.
 export const CONTRACTOR_TRADES: ContractorTrade[] = [
-  { name: "Roofing", domain: "roofers.io", emoji: "🏠", image: roofersImg.url },
-  { name: "Framing", domain: "framers.io", emoji: "🏗️", image: framersImg.url },
-  { name: "Drywall", domain: "drywallers.io", emoji: "🧱", image: drywallersImg.url },
-  { name: "Plumbing", domain: "plumbers.ltd", emoji: "💧", image: plumbersImg.url },
-  { name: "Finishing Carpentry", domain: "finishingcarpenters.com", emoji: "✏️", image: finishingCarpentersImg.url },
-  { name: "HVAC", domain: "hvacr.tv", emoji: "❄️", image: hvacrImg.url },
-  { name: "Rebar & Reinforcing", domain: "rebar.tv", emoji: "🔗", image: rebarImg.url },
-  { name: "Estimating", domain: "estimators.io", emoji: "📐", image: estimatorsImg.url },
-  { name: "Kitchen Cabinets", domain: "kitchencabinets.io", emoji: "🍳", image: kitchenCabinetsImg.url },
-  { name: "Hardscapes", domain: "hardscapes.io", emoji: "🪨", image: hardscapesImg.url },
-  { name: "Demolition", domain: "demolition.io", emoji: "💥", image: demolitionImg.url },
-  { name: "Fabrication", domain: "fabricators.io", emoji: "⚙️", image: fabricatorsImg.url },
-  { name: "Carpentry", domain: "carpenters.ltd", emoji: "🪚", image: carpentryImg.url },
-  { name: "Flooring", domain: "flooringinstallers.co", emoji: "🪵", image: flooringImg.url },
-  { name: "Fireproofing", domain: "fireproofing.ltd", emoji: "🔥", image: fireproofingImg.url },
-  { name: "Spray Foam", domain: "sprayfoamcontractors.ltd", emoji: "🧴", image: sprayfoamImg.url },
-  { name: "Irrigation", domain: "irrigation.ltd", emoji: "🌊", image: irrigationImg.url },
-  { name: "Junk Removal", domain: "junkremoval.ltd", emoji: "🗑️", image: junkremovalImg.url },
-  { name: "Custom Closets", domain: "customclosets.io", emoji: "🚪", image: customclosetsImg.url },
-  { name: "Strata Roofing", domain: "strataroofing.ca", emoji: "🏢", image: strataroofingImg.url },
-  { name: "Tenant Improvement", domain: "tenantimprovement.ca", emoji: "🏬", image: tenantimprovementImg.url },
+  { name: "Roofing", domain: "roofers.io", emoji: "🏠", image: roofersImg.url, seo: "Residential and commercial roofing contractors — asphalt, metal, torch-on, and flat systems. One roofer per city, permanent dofollow authority from a category-defining .io domain." },
+  { name: "Framing", domain: "framers.io", emoji: "🏗️", image: framersImg.url, seo: "Wood and steel-stud framing crews for custom homes, multi-family, and commercial builds. Verified operators with EyeSpyR badges and TALC.tv job-site posts." },
+  { name: "Drywall", domain: "drywallers.io", emoji: "🧱", image: drywallersImg.url, seo: "Drywall, taping, and Level-5 finishing contractors for new construction and renovations. Exclusive city territory locked to a single verified crew — $10 flat, month to month." },
+  { name: "Plumbing", domain: "plumbers.ltd", emoji: "💧", image: plumbersImg.url, seo: "Licensed plumbers for service calls, new construction, and commercial roughs. Premium .ltd domain with EyeSpyR verification and direct WhatsApp lead routing." },
+  { name: "Finishing Carpentry", domain: "finishingcarpenters.com", emoji: "✏️", image: finishingCarpentersImg.url, seo: "Finish carpenters, millworkers, and trim specialists showcased with portfolio galleries. Category-defining .com domain built for high-end residential and commercial interiors." },
+  { name: "HVAC", domain: "hvacr.tv", emoji: "❄️", image: hvacrImg.url, seo: "HVAC and refrigeration contractors on video — heat pumps, rooftop units, and commercial cold-side work. Premium .tv authority for licensed mechanical operators." },
+  { name: "Rebar & Reinforcing", domain: "rebar.tv", emoji: "🔗", image: rebarImg.url, seo: "Rebar placers, post-tension crews, and concrete reinforcing specialists. Category-defining .tv domain for civil, high-rise, and infrastructure suppliers." },
+  { name: "Estimating", domain: "estimators.io", emoji: "📐", image: estimatorsImg.url, seo: "Independent construction estimators for quantity take-offs, hard-bid, and preconstruction budgets. Verified specialists — one estimator per city, dofollow-linked." },
+  { name: "Kitchen Cabinets", domain: "kitchencabinets.io", emoji: "🍳", image: kitchenCabinetsImg.url, seo: "Custom cabinet shops, semi-custom installers, and kitchen designers. Premium .io domain feeding BuildersHaus.com and Weddings.io registry buyers." },
+  { name: "Hardscapes", domain: "hardscapes.io", emoji: "🪨", image: hardscapesImg.url, seo: "Paver installers, retaining wall builders, and outdoor living hardscape crews. Category-defining .io domain with project galleries and EyeSpyR-verified operators." },
+  { name: "Demolition", domain: "demolition.io", emoji: "💥", image: demolitionImg.url, seo: "Interior strip-outs, selective demo, and full-structure demolition contractors. Verified crews with dust-control protocols and premium .io category authority." },
+  { name: "Fabrication", domain: "fabricators.io", emoji: "⚙️", image: fabricatorsImg.url, seo: "Custom steel, aluminum, and specialty fabrication shops for architectural, industrial, and commercial builds. Category-defining .io domain for one-off and production runs." },
+  { name: "Carpentry", domain: "carpenters.ltd", emoji: "🪚", image: carpentryImg.url, seo: "Rough and finish carpenters for framing, decks, and custom builds. Premium .ltd domain, one carpentry crew per city, permanent territory." },
+  { name: "Flooring", domain: "flooringinstallers.co", emoji: "🪵", image: flooringImg.url, seo: "Hardwood, luxury vinyl, and tile flooring installers with portfolio reels. Verified crews for residential renovations and commercial tenant improvements." },
+  { name: "Fireproofing", domain: "fireproofing.ltd", emoji: "🔥", image: fireproofingImg.url, seo: "Spray-applied fireproofing, intumescent coatings, and firestopping contractors for commercial and high-rise projects. Premium .ltd category authority." },
+  { name: "Spray Foam", domain: "sprayfoamcontractors.ltd", emoji: "🧴", image: sprayfoamImg.url, seo: "Closed-cell and open-cell spray foam insulation contractors for residential and commercial envelopes. Verified applicators, one crew per city." },
+  { name: "Irrigation", domain: "irrigation.ltd", emoji: "🌊", image: irrigationImg.url, seo: "Landscape irrigation, drip systems, and smart-controller installers. Feeds ProMows.com maintenance operators and BuildersHaus.com custom builds." },
+  { name: "Junk Removal", domain: "junkremoval.ltd", emoji: "🗑️", image: junkremovalImg.url, seo: "Residential and commercial junk removal, estate cleanouts, and construction debris hauling. Category-defining .ltd domain with same-day booking." },
+  { name: "Custom Closets", domain: "customclosets.io", emoji: "🚪", image: customclosetsImg.url, seo: "Custom closet designers, walk-in installers, and organizational millwork specialists. Premium .io category domain for high-ticket residential clients." },
+  { name: "Strata Roofing", domain: "strataroofing.ca", emoji: "🏢", image: strataroofingImg.url, seo: "Strata and multi-family roofing contractors specializing in tar-and-gravel, TPO, and torch-on membrane systems. Verified operators for property managers across Canada." },
+  { name: "Tenant Improvement", domain: "tenantimprovement.ca", emoji: "🏬", image: tenantimprovementImg.url, seo: "Commercial tenant improvement GCs for retail buildouts, office renovations, and restaurant fit-ups. Category-defining .ca domain for landlords and brokers." },
 ];
 
 type Props = {
@@ -116,6 +117,13 @@ const ContractorTradesGrid = ({
                     loading="lazy"
                     className={`w-full h-full transition-transform duration-500 group-hover:scale-105 ${t.contain ? "object-contain p-4" : "object-cover"}`}
                   />
+                  {t.seo && (
+                    <div className="absolute inset-0 flex items-end bg-gradient-to-t from-black/95 via-black/80 to-black/20 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 group-focus-within:opacity-100 group-focus-within:translate-y-0 transition-all duration-300 pointer-events-none">
+                      <p className="text-white text-[12px] leading-snug p-3 font-medium drop-shadow-lg">
+                        {t.seo}
+                      </p>
+                    </div>
+                  )}
                 </div>
               ) : (
                 <div

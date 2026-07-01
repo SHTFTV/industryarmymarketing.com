@@ -23,7 +23,7 @@ import pitchdecktvImg from "@/assets/flagship/pitchdecktv-hero.jpg.asset.json";
 import talcImg from "@/assets/flagship/talc-hero.jpg.asset.json";
 import videographersImg from "@/assets/flagship/videographers-card-v2.png.asset.json";
 
-type Brand = { name: string; url: string; tagline: string; image?: string; contain?: boolean };
+type Brand = { name: string; url: string; tagline: string; image?: string; contain?: boolean; seo?: string };
 
 const groups: { icon: typeof Crown; eyebrow: string; title: string; blurb: string; brands: Brand[] }[] = [
   {
@@ -32,14 +32,14 @@ const groups: { icon: typeof Crown; eyebrow: string; title: string; blurb: strin
     title: "Category-Defining Properties",
     blurb: "Owned, operated, and ranking. Proof we don't just market brands — we build them.",
     brands: [
-      { name: "LoveOurListings", url: "https://loveourlistings.com", tagline: "Real Estate Showcase Network", image: loveourlistingsImg.url },
-      { name: "Weddings.io", url: "https://weddings.io", tagline: "Premium Wedding Vendor Network", image: weddingsImg.url },
-      { name: "Plowwow.com", url: "https://plowwow.com", tagline: "Snow & Site Services Marketplace", image: plowwowImg.url },
-      { name: "Kongtractors.com", url: "https://kongtractors.com", tagline: "Heavy Trade Contractor Directory", image: kongtractorsImg.url },
-      { name: "ProMows.com", url: "https://promows.com", tagline: "Lawn Care & Grounds Network", image: promowsImg.url },
-      { name: "BuildersHaus.com", url: "https://buildershaus.com", tagline: "Premium Builder & Renovation Hub", image: buildershausImg.url },
-      { name: "Dentists.ltd", url: "https://dentists.ltd", tagline: "Premium Dental Network", image: dentistsImg.url },
-      { name: "Treatments.tv", url: "https://treatments.tv", tagline: "Health & Wellness Video Network", image: treatmentsImg.url },
+      { name: "LoveOurListings", url: "https://loveourlistings.com", tagline: "Real Estate Showcase Network", image: loveourlistingsImg.url, seo: "Exclusive real estate showcase network pairing verified agents with high-intent buyers across North America. One agent per city — permanent listings, video tours, and dofollow authority from a 20+ year premium domain." },
+      { name: "Weddings.io", url: "https://weddings.io", tagline: "Premium Wedding Vendor Network", image: weddingsImg.url, seo: "The category-defining .io domain for the $300B global wedding industry. 1,018 cities, 24 countries, 9 cultural verticals — verified planners, photographers, and venues locked to one exclusive slot per metro." },
+      { name: "Plowwow.com", url: "https://plowwow.com", tagline: "Snow & Site Services Marketplace", image: plowwowImg.url, seo: "Snow removal, de-icing, and winter site services — one operator per city, dispatched with real-time storm routing. Trusted by strata, retail, and municipal clients across Canada and the northern US." },
+      { name: "Kongtractors.com", url: "https://kongtractors.com", tagline: "Heavy Trade Contractor Directory", image: kongtractorsImg.url, seo: "Heavy-trade contractor directory built for commercial GCs, developers, and site supers. Excavation, framing, concrete, and rebar specialists — verified by EyeSpyR and ranked on niche-relevant premium domains." },
+      { name: "ProMows.com", url: "https://promows.com", tagline: "Lawn Care & Grounds Network", image: promowsImg.url, seo: "Full-season lawn care, landscape maintenance, and grounds management network. Route-optimized crews, hardscape upsell channels, and territory-locked exclusivity for professional landscapers." },
+      { name: "BuildersHaus.com", url: "https://buildershaus.com", tagline: "Premium Builder & Renovation Hub", image: buildershausImg.url, seo: "Custom home builders, renovation specialists, and design-build firms showcased with project galleries, EyeSpyR verification, and TALC.tv video posts. One builder per city — permanent authority backlinks." },
+      { name: "Dentists.ltd", url: "https://dentists.ltd", tagline: "Premium Dental Network", image: dentistsImg.url, seo: "Premium dental practice network covering family, cosmetic, implant, and orthodontic clinics. Verified profiles, patient review capture, and dofollow SEO from a category-defining .ltd domain." },
+      { name: "Treatments.tv", url: "https://treatments.tv", tagline: "Health & Wellness Video Network", image: treatmentsImg.url, seo: "Health, wellness, and elective treatment provider network delivered as a full video showcase. Clinic reels, before/after tours, and TALC.tv-powered distribution to booking-ready patients." },
     ],
   },
   {
@@ -48,14 +48,14 @@ const groups: { icon: typeof Crown; eyebrow: string; title: string; blurb: strin
     title: "Our .TV Video Networks",
     blurb: "Premium .tv domains built as full video showcases — long-form storytelling, vendor reels, and category authority.",
     brands: [
-      { name: "Sparkys.tv", url: "https://sparkys.tv", tagline: "Electricians Video Network", image: sparkysImg.url },
-      { name: "Painters.tv", url: "https://painters.tv", tagline: "Pro Painter Showcase Network", image: paintersImg.url },
-      { name: "Decorator.tv", url: "https://decorator.tv", tagline: "Interior Decorator Studio Network", image: decoratorImg.url },
-      { name: "FloatHomes.tv", url: "https://floathomes.tv", tagline: "Floating Home Lifestyle Network", image: floathomesImg.url },
-      { name: "Excavators.tv", url: "https://excavators.tv", tagline: "Heavy Excavation Video Network", image: excavatorsImg.url },
-      { name: "Ranchers.tv", url: "https://ranchers.tv", tagline: "Ranch & Livestock Storytelling", image: ranchersImg.url },
-      { name: "Caterers.tv", url: "https://caterers.tv", tagline: "Premium Catering & Event Showcase Network", image: caterersHeroImg.url },
-      { name: "PitchDeck.tv", url: "https://pitchdeck.tv", tagline: "Founder Pitch & Investor Video Network", image: pitchdecktvImg.url },
+      { name: "Sparkys.tv", url: "https://sparkys.tv", tagline: "Electricians Video Network", image: sparkysImg.url, seo: "Licensed electricians and electrical contractors on video. Panel upgrades, EV charger installs, service calls — verified operators with dofollow backlinks from a category-defining .tv domain." },
+      { name: "Painters.tv", url: "https://painters.tv", tagline: "Pro Painter Showcase Network", image: paintersImg.url, seo: "Interior and exterior painting contractors showcased with project reels and color-consult videos. Residential, commercial, and strata painters — one crew per city, permanent territory." },
+      { name: "Decorator.tv", url: "https://decorator.tv", tagline: "Interior Decorator Studio Network", image: decoratorImg.url, seo: "Interior decorators and stagers with portfolio walk-throughs, room reveals, and vendor pairing. Premium .tv authority for high-ticket residential and hospitality clients." },
+      { name: "FloatHomes.tv", url: "https://floathomes.tv", tagline: "Floating Home Lifestyle Network", image: floathomesImg.url, seo: "Float home builders, moorage brokers, and coastal lifestyle content. The only premium video domain dedicated to floating home ownership, refits, and marina living." },
+      { name: "Excavators.tv", url: "https://excavators.tv", tagline: "Heavy Excavation Video Network", image: excavatorsImg.url, seo: "Site prep, foundation excavation, and heavy earthworks contractors on video. Fleet showcases, job-site reels, and verified operators for GCs and civil developers." },
+      { name: "Ranchers.tv", url: "https://ranchers.tv", tagline: "Ranch & Livestock Storytelling", image: ranchersImg.url, seo: "Working ranchers, livestock operations, and agri-lifestyle storytelling. Long-form video for beef, equine, and heritage ranches — plus vendor pairing for feed, fencing, and equipment." },
+      { name: "Caterers.tv", url: "https://caterers.tv", tagline: "Premium Catering & Event Showcase Network", image: caterersHeroImg.url, seo: "Wedding, corporate, and private-event caterers with menu films, tasting reels, and venue partnerships. Category-defining .tv domain feeding Weddings.io and BuildersHaus.com." },
+      { name: "PitchDeck.tv", url: "https://pitchdeck.tv", tagline: "Founder Pitch & Investor Video Network", image: pitchdecktvImg.url, seo: "Founder pitch videos, investor-grade deck walk-throughs, and startup category showcases. Premium .tv distribution for pre-seed through Series B storytelling." },
     ],
   },
   {
@@ -64,9 +64,9 @@ const groups: { icon: typeof Crown; eyebrow: string; title: string; blurb: strin
     title: "Our In-House Stack",
     blurb: "Proprietary tools that power every campaign we run — and that you get access to inside the ecosystem.",
     brands: [
-      { name: "EyeSpyR.com", url: "https://eyespyr.com", tagline: "Contractor Verification & Trust Badge", image: eyespyrImg.url, contain: true },
-      { name: "Videographers.io", url: "https://videographers.io", tagline: "Curated Talent For Your Next Project", image: videographersImg.url },
-      { name: "Talc.tv", url: "https://talc.tv", tagline: "Visual Blast Distribution Engine", image: talcImg.url },
+      { name: "EyeSpyR.com", url: "https://eyespyr.com", tagline: "Contractor Verification & Trust Badge", image: eyespyrImg.url, contain: true, seo: "Physical on-site contractor verification — an EyeSpyR inspector confirms the business exists at the address it claims. Trust badges, verified reviews, and anti-fraud citations for every IAM listing." },
+      { name: "Videographers.io", url: "https://videographers.io", tagline: "Curated Talent For Your Next Project", image: videographersImg.url, seo: "Curated videographer network powering Weddings.io reels, Treatments.tv clinic tours, and PitchDeck.tv founder films. Verified talent, fixed rates, and city-locked exclusivity." },
+      { name: "Talc.tv", url: "https://talc.tv", tagline: "Visual Blast Distribution Engine", image: talcImg.url, seo: "TALC.tv is IAM's visual blast distribution engine — one upload fans out to 40+ premium domain properties, Google Business Profile posts, and syndication endpoints. Powers every content beat in the ecosystem." },
     ],
   },
   {
@@ -75,8 +75,8 @@ const groups: { icon: typeof Crown; eyebrow: string; title: string; blurb: strin
     title: "Logistics Reimagined",
     blurb: "Disrupting how goods, gear, and crews move — the same playbook we apply to your industry.",
     brands: [
-      { name: "Errands.io", url: "https://errands.io", tagline: "Drone & Last-Mile Services", image: errandsImg.url },
-      { name: "Backhaul.io", url: "https://backhaul.io", tagline: "Smart Freight & Backhaul Network", image: backhaulImg.url },
+      { name: "Errands.io", url: "https://errands.io", tagline: "Drone & Last-Mile Services", image: errandsImg.url, seo: "Last-mile errand routing and drone-assisted delivery for retail, medical, and industrial pickups. Premium .io category domain built for the on-demand logistics era." },
+      { name: "Backhaul.io", url: "https://backhaul.io", tagline: "Smart Freight & Backhaul Network", image: backhaulImg.url, seo: "Smart freight and empty-mile backhaul matching for long-haul carriers. Turn deadhead miles into revenue with verified brokers, load transparency, and category-defining .io authority." },
     ],
   },
 ];
@@ -148,6 +148,15 @@ const FlagshipBrandsSection = () => {
                             brand.contain ? "object-contain p-6" : "object-cover"
                           }`}
                         />
+                        {brand.seo && (
+                          <div
+                            className="absolute inset-0 flex items-end bg-gradient-to-t from-black/95 via-black/80 to-black/20 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 group-focus-within:opacity-100 group-focus-within:translate-y-0 transition-all duration-300 pointer-events-none"
+                          >
+                            <p className="text-white text-[13px] leading-snug p-4 font-medium drop-shadow-lg">
+                              {brand.seo}
+                            </p>
+                          </div>
+                        )}
                       </div>
                     )}
                     <div className="p-5 flex flex-col">
