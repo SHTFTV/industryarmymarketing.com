@@ -117,6 +117,13 @@ const ContractorTradesGrid = ({
                     loading="lazy"
                     className={`w-full h-full transition-transform duration-500 group-hover:scale-105 ${t.contain ? "object-contain p-4" : "object-cover"}`}
                   />
+                  {t.seo && (
+                    <div className="absolute inset-0 flex items-end bg-gradient-to-t from-black/95 via-black/80 to-black/20 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 group-focus-within:opacity-100 group-focus-within:translate-y-0 transition-all duration-300 pointer-events-none">
+                      <p className="text-white text-[12px] leading-snug p-3 font-medium drop-shadow-lg">
+                        {t.seo}
+                      </p>
+                    </div>
+                  )}
                 </div>
               ) : (
                 <div
