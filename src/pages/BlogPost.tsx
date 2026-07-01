@@ -91,9 +91,14 @@ const BlogPost = () => {
 
   const articleSchema = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
+    "@id": `${SITE_URL}/blog/${post.slug}#article`,
     headline: post.title,
+    name: post.title,
     description: post.metaDescription,
+    url: `${SITE_URL}/blog/${post.slug}`,
+    inLanguage: "en-CA",
+    isPartOf: { "@id": `${SITE_URL}/#website` },
     image: {
       "@type": "ImageObject",
       url: absoluteImage,
@@ -102,15 +107,13 @@ const BlogPost = () => {
     },
     datePublished: isoDate,
     dateModified: isoDate,
-    author: { "@type": "Organization", name: "Industry Army Marketing" },
-    publisher: {
+    author: {
       "@type": "Organization",
       name: "Industry Army Marketing",
-      logo: {
-        "@type": "ImageObject",
-        url: `${SITE_URL}/favicon.svg`,
-        caption: "Industry Army Marketing logo",
-      },
+      url: SITE_URL,
+    },
+    publisher: {
+      "@id": `${SITE_URL}/#organization`,
     },
     mainEntityOfPage: { "@type": "WebPage", "@id": `${SITE_URL}/blog/${post.slug}` },
   };

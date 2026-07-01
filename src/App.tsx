@@ -43,6 +43,96 @@ import WeddingsEcosystem from "./pages/WeddingsEcosystem.tsx";
 import StaticHtmlPage from "./pages/StaticHtmlPage.tsx";
 import featuredBattle from "@/assets/blog/weddings-vs-aiweddings-battle.png.asset.json";
 
+const SITE = "https://industryarmymarketing.com";
+const battleImageAbs = `${SITE}${featuredBattle.url}`;
+
+const caseStudyJsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "@id": `${SITE}/case-studies/brand-defense-global-territory#article`,
+    headline: "Brand Defense: Global Territory — the Weddings.io case study",
+    name: "Brand Defense: Global Territory",
+    description:
+      "How Industry Army Marketing defended weddings.io (registered 2015) against the aiweddings.io AI-wrapper challenger — territory ownership, receipts, and the brand-defense model.",
+    url: `${SITE}/case-studies/brand-defense-global-territory`,
+    inLanguage: "en-CA",
+    isPartOf: { "@id": `${SITE}/#website` },
+    image: {
+      "@type": "ImageObject",
+      url: battleImageAbs,
+      caption:
+        "Weddings.io vs aiweddings.io — Industry Army Marketing Brand Defense case study",
+    },
+    datePublished: "2026-06-28",
+    dateModified: "2026-06-28",
+    author: { "@type": "Organization", name: "Industry Army Marketing", url: SITE },
+    publisher: { "@id": `${SITE}/#organization` },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${SITE}/case-studies/brand-defense-global-territory`,
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+      { "@type": "ListItem", position: 2, name: "Case Studies", item: `${SITE}/case-studies` },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "Brand Defense: Global Territory",
+        item: `${SITE}/case-studies/brand-defense-global-territory`,
+      },
+    ],
+  },
+];
+
+const towerBlogJsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "@id": `${SITE}/blog/aiweddings-tower-on-our-land#article`,
+    headline:
+      "You Built Your Tower on Our Land: aiweddings.io, weddings.io, and Why This Is a Risky Place to Plant a Flag",
+    name: "You Built Your Tower on Our Land",
+    description:
+      "The public timeline and proof trail behind weddings.io's 2015 registration and the aiweddings.io challenge — companion piece to the Brand Defense case study.",
+    url: `${SITE}/blog/aiweddings-tower-on-our-land`,
+    inLanguage: "en-CA",
+    isPartOf: { "@id": `${SITE}/#website` },
+    image: {
+      "@type": "ImageObject",
+      url: battleImageAbs,
+      caption:
+        "Weddings.io vs aiweddings.io — companion post to the Industry Army Marketing Brand Defense case study",
+    },
+    datePublished: "2026-06-28",
+    dateModified: "2026-06-28",
+    author: { "@type": "Organization", name: "Industry Army Marketing", url: SITE },
+    publisher: { "@id": `${SITE}/#organization` },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${SITE}/blog/aiweddings-tower-on-our-land`,
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+      { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE}/blog` },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "You Built Your Tower on Our Land",
+        item: `${SITE}/blog/aiweddings-tower-on-our-land`,
+      },
+    ],
+  },
+];
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -102,6 +192,7 @@ const App = () => (
                 path="/case-studies/brand-defense-global-territory"
                 image={featuredBattle.url}
                 imageAlt="Weddings.io vs aiweddings.io — Industry Army Marketing Brand Defense case study"
+                jsonLd={caseStudyJsonLd}
               />
             }
           />
@@ -115,6 +206,7 @@ const App = () => (
                 path="/blog/aiweddings-tower-on-our-land"
                 image={featuredBattle.url}
                 imageAlt="Weddings.io vs aiweddings.io — companion post to the Industry Army Marketing Brand Defense case study"
+                jsonLd={towerBlogJsonLd}
               />
             }
           />
