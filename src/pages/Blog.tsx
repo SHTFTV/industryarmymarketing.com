@@ -1,6 +1,7 @@
 import Layout from "@/components/Layout";
 import Seo from "@/components/Seo";
 import PageHeader from "@/components/PageHeader";
+import featuredBattle from "@/assets/blog/weddings-vs-aiweddings-battle.png.asset.json";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
@@ -74,6 +75,8 @@ const Blog = () => {
         title="Blog — Industry Army Intel | $10 Exclusive Trade Territories"
         description="2,000-word guides to exclusive territory marketing for contractors, trades, and service pros across BC and Canada. One trade per city. $10/month."
         path="/blog"
+        image={featuredBattle.url}
+        imageAlt="Weddings.io vs aiweddings.io — Industry Army Marketing Battle for the Brand case study"
       />
       <PageHeader
         eyebrow="Industry Army Intel"

@@ -1,5 +1,6 @@
 import Layout from "@/components/Layout";
 import Seo from "@/components/Seo";
+import featuredBattle from "@/assets/blog/weddings-vs-aiweddings-battle.png.asset.json";
 import HeroSection from "@/components/HeroSection";
 import FlagshipBrandsSection from "@/components/FlagshipBrandsSection";
 import FeaturedCaseStudy from "@/components/FeaturedCaseStudy";
@@ -19,6 +20,8 @@ const Index = () => {
         title="Industry Army Marketing | Contractor SEO & Territory Marketing"
         description="Permanent dofollow backlinks and exclusive city-trade territories on 20+ year-old industry domains. One contractor per trade per city — pricing scales with city population."
         path="/"
+        image={featuredBattle.url}
+        imageAlt="Weddings.io vs aiweddings.io — Industry Army Marketing Battle for the Brand case study"
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "LocalBusiness",

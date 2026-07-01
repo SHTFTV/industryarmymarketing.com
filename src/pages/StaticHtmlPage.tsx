@@ -1,8 +1,13 @@
 import { useEffect } from "react";
+import Seo from "@/components/Seo";
 
 interface Props {
   src: string;
   title: string;
+  description?: string;
+  path?: string;
+  image?: string;
+  imageAlt?: string;
 }
 
 /**
@@ -10,7 +15,7 @@ interface Props {
  * Lets us serve hand-authored long-form posts at clean React Router URLs
  * while preserving the exact HTML/CSS/JSON-LD word-for-word.
  */
-const StaticHtmlPage = ({ src, title }: Props) => {
+const StaticHtmlPage = ({ src, title, description, path, image, imageAlt }: Props) => {
   useEffect(() => {
     const prev = document.title;
     document.title = title;
@@ -20,6 +25,17 @@ const StaticHtmlPage = ({ src, title }: Props) => {
   }, [title]);
 
   return (
+    <>
+      {path && description && (
+        <Seo
+          title={title}
+          description={description}
+          path={path}
+          type="article"
+          image={image}
+          imageAlt={imageAlt}
+        />
+      )}
     <iframe
       src={src}
       title={title}
@@ -32,6 +48,7 @@ const StaticHtmlPage = ({ src, title }: Props) => {
         background: "#fff",
       }}
     />
+    </>
   );
 };
 
