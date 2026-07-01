@@ -41,6 +41,7 @@ import SeoAudit from "./pages/SeoAudit.tsx";
 import SeoAuditDetail from "./pages/SeoAuditDetail.tsx";
 import WeddingsEcosystem from "./pages/WeddingsEcosystem.tsx";
 import StaticHtmlPage from "./pages/StaticHtmlPage.tsx";
+import featuredBattle from "@/assets/blog/weddings-vs-aiweddings-battle.png.asset.json";
 
 const queryClient = new QueryClient();
 
@@ -97,6 +98,10 @@ const App = () => (
               <StaticHtmlPage
                 src="/case-studies/brand-defense-global-territory.html"
                 title="Brand Defense in Global: The $10 Exclusive Territory Guide — weddings.io Case Study"
+                description="How Industry Army Marketing defended weddings.io (registered 2015) against the aiweddings.io AI-wrapper challenger — territory ownership, receipts, and the brand-defense model."
+                path="/case-studies/brand-defense-global-territory"
+                image={featuredBattle.url}
+                imageAlt="Weddings.io vs aiweddings.io — Industry Army Marketing Brand Defense case study"
               />
             }
           />
@@ -106,6 +111,10 @@ const App = () => (
               <StaticHtmlPage
                 src="/blog/aiweddings-tower-on-our-land.html"
                 title="You Built Your Tower on Our Land: aiweddings.io, weddings.io, and Why This Is a Risky Place to Plant a Flag"
+                description="The public timeline and proof trail behind weddings.io's 2015 registration and the aiweddings.io challenge — companion piece to the Brand Defense case study."
+                path="/blog/aiweddings-tower-on-our-land"
+                image={featuredBattle.url}
+                imageAlt="Weddings.io vs aiweddings.io — companion post to the Industry Army Marketing Brand Defense case study"
               />
             }
           />
