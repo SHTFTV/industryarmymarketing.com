@@ -37,24 +37,39 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Industry Army Marketing",
-        "url": "https://industryarmymarketing.com/",
-        "email": "colin@industryarmymarketing.com",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Vancouver",
-          "addressRegion": "BC",
-          "addressCountry": "CA"
-        }
-      }
-    </script>
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "Industry Army Marketing",
-        "url": "https://industryarmymarketing.com/"
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://industryarmymarketing.com/#organization",
+            "name": "Industry Army Marketing",
+            "legalName": "Industry Army Marketing",
+            "url": "https://industryarmymarketing.com",
+            "foundingDate": "2011",
+            "description": "The founding network and master digital infrastructure platform for exclusive trade and lifestyle territories.",
+            "email": "colin@industryarmymarketing.com",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Vancouver",
+              "addressRegion": "BC",
+              "addressCountry": "CA"
+            },
+            "sameAs": [
+              "https://www.linkedin.com/in/colin-hamilton-5a9299407/"
+            ],
+            "subOrganization": [
+              { "@type": "Organization", "name": "Weddings.io", "url": "https://weddings.io" },
+              { "@type": "Organization", "name": "Gasfitter.ca", "url": "https://gasfitter.ca" },
+              { "@type": "Organization", "name": "Plowwow.com", "url": "https://plowwow.com" }
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://industryarmymarketing.com/#website",
+            "url": "https://industryarmymarketing.com",
+            "name": "Industry Army Marketing",
+            "publisher": { "@id": "https://industryarmymarketing.com/#organization" }
+          }
+        ]
       }
     </script>
   </head>
