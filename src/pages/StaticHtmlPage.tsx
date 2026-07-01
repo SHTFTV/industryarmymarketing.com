@@ -8,6 +8,7 @@ interface Props {
   path?: string;
   image?: string;
   imageAlt?: string;
+  jsonLd?: object | object[];
 }
 
 /**
@@ -15,7 +16,7 @@ interface Props {
  * Lets us serve hand-authored long-form posts at clean React Router URLs
  * while preserving the exact HTML/CSS/JSON-LD word-for-word.
  */
-const StaticHtmlPage = ({ src, title, description, path, image, imageAlt }: Props) => {
+const StaticHtmlPage = ({ src, title, description, path, image, imageAlt, jsonLd }: Props) => {
   useEffect(() => {
     const prev = document.title;
     document.title = title;
@@ -34,6 +35,7 @@ const StaticHtmlPage = ({ src, title, description, path, image, imageAlt }: Prop
           type="article"
           image={image}
           imageAlt={imageAlt}
+          jsonLd={jsonLd}
         />
       )}
     <iframe

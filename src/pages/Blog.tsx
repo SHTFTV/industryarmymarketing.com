@@ -1,5 +1,6 @@
 import Layout from "@/components/Layout";
 import Seo from "@/components/Seo";
+import { SITE_URL } from "@/components/Seo";
 import PageHeader from "@/components/PageHeader";
 import featuredBattle from "@/assets/blog/weddings-vs-aiweddings-battle.png.asset.json";
 import { Link } from "react-router-dom";
@@ -77,6 +78,27 @@ const Blog = () => {
         path="/blog"
         image={featuredBattle.url}
         imageAlt="Weddings.io vs aiweddings.io — Industry Army Marketing Battle for the Brand case study"
+        jsonLd={[
+          {
+            "@context": "https://schema.org",
+            "@type": "Blog",
+            "@id": `${SITE_URL}/blog#blog`,
+            name: "Industry Army Intel",
+            url: `${SITE_URL}/blog`,
+            description:
+              "Guides on $10 exclusive territory marketing across trade and lifestyle domains — SEO, AEO, GEO, and the math behind the model.",
+            publisher: { "@id": `${SITE_URL}/#organization` },
+            inLanguage: "en-CA",
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
+              { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE_URL}/blog` },
+            ],
+          },
+        ]}
       />
       <PageHeader
         eyebrow="Industry Army Intel"
