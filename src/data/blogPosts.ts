@@ -255,7 +255,7 @@ export const blogPosts: BlogPost[] = [
             "This filing is the escalation of the same defensive doctrine that has protected the brand since 2015: hold publicly, document everything, and use every legitimate legal instrument available when a copycat crosses the line from lookalike domain into registered business impersonation."
           ],
           "image": {
-            "src": "__WEDDINGS_FORMAL_COMPLAINT__",
+            "src": weddingsFormalComplaintImg,
             "alt": "Weddings.io formal complaint (Statement of Objection) filed with the Ontario Ministry of Public and Business Service Delivery under the Business Names Act",
             "caption": "Exhibit E — Statement of Objection filed with the Ontario government under the Business Names Act, July 2026.",
             "href": "/blog/battle-for-the-brand-weddings-io"
