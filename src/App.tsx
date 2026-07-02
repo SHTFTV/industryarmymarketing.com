@@ -67,7 +67,18 @@ const caseStudyJsonLd = [
     datePublished: "2026-06-28",
     dateModified: "2026-06-28",
     author: { "@type": "Organization", name: "Industry Army Marketing", url: SITE },
-    publisher: { "@id": `${SITE}/#organization` },
+    publisher: {
+      "@type": "Organization",
+      "@id": `${SITE}/#organization`,
+      name: "Industry Army Marketing",
+      url: SITE,
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE}/icon-512.png`,
+        width: 512,
+        height: 512,
+      },
+    },
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": `${SITE}/case-studies/brand-defense-global-territory`,
@@ -111,7 +122,18 @@ const towerBlogJsonLd = [
     datePublished: "2026-06-28",
     dateModified: "2026-06-28",
     author: { "@type": "Organization", name: "Industry Army Marketing", url: SITE },
-    publisher: { "@id": `${SITE}/#organization` },
+    publisher: {
+      "@type": "Organization",
+      "@id": `${SITE}/#organization`,
+      name: "Industry Army Marketing",
+      url: SITE,
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE}/icon-512.png`,
+        width: 512,
+        height: 512,
+      },
+    },
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": `${SITE}/blog/aiweddings-tower-on-our-land`,
