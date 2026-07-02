@@ -113,7 +113,16 @@ const BlogPost = () => {
       url: SITE_URL,
     },
     publisher: {
+      "@type": "Organization",
       "@id": `${SITE_URL}/#organization`,
+      name: "Industry Army Marketing",
+      url: SITE_URL,
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE_URL}/icon-512.png`,
+        width: 512,
+        height: 512,
+      },
     },
     mainEntityOfPage: { "@type": "WebPage", "@id": `${SITE_URL}/blog/${post.slug}` },
   };
