@@ -107,11 +107,13 @@ const BlogPost = () => {
     },
     datePublished: isoDate,
     dateModified: isoDate,
-    author: {
-      "@type": "Organization",
-      name: "Industry Army Marketing",
-      url: SITE_URL,
-    },
+    author: post.authorName
+      ? { "@type": "Person", name: post.authorName }
+      : {
+          "@type": "Organization",
+          name: "Industry Army Marketing",
+          url: SITE_URL,
+        },
     publisher: {
       "@type": "Organization",
       "@id": `${SITE_URL}/#organization`,
