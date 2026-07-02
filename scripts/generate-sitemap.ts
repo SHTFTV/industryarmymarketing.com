@@ -1,6 +1,6 @@
 // Runs before `vite dev` and `vite build` (predev/prebuild hooks); writes public/sitemap.xml.
 
-import { writeFileSync } from "fs";
+import { writeFileSync, readFileSync } from "fs";
 import { resolve } from "path";
 import contractorSlugs from "./contractor-slugs.json" with { type: "json" };
 
@@ -17,45 +17,24 @@ const localCities = ["vancouver", "surrey", "langley"];
 const niches = ["steel-stud", "mining-logistics"];
 const trades = ["plumbing","roofing","electrical","hvac","framing","demolition","excavation","painting"];
 
-const blogSlugs = [
-  "kitchen-cabinets-vancouver",
-  "weddings-vancouver",
-  "tractors-bc",
-  "framers-vancouver",
-  "hvacr-vancouver",
-  "excavators-bc",
-  "painters-vancouver",
-  "roofers-vancouver",
-  "drywallers-vancouver",
-  "plumbers-vancouver",
-  "demolition-vancouver",
-  "interior-designers-vancouver",
-  "backhaul-bc",
-  "snow-removal-bc",
-  "videographers-vancouver",
-  "errands-vancouver",
-  "gasfitter-bc",
-  "steel-stud-contractors-bc",
-  "eyespyr-trust-layer",
-  "buildershaus-front-door",
-  "healthwealthhome-content-engine",
-  "talc-tv-ai-content",
-  "aibuildr-geo-engine",
-  "financial-advisors-bc",
-  "insurance-brokers-bc",
-  "fabricators-bc",
-  "arborists-bc",
-  "rebar-tv-construction-media",
-  "sparkys-tv-electricians",
-  "jewellers-luxury-retail",
-  "promows-lawn-care",
-  "dentists-medical-aeo",
-  "ten-dollar-territories-explained",
-  "chiropractors-vancouver",
-  "movers-calgary",
-  "landscapers-toronto",
-  "hardscapes-kelowna",
-];
+// Auto-derived from src/data/blogPosts.ts so new posts appear in the
+// sitemap the next time predev/prebuild runs — no manual edits needed.
+// We regex-parse instead of importing to avoid tsx choking on the .jpg
+// asset imports that file uses through Vite's asset pipeline.
+const blogPostsSource = readFileSync(
+  resolve("src/data/blogPosts.ts"),
+  "utf8",
+);
+const blogSlugs = Array.from(
+  blogPostsSource.matchAll(/^\s*["']?slug["']?\s*:\s*["']([a-z0-9-]+)["']/gm),
+  (m) => m[1],
+);
+if (blogSlugs.length === 0) {
+  throw new Error("generate-sitemap: no blog slugs parsed from blogPosts.ts");
+}
+
+// Static HTML case-study / long-form pages are listed individually in
+// `entries` below (they need custom priorities + image tags).
 
 const entries: SitemapEntry[] = [
   { path: "/", changefreq: "weekly", priority: "1.0" },
