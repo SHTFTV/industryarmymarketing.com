@@ -24,6 +24,8 @@ import landscapersImg from "@/assets/blog/landscapers.jpg";
 import hardscapesImg from "@/assets/blog/hardscapes.jpg";
 import weddingsBattleAsset from "@/assets/blog/weddings-vs-aiweddings-battle.png.asset.json";
 const weddingsBattleImg = weddingsBattleAsset.url;
+import weddingsFormalComplaintAsset from "@/assets/blog/weddings-io-formal-complaint.png.asset.json";
+const weddingsFormalComplaintImg = weddingsFormalComplaintAsset.url;
 
 const IMG: Record<string, string> = {
   "kitchen-cabinets": kitchencabinetsImg,
@@ -76,6 +78,9 @@ export interface BlogPost {
   cardTitle?: string;
   /** Optional override alt/title text for the hero image. */
   imageAlt?: string;
+  /** Optional Person author override. When set, BlogPost JSON-LD emits
+   *  a Person author alongside the Organization publisher. */
+  authorName?: string;
   /** Optional rich case-study content. When set, BlogPost.tsx renders this
    *  instead of the generated default sections. Supports embedded images,
    *  timelines, footnote references (use `[^id]` in paragraph text), and
