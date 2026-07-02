@@ -1,9 +1,8 @@
 // Runs before `vite dev` and `vite build` (predev/prebuild hooks); writes public/sitemap.xml.
 
-import { writeFileSync } from "fs";
+import { writeFileSync, readFileSync } from "fs";
 import { resolve } from "path";
 import contractorSlugs from "./contractor-slugs.json" with { type: "json" };
-import { blogPosts } from "../src/data/blogPosts";
 
 const BASE_URL = "https://industryarmymarketing.com";
 
@@ -20,7 +19,19 @@ const trades = ["plumbing","roofing","electrical","hvac","framing","demolition",
 
 // Auto-derived from src/data/blogPosts.ts so new posts appear in the
 // sitemap the next time predev/prebuild runs — no manual edits needed.
-const blogSlugs = blogPosts.map((p) => p.slug);
+// We regex-parse instead of importing to avoid tsx choking on the .jpg
+// asset imports that file uses through Vite's asset pipeline.
+const blogPostsSource = readFileSync(
+  resolve("src/data/blogPosts.ts"),
+  "utf8",
+);
+const blogSlugs = Array.from(
+  blogPostsSource.matchAll(/^\s*slug:\s*["']([a-z0-9-]+)["']/gm),
+  (m) => m[1],
+);
+if (blogSlugs.length === 0) {
+  throw new Error("generate-sitemap: no blog slugs parsed from blogPosts.ts");
+}
 
 // Static HTML case-study / long-form pages are listed individually in
 // `entries` below (they need custom priorities + image tags).
