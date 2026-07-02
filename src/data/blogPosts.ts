@@ -248,6 +248,20 @@ export const blogPosts: BlogPost[] = [
           ]
         },
         {
+          "heading": "July 2026 — Formal Complaint filed with the Ontario government",
+          "paragraphs": [
+            "On July 2, 2026 we filed a formal Statement of Objection with the Ontario Ministry of Public and Business Service Delivery under Section 32 of the Business Names Act, targeting a company operating in Ontario under the registered name 'Weddings.io Inc.'",
+            "For the record: we have owned the weddings.io domain continuously since May 13, 2015. We have no affiliation with 'Weddings.io Inc.' The registration of a business name that mirrors our trademarked domain — nine years after our public, continuous, WHOIS-verifiable ownership began — is the kind of dilution the Business Names Act was written to remedy.",
+            "This filing is the escalation of the same defensive doctrine that has protected the brand since 2015: hold publicly, document everything, and use every legitimate legal instrument available when a copycat crosses the line from lookalike domain into registered business impersonation."
+          ],
+          "image": {
+            "src": "__WEDDINGS_FORMAL_COMPLAINT__",
+            "alt": "Weddings.io formal complaint (Statement of Objection) filed with the Ontario Ministry of Public and Business Service Delivery under the Business Names Act",
+            "caption": "Exhibit E — Statement of Objection filed with the Ontario government under the Business Names Act, July 2026.",
+            "href": "/blog/battle-for-the-brand-weddings-io"
+          }
+        },
+        {
           "heading": "The receipts extend across the whole network",
           "paragraphs": [
             "Weddings.io is not the only domain with a paper trail. gasfitter.ca was registered through CIRA in 2007 — an 18-year continuous hold on the category-defining Canadian gasfitting domain.[^gasfitter] Hamiltonhomeservices.com has Wayback captures dating to 2004, making it one of the oldest continuously-indexed home-services properties in the country.[^hamilton]",
