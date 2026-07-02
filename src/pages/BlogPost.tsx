@@ -194,8 +194,7 @@ const BlogPost = () => {
             animate={{ opacity: 1, y: 0 }}
             className="font-display text-4xl md:text-6xl text-foreground mt-6 mb-4 leading-[1.05]"
           >
-            {post.trade} in {post.city}:{" "}
-            <span className="text-primary">The $10 Exclusive Territory Guide</span>
+            {post.title}
           </motion.h1>
 
           <p className="text-muted-foreground text-xs uppercase tracking-widest mb-8">
