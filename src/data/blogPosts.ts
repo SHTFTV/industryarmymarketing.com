@@ -188,10 +188,10 @@ export const blogPosts: BlogPost[] = [
     "province": "BC",
     "category": "Company",
     "date": "June 2026",
-    "title": "Battle for the Brand: weddings.io vs aiweddings.io",
-    "metaDescription": "Eleven years of WHOIS records, Wayback captures, and receipts: the full history of weddings.io and the fight to defend it.",
+    "title": "Battle for the Brand: weddings.io Formal Complaint Letter Against aiweddings.io",
+    "metaDescription": "Read the weddings.io formal complaint letter against aiweddings.io, with WHOIS records, Wayback proof, and the full brand-defense timeline.",
     "authorName": "Colin Hamilton",
-    "excerpt": "Every disruptor has an origin story. This is ours — the receipts-backed history of weddings.io: registered May 13, 2015, defended through eleven quiet years, and shipped as the wedding industry's $10 exclusive-territory disruptor across 9 cultures, 1,018 cities, and 24 countries.",
+    "excerpt": "The formal complaint letter against aiweddings.io is now part of the public weddings.io brand-defense record, backed by WHOIS records, Wayback captures, and the full timeline from 2015 to today.",
     "pain": "The wedding industry is a $300B global category dominated by directory middlemen who rent your traffic and sell the same lead to six planners. Couples can't tell who's verified, planners can't tell which leads are real, and the category-defining .io domain sat unclaimed by every legacy player until 2015. When we registered weddings.io, the battle for the brand began that day — and it hasn't stopped since.",
     "detail": "The full origin story plus the operating model: registered May 13, 2015, 78 Wayback captures since, 9 cultures (South Asian, Persian, Chinese, Italian, Jewish, Christian, Hindu, Sikh, secular), 1,018 cities, 24 countries, EyeSpyR-verified vendors, TALC.tv content, WhatsApp lead routing, and one defended .io domain — priced flat at $10 per slot per month on The 250 Scale.",
     "process": "Read below for WHOIS exhibits, Wayback Machine screenshots, footnotes, and source links across four eras (2015 registration, 2016–2023 quiet build, 2024 copycat wave, 2025–2026 AI-enabled relaunch), then lock your city — 3 to 10 verified-planner slots per metro, $10 each, flat.",
@@ -209,8 +209,22 @@ export const blogPosts: BlogPost[] = [
       { "q": "Where can I see the master pricing chart?", "a": "All IAM platform pricing follows The 250 Scale at industryarmymarketing.com/pricing — same hardcoded matrix used on the territory chart and the free scan wizard." }
     ],
     "richContent": {
-      "intro": "Every disruptor has an origin story. Most are myth. This one has WHOIS records, Wayback captures, and eleven years of receipts. What follows is the full history of weddings.io — how a six-letter .io domain registered on May 13, 2015 became the prototype for the Industry Army Marketing playbook, survived three copycat attacks, and finally shipped as the wedding industry's category disruptor once AI caught up to the vision.",
+      "intro": "This is the public brand-defense record for weddings.io, including the formal complaint letter against aiweddings.io / Weddings.io Inc. filed with the Ontario government. The timeline below documents the 2015 weddings.io registration, years of public archive proof, the aiweddings.io conflict, and the formal Statement of Objection now attached as evidence.",
       "sections": [
+        {
+          "heading": "July 2026 — Formal Complaint Letter Against aiweddings.io / Weddings.io Inc.",
+          "paragraphs": [
+            "On July 2, 2026 we filed a formal Statement of Objection with the Ontario Ministry of Public and Business Service Delivery under Section 32 of the Business Names Act, targeting a company operating in Ontario under the registered name 'Weddings.io Inc.' and connected to the aiweddings.io conflict.",
+            "For the record: we have owned the weddings.io domain continuously since May 13, 2015. We have no affiliation with 'Weddings.io Inc.' The registration of a business name that mirrors our trademarked domain — nine years after our public, continuous, WHOIS-verifiable ownership began — is the kind of dilution the Business Names Act was written to remedy.",
+            "This filing is the escalation of the same defensive doctrine that has protected the brand since 2015: hold publicly, document everything, and use every legitimate legal instrument available when a copycat crosses the line from lookalike domain into registered business impersonation."
+          ],
+          "image": {
+            "src": weddingsFormalComplaintImg,
+            "alt": "Formal complaint letter against aiweddings.io and Weddings.io Inc. filed for the weddings.io brand dispute",
+            "caption": "Exhibit E — Formal complaint / Statement of Objection filed with the Ontario government under the Business Names Act, July 2026.",
+            "href": "/blog/battle-for-the-brand-weddings-io"
+          }
+        },
         {
           "heading": "May 13, 2015 — the day the brand was claimed",
           "paragraphs": [
@@ -246,20 +260,6 @@ export const blogPosts: BlogPost[] = [
             "We responded with the long version of this argument in a separate post: ‘You Built Your Tower on Our Land.’[^ailand] The short version is simpler. Eleven years of continuous ownership, public WHOIS, 78 Wayback captures, and a documented build pipeline are not erasable by registering a similar string in 2024.",
             "The lesson generalises beyond weddings. Every IAM domain — gasfitter.ca, plowwow.com, kongtractors.com, hamiltonhomeservices.com — was acquired or registered with the same defensive posture: get there first, hold it publicly, document everything."
           ]
-        },
-        {
-          "heading": "July 2026 — Formal Complaint filed with the Ontario government",
-          "paragraphs": [
-            "On July 2, 2026 we filed a formal Statement of Objection with the Ontario Ministry of Public and Business Service Delivery under Section 32 of the Business Names Act, targeting a company operating in Ontario under the registered name 'Weddings.io Inc.'",
-            "For the record: we have owned the weddings.io domain continuously since May 13, 2015. We have no affiliation with 'Weddings.io Inc.' The registration of a business name that mirrors our trademarked domain — nine years after our public, continuous, WHOIS-verifiable ownership began — is the kind of dilution the Business Names Act was written to remedy.",
-            "This filing is the escalation of the same defensive doctrine that has protected the brand since 2015: hold publicly, document everything, and use every legitimate legal instrument available when a copycat crosses the line from lookalike domain into registered business impersonation."
-          ],
-          "image": {
-            "src": weddingsFormalComplaintImg,
-            "alt": "Weddings.io formal complaint (Statement of Objection) filed with the Ontario Ministry of Public and Business Service Delivery under the Business Names Act",
-            "caption": "Exhibit E — Statement of Objection filed with the Ontario government under the Business Names Act, July 2026.",
-            "href": "/blog/battle-for-the-brand-weddings-io"
-          }
         },
         {
           "heading": "The receipts extend across the whole network",
