@@ -22,12 +22,8 @@ const trades = ["plumbing","roofing","electrical","hvac","framing","demolition",
 // sitemap the next time predev/prebuild runs — no manual edits needed.
 const blogSlugs = blogPosts.map((p) => p.slug);
 
-// Static HTML pages (case studies + companion long-form) served through
-// StaticHtmlPage routes. Add new entries here when a new one ships.
-const caseStudyPaths = [
-  "/case-studies/brand-defense-global-territory",
-  "/blog/aiweddings-tower-on-our-land",
-];
+// Static HTML case-study / long-form pages are listed individually in
+// `entries` below (they need custom priorities + image tags).
 
 const entries: SitemapEntry[] = [
   { path: "/", changefreq: "weekly", priority: "1.0" },
