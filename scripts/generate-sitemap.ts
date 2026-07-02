@@ -26,7 +26,7 @@ const blogPostsSource = readFileSync(
   "utf8",
 );
 const blogSlugs = Array.from(
-  blogPostsSource.matchAll(/^\s*slug:\s*["']([a-z0-9-]+)["']/gm),
+  blogPostsSource.matchAll(/^\s*["']?slug["']?\s*:\s*["']([a-z0-9-]+)["']/gm),
   (m) => m[1],
 );
 if (blogSlugs.length === 0) {
