@@ -51,6 +51,7 @@ const IMG: Record<string, string> = {
   mover: moverImg,
   landscapers: landscapersImg,
   hardscapes: hardscapesImg,
+  "weddings-formal-complaint": weddingsFormalComplaintImg,
 };
 
 export interface BlogPost {
