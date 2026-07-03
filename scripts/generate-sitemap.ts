@@ -97,6 +97,8 @@ function generateSitemap(entries: SitemapEntry[]) {
         ? `    <image:image>\n      <image:loc>${BASE_URL}/__l5e/assets-v1/0a5a3168-64b3-409f-a773-56a39f6e04b8/six-figure-land-grab-weddings-io.png</image:loc>\n      <image:caption>Six-figure .io domain land grab — weddings.io category-killer defense vs aiweddings.io and Weddings.io Inc.</image:caption>\n      <image:title>The Six-Figure Land Grab Nobody Planned — weddings.io featured image (Industry Army Marketing)</image:title>\n    </image:image>`
         : e.path === "/blog/formal-complaint-weddings-io-inc"
         ? `    <image:image>\n      <image:loc>${BASE_URL}/__l5e/assets-v1/049bfe5d-1aba-4b6d-99ba-5e1dd85a298e/weddings-io-formal-complaint.png</image:loc>\n      <image:caption>Formal complaint / Statement of Objection filed with Ontario government against 'Weddings.io Inc.'</image:caption>\n      <image:title>We've Filed a Formal Complaint Regarding 'Weddings.io Inc.' — Industry Army Marketing featured image</image:title>\n    </image:image>`
+        : e.path === "/blog/wedding-platform-controversy-domain-dispute-seo"
+        ? `    <image:image>\n      <image:loc>${BASE_URL}/__l5e/assets-v1/6b002842-33da-43fb-a520-93a6d46988ca/weddings-io-seo-command-center.png</image:loc>\n      <image:caption>weddings.io SEO Command Center — organic traffic, keyword rankings, backlinks, domain authority; independent alternative to The Knot and WeddingWire under FTC scrutiny</image:caption>\n      <image:title>Wedding Platform Controversy: How a Domain Dispute Became the Best SEO Campaign We Never Planned — weddings.io featured image</image:title>\n    </image:image>`
         : null,
       `  </url>`,
     ]
