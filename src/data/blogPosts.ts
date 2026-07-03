@@ -26,6 +26,8 @@ import weddingsBattleAsset from "@/assets/blog/weddings-vs-aiweddings-battle.png
 const weddingsBattleImg = weddingsBattleAsset.url;
 import weddingsFormalComplaintAsset from "@/assets/blog/weddings-io-formal-complaint.png.asset.json";
 const weddingsFormalComplaintImg = weddingsFormalComplaintAsset.url;
+import sixFigureLandGrabAsset from "@/assets/blog/six-figure-land-grab-weddings-io.png.asset.json";
+const sixFigureLandGrabImg = sixFigureLandGrabAsset.url;
 
 const IMG: Record<string, string> = {
   "kitchen-cabinets": kitchencabinetsImg,
@@ -52,6 +54,7 @@ const IMG: Record<string, string> = {
   landscapers: landscapersImg,
   hardscapes: hardscapesImg,
   "weddings-formal-complaint": weddingsFormalComplaintImg,
+  "six-figure-land-grab": sixFigureLandGrabImg,
 };
 
 export interface BlogPost {
