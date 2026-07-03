@@ -394,6 +394,114 @@ export const blogPosts: BlogPost[] = [
     }
   },
   {
+    "slug": "wedding-platform-controversy-domain-dispute-seo",
+    "brand": "weddings.io",
+    "trade": "Wedding Platform Controversy",
+    "cardTitle": "Wedding Platform Controversy: The SEO Campaign We Never Planned",
+    "tradeShort": "wedding platform",
+    "plural": "wedding vendors",
+    "video": null,
+    "imageKey": "weddings-seo-command-center",
+    "imageAlt": "weddings.io SEO Command Center — organic traffic 128.7K, 1,248 tracked keywords, 5.6K backlinks, DA 42 — independent alternative to The Knot and WeddingWire (WeddingPro)",
+    "city": "Vancouver",
+    "province": "BC",
+    "category": "Brand Defense",
+    "date": "July 2026",
+    "title": "Wedding Platform Controversy: How a Domain Dispute Became the Best SEO Campaign We Never Planned",
+    "metaDescription": "The Knot and WeddingWire face a class action and FTC scrutiny. weddings.io — a category-killer .io held since 2015 — is the independent alternative. Here is exactly how a domain dispute became a six-figure SEO event we could not have bought.",
+    "authorName": "Colin Hamilton",
+    "excerpt": "The Knot / WeddingWire are under FTC scrutiny and facing a class action. Nineteen years of quiet building met a legal filing we did not plan, and it turned into the most valuable SEO campaign we could not have bought. Here is the offence, the defence, and the receipts.",
+    "pain": "The independent wedding vendor community is actively looking for an alternative to The Knot and WeddingWire — 200+ FTC complaints, a class action filed April 30 2025, and Senator Grassley pressing for an investigation. We built the infrastructure before anyone was paying attention. Then a separate Ontario company incorporated as 'Weddings.io Inc.' and the story wrote itself.",
+    "detail": "weddings.io has been under continuous ICANN WHOIS registration since May 13, 2015 with 78 Internet Archive captures on public record. Verified single-word .io comparables: mint.io $230K (2021), fluid.io $199,995 (2021), metaverse.io $175K (2021), ledger.io $120K (2021), EVO.io $105K (2024). Over 52% of high-value .io sales are single English words — exactly this profile.",
+    "process": "On July 2, 2026 we filed a formal Statement of Objection under Section 32 of Ontario's Business Names Act. The EIN Presswire release is indexed. weddings.io/Who-Owns-Weddings.io is public. Layered SEO: press release backlinks, exact-match ownership page, long-form footnoted post, entity schema, targeted press outreach to domain-industry publications (DA 40–70), Vancouver tech media, and Canadian wedding trade press.",
+    "faqs": [
+      { "q": "What is the wedding platform controversy?", "a": "The Knot and WeddingWire — operating together as WeddingPro under The Knot Worldwide — face over 200 FTC complaints since 2018, a class action lawsuit filed April 30, 2025 by Kazerouni Law Group, and pressure from U.S. Senator Chuck Grassley for an FTC investigation. The Knot holds 1.7 stars on SiteJabber across 393 reviews; WeddingWire 2.6 stars on SmartCustomer across 819 reviews. Vendors allege high-pressure sales, one-sided contracts, and fraudulent leads." },
+      { "q": "How is weddings.io related?", "a": "weddings.io is an independent, vendor-friendly wedding infrastructure platform owned by Industry Army Marketing since May 13, 2015. Zero VC. Zero private-equity roll-up. Territory-locked listing plans from $10/month and free vendor signup options — the opposite of the sales-tactic model currently under FTC scrutiny." },
+      { "q": "What is the domain dispute?", "a": "A separate Ontario-incorporated company registered as 'Weddings.io Inc.' (Reg. No. 74761 8627 RT0001) while operating at aiweddings.io. We filed a formal Statement of Objection with Ontario's Ministry of Public and Business Service Delivery on July 2, 2026 under Section 32 of the Business Names Act. Prior use is documented: 11 years of continuous ICANN WHOIS registration and 78 Internet Archive captures." },
+      { "q": "Why is weddings.io a six-figure asset?", "a": "Publicly reported .io comparables: mint.io $230,000, fluid.io $199,995, metaverse.io $175,000, ledger.io $120,000, EVO.io $105,000. Top 10 reported .io sales of 2021 totaled over $1.1M. Over 52% of high-value .io sales are single English words — weddings.io is exactly that profile in a $70B global industry." },
+      { "q": "How does this become an SEO advantage?", "a": "The dispute created natural search demand around 'wedding platform controversy', 'weddings.io domain dispute', 'The Knot alternative', and related terms. We now own the indexed content answering those queries. Press release backlinks, exact-match ownership pages, and long-form footnoted posts compound over months. This is the highest-value SEO asset a startup can hold — earned editorial context — and it cannot be purchased." },
+      { "q": "What is the independent-vendor alternative?", "a": "weddings.io territory-locked listings, backed by the Industry Army Marketing 150+ domain feeder network across weddings, real estate, roofing, plumbing, and construction. Plans from $10/month, free signup options for independent vendors, and a vendor-owned model — not a marketplace that resells your leads to competitors." }
+    ],
+    "richContent": {
+      "intro": "There is a specific kind of luck that only arrives after nineteen years of quiet, consistent work. On July 2, 2026 we filed a formal Statement of Objection against a separate Ontario company that incorporated under a name identical to our flagship domain. We were not planning to launch loudly. The rollout was weeks away. Then this landed in our lap. And the more we looked at it, the more we realized: this is the most valuable SEO event that could have happened to us.",
+      "sections": [
+        {
+          "heading": "The wedding platform controversy you probably already know about",
+          "paragraphs": [
+            "The Knot and WeddingWire — now operating together as WeddingPro under The Knot Worldwide — collectively dominate the wedding vendor marketplace. The Knot Worldwide facilitated nearly $4 billion in consumer spending via advertising on its platforms, with 900,000 vendors in more than 10 countries using it.[^7] The numbers behind that dominance tell a different story.",
+            "Thousands of American wedding professionals have raised serious complaints regarding the sales practices of The Knot and WeddingWire. Vendors allege they are subjected to high-pressure sales tactics that steer them into unfair, one-sided contracts before they have the opportunity to fully review the terms.[^7]",
+            "The allegations escalated in 2025. Since 2018, more than two hundred formal complaints have been made about allegedly fraudulent activity on The Knot and WeddingWire to the FTC. U.S. Senator Chuck Grassley pressed the FTC to investigate.[^8] A class action lawsuit was filed on April 30, 2025 by the Kazerouni Law Group, alleging fraudulent leads. The case is pending.[^9]",
+            "The Knot holds 1.7 stars on SiteJabber across 393 reviews. WeddingWire holds 2.6 stars on SmartCustomer across 819 reviews. One vendor described paying over $877 for three months of advertising while WeddingPro displayed an incorrect response rate on their profile that falsely suggested they did not respond to couples — directly impacting their bookings.[^9]",
+            "We are not here to pile on The Knot. They deny the allegations and the case is before the courts. But the point that matters for this story is this: the independent wedding vendor community is actively looking for an alternative. The controversy created the demand. We built the infrastructure before anyone was paying attention."
+          ],
+          "image": {
+            "src": weddingsSeoCommandCenterImg,
+            "alt": "weddings.io SEO Command Center — organic traffic 128.7K, 1,248 tracked keywords, 5.6K backlinks, DA 42, SEO Health Score 86 — independent alternative to The Knot and WeddingWire under FTC scrutiny",
+            "caption": "The weddings.io SEO Command Center. Independent, vendor-owned wedding infrastructure — the opposite of the sales-tactic marketplace model currently under FTC scrutiny."
+          }
+        },
+        {
+          "heading": "What domain disputes actually look like — and why ours is different",
+          "paragraphs": [
+            "Domain name disputes are as old as the commercial internet. Nissan Motor Company spent over two decades in litigation against Uzi Nissan — an American businessman who had registered nissan.com using his own legal surname years before the car manufacturer wanted it. The courts ruled against the automaker because the domain holder had legitimate prior use.[^10] Prior registration and legitimate use won.",
+            "The same principle applies here — in our favour. weddings.io has been under continuous ICANN WHOIS registration since May 13, 2015, with 78 documented Internet Archive captures confirming uninterrupted operations.[^1] Prior use is not a grey area in our case. It is a documented, third-party verified matter of public record.",
+            "What makes our situation distinct from classic cybersquatting disputes is important. Under the Anticybersquatting Consumer Protection Act, courts consider whether the domain name holder made use, prior to the dispute, of the domain name in connection with a bona fide sale of goods or services. We have eleven years of documented operational use. We are not squatters. We are the original occupants.[^10]",
+            "The Ontario company incorporated under the name 'Weddings.io Inc.' after our domain was already operational. We filed our Statement of Objection under Section 32 of the Business Names Act to put that sequence of events on permanent public record.[^1]"
+          ]
+        },
+        {
+          "heading": "The six-figure asset sitting in the middle of all of this",
+          "paragraphs": [
+            "Here is the number that gives the entire story its stakes. Premium single-word .io domain sales — publicly reported and verified:[^3] mint.io $230,000 (2021), fluid.io $199,995 (2021), metaverse.io $175,000 (2021), ledger.io $120,000 (2021), EVO.io $105,000 (2024), auction.io $100,000 (2021).",
+            "The top 10 reported .io domain sales of 2021 alone totaled over $1.1 million USD.[^3] The market accelerated in 2024, with EVO.io selling for $105,000 — confirming the trend is not historical, it is active.[^4]",
+            "Over 52% of high-value .io sales are single English words — common nouns that define a category.[^6] weddings.io is exactly that: one word, exact-match, in a $70 billion global industry.",
+            "When a funded competitor spends marketing capital promoting a variation of that name, organic brand awareness flows toward the root. Every dollar they spend increasing awareness of 'Weddings.io' in the market benefits the domain that actually owns that exact phrase."
+          ]
+        },
+        {
+          "heading": "How the dispute became our SEO foundation",
+          "paragraphs": [
+            "Within 72 hours of the dispute becoming public, three permanent, indexed sources were live. A formal press release on EIN Presswire — a high-authority newswire that distributes to hundreds of news aggregators and syndication partners, generating natural backlinks at scale.[^1] A public ownership declaration at weddings.io/Who-Owns-Weddings.io — a permanently indexable page establishing prior use, creating an exact-match keyword-rich URL for searches like 'who owns weddings.io' and 'weddings.io company'.[^2] A long-form footnoted blog post at industryarmymarketing.com — keyword-rich, citation-heavy, linking out to domain industry authority sites and receiving backlinks in return.[^5]",
+            "The dispute created natural search demand around terms we now own the content for: 'wedding platform controversy' — this article; 'weddings.io domain dispute' — the ownership page and press release; 'wedding domain name' — six-figure comparables content; 'The Knot alternative' — vendor-focused positioning; 'wedding vendor platform Canada' — geographic niche capture. When someone searches 'wedding platform controversy' in 2026, we intend to be in that conversation — contextually relevant, factually grounded, and positioned as the independent alternative to the platforms currently under FTC scrutiny.",
+            "Natural editorial backlinks from credible publications are the highest-value SEO asset that cannot be purchased or manufactured. They can only be earned. Our outreach targets: domain industry publications (DA 40–70) — DomainNameWire, DNJournal, DomainInvesting.com, StrategicRevenue.com; Vancouver tech press — Vancouver Tech Journal, Vancouver Startup Week; wedding industry media — Weddingbells.ca (DA 58), ElegantWedding.ca — framed as disruption in their industry, an independent infrastructure alternative arriving at a moment when vendor trust in existing platforms is at a documented low.",
+            "Organization schema markup on weddings.io establishes entity clarity for Google's Knowledge Graph — essential for ensuring that searches for 'Weddings.io' surface the correct company, not the variation. This is particularly critical when two entities share a confusingly similar name."
+          ]
+        },
+        {
+          "heading": "The honest part — and why it actually makes the story better",
+          "paragraphs": [
+            "We were not ready to launch yet. The infrastructure was built. The network was ready. Plans — from $10 a month with free signup options — were priced and structured. But the public rollout was weeks away. Then this happened.",
+            "The honest truth is: we could not have bought this. A startup with a $1 million marketing budget cannot manufacture an organic news event, a legitimate legal filing, a verifiable prior-use record, and a David vs. Goliath narrative that journalists in three different verticals want to cover. Those things are either real or they are not. Ours are real.",
+            "The vendors currently looking for alternatives to The Knot, WeddingWire, and the existing wedding platform ecosystem now have somewhere to look. The domain industry is now aware of a six-figure asset that has been in continuous operation since 2015. The Vancouver startup community has a founder story that is eleven years in the making.",
+            "The timeline wasn't ours to choose. But nineteen years of building means the foundation doesn't shake when someone kicks the door. The rollout is here."
+          ]
+        }
+      ],
+      "footnotes": [
+        { "id": "1", "text": "EIN Presswire — Industry Army Marketing Addresses Brand Confusion Over Flagship Domain Weddings.io — July 3, 2026", "href": "https://www.einpresswire.com/article/924111175/industry-army-marketing-addresses-brand-confusion-over-flagship-domain-weddings-io" },
+        { "id": "2", "text": "weddings.io — Who Owns Weddings.io — Public ownership record and prior use documentation", "href": "https://weddings.io/Who-Owns-Weddings.io" },
+        { "id": "3", "text": "James Names — Top .io Sales of 2021: Where Are They Now?", "href": "https://jamesnames.com/2022/05/top-io-sales-of-2021-where-are-they-now/" },
+        { "id": "4", "text": "Register.Domains — Top Selling Domain Names This Summer — July 2024", "href": "https://register.domains/en/blog/top-selling-domain-names-this-summer" },
+        { "id": "5", "text": "Industry Army Marketing Blog — Battle for the Brand: weddings.io", "href": "/blog/battle-for-the-brand-weddings-io" },
+        { "id": "6", "text": "NamePros — The Last 5 Years of .IO Extension Sales — November 2024", "href": "https://www.namepros.com/blog/the-last-5-years-of-io-extension-sales.1339261/" },
+        { "id": "7", "text": "The Knot Whistleblowers — Exposing Fraudulent Practices", "href": "https://theknotwhistleblowers.com/" },
+        { "id": "8", "text": "U.S. Senator Chuck Grassley — Grassley Presses FTC to Investigate Alleged Fraud at Wedding Website The Knot — October 2025", "href": "https://www.grassley.senate.gov/news/news-releases/grassley-presses-ftc-to-investigate-alleged-fraud-deceptive-business-practices-at-wedding-website-the-knot" },
+        { "id": "9", "text": "PetaPixel — The Knot Accused of Selling Fake Leads to Wedding Photographers — April 2025", "href": "https://petapixel.com/2025/04/17/the-knot-accused-of-selling-fake-leads-to-wedding-photographers/" },
+        { "id": "10", "text": "Veeble — 7 Famous Domain Name Disputes and Their Interesting Stories", "href": "https://www.veeble.com/blog/famous-domain-name-disputes-and-their-interesting-stories/" }
+      ],
+      "sources": [
+        { "label": "EIN Presswire — Press Release (July 3, 2026)", "href": "https://www.einpresswire.com/article/924111175/industry-army-marketing-addresses-brand-confusion-over-flagship-domain-weddings-io" },
+        { "label": "The Knot Whistleblowers", "href": "https://theknotwhistleblowers.com/" },
+        { "label": "Senator Grassley — FTC Investigation Request (Oct 2025)", "href": "https://www.grassley.senate.gov/news/news-releases/grassley-presses-ftc-to-investigate-alleged-fraud-deceptive-business-practices-at-wedding-website-the-knot" },
+        { "label": "PetaPixel — The Knot Fake Leads Coverage (April 2025)", "href": "https://petapixel.com/2025/04/17/the-knot-accused-of-selling-fake-leads-to-wedding-photographers/" },
+        { "label": "Battle for the Brand: weddings.io — Full Case Study", "href": "/blog/battle-for-the-brand-weddings-io" },
+        { "label": "Formal Complaint — Statement of Objection Filing", "href": "/blog/formal-complaint-weddings-io-inc" },
+        { "label": "The Six-Figure Land Grab — .io comparables & receipts", "href": "/blog/six-figure-land-grab-weddings-io" },
+        { "label": "Who Owns Weddings.io — Public ownership record", "href": "https://weddings.io/Who-Owns-Weddings.io" }
+      ]
+    }
+  },
+  {
     "slug": "six-figure-land-grab-weddings-io",
     "brand": "weddings.io",
     "trade": "Domain Strategy",
