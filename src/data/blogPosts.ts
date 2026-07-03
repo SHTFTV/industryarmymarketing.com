@@ -391,6 +391,106 @@ export const blogPosts: BlogPost[] = [
     }
   },
   {
+    "slug": "six-figure-land-grab-weddings-io",
+    "brand": "weddings.io",
+    "trade": "Domain Strategy",
+    "cardTitle": "The Six-Figure Land Grab: weddings.io",
+    "tradeShort": "domain",
+    "plural": "domain investors",
+    "video": null,
+    "imageKey": "six-figure-land-grab",
+    "imageAlt": "Six-Figure Domain Land Grab — weddings.io category-killer .io domain brand defense against aiweddings.io copycat and Weddings.io Inc. brand confusion",
+    "city": "Vancouver",
+    "province": "BC",
+    "category": "Domain Strategy",
+    "date": "July 2026",
+    "title": "The Six-Figure Land Grab Nobody Planned — And Why weddings.io Is Right in the Middle of It",
+    "metaDescription": "weddings.io is a single-word, exact-match .io category-killer in a $70B industry. Verified .io comparables: mint.io $230K, fluid.io $199,995, EVO.io $105K. Owned continuously since 2015. Here is the offence, the defence, and the receipts.",
+    "authorName": "Colin Hamilton",
+    "excerpt": "We were building quietly — nineteen years of digital infrastructure, no VC, no runway calls. Then a VC-backed 'Weddings.io Inc.' launched at aiweddings.io and the noise found us. Here is the offence, the defence, and the six-figure .io comparables with receipts.",
+    "pain": "A VC-backed Ontario company incorporated as 'Weddings.io Inc.' and launched at aiweddings.io — same name, different company, zero affiliation with us. Directories and partner profiles started conflating the two. We were not ready to be loud yet. The noise found us anyway.",
+    "detail": "weddings.io is a single-word, exact-match .io in a $70B global category, held continuously by Industry Army Marketing since May 13, 2015 with 78 Internet Archive captures on public record. Verified aftermarket comparables include mint.io at $230,000, fluid.io at $199,995, and EVO.io at $105,000 in 2024.",
+    "process": "The Statement of Objection is filed with Ontario under Section 32 of the Business Names Act. The EIN Presswire release is on public record. Directories are being audited. Every marketing dollar spent on a variation of the root generates organic awareness that flows back to the exact-match anchor.",
+    "faqs": [
+      { "q": "Why are .io domains worth six figures?", "a": "The .io extension is the de facto standard for tech, SaaS, and AI platforms — .io is the technical shorthand for input/output. Single-word, category-defining .io names have cleared six figures repeatedly: mint.io at $230,000, fluid.io at $199,995, metaverse.io at $175,000, ledger.io at $120,000, EVO.io at $105,000 in 2024." },
+      { "q": "How does weddings.io compare?", "a": "Single English word. Exact-match. Category-defining in a $70B global industry. Over 52% of high-value .io sales are single English common nouns — exactly this profile." },
+      { "q": "Who owns weddings.io?", "a": "Industry Army Marketing. ICANN WHOIS confirms continuous registration since May 13, 2015 through the 2027 renewal window. The Internet Archive Wayback Machine has 78 captures dating to 2013." },
+      { "q": "What about 'Weddings.io Inc.' and aiweddings.io?", "a": "'Weddings.io Inc.' is an Ontario-incorporated company (Registration No. 74761 8627 RT0001) operating a separate platform at aiweddings.io. We have zero affiliation. On July 2, 2026 we filed a formal Statement of Objection with the Ontario Ministry of Public and Business Service Delivery under Section 32 of the Business Names Act." },
+      { "q": "Was this the plan?", "a": "No. We were building quietly toward a broader rollout — vendor tools, feeder networks, 1,018-city territory-locked listing plans. The timing was not ours to choose. Nineteen years of building means the foundation does not shake when someone kicks the door." },
+      { "q": "Where is the full press release?", "a": "EIN Presswire — Industry Army Marketing Addresses Brand Confusion Over Flagship Domain Weddings.io, published July 3, 2026." }
+    ],
+    "richContent": {
+      "intro": "Let me be straight with you. We were building — quietly, the way we always have. Nineteen years of laying digital infrastructure while everyone else chased trends. weddings.io was part of a larger rollout: vendor tools, feeder networks, territory-locked listing plans across 1,018 cities globally. We were not ready to be loud yet. Then the noise found us.",
+      "sections": [
+        {
+          "heading": "The noise that found us",
+          "paragraphs": [
+            "A VC-backed Ontario company incorporated under the name 'Weddings.io Inc.' (Registration No. 74761 8627 RT0001) and launched a platform at aiweddings.io. Same name. Different company. Zero affiliation with us. Directories, partner profiles, and platform listings started conflating the two — pointing vendor inquiries toward a company we have no connection to.[^1]",
+            "On July 2, 2026 we filed a formal Statement of Objection with Ontario's Ministry of Public and Business Service Delivery under Section 32 of the Business Names Act.[^1] We published a public notice on weddings.io.[^2] We began contacting every directory and platform where the confusion showed up.",
+            "Is it a blessing? Yes. Is it a curse? Also yes. We were not planning to be loud this early. But here we are — so let's talk about what is actually sitting on the table."
+          ],
+          "image": {
+            "src": sixFigureLandGrabImg,
+            "alt": "Six-Figure Domain Land Grab — weddings.io category-killer .io defense against aiweddings.io copycat and Weddings.io Inc. brand confusion",
+            "caption": "Six-figure domain land grab and a street fight over brand confusion — weddings.io is a category-killer easily worth a couple hundred K. Instead of lawyers, we are weaponizing the chaos as our GTM.",
+            "href": "/blog/formal-complaint-weddings-io-inc"
+          }
+        },
+        {
+          "heading": "What the .io market actually says — with receipts",
+          "paragraphs": [
+            "For anyone who thinks domain names are just web addresses, here is what publicly reported aftermarket sales look like for premium single-word .io domains: mint.io sold for $230,000 in 2021.[^3] fluid.io sold for $199,995 in 2021.[^3] metaverse.io sold for $175,000 in 2021.[^3] ledger.io sold for $120,000 in 2021.[^3] auction.io sold for $100,000 in 2021.[^3] trade.io sold for $88,000 in 2021.[^3] tank.io sold for $60,000 in 2021.[^3]",
+            "The top 10 reported .io sales of 2021 alone totaled over $1.1 million USD.[^3] The only .io domain to break the $200,000 barrier so far is mint.io at $230,000 through Park.io.[^3] EVO.io selling for $105,000 in June 2024 confirmed the market has not cooled — it is accelerating.[^4]",
+            "Over 52% of high-value .io sales are single English words — common nouns that define a category.[^5] weddings.io is exactly that profile: one word, exact-match, in a $70 billion global industry."
+          ]
+        },
+        {
+          "heading": "The offence",
+          "paragraphs": [
+            "We hold the root. The master key. The exact-match anchor in one of the most searched consumer categories on the internet.",
+            "weddings.io has been under continuous, un-lapsed ICANN WHOIS registration since May 13, 2015 — with 78 distinct historical captures by the Internet Archive Wayback Machine confirming uninterrupted digital operations.[^1] That is third-party audited public record. No incorporation date overrides prior domain registration and continuous operational use.",
+            "The .io extension has become the de facto standard for tech, SaaS, and AI platforms — named for the computing term input/output. A wedding tech company operating on a variation of this name will always generate organic awareness that flows back toward the root. Every marketing dollar they spend is domain equity they are building for us."
+          ]
+        },
+        {
+          "heading": "The defence",
+          "paragraphs": [
+            "We did not pick this fight. But we are not walking away from it either.",
+            "The Statement of Objection is filed.[^1] The press release is on public record via EIN Presswire.[^1] The ownership history is documented on weddings.io.[^2] The full brand-defense case study is published at industryarmymarketing.com.[^6]",
+            "Independent directories, partner platforms, and media indexers are advised to audit their listings and confirm outbound links route to the root domain at weddings.io — registered and operational since 2015."
+          ]
+        },
+        {
+          "heading": "The honest part",
+          "paragraphs": [
+            "We were about to launch. We had the infrastructure. We had the network — 150+ domain properties spanning weddings, real estate, roofing, plumbing, lawn care, and construction, anchored by weddings.io and including hyper-localized properties like brides.ltd, caterers.tv, and videographers.io.[^1] Plans from $10 a month. Free signups for independent vendors tired of paying Angi, Houzz, and The Knot a fortune to rent visibility on platforms they will never own.",
+            "The timing was not ours to choose. Nineteen years of building means the foundation does not shake when someone kicks the door.",
+            "The rollout is here. Loud or quiet — it is here."
+          ]
+        }
+      ],
+      "footnotes": [
+        { "id": "1", "text": "EIN Presswire — Industry Army Marketing Addresses Brand Confusion Over Flagship Domain Weddings.io — July 3, 2026", "href": "https://www.einpresswire.com/article/924111175/industry-army-marketing-addresses-brand-confusion-over-flagship-domain-weddings-io" },
+        { "id": "2", "text": "weddings.io — Who Owns Weddings.io — Public ownership record and brand timeline", "href": "https://weddings.io/Who-Owns-Weddings.io" },
+        { "id": "3", "text": "James Names — Top .io Sales of 2021: Where Are They Now?", "href": "https://jamesnames.com/2022/05/top-io-sales-of-2021-where-are-they-now/" },
+        { "id": "4", "text": "Register.Domains — Top Selling Domain Names This Summer — July 2024", "href": "https://register.domains/en/blog/top-selling-domain-names-this-summer" },
+        { "id": "5", "text": "NamePros — The Last 5 Years of .IO Extension Sales — November 2024", "href": "https://www.namepros.com/blog/the-last-5-years-of-io-extension-sales.1339261/" },
+        { "id": "6", "text": "Industry Army Marketing — Battle for the Brand: weddings.io", "href": "/blog/battle-for-the-brand-weddings-io" }
+      ],
+      "sources": [
+        { "label": "EIN Presswire — Press Release (July 3, 2026)", "href": "https://www.einpresswire.com/article/924111175/industry-army-marketing-addresses-brand-confusion-over-flagship-domain-weddings-io" },
+        { "label": "Who Owns Weddings.io — Public ownership record", "href": "https://weddings.io/Who-Owns-Weddings.io" },
+        { "label": "James Names — Top .io Sales of 2021", "href": "https://jamesnames.com/2022/05/top-io-sales-of-2021-where-are-they-now/" },
+        { "label": "Register.Domains — Top Selling Domains Summer 2024 (EVO.io $105K)", "href": "https://register.domains/en/blog/top-selling-domain-names-this-summer" },
+        { "label": "NamePros — The Last 5 Years of .IO Extension Sales", "href": "https://www.namepros.com/blog/the-last-5-years-of-io-extension-sales.1339261/" },
+        { "label": "Battle for the Brand: weddings.io — Full Case Study", "href": "/blog/battle-for-the-brand-weddings-io" },
+        { "label": "Formal Complaint — Statement of Objection Filing", "href": "/blog/formal-complaint-weddings-io-inc" },
+        { "label": "ICANN WHOIS — weddings.io", "href": "https://www.whois.com/whois/weddings.io" },
+        { "label": "Wayback Machine — weddings.io (78 captures since 2013)", "href": "https://web.archive.org/web/*/weddings.io" }
+      ]
+    }
+  },
+  {
     "slug": "talc-tv-content-engine-contractors",
     "brand": "talc.tv",
     "trade": "Content Engine",
