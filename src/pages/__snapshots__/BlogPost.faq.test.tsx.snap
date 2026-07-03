@@ -1009,6 +1009,55 @@ exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /financial-advisors-bc
 }
 `;
 
+exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /formal-complaint-weddings-io-inc: FAQPage JSON-LD matches stored snapshot 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A formal Statement of Objection with the Ontario Ministry of Public and Business Service Delivery under Section 32 of the Business Names Act, targeting the registered business name 'Weddings.io Inc.'"
+      },
+      "name": "What exactly was filed?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The registration of a business name that mirrors our trademarked domain — nine years after our continuous, WHOIS-verifiable ownership began — crossed the line from lookalike domain into registered business impersonation."
+      },
+      "name": "Why now?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Industry Army Marketing. ICANN WHOIS confirms continuous ownership since May 13, 2015 through the 2027 renewal window. The Internet Archive Wayback Machine records 78 captures since 2013."
+      },
+      "name": "Who owns weddings.io?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The full timeline, WHOIS exhibits, Wayback captures, and footnoted sources live at /blog/battle-for-the-brand-weddings-io."
+      },
+      "name": "Where is the full case study?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — the brand-confusion explainer for vendors is published at weddings.io/blog/brand-confusion-weddings-io-vs-weddings-io-inc."
+      },
+      "name": "Is there a vendor-facing version of this on weddings.io?"
+    }
+  ]
+}
+`;
+
 exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /framers-vancouver: FAQPage JSON-LD matches stored snapshot 1`] = `
 {
   "@context": "https://schema.org",
@@ -1921,6 +1970,63 @@ exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /roofers-vancouver: FA
 }
 `;
 
+exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /six-figure-land-grab-weddings-io: FAQPage JSON-LD matches stored snapshot 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The .io extension is the de facto standard for tech, SaaS, and AI platforms — .io is the technical shorthand for input/output. Single-word, category-defining .io names have cleared six figures repeatedly: mint.io at $230,000, fluid.io at $199,995, metaverse.io at $175,000, ledger.io at $120,000, EVO.io at $105,000 in 2024."
+      },
+      "name": "Why are .io domains worth six figures?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Single English word. Exact-match. Category-defining in a $70B global industry. Over 52% of high-value .io sales are single English common nouns — exactly this profile."
+      },
+      "name": "How does weddings.io compare?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Industry Army Marketing. ICANN WHOIS confirms continuous registration since May 13, 2015 through the 2027 renewal window. The Internet Archive Wayback Machine has 78 captures dating to 2013."
+      },
+      "name": "Who owns weddings.io?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "'Weddings.io Inc.' is an Ontario-incorporated company (Registration No. 74761 8627 RT0001) operating a separate platform at aiweddings.io. We have zero affiliation. On July 2, 2026 we filed a formal Statement of Objection with the Ontario Ministry of Public and Business Service Delivery under Section 32 of the Business Names Act."
+      },
+      "name": "What about 'Weddings.io Inc.' and aiweddings.io?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. We were building quietly toward a broader rollout — vendor tools, feeder networks, 1,018-city territory-locked listing plans. The timing was not ours to choose. Nineteen years of building means the foundation does not shake when someone kicks the door."
+      },
+      "name": "Was this the plan?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "EIN Presswire — Industry Army Marketing Addresses Brand Confusion Over Flagship Domain Weddings.io, published July 3, 2026."
+      },
+      "name": "Where is the full press release?"
+    }
+  ]
+}
+`;
+
 exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /snow-removal-bc: FAQPage JSON-LD matches stored snapshot 1`] = `
 {
   "@context": "https://schema.org",
@@ -2372,6 +2478,63 @@ exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /videographers-vancouv
         "text": "Yes — territory partners run up to 6-camera switched live with streaming output for conferences and product launches."
       },
       "name": "Can you handle live event multi-cam?"
+    }
+  ]
+}
+`;
+
+exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /wedding-platform-controversy-domain-dispute-seo: FAQPage JSON-LD matches stored snapshot 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Knot and WeddingWire — operating together as WeddingPro under The Knot Worldwide — face over 200 FTC complaints since 2018, a class action lawsuit filed April 30, 2025 by Kazerouni Law Group, and pressure from U.S. Senator Chuck Grassley for an FTC investigation. The Knot holds 1.7 stars on SiteJabber across 393 reviews; WeddingWire 2.6 stars on SmartCustomer across 819 reviews. Vendors allege high-pressure sales, one-sided contracts, and fraudulent leads."
+      },
+      "name": "What is the wedding platform controversy?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "weddings.io is an independent, vendor-friendly wedding infrastructure platform owned by Industry Army Marketing since May 13, 2015. Zero VC. Zero private-equity roll-up. Territory-locked listing plans from $10/month and free vendor signup options — the opposite of the sales-tactic model currently under FTC scrutiny."
+      },
+      "name": "How is weddings.io related?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A separate Ontario-incorporated company registered as 'Weddings.io Inc.' (Reg. No. 74761 8627 RT0001) while operating at aiweddings.io. We filed a formal Statement of Objection with Ontario's Ministry of Public and Business Service Delivery on July 2, 2026 under Section 32 of the Business Names Act. Prior use is documented: 11 years of continuous ICANN WHOIS registration and 78 Internet Archive captures."
+      },
+      "name": "What is the domain dispute?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Publicly reported .io comparables: mint.io $230,000, fluid.io $199,995, metaverse.io $175,000, ledger.io $120,000, EVO.io $105,000. Top 10 reported .io sales of 2021 totaled over $1.1M. Over 52% of high-value .io sales are single English words — weddings.io is exactly that profile in a $70B global industry."
+      },
+      "name": "Why is weddings.io a six-figure asset?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The dispute created natural search demand around 'wedding platform controversy', 'weddings.io domain dispute', 'The Knot alternative', and related terms. We now own the indexed content answering those queries. Press release backlinks, exact-match ownership pages, and long-form footnoted posts compound over months. This is the highest-value SEO asset a startup can hold — earned editorial context — and it cannot be purchased."
+      },
+      "name": "How does this become an SEO advantage?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "weddings.io territory-locked listings, backed by the Industry Army Marketing 150+ domain feeder network across weddings, real estate, roofing, plumbing, and construction. Plans from $10/month, free signup options for independent vendors, and a vendor-owned model — not a marketplace that resells your leads to competitors."
+      },
+      "name": "What is the independent-vendor alternative?"
     }
   ]
 }
