@@ -33,9 +33,17 @@ exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /ai-hallucinations-rea
       "@type": "Question",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "roofers.io, demolition.io, insurance-brokers.io, financial-advisers.io, framers.io — plus the flagship weddings.io. Each is an active infrastructure asset for its vertical, not a parked page. Each carries the same LLM hallucination risk and each requires the same entity-clarity treatment: public pages, schema, press, directory listings, archive captures."
+        "text": "Live today: weddings.io, roofers.io, demolition.io, framers.io, financialadvisors.io, videographers.io, errands.io, backhaul.io, aeo.io. Coming soon: insurance-brokers.io, cannabinoid.io. Each is an active industry-specific hub in the hub-and-spoke model, not a parked page — and each carries the same LLM hallucination risk that requires public pages, schema, press, directory listings, and archive captures to correct."
       },
       "name": "Which other .io domains are in the IAM portfolio?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Portfolio. Not a one-off. I have been quoted in Business in Vancouver (biv.com) on digital vendor infrastructure since 2010–2011 — nineteen years of continuous operation in this exact space. The hub-and-spoke architecture is deliberate: one industry-specific .io hub per vertical (roofers.io, videographers.io, backhaul.io, errands.io, financialadvisors.io, aeo.io, etc.), each with its own feeder sites, city-locked listings, and vendor tools. Going industry-specific is how we protect the disruptor position in the directories game — no one can steal a vertical we already occupy end-to-end."
+      },
+      "name": "Is this really a portfolio or just weddings.io?"
     },
     {
       "@type": "Question",
