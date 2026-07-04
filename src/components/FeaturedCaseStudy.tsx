@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { getPost } from "@/data/blogPosts";
+import weddingsLogo from "@/assets/flagship/weddings-io-logo.png.asset.json";
 
 const FEATURED_SLUG = "battle-for-the-brand-weddings-io";
 
@@ -30,6 +31,12 @@ const FeaturedCaseStudy = () => {
                 width={1280}
                 height={720}
                 className="w-full aspect-video object-cover group-hover:scale-[1.02] transition-transform"
+              />
+              <img
+                src={weddingsLogo.url}
+                alt="Weddings.io logo"
+                loading="lazy"
+                className="pointer-events-none absolute inset-0 m-auto w-[70%] max-w-[520px] h-auto drop-shadow-[0_4px_24px_rgba(0,0,0,0.6)]"
               />
               <span className="absolute top-3 left-3 bg-primary text-primary-foreground text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded">
                 Case Study
