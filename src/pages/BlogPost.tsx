@@ -1,5 +1,7 @@
 import { Link, useParams, Navigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useState } from "react";
+import { Copy, Check } from "lucide-react";
 import Layout from "@/components/Layout";
 import Seo, { SITE_URL } from "@/components/Seo";
 import { Button } from "@/components/ui/button";
@@ -9,6 +11,7 @@ import BlogRichContentView from "@/components/BlogRichContent";
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
   const post = slug ? getPost(slug) : undefined;
+  const [copied, setCopied] = useState(false);
 
   if (!post) return <Navigate to="/blog" replace />;
 
@@ -265,30 +268,62 @@ const BlogPost = () => {
             </div>
           </section>
 
-          <section className="p-8 md:p-10 rounded-lg bg-card border border-primary/40 text-center">
-            <p className="text-primary text-xs uppercase tracking-[0.3em] mb-3">
-              {post.cta?.eyebrow ?? `Lock the ${post.city} territory`}
-            </p>
-            <h2 className="font-display text-3xl md:text-4xl text-foreground mb-4">
-              {post.cta?.heading ?? `One ${post.tradeShort} contractor per city. $10 a month.`}
-            </h2>
-            <p className="text-muted-foreground mb-6 max-w-xl mx-auto leading-relaxed">
-              {post.cta?.body ??
-                `Claim the ${post.brand} listing for ${post.city}, ${post.province} before a competitor does. EyeSpyr verified. WhatsApp lead routing. Cancel any time.`}
-            </p>
-            <Button variant="hero" asChild size="lg">
-              {(() => {
-                const href = post.cta?.buttonHref ?? "/contact";
-                const label = post.cta?.buttonText ?? `Claim my ${post.city} territory`;
-                const isExternal = /^(mailto:|tel:|https?:)/i.test(href);
-                return isExternal ? (
-                  <a href={href}>{label}</a>
-                ) : (
-                  <Link to={href}>{label}</Link>
-                );
-              })()}
-            </Button>
-          </section>
+          {(() => {
+            const href = post.cta?.buttonHref ?? "/contact";
+            const label = post.cta?.buttonText ?? `Claim my ${post.city} territory`;
+            const isMailto = href.toLowerCase().startsWith("mailto:");
+            const isExternal = /^(mailto:|tel:|https?:)/i.test(href);
+            const email = isMailto ? href.slice(7).split("?")[0] : null;
+            return (
+              <section className="p-6 sm:p-8 md:p-10 rounded-lg bg-card border border-primary/40 text-center">
+                <p className="text-primary text-[10px] sm:text-xs uppercase tracking-[0.25em] sm:tracking-[0.3em] mb-3">
+                  {post.cta?.eyebrow ?? `Lock the ${post.city} territory`}
+                </p>
+                <h2 className="font-display text-2xl sm:text-3xl md:text-4xl text-foreground mb-4 leading-tight">
+                  {post.cta?.heading ?? `One ${post.tradeShort} contractor per city. $10 a month.`}
+                </h2>
+                <p className="text-muted-foreground mb-6 max-w-xl mx-auto leading-relaxed text-sm sm:text-base break-words">
+                  {post.cta?.body ??
+                    `Claim the ${post.brand} listing for ${post.city}, ${post.province} before a competitor does. EyeSpyr verified. WhatsApp lead routing. Cancel any time.`}
+                </p>
+                <div className="flex flex-col sm:flex-row gap-3 items-stretch sm:items-center justify-center flex-wrap">
+                  <Button variant="hero" asChild size="lg" className="whitespace-normal sm:whitespace-nowrap h-auto py-3 max-w-full">
+                    {isExternal ? (
+                      <a href={href}>{isMailto ? "Get your brand defence test" : label}</a>
+                    ) : (
+                      <Link to={href}>{label}</Link>
+                    )}
+                  </Button>
+                  {email && (
+                    <Button
+                      variant="outline"
+                      size="lg"
+                      type="button"
+                      onClick={async () => {
+                        try {
+                          await navigator.clipboard.writeText(email);
+                        } catch {
+                          const ta = document.createElement("textarea");
+                          ta.value = email;
+                          document.body.appendChild(ta);
+                          ta.select();
+                          document.execCommand("copy");
+                          document.body.removeChild(ta);
+                        }
+                        setCopied(true);
+                        setTimeout(() => setCopied(false), 2000);
+                      }}
+                      className="gap-2 max-w-full"
+                      aria-label={`Copy ${email} to clipboard`}
+                    >
+                      {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
+                      <span className="truncate">{copied ? "Copied!" : `Copy ${email}`}</span>
+                    </Button>
+                  )}
+                </div>
+              </section>
+            );
+          })()}
 
           <section className="mt-16">
             <p className="text-primary text-xs uppercase tracking-[0.3em] mb-3">Related Intel</p>
