@@ -277,9 +277,16 @@ const BlogPost = () => {
                 `Claim the ${post.brand} listing for ${post.city}, ${post.province} before a competitor does. EyeSpyr verified. WhatsApp lead routing. Cancel any time.`}
             </p>
             <Button variant="hero" asChild size="lg">
-              <Link to={post.cta?.buttonHref ?? "/contact"}>
-                {post.cta?.buttonText ?? `Claim my ${post.city} territory`}
-              </Link>
+              {(() => {
+                const href = post.cta?.buttonHref ?? "/contact";
+                const label = post.cta?.buttonText ?? `Claim my ${post.city} territory`;
+                const isExternal = /^(mailto:|tel:|https?:)/i.test(href);
+                return isExternal ? (
+                  <a href={href}>{label}</a>
+                ) : (
+                  <Link to={href}>{label}</Link>
+                );
+              })()}
             </Button>
           </section>
 

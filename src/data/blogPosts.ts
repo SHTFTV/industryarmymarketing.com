@@ -432,7 +432,7 @@ export const blogPosts: BlogPost[] = [
       "eyebrow": "AI hallucinations go legal",
       "heading": "Test your own .io domain against a major LLM — before it invents your corporate structure.",
       "body": "Ask any major LLM 'who owns [yourdomain].io?' on a fresh chat. Screenshot what it invents. If it fabricates a corporate split, a fictional division, or an affiliation you have no relationship with — you now have documented evidence for a formal objection, a press response, or a legal filing. I don't think this is real? Contact us for a deep dive on your brand: partnerships@industryarmymarketing.com.",
-      "buttonText": "Get a real evaluation of your brand",
+      "buttonText": "Email partnerships for a brand audit",
       "buttonHref": "mailto:partnerships@industryarmymarketing.com?subject=Audit%20my%20.io%20portfolio"
     },
     "city": "Vancouver",
