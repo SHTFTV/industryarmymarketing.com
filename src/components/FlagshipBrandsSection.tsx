@@ -149,6 +149,17 @@ const FlagshipBrandsSection = () => {
                             brand.contain ? "object-contain p-6" : "object-cover"
                           }`}
                         />
+                        {brand.logoOverlay && (
+                          <>
+                            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-black/25 to-black/40" />
+                            <img
+                              src={brand.logoOverlay}
+                              alt={`${brand.name} logo`}
+                              loading="lazy"
+                              className="pointer-events-none absolute inset-0 m-auto w-[85%] h-auto drop-shadow-[0_2px_18px_rgba(0,0,0,0.95)] brightness-125 contrast-125"
+                            />
+                          </>
+                        )}
                         {brand.seo && (
                           <div
                             className="absolute inset-0 flex items-end bg-gradient-to-t from-black/95 via-black/80 to-black/20 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 group-focus-within:opacity-100 group-focus-within:translate-y-0 transition-all duration-300 pointer-events-none"
