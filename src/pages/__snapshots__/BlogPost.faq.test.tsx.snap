@@ -1,5 +1,62 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /ai-hallucinations-real-business-problem: FAQPage JSON-LD matches stored snapshot 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In a fresh chat with no prior context we asked 'Who owns Weddings.io?' The LLM fabricated a corporate split — describing weddings.io as managed by one entity in BC and an imaginary 'AI Platform' division incorporated in Ontario. Neither camp exists. When pressed it doubled down, invented a feature stack, and warned users about 'App Store Confusion' between two entities it had manufactured."
+      },
+      "name": "What actually happened?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "When an LLM encounters two similarly named identifiers in training data — a domain (weddings.io) and a corporate name (Weddings.io Inc.) — it does not return a null. It pattern-matches, finds the most statistically plausible relationship, and presents it as fact. The result maps directly onto Initial Interest Confusion (Brookfield Communications v. West Coast Entertainment, U.S. 9th Circuit) and first-impression confusion doctrine (Sleep Country Canada v. Sears Canada, Ontario Superior Court)."
+      },
+      "name": "Why do LLMs hallucinate this way?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Industry Army Marketing. Continuous ICANN WHOIS registration since May 13, 2015. 78 Internet Archive captures. Zero affiliation with 'Weddings.io Inc.' (Ontario Reg. No. 74761 8627 RT0001), aiweddings.io, or any other similarly named entity."
+      },
+      "name": "Who owns weddings.io?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "roofers.io, demolition.io, insurance-brokers.io, financial-advisers.io, framers.io — plus the flagship weddings.io. Each is an active infrastructure asset for its vertical, not a parked page. Each carries the same LLM hallucination risk and each requires the same entity-clarity treatment: public pages, schema, press, directory listings, archive captures."
+      },
+      "name": "Which other .io domains are in the IAM portfolio?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Four steps. (1) Test each domain against major LLMs on a clean chat and document what the machine invents. (2) Put the correct information on public record — government filings where applicable, press releases, ownership declaration pages. (3) Ship Organization schema on every domain so Google's Knowledge Graph and AI retrieval systems have machine-readable ground truth. (4) Treat every domain as an entity that needs explicit indexing — the machine cannot hallucinate a coherent entity if the correct one is already clearly and multiply defined in indexed data."
+      },
+      "name": "What should other domain-portfolio operators do?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — same story, wider frame. The Knot and WeddingWire (WeddingPro) face 200+ FTC complaints since 2018, a class action filed April 30, 2025, and Senator Grassley pressing for an FTC investigation. The Knot denies all allegations; the case is pending. Independent vendors are actively looking for alternatives. weddings.io was built for that market: plans from $10/month, free signups, territory-locked listings."
+      },
+      "name": "Is this related to the wedding platform controversy?"
+    }
+  ]
+}
+`;
+
 exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /aibuildr-geo-engine: FAQPage JSON-LD matches stored snapshot 1`] = `
 {
   "@context": "https://schema.org",
