@@ -152,13 +152,27 @@ const FlagshipBrandsSection = () => {
                         />
                         {brand.logoOverlay && (
                           <>
-                            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-black/25 to-black/40" />
-                            <img
-                              src={brand.logoOverlay}
-                              alt={`${brand.name} logo`}
-                              loading="lazy"
-                              className="pointer-events-none absolute inset-0 m-auto w-[85%] h-auto drop-shadow-[0_2px_18px_rgba(0,0,0,0.95)] brightness-125 contrast-125"
-                            />
+                            {brand.logoPosition === "bottom" ? (
+                              <>
+                                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/70 to-transparent" />
+                                <img
+                                  src={brand.logoOverlay}
+                                  alt={`${brand.name} logo`}
+                                  loading="lazy"
+                                  className="pointer-events-none absolute bottom-3 left-1/2 -translate-x-1/2 w-[45%] max-w-[180px] h-auto drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]"
+                                />
+                              </>
+                            ) : (
+                              <>
+                                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-black/25 to-black/40" />
+                                <img
+                                  src={brand.logoOverlay}
+                                  alt={`${brand.name} logo`}
+                                  loading="lazy"
+                                  className="pointer-events-none absolute inset-0 m-auto w-[85%] h-auto drop-shadow-[0_2px_18px_rgba(0,0,0,0.95)] brightness-125 contrast-125"
+                                />
+                              </>
+                            )}
                           </>
                         )}
                         {brand.seo && (
