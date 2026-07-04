@@ -1,5 +1,7 @@
 import { Link, useParams, Navigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useState } from "react";
+import { Copy, Check } from "lucide-react";
 import Layout from "@/components/Layout";
 import Seo, { SITE_URL } from "@/components/Seo";
 import { Button } from "@/components/ui/button";
