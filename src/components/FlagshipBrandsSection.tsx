@@ -25,7 +25,7 @@ import talcImg from "@/assets/flagship/talc-hero.jpg.asset.json";
 import videographersImg from "@/assets/flagship/videographers-card-v2.png.asset.json";
 import weddingsLogo from "@/assets/flagship/weddings-io-logo.png.asset.json";
 
-type Brand = { name: string; url: string; tagline: string; image?: string; contain?: boolean; seo?: string; logoOverlay?: string };
+type Brand = { name: string; url: string; tagline: string; image?: string; contain?: boolean; seo?: string; logoOverlay?: string; logoPosition?: "center" | "bottom" };
 
 const groups: { icon: typeof Crown; eyebrow: string; title: string; blurb: string; brands: Brand[] }[] = [
   {
@@ -36,7 +36,7 @@ const groups: { icon: typeof Crown; eyebrow: string; title: string; blurb: strin
     brands: [
       { name: "LoveOurListings", url: "https://loveourlistings.com", tagline: "Real Estate Showcase Network", image: loveourlistingsImg.url, seo: "Exclusive real estate showcase network pairing verified agents with high-intent buyers across North America. One agent per city — permanent listings, video tours, and dofollow authority from a 20+ year premium domain." },
       { name: "Weddings.io", url: "https://weddings.io", tagline: "Premium Wedding Vendor Network", image: weddingsImg.url, logoOverlay: weddingsLogo.url, seo: "The category-defining .io domain for the $300B global wedding industry. 1,018 cities, 24 countries, 9 cultural verticals — verified planners, photographers, and venues locked to one exclusive slot per metro." },
-      { name: "Plowwow.com", url: "https://plowwow.com", tagline: "Snow & Site Services Marketplace", image: plowwowImg.url, logoOverlay: plowwowLogo.url, seo: "Snow removal, de-icing, and winter site services — one operator per city, dispatched with real-time storm routing. Trusted by strata, retail, and municipal clients across Canada and the northern US." },
+      { name: "Plowwow.com", url: "https://plowwow.com", tagline: "Snow & Site Services Marketplace", image: plowwowImg.url, logoOverlay: plowwowLogo.url, logoPosition: "bottom", seo: "Snow removal, de-icing, and winter site services — one operator per city, dispatched with real-time storm routing. Trusted by strata, retail, and municipal clients across Canada and the northern US." },
       { name: "Kongtractors.com", url: "https://kongtractors.com", tagline: "Heavy Trade Contractor Directory", image: kongtractorsImg.url, seo: "Heavy-trade contractor directory built for commercial GCs, developers, and site supers. Excavation, framing, concrete, and rebar specialists — verified by EyeSpyR and ranked on niche-relevant premium domains." },
       { name: "ProMows.com", url: "https://promows.com", tagline: "Lawn Care & Grounds Network", image: promowsImg.url, seo: "Full-season lawn care, landscape maintenance, and grounds management network. Route-optimized crews, hardscape upsell channels, and territory-locked exclusivity for professional landscapers." },
       { name: "BuildersHaus.com", url: "https://buildershaus.com", tagline: "Premium Builder & Renovation Hub", image: buildershausImg.url, seo: "Custom home builders, renovation specialists, and design-build firms showcased with project galleries, EyeSpyR verification, and TALC.tv video posts. One builder per city — permanent authority backlinks." },
@@ -152,13 +152,27 @@ const FlagshipBrandsSection = () => {
                         />
                         {brand.logoOverlay && (
                           <>
-                            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-black/25 to-black/40" />
-                            <img
-                              src={brand.logoOverlay}
-                              alt={`${brand.name} logo`}
-                              loading="lazy"
-                              className="pointer-events-none absolute inset-0 m-auto w-[85%] h-auto drop-shadow-[0_2px_18px_rgba(0,0,0,0.95)] brightness-125 contrast-125"
-                            />
+                            {brand.logoPosition === "bottom" ? (
+                              <>
+                                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/70 to-transparent" />
+                                <img
+                                  src={brand.logoOverlay}
+                                  alt={`${brand.name} logo`}
+                                  loading="lazy"
+                                  className="pointer-events-none absolute bottom-3 left-1/2 -translate-x-1/2 w-[45%] max-w-[180px] h-auto drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]"
+                                />
+                              </>
+                            ) : (
+                              <>
+                                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-black/25 to-black/40" />
+                                <img
+                                  src={brand.logoOverlay}
+                                  alt={`${brand.name} logo`}
+                                  loading="lazy"
+                                  className="pointer-events-none absolute inset-0 m-auto w-[85%] h-auto drop-shadow-[0_2px_18px_rgba(0,0,0,0.95)] brightness-125 contrast-125"
+                                />
+                              </>
+                            )}
                           </>
                         )}
                         {brand.seo && (
