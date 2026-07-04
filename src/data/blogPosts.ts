@@ -30,6 +30,14 @@ import sixFigureLandGrabAsset from "@/assets/blog/six-figure-land-grab-weddings-
 const sixFigureLandGrabImg = sixFigureLandGrabAsset.url;
 import weddingsSeoCommandCenterAsset from "@/assets/blog/weddings-io-seo-command-center.png.asset.json";
 const weddingsSeoCommandCenterImg = weddingsSeoCommandCenterAsset.url;
+import aiHallucinationWhoOwnsAsset from "@/assets/blog/ai-hallucination-who-owns-weddings-io.png.asset.json";
+const aiHallucinationWhoOwnsImg = aiHallucinationWhoOwnsAsset.url;
+import aiHallucinationBrandConfusionAsset from "@/assets/blog/ai-hallucination-brand-confusion.png.asset.json";
+const aiHallucinationBrandConfusionImg = aiHallucinationBrandConfusionAsset.url;
+import aiHallucinationAppStoreAsset from "@/assets/blog/ai-hallucination-app-store-confusion.png.asset.json";
+const aiHallucinationAppStoreImg = aiHallucinationAppStoreAsset.url;
+import aiHallucinationGeminiAsset from "@/assets/blog/ai-hallucination-gemini-weddings-io.png.asset.json";
+const aiHallucinationGeminiImg = aiHallucinationGeminiAsset.url;
 
 const IMG: Record<string, string> = {
   "kitchen-cabinets": kitchencabinetsImg,
@@ -58,6 +66,7 @@ const IMG: Record<string, string> = {
   "weddings-formal-complaint": weddingsFormalComplaintImg,
   "six-figure-land-grab": sixFigureLandGrabImg,
   "weddings-seo-command-center": weddingsSeoCommandCenterImg,
+  "ai-hallucination-who-owns": aiHallucinationWhoOwnsImg,
 };
 
 export interface BlogPost {
