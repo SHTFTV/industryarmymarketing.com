@@ -253,7 +253,7 @@ const BlogPost = () => {
 
           <section className="mb-12">
             <h2 className="font-display text-2xl md:text-3xl text-foreground mb-6">
-              Frequently asked: {post.trade} in {post.city}
+              {post.faqHeading ?? `Frequently asked: ${post.trade} in ${post.city}`}
             </h2>
             <div className="space-y-5">
               {post.faqs.map((f) => (
@@ -267,17 +267,19 @@ const BlogPost = () => {
 
           <section className="p-8 md:p-10 rounded-lg bg-card border border-primary/40 text-center">
             <p className="text-primary text-xs uppercase tracking-[0.3em] mb-3">
-              Lock the {post.city} territory
+              {post.cta?.eyebrow ?? `Lock the ${post.city} territory`}
             </p>
             <h2 className="font-display text-3xl md:text-4xl text-foreground mb-4">
-              One {post.tradeShort} contractor per city. $10 a month.
+              {post.cta?.heading ?? `One ${post.tradeShort} contractor per city. $10 a month.`}
             </h2>
             <p className="text-muted-foreground mb-6 max-w-xl mx-auto leading-relaxed">
-              Claim the {post.brand} listing for {post.city}, {post.province} before a competitor does.
-              EyeSpyr verified. WhatsApp lead routing. Cancel any time.
+              {post.cta?.body ??
+                `Claim the ${post.brand} listing for ${post.city}, ${post.province} before a competitor does. EyeSpyr verified. WhatsApp lead routing. Cancel any time.`}
             </p>
             <Button variant="hero" asChild size="lg">
-              <Link to="/contact">Claim my {post.city} territory</Link>
+              <Link to={post.cta?.buttonHref ?? "/contact"}>
+                {post.cta?.buttonText ?? `Claim my ${post.city} territory`}
+              </Link>
             </Button>
           </section>
 
