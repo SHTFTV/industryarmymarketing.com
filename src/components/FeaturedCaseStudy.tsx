@@ -32,11 +32,12 @@ const FeaturedCaseStudy = () => {
                 height={720}
                 className="w-full aspect-video object-cover group-hover:scale-[1.02] transition-transform"
               />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/50" />
               <img
                 src={weddingsLogo.url}
                 alt="Weddings.io logo"
                 loading="lazy"
-                className="pointer-events-none absolute inset-0 m-auto w-[70%] max-w-[520px] h-auto drop-shadow-[0_4px_24px_rgba(0,0,0,0.6)]"
+                className="pointer-events-none absolute inset-0 m-auto w-[80%] max-w-[560px] h-auto drop-shadow-[0_2px_18px_rgba(0,0,0,0.95)] brightness-125 contrast-125"
               />
               <span className="absolute top-3 left-3 bg-primary text-primary-foreground text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded">
                 Case Study
