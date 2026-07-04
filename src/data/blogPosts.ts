@@ -38,6 +38,8 @@ import aiHallucinationAppStoreAsset from "@/assets/blog/ai-hallucination-app-sto
 const aiHallucinationAppStoreImg = aiHallucinationAppStoreAsset.url;
 import aiHallucinationGeminiAsset from "@/assets/blog/ai-hallucination-gemini-weddings-io.png.asset.json";
 const aiHallucinationGeminiImg = aiHallucinationGeminiAsset.url;
+import aiHallucinationsGoLegalAsset from "@/assets/blog/ai-hallucinations-go-legal.jpg.asset.json";
+const aiHallucinationsGoLegalImg = aiHallucinationsGoLegalAsset.url;
 
 const IMG: Record<string, string> = {
   "kitchen-cabinets": kitchencabinetsImg,
@@ -67,6 +69,7 @@ const IMG: Record<string, string> = {
   "six-figure-land-grab": sixFigureLandGrabImg,
   "weddings-seo-command-center": weddingsSeoCommandCenterImg,
   "ai-hallucination-who-owns": aiHallucinationWhoOwnsImg,
+  "ai-hallucinations-go-legal": aiHallucinationsGoLegalImg,
 };
 
 export interface BlogPost {
@@ -102,6 +105,18 @@ export interface BlogPost {
    *  timelines, footnote references (use `[^id]` in paragraph text), and
    *  a sources list. Designed to be reusable for any future article. */
   richContent?: BlogRichContent;
+  /** Optional override for the "Frequently asked: {trade} in {city}" heading. */
+  faqHeading?: string;
+  /** Optional override for the bottom CTA block. When set, replaces the
+   *  default "One {tradeShort} contractor per city" pitch. Use for posts
+   *  where the auto-generated territory pitch does not fit. */
+  cta?: {
+    eyebrow?: string;
+    heading: string;
+    body: string;
+    buttonText: string;
+    buttonHref: string;
+  };
 }
 
 export interface BlogRichSection {
