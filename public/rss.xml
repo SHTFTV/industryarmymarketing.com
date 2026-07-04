@@ -6,7 +6,7 @@
     <atom:link href="https://industryarmymarketing.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>2,000-word guides on exclusive $10 territory marketing for trade contractors and service pros across Canada.</description>
     <language>en-ca</language>
-    <lastBuildDate>Fri, 03 Jul 2026 23:20:47 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 04 Jul 2026 00:02:49 GMT</lastBuildDate>
     <generator>Industry Army Marketing build pipeline</generator>
     <image>
       <url>https://industryarmymarketing.com/og-image.jpg</url>
@@ -47,6 +47,15 @@
       <pubDate>Mon, 01 Jul 2026 09:00:00 +0000</pubDate>
       <category>Company</category>
       <description>Industry Army Marketing has filed a formal Statement of Objection with the Ontario government against the business name &apos;Weddings.io Inc.&apos; in defense of the weddings.io brand held continuously since 2015.</description>
+      <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
+    </item>
+    <item>
+      <title>AI Hallucinations Are a Real Business Problem — And We Have the Screenshots to Prove It</title>
+      <link>https://industryarmymarketing.com/blog/ai-hallucinations-real-business-problem</link>
+      <guid isPermaLink="true">https://industryarmymarketing.com/blog/ai-hallucinations-real-business-problem</guid>
+      <pubDate>Mon, 01 Jul 2026 09:00:00 +0000</pubDate>
+      <category>AI &amp; Brand Integrity</category>
+      <description>A major LLM fabricated a fictional corporate split for weddings.io — invented an Ontario &apos;AI Platform&apos; division, then warned users about the confusion it manufactured. Documented case study, four screenshots, and what every .io domain portfolio operator should do about it.</description>
       <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
     </item>
     <item>
