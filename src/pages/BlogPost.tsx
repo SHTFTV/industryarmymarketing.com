@@ -11,6 +11,7 @@ import BlogRichContentView from "@/components/BlogRichContent";
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
   const post = slug ? getPost(slug) : undefined;
+  const [copied, setCopied] = useState(false);
 
   if (!post) return <Navigate to="/blog" replace />;
 
