@@ -34,6 +34,11 @@ const Blog = () => {
   const pageParam = parseInt(searchParams.get("page") ?? "1", 10);
   const page = Number.isFinite(pageParam) && pageParam > 0 ? pageParam : 1;
 
+  // Focus targets for a11y announcements on filter/pagination changes.
+  const resultsHeadingRef = useRef<HTMLHeadingElement | null>(null);
+  const firstCardRef = useRef<HTMLAnchorElement | null>(null);
+  const isInitialRender = useRef(true);
+
   // Debounced search: local input state drives the field, and a 300ms
   // timer commits the value into the URL query. Filtering + analytics
   // only fire once the URL settles, so typing stays cheap.
@@ -92,6 +97,11 @@ const Blog = () => {
         { replace: false }, // pagination should push so back-button works
       );
       trackEvent(BLOG_EVENTS.changePage, { page: nextPage });
+      // Move focus into the newly rendered results after paint so
+      // keyboard/screen-reader users land inside the updated page.
+      requestAnimationFrame(() => {
+        firstCardRef.current?.focus();
+      });
     },
     [setSearchParams],
   );
