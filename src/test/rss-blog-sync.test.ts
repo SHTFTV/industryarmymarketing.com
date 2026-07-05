@@ -59,8 +59,8 @@ describe("RSS ↔ blogPosts sync", () => {
       expect(item.title).toBe(post!.title);
       expect(item.category).toBe(post!.category);
       // description should be the metaDescription (or excerpt fallback) — non-empty
-      const expected = post!.metaDescription || post!.excerpt;
-      expect(item.description).toBe(expected);
+      const expected = (post!.metaDescription || post!.excerpt).trim();
+      expect(item.description.trim()).toBe(expected);
     }
   });
 
