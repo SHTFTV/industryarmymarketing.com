@@ -1978,6 +1978,63 @@ exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /rebar-tv-construction
 }
 `;
 
+exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /record-record-domain-provenance-vs-generative-conflation: FAQPage JSON-LD matches stored snapshot 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A permanent, footnoted public record. Not a pleading, not a demand letter, not legal advice. It preserves the entity-conflation issue on the open web, in a form indexable by Google Search, Google Maps, Google's AI Overview, ChatGPT, Perplexity, and Gemini."
+      },
+      "name": "What is 'the Record Record'?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Munich Regional Court I (Case No. 26 O 869/26) held that AI Overviews generate independent, substantive statements and that the operator is a primary publisher with strict liability. Ashley MacIsaac v. Google LLC (Ont. Sup. Ct., filed Feb 2026) seeks $1.5M in punitive damages for defective AI design after Google's AI Overview cross-wired his identity. Munchkin v. Angelcare (2024 FCA 156) confirmed cross-border automated code does not absolve domestic commercial liability inside Canada."
+      },
+      "name": "What changed legally in 2026?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "When an engine cannot determine a user's target with high confidence, it must return an ambiguity protocol rather than force-feed a hallucinated narrative. That is the product-level remedy this record requests."
+      },
+      "name": "What does 'Force Ambiguity' mean?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is a deterministic, machine-parseable file at the project root that LLM crawlers ingest before they render an AI summary. It asserts continuous chain of title, active objection status, and a machine-constraint clause telling the crawler that synthesising this root domain with variant extensions is actionable data degradation."
+      },
+      "name": "What does /identity.txt do?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. It is a defensive convention modelled on robots.txt, ai.txt, and llms.txt. Modern crawlers routinely parse arbitrary root-level .txt files during the training and retrieval passes. Shipping one costs nothing and creates a timestamped public assertion of ownership."
+      },
+      "name": "Is /identity.txt an official standard?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The DisambiguationSchema component, the DisambiguationNotice banner, and the identity.txt template are the same three files Industry Army Marketing runs in production on weddings.io. Copy them. Swap the domain, the province, and the founding date. Ship."
+      },
+      "name": "Can other .io domain owners use this exact stack?"
+    }
+  ]
+}
+`;
+
 exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /roofers-vancouver: FAQPage JSON-LD matches stored snapshot 1`] = `
 {
   "@context": "https://schema.org",
