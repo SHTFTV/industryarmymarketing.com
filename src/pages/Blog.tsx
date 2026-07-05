@@ -3,11 +3,11 @@ import Seo from "@/components/Seo";
 import { SITE_URL } from "@/components/Seo";
 import PageHeader from "@/components/PageHeader";
 import featuredBattle from "@/assets/blog/weddings-vs-aiweddings-battle.png.asset.json";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { blogPosts } from "@/data/blogPosts";
-import { useMemo, useState } from "react";
+import { useMemo, useCallback } from "react";
 import { Input } from "@/components/ui/input";
 import { Search, X } from "lucide-react";
 import FeaturedCaseStudy from "@/components/FeaturedCaseStudy";
@@ -20,9 +20,43 @@ const Blog = () => {
   const pinnedPost = pinActive ? blogPosts.find((p) => p.slug === PINNED_SLUG) : undefined;
   const featured = pinnedPost ?? blogPosts[0];
   const rest = blogPosts.filter((p) => p.slug !== featured.slug);
-  const [query, setQuery] = useState("");
-  const [city, setCity] = useState<string>("all");
-  const [category, setCategory] = useState<string>("all");
+  // Persist search state in URL so filtered views are shareable and
+  // survive page reloads. Empty/default values are stripped so the URL
+  // stays clean ("/blog" instead of "/blog?q=&city=all&category=all").
+  const [searchParams, setSearchParams] = useSearchParams();
+  const query = searchParams.get("q") ?? "";
+  const city = searchParams.get("city") ?? "all";
+  const category = searchParams.get("category") ?? "all";
+
+  const updateParam = useCallback(
+    (key: "q" | "city" | "category", value: string) => {
+      setSearchParams(
+        (prev) => {
+          const next = new URLSearchParams(prev);
+          const isDefault =
+            (key === "q" && value === "") ||
+            (key !== "q" && (value === "all" || value === ""));
+          if (isDefault) next.delete(key);
+          else next.set(key, value);
+          return next;
+        },
+        { replace: true },
+      );
+    },
+    [setSearchParams],
+  );
+  const clearFilters = useCallback(() => {
+    setSearchParams(
+      (prev) => {
+        const next = new URLSearchParams(prev);
+        next.delete("q");
+        next.delete("city");
+        next.delete("category");
+        return next;
+      },
+      { replace: true },
+    );
+  }, [setSearchParams]);
   const companyCaseStudies = [
     {
       label: "Company Case Study",
@@ -189,14 +223,14 @@ const Blog = () => {
                 type="search"
                 placeholder="Search trades, cities, keywords…"
                 value={query}
-                onChange={(e) => setQuery(e.target.value)}
+                onChange={(e) => updateParam("q", e.target.value)}
                 className="pl-9"
                 aria-label="Search blog posts"
               />
             </div>
             <select
               value={city}
-              onChange={(e) => setCity(e.target.value)}
+              onChange={(e) => updateParam("city", e.target.value)}
               aria-label="Filter by city"
               className="h-10 rounded-md border border-input bg-background px-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-ring"
             >
@@ -207,7 +241,7 @@ const Blog = () => {
             </select>
             <select
               value={category}
-              onChange={(e) => setCategory(e.target.value)}
+              onChange={(e) => updateParam("category", e.target.value)}
               aria-label="Filter by niche"
               className="h-10 rounded-md border border-input bg-background px-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-ring"
             >
@@ -218,7 +252,7 @@ const Blog = () => {
             </select>
             {hasFilters && (
               <button
-                onClick={() => { setQuery(""); setCity("all"); setCategory("all"); }}
+                onClick={clearFilters}
                 className="inline-flex items-center gap-1 text-xs uppercase tracking-widest text-muted-foreground hover:text-primary transition-colors px-2"
               >
                 <X className="h-3 w-3" /> Clear
