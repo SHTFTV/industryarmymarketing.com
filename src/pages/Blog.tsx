@@ -223,14 +223,14 @@ const Blog = () => {
                 type="search"
                 placeholder="Search trades, cities, keywords…"
                 value={query}
-                onChange={(e) => setQuery(e.target.value)}
+                onChange={(e) => updateParam("q", e.target.value)}
                 className="pl-9"
                 aria-label="Search blog posts"
               />
             </div>
             <select
               value={city}
-              onChange={(e) => setCity(e.target.value)}
+              onChange={(e) => updateParam("city", e.target.value)}
               aria-label="Filter by city"
               className="h-10 rounded-md border border-input bg-background px-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-ring"
             >
@@ -241,7 +241,7 @@ const Blog = () => {
             </select>
             <select
               value={category}
-              onChange={(e) => setCategory(e.target.value)}
+              onChange={(e) => updateParam("category", e.target.value)}
               aria-label="Filter by niche"
               className="h-10 rounded-md border border-input bg-background px-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-ring"
             >
@@ -252,7 +252,7 @@ const Blog = () => {
             </select>
             {hasFilters && (
               <button
-                onClick={() => { setQuery(""); setCity("all"); setCategory("all"); }}
+                onClick={clearFilters}
                 className="inline-flex items-center gap-1 text-xs uppercase tracking-widest text-muted-foreground hover:text-primary transition-colors px-2"
               >
                 <X className="h-3 w-3" /> Clear
