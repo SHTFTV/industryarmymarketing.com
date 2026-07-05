@@ -52,6 +52,7 @@ import weddingsConflationRootDomainAsset from "@/assets/blog/weddings-io-conflat
 const weddingsConflationRootDomainImg = weddingsConflationRootDomainAsset.url;
 import weddingsConflationFlaggedAsset from "@/assets/blog/weddings-io-conflation-flagged-review.png.asset.json";
 const weddingsConflationFlaggedImg = weddingsConflationFlaggedAsset.url;
+import recordRecordImg from "@/assets/blog/record-record-domain-provenance.jpg";
 
 const IMG: Record<string, string> = {
   "kitchen-cabinets": kitchencabinetsImg,
@@ -83,6 +84,7 @@ const IMG: Record<string, string> = {
   "ai-hallucination-who-owns": aiHallucinationWhoOwnsImg,
   "ai-hallucinations-go-legal": aiHallucinationsGoLegalImg,
   "weddings-io-entity-conflation": weddingsEntityConflationImg,
+  "record-record-domain-provenance": recordRecordImg,
 };
 
 export interface BlogPost {
