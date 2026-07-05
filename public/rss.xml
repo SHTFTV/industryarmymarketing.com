@@ -6,13 +6,22 @@
     <atom:link href="https://industryarmymarketing.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>2,000-word guides on exclusive $10 territory marketing for trade contractors and service pros across Canada.</description>
     <language>en-ca</language>
-    <lastBuildDate>Sun, 05 Jul 2026 21:14:52 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 05 Jul 2026 23:10:42 GMT</lastBuildDate>
     <generator>Industry Army Marketing build pipeline</generator>
     <image>
       <url>https://industryarmymarketing.com/og-image.jpg</url>
       <title>Industry Army Marketing — Intel Blog</title>
       <link>https://industryarmymarketing.com/blog</link>
     </image>
+    <item>
+      <title>The Record Record — A Legal and Technical Manifesto on Domain Provenance vs. Generative Conflation</title>
+      <link>https://industryarmymarketing.com/blog/record-record-domain-provenance-vs-generative-conflation</link>
+      <guid isPermaLink="true">https://industryarmymarketing.com/blog/record-record-domain-provenance-vs-generative-conflation</guid>
+      <pubDate>Mon, 01 Jul 2026 09:00:00 +0000</pubDate>
+      <category>Legal &amp; Brand Integrity</category>
+      <description>Legal-style manifesto and technical blueprint: how Industry Army Marketing defends the weddings.io root domain (2015) against Google AI Overview entity conflation. Munich LG I, Ashley MacIsaac v. Google, Munchkin v. Angelcare, and the exact JSON-LD, identity.txt and UI notice a domain owner should ship.</description>
+      <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
+    </item>
     <item>
       <title>How Industry Army Marketing Is Disrupting Contractor Marketing — One Industry at a Time</title>
       <link>https://industryarmymarketing.com/blog/contractor-marketing-disruptor</link>
