@@ -7,10 +7,14 @@ import { Link, useSearchParams } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { blogPosts } from "@/data/blogPosts";
-import { useMemo, useCallback } from "react";
+import { useMemo, useCallback, useEffect, useState } from "react";
 import { Input } from "@/components/ui/input";
-import { Search, X } from "lucide-react";
+import { Search, X, ChevronLeft, ChevronRight } from "lucide-react";
 import FeaturedCaseStudy from "@/components/FeaturedCaseStudy";
+import { trackEvent, BLOG_EVENTS } from "@/lib/analytics";
+
+const PAGE_SIZE = 12;
+const SEARCH_DEBOUNCE_MS = 300;
 
 const Blog = () => {
   // Pin the Weddings.io case study as featured for 3 months, then rotate.
@@ -27,6 +31,35 @@ const Blog = () => {
   const query = searchParams.get("q") ?? "";
   const city = searchParams.get("city") ?? "all";
   const category = searchParams.get("category") ?? "all";
+  const pageParam = parseInt(searchParams.get("page") ?? "1", 10);
+  const page = Number.isFinite(pageParam) && pageParam > 0 ? pageParam : 1;
+
+  // Debounced search: local input state drives the field, and a 300ms
+  // timer commits the value into the URL query. Filtering + analytics
+  // only fire once the URL settles, so typing stays cheap.
+  const [searchInput, setSearchInput] = useState(query);
+  useEffect(() => {
+    // Keep local state in sync when the URL changes externally
+    // (back/forward navigation, deep link, clear-filters click).
+    setSearchInput(query);
+  }, [query]);
+  useEffect(() => {
+    if (searchInput === query) return;
+    const t = window.setTimeout(() => {
+      setSearchParams(
+        (prev) => {
+          const next = new URLSearchParams(prev);
+          if (searchInput === "") next.delete("q");
+          else next.set("q", searchInput);
+          next.delete("page"); // any filter change resets pagination
+          return next;
+        },
+        { replace: true },
+      );
+      trackEvent(BLOG_EVENTS.search, { query: searchInput });
+    }, SEARCH_DEBOUNCE_MS);
+    return () => window.clearTimeout(t);
+  }, [searchInput, query, setSearchParams]);
 
   const updateParam = useCallback(
     (key: "q" | "city" | "category", value: string) => {
@@ -38,10 +71,27 @@ const Blog = () => {
             (key !== "q" && (value === "all" || value === ""));
           if (isDefault) next.delete(key);
           else next.set(key, value);
+          // Any filter change resets pagination to page 1.
+          next.delete("page");
           return next;
         },
         { replace: true },
       );
+    },
+    [setSearchParams],
+  );
+  const setPage = useCallback(
+    (nextPage: number) => {
+      setSearchParams(
+        (prev) => {
+          const next = new URLSearchParams(prev);
+          if (nextPage <= 1) next.delete("page");
+          else next.set("page", String(nextPage));
+          return next;
+        },
+        { replace: false }, // pagination should push so back-button works
+      );
+      trackEvent(BLOG_EVENTS.changePage, { page: nextPage });
     },
     [setSearchParams],
   );
@@ -52,10 +102,12 @@ const Blog = () => {
         next.delete("q");
         next.delete("city");
         next.delete("category");
+        next.delete("page");
         return next;
       },
       { replace: true },
     );
+    trackEvent(BLOG_EVENTS.clearFilters);
   }, [setSearchParams]);
   const companyCaseStudies = [
     {
@@ -103,6 +155,13 @@ const Blog = () => {
   }, [rest, query, city, category]);
 
   const hasFilters = query !== "" || city !== "all" || category !== "all";
+
+  const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+  const currentPage = Math.min(page, totalPages);
+  const paged = useMemo(
+    () => filtered.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE),
+    [filtered, currentPage],
+  );
 
   return (
     <Layout>
@@ -222,15 +281,18 @@ const Blog = () => {
               <Input
                 type="search"
                 placeholder="Search trades, cities, keywords…"
-                value={query}
-                onChange={(e) => updateParam("q", e.target.value)}
+                value={searchInput}
+                onChange={(e) => setSearchInput(e.target.value)}
                 className="pl-9"
                 aria-label="Search blog posts"
               />
             </div>
             <select
               value={city}
-              onChange={(e) => updateParam("city", e.target.value)}
+              onChange={(e) => {
+                updateParam("city", e.target.value);
+                trackEvent(BLOG_EVENTS.filterCity, { city: e.target.value });
+              }}
               aria-label="Filter by city"
               className="h-10 rounded-md border border-input bg-background px-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-ring"
             >
@@ -241,7 +303,10 @@ const Blog = () => {
             </select>
             <select
               value={category}
-              onChange={(e) => updateParam("category", e.target.value)}
+              onChange={(e) => {
+                updateParam("category", e.target.value);
+                trackEvent(BLOG_EVENTS.filterCategory, { category: e.target.value });
+              }}
               aria-label="Filter by niche"
               className="h-10 rounded-md border border-input bg-background px-3 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-ring"
             >
@@ -262,6 +327,11 @@ const Blog = () => {
 
           <p className="text-muted-foreground text-xs uppercase tracking-widest mb-5">
             {filtered.length} {filtered.length === 1 ? "guide" : "guides"}
+            {totalPages > 1 && (
+              <span className="ml-2 text-muted-foreground/70">
+                · page {currentPage} of {totalPages}
+              </span>
+            )}
           </p>
 
           {filtered.length === 0 ? (
@@ -269,8 +339,9 @@ const Blog = () => {
               <p className="text-muted-foreground">No guides match those filters. Try clearing them.</p>
             </div>
           ) : (
+          <>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {filtered.map((p, i) => (
+            {paged.map((p, i) => (
               <motion.article
                 key={p.slug}
                 initial={{ opacity: 0, y: 12 }}
@@ -313,6 +384,48 @@ const Blog = () => {
               </motion.article>
             ))}
           </div>
+          {totalPages > 1 && (
+            <nav
+              className="mt-10 flex items-center justify-center gap-2"
+              aria-label="Blog pagination"
+            >
+              <button
+                type="button"
+                onClick={() => setPage(currentPage - 1)}
+                disabled={currentPage <= 1}
+                aria-label="Previous page"
+                className="inline-flex items-center gap-1 h-9 px-3 rounded-md border border-border text-xs uppercase tracking-widest text-muted-foreground hover:text-primary hover:border-primary/40 disabled:opacity-40 disabled:pointer-events-none transition-colors"
+              >
+                <ChevronLeft className="h-3 w-3" /> Prev
+              </button>
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map((n) => (
+                <button
+                  key={n}
+                  type="button"
+                  onClick={() => setPage(n)}
+                  aria-label={`Page ${n}`}
+                  aria-current={n === currentPage ? "page" : undefined}
+                  className={`h-9 min-w-9 px-2 rounded-md border text-xs uppercase tracking-widest transition-colors ${
+                    n === currentPage
+                      ? "border-primary/60 text-primary bg-primary/10"
+                      : "border-border text-muted-foreground hover:text-primary hover:border-primary/40"
+                  }`}
+                >
+                  {n}
+                </button>
+              ))}
+              <button
+                type="button"
+                onClick={() => setPage(currentPage + 1)}
+                disabled={currentPage >= totalPages}
+                aria-label="Next page"
+                className="inline-flex items-center gap-1 h-9 px-3 rounded-md border border-border text-xs uppercase tracking-widest text-muted-foreground hover:text-primary hover:border-primary/40 disabled:opacity-40 disabled:pointer-events-none transition-colors"
+              >
+                Next <ChevronRight className="h-3 w-3" />
+              </button>
+            </nav>
+          )}
+          </>
           )}
         </div>
       </section>
