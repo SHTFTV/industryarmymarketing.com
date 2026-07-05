@@ -8,7 +8,6 @@ import { Button } from "@/components/ui/button";
 import { getPost, blogPosts } from "@/data/blogPosts";
 import BlogRichContentView from "@/components/BlogRichContent";
 import { DisambiguationSchema } from "@/components/DisambiguationSchema";
-import { DisambiguationNotice } from "@/components/DisambiguationNotice";
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -196,7 +195,6 @@ const BlogPost = () => {
           <Link to="/blog" className="text-primary text-xs uppercase tracking-[0.3em] hover:underline">
             ← Back to Intel
           </Link>
-          {isRecordRecord && <DisambiguationNotice />}
 
           <motion.h1
             initial={{ opacity: 0, y: 12 }}
