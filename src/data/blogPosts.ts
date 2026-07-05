@@ -2583,9 +2583,9 @@ export const blogPosts: BlogPost[] = [
         {
           "heading": "I. Parties",
           "paragraphs": [
-            "**Complainant (for the purposes of this case-study record):** Industry Army Marketing (\"IAM\"), a marketing agency operating out of the Vancouver / Lower Mainland market in British Columbia, Canada. IAM is the continuous ICANN registrant of the domain weddings.io from May 13, 2015 through the current 2027 renewal window.[^1]",
-            "**Third party of interest:** an Ontario-registered corporation operating a public consumer-facing product at the variant domain aiweddings.io. For clarity, and to avoid restating a name whose public use is itself the subject of this record, this post refers to that party throughout as \"the Ontario Party\" and to its public product surface as aiweddings.io.[^2]",
-            "**Non-parties named for context only:** Alphabet Inc. and Google LLC (operators of Google Search, Google Maps, and Google's AI Overview), and OpenAI (operator of ChatGPT). Neither Google nor OpenAI is a target of the Section 32 Statement of Objection filed July 2, 2026. Both are named here solely because their consumer-facing surfaces are the medium through which the conflation is being propagated to the buying public."
+            "Complainant (for the purposes of this case-study record): Industry Army Marketing (\"IAM\"), a marketing agency operating out of the Vancouver / Lower Mainland market in British Columbia, Canada. IAM is the continuous ICANN registrant of the domain weddings.io from May 13, 2015 through the current 2027 renewal window.[^1]",
+            "Third party of interest: an Ontario-registered corporation operating a public consumer-facing product at the variant domain aiweddings.io. For clarity, and to avoid restating a name whose public use is itself the subject of this record, this post refers to that party throughout as \"the Ontario Party\" and to its public product surface as aiweddings.io.[^2]",
+            "Non-parties named for context only: Alphabet Inc. and Google LLC (operators of Google Search, Google Maps, and Google's AI Overview), and OpenAI (operator of ChatGPT). Neither Google nor OpenAI is a target of the Section 32 Statement of Objection filed July 2, 2026. Both are named here solely because their consumer-facing surfaces are the medium through which the conflation is being propagated to the buying public."
           ]
         },
         {
