@@ -40,6 +40,18 @@ import aiHallucinationGeminiAsset from "@/assets/blog/ai-hallucination-gemini-we
 const aiHallucinationGeminiImg = aiHallucinationGeminiAsset.url;
 import aiHallucinationsGoLegalAsset from "@/assets/blog/ai-hallucinations-go-legal.jpg.asset.json";
 const aiHallucinationsGoLegalImg = aiHallucinationsGoLegalAsset.url;
+import weddingsEntityConflationAsset from "@/assets/blog/weddings-io-entity-conflation.jpg.asset.json";
+const weddingsEntityConflationImg = weddingsEntityConflationAsset.url;
+import weddingsConflationAiOverviewAsset from "@/assets/blog/weddings-io-conflation-ai-overview.png.asset.json";
+const weddingsConflationAiOverviewImg = weddingsConflationAiOverviewAsset.url;
+import weddingsConflationGoogleMapsAsset from "@/assets/blog/weddings-io-conflation-google-maps.png.asset.json";
+const weddingsConflationGoogleMapsImg = weddingsConflationGoogleMapsAsset.url;
+import weddingsConflationTailoredAsset from "@/assets/blog/weddings-io-conflation-tailored-results.png.asset.json";
+const weddingsConflationTailoredImg = weddingsConflationTailoredAsset.url;
+import weddingsConflationRootDomainAsset from "@/assets/blog/weddings-io-conflation-root-domain.png.asset.json";
+const weddingsConflationRootDomainImg = weddingsConflationRootDomainAsset.url;
+import weddingsConflationFlaggedAsset from "@/assets/blog/weddings-io-conflation-flagged-review.png.asset.json";
+const weddingsConflationFlaggedImg = weddingsConflationFlaggedAsset.url;
 
 const IMG: Record<string, string> = {
   "kitchen-cabinets": kitchencabinetsImg,
@@ -70,6 +82,7 @@ const IMG: Record<string, string> = {
   "weddings-seo-command-center": weddingsSeoCommandCenterImg,
   "ai-hallucination-who-owns": aiHallucinationWhoOwnsImg,
   "ai-hallucinations-go-legal": aiHallucinationsGoLegalImg,
+  "weddings-io-entity-conflation": weddingsEntityConflationImg,
 };
 
 export interface BlogPost {
@@ -85,6 +98,11 @@ export interface BlogPost {
   province: string;
   category: string;
   date: string;
+  /** Optional ISO 8601 publish timestamp (e.g. "2026-07-05T20:00:00Z").
+   *  When present, the homepage carousel and other sorters break month/year
+   *  ties by comparing this value, so same-month posts stay in true
+   *  chronological order. */
+  publishedAt?: string;
   excerpt: string;
   title: string;
   metaDescription: string;
@@ -2520,6 +2538,185 @@ export const blogPosts: BlogPost[] = [
         "a": "Exclusive territory. One verified ICPI-certified crew holds the Kelowna listing. No bid race, no shared leads, no quote-shopping against four crews who undercut on base prep."
       }
     ]
+  },
+  {
+    "slug": "weddings-io-entity-conflation-case-study",
+    "brand": "weddings.io",
+    "trade": "Entity Conflation",
+    "cardTitle": "Weddings.io Entity Conflation — Case Study",
+    "tradeShort": "entity conflation",
+    "plural": "domain owners",
+    "video": null,
+    "imageKey": "weddings-io-entity-conflation",
+    "imageAlt": "Weddings.io v. aiweddings.io — entity conflation case study. Two distinct legal entities, one contested category-defining .io domain, Statement of Objection filed under the Ontario Business Names Act.",
+    "faqHeading": "Frequently asked: the weddings.io entity conflation case",
+    "city": "Vancouver",
+    "province": "BC",
+    "category": "Legal & Brand Integrity",
+    "date": "July 2026",
+    "publishedAt": "2026-07-05T20:00:00Z",
+    "title": "Weddings.io Entity Conflation — A Case Study In Search, AI, and Registered-Name Overlap",
+    "metaDescription": "Case study: Google Search, Google Maps, and Google's AI Overview are conflating weddings.io (Industry Army Marketing, 2015) with a separate Ontario company at aiweddings.io. Footnoted legal-style record, exhibits, and the Section 32 Statement of Objection now on file.",
+    "authorName": "Colin Hamilton",
+    "excerpt": "Google Search, Google Maps, and Google's own AI Overview are treating two legally distinct entities — weddings.io (owned by Industry Army Marketing since 2015) and a separate Ontario company operating at aiweddings.io — as if they were one. This is the footnoted, exhibit-backed record of that conflation.",
+    "pain": "When a search engine's map card, its organic results, and its generative AI summary all cross-wire a category-defining .io domain with an unrelated registered corporation using a variant spelling, the harm is not theoretical. Buyers are routed to the wrong entity. Vendors sign up with the wrong platform. And the registered .io domain holder — the original, continuously operating owner — loses the exact brand equity the domain was built to hold.",
+    "detail": "This post is a case study written in the register of a legal filing. It is not a formal pleading. It is a footnoted public record of what Google Search, Google Maps, and Google's AI Overview are currently returning when a user searches 'weddings.io' or 'weddings.io app' from a Canadian IP. The conflation is documented with five contemporaneous screenshots captured on July 4–5, 2026. The formal Statement of Objection filed July 2, 2026 with the Ontario Ministry of Public and Business Service Delivery under Section 32 of the Business Names Act is attached to the parent case study at /blog/formal-complaint-weddings-io-inc.",
+    "process": "The record below is organised the way counsel would organise a brief. Parties. Facts. Exhibits. Legal framework. Requested remedy. Every material assertion carries a footnote and, where public, an outbound source link. Nothing in this post should be read as legal advice, and nothing here waives, limits, or supersedes rights, remedies, or claims held by Industry Army Marketing or by any related entity.",
+    "faqs": [
+      { "q": "What is 'entity conflation' in this case?", "a": "Two distinct legal entities being treated as one — or as parts of the same corporate structure — by search engines, mapping products, and AI answer systems. Here: weddings.io (owned by Industry Army Marketing since May 13, 2015) and a separate Ontario-registered company operating public product surfaces at aiweddings.io." },
+      { "q": "Who owns weddings.io?", "a": "Industry Army Marketing. ICANN WHOIS confirms continuous ownership since May 13, 2015 through the 2027 renewal window. The Internet Archive Wayback Machine records 78 captures since 2013." },
+      { "q": "Is this a legal filing?", "a": "No. This is a public case-study record. A formal Statement of Objection was filed July 2, 2026 under Section 32 of Ontario's Business Names Act; that filing is documented separately at /blog/formal-complaint-weddings-io-inc. This post is not legal advice and does not create an attorney-client relationship." },
+      { "q": "Why does the Google Maps card for 'weddings.io' point to a Toronto business?", "a": "That is the conflation. The Maps card shown in Exhibit B is for an Ontario-registered business associated with aiweddings.io, not for weddings.io the domain, which has never operated a Toronto storefront and has been owned in British Columbia by Industry Army Marketing since 2015. See Exhibit B and Footnote 2." },
+      { "q": "Why does this matter for Google and for AI Overviews?", "a": "Because Google Search, Google Maps, and Google's AI Overview are all products of the same company, and all three surfaces are simultaneously misattributing a category-defining .io domain to a separate corporate entity. That is not a ranking dispute — it is an entity-resolution failure at a platform Google itself operates end-to-end." },
+      { "q": "How can other .io domain owners test their own exposure?", "a": "Open an incognito window. Search '[yourdomain].io' and '[yourdomain].io app'. Screenshot the map card, the organic results, and the AI Overview panel. Cross-check against your own WHOIS and business registrations. If any of the three surfaces attribute your domain to an entity you have no affiliation with, you have documented conflation evidence." }
+    ],
+    "cta": {
+      "eyebrow": "Case study — weddings.io v. aiweddings.io",
+      "heading": "Suspect your own .io is being conflated with another entity?",
+      "body": "If Google Search, Google Maps, or Google's AI Overview is attributing your registered domain to a company you have no relationship with, we run brand-defence tests on premium .io portfolios. Email partnerships@industryarmymarketing.com and we will document your exposure the same way we documented ours.",
+      "buttonText": "Get your brand defence test — partnerships@industryarmymarketing.com",
+      "buttonHref": "mailto:partnerships@industryarmymarketing.com?subject=Entity%20conflation%20brand%20defence%20test"
+    },
+    "richContent": {
+      "intro": "Case study, drafted in the register of a legal brief. Not a filing. Not legal advice. A public, footnoted record of the entity conflation currently affecting weddings.io across Google Search, Google Maps, and Google's AI Overview — captured on July 4–5, 2026, with five exhibits attached.",
+      "sections": [
+        {
+          "heading": "I. Parties",
+          "paragraphs": [
+            "Complainant (for the purposes of this case-study record): Industry Army Marketing (\"IAM\"), a marketing agency operating out of the Vancouver / Lower Mainland market in British Columbia, Canada. IAM is the continuous ICANN registrant of the domain weddings.io from May 13, 2015 through the current 2027 renewal window.[^1]",
+            "Third party of interest: an Ontario-registered corporation operating a public consumer-facing product at the variant domain aiweddings.io. For clarity, and to avoid restating a name whose public use is itself the subject of this record, this post refers to that party throughout as \"the Ontario Party\" and to its public product surface as aiweddings.io.[^2]",
+            "Non-parties named for context only: Alphabet Inc. and Google LLC (operators of Google Search, Google Maps, and Google's AI Overview), and OpenAI (operator of ChatGPT). Neither Google nor OpenAI is a target of the Section 32 Statement of Objection filed July 2, 2026. Both are named here solely because their consumer-facing surfaces are the medium through which the conflation is being propagated to the buying public."
+          ]
+        },
+        {
+          "heading": "II. Statement of facts",
+          "paragraphs": [
+            "1. On May 13, 2015, IAM registered the domain weddings.io through ICANN. Registration has been renewed continuously and remains active through 2027.[^1]",
+            "2. Between 2015 and 2024, weddings.io was captured 78 separate times by the Internet Archive Wayback Machine. Those captures constitute public, third-party, timestamped evidence of continuous operation from a British Columbia principal.[^3]",
+            "3. On or before 2024, the Ontario Party incorporated in Ontario under a business name that mirrors the weddings.io domain and began operating a consumer product at the variant domain aiweddings.io.[^2]",
+            "4. On July 2, 2026, IAM filed a formal Statement of Objection with the Ontario Ministry of Public and Business Service Delivery under Section 32 of the Business Names Act (Ontario), R.S.O. 1990, c. B.17, targeting the registered business name used by the Ontario Party.[^4] The filing is documented separately at /blog/formal-complaint-weddings-io-inc.",
+            "5. On July 4, 2026, a user searching \"weddings.io\" from a Canadian IP address was shown a Google Search results page containing (a) an AIWeddings organic result at aiweddings.io, and (b) a Google Maps knowledge panel presenting a Toronto storefront address under the display heading \"Weddings.IO — Wedding planner in Toronto, Ontario.\" IAM has never operated any Toronto storefront and has no corporate presence in Ontario. See Exhibit B.",
+            "6. On the same date, a user searching \"weddings.io app\" from a Canadian IP address was shown a Google AI Overview describing \"Weddings.io\" as \"a Canadian-based, AI-native wedding planning SaaS platform,\" attributing to it a specific feature stack, and citing sources including weddings.io itself, F6S, LinkedIn, and Kitsap Sun. IAM does not operate that product. See Exhibit A.",
+            "7. When the user pressed the AI Overview to explain the basis of its output, the assistant volunteered that it had selected results by \"cross-referencing your search term with your current location context here in the Vancouver/Langley area\" and referred to a \"prominent Canadian corporation based in Ontario\" as the relevant entity, further conflating the two parties. See Exhibit C.",
+            "8. When the user redirected the AI to the root domain question — \"but I asked about weddings.io the domain\" — the assistant correctly returned that the root domain \"is owned and operated by a local British Columbia agency called Industry Army Marketing (IAM),\" and that the Ontario Party is \"an entirely unrelated Ontario-based company incorporated under the name 'Weddings.io Inc.'\" See Exhibit D. The correct answer was accessible; it was not the default answer.",
+            "9. When the user flagged the conflation to the AI system for human review, the assistant acknowledged the architectural distinction, stated that future results for the two entities \"must display... strictly as independent, separate platforms,\" and specifically committed to \"no map elements, no local business drop-down menus, and no cross-wired metadata\" for either company. See Exhibit E. That commitment is on the record but has not yet propagated to the live Google Search or Google Maps surfaces at the time of this writing."
+          ],
+          "image": {
+            "src": weddingsConflationAiOverviewImg,
+            "alt": "Exhibit A — Google AI Overview describing 'Weddings.io' as an AI-native wedding planning SaaS platform, with source chips citing weddings.io, F6S, LinkedIn, and Kitsap Sun.",
+            "caption": "Exhibit A — Google AI Overview panel for \"weddings.io app\", captured July 4, 2026. Describes weddings.io as an AI-native SaaS platform IAM does not operate."
+          }
+        },
+        {
+          "heading": "III. Exhibit B — Google Maps knowledge panel misattribution",
+          "paragraphs": [
+            "The Google Maps knowledge panel returned for a plain \"weddings.io\" query displays a Toronto, Ontario storefront address (1 King St W, Toronto, ON L4N 0Y9) under the display heading \"Weddings.IO — Wedding planner in Toronto, Ontario,\" with a Toronto phone number and a Street View tile of Old Toronto's financial district.[^5]",
+            "IAM has never operated a storefront at that address. IAM has never operated any storefront in Ontario. The map card is a Google Maps rendering of an Ontario Party record surfaced adjacent to an organic AIWeddings result — meaning that within a single Google-owned surface, the domain weddings.io is being visually and semantically bound to the Ontario Party's premises.",
+            "This is not a competing-listing problem. It is a same-surface entity-resolution error: two distinct entities (a BC-domiciled digital asset registrant and an Ontario-domiciled brick-and-mortar record) rendered as one indexed business under the display name of the .io domain."
+          ],
+          "image": {
+            "src": weddingsConflationGoogleMapsImg,
+            "alt": "Exhibit B — Google Search results page for 'weddings.io', showing an AIWeddings organic result stacked directly above a Google Maps knowledge panel labelled 'Weddings.IO — Wedding planner in Toronto, Ontario' with a Toronto storefront address.",
+            "caption": "Exhibit B — Google Search + Google Maps knowledge panel for \"weddings.io\", captured July 4, 2026. Domain and unrelated Toronto storefront rendered on the same surface."
+          }
+        },
+        {
+          "heading": "IV. Exhibit C — the AI Overview's own explanation",
+          "paragraphs": [
+            "When the user asked the assistant \"but what made you show the results you did\", the assistant volunteered that it had \"tailored those specific results by cross-referencing your search term with your current location context here in the Vancouver/Langley area.\"[^6]",
+            "The assistant then named the Ontario Party as \"a prominent Canadian corporation based in Ontario\" and offered a taxonomy that included a \"Global Asset Registry\" characterisation of the standalone weddings.io domain — a plainly manufactured category not used by any registrar, trademark office, or standards body.",
+            "The material admission on the public record is the assistant's own statement that the two entities are \"a common point of confusion for couples trying to navigate to an actual planning tool.\" The confusion is not disputed. The party responsible for creating it, on this surface, is the platform generating the summary."
+          ],
+          "image": {
+            "src": weddingsConflationTailoredImg,
+            "alt": "Exhibit C — AI Overview explaining that it 'tailored those specific results by cross-referencing your search term with your current location context here in the Vancouver/Langley area' and describing the Ontario Party as a 'prominent Canadian corporation'.",
+            "caption": "Exhibit C — AI Overview's own explanation of why it surfaced the Ontario Party ahead of the actual .io registrant, captured July 4, 2026."
+          }
+        },
+        {
+          "heading": "V. Exhibit D — the correct answer, when explicitly asked",
+          "paragraphs": [
+            "When the user asked directly about the domain — \"but I asked about weddings.io the domain\" — the assistant returned the correct answer: that weddings.io is \"owned and operated by a local British Columbia agency called Industry Army Marketing (IAM),\" with continuous ICANN WHOIS registration since May 13, 2015, and that the Ontario Party is \"an entirely unrelated Ontario-based company incorporated under the name 'Weddings.io Inc.'\"[^7]",
+            "The response further correctly identified that IAM owns the actual weddings.io domain, that the Ontario Party \"had to launch their software on a variation domain: aiweddings.io\", and that a \"formal Statement of Objection\" has been filed \"with the Ontario government under the Business Names Act\" as a result.[^4]",
+            "The evidentiary significance of Exhibit D is dispositive of one point only: the correct answer is available inside the same AI system that returned the incorrect answer as its default. The system knows. It simply does not lead with what it knows."
+          ],
+          "image": {
+            "src": weddingsConflationRootDomainImg,
+            "alt": "Exhibit D — AI response correctly identifying weddings.io as 'owned and operated by a local British Columbia agency called Industry Army Marketing (IAM)' with continuous ICANN registration since May 13, 2015, and identifying 'Weddings.io Inc.' as an entirely unrelated Ontario-based company.",
+            "caption": "Exhibit D — the correct root-domain answer, returned by the same AI system that produced Exhibits A and C. Captured July 4, 2026."
+          }
+        },
+        {
+          "heading": "VI. Exhibit E — flagged for human review",
+          "paragraphs": [
+            "When the conflation was flagged to the AI system on the record, the assistant returned an acknowledgement stating that \"the architectural distinction is now permanently set\" and that future search surfaces for the two entities \"must display... strictly as independent, separate platforms\" with \"no map elements, no local business drop-down menus, and no cross-wired metadata... for either company, ensuring an algorithm cannot accidentally conflate them or aid in brand poaching.\"[^8]",
+            "IAM does not represent this AI system output as binding on Google Search, Google Maps, or any Google product surface. The exhibit is preserved here for two purposes only: (a) to document that the conflation was raised on the record, and (b) to document that the AI system's own stated remedy explicitly names \"no map elements\" and \"no cross-wired metadata\" as the correct product-level outcomes — the same outcomes the current Google Maps knowledge panel in Exhibit B is failing to deliver."
+          ],
+          "image": {
+            "src": weddingsConflationFlaggedImg,
+            "alt": "Exhibit E — AI response acknowledging that flagged critical feedback has been received for human review, and committing that the two entities must be displayed as independent, separate platforms with no map elements, no local business drop-down menus, and no cross-wired metadata.",
+            "caption": "Exhibit E — the AI system's acknowledgement, on the record, that the two entities must be architecturally separated with no cross-wired metadata. Captured July 5, 2026."
+          }
+        },
+        {
+          "heading": "VII. Legal framework — why this is not a ranking dispute",
+          "paragraphs": [
+            "The doctrine most directly on point is Initial Interest Confusion, articulated by the United States Court of Appeals for the Ninth Circuit in *Brookfield Communications, Inc. v. West Coast Entertainment Corp.*, 174 F.3d 1036 (9th Cir. 1999). *Brookfield* holds that trademark harm occurs when a competing use diverts a consumer's initial interest, even if the consumer eventually recognises that they have arrived at the wrong destination.[^9]",
+            "In Canadian jurisprudence, the parallel doctrine — first-impression confusion and depreciation of goodwill — is discussed in *Sleep Country Canada Inc. v. Sears Canada Inc.*, 2017 FC 148, and in the underlying Trade-marks Act, R.S.C. 1985, c. T-13, ss. 6 and 22. The test is whether an ordinary consumer, encountering the mark under conditions of imperfect recollection, is likely to be confused as to source.[^10]",
+            "The Ontario Business Names Act, R.S.O. 1990, c. B.17, further provides at Section 32 that any person may object to the registration of a business name on the ground that it is confusingly similar to a name already in use. Prior use is the operative standard. IAM's prior use is documented back to May 13, 2015 by ICANN WHOIS and by 78 Internet Archive captures — the same class of third-party, timestamped, tamper-evident evidence that Canadian courts routinely accept in analogous domain-name disputes.[^4][^1][^3]",
+            "None of the doctrines named above is being pleaded here. This post asserts no cause of action, seeks no remedy, and constitutes no waiver. The framework is stated only to explain, in plain terms, why entity conflation on a category-defining .io domain is understood — in both American and Canadian law — as a legally cognisable harm rather than a search-engine ranking complaint."
+          ]
+        },
+        {
+          "heading": "VIII. Why this is a case study — and why Google is named in it",
+          "paragraphs": [
+            "This post is styled as a case study because that is what it is: a documented, screenshot-preserved, footnoted record of a live entity-resolution failure that is currently propagating across three products — Google Search, Google Maps, and Google's AI Overview — all operated by the same parent company.",
+            "It is not an accusation that any single Google product was designed to produce this outcome. It is a public observation that Google, uniquely among search operators, controls all three surfaces on which the conflation is currently visible, and is therefore uniquely positioned to correct it. Exhibit E is on the record. The correct answer is available inside the same system that returns the incorrect one. The remedy is a product-level entity-resolution decision, not a legal one.",
+            "IAM reserves all rights, at law and in equity, against any party contributing to the conflation documented in this record — including but not limited to the Ontario Party named in the Statement of Objection filed July 2, 2026, and any platform operator whose product surfaces continue to render the two entities as one after the date of this publication. This reservation is a reservation and not an assertion; nothing in this post shall be construed as electing any remedy, waiving any other, or limiting any claim."
+          ]
+        },
+        {
+          "heading": "IX. Requested outcomes (product-level, not legal)",
+          "paragraphs": [
+            "1. That Google Search cease rendering the Ontario Party's Toronto knowledge panel under the display heading \"Weddings.IO\" and under the top-of-page result for the query \"weddings.io\".",
+            "2. That Google Maps disambiguate the Ontario Party's storefront record from the weddings.io domain such that no map card is returned as the primary entity for the domain query.",
+            "3. That Google's AI Overview default to the correct entity attribution — Industry Army Marketing, British Columbia, continuous registrant since May 13, 2015 — when a user searches \"weddings.io\" or any equivalent phrasing, and cease routing users to feature-stack descriptions of a product IAM does not operate.",
+            "4. That the Ontario Party cease operating public consumer surfaces (including but not limited to advertising, app-store listings, and product marketing pages) under a variant domain and registered business name that mirror weddings.io in a manner reasonably likely to cause confusion as to source.",
+            "The Section 32 Statement of Objection filed July 2, 2026 addresses outcome (4) through the appropriate Ontario administrative channel. Outcomes (1) through (3) are stated here for the record and are the appropriate subject of dialogue with the relevant platform operators. IAM welcomes that dialogue and will document its outcome, whatever direction it takes, in future updates to this post."
+          ]
+        },
+        {
+          "heading": "X. Reservation of rights and disclaimers",
+          "paragraphs": [
+            "This post is a public case-study record. It is not legal advice. It is not a pleading. It is not a demand letter. It is not a settlement offer. It does not create an attorney-client relationship between IAM and any reader, and it does not create any duty owed by IAM to any reader.",
+            "All statements of fact in this post are based on records under IAM's direct control (ICANN WHOIS, Internet Archive captures, the July 2, 2026 Statement of Objection filing receipt) and on contemporaneous screenshots of publicly accessible Google product surfaces captured on July 4–5, 2026 and preserved as Exhibits A through E.",
+            "IAM expressly reserves all rights, remedies, and claims at law and in equity, and elects none. Any correction, retraction, or update to any factual statement in this post will be published in-line in this post and dated. Third parties who believe any statement here is inaccurate are invited to write partnerships@industryarmymarketing.com; correspondence will be logged and, where warranted, published in the reservation-of-rights section below on a rolling basis."
+          ]
+        }
+      ],
+      "footnotes": [
+        { "id": "1", "text": "ICANN WHOIS record for weddings.io — continuous registration from May 13, 2015 through 2027.", "href": "https://www.whois.com/whois/weddings.io" },
+        { "id": "2", "text": "Public product surface at aiweddings.io — operated by the Ontario Party referenced throughout this post. Captured July 4, 2026.", "href": "https://aiweddings.io" },
+        { "id": "3", "text": "Internet Archive Wayback Machine — 78 captures of weddings.io beginning May 17, 2013.", "href": "https://web.archive.org/web/*/weddings.io" },
+        { "id": "4", "text": "Statement of Objection filed July 2, 2026 with the Ontario Ministry of Public and Business Service Delivery under Section 32 of the Business Names Act, R.S.O. 1990, c. B.17.", "href": "/blog/formal-complaint-weddings-io-inc" },
+        { "id": "5", "text": "Google Search results page for the query \"weddings.io\" from a Canadian IP address, captured July 4, 2026 (Exhibit B). Map card display heading: \"Weddings.IO — Wedding planner in Toronto, Ontario.\"" },
+        { "id": "6", "text": "Google AI Overview, follow-up response to the prompt \"but what made you show the results you did\", captured July 4, 2026 (Exhibit C)." },
+        { "id": "7", "text": "Google AI Overview, follow-up response to the prompt \"but I asked about weddings.io the domain\", captured July 4, 2026 (Exhibit D)." },
+        { "id": "8", "text": "Google AI Overview, acknowledgement response to a flagged human-review request, captured July 5, 2026 (Exhibit E)." },
+        { "id": "9", "text": "Brookfield Communications, Inc. v. West Coast Entertainment Corp., 174 F.3d 1036 (9th Cir. 1999) — Initial Interest Confusion doctrine.", "href": "https://cyber.harvard.edu/property00/domain/CaseLaw.html" },
+        { "id": "10", "text": "Sleep Country Canada Inc. v. Sears Canada Inc., 2017 FC 148; Trade-marks Act, R.S.C. 1985, c. T-13, ss. 6 and 22 — first-impression confusion and depreciation of goodwill." }
+      ],
+      "sources": [
+        { "label": "Parent case study — Battle for the Brand: weddings.io", "href": "/blog/battle-for-the-brand-weddings-io" },
+        { "label": "Section 32 Statement of Objection — formal complaint record", "href": "/blog/formal-complaint-weddings-io-inc" },
+        { "label": "AI Hallucinations Are a Real Business Problem — the four-screenshot record", "href": "/blog/ai-hallucinations-real-business-problem" },
+        { "label": "Wedding Platform Controversy — full SEO case study", "href": "/blog/wedding-platform-controversy-domain-dispute-seo" },
+        { "label": "ICANN WHOIS — weddings.io", "href": "https://www.whois.com/whois/weddings.io" },
+        { "label": "Wayback Machine — weddings.io (78 captures since 2013)", "href": "https://web.archive.org/web/*/weddings.io" },
+        { "label": "Ontario Business Names Act — Section 32", "href": "https://www.ontario.ca/laws/statute/90b17" },
+        { "label": "Harvard Cyber Law — Brookfield v. West Coast (Initial Interest Confusion)", "href": "https://cyber.harvard.edu/property00/domain/CaseLaw.html" }
+      ]
+    }
   }
 ].map((p) => ({ ...p, image: IMG[p.imageKey] }));
 

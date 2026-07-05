@@ -24,6 +24,14 @@ const dateScore = (date: string) => {
   return (Number(year) || 0) * 12 + (monthOrder[month] ?? -1);
 };
 
+// Finer-grained timestamp when a post declares `publishedAt` (ISO string).
+// Falls back to the month/year score so legacy posts keep their relative order.
+const timestampScore = (publishedAt?: string) => {
+  if (!publishedAt) return 0;
+  const t = Date.parse(publishedAt);
+  return Number.isFinite(t) ? t : 0;
+};
+
 const LIMIT = 4;
 // Pin the Weddings.io case study to the front of the carousel for 3 months,
 // then let it rotate into the normal date-sorted loop.
@@ -44,6 +52,7 @@ type Ranked = {
 const buildRanking = (): Ranked[] => {
   const scored = blogPosts.map((post, index) => {
     const score = dateScore(post.date);
+    const ts = timestampScore(post.publishedAt);
     const [month, year] = post.date.split(" ");
     const reasons: string[] = [];
     if (!post.slug) reasons.push("missing slug");
@@ -57,11 +66,14 @@ const buildRanking = (): Ranked[] => {
       date: post.date,
       index,
       score,
+      ts,
       parseIssues: reasons,
     };
   });
 
-  const sorted = [...scored].sort((a, b) => b.score - a.score || b.index - a.index);
+  const sorted = [...scored].sort(
+    (a, b) => b.score - a.score || b.ts - a.ts || b.index - a.index,
+  );
   const cutoffScore = sorted[LIMIT - 1]?.score ?? -Infinity;
   const cutoffIndex = sorted[LIMIT - 1]?.index ?? -1;
 

@@ -481,6 +481,41 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://industryarmymarketing.com/blog/weddings-io-entity-conflation-case-study</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://industryarmymarketing.com/__l5e/assets-v1/c5c5b9c4-d6be-4ad7-b792-0c33cd820b19/weddings-io-entity-conflation.jpg</image:loc>
+      <image:caption>Weddings.io v. aiweddings.io — entity conflation case study featured image. Two distinct entities, one contested category-defining .io domain, Statement of Objection filed under the Ontario Business Names Act.</image:caption>
+      <image:title>Weddings.io Entity Conflation — Case Study Featured Image (Industry Army Marketing)</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://industryarmymarketing.com/__l5e/assets-v1/c5cb58a8-efe6-403f-a60c-b9ce2cb0062c/weddings-io-conflation-ai-overview.png</image:loc>
+      <image:caption>Exhibit A — Google AI Overview panel describing 'Weddings.io' as an AI-native wedding planning SaaS platform IAM does not operate. Captured July 4, 2026.</image:caption>
+      <image:title>Weddings.io Entity Conflation — Exhibit A (Google AI Overview)</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://industryarmymarketing.com/__l5e/assets-v1/9f380524-f12d-4d82-94e3-ff5d9b790106/weddings-io-conflation-google-maps.png</image:loc>
+      <image:caption>Exhibit B — Google Search + Google Maps knowledge panel rendering an unrelated Toronto storefront under the display heading 'Weddings.IO'. Captured July 4, 2026.</image:caption>
+      <image:title>Weddings.io Entity Conflation — Exhibit B (Google Maps knowledge panel misattribution)</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://industryarmymarketing.com/__l5e/assets-v1/64bafdd4-2f45-40bb-b517-ab365bd1e736/weddings-io-conflation-tailored-results.png</image:loc>
+      <image:caption>Exhibit C — Google AI Overview's own explanation of why it surfaced the Ontario Party ahead of the actual .io registrant. Captured July 4, 2026.</image:caption>
+      <image:title>Weddings.io Entity Conflation — Exhibit C (AI Overview self-explanation)</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://industryarmymarketing.com/__l5e/assets-v1/5a966e11-ea46-4808-a916-6030577cf40e/weddings-io-conflation-root-domain.png</image:loc>
+      <image:caption>Exhibit D — the correct root-domain answer, returned by the same AI system that produced the incorrect default. Captured July 4, 2026.</image:caption>
+      <image:title>Weddings.io Entity Conflation — Exhibit D (correct root-domain answer)</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://industryarmymarketing.com/__l5e/assets-v1/673281f8-99f0-4a09-86c3-1f141ce64b01/weddings-io-conflation-flagged-review.png</image:loc>
+      <image:caption>Exhibit E — AI system acknowledgement, on the record, that the two entities must be architecturally separated with no cross-wired metadata. Captured July 5, 2026.</image:caption>
+      <image:title>Weddings.io Entity Conflation — Exhibit E (flagged for human review)</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://industryarmymarketing.com/contractor-marketing/demolition-abbotsford/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
