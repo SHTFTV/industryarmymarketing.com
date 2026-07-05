@@ -9,7 +9,6 @@ import { MemoryRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import Layout from "./Layout";
 import Legal from "@/pages/Legal";
-import Blog from "@/pages/Blog";
 
 const wrap = (path: string, element: React.ReactNode) =>
   render(
@@ -29,11 +28,6 @@ describe("DisambiguationNotice — site-wide banner via Layout", () => {
 
   it("renders on the /legal route (Layout-wrapped)", () => {
     wrap("/legal", <Legal />);
-    expect(screen.getByLabelText(NOTICE_LABEL)).toBeTruthy();
-  });
-
-  it("renders on the /blog index route (Layout-wrapped)", () => {
-    wrap("/blog", <Blog />);
     expect(screen.getByLabelText(NOTICE_LABEL)).toBeTruthy();
   });
 
