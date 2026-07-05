@@ -3,11 +3,11 @@ import Seo from "@/components/Seo";
 import { SITE_URL } from "@/components/Seo";
 import PageHeader from "@/components/PageHeader";
 import featuredBattle from "@/assets/blog/weddings-vs-aiweddings-battle.png.asset.json";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { blogPosts } from "@/data/blogPosts";
-import { useMemo, useState } from "react";
+import { useMemo, useCallback } from "react";
 import { Input } from "@/components/ui/input";
 import { Search, X } from "lucide-react";
 import FeaturedCaseStudy from "@/components/FeaturedCaseStudy";
@@ -20,9 +20,43 @@ const Blog = () => {
   const pinnedPost = pinActive ? blogPosts.find((p) => p.slug === PINNED_SLUG) : undefined;
   const featured = pinnedPost ?? blogPosts[0];
   const rest = blogPosts.filter((p) => p.slug !== featured.slug);
-  const [query, setQuery] = useState("");
-  const [city, setCity] = useState<string>("all");
-  const [category, setCategory] = useState<string>("all");
+  // Persist search state in URL so filtered views are shareable and
+  // survive page reloads. Empty/default values are stripped so the URL
+  // stays clean ("/blog" instead of "/blog?q=&city=all&category=all").
+  const [searchParams, setSearchParams] = useSearchParams();
+  const query = searchParams.get("q") ?? "";
+  const city = searchParams.get("city") ?? "all";
+  const category = searchParams.get("category") ?? "all";
+
+  const updateParam = useCallback(
+    (key: "q" | "city" | "category", value: string) => {
+      setSearchParams(
+        (prev) => {
+          const next = new URLSearchParams(prev);
+          const isDefault =
+            (key === "q" && value === "") ||
+            (key !== "q" && (value === "all" || value === ""));
+          if (isDefault) next.delete(key);
+          else next.set(key, value);
+          return next;
+        },
+        { replace: true },
+      );
+    },
+    [setSearchParams],
+  );
+  const clearFilters = useCallback(() => {
+    setSearchParams(
+      (prev) => {
+        const next = new URLSearchParams(prev);
+        next.delete("q");
+        next.delete("city");
+        next.delete("category");
+        return next;
+      },
+      { replace: true },
+    );
+  }, [setSearchParams]);
   const companyCaseStudies = [
     {
       label: "Company Case Study",
