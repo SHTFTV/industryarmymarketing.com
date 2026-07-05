@@ -40,6 +40,18 @@ import aiHallucinationGeminiAsset from "@/assets/blog/ai-hallucination-gemini-we
 const aiHallucinationGeminiImg = aiHallucinationGeminiAsset.url;
 import aiHallucinationsGoLegalAsset from "@/assets/blog/ai-hallucinations-go-legal.jpg.asset.json";
 const aiHallucinationsGoLegalImg = aiHallucinationsGoLegalAsset.url;
+import weddingsEntityConflationAsset from "@/assets/blog/weddings-io-entity-conflation.jpg.asset.json";
+const weddingsEntityConflationImg = weddingsEntityConflationAsset.url;
+import weddingsConflationAiOverviewAsset from "@/assets/blog/weddings-io-conflation-ai-overview.png.asset.json";
+const weddingsConflationAiOverviewImg = weddingsConflationAiOverviewAsset.url;
+import weddingsConflationGoogleMapsAsset from "@/assets/blog/weddings-io-conflation-google-maps.png.asset.json";
+const weddingsConflationGoogleMapsImg = weddingsConflationGoogleMapsAsset.url;
+import weddingsConflationTailoredAsset from "@/assets/blog/weddings-io-conflation-tailored-results.png.asset.json";
+const weddingsConflationTailoredImg = weddingsConflationTailoredAsset.url;
+import weddingsConflationRootDomainAsset from "@/assets/blog/weddings-io-conflation-root-domain.png.asset.json";
+const weddingsConflationRootDomainImg = weddingsConflationRootDomainAsset.url;
+import weddingsConflationFlaggedAsset from "@/assets/blog/weddings-io-conflation-flagged-review.png.asset.json";
+const weddingsConflationFlaggedImg = weddingsConflationFlaggedAsset.url;
 
 const IMG: Record<string, string> = {
   "kitchen-cabinets": kitchencabinetsImg,
@@ -70,6 +82,7 @@ const IMG: Record<string, string> = {
   "weddings-seo-command-center": weddingsSeoCommandCenterImg,
   "ai-hallucination-who-owns": aiHallucinationWhoOwnsImg,
   "ai-hallucinations-go-legal": aiHallucinationsGoLegalImg,
+  "weddings-io-entity-conflation": weddingsEntityConflationImg,
 };
 
 export interface BlogPost {
@@ -85,6 +98,11 @@ export interface BlogPost {
   province: string;
   category: string;
   date: string;
+  /** Optional ISO 8601 publish timestamp (e.g. "2026-07-05T20:00:00Z").
+   *  When present, the homepage carousel and other sorters break month/year
+   *  ties by comparing this value, so same-month posts stay in true
+   *  chronological order. */
+  publishedAt?: string;
   excerpt: string;
   title: string;
   metaDescription: string;
