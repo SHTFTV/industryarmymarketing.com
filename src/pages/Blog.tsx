@@ -7,7 +7,7 @@ import { Link, useSearchParams } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { blogPosts } from "@/data/blogPosts";
-import { useMemo, useCallback, useEffect, useState } from "react";
+import { useMemo, useCallback, useEffect, useRef, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Search, X, ChevronLeft, ChevronRight } from "lucide-react";
 import FeaturedCaseStudy from "@/components/FeaturedCaseStudy";
@@ -33,6 +33,11 @@ const Blog = () => {
   const category = searchParams.get("category") ?? "all";
   const pageParam = parseInt(searchParams.get("page") ?? "1", 10);
   const page = Number.isFinite(pageParam) && pageParam > 0 ? pageParam : 1;
+
+  // Focus targets for a11y announcements on filter/pagination changes.
+  const resultsHeadingRef = useRef<HTMLHeadingElement | null>(null);
+  const firstCardRef = useRef<HTMLAnchorElement | null>(null);
+  const isInitialRender = useRef(true);
 
   // Debounced search: local input state drives the field, and a 300ms
   // timer commits the value into the URL query. Filtering + analytics
@@ -92,6 +97,11 @@ const Blog = () => {
         { replace: false }, // pagination should push so back-button works
       );
       trackEvent(BLOG_EVENTS.changePage, { page: nextPage });
+      // Move focus into the newly rendered results after paint so
+      // keyboard/screen-reader users land inside the updated page.
+      requestAnimationFrame(() => {
+        firstCardRef.current?.focus();
+      });
     },
     [setSearchParams],
   );
@@ -162,6 +172,17 @@ const Blog = () => {
     () => filtered.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE),
     [filtered, currentPage],
   );
+
+  // On any filter change (post-initial-render), soft-focus the results
+  // heading so assistive tech announces the new count.
+  const filterFingerprint = `${query}|${city}|${category}`;
+  useEffect(() => {
+    if (isInitialRender.current) {
+      isInitialRender.current = false;
+      return;
+    }
+    resultsHeadingRef.current?.focus({ preventScroll: true });
+  }, [filterFingerprint]);
 
   return (
     <Layout>
