@@ -7,6 +7,8 @@ import Seo, { SITE_URL } from "@/components/Seo";
 import { Button } from "@/components/ui/button";
 import { getPost, blogPosts } from "@/data/blogPosts";
 import BlogRichContentView from "@/components/BlogRichContent";
+import { DisambiguationSchema } from "@/components/DisambiguationSchema";
+import { DisambiguationNotice } from "@/components/DisambiguationNotice";
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -174,6 +176,8 @@ const BlogPost = () => {
 
   const related = blogPosts.filter((p) => p.slug !== post.slug).slice(0, 3);
 
+  const isRecordRecord = post.slug === "record-record-domain-provenance-vs-generative-conflation";
+
   return (
     <Layout>
       <Seo
@@ -185,12 +189,14 @@ const BlogPost = () => {
         imageAlt={heroImageAlt}
         jsonLd={schemas}
       />
+      {isRecordRecord && <DisambiguationSchema />}
 
       <article className="pt-32 pb-20">
         <div className="container mx-auto px-4 max-w-4xl">
           <Link to="/blog" className="text-primary text-xs uppercase tracking-[0.3em] hover:underline">
             ← Back to Intel
           </Link>
+          {isRecordRecord && <DisambiguationNotice />}
 
           <motion.h1
             initial={{ opacity: 0, y: 12 }}
