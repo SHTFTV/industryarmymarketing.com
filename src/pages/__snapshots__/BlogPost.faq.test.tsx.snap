@@ -2605,6 +2605,63 @@ exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /wedding-platform-cont
 }
 `;
 
+exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /weddings-io-entity-conflation-case-study: FAQPage JSON-LD matches stored snapshot 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Two distinct legal entities being treated as one — or as parts of the same corporate structure — by search engines, mapping products, and AI answer systems. Here: weddings.io (owned by Industry Army Marketing since May 13, 2015) and a separate Ontario-registered company operating public product surfaces at aiweddings.io."
+      },
+      "name": "What is 'entity conflation' in this case?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Industry Army Marketing. ICANN WHOIS confirms continuous ownership since May 13, 2015 through the 2027 renewal window. The Internet Archive Wayback Machine records 78 captures since 2013."
+      },
+      "name": "Who owns weddings.io?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. This is a public case-study record. A formal Statement of Objection was filed July 2, 2026 under Section 32 of Ontario's Business Names Act; that filing is documented separately at /blog/formal-complaint-weddings-io-inc. This post is not legal advice and does not create an attorney-client relationship."
+      },
+      "name": "Is this a legal filing?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "That is the conflation. The Maps card shown in Exhibit B is for an Ontario-registered business associated with aiweddings.io, not for weddings.io the domain, which has never operated a Toronto storefront and has been owned in British Columbia by Industry Army Marketing since 2015. See Exhibit B and Footnote 2."
+      },
+      "name": "Why does the Google Maps card for 'weddings.io' point to a Toronto business?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because Google Search, Google Maps, and Google's AI Overview are all products of the same company, and all three surfaces are simultaneously misattributing a category-defining .io domain to a separate corporate entity. That is not a ranking dispute — it is an entity-resolution failure at a platform Google itself operates end-to-end."
+      },
+      "name": "Why does this matter for Google and for AI Overviews?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Open an incognito window. Search '[yourdomain].io' and '[yourdomain].io app'. Screenshot the map card, the organic results, and the AI Overview panel. Cross-check against your own WHOIS and business registrations. If any of the three surfaces attribute your domain to an entity you have no affiliation with, you have documented conflation evidence."
+      },
+      "name": "How can other .io domain owners test their own exposure?"
+    }
+  ]
+}
+`;
+
 exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /weddings-vancouver: FAQPage JSON-LD matches stored snapshot 1`] = `
 {
   "@context": "https://schema.org",
