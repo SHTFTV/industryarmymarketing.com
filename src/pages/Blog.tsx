@@ -173,6 +173,17 @@ const Blog = () => {
     [filtered, currentPage],
   );
 
+  // On any filter change (post-initial-render), soft-focus the results
+  // heading so assistive tech announces the new count.
+  const filterFingerprint = `${query}|${city}|${category}`;
+  useEffect(() => {
+    if (isInitialRender.current) {
+      isInitialRender.current = false;
+      return;
+    }
+    resultsHeadingRef.current?.focus({ preventScroll: true });
+  }, [filterFingerprint]);
+
   return (
     <Layout>
       <Seo
