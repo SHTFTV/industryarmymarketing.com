@@ -7,7 +7,7 @@ import { Link, useSearchParams } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { blogPosts } from "@/data/blogPosts";
-import { useMemo, useCallback, useEffect, useState } from "react";
+import { useMemo, useCallback, useEffect, useRef, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Search, X, ChevronLeft, ChevronRight } from "lucide-react";
 import FeaturedCaseStudy from "@/components/FeaturedCaseStudy";
