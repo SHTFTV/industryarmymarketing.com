@@ -4,9 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "predev": "bunx tsx scripts/generate-sitemap.ts && bunx tsx scripts/generate-rss.ts && bunx tsx scripts/validate-rss.ts",
+    "predev": "bunx tsx scripts/generate-sitemap.ts && bunx tsx scripts/generate-identity-txt.ts && bunx tsx scripts/generate-rss.ts && bunx tsx scripts/validate-rss.ts",
     "dev": "vite",
-    "prebuild": "bunx tsx scripts/generate-sitemap.ts && bunx tsx scripts/generate-rss.ts && bunx tsx scripts/validate-rss.ts",
+    "prebuild": "bunx tsx scripts/generate-sitemap.ts && bunx tsx scripts/generate-identity-txt.ts && bunx tsx scripts/generate-rss.ts && bunx tsx scripts/validate-rss.ts",
     "build": "vite build",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
