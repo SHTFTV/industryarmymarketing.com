@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import Seo from "@/components/Seo";
+import { breadcrumbList } from "@/lib/breadcrumb";
 import PageHeader from "@/components/PageHeader";
 import { Button } from "@/components/ui/button";
 
@@ -38,6 +39,10 @@ const HowItWorks = () => (
       title="How It Works | Industry Army Marketing"
       description="Four steps to owning your trade in your city: choose city, lock category, get listed on 20+ year domains, and start fielding leads — from $10/month."
       path="/how-it-works"
+      jsonLd={breadcrumbList([
+        { name: "Home", path: "/" },
+        { name: "How It Works", path: "/how-it-works" },
+      ])}
     />
     <PageHeader
       eyebrow="The Process"
