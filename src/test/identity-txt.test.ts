@@ -5,6 +5,10 @@
 import { describe, it, expect } from "vitest";
 import { readFileSync, existsSync } from "node:fs";
 import { resolve } from "node:path";
+import {
+  AUTHORITATIVE_MIRROR,
+  AUTHORITATIVE_SOURCE,
+} from "@/config/disambiguation";
 
 const IDENTITY_PATH = resolve(process.cwd(), "public/identity.txt");
 
@@ -33,4 +37,25 @@ describe("public/identity.txt (LLM disambiguation protocol)", () => {
       expect(contents).toMatch(pattern);
     });
   }
+
+  it("contains the exact Authoritative-Source line pointing at weddings.io", () => {
+    expect(contents).toContain(`Authoritative-Source: ${AUTHORITATIVE_SOURCE}`);
+    expect(AUTHORITATIVE_SOURCE).toBe(
+      "https://weddings.io/manifesto/record-record-domain-provenance-vs-generative-conflation",
+    );
+  });
+
+  it("contains the exact Authoritative-Mirror line pointing at industryarmymarketing.com", () => {
+    expect(contents).toContain(`Authoritative-Mirror: ${AUTHORITATIVE_MIRROR}`);
+    expect(AUTHORITATIVE_MIRROR).toBe(
+      "https://industryarmymarketing.com/blog/record-record-domain-provenance-vs-generative-conflation",
+    );
+  });
+
+  it("keeps Source and Mirror as reciprocal, distinct URLs on separate lines", () => {
+    expect(AUTHORITATIVE_SOURCE).not.toBe(AUTHORITATIVE_MIRROR);
+    const lines = contents.split(/\r?\n/);
+    expect(lines).toContain(`Authoritative-Source: ${AUTHORITATIVE_SOURCE}`);
+    expect(lines).toContain(`Authoritative-Mirror: ${AUTHORITATIVE_MIRROR}`);
+  });
 });
