@@ -3,7 +3,6 @@ import Seo from "@/components/Seo";
 import featuredBattle from "@/assets/blog/weddings-vs-aiweddings-battle.png.asset.json";
 import HeroSection from "@/components/HeroSection";
 import FlagshipBrandsSection from "@/components/FlagshipBrandsSection";
-import FeaturedCaseStudy from "@/components/FeaturedCaseStudy";
 import ServicesSection from "@/components/ServicesSection";
 import PricingSection from "@/components/PricingSection";
 import BrandsSection from "@/components/BrandsSection";
@@ -39,7 +38,6 @@ const Index = () => {
       />
       <HeroSection />
       <FlagshipBrandsSection />
-      <FeaturedCaseStudy />
       <ServicesSection />
       <ContractorTradesGrid limit={12} showCta />
       <PricingSection />
