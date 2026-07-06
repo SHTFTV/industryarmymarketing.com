@@ -14,7 +14,7 @@ import dentistsImg from "@/assets/flagship/dentists-card.jpg.asset.json";
 import backhaulImg from "@/assets/flagship/backhaul-card-v2.jpg.asset.json";
 import sparkysImg from "@/assets/flagship/sparkys-hero.jpg.asset.json";
 import paintersImg from "@/assets/flagship/painters-card.png.asset.json";
-import floathomesImg from "@/assets/flagship/floathomes-hero.jpg.asset.json";
+import rebarImg from "@/assets/flagship/rebar-card.jpg.asset.json";
 import excavatorsImg from "@/assets/flagship/excavators-hero.jpg.asset.json";
 import caterersImg from "@/assets/flagship/caterers-card.png.asset.json";
 import caterersHeroImg from "@/assets/flagship/caterers-hero-overlay.jpg.asset.json";
@@ -53,7 +53,7 @@ const groups: { icon: typeof Crown; eyebrow: string; title: string; blurb: strin
       { name: "Sparkys.tv", url: "https://sparkys.tv", tagline: "Electricians Video Network", image: sparkysImg.url, seo: "Licensed electricians and electrical contractors on video. Panel upgrades, EV charger installs, service calls — verified operators with dofollow backlinks from a category-defining .tv domain." },
       { name: "Painters.tv", url: "https://painters.tv", tagline: "Pro Painter Showcase Network", image: paintersImg.url, seo: "Interior and exterior painting contractors showcased with project reels and color-consult videos. Residential, commercial, and strata painters — one crew per city, permanent territory." },
       { name: "Decorator.tv", url: "https://decorator.tv", tagline: "Interior Decorator Studio Network", image: decoratorImg.url, seo: "Interior decorators and stagers with portfolio walk-throughs, room reveals, and vendor pairing. Premium .tv authority for high-ticket residential and hospitality clients." },
-      { name: "FloatHomes.tv", url: "https://floathomes.tv", tagline: "Floating Home Lifestyle Network", image: floathomesImg.url, seo: "Float home builders, moorage brokers, and coastal lifestyle content. The only premium video domain dedicated to floating home ownership, refits, and marina living." },
+      { name: "Rebar.tv", url: "https://rebar.tv", tagline: "Rebar & Reinforcement Video Network", image: rebarImg.url, seo: "Rebar fabricators, placers, and post-tension crews on video. Job-site reels, tie-off techniques, and shop tours — verified operators feeding commercial GCs and civil developers on a category-defining .tv domain." },
       { name: "Excavators.tv", url: "https://excavators.tv", tagline: "Heavy Excavation Video Network", image: excavatorsImg.url, seo: "Site prep, foundation excavation, and heavy earthworks contractors on video. Fleet showcases, job-site reels, and verified operators for GCs and civil developers." },
       { name: "Ranchers.tv", url: "https://ranchers.tv", tagline: "Ranch & Livestock Storytelling", image: ranchersImg.url, seo: "Working ranchers, livestock operations, and agri-lifestyle storytelling. Long-form video for beef, equine, and heritage ranches — plus vendor pairing for feed, fencing, and equipment." },
       { name: "Caterers.tv", url: "https://caterers.tv", tagline: "Premium Catering & Event Showcase Network", image: caterersHeroImg.url, seo: "Wedding, corporate, and private-event caterers with menu films, tasting reels, and venue partnerships. Category-defining .tv domain feeding Weddings.io and BuildersHaus.com." },
