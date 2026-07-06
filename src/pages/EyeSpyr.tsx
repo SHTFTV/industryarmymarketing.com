@@ -26,6 +26,10 @@ const EyeSpyr = () => (
       title="EyeSpyr Verification — The Industry's Trust Standard | IAM"
       description="EyeSpyr is IAM's proprietary contractor verification system. Cross-referenced business licence, reviews, web health, and location data. The badge can only be earned."
       path="/eyespyr"
+      jsonLd={breadcrumbList([
+        { name: "Home", path: "/" },
+        { name: "EyeSpyr", path: "/eyespyr" },
+      ])}
     />
     <PageHeader
       eyebrow="Verification Standard"
