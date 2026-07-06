@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import type { User } from "@supabase/supabase-js";
 import Layout from "@/components/Layout";
 import Seo from "@/components/Seo";
+import { breadcrumbList } from "@/lib/breadcrumb";
 import PageHeader from "@/components/PageHeader";
 import { Button } from "@/components/ui/button";
 import { toast } from "@/components/ui/sonner";
