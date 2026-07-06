@@ -9,6 +9,11 @@ import { resolve } from "node:path";
 
 const SITEMAP_PATH = resolve(process.cwd(), "public/sitemap.xml");
 
+// The site's project-wide canonical origin. Every <loc> for the record
+// and disambiguation-related routes MUST resolve under this origin so
+// crawlers, RSS, and JSON-LD all bind to a single canonical entity.
+const CANONICAL_ORIGIN = "https://industryarmymarketing.com";
+
 const REQUIRED_URLS = [
   "/blog/record-record-domain-provenance-vs-generative-conflation",
   "/blog/weddings-io-entity-conflation-case-study",
@@ -29,9 +34,20 @@ describe("sitemap.xml — record page + disambiguation routes", () => {
     expect(base).toMatch(/^https?:\/\//);
   });
 
+  it("emits every <loc> under the canonical origin", () => {
+    expect(base).toBe(CANONICAL_ORIGIN);
+    const locs = Array.from(xml.matchAll(/<loc>([^<]+)<\/loc>/g)).map((m) => m[1]);
+    for (const l of locs) {
+      expect(
+        l.startsWith(`${CANONICAL_ORIGIN}/`) || l === CANONICAL_ORIGIN,
+        `sitemap <loc> ${l} must live under ${CANONICAL_ORIGIN}`,
+      ).toBe(true);
+    }
+  });
+
   for (const path of REQUIRED_URLS) {
     it(`includes canonical <loc> for ${path}`, () => {
-      const loc = `<loc>${base}${path}</loc>`;
+      const loc = `<loc>${CANONICAL_ORIGIN}${path}</loc>`;
       expect(xml).toContain(loc);
     });
   }
