@@ -4,6 +4,12 @@
 #      and src/data/blogPosts.ts stay in lockstep.
 #   2) A TypeScript typecheck of the app sources (no emit) so schema/type
 #      regressions from a content edit surface before merge.
+#   3) The disambiguation stack: regenerate public/identity.txt from the shared
+#      config, then run the schema / cross-link / sitemap-parse vitest suites
+#      that guard the weddings.io ⇄ industryarmymarketing.com binding.
+#   4) The Playwright E2E suite (Chromium) — record page loads with
+#      DisambiguationSchema and the DisambiguationNotice banner renders on
+#      every configured route.
 
 name: PR checks
 
@@ -45,3 +51,48 @@ jobs:
         # tsconfig.json references tsconfig.app.json + tsconfig.node.json;
         # -b runs both projects without emitting output.
         run: npx tsc -b --noEmit
+
+  disambiguation:
+    name: Disambiguation stack (identity.txt + schema + cross-link)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Regenerate public/identity.txt from shared config
+        run: npx tsx scripts/generate-identity-txt.ts
+      - name: Regenerate public/sitemap.xml from shared config
+        run: npx tsx scripts/generate-sitemap.ts
+      - name: Run disambiguation vitest suites
+        run: |
+          npx vitest run \
+            src/test/identity-txt.test.ts \
+            src/test/sitemap-record.test.ts \
+            src/test/sitemap-parse.test.ts \
+            src/components/DisambiguationSchema.sameAs.test.tsx \
+            src/components/DisambiguationNotice.test.tsx \
+            src/pages/BlogPost.crossLink.test.tsx \
+            src/pages/BlogPost.disambiguation.test.tsx \
+            --reporter=verbose
+
+  e2e:
+    name: Playwright E2E (record page + DisambiguationNotice)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+      - name: Run Playwright suite
+        run: npx playwright test
+        env:
+          CI: "true"
