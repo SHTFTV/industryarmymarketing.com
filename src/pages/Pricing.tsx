@@ -1,5 +1,6 @@
 import Layout from "@/components/Layout";
 import Seo from "@/components/Seo";
+import { breadcrumbList } from "@/lib/breadcrumb";
 import PageHeader from "@/components/PageHeader";
 import PricingSection from "@/components/PricingSection";
 import PricingCalculator from "@/components/PricingCalculator";
@@ -15,6 +16,10 @@ const Pricing = () => (
       title="Pricing — The 250 Scale | Territory Marketing | Industry Army Marketing"
         description="The 250 Scale — canonical territory pricing for all IAM platforms. $10–$50/slot/month. 3–10 slots per city. TALC.tv $10/post. Backlinks $25 one-time. Any industry. Any city."
       path="/pricing"
+      jsonLd={breadcrumbList([
+        { name: "Home", path: "/" },
+        { name: "Pricing", path: "/pricing" },
+      ])}
     />
     <PageHeader
       eyebrow="Transparent Pricing"

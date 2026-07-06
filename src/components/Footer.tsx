@@ -30,6 +30,7 @@ const cols = [
       { label: "Dofollow Network", to: "/dofollow-backlinks" },
       { label: "Legal Hub", to: "/legal" },
       { label: "Contact", to: "/contact" },
+      { label: "Sitemap", to: "/sitemap" },
       { label: "RSS Feed", to: "/rss.xml", external: true },
     ],
   },

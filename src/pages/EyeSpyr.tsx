@@ -1,5 +1,6 @@
 import Layout from "@/components/Layout";
 import Seo from "@/components/Seo";
+import { breadcrumbList } from "@/lib/breadcrumb";
 import PageHeader from "@/components/PageHeader";
 import FeatureGrid from "@/components/FeatureGrid";
 import CtaBanner from "@/components/CtaBanner";
@@ -25,6 +26,10 @@ const EyeSpyr = () => (
       title="EyeSpyr Verification — The Industry's Trust Standard | IAM"
       description="EyeSpyr is IAM's proprietary contractor verification system. Cross-referenced business licence, reviews, web health, and location data. The badge can only be earned."
       path="/eyespyr"
+      jsonLd={breadcrumbList([
+        { name: "Home", path: "/" },
+        { name: "EyeSpyr", path: "/eyespyr" },
+      ])}
     />
     <PageHeader
       eyebrow="Verification Standard"

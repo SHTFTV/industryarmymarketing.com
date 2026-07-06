@@ -1,5 +1,6 @@
 import Layout from "@/components/Layout";
 import Seo from "@/components/Seo";
+import { breadcrumbList } from "@/lib/breadcrumb";
 import PageHeader from "@/components/PageHeader";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -37,15 +38,22 @@ const GuestPost = () => (
       title="Guest Post Service | $10 Dofollow Backlinks on Aged Domains"
       description="Submit a guest post and get a permanent dofollow backlink on a 20+ year-old IAM network domain. $10 flat. White-hat, editorial, niche-relevant. Available worldwide."
       path="/guest-post"
-      jsonLd={{
-        "@context": "https://schema.org",
-        "@type": "Service",
-        name: "Guest Post with Dofollow Backlinks",
-        provider: { "@type": "Organization", name: "Industry Army Marketing" },
-        areaServed: "Worldwide",
-        description: "Editorial guest post placement with permanent dofollow backlinks on aged, niche-relevant domains.",
-        offers: { "@type": "Offer", price: "10", priceCurrency: "CAD" },
-      }}
+      jsonLd={[
+        {
+          "@context": "https://schema.org",
+          "@type": "Service",
+          name: "Guest Post with Dofollow Backlinks",
+          provider: { "@type": "Organization", name: "Industry Army Marketing" },
+          areaServed: "Worldwide",
+          description:
+            "Editorial guest post placement with permanent dofollow backlinks on aged, niche-relevant domains.",
+          offers: { "@type": "Offer", price: "10", priceCurrency: "CAD" },
+        },
+        breadcrumbList([
+          { name: "Home", path: "/" },
+          { name: "Guest Post", path: "/guest-post" },
+        ]),
+      ]}
     />
     <PageHeader
       eyebrow="Guest Posting · Dofollow"
