@@ -28,6 +28,20 @@ const REQUIRED_CANONICALS = [
   `${IAM_ORIGIN}/legal`,
 ];
 
+// For each canonical URL above, these variants MUST NOT appear anywhere
+// in the sitemap. A single stray variant fractures the canonical entity
+// and lets crawlers split link equity across duplicates.
+const forbiddenVariants = (canonical: string): string[] => {
+  const path = canonical.slice(IAM_ORIGIN.length) || "/";
+  const bareHost = IAM_ORIGIN.replace(/^https?:\/\//, "");
+  return [
+    `http://${bareHost}${path}`, // http scheme
+    `https://www.${bareHost}${path}`, // www subdomain
+    canonical.endsWith("/") ? canonical.slice(0, -1) : `${canonical}/`, // trailing slash swap
+    `${canonical}?utm_source=test`, // tracking param variant
+  ];
+};
+
 describe("sitemap.xml — parsed canonical URLs for manifesto-related pages", () => {
   let doc: Document;
   let locs: string[];
@@ -63,6 +77,12 @@ describe("sitemap.xml — parsed canonical URLs for manifesto-related pages", ()
   for (const url of REQUIRED_CANONICALS) {
     it(`includes the exact canonical <loc> ${url}`, () => {
       expect(locs).toContain(url);
+    });
+
+    it(`never emits an incorrect variant of ${url}`, () => {
+      for (const bad of forbiddenVariants(url)) {
+        expect(locs).not.toContain(bad);
+      }
     });
   }
 
