@@ -310,6 +310,10 @@ const ScanWizard = () => {
         title="Analyze My Business — Free I-Spy-R Scan | IAM"
         description="60-second EyeSpyr scan. See your score, territory availability, and what competitors are doing in your city. No credit card required."
         path="/scan-wizard"
+        jsonLd={breadcrumbList([
+          { name: "Home", path: "/" },
+          { name: "Free Scan", path: "/scan-wizard" },
+        ])}
       />
       <PageHeader
         eyebrow="I-Spy-R Analysis Engine"
