@@ -185,6 +185,10 @@ const Network = () => {
       title="Domain Network — 80+ Premium Trade Domains | IAM"
       description="Industry Army Marketing's network of 80+ premium .io, .tv, .ltd, and .ca trade domains. One exclusive contractor per city, per domain."
       path="/network"
+      jsonLd={breadcrumbList([
+        { name: "Home", path: "/" },
+        { name: "Network", path: "/network" },
+      ])}
     />
     <PageHeader
       eyebrow="The IAM Domain Army"
