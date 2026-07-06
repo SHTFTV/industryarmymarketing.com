@@ -1,5 +1,6 @@
 import Layout from "@/components/Layout";
 import Seo from "@/components/Seo";
+import { breadcrumbList } from "@/lib/breadcrumb";
 import PageHeader from "@/components/PageHeader";
 import CtaBanner from "@/components/CtaBanner";
 import { motion } from "framer-motion";
