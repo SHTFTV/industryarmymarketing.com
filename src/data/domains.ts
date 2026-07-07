@@ -42,6 +42,7 @@ export const domains = [
   { domain: "dentists.ltd", niche: "Dentistry", emoji: "🦷" },
   { domain: "lawyersadvice.co", niche: "Legal Services", emoji: "⚖️" },
   { domain: "weddings.io", niche: "Wedding Planners", emoji: "💍" },
+  { domain: "weddingsaas.com", niche: "Wedding SaaS News & Ratings", emoji: "📰" },
   { domain: "caterers.tv", niche: "Caterers", emoji: "🍽️" },
   { domain: "videographers.io", niche: "Videographers", emoji: "📸" },
   { domain: "plowwow.com", niche: "Snow Removal", emoji: "🌨️" },
