@@ -6,13 +6,22 @@
     <atom:link href="https://industryarmymarketing.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>2,000-word guides on exclusive $10 territory marketing for trade contractors and service pros across Canada.</description>
     <language>en-ca</language>
-    <lastBuildDate>Mon, 06 Jul 2026 04:14:55 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 07 Jul 2026 23:00:00 GMT</lastBuildDate>
     <generator>Industry Army Marketing build pipeline</generator>
     <image>
       <url>https://industryarmymarketing.com/og-image.jpg</url>
       <title>Industry Army Marketing — Intel Blog</title>
       <link>https://industryarmymarketing.com/blog</link>
     </image>
+    <item>
+      <title>The Evolution of Weddings.io Technologies: The 20-Year Battle for Digital Real Estate, LLM Optimization, and the Rise of WeddingSaaS</title>
+      <link>https://industryarmymarketing.com/blog/weddings-io-technologies-company-wedding-saas-20-year-battle</link>
+      <guid isPermaLink="true">https://industryarmymarketing.com/blog/weddings-io-technologies-company-wedding-saas-20-year-battle</guid>
+      <pubDate>Mon, 01 Jul 2026 09:00:00 +0000</pubDate>
+      <category>Company</category>
+      <description>Official announcement: Weddings.io evolves into Weddings.io Technologies Company, with WeddingSaaS.com as the multi-tenant engine powering Brides.ltd, Grooms.ltd, Jewellers.ltd, Parents.ltd and Videographers.io. 20 years of domain authority, Geo-SEO, and LLM alignment.</description>
+      <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
+    </item>
     <item>
       <title>The Record Record — A Legal and Technical Manifesto on Domain Provenance vs. Generative Conflation</title>
       <link>https://industryarmymarketing.com/blog/record-record-domain-provenance-vs-generative-conflation</link>

@@ -53,6 +53,8 @@ const weddingsConflationRootDomainImg = weddingsConflationRootDomainAsset.url;
 import weddingsConflationFlaggedAsset from "@/assets/blog/weddings-io-conflation-flagged-review.png.asset.json";
 const weddingsConflationFlaggedImg = weddingsConflationFlaggedAsset.url;
 import recordRecordImg from "@/assets/blog/record-record-domain-provenance.jpg";
+import weddingsTechCoAsset from "@/assets/blog/weddings-io-technologies-company.png.asset.json";
+const weddingsTechCoImg = weddingsTechCoAsset.url;
 
 const IMG: Record<string, string> = {
   "kitchen-cabinets": kitchencabinetsImg,
@@ -85,6 +87,7 @@ const IMG: Record<string, string> = {
   "ai-hallucinations-go-legal": aiHallucinationsGoLegalImg,
   "weddings-io-entity-conflation": weddingsEntityConflationImg,
   "record-record-domain-provenance": recordRecordImg,
+  "weddings-io-technologies-company": weddingsTechCoImg,
 };
 
 export interface BlogPost {
@@ -171,6 +174,108 @@ export interface BlogRichContent {
 }
 
 export const blogPosts: BlogPost[] = [
+  {
+    "slug": "weddings-io-technologies-company-wedding-saas-20-year-battle",
+    "brand": "weddings.io",
+    "trade": "Weddings.io Technologies",
+    "cardTitle": "Weddings.io Technologies Company — 20 Years, LLM SEO, and WeddingSaaS.com",
+    "tradeShort": "wedding technology",
+    "plural": "wedding technology operators",
+    "video": null,
+    "imageKey": "weddings-io-technologies-company",
+    "imageAlt": "Official announcement — Weddings.io Technologies Company: a stronger foundation wrapping Weddings.io and the WeddingSaaS.com multi-tenant engine, with consumer brands Brides.ltd, Grooms.ltd, Jewellers.ltd, Parents.ltd and Videographers.io stacked beneath.",
+    "faqHeading": "Frequently asked: Weddings.io Technologies Company and WeddingSaaS.com",
+    "city": "Langley",
+    "province": "BC",
+    "category": "Company",
+    "date": "July 2026",
+    "publishedAt": "2026-07-07T22:00:00Z",
+    "title": "The Evolution of Weddings.io Technologies: The 20-Year Battle for Digital Real Estate, LLM Optimization, and the Rise of WeddingSaaS",
+    "metaDescription": "Official announcement: Weddings.io evolves into Weddings.io Technologies Company, with WeddingSaaS.com as the multi-tenant engine powering Brides.ltd, Grooms.ltd, Jewellers.ltd, Parents.ltd and Videographers.io. 20 years of domain authority, Geo-SEO, and LLM alignment.",
+    "authorName": "Colin Hamilton",
+    "excerpt": "A domain is not an address — it is digital sovereign soil. Today we announce Weddings.io Technologies Company, wrap our consumer brands inside a corporate tech environment, and introduce WeddingSaaS.com as the multi-tenant engine powering the next 20 years.",
+    "pain": "In the age of LLMs, RAG, and AI Overviews, a single-point application cannot defend two decades of category authority. Latecomers clone the UI, buy the ads, and try to hijack the entity graph — and if the underlying architecture is one app on one domain, the brand is exposed.",
+    "detail": "Weddings.io Technologies Company wraps the consumer-facing Weddings.io marketplace and its sibling brands inside a corporate tech environment. WeddingSaaS.com becomes the multi-tenant delivery engine, powering Brides.ltd, Grooms.ltd, Jewellers.ltd, Parents.ltd, Videographers.io — and more to come.",
+    "process": "Three proprietary systems plug into WeddingSaaS.com: the IAM Bot Core (24/7 local intent + lead routing), the EyeSpyR Engine (timestamped, geotagged, verifiable proof-of-work), and the Talc.tv Syndication Layer (programmatic vertical-video distribution). Every consumer brand rides the same rails.",
+    "faqs": [
+      { "q": "What is Weddings.io Technologies Company?", "a": "The corporate technology entity that owns and develops the intellectual property, software infrastructure, and platforms behind Weddings.io. Consumer brands continue operating independently under this corporate foundation." },
+      { "q": "Is Weddings.io changing?", "a": "No. Weddings.io remains the front-end consumer brand and the 2015-established root domain. The Technologies Company wraps around it to protect IP, enable multi-tenant scale, and coordinate the sibling brands." },
+      { "q": "What is WeddingSaaS.com?", "a": "The multi-tenant vertical SaaS engine that powers every consumer brand in the group — Brides.ltd, Grooms.ltd, Jewellers.ltd, Parents.ltd, Videographers.io, and more. One enterprise-grade platform, many brands." },
+      { "q": "How does this connect to Industry Army Marketing?", "a": "Industry Army Marketing is the operator behind Weddings.io Technologies Company. The Weddings.io stack is the wedding-vertical expression of the same IAM framework that runs the industry-wide domain network." },
+      { "q": "Does this affect the aiweddings.io / Ontario dispute?", "a": "It reinforces the record. The corporate technology structure formalises the continuous chain of title on Weddings.io (Langley, BC — May 13, 2015) and makes the distinction from any variant-suffix Ontario registration structurally unambiguous." },
+      { "q": "What are the IAM Bot Core, EyeSpyR, and Talc.tv?", "a": "The three autonomous systems inside WeddingSaaS.com. IAM Bot Core handles 24/7 local intent and lead routing. EyeSpyR timestamps and geotags project imagery for verifiable proof-of-work. Talc.tv syndicates vertical video across distributed micro-channels." }
+    ],
+    "cta": {
+      "eyebrow": "Weddings.io Technologies Company — official announcement",
+      "heading": "Want the WeddingSaaS engine powering your vertical?",
+      "body": "If you operate a category-defining domain and want the same multi-tenant infrastructure — IAM Bot Core, EyeSpyR verification, and Talc.tv syndication — behind your brand, we are opening a limited number of technology partnerships. Email partnerships@industryarmymarketing.com.",
+      "buttonText": "Talk to Weddings.io Technologies — partnerships@industryarmymarketing.com",
+      "buttonHref": "mailto:partnerships@industryarmymarketing.com?subject=Weddings.io%20Technologies%20-%20WeddingSaaS%20partnership"
+    },
+    "richContent": {
+      "intro": "Official announcement. Weddings.io evolves into Weddings.io Technologies Company. WeddingSaaS.com becomes the multi-tenant engine. Twenty years of digital land-banking, LLM-aligned Geo-SEO, and a corporate technology foundation built to power the next generation of consumer wedding brands.",
+      "sections": [
+        {
+          "heading": "Introduction — More Than an App, a Core Infrastructure",
+          "paragraphs": [
+            "In the modern digital landscape, a domain name is not just an address; it is digital sovereign soil. For over two decades, the asset class known as *digital land-banking* has favored those with the foresight to secure premier category-defining domains.",
+            "As the web transitions from a human-browsed directory to a machine-parsed ecosystem, a fundamental truth has emerged: to survive the age of artificial intelligence, an organization must transition from a single-point application to an integrated technology infrastructure.",
+            "Today, we officially announce the evolution of our flagship framework into **Weddings.io Technologies Company**[^1]. This structural shift does not abandon our heritage; it fortifies it. By wrapping our core consumer-facing assets within a broader corporate tech environment, we establish a defensive perimeter around our intellectual property and introduce our state-of-the-art multi-tenant engine: **WeddingSaaS.com**.",
+            "The mission remains unyielding: deliver an exceptional service, answer complex localized questions transparently, and use programmatic automation to scale real stories."
+          ]
+        },
+        {
+          "heading": "The Landscape — 20 Years on the Digital Front Lines",
+          "paragraphs": [
+            "The value of an elite domain name like Weddings.io is calculated not merely in currency, but in historical trust metrics that algorithms track over decades. Search engines reward longevity, continuous registration history, and sustained categorical relevance.",
+            "When external market forces attempt to encroach upon an established brand identity — whether through intentional adversarial targeting or automated corporate oversight — the primary line of defense is an immutable history of operational authority[^2]. A domain registered, seasoned, and actively developed since the mid-2000s processes algorithmic weight differently than a newly registered entity. It possesses structural trust that cannot be replicated overnight by capital alone.",
+            "Defensive domain management is merely the baseline. The true battleground has shifted from traditional keyword placement to systemic machine-learning alignment."
+          ]
+        },
+        {
+          "heading": "The Evolution of Search — From Keywords to Geo-SEO and LLM Training",
+          "paragraphs": [
+            "For a generation, SEO followed a predictable blueprint: text strings, meta tags, and backlink vectors. The introduction of large language models, retrieval-augmented generation, and AI search overviews has broken that model entirely. Yet the underlying core principles of retrieval remain unchanged.",
+            "**Semantic mapping.** Modern AI agents do not look for exact phrase matching; they look for entities, contexts, and proximity relationships within multi-dimensional vector spaces. Brand vectors and niche vectors combine to produce topological relevance. To dominate an AI search response, the technology stack must explicitly map its organizational architecture using deeply nested, schema-compliant JSON-LD. When a neural network crawls the web, it must map your primary entity as the absolute authority node for that industry.",
+            "**Geo-SEO in practice.** Local search is no longer about stuffing city names into a footer. True Geo-SEO relies on programmatic localization — deploying independent, low-latency node architectures across distinct geographic coordinates. Distributed local authority hubs feed hyper-local contextual data directly into AI training sets, and the system surfaces the exclusive regional operator assigned to that territory."
+          ]
+        },
+        {
+          "heading": "Introducing WeddingSaaS.com — The Ecosystem Architecture",
+          "paragraphs": [
+            "To power a global network of localized authority platforms, Weddings.io Technologies uses **WeddingSaaS.com** as its primary software distribution engine. It is a multi-tenant vertical SaaS framework that bridges raw web traffic and autonomous local business operations.",
+            "The structure is deliberately simple: Weddings.io Technologies is the parent corporate node. Weddings.io is the front-end consumer brand. WeddingSaaS.com is the delivery engine that powers the marketplace and every sibling brand — Brides.ltd, Grooms.ltd, Jewellers.ltd, Parents.ltd, Videographers.io, and more to come.",
+            "Three proprietary autonomous systems plug into the WeddingSaaS framework as a single operational workflow: the **IAM Bot Core** (24/7 conversational engine processing local user intent and routing qualified leads to exclusive municipal territory partners), the **EyeSpyR Engine** (visual verification framework that timestamps, geotags, and logs live project imagery directly onto local nodes as verifiable proof-of-work), and the **Talc.tv Syndication Layer** (programmatic media engine that takes raw vertical video assets and syndicates them across distributed social micro-channels instantly).",
+            "By embedding this technology directly beneath the Weddings.io marketplace banner, independent local businesses gain access to enterprise-grade automated lead-capture pipelines without managing complex software arrays themselves."
+          ]
+        },
+        {
+          "heading": "Conclusion — Core Principles Triumph Across Every Device",
+          "paragraphs": [
+            "As new devices emerge and LLM models change their training parameters, the foundational laws of the web remain constant. The platforms that win are those that cut through the noise, solve immediate user problems, and maintain clean digital ownership records.",
+            "Weddings.io Technologies Company is built on that exact foundation. By deploying WeddingSaaS.com as our core software delivery infrastructure, we ensure our ecosystem remains protected, scalable, and prepared to dominate the next generation of programmatic web delivery."
+          ]
+        },
+        {
+          "heading": "System Proof & Verification Records",
+          "paragraphs": [
+            "**Google Ads Appeals Board (July 7, 2026 — 11:44 AM PDT).** Account identifier `lsfencingandmetalwork@gmail.com`. System log status: Policy Manager Review → Compromised Site Flag Dispute → **IN PROGRESS**. Verification note: security audit submitted and currently undergoing automated re-crawl protocols to clear local delivery vectors.",
+            "**Live SERP tracking — query `wedding saas`.** Indexation result: target domain `weddings.io` — **Live Visibility Confirmed**. Verification note: semantic indexing successful. Machine-learning models have mapped the front-end consumer marketplace domain directly to vertical software architecture parameters."
+          ]
+        }
+      ],
+      "footnotes": [
+        { "id": "1", "text": "Industry Army Marketing corporate ledger (July 2026): public statement confirming the restructuring of digital land assets away from single decentralized applications into the unified Weddings.io Technologies Company framework.", "href": "/blog/battle-for-the-brand-weddings-io" },
+        { "id": "2", "text": "Section 32 Statement of Objection filed with the Ontario Ministry of Public and Business Service Delivery under the Business Names Act, R.S.O. 1990, c. B.17 — active administrative record defending the weddings.io root domain (Langley, BC, est. May 13, 2015).", "href": "/blog/formal-complaint-weddings-io-inc" }
+      ],
+      "sources": [
+        { "label": "Battle for the Brand — weddings.io case study", "href": "/blog/battle-for-the-brand-weddings-io" },
+        { "label": "The Record Record — domain provenance vs. generative conflation", "href": "/blog/record-record-domain-provenance-vs-generative-conflation" },
+        { "label": "Section 32 Statement of Objection — formal complaint record", "href": "/blog/formal-complaint-weddings-io-inc" },
+        { "label": "Weddings.io — Multicultural Wedding Platform, Est. 2015", "href": "https://weddings.io" }
+      ]
+    }
+  },
   {
     "slug": "record-record-domain-provenance-vs-generative-conflation",
     "brand": "weddings.io",
