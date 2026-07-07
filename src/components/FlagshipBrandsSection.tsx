@@ -69,6 +69,7 @@ const groups: { icon: typeof Crown; eyebrow: string; title: string; blurb: strin
       { name: "EyeSpyR.com", url: "https://eyespyr.com", tagline: "Contractor Verification & Trust Badge", image: eyespyrImg.url, contain: true, seo: "Physical on-site contractor verification — an EyeSpyR inspector confirms the business exists at the address it claims. Trust badges, verified reviews, and anti-fraud citations for every IAM listing." },
       { name: "Videographers.io", url: "https://videographers.io", tagline: "Curated Talent For Your Next Project", image: videographersImg.url, seo: "Curated videographer network powering Weddings.io reels, Treatments.tv clinic tours, and PitchDeck.tv founder films. Verified talent, fixed rates, and city-locked exclusivity." },
       { name: "Talc.tv", url: "https://talc.tv", tagline: "Visual Blast Distribution Engine", image: talcImg.url, seo: "TALC.tv is IAM's visual blast distribution engine — one upload fans out to 40+ premium domain properties, Google Business Profile posts, and syndication endpoints. Powers every content beat in the ecosystem." },
+      { name: "WeddingSaaS.com", url: "https://weddingsaas.com", tagline: "Wedding SaaS News & Ratings", seo: "WeddingSaaS.com is IAM's independent news and ratings desk for wedding-industry software — reviewing planners, CRMs, booking tools, and vendor marketplaces without writing a line of their code. Editorial authority that feeds Weddings.io and defends the category." },
     ],
   },
   {
