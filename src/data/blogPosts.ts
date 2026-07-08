@@ -254,6 +254,34 @@ export const blogPosts: BlogPost[] = [
           ]
         },
         {
+          "heading": "WeddingSaaS.com — Domain Acquired and Site Shipped Today",
+          "paragraphs": [
+            "**Registered, DNS-propagated, and live in one working day.** WeddingSaaS.com was purchased this morning and the first cut of the site was engineered, deployed, and indexed by end of business — a deliberate proof that the Weddings.io Technologies stack can spin up a new authority node inside a single 24-hour cycle.",
+            "The site is intentionally *not* a wedding-planning app. It is an **independent editorial and evaluation desk** for wedding-industry software: news, ratings, side-by-side comparisons, and long-form architecture reviews of every planner, CRM, seating tool, RSVP engine, and vendor marketplace on the market. Crucially, **WeddingSaaS.com stores no customer code, no proprietary schemas, and no vendor IP** — every tech-to-tech comparison is run against public documentation, published pricing, and hands-on trial accounts.",
+            "This is built for the engineers, product managers, and CTOs of the wedding industry — the people who actually read changelogs, benchmark API response times, and argue about multi-tenant isolation. Expect deep dives on data models, integration surface area, deliverability, and the hidden trade-offs behind every 'AI-powered' claim. If you build wedding software, this is the desk you want reviewing you.",
+            "The corporate posture is deliberate: Weddings.io remains the consumer-facing marketplace, WeddingSaaS.com becomes the independent trade press, and Weddings.io Technologies Company owns both under one roof."
+          ],
+          "image": {
+            "src": googleAiWeddingsAppImg,
+            "alt": "Google AI Mode answer for the query 'weddings.io app' — Google's own AI describes Weddings.io as 'an AI-powered wedding planning SaaS platform designed to act as a co-pilot for couples and vendors,' citing 9 sites including weddings.io, AIWeddings and F6S.",
+            "caption": "Google AI Mode, July 7, 2026 — the query 'weddings.io app' returns Weddings.io as the AI-powered wedding-planning SaaS platform. Independent machine confirmation of the SaaS positioning that WeddingSaaS.com now covers editorially."
+          }
+        },
+        {
+          "heading": "Independent AI Confirmation — Google Names Weddings.io the SaaS Authority",
+          "paragraphs": [
+            "The screenshots below are captured directly from Google's AI Mode in an incognito session — no personalization, no signed-in bias. They are reproducible in court through standard Google Records subpoenas, browser history, device forensics, and the Wayback Machine's live index of the underlying source pages.",
+            "**Query: `weddings.io app`.** Google's generative answer opens with: *'Weddings.io is an AI-powered wedding planning SaaS platform designed to act as a co-pilot for couples and vendors.'* Nine cited sites. Weddings.io ranked as the primary authority node. AIWeddings appears only as a downstream mention.",
+            "**Query: `weddings.io`.** Google returns: *'a Canadian-based, AI-native wedding planning SaaS platform and digital marketplace,'* with seven cited sites including the Multicultural Wedding Platform (Est. 2015) page, weddings.io directly, and — notably — the Industry Army Marketing brand-confusion address itself as a corroborating source.",
+            "Two independent AI passes, two consistent answers, one root domain. This is not marketing copy — it is Google's own retrieval-augmented model classifying Weddings.io as the Canadian, AI-native, SaaS-and-marketplace entity, established 2015, out of Langley, BC. Any subsequent variant-suffix or provincial registration argues against Google's index, its training data, and its live crawl — not against us."
+          ],
+          "image": {
+            "src": googleAiWeddingsCanadianImg,
+            "alt": "Google AI Mode answer for the query 'weddings.io' — describes Weddings.io as 'a Canadian-based, AI-native wedding planning SaaS platform and digital marketplace,' citing 7 sites including the Multicultural Wedding Platform Est. 2015 page and the Industry Army Marketing brand-confusion address.",
+            "caption": "Google AI Mode, July 6, 2026 — 'a Canadian-based, AI-native wedding planning SaaS platform and digital marketplace.' Cited alongside the Weddings.io Multicultural Platform (Est. 2015) and the IAM brand-confusion record."
+          }
+        },
+        {
           "heading": "Conclusion — Core Principles Triumph Across Every Device",
           "paragraphs": [
             "As new devices emerge and LLM models change their training parameters, the foundational laws of the web remain constant. The platforms that win are those that cut through the noise, solve immediate user problems, and maintain clean digital ownership records.",
