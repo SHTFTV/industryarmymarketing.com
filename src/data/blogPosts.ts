@@ -55,6 +55,10 @@ const weddingsConflationFlaggedImg = weddingsConflationFlaggedAsset.url;
 import recordRecordImg from "@/assets/blog/record-record-domain-provenance.jpg";
 import weddingsTechCoAsset from "@/assets/blog/weddings-io-technologies-company.png.asset.json";
 const weddingsTechCoImg = weddingsTechCoAsset.url;
+import googleAiWeddingsAppAsset from "@/assets/blog/google-ai-mode-weddings-io-app-jul7.png.asset.json";
+const googleAiWeddingsAppImg = googleAiWeddingsAppAsset.url;
+import googleAiWeddingsCanadianAsset from "@/assets/blog/google-ai-weddings-io-canadian-saas.png.asset.json";
+const googleAiWeddingsCanadianImg = googleAiWeddingsCanadianAsset.url;
 
 const IMG: Record<string, string> = {
   "kitchen-cabinets": kitchencabinetsImg,
