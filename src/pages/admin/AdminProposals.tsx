@@ -30,6 +30,8 @@ import {
   Users,
   Send,
   Clock,
+  FileDown,
+  RotateCw,
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { downloadSeoProposalPdf } from "@/lib/seoProposalPdf";
@@ -92,10 +94,24 @@ function statusTone(status: string): string {
   }
 }
 
-const EmailPill = ({ label, status }: { label: string; status: string }) => (
+const EmailPill = ({
+  label,
+  status,
+  reason,
+}: {
+  label: string;
+  status: string;
+  reason?: string | null;
+}) => (
   <span
     className={`inline-flex items-center gap-1 px-1.5 py-0.5 rounded border text-[10px] font-medium uppercase ${statusTone(status)}`}
-    title={`${label}: ${status}`}
+    title={
+      status === "skipped" && reason
+        ? `${label}: skipped — ${reason}`
+        : reason
+          ? `${label}: ${status} — ${reason}`
+          : `${label}: ${status}`
+    }
   >
     {label}·{status}
   </span>
@@ -153,6 +169,8 @@ const AdminProposals = () => {
   const [attemptsLoading, setAttemptsLoading] = useState(false);
   const [testRecipient, setTestRecipient] = useState("");
   const [testSending, setTestSending] = useState(false);
+  const [attemptDrawer, setAttemptDrawer] = useState<EmailAttempt | null>(null);
+  const [retrying, setRetrying] = useState<null | "owner" | "customer">(null);
 
   useEffect(() => {
     const { data: sub } = supabase.auth.onAuthStateChange((_e, session) => {
@@ -290,6 +308,98 @@ const AdminProposals = () => {
       });
     }
     loadAttempts(selected.id);
+  };
+
+  const retryFailedSend = async (kind: "owner" | "customer") => {
+    if (!selected) return;
+    setRetrying(kind);
+    const { data, error } = await supabase.functions.invoke(
+      "retry-seo-proposal-send",
+      {
+        body: { proposal_id: selected.id, kind },
+      },
+    );
+    setRetrying(null);
+    if (error) {
+      toast({
+        title: "Retry failed",
+        description: error.message,
+        variant: "destructive",
+      });
+    } else {
+      const status = (data as { status?: string })?.status ?? "unknown";
+      const messageId = (data as { messageId?: string | null })?.messageId;
+      toast({
+        title: `Retry ${status}`,
+        description: messageId ? `Message ID: ${messageId}` : undefined,
+        variant: status === "sent" ? "default" : "destructive",
+      });
+      // Refresh row + attempts.
+      const { data: fresh } = await supabase
+        .from("seo_proposals")
+        .select(
+          "id,name,email,target_url,keywords,budget,competition,target_urls,city_population,package_slug,package_price,status,source,notes,emailed_customer,emailed_owner,owner_email_status,customer_email_status,owner_email_error,customer_email_error,owner_message_id,customer_message_id,email_attempted_at,created_at",
+        )
+        .eq("id", selected.id)
+        .maybeSingle();
+      if (fresh) {
+        const proposal = fresh as Proposal;
+        setSelected(proposal);
+        setRows((r) => r.map((x) => (x.id === proposal.id ? proposal : x)));
+      }
+    }
+    loadAttempts(selected.id);
+  };
+
+  const exportDeliveryReport = () => {
+    if (!selected) return;
+    const sorted = [...attempts].sort(
+      (a, b) =>
+        new Date(a.created_at).getTime() - new Date(b.created_at).getTime(),
+    );
+    const first = sorted[0];
+    const last = sorted[sorted.length - 1];
+    const escapeCsv = (v: unknown): string => {
+      if (v == null) return "";
+      const s = String(v).replace(/"/g, '""');
+      return /[",\n]/.test(s) ? `"${s}"` : s;
+    };
+    const lines: string[] = [];
+    lines.push(`Proposal ID,${escapeCsv(selected.id)}`);
+    lines.push(`Name,${escapeCsv(selected.name)}`);
+    lines.push(`Email,${escapeCsv(selected.email)}`);
+    lines.push(`Package,${escapeCsv(selected.package_slug)}`);
+    lines.push(`Package price,${selected.package_price}`);
+    lines.push(
+      `First attempt,${escapeCsv(first ? new Date(first.created_at).toISOString() : "")}`,
+    );
+    lines.push(
+      `Last attempt,${escapeCsv(last ? new Date(last.created_at).toISOString() : "")}`,
+    );
+    lines.push(`Total attempts,${attempts.length}`);
+    lines.push("");
+    lines.push("timestamp,kind,recipient,status,message_id,error");
+    for (const a of sorted) {
+      lines.push(
+        [
+          a.created_at,
+          a.kind,
+          a.recipient,
+          a.status,
+          a.message_id ?? "",
+          a.error ?? "",
+        ]
+          .map(escapeCsv)
+          .join(","),
+      );
+    }
+    const blob = new Blob([lines.join("\n")], { type: "text/csv" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `iam-delivery-${selected.id.slice(0, 8)}-${new Date().toISOString().slice(0, 10)}.csv`;
+    a.click();
+    URL.revokeObjectURL(url);
   };
 
   const totalPages = useMemo(
