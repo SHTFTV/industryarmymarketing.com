@@ -6,6 +6,14 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Check, Shield, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useEffect } from "react";
+import { trackEvent } from "@/lib/analytics";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const directoryFeatures = [
   "Get listed in the platform directory",
@@ -65,17 +73,45 @@ const globalRules = [
   "Monthly exclusive pricing is population/market based — contact us for your market rate.",
 ];
 
+const faqs: { q: string; a: string }[] = [
+  {
+    q: "What's included in the $10/year Directory Listing?",
+    a: "A full directory profile on the platform, EyeSpyR verified rating (pulled from 22+ independent sources), automatic TALC review requests after every completed job, and full searchability by clients — available to every trade in every market.",
+  },
+  {
+    q: "What's included in Exclusive Market Ownership?",
+    a: "One vendor per category per market — no competitors in your slot. Your listing appears above every directory vendor in every search and transaction, plus featured placement, EyeSpyR verified rating, and TALC auto-review triggers.",
+  },
+  {
+    q: "Are there any limits on directory listings?",
+    a: "No. The Directory tier is always open regardless of whether the exclusive slot for your category is taken. Multiple vendors per category per market are permitted at the directory level.",
+  },
+  {
+    q: "How is Exclusive pricing determined?",
+    a: "Exclusive monthly pricing is based on market population. Larger markets command higher monthly rates. Contact us with your city and category and we'll confirm your specific rate within 24 hours.",
+  },
+  {
+    q: "How does billing and renewal work?",
+    a: "Directory Listings are billed $10/year and renew annually. Exclusive Market Ownership is billed monthly at your market's rate and renews month-to-month while your slot is active. You can cancel Exclusive anytime — the slot returns to the market when your term ends.",
+  },
+  {
+    q: "What happens if I let my Exclusive slot lapse?",
+    a: "Your listing reverts to the Directory tier (if active) and the exclusive slot opens for another vendor in your category and market. Exclusive slots are strictly enforced — no double-booking under any circumstances.",
+  },
+];
+
 const Pricing = () => (
   <Layout>
     <Seo
-      title="Pricing — Simple Pricing. Serious Results. | Industry Army Marketing"
-      description="Two tiers. $10/year Directory Listing open to every trade. Exclusive Market Ownership — one vendor per category per market, priced by market size. Contact IAM for your rate."
+      title="Pricing — $10/yr Directory & Exclusive Market Ownership | IAM"
+      description="Two tiers. $10/year Directory Listing open to every trade. Exclusive Market Ownership — one vendor per category per market, priced by population. Contact IAM for your rate."
       path="/pricing"
       jsonLd={breadcrumbList([
         { name: "Home", path: "/" },
         { name: "Pricing", path: "/pricing" },
       ])}
     />
+    <PricingAnalytics />
     <PageHeader
       eyebrow="Simple Pricing"
       title="Simple Pricing."
