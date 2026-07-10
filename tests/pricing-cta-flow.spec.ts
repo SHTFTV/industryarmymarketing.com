@@ -82,6 +82,26 @@ async function ga4EventCalls(page: Page): Promise<string[]> {
   });
 }
 
+/**
+ * Returns the full GA4 event tuples ["event", name, params] captured so far.
+ * Used to assert the params payload (tier / cta / location / question) that
+ * the app forwards to gtag alongside the event name.
+ */
+async function ga4EventTuples(
+  page: Page,
+): Promise<Array<{ name: string; params: Record<string, unknown> }>> {
+  return await page.evaluate(() => {
+    const calls =
+      (window as unknown as { __ga4Calls?: unknown[][] }).__ga4Calls ?? [];
+    return calls
+      .filter((c) => c[0] === "event")
+      .map((c) => ({
+        name: c[1] as string,
+        params: (c[2] ?? {}) as Record<string, unknown>,
+      }));
+  });
+}
+
 function countOf<T>(arr: T[], v: T) {
   return arr.filter((x) => x === v).length;
 }
