@@ -128,13 +128,20 @@ export type Database = {
           city_population: number
           competition: string
           created_at: string
+          customer_email_error: string | null
+          customer_email_status: string
+          customer_message_id: string | null
           email: string | null
+          email_attempted_at: string | null
           emailed_customer: boolean
           emailed_owner: boolean
           id: string
           keywords: string | null
           name: string | null
           notes: string | null
+          owner_email_error: string | null
+          owner_email_status: string
+          owner_message_id: string | null
           package_price: number
           package_slug: string
           referrer: string | null
@@ -150,13 +157,20 @@ export type Database = {
           city_population?: number
           competition?: string
           created_at?: string
+          customer_email_error?: string | null
+          customer_email_status?: string
+          customer_message_id?: string | null
           email?: string | null
+          email_attempted_at?: string | null
           emailed_customer?: boolean
           emailed_owner?: boolean
           id?: string
           keywords?: string | null
           name?: string | null
           notes?: string | null
+          owner_email_error?: string | null
+          owner_email_status?: string
+          owner_message_id?: string | null
           package_price?: number
           package_slug: string
           referrer?: string | null
@@ -172,13 +186,20 @@ export type Database = {
           city_population?: number
           competition?: string
           created_at?: string
+          customer_email_error?: string | null
+          customer_email_status?: string
+          customer_message_id?: string | null
           email?: string | null
+          email_attempted_at?: string | null
           emailed_customer?: boolean
           emailed_owner?: boolean
           id?: string
           keywords?: string | null
           name?: string | null
           notes?: string | null
+          owner_email_error?: string | null
+          owner_email_status?: string
+          owner_message_id?: string | null
           package_price?: number
           package_slug?: string
           referrer?: string | null
