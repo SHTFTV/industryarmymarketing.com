@@ -162,7 +162,17 @@ const Pricing = () => (
               </p>
             </div>
             <Button variant="heroOutline" asChild className="w-full">
-              <Link to="/contact">Get Listed</Link>
+              <Link
+                to="/contact"
+                onClick={() =>
+                  trackEvent("pricing_tier_click", {
+                    tier: "directory",
+                    cta: "Get Listed",
+                  })
+                }
+              >
+                Get Listed
+              </Link>
             </Button>
           </motion.div>
 
@@ -210,7 +220,17 @@ const Pricing = () => (
               </p>
             </div>
             <Button variant="hero" asChild className="w-full">
-              <Link to="/contact">Contact Us for Your Market Rate</Link>
+              <Link
+                to="/contact"
+                onClick={() =>
+                  trackEvent("pricing_tier_click", {
+                    tier: "exclusive",
+                    cta: "Contact Us for Your Market Rate",
+                  })
+                }
+              >
+                Contact Us for Your Market Rate
+              </Link>
             </Button>
           </motion.div>
         </div>
@@ -336,7 +356,13 @@ const Pricing = () => (
         <p className="text-center text-foreground mt-8 max-w-2xl mx-auto">
           We are open to all industries and trades. If your category isn't
           listed,{" "}
-          <Link to="/contact" className="text-primary underline underline-offset-4">
+          <Link
+            to="/contact"
+            className="text-primary underline underline-offset-4"
+            onClick={() =>
+              trackEvent("pricing_contact_click", { location: "industries_expand" })
+            }
+          >
             contact us
           </Link>
           {" "}— we are actively expanding.
@@ -364,12 +390,70 @@ const Pricing = () => (
 
         <div className="mt-12 text-center">
           <Button variant="hero" size="lg" asChild>
-            <Link to="/contact">Contact Us for Your Market Rate</Link>
+            <Link
+              to="/contact"
+              onClick={() =>
+                trackEvent("pricing_contact_click", { location: "global_rules_footer" })
+              }
+            >
+              Contact Us for Your Market Rate
+            </Link>
+          </Button>
+        </div>
+      </div>
+    </section>
+
+    {/* FAQ */}
+    <section className="py-16 md:py-20 bg-background border-t border-border">
+      <div className="container mx-auto px-4 max-w-3xl">
+        <div className="text-center mb-10">
+          <p className="text-primary uppercase tracking-[0.3em] text-xs font-semibold mb-3">FAQ</p>
+          <h2 className="font-display text-4xl md:text-5xl text-foreground">
+            Frequently Asked <span className="text-primary">Questions</span>
+          </h2>
+          <p className="text-muted-foreground mt-3">
+            What's included, limits, and how billing works.
+          </p>
+        </div>
+        <Accordion type="single" collapsible className="w-full">
+          {faqs.map((f, i) => (
+            <AccordionItem key={f.q} value={`faq-${i}`}>
+              <AccordionTrigger
+                className="text-left font-display text-lg text-foreground"
+                onClick={() =>
+                  trackEvent("pricing_faq_open", { question: f.q })
+                }
+              >
+                {f.q}
+              </AccordionTrigger>
+              <AccordionContent className="text-foreground/90 text-sm leading-relaxed">
+                {f.a}
+              </AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
+        <div className="mt-10 text-center">
+          <Button variant="hero" size="lg" asChild>
+            <Link
+              to="/contact"
+              onClick={() =>
+                trackEvent("pricing_contact_click", { location: "faq_footer" })
+              }
+            >
+              Still have questions? Contact us
+            </Link>
           </Button>
         </div>
       </div>
     </section>
   </Layout>
 );
+
+const PricingAnalytics = () => {
+  useEffect(() => {
+    trackEvent("pricing_view", {});
+  }, []);
+  return null;
+};
 
 export default Pricing;
