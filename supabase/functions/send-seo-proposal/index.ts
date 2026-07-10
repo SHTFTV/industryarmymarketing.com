@@ -256,6 +256,44 @@ Deno.serve(async (req) => {
     console.error('seo_proposals insert failed:', insertError.message);
   }
 
+  // Log each send attempt into the audit table (best-effort).
+  if (inserted?.id) {
+    const attempts: Array<{
+      proposal_id: string;
+      kind: 'owner' | 'customer' | 'test';
+      recipient: string;
+      status: SendResult['status'];
+      message_id: string | null;
+      error: string | null;
+    }> = [
+      {
+        proposal_id: inserted.id,
+        kind: 'owner',
+        recipient: OWNER_EMAIL,
+        status: ownerResult.status,
+        message_id: ownerResult.messageId ?? null,
+        error: ownerResult.error ?? null,
+      },
+      {
+        proposal_id: inserted.id,
+        kind: 'customer',
+        recipient: customerEmail ?? '(no email provided)',
+        status: customerResult.status,
+        message_id: customerResult.messageId ?? null,
+        error: customerResult.error ?? null,
+      },
+    ];
+    const { error: attemptError } = await supabase
+      .from('proposal_email_attempts')
+      .insert(attempts);
+    if (attemptError) {
+      console.error(
+        'proposal_email_attempts insert failed:',
+        attemptError.message,
+      );
+    }
+  }
+
   const warning =
     !ownerResult.ok || (customerEmail && !customerResult.ok)
       ? ownerResult.error === 'RESEND_API_KEY not configured'

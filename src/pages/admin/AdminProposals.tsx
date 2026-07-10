@@ -28,6 +28,7 @@ import {
   RefreshCw,
   Download,
   Users,
+  Send,
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { downloadSeoProposalPdf } from "@/lib/seoProposalPdf";
@@ -62,7 +63,20 @@ type Proposal = {
 
 const PAGE_SIZE = 25;
 const STATUSES = ["new", "contacted", "won", "lost", "archived"] as const;
+const EMAIL_STATUSES = ["sent", "failed", "pending", "skipped"] as const;
+type EmailStatusFilter = "all" | (typeof EMAIL_STATUSES)[number];
 const OWNER_LABEL = "colin@industryarmymarketing.com";
+
+type EmailAttempt = {
+  id: string;
+  proposal_id: string;
+  kind: "owner" | "customer" | "test";
+  recipient: string;
+  status: string;
+  message_id: string | null;
+  error: string | null;
+  created_at: string;
+};
 
 function statusTone(status: string): string {
   switch (status) {
@@ -131,7 +145,13 @@ const AdminProposals = () => {
   const [search, setSearch] = useState("");
   const [pkgFilter, setPkgFilter] = useState<"all" | SeoPackageSlug>("all");
   const [statusFilter, setStatusFilter] = useState<string>("all");
+  const [emailStatusFilter, setEmailStatusFilter] =
+    useState<EmailStatusFilter>("all");
   const [selected, setSelected] = useState<Proposal | null>(null);
+  const [attempts, setAttempts] = useState<EmailAttempt[]>([]);
+  const [attemptsLoading, setAttemptsLoading] = useState(false);
+  const [testRecipient, setTestRecipient] = useState("");
+  const [testSending, setTestSending] = useState(false);
 
   useEffect(() => {
     const { data: sub } = supabase.auth.onAuthStateChange((_e, session) => {
@@ -165,6 +185,11 @@ const AdminProposals = () => {
       .order("created_at", { ascending: false });
     if (pkgFilter !== "all") q = q.eq("package_slug", pkgFilter);
     if (statusFilter !== "all") q = q.eq("status", statusFilter);
+    if (emailStatusFilter !== "all") {
+      q = q.or(
+        `owner_email_status.eq.${emailStatusFilter},customer_email_status.eq.${emailStatusFilter}`,
+      );
+    }
     if (search) {
       const esc = search.replace(/[%_,]/g, (c) => `\\${c}`);
       const like = `%${esc}%`;
@@ -197,7 +222,74 @@ const AdminProposals = () => {
   useEffect(() => {
     if (authed) load();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [authed, page, search, pkgFilter, statusFilter]);
+  }, [authed, page, search, pkgFilter, statusFilter, emailStatusFilter]);
+
+  const loadAttempts = async (proposalId: string) => {
+    setAttemptsLoading(true);
+    const { data, error } = await supabase
+      .from("proposal_email_attempts")
+      .select("*")
+      .eq("proposal_id", proposalId)
+      .order("created_at", { ascending: false });
+    if (error) {
+      toast({
+        title: "Failed to load email log",
+        description: error.message,
+        variant: "destructive",
+      });
+      setAttempts([]);
+    } else {
+      setAttempts((data as EmailAttempt[]) ?? []);
+    }
+    setAttemptsLoading(false);
+  };
+
+  useEffect(() => {
+    if (selected) {
+      setTestRecipient(selected.email ?? "");
+      loadAttempts(selected.id);
+    } else {
+      setAttempts([]);
+      setTestRecipient("");
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selected?.id]);
+
+  const sendTestEmail = async () => {
+    if (!selected) return;
+    const recipient = testRecipient.trim();
+    if (!recipient || !/^\S+@\S+\.\S+$/.test(recipient)) {
+      toast({
+        title: "Enter a valid recipient email",
+        variant: "destructive",
+      });
+      return;
+    }
+    setTestSending(true);
+    const { data, error } = await supabase.functions.invoke(
+      "send-proposal-test-email",
+      {
+        body: { proposal_id: selected.id, recipient },
+      },
+    );
+    setTestSending(false);
+    if (error) {
+      toast({
+        title: "Test send failed",
+        description: error.message,
+        variant: "destructive",
+      });
+    } else {
+      const status = (data as { status?: string })?.status ?? "unknown";
+      const messageId = (data as { messageId?: string | null })?.messageId;
+      toast({
+        title: `Test email ${status}`,
+        description: messageId ? `Message ID: ${messageId}` : undefined,
+        variant: status === "sent" ? "default" : "destructive",
+      });
+    }
+    loadAttempts(selected.id);
+  };
 
   const totalPages = useMemo(
     () => Math.max(1, Math.ceil(count / PAGE_SIZE)),
@@ -383,6 +475,28 @@ const AdminProposals = () => {
                 {STATUSES.map((s) => (
                   <SelectItem key={s} value={s}>
                     {s}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+
+          <div className="grid gap-3 md:grid-cols-4 mb-4">
+            <Select
+              value={emailStatusFilter}
+              onValueChange={(v) => {
+                setEmailStatusFilter(v as EmailStatusFilter);
+                setPage(0);
+              }}
+            >
+              <SelectTrigger className="bg-card border-border">
+                <SelectValue placeholder="Email delivery" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">All email statuses</SelectItem>
+                {EMAIL_STATUSES.map((s) => (
+                  <SelectItem key={s} value={s}>
+                    Email: {s}
                   </SelectItem>
                 ))}
               </SelectContent>
@@ -629,6 +743,109 @@ const AdminProposals = () => {
                   )}
                 </div>
               </div>
+            </div>
+
+            <div className="pt-4 border-t border-border">
+              <div className="flex items-center justify-between mb-2 gap-2 flex-wrap">
+                <p className="text-muted-foreground text-xs uppercase tracking-widest">
+                  Send test email
+                </p>
+              </div>
+              <div className="flex gap-2 flex-wrap items-center">
+                <Input
+                  value={testRecipient}
+                  onChange={(e) => setTestRecipient(e.target.value)}
+                  placeholder="test@example.com"
+                  className="bg-card border-border max-w-xs"
+                />
+                <Button
+                  variant="hero"
+                  size="sm"
+                  onClick={sendTestEmail}
+                  disabled={testSending}
+                >
+                  {testSending ? (
+                    <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                  ) : (
+                    <Send className="w-4 h-4 mr-2" />
+                  )}
+                  Send test
+                </Button>
+              </div>
+              <p className="text-[11px] text-muted-foreground mt-2">
+                Sends a plain test email (no PDF) via Resend and logs the
+                attempt below.
+              </p>
+            </div>
+
+            <div className="pt-4 border-t border-border mt-4">
+              <div className="flex items-center justify-between mb-2">
+                <p className="text-muted-foreground text-xs uppercase tracking-widest">
+                  Email delivery audit log
+                </p>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => loadAttempts(selected.id)}
+                  disabled={attemptsLoading}
+                >
+                  <RefreshCw
+                    className={`w-3.5 h-3.5 ${attemptsLoading ? "animate-spin" : ""}`}
+                  />
+                </Button>
+              </div>
+              {attemptsLoading ? (
+                <div className="py-6 flex justify-center">
+                  <Loader2 className="w-4 h-4 animate-spin text-primary" />
+                </div>
+              ) : attempts.length === 0 ? (
+                <p className="text-xs text-muted-foreground py-2">
+                  No send attempts recorded for this proposal yet.
+                </p>
+              ) : (
+                <div className="border border-border rounded overflow-hidden">
+                  <Table>
+                    <TableHeader>
+                      <TableRow>
+                        <TableHead className="text-xs">When</TableHead>
+                        <TableHead className="text-xs">Kind</TableHead>
+                        <TableHead className="text-xs">Recipient</TableHead>
+                        <TableHead className="text-xs">Status</TableHead>
+                        <TableHead className="text-xs">Message ID / Error</TableHead>
+                      </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                      {attempts.map((a) => (
+                        <TableRow key={a.id}>
+                          <TableCell className="text-xs whitespace-nowrap text-muted-foreground">
+                            {new Date(a.created_at).toLocaleString()}
+                          </TableCell>
+                          <TableCell className="text-xs uppercase">
+                            {a.kind}
+                          </TableCell>
+                          <TableCell className="text-xs break-all max-w-[180px]">
+                            {a.recipient}
+                          </TableCell>
+                          <TableCell>
+                            <EmailPill label={a.kind[0].toUpperCase()} status={a.status} />
+                          </TableCell>
+                          <TableCell className="text-xs break-all max-w-[240px]">
+                            {a.error ? (
+                              <span className="text-destructive">{a.error}</span>
+                            ) : a.message_id ? (
+                              <span className="font-mono text-muted-foreground">
+                                {a.message_id}
+                              </span>
+                            ) : (
+                              "—"
+                            )}
+                          </TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                </div>
+              )}
             </div>
             {selected.notes && (
               <div className="pt-4 border-t border-border">
