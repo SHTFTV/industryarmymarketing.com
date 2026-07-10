@@ -744,6 +744,109 @@ const AdminProposals = () => {
                 </div>
               </div>
             </div>
+
+            <div className="pt-4 border-t border-border">
+              <div className="flex items-center justify-between mb-2 gap-2 flex-wrap">
+                <p className="text-muted-foreground text-xs uppercase tracking-widest">
+                  Send test email
+                </p>
+              </div>
+              <div className="flex gap-2 flex-wrap items-center">
+                <Input
+                  value={testRecipient}
+                  onChange={(e) => setTestRecipient(e.target.value)}
+                  placeholder="test@example.com"
+                  className="bg-card border-border max-w-xs"
+                />
+                <Button
+                  variant="hero"
+                  size="sm"
+                  onClick={sendTestEmail}
+                  disabled={testSending}
+                >
+                  {testSending ? (
+                    <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                  ) : (
+                    <Send className="w-4 h-4 mr-2" />
+                  )}
+                  Send test
+                </Button>
+              </div>
+              <p className="text-[11px] text-muted-foreground mt-2">
+                Sends a plain test email (no PDF) via Resend and logs the
+                attempt below.
+              </p>
+            </div>
+
+            <div className="pt-4 border-t border-border mt-4">
+              <div className="flex items-center justify-between mb-2">
+                <p className="text-muted-foreground text-xs uppercase tracking-widest">
+                  Email delivery audit log
+                </p>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => loadAttempts(selected.id)}
+                  disabled={attemptsLoading}
+                >
+                  <RefreshCw
+                    className={`w-3.5 h-3.5 ${attemptsLoading ? "animate-spin" : ""}`}
+                  />
+                </Button>
+              </div>
+              {attemptsLoading ? (
+                <div className="py-6 flex justify-center">
+                  <Loader2 className="w-4 h-4 animate-spin text-primary" />
+                </div>
+              ) : attempts.length === 0 ? (
+                <p className="text-xs text-muted-foreground py-2">
+                  No send attempts recorded for this proposal yet.
+                </p>
+              ) : (
+                <div className="border border-border rounded overflow-hidden">
+                  <Table>
+                    <TableHeader>
+                      <TableRow>
+                        <TableHead className="text-xs">When</TableHead>
+                        <TableHead className="text-xs">Kind</TableHead>
+                        <TableHead className="text-xs">Recipient</TableHead>
+                        <TableHead className="text-xs">Status</TableHead>
+                        <TableHead className="text-xs">Message ID / Error</TableHead>
+                      </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                      {attempts.map((a) => (
+                        <TableRow key={a.id}>
+                          <TableCell className="text-xs whitespace-nowrap text-muted-foreground">
+                            {new Date(a.created_at).toLocaleString()}
+                          </TableCell>
+                          <TableCell className="text-xs uppercase">
+                            {a.kind}
+                          </TableCell>
+                          <TableCell className="text-xs break-all max-w-[180px]">
+                            {a.recipient}
+                          </TableCell>
+                          <TableCell>
+                            <EmailPill label={a.kind[0].toUpperCase()} status={a.status} />
+                          </TableCell>
+                          <TableCell className="text-xs break-all max-w-[240px]">
+                            {a.error ? (
+                              <span className="text-destructive">{a.error}</span>
+                            ) : a.message_id ? (
+                              <span className="font-mono text-muted-foreground">
+                                {a.message_id}
+                              </span>
+                            ) : (
+                              "—"
+                            )}
+                          </TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                </div>
+              )}
+            </div>
             {selected.notes && (
               <div className="pt-4 border-t border-border">
                 <p className="text-muted-foreground text-sm mb-2">Notes</p>
