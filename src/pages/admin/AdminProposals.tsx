@@ -29,6 +29,7 @@ import {
   Download,
   Users,
   Send,
+  Clock,
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { downloadSeoProposalPdf } from "@/lib/seoProposalPdf";
