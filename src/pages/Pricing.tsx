@@ -189,7 +189,7 @@ const Pricing = () => (
             </div>
             <Button variant="heroOutline" asChild className="w-full">
               <Link
-                to="/contact"
+                to="/contact?tier=directory"
                 onClick={() =>
                   trackEvent("pricing_tier_click", {
                     tier: "directory",
@@ -247,7 +247,7 @@ const Pricing = () => (
             </div>
             <Button variant="hero" asChild className="w-full">
               <Link
-                to="/contact"
+                to="/contact?tier=exclusive"
                 onClick={() =>
                   trackEvent("pricing_tier_click", {
                     tier: "exclusive",

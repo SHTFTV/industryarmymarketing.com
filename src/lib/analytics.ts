@@ -3,6 +3,53 @@ import type { Json } from "@/integrations/supabase/types";
 
 const KEY = "iam_session_id";
 
+// ---------------------------------------------------------------------------
+// GA4 mirror
+//   Set `VITE_GA4_MEASUREMENT_ID=G-XXXXXXX` to enable Google Analytics 4.
+//   All events tracked via `track` and `trackEvent` are mirrored to GA4.
+// ---------------------------------------------------------------------------
+declare global {
+  interface Window {
+    dataLayer?: unknown[];
+    gtag?: (...args: unknown[]) => void;
+  }
+}
+
+const GA4_ID =
+  (typeof import.meta !== "undefined" &&
+    (import.meta as unknown as { env?: Record<string, string | undefined> }).env
+      ?.VITE_GA4_MEASUREMENT_ID) ||
+  "";
+
+let ga4Initialized = false;
+function ensureGa4() {
+  if (ga4Initialized || !GA4_ID || typeof window === "undefined") return;
+  ga4Initialized = true;
+  window.dataLayer = window.dataLayer || [];
+  window.gtag =
+    window.gtag ||
+    function gtag() {
+      // eslint-disable-next-line prefer-rest-params
+      window.dataLayer!.push(arguments);
+    };
+  window.gtag("js", new Date());
+  window.gtag("config", GA4_ID, { send_page_view: true });
+  const s = document.createElement("script");
+  s.async = true;
+  s.src = `https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`;
+  document.head.appendChild(s);
+}
+
+function ga4Send(event: string, params: Record<string, unknown> = {}) {
+  if (!GA4_ID || typeof window === "undefined") return;
+  ensureGa4();
+  try {
+    window.gtag?.("event", event, params);
+  } catch {
+    /* noop */
+  }
+}
+
 function sessionId(): string {
   try {
     let id = localStorage.getItem(KEY);
@@ -35,6 +82,10 @@ export async function track(
     meta?: Record<string, unknown>;
   } = {},
 ): Promise<void> {
+  ga4Send(event, {
+    package_slug: payload.packageSlug,
+    ...(payload.meta ?? {}),
+  });
   try {
     await supabase.from("seo_events").insert({
       event,
@@ -75,6 +126,7 @@ export const BLOG_EVENTS = {
 } as const;
 
 export function trackEvent(name: string, meta: Record<string, unknown> = {}) {
+  ga4Send(name, meta);
   try {
     void supabase.from("seo_events").insert({
       event: name.slice(0, 80),
