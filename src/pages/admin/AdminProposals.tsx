@@ -50,6 +50,13 @@ type Proposal = {
   notes: string | null;
   emailed_customer: boolean;
   emailed_owner: boolean;
+  owner_email_status: string;
+  customer_email_status: string;
+  owner_email_error: string | null;
+  customer_email_error: string | null;
+  owner_message_id: string | null;
+  customer_message_id: string | null;
+  email_attempted_at: string | null;
   created_at: string;
 };
 
@@ -97,7 +104,7 @@ const AdminProposals = () => {
     let q = supabase
       .from("seo_proposals")
       .select(
-        "id,name,email,target_url,keywords,budget,competition,target_urls,city_population,package_slug,package_price,status,source,notes,emailed_customer,emailed_owner,created_at",
+        "id,name,email,target_url,keywords,budget,competition,target_urls,city_population,package_slug,package_price,status,source,notes,emailed_customer,emailed_owner,owner_email_status,customer_email_status,owner_email_error,customer_email_error,owner_message_id,customer_message_id,email_attempted_at,created_at",
         { count: "exact" },
       )
       .order("created_at", { ascending: false });
