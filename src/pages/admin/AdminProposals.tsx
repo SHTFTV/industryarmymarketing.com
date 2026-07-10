@@ -28,6 +28,7 @@ import {
   RefreshCw,
   Download,
   Users,
+  Send,
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { downloadSeoProposalPdf } from "@/lib/seoProposalPdf";
@@ -62,7 +63,20 @@ type Proposal = {
 
 const PAGE_SIZE = 25;
 const STATUSES = ["new", "contacted", "won", "lost", "archived"] as const;
+const EMAIL_STATUSES = ["sent", "failed", "pending", "skipped"] as const;
+type EmailStatusFilter = "all" | (typeof EMAIL_STATUSES)[number];
 const OWNER_LABEL = "colin@industryarmymarketing.com";
+
+type EmailAttempt = {
+  id: string;
+  proposal_id: string;
+  kind: "owner" | "customer" | "test";
+  recipient: string;
+  status: string;
+  message_id: string | null;
+  error: string | null;
+  created_at: string;
+};
 
 function statusTone(status: string): string {
   switch (status) {
@@ -131,7 +145,13 @@ const AdminProposals = () => {
   const [search, setSearch] = useState("");
   const [pkgFilter, setPkgFilter] = useState<"all" | SeoPackageSlug>("all");
   const [statusFilter, setStatusFilter] = useState<string>("all");
+  const [emailStatusFilter, setEmailStatusFilter] =
+    useState<EmailStatusFilter>("all");
   const [selected, setSelected] = useState<Proposal | null>(null);
+  const [attempts, setAttempts] = useState<EmailAttempt[]>([]);
+  const [attemptsLoading, setAttemptsLoading] = useState(false);
+  const [testRecipient, setTestRecipient] = useState("");
+  const [testSending, setTestSending] = useState(false);
 
   useEffect(() => {
     const { data: sub } = supabase.auth.onAuthStateChange((_e, session) => {
@@ -165,6 +185,11 @@ const AdminProposals = () => {
       .order("created_at", { ascending: false });
     if (pkgFilter !== "all") q = q.eq("package_slug", pkgFilter);
     if (statusFilter !== "all") q = q.eq("status", statusFilter);
+    if (emailStatusFilter !== "all") {
+      q = q.or(
+        `owner_email_status.eq.${emailStatusFilter},customer_email_status.eq.${emailStatusFilter}`,
+      );
+    }
     if (search) {
       const esc = search.replace(/[%_,]/g, (c) => `\\${c}`);
       const like = `%${esc}%`;
@@ -197,7 +222,74 @@ const AdminProposals = () => {
   useEffect(() => {
     if (authed) load();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [authed, page, search, pkgFilter, statusFilter]);
+  }, [authed, page, search, pkgFilter, statusFilter, emailStatusFilter]);
+
+  const loadAttempts = async (proposalId: string) => {
+    setAttemptsLoading(true);
+    const { data, error } = await supabase
+      .from("proposal_email_attempts")
+      .select("*")
+      .eq("proposal_id", proposalId)
+      .order("created_at", { ascending: false });
+    if (error) {
+      toast({
+        title: "Failed to load email log",
+        description: error.message,
+        variant: "destructive",
+      });
+      setAttempts([]);
+    } else {
+      setAttempts((data as EmailAttempt[]) ?? []);
+    }
+    setAttemptsLoading(false);
+  };
+
+  useEffect(() => {
+    if (selected) {
+      setTestRecipient(selected.email ?? "");
+      loadAttempts(selected.id);
+    } else {
+      setAttempts([]);
+      setTestRecipient("");
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selected?.id]);
+
+  const sendTestEmail = async () => {
+    if (!selected) return;
+    const recipient = testRecipient.trim();
+    if (!recipient || !/^\S+@\S+\.\S+$/.test(recipient)) {
+      toast({
+        title: "Enter a valid recipient email",
+        variant: "destructive",
+      });
+      return;
+    }
+    setTestSending(true);
+    const { data, error } = await supabase.functions.invoke(
+      "send-proposal-test-email",
+      {
+        body: { proposal_id: selected.id, recipient },
+      },
+    );
+    setTestSending(false);
+    if (error) {
+      toast({
+        title: "Test send failed",
+        description: error.message,
+        variant: "destructive",
+      });
+    } else {
+      const status = (data as { status?: string })?.status ?? "unknown";
+      const messageId = (data as { messageId?: string | null })?.messageId;
+      toast({
+        title: `Test email ${status}`,
+        description: messageId ? `Message ID: ${messageId}` : undefined,
+        variant: status === "sent" ? "default" : "destructive",
+      });
+    }
+    loadAttempts(selected.id);
+  };
 
   const totalPages = useMemo(
     () => Math.max(1, Math.ceil(count / PAGE_SIZE)),
@@ -383,6 +475,28 @@ const AdminProposals = () => {
                 {STATUSES.map((s) => (
                   <SelectItem key={s} value={s}>
                     {s}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+
+          <div className="grid gap-3 md:grid-cols-4 mb-4">
+            <Select
+              value={emailStatusFilter}
+              onValueChange={(v) => {
+                setEmailStatusFilter(v as EmailStatusFilter);
+                setPage(0);
+              }}
+            >
+              <SelectTrigger className="bg-card border-border">
+                <SelectValue placeholder="Email delivery" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">All email statuses</SelectItem>
+                {EMAIL_STATUSES.map((s) => (
+                  <SelectItem key={s} value={s}>
+                    Email: {s}
                   </SelectItem>
                 ))}
               </SelectContent>
