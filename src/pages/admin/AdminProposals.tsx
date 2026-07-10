@@ -1105,6 +1105,124 @@ const AdminProposals = () => {
           </div>
         </div>
       )}
+
+      {attemptDrawer && (
+        <div
+          className="fixed inset-0 z-[60] bg-background/85 backdrop-blur-sm flex items-center justify-center p-4"
+          onClick={() => setAttemptDrawer(null)}
+        >
+          <div
+            className="bg-card border border-border rounded-lg max-w-lg w-full max-h-[85vh] overflow-y-auto p-6"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-start justify-between mb-4">
+              <div>
+                <p className="text-xs uppercase tracking-widest text-primary">
+                  Attempt detail · {attemptDrawer.kind}
+                </p>
+                <h3 className="font-display text-2xl text-foreground">
+                  {attemptDrawer.status.toUpperCase()}
+                </h3>
+                <p className="text-xs text-muted-foreground mt-1">
+                  {new Date(attemptDrawer.created_at).toLocaleString()}
+                </p>
+              </div>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setAttemptDrawer(null)}
+              >
+                Close
+              </Button>
+            </div>
+            <dl className="grid gap-3 text-sm">
+              <div>
+                <dt className="text-muted-foreground text-xs uppercase tracking-widest">
+                  Recipient
+                </dt>
+                <dd className="text-foreground break-all">
+                  {attemptDrawer.recipient}
+                </dd>
+              </div>
+              <div>
+                <dt className="text-muted-foreground text-xs uppercase tracking-widest">
+                  Kind
+                </dt>
+                <dd className="text-foreground">{attemptDrawer.kind}</dd>
+              </div>
+              <div>
+                <dt className="text-muted-foreground text-xs uppercase tracking-widest">
+                  Status
+                </dt>
+                <dd>
+                  <EmailPill
+                    label={attemptDrawer.kind[0].toUpperCase()}
+                    status={attemptDrawer.status}
+                    reason={attemptDrawer.error}
+                  />
+                </dd>
+              </div>
+              <div>
+                <dt className="text-muted-foreground text-xs uppercase tracking-widest">
+                  Resend message ID
+                </dt>
+                <dd className="font-mono text-xs text-foreground break-all">
+                  {attemptDrawer.message_id ?? "—"}
+                </dd>
+              </div>
+              <div>
+                <dt className="text-muted-foreground text-xs uppercase tracking-widest">
+                  Error
+                </dt>
+                <dd className="text-xs break-all">
+                  {attemptDrawer.error ? (
+                    <span className="text-destructive">
+                      {attemptDrawer.error}
+                    </span>
+                  ) : (
+                    <span className="text-muted-foreground">None</span>
+                  )}
+                </dd>
+              </div>
+              <div>
+                <dt className="text-muted-foreground text-xs uppercase tracking-widest">
+                  Attempt ID
+                </dt>
+                <dd className="font-mono text-xs text-muted-foreground break-all">
+                  {attemptDrawer.id}
+                </dd>
+              </div>
+              <div>
+                <dt className="text-muted-foreground text-xs uppercase tracking-widest">
+                  Proposal ID
+                </dt>
+                <dd className="font-mono text-xs text-muted-foreground break-all">
+                  {attemptDrawer.proposal_id}
+                </dd>
+              </div>
+            </dl>
+            {attemptDrawer.status === "failed" &&
+              (attemptDrawer.kind === "owner" ||
+                attemptDrawer.kind === "customer") && (
+                <div className="mt-4 pt-4 border-t border-border">
+                  <Button
+                    variant="hero"
+                    size="sm"
+                    onClick={() => {
+                      const k = attemptDrawer.kind as "owner" | "customer";
+                      setAttemptDrawer(null);
+                      retryFailedSend(k);
+                    }}
+                    disabled={retrying !== null}
+                  >
+                    <RotateCw className="w-3.5 h-3.5 mr-2" />
+                    Retry this {attemptDrawer.kind} send
+                  </Button>
+                </div>
+              )}
+          </div>
+        </div>
+      )}
     </Layout>
   );
 };
