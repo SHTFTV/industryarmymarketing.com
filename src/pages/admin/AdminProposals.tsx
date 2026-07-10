@@ -29,6 +29,7 @@ import {
   Download,
   Users,
   Send,
+  Clock,
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { downloadSeoProposalPdf } from "@/lib/seoProposalPdf";
@@ -794,6 +795,81 @@ const AdminProposals = () => {
                   />
                 </Button>
               </div>
+              {attempts.length > 0 && (() => {
+                const sorted = [...attempts].sort(
+                  (a, b) =>
+                    new Date(a.created_at).getTime() -
+                    new Date(b.created_at).getTime(),
+                );
+                const first = sorted[0];
+                const last = sorted[sorted.length - 1];
+                const latestWithId = [...sorted]
+                  .reverse()
+                  .find((a) => a.message_id);
+                const latestError = [...sorted]
+                  .reverse()
+                  .find((a) => a.error);
+                return (
+                  <div className="bg-background/40 border border-border rounded p-3 mb-3 grid gap-2 sm:grid-cols-2 text-xs">
+                    <div className="flex items-start gap-2">
+                      <Clock className="w-3.5 h-3.5 text-primary mt-0.5" />
+                      <div>
+                        <p className="text-muted-foreground">First attempt</p>
+                        <p className="text-foreground">
+                          {new Date(first.created_at).toLocaleString()}
+                        </p>
+                        <p className="text-muted-foreground mt-0.5">
+                          {first.kind} · {first.status}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <Clock className="w-3.5 h-3.5 text-primary mt-0.5" />
+                      <div>
+                        <p className="text-muted-foreground">Last attempt</p>
+                        <p className="text-foreground">
+                          {new Date(last.created_at).toLocaleString()}
+                        </p>
+                        <p className="text-muted-foreground mt-0.5">
+                          {last.kind} · {last.status}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="sm:col-span-2 pt-2 border-t border-border">
+                      <p className="text-muted-foreground mb-1">
+                        Latest message ID
+                      </p>
+                      {latestWithId ? (
+                        <p className="font-mono text-foreground break-all">
+                          {latestWithId.message_id}
+                          <span className="text-muted-foreground ml-2">
+                            ({latestWithId.kind} ·{" "}
+                            {new Date(latestWithId.created_at).toLocaleString()})
+                          </span>
+                        </p>
+                      ) : (
+                        <p className="text-muted-foreground">—</p>
+                      )}
+                    </div>
+                    <div className="sm:col-span-2">
+                      <p className="text-muted-foreground mb-1">
+                        Latest Resend error
+                      </p>
+                      {latestError ? (
+                        <p className="text-destructive break-all">
+                          {latestError.error}
+                          <span className="text-muted-foreground ml-2">
+                            ({latestError.kind} ·{" "}
+                            {new Date(latestError.created_at).toLocaleString()})
+                          </span>
+                        </p>
+                      ) : (
+                        <p className="text-muted-foreground">No errors 🎉</p>
+                      )}
+                    </div>
+                  </div>
+                );
+              })()}
               {attemptsLoading ? (
                 <div className="py-6 flex justify-center">
                   <Loader2 className="w-4 h-4 animate-spin text-primary" />
