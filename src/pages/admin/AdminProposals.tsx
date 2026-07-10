@@ -30,6 +30,8 @@ import {
   Users,
   Send,
   Clock,
+  FileDown,
+  RotateCw,
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { downloadSeoProposalPdf } from "@/lib/seoProposalPdf";
@@ -92,10 +94,24 @@ function statusTone(status: string): string {
   }
 }
 
-const EmailPill = ({ label, status }: { label: string; status: string }) => (
+const EmailPill = ({
+  label,
+  status,
+  reason,
+}: {
+  label: string;
+  status: string;
+  reason?: string | null;
+}) => (
   <span
     className={`inline-flex items-center gap-1 px-1.5 py-0.5 rounded border text-[10px] font-medium uppercase ${statusTone(status)}`}
-    title={`${label}: ${status}`}
+    title={
+      status === "skipped" && reason
+        ? `${label}: skipped — ${reason}`
+        : reason
+          ? `${label}: ${status} — ${reason}`
+          : `${label}: ${status}`
+    }
   >
     {label}·{status}
   </span>
@@ -153,6 +169,8 @@ const AdminProposals = () => {
   const [attemptsLoading, setAttemptsLoading] = useState(false);
   const [testRecipient, setTestRecipient] = useState("");
   const [testSending, setTestSending] = useState(false);
+  const [attemptDrawer, setAttemptDrawer] = useState<EmailAttempt | null>(null);
+  const [retrying, setRetrying] = useState<null | "owner" | "customer">(null);
 
   useEffect(() => {
     const { data: sub } = supabase.auth.onAuthStateChange((_e, session) => {
@@ -290,6 +308,98 @@ const AdminProposals = () => {
       });
     }
     loadAttempts(selected.id);
+  };
+
+  const retryFailedSend = async (kind: "owner" | "customer") => {
+    if (!selected) return;
+    setRetrying(kind);
+    const { data, error } = await supabase.functions.invoke(
+      "retry-seo-proposal-send",
+      {
+        body: { proposal_id: selected.id, kind },
+      },
+    );
+    setRetrying(null);
+    if (error) {
+      toast({
+        title: "Retry failed",
+        description: error.message,
+        variant: "destructive",
+      });
+    } else {
+      const status = (data as { status?: string })?.status ?? "unknown";
+      const messageId = (data as { messageId?: string | null })?.messageId;
+      toast({
+        title: `Retry ${status}`,
+        description: messageId ? `Message ID: ${messageId}` : undefined,
+        variant: status === "sent" ? "default" : "destructive",
+      });
+      // Refresh row + attempts.
+      const { data: fresh } = await supabase
+        .from("seo_proposals")
+        .select(
+          "id,name,email,target_url,keywords,budget,competition,target_urls,city_population,package_slug,package_price,status,source,notes,emailed_customer,emailed_owner,owner_email_status,customer_email_status,owner_email_error,customer_email_error,owner_message_id,customer_message_id,email_attempted_at,created_at",
+        )
+        .eq("id", selected.id)
+        .maybeSingle();
+      if (fresh) {
+        const proposal = fresh as Proposal;
+        setSelected(proposal);
+        setRows((r) => r.map((x) => (x.id === proposal.id ? proposal : x)));
+      }
+    }
+    loadAttempts(selected.id);
+  };
+
+  const exportDeliveryReport = () => {
+    if (!selected) return;
+    const sorted = [...attempts].sort(
+      (a, b) =>
+        new Date(a.created_at).getTime() - new Date(b.created_at).getTime(),
+    );
+    const first = sorted[0];
+    const last = sorted[sorted.length - 1];
+    const escapeCsv = (v: unknown): string => {
+      if (v == null) return "";
+      const s = String(v).replace(/"/g, '""');
+      return /[",\n]/.test(s) ? `"${s}"` : s;
+    };
+    const lines: string[] = [];
+    lines.push(`Proposal ID,${escapeCsv(selected.id)}`);
+    lines.push(`Name,${escapeCsv(selected.name)}`);
+    lines.push(`Email,${escapeCsv(selected.email)}`);
+    lines.push(`Package,${escapeCsv(selected.package_slug)}`);
+    lines.push(`Package price,${selected.package_price}`);
+    lines.push(
+      `First attempt,${escapeCsv(first ? new Date(first.created_at).toISOString() : "")}`,
+    );
+    lines.push(
+      `Last attempt,${escapeCsv(last ? new Date(last.created_at).toISOString() : "")}`,
+    );
+    lines.push(`Total attempts,${attempts.length}`);
+    lines.push("");
+    lines.push("timestamp,kind,recipient,status,message_id,error");
+    for (const a of sorted) {
+      lines.push(
+        [
+          a.created_at,
+          a.kind,
+          a.recipient,
+          a.status,
+          a.message_id ?? "",
+          a.error ?? "",
+        ]
+          .map(escapeCsv)
+          .join(","),
+      );
+    }
+    const blob = new Blob([lines.join("\n")], { type: "text/csv" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `iam-delivery-${selected.id.slice(0, 8)}-${new Date().toISOString().slice(0, 10)}.csv`;
+    a.click();
+    URL.revokeObjectURL(url);
   };
 
   const totalPages = useMemo(
@@ -587,8 +697,16 @@ const AdminProposals = () => {
                         </Select>
                       </TableCell>
                       <TableCell className="text-xs whitespace-nowrap">
-                        <EmailPill label="O" status={r.owner_email_status} />{" "}
-                        <EmailPill label="C" status={r.customer_email_status} />
+                        <EmailPill
+                          label="O"
+                          status={r.owner_email_status}
+                          reason={r.owner_email_error}
+                        />{" "}
+                        <EmailPill
+                          label="C"
+                          status={r.customer_email_status}
+                          reason={r.customer_email_error}
+                        />
                       </TableCell>
                       <TableCell onClick={(e) => e.stopPropagation()}>
                         <Button
@@ -669,6 +787,16 @@ const AdminProposals = () => {
                 <Button
                   variant="outline"
                   size="sm"
+                  onClick={exportDeliveryReport}
+                  disabled={attempts.length === 0}
+                  title="Download CSV of every send attempt"
+                >
+                  <FileDown className="w-4 h-4 mr-1" />
+                  Report
+                </Button>
+                <Button
+                  variant="outline"
+                  size="sm"
                   onClick={() => setSelected(null)}
                 >
                   Close
@@ -729,6 +857,23 @@ const AdminProposals = () => {
                     error={selected.owner_email_error}
                     messageId={selected.owner_message_id}
                   />
+                  {(selected.owner_email_status === "failed" ||
+                    selected.owner_email_status === "skipped") && (
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="w-fit ml-[88px]"
+                      onClick={() => retryFailedSend("owner")}
+                      disabled={retrying === "owner"}
+                    >
+                      {retrying === "owner" ? (
+                        <Loader2 className="w-3.5 h-3.5 mr-2 animate-spin" />
+                      ) : (
+                        <RotateCw className="w-3.5 h-3.5 mr-2" />
+                      )}
+                      Retry owner send
+                    </Button>
+                  )}
                   <EmailStatusRow
                     who="Customer"
                     to={selected.email ?? "no email provided"}
@@ -736,6 +881,24 @@ const AdminProposals = () => {
                     error={selected.customer_email_error}
                     messageId={selected.customer_message_id}
                   />
+                  {selected.email &&
+                    (selected.customer_email_status === "failed" ||
+                      selected.customer_email_status === "skipped") && (
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="w-fit ml-[88px]"
+                        onClick={() => retryFailedSend("customer")}
+                        disabled={retrying === "customer"}
+                      >
+                        {retrying === "customer" ? (
+                          <Loader2 className="w-3.5 h-3.5 mr-2 animate-spin" />
+                        ) : (
+                          <RotateCw className="w-3.5 h-3.5 mr-2" />
+                        )}
+                        Retry customer send
+                      </Button>
+                    )}
                   {selected.email_attempted_at && (
                     <p className="text-xs text-muted-foreground">
                       Last attempt:{" "}
@@ -892,7 +1055,11 @@ const AdminProposals = () => {
                     </TableHeader>
                     <TableBody>
                       {attempts.map((a) => (
-                        <TableRow key={a.id}>
+                        <TableRow
+                          key={a.id}
+                          className="cursor-pointer hover:bg-background/40"
+                          onClick={() => setAttemptDrawer(a)}
+                        >
                           <TableCell className="text-xs whitespace-nowrap text-muted-foreground">
                             {new Date(a.created_at).toLocaleString()}
                           </TableCell>
@@ -903,7 +1070,11 @@ const AdminProposals = () => {
                             {a.recipient}
                           </TableCell>
                           <TableCell>
-                            <EmailPill label={a.kind[0].toUpperCase()} status={a.status} />
+                            <EmailPill
+                              label={a.kind[0].toUpperCase()}
+                              status={a.status}
+                              reason={a.error}
+                            />
                           </TableCell>
                           <TableCell className="text-xs break-all max-w-[240px]">
                             {a.error ? (
@@ -931,6 +1102,124 @@ const AdminProposals = () => {
                 </p>
               </div>
             )}
+          </div>
+        </div>
+      )}
+
+      {attemptDrawer && (
+        <div
+          className="fixed inset-0 z-[60] bg-background/85 backdrop-blur-sm flex items-center justify-center p-4"
+          onClick={() => setAttemptDrawer(null)}
+        >
+          <div
+            className="bg-card border border-border rounded-lg max-w-lg w-full max-h-[85vh] overflow-y-auto p-6"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-start justify-between mb-4">
+              <div>
+                <p className="text-xs uppercase tracking-widest text-primary">
+                  Attempt detail · {attemptDrawer.kind}
+                </p>
+                <h3 className="font-display text-2xl text-foreground">
+                  {attemptDrawer.status.toUpperCase()}
+                </h3>
+                <p className="text-xs text-muted-foreground mt-1">
+                  {new Date(attemptDrawer.created_at).toLocaleString()}
+                </p>
+              </div>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setAttemptDrawer(null)}
+              >
+                Close
+              </Button>
+            </div>
+            <dl className="grid gap-3 text-sm">
+              <div>
+                <dt className="text-muted-foreground text-xs uppercase tracking-widest">
+                  Recipient
+                </dt>
+                <dd className="text-foreground break-all">
+                  {attemptDrawer.recipient}
+                </dd>
+              </div>
+              <div>
+                <dt className="text-muted-foreground text-xs uppercase tracking-widest">
+                  Kind
+                </dt>
+                <dd className="text-foreground">{attemptDrawer.kind}</dd>
+              </div>
+              <div>
+                <dt className="text-muted-foreground text-xs uppercase tracking-widest">
+                  Status
+                </dt>
+                <dd>
+                  <EmailPill
+                    label={attemptDrawer.kind[0].toUpperCase()}
+                    status={attemptDrawer.status}
+                    reason={attemptDrawer.error}
+                  />
+                </dd>
+              </div>
+              <div>
+                <dt className="text-muted-foreground text-xs uppercase tracking-widest">
+                  Resend message ID
+                </dt>
+                <dd className="font-mono text-xs text-foreground break-all">
+                  {attemptDrawer.message_id ?? "—"}
+                </dd>
+              </div>
+              <div>
+                <dt className="text-muted-foreground text-xs uppercase tracking-widest">
+                  Error
+                </dt>
+                <dd className="text-xs break-all">
+                  {attemptDrawer.error ? (
+                    <span className="text-destructive">
+                      {attemptDrawer.error}
+                    </span>
+                  ) : (
+                    <span className="text-muted-foreground">None</span>
+                  )}
+                </dd>
+              </div>
+              <div>
+                <dt className="text-muted-foreground text-xs uppercase tracking-widest">
+                  Attempt ID
+                </dt>
+                <dd className="font-mono text-xs text-muted-foreground break-all">
+                  {attemptDrawer.id}
+                </dd>
+              </div>
+              <div>
+                <dt className="text-muted-foreground text-xs uppercase tracking-widest">
+                  Proposal ID
+                </dt>
+                <dd className="font-mono text-xs text-muted-foreground break-all">
+                  {attemptDrawer.proposal_id}
+                </dd>
+              </div>
+            </dl>
+            {attemptDrawer.status === "failed" &&
+              (attemptDrawer.kind === "owner" ||
+                attemptDrawer.kind === "customer") && (
+                <div className="mt-4 pt-4 border-t border-border">
+                  <Button
+                    variant="hero"
+                    size="sm"
+                    onClick={() => {
+                      const k = attemptDrawer.kind as "owner" | "customer";
+                      setAttemptDrawer(null);
+                      retryFailedSend(k);
+                    }}
+                    disabled={retrying !== null}
+                  >
+                    <RotateCw className="w-3.5 h-3.5 mr-2" />
+                    Retry this {attemptDrawer.kind} send
+                  </Button>
+                </div>
+              )}
           </div>
         </div>
       )}
