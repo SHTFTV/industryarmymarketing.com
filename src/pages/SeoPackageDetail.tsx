@@ -276,7 +276,7 @@ const SeoPackageDetail = () => {
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             <Button variant="hero" size="lg" asChild>
-              <a href={`mailto:colin@industryarmymarketing.com?subject=${pkg.name} Package Order`}>
+              <a href={buildMailto()}>
                 Order {pkg.name} · ${pkg.price}
               </a>
             </Button>
