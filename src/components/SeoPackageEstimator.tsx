@@ -54,7 +54,14 @@ const SeoPackageEstimator = () => {
       return;
     }
     setError(null);
-    setRecommendation(recommendPackage(parsed.data));
+    setRecommendation(
+      recommendPackage({
+        budget: parsed.data.budget,
+        competition: parsed.data.competition,
+        targetUrls: parsed.data.targetUrls,
+        cityPopulation: parsed.data.cityPopulation,
+      }),
+    );
   };
 
   return (
