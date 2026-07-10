@@ -92,6 +92,105 @@ export type Database = {
         }
         Relationships: []
       }
+      seo_events: {
+        Row: {
+          created_at: string
+          event: string
+          id: string
+          meta: Json
+          package_slug: string | null
+          path: string | null
+          session_id: string | null
+        }
+        Insert: {
+          created_at?: string
+          event: string
+          id?: string
+          meta?: Json
+          package_slug?: string | null
+          path?: string | null
+          session_id?: string | null
+        }
+        Update: {
+          created_at?: string
+          event?: string
+          id?: string
+          meta?: Json
+          package_slug?: string | null
+          path?: string | null
+          session_id?: string | null
+        }
+        Relationships: []
+      }
+      seo_proposals: {
+        Row: {
+          budget: number
+          city_population: number
+          competition: string
+          created_at: string
+          email: string | null
+          emailed_customer: boolean
+          emailed_owner: boolean
+          id: string
+          keywords: string | null
+          name: string | null
+          notes: string | null
+          package_price: number
+          package_slug: string
+          referrer: string | null
+          source: string
+          status: string
+          target_url: string | null
+          target_urls: number
+          updated_at: string
+          user_agent: string | null
+        }
+        Insert: {
+          budget?: number
+          city_population?: number
+          competition?: string
+          created_at?: string
+          email?: string | null
+          emailed_customer?: boolean
+          emailed_owner?: boolean
+          id?: string
+          keywords?: string | null
+          name?: string | null
+          notes?: string | null
+          package_price?: number
+          package_slug: string
+          referrer?: string | null
+          source?: string
+          status?: string
+          target_url?: string | null
+          target_urls?: number
+          updated_at?: string
+          user_agent?: string | null
+        }
+        Update: {
+          budget?: number
+          city_population?: number
+          competition?: string
+          created_at?: string
+          email?: string | null
+          emailed_customer?: boolean
+          emailed_owner?: boolean
+          id?: string
+          keywords?: string | null
+          name?: string | null
+          notes?: string | null
+          package_price?: number
+          package_slug?: string
+          referrer?: string | null
+          source?: string
+          status?: string
+          target_url?: string | null
+          target_urls?: number
+          updated_at?: string
+          user_agent?: string | null
+        }
+        Relationships: []
+      }
       user_roles: {
         Row: {
           created_at: string

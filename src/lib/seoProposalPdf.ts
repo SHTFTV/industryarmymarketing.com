@@ -316,3 +316,17 @@ export function downloadSeoProposalPdf(input: ProposalInputs): string {
   doc.save(filename);
   return filename;
 }
+
+export function seoProposalPdfAsBase64(input: ProposalInputs): {
+  base64: string;
+  filename: string;
+} {
+  const doc = generateSeoProposalPdf(input);
+  const pkg = SEO_PACKAGES.find((p) => p.slug === input.slug)!;
+  const filename = `IAM-SEO-Proposal-${pkg.name}.pdf`;
+  // jsPDF returns a base64-encoded string when called with 'datauristring'
+  // — but we want raw base64 without the data-URI prefix.
+  const dataUri = doc.output("datauristring");
+  const base64 = dataUri.split(",", 2)[1] ?? "";
+  return { base64, filename };
+}
