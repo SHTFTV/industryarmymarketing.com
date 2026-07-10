@@ -50,5 +50,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: pricing-a11y-report-${{ matrix.browser }}
-          path: playwright-report/
+          path: |
+            playwright-report/
+            test-results/
           retention-days: 7
