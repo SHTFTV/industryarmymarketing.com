@@ -11,14 +11,20 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Target } from "lucide-react";
+import { Target, Download } from "lucide-react";
 import { SEO_PACKAGES, recommendPackage, type SeoPackageSlug } from "@/data/seoPackages";
+import { downloadSeoProposalPdf } from "@/lib/seoProposalPdf";
+import { toast } from "@/hooks/use-toast";
 
 const schema = z.object({
   budget: z.number().min(0).max(50_000),
   competition: z.enum(["low", "medium", "high"]),
   targetUrls: z.number().int().min(1).max(50),
   cityPopulation: z.number().min(0).max(50_000_000),
+  clientName: z.string().trim().max(100).optional().or(z.literal("")),
+  clientEmail: z.union([z.string().trim().email().max(255), z.literal("")]).optional(),
+  targetUrl: z.string().trim().max(500).optional().or(z.literal("")),
+  keywords: z.string().trim().max(500).optional().or(z.literal("")),
 });
 
 const SeoPackageEstimator = () => {
@@ -26,29 +32,75 @@ const SeoPackageEstimator = () => {
   const [competition, setCompetition] = useState<"low" | "medium" | "high">("medium");
   const [targetUrls, setTargetUrls] = useState("2");
   const [cityPopulation, setCityPopulation] = useState("250000");
+  const [clientName, setClientName] = useState("");
+  const [clientEmail, setClientEmail] = useState("");
+  const [targetUrl, setTargetUrl] = useState("");
+  const [keywords, setKeywords] = useState("");
   const [recommendation, setRecommendation] = useState<SeoPackageSlug | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   const recommended = useMemo(
-    () => recommendPackage({
-      budget: Number(budget) || 0,
-      competition,
-      targetUrls: Number(targetUrls) || 1,
-      cityPopulation: Number(cityPopulation) || 0,
-    }),
+    () =>
+      recommendPackage({
+        budget: Number(budget) || 0,
+        competition,
+        targetUrls: Number(targetUrls) || 1,
+        cityPopulation: Number(cityPopulation) || 0,
+      }),
     [budget, competition, targetUrls, cityPopulation],
   );
 
   const pkg = SEO_PACKAGES.find((p) => p.slug === (recommendation ?? recommended))!;
 
-  const onSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const parsed = schema.safeParse({
+  const buildParams = () =>
+    new URLSearchParams({
+      budget: String(budget),
+      competition,
+      targetUrls: String(targetUrls),
+      cityPopulation: String(cityPopulation),
+      ...(clientName ? { clientName } : {}),
+      ...(clientEmail ? { clientEmail } : {}),
+      ...(targetUrl ? { targetUrl } : {}),
+      ...(keywords ? { keywords } : {}),
+    }).toString();
+
+  const buildMailto = () => {
+    const subject = `${pkg.name} Package Order — ${clientName || "IAM prospect"}`;
+    const body = [
+      `Package: ${pkg.name} (${pkg.tagline}) — $${pkg.price}`,
+      "",
+      "— Estimator Inputs —",
+      `Budget: $${budget}`,
+      `Competition: ${competition}`,
+      `Target URLs: ${targetUrls}`,
+      `City population: ${cityPopulation}`,
+      "",
+      "— Contact —",
+      `Name: ${clientName || "(please fill)"}`,
+      `Email: ${clientEmail || "(please fill)"}`,
+      `Target URL: ${targetUrl || "(please fill)"}`,
+      `Keywords: ${keywords || "(please fill 3–5)"}`,
+      "",
+      `Deliverables: ${pkg.deliverables} placements · ${pkg.timelineDays}-day delivery · ${pkg.revisions} revisions`,
+    ].join("\n");
+    return `mailto:colin@industryarmymarketing.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  };
+
+  const parsedInput = () =>
+    schema.safeParse({
       budget: Number(budget),
       competition,
       targetUrls: Number(targetUrls),
       cityPopulation: Number(cityPopulation),
+      clientName,
+      clientEmail,
+      targetUrl,
+      keywords,
     });
+
+  const onSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const parsed = parsedInput();
     if (!parsed.success) {
       setError(parsed.error.errors[0]?.message ?? "Invalid input");
       return;
@@ -64,16 +116,43 @@ const SeoPackageEstimator = () => {
     );
   };
 
+  const onDownload = () => {
+    const parsed = parsedInput();
+    if (!parsed.success) {
+      setError(parsed.error.errors[0]?.message ?? "Invalid input");
+      return;
+    }
+    setError(null);
+    try {
+      const filename = downloadSeoProposalPdf({
+        budget: parsed.data.budget,
+        competition: parsed.data.competition,
+        targetUrls: parsed.data.targetUrls,
+        cityPopulation: parsed.data.cityPopulation,
+        slug: pkg.slug,
+        clientName: parsed.data.clientName || undefined,
+        clientEmail: parsed.data.clientEmail || undefined,
+        targetUrl: parsed.data.targetUrl || undefined,
+        keywords: parsed.data.keywords || undefined,
+      });
+      toast({ title: "Proposal ready", description: `Downloaded ${filename}` });
+    } catch {
+      toast({ title: "Could not generate PDF", variant: "destructive" });
+    }
+  };
+
   return (
-    <section className="py-20 border-y border-border bg-card/40">
-      <div className="container mx-auto px-4 max-w-5xl">
+    <section id="estimator" className="py-20 border-y border-border bg-card/40 scroll-mt-20">
+      <div className="container mx-auto px-4 max-w-6xl">
         <div className="text-center mb-10">
-          <p className="text-xs uppercase tracking-[0.3em] text-primary font-semibold mb-3">Package Estimator</p>
+          <p className="text-xs uppercase tracking-[0.3em] text-primary font-semibold mb-3">
+            Package Estimator
+          </p>
           <h2 className="font-display text-4xl md:text-5xl text-foreground mb-3">
             Which Package <span className="text-primary">Fits You?</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Four inputs. Instant recommendation. No email required.
+            Four inputs. Instant recommendation. Downloadable proposal PDF. Order prefilled with everything you just entered.
           </p>
         </div>
 
@@ -107,27 +186,35 @@ const SeoPackageEstimator = () => {
             <div className="grid sm:grid-cols-2 gap-4">
               <div>
                 <Label htmlFor="urls">Target URLs</Label>
-                <Input
-                  id="urls"
-                  type="number"
-                  min={1}
-                  max={50}
-                  value={targetUrls}
-                  onChange={(e) => setTargetUrls(e.target.value)}
-                  className="mt-2"
-                />
+                <Input id="urls" type="number" min={1} max={50} value={targetUrls} onChange={(e) => setTargetUrls(e.target.value)} className="mt-2" />
               </div>
               <div>
                 <Label htmlFor="pop">City Population</Label>
-                <Input
-                  id="pop"
-                  type="number"
-                  min={0}
-                  max={50_000_000}
-                  value={cityPopulation}
-                  onChange={(e) => setCityPopulation(e.target.value)}
-                  className="mt-2"
-                />
+                <Input id="pop" type="number" min={0} max={50_000_000} value={cityPopulation} onChange={(e) => setCityPopulation(e.target.value)} className="mt-2" />
+              </div>
+            </div>
+
+            <div className="pt-4 border-t border-border">
+              <p className="text-xs uppercase tracking-widest text-muted-foreground mb-3">
+                Optional — prefill your proposal & order
+              </p>
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <Label htmlFor="cname">Your name</Label>
+                  <Input id="cname" maxLength={100} value={clientName} onChange={(e) => setClientName(e.target.value)} className="mt-2" placeholder="Colin R." />
+                </div>
+                <div>
+                  <Label htmlFor="cemail">Email</Label>
+                  <Input id="cemail" type="email" maxLength={255} value={clientEmail} onChange={(e) => setClientEmail(e.target.value)} className="mt-2" placeholder="you@company.com" />
+                </div>
+                <div>
+                  <Label htmlFor="curl">Target URL</Label>
+                  <Input id="curl" maxLength={500} value={targetUrl} onChange={(e) => setTargetUrl(e.target.value)} className="mt-2" placeholder="https://your-site.com/service" />
+                </div>
+                <div>
+                  <Label htmlFor="ckw">Keywords (3–5)</Label>
+                  <Input id="ckw" maxLength={500} value={keywords} onChange={(e) => setKeywords(e.target.value)} className="mt-2" placeholder="roofing vancouver, ..." />
+                </div>
               </div>
             </div>
 
@@ -146,15 +233,21 @@ const SeoPackageEstimator = () => {
             <p className="font-display text-3xl text-primary mb-4">
               ${pkg.price}<span className="text-sm text-muted-foreground font-sans"> one-time</span>
             </p>
-            <p className="text-sm text-muted-foreground mb-6 flex-1">{pkg.summary}</p>
+            <p className="text-sm text-muted-foreground mb-4 flex-1">{pkg.summary}</p>
+            <div className="grid grid-cols-3 gap-2 text-center py-3 mb-4 border-y border-border">
+              <div><div className="font-display text-lg text-primary">{pkg.deliverables}</div><div className="text-[10px] uppercase tracking-widest text-muted-foreground">Placements</div></div>
+              <div><div className="font-display text-lg text-primary">{pkg.timelineDays}d</div><div className="text-[10px] uppercase tracking-widest text-muted-foreground">Delivery</div></div>
+              <div><div className="font-display text-lg text-primary">{pkg.revisions}</div><div className="text-[10px] uppercase tracking-widest text-muted-foreground">Revisions</div></div>
+            </div>
             <div className="space-y-2">
               <Button variant="hero" className="w-full" asChild>
-                <Link to={`/seo-packages/${pkg.slug}`}>See Full {pkg.name} Details →</Link>
+                <a href={buildMailto()}>Order {pkg.name} · ${pkg.price} →</a>
               </Button>
-              <Button variant="outline" className="w-full" asChild>
-                <a href={`mailto:colin@industryarmymarketing.com?subject=${pkg.name} Package Order`}>
-                  Order {pkg.name} · ${pkg.price}
-                </a>
+              <Button variant="outline" className="w-full" onClick={onDownload}>
+                <Download className="w-4 h-4 mr-2" /> Download PDF Proposal
+              </Button>
+              <Button variant="ghost" className="w-full" asChild>
+                <Link to={`/seo-packages/${pkg.slug}?${buildParams()}`}>See Full {pkg.name} Details →</Link>
               </Button>
             </div>
           </div>
