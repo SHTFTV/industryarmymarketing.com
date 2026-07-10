@@ -44,11 +44,28 @@ jobs:
       - name: Install Playwright browsers
         run: npx playwright install --with-deps ${{ matrix.browser }}
       - name: Run pricing CTA + a11y suite
-        run: npx playwright test tests/pricing-cta-flow.spec.ts tests/pricing-visual.spec.ts --project=${{ matrix.browser }} --reporter=list
+        run: npx playwright test tests/pricing-cta-flow.spec.ts --project=${{ matrix.browser }} --reporter=list
+      # Visual regression suite runs only when baselines exist for this
+      # engine. Seed them via the `Pricing visual baselines (seed)` workflow
+      # and commit the artifact into tests/pricing-visual.spec.ts-snapshots/.
+      - name: Check for visual baselines
+        id: visual_baselines
+        run: |
+          if [ -d "tests/pricing-visual.spec.ts-snapshots" ] && \
+             ls tests/pricing-visual.spec.ts-snapshots/*-${{ matrix.browser }}-* >/dev/null 2>&1; then
+            echo "present=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "present=false" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Run pricing visual regression suite
+        if: steps.visual_baselines.outputs.present == 'true'
+        run: npx playwright test tests/pricing-visual.spec.ts --project=${{ matrix.browser }} --reporter=list
       - name: Upload Playwright report on failure
         if: failure()
         uses: actions/upload-artifact@v4
         with:
           name: pricing-a11y-report-${{ matrix.browser }}
-          path: playwright-report/
+          path: |
+            playwright-report/
+            test-results/
           retention-days: 7

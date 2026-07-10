@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test";
+import { test, expect, type Page, type Locator } from "@playwright/test";
 
 // Visual regression coverage for the /pricing page. Baselines are engine-
 // and viewport-scoped by Playwright's snapshot naming, so chromium / webkit
@@ -11,27 +11,60 @@ import { test, expect } from "@playwright/test";
 
 const LIVE = !!(process.env.PLAYWRIGHT_BASE_URL || process.env.BASE_URL);
 
-const SNAPSHOT_OPTS = {
-  maxDiffPixelRatio: 0.05,
-  animations: "disabled" as const,
-  // Mask likely-to-flake dynamic regions (LimitedSpotsWidget, live counters).
-  // Empty by default; we mask on a per-assertion basis where needed.
-};
+// Per-assertion overrides. Global defaults (threshold, maxDiffPixelRatio,
+// animations, caret, scale) live in playwright.config.ts and apply here too.
+// Keep the mask list small — masking hides real regressions, so it only
+// covers regions with intentionally dynamic content.
+function maskFor(page: Page): Locator[] {
+  return [
+    // Live spot-counter widget — animates and can change between runs.
+    page.locator('[data-testid="limited-spots-widget"]'),
+  ];
+}
+
+/**
+ * Wait for fonts + images to be ready so the snapshot is stable regardless
+ * of network timing. `document.fonts.ready` covers Bebas Neue + Inter.
+ */
+async function settle(page: Page) {
+  await page.waitForLoadState("networkidle").catch(() => {});
+  await page.evaluate(async () => {
+    if (document.fonts && document.fonts.ready) await document.fonts.ready;
+    const imgs = Array.from(document.images ?? []);
+    await Promise.all(
+      imgs.map((img) =>
+        img.complete
+          ? Promise.resolve()
+          : new Promise<void>((res) => {
+              img.addEventListener("load", () => res(), { once: true });
+              img.addEventListener("error", () => res(), { once: true });
+            }),
+      ),
+    );
+  });
+}
 
 test.describe("Pricing — visual regression: mobile stacked cards + FAQ states", () => {
   test.skip(LIVE, "Local dev only — visual baselines are engine + viewport scoped");
 
   test.beforeEach(async ({ page }) => {
-    // Suppress Framer Motion entrance animations for stable pixels.
-    await page.addStyleTag({
-      content: `
+    // Belt-and-suspenders: config sets `reducedMotion: "reduce"`, but Framer
+    // Motion still honours some transitions unless we neutralize CSS too.
+    // Runs before every page.goto so the rules apply on every navigation.
+    await page.addInitScript(() => {
+      const style = document.createElement("style");
+      style.textContent = `
         *, *::before, *::after {
           animation-duration: 0s !important;
           animation-delay: 0s !important;
           transition-duration: 0s !important;
           transition-delay: 0s !important;
+          scroll-behavior: auto !important;
         }
-      `,
+      `;
+      const attach = () => document.head?.appendChild(style);
+      if (document.head) attach();
+      else document.addEventListener("DOMContentLoaded", attach, { once: true });
     });
   });
 
@@ -41,9 +74,10 @@ test.describe("Pricing — visual regression: mobile stacked cards + FAQ states"
     const list = page.getByRole("list", { name: /comparison/i });
     await expect(list).toBeVisible();
     await list.scrollIntoViewIfNeeded();
-    // Let images/fonts settle before snapshotting.
-    await page.waitForLoadState("networkidle").catch(() => {});
-    await expect(list).toHaveScreenshot("pricing-mobile-comparison.png", SNAPSHOT_OPTS);
+    await settle(page);
+    await expect(list).toHaveScreenshot("pricing-mobile-comparison.png", {
+      mask: maskFor(page),
+    });
   });
 
   test("FAQ accordion — closed state (first item)", async ({ page }) => {
@@ -55,14 +89,14 @@ test.describe("Pricing — visual regression: mobile stacked cards + FAQ states"
     });
     await firstTrigger.scrollIntoViewIfNeeded();
     await expect(firstTrigger).toHaveAttribute("aria-expanded", "false");
+    await settle(page);
 
     // Screenshot the FAQ region (parent that contains all triggers).
     // Using a stable ancestor keeps the frame consistent open vs closed.
     const faqRegion = page.locator("section").filter({ has: firstTrigger }).first();
-    await expect(faqRegion).toHaveScreenshot(
-      "pricing-faq-closed.png",
-      SNAPSHOT_OPTS,
-    );
+    await expect(faqRegion).toHaveScreenshot("pricing-faq-closed.png", {
+      mask: maskFor(page),
+    });
   });
 
   test("FAQ accordion — open state (first item expanded)", async ({ page }) => {
@@ -80,12 +114,11 @@ test.describe("Pricing — visual regression: mobile stacked cards + FAQ states"
     if (panelId) {
       await expect(page.locator(`#${panelId}`)).toBeVisible();
     }
-
+    await settle(page);
     const faqRegion = page.locator("section").filter({ has: firstTrigger }).first();
-    await expect(faqRegion).toHaveScreenshot(
-      "pricing-faq-open.png",
-      SNAPSHOT_OPTS,
-    );
+    await expect(faqRegion).toHaveScreenshot("pricing-faq-open.png", {
+      mask: maskFor(page),
+    });
   });
 
   test("FAQ accordion — open state on mobile", async ({ page }) => {
@@ -98,11 +131,10 @@ test.describe("Pricing — visual regression: mobile stacked cards + FAQ states"
     await firstTrigger.scrollIntoViewIfNeeded();
     await firstTrigger.click();
     await expect(firstTrigger).toHaveAttribute("aria-expanded", "true");
-
+    await settle(page);
     const faqRegion = page.locator("section").filter({ has: firstTrigger }).first();
-    await expect(faqRegion).toHaveScreenshot(
-      "pricing-faq-open-mobile.png",
-      SNAPSHOT_OPTS,
-    );
+    await expect(faqRegion).toHaveScreenshot("pricing-faq-open-mobile.png", {
+      mask: maskFor(page),
+    });
   });
 });

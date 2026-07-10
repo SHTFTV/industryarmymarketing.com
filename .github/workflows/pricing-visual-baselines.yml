@@ -1,0 +1,64 @@
+# On-demand workflow to (re)generate the /pricing visual regression
+# baselines for every browser in the CI matrix. Snapshots are Linux+engine
+# specific; generating them in the same runner that later verifies them is
+# the only way to keep the pricing-a11y matrix stable.
+#
+# Trigger: workflow_dispatch. Uploads the updated snapshot PNGs as an
+# artifact; a maintainer downloads them, drops them into
+# `tests/pricing-visual.spec.ts-snapshots/`, and opens a PR.
+
+name: Pricing visual baselines (seed)
+
+on:
+  workflow_dispatch:
+    inputs:
+      browsers:
+        description: "Comma-separated browsers to seed (chromium, webkit, firefox)"
+        required: false
+        default: "chromium,webkit,firefox"
+
+permissions:
+  contents: read
+
+jobs:
+  seed:
+    name: Seed baselines (${{ matrix.browser }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        browser: [chromium, webkit, firefox]
+    env:
+      CI: "true"
+      VITE_GA4_MEASUREMENT_ID: G-TEST12345
+      TEST_BROWSER: ${{ matrix.browser }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Skip browsers not requested
+        id: gate
+        run: |
+          if [[ ",${{ github.event.inputs.browsers }}," == *",${{ matrix.browser }},"* ]]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=false" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Install dependencies
+        if: steps.gate.outputs.run == 'true'
+        run: npm ci
+      - name: Install Playwright browser
+        if: steps.gate.outputs.run == 'true'
+        run: npx playwright install --with-deps ${{ matrix.browser }}
+      - name: Generate baselines
+        if: steps.gate.outputs.run == 'true'
+        run: npx playwright test tests/pricing-visual.spec.ts --project=${{ matrix.browser }} --update-snapshots --reporter=list
+      - name: Upload baseline snapshots
+        if: steps.gate.outputs.run == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: pricing-visual-baselines-${{ matrix.browser }}
+          path: tests/pricing-visual.spec.ts-snapshots/
+          retention-days: 14
