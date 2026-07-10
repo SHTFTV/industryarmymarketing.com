@@ -42,6 +42,7 @@ import SeoAuditDetail from "./pages/SeoAuditDetail.tsx";
 import WeddingsEcosystem from "./pages/WeddingsEcosystem.tsx";
 import StaticHtmlPage from "./pages/StaticHtmlPage.tsx";
 import SiteMap from "./pages/SiteMap.tsx";
+import SeoPackages from "./pages/SeoPackages.tsx";
 import featuredBattle from "@/assets/blog/weddings-vs-aiweddings-battle.png.asset.json";
 
 const SITE = "https://industryarmymarketing.com";
@@ -173,6 +174,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/how-it-works" element={<HowItWorks />} />
           <Route path="/pricing" element={<Pricing />} />
+          <Route path="/seo-packages" element={<SeoPackages />} />
           <Route path="/contractors" element={<Contractors />} />
           <Route path="/service-professionals" element={<ServiceProfessionals />} />
           <Route path="/backlinks" element={<Backlinks />} />
