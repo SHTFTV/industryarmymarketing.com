@@ -243,6 +243,127 @@ const SeoPackages = () => (
     {/* Package Estimator */}
     <SeoPackageEstimator />
 
+    {/* Comparison table */}
+    <section className="py-20">
+      <div className="container mx-auto px-4 max-w-6xl">
+        <h2 className="font-display text-4xl md:text-5xl text-foreground text-center mb-3">
+          Side-by-Side <span className="text-primary">Comparison</span>
+        </h2>
+        <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-10">
+          Deliverables, timelines, and revisions across all three tiers.
+        </p>
+
+        <div className="rounded-lg border border-border bg-card overflow-x-auto">
+          <table className="w-full text-left min-w-[720px]">
+            <thead className="bg-secondary text-xs uppercase tracking-widest text-muted-foreground">
+              <tr>
+                <th className="px-6 py-4">Feature</th>
+                {SEO_PACKAGES.map((p) => (
+                  <th
+                    key={p.slug}
+                    className={`px-6 py-4 text-center ${p.featured ? "text-primary" : ""}`}
+                  >
+                    <div className="text-lg">{p.icon}</div>
+                    <div className="font-display text-xl text-foreground mt-1">{p.name}</div>
+                    <div className="text-[10px] tracking-widest">{p.tagline}</div>
+                    {p.featured && (
+                      <div className="inline-block mt-1 px-2 py-0.5 rounded-full bg-primary/20 text-primary text-[9px] font-bold">
+                        MOST POPULAR
+                      </div>
+                    )}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody className="text-sm">
+              {[
+                { label: "Price (one-time)", get: (p: typeof SEO_PACKAGES[number]) => (
+                  <span className="font-display text-2xl text-primary">${p.price}</span>
+                ) },
+                { label: "Total placements", get: (p) => `${p.deliverables}` },
+                { label: "Delivery time", get: (p) => `${p.timelineDays} days` },
+                { label: "Revisions included", get: (p) => `${p.revisions} round${p.revisions === 1 ? "" : "s"}` },
+                { label: "Mini blog / satellite posts", get: (p) => p.linkBuilding.find((l) => l.includes("satellite"))?.split(" ")[0] ?? "—" },
+                { label: "Web 2.0 properties", get: (p) => p.linkBuilding.find((l) => l.includes("web 2.0"))?.split(" ")[0] ?? "—" },
+                { label: "Article submissions", get: (p) => p.linkBuilding.find((l) => l.includes("article submissions"))?.split(" ")[0] ?? "—" },
+                { label: "EDU / GOV profiles", get: (p) => p.linkBuilding.find((l) => l.includes("EDU / GOV"))?.split(" ")[0] ?? "—" },
+                { label: "PBN posts (DA 50+)", get: (p) => {
+                  const m = p.linkBuilding.find((l) => l.includes("PBN"));
+                  return m ? m.split(" ")[0] : "—";
+                } },
+                { label: "Techbullion posts", get: (p) => {
+                  const m = p.linkBuilding.find((l) => l.includes("Techbullion"));
+                  return m ? m.split(" ")[0] : "—";
+                } },
+                { label: "Google News PR", get: (p) => {
+                  const m = p.linkBuilding.find((l) => /Google News/i.test(l));
+                  return m ? m.split(" ")[0] : "—";
+                } },
+                { label: "IAM industry verticals", get: (p) => {
+                  const m = p.iam.find((l) => /IAM industry vertical/.test(l));
+                  return m ? m.split(" ")[0] : "—";
+                } },
+                { label: "IAM .io placements", get: (p) => {
+                  const m = p.iam.find((l) => /\.io domain/.test(l));
+                  return m ? m.split(" ")[0] : "—";
+                } },
+                { label: "IAM .tv / .ltd placements", get: (p) => {
+                  const m = p.iam.find((l) => /\.tv or \.ltd/.test(l));
+                  return m ? m.split(" ")[0] : "—";
+                } },
+                { label: "IAM .com placement", get: (p) => (p.iam.some((l) => /\.com placement/.test(l)) ? "✓" : "—") },
+                { label: "weddings.io / roofers.io anchor", get: (p) => (p.iam.some((l) => /weddings\.io/.test(l)) ? "✓" : "—") },
+                { label: "Tier 2 drip duration", get: (p) => {
+                  if (p.tier2.some((l) => /60/.test(l))) return "60 days";
+                  if (p.tier2.some((l) => /30/.test(l))) return "30 days";
+                  return "Standard";
+                } },
+                { label: "Domain exclusivity", get: () => "✓" },
+                { label: "90-day link guarantee", get: () => "✓" },
+                { label: "White-label reports", get: () => "✓" },
+                { label: "Rush delivery available", get: (p) => (p.slug === "bullets" ? "—" : "✓") },
+              ].map((row) => (
+                <tr key={row.label} className="border-t border-border">
+                  <td className="px-6 py-3 font-medium text-foreground">{row.label}</td>
+                  {SEO_PACKAGES.map((p) => (
+                    <td
+                      key={p.slug}
+                      className={`px-6 py-3 text-center text-muted-foreground ${
+                        p.featured ? "bg-primary/5" : ""
+                      }`}
+                    >
+                      {row.get(p)}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+              <tr className="border-t border-border bg-card/60">
+                <td className="px-6 py-4"></td>
+                {SEO_PACKAGES.map((p) => (
+                  <td key={p.slug} className={`px-6 py-4 ${p.featured ? "bg-primary/5" : ""}`}>
+                    <div className="flex flex-col gap-2">
+                      <Button variant={p.featured ? "hero" : "outline"} size="sm" asChild>
+                        <Link to={`/seo-packages/${p.slug}`}>See {p.name} →</Link>
+                      </Button>
+                      <Button variant="ghost" size="sm" asChild>
+                        <a href={`mailto:colin@industryarmymarketing.com?subject=${p.name} Package Order`}>
+                          Order ${p.price}
+                        </a>
+                      </Button>
+                    </div>
+                  </td>
+                ))}
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p className="text-xs text-muted-foreground text-center mt-6">
+          Prefer a personalized proposal? <a href="#estimator" className="text-primary underline">Run the estimator</a> and download a PDF tailored to your inputs.
+        </p>
+      </div>
+    </section>
+
     {/* Deliverables & Timelines detail */}
     <section className="py-20">
       <div className="container mx-auto px-4 max-w-6xl">
