@@ -100,16 +100,42 @@ const faqs: { q: string; a: string }[] = [
   },
 ];
 
+const comparisonRows: { feature: string; directory: string; exclusive: string }[] = [
+  { feature: "Price", directory: "$10 / year", exclusive: "Monthly · market-based" },
+  { feature: "Directory listing", directory: "Yes", exclusive: "Yes" },
+  { feature: "Vendors per category / market", directory: "Unlimited", exclusive: "One — you" },
+  { feature: "Placement above directory", directory: "No", exclusive: "Yes — every search" },
+  { feature: "Featured placement platform-wide", directory: "No", exclusive: "Yes" },
+  { feature: "EyeSpyR verified rating (22+ sources)", directory: "Yes", exclusive: "Yes" },
+  { feature: "TALC auto review requests", directory: "Yes", exclusive: "Yes" },
+  { feature: "Market exclusivity", directory: "No", exclusive: "Strictly enforced" },
+  { feature: "Billing cadence", directory: "Annual", exclusive: "Monthly" },
+  { feature: "Cancel anytime", directory: "Yes (renews yearly)", exclusive: "Yes (month-to-month)" },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+
 const Pricing = () => (
   <Layout>
     <Seo
       title="Pricing — $10/yr Directory & Exclusive Market Ownership | IAM"
       description="Two tiers. $10/year Directory Listing open to every trade. Exclusive Market Ownership — one vendor per category per market, priced by population. Contact IAM for your rate."
       path="/pricing"
-      jsonLd={breadcrumbList([
-        { name: "Home", path: "/" },
-        { name: "Pricing", path: "/pricing" },
-      ])}
+      jsonLd={[
+        breadcrumbList([
+          { name: "Home", path: "/" },
+          { name: "Pricing", path: "/pricing" },
+        ]),
+        faqSchema,
+      ]}
     />
     <PricingAnalytics />
     <PageHeader
@@ -400,6 +426,88 @@ const Pricing = () => (
             </Link>
           </Button>
         </div>
+      </div>
+    </section>
+
+    {/* Side-by-side comparison */}
+    <section
+      id="tier-comparison"
+      className="py-16 md:py-20 bg-background border-t border-border"
+    >
+      <div className="container mx-auto px-4 max-w-5xl">
+        <div className="text-center mb-10">
+          <p className="text-primary uppercase tracking-[0.3em] text-xs font-semibold mb-3">
+            Side by Side
+          </p>
+          <h2 className="font-display text-4xl md:text-5xl text-foreground">
+            Directory vs <span className="text-primary">Exclusive</span>
+          </h2>
+          <p className="text-muted-foreground mt-3">
+            Same platform. Different level of ownership.
+          </p>
+        </div>
+
+        {/* Desktop table */}
+        <div className="hidden md:block overflow-x-auto rounded-lg border border-border bg-card">
+          <table
+            className="w-full text-sm"
+            aria-label="Directory versus Exclusive tier comparison"
+          >
+            <thead>
+              <tr className="border-b border-border">
+                <th scope="col" className="text-left p-4 text-xs uppercase tracking-widest text-muted-foreground font-semibold w-1/3">
+                  Feature
+                </th>
+                <th scope="col" className="text-left p-4 font-display text-lg text-foreground">
+                  Directory
+                  <div className="text-xs text-muted-foreground font-sans normal-case tracking-normal">$10 / year</div>
+                </th>
+                <th scope="col" className="text-left p-4 font-display text-lg text-primary">
+                  Exclusive
+                  <div className="text-xs text-muted-foreground font-sans normal-case tracking-normal">Contact for market rate</div>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {comparisonRows.map((row) => (
+                <tr key={row.feature} className="border-b border-border last:border-0">
+                  <th
+                    scope="row"
+                    className="text-left align-top p-4 text-foreground font-medium"
+                  >
+                    {row.feature}
+                  </th>
+                  <td className="align-top p-4 text-foreground/90">{row.directory}</td>
+                  <td className="align-top p-4 text-foreground/90">{row.exclusive}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        {/* Mobile stacked list */}
+        <ul className="md:hidden space-y-3" aria-label="Directory versus Exclusive tier comparison">
+          {comparisonRows.map((row) => (
+            <li
+              key={row.feature}
+              className="rounded-lg border border-border bg-card p-4"
+            >
+              <p className="text-xs uppercase tracking-widest text-muted-foreground mb-2">
+                {row.feature}
+              </p>
+              <div className="grid grid-cols-2 gap-3 text-sm">
+                <div>
+                  <p className="text-[10px] uppercase tracking-widest text-muted-foreground mb-1">Directory</p>
+                  <p className="text-foreground">{row.directory}</p>
+                </div>
+                <div>
+                  <p className="text-[10px] uppercase tracking-widest text-primary mb-1">Exclusive</p>
+                  <p className="text-foreground">{row.exclusive}</p>
+                </div>
+              </div>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
 
