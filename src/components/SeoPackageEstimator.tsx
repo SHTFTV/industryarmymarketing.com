@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { z } from "zod";
 import { Button } from "@/components/ui/button";
@@ -11,9 +11,11 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Target, Download } from "lucide-react";
+import { Target, Download, Loader2 } from "lucide-react";
 import { SEO_PACKAGES, recommendPackage, type SeoPackageSlug } from "@/data/seoPackages";
 import { downloadSeoProposalPdf } from "@/lib/seoProposalPdf";
+import { submitSeoOrder } from "@/lib/submitSeoOrder";
+import { track, trackDebounced } from "@/lib/analytics";
 import { toast } from "@/hooks/use-toast";
 
 const schema = z.object({
@@ -38,6 +40,11 @@ const SeoPackageEstimator = () => {
   const [keywords, setKeywords] = useState("");
   const [recommendation, setRecommendation] = useState<SeoPackageSlug | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [submitting, setSubmitting] = useState(false);
+
+  useEffect(() => {
+    void track("estimator_view");
+  }, []);
 
   const recommended = useMemo(
     () =>
@@ -52,6 +59,10 @@ const SeoPackageEstimator = () => {
 
   const pkg = SEO_PACKAGES.find((p) => p.slug === (recommendation ?? recommended))!;
 
+  useEffect(() => {
+    void track("estimator_recommendation", { packageSlug: recommended });
+  }, [recommended]);
+
   const buildParams = () =>
     new URLSearchParams({
       budget: String(budget),
@@ -63,28 +74,6 @@ const SeoPackageEstimator = () => {
       ...(targetUrl ? { targetUrl } : {}),
       ...(keywords ? { keywords } : {}),
     }).toString();
-
-  const buildMailto = () => {
-    const subject = `${pkg.name} Package Order — ${clientName || "IAM prospect"}`;
-    const body = [
-      `Package: ${pkg.name} (${pkg.tagline}) — $${pkg.price}`,
-      "",
-      "— Estimator Inputs —",
-      `Budget: $${budget}`,
-      `Competition: ${competition}`,
-      `Target URLs: ${targetUrls}`,
-      `City population: ${cityPopulation}`,
-      "",
-      "— Contact —",
-      `Name: ${clientName || "(please fill)"}`,
-      `Email: ${clientEmail || "(please fill)"}`,
-      `Target URL: ${targetUrl || "(please fill)"}`,
-      `Keywords: ${keywords || "(please fill 3–5)"}`,
-      "",
-      `Deliverables: ${pkg.deliverables} placements · ${pkg.timelineDays}-day delivery · ${pkg.revisions} revisions`,
-    ].join("\n");
-    return `mailto:colin@industryarmymarketing.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  };
 
   const parsedInput = () =>
     schema.safeParse({
@@ -106,14 +95,23 @@ const SeoPackageEstimator = () => {
       return;
     }
     setError(null);
-    setRecommendation(
-      recommendPackage({
+    const rec = recommendPackage({
+      budget: parsed.data.budget,
+      competition: parsed.data.competition,
+      targetUrls: parsed.data.targetUrls,
+      cityPopulation: parsed.data.cityPopulation,
+    });
+    setRecommendation(rec);
+    void track("estimator_submit", {
+      packageSlug: rec,
+      meta: {
         budget: parsed.data.budget,
         competition: parsed.data.competition,
         targetUrls: parsed.data.targetUrls,
         cityPopulation: parsed.data.cityPopulation,
-      }),
-    );
+        hasEmail: Boolean(parsed.data.clientEmail),
+      },
+    });
   };
 
   const onDownload = () => {
@@ -135,9 +133,55 @@ const SeoPackageEstimator = () => {
         targetUrl: parsed.data.targetUrl || undefined,
         keywords: parsed.data.keywords || undefined,
       });
+      void track("pdf_download", {
+        packageSlug: pkg.slug,
+        meta: { source: "estimator" },
+      });
       toast({ title: "Proposal ready", description: `Downloaded ${filename}` });
     } catch {
       toast({ title: "Could not generate PDF", variant: "destructive" });
+    }
+  };
+
+  const onOrder = async () => {
+    const parsed = parsedInput();
+    if (!parsed.success) {
+      setError(parsed.error.errors[0]?.message ?? "Invalid input");
+      return;
+    }
+    if (!parsed.data.clientEmail) {
+      setError("Please add your email so we can send you the proposal PDF.");
+      return;
+    }
+    setError(null);
+    setSubmitting(true);
+    try {
+      const result = await submitSeoOrder({
+        budget: parsed.data.budget,
+        competition: parsed.data.competition,
+        targetUrls: parsed.data.targetUrls,
+        cityPopulation: parsed.data.cityPopulation,
+        slug: pkg.slug,
+        clientName: parsed.data.clientName || undefined,
+        clientEmail: parsed.data.clientEmail || undefined,
+        targetUrl: parsed.data.targetUrl || undefined,
+        keywords: parsed.data.keywords || undefined,
+        source: "estimator",
+      });
+      toast({
+        title: result.emailedCustomer ? "Order sent!" : "Request received",
+        description:
+          result.warning ??
+          `${pkg.name} proposal on the way. Colin will confirm within 24h.`,
+      });
+    } catch (err) {
+      toast({
+        title: "Order failed",
+        description: err instanceof Error ? err.message : "Please try again",
+        variant: "destructive",
+      });
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -166,14 +210,27 @@ const SeoPackageEstimator = () => {
                 min={0}
                 max={50000}
                 value={budget}
-                onChange={(e) => setBudget(e.target.value)}
+                onChange={(e) => {
+                  setBudget(e.target.value);
+                  trackDebounced("budget", "estimator_input_change", {
+                    meta: { field: "budget", value: e.target.value },
+                  });
+                }}
                 className="mt-2"
               />
             </div>
 
             <div>
               <Label>Competition Level</Label>
-              <Select value={competition} onValueChange={(v) => setCompetition(v as typeof competition)}>
+              <Select
+                value={competition}
+                onValueChange={(v) => {
+                  setCompetition(v as typeof competition);
+                  void track("estimator_input_change", {
+                    meta: { field: "competition", value: v },
+                  });
+                }}
+              >
                 <SelectTrigger className="mt-2"><SelectValue /></SelectTrigger>
                 <SelectContent>
                   <SelectItem value="low">Low — new niche or local terms</SelectItem>
@@ -186,11 +243,37 @@ const SeoPackageEstimator = () => {
             <div className="grid sm:grid-cols-2 gap-4">
               <div>
                 <Label htmlFor="urls">Target URLs</Label>
-                <Input id="urls" type="number" min={1} max={50} value={targetUrls} onChange={(e) => setTargetUrls(e.target.value)} className="mt-2" />
+                <Input
+                  id="urls"
+                  type="number"
+                  min={1}
+                  max={50}
+                  value={targetUrls}
+                  onChange={(e) => {
+                    setTargetUrls(e.target.value);
+                    trackDebounced("urls", "estimator_input_change", {
+                      meta: { field: "targetUrls", value: e.target.value },
+                    });
+                  }}
+                  className="mt-2"
+                />
               </div>
               <div>
                 <Label htmlFor="pop">City Population</Label>
-                <Input id="pop" type="number" min={0} max={50_000_000} value={cityPopulation} onChange={(e) => setCityPopulation(e.target.value)} className="mt-2" />
+                <Input
+                  id="pop"
+                  type="number"
+                  min={0}
+                  max={50_000_000}
+                  value={cityPopulation}
+                  onChange={(e) => {
+                    setCityPopulation(e.target.value);
+                    trackDebounced("pop", "estimator_input_change", {
+                      meta: { field: "cityPopulation", value: e.target.value },
+                    });
+                  }}
+                  className="mt-2"
+                />
               </div>
             </div>
 
@@ -240,14 +323,36 @@ const SeoPackageEstimator = () => {
               <div><div className="font-display text-lg text-primary">{pkg.revisions}</div><div className="text-[10px] uppercase tracking-widest text-muted-foreground">Revisions</div></div>
             </div>
             <div className="space-y-2">
-              <Button variant="hero" className="w-full" asChild>
-                <a href={buildMailto()}>Order {pkg.name} · ${pkg.price} →</a>
+              <Button
+                variant="hero"
+                className="w-full"
+                onClick={onOrder}
+                disabled={submitting}
+              >
+                {submitting ? (
+                  <>
+                    <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                    Sending...
+                  </>
+                ) : (
+                  <>Order {pkg.name} · ${pkg.price} →</>
+                )}
               </Button>
               <Button variant="outline" className="w-full" onClick={onDownload}>
                 <Download className="w-4 h-4 mr-2" /> Download PDF Proposal
               </Button>
               <Button variant="ghost" className="w-full" asChild>
-                <Link to={`/seo-packages/${pkg.slug}?${buildParams()}`}>See Full {pkg.name} Details →</Link>
+                <Link
+                  to={`/seo-packages/${pkg.slug}?${buildParams()}`}
+                  onClick={() =>
+                    void track("package_selected", {
+                      packageSlug: pkg.slug,
+                      meta: { source: "estimator" },
+                    })
+                  }
+                >
+                  See Full {pkg.name} Details →
+                </Link>
               </Button>
             </div>
           </div>
