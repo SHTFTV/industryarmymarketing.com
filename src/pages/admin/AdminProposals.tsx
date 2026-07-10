@@ -416,23 +416,9 @@ const AdminProposals = () => {
                           </SelectContent>
                         </Select>
                       </TableCell>
-                      <TableCell className="text-xs">
-                        <span
-                          className={
-                            r.emailed_owner ? "text-primary" : "text-muted-foreground"
-                          }
-                        >
-                          O
-                        </span>{" "}
-                        <span
-                          className={
-                            r.emailed_customer
-                              ? "text-primary"
-                              : "text-muted-foreground"
-                          }
-                        >
-                          C
-                        </span>
+                      <TableCell className="text-xs whitespace-nowrap">
+                        <EmailPill label="O" status={r.owner_email_status} />{" "}
+                        <EmailPill label="C" status={r.customer_email_status} />
                       </TableCell>
                       <TableCell onClick={(e) => e.stopPropagation()}>
                         <Button
@@ -561,13 +547,32 @@ const AdminProposals = () => {
                 <span className="text-muted-foreground">City population:</span>{" "}
                 {selected.city_population.toLocaleString()}
               </div>
-              <div>
-                <span className="text-muted-foreground">Emailed owner:</span>{" "}
-                {selected.emailed_owner ? "yes" : "no"}
-              </div>
-              <div>
-                <span className="text-muted-foreground">Emailed customer:</span>{" "}
-                {selected.emailed_customer ? "yes" : "no"}
+              <div className="col-span-2 pt-2 border-t border-border">
+                <p className="text-muted-foreground text-xs uppercase tracking-widest mb-2">
+                  Email delivery
+                </p>
+                <div className="grid gap-2">
+                  <EmailStatusRow
+                    who="Owner"
+                    to={selected.email ? `reply-to ${selected.email}` : OWNER_LABEL}
+                    status={selected.owner_email_status}
+                    error={selected.owner_email_error}
+                    messageId={selected.owner_message_id}
+                  />
+                  <EmailStatusRow
+                    who="Customer"
+                    to={selected.email ?? "no email provided"}
+                    status={selected.customer_email_status}
+                    error={selected.customer_email_error}
+                    messageId={selected.customer_message_id}
+                  />
+                  {selected.email_attempted_at && (
+                    <p className="text-xs text-muted-foreground">
+                      Last attempt:{" "}
+                      {new Date(selected.email_attempted_at).toLocaleString()}
+                    </p>
+                  )}
+                </div>
               </div>
             </div>
             {selected.notes && (
