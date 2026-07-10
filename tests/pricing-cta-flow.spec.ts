@@ -82,6 +82,26 @@ async function ga4EventCalls(page: Page): Promise<string[]> {
   });
 }
 
+/**
+ * Returns the full GA4 event tuples ["event", name, params] captured so far.
+ * Used to assert the params payload (tier / cta / location / question) that
+ * the app forwards to gtag alongside the event name.
+ */
+async function ga4EventTuples(
+  page: Page,
+): Promise<Array<{ name: string; params: Record<string, unknown> }>> {
+  return await page.evaluate(() => {
+    const calls =
+      (window as unknown as { __ga4Calls?: unknown[][] }).__ga4Calls ?? [];
+    return calls
+      .filter((c) => c[0] === "event")
+      .map((c) => ({
+        name: c[1] as string,
+        params: (c[2] ?? {}) as Record<string, unknown>,
+      }));
+  });
+}
+
 function countOf<T>(arr: T[], v: T) {
   return arr.filter((x) => x === v).length;
 }
@@ -513,6 +533,213 @@ test.describe("Pricing — GA4 mirror sends events", () => {
         .toBe(true);
       const ga4 = await ga4EventCalls(page);
       expect(ga4.filter((e) => e === "pricing_tier_click").length).toBe(1);
+    });
+  }
+});
+
+// ---------------------------------------------------------------------------
+// 6. GA4 event_params payloads — tier, cta, location, question
+// ---------------------------------------------------------------------------
+test.describe("Pricing — GA4 mirror carries expected event_params", () => {
+  test.skip(LIVE, "Local dev only");
+  test.skip(
+    !process.env.VITE_GA4_MEASUREMENT_ID,
+    "VITE_GA4_MEASUREMENT_ID not set — GA4 mirror is disabled in this build",
+  );
+
+  for (const vp of viewports) {
+    test(`pricing_tier_click carries tier + cta (${vp.name})`, async ({ page }) => {
+      const captured = makeCaptured();
+      await stubBackend(page, captured);
+      await shimGtag(page);
+      await page.setViewportSize({ width: vp.width, height: vp.height });
+
+      await page.goto("/pricing");
+      await page.getByRole("link", { name: /get listed/i }).first().click();
+
+      await expect
+        .poll(async () =>
+          (await ga4EventTuples(page)).some((e) => e.name === "pricing_tier_click"),
+        )
+        .toBe(true);
+
+      const tuples = await ga4EventTuples(page);
+      const tierClicks = tuples.filter((e) => e.name === "pricing_tier_click");
+      expect(tierClicks).toHaveLength(1);
+      expect(tierClicks[0].params).toMatchObject({
+        tier: "directory",
+        cta: expect.stringMatching(/get listed/i),
+      });
+    });
+
+    test(`pricing_tier_click for exclusive carries tier=exclusive (${vp.name})`, async ({
+      page,
+    }) => {
+      const captured = makeCaptured();
+      await stubBackend(page, captured);
+      await shimGtag(page);
+      await page.setViewportSize({ width: vp.width, height: vp.height });
+
+      await page.goto("/pricing");
+      await page
+        .getByRole("link", { name: /contact us for your market rate/i })
+        .first()
+        .click();
+
+      await expect
+        .poll(async () =>
+          (await ga4EventTuples(page)).some((e) => e.name === "pricing_tier_click"),
+        )
+        .toBe(true);
+
+      const tuples = await ga4EventTuples(page);
+      const tierClicks = tuples.filter((e) => e.name === "pricing_tier_click");
+      expect(tierClicks).toHaveLength(1);
+      expect(tierClicks[0].params).toMatchObject({
+        tier: "exclusive",
+        cta: expect.stringMatching(/market rate/i),
+      });
+    });
+
+    test(`pricing_contact_click carries a location param (${vp.name})`, async ({
+      page,
+    }) => {
+      const captured = makeCaptured();
+      await stubBackend(page, captured);
+      await shimGtag(page);
+      await page.setViewportSize({ width: vp.width, height: vp.height });
+
+      await page.goto("/pricing");
+      await page
+        .getByRole("link", { name: /still have questions\? contact us/i })
+        .click();
+      await expect(page).toHaveURL(/\/contact$/);
+
+      // Read the tuples that were captured in the /pricing document. GA4 calls
+      // live on the previous document, so re-navigate back and re-verify from
+      // the fresh document isn't possible — instead we go back with history so
+      // the same document (and its __ga4Calls) is restored.
+      await page.goBack();
+      const tuples = await ga4EventTuples(page);
+      const contactClicks = tuples.filter((e) => e.name === "pricing_contact_click");
+      expect(contactClicks.length).toBeGreaterThanOrEqual(1);
+      // Every emitted contact_click carries a non-empty location string.
+      for (const c of contactClicks) {
+        expect(typeof c.params.location).toBe("string");
+        expect((c.params.location as string).length).toBeGreaterThan(0);
+      }
+    });
+
+    test(`pricing_faq_open carries the clicked question (${vp.name})`, async ({
+      page,
+    }) => {
+      const captured = makeCaptured();
+      await stubBackend(page, captured);
+      await shimGtag(page);
+      await page.setViewportSize({ width: vp.width, height: vp.height });
+
+      await page.goto("/pricing");
+      await page
+        .getByRole("button", { name: /what's included in the \$10\/year/i })
+        .click();
+
+      await expect
+        .poll(async () =>
+          (await ga4EventTuples(page)).some((e) => e.name === "pricing_faq_open"),
+        )
+        .toBe(true);
+
+      const tuples = await ga4EventTuples(page);
+      const faqOpens = tuples.filter((e) => e.name === "pricing_faq_open");
+      expect(faqOpens).toHaveLength(1);
+      expect(typeof faqOpens[0].params.question).toBe("string");
+      expect((faqOpens[0].params.question as string).toLowerCase()).toContain(
+        "$10",
+      );
+    });
+  }
+});
+
+// ---------------------------------------------------------------------------
+// 7. Navigation flows — SPA link nav + browser back/forward
+//    pricing_view fires exactly once per /pricing document; tier_click fires
+//    exactly once per user click, never duplicated by history restoration.
+// ---------------------------------------------------------------------------
+test.describe("Pricing — navigation preserves exactly-once event semantics", () => {
+  test.skip(LIVE, "Stubs Supabase; local dev only");
+
+  for (const vp of viewports) {
+    test(`SPA nav /pricing → /contact → /pricing: pricing_view once per mount (${vp.name})`, async ({
+      page,
+    }) => {
+      const captured = makeCaptured();
+      await stubBackend(page, captured);
+      await page.setViewportSize({ width: vp.width, height: vp.height });
+
+      await page.goto("/pricing");
+      await expect
+        .poll(() => countOf(captured.events, "pricing_view"))
+        .toBe(1);
+
+      // Tier CTA → /contact. tier_click fires once.
+      await page.getByRole("link", { name: /get listed/i }).first().click();
+      await expect(page).toHaveURL(/\/contact\?tier=directory$/);
+      await page.waitForTimeout(300);
+      expect(countOf(captured.events, "pricing_tier_click")).toBe(1);
+
+      // Navigate back to /pricing via the in-app nav (fresh mount).
+      await page.getByRole("link", { name: /^pricing$/i }).first().click();
+      await expect(page).toHaveURL(/\/pricing$/);
+      await expect
+        .poll(() => countOf(captured.events, "pricing_view"))
+        .toBe(2);
+
+      // tier_click count is still exactly 1 — remount did not replay it.
+      await page.waitForTimeout(300);
+      expect(countOf(captured.events, "pricing_tier_click")).toBe(1);
+    });
+
+    test(`browser back/forward: no duplicate pricing_view or tier_click (${vp.name})`, async ({
+      page,
+    }) => {
+      const captured = makeCaptured();
+      await stubBackend(page, captured);
+      await page.setViewportSize({ width: vp.width, height: vp.height });
+
+      await page.goto("/pricing");
+      await expect
+        .poll(() => countOf(captured.events, "pricing_view"))
+        .toBe(1);
+
+      await page.getByRole("link", { name: /get listed/i }).first().click();
+      await expect(page).toHaveURL(/\/contact\?tier=directory$/);
+      expect(countOf(captured.events, "pricing_tier_click")).toBe(1);
+
+      // Browser back → /pricing remounts. pricing_view increments by 1,
+      // tier_click stays at 1 (the historical click is not replayed).
+      await page.goBack();
+      await expect(page).toHaveURL(/\/pricing$/);
+      await expect
+        .poll(() => countOf(captured.events, "pricing_view"))
+        .toBe(2);
+      await page.waitForTimeout(300);
+      expect(countOf(captured.events, "pricing_tier_click")).toBe(1);
+
+      // Browser forward → /contact. No new pricing_view, no new tier_click.
+      await page.goForward();
+      await expect(page).toHaveURL(/\/contact\?tier=directory$/);
+      await page.waitForTimeout(300);
+      expect(countOf(captured.events, "pricing_view")).toBe(2);
+      expect(countOf(captured.events, "pricing_tier_click")).toBe(1);
+
+      // Back once more → /pricing remounts a third time; still exactly one
+      // additional pricing_view, still no replay of tier_click.
+      await page.goBack();
+      await expect(page).toHaveURL(/\/pricing$/);
+      await expect
+        .poll(() => countOf(captured.events, "pricing_view"))
+        .toBe(3);
+      expect(countOf(captured.events, "pricing_tier_click")).toBe(1);
     });
   }
 });
