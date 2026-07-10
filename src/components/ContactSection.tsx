@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import { z } from "zod";
 import { supabase } from "@/integrations/supabase/client";
@@ -45,8 +46,24 @@ const fieldCls = "bg-card border-border focus:border-primary";
 const errCls = "text-destructive text-xs mt-1";
 
 const ContactSection = () => {
+  const [params] = useSearchParams();
+  const tierParam = (params.get("tier") || "").toLowerCase();
+  const tier: "directory" | "exclusive" | null =
+    tierParam === "directory" || tierParam === "exclusive" ? tierParam : null;
+  const prefillMessage = tier === "directory"
+    ? "I'm interested in the $10/year Directory Listing. My trade and city are above — please confirm availability."
+    : tier === "exclusive"
+      ? "I'm interested in Exclusive Market Ownership. Please confirm my market rate and slot availability."
+      : "";
+
   const [form, setForm] = useState({
-    name: "", email: "", phone: "", trade: "", city: "", message: "", website: "",
+    name: "",
+    email: "",
+    phone: "",
+    trade: "",
+    city: "",
+    message: prefillMessage,
+    website: "",
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitting, setSubmitting] = useState(false);
@@ -78,6 +95,7 @@ const ContactSection = () => {
     setSubmitting(true);
     try {
       const { website: _hp, ...clean } = parsed.data;
+      const source = tier ? `pricing-${tier}` : "contact-page";
       const { error } = await supabase.from("leads").insert({
         name: clean.name,
         email: clean.email,
@@ -85,7 +103,7 @@ const ContactSection = () => {
         trade: clean.trade,
         city: clean.city,
         message: clean.message,
-        source: "contact-page",
+        source,
         user_agent: typeof navigator !== "undefined" ? navigator.userAgent : null,
       });
       if (error) throw error;
