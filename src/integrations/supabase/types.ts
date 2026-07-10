@@ -53,6 +53,47 @@ export type Database = {
         }
         Relationships: []
       }
+      proposal_email_attempts: {
+        Row: {
+          created_at: string
+          error: string | null
+          id: string
+          kind: string
+          message_id: string | null
+          proposal_id: string
+          recipient: string
+          status: string
+        }
+        Insert: {
+          created_at?: string
+          error?: string | null
+          id?: string
+          kind: string
+          message_id?: string | null
+          proposal_id: string
+          recipient: string
+          status: string
+        }
+        Update: {
+          created_at?: string
+          error?: string | null
+          id?: string
+          kind?: string
+          message_id?: string | null
+          proposal_id?: string
+          recipient?: string
+          status?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "proposal_email_attempts_proposal_id_fkey"
+            columns: ["proposal_id"]
+            isOneToOne: false
+            referencedRelation: "seo_proposals"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       seo_audits: {
         Row: {
           checks: Json
