@@ -7,7 +7,8 @@ import { Input } from "@/components/ui/input";
 import {
   Table, TableBody, TableCell, TableHead, TableHeader, TableRow,
 } from "@/components/ui/table";
-import { Loader2, LogOut, Search, ChevronLeft, ChevronRight, RefreshCw } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Loader2, LogOut, Search, ChevronLeft, ChevronRight, RefreshCw, Target } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 type Lead = {
@@ -120,6 +121,11 @@ const AdminLeads = () => {
               <p className="text-muted-foreground text-sm mt-1">{count} total submission{count === 1 ? "" : "s"}</p>
             </div>
             <div className="flex items-center gap-2">
+              <Button variant="outline" size="sm" asChild>
+                <Link to="/admin/proposals">
+                  <Target className="w-4 h-4 mr-2" />SEO proposals
+                </Link>
+              </Button>
               <Button variant="outline" size="sm" onClick={load} disabled={loading}>
                 <RefreshCw className={`w-4 h-4 mr-2 ${loading ? "animate-spin" : ""}`} />Refresh
               </Button>

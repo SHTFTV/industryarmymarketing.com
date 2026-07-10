@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Link, useParams, useSearchParams, Navigate } from "react-router-dom";
 import Layout from "@/components/Layout";
 import Seo from "@/components/Seo";
@@ -5,8 +6,10 @@ import PageHeader from "@/components/PageHeader";
 import { Button } from "@/components/ui/button";
 import { breadcrumbList } from "@/lib/breadcrumb";
 import { SEO_PACKAGES, type SeoPackageSlug } from "@/data/seoPackages";
-import { Check, Clock, Target, Zap, ShieldCheck, RefreshCw, Download } from "lucide-react";
+import { Check, Clock, Target, Zap, ShieldCheck, RefreshCw, Download, Loader2 } from "lucide-react";
 import { downloadSeoProposalPdf } from "@/lib/seoProposalPdf";
+import { submitSeoOrder } from "@/lib/submitSeoOrder";
+import { track } from "@/lib/analytics";
 import { toast } from "@/hooks/use-toast";
 
 const SeoPackageDetail = () => {
@@ -29,37 +32,32 @@ const SeoPackageDetail = () => {
   const cityPopulation = params.get("cityPopulation") ?? "";
   const hasPrefill = Boolean(clientName || clientEmail || targetUrl || keywords || budget);
 
-  const buildMailto = () => {
-    const subject = `${pkg.name} Package Order — ${clientName || "IAM prospect"}`;
-    const body = [
-      `Package: ${pkg.name} (${pkg.tagline}) — $${pkg.price}`,
-      "",
-      hasPrefill ? "— Estimator Inputs —" : "",
-      budget ? `Budget: $${budget}` : "",
-      competition ? `Competition: ${competition}` : "",
-      targetUrls ? `Target URLs: ${targetUrls}` : "",
-      cityPopulation ? `City population: ${cityPopulation}` : "",
-      "",
-      "— Contact —",
-      `Name: ${clientName || "(please fill)"}`,
-      `Email: ${clientEmail || "(please fill)"}`,
-      `Target URL: ${targetUrl || "(please fill)"}`,
-      `Keywords: ${keywords || "(please fill 3–5)"}`,
-      "",
-      `Deliverables: ${pkg.deliverables} placements · ${pkg.timelineDays}-day delivery · ${pkg.revisions} revisions`,
-    ]
-      .filter((l) => l !== "")
-      .join("\n");
-    return `mailto:colin@industryarmymarketing.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  };
+  const [submitting, setSubmitting] = useState(false);
 
-  const onDownloadPdf = () => {
+  useEffect(() => {
+    void track("package_detail_view", { packageSlug: pkg.slug });
+  }, [pkg.slug]);
+
+  const normalizedComp: "low" | "medium" | "high" =
+    competition === "low" || competition === "medium" || competition === "high"
+      ? competition
+      : "medium";
+
+  const onOrder = async () => {
+    if (!clientEmail) {
+      toast({
+        title: "Email required",
+        description:
+          "Use the estimator on /seo-packages so we can send you the proposal PDF.",
+        variant: "destructive",
+      });
+      return;
+    }
+    setSubmitting(true);
     try {
-      const comp: "low" | "medium" | "high" =
-        competition === "low" || competition === "medium" || competition === "high" ? competition : "medium";
-      const filename = downloadSeoProposalPdf({
+      const result = await submitSeoOrder({
         budget: Number(budget) || pkg.price,
-        competition: comp,
+        competition: normalizedComp,
         targetUrls: Number(targetUrls) || 1,
         cityPopulation: Number(cityPopulation) || 0,
         slug: pkg.slug,
@@ -67,6 +65,41 @@ const SeoPackageDetail = () => {
         clientEmail: clientEmail || undefined,
         targetUrl: targetUrl || undefined,
         keywords: keywords || undefined,
+        source: `detail:${pkg.slug}`,
+      });
+      toast({
+        title: result.emailedCustomer ? "Order sent!" : "Request received",
+        description:
+          result.warning ??
+          `${pkg.name} proposal on the way. Colin will confirm within 24h.`,
+      });
+    } catch (err) {
+      toast({
+        title: "Order failed",
+        description: err instanceof Error ? err.message : "Please try again",
+        variant: "destructive",
+      });
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  const onDownloadPdf = () => {
+    try {
+      const filename = downloadSeoProposalPdf({
+        budget: Number(budget) || pkg.price,
+        competition: normalizedComp,
+        targetUrls: Number(targetUrls) || 1,
+        cityPopulation: Number(cityPopulation) || 0,
+        slug: pkg.slug,
+        clientName: clientName || undefined,
+        clientEmail: clientEmail || undefined,
+        targetUrl: targetUrl || undefined,
+        keywords: keywords || undefined,
+      });
+      void track("pdf_download", {
+        packageSlug: pkg.slug,
+        meta: { source: "detail" },
       });
       toast({ title: "Proposal ready", description: `Downloaded ${filename}` });
     } catch {
@@ -108,10 +141,20 @@ const SeoPackageDetail = () => {
         description={pkg.summary}
       >
         <div className="flex flex-wrap gap-3">
-          <Button variant="hero" size="lg" asChild>
-            <a href={buildMailto()}>
-              Order {pkg.name} · ${pkg.price}
-            </a>
+          <Button
+            variant="hero"
+            size="lg"
+            onClick={onOrder}
+            disabled={submitting}
+          >
+            {submitting ? (
+              <>
+                <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                Sending...
+              </>
+            ) : (
+              <>Order {pkg.name} · ${pkg.price}</>
+            )}
           </Button>
           <Button variant="outline" size="lg" onClick={onDownloadPdf}>
             <Download className="w-4 h-4 mr-2" /> Download PDF Proposal
@@ -275,10 +318,20 @@ const SeoPackageDetail = () => {
             ${pkg.price} one-time. {pkg.deliverables} placements. {pkg.timelineDays}-day delivery. Email your target URL and 3–5 keywords — we confirm within 24 hours.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
-            <Button variant="hero" size="lg" asChild>
-              <a href={buildMailto()}>
-                Order {pkg.name} · ${pkg.price}
-              </a>
+            <Button
+              variant="hero"
+              size="lg"
+              onClick={onOrder}
+              disabled={submitting}
+            >
+              {submitting ? (
+                <>
+                  <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                  Sending...
+                </>
+              ) : (
+                <>Order {pkg.name} · ${pkg.price}</>
+              )}
             </Button>
             <Button variant="outline" size="lg" asChild>
               <Link to={`/seo-packages/${next.slug}`}>Compare with {next.name} →</Link>

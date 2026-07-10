@@ -31,6 +31,7 @@ import LocalSurrey from "./pages/local/Surrey.tsx";
 import LocalLangley from "./pages/local/Langley.tsx";
 import AdminLogin from "./pages/admin/AdminLogin.tsx";
 import AdminLeads from "./pages/admin/AdminLeads.tsx";
+import AdminProposals from "./pages/admin/AdminProposals.tsx";
 import PwaCheck from "./pages/PwaCheck.tsx";
 import RssPreview from "./pages/RssPreview.tsx";
 import DomainSetup from "./pages/DomainSetup.tsx";
@@ -205,6 +206,7 @@ const App = () => (
           <Route path="/local/langley" element={<LocalLangley />} />
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route path="/admin/leads" element={<AdminLeads />} />
+          <Route path="/admin/proposals" element={<AdminProposals />} />
           <Route path="/pwa-check" element={<PwaCheck />} />
           <Route path="/rss-preview" element={<RssPreview />} />
           <Route path="/domain-setup" element={<DomainSetup />} />
