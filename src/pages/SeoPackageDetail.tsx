@@ -1,19 +1,78 @@
-import { Link, useParams, Navigate } from "react-router-dom";
+import { Link, useParams, useSearchParams, Navigate } from "react-router-dom";
 import Layout from "@/components/Layout";
 import Seo from "@/components/Seo";
 import PageHeader from "@/components/PageHeader";
 import { Button } from "@/components/ui/button";
 import { breadcrumbList } from "@/lib/breadcrumb";
 import { SEO_PACKAGES, type SeoPackageSlug } from "@/data/seoPackages";
-import { Check, Clock, Target, Zap, ShieldCheck, RefreshCw } from "lucide-react";
+import { Check, Clock, Target, Zap, ShieldCheck, RefreshCw, Download } from "lucide-react";
+import { downloadSeoProposalPdf } from "@/lib/seoProposalPdf";
+import { toast } from "@/hooks/use-toast";
 
 const SeoPackageDetail = () => {
   const { slug } = useParams<{ slug: string }>();
+  const [params] = useSearchParams();
   const pkg = SEO_PACKAGES.find((p) => p.slug === slug);
   if (!pkg) return <Navigate to="/seo-packages" replace />;
 
   const idx = SEO_PACKAGES.findIndex((p) => p.slug === pkg.slug);
   const next = SEO_PACKAGES[(idx + 1) % SEO_PACKAGES.length];
+
+  // Prefilled context from estimator query params (optional).
+  const clientName = params.get("clientName") ?? "";
+  const clientEmail = params.get("clientEmail") ?? "";
+  const targetUrl = params.get("targetUrl") ?? "";
+  const keywords = params.get("keywords") ?? "";
+  const budget = params.get("budget") ?? "";
+  const competition = (params.get("competition") ?? "") as "" | "low" | "medium" | "high";
+  const targetUrls = params.get("targetUrls") ?? "";
+  const cityPopulation = params.get("cityPopulation") ?? "";
+  const hasPrefill = Boolean(clientName || clientEmail || targetUrl || keywords || budget);
+
+  const buildMailto = () => {
+    const subject = `${pkg.name} Package Order — ${clientName || "IAM prospect"}`;
+    const body = [
+      `Package: ${pkg.name} (${pkg.tagline}) — $${pkg.price}`,
+      "",
+      hasPrefill ? "— Estimator Inputs —" : "",
+      budget ? `Budget: $${budget}` : "",
+      competition ? `Competition: ${competition}` : "",
+      targetUrls ? `Target URLs: ${targetUrls}` : "",
+      cityPopulation ? `City population: ${cityPopulation}` : "",
+      "",
+      "— Contact —",
+      `Name: ${clientName || "(please fill)"}`,
+      `Email: ${clientEmail || "(please fill)"}`,
+      `Target URL: ${targetUrl || "(please fill)"}`,
+      `Keywords: ${keywords || "(please fill 3–5)"}`,
+      "",
+      `Deliverables: ${pkg.deliverables} placements · ${pkg.timelineDays}-day delivery · ${pkg.revisions} revisions`,
+    ]
+      .filter((l) => l !== "")
+      .join("\n");
+    return `mailto:colin@industryarmymarketing.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  };
+
+  const onDownloadPdf = () => {
+    try {
+      const comp: "low" | "medium" | "high" =
+        competition === "low" || competition === "medium" || competition === "high" ? competition : "medium";
+      const filename = downloadSeoProposalPdf({
+        budget: Number(budget) || pkg.price,
+        competition: comp,
+        targetUrls: Number(targetUrls) || 1,
+        cityPopulation: Number(cityPopulation) || 0,
+        slug: pkg.slug,
+        clientName: clientName || undefined,
+        clientEmail: clientEmail || undefined,
+        targetUrl: targetUrl || undefined,
+        keywords: keywords || undefined,
+      });
+      toast({ title: "Proposal ready", description: `Downloaded ${filename}` });
+    } catch {
+      toast({ title: "Could not generate PDF", variant: "destructive" });
+    }
+  };
 
   return (
     <Layout>
@@ -50,14 +109,22 @@ const SeoPackageDetail = () => {
       >
         <div className="flex flex-wrap gap-3">
           <Button variant="hero" size="lg" asChild>
-            <a href={`mailto:colin@industryarmymarketing.com?subject=${pkg.name} Package Order`}>
+            <a href={buildMailto()}>
               Order {pkg.name} · ${pkg.price}
             </a>
+          </Button>
+          <Button variant="outline" size="lg" onClick={onDownloadPdf}>
+            <Download className="w-4 h-4 mr-2" /> Download PDF Proposal
           </Button>
           <Button variant="outline" size="lg" asChild>
             <Link to="/seo-packages">← All Packages</Link>
           </Button>
         </div>
+        {hasPrefill && (
+          <p className="mt-4 text-xs uppercase tracking-widest text-primary">
+            Prefilled from your estimator inputs ✓
+          </p>
+        )}
       </PageHeader>
 
       {/* At-a-glance stats */}
