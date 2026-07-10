@@ -26,8 +26,17 @@ const BodySchema = z.object({
 
 const OWNER_EMAIL =
   Deno.env.get('IAM_OWNER_EMAIL') ?? 'colin@industryarmymarketing.com';
-const FROM_EMAIL = Deno.env.get('IAM_FROM_EMAIL') ?? 'onboarding@resend.dev';
+const FROM_EMAIL =
+  Deno.env.get('IAM_FROM_EMAIL') ?? 'no-reply@industryarmymarketing.com';
 const FROM_NAME = Deno.env.get('IAM_FROM_NAME') ?? 'Industry Army Marketing';
+const REPLY_TO = Deno.env.get('IAM_REPLY_TO') ?? OWNER_EMAIL;
+
+type SendResult = {
+  ok: boolean;
+  status: 'sent' | 'failed' | 'skipped';
+  messageId?: string;
+  error?: string;
+};
 
 async function sendEmail(params: {
   to: string;
@@ -35,10 +44,15 @@ async function sendEmail(params: {
   html: string;
   pdfBase64: string;
   pdfFilename: string;
-}): Promise<{ ok: boolean; error?: string }> {
+  replyTo?: string;
+}): Promise<SendResult> {
   const apiKey = Deno.env.get('RESEND_API_KEY');
   if (!apiKey) {
-    return { ok: false, error: 'RESEND_API_KEY not configured' };
+    return {
+      ok: false,
+      status: 'failed',
+      error: 'RESEND_API_KEY not configured',
+    };
   }
   try {
     const res = await fetch('https://api.resend.com/emails', {
@@ -50,6 +64,7 @@ async function sendEmail(params: {
       body: JSON.stringify({
         from: `${FROM_NAME} <${FROM_EMAIL}>`,
         to: [params.to],
+        reply_to: params.replyTo ?? REPLY_TO,
         subject: params.subject,
         html: params.html,
         attachments: [
@@ -63,14 +78,24 @@ async function sendEmail(params: {
     if (!res.ok) {
       const text = await res.text();
       console.error(`Resend send failed [${res.status}]: ${text}`);
-      return { ok: false, error: `resend_${res.status}` };
+      return {
+        ok: false,
+        status: 'failed',
+        error: `resend_${res.status}: ${text.slice(0, 500)}`,
+      };
     }
-    await res.text();
-    return { ok: true };
+    let messageId: string | undefined;
+    try {
+      const json = (await res.json()) as { id?: string };
+      messageId = json?.id;
+    } catch {
+      // ignore parse error
+    }
+    return { ok: true, status: 'sent', messageId };
   } catch (err) {
     const message = err instanceof Error ? err.message : String(err);
     console.error('Resend send threw:', message);
-    return { ok: false, error: message };
+    return { ok: false, status: 'failed', error: message };
   }
 }
 
@@ -178,10 +203,12 @@ Deno.serve(async (req) => {
     html: ownerEmailHtml(p),
     pdfBase64: p.pdf_base64,
     pdfFilename: p.pdf_filename,
+    replyTo: customerEmail ?? undefined,
   });
 
-  let customerResult: { ok: boolean; error?: string } = {
+  let customerResult: SendResult = {
     ok: false,
+    status: 'skipped',
     error: 'no_customer_email',
   };
   if (customerEmail) {
@@ -214,6 +241,13 @@ Deno.serve(async (req) => {
       user_agent: p.user_agent ?? null,
       emailed_owner: ownerResult.ok,
       emailed_customer: customerResult.ok,
+      owner_email_status: ownerResult.status,
+      customer_email_status: customerResult.status,
+      owner_email_error: ownerResult.error ?? null,
+      customer_email_error: customerResult.error ?? null,
+      owner_message_id: ownerResult.messageId ?? null,
+      customer_message_id: customerResult.messageId ?? null,
+      email_attempted_at: new Date().toISOString(),
     })
     .select('id')
     .single();
