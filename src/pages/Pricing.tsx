@@ -100,16 +100,42 @@ const faqs: { q: string; a: string }[] = [
   },
 ];
 
+const comparisonRows: { feature: string; directory: string; exclusive: string }[] = [
+  { feature: "Price", directory: "$10 / year", exclusive: "Monthly · market-based" },
+  { feature: "Directory listing", directory: "Yes", exclusive: "Yes" },
+  { feature: "Vendors per category / market", directory: "Unlimited", exclusive: "One — you" },
+  { feature: "Placement above directory", directory: "No", exclusive: "Yes — every search" },
+  { feature: "Featured placement platform-wide", directory: "No", exclusive: "Yes" },
+  { feature: "EyeSpyR verified rating (22+ sources)", directory: "Yes", exclusive: "Yes" },
+  { feature: "TALC auto review requests", directory: "Yes", exclusive: "Yes" },
+  { feature: "Market exclusivity", directory: "No", exclusive: "Strictly enforced" },
+  { feature: "Billing cadence", directory: "Annual", exclusive: "Monthly" },
+  { feature: "Cancel anytime", directory: "Yes (renews yearly)", exclusive: "Yes (month-to-month)" },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+
 const Pricing = () => (
   <Layout>
     <Seo
       title="Pricing — $10/yr Directory & Exclusive Market Ownership | IAM"
       description="Two tiers. $10/year Directory Listing open to every trade. Exclusive Market Ownership — one vendor per category per market, priced by population. Contact IAM for your rate."
       path="/pricing"
-      jsonLd={breadcrumbList([
-        { name: "Home", path: "/" },
-        { name: "Pricing", path: "/pricing" },
-      ])}
+      jsonLd={[
+        breadcrumbList([
+          { name: "Home", path: "/" },
+          { name: "Pricing", path: "/pricing" },
+        ]),
+        faqSchema,
+      ]}
     />
     <PricingAnalytics />
     <PageHeader
