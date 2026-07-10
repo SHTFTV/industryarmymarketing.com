@@ -43,20 +43,47 @@ jobs:
         run: npm ci
       - name: Install Playwright browsers
         run: npx playwright install --with-deps ${{ matrix.browser }}
+      # Hard gate: fail the PR if any engine's baselines are missing, so
+      # the visual suite can't silently stay skipped. Runs once per matrix
+      # leg but checks all three engines (cheap and deterministic).
+      - name: Verify pricing visual baselines are committed (all engines)
+        run: node scripts/pricing-visual-checksums.mjs --check
       - name: Run pricing CTA + a11y suite
         run: npx playwright test tests/pricing-cta-flow.spec.ts --project=${{ matrix.browser }} --reporter=list
-      # Visual regression suite runs only when baselines exist for this
-      # engine. Seed them via the `Pricing visual baselines (seed)` workflow
-      # and commit the artifact into tests/pricing-visual.spec.ts-snapshots/.
-      - name: Check for visual baselines
+      # With the gate above green, this branch's baselines are guaranteed
+      # to exist. We still print a clear log message if — for any reason —
+      # this engine's snapshot files disappear between steps, and skip the
+      # suite with an explicit reason instead of a silent success.
+      - name: Check for this engine's visual baselines
         id: visual_baselines
         run: |
-          if [ -d "tests/pricing-visual.spec.ts-snapshots" ] && \
-             ls tests/pricing-visual.spec.ts-snapshots/*-${{ matrix.browser }}-* >/dev/null 2>&1; then
+          set -euo pipefail
+          SNAP_DIR="tests/pricing-visual.spec.ts-snapshots"
+          ENGINE="${{ matrix.browser }}"
+          if [ -d "$SNAP_DIR" ] && ls "$SNAP_DIR"/*-"$ENGINE"-* >/dev/null 2>&1; then
             echo "present=true" >> "$GITHUB_OUTPUT"
+            echo "::notice title=Visual baselines::Found $(ls "$SNAP_DIR"/*-"$ENGINE"-* | wc -l) $ENGINE snapshot(s) in $SNAP_DIR"
           else
             echo "present=false" >> "$GITHUB_OUTPUT"
+            {
+              echo "## Pricing visual suite skipped for $ENGINE"
+              echo ""
+              echo "**Reason:** no baseline PNGs found in \`$SNAP_DIR\` matching \`*-$ENGINE-*.png\`."
+              echo ""
+              echo "**How to seed:**"
+              echo "1. Run the **Pricing visual baselines (seed)** workflow (Actions → Run workflow) for \`$ENGINE\`."
+              echo "2. Download the \`pricing-visual-baselines-$ENGINE\` artifact."
+              echo "3. Commit the PNGs into \`$SNAP_DIR/\` and reopen the PR."
+              echo ""
+              echo "Missing set snapshot checksum:"
+              node scripts/pricing-visual-checksums.mjs || true
+            } >> "$GITHUB_STEP_SUMMARY"
+            echo "::error title=Visual baselines missing::No $ENGINE snapshots in $SNAP_DIR — see the job summary for seed instructions."
+            exit 1
           fi
+      - name: Print baseline set checksum (audit trail)
+        if: steps.visual_baselines.outputs.present == 'true'
+        run: node scripts/pricing-visual-checksums.mjs
       - name: Run pricing visual regression suite
         if: steps.visual_baselines.outputs.present == 'true'
         run: npx playwright test tests/pricing-visual.spec.ts --project=${{ matrix.browser }} --reporter=list
