@@ -50,11 +50,73 @@ type Proposal = {
   notes: string | null;
   emailed_customer: boolean;
   emailed_owner: boolean;
+  owner_email_status: string;
+  customer_email_status: string;
+  owner_email_error: string | null;
+  customer_email_error: string | null;
+  owner_message_id: string | null;
+  customer_message_id: string | null;
+  email_attempted_at: string | null;
   created_at: string;
 };
 
 const PAGE_SIZE = 25;
 const STATUSES = ["new", "contacted", "won", "lost", "archived"] as const;
+const OWNER_LABEL = "colin@industryarmymarketing.com";
+
+function statusTone(status: string): string {
+  switch (status) {
+    case "sent":
+      return "bg-primary/15 text-primary border-primary/30";
+    case "failed":
+      return "bg-destructive/15 text-destructive border-destructive/30";
+    case "skipped":
+      return "bg-muted text-muted-foreground border-border";
+    default:
+      return "bg-yellow-500/15 text-yellow-500 border-yellow-500/30";
+  }
+}
+
+const EmailPill = ({ label, status }: { label: string; status: string }) => (
+  <span
+    className={`inline-flex items-center gap-1 px-1.5 py-0.5 rounded border text-[10px] font-medium uppercase ${statusTone(status)}`}
+    title={`${label}: ${status}`}
+  >
+    {label}·{status}
+  </span>
+);
+
+const EmailStatusRow = ({
+  who,
+  to,
+  status,
+  error,
+  messageId,
+}: {
+  who: string;
+  to: string;
+  status: string;
+  error: string | null;
+  messageId: string | null;
+}) => (
+  <div className="text-sm">
+    <div className="flex items-center gap-2 flex-wrap">
+      <span className="text-muted-foreground w-20">{who}</span>
+      <EmailPill label={who[0]} status={status} />
+      <span className="text-foreground text-xs">{to}</span>
+    </div>
+    {error && (
+      <p className="text-xs text-destructive mt-1 pl-[88px] break-all">
+        {error}
+      </p>
+    )}
+    {messageId && (
+      <p className="text-[10px] text-muted-foreground mt-0.5 pl-[88px] font-mono">
+        id: {messageId}
+      </p>
+    )}
+  </div>
+);
 
 const AdminProposals = () => {
   const navigate = useNavigate();
@@ -97,7 +159,7 @@ const AdminProposals = () => {
     let q = supabase
       .from("seo_proposals")
       .select(
-        "id,name,email,target_url,keywords,budget,competition,target_urls,city_population,package_slug,package_price,status,source,notes,emailed_customer,emailed_owner,created_at",
+        "id,name,email,target_url,keywords,budget,competition,target_urls,city_population,package_slug,package_price,status,source,notes,emailed_customer,emailed_owner,owner_email_status,customer_email_status,owner_email_error,customer_email_error,owner_message_id,customer_message_id,email_attempted_at,created_at",
         { count: "exact" },
       )
       .order("created_at", { ascending: false });
@@ -409,23 +471,9 @@ const AdminProposals = () => {
                           </SelectContent>
                         </Select>
                       </TableCell>
-                      <TableCell className="text-xs">
-                        <span
-                          className={
-                            r.emailed_owner ? "text-primary" : "text-muted-foreground"
-                          }
-                        >
-                          O
-                        </span>{" "}
-                        <span
-                          className={
-                            r.emailed_customer
-                              ? "text-primary"
-                              : "text-muted-foreground"
-                          }
-                        >
-                          C
-                        </span>
+                      <TableCell className="text-xs whitespace-nowrap">
+                        <EmailPill label="O" status={r.owner_email_status} />{" "}
+                        <EmailPill label="C" status={r.customer_email_status} />
                       </TableCell>
                       <TableCell onClick={(e) => e.stopPropagation()}>
                         <Button
@@ -554,13 +602,32 @@ const AdminProposals = () => {
                 <span className="text-muted-foreground">City population:</span>{" "}
                 {selected.city_population.toLocaleString()}
               </div>
-              <div>
-                <span className="text-muted-foreground">Emailed owner:</span>{" "}
-                {selected.emailed_owner ? "yes" : "no"}
-              </div>
-              <div>
-                <span className="text-muted-foreground">Emailed customer:</span>{" "}
-                {selected.emailed_customer ? "yes" : "no"}
+              <div className="col-span-2 pt-2 border-t border-border">
+                <p className="text-muted-foreground text-xs uppercase tracking-widest mb-2">
+                  Email delivery
+                </p>
+                <div className="grid gap-2">
+                  <EmailStatusRow
+                    who="Owner"
+                    to={selected.email ? `reply-to ${selected.email}` : OWNER_LABEL}
+                    status={selected.owner_email_status}
+                    error={selected.owner_email_error}
+                    messageId={selected.owner_message_id}
+                  />
+                  <EmailStatusRow
+                    who="Customer"
+                    to={selected.email ?? "no email provided"}
+                    status={selected.customer_email_status}
+                    error={selected.customer_email_error}
+                    messageId={selected.customer_message_id}
+                  />
+                  {selected.email_attempted_at && (
+                    <p className="text-xs text-muted-foreground">
+                      Last attempt:{" "}
+                      {new Date(selected.email_attempted_at).toLocaleString()}
+                    </p>
+                  )}
+                </div>
               </div>
             </div>
             {selected.notes && (
