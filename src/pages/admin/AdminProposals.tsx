@@ -62,6 +62,61 @@ type Proposal = {
 
 const PAGE_SIZE = 25;
 const STATUSES = ["new", "contacted", "won", "lost", "archived"] as const;
+const OWNER_LABEL = "colin@industryarmymarketing.com";
+
+function statusTone(status: string): string {
+  switch (status) {
+    case "sent":
+      return "bg-primary/15 text-primary border-primary/30";
+    case "failed":
+      return "bg-destructive/15 text-destructive border-destructive/30";
+    case "skipped":
+      return "bg-muted text-muted-foreground border-border";
+    default:
+      return "bg-yellow-500/15 text-yellow-500 border-yellow-500/30";
+  }
+}
+
+const EmailPill = ({ label, status }: { label: string; status: string }) => (
+  <span
+    className={`inline-flex items-center gap-1 px-1.5 py-0.5 rounded border text-[10px] font-medium uppercase ${statusTone(status)}`}
+    title={`${label}: ${status}`}
+  >
+    {label}·{status}
+  </span>
+);
+
+const EmailStatusRow = ({
+  who,
+  to,
+  status,
+  error,
+  messageId,
+}: {
+  who: string;
+  to: string;
+  status: string;
+  error: string | null;
+  messageId: string | null;
+}) => (
+  <div className="text-sm">
+    <div className="flex items-center gap-2 flex-wrap">
+      <span className="text-muted-foreground w-20">{who}</span>
+      <EmailPill label={who[0]} status={status} />
+      <span className="text-foreground text-xs">{to}</span>
+    </div>
+    {error && (
+      <p className="text-xs text-destructive mt-1 pl-[88px] break-all">
+        {error}
+      </p>
+    )}
+    {messageId && (
+      <p className="text-[10px] text-muted-foreground mt-0.5 pl-[88px] font-mono">
+        id: {messageId}
+      </p>
+    )}
+  </div>
+);
 
 const AdminProposals = () => {
   const navigate = useNavigate();
