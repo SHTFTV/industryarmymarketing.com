@@ -1,0 +1,49 @@
+# Runs on every pull request (and pushes to main).
+#
+# Executes the axe + keyboard-navigation Playwright suite for /pricing and
+# /contact so accessibility regressions and analytics-duplication bugs
+# surface before merge.
+#
+# VITE_GA4_MEASUREMENT_ID is set to a placeholder so the GA4 mirror in
+# src/lib/analytics.ts activates and the tests can assert gtag() calls
+# without ever loading the real Google Tag Manager script (blocked in-test
+# via page.route abort).
+
+name: Pricing a11y + analytics
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  pricing-a11y:
+    name: Playwright a11y + analytics (/pricing, /contact)
+    runs-on: ubuntu-latest
+    env:
+      CI: "true"
+      # Placeholder GA4 id so the GA4 mirror is compiled into the app during
+      # `vite dev`. Test route interception blocks the real tag script.
+      VITE_GA4_MEASUREMENT_ID: G-TEST12345
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+      - name: Run pricing CTA + a11y suite
+        run: npx playwright test tests/pricing-cta-flow.spec.ts --reporter=list
+      - name: Upload Playwright report on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pricing-a11y-report
+          path: playwright-report/
+          retention-days: 7
