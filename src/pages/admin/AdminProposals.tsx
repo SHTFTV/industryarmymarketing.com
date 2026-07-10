@@ -697,8 +697,16 @@ const AdminProposals = () => {
                         </Select>
                       </TableCell>
                       <TableCell className="text-xs whitespace-nowrap">
-                        <EmailPill label="O" status={r.owner_email_status} />{" "}
-                        <EmailPill label="C" status={r.customer_email_status} />
+                        <EmailPill
+                          label="O"
+                          status={r.owner_email_status}
+                          reason={r.owner_email_error}
+                        />{" "}
+                        <EmailPill
+                          label="C"
+                          status={r.customer_email_status}
+                          reason={r.customer_email_error}
+                        />
                       </TableCell>
                       <TableCell onClick={(e) => e.stopPropagation()}>
                         <Button
@@ -779,6 +787,16 @@ const AdminProposals = () => {
                 <Button
                   variant="outline"
                   size="sm"
+                  onClick={exportDeliveryReport}
+                  disabled={attempts.length === 0}
+                  title="Download CSV of every send attempt"
+                >
+                  <FileDown className="w-4 h-4 mr-1" />
+                  Report
+                </Button>
+                <Button
+                  variant="outline"
+                  size="sm"
                   onClick={() => setSelected(null)}
                 >
                   Close
@@ -839,6 +857,23 @@ const AdminProposals = () => {
                     error={selected.owner_email_error}
                     messageId={selected.owner_message_id}
                   />
+                  {(selected.owner_email_status === "failed" ||
+                    selected.owner_email_status === "skipped") && (
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="w-fit ml-[88px]"
+                      onClick={() => retryFailedSend("owner")}
+                      disabled={retrying === "owner"}
+                    >
+                      {retrying === "owner" ? (
+                        <Loader2 className="w-3.5 h-3.5 mr-2 animate-spin" />
+                      ) : (
+                        <RotateCw className="w-3.5 h-3.5 mr-2" />
+                      )}
+                      Retry owner send
+                    </Button>
+                  )}
                   <EmailStatusRow
                     who="Customer"
                     to={selected.email ?? "no email provided"}
@@ -846,6 +881,24 @@ const AdminProposals = () => {
                     error={selected.customer_email_error}
                     messageId={selected.customer_message_id}
                   />
+                  {selected.email &&
+                    (selected.customer_email_status === "failed" ||
+                      selected.customer_email_status === "skipped") && (
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="w-fit ml-[88px]"
+                        onClick={() => retryFailedSend("customer")}
+                        disabled={retrying === "customer"}
+                      >
+                        {retrying === "customer" ? (
+                          <Loader2 className="w-3.5 h-3.5 mr-2 animate-spin" />
+                        ) : (
+                          <RotateCw className="w-3.5 h-3.5 mr-2" />
+                        )}
+                        Retry customer send
+                      </Button>
+                    )}
                   {selected.email_attempted_at && (
                     <p className="text-xs text-muted-foreground">
                       Last attempt:{" "}
@@ -1002,7 +1055,11 @@ const AdminProposals = () => {
                     </TableHeader>
                     <TableBody>
                       {attempts.map((a) => (
-                        <TableRow key={a.id}>
+                        <TableRow
+                          key={a.id}
+                          className="cursor-pointer hover:bg-background/40"
+                          onClick={() => setAttemptDrawer(a)}
+                        >
                           <TableCell className="text-xs whitespace-nowrap text-muted-foreground">
                             {new Date(a.created_at).toLocaleString()}
                           </TableCell>
@@ -1013,7 +1070,11 @@ const AdminProposals = () => {
                             {a.recipient}
                           </TableCell>
                           <TableCell>
-                            <EmailPill label={a.kind[0].toUpperCase()} status={a.status} />
+                            <EmailPill
+                              label={a.kind[0].toUpperCase()}
+                              status={a.status}
+                              reason={a.error}
+                            />
                           </TableCell>
                           <TableCell className="text-xs break-all max-w-[240px]">
                             {a.error ? (
