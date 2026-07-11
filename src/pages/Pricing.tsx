@@ -8,6 +8,8 @@ import { Check, Shield, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useEffect } from "react";
 import { trackEvent } from "@/lib/analytics";
+import { SEO_PACKAGES } from "@/data/seoPackages";
+import { SITE_URL } from "@/components/Seo";
 import {
   Accordion,
   AccordionContent,
@@ -123,6 +125,18 @@ const faqSchema = {
   })),
 };
 
+const seoPackagesItemList = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Industry Army Marketing SEO Packages",
+  itemListElement: SEO_PACKAGES.map((p, i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    url: `${SITE_URL}/seo-packages/${p.slug}`,
+    name: `${p.name} — ${p.tagline}`,
+  })),
+};
+
 const Pricing = () => (
   <Layout>
     <Seo
@@ -135,6 +149,7 @@ const Pricing = () => (
           { name: "Pricing", path: "/pricing" },
         ]),
         faqSchema,
+        seoPackagesItemList,
       ]}
     />
     <PricingAnalytics />
@@ -259,6 +274,97 @@ const Pricing = () => (
               </Link>
             </Button>
           </motion.div>
+        </div>
+      </div>
+    </section>
+
+    {/* SEO Packages */}
+    <section
+      id="seo-packages"
+      aria-labelledby="seo-packages-heading"
+      className="py-16 md:py-20 bg-background border-t border-border"
+      data-testid="seo-packages-section"
+    >
+      <div className="container mx-auto px-4 max-w-6xl">
+        <div className="text-center mb-12">
+          <p className="text-primary uppercase tracking-[0.3em] text-xs font-semibold mb-3">
+            SEO Packages
+          </p>
+          <h2
+            id="seo-packages-heading"
+            className="font-display text-4xl md:text-5xl text-foreground"
+          >
+            Bullets. Boom. <span className="text-primary">Bombs.</span>
+          </h2>
+          <p className="text-muted-foreground mt-3 max-w-2xl mx-auto">
+            Three authority-building packages that push rankings on the pages you
+            already have. Pair any package with a Directory or Exclusive listing.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {SEO_PACKAGES.map((pkg) => (
+            <div
+              key={pkg.slug}
+              data-testid={`seo-package-card-${pkg.slug}`}
+              className={`rounded-lg border ${
+                pkg.featured
+                  ? "border-primary bg-surface-elevated shadow-[0_0_20px_hsl(var(--primary)/0.2)]"
+                  : "border-border bg-card"
+              } p-8 flex flex-col relative`}
+            >
+              {pkg.featured && (
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded">
+                  Most Popular
+                </div>
+              )}
+              <div className="text-3xl mb-2" aria-hidden="true">
+                {pkg.icon}
+              </div>
+              <h3 className="font-display text-3xl md:text-4xl text-foreground mb-1">
+                {pkg.name}
+              </h3>
+              <p className="text-xs uppercase tracking-[0.25em] text-muted-foreground mb-4">
+                {pkg.tagline}
+              </p>
+              <div className="flex items-baseline gap-2 mb-4">
+                <span className="font-display text-5xl text-primary">
+                  ${pkg.price}
+                </span>
+                <span className="text-muted-foreground text-sm">
+                  · {pkg.deliverables} placements · {pkg.timelineDays} days
+                </span>
+              </div>
+              <p className="text-muted-foreground text-sm mb-6 flex-1">
+                {pkg.summary}
+              </p>
+              <Button
+                variant={pkg.featured ? "hero" : "heroOutline"}
+                asChild
+                className="w-full"
+              >
+                <Link
+                  to={`/seo-packages/${pkg.slug}`}
+                  onClick={() =>
+                    trackEvent("pricing_tier_click", {
+                      tier: `seo_${pkg.slug}`,
+                      cta: "Get Started",
+                      source: "pricing_seo_packages",
+                    })
+                  }
+                >
+                  Get Started
+                </Link>
+              </Button>
+            </div>
+          ))}
+        </div>
+        <div className="text-center mt-8">
+          <Link
+            to="/seo-packages"
+            className="text-primary text-sm uppercase tracking-widest hover:underline"
+          >
+            Compare all SEO packages →
+          </Link>
         </div>
       </div>
     </section>
