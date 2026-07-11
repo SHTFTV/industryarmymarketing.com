@@ -8,6 +8,8 @@ import { Check, Shield, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useEffect } from "react";
 import { trackEvent } from "@/lib/analytics";
+import { SEO_PACKAGES } from "@/data/seoPackages";
+import { SITE_URL } from "@/components/Seo";
 import {
   Accordion,
   AccordionContent,
@@ -123,6 +125,18 @@ const faqSchema = {
   })),
 };
 
+const seoPackagesItemList = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Industry Army Marketing SEO Packages",
+  itemListElement: SEO_PACKAGES.map((p, i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    url: `${SITE_URL}/seo-packages/${p.slug}`,
+    name: `${p.name} — ${p.tagline}`,
+  })),
+};
+
 const Pricing = () => (
   <Layout>
     <Seo
@@ -135,6 +149,7 @@ const Pricing = () => (
           { name: "Pricing", path: "/pricing" },
         ]),
         faqSchema,
+        seoPackagesItemList,
       ]}
     />
     <PricingAnalytics />
