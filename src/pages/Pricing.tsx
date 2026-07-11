@@ -278,18 +278,6 @@ const Pricing = () => (
       </div>
     </section>
 
-    {/* Market definitions */}
-    <section className="py-16 md:py-20 bg-background border-t border-border">
-      <div className="container mx-auto px-4 max-w-5xl">
-        <div className="text-center mb-12">
-          <p className="text-primary uppercase tracking-[0.3em] text-xs font-semibold mb-3">Market Scope</p>
-          <h2 id="market-scope-heading" className="font-display text-4xl md:text-5xl text-foreground">
-            How Markets Are <span className="text-primary">Defined</span>
-          </h2>
-        </div>
-      </div>
-    </section>
-
     {/* SEO Packages */}
     <section
       id="seo-packages"
@@ -381,13 +369,14 @@ const Pricing = () => (
       </div>
     </section>
 
-    {/* Market definitions (continued) */}
+    {/* Market definitions */}
     <section className="py-16 md:py-20 bg-background border-t border-border">
       <div className="container mx-auto px-4 max-w-5xl">
         <div className="text-center mb-12">
-          <p className="text-primary uppercase tracking-[0.3em] text-xs font-semibold mb-3">
-            Market Scope Details
-          </p>
+          <p className="text-primary uppercase tracking-[0.3em] text-xs font-semibold mb-3">Market Scope</p>
+          <h2 className="font-display text-4xl md:text-5xl text-foreground">
+            How Markets Are <span className="text-primary">Defined</span>
+          </h2>
         </div>
         <div className="grid md:grid-cols-2 gap-6">
           <div className="rounded-lg border border-border bg-card p-6">
