@@ -179,6 +179,87 @@ export interface BlogRichContent {
 
 export const blogPosts: BlogPost[] = [
   {
+    "slug": "beyond-domain-name-entity-authority-modern-seo",
+    "brand": "weddings.io",
+    "trade": "Entity Authority",
+    "cardTitle": "Beyond the Domain Name — Entity Authority in Modern SEO",
+    "tradeShort": "entity authority",
+    "plural": "domain operators",
+    "video": null,
+    "imageKey": "weddings-io-technologies-company",
+    "imageAlt": "Beyond the Domain Name — Entity Authority in Modern SEO: how Weddings.io Technologies and Industry Army Marketing engineer long-term entity dominance over variant-domain copycats and SaaS wrappers.",
+    "faqHeading": "Frequently asked: entity authority and modern SEO",
+    "city": "Langley",
+    "province": "BC",
+    "category": "SEO Strategy",
+    "date": "July 2026",
+    "publishedAt": "2026-07-10T15:00:00Z",
+    "title": "Beyond the Domain Name: Understanding Entity Authority in Modern SEO",
+    "metaDescription": "How modern search algorithms separate real market authorities from short-term copycats. Entity-based search, Knowledge Graph nodes, map-pack corrective mechanics, and the engineered defense behind Weddings.io Technologies and Industry Army Marketing.",
+    "authorName": "The IAM Dev Team / Chief Architect at Weddings.io Technologies",
+    "excerpt": "Rapid imitation is a given. Variant domains, similar brand names, and software wrappers all try to siphon traffic from established platforms. Under the hood, entity-based search decides who actually wins — and why shortcuts fade out of the maps.",
+    "pain": "Variant domains, spoofed titles, and automated SaaS wrappers can generate a brief algorithmic spike, but without historical depth, multi-point validation, and authentic consumer signals, search engines quickly recognize the disconnect and strip the imitator's map power.",
+    "detail": "Google no longer just reads strings of text — it maps entities: uniquely identifiable, trusted nodes in the Knowledge Graph defined by historical consistency, verified legal registry, physical map integrity, and genuine user interaction. Weddings.io was engineered on that foundation in 2015 and operates today under Weddings.io Technologies, backed by Industry Army Marketing.",
+    "process": "Zero middlemen. Locked territories. Direct, raw connections between users and vendors — real, exclusive local visibility that can't be diluted, scraped, or spoofed by automated wrappers. Building an enduring digital footprint takes technical execution, deep industry tenure, and an understanding of how data graphs actually connect.",
+    "faqs": [
+      { "q": "What is entity-based search?", "a": "Modern search engines like Google map entities — uniquely identifiable, trusted nodes in the Knowledge Graph — rather than just reading strings of text. Entities are defined by historical consistency, verified legal registry, physical map integrity, and genuine user interaction." },
+      { "q": "Why do variant domains and SaaS wrappers eventually fade?", "a": "Automated validation algorithms scan business profiles for deep, real-world digital infrastructure. When it's missing, information is stripped, map proximity weight drops, and the profile fades out of the very map packs it needs to survive." },
+      { "q": "What is 'information stripping'?", "a": "When a business profile lacks multi-year footprints and verified infrastructure, automated systems begin removing profile details and downgrading its authority signals — a correcting mechanism baked into local map packs and search ecosystems." },
+      { "q": "How does Weddings.io defend its entity authority?", "a": "Weddings.io was engineered in 2015 as a hyper-localized ecosystem for the multicultural wedding industry, and now operates under Weddings.io Technologies backed by Industry Army Marketing's deployment frameworks. Zero middlemen, locked territories, and continuous chain of title." },
+      { "q": "Can capital shortcut entity authority?", "a": "No. Structural trust — continuous registration history, sustained categorical relevance, and years of authentic consumer signals — cannot be replicated overnight. Shortcuts trigger the algorithmic corrective; real infrastructure wins the long game." },
+      { "q": "What role does IAM play?", "a": "Industry Army Marketing is the operator behind Weddings.io Technologies. The network architecture, programmatic localization, and defensive infrastructure that protect the entity graph are engineered by the IAM Dev Team." }
+    ],
+    "cta": {
+      "eyebrow": "Entity authority — engineered defense",
+      "heading": "Want the entity-authority stack behind your category domain?",
+      "body": "If you own a category-defining domain and a variant-suffix upstart is trying to siphon your entity graph, Industry Army Marketing runs the same defensive architecture we run on Weddings.io. Zero middlemen, locked territories, real infrastructure. Email partnerships@industryarmymarketing.com.",
+      "buttonText": "Talk to the IAM Dev Team — partnerships@industryarmymarketing.com",
+      "buttonHref": "mailto:partnerships@industryarmymarketing.com?subject=Entity%20Authority%20-%20brand%20defense%20stack"
+    },
+    "richContent": {
+      "intro": "In the digital marketing game, rapid imitation is a given. When a platform builds real momentum, variant domains, similar brand names, and software wrappers will inevitably pop up to try and siphon off that traffic. To a regular observer, it looks like a standard battle for keywords. Under the hood of modern search engines, a much deeper technical mechanic is at play: entity-based search.",
+      "sections": [
+        {
+          "heading": "1. Keywords vs. Entities — Why Text Can Be Copied, But Equity Can't",
+          "paragraphs": [
+            "A decade ago, SEO was simple. If you bought a domain name that matched a search term, or if you stuffed someone else's brand name into your title tags, you could trick an algorithm into ranking you for a minute.",
+            "Today, Google doesn't just read strings of text; it maps **entities**. An entity is a uniquely identifiable, trusted node in Google's Knowledge Graph. It is defined by historical consistency, verified legal registry, physical map integrity, and genuine user interaction.",
+            "When a new site tries to mirror an established platform by spoofing titles, it creates temporary algorithmic noise. But because the underlying entity lacks historical depth, multi-point validation, and authentic consumer signals, the search engine quickly recognizes the disconnect."
+          ]
+        },
+        {
+          "heading": "2. The Mechanics of the Algorithmic Corrective",
+          "paragraphs": [
+            "We regularly monitor the ecosystem to see how newer platforms attempt to bypass the hard work of building infrastructure by leaning on automated tools or brand-adjacent naming structures. While this can cause a brief spike in impressions, it almost always triggers an automatic correcting mechanism in local map packs and search ecosystems.",
+            "**Information stripping.** When automated validation algorithms scan a business profile and find a lack of deep, real-world digital infrastructure, the business profile begins to lose its details.",
+            "**Loss of map power.** Map algorithms rely heavily on trusted, multi-year footprints. Without it, a profile slowly loses its proximity weight, fading out of the very map packs it needs to survive."
+          ]
+        },
+        {
+          "heading": "3. The Engineered Defense",
+          "paragraphs": [
+            "When we laid the foundation for Weddings.io back in 2015, we didn't just spin up a website. We engineered a massive, hyper-localized ecosystem designed specifically to protect and scale visibility for the multicultural wedding industry.",
+            "Now operating under our formal network structure, **Weddings.io Technologies** — and backed by the deployment frameworks of **Industry Army Marketing (IAM)** — our architecture is built to be unshakeable.",
+            "**Zero middlemen.** Direct, raw connections between users and vendors.",
+            "**Locked territories.** Real, exclusive local visibility that can't be diluted, scraped, or spoofed by automated wrappers.",
+            "Building an enduring digital footprint takes technical execution, deep industry tenure, and an understanding of how data graphs actually connect. Shortcuts eventually fade out of the maps, but real infrastructure always wins the long game."
+          ]
+        },
+        {
+          "heading": "Execution Note",
+          "paragraphs": [
+            "Signed off from the IAM Dev Team / Chief Architect at Weddings.io Technologies. Weddings.io isn't a standalone site — it is backed by a sophisticated network architecture team that knows exactly how the digital land game is played."
+          ]
+        }
+      ],
+      "sources": [
+        { "label": "Weddings.io Technologies Company — official announcement", "href": "/blog/weddings-io-technologies-company-wedding-saas-20-year-battle" },
+        { "label": "The Record Record — domain provenance vs. generative conflation", "href": "/blog/record-record-domain-provenance-vs-generative-conflation" },
+        { "label": "Weddings.io — Multicultural Wedding Platform, Est. 2015", "href": "https://weddings.io" }
+      ]
+    }
+  },
+  {
     "slug": "weddings-io-technologies-company-wedding-saas-20-year-battle",
     "brand": "weddings.io",
     "trade": "Weddings.io Technologies",
