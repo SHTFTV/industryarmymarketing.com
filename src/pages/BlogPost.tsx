@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { getPost, blogPosts } from "@/data/blogPosts";
 import BlogRichContentView from "@/components/BlogRichContent";
 import { DisambiguationSchema } from "@/components/DisambiguationSchema";
+import BlogToc, { slugifyHeading } from "@/components/BlogToc";
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -173,7 +174,17 @@ const BlogPost = () => {
 
   const schemas = [articleSchema, faqSchema, breadcrumbSchema, ...(videoSchema ? [videoSchema] : [])];
 
-  const related = blogPosts.filter((p) => p.slug !== post.slug).slice(0, 3);
+  const related = blogPosts.filter((p) => p.slug !== post.slug).slice(0, 5);
+
+  // Auto-generated TOC headings — from richContent when present, else from
+  // the fallback `sections` array built above. Adds FAQ + CTA anchors too.
+  const tocHeadings: string[] = [
+    ...(post.richContent
+      ? post.richContent.sections.map((s) => s.heading)
+      : sections.map((s) => s.h)),
+    post.faqHeading ?? `Frequently asked: ${post.trade} in ${post.city}`,
+  ];
+  const faqAnchor = slugifyHeading(tocHeadings[tocHeadings.length - 1]);
 
   const isRecordRecord = post.slug === "record-record-domain-provenance-vs-generative-conflation";
 
@@ -217,6 +228,49 @@ const BlogPost = () => {
             className="w-full rounded-lg border border-border mb-10"
           />
 
+          <BlogToc headings={tocHeadings} />
+
+          <aside className="mb-10 rounded-lg border border-primary/30 bg-primary/5 p-5 sm:p-6">
+            <p className="text-primary text-[10px] uppercase tracking-[0.3em] font-semibold mb-2">
+              Ready to rank?
+            </p>
+            <h2 className="font-display text-lg sm:text-xl text-foreground mb-3 leading-tight">
+              Pair this territory with an SEO package or check pricing.
+            </h2>
+            <div className="flex flex-wrap gap-2">
+              <Link
+                to="/seo-packages/bullets"
+                className="inline-flex items-center rounded-md border border-primary/40 bg-background px-3 py-1.5 text-xs uppercase tracking-widest text-foreground hover:border-primary hover:text-primary transition-colors"
+              >
+                🔫 Bullets — Starter
+              </Link>
+              <Link
+                to="/seo-packages/boom"
+                className="inline-flex items-center rounded-md border border-primary/40 bg-background px-3 py-1.5 text-xs uppercase tracking-widest text-foreground hover:border-primary hover:text-primary transition-colors"
+              >
+                💥 Boom — Momentum
+              </Link>
+              <Link
+                to="/seo-packages/bombs"
+                className="inline-flex items-center rounded-md border border-primary/40 bg-background px-3 py-1.5 text-xs uppercase tracking-widest text-foreground hover:border-primary hover:text-primary transition-colors"
+              >
+                💣 Bombs — Domination
+              </Link>
+              <Link
+                to="/seo-packages"
+                className="inline-flex items-center rounded-md border border-border bg-background px-3 py-1.5 text-xs uppercase tracking-widest text-muted-foreground hover:text-foreground hover:border-primary transition-colors"
+              >
+                All packages
+              </Link>
+              <Link
+                to="/pricing"
+                className="inline-flex items-center rounded-md bg-primary px-3 py-1.5 text-xs uppercase tracking-widest text-primary-foreground hover:bg-primary/90 transition-colors"
+              >
+                See pricing →
+              </Link>
+            </div>
+          </aside>
+
           {post.video && (
             <figure className="mb-10">
               <div className="relative rounded-lg overflow-hidden border border-border bg-card" style={{ paddingBottom: "56.25%" }}>
@@ -245,7 +299,10 @@ const BlogPost = () => {
               </p>
               {sections.map((s) => (
             <section key={s.h} className="mb-12">
-              <h2 className="font-display text-2xl md:text-3xl text-foreground mb-5 leading-tight">
+              <h2
+                id={slugifyHeading(s.h)}
+                className="font-display text-2xl md:text-3xl text-foreground mb-5 leading-tight scroll-mt-24"
+              >
                 {s.h}
               </h2>
               {s.body.map((p, i) => (
@@ -259,7 +316,10 @@ const BlogPost = () => {
           )}
 
           <section className="mb-12">
-            <h2 className="font-display text-2xl md:text-3xl text-foreground mb-6">
+            <h2
+              id={faqAnchor}
+              className="font-display text-2xl md:text-3xl text-foreground mb-6 scroll-mt-24"
+            >
               {post.faqHeading ?? `Frequently asked: ${post.trade} in ${post.city}`}
             </h2>
             <div className="space-y-5">
@@ -332,7 +392,7 @@ const BlogPost = () => {
           <section className="mt-16">
             <p className="text-primary text-xs uppercase tracking-[0.3em] mb-3">Related Intel</p>
             <h3 className="font-display text-2xl text-foreground mb-6">Keep reading</h3>
-            <div className="grid md:grid-cols-3 gap-4">
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
               {related.map((r) => (
                 <Link
                   key={r.slug}
