@@ -6,6 +6,8 @@ type Props = {
   targetSelector?: string;
   /** Heading texts (in document order) to resolve the active section. */
   headings: string[];
+  /** Total estimated read time in minutes. Used to compute time remaining. */
+  readMinutes?: number;
 };
 
 /**
@@ -13,7 +15,11 @@ type Props = {
  * has scrolled through the article body and — when a section is in view —
  * the current section label to sync with the TOC.
  */
-const ReadingProgress = ({ targetSelector = "article", headings }: Props) => {
+const ReadingProgress = ({
+  targetSelector = "article",
+  headings,
+  readMinutes = 10,
+}: Props) => {
   const [progress, setProgress] = useState(0);
   const [activeText, setActiveText] = useState<string | null>(null);
 
@@ -75,6 +81,13 @@ const ReadingProgress = ({ targetSelector = "article", headings }: Props) => {
   }, [headings]);
 
   const pct = Math.max(0, Math.min(100, progress));
+  const remainingMin = Math.max(0, Math.ceil((readMinutes * (100 - pct)) / 100));
+  const remainingLabel =
+    pct >= 99
+      ? "Done"
+      : remainingMin <= 0
+        ? "< 1 min left"
+        : `${remainingMin} min left`;
 
   return (
     <div
@@ -94,6 +107,12 @@ const ReadingProgress = ({ targetSelector = "article", headings }: Props) => {
             <span className="text-foreground normal-case tracking-normal">
               {activeText}
             </span>
+            <span
+              className="text-muted-foreground ml-2 pl-2 border-l border-border normal-case tracking-normal"
+              aria-hidden="true"
+            >
+              {remainingLabel}
+            </span>
           </div>
         </div>
       )}
@@ -104,9 +123,10 @@ const ReadingProgress = ({ targetSelector = "article", headings }: Props) => {
         aria-valuemin={0}
         aria-valuemax={100}
         aria-valuenow={Math.round(pct)}
+        aria-valuetext={`${Math.round(pct)} percent read, ${remainingLabel}`}
         className="sr-only"
       >
-        {Math.round(pct)}% read
+        {Math.round(pct)}% read, {remainingLabel}
       </span>
     </div>
   );
