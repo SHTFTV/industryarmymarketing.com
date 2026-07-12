@@ -17,7 +17,7 @@ import {
 import type { LucideIcon } from "lucide-react";
 import { SEO_PACKAGES } from "@/data/seoPackages";
 import { Button } from "@/components/ui/button";
-import { track } from "@/lib/analytics";
+import { track, recordCtaAttribution } from "@/lib/analytics";
 
 type Row = {
   label: string;
@@ -298,7 +298,7 @@ const SeoPackagesCompare = () => {
                       to={`/seo-packages/${p.slug}`}
                       aria-label={`Compare and view ${p.name} SEO package — ${p.tagline}, $${p.price}`}
                       data-testid={`home-compare-cta-${p.slug}`}
-                      onClick={() =>
+                      onClick={() => {
                         void track("home_package_cta_click", {
                           packageSlug: p.slug,
                           meta: {
@@ -306,8 +306,16 @@ const SeoPackagesCompare = () => {
                             price: p.price,
                             source: "home_seo_packages_compare",
                           },
-                        })
-                      }
+                        });
+                        recordCtaAttribution({
+                          event: "home_package_cta_click",
+                          label: p.name,
+                          source: "home_seo_packages_compare",
+                          target: `/seo-packages/${p.slug}`,
+                          packageSlug: p.slug,
+                          price: p.price,
+                        });
+                      }}
                     >
                       Deploy {p.name}
                       <ArrowRight
