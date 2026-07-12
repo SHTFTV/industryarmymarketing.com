@@ -72,6 +72,7 @@ export type AnalyticsEvent =
   | "package_detail_view"
   | "home_package_cta_click"
   | "home_compare_packages_click"
+  | "home_compare_faq_cta_click"
   | "pdf_download"
   | "order_click"
   | "order_submitted"
