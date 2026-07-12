@@ -152,6 +152,7 @@ const PricingChartSection = () => {
                   openTooltip === row.lowerBound ? `pricing-tip-mobile-${row.lowerBound}` : undefined
                 }
                 title={`${RULE_TEXT} — ${ruleCallout(row.pricePerSlot)}`}
+                onKeyDown={handleTooltipKeyDown}
                 onFocus={() =>
                   fireOnce(EVT.calloutFocus, {
                     lowerBound: row.lowerBound,
@@ -251,6 +252,7 @@ const PricingChartSection = () => {
                       openTooltip === row.lowerBound ? `pricing-tip-${row.lowerBound}` : undefined
                     }
                     title={`${RULE_TEXT} — ${ruleCallout(row.pricePerSlot)}`}
+                    onKeyDown={handleTooltipKeyDown}
                     onFocus={() =>
                       fireOnce(EVT.calloutFocus, {
                         lowerBound: row.lowerBound,
