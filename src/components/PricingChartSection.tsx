@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useRef, useState, type KeyboardEvent } from "react";
 import { PRICING_MATRIX } from "@/data/pricingMatrix";
 import { Button } from "@/components/ui/button";
 import { usePpp } from "@/hooks/usePpp";
@@ -34,7 +34,7 @@ const PricingChartSection = () => {
   // Escape key closes an open tooltip from anywhere on the page, matching
   // native tooltip / disclosure keyboard patterns (WAI-ARIA 1.2).
   const handleTooltipKeyDown = useCallback(
-    (e: React.KeyboardEvent<HTMLButtonElement>) => {
+    (e: KeyboardEvent<HTMLButtonElement>) => {
       if (e.key === "Escape" && openTooltip !== null) {
         e.preventDefault();
         setOpenTooltip(null);
