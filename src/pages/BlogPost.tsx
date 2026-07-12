@@ -188,6 +188,42 @@ const BlogPost = () => {
 
   const isRecordRecord = post.slug === "record-record-domain-provenance-vs-generative-conflation";
 
+  // Topic-aware SEO package selection. Emphasize the tier that best matches
+  // the post's category / audience.
+  type PkgKey = "bullets" | "boom" | "bombs";
+  const PKG_META: Record<PkgKey, { emoji: string; name: string; tagline: string }> = {
+    bullets: { emoji: "🔫", name: "Bullets", tagline: "Entry authority" },
+    boom:    { emoji: "💥", name: "Boom",    tagline: "Momentum stack" },
+    bombs:   { emoji: "💣", name: "Bombs",   tagline: "Total domination" },
+  };
+  const cat = (post.category ?? "").toLowerCase();
+  const title = (post.title ?? "").toLowerCase();
+  let primary: PkgKey = "boom";
+  if (/legal|brand|integrity|company|strategy|entity|authority|conflation|provenance/.test(cat + " " + title)) {
+    primary = "bombs";
+  } else if (/local|city|contractor|trade|starter|small|niche/.test(cat + " " + title)) {
+    primary = "bullets";
+  }
+  const secondary: PkgKey[] = (["bullets", "boom", "bombs"] as PkgKey[]).filter((k) => k !== primary);
+  const CTA_COPY: Record<PkgKey, { eyebrow: string; heading: string; button: string }> = {
+    bullets: {
+      eyebrow: "Start ranking this quarter",
+      heading: `Give the ${post.city ?? post.brand} listing a first authority push.`,
+      button: "Launch Bullets →",
+    },
+    boom: {
+      eyebrow: "Compound the authority",
+      heading: `Stack momentum behind your ${post.tradeShort ?? "territory"} listing.`,
+      button: "Fire Boom →",
+    },
+    bombs: {
+      eyebrow: "Own the category",
+      heading: `Lock the entity graph around ${post.brand ?? "your domain"}.`,
+      button: "Deploy Bombs →",
+    },
+  };
+  const copy = CTA_COPY[primary];
+
   return (
     <Layout>
       <Seo
@@ -228,45 +264,40 @@ const BlogPost = () => {
             className="w-full rounded-lg border border-border mb-10"
           />
 
-          <BlogToc headings={tocHeadings} />
-
           <aside className="mb-10 rounded-lg border border-primary/30 bg-primary/5 p-5 sm:p-6">
             <p className="text-primary text-[10px] uppercase tracking-[0.3em] font-semibold mb-2">
-              Ready to rank?
+              {copy.eyebrow}
             </p>
-            <h2 className="font-display text-lg sm:text-xl text-foreground mb-3 leading-tight">
-              Pair this territory with an SEO package or check pricing.
+            <h2 className="font-display text-lg sm:text-xl text-foreground mb-4 leading-tight">
+              {copy.heading}
             </h2>
             <div className="flex flex-wrap gap-2">
               <Link
-                to="/seo-packages/bullets"
-                className="inline-flex items-center rounded-md border border-primary/40 bg-background px-3 py-1.5 text-xs uppercase tracking-widest text-foreground hover:border-primary hover:text-primary transition-colors"
+                to={`/seo-packages/${primary}`}
+                className="inline-flex items-center rounded-md bg-primary px-3 py-1.5 text-xs uppercase tracking-widest text-primary-foreground hover:bg-primary/90 transition-colors"
               >
-                🔫 Bullets — Starter
+                {PKG_META[primary].emoji} {copy.button}
               </Link>
-              <Link
-                to="/seo-packages/boom"
-                className="inline-flex items-center rounded-md border border-primary/40 bg-background px-3 py-1.5 text-xs uppercase tracking-widest text-foreground hover:border-primary hover:text-primary transition-colors"
-              >
-                💥 Boom — Momentum
-              </Link>
-              <Link
-                to="/seo-packages/bombs"
-                className="inline-flex items-center rounded-md border border-primary/40 bg-background px-3 py-1.5 text-xs uppercase tracking-widest text-foreground hover:border-primary hover:text-primary transition-colors"
-              >
-                💣 Bombs — Domination
-              </Link>
+              {secondary.map((k) => (
+                <Link
+                  key={k}
+                  to={`/seo-packages/${k}`}
+                  className="inline-flex items-center rounded-md border border-primary/40 bg-background px-3 py-1.5 text-xs uppercase tracking-widest text-foreground hover:border-primary hover:text-primary transition-colors"
+                >
+                  {PKG_META[k].emoji} {PKG_META[k].name} · {PKG_META[k].tagline}
+                </Link>
+              ))}
               <Link
                 to="/seo-packages"
                 className="inline-flex items-center rounded-md border border-border bg-background px-3 py-1.5 text-xs uppercase tracking-widest text-muted-foreground hover:text-foreground hover:border-primary transition-colors"
               >
-                All packages
+                Compare all packages
               </Link>
               <Link
                 to="/pricing"
-                className="inline-flex items-center rounded-md bg-primary px-3 py-1.5 text-xs uppercase tracking-widest text-primary-foreground hover:bg-primary/90 transition-colors"
+                className="inline-flex items-center rounded-md border border-border bg-background px-3 py-1.5 text-xs uppercase tracking-widest text-muted-foreground hover:text-foreground hover:border-primary transition-colors"
               >
-                See pricing →
+                Territory pricing →
               </Link>
             </div>
           </aside>
@@ -291,12 +322,21 @@ const BlogPost = () => {
           )}
 
           {post.richContent ? (
-            <BlogRichContentView content={post.richContent} />
+            <>
+              {post.richContent.intro && (
+                <p className="text-xl md:text-2xl text-foreground/90 leading-relaxed mb-8 font-medium">
+                  {post.richContent.intro}
+                </p>
+              )}
+              <BlogToc headings={tocHeadings} />
+              <BlogRichContentView content={{ ...post.richContent, intro: undefined }} />
+            </>
           ) : (
             <>
               <p className="text-xl md:text-2xl text-foreground/90 leading-relaxed mb-12 font-medium">
                 {post.pain}
               </p>
+              <BlogToc headings={tocHeadings} />
               {sections.map((s) => (
             <section key={s.h} className="mb-12">
               <h2
