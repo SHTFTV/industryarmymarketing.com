@@ -6,6 +6,7 @@ import { cities, domains } from "@/data/domains";
 import { ADDONS } from "@/data/pricingMatrix";
 import { lookupTierByPopulation, parsePopulation, formatSlotStatus } from "@/lib/pricing";
 import { usePpp } from "@/hooks/usePpp";
+import { openComingSoon } from "@/lib/comingSoon";
 
 const CITY_OPTIONS = cities.filter((c) => c.slug !== "any");
 
@@ -199,11 +200,20 @@ const PricingCalculator = () => {
                   </div>
 
                   <div className="mt-8 flex flex-col sm:flex-row gap-3">
-                    <Button variant="hero" size="lg" asChild className="flex-1">
-                      <Link to="/scan-wizard">Apply Today — Claim This Slot</Link>
+                    <Button
+                      variant="hero"
+                      size="lg"
+                      className="flex-1"
+                      onClick={() => openComingSoon({ title: "Apply Today — Claim This Slot" })}
+                    >
+                      Apply Today — Claim This Slot
                     </Button>
-                    <Button variant="heroOutline" size="lg" asChild>
-                      <Link to="/contact">Talk to Sales</Link>
+                    <Button
+                      variant="heroOutline"
+                      size="lg"
+                      onClick={() => openComingSoon({ title: "Talk to Sales" })}
+                    >
+                      Talk to Sales
                     </Button>
                   </div>
                 </div>

@@ -4,6 +4,7 @@ import { MotionConfig } from "framer-motion";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import ComingSoonModal from "@/components/ComingSoonModal";
 import Index from "./pages/Index.tsx";
 import HowItWorks from "./pages/HowItWorks.tsx";
 import Pricing from "./pages/Pricing.tsx";
@@ -171,6 +172,7 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
+        <ComingSoonModal />
         <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />

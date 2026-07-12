@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { openComingSoon } from "@/lib/comingSoon";
 
 interface CtaBannerProps {
   title: string;
@@ -29,12 +29,22 @@ const CtaBanner = ({
         <p className="text-muted-foreground mt-5 text-lg leading-relaxed">{description}</p>
       )}
       <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-        <Button variant="hero" size="lg" asChild>
-          <Link to={primaryTo}>{primaryLabel}</Link>
+        <Button
+          variant="hero"
+          size="lg"
+          data-primary-to={primaryTo}
+          onClick={() => openComingSoon({ title: primaryLabel })}
+        >
+          {primaryLabel}
         </Button>
         {secondaryLabel && secondaryTo && (
-          <Button variant="outline" size="lg" asChild>
-            <Link to={secondaryTo}>{secondaryLabel}</Link>
+          <Button
+            variant="outline"
+            size="lg"
+            data-secondary-to={secondaryTo}
+            onClick={() => openComingSoon({ title: secondaryLabel })}
+          >
+            {secondaryLabel}
           </Button>
         )}
       </div>
