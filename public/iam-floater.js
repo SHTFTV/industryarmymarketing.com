@@ -76,6 +76,39 @@
     );
   }
 
+  // EyeSpyr wordmark: "Eye" neon-green, "S" white, "pyr" neon-green.
+  function eyespyrVerticalLabel(size, weight, opacity) {
+    var wrap = [
+      "writing-mode:vertical-rl",
+      "transform:rotate(180deg)",
+      "font-size:" + size + "px",
+      "font-weight:" + weight,
+      "letter-spacing:0.18em",
+      "text-transform:uppercase",
+      "line-height:1",
+      "opacity:" + opacity,
+      "white-space:nowrap",
+      "display:inline-flex",
+    ].join(";");
+    return (
+      '<span style="' + wrap + '">' +
+        '<span style="color:#caff00;">Eye</span>' +
+        '<span style="color:#ffffff;">S</span>' +
+        '<span style="color:#caff00;">pyr</span>' +
+      '</span>'
+    );
+  }
+
+  function eyespyrInlineWordmark() {
+    return (
+      '<span style="font-weight:900;letter-spacing:0.02em;">' +
+        '<span style="color:#caff00;">Eye</span>' +
+        '<span style="color:#ffffff;">S</span>' +
+        '<span style="color:#caff00;">pyr</span>' +
+      '</span>'
+    );
+  }
+
   function buildPanel() {
     var panel = document.getElementById(PANEL_ID);
     if (panel) return panel;
@@ -105,12 +138,12 @@
       "font-weight:900","font-size:14px","letter-spacing:0.02em",
     ].join(";");
 
-    function row(href, badgeBg, badgeColor, badge, title, note) {
+    function row(href, badgeBg, badgeColor, badge, title, note, titleHtml) {
       return (
         '<a href="' + href + '" style="' + rowStyle + '">' +
           '<span style="' + badgeStyle + 'background:' + badgeBg + ';color:' + badgeColor + ';">' + escapeHtml(badge) + '</span>' +
           '<span style="min-width:0;flex:1;">' +
-            '<strong style="display:block;font-size:14px;font-weight:800;line-height:1.1;color:#f4f4f4;">' + escapeHtml(title) + '</strong>' +
+            '<strong style="display:block;font-size:14px;font-weight:800;line-height:1.1;color:#f4f4f4;">' + (titleHtml || escapeHtml(title)) + '</strong>' +
             '<span style="display:block;margin-top:3px;font-size:11px;line-height:1.2;color:rgba(244,244,244,0.65);">' + escapeHtml(note) + '</span>' +
           '</span>' +
         '</a>'
@@ -125,7 +158,7 @@
         '</div>' +
         '<strong style="display:block;color:#f4f4f4;font-size:18px;line-height:1.2;margin-bottom:14px;">One team. One record.</strong>' +
         '<div style="display:flex;flex-direction:column;gap:8px;">' +
-          row(MAIL, "#4ea3ff", "#0b0b0b", "\u{1F441}", "EyeSpyr", "Verification standard · Coming soon") +
+          row(MAIL, "#0b0b0b", "#caff00", "\u{1F441}", "EyeSpyr", "Verification standard · Coming soon", eyespyrInlineWordmark()) +
           row(MAIL, "#ff5b8a", "#0b0b0b", "T", "TALC.tv", "Network property · Coming soon") +
           row("/",  "#ff9a3c", "#0b0b0b", "I", "IAM", "Industry Army Marketing") +
         '</div>' +
@@ -167,17 +200,17 @@
       '<div style="display:flex;flex-direction:column;align-items:center;gap:18px;padding:16px 10px 12px;flex:1;">' +
         '<button type="button" data-iam-rail="eyespyr" style="' + railBtnStyle + '" aria-label="EyeSpyr partnerships">' +
           '<span style="display:inline-flex;flex-direction:column;align-items:center;gap:12px;">' +
-            verticalLabel("Partnerships", "#ff9a3c", 10, 800, 0.85) +
-            verticalLabel("EyeSpyr", "#4ea3ff", 15, 900, 1) +
+            verticalLabel("Partnerships", "#caff00", 10, 800, 0.85) +
+            eyespyrVerticalLabel(15, 900, 1) +
           '</span>' +
         '</button>' +
         '<span style="width:1px;height:14px;background:rgba(244,244,244,0.18);"></span>' +
         '<button type="button" data-iam-rail="talc" style="' + railBtnStyle + '" aria-label="TALC.tv">' +
-          verticalLabel("TALC.tv", "#ff5b8a", 15, 900, 1) +
+          verticalLabel("TALC.tv", "#f4f4f4", 15, 900, 1) +
         '</button>' +
         '<span style="width:1px;height:14px;background:rgba(244,244,244,0.18);"></span>' +
         '<button type="button" data-iam-rail="iam" style="' + railBtnStyle + '" aria-label="IAM Industry Army Marketing">' +
-          verticalLabel("IAM", "#ff9a3c", 15, 900, 1) +
+          verticalLabel("IAM", "#caff00", 15, 900, 1) +
         '</button>' +
         '<button type="button" data-iam-rail="learn" style="' + railBtnStyle + 'margin-top:4px;" aria-label="Learn more">' +
           verticalLabel("Learn more", "rgba(244,244,244,0.55)", 10, 700, 1) +
