@@ -1,6 +1,5 @@
 import { useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { cities, domains } from "@/data/domains";
 import { ADDONS } from "@/data/pricingMatrix";
