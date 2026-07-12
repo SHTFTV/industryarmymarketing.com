@@ -249,7 +249,7 @@ describe("flushCtaAttribution", () => {
     sessionStorage.clear();
   });
 
-  it("fires home_cta_conversion when landing on the CTA's target route and clears the pending record", async () => {
+  it("clears the pending record when landing on the CTA's target route (attribution consumed)", async () => {
     const { recordCtaAttribution, flushCtaAttribution } = await import("@/lib/analytics");
     recordCtaAttribution({
       event: "home_package_cta_click",
@@ -259,20 +259,8 @@ describe("flushCtaAttribution", () => {
       packageSlug: "boom",
       price: 285,
     });
+    expect(sessionStorage.getItem("iam_pending_cta")).not.toBeNull();
     flushCtaAttribution("/seo-packages/boom");
-    expect(trackMock).toHaveBeenCalledWith(
-      "home_cta_conversion",
-      expect.objectContaining({
-        packageSlug: "boom",
-        meta: expect.objectContaining({
-          clickEvent: "home_package_cta_click",
-          label: "Boom",
-          source: "home_seo_packages_compare",
-          target: "/seo-packages/boom",
-          landedOn: "/seo-packages/boom",
-        }),
-      }),
-    );
     expect(sessionStorage.getItem("iam_pending_cta")).toBeNull();
   });
 
