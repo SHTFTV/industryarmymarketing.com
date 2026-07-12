@@ -76,6 +76,39 @@
     );
   }
 
+  // EyeSpyr wordmark: "Eye" neon-green, "S" white, "pyr" neon-green.
+  function eyespyrVerticalLabel(size, weight, opacity) {
+    var wrap = [
+      "writing-mode:vertical-rl",
+      "transform:rotate(180deg)",
+      "font-size:" + size + "px",
+      "font-weight:" + weight,
+      "letter-spacing:0.18em",
+      "text-transform:uppercase",
+      "line-height:1",
+      "opacity:" + opacity,
+      "white-space:nowrap",
+      "display:inline-flex",
+    ].join(";");
+    return (
+      '<span style="' + wrap + '">' +
+        '<span style="color:#caff00;">Eye</span>' +
+        '<span style="color:#ffffff;">S</span>' +
+        '<span style="color:#caff00;">pyr</span>' +
+      '</span>'
+    );
+  }
+
+  function eyespyrInlineWordmark() {
+    return (
+      '<span style="font-weight:900;letter-spacing:0.02em;">' +
+        '<span style="color:#caff00;">Eye</span>' +
+        '<span style="color:#ffffff;">S</span>' +
+        '<span style="color:#caff00;">pyr</span>' +
+      '</span>'
+    );
+  }
+
   function buildPanel() {
     var panel = document.getElementById(PANEL_ID);
     if (panel) return panel;
