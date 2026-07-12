@@ -5,6 +5,15 @@ import { Button } from "@/components/ui/button";
 import { usePpp } from "@/hooks/usePpp";
 import { PPP_COUNTRIES } from "@/data/pppFactors";
 
+// Human-readable derivation of the $10-per-100K rule for a given row.
+// Uses the row's upperBound (capped at 30M for the terminal Infinity row)
+// so the callout always mirrors what pricingMatrix.ts hardcodes.
+const RULE_TEXT = "$10 USD per 100,000 population, per slot";
+function ruleCallout(pricePerSlot: number): string {
+  const blocks = pricePerSlot / 10; // pricePerSlot === blocks × $10
+  return `${blocks} × 100K × $10 = $${pricePerSlot}/slot/mo`;
+}
+
 const PricingChartSection = () => {
   const { country, setCountry, factor, adjust } = usePpp();
   const isDiscounted = factor < 1;
@@ -53,6 +62,22 @@ const PricingChartSection = () => {
         </p>
       </motion.div>
 
+      {/* Pinned rule banner — sticks above the chart while users scroll long tiers */}
+      <div
+        data-testid="pricing-rule-banner"
+        role="note"
+        aria-label={RULE_TEXT}
+        className="sticky top-16 z-20 mb-4 rounded-md border-2 border-primary bg-background/95 backdrop-blur px-4 py-3 shadow-[0_0_20px_hsl(var(--primary)/0.25)]"
+      >
+        <p className="font-display text-lg md:text-xl text-center tracking-wide">
+          <span className="text-primary">$10 USD</span>{" "}
+          <span className="text-foreground">per 100,000 population, per slot</span>
+        </p>
+        <p className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground text-center mt-1">
+          Flat rule · Applied to every tier below
+        </p>
+      </div>
+
       {/* Mobile: stacked cards */}
       <ul
         className="sm:hidden space-y-3 list-none p-0"
@@ -60,7 +85,11 @@ const PricingChartSection = () => {
         data-testid="pricing-chart-mobile"
       >
         {PRICING_MATRIX.map((row) => (
-          <li key={row.lowerBound} className="rounded-lg border border-border bg-card p-4">
+          <li
+            key={row.lowerBound}
+            className="rounded-lg border border-border bg-card p-4"
+            title={`${RULE_TEXT} — ${ruleCallout(row.pricePerSlot)}`}
+          >
             <p className="text-xs uppercase tracking-widest text-muted-foreground">{row.populationLabel}</p>
             <div className="flex items-baseline justify-between mt-2">
               <p className="font-display text-2xl text-primary">
@@ -72,6 +101,12 @@ const PricingChartSection = () => {
             <p className="text-[10px] uppercase tracking-widest text-muted-foreground mt-2">
               {row.status} · ${adjust(row.monthlyTotal)}/mo if sold out
               {isDiscounted ? ` · list $${row.pricePerSlot}` : ""}
+            </p>
+            <p
+              data-testid={`pricing-callout-mobile-${row.lowerBound}`}
+              className="text-[10px] font-mono text-primary/90 mt-2 border-t border-border pt-2"
+            >
+              {ruleCallout(row.pricePerSlot)}
             </p>
           </li>
         ))}
@@ -98,11 +133,16 @@ const PricingChartSection = () => {
               <th scope="col" className="px-3 md:px-6 py-4 text-primary whitespace-nowrap">Per Slot / Mo</th>
               <th scope="col" className="px-3 md:px-6 py-4 hidden md:table-cell whitespace-nowrap">Total If Sold Out</th>
               <th scope="col" className="px-3 md:px-6 py-4 hidden lg:table-cell whitespace-nowrap">Status</th>
+              <th scope="col" className="px-3 md:px-6 py-4 hidden md:table-cell whitespace-nowrap">$10 / 100K Rule</th>
             </tr>
           </thead>
           <tbody>
             {PRICING_MATRIX.map((row) => (
-              <tr key={row.lowerBound} className="border-t border-border hover:bg-secondary/40 transition-colors">
+              <tr
+                key={row.lowerBound}
+                className="border-t border-border hover:bg-secondary/40 transition-colors"
+                title={`${RULE_TEXT} — ${ruleCallout(row.pricePerSlot)}`}
+              >
                 <th scope="row" className="px-4 md:px-6 py-3 font-semibold text-foreground whitespace-nowrap text-left">{row.populationLabel}</th>
                 <td className="px-3 md:px-6 py-3 text-muted-foreground">{row.slots}</td>
                 <td className="px-3 md:px-6 py-3 text-primary font-display text-lg whitespace-nowrap">
@@ -111,6 +151,12 @@ const PricingChartSection = () => {
                 </td>
                 <td className="px-3 md:px-6 py-3 text-muted-foreground text-sm hidden md:table-cell whitespace-nowrap">${adjust(row.monthlyTotal)}/mo</td>
                 <td className="px-3 md:px-6 py-3 text-xs uppercase tracking-widest text-muted-foreground hidden lg:table-cell whitespace-nowrap">{row.status}</td>
+                <td
+                  data-testid={`pricing-callout-${row.lowerBound}`}
+                  className="px-3 md:px-6 py-3 text-[11px] font-mono text-primary/90 hidden md:table-cell whitespace-nowrap"
+                >
+                  {ruleCallout(row.pricePerSlot)}
+                </td>
               </tr>
             ))}
           </tbody>
