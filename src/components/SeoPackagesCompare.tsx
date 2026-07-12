@@ -321,9 +321,112 @@ const SeoPackagesCompare = () => {
             </tr>
           </tbody>
         </table>
+
+        <SeoPackagesCompareFaq fadeIn={fadeIn} />
       </div>
     </section>
   );
 };
 
 export default SeoPackagesCompare;
+
+const FAQS: { q: string; a: string }[] = [
+  {
+    q: "What if my budget doesn't fit a tier exactly?",
+    a: "Tell us your number. We'll deploy in the right places — domains, verticals, and anchors that actually move your rankings — instead of padding a package.",
+  },
+  {
+    q: "How fast will I see results?",
+    a: "Every package deploys in 14 days. Indexing and ranking movement typically shows in weeks 3–8, depending on niche competition and target city size.",
+  },
+  {
+    q: "Do you work with my niche?",
+    a: "If you're a contractor, service pro, wedding/roofing/plumbing/electrical business, or local operator, yes. If your niche is unusual, ask — we'll answer honestly.",
+  },
+  {
+    q: "Is this a subscription?",
+    a: "No. Every package is one-time. Come back when you want another push, or scale to Boom or Bombs when your budget grows.",
+  },
+];
+
+function SeoPackagesCompareFaq({
+  fadeIn,
+}: {
+  fadeIn: Record<string, unknown>;
+}) {
+  return (
+    <motion.aside
+      {...fadeIn}
+      aria-labelledby="seo-packages-compare-faq-heading"
+      className="mt-16 mx-auto max-w-4xl rounded-xl border border-border bg-card/40 p-6 md:p-8"
+    >
+      <div className="flex items-center gap-3 mb-5">
+        <div className="w-10 h-10 rounded-lg bg-primary/15 border border-primary/40 flex items-center justify-center shrink-0">
+          <MessageCircleQuestion size={18} className="text-primary" aria-hidden="true" />
+        </div>
+        <div>
+          <p className="text-primary uppercase tracking-[0.25em] text-[10px] font-semibold">
+            Answers about your business
+          </p>
+          <h3
+            id="seo-packages-compare-faq-heading"
+            className="font-display text-2xl md:text-3xl text-foreground leading-tight"
+          >
+            Budget questions, answered.
+          </h3>
+        </div>
+      </div>
+
+      <dl className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-5">
+        {FAQS.map((f) => (
+          <div key={f.q}>
+            <dt className="text-foreground font-semibold text-sm mb-1">{f.q}</dt>
+            <dd className="text-muted-foreground text-sm leading-relaxed">{f.a}</dd>
+          </div>
+        ))}
+      </dl>
+
+      <div className="mt-6 flex flex-col sm:flex-row gap-3 border-t border-border pt-5">
+        <Button
+          asChild
+          variant="hero"
+          size="lg"
+          className="uppercase tracking-widest text-xs focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+        >
+          <Link
+            to="/contact"
+            aria-label="Tell us your budget and get honest answers about your business"
+            data-testid="home-compare-faq-cta-contact"
+            onClick={() =>
+              void track("home_compare_faq_cta_click", {
+                meta: { label: "Tell us your budget", source: "home_seo_packages_compare_faq", target: "/contact" },
+              })
+            }
+          >
+            Tell us your budget
+            <ArrowRight size={14} className="ml-2 motion-safe:transition-transform" />
+          </Link>
+        </Button>
+        <Button
+          asChild
+          variant="outline"
+          size="lg"
+          className="uppercase tracking-widest text-xs focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+        >
+          <Link
+            to="/seo-packages"
+            aria-label="Compare all SEO packages in detail"
+            data-testid="home-compare-faq-cta-compare"
+            onClick={() =>
+              void track("home_compare_faq_cta_click", {
+                meta: { label: "Compare all packages", source: "home_seo_packages_compare_faq", target: "/seo-packages" },
+              })
+            }
+          >
+            Compare all packages
+          </Link>
+        </Button>
+      </div>
+    </motion.aside>
+  );
+}
