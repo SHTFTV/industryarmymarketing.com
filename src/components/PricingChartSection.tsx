@@ -2,8 +2,13 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { PRICING_MATRIX } from "@/data/pricingMatrix";
 import { Button } from "@/components/ui/button";
+import { usePpp } from "@/hooks/usePpp";
+import { PPP_COUNTRIES } from "@/data/pppFactors";
 
-const PricingChartSection = () => (
+const PricingChartSection = () => {
+  const { country, setCountry, factor, adjust } = usePpp();
+  const isDiscounted = factor < 1;
+  return (
   <section className="py-24 gradient-tactical border-y border-border">
     <div className="container mx-auto px-4 max-w-6xl">
       <motion.div
@@ -16,9 +21,36 @@ const PricingChartSection = () => (
           Territory <span className="text-primary">Pricing Chart</span>
         </h2>
         <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-          Hardcoded flat per-slot pricing. Slot 1 and the last slot cost the same. A tier only reads SOLD OUT when every slot is filled.
+          $10 USD per 100,000 population, per slot. Slot 1 and the last slot cost the same. A tier only reads SOLD OUT when every slot is filled.
         </p>
-        <p className="text-xs uppercase tracking-[0.3em] text-primary mt-2">All Prices in USD</p>
+        <div className="mt-4 inline-flex items-center gap-3 rounded border border-border bg-card px-3 py-2">
+          <label htmlFor="ppp-country" className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+            Country
+          </label>
+          <select
+            id="ppp-country"
+            value={country}
+            onChange={(e) => setCountry(e.target.value)}
+            className="bg-transparent text-foreground text-sm focus:outline-none"
+            aria-label="Select your country for PPP-adjusted pricing"
+          >
+            <optgroup label="Established (flat USD)">
+              {PPP_COUNTRIES.filter((c) => c.tier === "established").map((c) => (
+                <option key={c.code} value={c.code}>{c.name}</option>
+              ))}
+            </optgroup>
+            <optgroup label="Emerging (PPP-adjusted)">
+              {PPP_COUNTRIES.filter((c) => c.tier === "emerging").map((c) => (
+                <option key={c.code} value={c.code}>{c.name} — {Math.round(c.factor * 100)}%</option>
+              ))}
+            </optgroup>
+          </select>
+        </div>
+        <p className="text-xs uppercase tracking-[0.3em] text-primary mt-3">
+          {isDiscounted
+            ? `PPP-adjusted for accessibility · ${Math.round(factor * 100)}% of USD list · Card country enforced at checkout`
+            : "All prices in USD · Card country enforced at checkout"}
+        </p>
       </motion.div>
 
       {/* Mobile: stacked cards */}
@@ -32,12 +64,15 @@ const PricingChartSection = () => (
             <p className="text-xs uppercase tracking-widest text-muted-foreground">{row.populationLabel}</p>
             <div className="flex items-baseline justify-between mt-2">
               <p className="font-display text-2xl text-primary">
-                <span aria-label={`${row.pricePerSlot} dollars per slot per month`}>${row.pricePerSlot}</span>
+                <span aria-label={`${adjust(row.pricePerSlot)} dollars per slot per month`}>${adjust(row.pricePerSlot)}</span>
                 <span className="text-sm text-muted-foreground">/slot/mo</span>
               </p>
               <p className="text-sm text-foreground">{row.slots} slots</p>
             </div>
-            <p className="text-[10px] uppercase tracking-widest text-muted-foreground mt-2">{row.status} · ${row.monthlyTotal}/mo if sold out</p>
+            <p className="text-[10px] uppercase tracking-widest text-muted-foreground mt-2">
+              {row.status} · ${adjust(row.monthlyTotal)}/mo if sold out
+              {isDiscounted ? ` · list $${row.pricePerSlot}` : ""}
+            </p>
           </li>
         ))}
       </ul>
@@ -70,8 +105,11 @@ const PricingChartSection = () => (
               <tr key={row.lowerBound} className="border-t border-border hover:bg-secondary/40 transition-colors">
                 <th scope="row" className="px-4 md:px-6 py-3 font-semibold text-foreground whitespace-nowrap text-left">{row.populationLabel}</th>
                 <td className="px-3 md:px-6 py-3 text-muted-foreground">{row.slots}</td>
-                <td className="px-3 md:px-6 py-3 text-primary font-display text-lg whitespace-nowrap">${row.pricePerSlot}/mo</td>
-                <td className="px-3 md:px-6 py-3 text-muted-foreground text-sm hidden md:table-cell whitespace-nowrap">${row.monthlyTotal}/mo</td>
+                <td className="px-3 md:px-6 py-3 text-primary font-display text-lg whitespace-nowrap">
+                  ${adjust(row.pricePerSlot)}/mo
+                  {isDiscounted && <span className="ml-2 text-[10px] font-body text-muted-foreground line-through">${row.pricePerSlot}</span>}
+                </td>
+                <td className="px-3 md:px-6 py-3 text-muted-foreground text-sm hidden md:table-cell whitespace-nowrap">${adjust(row.monthlyTotal)}/mo</td>
                 <td className="px-3 md:px-6 py-3 text-xs uppercase tracking-widest text-muted-foreground hidden lg:table-cell whitespace-nowrap">{row.status}</td>
               </tr>
             ))}
@@ -88,6 +126,7 @@ const PricingChartSection = () => (
       </div>
     </div>
   </section>
-);
+  );
+};
 
 export default PricingChartSection;
