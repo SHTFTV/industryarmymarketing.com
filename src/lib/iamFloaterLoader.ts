@@ -34,11 +34,11 @@ const DEFAULT_CONFIG: IamFloaterConfig = {
   hiddenPages: [],
   scriptUrl: LOCAL_FLOATER_SCRIPT,
   timeoutMs: 3500,
-  label: "SEO PACKAGES",
-  title: "Industry Army Marketing",
-  subtitle: "$10 territory SEO",
-  cta: "Get started",
-  href: "/pricing",
+  label: "THE STACK",
+  title: "EyeSpyr · TALC · IAM",
+  subtitle: "Verification · Network · SEO",
+  cta: "Explore",
+  href: "/",
 };
 
 const parseBoolean = (value: string | boolean | undefined, fallback: boolean) => {
