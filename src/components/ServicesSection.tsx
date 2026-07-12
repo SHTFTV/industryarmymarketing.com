@@ -1,11 +1,13 @@
 import { motion } from "framer-motion";
 import { Search, Link, BarChart3, Globe, Megaphone, TrendingUp } from "lucide-react";
+import { Link as RouterLink } from "react-router-dom";
 
 const services = [
   {
     icon: Search,
     title: "SEO Domination",
     description: "Rank #1 on Google. We deploy battle-tested SEO strategies that crush your competition and own your local market.",
+    to: "/seo-packages",
   },
   {
     icon: Link,
@@ -59,6 +61,14 @@ const ServicesSection = () => {
               <service.icon className="w-10 h-10 text-primary mb-5 group-hover:animate-pulse-glow" />
               <h3 className="font-display text-2xl text-foreground mb-3">{service.title}</h3>
               <p className="text-muted-foreground leading-relaxed text-sm">{service.description}</p>
+              {service.to && (
+                <RouterLink
+                  to={service.to}
+                  className="inline-block mt-4 text-primary text-xs uppercase tracking-widest font-semibold hover:opacity-80"
+                >
+                  View SEO Packages →
+                </RouterLink>
+              )}
             </motion.div>
           ))}
         </div>
