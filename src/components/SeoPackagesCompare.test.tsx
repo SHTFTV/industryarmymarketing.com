@@ -4,9 +4,14 @@ import { MemoryRouter } from "react-router-dom";
 import { SEO_PACKAGES } from "@/data/seoPackages";
 
 const trackMock = vi.fn();
-vi.mock("@/lib/analytics", () => ({
-  track: (...args: unknown[]) => trackMock(...args),
-}));
+vi.mock("@/lib/analytics", async () => {
+  const actual =
+    await vi.importActual<typeof import("@/lib/analytics")>("@/lib/analytics");
+  return {
+    ...actual,
+    track: (...args: unknown[]) => trackMock(...args),
+  };
+});
 
 // Force reduced motion for a subset of tests
 const reducedMotionMock = vi.fn(() => false);
@@ -174,5 +179,104 @@ describe("SeoPackagesCompare — a11y + analytics + reduced motion", () => {
     const bomb = screen.getByTestId("home-compare-cta-boom");
     const arrow = bomb.querySelector("svg.lucide-arrow-right");
     expect(arrow?.getAttribute("class") ?? "").toMatch(/motion-safe:transition-transform/);
+  });
+
+  it("emits FAQPage JSON-LD with matching questions + answers for rich results", () => {
+    renderSection();
+    const script = document.querySelector(
+      '[data-testid="seo-packages-compare-faq-jsonld"]',
+    );
+    expect(script).toBeInTheDocument();
+    const json = JSON.parse(script!.textContent ?? "{}");
+    expect(json["@type"]).toBe("FAQPage");
+    expect(json.mainEntity).toHaveLength(4);
+    for (const q of json.mainEntity) {
+      expect(q["@type"]).toBe("Question");
+      expect(typeof q.name).toBe("string");
+      expect(q.acceptedAnswer["@type"]).toBe("Answer");
+      expect(typeof q.acceptedAnswer.text).toBe("string");
+    }
+    // Answers rendered in the DOM must match the JSON-LD answers exactly.
+    const dds = Array.from(document.querySelectorAll("dd")).map((n) => n.textContent);
+    for (const q of json.mainEntity) {
+      expect(dds).toContain(q.acceptedAnswer.text);
+    }
+  });
+
+  it("compare CTAs record a pending attribution in sessionStorage keyed to their target route", () => {
+    renderSection();
+    for (const pkg of SEO_PACKAGES) {
+      sessionStorage.clear();
+      fireEvent.click(screen.getByTestId(`home-compare-cta-${pkg.slug}`));
+      const raw = sessionStorage.getItem("iam_pending_cta");
+      expect(raw).toBeTruthy();
+      const cta = JSON.parse(raw!);
+      expect(cta).toMatchObject({
+        event: "home_package_cta_click",
+        label: pkg.name,
+        source: "home_seo_packages_compare",
+        target: `/seo-packages/${pkg.slug}`,
+        packageSlug: pkg.slug,
+        price: pkg.price,
+      });
+      expect(typeof cta.ts).toBe("number");
+    }
+  });
+
+  it("FAQ CTAs record pending attribution targeted at /contact and /seo-packages", () => {
+    renderSection();
+    sessionStorage.clear();
+    fireEvent.click(screen.getByTestId("home-compare-faq-cta-contact"));
+    expect(JSON.parse(sessionStorage.getItem("iam_pending_cta")!)).toMatchObject({
+      event: "home_compare_faq_cta_click",
+      label: "Tell us your budget",
+      target: "/contact",
+    });
+    sessionStorage.clear();
+    fireEvent.click(screen.getByTestId("home-compare-faq-cta-compare"));
+    expect(JSON.parse(sessionStorage.getItem("iam_pending_cta")!)).toMatchObject({
+      event: "home_compare_faq_cta_click",
+      label: "Compare all packages",
+      target: "/seo-packages",
+    });
+  });
+});
+
+describe("flushCtaAttribution", () => {
+  beforeEach(() => {
+    cleanup();
+    trackMock.mockReset();
+    sessionStorage.clear();
+  });
+
+  it("clears the pending record when landing on the CTA's target route (attribution consumed)", async () => {
+    const { recordCtaAttribution, flushCtaAttribution } = await import("@/lib/analytics");
+    recordCtaAttribution({
+      event: "home_package_cta_click",
+      label: "Boom",
+      source: "home_seo_packages_compare",
+      target: "/seo-packages/boom",
+      packageSlug: "boom",
+      price: 285,
+    });
+    expect(sessionStorage.getItem("iam_pending_cta")).not.toBeNull();
+    flushCtaAttribution("/seo-packages/boom");
+    expect(sessionStorage.getItem("iam_pending_cta")).toBeNull();
+  });
+
+  it("does not fire conversion on a mismatched route and keeps the pending record", async () => {
+    const { recordCtaAttribution, flushCtaAttribution } = await import("@/lib/analytics");
+    recordCtaAttribution({
+      event: "home_compare_faq_cta_click",
+      label: "Tell us your budget",
+      source: "home_seo_packages_compare_faq",
+      target: "/contact",
+    });
+    flushCtaAttribution("/pricing");
+    expect(trackMock).not.toHaveBeenCalledWith(
+      "home_cta_conversion",
+      expect.anything(),
+    );
+    expect(sessionStorage.getItem("iam_pending_cta")).not.toBeNull();
   });
 });

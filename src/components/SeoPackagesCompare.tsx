@@ -17,7 +17,7 @@ import {
 import type { LucideIcon } from "lucide-react";
 import { SEO_PACKAGES } from "@/data/seoPackages";
 import { Button } from "@/components/ui/button";
-import { track } from "@/lib/analytics";
+import { track, recordCtaAttribution } from "@/lib/analytics";
 
 type Row = {
   label: string;
@@ -298,7 +298,7 @@ const SeoPackagesCompare = () => {
                       to={`/seo-packages/${p.slug}`}
                       aria-label={`Compare and view ${p.name} SEO package — ${p.tagline}, $${p.price}`}
                       data-testid={`home-compare-cta-${p.slug}`}
-                      onClick={() =>
+                      onClick={() => {
                         void track("home_package_cta_click", {
                           packageSlug: p.slug,
                           meta: {
@@ -306,8 +306,16 @@ const SeoPackagesCompare = () => {
                             price: p.price,
                             source: "home_seo_packages_compare",
                           },
-                        })
-                      }
+                        });
+                        recordCtaAttribution({
+                          event: "home_package_cta_click",
+                          label: p.name,
+                          source: "home_seo_packages_compare",
+                          target: `/seo-packages/${p.slug}`,
+                          packageSlug: p.slug,
+                          price: p.price,
+                        });
+                      }}
                     >
                       Deploy {p.name}
                       <ArrowRight
@@ -354,12 +362,29 @@ function SeoPackagesCompareFaq({
 }: {
   fadeIn: Record<string, unknown>;
 }) {
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id":
+      "https://www.industryarmymarketing.com/#seo-packages-compare-faq",
+    mainEntity: FAQS.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  };
   return (
     <motion.aside
       {...fadeIn}
       aria-labelledby="seo-packages-compare-faq-heading"
       className="mt-16 mx-auto max-w-4xl rounded-xl border border-border bg-card/40 p-6 md:p-8"
     >
+      <script
+        type="application/ld+json"
+        data-testid="seo-packages-compare-faq-jsonld"
+        // Rich results for the budget reassurance FAQ block.
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <div className="flex items-center gap-3 mb-5">
         <div className="w-10 h-10 rounded-lg bg-primary/15 border border-primary/40 flex items-center justify-center shrink-0">
           <MessageCircleQuestion size={18} className="text-primary" aria-hidden="true" />
@@ -397,11 +422,17 @@ function SeoPackagesCompareFaq({
             to="/contact"
             aria-label="Tell us your budget and get honest answers about your business"
             data-testid="home-compare-faq-cta-contact"
-            onClick={() =>
+            onClick={() => {
               void track("home_compare_faq_cta_click", {
                 meta: { label: "Tell us your budget", source: "home_seo_packages_compare_faq", target: "/contact" },
-              })
-            }
+              });
+              recordCtaAttribution({
+                event: "home_compare_faq_cta_click",
+                label: "Tell us your budget",
+                source: "home_seo_packages_compare_faq",
+                target: "/contact",
+              });
+            }}
           >
             Tell us your budget
             <ArrowRight size={14} className="ml-2 motion-safe:transition-transform" />
@@ -417,11 +448,17 @@ function SeoPackagesCompareFaq({
             to="/seo-packages"
             aria-label="Compare all SEO packages in detail"
             data-testid="home-compare-faq-cta-compare"
-            onClick={() =>
+            onClick={() => {
               void track("home_compare_faq_cta_click", {
                 meta: { label: "Compare all packages", source: "home_seo_packages_compare_faq", target: "/seo-packages" },
-              })
-            }
+              });
+              recordCtaAttribution({
+                event: "home_compare_faq_cta_click",
+                label: "Compare all packages",
+                source: "home_seo_packages_compare_faq",
+                target: "/seo-packages",
+              });
+            }}
           >
             Compare all packages
           </Link>
