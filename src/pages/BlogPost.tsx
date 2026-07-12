@@ -10,6 +10,8 @@ import BlogRichContentView from "@/components/BlogRichContent";
 import { DisambiguationSchema } from "@/components/DisambiguationSchema";
 import BlogToc, { slugifyHeading } from "@/components/BlogToc";
 import ReadingProgress from "@/components/ReadingProgress";
+import { copySectionLink } from "@/lib/copySectionLink";
+import { Link2 } from "lucide-react";
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -362,10 +364,32 @@ const BlogPost = () => {
             </h2>
             <div className="space-y-5">
               {post.faqs.map((f) => (
-                <div key={f.q} className="p-5 rounded-lg bg-card border border-border">
-                  <h3 className="font-display text-lg text-foreground mb-2">{f.q}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{f.a}</p>
-                </div>
+                (() => {
+                  const qId = `faq-${slugifyHeading(f.q)}`;
+                  return (
+                    <div
+                      key={f.q}
+                      id={qId}
+                      className="p-5 rounded-lg bg-card border border-border scroll-mt-24 group"
+                    >
+                      <div className="flex items-start gap-3 mb-2">
+                        <h3 className="font-display text-lg text-foreground flex-1">
+                          {f.q}
+                        </h3>
+                        <button
+                          type="button"
+                          onClick={() => copySectionLink(qId, f.q)}
+                          aria-label={`Copy link to FAQ: ${f.q}`}
+                          title="Copy link to this FAQ"
+                          className="shrink-0 inline-flex items-center justify-center h-7 w-7 rounded-sm text-muted-foreground opacity-0 group-hover:opacity-100 focus:opacity-100 hover:text-primary transition-opacity focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                        >
+                          <Link2 className="h-3.5 w-3.5" aria-hidden="true" />
+                        </button>
+                      </div>
+                      <p className="text-muted-foreground leading-relaxed">{f.a}</p>
+                    </div>
+                  );
+                })()
               ))}
             </div>
           </section>
