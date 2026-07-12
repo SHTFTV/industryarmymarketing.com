@@ -14,6 +14,34 @@ import { toast } from "@/hooks/use-toast";
 import { usePpp } from "@/hooks/usePpp";
 import PriceUsd from "@/components/PriceUsd";
 
+// Per-package FAQ content, surfaced visibly AND as FAQPage JSON-LD so
+// Google/Bing can render rich FAQ results on each package landing page
+// (not just the homepage comparison section).
+const packageFaq = (pkg: {
+  name: string;
+  price: number;
+  deliverables: number;
+  timelineDays: number;
+  revisions: number;
+}) => [
+  {
+    q: `Who is the ${pkg.name} package for?`,
+    a: `${pkg.name} is built for teams that need ${pkg.deliverables} authority placements delivered in ${pkg.timelineDays} days for a flat $${pkg.price} — no retainer, no lock-in.`,
+  },
+  {
+    q: `When will I see ranking results from ${pkg.name}?`,
+    a: `Placements go live on the ${pkg.timelineDays}-day schedule. Most clients see keyword movement within 30–60 days as Tier 2 signals index and internal linking compounds.`,
+  },
+  {
+    q: `How many revisions are included?`,
+    a: `${pkg.revisions} free revision${pkg.revisions === 1 ? "" : "s"} covering anchor text, target URL, and content tone before articles publish.`,
+  },
+  {
+    q: `Is ${pkg.name} a one-time purchase or a subscription?`,
+    a: `One-time. $${pkg.price} covers the full ${pkg.deliverables}-placement deployment and link report. Re-order any time — no auto-renew.`,
+  },
+];
+
 const SeoPackageDetail = () => {
   const { slug } = useParams<{ slug: string }>();
   const [params] = useSearchParams();
@@ -113,6 +141,17 @@ const SeoPackageDetail = () => {
     }
   };
 
+  const faq = packageFaq(pkg);
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faq.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  };
+
   return (
     <Layout>
       <Seo
@@ -138,6 +177,7 @@ const SeoPackageDetail = () => {
               availability: "https://schema.org/InStock",
             },
           },
+          faqJsonLd,
         ]}
       />
       <PageHeader
