@@ -6,6 +6,7 @@ import { breadcrumbList } from "@/lib/breadcrumb";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { SEO_PACKAGES } from "@/data/seoPackages";
+import PriceUsd from "@/components/PriceUsd";
 import { Check, Clock, Target, Zap, ShieldCheck, RefreshCw, FileText, Lock } from "lucide-react";
 
 const pillars = [
@@ -176,8 +177,7 @@ const SeoPackages = () => (
                 <div className="text-xs uppercase tracking-widest text-muted-foreground mt-1">{p.tagline}</div>
               </div>
               <div className="font-display text-4xl text-primary">
-                ${p.price}
-                <span className="text-sm text-muted-foreground font-sans font-normal"> / one-time</span>
+                <PriceUsd usd={p.price} suffix=" / one-time" />
               </div>
               <p className="text-sm text-muted-foreground">{p.summary}</p>
               <div className="grid grid-cols-3 gap-2 text-center py-3 border-y border-border">
@@ -230,7 +230,7 @@ const SeoPackages = () => (
                 </Button>
                 <Button variant="ghost" className="w-full" asChild>
                   <a href={`mailto:colin@industryarmymarketing.com?subject=${p.name} Package Order`}>
-                    Order {p.name} · ${p.price}
+                    Order {p.name} · <PriceUsd usd={p.price} showList={false} />
                   </a>
                 </Button>
               </div>
@@ -278,7 +278,7 @@ const SeoPackages = () => (
             <tbody className="text-sm">
               {[
                 { label: "Price (one-time)", get: (p: typeof SEO_PACKAGES[number]) => (
-                  <span className="font-display text-2xl text-primary">${p.price}</span>
+                  <span className="font-display text-2xl text-primary"><PriceUsd usd={p.price} /></span>
                 ) },
                 { label: "Total placements", get: (p) => `${p.deliverables}` },
                 { label: "Delivery time", get: (p) => `${p.timelineDays} days` },
@@ -347,7 +347,7 @@ const SeoPackages = () => (
                       </Button>
                       <Button variant="ghost" size="sm" asChild>
                         <a href={`mailto:colin@industryarmymarketing.com?subject=${p.name} Package Order`}>
-                          Order ${p.price}
+                          Order <PriceUsd usd={p.price} showList={false} />
                         </a>
                       </Button>
                     </div>
@@ -387,7 +387,7 @@ const SeoPackages = () => (
                   <p className="text-muted-foreground max-w-2xl">{p.summary}</p>
                 </div>
                 <div className="text-right">
-                  <div className="font-display text-3xl text-primary">${p.price}</div>
+                  <div className="font-display text-3xl text-primary"><PriceUsd usd={p.price} /></div>
                   <div className="text-xs uppercase tracking-widest text-muted-foreground">{p.deliverables} placements</div>
                 </div>
               </div>
@@ -428,7 +428,7 @@ const SeoPackages = () => (
                 </Button>
                 <Button variant="outline" asChild>
                   <a href={`mailto:colin@industryarmymarketing.com?subject=${p.name} Package Order`}>
-                    Order · ${p.price}
+                    Order · <PriceUsd usd={p.price} showList={false} />
                   </a>
                 </Button>
               </div>

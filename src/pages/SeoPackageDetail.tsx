@@ -11,12 +11,18 @@ import { downloadSeoProposalPdf } from "@/lib/seoProposalPdf";
 import { submitSeoOrder } from "@/lib/submitSeoOrder";
 import { track } from "@/lib/analytics";
 import { toast } from "@/hooks/use-toast";
+import { usePpp } from "@/hooks/usePpp";
+import PriceUsd from "@/components/PriceUsd";
 
 const SeoPackageDetail = () => {
   const { slug } = useParams<{ slug: string }>();
   const [params] = useSearchParams();
   const pkg = SEO_PACKAGES.find((p) => p.slug === slug);
   if (!pkg) return <Navigate to="/seo-packages" replace />;
+
+  // Display-only PPP; JSON-LD keeps USD list price for schema.org compliance.
+  const { adjust, factor } = usePpp();
+  const displayPrice = adjust(pkg.price);
 
   const idx = SEO_PACKAGES.findIndex((p) => p.slug === pkg.slug);
   const next = SEO_PACKAGES[(idx + 1) % SEO_PACKAGES.length];
@@ -137,7 +143,7 @@ const SeoPackageDetail = () => {
       <PageHeader
         eyebrow={`SEO Package · ${pkg.tagline}`}
         title={`${pkg.icon} ${pkg.name}.`}
-        highlight={`$${pkg.price}`}
+        highlight={`$${displayPrice}`}
         description={pkg.summary}
       >
         <div className="flex flex-wrap gap-3">
@@ -153,7 +159,7 @@ const SeoPackageDetail = () => {
                 Sending...
               </>
             ) : (
-              <>Order {pkg.name} · ${pkg.price}</>
+              <>Order {pkg.name} · ${displayPrice}</>
             )}
           </Button>
           <Button variant="outline" size="lg" onClick={onDownloadPdf}>
@@ -163,6 +169,11 @@ const SeoPackageDetail = () => {
             <Link to="/seo-packages">← All Packages</Link>
           </Button>
         </div>
+        {factor < 1 && (
+          <p className="mt-4 text-xs uppercase tracking-widest text-primary">
+            PPP-adjusted for accessibility · {Math.round(factor * 100)}% of list ${pkg.price} · Card country enforced at checkout
+          </p>
+        )}
         {hasPrefill && (
           <p className="mt-4 text-xs uppercase tracking-widest text-primary">
             Prefilled from your estimator inputs ✓
@@ -315,7 +326,7 @@ const SeoPackageDetail = () => {
             Deploy <span className="text-primary">{pkg.name}</span>
           </h2>
           <p className="text-muted-foreground mb-8">
-            ${pkg.price} one-time. {pkg.deliverables} placements. {pkg.timelineDays}-day delivery. Email your target URL and 3–5 keywords — we confirm within 24 hours.
+            ${displayPrice} one-time. {pkg.deliverables} placements. {pkg.timelineDays}-day delivery. Email your target URL and 3–5 keywords — we confirm within 24 hours.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             <Button
@@ -330,7 +341,7 @@ const SeoPackageDetail = () => {
                   Sending...
                 </>
               ) : (
-                <>Order {pkg.name} · ${pkg.price}</>
+                <>Order {pkg.name} · ${displayPrice}</>
               )}
             </Button>
             <Button variant="outline" size="lg" asChild>

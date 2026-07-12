@@ -1,9 +1,9 @@
 import Layout from "@/components/Layout";
 import Seo from "@/components/Seo";
 import { breadcrumbList } from "@/lib/breadcrumb";
-import PageHeader from "@/components/PageHeader";
 import FeatureGrid from "@/components/FeatureGrid";
 import CtaBanner from "@/components/CtaBanner";
+import EyeSpyLogo from "@/components/EyeSpyLogo";
 
 const pillars = [
   { icon: "🏢", title: "Business Verification", body: "We cross-reference your BC or Canadian business license, GST/HST registration, and confirm your physical service area. No shell companies. No fake addresses." },
@@ -23,20 +23,28 @@ const tiers = [
 const EyeSpyr = () => (
   <Layout>
     <Seo
-      title="EyeSpyr Verification — The Industry's Trust Standard | IAM"
-      description="EyeSpyr is IAM's proprietary contractor verification system. Cross-referenced business licence, reviews, web health, and location data. The badge can only be earned."
+      title="EyeSpy® Verification — The Industry's Trust Standard | IAM"
+      description="EyeSpy® is IAM's proprietary contractor verification system. Cross-referenced business licence, reviews, web health, and location data. The badge can only be earned."
       path="/eyespyr"
       jsonLd={breadcrumbList([
         { name: "Home", path: "/" },
-        { name: "EyeSpyr", path: "/eyespyr" },
+        { name: "EyeSpy®", path: "/eyespyr" },
       ])}
     />
-    <PageHeader
-      eyebrow="Verification Standard"
-      title="Eye"
-      highlight="Spyr"
-      description="The trust badge that separates real contractors from scams. Every IAM network member earns it. No one can buy it."
-    />
+    <section className="relative overflow-hidden border-b border-border gradient-tactical">
+      <div className="container mx-auto px-4 py-20 md:py-28 relative">
+        <p className="text-primary uppercase tracking-[0.3em] text-xs font-semibold mb-4">
+          Verification Standard
+        </p>
+        <div className="mb-6">
+          <EyeSpyLogo size="xl" />
+        </div>
+        <p className="text-muted-foreground max-w-2xl text-lg leading-relaxed">
+          The trust badge that separates real contractors from scams. Every IAM network member earns it. No one can buy it.
+        </p>
+      </div>
+      <div className="absolute bottom-0 left-0 right-0 h-px gradient-neon-line opacity-50" />
+    </section>
     <section className="py-20">
       <div className="container mx-auto px-4 max-w-6xl">
         <p className="text-primary uppercase tracking-[0.3em] text-xs font-semibold mb-3">The Four Pillars</p>
