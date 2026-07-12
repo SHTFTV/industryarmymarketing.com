@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState, type KeyboardEvent, type MouseEvent } from "react";
+import { Link2, Check } from "lucide-react";
 
 export const slugifyHeading = (h: string) =>
   h
@@ -23,6 +24,7 @@ const BlogToc = ({ headings }: Props) => {
 
   const [activeId, setActiveId] = useState<string | null>(null);
   const [focusIndex, setFocusIndex] = useState(0);
+  const [copiedId, setCopiedId] = useState<string | null>(null);
   const linkRefs = useRef<Array<HTMLAnchorElement | null>>([]);
 
   useEffect(() => {
@@ -120,6 +122,32 @@ const BlogToc = ({ headings }: Props) => {
     linkRefs.current[next]?.focus();
   };
 
+  const copySectionLink = async (id: string) => {
+    if (typeof window === "undefined") return;
+    const url = `${window.location.origin}${window.location.pathname}#${id}`;
+    try {
+      await navigator.clipboard.writeText(url);
+    } catch {
+      const ta = document.createElement("textarea");
+      ta.value = url;
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        document.execCommand("copy");
+      } catch {
+        /* ignore */
+      }
+      document.body.removeChild(ta);
+    }
+    if (typeof history !== "undefined" && history.replaceState) {
+      history.replaceState(null, "", `#${id}`);
+    }
+    setCopiedId(id);
+    window.setTimeout(() => {
+      setCopiedId((prev) => (prev === id ? null : prev));
+    }, 1800);
+  };
+
   return (
     <nav
       aria-label="Table of contents"
@@ -145,27 +173,53 @@ const BlogToc = ({ headings }: Props) => {
               key={it.id}
               className={active ? "marker:text-primary marker:font-bold" : undefined}
             >
-              <a
-                href={`#${it.id}`}
-                ref={(el) => (linkRefs.current[idx] = el)}
-                tabIndex={tabIndex}
-                onClick={(e) => handleClick(e, it.id, idx)}
-                onKeyDown={(e) => handleKeyDown(e, idx)}
-                onFocus={() => setFocusIndex(idx)}
-                aria-current={active ? "location" : undefined}
-                data-active={active ? "true" : undefined}
-                className={
-                  "inline-block rounded-sm underline-offset-2 transition-colors " +
-                  "focus:outline-none focus-visible:outline-none " +
-                  "focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 " +
-                  "focus-visible:ring-offset-background " +
-                  (active
-                    ? "text-primary font-semibold underline decoration-primary"
-                    : "text-foreground/90 hover:text-primary underline decoration-primary/30 hover:decoration-primary")
-                }
-              >
-                {it.text}
-              </a>
+              <div className="flex items-start gap-2 group">
+                <a
+                  href={`#${it.id}`}
+                  ref={(el) => (linkRefs.current[idx] = el)}
+                  tabIndex={tabIndex}
+                  onClick={(e) => handleClick(e, it.id, idx)}
+                  onKeyDown={(e) => handleKeyDown(e, idx)}
+                  onFocus={() => setFocusIndex(idx)}
+                  aria-current={active ? "location" : undefined}
+                  data-active={active ? "true" : undefined}
+                  className={
+                    "inline-block flex-1 rounded-sm underline-offset-2 transition-colors " +
+                    "focus:outline-none focus-visible:outline-none " +
+                    "focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 " +
+                    "focus-visible:ring-offset-background " +
+                    (active
+                      ? "text-primary font-semibold underline decoration-primary"
+                      : "text-foreground/90 hover:text-primary underline decoration-primary/30 hover:decoration-primary")
+                  }
+                >
+                  {it.text}
+                </a>
+                <button
+                  type="button"
+                  onClick={() => copySectionLink(it.id)}
+                  aria-label={
+                    copiedId === it.id
+                      ? `Section link copied for ${it.text}`
+                      : `Copy link to section: ${it.text}`
+                  }
+                  title={copiedId === it.id ? "Link copied" : "Copy link to section"}
+                  className={
+                    "shrink-0 inline-flex items-center justify-center h-6 w-6 rounded-sm " +
+                    "text-muted-foreground opacity-0 group-hover:opacity-100 focus:opacity-100 " +
+                    "hover:text-primary transition-opacity " +
+                    "focus:outline-none focus-visible:ring-2 focus-visible:ring-primary " +
+                    "focus-visible:ring-offset-2 focus-visible:ring-offset-background " +
+                    (copiedId === it.id ? "!opacity-100 text-primary" : "")
+                  }
+                >
+                  {copiedId === it.id ? (
+                    <Check className="h-3.5 w-3.5" aria-hidden="true" />
+                  ) : (
+                    <Link2 className="h-3.5 w-3.5" aria-hidden="true" />
+                  )}
+                </button>
+              </div>
             </li>
           );
         })}
