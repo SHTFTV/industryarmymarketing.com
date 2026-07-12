@@ -1,0 +1,23 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`PricingChartSection > mobile layout snapshot is stable so overflow regressions surface in CI 1`] = `
+{
+  "containerTag": "ul",
+  "firstThree": [
+    {
+      "tag": "li",
+      "text": "0 – 100,000$10/slot/mo3 slots$10 per 100K Baseline · $30/mo if sold out",
+    },
+    {
+      "tag": "li",
+      "text": "100,001 – 200,000$20/slot/mo3 slots$10 per 100K · $60/mo if sold out",
+    },
+    {
+      "tag": "li",
+      "text": "200,001 – 250,000$25/slot/mo3 slots$10 per 100K · $75/mo if sold out",
+    },
+  ],
+  "hiddenAtSmAndUp": true,
+  "itemCount": 39,
+}
+`;
