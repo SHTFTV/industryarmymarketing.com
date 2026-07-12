@@ -1,6 +1,8 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 import { MotionConfig } from "framer-motion";
+import { flushCtaAttribution } from "@/lib/analytics";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -163,6 +165,15 @@ const towerBlogJsonLd = [
 
 const queryClient = new QueryClient();
 
+// Fires home_cta_conversion on route entries that match a pending CTA click.
+const CtaAttributionListener = () => {
+  const location = useLocation();
+  useEffect(() => {
+    flushCtaAttribution(location.pathname);
+  }, [location.pathname]);
+  return null;
+};
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     {/* reducedMotion="always" forces motion components to skip their initial
@@ -175,6 +186,7 @@ const App = () => (
         <Sonner />
         <ComingSoonModal />
         <BrowserRouter>
+        <CtaAttributionListener />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/how-it-works" element={<HowItWorks />} />
