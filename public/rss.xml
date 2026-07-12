@@ -6,13 +6,22 @@
     <atom:link href="https://industryarmymarketing.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>2,000-word guides on exclusive $10 territory marketing for trade contractors and service pros across Canada.</description>
     <language>en-ca</language>
-    <lastBuildDate>Sat, 11 Jul 2026 05:27:07 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 12 Jul 2026 02:06:21 GMT</lastBuildDate>
     <generator>Industry Army Marketing build pipeline</generator>
     <image>
       <url>https://industryarmymarketing.com/og-image.jpg</url>
       <title>Industry Army Marketing — Intel Blog</title>
       <link>https://industryarmymarketing.com/blog</link>
     </image>
+    <item>
+      <title>Beyond the Domain Name: Understanding Entity Authority in Modern SEO</title>
+      <link>https://industryarmymarketing.com/blog/beyond-domain-name-entity-authority-modern-seo</link>
+      <guid isPermaLink="true">https://industryarmymarketing.com/blog/beyond-domain-name-entity-authority-modern-seo</guid>
+      <pubDate>Mon, 01 Jul 2026 09:00:00 +0000</pubDate>
+      <category>SEO Strategy</category>
+      <description>How modern search algorithms separate real market authorities from short-term copycats. Entity-based search, Knowledge Graph nodes, map-pack corrective mechanics, and the engineered defense behind Weddings.io Technologies and Industry Army Marketing.</description>
+      <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
+    </item>
     <item>
       <title>The Evolution of Weddings.io Technologies: The 20-Year Battle for Digital Real Estate, LLM Optimization, and the Rise of WeddingSaaS</title>
       <link>https://industryarmymarketing.com/blog/weddings-io-technologies-company-wedding-saas-20-year-battle</link>
