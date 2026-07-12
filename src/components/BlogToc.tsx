@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState, type KeyboardEvent, type MouseEvent } from "react";
 import { Link2, Check } from "lucide-react";
+import { copySectionLink } from "@/lib/copySectionLink";
 
 export const slugifyHeading = (h: string) =>
   h
@@ -56,6 +57,33 @@ const BlogToc = ({ headings }: Props) => {
     );
     els.forEach((el) => io.observe(el));
     return () => io.disconnect();
+  }, [items]);
+
+  // Sync TOC + smooth-scroll when the page loads with an existing hash
+  // (e.g. someone shared /blog/foo#section-slug). Runs once per item set
+  // and matches by slug against the current TOC.
+  useEffect(() => {
+    if (typeof window === "undefined" || items.length === 0) return;
+    const hash = window.location.hash.replace(/^#/, "");
+    if (!hash) return;
+    if (!items.some((it) => it.id === hash)) return;
+    const el = document.getElementById(hash);
+    if (!el) return;
+
+    setActiveId(hash);
+    const targetIdx = items.findIndex((it) => it.id === hash);
+    if (targetIdx >= 0) setFocusIndex(targetIdx);
+
+    const prefersReduced =
+      window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ?? false;
+    // Defer to next frame so the layout is measured after the article mounts.
+    const raf = window.requestAnimationFrame(() => {
+      el.scrollIntoView({
+        behavior: prefersReduced ? "auto" : "smooth",
+        block: "start",
+      });
+    });
+    return () => window.cancelAnimationFrame(raf);
   }, [items]);
 
   if (items.length < 2) return null;
@@ -122,26 +150,8 @@ const BlogToc = ({ headings }: Props) => {
     linkRefs.current[next]?.focus();
   };
 
-  const copySectionLink = async (id: string) => {
-    if (typeof window === "undefined") return;
-    const url = `${window.location.origin}${window.location.pathname}#${id}`;
-    try {
-      await navigator.clipboard.writeText(url);
-    } catch {
-      const ta = document.createElement("textarea");
-      ta.value = url;
-      document.body.appendChild(ta);
-      ta.select();
-      try {
-        document.execCommand("copy");
-      } catch {
-        /* ignore */
-      }
-      document.body.removeChild(ta);
-    }
-    if (typeof history !== "undefined" && history.replaceState) {
-      history.replaceState(null, "", `#${id}`);
-    }
+  const handleCopy = async (id: string, label: string) => {
+    await copySectionLink(id, label);
     setCopiedId(id);
     window.setTimeout(() => {
       setCopiedId((prev) => (prev === id ? null : prev));
@@ -197,7 +207,7 @@ const BlogToc = ({ headings }: Props) => {
                 </a>
                 <button
                   type="button"
-                  onClick={() => copySectionLink(it.id)}
+                  onClick={() => handleCopy(it.id, it.text)}
                   aria-label={
                     copiedId === it.id
                       ? `Section link copied for ${it.text}`
