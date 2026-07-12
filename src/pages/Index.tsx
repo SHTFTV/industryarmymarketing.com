@@ -5,6 +5,7 @@ import HeroSection from "@/components/HeroSection";
 import FlagshipBrandsSection from "@/components/FlagshipBrandsSection";
 import ServicesSection from "@/components/ServicesSection";
 import SeoPackagesSection from "@/components/SeoPackagesSection";
+import SeoPackagesCompare from "@/components/SeoPackagesCompare";
 import PricingSection from "@/components/PricingSection";
 import BrandsSection from "@/components/BrandsSection";
 import PricingChartSection from "@/components/PricingChartSection";
@@ -41,6 +42,7 @@ const Index = () => {
       <FlagshipBrandsSection />
       <ServicesSection />
       <SeoPackagesSection />
+      <SeoPackagesCompare />
       <ContractorTradesGrid limit={12} showCta />
       <PricingSection />
       <PricingChartSection />
