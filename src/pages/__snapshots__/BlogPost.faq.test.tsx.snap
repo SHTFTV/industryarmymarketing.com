@@ -333,6 +333,63 @@ exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /battle-for-the-brand-
 }
 `;
 
+exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /beyond-domain-name-entity-authority-modern-seo: FAQPage JSON-LD matches stored snapshot 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Modern search engines like Google map entities — uniquely identifiable, trusted nodes in the Knowledge Graph — rather than just reading strings of text. Entities are defined by historical consistency, verified legal registry, physical map integrity, and genuine user interaction."
+      },
+      "name": "What is entity-based search?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Automated validation algorithms scan business profiles for deep, real-world digital infrastructure. When it's missing, information is stripped, map proximity weight drops, and the profile fades out of the very map packs it needs to survive."
+      },
+      "name": "Why do variant domains and SaaS wrappers eventually fade?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "When a business profile lacks multi-year footprints and verified infrastructure, automated systems begin removing profile details and downgrading its authority signals — a correcting mechanism baked into local map packs and search ecosystems."
+      },
+      "name": "What is 'information stripping'?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Weddings.io was engineered in 2015 as a hyper-localized ecosystem for the multicultural wedding industry, and now operates under Weddings.io Technologies backed by Industry Army Marketing's deployment frameworks. Zero middlemen, locked territories, and continuous chain of title."
+      },
+      "name": "How does Weddings.io defend its entity authority?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Structural trust — continuous registration history, sustained categorical relevance, and years of authentic consumer signals — cannot be replicated overnight. Shortcuts trigger the algorithmic corrective; real infrastructure wins the long game."
+      },
+      "name": "Can capital shortcut entity authority?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Industry Army Marketing is the operator behind Weddings.io Technologies. The network architecture, programmatic localization, and defensive infrastructure that protect the entity graph are engineered by the IAM Dev Team."
+      },
+      "name": "What role does IAM play?"
+    }
+  ]
+}
+`;
+
 exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /buildershaus-every-trade-one-platform: FAQPage JSON-LD matches stored snapshot 1`] = `
 {
   "@context": "https://schema.org",
@@ -2714,6 +2771,63 @@ exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /weddings-io-entity-co
         "text": "Open an incognito window. Search '[yourdomain].io' and '[yourdomain].io app'. Screenshot the map card, the organic results, and the AI Overview panel. Cross-check against your own WHOIS and business registrations. If any of the three surfaces attribute your domain to an entity you have no affiliation with, you have documented conflation evidence."
       },
       "name": "How can other .io domain owners test their own exposure?"
+    }
+  ]
+}
+`;
+
+exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /weddings-io-technologies-company-wedding-saas-20-year-battle: FAQPage JSON-LD matches stored snapshot 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The corporate technology entity that owns and develops the intellectual property, software infrastructure, and platforms behind Weddings.io. Consumer brands continue operating independently under this corporate foundation."
+      },
+      "name": "What is Weddings.io Technologies Company?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Weddings.io remains the front-end consumer brand and the 2015-established root domain. The Technologies Company wraps around it to protect IP, enable multi-tenant scale, and coordinate the sibling brands."
+      },
+      "name": "Is Weddings.io changing?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The multi-tenant vertical SaaS engine that powers every consumer brand in the group — Brides.ltd, Grooms.ltd, Jewellers.ltd, Parents.ltd, Videographers.io, and more. One enterprise-grade platform, many brands."
+      },
+      "name": "What is WeddingSaaS.com?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Industry Army Marketing is the operator behind Weddings.io Technologies Company. The Weddings.io stack is the wedding-vertical expression of the same IAM framework that runs the industry-wide domain network."
+      },
+      "name": "How does this connect to Industry Army Marketing?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It reinforces the record. The corporate technology structure formalises the continuous chain of title on Weddings.io (Langley, BC — May 13, 2015) and makes the distinction from any variant-suffix Ontario registration structurally unambiguous."
+      },
+      "name": "Does this affect the aiweddings.io / Ontario dispute?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The three autonomous systems inside WeddingSaaS.com. IAM Bot Core handles 24/7 local intent and lead routing. EyeSpyR timestamps and geotags project imagery for verifiable proof-of-work. Talc.tv syndicates vertical video across distributed micro-channels."
+      },
+      "name": "What are the IAM Bot Core, EyeSpyR, and Talc.tv?"
     }
   ]
 }
