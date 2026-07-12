@@ -17,6 +17,8 @@ import { downloadSeoProposalPdf } from "@/lib/seoProposalPdf";
 import { submitSeoOrder } from "@/lib/submitSeoOrder";
 import { track, trackDebounced } from "@/lib/analytics";
 import { toast } from "@/hooks/use-toast";
+import { usePpp } from "@/hooks/usePpp";
+import PriceUsd from "@/components/PriceUsd";
 
 const schema = z.object({
   budget: z.number().min(0).max(50_000),
@@ -30,6 +32,7 @@ const schema = z.object({
 });
 
 const SeoPackageEstimator = () => {
+  const { adjust, factor } = usePpp();
   const [budget, setBudget] = useState("300");
   const [competition, setCompetition] = useState<"low" | "medium" | "high">("medium");
   const [targetUrls, setTargetUrls] = useState("2");
@@ -314,8 +317,13 @@ const SeoPackageEstimator = () => {
             <h3 className="font-display text-4xl text-foreground">{pkg.name}</h3>
             <p className="text-xs uppercase tracking-widest text-muted-foreground mb-4">{pkg.tagline}</p>
             <p className="font-display text-3xl text-primary mb-4">
-              ${pkg.price}<span className="text-sm text-muted-foreground font-sans"> one-time</span>
+              <PriceUsd usd={pkg.price} suffix=" one-time" />
             </p>
+            {factor < 1 && (
+              <p className="text-[10px] uppercase tracking-widest text-primary mb-3">
+                PPP-adjusted · {Math.round(factor * 100)}% of ${pkg.price} · Card country enforced at checkout
+              </p>
+            )}
             <p className="text-sm text-muted-foreground mb-4 flex-1">{pkg.summary}</p>
             <div className="grid grid-cols-3 gap-2 text-center py-3 mb-4 border-y border-border">
               <div><div className="font-display text-lg text-primary">{pkg.deliverables}</div><div className="text-[10px] uppercase tracking-widest text-muted-foreground">Placements</div></div>
@@ -335,7 +343,7 @@ const SeoPackageEstimator = () => {
                     Sending...
                   </>
                 ) : (
-                  <>Order {pkg.name} · ${pkg.price} →</>
+                  <>Order {pkg.name} · ${adjust(pkg.price)} →</>
                 )}
               </Button>
               <Button variant="outline" className="w-full" onClick={onDownload}>
