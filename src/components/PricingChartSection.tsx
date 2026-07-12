@@ -7,13 +7,11 @@ import { usePpp } from "@/hooks/usePpp";
 import { PPP_COUNTRIES } from "@/data/pppFactors";
 import { trackEvent } from "@/lib/analytics";
 
-// Human-readable derivation of the $10-per-100K rule for a given row.
-// Uses the row's upperBound (capped at 30M for the terminal Infinity row)
-// so the callout always mirrors what pricingMatrix.ts hardcodes.
-const RULE_TEXT = "$10 USD per 100,000 population, per slot";
+// Human-readable flat pricing rule for a given row.
+// Population controls slot count only; the per-slot price never scales.
+const RULE_TEXT = "$10 USD per 100,000 population baseline; every slot stays $10/mo";
 function ruleCallout(pricePerSlot: number): string {
-  const blocks = pricePerSlot / 10; // pricePerSlot === blocks × $10
-  return `${blocks} × 100K × $10 = $${pricePerSlot}/slot/mo`;
+  return `$10 per 100K = $${pricePerSlot}/slot/mo`;
 }
 
 // Analytics event names for banner + callout interactions. Deduped per
@@ -104,7 +102,7 @@ const PricingChartSection = () => {
           Territory <span className="text-primary">Pricing Chart</span>
         </h2>
         <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-          $10 USD per 100,000 population, per slot. Slot 1 and the last slot cost the same. A tier only reads SOLD OUT when every slot is filled.
+          $10 USD per slot, flat across every population tier. Population only controls slot count. A tier only reads SOLD OUT when every slot is filled.
         </p>
         <div className="mt-4 inline-flex items-center gap-3 rounded border border-border bg-card px-3 py-2">
           <label htmlFor="ppp-country" className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
@@ -148,10 +146,10 @@ const PricingChartSection = () => {
       >
         <p className="font-display text-lg md:text-xl text-center tracking-wide">
           <span className="text-primary">$10 USD</span>{" "}
-          <span className="text-foreground">per 100,000 population, per slot</span>
+          <span className="text-foreground">per slot, flat across every population tier</span>
         </p>
         <p className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground text-center mt-1">
-          Flat rule · Applied to every tier below
+          100K baseline · No population multiplier
         </p>
       </div>
 

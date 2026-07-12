@@ -45,7 +45,7 @@ test.describe("Territory Pricing chart — axe accessibility", () => {
     // Banner: role=note + aria-label with the rule.
     expect(await banner.getAttribute("role")).toBe("note");
     expect(await banner.getAttribute("aria-label")).toMatch(
-      /\$10 USD per 100,000 population, per slot/,
+      /\$10 USD per 100,000 population baseline; every slot stays \$10\/mo/,
     );
     expect(await banner.getAttribute("tabindex")).toBe("0");
 
@@ -57,8 +57,8 @@ test.describe("Territory Pricing chart — axe accessibility", () => {
     for (let i = 0; i < count; i++) {
       const b = buttons.nth(i);
       const label = await b.getAttribute("aria-label");
-      expect(label).toMatch(/\$10 USD per 100,000 population, per slot/);
-      expect(label).toMatch(/× 100K × \$10 = \$\d+\/slot\/mo/);
+      expect(label).toMatch(/\$10 USD per 100,000 population baseline; every slot stays \$10\/mo/);
+      expect(label).toMatch(/\$10 per 100K = \$10\/slot\/mo/);
       expect(await b.getAttribute("aria-expanded")).toBe("false");
     }
 

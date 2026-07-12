@@ -67,32 +67,29 @@ describe("PricingChartSection", () => {
     }).toMatchSnapshot();
   });
 
-  it("renders a pinned $10 per 100K rule banner above the chart", () => {
+  it("renders a pinned flat $10 slot rule banner above the chart", () => {
     renderChart();
     const banner = screen.getByTestId("pricing-rule-banner");
     expect(banner).toBeInTheDocument();
     expect(banner.className).toMatch(/sticky/);
     expect(banner.textContent).toMatch(/\$10 USD/);
-    expect(banner.textContent).toMatch(/per 100,000 population, per slot/i);
-    expect(banner.getAttribute("aria-label")).toMatch(/\$10 USD per 100,000 population, per slot/);
+    expect(banner.textContent).toMatch(/per slot, flat across every population tier/i);
+    expect(banner.getAttribute("aria-label")).toMatch(/\$10 USD per 100,000 population baseline; every slot stays \$10\/mo/);
   });
 
-  it("renders a per-row $10 per 100K callout that matches pricingMatrix logic", () => {
+  it("renders a per-row $10 per 100K callout with no population multiplier", () => {
     renderChart();
     // Every row emits a callout in both the desktop table and mobile list,
-    // and each callout must equal `${blocks} × 100K × $10 = $${pricePerSlot}/slot/mo`,
-    // where blocks = pricePerSlot / 10. That expression is the $10-per-100K
-    // rule expressed in reverse from the hardcoded matrix — if a row ever
-    // drifts from the rule, this assertion fails.
+    // and each callout must keep the visible rule locked to $10/slot/mo.
     for (const row of PRICING_MATRIX) {
-      const blocks = row.pricePerSlot / 10;
-      const expected = `${blocks} × 100K × $10 = $${row.pricePerSlot}/slot/mo`;
+      expect(row.pricePerSlot).toBe(10);
+      const expected = `$10 per 100K = $${row.pricePerSlot}/slot/mo`;
       expect(screen.getByTestId(`pricing-callout-${row.lowerBound}`)).toHaveTextContent(expected);
       expect(screen.getByTestId(`pricing-callout-mobile-${row.lowerBound}`)).toHaveTextContent(expected);
     }
   });
 
-  it("exposes the $10 per 100K rule as a hover tooltip on every row", () => {
+  it("exposes the flat $10 per 100K rule as a hover tooltip on every row", () => {
     renderChart();
     const table = screen.getByTestId("pricing-chart-table");
     const dataRows = within(table)
@@ -102,7 +99,7 @@ describe("PricingChartSection", () => {
     dataRows.forEach((tr, i) => {
       const row = PRICING_MATRIX[i];
       const title = tr.getAttribute("title") ?? "";
-      expect(title).toMatch(/\$10 USD per 100,000 population, per slot/);
+      expect(title).toMatch(/\$10 USD per 100,000 population baseline; every slot stays \$10\/mo/);
       expect(title).toContain(`$${row.pricePerSlot}/slot/mo`);
     });
   });
