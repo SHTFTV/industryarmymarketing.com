@@ -158,7 +158,7 @@
         '</div>' +
         '<strong style="display:block;color:#f4f4f4;font-size:18px;line-height:1.2;margin-bottom:14px;">One team. One record.</strong>' +
         '<div style="display:flex;flex-direction:column;gap:8px;">' +
-          row(MAIL, "#0b0b0b", "#caff00", "\u{1F441}", "EyeSpyr", "Verification standard · Coming soon", eyespyrInlineWordmark()) +
+          row(MAIL, "#0b0b0b", "#7bd44a", "\u{1F50D}", "EyeSpy", "Verification standard · Coming soon", eyespyrInlineWordmark()) +
           row(MAIL, "#ff5b8a", "#0b0b0b", "T", "TALC.tv", "Network property · Coming soon") +
           row("/",  "#ff9a3c", "#0b0b0b", "I", "IAM", "Industry Army Marketing") +
         '</div>' +
