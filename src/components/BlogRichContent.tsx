@@ -82,7 +82,13 @@ const SmartLink = ({
     </Link>
   );
 
-const BlogRichContentView = ({ content }: { content: RichContent }) => {
+const BlogRichContentView = ({
+  content,
+  afterIntro,
+}: {
+  content: RichContent;
+  afterIntro?: React.ReactNode;
+}) => {
   const ids = (content.footnotes ?? []).map((f) => f.id);
 
   return (
@@ -92,6 +98,8 @@ const BlogRichContentView = ({ content }: { content: RichContent }) => {
           {renderWithFootnotes(content.intro, ids)}
         </p>
       )}
+
+      {afterIntro}
 
       {content.sections.map((section, i) => (
         <section key={i} className="mb-12">
