@@ -31,6 +31,17 @@ const PricingChartSection = () => {
   const { country, setCountry, factor, adjust } = usePpp();
   const isDiscounted = factor < 1;
   const [openTooltip, setOpenTooltip] = useState<number | null>(null);
+  // Escape key closes an open tooltip from anywhere on the page, matching
+  // native tooltip / disclosure keyboard patterns (WAI-ARIA 1.2).
+  const handleTooltipKeyDown = useCallback(
+    (e: React.KeyboardEvent<HTMLButtonElement>) => {
+      if (e.key === "Escape" && openTooltip !== null) {
+        e.preventDefault();
+        setOpenTooltip(null);
+      }
+    },
+    [openTooltip],
+  );
   // De-dupe focus/hover events per row per mount so a user rapidly moving
   // the pointer/keyboard across the matrix records one event per row.
   const firedRef = useRef<Set<string>>(new Set());
