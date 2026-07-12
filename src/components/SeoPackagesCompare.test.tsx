@@ -4,9 +4,14 @@ import { MemoryRouter } from "react-router-dom";
 import { SEO_PACKAGES } from "@/data/seoPackages";
 
 const trackMock = vi.fn();
-vi.mock("@/lib/analytics", () => ({
-  track: (...args: unknown[]) => trackMock(...args),
-}));
+vi.mock("@/lib/analytics", async () => {
+  const actual =
+    await vi.importActual<typeof import("@/lib/analytics")>("@/lib/analytics");
+  return {
+    ...actual,
+    track: (...args: unknown[]) => trackMock(...args),
+  };
+});
 
 // Force reduced motion for a subset of tests
 const reducedMotionMock = vi.fn(() => false);
