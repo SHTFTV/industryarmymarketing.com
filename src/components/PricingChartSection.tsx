@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { useCallback, useRef, useState } from "react";
 import { PRICING_MATRIX } from "@/data/pricingMatrix";
 import { Button } from "@/components/ui/button";
 import { usePpp } from "@/hooks/usePpp";
 import { PPP_COUNTRIES } from "@/data/pppFactors";
+import { trackEvent } from "@/lib/analytics";
 
 // Human-readable derivation of the $10-per-100K rule for a given row.
 // Uses the row's upperBound (capped at 30M for the terminal Infinity row)
@@ -14,9 +16,33 @@ function ruleCallout(pricePerSlot: number): string {
   return `${blocks} × 100K × $10 = $${pricePerSlot}/slot/mo`;
 }
 
+// Analytics event names for banner + callout interactions. Deduped per
+// mount so noisy focus/hover streams don't flood the pipeline while still
+// letting E2E assert that the first interaction of each type was recorded.
+const EVT = {
+  bannerFocus: "pricing_chart_banner_focus",
+  bannerHover: "pricing_chart_banner_hover",
+  calloutFocus: "pricing_chart_callout_focus",
+  calloutHover: "pricing_chart_callout_hover",
+  calloutTooltipOpen: "pricing_chart_callout_tooltip_open",
+} as const;
+
 const PricingChartSection = () => {
   const { country, setCountry, factor, adjust } = usePpp();
   const isDiscounted = factor < 1;
+  const [openTooltip, setOpenTooltip] = useState<number | null>(null);
+  // De-dupe focus/hover events per row per mount so a user rapidly moving
+  // the pointer/keyboard across the matrix records one event per row.
+  const firedRef = useRef<Set<string>>(new Set());
+  const fireOnce = useCallback(
+    (event: string, meta: Record<string, unknown>) => {
+      const key = `${event}:${meta.lowerBound ?? "banner"}`;
+      if (firedRef.current.has(key)) return;
+      firedRef.current.add(key);
+      trackEvent(event, meta);
+    },
+    [],
+  );
   return (
   <section className="py-24 gradient-tactical border-y border-border">
     <div className="container mx-auto px-4 max-w-6xl">
@@ -68,6 +94,8 @@ const PricingChartSection = () => {
         role="note"
         aria-label={RULE_TEXT}
         tabIndex={0}
+        onFocus={() => fireOnce(EVT.bannerFocus, { rule: RULE_TEXT })}
+        onMouseEnter={() => fireOnce(EVT.bannerHover, { rule: RULE_TEXT })}
         className="sticky top-16 z-20 mb-4 rounded-md border-2 border-primary bg-background/95 backdrop-blur px-4 py-3 shadow-[0_0_20px_hsl(var(--primary)/0.25)] outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
       >
         <p className="font-display text-lg md:text-xl text-center tracking-wide">
@@ -103,16 +131,59 @@ const PricingChartSection = () => {
               {row.status} · ${adjust(row.monthlyTotal)}/mo if sold out
               {isDiscounted ? ` · list $${row.pricePerSlot}` : ""}
             </p>
-            <p
-              data-testid={`pricing-callout-mobile-${row.lowerBound}`}
-              tabIndex={0}
-              role="note"
-              aria-label={`${row.populationLabel}: ${ruleCallout(row.pricePerSlot)} — ${RULE_TEXT}`}
-              title={`${RULE_TEXT} — ${ruleCallout(row.pricePerSlot)}`}
-              className="text-[10px] font-mono text-primary/90 mt-2 border-t border-border pt-2 outline-none focus-visible:ring-2 focus-visible:ring-primary rounded"
-            >
-              {ruleCallout(row.pricePerSlot)}
-            </p>
+            <div className="mt-2 border-t border-border pt-2">
+              <button
+                type="button"
+                data-testid={`pricing-callout-mobile-${row.lowerBound}`}
+                aria-label={`${row.populationLabel}: ${ruleCallout(row.pricePerSlot)} — ${RULE_TEXT}`}
+                aria-expanded={openTooltip === row.lowerBound}
+                aria-describedby={
+                  openTooltip === row.lowerBound ? `pricing-tip-mobile-${row.lowerBound}` : undefined
+                }
+                title={`${RULE_TEXT} — ${ruleCallout(row.pricePerSlot)}`}
+                onFocus={() =>
+                  fireOnce(EVT.calloutFocus, {
+                    lowerBound: row.lowerBound,
+                    pricePerSlot: row.pricePerSlot,
+                    population: row.populationLabel,
+                    layout: "mobile",
+                  })
+                }
+                onMouseEnter={() =>
+                  fireOnce(EVT.calloutHover, {
+                    lowerBound: row.lowerBound,
+                    pricePerSlot: row.pricePerSlot,
+                    population: row.populationLabel,
+                    layout: "mobile",
+                  })
+                }
+                onClick={() => {
+                  setOpenTooltip((prev) => (prev === row.lowerBound ? null : row.lowerBound));
+                  trackEvent(EVT.calloutTooltipOpen, {
+                    lowerBound: row.lowerBound,
+                    pricePerSlot: row.pricePerSlot,
+                    population: row.populationLabel,
+                    layout: "mobile",
+                  });
+                }}
+                className="block w-full text-left text-[10px] font-mono text-primary/90 outline-none focus-visible:ring-2 focus-visible:ring-primary rounded"
+              >
+                {ruleCallout(row.pricePerSlot)}
+              </button>
+              {openTooltip === row.lowerBound && (
+                <div
+                  id={`pricing-tip-mobile-${row.lowerBound}`}
+                  role="tooltip"
+                  data-testid={`pricing-tooltip-mobile-${row.lowerBound}`}
+                  className="mt-2 rounded-md border border-primary/60 bg-background px-3 py-2 text-[11px] text-foreground shadow-md"
+                >
+                  <span className="text-primary font-semibold">{RULE_TEXT}</span>
+                  <span className="block text-muted-foreground mt-1">
+                    {row.populationLabel} → {ruleCallout(row.pricePerSlot)}
+                  </span>
+                </div>
+              )}
+            </div>
           </li>
         ))}
       </ul>
@@ -160,15 +231,59 @@ const PricingChartSection = () => {
                   data-testid={`pricing-callout-${row.lowerBound}`}
                   className="px-3 md:px-6 py-3 text-[11px] font-mono text-primary/90 hidden md:table-cell whitespace-nowrap"
                 >
-                  <span
-                    tabIndex={0}
-                    role="note"
+                  <button
+                    type="button"
+                    data-testid={`pricing-callout-button-${row.lowerBound}`}
                     aria-label={`${row.populationLabel}: ${ruleCallout(row.pricePerSlot)} — ${RULE_TEXT}`}
+                    aria-expanded={openTooltip === row.lowerBound}
+                    aria-describedby={
+                      openTooltip === row.lowerBound ? `pricing-tip-${row.lowerBound}` : undefined
+                    }
                     title={`${RULE_TEXT} — ${ruleCallout(row.pricePerSlot)}`}
-                    className="inline-block outline-none focus-visible:ring-2 focus-visible:ring-primary rounded px-1"
+                    onFocus={() =>
+                      fireOnce(EVT.calloutFocus, {
+                        lowerBound: row.lowerBound,
+                        pricePerSlot: row.pricePerSlot,
+                        population: row.populationLabel,
+                        layout: "desktop",
+                      })
+                    }
+                    onMouseEnter={() =>
+                      fireOnce(EVT.calloutHover, {
+                        lowerBound: row.lowerBound,
+                        pricePerSlot: row.pricePerSlot,
+                        population: row.populationLabel,
+                        layout: "desktop",
+                      })
+                    }
+                    onClick={() => {
+                      setOpenTooltip((prev) =>
+                        prev === row.lowerBound ? null : row.lowerBound,
+                      );
+                      trackEvent(EVT.calloutTooltipOpen, {
+                        lowerBound: row.lowerBound,
+                        pricePerSlot: row.pricePerSlot,
+                        population: row.populationLabel,
+                        layout: "desktop",
+                      });
+                    }}
+                    className="inline-block outline-none focus-visible:ring-2 focus-visible:ring-primary rounded px-1 text-left"
                   >
                     {ruleCallout(row.pricePerSlot)}
-                  </span>
+                  </button>
+                  {openTooltip === row.lowerBound && (
+                    <div
+                      id={`pricing-tip-${row.lowerBound}`}
+                      role="tooltip"
+                      data-testid={`pricing-tooltip-${row.lowerBound}`}
+                      className="mt-1 rounded border border-primary/60 bg-background px-2 py-1 text-[11px] text-foreground shadow-md whitespace-normal"
+                    >
+                      <span className="text-primary font-semibold">{RULE_TEXT}</span>
+                      <span className="block text-muted-foreground">
+                        {row.populationLabel} → {ruleCallout(row.pricePerSlot)}
+                      </span>
+                    </div>
+                  )}
                 </td>
               </tr>
             ))}
