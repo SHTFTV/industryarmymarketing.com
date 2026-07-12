@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { SEO_PACKAGES } from "@/data/seoPackages";
+import { Button } from "@/components/ui/button";
 
 const SeoPackagesSection = () => {
   return (
@@ -59,12 +60,19 @@ const SeoPackagesSection = () => {
                 <span>·</span>
                 <span>{pkg.timelineDays} days</span>
               </div>
-              <Link
-                to={`/seo-packages/${pkg.slug}`}
-                className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded bg-primary text-primary-foreground font-semibold uppercase tracking-widest text-xs hover:opacity-90 transition-opacity"
+              <Button
+                asChild
+                variant={pkg.featured ? "hero" : "outline"}
+                size="lg"
+                className="w-full uppercase tracking-widest text-xs focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               >
-                View {pkg.name} <ArrowRight size={14} />
-              </Link>
+                <Link
+                  to={`/seo-packages/${pkg.slug}`}
+                  aria-label={`View ${pkg.name} SEO package details — ${pkg.tagline}, $${pkg.price}`}
+                >
+                  View {pkg.name} Details <ArrowRight size={14} className="ml-1" />
+                </Link>
+              </Button>
             </motion.div>
           ))}
         </div>
@@ -72,7 +80,8 @@ const SeoPackagesSection = () => {
         <div className="text-center mt-10">
           <Link
             to="/seo-packages"
-            className="inline-flex items-center gap-2 text-primary hover:text-primary/80 uppercase tracking-widest text-xs font-semibold"
+            aria-label="Compare all SEO packages"
+            className="inline-flex items-center gap-2 text-primary hover:text-primary/80 uppercase tracking-widest text-xs font-semibold rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background px-2 py-1"
           >
             Compare all packages <ArrowRight size={14} />
           </Link>
