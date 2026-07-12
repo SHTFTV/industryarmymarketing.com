@@ -67,7 +67,8 @@ const PricingChartSection = () => {
         data-testid="pricing-rule-banner"
         role="note"
         aria-label={RULE_TEXT}
-        className="sticky top-16 z-20 mb-4 rounded-md border-2 border-primary bg-background/95 backdrop-blur px-4 py-3 shadow-[0_0_20px_hsl(var(--primary)/0.25)]"
+        tabIndex={0}
+        className="sticky top-16 z-20 mb-4 rounded-md border-2 border-primary bg-background/95 backdrop-blur px-4 py-3 shadow-[0_0_20px_hsl(var(--primary)/0.25)] outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
       >
         <p className="font-display text-lg md:text-xl text-center tracking-wide">
           <span className="text-primary">$10 USD</span>{" "}
@@ -104,7 +105,11 @@ const PricingChartSection = () => {
             </p>
             <p
               data-testid={`pricing-callout-mobile-${row.lowerBound}`}
-              className="text-[10px] font-mono text-primary/90 mt-2 border-t border-border pt-2"
+              tabIndex={0}
+              role="note"
+              aria-label={`${row.populationLabel}: ${ruleCallout(row.pricePerSlot)} — ${RULE_TEXT}`}
+              title={`${RULE_TEXT} — ${ruleCallout(row.pricePerSlot)}`}
+              className="text-[10px] font-mono text-primary/90 mt-2 border-t border-border pt-2 outline-none focus-visible:ring-2 focus-visible:ring-primary rounded"
             >
               {ruleCallout(row.pricePerSlot)}
             </p>
@@ -155,7 +160,15 @@ const PricingChartSection = () => {
                   data-testid={`pricing-callout-${row.lowerBound}`}
                   className="px-3 md:px-6 py-3 text-[11px] font-mono text-primary/90 hidden md:table-cell whitespace-nowrap"
                 >
-                  {ruleCallout(row.pricePerSlot)}
+                  <span
+                    tabIndex={0}
+                    role="note"
+                    aria-label={`${row.populationLabel}: ${ruleCallout(row.pricePerSlot)} — ${RULE_TEXT}`}
+                    title={`${RULE_TEXT} — ${ruleCallout(row.pricePerSlot)}`}
+                    className="inline-block outline-none focus-visible:ring-2 focus-visible:ring-primary rounded px-1"
+                  >
+                    {ruleCallout(row.pricePerSlot)}
+                  </span>
                 </td>
               </tr>
             ))}
