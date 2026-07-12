@@ -9,6 +9,7 @@ import { getPost, blogPosts } from "@/data/blogPosts";
 import BlogRichContentView from "@/components/BlogRichContent";
 import { DisambiguationSchema } from "@/components/DisambiguationSchema";
 import BlogToc, { slugifyHeading } from "@/components/BlogToc";
+import ReadingProgress from "@/components/ReadingProgress";
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -236,6 +237,8 @@ const BlogPost = () => {
         jsonLd={schemas}
       />
       {isRecordRecord && <DisambiguationSchema />}
+
+      <ReadingProgress headings={tocHeadings} />
 
       <article className="pt-32 pb-20">
         <div className="container mx-auto px-4 max-w-4xl">
