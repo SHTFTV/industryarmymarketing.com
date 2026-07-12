@@ -70,6 +70,8 @@ export type AnalyticsEvent =
   | "estimator_recommendation"
   | "package_selected"
   | "package_detail_view"
+  | "home_package_cta_click"
+  | "home_compare_packages_click"
   | "pdf_download"
   | "order_click"
   | "order_submitted"
