@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useRef, useState, type KeyboardEvent } from "react";
 import { PRICING_MATRIX } from "@/data/pricingMatrix";
 import { Button } from "@/components/ui/button";
 import { usePpp } from "@/hooks/usePpp";
@@ -31,6 +31,17 @@ const PricingChartSection = () => {
   const { country, setCountry, factor, adjust } = usePpp();
   const isDiscounted = factor < 1;
   const [openTooltip, setOpenTooltip] = useState<number | null>(null);
+  // Escape key closes an open tooltip from anywhere on the page, matching
+  // native tooltip / disclosure keyboard patterns (WAI-ARIA 1.2).
+  const handleTooltipKeyDown = useCallback(
+    (e: KeyboardEvent<HTMLButtonElement>) => {
+      if (e.key === "Escape" && openTooltip !== null) {
+        e.preventDefault();
+        setOpenTooltip(null);
+      }
+    },
+    [openTooltip],
+  );
   // De-dupe focus/hover events per row per mount so a user rapidly moving
   // the pointer/keyboard across the matrix records one event per row.
   const firedRef = useRef<Set<string>>(new Set());
@@ -141,6 +152,7 @@ const PricingChartSection = () => {
                   openTooltip === row.lowerBound ? `pricing-tip-mobile-${row.lowerBound}` : undefined
                 }
                 title={`${RULE_TEXT} — ${ruleCallout(row.pricePerSlot)}`}
+                onKeyDown={handleTooltipKeyDown}
                 onFocus={() =>
                   fireOnce(EVT.calloutFocus, {
                     lowerBound: row.lowerBound,
@@ -240,6 +252,7 @@ const PricingChartSection = () => {
                       openTooltip === row.lowerBound ? `pricing-tip-${row.lowerBound}` : undefined
                     }
                     title={`${RULE_TEXT} — ${ruleCallout(row.pricePerSlot)}`}
+                    onKeyDown={handleTooltipKeyDown}
                     onFocus={() =>
                       fireOnce(EVT.calloutFocus, {
                         lowerBound: row.lowerBound,

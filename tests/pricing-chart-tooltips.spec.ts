@@ -128,35 +128,76 @@ test.describe("Territory Pricing chart — tooltips + pinned banner (desktop)", 
   });
 
   test("banner and callout interactions record the expected analytics events", async ({ page }) => {
-    const row = SAMPLES[1];
+    // Assert focus / hover / tooltip_open events carry the exact tier +
+    // $/slot mapping in meta for multiple representative rows.
     const banner = page.getByTestId("pricing-rule-banner");
-    const btn = page.getByTestId(`pricing-callout-button-${row.lowerBound}`);
+    const rows = [SAMPLES[0], SAMPLES[2], SAMPLES[4]];
 
     const events = await withCapturedEvents(page, async () => {
       await banner.hover();
       await banner.focus();
-      await btn.scrollIntoViewIfNeeded();
-      await btn.hover();
-      await btn.focus();
-      await btn.click();
-      // Give the async supabase POSTs time to flush.
-      await page.waitForTimeout(400);
+      for (const row of rows) {
+        const btn = page.getByTestId(`pricing-callout-button-${row.lowerBound}`);
+        await btn.scrollIntoViewIfNeeded();
+        await btn.hover();
+        await btn.focus();
+        await btn.click();
+      }
+      await page.waitForTimeout(500);
     });
 
     const names = events.map((e) => e.event);
     expect(names).toContain("pricing_chart_banner_hover");
     expect(names).toContain("pricing_chart_banner_focus");
-    expect(names).toContain("pricing_chart_callout_hover");
-    expect(names).toContain("pricing_chart_callout_focus");
-    expect(names).toContain("pricing_chart_callout_tooltip_open");
 
-    const tooltipOpen = events.find((e) => e.event === "pricing_chart_callout_tooltip_open");
-    expect(tooltipOpen?.meta).toMatchObject({
-      lowerBound: row.lowerBound,
-      pricePerSlot: row.pricePerSlot,
-      population: row.population,
-      layout: "desktop",
-    });
+    for (const row of rows) {
+      const expected = {
+        lowerBound: row.lowerBound,
+        pricePerSlot: row.pricePerSlot,
+        population: row.population,
+        layout: "desktop",
+      };
+      const focus = events.find(
+        (e) =>
+          e.event === "pricing_chart_callout_focus" &&
+          (e.meta as { lowerBound?: number } | null)?.lowerBound === row.lowerBound,
+      );
+      const hover = events.find(
+        (e) =>
+          e.event === "pricing_chart_callout_hover" &&
+          (e.meta as { lowerBound?: number } | null)?.lowerBound === row.lowerBound,
+      );
+      const open = events.find(
+        (e) =>
+          e.event === "pricing_chart_callout_tooltip_open" &&
+          (e.meta as { lowerBound?: number } | null)?.lowerBound === row.lowerBound,
+      );
+      expect(focus, `focus event missing for ${row.population}`).toBeDefined();
+      expect(hover, `hover event missing for ${row.population}`).toBeDefined();
+      expect(open, `tooltip_open event missing for ${row.population}`).toBeDefined();
+      expect(focus!.meta).toMatchObject(expected);
+      expect(hover!.meta).toMatchObject(expected);
+      expect(open!.meta).toMatchObject(expected);
+    }
+  });
+
+  test("Escape closes an open tooltip via keyboard-only navigation", async ({ page }) => {
+    const row = SAMPLES[2];
+    const btn = page.getByTestId(`pricing-callout-button-${row.lowerBound}`);
+    await btn.scrollIntoViewIfNeeded();
+
+    // Keyboard-only: focus the button, Enter to open, Escape to close.
+    await btn.focus();
+    await expect(btn).toBeFocused();
+    await page.keyboard.press("Enter");
+    await expect(page.getByTestId(`pricing-tooltip-${row.lowerBound}`)).toBeVisible();
+    await expect(btn).toHaveAttribute("aria-expanded", "true");
+
+    await page.keyboard.press("Escape");
+    await expect(page.getByTestId(`pricing-tooltip-${row.lowerBound}`)).toHaveCount(0);
+    await expect(btn).toHaveAttribute("aria-expanded", "false");
+    // Focus remains on the trigger so keyboard users don't lose their place.
+    await expect(btn).toBeFocused();
   });
 });
 
