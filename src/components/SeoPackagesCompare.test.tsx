@@ -287,4 +287,3 @@ describe("flushCtaAttribution", () => {
     expect(sessionStorage.getItem("iam_pending_cta")).not.toBeNull();
   });
 });
-});
