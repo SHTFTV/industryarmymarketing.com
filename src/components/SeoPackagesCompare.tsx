@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useReducedMotion } from "framer-motion";
 import { Link } from "react-router-dom";
 import {
   Check,
@@ -10,6 +11,8 @@ import {
   Layers,
   Target,
   ArrowRight,
+  Wallet,
+  MessageCircleQuestion,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { SEO_PACKAGES } from "@/data/seoPackages";
@@ -31,6 +34,14 @@ const rows: Row[] = [
 ];
 
 const SeoPackagesCompare = () => {
+  const prefersReducedMotion = useReducedMotion();
+  const fadeIn = prefersReducedMotion
+    ? { initial: false, whileInView: undefined, transition: undefined }
+    : {
+        initial: { opacity: 0, y: 20 },
+        whileInView: { opacity: 1, y: 0 },
+        viewport: { once: true },
+      };
   return (
     <section
       id="seo-packages-compare"
@@ -50,7 +61,7 @@ const SeoPackagesCompare = () => {
       {/* Radial glow */}
       <div
         aria-hidden="true"
-        className="absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full pointer-events-none"
+        className="absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full pointer-events-none motion-reduce:opacity-40"
         style={{
           background:
             "radial-gradient(circle, hsl(var(--primary) / 0.12) 0%, transparent 60%)",
@@ -59,9 +70,7 @@ const SeoPackagesCompare = () => {
 
       <div className="relative container mx-auto px-4">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          {...fadeIn}
           className="text-center mb-14"
         >
           <div className="inline-flex items-center gap-2 text-primary uppercase tracking-[0.3em] text-xs font-semibold mb-4">
@@ -71,10 +80,10 @@ const SeoPackagesCompare = () => {
           </div>
           <h2
             id="seo-packages-compare-heading"
-            className="font-display text-5xl md:text-7xl text-foreground leading-none"
+            className="font-display text-5xl md:text-7xl text-foreground leading-none motion-reduce:[text-shadow:none]"
           >
             Compare the{" "}
-            <span className="text-primary [text-shadow:0_0_30px_hsl(var(--primary)/0.6)]">
+            <span className="text-primary [text-shadow:0_0_30px_hsl(var(--primary)/0.6)] motion-reduce:[text-shadow:none]">
               Arsenal
             </span>
           </h2>
@@ -82,6 +91,38 @@ const SeoPackagesCompare = () => {
             Three loadouts. One target: the top of Google. Line them up and pick
             your firepower.
           </p>
+        </motion.div>
+
+        {/* Budget promise band */}
+        <motion.div
+          {...fadeIn}
+          className="mx-auto max-w-4xl mb-14 rounded-xl border border-primary/30 bg-card/60 p-6 md:p-8 shadow-[0_0_40px_-15px_hsl(var(--primary)/0.4)] motion-reduce:shadow-none"
+        >
+          <div className="flex flex-col md:flex-row md:items-center gap-6">
+            <div className="flex items-center gap-4 md:border-r md:border-border md:pr-6">
+              <div className="shrink-0 w-12 h-12 rounded-lg bg-primary/15 border border-primary/40 flex items-center justify-center">
+                <Wallet size={22} className="text-primary" aria-hidden="true" />
+              </div>
+              <div>
+                <p className="text-primary uppercase tracking-[0.25em] text-[10px] font-semibold">
+                  What's your budget?
+                </p>
+                <p className="font-display text-2xl md:text-3xl text-foreground leading-tight">
+                  We'll spend it.
+                </p>
+              </div>
+            </div>
+            <div className="flex-1">
+              <p className="text-foreground/90 text-base leading-relaxed">
+                In the right places, of course — the domains, verticals, and
+                anchors that actually move rankings for your niche.
+              </p>
+              <p className="text-muted-foreground text-sm mt-2 flex items-center gap-2">
+                <MessageCircleQuestion size={14} className="text-primary" aria-hidden="true" />
+                Tell us about your business and we'll answer honestly — no fluff, no filler.
+              </p>
+            </div>
+          </div>
         </motion.div>
 
         {/* Semantic table for a11y; visually rendered as neon spec-sheet columns */}
@@ -106,13 +147,17 @@ const SeoPackagesCompare = () => {
                   style={{ width: `${100 / SEO_PACKAGES.length}%` }}
                 >
                   <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    initial={prefersReducedMotion ? false : { opacity: 0, y: 30 }}
+                    whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: 0.05 * SEO_PACKAGES.indexOf(p) }}
+                    transition={
+                      prefersReducedMotion
+                        ? { duration: 0 }
+                        : { delay: 0.05 * SEO_PACKAGES.indexOf(p) }
+                    }
                     className={`relative mx-2 rounded-t-xl p-6 text-left border border-b-0 ${
                       p.featured
-                        ? "border-primary bg-gradient-to-b from-primary/15 to-transparent shadow-[0_-10px_40px_-10px_hsl(var(--primary)/0.5)]"
+                        ? "border-primary bg-gradient-to-b from-primary/15 to-transparent shadow-[0_-10px_40px_-10px_hsl(var(--primary)/0.5)] motion-reduce:shadow-none"
                         : "border-border bg-card/60"
                     }`}
                   >
@@ -171,11 +216,11 @@ const SeoPackagesCompare = () => {
                 {SEO_PACKAGES.map((p) => (
                   <td
                     key={p.slug}
-                    className={`p-4 align-middle text-center md:text-left border-b border-border/40 border-x mx-2 ${
+                    className={`p-4 align-middle text-center md:text-left border-b border-border/40 border-x mx-2 motion-safe:transition-colors ${
                       p.featured
                         ? "bg-primary/5 border-primary/30 group-hover:bg-primary/10"
                         : "bg-card/30 group-hover:bg-card/60"
-                    } transition-colors`}
+                    }`}
                   >
                     <div className="md:hidden text-[10px] uppercase tracking-widest text-muted-foreground mb-1 flex items-center justify-center gap-2">
                       <row.Icon size={12} aria-hidden="true" /> {row.label}
@@ -239,7 +284,7 @@ const SeoPackagesCompare = () => {
                   key={p.slug}
                   className={`p-4 pt-6 align-top border-x rounded-b-xl ${
                     p.featured
-                      ? "bg-primary/5 border-primary/30 shadow-[0_10px_40px_-10px_hsl(var(--primary)/0.5)]"
+                      ? "bg-primary/5 border-primary/30 shadow-[0_10px_40px_-10px_hsl(var(--primary)/0.5)] motion-reduce:shadow-none"
                       : "bg-card/30 border-border"
                   }`}
                 >
@@ -267,7 +312,7 @@ const SeoPackagesCompare = () => {
                       Deploy {p.name}
                       <ArrowRight
                         size={14}
-                        className="ml-2 transition-transform group-hover/cta:translate-x-1"
+                        className="ml-2 motion-safe:transition-transform motion-safe:group-hover/cta:translate-x-1"
                       />
                     </Link>
                   </Button>
