@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { useCallback, useRef, useState, type KeyboardEvent } from "react";
+import { useCallback, useEffect, useRef, useState, type KeyboardEvent } from "react";
 import { PRICING_MATRIX } from "@/data/pricingMatrix";
 import { Button } from "@/components/ui/button";
 import { usePpp } from "@/hooks/usePpp";
@@ -31,16 +31,53 @@ const PricingChartSection = () => {
   const { country, setCountry, factor, adjust } = usePpp();
   const isDiscounted = factor < 1;
   const [openTooltip, setOpenTooltip] = useState<number | null>(null);
+  // When a tooltip is open, remember which trigger opened it so we can
+  // restore focus on dismiss (Escape, outside click, or scroll).
+  const triggerRefs = useRef<Map<number, HTMLButtonElement>>(new Map());
+  const closeTooltip = useCallback((restoreFocus: boolean) => {
+    setOpenTooltip((current) => {
+      if (current === null) return current;
+      if (restoreFocus) {
+        const trigger = triggerRefs.current.get(current);
+        // Defer so React finishes the state flush before we move focus.
+        if (trigger) queueMicrotask(() => trigger.focus());
+      }
+      return null;
+    });
+  }, []);
+  // Close on outside click and on scroll — matches native tooltip UX and
+  // prevents a stale tooltip from floating away from its trigger as the
+  // sticky matrix scrolls beneath it.
+  useEffect(() => {
+    if (openTooltip === null) return;
+    const onDocClick = (e: MouseEvent) => {
+      const target = e.target as Node | null;
+      const trigger = triggerRefs.current.get(openTooltip);
+      const tipId = `pricing-tip-${openTooltip}`;
+      const tipMobileId = `pricing-tip-mobile-${openTooltip}`;
+      const tip =
+        document.getElementById(tipId) || document.getElementById(tipMobileId);
+      if (target && (trigger?.contains(target) || tip?.contains(target))) return;
+      closeTooltip(false);
+    };
+    const onScroll = () => closeTooltip(false);
+    document.addEventListener("mousedown", onDocClick);
+    window.addEventListener("scroll", onScroll, { passive: true, capture: true });
+    return () => {
+      document.removeEventListener("mousedown", onDocClick);
+      window.removeEventListener("scroll", onScroll, { capture: true });
+    };
+  }, [openTooltip, closeTooltip]);
   // Escape key closes an open tooltip from anywhere on the page, matching
   // native tooltip / disclosure keyboard patterns (WAI-ARIA 1.2).
   const handleTooltipKeyDown = useCallback(
     (e: KeyboardEvent<HTMLButtonElement>) => {
       if (e.key === "Escape" && openTooltip !== null) {
         e.preventDefault();
-        setOpenTooltip(null);
+        closeTooltip(true);
       }
     },
-    [openTooltip],
+    [openTooltip, closeTooltip],
   );
   // De-dupe focus/hover events per row per mount so a user rapidly moving
   // the pointer/keyboard across the matrix records one event per row.
