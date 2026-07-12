@@ -358,6 +358,29 @@ const SeoPackageDetail = () => {
         </div>
       </section>
 
+      {/* FAQ */}
+      <section className="py-16" data-testid={`pkg-faq-${pkg.slug}`}>
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="font-display text-3xl md:text-4xl text-foreground mb-8">
+            {pkg.name} <span className="text-primary">FAQ</span>
+          </h2>
+          <div className="space-y-4">
+            {faq.map((f) => (
+              <details
+                key={f.q}
+                className="group p-5 rounded-lg border border-border bg-card open:border-primary/40"
+              >
+                <summary className="cursor-pointer font-semibold text-foreground list-none flex justify-between items-center gap-4">
+                  <span>{f.q}</span>
+                  <span className="text-primary transition-transform group-open:rotate-45">+</span>
+                </summary>
+                <p className="mt-3 text-muted-foreground text-sm leading-relaxed">{f.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Final CTA */}
       <section className="py-20 bg-primary/5 border-y border-primary/20 text-center">
         <div className="container mx-auto px-4 max-w-2xl">
