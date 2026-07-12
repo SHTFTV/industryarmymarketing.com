@@ -5,19 +5,18 @@ import { test, expect, type Request } from "@playwright/test";
 // and analytics event recording. Runs on every configured project
 // (chromium / webkit / firefox) via playwright.config.ts.
 
-const RULE = "$10 USD per 100,000 population, per slot";
+const RULE = "$10 USD per 100,000 population baseline; every slot stays $10/mo";
 
 const SAMPLES = [
   { lowerBound: 0,          pricePerSlot: 10,   population: "0 – 100,000" },
-  { lowerBound: 250_001,    pricePerSlot: 35,   population: "250,001 – 350,000" },
-  { lowerBound: 850_001,    pricePerSlot: 100,  population: "850,001 – 1,000,000" },
-  { lowerBound: 5_000_001,  pricePerSlot: 600,  population: "5,000,001 – 6,000,000" },
-  { lowerBound: 29_000_001, pricePerSlot: 3000, population: "29,000,001 – 30,000,000+" },
+  { lowerBound: 250_001,    pricePerSlot: 10,   population: "250,001 – 350,000" },
+  { lowerBound: 850_001,    pricePerSlot: 10,   population: "850,001 – 1,000,000" },
+  { lowerBound: 5_000_001,  pricePerSlot: 10,   population: "5,000,001 – 6,000,000" },
+  { lowerBound: 29_000_001, pricePerSlot: 10,   population: "29,000,001 – 30,000,000+" },
 ];
 
 function calloutText(price: number): string {
-  const blocks = price / 10;
-  return `${blocks} × 100K × $10 = $${price}/slot/mo`;
+  return `$10 per 100K = $${price}/slot/mo`;
 }
 
 type CapturedEvent = {

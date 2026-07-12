@@ -6,7 +6,7 @@ describe("hardcoded pricing lookup", () => {
     const t = lookupTierByPopulation(50_000)!;
     expect(t.row.slots).toBe(3);
     expect(t.row.pricePerSlot).toBe(10);
-    expect(t.row.status).toBe("$10 per 100K Baseline");
+    expect(t.row.status).toBe("$10/slot flat");
   });
 
   it("steps slots one by one between 250K and 1M", () => {
@@ -15,17 +15,17 @@ describe("hardcoded pricing lookup", () => {
     expect(lookupTierByPopulation(900_000)!.row.slots).toBe(10);
   });
 
-  it("prices at $10 per 100K of population, per slot", () => {
+  it("keeps per-slot pricing flat at exactly $10 for every population sample", () => {
     expect(lookupTierByPopulation(50_000)!.row.pricePerSlot).toBe(10);
-    expect(lookupTierByPopulation(300_000)!.row.pricePerSlot).toBe(35);
-    expect(lookupTierByPopulation(2_500_000)!.row.pricePerSlot).toBe(300);
-    expect(lookupTierByPopulation(9_500_000)!.row.pricePerSlot).toBe(1000);
-    expect(lookupTierByPopulation(50_000_000)!.row.pricePerSlot).toBe(3000);
+    expect(lookupTierByPopulation(300_000)!.row.pricePerSlot).toBe(10);
+    expect(lookupTierByPopulation(2_500_000)!.row.pricePerSlot).toBe(10);
+    expect(lookupTierByPopulation(9_500_000)!.row.pricePerSlot).toBe(10);
+    expect(lookupTierByPopulation(50_000_000)!.row.pricePerSlot).toBe(10);
   });
 
   it("computes the Position #1 add-on as exactly half the slot cost", () => {
     expect(lookupTierByPopulation(50_000)!.position1AddonMonthly).toBe(5);
-    expect(lookupTierByPopulation(50_000_000)!.position1AddonMonthly).toBe(1500);
+    expect(lookupTierByPopulation(50_000_000)!.position1AddonMonthly).toBe(5);
   });
 
   it("only reads SOLD OUT once all slots are claimed", () => {

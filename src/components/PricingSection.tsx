@@ -22,9 +22,9 @@ const plans = [
   {
     tier: "SEO TERRITORY",
     name: "City Commander",
-    price: "From $10",
+    price: "$10",
     unit: "/slot/mo",
-    subtitle: "Population-scaled · One contractor per trade per city",
+    subtitle: "Flat slot pricing · One contractor per trade per city",
     featured: true,
     badge: "LOCK OUT COMPETITORS",
     features: [
@@ -76,7 +76,7 @@ const PricingSection = () => {
             CONTRACTOR <span className="text-primary">PRICING</span>
           </h2>
           <p className="text-muted-foreground mt-3 text-lg">
-            $10 per 100K population / month
+            $10 per slot / month. Population only sets slot count.
           </p>
           <p className="text-xs uppercase tracking-[0.3em] text-primary mt-2">All Pricing in USD</p>
         </motion.div>
@@ -148,7 +148,7 @@ const PricingSection = () => {
             ENTERPRISE LEVEL DOMINATION
           </h3>
           <p className="text-muted-foreground mt-4 max-w-2xl mx-auto text-sm">
-            We offer custom pricing for individual packages, websites, product sales, and full marketing builds — not just the $10 population-based SEO. Multi-location contractors, franchises, and enterprise accounts welcome.
+            We offer custom pricing for individual packages, websites, product sales, and full marketing builds — territory slots stay flat at $10/mo. Multi-location contractors, franchises, and enterprise accounts welcome.
           </p>
         </motion.div>
       </div>

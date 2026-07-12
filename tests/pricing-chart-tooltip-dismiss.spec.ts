@@ -77,8 +77,8 @@ test.describe("Pricing chart tooltip — dismissal", () => {
     // Then open two rows — must record exactly two tooltip_open events with
     // the right lowerBound in each meta.
     const banner = page.getByTestId("pricing-rule-banner");
-    const rowA = { lowerBound: 250_001, pricePerSlot: 35 };
-    const rowB = { lowerBound: 850_001, pricePerSlot: 100 };
+    const rowA = { lowerBound: 250_001, pricePerSlot: 10 };
+    const rowB = { lowerBound: 850_001, pricePerSlot: 10 };
 
     const events = await withCapturedEvents(page, async () => {
       // 1. Outside click — no tooltip should open.

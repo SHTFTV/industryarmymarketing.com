@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The 250 Scale — IAM Territory Pricing | Industry Army Marketing</title>
-  <meta name="description" content="The 250 Scale is the canonical territory pricing model for all Industry Army Marketing platforms. $10–$50 per slot per month. 3–10 slots per city. Every industry. Every site.">
+  <meta name="description" content="The 250 Scale is the canonical territory pricing model for all Industry Army Marketing platforms. $10 flat per slot per month. 3–10 slots per city. Every industry. Every site.">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
   <link rel="canonical" href="https://industryarmymarketing.com/pricing/">
   <meta property="og:title" content="The 250 Scale — IAM Territory Pricing">
-  <meta property="og:description" content="The canonical territory pricing model for all IAM platforms. $10–$50/slot/month. 3–10 slots. Every industry. Every city.">
+  <meta property="og:description" content="The canonical territory pricing model for all IAM platforms. $10 flat per slot per month. 3–10 slots. Every industry. Every city.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://industryarmymarketing.com/pricing/">
   <meta property="og:image" content="https://industryarmymarketing.com/og.jpg">
@@ -44,7 +44,7 @@
           {
             "@type": "Question",
             "name": "What is The 250 Scale?",
-            "acceptedAnswer": {"@type": "Answer", "text": "The 250 Scale is the canonical territory pricing formula used across all Industry Army Marketing platforms. Every city starts at 3 exclusive vendor slots minimum. Slots scale with population up to a hard cap of 10. Price per slot is $10/month under 1 million population, stepping up $10 per million after that — $20 at 1M, $30 at 2M, $40 at 3M, $50 at 4M and above."}
+            "acceptedAnswer": {"@type": "Answer", "text": "The 250 Scale is the canonical territory pricing formula used across all Industry Army Marketing platforms. Every city starts at 3 exclusive vendor slots minimum. Slots scale with population up to a hard cap of 10. Price per slot is always $10/month. Population changes slot count only, never the per-slot price."}
           },
           {
             "@type": "Question",
@@ -261,13 +261,13 @@
       </div>
       <div class="rule-card">
         <div class="rule-num">$10</div>
-        <div class="rule-label">Floor Price</div>
-        <div class="rule-detail">Minimum $10/slot/month. No city ever goes below this. No exceptions.</div>
+        <div class="rule-label">Flat Price</div>
+        <div class="rule-detail">Every slot is $10/month. Population never multiplies the per-slot price.</div>
       </div>
       <div class="rule-card">
-        <div class="rule-num">$50</div>
-        <div class="rule-label">Ceiling Price</div>
-        <div class="rule-detail">Maximum $50/slot/month for cities 4M+ population. Price caps here.</div>
+        <div class="rule-num">100K</div>
+        <div class="rule-label">Baseline</div>
+        <div class="rule-detail">The 100K rule anchors pricing at $10. It does not create higher multipliers.</div>
       </div>
     </div>
   </div>
@@ -328,29 +328,29 @@
           <tr>
             <td>1,000,000 – 1,999,999</td>
             <td><span class="slot-pill">10</span></td>
-            <td><span class="price-big">$20</span> <span class="price-unit">/slot/mo</span></td>
-            <td><span class="tier-badge tier-silver">Silver</span></td>
+            <td><span class="price-big">$10</span> <span class="price-unit">/slot/mo</span></td>
+            <td><span class="tier-badge tier-standard">Flat</span></td>
             <td class="example-cities">Calgary, Birmingham UK, Toronto</td>
           </tr>
           <tr>
             <td>2,000,000 – 2,999,999</td>
             <td><span class="slot-pill">10</span></td>
-            <td><span class="price-big">$30</span> <span class="price-unit">/slot/mo</span></td>
-            <td><span class="tier-badge tier-gold">Gold</span></td>
+            <td><span class="price-big">$10</span> <span class="price-unit">/slot/mo</span></td>
+            <td><span class="tier-badge tier-standard">Flat</span></td>
             <td class="example-cities">Houston, Kuala Lumpur, Sydney</td>
           </tr>
           <tr>
             <td>3,000,000 – 3,999,999</td>
             <td><span class="slot-pill">10</span></td>
-            <td><span class="price-big">$40</span> <span class="price-unit">/slot/mo</span></td>
-            <td><span class="tier-badge tier-platinum">Platinum</span></td>
+            <td><span class="price-big">$10</span> <span class="price-unit">/slot/mo</span></td>
+            <td><span class="tier-badge tier-standard">Flat</span></td>
             <td class="example-cities">Chicago, Lahore, Lagos</td>
           </tr>
           <tr>
             <td>4,000,000+</td>
             <td><span class="slot-pill">10</span></td>
-            <td><span class="price-big">$50</span> <span class="price-unit">/slot/mo</span></td>
-            <td><span class="tier-badge tier-diamond">Diamond</span></td>
+            <td><span class="price-big">$10</span> <span class="price-unit">/slot/mo</span></td>
+            <td><span class="tier-badge tier-standard">Flat</span></td>
             <td class="example-cities">London, New York, Dubai, Mumbai, Delhi</td>
           </tr>
         </tbody>
@@ -359,14 +359,14 @@
 
     <div class="callout">
       <p class="callout-label">The Formula</p>
-      <p>"Population sets the price. Not negotiation. Not market conditions. Not how many competitors you have. The formula is public and identical for every city on earth. A vendor in Surrey pays the same formula as a vendor in Singapore."</p>
+      <p>"Population sets available slots only. The price is always $10 per slot per month. Not negotiation. Not market conditions. Not how many competitors you have. A vendor in Surrey pays the same per-slot price as a vendor in Singapore."</p>
     </div>
 
     <!-- FORMULA BOX -->
     <div class="formula-box">
       <h3>The TypeScript Functions — Copy Into Any Codebase</h3>
       <div class="formula">calculateSlotCount(population) → 3 | 4 | 6 | 7 | 9 | 10</div>
-      <div class="formula">calculateSlotPrice(population) → $10 | $20 | $30 | $40 | $50</div>
+      <div class="formula">calculateSlotPrice(population) → $10</div>
       <hr class="formula-divider">
       <pre>export function calculateSlotCount(population: number): number {
   if (population &lt; 250000) return 3;
@@ -379,50 +379,46 @@
 }
 
 export function calculateSlotPrice(population: number): number {
-  if (population &lt; 1000000) return 10;
-  if (population &lt; 2000000) return 20;
-  if (population &lt; 3000000) return 30;
-  if (population &lt; 4000000) return 40;
-  return 50; // Caps at $50. Never exceeds $50.
+  return 10; // Flat. Population never multiplies per-slot price.
 }</pre>
     </div>
   </div>
 
   <!-- THE MILLIONAIRES CLUB -->
   <div class="section">
-    <p class="section-label">Millionaires Club</p>
-    <h2>Cities Over 1 Million — <em>App Discounts Included</em></h2>
-    <p class="section-sub">Vendors paying $20/month or more are in the Millionaires Club. The more you pay for territory, the bigger your discount on any app tier across IAM platforms.</p>
+    <p class="section-label">Flat Slot Rule</p>
+    <h2>Cities Over 1 Million — <em>Still $10 Per Slot</em></h2>
+    <p class="section-sub">Large cities can have more slots, but the per-slot price never increases. The first slot and the last slot are both $10/month.</p>
     <div class="millionaires">
       <div class="m-card">
         <div class="m-tier" style="color:var(--faint)">Standard</div>
         <div class="m-price">$10</div>
         <div class="m-pop">Under 1M population</div>
-        <div class="m-benefit">No app discount</div>
+        <div class="m-benefit">$10/slot/month</div>
       </div>
       <div class="m-card silver">
         <div class="m-tier">Silver</div>
-        <div class="m-price">$20</div>
+        <div class="m-price">$10</div>
         <div class="m-pop">1M – 1.99M population</div>
-        <div class="m-benefit">20% off any app tier</div>
+        <div class="m-benefit">$10/slot/month</div>
       </div>
       <div class="m-card gold">
         <div class="m-tier">Gold</div>
-        <div class="m-price">$30</div>
+        <div class="m-price">$10</div>
         <div class="m-pop">2M – 2.99M population</div>
-        <div class="m-benefit">30% off any app tier</div>
+        <div class="m-benefit">$10/slot/month</div>
       </div>
       <div class="m-card platinum">
         <div class="m-tier">Platinum</div>
-        <div class="m-price">$40</div>
+        <div class="m-price">$10</div>
         <div class="m-pop">3M – 3.99M population</div>
-        <div class="m-benefit">40% off any app tier</div>
+        <div class="m-benefit">$10/slot/month</div>
       </div>
       <div class="m-card diamond">
         <div class="m-tier">Diamond</div>
-        <div class="m-price">$50</div>
+        <div class="m-price">$10</div>
         <div class="m-pop">4M+ population</div>
-        <div class="m-benefit">50% off any app tier</div>
+        <div class="m-benefit">$10/slot/month</div>
       </div>
     </div>
   </div>
@@ -557,7 +553,7 @@ export function calculateSlotPrice(population: number): number {
     <br>
     <details>
       <summary>What is The 250 Scale?</summary>
-      <p>The 250 Scale is the canonical territory pricing formula used across all Industry Army Marketing platforms. Every city starts at 3 exclusive vendor slots minimum. Slots scale with population up to a hard cap of 10. Price per slot is $10/month under 1 million population, stepping up $10 per million — $20 at 1M, $30 at 2M, $40 at 3M, $50 at 4M and above. The formula is public, transparent, and identical for every city on earth.</p>
+      <p>The 250 Scale is the canonical territory pricing formula used across all Industry Army Marketing platforms. Every city starts at 3 exclusive vendor slots minimum. Slots scale with population up to a hard cap of 10. Price per slot is always $10/month. Population changes slot count only, never the per-slot price. The formula is public, transparent, and identical for every city on earth.</p>
     </details>
     <details>
       <summary>What industries does this pricing cover?</summary>
