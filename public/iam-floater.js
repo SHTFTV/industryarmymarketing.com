@@ -119,13 +119,13 @@
         escapeHtml(config.heading) +
       '</strong>' +
       '<div style="display:flex;flex-direction:column;gap:6px;">' +
-        row("/eyespyr",  "👁", "EyeSpyr",  "Verification standard") +
-        row("https://talc.tv", "T", "TALC.tv", "Network property") +
+        row("mailto:partnerships@industryarmymarketing.com", "👁", "EyeSpyr",  "Coming soon") +
+        row("mailto:partnerships@industryarmymarketing.com", "T", "TALC.tv", "Coming soon") +
         row("/",         "I",  "IAM",      "Industry Army Marketing") +
       '</div>' +
-      '<span style="display:block;margin-top:10px;color:rgba(244,244,244,0.55);font-size:10px;line-height:1.3;letter-spacing:0.04em;">' +
-        escapeHtml(config.subtitle) +
-      '</span>';
+      '<a href="mailto:partnerships@industryarmymarketing.com" style="display:block;margin-top:10px;color:rgba(202,255,0,0.85);font-size:10px;line-height:1.3;letter-spacing:0.04em;text-decoration:none;">' +
+        'partnerships@industryarmymarketing.com' +
+      '</a>';
 
     // Row hover
     var rows = element.querySelectorAll('a[href]');
