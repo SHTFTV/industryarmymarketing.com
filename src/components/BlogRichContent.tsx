@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import type { BlogRichContent as RichContent } from "@/data/blogPosts";
+import { slugifyHeading } from "@/components/BlogToc";
 
 const FOOTNOTE_RE = /\[\^([a-z0-9_-]+)\]/gi;
 // Inline markdown link: [text](href)
@@ -94,7 +95,10 @@ const BlogRichContentView = ({ content }: { content: RichContent }) => {
 
       {content.sections.map((section, i) => (
         <section key={i} className="mb-12">
-          <h2 className="font-display text-2xl md:text-3xl text-foreground mb-5 leading-tight">
+          <h2
+            id={slugifyHeading(section.heading)}
+            className="font-display text-2xl md:text-3xl text-foreground mb-5 leading-tight scroll-mt-24"
+          >
             {section.heading}
           </h2>
           {section.paragraphs.map((p, j) => (
