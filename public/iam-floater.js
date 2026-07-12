@@ -76,7 +76,7 @@
     );
   }
 
-  // EyeSpyr wordmark: "Eye" neon-green, "S" white, "pyr" neon-green.
+  // EyeSpy® wordmark: "Eye" neon-green, "Spy" white, "®" neon-green.
   function eyespyrVerticalLabel(size, weight, opacity) {
     var wrap = [
       "writing-mode:vertical-rl",
@@ -84,7 +84,7 @@
       "font-size:" + size + "px",
       "font-weight:" + weight,
       "letter-spacing:0.18em",
-      "text-transform:uppercase",
+      "text-transform:none",
       "line-height:1",
       "opacity:" + opacity,
       "white-space:nowrap",
@@ -92,19 +92,19 @@
     ].join(";");
     return (
       '<span style="' + wrap + '">' +
-        '<span style="color:#caff00;">Eye</span>' +
-        '<span style="color:#ffffff;">S</span>' +
-        '<span style="color:#caff00;">pyr</span>' +
+        '<span style="color:#7bd44a;font-style:italic;">Eye</span>' +
+        '<span style="color:#ffffff;font-style:italic;">Spy</span>' +
+        '<span style="color:#7bd44a;font-size:0.7em;vertical-align:super;">\u00AE</span>' +
       '</span>'
     );
   }
 
   function eyespyrInlineWordmark() {
     return (
-      '<span style="font-weight:900;letter-spacing:0.02em;">' +
-        '<span style="color:#caff00;">Eye</span>' +
-        '<span style="color:#ffffff;">S</span>' +
-        '<span style="color:#caff00;">pyr</span>' +
+      '<span style="font-weight:900;font-style:italic;letter-spacing:0.01em;">' +
+        '<span style="color:#7bd44a;">Eye</span>' +
+        '<span style="color:#ffffff;">Spy</span>' +
+        '<span style="color:#7bd44a;font-size:0.7em;vertical-align:super;font-style:normal;">\u00AE</span>' +
       '</span>'
     );
   }
