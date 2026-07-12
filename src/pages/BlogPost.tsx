@@ -1,6 +1,6 @@
 import { Link, useParams, Navigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Copy, Check } from "lucide-react";
 import Layout from "@/components/Layout";
 import Seo, { SITE_URL } from "@/components/Seo";
@@ -17,6 +17,7 @@ const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
   const post = slug ? getPost(slug) : undefined;
   const [copied, setCopied] = useState(false);
+  const [highlightedFaqId, setHighlightedFaqId] = useState<string | null>(null);
 
   if (!post) return <Navigate to="/blog" replace />;
 
@@ -189,6 +190,52 @@ const BlogPost = () => {
   ];
   const faqAnchor = slugifyHeading(tocHeadings[tocHeadings.length - 1]);
 
+  // Estimate read time from actual body word count (~220 wpm) so the reading
+  // progress "time remaining" figure reflects this specific post — not a
+  // hardcoded default.
+  const countWords = (s: string) =>
+    s ? s.trim().split(/\s+/).filter(Boolean).length : 0;
+  const bodyTexts: string[] = [
+    post.pain,
+    post.detail,
+    post.process,
+    post.metaDescription,
+    ...(post.richContent
+      ? [
+          post.richContent.intro ?? "",
+          ...post.richContent.sections.flatMap((s) => [s.heading, ...s.paragraphs]),
+        ]
+      : sections.flatMap((s) => [s.h, ...s.body])),
+    ...post.faqs.flatMap((f) => [f.q, f.a]),
+  ];
+  const totalWords = bodyTexts.reduce((n, s) => n + countWords(s || ""), 0);
+  const readMinutes = Math.max(1, Math.round(totalWords / 220));
+
+  // Smooth-scroll + transient highlight when the page loads with a
+  // matching FAQ hash (e.g. /blog/foo#faq-my-question). Same-page anchor
+  // clicks fire copySectionLink and are handled by the browser directly.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const raw = window.location.hash.replace(/^#/, "");
+    if (!raw || !raw.startsWith("faq-")) return;
+    const el = document.getElementById(raw);
+    if (!el) return;
+    const prefersReduced =
+      window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ?? false;
+    const raf = window.requestAnimationFrame(() => {
+      el.scrollIntoView({
+        behavior: prefersReduced ? "auto" : "smooth",
+        block: "start",
+      });
+    });
+    setHighlightedFaqId(raw);
+    const t = window.setTimeout(() => setHighlightedFaqId(null), 2400);
+    return () => {
+      window.cancelAnimationFrame(raf);
+      window.clearTimeout(t);
+    };
+  }, [post.slug]);
+
   const isRecordRecord = post.slug === "record-record-domain-provenance-vs-generative-conflation";
 
   // Topic-aware SEO package selection. Emphasize the tier that best matches
@@ -240,7 +287,7 @@ const BlogPost = () => {
       />
       {isRecordRecord && <DisambiguationSchema />}
 
-      <ReadingProgress headings={tocHeadings} />
+      <ReadingProgress headings={tocHeadings} readMinutes={readMinutes} />
 
       <article className="pt-32 pb-20">
         <div className="container mx-auto px-4 max-w-4xl">
@@ -257,7 +304,7 @@ const BlogPost = () => {
           </motion.h1>
 
           <p className="text-muted-foreground text-xs uppercase tracking-widest mb-8">
-            {post.date} · {post.category} · {post.brand} · 10 min read
+            {post.date} · {post.category} · {post.brand} · {readMinutes} min read
           </p>
 
           <img
@@ -366,11 +413,18 @@ const BlogPost = () => {
               {post.faqs.map((f) => (
                 (() => {
                   const qId = `faq-${slugifyHeading(f.q)}`;
+                  const isHighlighted = highlightedFaqId === qId;
                   return (
                     <div
                       key={f.q}
                       id={qId}
-                      className="p-5 rounded-lg bg-card border border-border scroll-mt-24 group"
+                      data-highlighted={isHighlighted ? "true" : undefined}
+                      className={
+                        "p-5 rounded-lg bg-card border scroll-mt-24 group transition-colors " +
+                        (isHighlighted
+                          ? "border-primary ring-2 ring-primary/50 bg-primary/5"
+                          : "border-border")
+                      }
                     >
                       <div className="flex items-start gap-3 mb-2">
                         <h3 className="font-display text-lg text-foreground flex-1">
