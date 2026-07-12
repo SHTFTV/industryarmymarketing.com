@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState, type KeyboardEvent, type MouseEvent } from "react";
 
 export const slugifyHeading = (h: string) =>
   h
@@ -22,6 +22,8 @@ const BlogToc = ({ headings }: Props) => {
   );
 
   const [activeId, setActiveId] = useState<string | null>(null);
+  const [focusIndex, setFocusIndex] = useState(0);
+  const linkRefs = useRef<Array<HTMLAnchorElement | null>>([]);
 
   useEffect(() => {
     if (typeof window === "undefined" || items.length === 0) return;
@@ -56,18 +58,88 @@ const BlogToc = ({ headings }: Props) => {
 
   if (items.length < 2) return null;
 
+  const scrollToId = (id: string) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const prefersReduced =
+      typeof window !== "undefined" &&
+      window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+    el.scrollIntoView({
+      behavior: prefersReduced ? "auto" : "smooth",
+      block: "start",
+    });
+    // Move a11y focus to the section heading so screen readers announce it.
+    const prevTabIndex = el.getAttribute("tabindex");
+    el.setAttribute("tabindex", "-1");
+    el.focus({ preventScroll: true });
+    if (prevTabIndex === null) {
+      // Cleanup after blur so we don't leave tabindex on headings permanently.
+      el.addEventListener(
+        "blur",
+        () => el.removeAttribute("tabindex"),
+        { once: true },
+      );
+    }
+    if (typeof history !== "undefined" && history.replaceState) {
+      history.replaceState(null, "", `#${id}`);
+    }
+    setActiveId(id);
+  };
+
+  const handleClick = (e: MouseEvent<HTMLAnchorElement>, id: string, idx: number) => {
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+    e.preventDefault();
+    setFocusIndex(idx);
+    scrollToId(id);
+  };
+
+  // Roving tabindex: only one link is tab-reachable at a time; arrow keys
+  // move focus between links, Home/End jump to ends.
+  const handleKeyDown = (e: KeyboardEvent<HTMLAnchorElement>, idx: number) => {
+    let next = idx;
+    switch (e.key) {
+      case "ArrowDown":
+      case "ArrowRight":
+        next = (idx + 1) % items.length;
+        break;
+      case "ArrowUp":
+      case "ArrowLeft":
+        next = (idx - 1 + items.length) % items.length;
+        break;
+      case "Home":
+        next = 0;
+        break;
+      case "End":
+        next = items.length - 1;
+        break;
+      default:
+        return;
+    }
+    e.preventDefault();
+    setFocusIndex(next);
+    linkRefs.current[next]?.focus();
+  };
+
   return (
     <nav
       aria-label="Table of contents"
       className="mb-10 rounded-lg border border-border bg-card/70 p-5"
       data-testid="blog-toc"
     >
-      <p className="text-primary text-[10px] uppercase tracking-[0.3em] font-semibold mb-3">
+      <p
+        id="blog-toc-label"
+        className="text-primary text-[10px] uppercase tracking-[0.3em] font-semibold mb-3"
+      >
         On this page
       </p>
-      <ol className="space-y-2 list-decimal pl-5 text-sm">
+      <ol
+        aria-labelledby="blog-toc-label"
+        className="space-y-2 list-decimal pl-5 text-sm"
+      >
         {items.map((it) => {
           const active = activeId === it.id;
+          const idx = items.indexOf(it);
+          const tabIndex = idx === focusIndex ? 0 : -1;
           return (
             <li
               key={it.id}
@@ -75,10 +147,18 @@ const BlogToc = ({ headings }: Props) => {
             >
               <a
                 href={`#${it.id}`}
+                ref={(el) => (linkRefs.current[idx] = el)}
+                tabIndex={tabIndex}
+                onClick={(e) => handleClick(e, it.id, idx)}
+                onKeyDown={(e) => handleKeyDown(e, idx)}
+                onFocus={() => setFocusIndex(idx)}
                 aria-current={active ? "location" : undefined}
                 data-active={active ? "true" : undefined}
                 className={
-                  "underline-offset-2 transition-colors " +
+                  "inline-block rounded-sm underline-offset-2 transition-colors " +
+                  "focus:outline-none focus-visible:outline-none " +
+                  "focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 " +
+                  "focus-visible:ring-offset-background " +
                   (active
                     ? "text-primary font-semibold underline decoration-primary"
                     : "text-foreground/90 hover:text-primary underline decoration-primary/30 hover:decoration-primary")
