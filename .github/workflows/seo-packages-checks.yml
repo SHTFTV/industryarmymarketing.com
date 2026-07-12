@@ -1,0 +1,28 @@
+name: SEO Packages checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  seo-packages:
+    name: Integration + a11y (SEO Packages)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
+      - name: Run SEO Packages integration + a11y tests
+        run: |
+          npx vitest run \
+            src/pages/SeoPackages.seo.test.tsx \
+            src/components/SeoPackagesSection.test.tsx \
+            --reporter=default
