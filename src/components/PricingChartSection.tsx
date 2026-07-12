@@ -182,6 +182,10 @@ const PricingChartSection = () => {
             <div className="mt-2 border-t border-border pt-2">
               <button
                 type="button"
+                ref={(el) => {
+                  if (el) triggerRefs.current.set(row.lowerBound, el);
+                  else triggerRefs.current.delete(row.lowerBound);
+                }}
                 data-testid={`pricing-callout-mobile-${row.lowerBound}`}
                 aria-label={`${row.populationLabel}: ${ruleCallout(row.pricePerSlot)} — ${RULE_TEXT}`}
                 aria-expanded={openTooltip === row.lowerBound}
@@ -282,6 +286,10 @@ const PricingChartSection = () => {
                 >
                   <button
                     type="button"
+                    ref={(el) => {
+                      if (el) triggerRefs.current.set(row.lowerBound, el);
+                      else triggerRefs.current.delete(row.lowerBound);
+                    }}
                     data-testid={`pricing-callout-button-${row.lowerBound}`}
                     aria-label={`${row.populationLabel}: ${ruleCallout(row.pricePerSlot)} — ${RULE_TEXT}`}
                     aria-expanded={openTooltip === row.lowerBound}
