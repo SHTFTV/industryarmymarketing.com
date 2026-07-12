@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { SEO_PACKAGES } from "@/data/seoPackages";
 import { Button } from "@/components/ui/button";
+import { track } from "@/lib/analytics";
 
 const SeoPackagesSection = () => {
   return (
@@ -69,6 +70,13 @@ const SeoPackagesSection = () => {
                 <Link
                   to={`/seo-packages/${pkg.slug}`}
                   aria-label={`View ${pkg.name} SEO package details — ${pkg.tagline}, $${pkg.price}`}
+                  data-testid={`home-package-cta-${pkg.slug}`}
+                  onClick={() =>
+                    void track("home_package_cta_click", {
+                      packageSlug: pkg.slug,
+                      meta: { label: pkg.name, price: pkg.price, source: "home_seo_packages" },
+                    })
+                  }
                 >
                   View {pkg.name} Details <ArrowRight size={14} className="ml-1" />
                 </Link>
@@ -81,6 +89,11 @@ const SeoPackagesSection = () => {
           <Link
             to="/seo-packages"
             aria-label="Compare all SEO packages"
+            onClick={() =>
+              void track("home_compare_packages_click", {
+                meta: { source: "home_seo_packages" },
+              })
+            }
             className="inline-flex items-center gap-2 text-primary hover:text-primary/80 uppercase tracking-widest text-xs font-semibold rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background px-2 py-1"
           >
             Compare all packages <ArrowRight size={14} />
