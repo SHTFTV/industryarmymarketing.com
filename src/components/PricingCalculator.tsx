@@ -5,10 +5,12 @@ import { Button } from "@/components/ui/button";
 import { cities, domains } from "@/data/domains";
 import { ADDONS } from "@/data/pricingMatrix";
 import { lookupTierByPopulation, parsePopulation, formatSlotStatus } from "@/lib/pricing";
+import { usePpp } from "@/hooks/usePpp";
 
 const CITY_OPTIONS = cities.filter((c) => c.slug !== "any");
 
 const PricingCalculator = () => {
+  const { factor, adjust } = usePpp();
   const [cityQuery, setCityQuery] = useState("");
   const [manualPop, setManualPop] = useState<string>("");
   const [industry, setIndustry] = useState<string>("");
@@ -165,8 +167,10 @@ const PricingCalculator = () => {
                     </div>
                     <div>
                       <p className="text-xs uppercase tracking-widest text-muted-foreground">Per Slot</p>
-                      <p className="font-display text-5xl text-primary text-glow">${tier.pricePerSlot}<span className="text-base text-muted-foreground">/mo</span></p>
-                      <p className="text-xs text-muted-foreground mt-1">Flat — slot 1 = slot {tier.slots}</p>
+                      <p className="font-display text-5xl text-primary text-glow">${adjust(tier.pricePerSlot)}<span className="text-base text-muted-foreground">/mo</span></p>
+                      <p className="text-xs text-muted-foreground mt-1">
+                        {factor < 1 ? `List $${tier.pricePerSlot} · ${Math.round(factor * 100)}% PPP` : "Slot 1 = slot " + tier.slots}
+                      </p>
                     </div>
                     <div>
                       <p className="text-xs uppercase tracking-widest text-muted-foreground">Available</p>
@@ -178,19 +182,19 @@ const PricingCalculator = () => {
                   <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-3 text-sm">
                     <div className="p-3 rounded border border-border bg-card">
                       <p className="text-xs uppercase text-muted-foreground">Position #1 add-on</p>
-                      <p className="text-primary font-display text-xl">+${(tier.pricePerSlot * ADDONS.position1FeaturePercent).toFixed(2)}/mo</p>
+                      <p className="text-primary font-display text-xl">+${adjust(tier.pricePerSlot * ADDONS.position1FeaturePercent)}/mo</p>
                     </div>
                     <div className="p-3 rounded border border-border bg-card">
                       <p className="text-xs uppercase text-muted-foreground">Backlink Pack</p>
-                      <p className="text-primary font-display text-xl">${ADDONS.backlinkPackOneTime.toFixed(2)} once</p>
+                      <p className="text-primary font-display text-xl">${adjust(ADDONS.backlinkPackOneTime)} once</p>
                     </div>
                     <div className="p-3 rounded border border-border bg-card">
                       <p className="text-xs uppercase text-muted-foreground">TALC.tv Blast</p>
-                      <p className="text-primary font-display text-xl">${ADDONS.talcVisualBlastPerPost.toFixed(2)}/post</p>
+                      <p className="text-primary font-display text-xl">${adjust(ADDONS.talcVisualBlastPerPost)}/post</p>
                     </div>
                     <div className="p-3 rounded border border-border bg-card">
                       <p className="text-xs uppercase text-muted-foreground">Hall Visualizer</p>
-                      <p className="text-primary font-display text-xl">${ADDONS.hallVisualizerPerRender.toFixed(2)}/render</p>
+                      <p className="text-primary font-display text-xl">${adjust(ADDONS.hallVisualizerPerRender)}/render</p>
                     </div>
                   </div>
 
