@@ -5,10 +5,12 @@ import { Button } from "@/components/ui/button";
 import { cities, domains } from "@/data/domains";
 import { ADDONS } from "@/data/pricingMatrix";
 import { lookupTierByPopulation, parsePopulation, formatSlotStatus } from "@/lib/pricing";
+import { usePpp } from "@/hooks/usePpp";
 
 const CITY_OPTIONS = cities.filter((c) => c.slug !== "any");
 
 const PricingCalculator = () => {
+  const { factor, adjust } = usePpp();
   const [cityQuery, setCityQuery] = useState("");
   const [manualPop, setManualPop] = useState<string>("");
   const [industry, setIndustry] = useState<string>("");
