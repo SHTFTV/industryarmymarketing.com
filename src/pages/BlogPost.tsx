@@ -322,15 +322,10 @@ const BlogPost = () => {
           )}
 
           {post.richContent ? (
-            <>
-              {post.richContent.intro && (
-                <p className="text-xl md:text-2xl text-foreground/90 leading-relaxed mb-8 font-medium">
-                  {post.richContent.intro}
-                </p>
-              )}
-              <BlogToc headings={tocHeadings} />
-              <BlogRichContentView content={{ ...post.richContent, intro: undefined }} />
-            </>
+            <BlogRichContentView
+              content={post.richContent}
+              afterIntro={<BlogToc headings={tocHeadings} />}
+            />
           ) : (
             <>
               <p className="text-xl md:text-2xl text-foreground/90 leading-relaxed mb-12 font-medium">
