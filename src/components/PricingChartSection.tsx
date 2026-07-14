@@ -13,6 +13,9 @@ const RULE_TEXT = "$10 USD per 100,000 population baseline; every slot stays $10
 function ruleCallout(pricePerSlot: number): string {
   return `$10 per 100K = $${pricePerSlot}/slot/mo`;
 }
+// Formula shown inside the expanded tooltip — locked string so visual
+// regression tests can pin the exact wording across desktop + mobile.
+const RULE_FORMULA = "1 × 100K × $10 = $10/slot/mo";
 
 // Analytics event names for banner + callout interactions. Deduped per
 // mount so noisy focus/hover streams don't flood the pipeline while still
