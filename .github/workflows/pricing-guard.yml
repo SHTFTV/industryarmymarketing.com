@@ -1,0 +1,61 @@
+# Whole-site pricing guard.
+#
+# Runs `tests/no-forbidden-pricing.spec.ts` — a Playwright sweep over
+# every public route listed in `src/config/pricing.ts`
+# (PUBLIC_ROUTES_TO_SCAN) and fails the build if any non-allowlisted
+# route contains the removed Bullets/Boom/Bombs block or $85/$285/$585
+# one-time prices.
+#
+# On failure, uploads `pricing-guard-report/` — one JSON row per route
+# with the exact matched text, before/after context, and full-page +
+# snippet screenshots so the offending page can be diagnosed without
+# re-running the suite locally.
+
+name: Pricing guard (whole-site)
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pricing-guard-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  pricing-guard:
+    name: No forbidden pricing on public routes
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+
+      - name: Run pricing guard sweep
+        run: npx playwright test tests/no-forbidden-pricing.spec.ts --project=chromium --reporter=list
+
+      - name: Append report to job summary
+        if: always()
+        run: |
+          if [ -f pricing-guard-report/report.md ]; then
+            cat pricing-guard-report/report.md >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "No pricing-guard-report generated." >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Upload pricing-guard artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pricing-guard-report-${{ github.run_id }}-${{ github.run_attempt }}
+          path: pricing-guard-report/
+          if-no-files-found: warn
+          retention-days: 30
