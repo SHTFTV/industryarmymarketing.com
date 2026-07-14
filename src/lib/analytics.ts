@@ -80,7 +80,8 @@ export type AnalyticsEvent =
   | "order_failed"
   | "bid_form_submitted"
   | "bid_form_submit_failed"
-  | "bid_form_validation_failed";
+  | "bid_form_validation_failed"
+  | "bid_success";
 
 export async function track(
   event: AnalyticsEvent,

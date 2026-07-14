@@ -15,6 +15,7 @@ interface SeoProps {
   jsonLd?: object | object[];
   image?: string;
   imageAlt?: string;
+  noindex?: boolean;
 }
 
 const Seo = ({
@@ -25,6 +26,7 @@ const Seo = ({
   jsonLd,
   image = "/og-image.jpg",
   imageAlt = "Industry Army Marketing — $10 SEO. 20+ years of authority.",
+  noindex = false,
 }: SeoProps) => {
   const schemas = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
   const absoluteUrl = toAbsolute(path);
@@ -33,6 +35,7 @@ const Seo = ({
     <Helmet>
       <title>{title}</title>
       <meta name="description" content={description} />
+      {noindex && <meta name="robots" content="noindex, nofollow" />}
       <link rel="canonical" href={absoluteUrl} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
