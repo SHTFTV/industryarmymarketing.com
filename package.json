@@ -206,6 +206,7 @@
       "/blog/landscapers-toronto",
       "/blog/hardscapes-kelowna",
       "/blog/weddings-io-entity-conflation-case-study"
-    ]
+    ],
+    "waitFor": 3000
   }
 }
