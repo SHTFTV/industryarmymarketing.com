@@ -106,9 +106,17 @@ const BidRequestForm = ({
     const userAgent =
       typeof navigator !== "undefined" ? navigator.userAgent || null : null;
     try {
-      const { data: inserted, error } = await supabase
+      // Generate the id client-side so we can attribute the thank-you
+      // event without needing SELECT access to service_leads (anon has
+      // INSERT-only privileges under RLS).
+      const leadId =
+        typeof crypto !== "undefined" && "randomUUID" in crypto
+          ? crypto.randomUUID()
+          : null;
+      const { error } = await supabase
         .from("service_leads")
         .insert({
+        id: leadId ?? undefined,
         service,
         name: clean.name,
         email: clean.email,
@@ -123,13 +131,11 @@ const BidRequestForm = ({
         referrer,
         user_agent: userAgent,
         page_path: path,
-        })
-        .select("id")
-        .maybeSingle();
+        });
       if (error) throw error;
       trackEvent("bid_form_submitted", {
         service,
-        lead_id: inserted?.id ?? null,
+        lead_id: leadId,
         has_phone: !!clean.phone,
         has_company: !!clean.company,
         has_city: !!clean.city,
@@ -143,7 +149,7 @@ const BidRequestForm = ({
       });
       formEl.reset();
       navigate(`/services/${service}/thank-you`, {
-        state: { leadId: inserted?.id ?? null, fromForm: true },
+        state: { leadId, fromForm: true },
       });
     } catch (err) {
       trackEvent("bid_form_submit_failed", { service });
