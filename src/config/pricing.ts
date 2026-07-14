@@ -37,6 +37,88 @@ export const FORBIDDEN_ON_TERRITORY_SURFACES = [
   "Bullets. Boom. Bombs.",
 ] as const;
 
+/**
+ * Regex patterns for forbidden pricing. These catch variants that plain
+ * substring matching would miss (e.g. `$85/one time`, `$ 85 one-time`,
+ * `Bullets, Boom, Bombs`). The Playwright guard runs BOTH the substring
+ * list above and these patterns against every scanned route.
+ *
+ * Serialized as `{ source, flags }` so the spec can rebuild them on the
+ * Node side without shipping a full RegExp through JSON.
+ */
+export const FORBIDDEN_PATTERNS: readonly {
+  name: string;
+  source: string;
+  flags: string;
+}[] = [
+  {
+    name: "seo-package-one-time-price",
+    // $85 one-time / $285 one-time / $585 one-time, tolerant of spacing
+    // and hyphen/space between "one" and "time".
+    source: "\\$\\s?(85|285|585)\\s*(?:one[\\s-]?time)",
+    flags: "i",
+  },
+  {
+    name: "bullets-boom-bombs-block",
+    // The removed marketing block, tolerant of punctuation and casing.
+    source: "bullets\\s*[.,·•]?\\s*boom\\s*[.,·•]?\\s*bombs",
+    flags: "i",
+  },
+];
+
+/**
+ * Routes that ARE the SEO Packages product and are allowed to render
+ * Bullets/Boom/Bombs pricing. Every other public route must be free of
+ * the forbidden strings/patterns above.
+ *
+ * Prefix match: `/seo-packages` also allows `/seo-packages/bullets` etc.
+ */
+export const SEO_PACKAGES_ALLOWED_ROUTES = [
+  "/seo-packages",
+  "/pricing", // legacy combined pricing page — still hosts the packages block.
+] as const;
+
+/**
+ * Every static public route the CI guard should scan. Parametric routes
+ * (`/blog/:slug`, `/contractors/:trade/:city`) are covered by dedicated
+ * spot-check specs; this list is for the whole-site sweep.
+ *
+ * Keep in sync with the <Route> table in `src/App.tsx`. When a new
+ * public page is added, add its path here.
+ */
+export const PUBLIC_ROUTES_TO_SCAN = [
+  "/",
+  "/how-it-works",
+  "/pricing",
+  "/seo-packages",
+  "/contractors",
+  "/service-professionals",
+  "/backlinks",
+  "/dofollow-backlinks",
+  "/guest-post",
+  "/industries",
+  "/contact",
+  "/network",
+  "/eyespyr",
+  "/blog",
+  "/investors",
+  "/legal",
+  "/niches/steel-stud",
+  "/niches/mining-logistics",
+  "/local/vancouver",
+  "/local/surrey",
+  "/local/langley",
+  "/weddings-ecosystem",
+  "/sitemap",
+] as const;
+
+/** True when the given route is allowed to show SEO Packages pricing. */
+export function isSeoPackagesRoute(pathname: string): boolean {
+  return SEO_PACKAGES_ALLOWED_ROUTES.some(
+    (allowed) => pathname === allowed || pathname.startsWith(`${allowed}/`),
+  );
+}
+
 /** Runtime self-check: matrix rows must obey the flat rule. */
 function verifyTerritoryPricingRule(): void {
   for (const row of PRICING_MATRIX) {
