@@ -13,6 +13,9 @@ const RULE_TEXT = "$10 USD per 100,000 population baseline; every slot stays $10
 function ruleCallout(pricePerSlot: number): string {
   return `$10 per 100K = $${pricePerSlot}/slot/mo`;
 }
+// Formula shown inside the expanded tooltip — locked string so visual
+// regression tests can pin the exact wording across desktop + mobile.
+const RULE_FORMULA = "1 × 100K × $10 = $10/slot/mo";
 
 // Analytics event names for banner + callout interactions. Deduped per
 // mount so noisy focus/hover streams don't flood the pipeline while still
@@ -232,6 +235,12 @@ const PricingChartSection = () => {
                   <span className="block text-muted-foreground mt-1">
                     {row.populationLabel} → {ruleCallout(row.pricePerSlot)}
                   </span>
+                  <span
+                    data-testid={`pricing-tooltip-formula-mobile-${row.lowerBound}`}
+                    className="block text-primary/90 font-mono mt-1"
+                  >
+                    {RULE_FORMULA}
+                  </span>
                 </div>
               )}
             </div>
@@ -337,6 +346,12 @@ const PricingChartSection = () => {
                       <span className="text-primary font-semibold">{RULE_TEXT}</span>
                       <span className="block text-muted-foreground">
                         {row.populationLabel} → {ruleCallout(row.pricePerSlot)}
+                      </span>
+                      <span
+                        data-testid={`pricing-tooltip-formula-${row.lowerBound}`}
+                        className="block text-primary/90 font-mono"
+                      >
+                        {RULE_FORMULA}
                       </span>
                     </div>
                   )}
