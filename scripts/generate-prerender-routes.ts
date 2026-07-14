@@ -5,7 +5,6 @@
 
 import { readFileSync, writeFileSync } from "fs";
 import { resolve } from "path";
-import contractorSlugs from "./contractor-slugs.json" with { type: "json" };
 
 const cities = ["vancouver", "surrey", "calgary", "edmonton", "toronto", "kelowna"];
 const localCities = ["vancouver", "surrey", "langley"];
@@ -51,7 +50,6 @@ const routes: string[] = [
   ...cities.map((c) => `/cities/${c}`),
   ...trades.map((t) => `/contractors/${t}`),
   ...blogSlugs.map((s) => `/blog/${s}`),
-  ...(contractorSlugs as string[]).map((s) => `/contractor-marketing/${s}/`),
 ];
 
 const uniqueRoutes = Array.from(new Set(routes));
