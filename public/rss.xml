@@ -6,13 +6,22 @@
     <atom:link href="https://industryarmymarketing.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>2,000-word guides on exclusive $10 territory marketing for trade contractors and service pros across Canada.</description>
     <language>en-ca</language>
-    <lastBuildDate>Tue, 14 Jul 2026 03:16:29 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 14 Jul 2026 18:41:16 GMT</lastBuildDate>
     <generator>Industry Army Marketing build pipeline</generator>
     <image>
       <url>https://industryarmymarketing.com/og-image.jpg</url>
       <title>Industry Army Marketing — Intel Blog</title>
       <link>https://industryarmymarketing.com/blog</link>
     </image>
+    <item>
+      <title>Why IAM Vendors Need to Embrace Purchasing Power Parity Pricing</title>
+      <link>https://industryarmymarketing.com/blog/iam-vendors-purchasing-power-parity-pricing</link>
+      <guid isPermaLink="true">https://industryarmymarketing.com/blog/iam-vendors-purchasing-power-parity-pricing</guid>
+      <pubDate>Mon, 01 Jul 2026 09:00:00 +0000</pubDate>
+      <category>Pricing Strategy</category>
+      <description>A case for making identity security accessible to every market, not just the ones with the biggest wallets. Why per-seat IAM is the perfect category for PPP pricing, what good looks like, and how the revenue math actually works.</description>
+      <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
+    </item>
     <item>
       <title>Beyond the Domain Name: Understanding Entity Authority in Modern SEO</title>
       <link>https://industryarmymarketing.com/blog/beyond-domain-name-entity-authority-modern-seo</link>

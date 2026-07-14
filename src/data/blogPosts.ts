@@ -59,6 +59,7 @@ import googleAiWeddingsAppAsset from "@/assets/blog/google-ai-mode-weddings-io-a
 const googleAiWeddingsAppImg = googleAiWeddingsAppAsset.url;
 import googleAiWeddingsCanadianAsset from "@/assets/blog/google-ai-weddings-io-canadian-saas.png.asset.json";
 const googleAiWeddingsCanadianImg = googleAiWeddingsCanadianAsset.url;
+import iamPppPricingImg from "@/assets/blog/iam-ppp-pricing.jpg";
 
 const IMG: Record<string, string> = {
   "kitchen-cabinets": kitchencabinetsImg,
@@ -92,6 +93,7 @@ const IMG: Record<string, string> = {
   "weddings-io-entity-conflation": weddingsEntityConflationImg,
   "record-record-domain-provenance": recordRecordImg,
   "weddings-io-technologies-company": weddingsTechCoImg,
+  "iam-ppp-pricing": iamPppPricingImg,
 };
 
 export interface BlogPost {
@@ -178,6 +180,129 @@ export interface BlogRichContent {
 }
 
 export const blogPosts: BlogPost[] = [
+  {
+    "slug": "iam-vendors-purchasing-power-parity-pricing",
+    "brand": "industryarmymarketing.com",
+    "trade": "PPP Pricing for IAM",
+    "cardTitle": "Why IAM Vendors Need to Embrace Purchasing Power Parity Pricing",
+    "tradeShort": "PPP pricing",
+    "plural": "identity security buyers",
+    "video": null,
+    "imageKey": "iam-ppp-pricing",
+    "imageAlt": "Purchasing Power Parity pricing for Identity and Access Management vendors — neon-green world map with regional price tags and a padlock icon on a dark tactical background.",
+    "faqHeading": "Frequently asked: PPP pricing for IAM vendors",
+    "city": "Global",
+    "province": "Worldwide",
+    "category": "Pricing Strategy",
+    "date": "July 2026",
+    "publishedAt": "2026-07-14T15:00:00Z",
+    "title": "Why IAM Vendors Need to Embrace Purchasing Power Parity Pricing",
+    "metaDescription": "A case for making identity security accessible to every market, not just the ones with the biggest wallets. Why per-seat IAM is the perfect category for PPP pricing, what good looks like, and how the revenue math actually works.",
+    "authorName": "Industry Army Marketing",
+    "excerpt": "Identity and Access Management is table stakes everywhere, yet most IAM vendors bill flat USD globally. A $12/user/month plan that's a rounding error in San Francisco is a real chunk of a developer's monthly salary in Vietnam, Nigeria, or Peru. Here's why PPP pricing belongs at the identity layer — and how to do it without inviting arbitrage.",
+    "pain": "Identity security priced in flat USD prices entire regions out of strong IAM — leaving SMBs in Lagos, Jakarta, and Bangalore on weaker alternatives, creating attack vectors that ripple outward across every market IAM vendors serve.",
+    "detail": "Purchasing Power Parity pricing anchors what a customer pays to what a price actually means in their local economy. Cloud infrastructure already does this. Per-seat IAM — where every employee is a line item — is the software category where flat global USD hurts the most.",
+    "process": "Bill by company HQ or billing address. Publish the tiers. Skip the sales-call gatekeeping. Verify with card country, VAT ID and usage signals to keep arbitrage theoretical. Extend PPP across the whole portfolio, not just the entry-level plan.",
+    "faqs": [
+      { "q": "What is Purchasing Power Parity (PPP) pricing?", "a": "PPP is an economic concept that compares the real value of currencies by what a basket of goods actually costs in different countries. PPP pricing adjusts what customers pay based on those local realities — principled, data-driven localization rather than arbitrary emerging-market discounts." },
+      { "q": "Why is IAM the right category for PPP pricing?", "a": "IAM is almost universally priced per user, so every seat is a line item. The gap between flat USD and PPP-adjusted pricing is the difference between a growing team deploying strong IAM properly or falling back to a weaker alternative — which becomes everyone's security problem." },
+      { "q": "Won't PPP pricing cannibalize revenue?", "a": "The data says otherwise. Conversion in price-sensitive markets rises sharply with localized pricing, expansion revenue follows adoption, and churn drops when the product is genuinely affordable. Global enterprises with centralized procurement stay on full-price contracts — PPP targets SMBs and local companies." },
+      { "q": "How do you stop arbitrage?", "a": "Verify billing address, card country, VAT ID and company registration. Watch usage signals — an account with 90% US logins signing up on a low-PPP tier gets flagged. Bake the geography rule into terms of service. The theoretical arbitrage is far smaller than the very real missed market." },
+      { "q": "Which regions should IAM vendors target with PPP?", "a": "A workable starting frame anchored to GDP-per-capita PPP ratios: Western Europe / Australia / Canada 90–100% of US, Eastern Europe & Middle East 55–75%, Latin America 40–60%, Southeast Asia 30–50%, Sub-Saharan Africa 25–40%, South Asia 25–45%. Vendors should model against their own cost structure and ARR targets, not treat these as prescriptive." },
+      { "q": "How does IAM already handle this internally?", "a": "Industry Army Marketing runs a PPP factor table in production — established markets flat USD, emerging markets 25–55% of list — with Stripe card-country enforcement as the source of truth at checkout. Display prices are anchored to the buyer's country; billing verifies it." }
+    ],
+    "cta": {
+      "eyebrow": "IAM Pricing Strategy",
+      "heading": "Want to see PPP pricing running in production?",
+      "body": "Industry Army Marketing ships PPP-adjusted pricing across our whole portfolio — display prices anchored to buyer country, Stripe card-country enforced at checkout, no sales-call gatekeeping. If you operate an IAM or identity-adjacent SaaS and want to compare notes on the mechanics, email partnerships@industryarmymarketing.com.",
+      "buttonText": "Talk PPP pricing — partnerships@industryarmymarketing.com",
+      "buttonHref": "mailto:partnerships@industryarmymarketing.com?subject=PPP%20pricing%20for%20IAM"
+    },
+    "richContent": {
+      "intro": "A case for making identity security accessible to every market, not just the ones with the biggest wallets. Purchasing Power Parity pricing is one of the most concrete, actionable ways the IAM industry can actually deliver on its favourite talking point: democratizing security.",
+      "sections": [
+        {
+          "heading": "The Identity Security Gap Nobody Talks About",
+          "paragraphs": [
+            "Identity and Access Management is no longer a luxury reserved for enterprises. In a world where credential-based attacks account for the majority of breaches, strong IAM is table stakes — for startups in São Paulo, SMBs in Nairobi, and scale-ups in Bangalore just as much as it is for Fortune 500 companies in New York.",
+            "And yet, pricing hasn't caught up with that reality.",
+            "Most IAM vendors price in USD, EUR, or GBP and apply those prices globally. The result: a $12/user/month SSO plan that feels like a minor budget line in San Francisco represents a significant chunk of a developer's monthly salary in Vietnam, Nigeria, or Peru. Identity security becomes a privilege of geography, not a function of risk.",
+            "That's where Purchasing Power Parity (PPP) pricing comes in."
+          ]
+        },
+        {
+          "heading": "What Is PPP Pricing?",
+          "paragraphs": [
+            "Purchasing Power Parity is an economic concept that compares the relative value of currencies by looking at what a basket of goods actually costs in different countries. In simpler terms: $1 doesn't buy the same thing everywhere.",
+            "PPP pricing adjusts what customers pay based on local economic realities — not arbitrary 'emerging market discounts,' but principled, data-driven localization that reflects what a price actually means in a given market.",
+            "Companies like Spotify, Notion, and Loom have experimented with regional pricing. Netflix built an entire pricing tier strategy around it. The principle is simple: charge what the market can bear, not what's convenient for your finance team to bill.",
+            "For IAM vendors, this matters more than in almost any other software category."
+          ]
+        },
+        {
+          "heading": "Why IAM Is the Perfect Category for PPP",
+          "paragraphs": [
+            "**1. Security shouldn't be a luxury.** When a growing fintech in Lagos can't afford MFA enforcement or role-based access controls, the security gap isn't just their problem — it's everyone's. Compromised accounts don't respect borders. Weaker security postures in price-excluded markets create attack vectors that ripple outward. PPP pricing for IAM is, in a meaningful sense, a matter of global security hygiene.",
+            "**2. IAM is per-seat, making the gap visceral.** Unlike flat-rate SaaS tools, IAM is almost universally priced per user. Every employee seat is a line item. For a 50-person team in Indonesia, the difference between USD pricing and PPP-adjusted pricing can mean the difference between deploying IAM properly or not deploying it at all — or deploying a cheaper, less capable alternative with real security trade-offs.",
+            "**3. The competitive landscape is regional.** Local and regional IAM vendors in markets like India, Southeast Asia, and Latin America often win not because their product is better, but because their price is survivable. Global IAM leaders are leaving massive market share on the table by refusing to localize pricing — and ceding those customers to competitors who will.",
+            "**4. Cloud infrastructure already does this.** AWS, Azure, and GCP all offer region-specific pricing. If the infrastructure layer has accepted that global pricing is a first-class concern, the identity layer that sits on top of it should too."
+          ]
+        },
+        {
+          "heading": "What PPP Pricing for IAM Could Look Like",
+          "paragraphs": [
+            "PPP pricing doesn't mean giving things away. It means anchoring price to value as experienced locally. A rough framework, anchored to approximate GDP-per-capita PPP ratios vs. the US base:",
+            "**Western Europe, Australia, Canada:** 90–100%. **Eastern Europe, Middle East:** 55–75%. **Latin America (Brazil, Mexico):** 40–60%. **Southeast Asia (Indonesia, Vietnam):** 30–50%. **Sub-Saharan Africa:** 25–40%. **South Asia (India, Pakistan):** 25–45%.",
+            "Not prescriptive — vendors should model against their own cost structures and ARR targets. The mechanism can be simple: billing address or company HQ country determines the pricing tier, with clear public documentation and no hoops to jump through. Opacity kills trust."
+          ]
+        },
+        {
+          "heading": "The Revenue Math Actually Works",
+          "paragraphs": [
+            "The instinctive objection is always: 'We'll lose revenue.' The data says otherwise.",
+            "**Conversion rates in price-sensitive markets are far higher when pricing is localized.** A 3x higher conversion rate at 50% price more than breaks even.",
+            "**Expansion revenue follows.** Teams that adopt IAM grow. A 10-seat team at PPP pricing in Jakarta today is a 100-seat customer in three years.",
+            "**Churn drops.** Price-sensitive customers who can afford the product are more loyal than price-sensitive customers who are always one budget cycle away from churning.",
+            "**Enterprise deals in those markets remain full price.** Large multinationals operating in lower-PPP countries still get quoted based on global contracts. PPP pricing targets SMBs and local companies, not global enterprises with centralized procurement."
+          ]
+        },
+        {
+          "heading": "The Harder Conversation: Arbitrage Risk",
+          "paragraphs": [
+            "PPP pricing skeptics raise arbitrage: what stops a US company from billing through a subsidiary in Vietnam to get cheaper IAM? A few things:",
+            "**Billing address verification** — credit card country, VAT ID, or company registration can flag mismatches.",
+            "**Usage-based signals** — if 90% of your users are logging in from US IPs, the system can flag the account for review.",
+            "**Terms of service** — explicitly prohibit purchasing through a geography where the company doesn't primarily operate.",
+            "**Practical friction** — most legitimate US companies aren't going to set up a foreign subsidiary to save $4/user/month. The arbitrage risk is theoretical; the missed market opportunity is real.",
+            "No system is perfect, but the risk of abuse is vastly smaller than the revenue and impact opportunity of proper PPP pricing."
+          ]
+        },
+        {
+          "heading": "What Good Looks Like",
+          "paragraphs": [
+            "**Be transparent.** Publish your pricing tiers publicly, by country or region. Don't make customers negotiate. The opacity of 'contact sales for regional pricing' is a conversion killer and a trust destroyer.",
+            "**Don't gatekeep.** PPP pricing shouldn't require a special code, a sales call, or proof of hardship. It should be the default price when someone signs up from a qualifying country.",
+            "**Update it regularly.** Currency valuations and economic conditions change. A pricing model that made sense in 2020 may be out of date today. Build in an annual review.",
+            "**Include all tiers.** PPP pricing that only applies to your entry-level plan and leaves enterprise pricing at USD rates sends a clear signal about which customers you actually want. Extend it across the portfolio.",
+            "**Communicate it.** Tell your markets that PPP pricing exists. Run localized campaigns. Partner with regional resellers. Pricing localization only works if people know about it."
+          ]
+        },
+        {
+          "heading": "The Bottom Line",
+          "paragraphs": [
+            "The IAM industry talks a lot about democratizing security. PPP pricing is one of the most concrete, actionable ways to actually do it.",
+            "The question isn't whether the math works — it does. The question is whether IAM vendors are willing to treat global access as a product strategy, not just a sales footnote.",
+            "The market is there. The need is real. The pricing just needs to catch up.",
+            "Have thoughts on PPP pricing in the IAM space? We'd love to hear from practitioners, vendors, and buyers navigating this — email partnerships@industryarmymarketing.com."
+          ]
+        }
+      ],
+      "sources": [
+        { "label": "Industry Army Marketing — PPP re-quote tooling (internal reference)", "href": "/admin/ppp-requote" },
+        { "label": "World Bank International Comparison Program (ICP) 2020", "href": "https://www.worldbank.org/en/programs/icp" }
+      ]
+    }
+  },
   {
     "slug": "beyond-domain-name-entity-authority-modern-seo",
     "brand": "weddings.io",
