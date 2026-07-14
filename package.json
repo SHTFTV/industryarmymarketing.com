@@ -14,7 +14,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "validate:sitemap": "bunx tsx scripts/validate-sitemap.ts",
-    "validate:rss": "bunx tsx scripts/validate-rss.ts"
+    "validate:rss": "bunx tsx scripts/validate-rss.ts",
+    "pricing-guard": "bunx tsx scripts/pricing-guard.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
