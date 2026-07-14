@@ -54,6 +54,8 @@ import WebDevelopment from "./pages/services/WebDevelopment.tsx";
 import SocialMedia from "./pages/services/SocialMedia.tsx";
 import AffordableSeo from "./pages/services/AffordableSeo.tsx";
 import DofollowBacklinksService from "./pages/services/DofollowBacklinksService.tsx";
+import ServiceThankYou from "./pages/services/ServiceThankYou.tsx";
+import AdminServiceLeads from "./pages/admin/AdminServiceLeads.tsx";
 import featuredBattle from "@/assets/blog/weddings-vs-aiweddings-battle.png.asset.json";
 
 const SITE = "https://industryarmymarketing.com";
@@ -203,6 +205,8 @@ const App = () => (
           <Route path="/services/social-media" element={<SocialMedia />} />
           <Route path="/services/affordable-seo" element={<AffordableSeo />} />
           <Route path="/services/dofollow-backlinks" element={<DofollowBacklinksService />} />
+          <Route path="/services/:slug/thank-you" element={<ServiceThankYou />} />
+          <Route path="/admin/service-leads" element={<AdminServiceLeads />} />
           <Route path="/contractors" element={<Contractors />} />
           <Route path="/service-professionals" element={<ServiceProfessionals />} />
           <Route path="/backlinks" element={<Backlinks />} />

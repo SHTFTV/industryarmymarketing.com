@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { z } from "zod";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
@@ -63,6 +64,7 @@ const BidRequestForm = ({
   heading,
   subheading,
 }: BidRequestFormProps) => {
+  const navigate = useNavigate();
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -104,7 +106,9 @@ const BidRequestForm = ({
     const userAgent =
       typeof navigator !== "undefined" ? navigator.userAgent || null : null;
     try {
-      const { error } = await supabase.from("service_leads").insert({
+      const { data: inserted, error } = await supabase
+        .from("service_leads")
+        .insert({
         service,
         name: clean.name,
         email: clean.email,
@@ -119,10 +123,13 @@ const BidRequestForm = ({
         referrer,
         user_agent: userAgent,
         page_path: path,
-      });
+        })
+        .select("id")
+        .maybeSingle();
       if (error) throw error;
       trackEvent("bid_form_submitted", {
         service,
+        lead_id: inserted?.id ?? null,
         has_phone: !!clean.phone,
         has_company: !!clean.company,
         has_city: !!clean.city,
@@ -135,6 +142,9 @@ const BidRequestForm = ({
         description: `Your ${serviceLabel} inquiry is tagged and queued. We reply within 1 business day.`,
       });
       formEl.reset();
+      navigate(`/services/${service}/thank-you`, {
+        state: { leadId: inserted?.id ?? null, fromForm: true },
+      });
     } catch (err) {
       trackEvent("bid_form_submit_failed", { service });
       toast({
