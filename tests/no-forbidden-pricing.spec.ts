@@ -441,6 +441,7 @@ for (const route of ROUTES_TO_SCAN) {
         snippetScreenshot: snippetWritten,
         annotatedScreenshot: annotatedWritten,
         suppressedBy,
+        isNew: !suppressedBy && !previousMatchKeys.has(matchKey(route, { kind, name, matchedText })),
       });
     }
 
