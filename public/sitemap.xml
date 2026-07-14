@@ -111,6 +111,46 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://industryarmymarketing.com/services/lead-generation</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://industryarmymarketing.com/__l5e/assets-v1/0307501f-9361-47d3-a234-fb01b87a65af/lead-generation-hero.jpg</image:loc>
+      <image:caption>Lead generation pipeline — glowing network of leads converging into a contractor's inbox</image:caption>
+      <image:title>Lead Generation for Contractors — Industry Army Marketing</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://industryarmymarketing.com/services/web-development</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://industryarmymarketing.com/__l5e/assets-v1/a7d18561-ff63-45c9-ad07-708a6514a20d/web-development-hero.jpg</image:loc>
+      <image:caption>Modern high-performance contractor website on a laptop with a Lighthouse 100 score</image:caption>
+      <image:title>Web Development for Contractors — Industry Army Marketing</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://industryarmymarketing.com/services/social-media</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://industryarmymarketing.com/__l5e/assets-v1/1cf5b1ea-f7e7-40fc-9856-d2837ca3386a/social-media-hero.jpg</image:loc>
+      <image:caption>TALC.tv broadcast tower fanning signals to ten social platforms</image:caption>
+      <image:title>Social Media Syndication via TALC.tv — Industry Army Marketing</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://industryarmymarketing.com/services/affordable-seo</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://industryarmymarketing.com/__l5e/assets-v1/0ed29c46-022d-45ba-87b6-9c1237593ff9/affordable-seo-hero.jpg</image:loc>
+      <image:caption>A glowing $10 chip on a vault pedestal surrounded by elite ranking insignia</image:caption>
+      <image:title>Affordable SEO — $10 Business Listings and Power-Partner Slots</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://industryarmymarketing.com/case-studies/brand-defense-global-territory</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
