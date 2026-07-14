@@ -28,13 +28,46 @@ import {
 const REPORT_DIR = join(process.cwd(), "pricing-guard-report");
 const REPORT_JSON = join(REPORT_DIR, "report.json");
 const REPORT_MD = join(REPORT_DIR, "report.md");
+const PREVIOUS_JSON = join(REPORT_DIR, "previous.json");
 const SITEMAP_PATH = join(process.cwd(), "public", "sitemap.xml");
 
 /**
  * True when running under GitHub Actions — enables `::error` /
  * `::warning` workflow-command output for PR annotations.
+ *
+ * Can be forced on/off via PRICING_GUARD_ANNOTATIONS=on|off
+ * (set by the CLI's `--annotations` flag).
  */
-const IS_GITHUB_ACTIONS = process.env.GITHUB_ACTIONS === "true";
+const ANNOTATIONS_ENV = (process.env.PRICING_GUARD_ANNOTATIONS ?? "").toLowerCase();
+const EMIT_GITHUB_ANNOTATIONS =
+  ANNOTATIONS_ENV === "on"
+    ? true
+    : ANNOTATIONS_ENV === "off"
+      ? false
+      : process.env.GITHUB_ACTIONS === "true";
+
+/**
+ * Which mode(s) to run. Set via PRICING_GUARD_MODE=packages|territory|all
+ * (defaults to "all"). Routes whose natural mode is filtered out are
+ * skipped entirely.
+ */
+const MODE_FILTER = ((): "packages" | "territory" | "all" => {
+  const v = (process.env.PRICING_GUARD_MODE ?? "all").toLowerCase();
+  return v === "packages" || v === "territory" ? v : "all";
+})();
+
+/**
+ * Restrict the sweep to a comma-separated list of pathnames.
+ * PRICING_GUARD_ROUTES="/,/pricing,/seo-packages"
+ */
+const ROUTE_FILTER: string[] | null = (() => {
+  const raw = process.env.PRICING_GUARD_ROUTES;
+  if (!raw) return null;
+  return raw
+    .split(",")
+    .map((s) => s.trim())
+    .filter(Boolean);
+})();
 
 /** Escape a value for a GitHub workflow-command parameter. */
 function ghEscape(s: string): string {
@@ -79,9 +112,15 @@ function readSitemapRoutes(): string[] {
 }
 
 const SITEMAP_ROUTES = readSitemapRoutes();
-const ROUTES_TO_SCAN = Array.from(
+const ALL_ROUTES = Array.from(
   new Set<string>([...PUBLIC_ROUTES_TO_SCAN, ...SITEMAP_ROUTES]),
 );
+const ROUTES_TO_SCAN = ALL_ROUTES.filter((route) => {
+  if (ROUTE_FILTER && !ROUTE_FILTER.includes(route)) return false;
+  if (MODE_FILTER === "all") return true;
+  const routeMode = isSeoPackagesRoute(route) ? "packages" : "territory";
+  return routeMode === MODE_FILTER;
+});
 
 type Match = {
   kind: "substring" | "regex" | "required-missing";
@@ -94,6 +133,7 @@ type Match = {
   snippetScreenshot: string | null;
   annotatedScreenshot: string | null;
   suppressedBy?: RouteSuppression;
+  isNew?: boolean;
 };
 
 type RouteReport = {
@@ -120,8 +160,40 @@ function context(text: string, index: number, len: number) {
 // Accumulate one report per test run.
 const runReport: RouteReport[] = [];
 
+/**
+ * Load the previous run's report (if any) BEFORE we overwrite it in
+ * beforeAll, so we can diff new vs. pre-existing matches. Stored as
+ * `previous.json` for reference in CI artifacts.
+ */
+type PrevMatchKey = string;
+function matchKey(route: string, m: Pick<Match, "kind" | "name" | "matchedText">): PrevMatchKey {
+  return `${route}|${m.kind}|${m.name}|${m.matchedText}`;
+}
+const previousMatchKeys = new Set<PrevMatchKey>();
+let previousLoaded = false;
+function loadPreviousReport() {
+  if (previousLoaded) return;
+  previousLoaded = true;
+  if (!existsSync(REPORT_JSON)) return;
+  try {
+    const prev = JSON.parse(readFileSync(REPORT_JSON, "utf8"));
+    // Snapshot the previous run for the artifact bundle.
+    writeFileSync(PREVIOUS_JSON, JSON.stringify(prev, null, 2));
+    const routes: RouteReport[] = prev?.routes ?? [];
+    for (const r of routes) {
+      for (const m of r.matches ?? []) {
+        if (m.suppressedBy) continue;
+        previousMatchKeys.add(matchKey(r.route, m));
+      }
+    }
+  } catch {
+    /* previous report missing/corrupt — treat everything as new */
+  }
+}
+
 test.beforeAll(() => {
   ensureReportDir();
+  loadPreviousReport();
   // Reset report on first run.
   writeFileSync(REPORT_JSON, JSON.stringify({ generatedAt: null, routes: [] }, null, 2));
 });
@@ -162,6 +234,12 @@ test.afterAll(() => {
     0,
   );
   md.push(`- Suppressed matches (per-route allowlist): ${suppressed}`);
+  const newlyIntroduced = runReport.reduce(
+    (n, r) => n + r.matches.filter((m) => m.isNew && !m.suppressedBy).length,
+    0,
+  );
+  md.push(`- Newly introduced matches vs. previous run: ${newlyIntroduced}`);
+  md.push(`- Filter — mode: \`${MODE_FILTER}\`, routes: \`${ROUTE_FILTER ? ROUTE_FILTER.join(",") : "*"}\`, annotations: \`${EMIT_GITHUB_ANNOTATIONS ? "on" : "off"}\``);
   md.push(``);
   for (const r of runReport) {
     if (r.matches.length === 0) continue;
@@ -174,8 +252,9 @@ test.afterAll(() => {
     md.push(``);
     for (const m of r.matches) {
       const suppressTag = m.suppressedBy ? ` (SUPPRESSED — ${m.suppressedBy.reason})` : "";
+      const newTag = m.isNew && !m.suppressedBy ? " 🆕 NEW" : "";
       md.push(
-        `- **[${m.severity}][${m.kind}] ${m.name}**${suppressTag} matched \`${m.matchedText}\``,
+        `- **[${m.severity}][${m.kind}] ${m.name}**${newTag}${suppressTag} matched \`${m.matchedText}\``,
       );
       md.push(`  - context: …${m.contextBefore}**${m.matchedText}**${m.contextAfter}…`);
       md.push(`  - full-page screenshot: \`${m.fullPageScreenshot}\``);
@@ -362,6 +441,7 @@ for (const route of ROUTES_TO_SCAN) {
         snippetScreenshot: snippetWritten,
         annotatedScreenshot: annotatedWritten,
         suppressedBy,
+        isNew: !suppressedBy && !previousMatchKeys.has(matchKey(route, { kind, name, matchedText })),
       });
     }
 
@@ -435,16 +515,17 @@ for (const route of ROUTES_TO_SCAN) {
 
         // GitHub Actions PR annotations. Emitted as workflow commands
         // on stdout so they surface inline in the checks tab.
-        if (IS_GITHUB_ACTIONS) {
+        if (EMIT_GITHUB_ANNOTATIONS) {
           const cmd = m.severity === "fail" ? "error" : "warning";
           const artifactHint = m.annotatedScreenshot
             ? ` — annotated overlay: ${m.annotatedScreenshot.replace(process.cwd() + "/", "")}`
             : m.snippetScreenshot
               ? ` — snippet: ${m.snippetScreenshot.replace(process.cwd() + "/", "")}`
               : "";
-          const title = ghEscape(`[pricing-guard/${mode}] ${route} → ${m.name}`);
+          const newTag = m.isNew ? " [NEW]" : "";
+          const title = ghEscape(`[pricing-guard/${mode}]${newTag} ${route} → ${m.name}`);
           const message = ghMessageEscape(
-            `${m.kind} match "${m.matchedText}" on ${route} (${mode} mode). ` +
+            `${m.isNew ? "NEW " : ""}${m.kind} match "${m.matchedText}" on ${route} (${mode} mode). ` +
               `Context: …${m.contextBefore}[[${m.matchedText}]]${m.contextAfter}…${artifactHint}`,
           );
           console.log(`::${cmd} title=${title}::${message}`);
