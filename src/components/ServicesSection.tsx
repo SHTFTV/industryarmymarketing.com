@@ -13,8 +13,8 @@ const services = [
     icon: Link,
     title: "Dofollow Backlinks",
     description: "Every page we build ships with dofollow links—no nofollow gatekeeping. Real trust signals that push you to the front of Google, every time.",
-    to: "/dofollow-backlinks",
-    ctaLabel: "View Dofollow Network",
+    to: "/services/dofollow-backlinks",
+    ctaLabel: "See the Backlink Program",
   },
   {
     icon: BarChart3,

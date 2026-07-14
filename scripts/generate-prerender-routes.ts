@@ -40,6 +40,7 @@ const routes: string[] = [
   "/services/web-development",
   "/services/social-media",
   "/services/affordable-seo",
+  "/services/dofollow-backlinks",
   "/industries",
   "/contact",
   "/network",

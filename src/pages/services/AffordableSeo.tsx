@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Coins, Crown, ShieldCheck, Trophy, Lock, ArrowUpRight } from "lucide-react";
+import BidRequestForm from "@/components/BidRequestForm";
 import heroAsset from "@/assets/services/affordable-seo-hero.jpg.asset.json";
 
 const faqs = [
@@ -249,6 +250,15 @@ const AffordableSeo = () => {
           <h2 className="font-display text-3xl md:text-4xl mb-3">$10. One coin. Two doors.</h2>
           <p className="text-muted-foreground mb-6 max-w-xl mx-auto">Pick the door that fits your business. We will tell you honestly if the city slot is available before you pay.</p>
           <Button variant="hero" size="lg" asChild><Link to="/contact">Claim a $10 Placement</Link></Button>
+        </section>
+
+        <section className="pt-4">
+          <BidRequestForm
+            service="affordable-seo"
+            serviceLabel="Affordable SEO"
+            heading="Submit your $10 placement request"
+            subheading="Tell us the city and trade. We check slot availability, confirm the door (open listing or power-partner slot), and reply with next steps."
+          />
         </section>
       </article>
     </Layout>

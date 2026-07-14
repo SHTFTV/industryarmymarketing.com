@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Zap, Code2, Gauge, Network, Check, ShieldCheck } from "lucide-react";
+import BidRequestForm from "@/components/BidRequestForm";
 import heroAsset from "@/assets/services/web-development-hero.jpg.asset.json";
 
 const tiers = [
@@ -255,6 +256,15 @@ const WebDevelopment = () => {
           <h2 className="font-display text-3xl md:text-4xl mb-3">Ship a site that actually earns.</h2>
           <p className="text-muted-foreground mb-6 max-w-xl mx-auto">Pick a tier. We build. You launch. Optional network entry on the way out.</p>
           <Button variant="hero" size="lg" asChild><Link to="/contact">Start Your Build</Link></Button>
+        </section>
+
+        <section className="pt-4">
+          <BidRequestForm
+            service="web-development"
+            serviceLabel="Web Development"
+            heading="Request a web-dev bid"
+            subheading="Tell us which tier fits and what you need shipped. Every inquiry is tagged to Web Development and reviewed by a human — no bots, no shared queue."
+          />
         </section>
       </article>
     </Layout>

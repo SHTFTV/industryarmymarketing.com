@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Target, Inbox, Handshake, TrendingUp, MapPin, Clock } from "lucide-react";
+import BidRequestForm from "@/components/BidRequestForm";
 import heroAsset from "@/assets/services/lead-generation-hero.jpg.asset.json";
 
 const FOCUS = "lead generation for contractors";
@@ -222,6 +223,15 @@ const LeadGeneration = () => {
           <h2 className="font-display text-3xl md:text-4xl mb-3">Ready to be the one who gets the call?</h2>
           <p className="text-muted-foreground mb-6 max-w-xl mx-auto">Pick your city, pick your trade, pay $10 once. We handle the rest.</p>
           <Button variant="hero" size="lg" asChild><Link to="/contact">Claim Your City — $10</Link></Button>
+        </section>
+
+        <section className="pt-4">
+          <BidRequestForm
+            service="lead-generation"
+            serviceLabel="Lead Generation"
+            heading="Submit your lead-gen bid request"
+            subheading="Tell us your city, trade, and target radius. Every inquiry is tagged to Lead Generation and routed to a human within one business day."
+          />
         </section>
       </article>
     </Layout>
