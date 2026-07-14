@@ -29,7 +29,20 @@ const REPORT_DIR = join(process.cwd(), "pricing-guard-report");
 const REPORT_JSON = join(REPORT_DIR, "report.json");
 const REPORT_MD = join(REPORT_DIR, "report.md");
 const PREVIOUS_JSON = join(REPORT_DIR, "previous.json");
+const SUMMARY_JSON = join(REPORT_DIR, "summary.json");
 const SITEMAP_PATH = join(process.cwd(), "public", "sitemap.xml");
+
+/**
+ * Optional baseline override for computing `isNew`. When
+ * PRICING_GUARD_BASELINE_PATH points at an existing `report.json`
+ * (from a prior run or a stored artifact), that file is used as the
+ * baseline instead of the report we're about to overwrite.
+ */
+const BASELINE_PATH = process.env.PRICING_GUARD_BASELINE_PATH
+  ? (process.env.PRICING_GUARD_BASELINE_PATH.startsWith("/")
+      ? process.env.PRICING_GUARD_BASELINE_PATH
+      : join(process.cwd(), process.env.PRICING_GUARD_BASELINE_PATH))
+  : REPORT_JSON;
 
 /**
  * True when running under GitHub Actions — enables `::error` /
@@ -174,9 +187,9 @@ let previousLoaded = false;
 function loadPreviousReport() {
   if (previousLoaded) return;
   previousLoaded = true;
-  if (!existsSync(REPORT_JSON)) return;
+  if (!existsSync(BASELINE_PATH)) return;
   try {
-    const prev = JSON.parse(readFileSync(REPORT_JSON, "utf8"));
+    const prev = JSON.parse(readFileSync(BASELINE_PATH, "utf8"));
     // Snapshot the previous run for the artifact bundle.
     writeFileSync(PREVIOUS_JSON, JSON.stringify(prev, null, 2));
     const routes: RouteReport[] = prev?.routes ?? [];
@@ -270,6 +283,85 @@ test.afterAll(() => {
     md.push(``);
   }
   writeFileSync(REPORT_MD, md.join("\n"));
+
+  // Compact machine-readable summary for CI consumption.
+  const totals = {
+    routesScanned: runReport.filter((r) => r.scanned).length,
+    routesTerritory: runReport.filter((r) => r.mode === "territory" && r.scanned).length,
+    routesPackages: runReport.filter((r) => r.mode === "packages" && r.scanned).length,
+    sitemapRoutesFound: SITEMAP_ROUTES.length,
+    matchesTotal: runReport.reduce((n, r) => n + r.matches.length, 0),
+    matchesActive: runReport.reduce(
+      (n, r) => n + r.matches.filter((m) => !m.suppressedBy).length,
+      0,
+    ),
+    matchesFail: runReport.reduce(
+      (n, r) => n + r.matches.filter((m) => m.severity === "fail" && !m.suppressedBy).length,
+      0,
+    ),
+    matchesWarn: runReport.reduce(
+      (n, r) => n + r.matches.filter((m) => m.severity === "warn" && !m.suppressedBy).length,
+      0,
+    ),
+    matchesSuppressed: runReport.reduce(
+      (n, r) => n + r.matches.filter((m) => m.suppressedBy).length,
+      0,
+    ),
+    matchesNew: runReport.reduce(
+      (n, r) => n + r.matches.filter((m) => m.isNew && !m.suppressedBy).length,
+      0,
+    ),
+    matchesNewFail: runReport.reduce(
+      (n, r) =>
+        n +
+        r.matches.filter(
+          (m) => m.isNew && !m.suppressedBy && m.severity === "fail",
+        ).length,
+      0,
+    ),
+    matchesNewWarn: runReport.reduce(
+      (n, r) =>
+        n +
+        r.matches.filter(
+          (m) => m.isNew && !m.suppressedBy && m.severity === "warn",
+        ).length,
+      0,
+    ),
+  };
+  const newMatches = runReport.flatMap((r) =>
+    r.matches
+      .filter((m) => m.isNew && !m.suppressedBy)
+      .map((m) => ({
+        route: r.route,
+        mode: r.mode,
+        severity: m.severity,
+        kind: m.kind,
+        name: m.name,
+        matchedText: m.matchedText,
+      })),
+  );
+  writeFileSync(
+    SUMMARY_JSON,
+    JSON.stringify(
+      {
+        generatedAt: new Date().toISOString(),
+        ok: !anyFailed,
+        anyWarned,
+        anyNew: totals.matchesNew > 0,
+        anyNewFail: totals.matchesNewFail > 0,
+        baselinePath: BASELINE_PATH,
+        filter: {
+          mode: MODE_FILTER,
+          routes: ROUTE_FILTER,
+          annotations: EMIT_GITHUB_ANNOTATIONS,
+        },
+        totals,
+        newMatches,
+      },
+      null,
+      2,
+    ),
+  );
 });
 
 /**
