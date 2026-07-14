@@ -29,7 +29,20 @@ const REPORT_DIR = join(process.cwd(), "pricing-guard-report");
 const REPORT_JSON = join(REPORT_DIR, "report.json");
 const REPORT_MD = join(REPORT_DIR, "report.md");
 const PREVIOUS_JSON = join(REPORT_DIR, "previous.json");
+const SUMMARY_JSON = join(REPORT_DIR, "summary.json");
 const SITEMAP_PATH = join(process.cwd(), "public", "sitemap.xml");
+
+/**
+ * Optional baseline override for computing `isNew`. When
+ * PRICING_GUARD_BASELINE_PATH points at an existing `report.json`
+ * (from a prior run or a stored artifact), that file is used as the
+ * baseline instead of the report we're about to overwrite.
+ */
+const BASELINE_PATH = process.env.PRICING_GUARD_BASELINE_PATH
+  ? (process.env.PRICING_GUARD_BASELINE_PATH.startsWith("/")
+      ? process.env.PRICING_GUARD_BASELINE_PATH
+      : join(process.cwd(), process.env.PRICING_GUARD_BASELINE_PATH))
+  : REPORT_JSON;
 
 /**
  * True when running under GitHub Actions — enables `::error` /
@@ -174,9 +187,9 @@ let previousLoaded = false;
 function loadPreviousReport() {
   if (previousLoaded) return;
   previousLoaded = true;
-  if (!existsSync(REPORT_JSON)) return;
+  if (!existsSync(BASELINE_PATH)) return;
   try {
-    const prev = JSON.parse(readFileSync(REPORT_JSON, "utf8"));
+    const prev = JSON.parse(readFileSync(BASELINE_PATH, "utf8"));
     // Snapshot the previous run for the artifact bundle.
     writeFileSync(PREVIOUS_JSON, JSON.stringify(prev, null, 2));
     const routes: RouteReport[] = prev?.routes ?? [];
