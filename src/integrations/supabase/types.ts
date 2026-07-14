@@ -253,6 +253,63 @@ export type Database = {
         }
         Relationships: []
       }
+      service_leads: {
+        Row: {
+          budget: string | null
+          city: string | null
+          company: string | null
+          created_at: string
+          email: string
+          id: string
+          name: string
+          page_path: string | null
+          phone: string | null
+          project_description: string | null
+          referrer: string | null
+          service: string
+          session_id: string | null
+          timeline: string | null
+          trade: string | null
+          user_agent: string | null
+        }
+        Insert: {
+          budget?: string | null
+          city?: string | null
+          company?: string | null
+          created_at?: string
+          email: string
+          id?: string
+          name: string
+          page_path?: string | null
+          phone?: string | null
+          project_description?: string | null
+          referrer?: string | null
+          service: string
+          session_id?: string | null
+          timeline?: string | null
+          trade?: string | null
+          user_agent?: string | null
+        }
+        Update: {
+          budget?: string | null
+          city?: string | null
+          company?: string | null
+          created_at?: string
+          email?: string
+          id?: string
+          name?: string
+          page_path?: string | null
+          phone?: string | null
+          project_description?: string | null
+          referrer?: string | null
+          service?: string
+          session_id?: string | null
+          timeline?: string | null
+          trade?: string | null
+          user_agent?: string | null
+        }
+        Relationships: []
+      }
       user_roles: {
         Row: {
           created_at: string

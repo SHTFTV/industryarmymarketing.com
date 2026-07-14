@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Radio, Share2, Repeat, Sparkles, Tv, Globe } from "lucide-react";
+import BidRequestForm from "@/components/BidRequestForm";
 import heroAsset from "@/assets/services/social-media-hero.jpg.asset.json";
 
 const platforms = [
@@ -232,6 +233,15 @@ const SocialMedia = () => {
           <h2 className="font-display text-3xl md:text-4xl mb-3">Broadcast once. Land everywhere.</h2>
           <p className="text-muted-foreground mb-6 max-w-xl mx-auto">Add TALC.tv to your stack for $10 per placement, or $99/month standalone.</p>
           <Button variant="hero" size="lg" asChild><Link to="/contact">Turn On TALC</Link></Button>
+        </section>
+
+        <section className="pt-4">
+          <BidRequestForm
+            service="social-media"
+            serviceLabel="Social Media"
+            heading="Submit a TALC.tv bid request"
+            subheading="Tell us your platforms, cadence, and content source. Every inquiry is tagged to Social Media and routed with attribution."
+          />
         </section>
       </article>
     </Layout>

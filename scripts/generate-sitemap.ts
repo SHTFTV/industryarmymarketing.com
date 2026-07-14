@@ -63,6 +63,7 @@ const entries: SitemapEntry[] = [
   { path: "/services/web-development", changefreq: "monthly", priority: "0.9" },
   { path: "/services/social-media", changefreq: "monthly", priority: "0.9" },
   { path: "/services/affordable-seo", changefreq: "monthly", priority: "0.9" },
+  { path: "/services/dofollow-backlinks", changefreq: "monthly", priority: "0.9" },
   { path: "/case-studies/brand-defense-global-territory", changefreq: "monthly", priority: "0.9" },
   { path: "/blog/aiweddings-tower-on-our-land", changefreq: "monthly", priority: "0.8" },
   { path: "/contractor-marketing/", changefreq: "weekly", priority: "0.9" },
@@ -110,6 +111,11 @@ const serviceImages: Record<string, { loc: string; caption: string; title: strin
     loc: `${BASE_URL}/__l5e/assets-v1/0ed29c46-022d-45ba-87b6-9c1237593ff9/affordable-seo-hero.jpg`,
     caption: "A glowing $10 chip on a vault pedestal surrounded by elite ranking insignia",
     title: "Affordable SEO — $10 Business Listings and Power-Partner Slots",
+  },
+  "/services/dofollow-backlinks": {
+    loc: `${BASE_URL}/__l5e/assets-v1/418ee436-136a-4d8f-b26d-e1462d17741c/dofollow-backlinks-hero.jpg`,
+    caption: "Neon green dofollow link chains connecting a network of servers to a #1 Google ranking",
+    title: "Dofollow Backlinks — $10 Permanent Placements from the IAM 350+ Network",
   },
 };
 
