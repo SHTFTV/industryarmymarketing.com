@@ -8,6 +8,7 @@
     "dev": "vite",
     "prebuild": "bunx tsx scripts/generate-sitemap.ts && bunx tsx scripts/generate-identity-txt.ts && bunx tsx scripts/generate-rss.ts && bunx tsx scripts/validate-rss.ts",
     "build": "vite build",
+    "postbuild": "bunx tsx scripts/generate-prerender-routes.ts && react-snap",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",
@@ -102,5 +103,14 @@
     "typescript-eslint": "^8.38.0",
     "vite": "^5.4.19",
     "vitest": "^3.2.4"
+  },
+  "reactSnap": {
+    "source": "dist",
+    "destination": "dist",
+    "inlineCss": false,
+    "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"],
+    "skipThirdPartyRequests": true,
+    "crawl": true,
+    "include": ["/"]
   }
 }
