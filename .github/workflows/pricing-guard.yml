@@ -39,6 +39,9 @@ jobs:
       - run: npm ci
       - run: npx playwright install --with-deps chromium
 
+      - name: Generate sitemap (feeds route discovery)
+        run: npx tsx scripts/generate-sitemap.ts
+
       - name: Run pricing guard sweep
         run: npx playwright test tests/no-forbidden-pricing.spec.ts --project=chromium --reporter=list
 
