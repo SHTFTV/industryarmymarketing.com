@@ -59,6 +59,10 @@ const entries: SitemapEntry[] = [
   { path: "/seo-packages/bullets", changefreq: "monthly", priority: "0.8" },
   { path: "/seo-packages/boom", changefreq: "monthly", priority: "0.8" },
   { path: "/seo-packages/bombs", changefreq: "monthly", priority: "0.8" },
+  { path: "/services/lead-generation", changefreq: "monthly", priority: "0.9" },
+  { path: "/services/web-development", changefreq: "monthly", priority: "0.9" },
+  { path: "/services/social-media", changefreq: "monthly", priority: "0.9" },
+  { path: "/services/affordable-seo", changefreq: "monthly", priority: "0.9" },
   { path: "/case-studies/brand-defense-global-territory", changefreq: "monthly", priority: "0.9" },
   { path: "/blog/aiweddings-tower-on-our-land", changefreq: "monthly", priority: "0.8" },
   { path: "/contractor-marketing/", changefreq: "weekly", priority: "0.9" },
@@ -86,6 +90,29 @@ const entries: SitemapEntry[] = [
   })),
 ];
 
+const serviceImages: Record<string, { loc: string; caption: string; title: string }> = {
+  "/services/lead-generation": {
+    loc: `${BASE_URL}/__l5e/assets-v1/0307501f-9361-47d3-a234-fb01b87a65af/lead-generation-hero.jpg`,
+    caption: "Lead generation pipeline — glowing network of leads converging into a contractor's inbox",
+    title: "Lead Generation for Contractors — Industry Army Marketing",
+  },
+  "/services/web-development": {
+    loc: `${BASE_URL}/__l5e/assets-v1/a7d18561-ff63-45c9-ad07-708a6514a20d/web-development-hero.jpg`,
+    caption: "Modern high-performance contractor website on a laptop with a Lighthouse 100 score",
+    title: "Web Development for Contractors — Industry Army Marketing",
+  },
+  "/services/social-media": {
+    loc: `${BASE_URL}/__l5e/assets-v1/1cf5b1ea-f7e7-40fc-9856-d2837ca3386a/social-media-hero.jpg`,
+    caption: "TALC.tv broadcast tower fanning signals to ten social platforms",
+    title: "Social Media Syndication via TALC.tv — Industry Army Marketing",
+  },
+  "/services/affordable-seo": {
+    loc: `${BASE_URL}/__l5e/assets-v1/0ed29c46-022d-45ba-87b6-9c1237593ff9/affordable-seo-hero.jpg`,
+    caption: "A glowing $10 chip on a vault pedestal surrounded by elite ranking insignia",
+    title: "Affordable SEO — $10 Business Listings and Power-Partner Slots",
+  },
+};
+
 function generateSitemap(entries: SitemapEntry[]) {
   const urls = entries.map((e) =>
     [
@@ -93,7 +120,9 @@ function generateSitemap(entries: SitemapEntry[]) {
       `    <loc>${BASE_URL}${e.path}</loc>`,
       e.changefreq ? `    <changefreq>${e.changefreq}</changefreq>` : null,
       e.priority ? `    <priority>${e.priority}</priority>` : null,
-      e.path === "/case-studies/brand-defense-global-territory"
+      serviceImages[e.path]
+        ? `    <image:image>\n      <image:loc>${serviceImages[e.path].loc}</image:loc>\n      <image:caption>${serviceImages[e.path].caption}</image:caption>\n      <image:title>${serviceImages[e.path].title}</image:title>\n    </image:image>`
+        : e.path === "/case-studies/brand-defense-global-territory"
         ? `    <image:image>\n      <image:loc>${BASE_URL}/__l5e/assets-v1/02af8a33-6818-4513-9a62-86ecc08b3910/weddings-io-hero.jpg</image:loc>\n      <image:caption>weddings.io WHOIS verification — IAM brand defense</image:caption>\n      <image:title>weddings.io domain WHOIS record — registered May 13 2015 — Industry Army Marketing brand defense case study</image:title>\n    </image:image>`
         : e.path === "/blog/battle-for-the-brand-weddings-io"
         ? `    <image:image>\n      <image:loc>${BASE_URL}/__l5e/assets-v1/5e8614a6-5da3-4243-b3e9-6f5bad84bd9c/weddings-vs-aiweddings-battle.png</image:loc>\n      <image:caption>weddings.io vs aiweddings.io — The Battle for the Domain Name (IAM case study)</image:caption>\n      <image:title>weddings.io vs aiweddings.io: The Battle for the Domain Name — Industry Army Marketing brand defense case study featured image</image:title>\n    </image:image>`

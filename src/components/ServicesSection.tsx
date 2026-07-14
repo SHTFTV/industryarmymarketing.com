@@ -13,26 +13,36 @@ const services = [
     icon: Link,
     title: "Dofollow Backlinks",
     description: "Every page we build ships with dofollow links—no nofollow gatekeeping. Real trust signals that push you to the front of Google, every time.",
+    to: "/dofollow-backlinks",
+    ctaLabel: "View Dofollow Network",
   },
   {
     icon: BarChart3,
     title: "Lead Generation",
     description: "Every service is a lead-gen engine. We put you on live bids, RFPs, and buyer feeds so real jobs land in your inbox—not just clicks.",
+    to: "/services/lead-generation",
+    ctaLabel: "How Leads Work",
   },
   {
     icon: Globe,
     title: "Web Development",
     description: "Fast, modern sites built to convert. Three tiers: Starter $499, Growth $1,499, Flagship $3,999. Join the Army network on launch—or don't. Your call.",
+    to: "/services/web-development",
+    ctaLabel: "See the Tiers",
   },
   {
     icon: Megaphone,
     title: "Social Media",
     description: "Powered by TALC.tv and the Sprinkling network. We syndicate you across X, Instagram, TikTok, YouTube, LinkedIn, Threads and every platform with an open API—one push, six+ channels.",
+    to: "/services/social-media",
+    ctaLabel: "Explore TALC.tv",
   },
   {
     icon: TrendingUp,
     title: "Affordable SEO",
     description: "$10 business listing gets you in. The other $10 spots are hard-earned—reserved for power partners who show up online and prove it. Best of the best only. Eyespyr TALC upsells available.",
+    to: "/services/affordable-seo",
+    ctaLabel: "See Both Doors",
   },
 ];
 
@@ -66,7 +76,7 @@ const ServicesSection = () => {
                   to={service.to}
                   className="inline-block mt-4 text-primary text-xs uppercase tracking-widest font-semibold hover:opacity-80"
                 >
-                  View SEO Packages →
+                  {service.ctaLabel ?? "View SEO Packages"} →
                 </RouterLink>
               )}
             </motion.div>

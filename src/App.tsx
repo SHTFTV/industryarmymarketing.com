@@ -49,6 +49,10 @@ import StaticHtmlPage from "./pages/StaticHtmlPage.tsx";
 import SiteMap from "./pages/SiteMap.tsx";
 import SeoPackages from "./pages/SeoPackages.tsx";
 import SeoPackageDetail from "./pages/SeoPackageDetail.tsx";
+import LeadGeneration from "./pages/services/LeadGeneration.tsx";
+import WebDevelopment from "./pages/services/WebDevelopment.tsx";
+import SocialMedia from "./pages/services/SocialMedia.tsx";
+import AffordableSeo from "./pages/services/AffordableSeo.tsx";
 import featuredBattle from "@/assets/blog/weddings-vs-aiweddings-battle.png.asset.json";
 
 const SITE = "https://industryarmymarketing.com";
@@ -193,6 +197,10 @@ const App = () => (
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/seo-packages" element={<SeoPackages />} />
           <Route path="/seo-packages/:slug" element={<SeoPackageDetail />} />
+          <Route path="/services/lead-generation" element={<LeadGeneration />} />
+          <Route path="/services/web-development" element={<WebDevelopment />} />
+          <Route path="/services/social-media" element={<SocialMedia />} />
+          <Route path="/services/affordable-seo" element={<AffordableSeo />} />
           <Route path="/contractors" element={<Contractors />} />
           <Route path="/service-professionals" element={<ServiceProfessionals />} />
           <Route path="/backlinks" element={<Backlinks />} />
