@@ -4,10 +4,7 @@ import featuredBattle from "@/assets/blog/weddings-vs-aiweddings-battle.png.asse
 import HeroSection from "@/components/HeroSection";
 import FlagshipBrandsSection from "@/components/FlagshipBrandsSection";
 import ServicesSection from "@/components/ServicesSection";
-import SeoPackagesSection from "@/components/SeoPackagesSection";
-import SeoPackagesCompare from "@/components/SeoPackagesCompare";
 import PricingSection from "@/components/PricingSection";
-import BrandsSection from "@/components/BrandsSection";
 import PricingChartSection from "@/components/PricingChartSection";
 import AboutSection from "@/components/AboutSection";
 import ContactSection from "@/components/ContactSection";
@@ -41,12 +38,9 @@ const Index = () => {
       <HeroSection />
       <FlagshipBrandsSection />
       <ServicesSection />
-      <SeoPackagesSection />
-      <SeoPackagesCompare />
       <ContractorTradesGrid limit={12} showCta />
       <PricingSection />
       <PricingChartSection />
-      <BrandsSection />
       <AboutSection />
       <LatestBlogPosts />
       <ContactSection />
