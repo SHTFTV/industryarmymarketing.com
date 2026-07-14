@@ -30,12 +30,25 @@ export const RULE_LONG =
  * If the SEO Packages block ever re-mounts on these pages, the
  * Playwright guard `tests/no-forbidden-pricing.spec.ts` fails.
  */
-export const FORBIDDEN_ON_TERRITORY_SURFACES = [
-  "$85 one-time",
-  "$285 one-time",
-  "$585 one-time",
-  "Bullets. Boom. Bombs.",
-] as const;
+export type Severity = "warn" | "fail";
+
+export type ForbiddenSubstring = {
+  text: string;
+  severity: Severity;
+};
+
+/**
+ * Substrings that MUST NOT appear on territory-pricing surfaces. Each
+ * has a severity:
+ *   - "fail" → CI fails, spec throws, non-zero exit
+ *   - "warn" → recorded in the report but does not fail the build
+ */
+export const FORBIDDEN_ON_TERRITORY_SURFACES: readonly ForbiddenSubstring[] = [
+  { text: "$85 one-time", severity: "fail" },
+  { text: "$285 one-time", severity: "fail" },
+  { text: "$585 one-time", severity: "fail" },
+  { text: "Bullets. Boom. Bombs.", severity: "fail" },
+];
 
 /**
  * Regex patterns for forbidden pricing. These catch variants that plain
@@ -50,6 +63,7 @@ export const FORBIDDEN_PATTERNS: readonly {
   name: string;
   source: string;
   flags: string;
+  severity: Severity;
 }[] = [
   {
     name: "seo-package-one-time-price",
@@ -57,12 +71,22 @@ export const FORBIDDEN_PATTERNS: readonly {
     // and hyphen/space between "one" and "time".
     source: "\\$\\s?(85|285|585)\\s*(?:one[\\s-]?time)",
     flags: "i",
+    severity: "fail",
   },
   {
     name: "bullets-boom-bombs-block",
     // The removed marketing block, tolerant of punctuation and casing.
     source: "bullets\\s*[.,·•]?\\s*boom\\s*[.,·•]?\\s*bombs",
     flags: "i",
+    severity: "fail",
+  },
+  {
+    // Lone mentions of the old product names in prose are allowed but
+    // worth surfacing so we can review copy drift.
+    name: "loose-package-name-mention",
+    source: "\\b(bullets|boom|bombs)\\b",
+    flags: "i",
+    severity: "warn",
   },
 ];
 
