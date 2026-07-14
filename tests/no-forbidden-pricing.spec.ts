@@ -283,6 +283,85 @@ test.afterAll(() => {
     md.push(``);
   }
   writeFileSync(REPORT_MD, md.join("\n"));
+
+  // Compact machine-readable summary for CI consumption.
+  const totals = {
+    routesScanned: runReport.filter((r) => r.scanned).length,
+    routesTerritory: runReport.filter((r) => r.mode === "territory" && r.scanned).length,
+    routesPackages: runReport.filter((r) => r.mode === "packages" && r.scanned).length,
+    sitemapRoutesFound: SITEMAP_ROUTES.length,
+    matchesTotal: runReport.reduce((n, r) => n + r.matches.length, 0),
+    matchesActive: runReport.reduce(
+      (n, r) => n + r.matches.filter((m) => !m.suppressedBy).length,
+      0,
+    ),
+    matchesFail: runReport.reduce(
+      (n, r) => n + r.matches.filter((m) => m.severity === "fail" && !m.suppressedBy).length,
+      0,
+    ),
+    matchesWarn: runReport.reduce(
+      (n, r) => n + r.matches.filter((m) => m.severity === "warn" && !m.suppressedBy).length,
+      0,
+    ),
+    matchesSuppressed: runReport.reduce(
+      (n, r) => n + r.matches.filter((m) => m.suppressedBy).length,
+      0,
+    ),
+    matchesNew: runReport.reduce(
+      (n, r) => n + r.matches.filter((m) => m.isNew && !m.suppressedBy).length,
+      0,
+    ),
+    matchesNewFail: runReport.reduce(
+      (n, r) =>
+        n +
+        r.matches.filter(
+          (m) => m.isNew && !m.suppressedBy && m.severity === "fail",
+        ).length,
+      0,
+    ),
+    matchesNewWarn: runReport.reduce(
+      (n, r) =>
+        n +
+        r.matches.filter(
+          (m) => m.isNew && !m.suppressedBy && m.severity === "warn",
+        ).length,
+      0,
+    ),
+  };
+  const newMatches = runReport.flatMap((r) =>
+    r.matches
+      .filter((m) => m.isNew && !m.suppressedBy)
+      .map((m) => ({
+        route: r.route,
+        mode: r.mode,
+        severity: m.severity,
+        kind: m.kind,
+        name: m.name,
+        matchedText: m.matchedText,
+      })),
+  );
+  writeFileSync(
+    SUMMARY_JSON,
+    JSON.stringify(
+      {
+        generatedAt: new Date().toISOString(),
+        ok: !anyFailed,
+        anyWarned,
+        anyNew: totals.matchesNew > 0,
+        anyNewFail: totals.matchesNewFail > 0,
+        baselinePath: BASELINE_PATH,
+        filter: {
+          mode: MODE_FILTER,
+          routes: ROUTE_FILTER,
+          annotations: EMIT_GITHUB_ANNOTATIONS,
+        },
+        totals,
+        newMatches,
+      },
+      null,
+      2,
+    ),
+  );
 });
 
 /**
