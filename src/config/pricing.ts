@@ -226,6 +226,33 @@ export type RouteSuppression = {
 export const ROUTE_SUPPRESSIONS: Readonly<Record<string, readonly RouteSuppression[]>> = {
   // No active suppressions today. Add entries here (with a full audit
   // record) instead of loosening the global patterns.
+  //
+  // ── TEMPLATE ────────────────────────────────────────────────────────
+  // Copy the block below, uncomment, and fill every field. All fields
+  // except `expiresOn` and `ref` are required. Prefer an `expiresOn`
+  // within 90 days so suppressions get re-reviewed instead of silently
+  // persisting forever.
+  //
+  // "/blog": [
+  //   {
+  //     // Either the exact matched text OR the pattern `name` from
+  //     // FORBIDDEN_PATTERNS (e.g. "loose-package-name-mention").
+  //     match: "loose-package-name-mention",
+  //     // Why this false-positive is acceptable on this route. Be
+  //     // specific — reviewers should not have to guess.
+  //     reason: "Historical post referencing the retired Bullets/Boom/Bombs SKUs by name.",
+  //     // GitHub handle or email of the person adding the suppression.
+  //     addedBy: "@your-handle",
+  //     // ISO date (YYYY-MM-DD) when the suppression was added.
+  //     addedOn: "2026-07-14",
+  //     // ISO date when the suppression auto-expires. Keep ≤ 90 days
+  //     // out unless there's a documented reason for longer.
+  //     expiresOn: "2026-10-12",
+  //     // Link to the PR / issue / ADR that justifies the entry.
+  //     ref: "https://github.com/org/repo/pull/1234",
+  //   },
+  // ],
+  // ────────────────────────────────────────────────────────────────────
 };
 
 /** Returns the effective suppressions for a route (with prefix inheritance). */
