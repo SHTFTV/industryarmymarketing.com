@@ -156,3 +156,104 @@ function verifyTerritoryPricingRule(): void {
 verifyTerritoryPricingRule();
 
 export { PRICING_MATRIX, ADDONS };
+
+// ---------------------------------------------------------------------------
+// SEO Packages guard (mirror of the territory guard, run in "packages" mode).
+//
+// On routes in SEO_PACKAGES_ALLOWED_ROUTES:
+//   - REQUIRED strings must be present (product block must render)
+//   - Territory-rule strings ($10/slot flat wording) must NOT be present
+//     — prevents cross-contamination from the City Commander product
+// ---------------------------------------------------------------------------
+
+/** Strings the SEO Packages product surface MUST render. */
+export const REQUIRED_ON_SEO_PACKAGES: readonly {
+  text: string;
+  severity: Severity;
+}[] = [
+  { text: "$85 one-time", severity: "fail" },
+  { text: "$285 one-time", severity: "fail" },
+  { text: "$585 one-time", severity: "fail" },
+];
+
+/**
+ * Territory-pricing rule strings that MUST NOT leak onto SEO Packages
+ * routes. If they appear, either the packages page has been repurposed
+ * or the territory product's copy has been pasted into it by accident.
+ */
+export const FORBIDDEN_ON_SEO_PACKAGES: readonly ForbiddenSubstring[] = [
+  { text: "$10/slot/mo", severity: "fail" },
+  { text: "$10/slot flat", severity: "fail" },
+  { text: "$10 per 100K", severity: "fail" },
+  { text: "100K baseline", severity: "fail" },
+  { text: "Territory Pricing", severity: "warn" },
+];
+
+// ---------------------------------------------------------------------------
+// Per-route suppressions (audit-tracked false-positive allowlist).
+//
+// When a legitimate product name or price string collides with a
+// forbidden pattern on a specific route, add an entry here instead of
+// weakening the pattern globally. The Playwright guard consults this
+// list per (route, match) and treats matched suppressions as "skipped"
+// in the report — the audit trail is preserved.
+// ---------------------------------------------------------------------------
+
+export type RouteSuppression = {
+  /** Exact matched text OR the pattern name to suppress. */
+  match: string;
+  /** Human-readable reason this false-positive is allowed. Required. */
+  reason: string;
+  /** Who added it — GitHub handle or email. Required for audit trail. */
+  addedBy: string;
+  /** ISO date when suppression was added. Required. */
+  addedOn: string;
+  /** Optional expiry (ISO date). Suppression expires and re-fires after. */
+  expiresOn?: string;
+  /** Optional PR/issue link for context. */
+  ref?: string;
+};
+
+/**
+ * Map of `pathname` → suppressions. Prefix match: `/blog/foo` inherits
+ * suppressions defined for `/blog`.
+ *
+ * Example:
+ *   "/blog": [
+ *     { match: "loose-package-name-mention", reason: "Historical post citing the old product names", addedBy: "@colin", addedOn: "2026-07-14", ref: "PR#412" }
+ *   ]
+ */
+export const ROUTE_SUPPRESSIONS: Readonly<Record<string, readonly RouteSuppression[]>> = {
+  // No active suppressions today. Add entries here (with a full audit
+  // record) instead of loosening the global patterns.
+};
+
+/** Returns the effective suppressions for a route (with prefix inheritance). */
+export function suppressionsForRoute(pathname: string): RouteSuppression[] {
+  const now = Date.now();
+  const out: RouteSuppression[] = [];
+  for (const [prefix, entries] of Object.entries(ROUTE_SUPPRESSIONS)) {
+    if (pathname === prefix || pathname.startsWith(`${prefix}/`)) {
+      for (const e of entries) {
+        if (e.expiresOn && Date.parse(e.expiresOn) < now) continue;
+        out.push(e);
+      }
+    }
+  }
+  return out;
+}
+
+/**
+ * True when a specific (route, matchedText, patternName) tuple is
+ * covered by an audited suppression.
+ */
+export function isSuppressed(
+  pathname: string,
+  matchedText: string,
+  patternName: string,
+): RouteSuppression | null {
+  for (const s of suppressionsForRoute(pathname)) {
+    if (s.match === matchedText || s.match === patternName) return s;
+  }
+  return null;
+}
