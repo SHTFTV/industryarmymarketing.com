@@ -235,6 +235,12 @@ const PricingChartSection = () => {
                   <span className="block text-muted-foreground mt-1">
                     {row.populationLabel} → {ruleCallout(row.pricePerSlot)}
                   </span>
+                  <span
+                    data-testid={`pricing-tooltip-formula-mobile-${row.lowerBound}`}
+                    className="block text-primary/90 font-mono mt-1"
+                  >
+                    {RULE_FORMULA}
+                  </span>
                 </div>
               )}
             </div>
@@ -340,6 +346,12 @@ const PricingChartSection = () => {
                       <span className="text-primary font-semibold">{RULE_TEXT}</span>
                       <span className="block text-muted-foreground">
                         {row.populationLabel} → {ruleCallout(row.pricePerSlot)}
+                      </span>
+                      <span
+                        data-testid={`pricing-tooltip-formula-${row.lowerBound}`}
+                        className="block text-primary/90 font-mono"
+                      >
+                        {RULE_FORMULA}
                       </span>
                     </div>
                   )}
