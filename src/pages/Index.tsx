@@ -5,7 +5,6 @@ import HeroSection from "@/components/HeroSection";
 import FlagshipBrandsSection from "@/components/FlagshipBrandsSection";
 import ServicesSection from "@/components/ServicesSection";
 import PricingSection from "@/components/PricingSection";
-import PricingChartSection from "@/components/PricingChartSection";
 import AboutSection from "@/components/AboutSection";
 import ContactSection from "@/components/ContactSection";
 import ContractorTradesGrid from "@/components/ContractorTradesGrid";
@@ -40,7 +39,6 @@ const Index = () => {
       <ServicesSection />
       <ContractorTradesGrid limit={12} showCta />
       <PricingSection />
-      <PricingChartSection />
       <AboutSection />
       <LatestBlogPosts />
       <ContactSection />
