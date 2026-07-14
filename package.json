@@ -113,7 +113,7 @@
       "--disable-setuid-sandbox"
     ],
     "skipThirdPartyRequests": true,
-    "crawl": true,
+    "crawl": false,
     "include": [
       "/",
       "/how-it-works",
