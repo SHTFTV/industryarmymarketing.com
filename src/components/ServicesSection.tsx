@@ -12,27 +12,27 @@ const services = [
   {
     icon: Link,
     title: "Dofollow Backlinks",
-    description: "High-authority backlinks that build your domain power and send trust signals to every search engine.",
+    description: "Every page we build ships with dofollow links—no nofollow gatekeeping. Real trust signals that push you to the front of Google, every time.",
   },
   {
     icon: BarChart3,
     title: "Lead Generation",
-    description: "Turn clicks into customers. Our funnels and landing pages are engineered for maximum conversion.",
+    description: "Every service is a lead-gen engine. We put you on live bids, RFPs, and buyer feeds so real jobs land in your inbox—not just clicks.",
   },
   {
     icon: Globe,
     title: "Web Development",
-    description: "Fast, modern websites built for performance. No bloated WordPress—just clean, conversion-focused design.",
+    description: "Fast, modern sites built to convert. Three tiers: Starter $499, Growth $1,499, Flagship $3,999. Join the Army network on launch—or don't. Your call.",
   },
   {
     icon: Megaphone,
     title: "Social Media",
-    description: "Strategic social campaigns that build your brand presence and engage your target audience where they live.",
+    description: "Powered by TALC.tv and the Sprinkling network. We syndicate you across X, Instagram, TikTok, YouTube, LinkedIn, Threads and every platform with an open API—one push, six+ channels.",
   },
   {
     icon: TrendingUp,
     title: "Affordable SEO",
-    description: "Enterprise-level SEO at small business prices. Starting at just $10—the marketing revolution is real.",
+    description: "$10 business listing gets you in. The other $10 spots are hard-earned—reserved for power partners who show up online and prove it. Best of the best only. Eyespyr TALC upsells available.",
   },
 ];
 
