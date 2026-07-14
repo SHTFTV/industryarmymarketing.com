@@ -76,7 +76,8 @@ const PricingSection = () => {
             CONTRACTOR <span className="text-primary">PRICING</span>
           </h2>
           <p className="text-muted-foreground mt-3 text-lg">
-            $10 per slot / month. Population only sets slot count.
+            <span className="text-primary font-semibold">$10</span> — the flat price that matches
+            most of our offers. Listings, territory slots, TALC.tv blasts, EyeSpyR badges — all $10.
           </p>
           <p className="text-xs uppercase tracking-[0.3em] text-primary mt-2">All Pricing in USD</p>
         </motion.div>
