@@ -24,6 +24,14 @@ on:
         description: "Live origin to verify (defaults to production)"
         required: false
         default: "https://www.industryarmymarketing.com"
+      regions:
+        description: "Comma-separated region ids from cache-checks.config.json (blank = all)"
+        required: false
+        default: ""
+      routes:
+        description: "Comma-separated route allowlist override (blank = config)"
+        required: false
+        default: ""
 
 permissions:
   contents: read
@@ -38,6 +46,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       LIVE_URL: ${{ github.event.inputs.base_url || 'https://www.industryarmymarketing.com' }}
+      REGIONS: ${{ github.event.inputs.regions }}
+      ROUTES: ${{ github.event.inputs.routes }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -54,9 +64,14 @@ jobs:
           PLAYWRIGHT_BASE_URL: ${{ env.LIVE_URL }}
         run: npx playwright test tests/live-cache-headers.spec.ts tests/live-cache-headers-extended.spec.ts --project=chromium --reporter=list
 
-      - name: HTML freshness verifier (multi-run, cross-edge)
+      - name: HTML freshness verifier (multi-run, region matrix)
         env:
-          BASE_URL: ${{ env.LIVE_URL }}
+          # Only pin BASE_URL when the operator explicitly overrode it
+          # via workflow_dispatch; otherwise fall through to the region
+          # matrix defined in cache-checks.config.json.
+          BASE_URL: ${{ github.event.inputs.base_url }}
+          REGIONS: ${{ env.REGIONS }}
+          ROUTES: ${{ env.ROUTES }}
           RUNS: "4"
         run: npx tsx scripts/verify-fresh-html.ts
 

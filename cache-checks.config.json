@@ -1,0 +1,27 @@
+{
+  "$comment": "Configuration for scripts/verify-fresh-html.ts and the Live cache + freshness gate. Edit this file to change routes, regions, and prior-deploy hashes without touching code.",
+  "routes": {
+    "allow": ["/", "/pricing", "/blog", "/legal"],
+    "deny": []
+  },
+  "regions": [
+    {
+      "id": "prod-apex",
+      "label": "Production (apex)",
+      "baseUrl": "https://industryarmymarketing.com"
+    },
+    {
+      "id": "prod-www",
+      "label": "Production (www)",
+      "baseUrl": "https://www.industryarmymarketing.com"
+    },
+    {
+      "id": "lovable-app",
+      "label": "Lovable published origin",
+      "baseUrl": "https://army-army-unplugged.lovable.app"
+    }
+  ],
+  "previousDeployHashes": {
+    "$comment": "Optional. Map of `${regionId}::${route}` -> sha256 of the served HTML from the LAST known-good deploy. If the verifier sees the same hash again after a fresh publish, it fails: the CDN is still serving stale HTML. Update this file when you cut a new deploy, or leave empty to skip the check."
+  }
+}
