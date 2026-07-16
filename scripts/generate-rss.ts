@@ -72,7 +72,7 @@ const posts = slugs
       category: categories[i],
       publishedAt,
       sourceIndex: i,
-      sortTime: sortTime(dates[i], publishedAt),
+      sortTime: sortTime(slug, publishedAt),
     };
   })
   .sort((a, b) => b.sortTime - a.sortTime || b.sourceIndex - a.sourceIndex);
@@ -85,7 +85,7 @@ const items = posts
       `      <title>${esc(post.title)}</title>`,
       `      <link>${link}</link>`,
       `      <guid isPermaLink="true">${link}</guid>`,
-      `      <pubDate>${toRfc822(post.date, post.publishedAt)}</pubDate>`,
+      `      <pubDate>${toRfc822(post.sortTime)}</pubDate>`,
       `      <category>${esc(post.category)}</category>`,
       `      <description>${esc(post.description)}</description>`,
       `      <enclosure url="${OG_IMAGE_URL}" length="${OG_IMAGE_BYTES}" type="image/jpeg" />`,
