@@ -3231,6 +3231,17 @@ const rawBlogPosts: BlogPost[] = [
   }
 ].map((p) => ({ ...p, image: IMG[p.imageKey] }));
 
+// Validate first so a missing/invalid publishedAt fails loudly at import time
+// — before any consumer (carousel, /blog, RSS, sitemap) gets a chance to render.
+for (const post of rawBlogPosts) {
+  if (!post.publishedAt || !Number.isFinite(Date.parse(post.publishedAt))) {
+    throw new Error(
+      `Blog post "${post.slug}" is missing a valid ISO publishedAt. ` +
+        `Add a "publishedAt": "YYYY-MM-DDTHH:MM:SSZ" field.`,
+    );
+  }
+}
+
 export const blogPosts: BlogPost[] = rawBlogPosts
   .map((post, index) => ({ post, index }))
   .sort((a, b) => compareBlogPostsByNewest(a.post, b.post) || b.index - a.index)
