@@ -182,31 +182,22 @@ export interface BlogRichContent {
   sources?: BlogSource[];
 }
 
-const monthOrder: Record<string, number> = {
-  January: 0,
-  February: 1,
-  March: 2,
-  April: 3,
-  May: 4,
-  June: 5,
-  July: 6,
-  August: 7,
-  September: 8,
-  October: 9,
-  November: 10,
-  December: 11,
-};
-
-const postTime = (post: Pick<BlogPost, "date" | "publishedAt">) => {
-  if (post.publishedAt) {
-    const publishedTime = Date.parse(post.publishedAt);
-    if (Number.isFinite(publishedTime)) return publishedTime;
+/**
+ * Strict publish time. Every blog post MUST have a valid ISO `publishedAt`.
+ * A missing or unparseable value is a data error and fails at module load
+ * so bad rows can never reach the homepage carousel, /blog list, or RSS.
+ */
+export const postTime = (post: Pick<BlogPost, "slug" | "publishedAt">): number => {
+  if (!post.publishedAt) {
+    throw new Error(`Blog post "${post.slug}" is missing required publishedAt.`);
   }
-
-  const [month, year] = post.date.split(" ");
-  const monthIndex = monthOrder[month] ?? 0;
-  const fullYear = Number(year) || 1970;
-  return Date.UTC(fullYear, monthIndex, 1, 9, 0, 0);
+  const t = Date.parse(post.publishedAt);
+  if (!Number.isFinite(t)) {
+    throw new Error(
+      `Blog post "${post.slug}" has invalid publishedAt: "${post.publishedAt}".`,
+    );
+  }
+  return t;
 };
 
 export const compareBlogPostsByNewest = (a: BlogPost, b: BlogPost) => postTime(b) - postTime(a);
