@@ -19,6 +19,7 @@ const descs = grab("metaDescription");
 const excerpts = grab("excerpt");
 const dates = grab("date");
 const categories = grab("category");
+const slugMatches = [...src.matchAll(/^    "slug":\s*"([^"]+)"/gm)];
 
 if (
   slugs.length !== titles.length ||
@@ -38,7 +39,34 @@ const months: Record<string, string> = {
   September: "Sep", October: "Oct", November: "Nov", December: "Dec",
 };
 
-function toRfc822(date: string): string {
+const monthIndex: Record<string, number> = {
+  January: 0, February: 1, March: 2, April: 3,
+  May: 4, June: 5, July: 6, August: 7,
+  September: 8, October: 9, November: 10, December: 11,
+};
+
+function publishedAtForPost(index: number): string | undefined {
+  const start = slugMatches[index]?.index ?? 0;
+  const end = slugMatches[index + 1]?.index ?? src.length;
+  return src.slice(start, end).match(/^    "publishedAt":\s*"([^"]+)"/m)?.[1];
+}
+
+function sortTime(date: string, publishedAt?: string): number {
+  if (publishedAt) {
+    const t = Date.parse(publishedAt);
+    if (Number.isFinite(t)) return t;
+  }
+
+  const [mName, yStr] = date.split(" ");
+  return Date.UTC(Number(yStr) || 1970, monthIndex[mName] ?? 0, 1, 9, 0, 0);
+}
+
+function toRfc822(date: string, publishedAt?: string): string {
+  if (publishedAt) {
+    const t = Date.parse(publishedAt);
+    if (Number.isFinite(t)) return new Date(t).toUTCString();
+  }
+
   const [mName, yStr] = date.split(" ");
   const m = months[mName] ?? "Jan";
   const y = yStr ?? new Date().getFullYear().toString();
@@ -54,17 +82,33 @@ function esc(s: string): string {
     .replace(/'/g, "&apos;");
 }
 
-const items = slugs
+const posts = slugs
   .map((slug, i) => {
-    const link = `${BASE_URL}/blog/${slug}`;
+    const publishedAt = publishedAtForPost(i);
+    return {
+      slug,
+      title: titles[i],
+      description: descs[i] || excerpts[i],
+      date: dates[i],
+      category: categories[i],
+      publishedAt,
+      sourceIndex: i,
+      sortTime: sortTime(dates[i], publishedAt),
+    };
+  })
+  .sort((a, b) => b.sortTime - a.sortTime || b.sourceIndex - a.sourceIndex);
+
+const items = posts
+  .map((post) => {
+    const link = `${BASE_URL}/blog/${post.slug}`;
     return [
       `    <item>`,
-      `      <title>${esc(titles[i])}</title>`,
+      `      <title>${esc(post.title)}</title>`,
       `      <link>${link}</link>`,
       `      <guid isPermaLink="true">${link}</guid>`,
-      `      <pubDate>${toRfc822(dates[i])}</pubDate>`,
-      `      <category>${esc(categories[i])}</category>`,
-      `      <description>${esc(descs[i] || excerpts[i])}</description>`,
+      `      <pubDate>${toRfc822(post.date, post.publishedAt)}</pubDate>`,
+      `      <category>${esc(post.category)}</category>`,
+      `      <description>${esc(post.description)}</description>`,
       `      <enclosure url="${OG_IMAGE_URL}" length="${OG_IMAGE_BYTES}" type="image/jpeg" />`,
       `    </item>`,
     ].join("\n");
