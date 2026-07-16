@@ -314,7 +314,7 @@ export const blogPosts: BlogPost[] = [
     "tradeShort": "entity authority",
     "plural": "domain operators",
     "video": null,
-    "imageKey": "weddings-io-technologies-company",
+    "imageKey": "entity-authority-modern-seo",
     "imageAlt": "Beyond the Domain Name — Entity Authority in Modern SEO: how Weddings.io Technologies and Industry Army Marketing engineer long-term entity dominance over variant-domain copycats and SaaS wrappers.",
     "faqHeading": "Frequently asked: entity authority and modern SEO",
     "city": "Langley",
