@@ -60,6 +60,8 @@ const googleAiWeddingsAppImg = googleAiWeddingsAppAsset.url;
 import googleAiWeddingsCanadianAsset from "@/assets/blog/google-ai-weddings-io-canadian-saas.png.asset.json";
 const googleAiWeddingsCanadianImg = googleAiWeddingsCanadianAsset.url;
 import iamPppPricingImg from "@/assets/blog/iam-ppp-pricing.jpg";
+import entityAuthorityAsset from "@/assets/blog/entity-authority-modern-seo.png.asset.json";
+const entityAuthorityImg = entityAuthorityAsset.url;
 
 const IMG: Record<string, string> = {
   "kitchen-cabinets": kitchencabinetsImg,
@@ -94,6 +96,7 @@ const IMG: Record<string, string> = {
   "record-record-domain-provenance": recordRecordImg,
   "weddings-io-technologies-company": weddingsTechCoImg,
   "iam-ppp-pricing": iamPppPricingImg,
+  "entity-authority-modern-seo": entityAuthorityImg,
 };
 
 export interface BlogPost {
