@@ -321,7 +321,7 @@ export const blogPosts: BlogPost[] = [
     "province": "BC",
     "category": "SEO Strategy",
     "date": "July 2026",
-    "publishedAt": "2026-07-10T15:00:00Z",
+    "publishedAt": "2026-07-16T02:00:00Z",
     "title": "Beyond the Domain Name: Understanding Entity Authority in Modern SEO",
     "metaDescription": "How modern search algorithms separate real market authorities from short-term copycats. Entity-based search, Knowledge Graph nodes, map-pack corrective mechanics, and the engineered defense behind Weddings.io Technologies and Industry Army Marketing.",
     "authorName": "The IAM Dev Team / Chief Architect at Weddings.io Technologies",
