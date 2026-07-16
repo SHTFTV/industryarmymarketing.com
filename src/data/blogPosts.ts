@@ -182,7 +182,36 @@ export interface BlogRichContent {
   sources?: BlogSource[];
 }
 
-export const blogPosts: BlogPost[] = [
+const monthOrder: Record<string, number> = {
+  January: 0,
+  February: 1,
+  March: 2,
+  April: 3,
+  May: 4,
+  June: 5,
+  July: 6,
+  August: 7,
+  September: 8,
+  October: 9,
+  November: 10,
+  December: 11,
+};
+
+const postTime = (post: Pick<BlogPost, "date" | "publishedAt">) => {
+  if (post.publishedAt) {
+    const publishedTime = Date.parse(post.publishedAt);
+    if (Number.isFinite(publishedTime)) return publishedTime;
+  }
+
+  const [month, year] = post.date.split(" ");
+  const monthIndex = monthOrder[month] ?? 0;
+  const fullYear = Number(year) || 1970;
+  return Date.UTC(fullYear, monthIndex, 1, 9, 0, 0);
+};
+
+export const compareBlogPostsByNewest = (a: BlogPost, b: BlogPost) => postTime(b) - postTime(a);
+
+const rawBlogPosts: BlogPost[] = [
   {
     "slug": "iam-vendors-purchasing-power-parity-pricing",
     "brand": "industryarmymarketing.com",
@@ -3164,6 +3193,11 @@ export const blogPosts: BlogPost[] = [
     }
   }
 ].map((p) => ({ ...p, image: IMG[p.imageKey] }));
+
+export const blogPosts: BlogPost[] = rawBlogPosts
+  .map((post, index) => ({ post, index }))
+  .sort((a, b) => compareBlogPostsByNewest(a.post, b.post) || b.index - a.index)
+  .map(({ post }) => post);
 
 export function getPost(slug: string): BlogPost | undefined {
   return blogPosts.find(p => p.slug === slug);

@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach, vi } from "vitest";
-import { render, cleanup, within } from "@testing-library/react";
+import { render, cleanup } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 
 type MockPost = {
@@ -9,12 +9,38 @@ type MockPost = {
   brand: string;
   category: string;
   date: string;
+  publishedAt?: string;
   image: string;
   pain: string;
   excerpt?: string;
 };
 
 const mockPosts: MockPost[] = [];
+
+const monthOrder: Record<string, number> = {
+  January: 0,
+  February: 1,
+  March: 2,
+  April: 3,
+  May: 4,
+  June: 5,
+  July: 6,
+  August: 7,
+  September: 8,
+  October: 9,
+  November: 10,
+  December: 11,
+};
+
+const postTime = (post: MockPost) => {
+  if (post.publishedAt) {
+    const t = Date.parse(post.publishedAt);
+    if (Number.isFinite(t)) return t;
+  }
+
+  const [month, year] = post.date.split(" ");
+  return Date.UTC(Number(year) || 1970, monthOrder[month] ?? 0, 1, 9, 0, 0);
+};
 
 vi.mock("@/data/blogPosts", () => ({
   get blogPosts() {
@@ -46,7 +72,14 @@ const makePost = (overrides: Partial<MockPost> & { slug: string; date: string })
 });
 
 const setPosts = (posts: MockPost[]) => {
-  mockPosts.splice(0, mockPosts.length, ...posts);
+  mockPosts.splice(
+    0,
+    mockPosts.length,
+    ...posts
+      .map((post, index) => ({ post, index }))
+      .sort((a, b) => postTime(b.post) - postTime(a.post) || b.index - a.index)
+      .map(({ post }) => post),
+  );
 };
 
 const renderCarousel = async () => {
