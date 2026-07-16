@@ -224,36 +224,7 @@ const Blog = () => {
 
       <section className="py-16">
         <div className="container mx-auto px-4 max-w-6xl">
-          <p className="text-primary uppercase tracking-[0.3em] text-xs font-semibold mb-3">Featured</p>
-          <motion.article
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="grid md:grid-cols-2 gap-8 p-6 md:p-8 rounded-lg bg-card border border-primary/30"
-          >
-            <Link to={`/blog/${featured.slug}`} className="block">
-              <img
-                src={featured.image}
-                alt={`${featured.trade} in ${featured.city} — ${featured.brand}`}
-                width={1280}
-                height={720}
-                className="w-full rounded-md border border-border"
-              />
-            </Link>
-            <div className="flex flex-col justify-center">
-              <p className="text-muted-foreground text-xs uppercase tracking-widest mb-3">
-                {featured.date} · {featured.category} · {featured.brand}
-              </p>
-              <h2 className="font-display text-3xl md:text-4xl text-foreground mb-3 leading-tight">
-                {featured.cardTitle || `${featured.trade} in ${featured.city}: The $10 Exclusive Territory Guide`}
-              </h2>
-              <p className="text-muted-foreground leading-relaxed mb-5">{featured.pain}</p>
-              <Button variant="hero" asChild className="self-start">
-                <Link to={`/blog/${featured.slug}`}>Read the guide</Link>
-              </Button>
-            </div>
-          </motion.article>
-
-          <div className="mt-12">
+          <div>
             <p className="text-primary uppercase tracking-[0.3em] text-xs font-semibold mb-3">
               Company Case Study Blog
             </p>
