@@ -3194,7 +3194,10 @@ const rawBlogPosts: BlogPost[] = [
   }
 ].map((p) => ({ ...p, image: IMG[p.imageKey] }));
 
-export const blogPosts: BlogPost[] = [...rawBlogPosts].sort(compareBlogPostsByNewest);
+export const blogPosts: BlogPost[] = rawBlogPosts
+  .map((post, index) => ({ post, index }))
+  .sort((a, b) => compareBlogPostsByNewest(a.post, b.post) || b.index - a.index)
+  .map(({ post }) => post);
 
 export function getPost(slug: string): BlogPost | undefined {
   return blogPosts.find(p => p.slug === slug);
