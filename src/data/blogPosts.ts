@@ -368,6 +368,30 @@ const rawBlogPosts: BlogPost[] = [
       "intro": "In the digital marketing game, rapid imitation is a given. When a platform builds real momentum, variant domains, similar brand names, and software wrappers will inevitably pop up to try and siphon off that traffic. To a regular observer, it looks like a standard battle for keywords. Under the hood of modern search engines, a much deeper technical mechanic is at play: entity-based search.",
       "sections": [
         {
+          "heading": "Exhibit F — July 15, 2026: Google SERP presents weddings.io and aiweddings.io as the same entity",
+          "paragraphs": [
+            "Captured July 15, 2026, from an incognito Chrome session on google.com. Query: `weddings.io`. The Search Engine Results Page returns the aiweddings.io organic result in the #1 slot, immediately followed by weddings.io — the original, continuously registered .io domain owned by Industry Army Marketing since May 13, 2015 — in the #2 slot. Directly below both results, Google's AI Overview opens with the sentence \"Weddings.io (aiWeddings.io) is an AI-powered wedding planning platform and vendor marketplace.\" That single parenthetical treats two independently owned domains, two separately registered legal entities, and two distinct product surfaces as one entity.",
+            "This screenshot is preserved as tamper-evident record of the conflation as displayed to a Canadian IP address on that date and is being retained as evidence in ongoing and contemplated proceedings. No cropping, no annotation, no post-capture edits."
+          ],
+          "image": {
+            "src": "/__l5e/assets-v1/6e2bad06-ed5a-49a0-95b3-5d04697e7164/google-serp-weddings-io-aiweddings-conflation-2026-07-15.png",
+            "alt": "Exhibit F — Google Search results page for the query 'weddings.io' captured July 15, 2026: aiweddings.io ranked #1, weddings.io ranked #2, followed by an AI Overview stating 'Weddings.io (aiWeddings.io) is an AI-powered wedding planning platform and vendor marketplace.'",
+            "caption": "Exhibit F — Google SERP, query 'weddings.io', captured July 15, 2026 (10:07 PM PT, incognito, Canadian IP). AI Overview opens by equating weddings.io with aiweddings.io in the first sentence."
+          }
+        },
+        {
+          "heading": "Exhibit G — July 15, 2026: Google AI Overview attributes the aiWeddings.io feature stack to weddings.io",
+          "paragraphs": [
+            "Same session, scrolled into the expanded AI Overview panel. Google's AI Overview attributes an AI vendor-matching product, a couples-side free tier, a Vendor Hub SaaS, and a Greater Toronto Area service footprint to \"Weddings.io.\" Industry Army Marketing has never operated a Toronto service footprint, has never shipped an AI vendor-matching product, and has no couples-side or Vendor Hub SaaS. Every feature listed under the heading \"Weddings.io\" belongs to aiweddings.io — a separate .io domain registered by a separate Ontario party. The citation chips on the right (AIWeddings, a Facebook Group post about \"building aiweddings.io\") are the actual sources; the heading \"Weddings.io\" is the misattribution.",
+            "The closing line — \"To explore the tool, test out the AI vendor matching, or sign up as a vendor, visit Weddings.io\" — directs a searcher who typed weddings.io to visit weddings.io to use a product weddings.io does not operate. That is the exact market-facing harm this record documents."
+          ],
+          "image": {
+            "src": "/__l5e/assets-v1/78faf155-5924-4087-a889-d6b4cf7190ef/google-ai-overview-weddings-io-conflation-2026-07-15.png",
+            "alt": "Exhibit G — Google AI Overview expanded panel captured July 15, 2026, attributing an AI vendor-matching platform, free-for-couples pricing, Vendor Hub SaaS, and a Greater Toronto Area service footprint to 'Weddings.io', with citation chips pointing to AIWeddings and a Facebook Group post about building aiweddings.io.",
+            "caption": "Exhibit G — Google AI Overview, expanded, captured July 15, 2026. Product features and Toronto service area belonging to aiweddings.io are attributed under the heading 'Weddings.io'."
+          }
+        },
+        {
           "heading": "1. Keywords vs. Entities — Why Text Can Be Copied, But Equity Can't",
           "paragraphs": [
             "A decade ago, SEO was simple. If you bought a domain name that matched a search term, or if you stuffed someone else's brand name into your title tags, you could trick an algorithm into ranking you for a minute.",
