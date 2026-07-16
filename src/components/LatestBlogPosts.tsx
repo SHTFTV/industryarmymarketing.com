@@ -4,34 +4,6 @@ import { Button } from "@/components/ui/button";
 import { blogPosts } from "@/data/blogPosts";
 import { useEffect, useMemo, useState } from "react";
 
-const monthOrder: Record<string, number> = {
-  January: 0,
-  February: 1,
-  March: 2,
-  April: 3,
-  May: 4,
-  June: 5,
-  July: 6,
-  August: 7,
-  September: 8,
-  October: 9,
-  November: 10,
-  December: 11,
-};
-
-const dateScore = (date: string) => {
-  const [month, year] = date.split(" ");
-  return (Number(year) || 0) * 12 + (monthOrder[month] ?? -1);
-};
-
-// Finer-grained timestamp when a post declares `publishedAt` (ISO string).
-// Falls back to the month/year score so legacy posts keep their relative order.
-const timestampScore = (publishedAt?: string) => {
-  if (!publishedAt) return 0;
-  const t = Date.parse(publishedAt);
-  return Number.isFinite(t) ? t : 0;
-};
-
 const LIMIT = 4;
 
 type Ranked = {
@@ -40,54 +12,26 @@ type Ranked = {
   city: string;
   date: string;
   index: number;
-  score: number;
+  publishedAt?: string;
   included: boolean;
   reason: string;
 };
 
 const buildRanking = (): Ranked[] => {
-  const scored = blogPosts.map((post, index) => {
-    const score = dateScore(post.date);
-    const ts = timestampScore(post.publishedAt);
-    const [month, year] = post.date.split(" ");
-    const reasons: string[] = [];
-    if (!post.slug) reasons.push("missing slug");
-    if (!post.date) reasons.push("missing date");
-    if (monthOrder[month] === undefined) reasons.push(`unrecognized month "${month}"`);
-    if (!Number(year)) reasons.push(`unrecognized year "${year}"`);
+  return blogPosts.map((post, rank) => {
+    const included = rank < LIMIT;
     return {
       slug: post.slug,
       trade: post.trade,
       city: post.city,
       date: post.date,
-      index,
-      score,
-      ts,
-      parseIssues: reasons,
+      publishedAt: post.publishedAt,
+      index: rank,
+      included,
+      reason: included
+        ? "included (top " + LIMIT + " from centralized newest-first blog order)"
+        : "excluded — below top " + LIMIT + " in centralized newest-first blog order",
     };
-  });
-
-  const sorted = [...scored].sort(
-    (a, b) => b.score - a.score || b.ts - a.ts || b.index - a.index,
-  );
-  const cutoffScore = sorted[LIMIT - 1]?.score ?? -Infinity;
-  const cutoffIndex = sorted[LIMIT - 1]?.index ?? -1;
-
-  return sorted.map((item, rank) => {
-    const included = rank < LIMIT;
-    let reason = "included (top " + LIMIT + " by date, newest first)";
-    if (!included) {
-      if (item.parseIssues.length) {
-        reason = `excluded — ${item.parseIssues.join("; ")}`;
-      } else if (item.score < cutoffScore) {
-        reason = `excluded — older than cutoff (score ${item.score} < ${cutoffScore})`;
-      } else {
-        reason = `excluded — tie at cutoff score ${cutoffScore}, lost insertion-order tiebreak (index ${item.index} < ${cutoffIndex})`;
-      }
-    } else if (item.parseIssues.length) {
-      reason = `included BUT has parse issues: ${item.parseIssues.join("; ")}`;
-    }
-    return { ...item, included, reason };
   });
 };
 
@@ -125,8 +69,8 @@ const LatestBlogPosts = () => {
         included: r.included ? "✅" : "❌",
         id: r.slug,
         date: r.date,
-        score: r.score,
-        sourceIndex: r.index,
+        publishedAt: r.publishedAt ?? "",
+        orderIndex: r.index,
         reason: r.reason,
       })),
     );
@@ -165,8 +109,8 @@ const LatestBlogPosts = () => {
                     <th className="py-1 pr-3">in</th>
                     <th className="py-1 pr-3">id (slug)</th>
                     <th className="py-1 pr-3">date</th>
-                    <th className="py-1 pr-3">score</th>
-                    <th className="py-1 pr-3">srcIdx</th>
+                    <th className="py-1 pr-3">publishedAt</th>
+                    <th className="py-1 pr-3">order</th>
                     <th className="py-1">reason</th>
                   </tr>
                 </thead>
@@ -180,7 +124,7 @@ const LatestBlogPosts = () => {
                       <td className="py-1 pr-3">{r.included ? "✅" : "❌"}</td>
                       <td className="py-1 pr-3">{r.slug}</td>
                       <td className="py-1 pr-3">{r.date}</td>
-                      <td className="py-1 pr-3">{r.score}</td>
+                        <td className="py-1 pr-3">{r.publishedAt ?? "—"}</td>
                       <td className="py-1 pr-3">{r.index}</td>
                       <td className="py-1">{r.reason}</td>
                     </tr>
