@@ -127,6 +127,43 @@ const REQUIRED_BY_TYPE: Record<string, FieldSpec[]> = {
   ],
   Person: [{ field: "name", required: true, check: nonEmptyString }],
   ImageObject: [{ field: "url", required: true, check: absoluteUrl }],
+  ListItem: [
+    {
+      field: "position",
+      required: true,
+      check: (v) => (typeof v === "number" && v >= 1 ? null : "number >= 1"),
+    },
+    { field: "name", required: false, check: nonEmptyString },
+    {
+      field: "item",
+      required: false,
+      check: (v) => {
+        if (v === undefined) return null;
+        if (typeof v === "string")
+          return isAbsoluteUrl(v) ? null : "absolute https URL";
+        if (isPlainObject(v)) {
+          if (!isAbsoluteUrl(v["@id"])) return "item.@id absolute https URL";
+          return null;
+        }
+        return "string URL or object with @id";
+      },
+    },
+  ],
+  Question: [
+    { field: "name", required: true, check: nonEmptyString },
+    {
+      field: "acceptedAnswer",
+      required: true,
+      check: (v) => {
+        if (!isPlainObject(v)) return "Answer object";
+        if (v["@type"] !== "Answer") return '{"@type":"Answer"}';
+        if (typeof v.text !== "string" || !v.text.trim())
+          return "acceptedAnswer.text non-empty string";
+        return null;
+      },
+    },
+  ],
+  Answer: [{ field: "text", required: true, check: nonEmptyString }],
   BreadcrumbList: [
     { field: "itemListElement", required: true, check: itemListElement },
   ],
