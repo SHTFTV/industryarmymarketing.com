@@ -56,6 +56,7 @@ import AffordableSeo from "./pages/services/AffordableSeo.tsx";
 import DofollowBacklinksService from "./pages/services/DofollowBacklinksService.tsx";
 import ServiceThankYou from "./pages/services/ServiceThankYou.tsx";
 import AdminServiceLeads from "./pages/admin/AdminServiceLeads.tsx";
+import { legacyRedirectRoutes } from "./components/LegacyRedirects";
 import featuredBattle from "@/assets/blog/weddings-vs-aiweddings-battle.png.asset.json";
 
 const SITE = "https://industryarmymarketing.com";
@@ -271,6 +272,7 @@ const App = () => (
             }
           />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            {legacyRedirectRoutes()}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
