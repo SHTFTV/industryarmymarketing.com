@@ -72,6 +72,32 @@ jobs:
             --summary redirect-chain-summary.json
         continue-on-error: true
 
+      - name: Write drift metrics to job summary
+        if: always() && hashFiles('baseline-drift-metrics.json') != ''
+        run: |
+          node -e '
+            const fs = require("fs");
+            const m = JSON.parse(fs.readFileSync("baseline-drift-metrics.json", "utf8"));
+            const t = m.thresholds || {}, g = m.measured || {}, e = m.exceeded || {};
+            const rulesCell = (g.rulesChanged ?? 0) + (t.maxRules != null ? " / " + t.maxRules : "");
+            const finalCell = (g.finalPathChanges ?? 0) + (t.maxFinalPathChanges != null ? " / " + t.maxFinalPathChanges : "");
+            const status = (e.rules || e.finalPath) ? "❌ threshold exceeded" : "✅ within threshold";
+            const md = [
+              "## Redirect baseline drift — " + status,
+              "",
+              "| Metric | Measured / Threshold | Exceeded |",
+              "| --- | --- | --- |",
+              "| Changed rules (added + modified) | `" + rulesCell + "` | " + (e.rules ? "❌" : "✅") + " |",
+              "| Final destination changes | `" + finalCell + "` | " + (e.finalPath ? "❌" : "✅") + " |",
+              "| Added | `" + (g.rulesAdded ?? 0) + "` | — |",
+              "| Modified | `" + (g.rulesModified ?? 0) + "` | — |",
+              "",
+              "_Baseline ref: `" + (m.baselineRef || "working tree") + "`_",
+              "",
+            ].join("\n");
+            fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, md);
+          '
+
       - name: Validate redirect-chain-summary schema
         id: summary_schema
         if: always() && hashFiles('redirect-chain-summary.json') != ''
@@ -96,6 +122,7 @@ jobs:
             --baseline-ref "$REF" \
             --baseline-diff-out baseline-diff.md \
             --baseline-diff-csv baseline-diff.csv \
+            --drift-metrics-out baseline-drift-metrics.json \
             --drift-max-rules "$DRIFT_MAX_RULES" \
             --drift-max-final-path-changes "$DRIFT_MAX_FINAL_PATH_CHANGES" \
             --ua-matrix --annotate \
@@ -172,6 +199,7 @@ jobs:
             redirect-chain-report.html
             baseline-diff.md
             baseline-diff.csv
+            baseline-drift-metrics.json
             .redirect-baselines/redirect-chain-baseline.json
           if-no-files-found: ignore
 
@@ -203,6 +231,15 @@ jobs:
         with:
           name: baseline-diff-csv
           path: baseline-diff.csv
+          if-no-files-found: ignore
+
+      - name: Upload baseline-drift-metrics.json (direct link)
+        id: upload_drift_metrics
+        if: always() && hashFiles('baseline-drift-metrics.json') != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: baseline-drift-metrics
+          path: baseline-drift-metrics.json
           if-no-files-found: ignore
 
       - name: Upload redirect-chain-baseline.json (direct link)
@@ -255,6 +292,7 @@ jobs:
           BASELINE_DIFF_MD_URL: ${{ steps.upload_baseline_diff_md.outputs.artifact-url }}
           BASELINE_DIFF_CSV_URL: ${{ steps.upload_baseline_diff_csv.outputs.artifact-url }}
           BASELINE_JSON_URL: ${{ steps.upload_baseline_json.outputs.artifact-url }}
+          DRIFT_METRICS_URL: ${{ steps.upload_drift_metrics.outputs.artifact-url }}
           BASELINE_DRIFT_OUTCOME: ${{ steps.baseline_drift.outcome }}
         with:
           script: |
@@ -291,6 +329,7 @@ jobs:
             const baselineDiffMdUrl = process.env.BASELINE_DIFF_MD_URL || artifactsUrl;
             const baselineDiffCsvUrl = process.env.BASELINE_DIFF_CSV_URL || artifactsUrl;
             const baselineJsonUrl = process.env.BASELINE_JSON_URL || artifactsUrl;
+            const driftMetricsUrl = process.env.DRIFT_METRICS_URL || artifactsUrl;
             const driftOutcome = process.env.BASELINE_DRIFT_OUTCOME || '';
             const nightlyReportUrl = ${{ toJSON(vars.NIGHTLY_REDIRECT_REPORT_URL) }} || '';
             if (!process.env.DIFF_ARTIFACT_URL || !process.env.PRERENDER_LOG_ARTIFACT_URL) {
@@ -329,6 +368,34 @@ jobs:
                 '</details>',
               ].join('\n');
             } catch { /* redirect chain step is main-only; skip on PRs */ }
+            // Baseline drift metrics: measured counts vs. configured thresholds.
+            // Rendered as a compact table so reviewers see the numbers that
+            // drove the PASS/FAIL directly in the PR comment.
+            let driftMetricsSection = '';
+            try {
+              const m = JSON.parse(fs.readFileSync('baseline-drift-metrics.json', 'utf8'));
+              const t = m.thresholds || {};
+              const g = m.measured || {};
+              const e = m.exceeded || {};
+              const rulesCell = `${g.rulesChanged ?? 0}${t.maxRules != null ? ` / ${t.maxRules}` : ''}`;
+              const finalCell = `${g.finalPathChanges ?? 0}${t.maxFinalPathChanges != null ? ` / ${t.maxFinalPathChanges}` : ''}`;
+              const status = (e.rules || e.finalPath) ? '❌ threshold exceeded' : '✅ within threshold';
+              driftMetricsSection = [
+                '',
+                `<details${(e.rules || e.finalPath) ? ' open' : ''}><summary>Baseline drift metrics — ${status}</summary>`,
+                '',
+                '| Metric | Measured / Threshold | Exceeded |',
+                '| --- | --- | --- |',
+                `| Changed rules (added + modified) | \`${rulesCell}\` | ${e.rules ? '❌' : '✅'} |`,
+                `| Final destination changes | \`${finalCell}\` | ${e.finalPath ? '❌' : '✅'} |`,
+                `| Added | \`${g.rulesAdded ?? 0}\` | — |`,
+                `| Modified | \`${g.rulesModified ?? 0}\` | — |`,
+                '',
+                `_Baseline ref: \`${m.baselineRef || 'working tree'}\` · [full metrics JSON](${driftMetricsUrl})_`,
+                '',
+                '</details>',
+              ].join('\n');
+            } catch { /* no metrics on this run */ }
             // Baseline changes (from --update-baseline --dry-run). Rendered as a
             // formatted table so reviewers can approve drift directly from the PR.
             let baselineDiffSection = '';
@@ -361,6 +428,7 @@ jobs:
               `- 📝 **Baseline drift (Markdown)**: [baseline-diff.md](${baselineDiffMdUrl})`,
               `- 📈 **Baseline drift (CSV)**: [baseline-diff.csv](${baselineDiffCsvUrl})`,
               `- 📦 **Redirect baseline (JSON)**: [redirect-chain-baseline.json](${baselineJsonUrl})`,
+              `- 📉 **Drift metrics (JSON)**: [baseline-drift-metrics.json](${driftMetricsUrl})`,
               driftOutcome === 'failure'
                 ? `- 🚨 **Baseline drift threshold exceeded** — this deploy check is failing on drift alone. Review the diff and either fix the redirect regression or approve a new baseline.`
                 : `- 🧭 **Baseline drift**: within configured threshold (\`${driftOutcome || 'n/a'}\`).`,
@@ -369,6 +437,7 @@ jobs:
               `- 🔗 **Full run**: ${runUrl}`,
               diffPreview,
               redirectSummary,
+              driftMetricsSection,
               baselineDiffSection,
             ].join('\n');
             const { owner, repo } = context.repo;

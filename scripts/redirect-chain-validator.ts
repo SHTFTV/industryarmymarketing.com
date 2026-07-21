@@ -79,6 +79,10 @@ const BASELINE_DIFF_CSV = arg("--baseline-diff-csv");
 // only rules whose finalPath changed. Undefined = no threshold enforced.
 const DRIFT_MAX_RULES = arg("--drift-max-rules");
 const DRIFT_MAX_FINAL_PATH_CHANGES = arg("--drift-max-final-path-changes");
+// Optional path for a small JSON blob capturing measured drift counts
+// and the configured thresholds. CI reads this to render the numbers
+// in the PR comment and the workflow-summary "Checks" table.
+const DRIFT_METRICS_OUT = arg("--drift-metrics-out");
 // Load the baseline from a Git ref (e.g. `HEAD~1`, `origin/main`,
 // a tag or SHA) instead of the working-tree file. Enables reviewing
 // drift across deploys: run the validator with the previous deploy's
@@ -122,7 +126,22 @@ function loadBaseline(): BaselineFile {
     try {
       const raw = execSync(`git show ${spec}`, { encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] });
       console.log(`redirect-chain-validator: baseline loaded from git ${spec}`);
-      return parseBaselineJson(`git:${spec}`, raw);
+      const parsed = parseBaselineJson(`git:${spec}`, raw);
+      // Strict cross-schema check: a baseline loaded from an arbitrary
+      // Git ref must match the CURRENT summary schema version. Prevents
+      // silently validating against an out-of-date baseline shape when
+      // the summary schema has moved forward on this commit.
+      const bv = parsed.schemaVersion ?? BASELINE_SCHEMA_VERSION;
+      if (bv !== SUMMARY_SCHEMA_VERSION) {
+        const msg =
+          `redirect-chain-validator: SCHEMA MISMATCH — baseline at git ${spec} ` +
+          `has schemaVersion "${bv}" but current summary schemaVersion is "${SUMMARY_SCHEMA_VERSION}". ` +
+          `Regenerate the baseline on this commit (--update-baseline) or drop --baseline-ref.`;
+        console.error(msg);
+        if (ANNOTATE) console.log(`::error::${msg}`);
+        process.exit(3);
+      }
+      return parsed;
     } catch (e) {
       console.error(
         `redirect-chain-validator: --baseline-ref could not read ${spec}: ${(e as Error).message.trim()}`,
@@ -619,6 +638,17 @@ async function main() {
         console.log(`    hops:      ${fmtHops(d.old?.hops)}  →  ${fmtHops(d.next.hops)}`);
       if (d.finalPathChanged)
         console.log(`    finalPath: ${d.old?.finalPath ?? "(none)"}  →  ${d.next.finalPath}`);
+      // Per-rule GitHub annotation so the drifting rule shows up as
+      // its own entry on the PR "Checks" page.
+      if (ANNOTATE) {
+        const parts: string[] = [`baseline ${d.kind}: ${d.rule}`];
+        if (d.hopsChanged) parts.push(`hops ${fmtHops(d.old?.hops)} → ${fmtHops(d.next.hops)}`);
+        if (d.finalPathChanged)
+          parts.push(`finalPath ${d.old?.finalPath ?? "(none)"} → ${d.next.finalPath}`);
+        const level = d.kind === "added" ? "notice" : "warning";
+        const title = `Redirect baseline ${d.kind}`;
+        console.log(`::${level} title=${title}::${parts.join(" | ")}`);
+      }
     }
     if (BASELINE_DIFF_OUT) {
       const lines: string[] = [];
@@ -697,6 +727,31 @@ async function main() {
       DRIFT_MAX_FINAL_PATH_CHANGES !== undefined ? Number(DRIFT_MAX_FINAL_PATH_CHANGES) : undefined;
     const overRules = maxRules !== undefined && changed.length > maxRules;
     const overFinal = maxFinalPath !== undefined && finalPathChanges > maxFinalPath;
+
+    // Persist measured counts + thresholds so CI can surface them in the
+    // PR comment and the "Checks" summary without re-parsing baseline-diff.
+    if (DRIFT_METRICS_OUT) {
+      const metrics = {
+        schemaVersion: SUMMARY_SCHEMA_VERSION,
+        generatedAt: nowIso,
+        baselineRef: BASELINE_REF ?? null,
+        thresholds: {
+          maxRules: maxRules ?? null,
+          maxFinalPathChanges: maxFinalPath ?? null,
+        },
+        measured: {
+          rulesChanged: changed.length,
+          rulesAdded: diffs.filter((d) => d.kind === "added").length,
+          rulesModified: diffs.filter((d) => d.kind === "changed").length,
+          finalPathChanges,
+        },
+        exceeded: { rules: overRules, finalPath: overFinal },
+      };
+      mkdirSync(dirname(resolve(DRIFT_METRICS_OUT)), { recursive: true });
+      writeFileSync(resolve(DRIFT_METRICS_OUT), JSON.stringify(metrics, null, 2) + "\n");
+      console.log(`redirect-chain-validator: drift metrics written to ${DRIFT_METRICS_OUT}`);
+    }
+
     if (overRules || overFinal) {
       const msg =
         `redirect-chain-validator: baseline drift exceeds threshold — ` +
