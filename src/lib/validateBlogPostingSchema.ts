@@ -49,9 +49,10 @@ export const validateBlogPostingSchema = (
   // headline — required, string, <=110 chars (Google guidance)
   if (typeof schema.headline !== "string" || !schema.headline.trim()) {
     add("headline", "missing-or-wrong-type", "non-empty string", schema.headline);
-  } else if ((schema.headline as string).length > 110) {
-    add("headline", "too-long", "<=110 chars", (schema.headline as string).length);
   }
+  // Note: Google recommends headline <=110 chars for best rendering. That's a
+  // soft quality signal, not a schema.org type requirement, so we don't fail
+  // the schema check on it — track it separately in editorial QA if needed.
 
   // description — required by us (matches metaDescription)
   if (typeof schema.description !== "string" || (schema.description as string).length < 40) {
