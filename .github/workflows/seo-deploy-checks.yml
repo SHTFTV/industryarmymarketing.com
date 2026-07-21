@@ -221,17 +221,17 @@ jobs:
             try {
               const s = JSON.parse(fs.readFileSync('redirect-chain-summary.json', 'utf8'));
               const t = s.totals || {};
-              const rows = (s.rules || []).map((r) => {
+              const ruleRows = (s.rules || []).map((r) => {
                 const okIcon = r.ok ? '✅' : '❌';
                 const exp = (r.expected?.hops || []).join(' → ');
                 const act = (r.actual?.hops || []).join(' → ');
                 return `| ${okIcon} | \`${r.rule}\` | ${r.ua} | \`${exp}\` | \`${act}\` | \`${r.expected?.finalUrl || ''}\` | \`${r.actual?.finalUrl || ''}\` |`;
               });
               // Show failing rules first; cap total rows to keep the comment readable.
-              const failing = (s.rules || []).map((r, i) => ({ r, i })).filter(({ r }) => !r.ok).map(({ i }) => rows[i]);
-              const passing = (s.rules || []).map((r, i) => ({ r, i })).filter(({ r }) => r.ok).map(({ i }) => rows[i]);
+              const failing = (s.rules || []).map((r, i) => ({ r, i })).filter(({ r }) => !r.ok).map(({ i }) => ruleRows[i]);
+              const passing = (s.rules || []).map((r, i) => ({ r, i })).filter(({ r }) => r.ok).map(({ i }) => ruleRows[i]);
               const shown = [...failing, ...passing].slice(0, 25);
-              const more = rows.length - shown.length;
+              const more = ruleRows.length - shown.length;
               redirectSummary = [
                 '',
                 `<details${(t.failed || 0) > 0 ? ' open' : ''}><summary>Redirect chain summary (${t.passed || 0}/${t.cases || 0} passed, ${t.failed || 0} failed)</summary>`,
