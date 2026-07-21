@@ -38,9 +38,9 @@ describe(`blog post: ${SLUG}`, () => {
     const smImage = smBlock.match(/<image:loc>([^<]+)<\/image:loc>/)?.[1];
     expect(smImage).toBeTruthy();
 
-    const item = rss.match(
-      new RegExp(`<item>[\\s\\S]*?/blog/${SLUG}[\\s\\S]*?</item>`),
-    )![0];
+    const items = [...rss.matchAll(/<item>[\s\S]*?<\/item>/g)].map((m) => m[0]);
+    const item = items.find((s) => s.includes(`/blog/${SLUG}`))!;
+    expect(item).toBeTruthy();
     const encUrl = item.match(/<enclosure[^>]+url=["']([^"']+)["']/)?.[1];
     const encType = item.match(/<enclosure[^>]+type=["']([^"']+)["']/)?.[1];
     expect(encUrl).toBe(smImage);
