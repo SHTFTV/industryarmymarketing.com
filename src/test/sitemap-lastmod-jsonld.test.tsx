@@ -19,12 +19,14 @@ const sitemapXml = readFileSync(resolve("public/sitemap.xml"), "utf8");
 
 const lastmodForBlog = (slug: string): string | null => {
   const loc = `${SITE_URL}/blog/${slug}`;
-  // Match the <url> block containing this <loc> and pull its <lastmod>.
-  const block = sitemapXml.match(
-    new RegExp(
-      `<url>[\\s\\S]*?<loc>${loc.replace(/[.*+?^${}()|[\\]\\\\]/g, "\\\\$&")}</loc>[\\s\\S]*?</url>`,
-    ),
-  )?.[0];
+  // Anchor on the exact <loc> so we always read the <lastmod> from the same
+  // <url> block — a broader lazy match returns the first <url> in the file
+  // and pulls an unrelated <lastmod>.
+  const escaped = loc.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const re = new RegExp(
+    `<url>\\s*<loc>${escaped}</loc>[\\s\\S]*?</url>`,
+  );
+  const block = sitemapXml.match(re)?.[0];
   if (!block) return null;
   return block.match(/<lastmod>([^<]+)<\/lastmod>/)?.[1] ?? null;
 };
