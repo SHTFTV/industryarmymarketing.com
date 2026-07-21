@@ -76,6 +76,23 @@ jobs:
         id: summary_schema
         if: always() && hashFiles('redirect-chain-summary.json') != ''
         run: bunx tsx scripts/validate-summary-schema.ts --in redirect-chain-summary.json --annotate
+        continue-on-error: true
+
+      - name: Baseline drift preview (dry-run diff vs previous commit)
+        id: baseline_drift
+        if: always() && hashFiles('redirect-chain-summary.json') != ''
+        run: |
+          # Show what the baseline WOULD change vs the last committed
+          # baseline (HEAD~1 on push, base ref on PRs). Never writes.
+          REF="${{ github.event_name == 'pull_request' && format('origin/{0}', github.base_ref) || 'HEAD~1' }}"
+          echo "Comparing against git ref: $REF"
+          bunx tsx scripts/redirect-chain-validator.ts \
+            --update-baseline --dry-run \
+            --baseline-ref "$REF" \
+            --baseline-diff-out baseline-diff.md \
+            --ua-matrix --annotate \
+            --summary redirect-chain-summary.json || true
+        continue-on-error: true
 
       - name: Render redirect chain HTML report
         id: redirect_html
@@ -145,6 +162,8 @@ jobs:
             redirect-chain-report.json
             redirect-chain-summary.json
             redirect-chain-report.html
+            baseline-diff.md
+            .redirect-baselines/redirect-chain-baseline.json
           if-no-files-found: ignore
 
       - name: Ensure PR comment will have artifact URLs
@@ -200,6 +219,7 @@ jobs:
               ['Prerender HTML SEO check', ${{ toJSON(steps.prerender_check.outcome) }}],
               ['Real-HTTP redirect chain', ${{ toJSON(steps.redirect_chain.outcome) }}],
               ['Redirect summary schema', ${{ toJSON(steps.summary_schema.outcome) }}],
+              ['Baseline drift preview', ${{ toJSON(steps.baseline_drift.outcome) }}],
               ['Legacy live audit', ${{ toJSON(steps.legacy_live.outcome) }}],
               ['Legacy redirects live test', ${{ toJSON(steps.legacy_live_test.outcome) }}],
               ['SEO diff report', ${{ toJSON(steps.seo_diff.outcome) }}],
@@ -251,6 +271,21 @@ jobs:
                 '</details>',
               ].join('\n');
             } catch { /* redirect chain step is main-only; skip on PRs */ }
+            // Baseline changes (from --update-baseline --dry-run). Rendered as a
+            // formatted table so reviewers can approve drift directly from the PR.
+            let baselineDiffSection = '';
+            try {
+              const md = fs.readFileSync('baseline-diff.md', 'utf8');
+              const hasChanges = !/No baseline entries would change/.test(md);
+              baselineDiffSection = [
+                '',
+                `<details${hasChanges ? ' open' : ''}><summary>Redirect baseline changes${hasChanges ? ' (drift detected)' : ' (no drift)'}</summary>`,
+                '',
+                md,
+                '',
+                '</details>',
+              ].join('\n');
+            } catch { /* no baseline diff on this run */ }
             const overall = steps.some(([, o]) => o === 'failure') ? '❌ FAIL' : '✅ PASS';
             const marker = '<!-- seo-ci-summary -->';
             const body = [
@@ -269,6 +304,7 @@ jobs:
               `- 🔗 **Full run**: ${runUrl}`,
               diffPreview,
               redirectSummary,
+              baselineDiffSection,
             ].join('\n');
             const { owner, repo } = context.repo;
             const issue_number = context.payload.pull_request.number;
