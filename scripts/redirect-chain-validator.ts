@@ -459,10 +459,14 @@ async function main() {
   );
 
   if (JSON_OUT) {
-    writeFileSync(
-      resolve(JSON_OUT),
-      JSON.stringify({ base: BASE, results, inconsistent }, null, 2),
-    );
+    if (DRY_RUN) {
+      console.log(`redirect-chain-validator: [dry-run] would write ${JSON_OUT}`);
+    } else {
+      writeFileSync(
+        resolve(JSON_OUT),
+        JSON.stringify({ base: BASE, results, inconsistent }, null, 2),
+      );
+    }
   }
   if (SUMMARY_OUT) {
     // Compact per-rule expected-vs-actual summary suitable for CI review.
@@ -503,11 +507,21 @@ async function main() {
       }),
       inconsistent,
     };
-    writeFileSync(resolve(SUMMARY_OUT), JSON.stringify(summary, null, 2));
-    console.log(`redirect-chain-validator: summary written to ${SUMMARY_OUT}`);
+    if (DRY_RUN) {
+      console.log(`redirect-chain-validator: [dry-run] would write ${SUMMARY_OUT}`);
+    } else {
+      writeFileSync(resolve(SUMMARY_OUT), JSON.stringify(summary, null, 2));
+      console.log(`redirect-chain-validator: summary written to ${SUMMARY_OUT}`);
+    }
   }
 
   if (UPDATE_BASELINE) {
+    if (BASELINE_REF) {
+      console.error(
+        `redirect-chain-validator: --update-baseline cannot be combined with --baseline-ref (${BASELINE_REF}). The Git-ref baseline is read-only; check out the ref or drop --baseline-ref to write.`,
+      );
+      process.exit(2);
+    }
     if (ONLY) {
       console.log(
         `redirect-chain-validator: --update-baseline scoped by --only "${ONLY}" — untouched rules retain their prior baseline entry.`,
@@ -598,6 +612,7 @@ async function main() {
       lines.push("");
       lines.push(`- Base: \`${BASE}\``);
       lines.push(`- Generated: ${nowIso}`);
+      if (DRY_RUN) lines.push(`- Mode: **dry-run** (no files written)`);
       if (ONLY) lines.push(`- Scope (\`--only\`): \`${ONLY}\``);
       lines.push(
         `- Summary: **${changed.length} change(s)** (${diffs.filter((d) => d.kind === "added").length} added, ${diffs.filter((d) => d.kind === "changed").length} changed)`,
@@ -615,16 +630,29 @@ async function main() {
         }
       }
       lines.push("");
-      mkdirSync(dirname(resolve(BASELINE_DIFF_OUT)), { recursive: true });
-      writeFileSync(resolve(BASELINE_DIFF_OUT), lines.join("\n"));
-      console.log(`redirect-chain-validator: baseline diff written to ${BASELINE_DIFF_OUT}`);
+      if (DRY_RUN) {
+        console.log(`redirect-chain-validator: [dry-run] would write baseline diff to ${BASELINE_DIFF_OUT}`);
+        console.log("--- baseline-diff.md (dry-run preview) ---");
+        console.log(lines.join("\n"));
+        console.log("--- end preview ---");
+      } else {
+        mkdirSync(dirname(resolve(BASELINE_DIFF_OUT)), { recursive: true });
+        writeFileSync(resolve(BASELINE_DIFF_OUT), lines.join("\n"));
+        console.log(`redirect-chain-validator: baseline diff written to ${BASELINE_DIFF_OUT}`);
+      }
     }
 
-    mkdirSync(dirname(BASELINE_PATH), { recursive: true });
-    writeFileSync(BASELINE_PATH, JSON.stringify(merged, null, 2) + "\n");
-    console.log(
-      `redirect-chain-validator: baseline updated (${updated} rule(s)) → ${BASELINE_PATH}`,
-    );
+    if (DRY_RUN) {
+      console.log(
+        `redirect-chain-validator: [dry-run] would update baseline (${updated} rule(s)) → ${BASELINE_PATH} — no files written.`,
+      );
+    } else {
+      mkdirSync(dirname(BASELINE_PATH), { recursive: true });
+      writeFileSync(BASELINE_PATH, JSON.stringify(merged, null, 2) + "\n");
+      console.log(
+        `redirect-chain-validator: baseline updated (${updated} rule(s)) → ${BASELINE_PATH}`,
+      );
+    }
   }
 
   process.exit(totalOk ? 0 : 1);
