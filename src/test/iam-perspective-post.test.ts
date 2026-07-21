@@ -8,7 +8,7 @@ const html = readFileSync(HTML_PATH, "utf8");
 
 const meta = (attr: "name" | "property", key: string): string | null => {
   const re = new RegExp(
-    `<meta[^>]+${attr}=["']${key.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}["'][^>]+content=["']([^"']+)["']`,
+    `<meta[^>]+${attr}=["']${key.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}["'][^>]+content="([^"]+)"`,
     "i",
   );
   return html.match(re)?.[1] ?? null;
