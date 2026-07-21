@@ -35,10 +35,9 @@ const SITE = arg("--site", "https://industryarmymarketing.com/")!;
 // www vs. non-www mismatch does not trigger a 400.
 const defaultSitemap = new URL("/sitemap.xml", SITE).toString();
 const SITEMAP = arg("--sitemap", defaultSitemap)!;
-const INSPECT_URLS = [
-  "https://www.industryarmymarketing.com/",
-  "https://www.industryarmymarketing.com/blog",
-];
+// Inspection URLs must live under the verified property (SITE).
+const inspectBase = SITE.replace(/\/$/, "");
+const INSPECT_URLS = [`${inspectBase}/`, `${inspectBase}/blog`];
 
 const authHeaders = {
   Authorization: `Bearer ${LOVABLE_KEY}`,
