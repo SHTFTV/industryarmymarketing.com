@@ -1,0 +1,102 @@
+name: SEO nightly drift check
+
+# Nightly re-run of the live legacy-redirect audits against production
+# to catch SEO drift between deploys (CDN cache/config changes, DNS,
+# hosting rollouts, etc.). Uses the same scripts as the deploy workflow
+# but runs on a schedule against the live origin only.
+
+on:
+  schedule:
+    - cron: "17 8 * * *" # 08:17 UTC daily
+  workflow_dispatch:
+
+concurrency:
+  group: seo-nightly
+  cancel-in-progress: false
+
+jobs:
+  legacy-drift:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      issues: write
+    env:
+      LEGACY_LIVE_BASE: https://www.industryarmymarketing.com
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install
+        run: bun install --frozen-lockfile
+
+      - name: Build (produces dist/ for legacy-not-prerendered check)
+        run: bun run build
+
+      - name: Legacy paths not prerendered
+        id: legacy_not_prerendered
+        run: bunx tsx scripts/check-legacy-not-prerendered.ts --annotate
+
+      - name: Legacy live audit
+        id: legacy_live
+        run: bunx tsx scripts/check-legacy-live.ts --annotate --base "$LEGACY_LIVE_BASE"
+
+      - name: Redirect chain validator (live)
+        id: redirect_chain
+        run: |
+          bunx tsx scripts/redirect-chain-validator.ts \
+            --base "$LEGACY_LIVE_BASE" --ua-matrix --annotate \
+            --json redirect-chain-report.json \
+            --summary redirect-chain-summary.json
+
+      - name: Legacy redirects live integration test
+        id: legacy_live_test
+        run: bunx vitest run src/test/legacy-redirects-live.test.ts
+
+      - name: Upload nightly reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: seo-nightly-reports
+          path: |
+            redirect-chain-report.json
+            redirect-chain-summary.json
+          if-no-files-found: ignore
+
+      - name: Open drift issue on failure
+        if: failure()
+        uses: actions/github-script@v7
+        env:
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        with:
+          script: |
+            const marker = '<!-- seo-nightly-drift -->';
+            const { owner, repo } = context.repo;
+            const body = [
+              marker,
+              '### SEO nightly drift detected',
+              '',
+              'One or more legacy-redirect audits failed against production:',
+              `- Legacy not prerendered: \`${{ steps.legacy_not_prerendered.outcome }}\``,
+              `- Legacy live audit: \`${{ steps.legacy_live.outcome }}\``,
+              `- Redirect chain validator: \`${{ steps.redirect_chain.outcome }}\``,
+              `- Legacy redirects live test: \`${{ steps.legacy_live_test.outcome }}\``,
+              '',
+              `Run: ${process.env.RUN_URL}`,
+            ].join('\n');
+            const { data: issues } = await github.rest.issues.listForRepo({
+              owner, repo, state: 'open', labels: 'seo-drift', per_page: 20,
+            });
+            const prior = issues.find((i) => i.body && i.body.includes(marker));
+            if (prior) {
+              await github.rest.issues.createComment({ owner, repo, issue_number: prior.number, body });
+            } else {
+              await github.rest.issues.create({
+                owner, repo,
+                title: `SEO nightly drift detected (${new Date().toISOString().slice(0, 10)})`,
+                body,
+                labels: ['seo-drift'],
+              });
+            }

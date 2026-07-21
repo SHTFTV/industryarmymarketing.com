@@ -31,6 +31,28 @@ const BASE = (arg("--base", "https://www.industryarmymarketing.com") ?? "").repl
 const MAX_HOPS = Number(arg("--max-hops", "5"));
 const TIMEOUT = Number(arg("--timeout", "10000"));
 const JSON_OUT = arg("--json");
+const SUMMARY_OUT = arg("--summary");
+const RETRIES = Number(arg("--retries", "3"));
+const ANNOTATE = flag("--annotate");
+
+// Sleep with jittered exponential backoff. Base delay grows 500ms →
+// 1s → 2s and each attempt adds up to `base` of random jitter to avoid
+// thundering herds against the origin/CDN.
+async function backoff(attempt: number) {
+  const base = 500 * Math.pow(2, attempt);
+  const jitter = Math.random() * base;
+  await new Promise((r) => setTimeout(r, base + jitter));
+}
+
+// Emit a GitHub Actions error annotation. Falls back to plain console
+// output when not running in CI (or when --annotate is not set).
+function annotate(title: string, message: string) {
+  if (!ANNOTATE) return;
+  const file = "src/components/LegacyRedirects.tsx";
+  // Newlines must be encoded per the workflow-commands format.
+  const encoded = message.replace(/\r/g, "").replace(/\n/g, "%0A");
+  console.log(`::error file=${file},title=${title}::${encoded}`);
+}
 
 // Common browser + crawler user agents. Redirects must resolve to the
 // same final destination regardless of client.
@@ -119,24 +141,38 @@ async function followChain(
   const hops: Hop[] = [];
   let url = `${BASE}${startPath}`;
   for (let i = 0; i < MAX_HOPS; i++) {
-    const controller = new AbortController();
-    const t = setTimeout(() => controller.abort(), TIMEOUT);
-    let res: Response;
-    try {
-      // GET (not HEAD): some CDNs/hosts skip cache/content-type headers
-      // on HEAD but include them for GET. Discard the body via cancel().
-      res = await fetch(url, {
-        method: "GET",
-        redirect: "manual",
-        signal: controller.signal,
-        headers: { "User-Agent": userAgent, Accept: "text/html,*/*;q=0.8" },
-      });
-    } catch (e) {
-      clearTimeout(t);
-      return { hops, finalUrl: url, error: (e as Error).message };
+    // Retry each hop with jittered exponential backoff. Transient
+    // DNS/network/CDN glitches must not fail CI.
+    let res: Response | undefined;
+    let lastErr: Error | undefined;
+    for (let attempt = 0; attempt <= RETRIES; attempt++) {
+      const controller = new AbortController();
+      const t = setTimeout(() => controller.abort(), TIMEOUT);
+      try {
+        res = await fetch(url, {
+          method: "GET",
+          redirect: "manual",
+          signal: controller.signal,
+          headers: { "User-Agent": userAgent, Accept: "text/html,*/*;q=0.8" },
+        });
+        clearTimeout(t);
+        // Retry on transient upstream errors (5xx, 429). 3xx/4xx are
+        // real signals and returned immediately.
+        if (res.status >= 500 || res.status === 429) {
+          try { await res.body?.cancel(); } catch { /* ignore */ }
+          if (attempt < RETRIES) { await backoff(attempt); continue; }
+        }
+        break;
+      } catch (e) {
+        clearTimeout(t);
+        lastErr = e as Error;
+        if (attempt < RETRIES) { await backoff(attempt); continue; }
+      }
+    }
+    if (!res) {
+      return { hops, finalUrl: url, error: lastErr?.message ?? "fetch failed" };
     }
     try { await res.body?.cancel(); } catch { /* ignore */ }
-    clearTimeout(t);
     const location = res.headers.get("location") ?? undefined;
     hops.push({
       url,
@@ -249,6 +285,21 @@ async function main() {
       console.log(
         `  ${tag}  ${uaTag}${from.padEnd(56)} [${chain}] → ${finalUrl}${ok ? "" : ` (${reasons.join("; ")})`}`,
       );
+      if (!ok) {
+        const statusExp = statusExpectationsFor(originalRule);
+        const expectedHop1 = (statusExp.hops[0] ?? statusExp.defaultHopStatus).join("/");
+        const actualHop1 = hops[0]?.status ?? "none";
+        const msg = [
+          `Rule: ${originalRule}${uaCount > 1 ? ` [${uaLabel}]` : ""}`,
+          `Requested: ${from}`,
+          `Expected hop 1: ${expectedHop1}`,
+          `Actual hop 1: ${actualHop1}`,
+          `Expected final: ${expectedFinal}`,
+          `Actual final: ${finalNorm}`,
+          `Reasons: ${reasons.join("; ")}`,
+        ].join("\n");
+        annotate(`Legacy redirect FAIL: ${originalRule}`, msg);
+      }
     }
   }
 
@@ -275,6 +326,47 @@ async function main() {
       resolve(JSON_OUT),
       JSON.stringify({ base: BASE, results, inconsistent }, null, 2),
     );
+  }
+  if (SUMMARY_OUT) {
+    // Compact per-rule expected-vs-actual summary suitable for CI review.
+    const summary = {
+      base: BASE,
+      generatedAt: new Date().toISOString(),
+      totals: {
+        cases: results.length,
+        passed: results.length - failed.length,
+        failed: failed.length,
+        crossUaMismatches: inconsistent.length,
+      },
+      rules: results.map((r) => {
+        const rule =
+          LEGACY_REDIRECTS.find(
+            (x) => x.from === r.from || (x.from.endsWith("/*") && r.from.startsWith(x.from.slice(0, -1))),
+          )?.from ?? r.from;
+        const statusExp = statusExpectationsFor(rule);
+        const expectedHops = statusExp.hops.length
+          ? statusExp.hops.map((h) => h.join("/"))
+          : [statusExp.defaultHopStatus.join("/")];
+        return {
+          rule,
+          ua: r.ua,
+          requested: r.from,
+          expected: {
+            hops: expectedHops,
+            finalUrl: `${BASE}${r.expectedTo}`.replace(/\/$/, ""),
+          },
+          actual: {
+            hops: r.hops.map((h) => h.status),
+            finalUrl: r.finalUrl.replace(/\/$/, "").split("?")[0],
+          },
+          ok: r.ok,
+          reasons: r.reasons,
+        };
+      }),
+      inconsistent,
+    };
+    writeFileSync(resolve(SUMMARY_OUT), JSON.stringify(summary, null, 2));
+    console.log(`redirect-chain-validator: summary written to ${SUMMARY_OUT}`);
   }
   process.exit(totalOk ? 0 : 1);
 }

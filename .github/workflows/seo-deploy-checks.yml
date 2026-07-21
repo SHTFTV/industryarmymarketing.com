@@ -56,7 +56,7 @@ jobs:
 
       - name: Legacy paths not prerendered
         id: legacy_not_prerendered
-        run: bunx tsx scripts/check-legacy-not-prerendered.ts
+        run: bunx tsx scripts/check-legacy-not-prerendered.ts --annotate
 
       - name: Prerender HTML SEO check (blog + newest posts)
         id: prerender_check
@@ -65,13 +65,17 @@ jobs:
       - name: Real-HTTP redirect chain validator
         id: redirect_chain
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-        run: bun run redirects:validate
+        run: |
+          bunx tsx scripts/redirect-chain-validator.ts \
+            --ua-matrix --annotate \
+            --json redirect-chain-report.json \
+            --summary redirect-chain-summary.json
         continue-on-error: true
 
       - name: Legacy live audit (post-deploy)
         id: legacy_live
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-        run: bunx tsx scripts/check-legacy-live.ts
+        run: bunx tsx scripts/check-legacy-live.ts --annotate
         continue-on-error: true
 
       - name: Legacy redirects live integration test
@@ -116,6 +120,17 @@ jobs:
         with:
           name: prerender-html-check-log
           path: prerender-html-check.log
+
+      - name: Upload redirect chain reports
+        id: upload_redirect_reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: redirect-chain-reports
+          path: |
+            redirect-chain-report.json
+            redirect-chain-summary.json
+          if-no-files-found: ignore
 
       - name: Ensure PR comment will have artifact URLs
         id: check_artifact_urls
