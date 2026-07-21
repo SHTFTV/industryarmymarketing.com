@@ -54,6 +54,10 @@ jobs:
         id: perf
         run: bunx tsx scripts/perf-budget.ts
 
+      - name: Legacy paths not prerendered
+        id: legacy_not_prerendered
+        run: bunx tsx scripts/check-legacy-not-prerendered.ts
+
       - name: Prerender HTML SEO check (blog + newest posts)
         id: prerender_check
         run: bun run prerender:check 2>&1 | tee prerender-html-check.log
@@ -62,6 +66,20 @@ jobs:
         id: redirect_chain
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: bun run redirects:validate
+        continue-on-error: true
+
+      - name: Legacy live audit (post-deploy)
+        id: legacy_live
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: bunx tsx scripts/check-legacy-live.ts
+        continue-on-error: true
+
+      - name: Legacy redirects live integration test
+        id: legacy_live_test
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        env:
+          LEGACY_LIVE_BASE: https://www.industryarmymarketing.com
+        run: bunx vitest run src/test/legacy-redirects-live.test.ts
         continue-on-error: true
 
       - name: Restore previous SEO snapshot
@@ -99,6 +117,24 @@ jobs:
           name: prerender-html-check-log
           path: prerender-html-check.log
 
+      - name: Ensure PR comment will have artifact URLs
+        id: check_artifact_urls
+        if: github.event_name == 'pull_request'
+        env:
+          DIFF_URL: ${{ steps.upload_diff.outputs.artifact-url }}
+          LOG_URL: ${{ steps.upload_prerender_log.outputs.artifact-url }}
+        run: |
+          missing=0
+          if [ -z "$DIFF_URL" ]; then
+            echo "::error::seo-diff-report artifact URL is empty; PR comment would lose direct link"
+            missing=1
+          fi
+          if [ -z "$LOG_URL" ]; then
+            echo "::error::prerender-html-check-log artifact URL is empty; PR comment would lose direct link"
+            missing=1
+          fi
+          exit $missing
+
       - name: Upload current SEO snapshot (baseline for next run)
         uses: actions/upload-artifact@v4
         with:
@@ -129,9 +165,13 @@ jobs:
               ['robots/sitemap/blog consistency', ${{ toJSON(steps.consistency.outcome) }}],
               ['Canonical + JSON-LD', ${{ toJSON(steps.canonical_jsonld.outcome) }}],
               ['Prerender perf budgets', ${{ toJSON(steps.perf.outcome) }}],
+              ['Legacy paths not prerendered', ${{ toJSON(steps.legacy_not_prerendered.outcome) }}],
               ['Prerender HTML SEO check', ${{ toJSON(steps.prerender_check.outcome) }}],
               ['Real-HTTP redirect chain', ${{ toJSON(steps.redirect_chain.outcome) }}],
+              ['Legacy live audit', ${{ toJSON(steps.legacy_live.outcome) }}],
+              ['Legacy redirects live test', ${{ toJSON(steps.legacy_live_test.outcome) }}],
               ['SEO diff report', ${{ toJSON(steps.seo_diff.outcome) }}],
+              ['Artifact URLs present', ${{ toJSON(steps.check_artifact_urls.outcome) }}],
             ];
             const rows = steps
               .filter(([, o]) => o && o !== '')
@@ -141,6 +181,9 @@ jobs:
             const artifactsUrl = `${runUrl}#artifacts`;
             const diffUrl = process.env.DIFF_ARTIFACT_URL || artifactsUrl;
             const prerenderLogUrl = process.env.PRERENDER_LOG_ARTIFACT_URL || artifactsUrl;
+            if (!process.env.DIFF_ARTIFACT_URL || !process.env.PRERENDER_LOG_ARTIFACT_URL) {
+              core.setFailed('PR summary comment is missing direct artifact URLs for seo-diff-report.md or prerender-html-check.log');
+            }
             let diffPreview = '';
             try {
               const md = fs.readFileSync('seo-diff-report.md', 'utf8').split('\n').slice(0, 30).join('\n');
