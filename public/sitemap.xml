@@ -476,13 +476,13 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://industryarmymarketing.com/blog/iam-vendors-purchasing-power-parity-pricing</loc>
+    <loc>https://industryarmymarketing.com/blog/beyond-domain-name-entity-authority-modern-seo</loc>
     <lastmod>2026-07-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://industryarmymarketing.com/blog/beyond-domain-name-entity-authority-modern-seo</loc>
+    <loc>https://industryarmymarketing.com/blog/iam-vendors-purchasing-power-parity-pricing</loc>
     <lastmod>2026-07-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -500,37 +500,61 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://industryarmymarketing.com/blog/contractor-marketing-disruptor</loc>
-    <lastmod>2026-06-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://industryarmymarketing.com/blog/buildershaus-every-trade-one-platform</loc>
-    <lastmod>2026-06-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://industryarmymarketing.com/blog/battle-for-the-brand-weddings-io</loc>
-    <lastmod>2026-06-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://industryarmymarketing.com/__l5e/assets-v1/5e8614a6-5da3-4243-b3e9-6f5bad84bd9c/weddings-vs-aiweddings-battle.png</image:loc>
-      <image:caption>weddings.io vs aiweddings.io — The Battle for the Domain Name (IAM case study)</image:caption>
-      <image:title>weddings.io vs aiweddings.io: The Battle for the Domain Name — Industry Army Marketing brand defense case study featured image</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://industryarmymarketing.com/blog/formal-complaint-weddings-io-inc</loc>
+    <loc>https://industryarmymarketing.com/blog/weddings-io-entity-conflation-case-study</loc>
     <lastmod>2026-07-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
-      <image:loc>https://industryarmymarketing.com/__l5e/assets-v1/049bfe5d-1aba-4b6d-99ba-5e1dd85a298e/weddings-io-formal-complaint.png</image:loc>
-      <image:caption>Formal complaint / Statement of Objection filed with Ontario government against 'Weddings.io Inc.'</image:caption>
-      <image:title>We've Filed a Formal Complaint Regarding 'Weddings.io Inc.' — Industry Army Marketing featured image</image:title>
+      <image:loc>https://industryarmymarketing.com/__l5e/assets-v1/c5c5b9c4-d6be-4ad7-b792-0c33cd820b19/weddings-io-entity-conflation.jpg</image:loc>
+      <image:caption>Weddings.io v. aiweddings.io — entity conflation case study featured image. Two distinct entities, one contested category-defining .io domain, Statement of Objection filed under the Ontario Business Names Act.</image:caption>
+      <image:title>Weddings.io Entity Conflation — Case Study Featured Image (Industry Army Marketing)</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://industryarmymarketing.com/__l5e/assets-v1/c5cb58a8-efe6-403f-a60c-b9ce2cb0062c/weddings-io-conflation-ai-overview.png</image:loc>
+      <image:caption>Exhibit A — Google AI Overview panel describing 'Weddings.io' as an AI-native wedding planning SaaS platform IAM does not operate. Captured July 4, 2026.</image:caption>
+      <image:title>Weddings.io Entity Conflation — Exhibit A (Google AI Overview)</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://industryarmymarketing.com/__l5e/assets-v1/9f380524-f12d-4d82-94e3-ff5d9b790106/weddings-io-conflation-google-maps.png</image:loc>
+      <image:caption>Exhibit B — Google Search + Google Maps knowledge panel rendering an unrelated Toronto storefront under the display heading 'Weddings.IO'. Captured July 4, 2026.</image:caption>
+      <image:title>Weddings.io Entity Conflation — Exhibit B (Google Maps knowledge panel misattribution)</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://industryarmymarketing.com/__l5e/assets-v1/64bafdd4-2f45-40bb-b517-ab365bd1e736/weddings-io-conflation-tailored-results.png</image:loc>
+      <image:caption>Exhibit C — Google AI Overview's own explanation of why it surfaced the Ontario Party ahead of the actual .io registrant. Captured July 4, 2026.</image:caption>
+      <image:title>Weddings.io Entity Conflation — Exhibit C (AI Overview self-explanation)</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://industryarmymarketing.com/__l5e/assets-v1/5a966e11-ea46-4808-a916-6030577cf40e/weddings-io-conflation-root-domain.png</image:loc>
+      <image:caption>Exhibit D — the correct root-domain answer, returned by the same AI system that produced the incorrect default. Captured July 4, 2026.</image:caption>
+      <image:title>Weddings.io Entity Conflation — Exhibit D (correct root-domain answer)</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://industryarmymarketing.com/__l5e/assets-v1/673281f8-99f0-4a09-86c3-1f141ce64b01/weddings-io-conflation-flagged-review.png</image:loc>
+      <image:caption>Exhibit E — AI system acknowledgement, on the record, that the two entities must be architecturally separated with no cross-wired metadata. Captured July 5, 2026.</image:caption>
+      <image:title>Weddings.io Entity Conflation — Exhibit E (flagged for human review)</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://industryarmymarketing.com/blog/six-figure-land-grab-weddings-io</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://industryarmymarketing.com/__l5e/assets-v1/0a5a3168-64b3-409f-a773-56a39f6e04b8/six-figure-land-grab-weddings-io.png</image:loc>
+      <image:caption>Six-figure .io domain land grab — weddings.io category-killer defense vs aiweddings.io and Weddings.io Inc.</image:caption>
+      <image:title>The Six-Figure Land Grab Nobody Planned — weddings.io featured image (Industry Army Marketing)</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://industryarmymarketing.com/blog/wedding-platform-controversy-domain-dispute-seo</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://industryarmymarketing.com/__l5e/assets-v1/6b002842-33da-43fb-a520-93a6d46988ca/weddings-io-seo-command-center.png</image:loc>
+      <image:caption>weddings.io SEO Command Center — organic traffic, keyword rankings, backlinks, domain authority; independent alternative to The Knot and WeddingWire under FTC scrutiny</image:caption>
+      <image:title>Wedding Platform Controversy: How a Domain Dispute Became the Best SEO Campaign We Never Planned — weddings.io featured image</image:title>
     </image:image>
   </url>
   <url>
@@ -565,29 +589,42 @@
     </image:image>
   </url>
   <url>
-    <loc>https://industryarmymarketing.com/blog/wedding-platform-controversy-domain-dispute-seo</loc>
+    <loc>https://industryarmymarketing.com/blog/formal-complaint-weddings-io-inc</loc>
     <lastmod>2026-07-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
-      <image:loc>https://industryarmymarketing.com/__l5e/assets-v1/6b002842-33da-43fb-a520-93a6d46988ca/weddings-io-seo-command-center.png</image:loc>
-      <image:caption>weddings.io SEO Command Center — organic traffic, keyword rankings, backlinks, domain authority; independent alternative to The Knot and WeddingWire under FTC scrutiny</image:caption>
-      <image:title>Wedding Platform Controversy: How a Domain Dispute Became the Best SEO Campaign We Never Planned — weddings.io featured image</image:title>
+      <image:loc>https://industryarmymarketing.com/__l5e/assets-v1/049bfe5d-1aba-4b6d-99ba-5e1dd85a298e/weddings-io-formal-complaint.png</image:loc>
+      <image:caption>Formal complaint / Statement of Objection filed with Ontario government against 'Weddings.io Inc.'</image:caption>
+      <image:title>We've Filed a Formal Complaint Regarding 'Weddings.io Inc.' — Industry Army Marketing featured image</image:title>
     </image:image>
   </url>
   <url>
-    <loc>https://industryarmymarketing.com/blog/six-figure-land-grab-weddings-io</loc>
-    <lastmod>2026-07-01</lastmod>
+    <loc>https://industryarmymarketing.com/blog/hardscapes-kelowna</loc>
+    <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://industryarmymarketing.com/__l5e/assets-v1/0a5a3168-64b3-409f-a773-56a39f6e04b8/six-figure-land-grab-weddings-io.png</image:loc>
-      <image:caption>Six-figure .io domain land grab — weddings.io category-killer defense vs aiweddings.io and Weddings.io Inc.</image:caption>
-      <image:title>The Six-Figure Land Grab Nobody Planned — weddings.io featured image (Industry Army Marketing)</image:title>
-    </image:image>
   </url>
   <url>
-    <loc>https://industryarmymarketing.com/blog/talc-tv-content-engine-contractors</loc>
+    <loc>https://industryarmymarketing.com/blog/landscapers-toronto</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://industryarmymarketing.com/blog/movers-calgary</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://industryarmymarketing.com/blog/chiropractors-vancouver</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://industryarmymarketing.com/blog/gasfitter-bc</loc>
     <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -599,103 +636,30 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://industryarmymarketing.com/blog/kitchen-cabinets-vancouver</loc>
-    <lastmod>2026-05-01</lastmod>
+    <loc>https://industryarmymarketing.com/blog/talc-tv-content-engine-contractors</loc>
+    <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://industryarmymarketing.com/blog/weddings-vancouver</loc>
-    <lastmod>2026-05-01</lastmod>
+    <loc>https://industryarmymarketing.com/blog/battle-for-the-brand-weddings-io</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://industryarmymarketing.com/__l5e/assets-v1/5e8614a6-5da3-4243-b3e9-6f5bad84bd9c/weddings-vs-aiweddings-battle.png</image:loc>
+      <image:caption>weddings.io vs aiweddings.io — The Battle for the Domain Name (IAM case study)</image:caption>
+      <image:title>weddings.io vs aiweddings.io: The Battle for the Domain Name — Industry Army Marketing brand defense case study featured image</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://industryarmymarketing.com/blog/buildershaus-every-trade-one-platform</loc>
+    <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://industryarmymarketing.com/blog/tractors-bc</loc>
-    <lastmod>2026-05-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://industryarmymarketing.com/blog/framers-vancouver</loc>
-    <lastmod>2026-05-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://industryarmymarketing.com/blog/hvacr-vancouver</loc>
-    <lastmod>2026-05-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://industryarmymarketing.com/blog/excavators-bc</loc>
-    <lastmod>2026-04-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://industryarmymarketing.com/blog/painters-vancouver</loc>
-    <lastmod>2026-04-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://industryarmymarketing.com/blog/roofers-vancouver</loc>
-    <lastmod>2026-04-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://industryarmymarketing.com/blog/drywallers-vancouver</loc>
-    <lastmod>2026-04-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://industryarmymarketing.com/blog/plumbers-vancouver</loc>
-    <lastmod>2026-03-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://industryarmymarketing.com/blog/demolition-vancouver</loc>
-    <lastmod>2026-03-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://industryarmymarketing.com/blog/interior-designers-vancouver</loc>
-    <lastmod>2026-03-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://industryarmymarketing.com/blog/backhaul-bc</loc>
-    <lastmod>2026-03-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://industryarmymarketing.com/blog/snow-removal-bc</loc>
-    <lastmod>2026-02-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://industryarmymarketing.com/blog/videographers-vancouver</loc>
-    <lastmod>2026-02-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://industryarmymarketing.com/blog/errands-vancouver</loc>
-    <lastmod>2026-02-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://industryarmymarketing.com/blog/gasfitter-bc</loc>
+    <loc>https://industryarmymarketing.com/blog/contractor-marketing-disruptor</loc>
     <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -707,7 +671,61 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://industryarmymarketing.com/blog/hvacr-vancouver</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://industryarmymarketing.com/blog/framers-vancouver</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://industryarmymarketing.com/blog/tractors-bc</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://industryarmymarketing.com/blog/weddings-vancouver</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://industryarmymarketing.com/blog/kitchen-cabinets-vancouver</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://industryarmymarketing.com/blog/eyespyr-trust-layer</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://industryarmymarketing.com/blog/drywallers-vancouver</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://industryarmymarketing.com/blog/roofers-vancouver</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://industryarmymarketing.com/blog/painters-vancouver</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://industryarmymarketing.com/blog/excavators-bc</loc>
     <lastmod>2026-04-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -719,7 +737,55 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://industryarmymarketing.com/blog/backhaul-bc</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://industryarmymarketing.com/blog/interior-designers-vancouver</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://industryarmymarketing.com/blog/demolition-vancouver</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://industryarmymarketing.com/blog/plumbers-vancouver</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://industryarmymarketing.com/blog/ten-dollar-territories-explained</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://industryarmymarketing.com/blog/healthwealthhome-content-engine</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://industryarmymarketing.com/blog/errands-vancouver</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://industryarmymarketing.com/blog/videographers-vancouver</loc>
+    <lastmod>2026-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://industryarmymarketing.com/blog/snow-removal-bc</loc>
     <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -789,71 +855,5 @@
     <lastmod>2025-03-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://industryarmymarketing.com/blog/ten-dollar-territories-explained</loc>
-    <lastmod>2026-02-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://industryarmymarketing.com/blog/chiropractors-vancouver</loc>
-    <lastmod>2026-06-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://industryarmymarketing.com/blog/movers-calgary</loc>
-    <lastmod>2026-06-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://industryarmymarketing.com/blog/landscapers-toronto</loc>
-    <lastmod>2026-06-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://industryarmymarketing.com/blog/hardscapes-kelowna</loc>
-    <lastmod>2026-06-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://industryarmymarketing.com/blog/weddings-io-entity-conflation-case-study</loc>
-    <lastmod>2026-07-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://industryarmymarketing.com/__l5e/assets-v1/c5c5b9c4-d6be-4ad7-b792-0c33cd820b19/weddings-io-entity-conflation.jpg</image:loc>
-      <image:caption>Weddings.io v. aiweddings.io — entity conflation case study featured image. Two distinct entities, one contested category-defining .io domain, Statement of Objection filed under the Ontario Business Names Act.</image:caption>
-      <image:title>Weddings.io Entity Conflation — Case Study Featured Image (Industry Army Marketing)</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://industryarmymarketing.com/__l5e/assets-v1/c5cb58a8-efe6-403f-a60c-b9ce2cb0062c/weddings-io-conflation-ai-overview.png</image:loc>
-      <image:caption>Exhibit A — Google AI Overview panel describing 'Weddings.io' as an AI-native wedding planning SaaS platform IAM does not operate. Captured July 4, 2026.</image:caption>
-      <image:title>Weddings.io Entity Conflation — Exhibit A (Google AI Overview)</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://industryarmymarketing.com/__l5e/assets-v1/9f380524-f12d-4d82-94e3-ff5d9b790106/weddings-io-conflation-google-maps.png</image:loc>
-      <image:caption>Exhibit B — Google Search + Google Maps knowledge panel rendering an unrelated Toronto storefront under the display heading 'Weddings.IO'. Captured July 4, 2026.</image:caption>
-      <image:title>Weddings.io Entity Conflation — Exhibit B (Google Maps knowledge panel misattribution)</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://industryarmymarketing.com/__l5e/assets-v1/64bafdd4-2f45-40bb-b517-ab365bd1e736/weddings-io-conflation-tailored-results.png</image:loc>
-      <image:caption>Exhibit C — Google AI Overview's own explanation of why it surfaced the Ontario Party ahead of the actual .io registrant. Captured July 4, 2026.</image:caption>
-      <image:title>Weddings.io Entity Conflation — Exhibit C (AI Overview self-explanation)</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://industryarmymarketing.com/__l5e/assets-v1/5a966e11-ea46-4808-a916-6030577cf40e/weddings-io-conflation-root-domain.png</image:loc>
-      <image:caption>Exhibit D — the correct root-domain answer, returned by the same AI system that produced the incorrect default. Captured July 4, 2026.</image:caption>
-      <image:title>Weddings.io Entity Conflation — Exhibit D (correct root-domain answer)</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://industryarmymarketing.com/__l5e/assets-v1/673281f8-99f0-4a09-86c3-1f141ce64b01/weddings-io-conflation-flagged-review.png</image:loc>
-      <image:caption>Exhibit E — AI system acknowledgement, on the record, that the two entities must be architecturally separated with no cross-wired metadata. Captured July 5, 2026.</image:caption>
-      <image:title>Weddings.io Entity Conflation — Exhibit E (flagged for human review)</image:title>
-    </image:image>
   </url>
 </urlset>
