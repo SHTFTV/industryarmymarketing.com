@@ -122,7 +122,22 @@ function loadBaseline(): BaselineFile {
     try {
       const raw = execSync(`git show ${spec}`, { encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] });
       console.log(`redirect-chain-validator: baseline loaded from git ${spec}`);
-      return parseBaselineJson(`git:${spec}`, raw);
+      const parsed = parseBaselineJson(`git:${spec}`, raw);
+      // Strict cross-schema check: a baseline loaded from an arbitrary
+      // Git ref must match the CURRENT summary schema version. Prevents
+      // silently validating against an out-of-date baseline shape when
+      // the summary schema has moved forward on this commit.
+      const bv = parsed.schemaVersion ?? BASELINE_SCHEMA_VERSION;
+      if (bv !== SUMMARY_SCHEMA_VERSION) {
+        const msg =
+          `redirect-chain-validator: SCHEMA MISMATCH — baseline at git ${spec} ` +
+          `has schemaVersion "${bv}" but current summary schemaVersion is "${SUMMARY_SCHEMA_VERSION}". ` +
+          `Regenerate the baseline on this commit (--update-baseline) or drop --baseline-ref.`;
+        console.error(msg);
+        if (ANNOTATE) console.log(`::error::${msg}`);
+        process.exit(3);
+      }
+      return parsed;
     } catch (e) {
       console.error(
         `redirect-chain-validator: --baseline-ref could not read ${spec}: ${(e as Error).message.trim()}`,
