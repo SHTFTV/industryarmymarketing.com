@@ -21,7 +21,10 @@
     "seo:check": "bunx tsx scripts/seo-canonical-jsonld-check.ts",
     "seo:consistency": "bunx tsx scripts/seo-consistency-check.ts",
     "perf:budget": "bunx tsx scripts/perf-budget.ts",
-    "gsc:poll": "bunx tsx scripts/gsc-poll-indexing.ts"
+    "gsc:poll": "bunx tsx scripts/gsc-poll-indexing.ts",
+    "redirects:validate": "bunx tsx scripts/redirect-chain-validator.ts",
+    "prerender:check": "bunx tsx scripts/prerender-html-check.ts",
+    "seo:diff": "bunx tsx scripts/seo-diff-report.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
