@@ -23,8 +23,8 @@ const CASES: Array<{ title: string; url: string }> = [
     url: "https://industryarmymarketing.com/blog/unicode-café",
   },
   {
-    title: "Already %20 percent",
-    url: "https://industryarmymarketing.com/blog/already%20percent",
+    title: "Trailing slash & hash",
+    url: "https://industryarmymarketing.com/blog/hash-post/#section",
   },
   {
     title: 'Quotes "and" slashes/back',
