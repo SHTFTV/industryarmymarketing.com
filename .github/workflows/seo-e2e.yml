@@ -33,23 +33,39 @@ jobs:
             --reporter=default --reporter=json --outputFile=vitest-seo.json \
             src/test/iam-perspective-post.test.ts \
             src/test/blog-posts-seo-parity.test.ts \
-            src/test/blog-jsonld-dates.test.ts
+            src/test/blog-jsonld-dates.test.ts \
+            src/pages/BlogPost.robotsSitemapSchema.test.tsx
           echo "exit_code=$?" >> "$GITHUB_OUTPUT"
           exit 0
-      - name: Summarize SEO failures
-        if: always()
-        env:
-          SEO_COMMENT_OUT: seo-comment.md
-        run: |
-          node scripts/summarize-seo-failures.mjs vitest-seo.json || true
       - name: Upload vitest report
         if: always()
+        id: upload_vitest
         uses: actions/upload-artifact@v4
         with:
           name: seo-vitest-report
           path: |
             vitest-seo.json
-            seo-comment.md
+      - name: Wait for Playwright + OG image jobs (for artifact URLs)
+        # We link to sibling job artifacts in the PR comment. The GitHub
+        # artifact URLs resolve to the workflow run's Artifacts tab, so we
+        # only need the run id — not the individual artifact ids.
+        run: 'echo "run_url=${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" >> "$GITHUB_ENV"'
+      - name: Summarize SEO failures
+        if: always()
+        env:
+          SEO_COMMENT_OUT: seo-comment.md
+          RUN_URL: ${{ env.run_url }}
+          VITEST_REPORT_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}#artifacts
+          PLAYWRIGHT_LOG_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}#artifacts
+          OG_IMAGE_LOG_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}#artifacts
+        run: |
+          node scripts/summarize-seo-failures.mjs vitest-seo.json || true
+      - name: Upload PR comment body
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: seo-pr-comment
+          path: seo-comment.md
       - name: Comment PR summary
         if: always() && github.event_name == 'pull_request'
         uses: actions/github-script@v7
@@ -88,7 +104,7 @@ jobs:
       - name: Install Playwright browsers
         run: npx playwright install --with-deps chromium
       - name: Run E2E SEO check
-        run: npx tsx scripts/e2e-blog-seo.ts --url=$BLOG_URL | tee e2e-blog-seo.log
+        run: npx tsx scripts/e2e-blog-seo.ts --url=$BLOG_URL 2>&1 | tee e2e-blog-seo.log
       - name: Upload E2E log
         if: always()
         uses: actions/upload-artifact@v4
@@ -112,4 +128,10 @@ jobs:
       - name: Fetch every published OG image
         env:
           RUN_LIVE_OG_CHECK: "1"
-        run: npx vitest run src/test/blog-og-images-live.test.ts
+        run: npx vitest run src/test/blog-og-images-live.test.ts 2>&1 | tee og-image-check.log
+      - name: Upload OG image log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: og-image-check-log
+          path: og-image-check.log
