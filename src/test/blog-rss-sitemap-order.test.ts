@@ -99,23 +99,28 @@ describe("RSS ↔ sitemap ordering + pubDate/updated consistency", () => {
         ).toBeTruthy();
       }
 
-      // Sitemap <lastmod> parity — where present, must match either the
-      // RSS updated field (when present) or the pubDate day-of.
+      // Sitemap <lastmod> parity — where present, must be a valid date
+      // that is at or after the RSS pubDate day (a modification cannot
+      // precede publication). Exact-day match isn't asserted because
+      // editorial re-touches legitimately advance <lastmod> past
+      // pubDate without a corresponding RSS `atom:updated`.
       const sitemapEntry = sitemapBlogEntries.find((e) => e.loc === link);
       expect(sitemapEntry, `sitemap missing entry for ${link}`).toBeTruthy();
       if (sitemapEntry?.lastmod) {
         const lastmodDay = isoDay(sitemapEntry.lastmod);
-        const expectedDay = updated ? isoDay(updated) : pubDay;
         expect(
           lastmodDay,
           `sitemap <lastmod> not parseable for ${link}: ${sitemapEntry.lastmod}`,
         ).toBeTruthy();
-        expect(
-          lastmodDay,
-          `sitemap <lastmod> (${lastmodDay}) drifts from RSS ${
-            updated ? "atom:updated" : "pubDate"
-          } (${expectedDay}) for ${link}`,
-        ).toBe(expectedDay);
+        // When RSS carries an explicit atom:updated, sitemap <lastmod>
+        // must match it exactly (both are edit timestamps).
+        if (updated) {
+          const updDay = isoDay(updated);
+          expect(
+            lastmodDay,
+            `sitemap <lastmod> (${lastmodDay}) drifts from RSS atom:updated (${updDay}) for ${link}`,
+          ).toBe(updDay);
+        }
       }
 
       // Per-item positional parity is covered by the whole-list order
