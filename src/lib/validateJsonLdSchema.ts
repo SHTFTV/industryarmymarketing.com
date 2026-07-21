@@ -168,6 +168,19 @@ const REQUIRED_BY_TYPE: Record<string, FieldSpec[]> = {
     },
   ],
   Answer: [{ field: "text", required: true, check: nonEmptyString }],
+  VideoObject: [
+    { field: "name", required: true, check: nonEmptyString },
+    { field: "description", required: true, check: nonEmptyString },
+    { field: "thumbnailUrl", required: true, check: (v) => {
+      if (typeof v === "string") return isAbsoluteUrl(v) ? null : "absolute https URL";
+      if (Array.isArray(v)) {
+        for (const u of v) if (!isAbsoluteUrl(u)) return "each thumbnailUrl absolute https URL";
+        return null;
+      }
+      return "string URL or array of URLs";
+    } },
+    { field: "uploadDate", required: true, check: iso8601 },
+  ],
   BreadcrumbList: [
     { field: "itemListElement", required: true, check: itemListElement },
   ],
