@@ -63,6 +63,24 @@ type HeaderExpectations = {
   cacheControl?: RegExp;
   contentType?: RegExp;
 };
+// Expected redirect status codes per hop for a given rule. The first
+// entry applies to the first hop, the second to the second, etc. If a
+// rule has more hops than entries, remaining hops fall back to
+// `defaultHopStatus`. A hop is considered valid when its status is
+// included in the allowed list.
+type StatusExpectations = {
+  hops: number[][]; // e.g. [[301], [301,308]] → hop 1 must be 301, hop 2 either 301 or 308
+  defaultHopStatus: number[]; // allowed statuses for any hop beyond `hops`
+};
+const STATUS_EXPECTATIONS: Record<string, StatusExpectations> = {
+  default: { hops: [[301]], defaultHopStatus: [301, 302, 307, 308] },
+  // Admin/login paths may legitimately use 302/307 to force a fresh flow
+  "/wp-admin/*": { hops: [[301, 302, 307]], defaultHopStatus: [301, 302, 307, 308] },
+  "/wp-login.php": { hops: [[301, 302, 307]], defaultHopStatus: [301, 302, 307, 308] },
+};
+function statusExpectationsFor(rule: string): StatusExpectations {
+  return STATUS_EXPECTATIONS[rule] ?? STATUS_EXPECTATIONS.default;
+}
 const HEADER_EXPECTATIONS: Record<string, HeaderExpectations> = {
   default: {
     cacheControl: /(max-age|public|no-cache|no-store|private|s-maxage)/i,
@@ -203,12 +221,21 @@ async function main() {
       if (error) reasons.push(`fetch error: ${error}`);
       else if (hops.length === 0) reasons.push("no hops");
       else {
-        if (hops[0].status < 300 || hops[0].status >= 400)
-          reasons.push(`first hop was ${hops[0].status}, expected 301/302`);
-        const badHop = hops.find(
-          (h, i) => i < hops.length - 1 && h.status !== 301 && h.status !== 302,
-        );
-        if (badHop) reasons.push(`intermediate hop returned ${badHop.status}`);
+        const statusExp = statusExpectationsFor(originalRule);
+        // Validate each redirect hop (all hops except the final terminal one).
+        for (let i = 0; i < hops.length - 1; i++) {
+          const allowed = statusExp.hops[i] ?? statusExp.defaultHopStatus;
+          if (!allowed.includes(hops[i].status)) {
+            reasons.push(
+              `hop ${i + 1} returned ${hops[i].status}, expected one of ${allowed.join("/")}`,
+            );
+          }
+        }
+        // The final hop must not itself be a redirect (chain must terminate).
+        const last = hops[hops.length - 1];
+        if (last.status >= 300 && last.status < 400) {
+          reasons.push(`chain did not terminate; final hop was ${last.status}`);
+        }
         if (finalNorm !== expectedFinal)
           reasons.push(`final ${finalNorm} !== expected ${expectedFinal}`);
         reasons.push(...checkHeaders(hops[0], expectationsFor(originalRule), expectedFinal));
