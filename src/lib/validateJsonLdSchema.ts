@@ -224,6 +224,7 @@ export const validateJsonLdBlock = (
   const violations: JsonLdViolation[] = [];
   const ctx = schema["@context"];
   if (
+    ctx !== undefined &&
     ctx !== "https://schema.org" &&
     ctx !== "http://schema.org" &&
     !(Array.isArray(ctx) && ctx.includes("https://schema.org"))
