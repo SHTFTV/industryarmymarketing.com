@@ -46,6 +46,7 @@ const Seo = ({
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
+      <meta name="twitter:url" content={absoluteUrl} />
       <meta name="twitter:image" content={absoluteImage} />
       <meta name="twitter:image:alt" content={imageAlt} />
       {schemas.map((schema, i) => (
