@@ -117,7 +117,15 @@ const BlogPost = () => {
     datePublished: isoDate,
     dateModified: isoDate,
     author: post.authorName
-      ? { "@type": "Person", name: post.authorName }
+      ? {
+          "@type": "Person",
+          name: post.authorName,
+          // Every author node needs a resolvable identifier so
+          // schema.org author attribution isn't dangling. We don't
+          // maintain per-author pages, so credit the Person back to
+          // the site origin — same origin the publisher advertises.
+          url: SITE_URL,
+        }
       : {
           "@type": "Organization",
           name: "Industry Army Marketing",
