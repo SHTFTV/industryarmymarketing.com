@@ -271,6 +271,19 @@ const App = () => (
               />
             }
           />
+          <Route
+            path="/blog/iam-perspective-committed-people-not-capital"
+            element={
+              <StaticHtmlPage
+                src="/blog/iam-perspective-committed-people-not-capital.html"
+                title="IAM Perspective: Committed People, Not Committed Capital — A Builder's Response to the Legacy-Media Wedding Tech Wave"
+                description="Industry Army Marketing's builder response to WeddingSaaS.com's analysis of legacy media acquiring the wedding tech stack — why the IAM ecosystem model bets on committed people over committed capital."
+                path="/blog/iam-perspective-committed-people-not-capital"
+                image="/blog-assets/iam-perspective-committed-people.jpg"
+                imageAlt="IAM Perspective — committed people, not committed capital"
+              />
+            }
+          />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             {legacyRedirectRoutes()}
             <Route path="*" element={<NotFound />} />
