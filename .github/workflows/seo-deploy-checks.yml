@@ -72,6 +72,11 @@ jobs:
             --summary redirect-chain-summary.json
         continue-on-error: true
 
+      - name: Validate redirect-chain-summary schema
+        id: summary_schema
+        if: always() && hashFiles('redirect-chain-summary.json') != ''
+        run: bunx tsx scripts/validate-summary-schema.ts --in redirect-chain-summary.json --annotate
+
       - name: Render redirect chain HTML report
         id: redirect_html
         if: always() && hashFiles('redirect-chain-summary.json') != ''
@@ -194,6 +199,7 @@ jobs:
               ['Legacy paths not prerendered', ${{ toJSON(steps.legacy_not_prerendered.outcome) }}],
               ['Prerender HTML SEO check', ${{ toJSON(steps.prerender_check.outcome) }}],
               ['Real-HTTP redirect chain', ${{ toJSON(steps.redirect_chain.outcome) }}],
+              ['Redirect summary schema', ${{ toJSON(steps.summary_schema.outcome) }}],
               ['Legacy live audit', ${{ toJSON(steps.legacy_live.outcome) }}],
               ['Legacy redirects live test', ${{ toJSON(steps.legacy_live_test.outcome) }}],
               ['SEO diff report', ${{ toJSON(steps.seo_diff.outcome) }}],
@@ -208,6 +214,7 @@ jobs:
             const diffUrl = process.env.DIFF_ARTIFACT_URL || artifactsUrl;
             const prerenderLogUrl = process.env.PRERENDER_LOG_ARTIFACT_URL || artifactsUrl;
             const redirectUrl = process.env.REDIRECT_ARTIFACT_URL || artifactsUrl;
+            const nightlyReportUrl = ${{ toJSON(vars.NIGHTLY_REDIRECT_REPORT_URL) }} || '';
             if (!process.env.DIFF_ARTIFACT_URL || !process.env.PRERENDER_LOG_ARTIFACT_URL) {
               core.setFailed('PR summary comment is missing direct artifact URLs for seo-diff-report.md or prerender-html-check.log');
             }
@@ -257,6 +264,7 @@ jobs:
               `- 📄 **SEO diff report**: [seo-diff-report.md](${diffUrl})`,
               `- 🧪 **Prerender HTML check log**: [prerender-html-check.log](${prerenderLogUrl})`,
               `- 🔁 **Redirect chain HTML report**: [redirect-chain-report.html](${redirectUrl})`,
+              nightlyReportUrl ? `- 🌙 **Latest nightly report**: [open]( ${nightlyReportUrl} )` : `- 🌙 **Latest nightly report**: _not yet available_`,
               `- 🗂️ **All artifacts**: ${artifactsUrl}`,
               `- 🔗 **Full run**: ${runUrl}`,
               diffPreview,
