@@ -301,6 +301,7 @@ jobs:
           REDIRECT_SUMMARY_URL: ${{ steps.upload_redirect_summary.outputs.artifact-url }}
           BASELINE_DIFF_MD_URL: ${{ steps.upload_baseline_diff_md.outputs.artifact-url }}
           BASELINE_DIFF_CSV_URL: ${{ steps.upload_baseline_diff_csv.outputs.artifact-url }}
+          BASELINE_DIFF_JSON_URL: ${{ steps.upload_baseline_diff_json.outputs.artifact-url }}
           BASELINE_JSON_URL: ${{ steps.upload_baseline_json.outputs.artifact-url }}
           DRIFT_METRICS_URL: ${{ steps.upload_drift_metrics.outputs.artifact-url }}
           BASELINE_DRIFT_OUTCOME: ${{ steps.baseline_drift.outcome }}
@@ -338,6 +339,7 @@ jobs:
             const redirectSummaryUrl = process.env.REDIRECT_SUMMARY_URL || artifactsUrl;
             const baselineDiffMdUrl = process.env.BASELINE_DIFF_MD_URL || artifactsUrl;
             const baselineDiffCsvUrl = process.env.BASELINE_DIFF_CSV_URL || artifactsUrl;
+            const baselineDiffJsonUrl = process.env.BASELINE_DIFF_JSON_URL || artifactsUrl;
             const baselineJsonUrl = process.env.BASELINE_JSON_URL || artifactsUrl;
             const driftMetricsUrl = process.env.DRIFT_METRICS_URL || artifactsUrl;
             const driftOutcome = process.env.BASELINE_DRIFT_OUTCOME || '';
@@ -437,6 +439,7 @@ jobs:
               `- 📊 **Redirect chain summary (JSON)**: [redirect-chain-summary.json](${redirectSummaryUrl})`,
               `- 📝 **Baseline drift (Markdown)**: [baseline-diff.md](${baselineDiffMdUrl})`,
               `- 📈 **Baseline drift (CSV)**: [baseline-diff.csv](${baselineDiffCsvUrl})`,
+              `- 🧾 **Baseline drift (per-rule JSON)**: [baseline-diff.json](${baselineDiffJsonUrl})`,
               `- 📦 **Redirect baseline (JSON)**: [redirect-chain-baseline.json](${baselineJsonUrl})`,
               `- 📉 **Drift metrics (JSON)**: [baseline-drift-metrics.json](${driftMetricsUrl})`,
               driftOutcome === 'failure'
