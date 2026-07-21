@@ -122,6 +122,7 @@ jobs:
             --baseline-ref "$REF" \
             --baseline-diff-out baseline-diff.md \
             --baseline-diff-csv baseline-diff.csv \
+            --baseline-diff-json baseline-diff.json \
             --drift-metrics-out baseline-drift-metrics.json \
             --drift-max-rules "$DRIFT_MAX_RULES" \
             --drift-max-final-path-changes "$DRIFT_MAX_FINAL_PATH_CHANGES" \
@@ -231,6 +232,15 @@ jobs:
         with:
           name: baseline-diff-csv
           path: baseline-diff.csv
+          if-no-files-found: ignore
+
+      - name: Upload baseline-diff.json (direct link)
+        id: upload_baseline_diff_json
+        if: always() && hashFiles('baseline-diff.json') != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: baseline-diff-json
+          path: baseline-diff.json
           if-no-files-found: ignore
 
       - name: Upload baseline-drift-metrics.json (direct link)
