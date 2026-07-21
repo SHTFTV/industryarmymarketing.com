@@ -17,6 +17,7 @@ const arg = (n: string, d?: string) => {
 const BASE = (arg("--base", "https://www.industryarmymarketing.com") ?? "").replace(/\/$/, "");
 const RETRIES = Number(arg("--retries", "3"));
 const ANNOTATE = args.includes("--annotate");
+const HEAD_FIRST = !args.includes("--no-head");
 
 async function backoff(attempt: number) {
   const base = 500 * Math.pow(2, attempt);
@@ -61,11 +62,23 @@ function expand(from: string): string[] {
 }
 
 async function head(path: string): Promise<{ status: number; location?: string }> {
-  const res = await fetchWithRetry(`${BASE}${path}`, {
-    method: "GET",
-    redirect: "manual",
-    headers: { "User-Agent": "Lovable-Legacy-Live-Check/1.0" },
-  });
+  const url = `${BASE}${path}`;
+  const headers = { "User-Agent": "Lovable-Legacy-Live-Check/1.0" };
+  // HEAD-first to save origin load; fall back to GET when the origin
+  // refuses HEAD (405/501) or omits Location on a 3xx.
+  if (HEAD_FIRST) {
+    try {
+      const res = await fetchWithRetry(url, { method: "HEAD", redirect: "manual", headers });
+      try { await res.body?.cancel(); } catch { /* ignore */ }
+      const location = res.headers.get("location") ?? undefined;
+      const needsGet =
+        res.status === 405 ||
+        res.status === 501 ||
+        (res.status >= 300 && res.status < 400 && !location);
+      if (!needsGet) return { status: res.status, location };
+    } catch { /* fall through to GET */ }
+  }
+  const res = await fetchWithRetry(url, { method: "GET", redirect: "manual", headers });
   try { await res.body?.cancel(); } catch { /* ignore */ }
   return { status: res.status, location: res.headers.get("location") ?? undefined };
 }
