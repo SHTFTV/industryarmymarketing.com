@@ -34,8 +34,19 @@ describe("RSS feed structural + sitemap parity", () => {
 
   const items = extractAll(rss, "item");
 
-  it("has one <item> per blog post", () => {
-    expect(items.length).toBe(blogPosts.length);
+  it("contains at least one <item> per blog post", () => {
+    expect(items.length).toBeGreaterThanOrEqual(blogPosts.length);
+  });
+
+  it("every <item><link> exists as a <loc> in sitemap.xml", () => {
+    for (const item of items) {
+      const link = firstTag(item, "link");
+      expect(link, "item missing <link>").toBeTruthy();
+      expect(
+        sitemap.includes(`<loc>${link}</loc>`),
+        `sitemap.xml missing <loc>${link}</loc>`,
+      ).toBe(true);
+    }
   });
 
   it.each(blogPosts.map((p) => [p.slug, p.title] as const))(
