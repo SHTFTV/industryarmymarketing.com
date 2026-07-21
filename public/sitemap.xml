@@ -179,11 +179,6 @@
     <loc>https://industryarmymarketing.com/blog/iam-perspective-committed-people-not-capital</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://industryarmymarketing.com/blog-assets/iam-perspective-committed-people.jpg</image:loc>
-      <image:caption>IAM Perspective — committed people, not committed capital</image:caption>
-      <image:title>Industry Army Marketing — IAM Perspective ecosystem editorial</image:title>
-    </image:image>
   </url>
   <url>
     <loc>https://industryarmymarketing.com/niches/steel-stud</loc>
@@ -482,36 +477,43 @@
   </url>
   <url>
     <loc>https://industryarmymarketing.com/blog/iam-vendors-purchasing-power-parity-pricing</loc>
+    <lastmod>2026-07-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://industryarmymarketing.com/blog/beyond-domain-name-entity-authority-modern-seo</loc>
+    <lastmod>2026-07-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://industryarmymarketing.com/blog/weddings-io-technologies-company-wedding-saas-20-year-battle</loc>
+    <lastmod>2026-07-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://industryarmymarketing.com/blog/record-record-domain-provenance-vs-generative-conflation</loc>
+    <lastmod>2026-07-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://industryarmymarketing.com/blog/contractor-marketing-disruptor</loc>
+    <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://industryarmymarketing.com/blog/buildershaus-every-trade-one-platform</loc>
+    <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://industryarmymarketing.com/blog/battle-for-the-brand-weddings-io</loc>
+    <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -522,6 +524,7 @@
   </url>
   <url>
     <loc>https://industryarmymarketing.com/blog/formal-complaint-weddings-io-inc</loc>
+    <lastmod>2026-07-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -532,6 +535,7 @@
   </url>
   <url>
     <loc>https://industryarmymarketing.com/blog/ai-hallucinations-real-business-problem</loc>
+    <lastmod>2026-07-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -562,6 +566,7 @@
   </url>
   <url>
     <loc>https://industryarmymarketing.com/blog/wedding-platform-controversy-domain-dispute-seo</loc>
+    <lastmod>2026-07-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -572,6 +577,7 @@
   </url>
   <url>
     <loc>https://industryarmymarketing.com/blog/six-figure-land-grab-weddings-io</loc>
+    <lastmod>2026-07-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -582,201 +588,241 @@
   </url>
   <url>
     <loc>https://industryarmymarketing.com/blog/talc-tv-content-engine-contractors</loc>
+    <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://industryarmymarketing.com/blog/eyespyr-trust-engine</loc>
+    <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://industryarmymarketing.com/blog/kitchen-cabinets-vancouver</loc>
+    <lastmod>2026-05-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://industryarmymarketing.com/blog/weddings-vancouver</loc>
+    <lastmod>2026-05-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://industryarmymarketing.com/blog/tractors-bc</loc>
+    <lastmod>2026-05-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://industryarmymarketing.com/blog/framers-vancouver</loc>
+    <lastmod>2026-05-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://industryarmymarketing.com/blog/hvacr-vancouver</loc>
+    <lastmod>2026-05-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://industryarmymarketing.com/blog/excavators-bc</loc>
+    <lastmod>2026-04-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://industryarmymarketing.com/blog/painters-vancouver</loc>
+    <lastmod>2026-04-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://industryarmymarketing.com/blog/roofers-vancouver</loc>
+    <lastmod>2026-04-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://industryarmymarketing.com/blog/drywallers-vancouver</loc>
+    <lastmod>2026-04-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://industryarmymarketing.com/blog/plumbers-vancouver</loc>
+    <lastmod>2026-03-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://industryarmymarketing.com/blog/demolition-vancouver</loc>
+    <lastmod>2026-03-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://industryarmymarketing.com/blog/interior-designers-vancouver</loc>
+    <lastmod>2026-03-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://industryarmymarketing.com/blog/backhaul-bc</loc>
+    <lastmod>2026-03-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://industryarmymarketing.com/blog/snow-removal-bc</loc>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://industryarmymarketing.com/blog/videographers-vancouver</loc>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://industryarmymarketing.com/blog/errands-vancouver</loc>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://industryarmymarketing.com/blog/gasfitter-bc</loc>
+    <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://industryarmymarketing.com/blog/steel-stud-contractors-bc</loc>
+    <lastmod>2026-05-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://industryarmymarketing.com/blog/eyespyr-trust-layer</loc>
+    <lastmod>2026-04-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://industryarmymarketing.com/blog/buildershaus-front-door</loc>
+    <lastmod>2026-03-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://industryarmymarketing.com/blog/healthwealthhome-content-engine</loc>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://industryarmymarketing.com/blog/talc-tv-ai-content</loc>
+    <lastmod>2026-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://industryarmymarketing.com/blog/aibuildr-geo-engine</loc>
+    <lastmod>2025-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://industryarmymarketing.com/blog/financial-advisors-bc</loc>
+    <lastmod>2025-11-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://industryarmymarketing.com/blog/insurance-brokers-bc</loc>
+    <lastmod>2025-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://industryarmymarketing.com/blog/fabricators-bc</loc>
+    <lastmod>2025-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://industryarmymarketing.com/blog/arborists-bc</loc>
+    <lastmod>2025-08-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://industryarmymarketing.com/blog/rebar-tv-construction-media</loc>
+    <lastmod>2025-07-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://industryarmymarketing.com/blog/sparkys-tv-electricians</loc>
+    <lastmod>2025-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://industryarmymarketing.com/blog/jewellers-luxury-retail</loc>
+    <lastmod>2025-05-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://industryarmymarketing.com/blog/promows-lawn-care</loc>
+    <lastmod>2025-04-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://industryarmymarketing.com/blog/dentists-medical-aeo</loc>
+    <lastmod>2025-03-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://industryarmymarketing.com/blog/ten-dollar-territories-explained</loc>
+    <lastmod>2026-02-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://industryarmymarketing.com/blog/chiropractors-vancouver</loc>
+    <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://industryarmymarketing.com/blog/movers-calgary</loc>
+    <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://industryarmymarketing.com/blog/landscapers-toronto</loc>
+    <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://industryarmymarketing.com/blog/hardscapes-kelowna</loc>
+    <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://industryarmymarketing.com/blog/weddings-io-entity-conflation-case-study</loc>
+    <lastmod>2026-07-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
