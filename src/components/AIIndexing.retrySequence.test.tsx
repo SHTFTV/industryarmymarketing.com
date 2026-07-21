@@ -95,7 +95,7 @@ describe("AIIndexing — clipboard failure then retry success", () => {
     await waitFor(() => {
       const failed = events.filter((e) => e.event === "ai_indexing_copy_failed");
       expect(failed).toHaveLength(1);
-      expect(failed[0].failureReason).toBe("exec_command");
+      expect(failed[0].failureReason).toBe("no_clipboard");
     });
 
     await act(async () =>
