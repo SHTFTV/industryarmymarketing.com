@@ -206,6 +206,20 @@ const Blog = () => {
           },
           {
             "@context": "https://schema.org",
+            "@type": "ItemList",
+            "@id": `${SITE_URL}/blog#latest`,
+            name: "Latest Industry Army Intel posts",
+            itemListOrder: "https://schema.org/ItemListOrderDescending",
+            numberOfItems: Math.min(blogPosts.length, 10),
+            itemListElement: blogPosts.slice(0, 10).map((p, i) => ({
+              "@type": "ListItem",
+              position: i + 1,
+              url: `${SITE_URL}/blog/${p.slug}`,
+              name: p.cardTitle || `${p.trade} in ${p.city}`,
+            })),
+          },
+          {
+            "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             itemListElement: [
               { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
