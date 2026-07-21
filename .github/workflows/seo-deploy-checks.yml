@@ -15,6 +15,9 @@ jobs:
   seo-checks:
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    permissions:
+      contents: read
+      pull-requests: write
     env:
       LOVABLE_API_KEY: ${{ secrets.LOVABLE_API_KEY }}
       GOOGLE_SEARCH_CONSOLE_API_KEY: ${{ secrets.GOOGLE_SEARCH_CONSOLE_API_KEY }}
@@ -28,27 +31,35 @@ jobs:
         run: bun install --frozen-lockfile
 
       - name: Build (generates sitemap + prerender)
+        id: build
         run: bun run build
 
       - name: Redirect regression tests
+        id: redirect_tests
         run: bunx vitest run src/test/legacy-redirects.test.tsx
 
       - name: Sitemap validation
+        id: sitemap
         run: bun run validate:sitemap
 
       - name: robots.txt / sitemap.xml / blog consistency
+        id: consistency
         run: bunx tsx scripts/seo-consistency-check.ts
 
       - name: Canonical + JSON-LD check
+        id: canonical_jsonld
         run: bun run seo:check
 
       - name: Prerender performance budgets
+        id: perf
         run: bunx tsx scripts/perf-budget.ts
 
       - name: Prerender HTML SEO check (blog + newest posts)
-        run: bun run prerender:check
+        id: prerender_check
+        run: bun run prerender:check 2>&1 | tee prerender-html-check.log
 
       - name: Real-HTTP redirect chain validator
+        id: redirect_chain
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: bun run redirects:validate
         continue-on-error: true
@@ -68,15 +79,25 @@ jobs:
           fi
 
       - name: Generate SEO diff report
+        id: seo_diff
         run: bun run seo:diff
 
       - name: Upload SEO diff report
+        id: upload_diff
         uses: actions/upload-artifact@v4
         with:
           name: seo-diff-report
           path: |
             seo-diff-report.md
             seo-diff-report.json
+
+      - name: Upload prerender HTML check log
+        id: upload_prerender_log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: prerender-html-check-log
+          path: prerender-html-check.log
 
       - name: Upload current SEO snapshot (baseline for next run)
         uses: actions/upload-artifact@v4
@@ -88,3 +109,60 @@ jobs:
       - name: GSC sync (main only)
         if: github.event_name == 'push' && github.ref == 'refs/heads/main' && env.LOVABLE_API_KEY != '' && env.GOOGLE_SEARCH_CONSOLE_API_KEY != ''
         run: bun run gsc:sync
+
+      - name: Post CI summary comment on PR
+        if: github.event_name == 'pull_request' && always()
+        uses: actions/github-script@v7
+        env:
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+            const icon = (o) => o === 'success' ? '✅' : o === 'skipped' ? '⏭️' : '❌';
+            const steps = [
+              ['Build', ${{ toJSON(steps.build.outcome) }}],
+              ['Redirect regression tests', ${{ toJSON(steps.redirect_tests.outcome) }}],
+              ['Sitemap validation', ${{ toJSON(steps.sitemap.outcome) }}],
+              ['robots/sitemap/blog consistency', ${{ toJSON(steps.consistency.outcome) }}],
+              ['Canonical + JSON-LD', ${{ toJSON(steps.canonical_jsonld.outcome) }}],
+              ['Prerender perf budgets', ${{ toJSON(steps.perf.outcome) }}],
+              ['Prerender HTML SEO check', ${{ toJSON(steps.prerender_check.outcome) }}],
+              ['Real-HTTP redirect chain', ${{ toJSON(steps.redirect_chain.outcome) }}],
+              ['SEO diff report', ${{ toJSON(steps.seo_diff.outcome) }}],
+            ];
+            const rows = steps
+              .filter(([, o]) => o && o !== '')
+              .map(([n, o]) => `| ${icon(o)} | ${n} | \`${o}\` |`)
+              .join('\n');
+            const runUrl = process.env.RUN_URL;
+            const artifactsUrl = `${runUrl}#artifacts`;
+            let diffPreview = '';
+            try {
+              const md = fs.readFileSync('seo-diff-report.md', 'utf8').split('\n').slice(0, 30).join('\n');
+              diffPreview = `\n<details><summary>SEO diff (preview — full report in artifacts)</summary>\n\n${md}\n\n</details>`;
+            } catch {}
+            const overall = steps.some(([, o]) => o === 'failure') ? '❌ FAIL' : '✅ PASS';
+            const marker = '<!-- seo-ci-summary -->';
+            const body = [
+              marker,
+              `### SEO deploy checks — ${overall}`,
+              '',
+              '| Result | Step | Outcome |',
+              '| --- | --- | --- |',
+              rows,
+              '',
+              `- 📄 **SEO diff report**: [seo-diff-report.md](${artifactsUrl}) (artifact \`seo-diff-report\`)`,
+              `- 🧪 **Prerender HTML check log**: [prerender-html-check.log](${artifactsUrl}) (artifact \`prerender-html-check-log\`)`,
+              `- 🔗 **Full run**: ${runUrl}`,
+              diffPreview,
+            ].join('\n');
+            const { owner, repo } = context.repo;
+            const issue_number = context.payload.pull_request.number;
+            const { data: existing } = await github.rest.issues.listComments({ owner, repo, issue_number, per_page: 100 });
+            const prior = existing.find((c) => c.body && c.body.includes(marker));
+            if (prior) {
+              await github.rest.issues.updateComment({ owner, repo, comment_id: prior.id, body });
+            } else {
+              await github.rest.issues.createComment({ owner, repo, issue_number, body });
+            }
