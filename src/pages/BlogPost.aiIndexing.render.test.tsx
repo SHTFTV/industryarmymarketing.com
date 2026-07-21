@@ -50,19 +50,23 @@ describe("AIIndexing on blog post pages", () => {
       renderPost(slug);
       const expectedUrl = `${CANONICAL}/blog/${slug}`;
       const encoded = encodeURIComponent(expectedUrl);
-      // LinkedIn share button hrefs the encoded articleUrl.
-      const linkedin = document.querySelector(
-        `a[href*="linkedin.com/sharing/share-offsite/?url=${encoded}"]`,
+      const anchors = Array.from(
+        document.querySelectorAll<HTMLAnchorElement>("a[href]"),
+      );
+      const hrefs = anchors.map((a) => a.getAttribute("href") ?? "");
+      const linkedin = hrefs.find(
+        (h) =>
+          h.includes("linkedin.com/sharing/share-offsite/") &&
+          h.includes(encoded),
       );
       expect(
         linkedin,
         `LinkedIn share link must encode ${expectedUrl}`,
-      ).not.toBeNull();
-      // X share too, defense in depth.
-      const x = document.querySelector(
-        `a[href*="x.com/intent/tweet"][href*="url=${encoded}"]`,
+      ).toBeTruthy();
+      const x = hrefs.find(
+        (h) => h.includes("x.com/intent/tweet") && h.includes(encoded),
       );
-      expect(x, `X share link must encode ${expectedUrl}`).not.toBeNull();
+      expect(x, `X share link must encode ${expectedUrl}`).toBeTruthy();
     },
   );
 });
