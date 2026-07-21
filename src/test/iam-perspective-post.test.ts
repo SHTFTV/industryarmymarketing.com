@@ -132,13 +132,10 @@ describe(`blog post: ${SLUG}`, () => {
     expect(rss).toContain(
       `https://industryarmymarketing.com/blog/${SLUG}`,
     );
-    const item = rss.match(
-      new RegExp(
-        `<item>[\\s\\S]*?/blog/${SLUG}[\\s\\S]*?</item>`,
-      ),
-    );
+    const items = [...rss.matchAll(/<item>[\s\S]*?<\/item>/g)].map((m) => m[0]);
+    const item = items.find((s) => s.includes(`/blog/${SLUG}`));
     expect(item).toBeTruthy();
-    expect(item![0]).toMatch(/<pubDate>[^<]+<\/pubDate>/);
-    expect(item![0]).toMatch(/<enclosure[^>]+type=["']image\//);
+    expect(item!).toMatch(/<pubDate>[^<]+<\/pubDate>/);
+    expect(item!).toMatch(/<enclosure[^>]+type=["']image\//);
   });
 });
