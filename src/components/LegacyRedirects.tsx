@@ -22,6 +22,8 @@ export const LEGACY_REDIRECTS: ReadonlyArray<{ from: string; to: string }> = [
   { from: "/our-clients-use-these-free-directories/", to: "/network" },
   { from: "/ai-lol", to: "/blog" },
   { from: "/ai-lol/", to: "/blog" },
+  { from: "/ror-sitemap", to: "/blog" },
+  { from: "/ror-sitemap/", to: "/blog" },
   {
     from: "/industry-army-marketing-opens-to-new-clients-after-20-years-of-seo-excellence-in-vancouver",
     to: "/blog",
