@@ -52,8 +52,7 @@ describe("AIIndexing — Copy prompt flow", () => {
   });
 
   it("falls back to execCommand when navigator.clipboard is missing", async () => {
-    // @ts-expect-error force-remove clipboard
-    delete (navigator as any).clipboard;
+    delete (navigator as unknown as { clipboard?: unknown }).clipboard;
     const execCommand = vi.fn().mockReturnValue(true);
     Object.defineProperty(document, "execCommand", {
       configurable: true,
