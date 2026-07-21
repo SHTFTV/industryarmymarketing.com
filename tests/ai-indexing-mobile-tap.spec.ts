@@ -6,7 +6,8 @@
 //   • The live region remains accessible (present in DOM, correct role/aria)
 //     across successive rapid taps.
 
-import { test, expect, devices } from "../playwright-fixture";
+import { test, expect } from "../playwright-fixture";
+import { devices } from "@playwright/test";
 
 const SLUG = "iam-vendors-purchasing-power-parity-pricing";
 const CANONICAL_ORIGIN = "https://industryarmymarketing.com";
