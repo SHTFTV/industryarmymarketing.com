@@ -94,18 +94,19 @@ describe("AIIndexing — rapid interaction integrity", () => {
       clipboard: { writeText: vi.fn().mockResolvedValue(undefined) },
     });
     render(<AIIndexing {...PROPS} />);
-    fireEvent.click(screen.getByRole("button", { name: /Claude/i }));
+    const claudeToggle = screen.getByRole("button", { name: /Claude/i });
+    fireEvent.click(claudeToggle);
     const copyBtn = screen.getByRole("button", { name: /Copy prompt/i });
 
-    // Click path — start with focus elsewhere
-    (document.body as HTMLElement).focus();
-    expect(document.activeElement).not.toBe(copyBtn);
+    // Click path — start with focus on the toggle button
+    claudeToggle.focus();
+    expect(document.activeElement).toBe(claudeToggle);
     await act(async () => fireEvent.click(copyBtn));
     await waitFor(() => expect(document.activeElement).toBe(copyBtn));
 
     // Shortcut path — move focus away, then Ctrl+K, then focus should return
-    (document.body as HTMLElement).focus();
-    expect(document.activeElement).not.toBe(copyBtn);
+    claudeToggle.focus();
+    expect(document.activeElement).toBe(claudeToggle);
     await act(async () => {
       fireEvent.keyDown(window, { key: "k", ctrlKey: true });
     });
