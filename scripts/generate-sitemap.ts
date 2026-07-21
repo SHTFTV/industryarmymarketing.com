@@ -64,6 +64,7 @@ const entries: SitemapEntry[] = [
   { path: "/services/dofollow-backlinks", changefreq: "monthly", priority: "0.9" },
   { path: "/case-studies/brand-defense-global-territory", changefreq: "monthly", priority: "0.9" },
   { path: "/blog/aiweddings-tower-on-our-land", changefreq: "monthly", priority: "0.8" },
+  { path: "/blog/iam-perspective-committed-people-not-capital", changefreq: "monthly", priority: "0.8" },
   ...niches.map((n) => ({ path: `/niches/${n}`, changefreq: "monthly" as const, priority: "0.7" })),
   ...localCities.map((c) => ({ path: `/local/${c}`, changefreq: "monthly" as const, priority: "0.7" })),
   ...cities.map((c) => ({
