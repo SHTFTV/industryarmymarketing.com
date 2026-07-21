@@ -638,6 +638,17 @@ async function main() {
         console.log(`    hops:      ${fmtHops(d.old?.hops)}  →  ${fmtHops(d.next.hops)}`);
       if (d.finalPathChanged)
         console.log(`    finalPath: ${d.old?.finalPath ?? "(none)"}  →  ${d.next.finalPath}`);
+      // Per-rule GitHub annotation so the drifting rule shows up as
+      // its own entry on the PR "Checks" page.
+      if (ANNOTATE) {
+        const parts: string[] = [`baseline ${d.kind}: ${d.rule}`];
+        if (d.hopsChanged) parts.push(`hops ${fmtHops(d.old?.hops)} → ${fmtHops(d.next.hops)}`);
+        if (d.finalPathChanged)
+          parts.push(`finalPath ${d.old?.finalPath ?? "(none)"} → ${d.next.finalPath}`);
+        const level = d.kind === "added" ? "notice" : "warning";
+        const title = `Redirect baseline ${d.kind}`;
+        console.log(`::${level} title=${title}::${parts.join(" | ")}`);
+      }
     }
     if (BASELINE_DIFF_OUT) {
       const lines: string[] = [];
