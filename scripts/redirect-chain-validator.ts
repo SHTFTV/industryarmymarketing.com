@@ -70,6 +70,15 @@ const UPDATE_BASELINE = flag("--update-baseline");
 const DRY_RUN = flag("--dry-run");
 // Optional path for a Markdown diff of pending baseline changes.
 const BASELINE_DIFF_OUT = arg("--baseline-diff-out");
+// Optional path for a CSV export of pending baseline changes. Same rows
+// as the Markdown table but machine-readable for spreadsheets / BI tools.
+const BASELINE_DIFF_CSV = arg("--baseline-diff-csv");
+// Drift thresholds. When set (>= 0), the process exits with code 2 if
+// pending baseline changes exceed the limit. `--drift-max-rules` counts
+// any rule marked added/changed. `--drift-max-final-path-changes` counts
+// only rules whose finalPath changed. Undefined = no threshold enforced.
+const DRIFT_MAX_RULES = arg("--drift-max-rules");
+const DRIFT_MAX_FINAL_PATH_CHANGES = arg("--drift-max-final-path-changes");
 // Load the baseline from a Git ref (e.g. `HEAD~1`, `origin/main`,
 // a tag or SHA) instead of the working-tree file. Enables reviewing
 // drift across deploys: run the validator with the previous deploy's
