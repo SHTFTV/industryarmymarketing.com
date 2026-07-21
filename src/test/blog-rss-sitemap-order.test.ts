@@ -18,11 +18,18 @@ import { describe, it, expect } from "vitest";
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { SITE_URL } from "@/components/Seo";
+import { blogPosts } from "@/data/blogPosts";
 
 const rss = readFileSync(resolve("public/rss.xml"), "utf8");
 const sitemap = readFileSync(resolve("public/sitemap.xml"), "utf8");
 
 const BLOG_PREFIX = `${SITE_URL}/blog/`;
+
+// Only compare blog URLs that are backed by a blogPosts entry. Editorial
+// HTML pages under /blog/* can legitimately live in sitemap.xml without
+// appearing in rss.xml (RSS iterates the data-driven post list); those
+// entries would produce false-positive drift here.
+const KNOWN_SLUGS = new Set(blogPosts.map((p) => `${BLOG_PREFIX}${p.slug}`));
 
 // Ordered list of RSS <item> blocks and their <link>s.
 const rssItemBlocks = [...rss.matchAll(/<item>([\s\S]*?)<\/item>/g)].map(
@@ -30,7 +37,7 @@ const rssItemBlocks = [...rss.matchAll(/<item>([\s\S]*?)<\/item>/g)].map(
 );
 const rssBlogLinks = rssItemBlocks
   .map((b) => b.match(/<link>([^<]+)<\/link>/)?.[1] ?? null)
-  .filter((l): l is string => !!l && l.startsWith(BLOG_PREFIX));
+  .filter((l): l is string => !!l && KNOWN_SLUGS.has(l));
 
 // Ordered list of sitemap <url> blocks whose <loc> is a /blog/:slug URL.
 const sitemapUrlBlocks = [...sitemap.matchAll(/<url>([\s\S]*?)<\/url>/g)].map(
@@ -44,7 +51,7 @@ const sitemapBlogEntries = sitemapUrlBlocks
   })
   .filter(
     (e): e is { loc: string; lastmod: string | null } =>
-      !!e.loc && e.loc.startsWith(BLOG_PREFIX),
+      !!e.loc && KNOWN_SLUGS.has(e.loc),
   );
 const sitemapBlogLinks = sitemapBlogEntries.map((e) => e.loc);
 
