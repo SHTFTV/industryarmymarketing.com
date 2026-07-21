@@ -15,6 +15,10 @@
 //   bunx tsx scripts/redirect-chain-validator.ts --ua-matrix        # cross-UA check
 //   bunx tsx scripts/redirect-chain-validator.ts --ua "MyBot/1.0"   # single UA override
 //   bunx tsx scripts/redirect-chain-validator.ts --json out.json    # machine-readable report
+//   bunx tsx scripts/redirect-chain-validator.ts --only /packages --update-baseline
+//     # regenerate baseline entries ONLY for rules matching /packages
+//   bunx tsx scripts/redirect-chain-validator.ts --update-baseline --baseline-diff-out baseline-diff.md
+//     # write a reviewable old-vs-new hop/finalPath diff before approval
 
 import { LEGACY_REDIRECTS } from "../src/components/LegacyRedirects";
 import { writeFileSync, readFileSync, existsSync, mkdirSync } from "fs";
@@ -48,9 +52,18 @@ const BASELINE_PATH = resolve(arg("--baseline", ".redirect-baselines/redirect-ch
 // Rewrite the baseline file with the results of this run. Only rules
 // that completed cleanly (had ≥1 hop and no fetch error) are updated.
 const UPDATE_BASELINE = flag("--update-baseline");
+// Optional path for a Markdown diff of pending baseline changes.
+const BASELINE_DIFF_OUT = arg("--baseline-diff-out");
+// Summary schema version emitted in redirect-chain-summary.json. Keep
+// in sync with scripts/validate-summary-schema.ts SUPPORTED_SCHEMA_VERSIONS.
+const SUMMARY_SCHEMA_VERSION = "1";
+// Baseline file schema version. Bump alongside a migration when the
+// on-disk shape changes.
+const BASELINE_SCHEMA_VERSION = "1";
 
 type BaselineEntry = { hops: string[][]; finalPath: string; approvedAt?: string };
 type BaselineFile = {
+  schemaVersion?: string;
   generatedAt: string | null;
   base: string | null;
   rules: Record<string, BaselineEntry>;
@@ -59,7 +72,18 @@ function loadBaseline(): BaselineFile {
   if (!existsSync(BASELINE_PATH)) return { generatedAt: null, base: null, rules: {} };
   try {
     const parsed = JSON.parse(readFileSync(BASELINE_PATH, "utf8")) as BaselineFile;
-    return { generatedAt: parsed.generatedAt ?? null, base: parsed.base ?? null, rules: parsed.rules ?? {} };
+    if (parsed.schemaVersion && parsed.schemaVersion !== BASELINE_SCHEMA_VERSION) {
+      console.error(
+        `redirect-chain-validator: MIGRATION REQUIRED — baseline schemaVersion "${parsed.schemaVersion}" is not supported (expected "${BASELINE_SCHEMA_VERSION}"). Regenerate with --update-baseline after upgrading.`,
+      );
+      process.exit(3);
+    }
+    return {
+      schemaVersion: parsed.schemaVersion ?? BASELINE_SCHEMA_VERSION,
+      generatedAt: parsed.generatedAt ?? null,
+      base: parsed.base ?? null,
+      rules: parsed.rules ?? {},
+    };
   } catch (e) {
     console.warn(`redirect-chain-validator: could not parse ${BASELINE_PATH}: ${(e as Error).message}`);
     return { generatedAt: null, base: null, rules: {} };
@@ -408,6 +432,7 @@ async function main() {
   if (SUMMARY_OUT) {
     // Compact per-rule expected-vs-actual summary suitable for CI review.
     const summary = {
+      schemaVersion: SUMMARY_SCHEMA_VERSION,
       base: BASE,
       generatedAt: new Date().toISOString(),
       totals: {
@@ -448,12 +473,18 @@ async function main() {
   }
 
   if (UPDATE_BASELINE) {
+    if (ONLY) {
+      console.log(
+        `redirect-chain-validator: --update-baseline scoped by --only "${ONLY}" — untouched rules retain their prior baseline entry.`,
+      );
+    }
     // Fold clean per-rule outcomes into a fresh baseline file. Only
     // rules that produced at least one hop AND terminated (last hop is
     // non-3xx or a valid terminal) get written — errored rules retain
     // their previous baseline entry, if any.
     const nowIso = new Date().toISOString();
     const merged: BaselineFile = {
+      schemaVersion: BASELINE_SCHEMA_VERSION,
       generatedAt: nowIso,
       base: BASE,
       rules: { ...BASELINE.rules },
@@ -467,6 +498,15 @@ async function main() {
       (byRule[rule] ??= []).push(r);
     }
     let updated = 0;
+    type BaselineDiff = {
+      rule: string;
+      kind: "added" | "changed" | "unchanged";
+      old?: BaselineEntry;
+      next: BaselineEntry;
+      hopsChanged: boolean;
+      finalPathChanged: boolean;
+    };
+    const diffs: BaselineDiff[] = [];
     for (const [rule, rs] of Object.entries(byRule)) {
       // Prefer entries with a clean chain to derive the new baseline.
       const clean = rs.filter(
@@ -485,9 +525,66 @@ async function main() {
       }
       const finalUrl = clean[0].finalUrl.replace(/\/$/, "").split("?")[0];
       const finalPath = finalUrl.startsWith(BASE) ? finalUrl.slice(BASE.length) || "/" : finalUrl;
-      merged.rules[rule] = { hops, finalPath, approvedAt: nowIso };
+      const next: BaselineEntry = { hops, finalPath, approvedAt: nowIso };
+      const prev = BASELINE.rules[rule];
+      const hopsChanged =
+        !prev ||
+        JSON.stringify(prev.hops ?? []) !== JSON.stringify(hops);
+      const finalPathChanged = !prev || prev.finalPath !== finalPath;
+      const kind: BaselineDiff["kind"] = !prev
+        ? "added"
+        : hopsChanged || finalPathChanged
+          ? "changed"
+          : "unchanged";
+      diffs.push({ rule, kind, old: prev, next, hopsChanged, finalPathChanged });
+      merged.rules[rule] = next;
       updated++;
     }
+
+    // Emit an old-vs-new diff so reviewers can inspect what will
+    // change BEFORE approving the new baseline. Always print to stdout;
+    // optionally write a Markdown file for PR upload.
+    const fmtHops = (h?: string[][]) =>
+      !h || h.length === 0 ? "(none)" : h.map((x) => x.join("/")).join(" → ");
+    const changed = diffs.filter((d) => d.kind !== "unchanged");
+    console.log(
+      `\nBaseline changes: ${changed.length} rule(s) will change (${diffs.filter((d) => d.kind === "added").length} added, ${diffs.filter((d) => d.kind === "changed").length} changed, ${diffs.filter((d) => d.kind === "unchanged").length} unchanged).`,
+    );
+    for (const d of changed) {
+      console.log(`  ${d.kind.toUpperCase().padEnd(9)} ${d.rule}`);
+      if (d.hopsChanged)
+        console.log(`    hops:      ${fmtHops(d.old?.hops)}  →  ${fmtHops(d.next.hops)}`);
+      if (d.finalPathChanged)
+        console.log(`    finalPath: ${d.old?.finalPath ?? "(none)"}  →  ${d.next.finalPath}`);
+    }
+    if (BASELINE_DIFF_OUT) {
+      const lines: string[] = [];
+      lines.push(`# Redirect baseline changes`);
+      lines.push("");
+      lines.push(`- Base: \`${BASE}\``);
+      lines.push(`- Generated: ${nowIso}`);
+      if (ONLY) lines.push(`- Scope (\`--only\`): \`${ONLY}\``);
+      lines.push(
+        `- Summary: **${changed.length} change(s)** (${diffs.filter((d) => d.kind === "added").length} added, ${diffs.filter((d) => d.kind === "changed").length} changed)`,
+      );
+      lines.push("");
+      if (changed.length === 0) {
+        lines.push(`_No baseline entries would change._`);
+      } else {
+        lines.push(`| Rule | Kind | Old hops | New hops | Old finalPath | New finalPath |`);
+        lines.push(`|------|------|----------|----------|---------------|---------------|`);
+        for (const d of changed) {
+          lines.push(
+            `| \`${d.rule}\` | ${d.kind} | ${fmtHops(d.old?.hops)} | ${fmtHops(d.next.hops)} | \`${d.old?.finalPath ?? "—"}\` | \`${d.next.finalPath}\` |`,
+          );
+        }
+      }
+      lines.push("");
+      mkdirSync(dirname(resolve(BASELINE_DIFF_OUT)), { recursive: true });
+      writeFileSync(resolve(BASELINE_DIFF_OUT), lines.join("\n"));
+      console.log(`redirect-chain-validator: baseline diff written to ${BASELINE_DIFF_OUT}`);
+    }
+
     mkdirSync(dirname(BASELINE_PATH), { recursive: true });
     writeFileSync(BASELINE_PATH, JSON.stringify(merged, null, 2) + "\n");
     console.log(
