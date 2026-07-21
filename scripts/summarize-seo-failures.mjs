@@ -82,19 +82,48 @@ if (failures.length === 0) {
 } else {
   lines.push("");
   lines.push(`❌ **${failures.length} failing SEO check(s).**`);
+
+  // Group by slug so reviewers see every failing assertion for each post
+  // in one row without scrolling through repeats.
+  const bySlug = new Map();
+  for (const f of failures) {
+    const key = f.slug ?? "(no slug)";
+    if (!bySlug.has(key)) bySlug.set(key, []);
+    bySlug.get(key).push(f);
+  }
+
   lines.push("");
-  lines.push("| Slug | Check | Expected | Actual | File |");
+  lines.push("| Slug | Failing assertion | Expected | Actual | File |");
   lines.push("| --- | --- | --- | --- | --- |");
-  for (const f of failures.slice(0, 40)) {
-    const esc = (s) => (s ? String(s).replace(/\|/g, "\\|").replace(/\n/g, " ") : "");
-    lines.push(
-      `| ${esc(f.slug ?? "—")} | ${esc(f.name)} | ${esc(f.expected ?? "—")} | ${esc(f.actual ?? f.message)} | \`${esc(f.file)}\` |`,
-    );
+  const esc = (s) => (s ? String(s).replace(/\|/g, "\\|").replace(/\n/g, " ") : "");
+  let printed = 0;
+  outer: for (const [slug, items] of bySlug) {
+    for (const f of items) {
+      if (printed >= 60) break outer;
+      lines.push(
+        `| \`${esc(slug)}\` | ${esc(f.name)} | ${esc(f.expected ?? "—")} | ${esc(f.actual ?? f.message)} | \`${esc(f.file)}\` |`,
+      );
+      printed++;
+    }
   }
-  if (failures.length > 40) {
+  if (failures.length > printed) {
     lines.push("");
-    lines.push(`_…and ${failures.length - 40} more. See workflow logs for the full list._`);
+    lines.push(`_…and ${failures.length - printed} more. See workflow logs for the full list._`);
   }
+}
+
+// Direct artifact links — populated by the workflow so reviewers can jump
+// straight from the PR comment to the uploaded logs and reports.
+const runUrl = process.env.RUN_URL;
+const artifactLinks = [];
+if (process.env.VITEST_REPORT_URL) artifactLinks.push(`[vitest report](${process.env.VITEST_REPORT_URL})`);
+if (process.env.PLAYWRIGHT_LOG_URL) artifactLinks.push(`[Playwright E2E log](${process.env.PLAYWRIGHT_LOG_URL})`);
+if (process.env.OG_IMAGE_LOG_URL) artifactLinks.push(`[OG image check log](${process.env.OG_IMAGE_LOG_URL})`);
+if (artifactLinks.length > 0 || runUrl) {
+  lines.push("");
+  lines.push("**Artifacts**");
+  if (artifactLinks.length > 0) lines.push(artifactLinks.map((l) => `- ${l}`).join("\n"));
+  if (runUrl) lines.push(`- [Workflow run](${runUrl})`);
 }
 
 const body = lines.join("\n");
