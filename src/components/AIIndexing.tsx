@@ -438,6 +438,9 @@ export function AIIndexing({ articleTitle, articleUrl, publication }: AIIndexing
                         Open in {platform.name} ↗
                       </a>
                       <button
+                        ref={(el) => {
+                          copyBtnRefs.current[platform.id] = el;
+                        }}
                         onClick={() => copyPrompt(platform.id, prompt)}
                         disabled={isCopying}
                         aria-busy={isCopying}
