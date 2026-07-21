@@ -218,6 +218,7 @@ export function AIIndexing({ articleTitle, articleUrl, publication }: AIIndexing
   const openAIRef = useRef<string | null>(null);
   const copyingRef = useRef<string | null>(null);
   const promptsRef = useRef<Record<string, string>>({});
+  const copyBtnRefs = useRef<Record<string, HTMLButtonElement | null>>({});
   const brand = BRAND[publication];
 
   useEffect(() => {
@@ -336,6 +337,12 @@ export function AIIndexing({ articleTitle, articleUrl, publication }: AIIndexing
     } finally {
       copyingRef.current = null;
       setCopyingId(null);
+      // Return focus to the Copy prompt button so keyboard users stay in place
+      // and the aria-live announcement stays contextual to the control.
+      const btn = copyBtnRefs.current[id];
+      if (btn && typeof btn.focus === "function") {
+        btn.focus({ preventScroll: true });
+      }
     }
   }
 
