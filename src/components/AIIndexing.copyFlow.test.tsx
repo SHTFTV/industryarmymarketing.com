@@ -1,4 +1,4 @@
-import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
+import { describe, it, expect, vi, afterEach } from "vitest";
 import { render, screen, fireEvent, waitFor, act } from "@testing-library/react";
 import { AIIndexing } from "./AIIndexing";
 
@@ -17,15 +17,12 @@ function getCopyButton(): HTMLButtonElement {
 }
 
 describe("AIIndexing — Copy prompt flow", () => {
-  beforeEach(() => {
-    vi.useFakeTimers();
-  });
   afterEach(() => {
-    vi.useRealTimers();
     vi.restoreAllMocks();
   });
 
   it("shows success state when navigator.clipboard resolves", async () => {
+    vi.useFakeTimers();
     const writeText = vi.fn().mockResolvedValue(undefined);
     Object.assign(navigator, { clipboard: { writeText } });
 
@@ -49,6 +46,7 @@ describe("AIIndexing — Copy prompt flow", () => {
     });
     expect(btn).toHaveAttribute("data-copy-state", "idle");
     expect(btn.textContent).toMatch(/Copy prompt/);
+    vi.useRealTimers();
   });
 
   it("falls back to execCommand when navigator.clipboard is missing", async () => {
@@ -84,17 +82,13 @@ describe("AIIndexing — Copy prompt flow", () => {
     openChatGPT();
     const btn = getCopyButton();
 
-    await act(async () => {
-      fireEvent.click(btn);
-      await Promise.resolve();
-      await Promise.resolve();
-    });
+    fireEvent.click(btn);
 
-    expect(writeText).toHaveBeenCalled();
-    expect(execCommand).toHaveBeenCalledWith("copy");
     await waitFor(() =>
       expect(btn).toHaveAttribute("data-copy-state", "success"),
     );
+    expect(writeText).toHaveBeenCalled();
+    expect(execCommand).toHaveBeenCalledWith("copy");
   });
 
   it("shows an explicit error state when both clipboard and fallback fail", async () => {
@@ -109,11 +103,7 @@ describe("AIIndexing — Copy prompt flow", () => {
     openChatGPT();
     const btn = getCopyButton();
 
-    await act(async () => {
-      fireEvent.click(btn);
-      await Promise.resolve();
-      await Promise.resolve();
-    });
+    fireEvent.click(btn);
 
     await waitFor(() =>
       expect(btn).toHaveAttribute("data-copy-state", "error"),
@@ -121,10 +111,10 @@ describe("AIIndexing — Copy prompt flow", () => {
     expect(btn.textContent).toMatch(/Copy failed/);
 
     // error state must also clear — no indeterminate UI
-    await act(async () => {
-      vi.advanceTimersByTime(2100);
-    });
-    expect(btn).toHaveAttribute("data-copy-state", "idle");
+    await waitFor(
+      () => expect(btn).toHaveAttribute("data-copy-state", "idle"),
+      { timeout: 3000 },
+    );
     expect(btn.textContent).toMatch(/Copy prompt/);
   });
 });
