@@ -15,6 +15,47 @@ const meta = (attr: "name" | "property", key: string): string | null => {
 };
 
 describe(`blog post: ${SLUG}`, () => {
+  it("published slug URL matches everywhere (route, canonical, sitemap, rss)", () => {
+    const app = readFileSync(resolve("src/App.tsx"), "utf8");
+    const sitemap = readFileSync(resolve("public/sitemap.xml"), "utf8");
+    const rss = readFileSync(resolve("public/rss.xml"), "utf8");
+    const canonical = html.match(
+      /<link[^>]+rel=["']canonical["'][^>]+href=["']([^"']+)["']/i,
+    )?.[1];
+    const expectedPath = `/blog/${SLUG}`;
+    expect(canonical).toContain(expectedPath);
+    expect(app).toContain(`path="${expectedPath}"`);
+    expect(sitemap).toContain(`${expectedPath}</loc>`);
+    expect(rss).toContain(expectedPath);
+  });
+
+  it("RSS enclosure matches the sitemap image entry (URL + type)", () => {
+    const sitemap = readFileSync(resolve("public/sitemap.xml"), "utf8");
+    const rss = readFileSync(resolve("public/rss.xml"), "utf8");
+    const smBlock = sitemap.match(
+      new RegExp(`<url>\\s*<loc>[^<]*/blog/${SLUG}</loc>[\\s\\S]*?</url>`),
+    )![0];
+    const smImage = smBlock.match(/<image:loc>([^<]+)<\/image:loc>/)?.[1];
+    expect(smImage).toBeTruthy();
+
+    const item = rss.match(
+      new RegExp(`<item>[\\s\\S]*?/blog/${SLUG}[\\s\\S]*?</item>`),
+    )![0];
+    const encUrl = item.match(/<enclosure[^>]+url=["']([^"']+)["']/)?.[1];
+    const encType = item.match(/<enclosure[^>]+type=["']([^"']+)["']/)?.[1];
+    expect(encUrl).toBe(smImage);
+    // Type must be a valid image MIME matching the file extension
+    expect(encType).toMatch(/^image\/(jpeg|png|webp)$/);
+    const ext = smImage!.split(".").pop()!.toLowerCase();
+    const extMime: Record<string, string> = {
+      jpg: "image/jpeg",
+      jpeg: "image/jpeg",
+      png: "image/png",
+      webp: "image/webp",
+    };
+    expect(encType).toBe(extMime[ext]);
+  });
+
   it("route is registered in src/App.tsx with the expected slug", () => {
     const app = readFileSync(resolve("src/App.tsx"), "utf8");
     expect(app).toContain(`path="/blog/${SLUG}"`);
