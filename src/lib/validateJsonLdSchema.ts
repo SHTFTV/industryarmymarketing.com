@@ -114,8 +114,12 @@ const REQUIRED_BY_TYPE: Record<string, FieldSpec[]> = {
     { field: "url", required: true, check: absoluteUrl },
   ],
   WebPage: [
-    { field: "name", required: true, check: nonEmptyString },
-    { field: "url", required: true, check: absoluteUrl },
+    // WebPage is used both as a standalone page schema and inline via
+    // `mainEntityOfPage: { "@type": "WebPage", "@id": "..." }`. The
+    // inline form legitimately carries only @id, so name/url are only
+    // validated when present.
+    { field: "name", required: false, check: nonEmptyString },
+    { field: "url", required: false, check: absoluteUrl },
   ],
   WebSite: [
     { field: "name", required: true, check: nonEmptyString },
