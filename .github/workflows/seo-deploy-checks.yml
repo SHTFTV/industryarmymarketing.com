@@ -72,6 +72,32 @@ jobs:
             --summary redirect-chain-summary.json
         continue-on-error: true
 
+      - name: Write drift metrics to job summary
+        if: always() && hashFiles('baseline-drift-metrics.json') != ''
+        run: |
+          node -e '
+            const fs = require("fs");
+            const m = JSON.parse(fs.readFileSync("baseline-drift-metrics.json", "utf8"));
+            const t = m.thresholds || {}, g = m.measured || {}, e = m.exceeded || {};
+            const rulesCell = (g.rulesChanged ?? 0) + (t.maxRules != null ? " / " + t.maxRules : "");
+            const finalCell = (g.finalPathChanges ?? 0) + (t.maxFinalPathChanges != null ? " / " + t.maxFinalPathChanges : "");
+            const status = (e.rules || e.finalPath) ? "❌ threshold exceeded" : "✅ within threshold";
+            const md = [
+              "## Redirect baseline drift — " + status,
+              "",
+              "| Metric | Measured / Threshold | Exceeded |",
+              "| --- | --- | --- |",
+              "| Changed rules (added + modified) | `" + rulesCell + "` | " + (e.rules ? "❌" : "✅") + " |",
+              "| Final destination changes | `" + finalCell + "` | " + (e.finalPath ? "❌" : "✅") + " |",
+              "| Added | `" + (g.rulesAdded ?? 0) + "` | — |",
+              "| Modified | `" + (g.rulesModified ?? 0) + "` | — |",
+              "",
+              "_Baseline ref: `" + (m.baselineRef || "working tree") + "`_",
+              "",
+            ].join("\n");
+            fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, md);
+          '
+
       - name: Validate redirect-chain-summary schema
         id: summary_schema
         if: always() && hashFiles('redirect-chain-summary.json') != ''
