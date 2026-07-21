@@ -30,7 +30,11 @@ function arg(name: string, fallback?: string): string | undefined {
 }
 
 const SITE = arg("--site", "https://industryarmymarketing.com/")!;
-const SITEMAP = arg("--sitemap", "https://www.industryarmymarketing.com/sitemap.xml")!;
+// Google requires the sitemap URL to live on the same host as the
+// verified property. Derive the default sitemap from SITE so a
+// www vs. non-www mismatch does not trigger a 400.
+const defaultSitemap = new URL("/sitemap.xml", SITE).toString();
+const SITEMAP = arg("--sitemap", defaultSitemap)!;
 const INSPECT_URLS = [
   "https://www.industryarmymarketing.com/",
   "https://www.industryarmymarketing.com/blog",
