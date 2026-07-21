@@ -727,12 +727,66 @@ async function main() {
     // Threshold gating: exit code 2 when drift exceeds configured limits.
     // Kept separate from the run's pass/fail (exit 1) so CI can
     // distinguish "checks failed" from "drift exceeded threshold".
-    const finalPathChanges = changed.filter((d) => d.finalPathChanged).length;
+    // Evaluation is delegated to a pure helper (scripts/lib/drift-gate.ts)
+    // so it can be unit-tested in isolation.
     const maxRules = DRIFT_MAX_RULES !== undefined ? Number(DRIFT_MAX_RULES) : undefined;
     const maxFinalPath =
       DRIFT_MAX_FINAL_PATH_CHANGES !== undefined ? Number(DRIFT_MAX_FINAL_PATH_CHANGES) : undefined;
-    const overRules = maxRules !== undefined && changed.length > maxRules;
-    const overFinal = maxFinalPath !== undefined && finalPathChanges > maxFinalPath;
+    const gate = evaluateDriftGate({
+      diffs: diffs as BaselineDriftEntry[],
+      maxRules,
+      maxFinalPathChanges: maxFinalPath,
+    });
+    const finalPathChanges = gate.finalPathChanges;
+    const overRules = gate.overRules;
+    const overFinal = gate.overFinal;
+
+    // Per-rule JSON drift diff — machine-readable artifact that mirrors
+    // the Markdown/CSV outputs but preserves structured hop arrays and
+    // finalPath strings for downstream tooling.
+    if (BASELINE_DIFF_JSON) {
+      const payload = {
+        schemaVersion: SUMMARY_SCHEMA_VERSION,
+        generatedAt: nowIso,
+        base: BASE,
+        baselineRef: BASELINE_REF ?? null,
+        dryRun: DRY_RUN,
+        thresholds: {
+          maxRules: maxRules ?? null,
+          maxFinalPathChanges: maxFinalPath ?? null,
+        },
+        measured: {
+          rulesChanged: gate.changedCount,
+          rulesAdded: gate.addedCount,
+          rulesModified: gate.modifiedCount,
+          finalPathChanges,
+        },
+        exceeded: { rules: overRules, finalPath: overFinal },
+        rules: diffs
+          .filter((d) => d.kind !== "unchanged")
+          .map((d) => ({
+            rule: d.rule,
+            kind: d.kind,
+            hopsChanged: d.hopsChanged,
+            finalPathChanged: d.finalPathChanged,
+            old: d.old
+              ? { hops: d.old.hops ?? [], finalPath: d.old.finalPath ?? null }
+              : null,
+            next: { hops: d.next.hops, finalPath: d.next.finalPath },
+          })),
+      };
+      if (DRY_RUN) {
+        console.log(
+          `redirect-chain-validator: [dry-run] would write baseline diff JSON to ${BASELINE_DIFF_JSON}`,
+        );
+      } else {
+        mkdirSync(dirname(resolve(BASELINE_DIFF_JSON)), { recursive: true });
+        writeFileSync(resolve(BASELINE_DIFF_JSON), JSON.stringify(payload, null, 2) + "\n");
+        console.log(
+          `redirect-chain-validator: baseline diff JSON written to ${BASELINE_DIFF_JSON}`,
+        );
+      }
+    }
 
     // Persist measured counts + thresholds so CI can surface them in the
     // PR comment and the "Checks" summary without re-parsing baseline-diff.
@@ -759,14 +813,8 @@ async function main() {
     }
 
     if (overRules || overFinal) {
-      const msg =
-        `redirect-chain-validator: baseline drift exceeds threshold — ` +
-        `changed rules=${changed.length}` +
-        (maxRules !== undefined ? ` (max ${maxRules})` : "") +
-        `, finalPath changes=${finalPathChanges}` +
-        (maxFinalPath !== undefined ? ` (max ${maxFinalPath})` : "");
-      console.error(msg);
-      if (ANNOTATE) console.log(`::error::${msg}`);
+      console.error(gate.message);
+      if (ANNOTATE) console.log(`::error::${gate.message}`);
       process.exit(2);
     }
 
