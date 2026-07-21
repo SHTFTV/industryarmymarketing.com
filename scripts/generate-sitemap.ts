@@ -31,6 +31,24 @@ if (blogSlugs.length === 0) {
   throw new Error("generate-sitemap: no blog slugs parsed from blogPosts.ts");
 }
 
+// Extract each post's `publishedAt` (ISO) so we can order sitemap entries
+// newest-first, matching the RSS feed's ordering. This keeps the two
+// surfaces byte-for-byte consistent for crawlers and prevents drift
+// caught by src/test/blog-rss-sitemap-order.test.ts.
+const blogPublishedAt: Record<string, string> = {};
+for (const slug of blogSlugs) {
+  const slugIdx = blogPostsSource.indexOf(`"slug": "${slug}"`);
+  if (slugIdx === -1) continue;
+  const window = blogPostsSource.slice(slugIdx, slugIdx + 6000);
+  const m = window.match(/"publishedAt"\s*:\s*"([^"]+)"/);
+  if (m) blogPublishedAt[slug] = m[1];
+}
+blogSlugs.sort((a, b) => {
+  const ta = blogPublishedAt[a] ? Date.parse(blogPublishedAt[a]) : 0;
+  const tb = blogPublishedAt[b] ? Date.parse(blogPublishedAt[b]) : 0;
+  return tb - ta;
+});
+
 // Parse each blog post's human-readable `date: "Month YYYY"` and derive a
 // YYYY-MM-01 lastmod for the sitemap, mirroring the exact derivation used
 // by src/pages/BlogPost.tsx for the BlogPosting JSON-LD `dateModified` so
