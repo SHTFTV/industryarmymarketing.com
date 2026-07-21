@@ -181,6 +181,13 @@ const REQUIRED_BY_TYPE: Record<string, FieldSpec[]> = {
     } },
     { field: "uploadDate", required: true, check: iso8601 },
   ],
+  // Additional schema.org @types we emit on niche editorial posts. Kept
+  // permissive (no required fields) so the validator doesn't gate on
+  // fields Google treats as recommended-not-required, while still
+  // recognising the @type as valid instead of flagging unknown-type.
+  ItemPage: [],
+  Action: [],
+  Legislation: [],
   BreadcrumbList: [
     { field: "itemListElement", required: true, check: itemListElement },
   ],
