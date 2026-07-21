@@ -16,7 +16,9 @@
     "test:watch": "vitest",
     "validate:sitemap": "bunx tsx scripts/validate-sitemap.ts",
     "validate:rss": "bunx tsx scripts/validate-rss.ts",
-    "pricing-guard": "bunx tsx scripts/pricing-guard.ts"
+    "pricing-guard": "bunx tsx scripts/pricing-guard.ts",
+    "gsc:sync": "bunx tsx scripts/gsc-sync.ts",
+    "seo:check": "bunx tsx scripts/seo-canonical-jsonld-check.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
