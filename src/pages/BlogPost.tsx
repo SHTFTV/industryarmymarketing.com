@@ -12,6 +12,7 @@ import BlogToc, { slugifyHeading } from "@/components/BlogToc";
 import ReadingProgress from "@/components/ReadingProgress";
 import { copySectionLink } from "@/lib/copySectionLink";
 import { Link2 } from "lucide-react";
+import { AIIndexing } from "@/components/AIIndexing";
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -512,6 +513,14 @@ const BlogPost = () => {
               </section>
             );
           })()}
+
+          <div className="mt-16">
+            <AIIndexing
+              articleTitle={post.title}
+              articleUrl={`https://industryarmymarketing.com/blog/${post.slug}`}
+              publication="iam"
+            />
+          </div>
 
           <section className="mt-16">
             <p className="text-primary text-xs uppercase tracking-[0.3em] mb-3">Related Intel</p>
