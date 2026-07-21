@@ -17,8 +17,49 @@
  *   />
  */
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ChevronDown, ChevronUp, Share2 } from "lucide-react";
+
+// ─── Analytics ────────────────────────────────────────────────
+// Fires a lightweight custom event + forwards to gtag/plausible/dataLayer
+// when available. Payload is intentionally minimal — never includes the
+// prompt text or article title body.
+type AnalyticsPayload = {
+  event:
+    | "ai_indexing_prompt_opened"
+    | "ai_indexing_copy_succeeded"
+    | "ai_indexing_copy_failed";
+  platform: string;
+  publication: string;
+  articleUrl: string;
+  copyMethod?: "clipboard" | "fallback";
+  failureReason?: "permission" | "no_clipboard" | "exec_command" | "exception";
+};
+
+function trackAIIndexing(payload: AnalyticsPayload) {
+  if (typeof window === "undefined") return;
+  try {
+    window.dispatchEvent(
+      new CustomEvent("iam:ai-indexing", { detail: payload }),
+    );
+    const w = window as unknown as {
+      gtag?: (...args: unknown[]) => void;
+      plausible?: (name: string, opts?: { props: Record<string, unknown> }) => void;
+      dataLayer?: unknown[];
+    };
+    w.gtag?.("event", payload.event, {
+      platform: payload.platform,
+      publication: payload.publication,
+      article_url: payload.articleUrl,
+      copy_method: payload.copyMethod,
+      failure_reason: payload.failureReason,
+    });
+    w.plausible?.(payload.event, { props: { ...payload } });
+    w.dataLayer?.push({ ...payload, event: payload.event });
+  } catch {
+    // analytics must never break the UI
+  }
+}
 
 // ─── Brand config per publication ────────────────────────────
 const BRAND = {
@@ -173,10 +214,30 @@ export function AIIndexing({ articleTitle, articleUrl, publication }: AIIndexing
   const [copyStatus, setCopyStatus] = useState<
     { id: string; state: "success" | "error"; message: string } | null
   >(null);
+  const [copyingId, setCopyingId] = useState<string | null>(null);
+  const openAIRef = useRef<string | null>(null);
+  const copyingRef = useRef<string | null>(null);
+  const promptsRef = useRef<Record<string, string>>({});
   const brand = BRAND[publication];
 
+  useEffect(() => {
+    openAIRef.current = openAI;
+  }, [openAI]);
+  useEffect(() => {
+    copyingRef.current = copyingId;
+  }, [copyingId]);
+
   function toggleAI(id: string) {
-    setOpenAI(openAI === id ? null : id);
+    const next = openAI === id ? null : id;
+    setOpenAI(next);
+    if (next) {
+      trackAIIndexing({
+        event: "ai_indexing_prompt_opened",
+        platform: next,
+        publication,
+        articleUrl,
+      });
+    }
   }
 
   function fallbackCopy(text: string): boolean {
@@ -210,23 +271,91 @@ export function AIIndexing({ articleTitle, articleUrl, publication }: AIIndexing
   }
 
   async function copyPrompt(id: string, prompt: string) {
+    // Guard against double-fire from the keyboard shortcut + click,
+    // and from users mashing the button.
+    if (copyingRef.current) return;
+    copyingRef.current = id;
+    setCopyingId(id);
     const clip =
       typeof navigator !== "undefined" ? navigator.clipboard : undefined;
-    if (clip && typeof clip.writeText === "function") {
-      try {
-        await clip.writeText(prompt);
-        showStatus(id, "success", "Copied ✓");
-        return;
-      } catch {
-        // permission denied or blocked — fall through to legacy copy
+    try {
+      if (clip && typeof clip.writeText === "function") {
+        try {
+          await clip.writeText(prompt);
+          showStatus(id, "success", "Copied ✓");
+          trackAIIndexing({
+            event: "ai_indexing_copy_succeeded",
+            platform: id,
+            publication,
+            articleUrl,
+            copyMethod: "clipboard",
+          });
+          return;
+        } catch {
+          if (fallbackCopy(prompt)) {
+            showStatus(id, "success", "Copied ✓");
+            trackAIIndexing({
+              event: "ai_indexing_copy_succeeded",
+              platform: id,
+              publication,
+              articleUrl,
+              copyMethod: "fallback",
+            });
+            return;
+          }
+          showStatus(id, "error", "Copy failed");
+          trackAIIndexing({
+            event: "ai_indexing_copy_failed",
+            platform: id,
+            publication,
+            articleUrl,
+            failureReason: "permission",
+          });
+          return;
+        }
       }
-    }
-    if (fallbackCopy(prompt)) {
-      showStatus(id, "success", "Copied ✓");
-    } else {
-      showStatus(id, "error", "Copy failed");
+      if (fallbackCopy(prompt)) {
+        showStatus(id, "success", "Copied ✓");
+        trackAIIndexing({
+          event: "ai_indexing_copy_succeeded",
+          platform: id,
+          publication,
+          articleUrl,
+          copyMethod: "fallback",
+        });
+      } else {
+        showStatus(id, "error", "Copy failed");
+        trackAIIndexing({
+          event: "ai_indexing_copy_failed",
+          platform: id,
+          publication,
+          articleUrl,
+          failureReason: clip ? "exec_command" : "no_clipboard",
+        });
+      }
+    } finally {
+      copyingRef.current = null;
+      setCopyingId(null);
     }
   }
+
+  // Keyboard shortcut: Ctrl/Cmd+K copies the currently open dropdown's prompt.
+  useEffect(() => {
+    function onKey(e: KeyboardEvent) {
+      const isCopyShortcut =
+        (e.ctrlKey || e.metaKey) && (e.key === "k" || e.key === "K");
+      if (!isCopyShortcut) return;
+      const id = openAIRef.current;
+      if (!id) return;
+      const prompt = promptsRef.current[id];
+      if (!prompt) return;
+      e.preventDefault();
+      void copyPrompt(id, prompt);
+    }
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [publication, articleUrl]);
 
   const shareUrl = encodeURIComponent(articleUrl);
   const shareText = encodeURIComponent(`${articleTitle} — via ${brand.name}`);
@@ -240,12 +369,24 @@ export function AIIndexing({ articleTitle, articleUrl, publication }: AIIndexing
           IAM AI Indexing Section
         </p>
 
+        {/* SR-only live region announces copy result */}
+        <div
+          role="status"
+          aria-live="polite"
+          aria-atomic="true"
+          className="sr-only"
+        >
+          {copyStatus ? copyStatus.message : ""}
+        </div>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           {AI_PLATFORMS.map((platform) => {
             const isOpen   = openAI === platform.id;
             const Icon     = platform.icon;
             const prompt   = platform.prompt(articleTitle, articleUrl);
             const deepLink = platform.buildUrl(articleTitle, articleUrl);
+            promptsRef.current[platform.id] = prompt;
+            const isCopying = copyingId === platform.id;
 
             return (
               <div
@@ -291,17 +432,28 @@ export function AIIndexing({ articleTitle, articleUrl, publication }: AIIndexing
                       </a>
                       <button
                         onClick={() => copyPrompt(platform.id, prompt)}
-                        aria-live="polite"
+                        disabled={isCopying}
+                        aria-busy={isCopying}
+                        aria-keyshortcuts="Control+K Meta+K"
+                        title="Copy prompt (Ctrl/Cmd+K)"
                         data-copy-state={
-                          copyStatus?.id === platform.id ? copyStatus.state : "idle"
+                          isCopying
+                            ? "copying"
+                            : copyStatus?.id === platform.id
+                              ? copyStatus.state
+                              : "idle"
                         }
-                        className={`text-xs font-semibold py-2 px-3 rounded-lg border transition-all whitespace-nowrap ${
+                        className={`text-xs font-semibold py-2 px-3 rounded-lg border transition-all whitespace-nowrap disabled:cursor-not-allowed disabled:opacity-60 ${
                           copyStatus?.id === platform.id && copyStatus.state === "error"
                             ? "border-red-500/40 text-red-400"
                             : "border-white/10 text-muted-foreground hover:text-foreground"
                         }`}
                       >
-                        {copyStatus?.id === platform.id ? copyStatus.message : "Copy prompt"}
+                        {isCopying
+                          ? "Copying…"
+                          : copyStatus?.id === platform.id
+                            ? copyStatus.message
+                            : "Copy prompt"}
                       </button>
                     </div>
                   </div>
