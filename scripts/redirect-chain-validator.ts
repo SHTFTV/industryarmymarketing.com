@@ -25,6 +25,11 @@
 //     --summary redirect-chain-summary.json
 //     # validate against the baseline stored at a specific Git ref instead
 //     # of the working-tree file — lets you review drift vs the previous commit
+//   bunx tsx scripts/redirect-chain-validator.ts --update-baseline --dry-run \
+//     --baseline-diff-out baseline-diff.md --baseline-diff-csv baseline-diff.csv \
+//     --drift-max-rules 3 --drift-max-final-path-changes 1
+//     # export a CSV alongside the Markdown table and fail the run only when
+//     # drift exceeds configured thresholds (changed rules / finalPath changes)
 
 import { LEGACY_REDIRECTS } from "../src/components/LegacyRedirects";
 import { writeFileSync, readFileSync, existsSync, mkdirSync } from "fs";
