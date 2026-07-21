@@ -45,6 +45,46 @@ jobs:
       - name: Prerender performance budgets
         run: bunx tsx scripts/perf-budget.ts
 
+      - name: Prerender HTML SEO check (blog + newest posts)
+        run: bun run prerender:check
+
+      - name: Real-HTTP redirect chain validator
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: bun run redirects:validate
+        continue-on-error: true
+
+      - name: Restore previous SEO snapshot
+        uses: actions/download-artifact@v4
+        with:
+          name: seo-snapshot
+          path: .seo-snapshots
+        continue-on-error: true
+
+      - name: Rename restored snapshot to previous.json
+        run: |
+          mkdir -p .seo-snapshots
+          if [ -f .seo-snapshots/current.json ]; then
+            mv .seo-snapshots/current.json .seo-snapshots/previous.json
+          fi
+
+      - name: Generate SEO diff report
+        run: bun run seo:diff
+
+      - name: Upload SEO diff report
+        uses: actions/upload-artifact@v4
+        with:
+          name: seo-diff-report
+          path: |
+            seo-diff-report.md
+            seo-diff-report.json
+
+      - name: Upload current SEO snapshot (baseline for next run)
+        uses: actions/upload-artifact@v4
+        with:
+          name: seo-snapshot
+          path: .seo-snapshots/current.json
+          overwrite: true
+
       - name: GSC sync (main only)
         if: github.event_name == 'push' && github.ref == 'refs/heads/main' && env.LOVABLE_API_KEY != '' && env.GOOGLE_SEARCH_CONSOLE_API_KEY != ''
         run: bun run gsc:sync

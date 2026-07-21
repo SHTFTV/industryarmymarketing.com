@@ -39,6 +39,53 @@ const TIMEOUT_MIN = Number(arg("--timeout", "20"));
 const INTERVAL_SEC = Number(arg("--interval", "60"));
 const COUNT = Number(arg("--count", "3"));
 
+// Rate limiter + backoff — GSC URL Inspection API allows ~2000 QPD and
+// bursts trigger 429s. We serialize requests through a token bucket and
+// retry with exponential backoff + jitter on 429/5xx.
+const RPS = Number(arg("--rps", "1")); // requests/sec (soft cap)
+const MAX_RETRIES = Number(arg("--max-retries", "5"));
+const BASE_BACKOFF_MS = Number(arg("--backoff-ms", "1000"));
+const MAX_BACKOFF_MS = Number(arg("--max-backoff-ms", "60000"));
+
+const MIN_GAP_MS = Math.max(1, Math.floor(1000 / Math.max(RPS, 0.1)));
+let nextAvailableAt = 0;
+async function acquireSlot() {
+  const now = Date.now();
+  const wait = Math.max(0, nextAvailableAt - now);
+  nextAvailableAt = Math.max(now, nextAvailableAt) + MIN_GAP_MS;
+  if (wait > 0) await new Promise((r) => setTimeout(r, wait));
+}
+
+async function throttledFetch(url: string, init: RequestInit): Promise<Response> {
+  let attempt = 0;
+  while (true) {
+    await acquireSlot();
+    let res: Response;
+    try {
+      res = await fetch(url, init);
+    } catch (e) {
+      if (attempt >= MAX_RETRIES) throw e;
+      const delay = Math.min(MAX_BACKOFF_MS, BASE_BACKOFF_MS * 2 ** attempt);
+      const jitter = Math.floor(Math.random() * 250);
+      console.warn(`  fetch error (attempt ${attempt + 1}/${MAX_RETRIES}): ${(e as Error).message}; retrying in ${delay + jitter}ms`);
+      await new Promise((r) => setTimeout(r, delay + jitter));
+      attempt += 1;
+      continue;
+    }
+    if ((res.status === 429 || res.status >= 500) && attempt < MAX_RETRIES) {
+      const retryAfter = Number(res.headers.get("retry-after") ?? "0") * 1000;
+      const exp = Math.min(MAX_BACKOFF_MS, BASE_BACKOFF_MS * 2 ** attempt);
+      const jitter = Math.floor(Math.random() * 500);
+      const delay = Math.max(retryAfter, exp) + jitter;
+      console.warn(`  ${res.status} from ${url} (attempt ${attempt + 1}/${MAX_RETRIES}); backing off ${delay}ms`);
+      await new Promise((r) => setTimeout(r, delay));
+      attempt += 1;
+      continue;
+    }
+    return res;
+  }
+}
+
 const SITEMAP = new URL("/sitemap.xml", SITE).toString();
 
 const authHeaders = {
@@ -67,7 +114,7 @@ function newestBlogUrls(n: number): string[] {
 async function submitSitemap() {
   const encSite = encodeURIComponent(SITE);
   const encMap = encodeURIComponent(SITEMAP);
-  const res = await fetch(
+  const res = await throttledFetch(
     `${GATEWAY}/webmasters/v3/sites/${encSite}/sitemaps/${encMap}`,
     { method: "PUT", headers: authHeaders },
   );
@@ -84,7 +131,7 @@ type Row = { url: string; verdict: Verdict; coverage: string; lastCrawl: string 
 
 async function inspect(u: string): Promise<Row> {
   try {
-    const res = await fetch(`${GATEWAY}/v1/urlInspection/index:inspect`, {
+    const res = await throttledFetch(`${GATEWAY}/v1/urlInspection/index:inspect`, {
       method: "POST",
       headers: { ...authHeaders, "Content-Type": "application/json" },
       body: JSON.stringify({ inspectionUrl: u, siteUrl: SITE }),
@@ -128,7 +175,10 @@ async function main() {
     iter += 1;
     console.log(`\n— iteration ${iter} (${new Date().toISOString()}) —`);
     await submitSitemap();
-    const rows = await Promise.all(Array.from(pending).map(inspect));
+    // Serialize inspections through the rate limiter so we don't
+    // burst-fire the GSC API and trigger 429s.
+    const rows: Row[] = [];
+    for (const u of pending) rows.push(await inspect(u));
     for (const r of rows) {
       finalRows.set(r.url, r);
       console.log(`  ${r.verdict.padEnd(7)} ${r.coverage.padEnd(40)} ${r.url}`);
