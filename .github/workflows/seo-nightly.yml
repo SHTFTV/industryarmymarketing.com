@@ -51,6 +51,47 @@ jobs:
             --json redirect-chain-report.json \
             --summary redirect-chain-summary.json
 
+      - name: Restore redirect-chain history
+        id: restore_history
+        uses: actions/cache@v4
+        with:
+          path: .redirect-history
+          key: redirect-history-${{ github.run_id }}
+          restore-keys: |
+            redirect-history-
+
+      - name: Archive today's summary into history
+        if: always() && hashFiles('redirect-chain-summary.json') != ''
+        run: |
+          mkdir -p .redirect-history
+          stamp="$(date -u +%Y-%m-%d)"
+          cp redirect-chain-summary.json ".redirect-history/${stamp}.json"
+          # Keep at most the last 60 daily snapshots to bound cache size.
+          ls -1 .redirect-history/*.json | sort | head -n -60 | xargs -r rm -f
+          ls -la .redirect-history
+
+      - name: Generate trend/diff report
+        if: always() && hashFiles('.redirect-history/*.json') != ''
+        run: |
+          bunx tsx scripts/redirect-trend.ts \
+            --history .redirect-history \
+            --out-md redirect-trend.md \
+            --out-json redirect-trend.json
+
+      - name: Render HTML redirect report
+        if: always() && hashFiles('redirect-chain-summary.json') != ''
+        run: |
+          bunx tsx scripts/redirect-report-html.ts \
+            --in redirect-chain-summary.json \
+            --out redirect-chain-report.html
+
+      - name: Persist redirect-chain history cache
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: .redirect-history
+          key: redirect-history-${{ github.run_id }}
+
       - name: Legacy redirects live integration test
         id: legacy_live_test
         run: bunx vitest run src/test/legacy-redirects-live.test.ts
@@ -63,6 +104,9 @@ jobs:
           path: |
             redirect-chain-report.json
             redirect-chain-summary.json
+            redirect-chain-report.html
+            redirect-trend.md
+            redirect-trend.json
           if-no-files-found: ignore
 
       - name: Open drift issue on failure
