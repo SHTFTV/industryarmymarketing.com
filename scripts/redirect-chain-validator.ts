@@ -19,9 +19,16 @@
 //     # regenerate baseline entries ONLY for rules matching /packages
 //   bunx tsx scripts/redirect-chain-validator.ts --update-baseline --baseline-diff-out baseline-diff.md
 //     # write a reviewable old-vs-new hop/finalPath diff before approval
+//   bunx tsx scripts/redirect-chain-validator.ts --update-baseline --dry-run
+//     # print the pending baseline changes and DO NOT write any files
+//   bunx tsx scripts/redirect-chain-validator.ts --baseline-ref HEAD~1 \
+//     --summary redirect-chain-summary.json
+//     # validate against the baseline stored at a specific Git ref instead
+//     # of the working-tree file — lets you review drift vs the previous commit
 
 import { LEGACY_REDIRECTS } from "../src/components/LegacyRedirects";
 import { writeFileSync, readFileSync, existsSync, mkdirSync } from "fs";
+import { execSync } from "child_process";
 import { resolve, dirname } from "path";
 
 const args = process.argv.slice(2);
@@ -52,8 +59,17 @@ const BASELINE_PATH = resolve(arg("--baseline", ".redirect-baselines/redirect-ch
 // Rewrite the baseline file with the results of this run. Only rules
 // that completed cleanly (had ≥1 hop and no fetch error) are updated.
 const UPDATE_BASELINE = flag("--update-baseline");
+// Dry-run: compute + display the pending diff and skip every write
+// (baseline file, diff Markdown file, summary file). Useful for
+// previewing what `--update-baseline` would do in CI before approval.
+const DRY_RUN = flag("--dry-run");
 // Optional path for a Markdown diff of pending baseline changes.
 const BASELINE_DIFF_OUT = arg("--baseline-diff-out");
+// Load the baseline from a Git ref (e.g. `HEAD~1`, `origin/main`,
+// a tag or SHA) instead of the working-tree file. Enables reviewing
+// drift across deploys: run the validator with the previous deploy's
+// baseline as the source of truth for expected hops/finalPath.
+const BASELINE_REF = arg("--baseline-ref");
 // Summary schema version emitted in redirect-chain-summary.json. Keep
 // in sync with scripts/validate-summary-schema.ts SUPPORTED_SCHEMA_VERSIONS.
 const SUMMARY_SCHEMA_VERSION = "1";
@@ -68,22 +84,41 @@ type BaselineFile = {
   base: string | null;
   rules: Record<string, BaselineEntry>;
 };
+function parseBaselineJson(source: string, raw: string): BaselineFile {
+  const parsed = JSON.parse(raw) as BaselineFile;
+  if (parsed.schemaVersion && parsed.schemaVersion !== BASELINE_SCHEMA_VERSION) {
+    console.error(
+      `redirect-chain-validator: MIGRATION REQUIRED — baseline (${source}) schemaVersion "${parsed.schemaVersion}" is not supported (expected "${BASELINE_SCHEMA_VERSION}").`,
+    );
+    process.exit(3);
+  }
+  return {
+    schemaVersion: parsed.schemaVersion ?? BASELINE_SCHEMA_VERSION,
+    generatedAt: parsed.generatedAt ?? null,
+    base: parsed.base ?? null,
+    rules: parsed.rules ?? {},
+  };
+}
 function loadBaseline(): BaselineFile {
+  // Git-ref mode: read the baseline blob out of the requested ref.
+  // Useful for cross-deploy drift review without checking out the ref.
+  if (BASELINE_REF) {
+    const relPath = arg("--baseline", ".redirect-baselines/redirect-chain-baseline.json")!;
+    const spec = `${BASELINE_REF}:${relPath}`;
+    try {
+      const raw = execSync(`git show ${spec}`, { encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] });
+      console.log(`redirect-chain-validator: baseline loaded from git ${spec}`);
+      return parseBaselineJson(`git:${spec}`, raw);
+    } catch (e) {
+      console.error(
+        `redirect-chain-validator: --baseline-ref could not read ${spec}: ${(e as Error).message.trim()}`,
+      );
+      process.exit(2);
+    }
+  }
   if (!existsSync(BASELINE_PATH)) return { generatedAt: null, base: null, rules: {} };
   try {
-    const parsed = JSON.parse(readFileSync(BASELINE_PATH, "utf8")) as BaselineFile;
-    if (parsed.schemaVersion && parsed.schemaVersion !== BASELINE_SCHEMA_VERSION) {
-      console.error(
-        `redirect-chain-validator: MIGRATION REQUIRED — baseline schemaVersion "${parsed.schemaVersion}" is not supported (expected "${BASELINE_SCHEMA_VERSION}"). Regenerate with --update-baseline after upgrading.`,
-      );
-      process.exit(3);
-    }
-    return {
-      schemaVersion: parsed.schemaVersion ?? BASELINE_SCHEMA_VERSION,
-      generatedAt: parsed.generatedAt ?? null,
-      base: parsed.base ?? null,
-      rules: parsed.rules ?? {},
-    };
+    return parseBaselineJson(BASELINE_PATH, readFileSync(BASELINE_PATH, "utf8"));
   } catch (e) {
     console.warn(`redirect-chain-validator: could not parse ${BASELINE_PATH}: ${(e as Error).message}`);
     return { generatedAt: null, base: null, rules: {} };
