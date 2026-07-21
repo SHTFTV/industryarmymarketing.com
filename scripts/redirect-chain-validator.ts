@@ -727,6 +727,31 @@ async function main() {
       DRIFT_MAX_FINAL_PATH_CHANGES !== undefined ? Number(DRIFT_MAX_FINAL_PATH_CHANGES) : undefined;
     const overRules = maxRules !== undefined && changed.length > maxRules;
     const overFinal = maxFinalPath !== undefined && finalPathChanges > maxFinalPath;
+
+    // Persist measured counts + thresholds so CI can surface them in the
+    // PR comment and the "Checks" summary without re-parsing baseline-diff.
+    if (DRIFT_METRICS_OUT) {
+      const metrics = {
+        schemaVersion: SUMMARY_SCHEMA_VERSION,
+        generatedAt: nowIso,
+        baselineRef: BASELINE_REF ?? null,
+        thresholds: {
+          maxRules: maxRules ?? null,
+          maxFinalPathChanges: maxFinalPath ?? null,
+        },
+        measured: {
+          rulesChanged: changed.length,
+          rulesAdded: diffs.filter((d) => d.kind === "added").length,
+          rulesModified: diffs.filter((d) => d.kind === "changed").length,
+          finalPathChanges,
+        },
+        exceeded: { rules: overRules, finalPath: overFinal },
+      };
+      mkdirSync(dirname(resolve(DRIFT_METRICS_OUT)), { recursive: true });
+      writeFileSync(resolve(DRIFT_METRICS_OUT), JSON.stringify(metrics, null, 2) + "\n");
+      console.log(`redirect-chain-validator: drift metrics written to ${DRIFT_METRICS_OUT}`);
+    }
+
     if (overRules || overFinal) {
       const msg =
         `redirect-chain-validator: baseline drift exceeds threshold — ` +
