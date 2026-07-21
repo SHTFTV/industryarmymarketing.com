@@ -15,6 +15,10 @@
 //   bunx tsx scripts/redirect-chain-validator.ts --ua-matrix        # cross-UA check
 //   bunx tsx scripts/redirect-chain-validator.ts --ua "MyBot/1.0"   # single UA override
 //   bunx tsx scripts/redirect-chain-validator.ts --json out.json    # machine-readable report
+//   bunx tsx scripts/redirect-chain-validator.ts --only /packages --update-baseline
+//     # regenerate baseline entries ONLY for rules matching /packages
+//   bunx tsx scripts/redirect-chain-validator.ts --update-baseline --baseline-diff-out baseline-diff.md
+//     # write a reviewable old-vs-new hop/finalPath diff before approval
 
 import { LEGACY_REDIRECTS } from "../src/components/LegacyRedirects";
 import { writeFileSync, readFileSync, existsSync, mkdirSync } from "fs";
@@ -48,9 +52,18 @@ const BASELINE_PATH = resolve(arg("--baseline", ".redirect-baselines/redirect-ch
 // Rewrite the baseline file with the results of this run. Only rules
 // that completed cleanly (had ≥1 hop and no fetch error) are updated.
 const UPDATE_BASELINE = flag("--update-baseline");
+// Optional path for a Markdown diff of pending baseline changes.
+const BASELINE_DIFF_OUT = arg("--baseline-diff-out");
+// Summary schema version emitted in redirect-chain-summary.json. Keep
+// in sync with scripts/validate-summary-schema.ts SUPPORTED_SCHEMA_VERSIONS.
+const SUMMARY_SCHEMA_VERSION = "1";
+// Baseline file schema version. Bump alongside a migration when the
+// on-disk shape changes.
+const BASELINE_SCHEMA_VERSION = "1";
 
 type BaselineEntry = { hops: string[][]; finalPath: string; approvedAt?: string };
 type BaselineFile = {
+  schemaVersion?: string;
   generatedAt: string | null;
   base: string | null;
   rules: Record<string, BaselineEntry>;
@@ -59,7 +72,18 @@ function loadBaseline(): BaselineFile {
   if (!existsSync(BASELINE_PATH)) return { generatedAt: null, base: null, rules: {} };
   try {
     const parsed = JSON.parse(readFileSync(BASELINE_PATH, "utf8")) as BaselineFile;
-    return { generatedAt: parsed.generatedAt ?? null, base: parsed.base ?? null, rules: parsed.rules ?? {} };
+    if (parsed.schemaVersion && parsed.schemaVersion !== BASELINE_SCHEMA_VERSION) {
+      console.error(
+        `redirect-chain-validator: MIGRATION REQUIRED — baseline schemaVersion "${parsed.schemaVersion}" is not supported (expected "${BASELINE_SCHEMA_VERSION}"). Regenerate with --update-baseline after upgrading.`,
+      );
+      process.exit(3);
+    }
+    return {
+      schemaVersion: parsed.schemaVersion ?? BASELINE_SCHEMA_VERSION,
+      generatedAt: parsed.generatedAt ?? null,
+      base: parsed.base ?? null,
+      rules: parsed.rules ?? {},
+    };
   } catch (e) {
     console.warn(`redirect-chain-validator: could not parse ${BASELINE_PATH}: ${(e as Error).message}`);
     return { generatedAt: null, base: null, rules: {} };
