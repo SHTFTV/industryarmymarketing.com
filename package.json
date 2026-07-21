@@ -18,7 +18,10 @@
     "validate:rss": "bunx tsx scripts/validate-rss.ts",
     "pricing-guard": "bunx tsx scripts/pricing-guard.ts",
     "gsc:sync": "bunx tsx scripts/gsc-sync.ts",
-    "seo:check": "bunx tsx scripts/seo-canonical-jsonld-check.ts"
+    "seo:check": "bunx tsx scripts/seo-canonical-jsonld-check.ts",
+    "seo:consistency": "bunx tsx scripts/seo-consistency-check.ts",
+    "perf:budget": "bunx tsx scripts/perf-budget.ts",
+    "gsc:poll": "bunx tsx scripts/gsc-poll-indexing.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
