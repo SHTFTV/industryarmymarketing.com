@@ -1,0 +1,50 @@
+name: SEO deploy checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: seo-deploy-checks-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  seo-checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      LOVABLE_API_KEY: ${{ secrets.LOVABLE_API_KEY }}
+      GOOGLE_SEARCH_CONSOLE_API_KEY: ${{ secrets.GOOGLE_SEARCH_CONSOLE_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install
+        run: bun install --frozen-lockfile
+
+      - name: Build (generates sitemap + prerender)
+        run: bun run build
+
+      - name: Redirect regression tests
+        run: bunx vitest run src/test/legacy-redirects.test.tsx
+
+      - name: Sitemap validation
+        run: bun run validate:sitemap
+
+      - name: robots.txt / sitemap.xml / blog consistency
+        run: bunx tsx scripts/seo-consistency-check.ts
+
+      - name: Canonical + JSON-LD check
+        run: bun run seo:check
+
+      - name: Prerender performance budgets
+        run: bunx tsx scripts/perf-budget.ts
+
+      - name: GSC sync (main only)
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main' && env.LOVABLE_API_KEY != '' && env.GOOGLE_SEARCH_CONSOLE_API_KEY != ''
+        run: bun run gsc:sync
