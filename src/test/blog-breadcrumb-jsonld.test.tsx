@@ -40,16 +40,34 @@ const findBreadcrumb = (): Breadcrumb | undefined =>
       (s as { "@type"?: string })["@type"] === "BreadcrumbList",
   );
 
-const assertPositionsValid = (bc: Breadcrumb) => {
+const assertBreadcrumbShape = (bc: Breadcrumb) => {
+  // Top-level @type must be BreadcrumbList (not just present as an object).
+  expect(bc["@type"]).toBe("BreadcrumbList");
+  expect(Array.isArray(bc.itemListElement)).toBe(true);
   expect(bc.itemListElement.length).toBeGreaterThanOrEqual(2);
+
+  const seenPositions = new Set<number>();
   bc.itemListElement.forEach((el, i) => {
     expect(el["@type"]).toBe("ListItem");
+    // Position must be a number, start at 1, be strictly sequential, and unique.
+    expect(typeof el.position).toBe("number");
+    expect(Number.isInteger(el.position)).toBe(true);
     expect(el.position).toBe(i + 1);
+    expect(seenPositions.has(el.position)).toBe(false);
+    seenPositions.add(el.position);
+
     expect(typeof el.name).toBe("string");
     expect(el.name.length).toBeGreaterThan(0);
-    expect(el.item).toMatch(/^https?:\/\//);
+
+    // Every item URL must be an absolute canonical URL on SITE_URL.
+    expect(typeof el.item).toBe("string");
+    expect(el.item.startsWith(SITE_URL)).toBe(true);
+    expect(el.item).toMatch(/^https:\/\//);
   });
 };
+
+const readCanonical = (): string | null =>
+  document.querySelector('link[rel="canonical"]')?.getAttribute("href") ?? null;
 
 const renderRoute = (path: string) =>
   render(
@@ -76,10 +94,18 @@ describe("BreadcrumbList JSON-LD parity", () => {
       expect(found, "BreadcrumbList missing on /blog").toBeTruthy();
       return found!;
     });
-    assertPositionsValid(bc);
+    assertBreadcrumbShape(bc);
     expect(bc.itemListElement).toHaveLength(2);
     expect(bc.itemListElement[0].item).toBe(`${SITE_URL}/`);
     expect(bc.itemListElement[1].item).toBe(`${SITE_URL}/blog`);
+
+    // The last crumb URL must match the page's rendered canonical link.
+    const canonical = await waitFor(() => {
+      const c = readCanonical();
+      expect(c, "canonical link missing on /blog").toBeTruthy();
+      return c!;
+    });
+    expect(bc.itemListElement[bc.itemListElement.length - 1].item).toBe(canonical);
   });
 
   for (const post of blogPosts) {
@@ -90,11 +116,20 @@ describe("BreadcrumbList JSON-LD parity", () => {
         expect(found, `BreadcrumbList missing on /blog/${post.slug}`).toBeTruthy();
         return found!;
       });
-      assertPositionsValid(bc);
+      assertBreadcrumbShape(bc);
       expect(bc.itemListElement).toHaveLength(3);
       expect(bc.itemListElement[0].item).toBe(`${SITE_URL}/`);
       expect(bc.itemListElement[1].item).toBe(`${SITE_URL}/blog`);
       expect(bc.itemListElement[2].item).toBe(`${SITE_URL}/blog/${post.slug}`);
+
+      // Terminal crumb must match the rendered canonical URL for this post.
+      const canonical = await waitFor(() => {
+        const c = readCanonical();
+        expect(c, `canonical missing on /blog/${post.slug}`).toBeTruthy();
+        return c!;
+      });
+      expect(canonical).toBe(`${SITE_URL}/blog/${post.slug}`);
+      expect(bc.itemListElement[2].item).toBe(canonical);
     });
   }
 });
