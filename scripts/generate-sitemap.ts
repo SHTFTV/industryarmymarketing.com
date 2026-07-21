@@ -31,6 +31,27 @@ if (blogSlugs.length === 0) {
   throw new Error("generate-sitemap: no blog slugs parsed from blogPosts.ts");
 }
 
+// Parse each blog post's human-readable `date: "Month YYYY"` and derive a
+// YYYY-MM-01 lastmod for the sitemap, mirroring the exact derivation used
+// by src/pages/BlogPost.tsx for the BlogPosting JSON-LD `dateModified` so
+// crawlers see identical values in both surfaces.
+const MONTHS: Record<string, string> = {
+  January: "01", February: "02", March: "03", April: "04",
+  May: "05", June: "06", July: "07", August: "08",
+  September: "09", October: "10", November: "11", December: "12",
+};
+const blogLastmod: Record<string, string> = {};
+for (const slug of blogSlugs) {
+  const slugIdx = blogPostsSource.indexOf(`"slug": "${slug}"`);
+  if (slugIdx === -1) continue;
+  const window = blogPostsSource.slice(slugIdx, slugIdx + 4000);
+  const m = window.match(/"date"\s*:\s*"([A-Za-z]+)\s+(\d{4})"/);
+  if (!m) continue;
+  const mm = MONTHS[m[1]];
+  if (!mm) continue;
+  blogLastmod[`/blog/${slug}`] = `${m[2]}-${mm}-01`;
+}
+
 // Static HTML case-study / long-form pages are listed individually in
 // `entries` below (they need custom priorities + image tags).
 
@@ -119,6 +140,7 @@ function generateSitemap(entries: SitemapEntry[]) {
     [
       `  <url>`,
       `    <loc>${BASE_URL}${e.path}</loc>`,
+      blogLastmod[e.path] ? `    <lastmod>${blogLastmod[e.path]}</lastmod>` : null,
       e.changefreq ? `    <changefreq>${e.changefreq}</changefreq>` : null,
       e.priority ? `    <priority>${e.priority}</priority>` : null,
       serviceImages[e.path]
