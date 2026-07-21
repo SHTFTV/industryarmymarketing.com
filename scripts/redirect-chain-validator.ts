@@ -79,6 +79,10 @@ const BASELINE_DIFF_CSV = arg("--baseline-diff-csv");
 // only rules whose finalPath changed. Undefined = no threshold enforced.
 const DRIFT_MAX_RULES = arg("--drift-max-rules");
 const DRIFT_MAX_FINAL_PATH_CHANGES = arg("--drift-max-final-path-changes");
+// Optional path for a small JSON blob capturing measured drift counts
+// and the configured thresholds. CI reads this to render the numbers
+// in the PR comment and the workflow-summary "Checks" table.
+const DRIFT_METRICS_OUT = arg("--drift-metrics-out");
 // Load the baseline from a Git ref (e.g. `HEAD~1`, `origin/main`,
 // a tag or SHA) instead of the working-tree file. Enables reviewing
 // drift across deploys: run the validator with the previous deploy's
