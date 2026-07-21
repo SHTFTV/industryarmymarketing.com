@@ -21,6 +21,7 @@ jobs:
     permissions:
       contents: read
       issues: write
+      actions: write
     env:
       LEGACY_LIVE_BASE: https://www.industryarmymarketing.com
     steps:
@@ -50,6 +51,11 @@ jobs:
             --base "$LEGACY_LIVE_BASE" --ua-matrix --annotate \
             --json redirect-chain-report.json \
             --summary redirect-chain-summary.json
+
+      - name: Validate redirect-chain-summary schema
+        id: summary_schema
+        if: always() && hashFiles('redirect-chain-summary.json') != ''
+        run: bunx tsx scripts/validate-summary-schema.ts --in redirect-chain-summary.json --annotate
 
       - name: Restore redirect-chain history
         id: restore_history
@@ -84,6 +90,46 @@ jobs:
           bunx tsx scripts/redirect-report-html.ts \
             --in redirect-chain-summary.json \
             --out redirect-chain-report.html
+
+      - name: Write HTML report into workflow job summary
+        if: always() && hashFiles('redirect-chain-report.html') != ''
+        env:
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          {
+            echo "## Nightly redirect chain report"
+            echo ""
+            echo "Run: ${RUN_URL}"
+            echo ""
+            if [ -f redirect-trend.md ]; then
+              echo "### Trend"
+              echo ""
+              cat redirect-trend.md
+              echo ""
+            fi
+            echo "### Full HTML report"
+            echo ""
+            echo '<details><summary>Open embedded HTML report</summary>'
+            echo ""
+            cat redirect-chain-report.html
+            echo ""
+            echo "</details>"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Publish stable nightly report URL to repo variable
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          # Point NIGHTLY_REDIRECT_REPORT_URL at the current run's job
+          # summary (stable URL, always accessible from PRs).
+          url="${RUN_URL}#summary"
+          if gh variable set NIGHTLY_REDIRECT_REPORT_URL --body "$url" 2>/tmp/gh_err; then
+            echo "Set NIGHTLY_REDIRECT_REPORT_URL=$url"
+          else
+            echo "::warning::Could not set repo variable NIGHTLY_REDIRECT_REPORT_URL: $(cat /tmp/gh_err)"
+          fi
 
       - name: Persist redirect-chain history cache
         if: always()
