@@ -1,0 +1,73 @@
+name: SEO E2E
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: seo-e2e-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  rss-sitemap-enclosure:
+    name: RSS ↔ sitemap enclosure tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install deps
+        run: npm ci
+      - name: Vitest — enclosure + all-post SEO parity
+        run: |
+          npx vitest run \
+            src/test/iam-perspective-post.test.ts \
+            src/test/blog-posts-seo-parity.test.ts
+
+  playwright-e2e:
+    name: Playwright E2E SEO (published URL)
+    runs-on: ubuntu-latest
+    env:
+      BLOG_URL: https://www.industryarmymarketing.com/blog/iam-perspective-committed-people-not-capital
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install deps
+        run: npm ci
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+      - name: Run E2E SEO check
+        run: npx tsx scripts/e2e-blog-seo.ts --url=$BLOG_URL | tee e2e-blog-seo.log
+      - name: Upload E2E log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: e2e-blog-seo-log
+          path: e2e-blog-seo.log
+
+  live-og-images:
+    name: Live OG image reachability
+    runs-on: ubuntu-latest
+    # Best-effort: OG image drift shouldn't block a PR that only edits code.
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install deps
+        run: npm ci
+      - name: Fetch every published OG image
+        env:
+          RUN_LIVE_OG_CHECK: "1"
+        run: npx vitest run src/test/blog-og-images-live.test.ts
