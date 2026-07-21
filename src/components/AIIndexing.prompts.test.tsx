@@ -32,7 +32,7 @@ const PLATFORMS = [
   {
     name: "Grok",
     origin: "https://grok.com/",
-    promptStart: "What's the significance of",
+    promptStart: "What's the broader significance of this story",
     embeddedUrlPrefix: "https://grok.com/?q=",
     deepLinkPromptStart: `What's the significance of: "${ARTICLE_TITLE}"?`,
   },
@@ -192,8 +192,9 @@ describe("AIIndexing — accessibility & keyboard navigation", () => {
 
   it("section is labelled with the visible 'IAM AI Indexing Section' heading text", () => {
     setup();
-    // Screen-reader users encounter the section via this label.
-    const label = screen.getByText(/IAM AI Indexing Section/i);
-    expect(label).toBeInTheDocument();
+    // Screen-reader users encounter the section via this label. Also
+    // referenced in the network footer, so accept either occurrence.
+    const labels = screen.getAllByText(/IAM AI Indexing Section/i);
+    expect(labels.length).toBeGreaterThan(0);
   });
 });
