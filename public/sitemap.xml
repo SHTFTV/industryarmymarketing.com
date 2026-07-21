@@ -179,6 +179,11 @@
     <loc>https://industryarmymarketing.com/blog/iam-perspective-committed-people-not-capital</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://industryarmymarketing.com/blog-assets/iam-perspective-committed-people.jpg</image:loc>
+      <image:caption>IAM Perspective — committed people, not committed capital</image:caption>
+      <image:title>Industry Army Marketing — IAM Perspective ecosystem editorial</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://industryarmymarketing.com/niches/steel-stud</loc>
