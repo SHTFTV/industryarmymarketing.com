@@ -432,17 +432,28 @@ export function AIIndexing({ articleTitle, articleUrl, publication }: AIIndexing
                       </a>
                       <button
                         onClick={() => copyPrompt(platform.id, prompt)}
-                        aria-live="polite"
+                        disabled={isCopying}
+                        aria-busy={isCopying}
+                        aria-keyshortcuts="Control+K Meta+K"
+                        title="Copy prompt (Ctrl/Cmd+K)"
                         data-copy-state={
-                          copyStatus?.id === platform.id ? copyStatus.state : "idle"
+                          isCopying
+                            ? "copying"
+                            : copyStatus?.id === platform.id
+                              ? copyStatus.state
+                              : "idle"
                         }
-                        className={`text-xs font-semibold py-2 px-3 rounded-lg border transition-all whitespace-nowrap ${
+                        className={`text-xs font-semibold py-2 px-3 rounded-lg border transition-all whitespace-nowrap disabled:cursor-not-allowed disabled:opacity-60 ${
                           copyStatus?.id === platform.id && copyStatus.state === "error"
                             ? "border-red-500/40 text-red-400"
                             : "border-white/10 text-muted-foreground hover:text-foreground"
                         }`}
                       >
-                        {copyStatus?.id === platform.id ? copyStatus.message : "Copy prompt"}
+                        {isCopying
+                          ? "Copying…"
+                          : copyStatus?.id === platform.id
+                            ? copyStatus.message
+                            : "Copy prompt"}
                       </button>
                     </div>
                   </div>
