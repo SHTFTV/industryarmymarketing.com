@@ -17,8 +17,8 @@
 //   bunx tsx scripts/redirect-chain-validator.ts --json out.json    # machine-readable report
 
 import { LEGACY_REDIRECTS } from "../src/components/LegacyRedirects";
-import { writeFileSync } from "fs";
-import { resolve } from "path";
+import { writeFileSync, readFileSync, existsSync, mkdirSync } from "fs";
+import { resolve, dirname } from "path";
 
 const args = process.argv.slice(2);
 const arg = (n: string, d?: string) => {
@@ -38,6 +38,34 @@ const ANNOTATE = flag("--annotate");
 // the origin/CDN refuses HEAD (405/501) or returns a suspiciously empty
 // response missing a Location on a 3xx. Reduces CI time and origin load.
 const HEAD_FIRST = !flag("--no-head");
+// Filter to a single legacy rule (exact match) or any rule whose `from`
+// starts with the given prefix. Speeds up debugging when only one
+// redirect changed. Wildcard suffix (`/*`) is honored as prefix match.
+const ONLY = arg("--only");
+// Path to the approved-outcomes baseline. When the file exists and has
+// entries for a rule, those override the built-in expectations.
+const BASELINE_PATH = resolve(arg("--baseline", ".redirect-baselines/redirect-chain-baseline.json")!);
+// Rewrite the baseline file with the results of this run. Only rules
+// that completed cleanly (had ≥1 hop and no fetch error) are updated.
+const UPDATE_BASELINE = flag("--update-baseline");
+
+type BaselineEntry = { hops: string[][]; finalPath: string; approvedAt?: string };
+type BaselineFile = {
+  generatedAt: string | null;
+  base: string | null;
+  rules: Record<string, BaselineEntry>;
+};
+function loadBaseline(): BaselineFile {
+  if (!existsSync(BASELINE_PATH)) return { generatedAt: null, base: null, rules: {} };
+  try {
+    const parsed = JSON.parse(readFileSync(BASELINE_PATH, "utf8")) as BaselineFile;
+    return { generatedAt: parsed.generatedAt ?? null, base: parsed.base ?? null, rules: parsed.rules ?? {} };
+  } catch (e) {
+    console.warn(`redirect-chain-validator: could not parse ${BASELINE_PATH}: ${(e as Error).message}`);
+    return { generatedAt: null, base: null, rules: {} };
+  }
+}
+const BASELINE = loadBaseline();
 
 // Sleep with jittered exponential backoff. Base delay grows 500ms →
 // 1s → 2s and each attempt adds up to `base` of random jitter to avoid
@@ -105,6 +133,13 @@ const STATUS_EXPECTATIONS: Record<string, StatusExpectations> = {
   "/wp-login.php": { hops: [[301, 302, 307]], defaultHopStatus: [301, 302, 307, 308] },
 };
 function statusExpectationsFor(rule: string): StatusExpectations {
+  const b = BASELINE.rules[rule];
+  if (b && Array.isArray(b.hops) && b.hops.length > 0) {
+    return {
+      hops: b.hops.map((h) => h.map((s) => Number(s)).filter((n) => Number.isInteger(n))),
+      defaultHopStatus: STATUS_EXPECTATIONS.default.defaultHopStatus,
+    };
+  }
   return STATUS_EXPECTATIONS[rule] ?? STATUS_EXPECTATIONS.default;
 }
 const HEADER_EXPECTATIONS: Record<string, HeaderExpectations> = {
@@ -257,10 +292,32 @@ function checkHeaders(
 }
 
 async function main() {
-  const cases = LEGACY_REDIRECTS.flatMap(({ from, to }) => expand(from, to));
+  // Apply --only rule filter (exact match or prefix match, wildcard-aware).
+  const filteredRedirects = ONLY
+    ? LEGACY_REDIRECTS.filter((r) => {
+        if (r.from === ONLY) return true;
+        if (r.from.endsWith("/*") && ONLY.startsWith(r.from.slice(0, -2))) return true;
+        return r.from.startsWith(ONLY);
+      })
+    : LEGACY_REDIRECTS;
+  if (ONLY && filteredRedirects.length === 0) {
+    console.error(`redirect-chain-validator: --only "${ONLY}" matched no legacy rules`);
+    process.exit(2);
+  }
+  const cases = filteredRedirects.flatMap(({ from, to }) => expand(from, to));
+  // Apply per-rule expected-final override from baseline when present.
+  const expectedFinalFor = (originalRule: string, defaultTo: string): string => {
+    const b = BASELINE.rules[originalRule];
+    if (b && typeof b.finalPath === "string" && b.finalPath.length > 0) {
+      return `${BASE}${b.finalPath}`.replace(/\/$/, "");
+    }
+    return `${BASE}${defaultTo}`.replace(/\/$/, "");
+  };
   const uaCount = Object.keys(userAgents).length;
   console.log(
-    `redirect-chain-validator: ${cases.length} cases × ${uaCount} UA(s) against ${BASE}`,
+    `redirect-chain-validator: ${cases.length} cases × ${uaCount} UA(s) against ${BASE}` +
+      (ONLY ? ` [--only ${ONLY}]` : "") +
+      (Object.keys(BASELINE.rules).length ? ` [baseline: ${Object.keys(BASELINE.rules).length} rules]` : ""),
   );
 
   const results: Result[] = [];
@@ -271,7 +328,7 @@ async function main() {
       const originalRule = LEGACY_REDIRECTS.find(
         (r) => r.from === from || (r.from.endsWith("/*") && from.startsWith(r.from.slice(0, -1))),
       )?.from ?? from;
-      const expectedFinal = `${BASE}${to}`.replace(/\/$/, "");
+      const expectedFinal = expectedFinalFor(originalRule, to);
       const { hops, finalUrl, error } = await followChain(from, ua);
       const finalNorm = finalUrl.replace(/\/$/, "").split("?")[0];
       const reasons: string[] = [];
@@ -374,7 +431,7 @@ async function main() {
           requested: r.from,
           expected: {
             hops: expectedHops,
-            finalUrl: `${BASE}${r.expectedTo}`.replace(/\/$/, ""),
+            finalUrl: expectedFinalFor(rule, r.expectedTo),
           },
           actual: {
             hops: r.hops.map((h) => h.status),
@@ -389,6 +446,55 @@ async function main() {
     writeFileSync(resolve(SUMMARY_OUT), JSON.stringify(summary, null, 2));
     console.log(`redirect-chain-validator: summary written to ${SUMMARY_OUT}`);
   }
+
+  if (UPDATE_BASELINE) {
+    // Fold clean per-rule outcomes into a fresh baseline file. Only
+    // rules that produced at least one hop AND terminated (last hop is
+    // non-3xx or a valid terminal) get written — errored rules retain
+    // their previous baseline entry, if any.
+    const nowIso = new Date().toISOString();
+    const merged: BaselineFile = {
+      generatedAt: nowIso,
+      base: BASE,
+      rules: { ...BASELINE.rules },
+    };
+    const byRule: Record<string, Result[]> = {};
+    for (const r of results) {
+      const rule =
+        LEGACY_REDIRECTS.find(
+          (x) => x.from === r.from || (x.from.endsWith("/*") && r.from.startsWith(x.from.slice(0, -1))),
+        )?.from ?? r.from;
+      (byRule[rule] ??= []).push(r);
+    }
+    let updated = 0;
+    for (const [rule, rs] of Object.entries(byRule)) {
+      // Prefer entries with a clean chain to derive the new baseline.
+      const clean = rs.filter(
+        (r) => r.hops.length > 0 && !r.reasons.some((x) => x.startsWith("fetch error")),
+      );
+      if (clean.length === 0) continue;
+      // Union of observed statuses per hop across all UA runs; keep last
+      // hop chain length. If UAs disagree on hop count, use the shortest
+      // (conservative) to avoid over-permissive baselines.
+      const minHopLen = Math.min(...clean.map((r) => r.hops.length - 1)); // drop terminal
+      const hops: string[][] = [];
+      for (let i = 0; i < minHopLen; i++) {
+        const set = new Set<number>();
+        for (const r of clean) set.add(r.hops[i].status);
+        hops.push([...set].sort((a, b) => a - b).map(String));
+      }
+      const finalUrl = clean[0].finalUrl.replace(/\/$/, "").split("?")[0];
+      const finalPath = finalUrl.startsWith(BASE) ? finalUrl.slice(BASE.length) || "/" : finalUrl;
+      merged.rules[rule] = { hops, finalPath, approvedAt: nowIso };
+      updated++;
+    }
+    mkdirSync(dirname(BASELINE_PATH), { recursive: true });
+    writeFileSync(BASELINE_PATH, JSON.stringify(merged, null, 2) + "\n");
+    console.log(
+      `redirect-chain-validator: baseline updated (${updated} rule(s)) → ${BASELINE_PATH}`,
+    );
+  }
+
   process.exit(totalOk ? 0 : 1);
 }
 
