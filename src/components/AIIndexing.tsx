@@ -214,6 +214,10 @@ export function AIIndexing({ articleTitle, articleUrl, publication }: AIIndexing
   const [copyStatus, setCopyStatus] = useState<
     { id: string; state: "success" | "error"; message: string } | null
   >(null);
+  // Separate state drives the aria-live region so we can *clear* it between
+  // announcements. This forces assistive tech to re-announce even when two
+  // successive copies produce identical text ("Copied ✓").
+  const [liveMessage, setLiveMessage] = useState<string>("");
   const [copyingId, setCopyingId] = useState<string | null>(null);
   const openAIRef = useRef<string | null>(null);
   const copyingRef = useRef<string | null>(null);
@@ -264,10 +268,16 @@ export function AIIndexing({ articleTitle, articleUrl, publication }: AIIndexing
 
   function showStatus(id: string, state: "success" | "error", message: string) {
     setCopyStatus({ id, state, message });
+    // Clear the live region first, then re-populate on the next tick so
+    // screen readers see a genuine text change (empty → message) and always
+    // re-announce, even for rapid repeat copies.
+    setLiveMessage("");
+    setTimeout(() => setLiveMessage(message), 30);
     setTimeout(() => {
       setCopyStatus((current) =>
         current && current.id === id && current.state === state ? null : current,
       );
+      setLiveMessage((current) => (current === message ? "" : current));
     }, 2000);
   }
 
@@ -382,8 +392,9 @@ export function AIIndexing({ articleTitle, articleUrl, publication }: AIIndexing
           aria-live="polite"
           aria-atomic="true"
           className="sr-only"
+          data-testid="ai-indexing-live-region"
         >
-          {copyStatus ? copyStatus.message : ""}
+          {liveMessage}
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
