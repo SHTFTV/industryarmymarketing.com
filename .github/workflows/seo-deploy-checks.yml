@@ -72,6 +72,15 @@ jobs:
             --summary redirect-chain-summary.json
         continue-on-error: true
 
+      - name: Render redirect chain HTML report
+        id: redirect_html
+        if: always() && hashFiles('redirect-chain-summary.json') != ''
+        run: |
+          bunx tsx scripts/redirect-report-html.ts \
+            --in redirect-chain-summary.json \
+            --out redirect-chain-report.html
+        continue-on-error: true
+
       - name: Legacy live audit (post-deploy)
         id: legacy_live
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
@@ -130,6 +139,7 @@ jobs:
           path: |
             redirect-chain-report.json
             redirect-chain-summary.json
+            redirect-chain-report.html
           if-no-files-found: ignore
 
       - name: Ensure PR comment will have artifact URLs
@@ -168,6 +178,7 @@ jobs:
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
           DIFF_ARTIFACT_URL: ${{ steps.upload_diff.outputs.artifact-url }}
           PRERENDER_LOG_ARTIFACT_URL: ${{ steps.upload_prerender_log.outputs.artifact-url }}
+          REDIRECT_ARTIFACT_URL: ${{ steps.upload_redirect_reports.outputs.artifact-url }}
         with:
           script: |
             const fs = require('fs');
@@ -196,6 +207,7 @@ jobs:
             const artifactsUrl = `${runUrl}#artifacts`;
             const diffUrl = process.env.DIFF_ARTIFACT_URL || artifactsUrl;
             const prerenderLogUrl = process.env.PRERENDER_LOG_ARTIFACT_URL || artifactsUrl;
+            const redirectUrl = process.env.REDIRECT_ARTIFACT_URL || artifactsUrl;
             if (!process.env.DIFF_ARTIFACT_URL || !process.env.PRERENDER_LOG_ARTIFACT_URL) {
               core.setFailed('PR summary comment is missing direct artifact URLs for seo-diff-report.md or prerender-html-check.log');
             }
@@ -204,6 +216,34 @@ jobs:
               const md = fs.readFileSync('seo-diff-report.md', 'utf8').split('\n').slice(0, 30).join('\n');
               diffPreview = `\n<details><summary>SEO diff (preview — full report in artifacts)</summary>\n\n${md}\n\n</details>`;
             } catch {}
+            // Per-rule redirect summary from redirect-chain-summary.json.
+            let redirectSummary = '';
+            try {
+              const s = JSON.parse(fs.readFileSync('redirect-chain-summary.json', 'utf8'));
+              const t = s.totals || {};
+              const ruleRows = (s.rules || []).map((r) => {
+                const okIcon = r.ok ? '✅' : '❌';
+                const exp = (r.expected?.hops || []).join(' → ');
+                const act = (r.actual?.hops || []).join(' → ');
+                return `| ${okIcon} | \`${r.rule}\` | ${r.ua} | \`${exp}\` | \`${act}\` | \`${r.expected?.finalUrl || ''}\` | \`${r.actual?.finalUrl || ''}\` |`;
+              });
+              // Show failing rules first; cap total rows to keep the comment readable.
+              const failing = (s.rules || []).map((r, i) => ({ r, i })).filter(({ r }) => !r.ok).map(({ i }) => ruleRows[i]);
+              const passing = (s.rules || []).map((r, i) => ({ r, i })).filter(({ r }) => r.ok).map(({ i }) => ruleRows[i]);
+              const shown = [...failing, ...passing].slice(0, 25);
+              const more = ruleRows.length - shown.length;
+              redirectSummary = [
+                '',
+                `<details${(t.failed || 0) > 0 ? ' open' : ''}><summary>Redirect chain summary (${t.passed || 0}/${t.cases || 0} passed, ${t.failed || 0} failed)</summary>`,
+                '',
+                '| Result | Rule | UA | Expected hops | Actual hops | Expected final | Actual final |',
+                '| --- | --- | --- | --- | --- | --- | --- |',
+                shown.join('\n'),
+                more > 0 ? `\n_+${more} more rules — see [full HTML report](${redirectUrl})._` : '',
+                '',
+                '</details>',
+              ].join('\n');
+            } catch { /* redirect chain step is main-only; skip on PRs */ }
             const overall = steps.some(([, o]) => o === 'failure') ? '❌ FAIL' : '✅ PASS';
             const marker = '<!-- seo-ci-summary -->';
             const body = [
@@ -216,9 +256,11 @@ jobs:
               '',
               `- 📄 **SEO diff report**: [seo-diff-report.md](${diffUrl})`,
               `- 🧪 **Prerender HTML check log**: [prerender-html-check.log](${prerenderLogUrl})`,
+              `- 🔁 **Redirect chain HTML report**: [redirect-chain-report.html](${redirectUrl})`,
               `- 🗂️ **All artifacts**: ${artifactsUrl}`,
               `- 🔗 **Full run**: ${runUrl}`,
               diffPreview,
+              redirectSummary,
             ].join('\n');
             const { owner, repo } = context.repo;
             const issue_number = context.payload.pull_request.number;

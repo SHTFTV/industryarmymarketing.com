@@ -34,6 +34,10 @@ const JSON_OUT = arg("--json");
 const SUMMARY_OUT = arg("--summary");
 const RETRIES = Number(arg("--retries", "3"));
 const ANNOTATE = flag("--annotate");
+// HEAD-first mode: try HEAD on each hop and only fall back to GET when
+// the origin/CDN refuses HEAD (405/501) or returns a suspiciously empty
+// response missing a Location on a 3xx. Reduces CI time and origin load.
+const HEAD_FIRST = !flag("--no-head");
 
 // Sleep with jittered exponential backoff. Base delay grows 500ms →
 // 1s → 2s and each attempt adds up to `base` of random jitter to avoid
@@ -145,28 +149,45 @@ async function followChain(
     // DNS/network/CDN glitches must not fail CI.
     let res: Response | undefined;
     let lastErr: Error | undefined;
-    for (let attempt = 0; attempt <= RETRIES; attempt++) {
-      const controller = new AbortController();
-      const t = setTimeout(() => controller.abort(), TIMEOUT);
-      try {
-        res = await fetch(url, {
-          method: "GET",
-          redirect: "manual",
-          signal: controller.signal,
-          headers: { "User-Agent": userAgent, Accept: "text/html,*/*;q=0.8" },
-        });
-        clearTimeout(t);
-        // Retry on transient upstream errors (5xx, 429). 3xx/4xx are
-        // real signals and returned immediately.
-        if (res.status >= 500 || res.status === 429) {
-          try { await res.body?.cancel(); } catch { /* ignore */ }
+    // Prefer HEAD to save bandwidth; fall back to GET when HEAD is
+    // unsupported or the response is unusable for redirect analysis.
+    const methods: Array<"HEAD" | "GET"> = HEAD_FIRST ? ["HEAD", "GET"] : ["GET"];
+    outer: for (const method of methods) {
+      for (let attempt = 0; attempt <= RETRIES; attempt++) {
+        const controller = new AbortController();
+        const t = setTimeout(() => controller.abort(), TIMEOUT);
+        try {
+          res = await fetch(url, {
+            method,
+            redirect: "manual",
+            signal: controller.signal,
+            headers: { "User-Agent": userAgent, Accept: "text/html,*/*;q=0.8" },
+          });
+          clearTimeout(t);
+          if (res.status >= 500 || res.status === 429) {
+            try { await res.body?.cancel(); } catch { /* ignore */ }
+            if (attempt < RETRIES) { await backoff(attempt); continue; }
+          }
+          // HEAD not supported → try GET.
+          if (method === "HEAD" && (res.status === 405 || res.status === 501)) {
+            try { await res.body?.cancel(); } catch { /* ignore */ }
+            res = undefined;
+            continue outer;
+          }
+          // 3xx without Location on HEAD is unreliable → retry with GET.
+          if (method === "HEAD" && res.status >= 300 && res.status < 400 && !res.headers.get("location")) {
+            try { await res.body?.cancel(); } catch { /* ignore */ }
+            res = undefined;
+            continue outer;
+          }
+          break outer;
+        } catch (e) {
+          clearTimeout(t);
+          lastErr = e as Error;
           if (attempt < RETRIES) { await backoff(attempt); continue; }
+          // On persistent HEAD failure, try GET before giving up.
+          if (method === "HEAD") continue outer;
         }
-        break;
-      } catch (e) {
-        clearTimeout(t);
-        lastErr = e as Error;
-        if (attempt < RETRIES) { await backoff(attempt); continue; }
       }
     }
     if (!res) {
