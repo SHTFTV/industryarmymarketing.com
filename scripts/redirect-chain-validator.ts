@@ -656,6 +656,59 @@ async function main() {
       }
     }
 
+    // CSV export of pending baseline changes. Always emitted alongside
+    // the Markdown table when requested; header row is stable so CI can
+    // diff/aggregate it across runs.
+    if (BASELINE_DIFF_CSV) {
+      const esc = (v: string) => `"${String(v).replace(/"/g, '""')}"`;
+      const rows: string[] = [
+        "rule,kind,hopsChanged,finalPathChanged,oldHops,newHops,oldFinalPath,newFinalPath",
+      ];
+      for (const d of changed) {
+        rows.push(
+          [
+            esc(d.rule),
+            esc(d.kind),
+            String(d.hopsChanged),
+            String(d.finalPathChanged),
+            esc(fmtHops(d.old?.hops)),
+            esc(fmtHops(d.next.hops)),
+            esc(d.old?.finalPath ?? ""),
+            esc(d.next.finalPath),
+          ].join(","),
+        );
+      }
+      const csv = rows.join("\n") + "\n";
+      if (DRY_RUN) {
+        console.log(`redirect-chain-validator: [dry-run] would write baseline diff CSV to ${BASELINE_DIFF_CSV}`);
+      } else {
+        mkdirSync(dirname(resolve(BASELINE_DIFF_CSV)), { recursive: true });
+        writeFileSync(resolve(BASELINE_DIFF_CSV), csv);
+        console.log(`redirect-chain-validator: baseline diff CSV written to ${BASELINE_DIFF_CSV}`);
+      }
+    }
+
+    // Threshold gating: exit code 2 when drift exceeds configured limits.
+    // Kept separate from the run's pass/fail (exit 1) so CI can
+    // distinguish "checks failed" from "drift exceeded threshold".
+    const finalPathChanges = changed.filter((d) => d.finalPathChanged).length;
+    const maxRules = DRIFT_MAX_RULES !== undefined ? Number(DRIFT_MAX_RULES) : undefined;
+    const maxFinalPath =
+      DRIFT_MAX_FINAL_PATH_CHANGES !== undefined ? Number(DRIFT_MAX_FINAL_PATH_CHANGES) : undefined;
+    const overRules = maxRules !== undefined && changed.length > maxRules;
+    const overFinal = maxFinalPath !== undefined && finalPathChanges > maxFinalPath;
+    if (overRules || overFinal) {
+      const msg =
+        `redirect-chain-validator: baseline drift exceeds threshold — ` +
+        `changed rules=${changed.length}` +
+        (maxRules !== undefined ? ` (max ${maxRules})` : "") +
+        `, finalPath changes=${finalPathChanges}` +
+        (maxFinalPath !== undefined ? ` (max ${maxFinalPath})` : "");
+      console.error(msg);
+      if (ANNOTATE) console.log(`::error::${msg}`);
+      process.exit(2);
+    }
+
     if (DRY_RUN) {
       console.log(
         `redirect-chain-validator: [dry-run] would update baseline (${updated} rule(s)) → ${BASELINE_PATH} — no files written.`,
