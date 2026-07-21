@@ -2,8 +2,6 @@
 
 import { writeFileSync, readFileSync } from "fs";
 import { resolve } from "path";
-import contractorSlugs from "./contractor-slugs.json" with { type: "json" };
-
 const BASE_URL = "https://industryarmymarketing.com";
 
 interface SitemapEntry {
@@ -66,12 +64,6 @@ const entries: SitemapEntry[] = [
   { path: "/services/dofollow-backlinks", changefreq: "monthly", priority: "0.9" },
   { path: "/case-studies/brand-defense-global-territory", changefreq: "monthly", priority: "0.9" },
   { path: "/blog/aiweddings-tower-on-our-land", changefreq: "monthly", priority: "0.8" },
-  { path: "/contractor-marketing/", changefreq: "weekly", priority: "0.9" },
-  ...trades.map((t) => ({
-    path: `/contractor-marketing/${t}/`,
-    changefreq: "weekly" as const,
-    priority: "0.8",
-  })),
   ...niches.map((n) => ({ path: `/niches/${n}`, changefreq: "monthly" as const, priority: "0.7" })),
   ...localCities.map((c) => ({ path: `/local/${c}`, changefreq: "monthly" as const, priority: "0.7" })),
   ...cities.map((c) => ({
@@ -79,15 +71,17 @@ const entries: SitemapEntry[] = [
     changefreq: "monthly" as const,
     priority: "0.7",
   })),
+  ...trades.flatMap((t) =>
+    cities.map((c) => ({
+      path: `/contractors/${t}/${c}`,
+      changefreq: "monthly" as const,
+      priority: "0.6",
+    })),
+  ),
   ...blogSlugs.map((s) => ({
     path: `/blog/${s}`,
     changefreq: "monthly" as const,
     priority: "0.7",
-  })),
-  ...(contractorSlugs as string[]).map((s) => ({
-    path: `/contractor-marketing/${s}/`,
-    changefreq: "monthly" as const,
-    priority: "0.6",
   })),
 ];
 
