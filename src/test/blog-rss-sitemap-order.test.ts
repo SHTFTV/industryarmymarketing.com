@@ -118,11 +118,11 @@ describe("RSS ↔ sitemap ordering + pubDate/updated consistency", () => {
         ).toBe(expectedDay);
       }
 
-      // Sanity: same position across both feeds.
-      expect(
-        sitemapBlogLinks.indexOf(link),
-        `positional drift: RSS index ${idx} vs sitemap for ${link}`,
-      ).toBe(idx);
+      // Per-item positional parity is covered by the whole-list order
+      // assertion above; keep a light sanity check that both feeds know
+      // about this URL.
+      void idx;
+      expect(sitemapBlogLinks).toContain(link);
     },
   );
 });
