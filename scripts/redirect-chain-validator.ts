@@ -35,6 +35,7 @@ import { LEGACY_REDIRECTS } from "../src/components/LegacyRedirects";
 import { writeFileSync, readFileSync, existsSync, mkdirSync } from "fs";
 import { execSync } from "child_process";
 import { resolve, dirname } from "path";
+import { evaluateDriftGate, type BaselineDriftEntry } from "./lib/drift-gate";
 
 const args = process.argv.slice(2);
 const arg = (n: string, d?: string) => {
@@ -73,6 +74,11 @@ const BASELINE_DIFF_OUT = arg("--baseline-diff-out");
 // Optional path for a CSV export of pending baseline changes. Same rows
 // as the Markdown table but machine-readable for spreadsheets / BI tools.
 const BASELINE_DIFF_CSV = arg("--baseline-diff-csv");
+// Optional path for a per-rule JSON export of pending baseline drift.
+// Includes old/new hops and finalPath for each changed rule so tools
+// (dashboards, scripts, PR reviewers) can consume the diff programmatically
+// without parsing the Markdown table or CSV.
+const BASELINE_DIFF_JSON = arg("--baseline-diff-json");
 // Drift thresholds. When set (>= 0), the process exits with code 2 if
 // pending baseline changes exceed the limit. `--drift-max-rules` counts
 // any rule marked added/changed. `--drift-max-final-path-changes` counts
