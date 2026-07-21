@@ -81,6 +81,11 @@ jobs:
       - name: Baseline drift preview (dry-run diff vs previous commit)
         id: baseline_drift
         if: always() && hashFiles('redirect-chain-summary.json') != ''
+        env:
+          # Fail this step (and the deploy check) only when drift exceeds
+          # the configured thresholds. Override via repo variables.
+          DRIFT_MAX_RULES: ${{ vars.REDIRECT_DRIFT_MAX_RULES || '5' }}
+          DRIFT_MAX_FINAL_PATH_CHANGES: ${{ vars.REDIRECT_DRIFT_MAX_FINAL_PATH_CHANGES || '1' }}
         run: |
           # Show what the baseline WOULD change vs the last committed
           # baseline (HEAD~1 on push, base ref on PRs). Never writes.
@@ -90,8 +95,11 @@ jobs:
             --update-baseline --dry-run \
             --baseline-ref "$REF" \
             --baseline-diff-out baseline-diff.md \
+            --baseline-diff-csv baseline-diff.csv \
+            --drift-max-rules "$DRIFT_MAX_RULES" \
+            --drift-max-final-path-changes "$DRIFT_MAX_FINAL_PATH_CHANGES" \
             --ua-matrix --annotate \
-            --summary redirect-chain-summary.json || true
+            --summary redirect-chain-summary.json
         continue-on-error: true
 
       - name: Render redirect chain HTML report
@@ -163,7 +171,47 @@ jobs:
             redirect-chain-summary.json
             redirect-chain-report.html
             baseline-diff.md
+            baseline-diff.csv
             .redirect-baselines/redirect-chain-baseline.json
+          if-no-files-found: ignore
+
+      # Upload each key file as its own artifact so PR comments can link
+      # directly to redirect-chain-summary.json, baseline-diff.md, and the
+      # baseline JSON without the reviewer having to open the zipped bundle.
+      - name: Upload redirect-chain-summary.json (direct link)
+        id: upload_redirect_summary
+        if: always() && hashFiles('redirect-chain-summary.json') != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: redirect-chain-summary
+          path: redirect-chain-summary.json
+          if-no-files-found: ignore
+
+      - name: Upload baseline-diff.md (direct link)
+        id: upload_baseline_diff_md
+        if: always() && hashFiles('baseline-diff.md') != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: baseline-diff-md
+          path: baseline-diff.md
+          if-no-files-found: ignore
+
+      - name: Upload baseline-diff.csv (direct link)
+        id: upload_baseline_diff_csv
+        if: always() && hashFiles('baseline-diff.csv') != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: baseline-diff-csv
+          path: baseline-diff.csv
+          if-no-files-found: ignore
+
+      - name: Upload redirect-chain-baseline.json (direct link)
+        id: upload_baseline_json
+        if: always() && hashFiles('.redirect-baselines/redirect-chain-baseline.json') != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: redirect-chain-baseline-json
+          path: .redirect-baselines/redirect-chain-baseline.json
           if-no-files-found: ignore
 
       - name: Ensure PR comment will have artifact URLs
@@ -203,6 +251,11 @@ jobs:
           DIFF_ARTIFACT_URL: ${{ steps.upload_diff.outputs.artifact-url }}
           PRERENDER_LOG_ARTIFACT_URL: ${{ steps.upload_prerender_log.outputs.artifact-url }}
           REDIRECT_ARTIFACT_URL: ${{ steps.upload_redirect_reports.outputs.artifact-url }}
+          REDIRECT_SUMMARY_URL: ${{ steps.upload_redirect_summary.outputs.artifact-url }}
+          BASELINE_DIFF_MD_URL: ${{ steps.upload_baseline_diff_md.outputs.artifact-url }}
+          BASELINE_DIFF_CSV_URL: ${{ steps.upload_baseline_diff_csv.outputs.artifact-url }}
+          BASELINE_JSON_URL: ${{ steps.upload_baseline_json.outputs.artifact-url }}
+          BASELINE_DRIFT_OUTCOME: ${{ steps.baseline_drift.outcome }}
         with:
           script: |
             const fs = require('fs');
@@ -234,6 +287,11 @@ jobs:
             const diffUrl = process.env.DIFF_ARTIFACT_URL || artifactsUrl;
             const prerenderLogUrl = process.env.PRERENDER_LOG_ARTIFACT_URL || artifactsUrl;
             const redirectUrl = process.env.REDIRECT_ARTIFACT_URL || artifactsUrl;
+            const redirectSummaryUrl = process.env.REDIRECT_SUMMARY_URL || artifactsUrl;
+            const baselineDiffMdUrl = process.env.BASELINE_DIFF_MD_URL || artifactsUrl;
+            const baselineDiffCsvUrl = process.env.BASELINE_DIFF_CSV_URL || artifactsUrl;
+            const baselineJsonUrl = process.env.BASELINE_JSON_URL || artifactsUrl;
+            const driftOutcome = process.env.BASELINE_DRIFT_OUTCOME || '';
             const nightlyReportUrl = ${{ toJSON(vars.NIGHTLY_REDIRECT_REPORT_URL) }} || '';
             if (!process.env.DIFF_ARTIFACT_URL || !process.env.PRERENDER_LOG_ARTIFACT_URL) {
               core.setFailed('PR summary comment is missing direct artifact URLs for seo-diff-report.md or prerender-html-check.log');
@@ -299,6 +357,13 @@ jobs:
               `- 📄 **SEO diff report**: [seo-diff-report.md](${diffUrl})`,
               `- 🧪 **Prerender HTML check log**: [prerender-html-check.log](${prerenderLogUrl})`,
               `- 🔁 **Redirect chain HTML report**: [redirect-chain-report.html](${redirectUrl})`,
+              `- 📊 **Redirect chain summary (JSON)**: [redirect-chain-summary.json](${redirectSummaryUrl})`,
+              `- 📝 **Baseline drift (Markdown)**: [baseline-diff.md](${baselineDiffMdUrl})`,
+              `- 📈 **Baseline drift (CSV)**: [baseline-diff.csv](${baselineDiffCsvUrl})`,
+              `- 📦 **Redirect baseline (JSON)**: [redirect-chain-baseline.json](${baselineJsonUrl})`,
+              driftOutcome === 'failure'
+                ? `- 🚨 **Baseline drift threshold exceeded** — this deploy check is failing on drift alone. Review the diff and either fix the redirect regression or approve a new baseline.`
+                : `- 🧭 **Baseline drift**: within configured threshold (\`${driftOutcome || 'n/a'}\`).`,
               nightlyReportUrl ? `- 🌙 **Latest nightly report**: [open]( ${nightlyReportUrl} )` : `- 🌙 **Latest nightly report**: _not yet available_`,
               `- 🗂️ **All artifacts**: ${artifactsUrl}`,
               `- 🔗 **Full run**: ${runUrl}`,
