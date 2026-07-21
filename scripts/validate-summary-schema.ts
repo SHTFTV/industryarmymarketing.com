@@ -5,6 +5,12 @@
 // invalid status-hop data (e.g. negative HTTP statuses, non-integer
 // codes, empty final URLs). No external deps — validation is inline.
 //
+// Schema versioning: the summary file carries a top-level
+// `schemaVersion` string. This validator only understands versions in
+// SUPPORTED_SCHEMA_VERSIONS; anything else fails fast with a clear
+// migration error so CI never silently accepts a summary produced by
+// an incompatible writer.
+//
 // Usage:
 //   bunx tsx scripts/validate-summary-schema.ts \
 //     --in redirect-chain-summary.json
@@ -21,10 +27,23 @@ const arg = (n: string, d?: string) => {
 const IN = resolve(arg("--in", "redirect-chain-summary.json")!);
 const ANNOTATE = args.includes("--annotate");
 
-const errors: string[] = [];
+// Schema versions this validator can handle. Keep in sync with the
+// writer in scripts/redirect-chain-validator.ts. When breaking changes
+// land, bump CURRENT_SCHEMA_VERSION and add the previous version to
+// SUPPORTED_SCHEMA_VERSIONS only if a migration path is provided.
+const CURRENT_SCHEMA_VERSION = "1";
+const SUPPORTED_SCHEMA_VERSIONS = new Set<string>([CURRENT_SCHEMA_VERSION]);
+
+type SchemaError = { path: string; msg: string; rule?: string };
+const errors: SchemaError[] = [];
 function fail(path: string, msg: string) {
-  errors.push(`${path}: ${msg}`);
+  // Extract the rule name from paths like `$.rules[3].expected.hops[0]`
+  // so CI annotations can point at the exact legacy rule that failed.
+  const m = path.match(/^\$\.rules\[(\d+)\]/);
+  const rule = m ? ruleNameByIndex[Number(m[1])] : undefined;
+  errors.push({ path, msg, rule });
 }
+let ruleNameByIndex: Record<number, string> = {};
 function isObject(v: unknown): v is Record<string, unknown> {
   return typeof v === "object" && v !== null && !Array.isArray(v);
 }
@@ -65,6 +84,10 @@ function validate(root: unknown): void {
   }
 
   if (!Array.isArray(root.rules)) return fail("$.rules", "must be an array");
+  ruleNameByIndex = {};
+  (root.rules as unknown[]).forEach((r, i) => {
+    if (isObject(r) && isNonEmptyString(r.rule)) ruleNameByIndex[i] = r.rule as string;
+  });
   root.rules.forEach((r, i) => {
     const p = `$.rules[${i}]`;
     if (!isObject(r)) return fail(p, "must be an object");
@@ -111,6 +134,19 @@ function validate(root: unknown): void {
     fail("$.inconsistent", "must be an array when present");
 }
 
+// Emit a per-error GitHub Actions annotation. Each annotation carries
+// the failing JSON path, the offending rule name (when known), and the
+// human message so reviewers can jump straight to the broken entry.
+function emitAnnotations(list: SchemaError[]) {
+  for (const e of list) {
+    const title = e.rule
+      ? `summary schema invalid: ${e.rule}`
+      : `summary schema invalid`;
+    const body = `path: ${e.path}%0A${e.msg}`;
+    console.log(`::error file=${IN},title=${title}::${body}`);
+  }
+}
+
 function main() {
   let raw: string;
   try { raw = readFileSync(IN, "utf8"); }
@@ -125,16 +161,39 @@ function main() {
     if (ANNOTATE) console.log(`::error file=${IN},title=Invalid JSON::${(e as Error).message}`);
     process.exit(2);
   }
+  // Schema version gate — refuse to validate an incompatible payload.
+  if (isObject(parsed)) {
+    const v = (parsed as Record<string, unknown>).schemaVersion;
+    if (v === undefined) {
+      console.warn(
+        `validate-summary-schema: WARN — no schemaVersion field; assuming "${CURRENT_SCHEMA_VERSION}" (writer should be upgraded).`,
+      );
+    } else if (!isString(v) || !SUPPORTED_SCHEMA_VERSIONS.has(v)) {
+      const supported = [...SUPPORTED_SCHEMA_VERSIONS].join(", ");
+      const msg = `unsupported schemaVersion "${String(v)}" — this validator understands: ${supported}. Upgrade scripts/validate-summary-schema.ts or regenerate the summary with a compatible writer.`;
+      console.error(`validate-summary-schema: MIGRATION REQUIRED — ${msg}`);
+      if (ANNOTATE) {
+        console.log(
+          `::error file=${IN},title=redirect-chain-summary schema migration required::${msg.replace(/\n/g, "%0A")}`,
+        );
+      }
+      process.exit(3);
+    }
+  }
   validate(parsed);
   if (errors.length === 0) {
     console.log(`validate-summary-schema: PASS (${IN})`);
     return;
   }
   console.error(`validate-summary-schema: FAIL — ${errors.length} problem(s) in ${IN}`);
-  for (const e of errors) console.error(`  ${e}`);
+  for (const e of errors) {
+    const tag = e.rule ? ` [${e.rule}]` : "";
+    console.error(`  ${e.path}${tag}: ${e.msg}`);
+  }
   if (ANNOTATE) {
-    const msg = errors.slice(0, 20).join("\n").replace(/\n/g, "%0A");
-    console.log(`::error file=${IN},title=redirect-chain-summary schema invalid::${msg}`);
+    // One annotation per error (capped) so each broken rule/path gets
+    // its own line item in the PR "Files changed / Checks" surface.
+    emitAnnotations(errors.slice(0, 50));
   }
   process.exit(1);
 }
