@@ -170,18 +170,62 @@ interface AIIndexingProps {
 
 export function AIIndexing({ articleTitle, articleUrl, publication }: AIIndexingProps) {
   const [openAI, setOpenAI] = useState<string | null>(null);
-  const [copied, setCopied]  = useState(false);
+  const [copyStatus, setCopyStatus] = useState<
+    { id: string; state: "success" | "error"; message: string } | null
+  >(null);
   const brand = BRAND[publication];
 
   function toggleAI(id: string) {
     setOpenAI(openAI === id ? null : id);
   }
 
-  function copyPrompt(prompt: string) {
-    navigator.clipboard.writeText(prompt).then(() => {
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    });
+  function fallbackCopy(text: string): boolean {
+    if (typeof document === "undefined") return false;
+    try {
+      const textarea = document.createElement("textarea");
+      textarea.value = text;
+      textarea.setAttribute("readonly", "");
+      textarea.style.position = "fixed";
+      textarea.style.top = "0";
+      textarea.style.left = "0";
+      textarea.style.opacity = "0";
+      document.body.appendChild(textarea);
+      textarea.focus();
+      textarea.select();
+      const ok = document.execCommand?.("copy") ?? false;
+      document.body.removeChild(textarea);
+      return ok;
+    } catch {
+      return false;
+    }
+  }
+
+  function showStatus(id: string, state: "success" | "error", message: string) {
+    setCopyStatus({ id, state, message });
+    setTimeout(() => {
+      setCopyStatus((current) =>
+        current && current.id === id && current.state === state ? null : current,
+      );
+    }, 2000);
+  }
+
+  async function copyPrompt(id: string, prompt: string) {
+    const clip =
+      typeof navigator !== "undefined" ? navigator.clipboard : undefined;
+    if (clip && typeof clip.writeText === "function") {
+      try {
+        await clip.writeText(prompt);
+        showStatus(id, "success", "Copied ✓");
+        return;
+      } catch {
+        // permission denied or blocked — fall through to legacy copy
+      }
+    }
+    if (fallbackCopy(prompt)) {
+      showStatus(id, "success", "Copied ✓");
+    } else {
+      showStatus(id, "error", "Copy failed");
+    }
   }
 
   const shareUrl = encodeURIComponent(articleUrl);
@@ -246,10 +290,18 @@ export function AIIndexing({ articleTitle, articleUrl, publication }: AIIndexing
                         Open in {platform.name} ↗
                       </a>
                       <button
-                        onClick={() => copyPrompt(prompt)}
-                        className="text-xs font-semibold py-2 px-3 rounded-lg border border-white/10 text-muted-foreground hover:text-foreground transition-all whitespace-nowrap"
+                        onClick={() => copyPrompt(platform.id, prompt)}
+                        aria-live="polite"
+                        data-copy-state={
+                          copyStatus?.id === platform.id ? copyStatus.state : "idle"
+                        }
+                        className={`text-xs font-semibold py-2 px-3 rounded-lg border transition-all whitespace-nowrap ${
+                          copyStatus?.id === platform.id && copyStatus.state === "error"
+                            ? "border-red-500/40 text-red-400"
+                            : "border-white/10 text-muted-foreground hover:text-foreground"
+                        }`}
                       >
-                        {copied ? "Copied ✓" : "Copy prompt"}
+                        {copyStatus?.id === platform.id ? copyStatus.message : "Copy prompt"}
                       </button>
                     </div>
                   </div>
