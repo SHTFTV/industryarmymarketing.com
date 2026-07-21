@@ -15,6 +15,42 @@ const arg = (n: string, d?: string) => {
   return i >= 0 ? args[i + 1] : d;
 };
 const BASE = (arg("--base", "https://www.industryarmymarketing.com") ?? "").replace(/\/$/, "");
+const RETRIES = Number(arg("--retries", "3"));
+const ANNOTATE = args.includes("--annotate");
+
+async function backoff(attempt: number) {
+  const base = 500 * Math.pow(2, attempt);
+  await new Promise((r) => setTimeout(r, base + Math.random() * base));
+}
+
+function annotate(title: string, message: string) {
+  if (!ANNOTATE) return;
+  const encoded = message.replace(/\r/g, "").replace(/\n/g, "%0A");
+  console.log(
+    `::error file=src/components/LegacyRedirects.tsx,title=${title}::${encoded}`,
+  );
+}
+
+async function fetchWithRetry(url: string, init: RequestInit): Promise<Response> {
+  let lastErr: Error | undefined;
+  for (let attempt = 0; attempt <= RETRIES; attempt++) {
+    try {
+      const res = await fetch(url, init);
+      if (res.status >= 500 || res.status === 429) {
+        if (attempt < RETRIES) {
+          try { await res.body?.cancel(); } catch { /* ignore */ }
+          await backoff(attempt);
+          continue;
+        }
+      }
+      return res;
+    } catch (e) {
+      lastErr = e as Error;
+      if (attempt < RETRIES) await backoff(attempt);
+    }
+  }
+  throw lastErr ?? new Error("fetch failed after retries");
+}
 
 function expand(from: string): string[] {
   const base = from.replace(/\/\*$/, "");
@@ -25,7 +61,7 @@ function expand(from: string): string[] {
 }
 
 async function head(path: string): Promise<{ status: number; location?: string }> {
-  const res = await fetch(`${BASE}${path}`, {
+  const res = await fetchWithRetry(`${BASE}${path}`, {
     method: "GET",
     redirect: "manual",
     headers: { "User-Agent": "Lovable-Legacy-Live-Check/1.0" },
@@ -40,13 +76,29 @@ async function main() {
 
   const failures: string[] = [];
   for (const p of paths) {
+    const rule = LEGACY_REDIRECTS.find(
+      (r) => p === r.from || p === `${r.from.replace(/\/$/, "")}/` ||
+        (r.from.endsWith("/*") && p.startsWith(r.from.slice(0, -2))),
+    );
     try {
       const { status } = await head(p);
       // Acceptable: 3xx redirect or 404 (host may prefer to hard-drop).
       // Never acceptable: 200 OK (means path is still a live page).
-      if (status === 200) failures.push(`${p} returned 200 (should be 3xx or 404)`);
-      else if (!(status >= 300 && status < 500)) failures.push(`${p} returned ${status}`);
-      else console.log(`  OK  ${p} → ${status}`);
+      if (status === 200) {
+        failures.push(`${p} returned 200 (should be 3xx or 404)`);
+        annotate(
+          `Legacy path still live: ${rule?.from ?? p}`,
+          `Requested: ${p}\nExpected: 3xx redirect → ${rule?.to ?? "n/a"} (or 404)\nActual: 200 OK`,
+        );
+      } else if (!(status >= 300 && status < 500)) {
+        failures.push(`${p} returned ${status}`);
+        annotate(
+          `Legacy path unexpected status: ${rule?.from ?? p}`,
+          `Requested: ${p}\nExpected: 3xx/4xx\nActual: ${status}`,
+        );
+      } else {
+        console.log(`  OK  ${p} → ${status}`);
+      }
     } catch (e) {
       failures.push(`${p} fetch error: ${(e as Error).message}`);
     }
@@ -55,7 +107,9 @@ async function main() {
   // Live sitemap must not include any legacy literal.
   const sitemapUrl = `${BASE}/sitemap.xml`;
   console.log(`check-legacy-live: fetching ${sitemapUrl}`);
-  const sm = await fetch(sitemapUrl, { headers: { "User-Agent": "Lovable-Legacy-Live-Check/1.0" } });
+  const sm = await fetchWithRetry(sitemapUrl, {
+    headers: { "User-Agent": "Lovable-Legacy-Live-Check/1.0" },
+  });
   if (!sm.ok) {
     failures.push(`sitemap.xml returned ${sm.status}`);
   } else {
@@ -66,7 +120,13 @@ async function main() {
       // Match `<loc>...{literal}</loc>` or trailing-slash variant to avoid
       // false positives on unrelated paths that happen to share a prefix.
       const re = new RegExp(`<loc>[^<]*${literal.replace(/[.*+?^${}()|[\\]\\\\]/g, "\\\\$&")}/?</loc>`);
-      if (re.test(body)) failures.push(`sitemap.xml lists legacy path ${literal}`);
+      if (re.test(body)) {
+        failures.push(`sitemap.xml lists legacy path ${literal}`);
+        annotate(
+          `Legacy path in sitemap: ${from}`,
+          `Legacy rule ${from} appears in live sitemap.xml at ${literal}`,
+        );
+      }
     }
   }
 
