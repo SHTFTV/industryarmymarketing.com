@@ -203,6 +203,14 @@ const Blog = () => {
               "Guides on $10 exclusive territory marketing across trade and lifestyle domains — SEO, AEO, GEO, and the math behind the model.",
             publisher: { "@id": `${SITE_URL}/#organization` },
             inLanguage: "en-CA",
+            // Anchor the Blog node to a WebPage whose @id is byte-identical
+            // to the sitemap <loc>. Search engines join graphs via @id, so
+            // the primary route identifier must exactly match the canonical
+            // URL emitted in sitemap.xml — no fragments, no trailing slash.
+            mainEntityOfPage: {
+              "@type": "WebPage",
+              "@id": `${SITE_URL}/blog`,
+            },
           },
           {
             "@context": "https://schema.org",
