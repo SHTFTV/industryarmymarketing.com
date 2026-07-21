@@ -115,6 +115,8 @@ jobs:
         uses: actions/github-script@v7
         env:
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          DIFF_ARTIFACT_URL: ${{ steps.upload_diff.outputs.artifact-url }}
+          PRERENDER_LOG_ARTIFACT_URL: ${{ steps.upload_prerender_log.outputs.artifact-url }}
         with:
           script: |
             const fs = require('fs');
@@ -137,6 +139,8 @@ jobs:
               .join('\n');
             const runUrl = process.env.RUN_URL;
             const artifactsUrl = `${runUrl}#artifacts`;
+            const diffUrl = process.env.DIFF_ARTIFACT_URL || artifactsUrl;
+            const prerenderLogUrl = process.env.PRERENDER_LOG_ARTIFACT_URL || artifactsUrl;
             let diffPreview = '';
             try {
               const md = fs.readFileSync('seo-diff-report.md', 'utf8').split('\n').slice(0, 30).join('\n');
@@ -152,8 +156,9 @@ jobs:
               '| --- | --- | --- |',
               rows,
               '',
-              `- 📄 **SEO diff report**: [seo-diff-report.md](${artifactsUrl}) (artifact \`seo-diff-report\`)`,
-              `- 🧪 **Prerender HTML check log**: [prerender-html-check.log](${artifactsUrl}) (artifact \`prerender-html-check-log\`)`,
+              `- 📄 **SEO diff report**: [seo-diff-report.md](${diffUrl})`,
+              `- 🧪 **Prerender HTML check log**: [prerender-html-check.log](${prerenderLogUrl})`,
+              `- 🗂️ **All artifacts**: ${artifactsUrl}`,
               `- 🔗 **Full run**: ${runUrl}`,
               diffPreview,
             ].join('\n');
