@@ -7,8 +7,9 @@ import { render, screen, fireEvent, act, waitFor } from "@testing-library/react"
 import { AIIndexing } from "./AIIndexing";
 
 const ARTICLE_URL = "https://industryarmymarketing.com/blog/payload-shape";
-const SUCCESS_KEYS = ["event", "platform", "publication", "articleUrl", "copyMethod"].sort();
-const FAILURE_KEYS = ["event", "platform", "publication", "articleUrl", "failureReason"].sort();
+const SUCCESS_KEYS = ["event", "platform", "publication", "articleUrl", "sessionId", "attemptId", "copyMethod"].sort();
+const FAILURE_KEYS = ["event", "platform", "publication", "articleUrl", "sessionId", "attemptId", "failureReason"].sort();
+const OPENED_KEYS = ["event", "platform", "publication", "articleUrl", "sessionId", "attemptId"].sort();
 
 function captureDetails() {
   const details: Array<Record<string, unknown>> = [];
@@ -54,13 +55,15 @@ describe("AIIndexing — strict analytics payload shape", () => {
 
     // CustomEvent detail: exact key set, exact values, no extras.
     expect(ownKeys(success)).toEqual(SUCCESS_KEYS);
-    expect(success).toEqual({
+    expect(success).toMatchObject({
       event: "ai_indexing_copy_succeeded",
       platform: "chatgpt",
       publication: "iam",
       articleUrl: ARTICLE_URL,
       copyMethod: "clipboard",
     });
+    expect(typeof (success as Record<string, unknown>).sessionId).toBe("string");
+    expect(typeof (success as Record<string, unknown>).attemptId).toBe("string");
     expect(success).not.toHaveProperty("failureReason");
 
     // plausible: props exactly mirror the CustomEvent payload.
@@ -82,7 +85,7 @@ describe("AIIndexing — strict analytics payload shape", () => {
     const gaParams = gtagCall![2] as Record<string, unknown>;
     const gaDefinedKeys = ownKeys(gaParams);
     expect(gaDefinedKeys).toEqual(
-      ["platform", "publication", "article_url", "copy_method"].sort(),
+      ["platform", "publication", "article_url", "session_id", "attempt_id", "copy_method"].sort(),
     );
 
     off();
@@ -118,13 +121,15 @@ describe("AIIndexing — strict analytics payload shape", () => {
     const failure = details.find((d) => d.event === "ai_indexing_copy_failed")!;
 
     expect(ownKeys(failure)).toEqual(FAILURE_KEYS);
-    expect(failure).toEqual({
+    expect(failure).toMatchObject({
       event: "ai_indexing_copy_failed",
       platform: "claude",
       publication: "videographers",
       articleUrl: ARTICLE_URL,
       failureReason: "permission",
     });
+    expect(typeof (failure as Record<string, unknown>).sessionId).toBe("string");
+    expect(typeof (failure as Record<string, unknown>).attemptId).toBe("string");
     expect(failure).not.toHaveProperty("copyMethod");
 
     const plausibleCall = plausible.mock.calls.find(
@@ -141,7 +146,7 @@ describe("AIIndexing — strict analytics payload shape", () => {
     expect(gtagCall).toBeDefined();
     const gaDefinedKeys = ownKeys(gtagCall![2] as Record<string, unknown>);
     expect(gaDefinedKeys).toEqual(
-      ["platform", "publication", "article_url", "failure_reason"].sort(),
+      ["platform", "publication", "article_url", "session_id", "attempt_id", "failure_reason"].sort(),
     );
 
     off();
@@ -163,9 +168,7 @@ describe("AIIndexing — strict analytics payload shape", () => {
 
     const opened = details.find((d) => d.event === "ai_indexing_prompt_opened");
     expect(opened).toBeDefined();
-    expect(ownKeys(opened!)).toEqual(
-      ["event", "platform", "publication", "articleUrl"].sort(),
-    );
+    expect(ownKeys(opened!)).toEqual(OPENED_KEYS);
     expect(opened).not.toHaveProperty("copyMethod");
     expect(opened).not.toHaveProperty("failureReason");
     off();
