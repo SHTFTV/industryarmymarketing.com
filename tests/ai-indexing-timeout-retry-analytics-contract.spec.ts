@@ -22,6 +22,8 @@ type Detail = {
   platform: string;
   publication: string;
   articleUrl: string;
+  sessionId: string;
+  attemptId: string;
   copyMethod?: string;
   failureReason?: string;
 };
