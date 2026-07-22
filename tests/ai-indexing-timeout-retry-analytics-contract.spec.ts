@@ -31,6 +31,8 @@ const SUCCESS_KEYS = [
   "platform",
   "publication",
   "articleUrl",
+  "sessionId",
+  "attemptId",
   "copyMethod",
 ].sort();
 
@@ -39,6 +41,8 @@ const FAILURE_KEYS = [
   "platform",
   "publication",
   "articleUrl",
+  "sessionId",
+  "attemptId",
   "copyMethod",
   "failureReason",
 ].sort();
