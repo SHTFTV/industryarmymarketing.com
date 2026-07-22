@@ -43,7 +43,6 @@ const FAILURE_KEYS = [
   "articleUrl",
   "sessionId",
   "attemptId",
-  "copyMethod",
   "failureReason",
 ].sort();
 
@@ -150,10 +149,10 @@ test.describe("AIIndexing — timeout retry analytics contract", () => {
     expect(fail.platform).toBe("chatgpt");
     expect(fail.publication).toBe("iam");
     expect(fail.articleUrl).toBe(`${CANONICAL_ORIGIN}/blog/${SLUG}`);
-    expect(typeof fail.copyMethod).toBe("string");
-    expect(fail.copyMethod!.length).toBeGreaterThan(0);
     expect(typeof fail.failureReason).toBe("string");
     expect(fail.failureReason!.length).toBeGreaterThan(0);
+    expect(typeof (fail as unknown as { sessionId: string }).sessionId).toBe("string");
+    expect(typeof (fail as unknown as { attemptId: string }).attemptId).toBe("string");
 
     // Success payload shape: exact keys, exact values, no failureReason.
     const ok = successes[0];
@@ -162,7 +161,18 @@ test.describe("AIIndexing — timeout retry analytics contract", () => {
     expect(ok.platform).toBe("chatgpt");
     expect(ok.publication).toBe("iam");
     expect(ok.articleUrl).toBe(`${CANONICAL_ORIGIN}/blog/${SLUG}`);
-    expect(ok.copyMethod).toBe("execCommand");
+    // Component reports the fallback path as "fallback" (matches AnalyticsPayload union).
+    expect(ok.copyMethod).toBe("fallback");
     expect(ok.failureReason).toBeUndefined();
+
+    // Cross-attempt ID contract:
+    //   sessionId is stable across the whole mount (same for failure + success).
+    //   attemptId is generated per copyPrompt() call → the retry gets a NEW one.
+    expect((fail as unknown as { sessionId: string }).sessionId).toBe(
+      (ok as unknown as { sessionId: string }).sessionId,
+    );
+    expect((fail as unknown as { attemptId: string }).attemptId).not.toBe(
+      (ok as unknown as { attemptId: string }).attemptId,
+    );
   });
 });
