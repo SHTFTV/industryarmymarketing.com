@@ -32,6 +32,8 @@ type AnalyticsPayload = {
   platform: string;
   publication: string;
   articleUrl: string;
+  sessionId: string;
+  attemptId: string;
   copyMethod?: "clipboard" | "fallback";
   failureReason?: "permission" | "no_clipboard" | "exec_command" | "exception";
 };
@@ -51,6 +53,8 @@ function trackAIIndexing(payload: AnalyticsPayload) {
       platform: payload.platform,
       publication: payload.publication,
       article_url: payload.articleUrl,
+      session_id: payload.sessionId,
+      attempt_id: payload.attemptId,
       copy_method: payload.copyMethod,
       failure_reason: payload.failureReason,
     });
@@ -59,6 +63,22 @@ function trackAIIndexing(payload: AnalyticsPayload) {
   } catch {
     // analytics must never break the UI
   }
+}
+
+// ─── ID generators ────────────────────────────────────────────
+// crypto.randomUUID when available (all modern browsers + jsdom in newer
+// versions); falls back to a short random string so tests and older runtimes
+// still get a stable, non-empty identifier.
+function genId(prefix: string): string {
+  try {
+    const c = (globalThis as unknown as { crypto?: Crypto }).crypto;
+    if (c && typeof c.randomUUID === "function") {
+      return `${prefix}_${c.randomUUID()}`;
+    }
+  } catch {
+    /* ignore */
+  }
+  return `${prefix}_${Math.random().toString(36).slice(2, 10)}${Date.now().toString(36)}`;
 }
 
 // ─── Brand config per publication ────────────────────────────
