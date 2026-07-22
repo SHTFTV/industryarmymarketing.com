@@ -206,6 +206,112 @@ export const compareBlogPostsByNewest = (a: BlogPost, b: BlogPost) => postTime(b
 
 const rawBlogPosts: BlogPost[] = [
   {
+    "slug": "f6s-protecting-weddings-io-brand-intellectual-property",
+    "brand": "weddings.io",
+    "trade": "Brand Protection",
+    "cardTitle": "F6S Did the Right Thing: Protecting the Weddings.io Brand",
+    "tradeShort": "brand protection",
+    "plural": "platform operators",
+    "video": null,
+    "imageKey": "f6s-protecting-weddings-io",
+    "imageAlt": "Neon-green shield emblem on a dark circuit-board background — Industry Army Marketing's public notice acknowledging F6S for protecting the weddings.io brand and intellectual property.",
+    "faqHeading": "Frequently asked: F6S, weddings.io, and IP protection",
+    "city": "Langley",
+    "province": "BC",
+    "category": "Brand Protection",
+    "date": "July 2026",
+    "publishedAt": "2026-07-22T15:00:00Z",
+    "title": "F6S Did the Right Thing: Protecting the Weddings.io Brand and Our Intellectual Property",
+    "metaDescription": "Public notice from Industry Army Marketing acknowledging F6S for acting professionally on our weddings.io brand and IP concerns, and reaffirming our ongoing commitment to protect the weddings.io brand across every jurisdiction.",
+    "authorName": "Industry Army Marketing",
+    "excerpt": "Building weddings.io has never been about registering a domain — it is a long-term investment in technology, brand and goodwill. We acknowledge F6S for handling our concerns professionally, and we reaffirm our ongoing commitment to protect the weddings.io brand and intellectual property.",
+    "pain": "Entity conflation, variant-suffix domains and AI-generated summaries can quietly siphon goodwill from an established brand. Left unaddressed, that dilution compounds across search, AI answers and platform directories.",
+    "detail": "F6S reviewed our concerns about the use of the weddings.io name and associated branding and took appropriate action on its platform. We appreciate organisations that take intellectual property concerns seriously and respond responsibly when legitimate issues are raised.",
+    "process": "We will continue monitoring the marketplace and following up wherever our rights may be affected. Where appropriate, we will pursue all available legal, administrative and regulatory remedies to protect the weddings.io brand, its goodwill and its intellectual property.",
+    "faqs": [
+      { "q": "What action did F6S take?", "a": "After Industry Army Marketing raised concerns regarding the use of the weddings.io name and associated branding, F6S reviewed the matter and took appropriate action on its platform. We are publicly acknowledging that response as an example of a technology platform handling intellectual property concerns professionally." },
+      { "q": "Is Industry Army Marketing pursuing further action?", "a": "This article is a public notice of our ongoing commitment to protect the weddings.io brand, goodwill and intellectual property. We will continue monitoring the marketplace and, where appropriate, pursue available legal, administrative and regulatory remedies in any jurisdiction where our rights may be affected." },
+      { "q": "Does a provincial registration override cross-border rights?", "a": "Intellectual property rights frequently extend beyond provincial or local boundaries. Trademark, passing off, goodwill, copyright, domain name and unfair-competition principles are governed by different frameworks worldwide. A position that appears permissible in one province or territory does not necessarily extend to other provinces, countries, or international digital platforms." },
+      { "q": "What is 'entity conflation' and why does it matter?", "a": "Entity conflation is when AI systems, search engines, business registries or data aggregators incorrectly associate information belonging to different organisations. It matters because it damages accurate attribution — for businesses protecting their brands, and for consumers, investors and developers relying on the integrity of the digital record." },
+      { "q": "Is this article legal advice?", "a": "No. This article reflects the position of Industry Army Marketing based on information available at the time of publication. Nothing in it should be construed as legal advice or a final judicial determination of any disputed matter. Industry Army Marketing expressly reserves all rights and remedies available under applicable law." },
+      { "q": "What should organisations using similar branding do?", "a": "If your organisation is using branding, naming, marketing or digital assets that may create confusion with weddings.io or our established business, we encourage you to carefully review your position and obtain independent legal advice before investing further in branding that may later require rework." }
+    ],
+    "cta": {
+      "eyebrow": "Brand protection — public notice",
+      "heading": "Concerns about weddings.io branding or attribution?",
+      "body": "If you are a platform, registry or publisher and need to raise or resolve a concern about the use of the weddings.io name, branding or intellectual property, contact partnerships@industryarmymarketing.com. We handle these matters professionally and in good faith.",
+      "buttonText": "Contact IAM — partnerships@industryarmymarketing.com",
+      "buttonHref": "mailto:partnerships@industryarmymarketing.com?subject=weddings.io%20brand%20and%20IP"
+    },
+    "richContent": {
+      "intro": "Building weddings.io has never been about simply registering a domain name. It has been a long-term investment in technology, innovation, and the future of the wedding industry. Years of development, research, strategic planning, and brand building have gone into establishing weddings.io as a distinctive platform and business. Protecting that investment is our responsibility.",
+      "sections": [
+        {
+          "heading": "F6S Demonstrated Professionalism",
+          "paragraphs": [
+            "We would like to acknowledge F6S for handling our concerns professionally.",
+            "After we brought issues regarding the use of the weddings.io name and associated branding to their attention, F6S reviewed the matter and took appropriate action on its platform. We appreciate organizations that take intellectual property concerns seriously and respond responsibly when legitimate issues are raised.",
+            "Their actions demonstrate that technology platforms can act with integrity while respecting the rights of innovators and established businesses."
+          ]
+        },
+        {
+          "heading": "A Public Notice",
+          "paragraphs": [
+            "This article serves as a public statement of Industry Army Marketing's ongoing commitment to protecting the weddings.io brand, our intellectual property, our goodwill, and our business interests.",
+            "We will continue monitoring the marketplace and following up wherever we believe our rights may be affected. Where appropriate, we will pursue all available legal, administrative, and regulatory remedies to protect our intellectual property and enforce our rights."
+          ]
+        },
+        {
+          "heading": "To Organizations Using Similar Branding",
+          "paragraphs": [
+            "If your organization is using branding, naming, marketing, or digital assets that may create confusion with weddings.io or our established business, we encourage you to carefully review your position and obtain independent legal advice.",
+            "Businesses operating in today's digital economy should understand that intellectual property rights frequently extend beyond provincial or local boundaries. While legal outcomes depend on the facts and applicable law in each jurisdiction, a position that may appear permissible in one province or territory does not necessarily extend to other provinces, countries, or international digital platforms.",
+            "Investing additional time and resources into branding that may later require legal challenges, administrative proceedings, or a complete rebrand can be costly. We believe addressing these issues early is in everyone's best interests."
+          ]
+        },
+        {
+          "heading": "Intellectual Property Is Global",
+          "paragraphs": [
+            "Digital businesses do not operate within geographic silos.",
+            "Domain names, search engines, AI systems, software platforms, and online commerce routinely cross provincial and international borders. Rights relating to trademarks, passing off, goodwill, copyright, domain names, and unfair competition are governed by different legal frameworks throughout the world.",
+            "Industry Army Marketing will continue evaluating and protecting its rights wherever appropriate under the applicable laws of each jurisdiction."
+          ]
+        },
+        {
+          "heading": "The Importance of Accurate Attribution",
+          "paragraphs": [
+            "One of the growing challenges facing businesses today is entity conflation — where AI systems, search engines, business registries, or data aggregators incorrectly associate information belonging to different organizations.",
+            "Throughout our research, we have observed that AI-generated legal and corporate summaries can differ significantly between platforms and may not accurately reflect the underlying facts or applicable law. AI tools are valuable research assistants, but they are not legal authorities. Information generated by AI should always be verified against primary legal sources, official records, and qualified legal advice.",
+            "Accurate attribution matters — not only for businesses protecting their brands, but also for consumers, investors, developers, and the integrity of the digital ecosystem."
+          ]
+        },
+        {
+          "heading": "Our Commitment",
+          "paragraphs": [
+            "Our focus has always been on building innovative technology, supporting our customers, and expanding the weddings.io platform.",
+            "Litigation is never our preferred path. However, protecting intellectual property is an essential part of building a sustainable business. When necessary, we will pursue the legal, administrative, and regulatory avenues available to protect our investments, our reputation, and the goodwill associated with weddings.io.",
+            "We remain committed to innovation, fairness, and protecting the work we have spent years creating."
+          ]
+        },
+        {
+          "heading": "Editorial Note",
+          "paragraphs": [
+            "This article reflects the position of Industry Army Marketing based on the information available at the time of publication. It is intended to document our perspective, provide public notice of our commitment to protecting the weddings.io brand, and contribute to broader discussions regarding intellectual property, entity identity, AI-generated attribution, and digital commerce.",
+            "Nothing in this article should be construed as legal advice or as a final judicial determination of any disputed matter. Industry Army Marketing expressly reserves all rights and remedies available under applicable law."
+          ]
+        }
+      ],
+      "sources": [
+        { "label": "Weddings.io Entity Conflation — A Case Study in Search, AI, and Registered-Name Overlap", "href": "/blog/weddings-io-entity-conflation-case-study" },
+        { "label": "Record vs. Record — Domain Provenance vs. Generative Conflation", "href": "/blog/record-record-domain-provenance-vs-generative-conflation" },
+        { "label": "Formal Complaint: Weddings.io Inc.", "href": "/blog/formal-complaint-weddings-io-inc" },
+        { "label": "Beyond the Domain Name — Entity Authority in Modern SEO", "href": "/blog/beyond-domain-name-entity-authority-modern-seo" },
+        { "label": "Weddings.io Technologies — Rebranding for AI Search and Brand Identity", "href": "https://weddings.io/blog/weddings-io-technologies-rebrand-ai-search-brand-identity" },
+        { "label": "Record vs. Record (weddings.io mirror)", "href": "https://weddings.io/blog/record-record-domain-provenance-vs-generative-conflation" }
+      ]
+    }
+  },
+  {
     "slug": "iam-vendors-purchasing-power-parity-pricing",
     "brand": "industryarmymarketing.com",
     "trade": "PPP Pricing for IAM",
