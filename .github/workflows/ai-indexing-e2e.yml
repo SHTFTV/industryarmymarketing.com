@@ -1,0 +1,127 @@
+name: AIIndexing E2E (Chromium + Firefox + WebKit)
+
+# Runs the AIIndexing Playwright suite on all three engines. The suite covers
+# copy-prompt happy paths, keyboard shortcut behavior, in-flight timeout →
+# fallback retry, permission denial → retry, focus/tab-order preservation,
+# aria-live announcements, and the analytics identifier contract
+# (sessionId stable per mount, attemptId per copyPrompt() call).
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    paths:
+      - "src/components/AIIndexing.tsx"
+      - "src/components/AIIndexing.*.test.tsx"
+      - "tests/ai-indexing-*.spec.ts"
+      - "playwright.config.ts"
+      - "playwright-fixture.ts"
+      - ".github/workflows/ai-indexing-e2e.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: ai-indexing-e2e-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  playwright:
+    name: Playwright — ${{ matrix.browser }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      matrix:
+        browser: [chromium, firefox, webkit]
+    env:
+      # Pin the matrix engine so playwright.config's ONLY_BROWSER filter runs
+      # a single project per leg — matches the pattern used in seo-e2e.yml.
+      TEST_BROWSER: ${{ matrix.browser }}
+      # Analytics runtime configuration for the E2E build. These are the
+      # SAME values production reads at build time; without them the app
+      # would still render, but analytics forwarding paths (gtag/plausible)
+      # would no-op and several assertions would trivially pass. We set them
+      # to fixed test tokens so the CustomEvent + provider-forwarding paths
+      # both exercise real code, and the tests can assert deterministic
+      # payloads without hitting live endpoints (all analytics beacons are
+      # route-mocked inside the specs themselves).
+      VITE_GA_MEASUREMENT_ID: G-TEST0000AI
+      VITE_PLAUSIBLE_DOMAIN: industryarmymarketing.test
+      VITE_ANALYTICS_ENV: e2e
+      # Force React Router to canonicalize URLs the same way production does.
+      VITE_CANONICAL_ORIGIN: https://industryarmymarketing.com
+      # Playwright config knobs.
+      CI: "1"
+      PLAYWRIGHT_HTML_REPORT: playwright-report-${{ matrix.browser }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install deps
+        run: npm ci
+
+      # Cache browser binaries per engine. Playwright pins its browser
+      # versions in the lockfile, so the cache key is the lockfile hash + the
+      # engine name — safe to reuse across runs, invalidated on upgrade.
+      - name: Cache Playwright browsers
+        id: pw-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: pw-${{ runner.os }}-${{ matrix.browser }}-${{ hashFiles('package-lock.json') }}
+
+      - name: Install Playwright browsers + system deps
+        if: steps.pw-cache.outputs.cache-hit != 'true'
+        run: npx playwright install --with-deps ${{ matrix.browser }}
+
+      - name: Install Playwright system deps (cache hit)
+        if: steps.pw-cache.outputs.cache-hit == 'true'
+        run: npx playwright install-deps ${{ matrix.browser }}
+
+      - name: Build app
+        run: npm run build
+
+      - name: Run AIIndexing Playwright suite (${{ matrix.browser }})
+        run: npx playwright test tests/ai-indexing-*.spec.ts --reporter=list,html
+
+      - name: Upload Playwright HTML report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report-${{ matrix.browser }}
+          path: playwright-report/
+          retention-days: 14
+          if-no-files-found: ignore
+
+      - name: Upload trace/screenshots on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-artifacts-${{ matrix.browser }}
+          path: |
+            test-results/
+            playwright-report/
+          retention-days: 14
+          if-no-files-found: ignore
+
+  unit:
+    name: Vitest — AIIndexing analytics contract
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - run: npm ci
+      - name: Run AIIndexing unit tests (payload shape, no-leak, retries)
+        run: npx vitest run "src/components/AIIndexing.*.test.tsx"
