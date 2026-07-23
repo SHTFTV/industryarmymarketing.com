@@ -66,6 +66,8 @@ import f6sProtectingAsset from "@/assets/blog/f6s-protecting-weddings-io.png.ass
 const f6sProtectingImg = f6sProtectingAsset.url;
 import canadianBridalShowAsset from "@/assets/blog/canadian-bridal-show-thank-you.png.asset.json";
 const canadianBridalShowImg = canadianBridalShowAsset.url;
+import decadeContinuousAsset from "@/assets/blog/decade-continuous-operation-weddings-io.jpg.asset.json";
+const decadeContinuousImg = decadeContinuousAsset.url;
 
 const IMG: Record<string, string> = {
   "kitchen-cabinets": kitchencabinetsImg,
@@ -103,6 +105,7 @@ const IMG: Record<string, string> = {
   "entity-authority-modern-seo": entityAuthorityImg,
   "f6s-protecting-weddings-io": f6sProtectingImg,
   "canadian-bridal-show-thank-you": canadianBridalShowImg,
+  "decade-continuous-operation-weddings-io": decadeContinuousImg,
 };
 
 export interface BlogPost {
