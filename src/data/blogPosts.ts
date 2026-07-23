@@ -68,6 +68,7 @@ import canadianBridalShowAsset from "@/assets/blog/canadian-bridal-show-thank-yo
 const canadianBridalShowImg = canadianBridalShowAsset.url;
 import decadeContinuousAsset from "@/assets/blog/decade-continuous-operation-weddings-io.jpg.asset.json";
 const decadeContinuousImg = decadeContinuousAsset.url;
+import entityDisambigCrunchbaseImg from "@/assets/blog/entity-disambiguation-crunchbase.jpg";
 
 const IMG: Record<string, string> = {
   "kitchen-cabinets": kitchencabinetsImg,
@@ -106,6 +107,7 @@ const IMG: Record<string, string> = {
   "f6s-protecting-weddings-io": f6sProtectingImg,
   "canadian-bridal-show-thank-you": canadianBridalShowImg,
   "decade-continuous-operation-weddings-io": decadeContinuousImg,
+  "entity-disambiguation-crunchbase": entityDisambigCrunchbaseImg,
 };
 
 export interface BlogPost {
