@@ -5,7 +5,8 @@ import { Copy, Check } from "lucide-react";
 import Layout from "@/components/Layout";
 import Seo, { SITE_URL } from "@/components/Seo";
 import { Button } from "@/components/ui/button";
-import { getPost, blogPosts } from "@/data/blogPosts";
+import { getPost, blogPosts, type BlogPost as BlogPostType } from "@/data/blogPosts";
+import { supabase } from "@/integrations/supabase/client";
 import BlogRichContentView from "@/components/BlogRichContent";
 import { DisambiguationSchema } from "@/components/DisambiguationSchema";
 import BlogToc, { slugifyHeading } from "@/components/BlogToc";
@@ -16,11 +17,78 @@ import { AIIndexing } from "@/components/AIIndexing";
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
-  const post = slug ? getPost(slug) : undefined;
+  const staticPost = slug ? getPost(slug) : undefined;
   const [copied, setCopied] = useState(false);
   const [highlightedFaqId, setHighlightedFaqId] = useState<string | null>(null);
+  const [dbPost, setDbPost] = useState<BlogPostType | undefined>(staticPost);
+  const [dbStatus, setDbStatus] = useState<"ok" | "loading" | "missing">(
+    staticPost ? "ok" : "loading"
+  );
 
-  if (!post) return <Navigate to="/blog" replace />;
+  // Fallback: when the slug isn't in the static bundle (e.g. a post created
+  // through the admin UI after the last deploy), fetch the row from the DB
+  // by slug and hydrate the page directly from `blog_posts.data`.
+  useEffect(() => {
+    if (staticPost || !slug) return;
+    let alive = true;
+    setDbStatus("loading");
+    (async () => {
+      const { data, error } = await supabase
+        .from("blog_posts")
+        .select("data")
+        .eq("slug", slug)
+        .eq("is_published", true)
+        .maybeSingle();
+      if (!alive) return;
+      if (error || !data?.data) {
+        setDbStatus("missing");
+        return;
+      }
+      setDbPost(data.data as unknown as BlogPostType);
+      setDbStatus("ok");
+    })();
+    return () => {
+      alive = false;
+    };
+  }, [slug, staticPost]);
+
+  const post = dbPost;
+
+  // Smooth-scroll + transient highlight when the page loads with a
+  // matching FAQ hash. Declared here so hook order stays stable regardless
+  // of the DB-fallback loading state below.
+  useEffect(() => {
+    if (typeof window === "undefined" || !post) return;
+    const raw = window.location.hash.replace(/^#/, "");
+    if (!raw || !raw.startsWith("faq-")) return;
+    const el = document.getElementById(raw);
+    if (!el) return;
+    const prefersReduced =
+      window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ?? false;
+    const raf = window.requestAnimationFrame(() => {
+      el.scrollIntoView({
+        behavior: prefersReduced ? "auto" : "smooth",
+        block: "start",
+      });
+    });
+    setHighlightedFaqId(raw);
+    const t = window.setTimeout(() => setHighlightedFaqId(null), 2400);
+    return () => {
+      window.cancelAnimationFrame(raf);
+      window.clearTimeout(t);
+    };
+  }, [post?.slug]);
+
+  if (dbStatus === "loading") {
+    return (
+      <Layout>
+        <div className="pt-32 pb-20 container mx-auto px-4 max-w-4xl text-center text-muted-foreground text-sm uppercase tracking-widest">
+          Loading post…
+        </div>
+      </Layout>
+    );
+  }
+  if (!post || dbStatus === "missing") return <Navigate to="/blog" replace />;
 
   // Long-form body sections (each ~250-350 words) — built from per-post data
   const sections: { h: string; body: string[] }[] = [
@@ -219,31 +287,6 @@ const BlogPost = () => {
   ];
   const totalWords = bodyTexts.reduce((n, s) => n + countWords(s || ""), 0);
   const readMinutes = Math.max(1, Math.round(totalWords / 220));
-
-  // Smooth-scroll + transient highlight when the page loads with a
-  // matching FAQ hash (e.g. /blog/foo#faq-my-question). Same-page anchor
-  // clicks fire copySectionLink and are handled by the browser directly.
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    const raw = window.location.hash.replace(/^#/, "");
-    if (!raw || !raw.startsWith("faq-")) return;
-    const el = document.getElementById(raw);
-    if (!el) return;
-    const prefersReduced =
-      window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ?? false;
-    const raf = window.requestAnimationFrame(() => {
-      el.scrollIntoView({
-        behavior: prefersReduced ? "auto" : "smooth",
-        block: "start",
-      });
-    });
-    setHighlightedFaqId(raw);
-    const t = window.setTimeout(() => setHighlightedFaqId(null), 2400);
-    return () => {
-      window.cancelAnimationFrame(raf);
-      window.clearTimeout(t);
-    };
-  }, [post.slug]);
 
   const isRecordRecord = post.slug === "record-record-domain-provenance-vs-generative-conflation";
 
