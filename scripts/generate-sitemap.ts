@@ -2,6 +2,7 @@
 
 import { writeFileSync, readFileSync } from "fs";
 import { resolve } from "path";
+import { fetchPublishedBlogPosts } from "./lib/blog-source";
 const BASE_URL = "https://industryarmymarketing.com";
 
 interface SitemapEntry {
@@ -23,7 +24,7 @@ const blogPostsSource = readFileSync(
   resolve("src/data/blogPosts.ts"),
   "utf8",
 );
-const blogSlugs = Array.from(
+let blogSlugs = Array.from(
   blogPostsSource.matchAll(/^\s*["']?slug["']?\s*:\s*["']([a-z0-9-]+)["']/gm),
   (m) => m[1],
 );
@@ -43,6 +44,27 @@ for (const slug of blogSlugs) {
   const m = window.match(/"publishedAt"\s*:\s*"([^"]+)"/);
   if (m) blogPublishedAt[slug] = m[1];
 }
+
+// DB overlay: if `blog_posts` returns published rows, filter blogSlugs to
+// only those live in the DB and union in any DB-only slugs (posts created
+// through /admin/blog that don't exist in the static file). Static file
+// remains the fallback so a DB outage never breaks the build.
+const dbRows = await fetchPublishedBlogPosts();
+if (dbRows) {
+  const dbSlugSet = new Set(dbRows.map((r) => r.slug));
+  const staticSlugSet = new Set(blogSlugs);
+  // Keep only slugs that are still is_published=true in the DB.
+  blogSlugs = blogSlugs.filter((s) => dbSlugSet.has(s));
+  // Union in DB-only slugs (new admin-created posts).
+  for (const row of dbRows) {
+    if (!staticSlugSet.has(row.slug)) blogSlugs.push(row.slug);
+    if (!blogPublishedAt[row.slug]) blogPublishedAt[row.slug] = row.published_at;
+  }
+  console.log(`[sitemap] DB overlay applied: ${blogSlugs.length} live posts`);
+} else {
+  console.log(`[sitemap] DB overlay unavailable — using static blogPosts.ts`);
+}
+
 blogSlugs.sort((a, b) => {
   const ta = blogPublishedAt[a] ? Date.parse(blogPublishedAt[a]) : 0;
   const tb = blogPublishedAt[b] ? Date.parse(blogPublishedAt[b]) : 0;
