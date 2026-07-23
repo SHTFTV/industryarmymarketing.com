@@ -253,7 +253,12 @@ const BlogPost = () => {
       }
     : null;
 
-  const schemas = [articleSchema, faqSchema, breadcrumbSchema, ...(videoSchema ? [videoSchema] : [])];
+  const schemas: Record<string, unknown>[] = [
+    articleSchema,
+    faqSchema,
+    breadcrumbSchema,
+    ...(videoSchema ? [videoSchema] : []),
+  ];
 
   // Press-release / official notice posts get an additional NewsArticle
   // schema so Google News, Discover, and LLM answer surfaces treat them
