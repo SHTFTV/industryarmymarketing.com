@@ -5,6 +5,7 @@
 
 import { readFileSync, writeFileSync } from "fs";
 import { resolve } from "path";
+import { fetchPublishedBlogPosts } from "./lib/blog-source";
 
 const cities = ["vancouver", "surrey", "calgary", "edmonton", "toronto", "kelowna"];
 const localCities = ["vancouver", "surrey", "langley"];
@@ -38,7 +39,20 @@ const uniquePosts = blogPosts.filter((p) => {
   return true;
 });
 uniquePosts.sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
-const blogSlugs = uniquePosts.map((p) => p.slug);
+let blogSlugs = uniquePosts.map((p) => p.slug);
+
+// DB overlay: filter to live posts and append any DB-only slugs so
+// react-snap prerenders every published route from /admin/blog too.
+const dbRows = await fetchPublishedBlogPosts();
+if (dbRows) {
+  const dbSlugSet = new Set(dbRows.map((r) => r.slug));
+  const staticSet = new Set(blogSlugs);
+  blogSlugs = blogSlugs.filter((s) => dbSlugSet.has(s));
+  for (const row of dbRows) {
+    if (!staticSet.has(row.slug)) blogSlugs.push(row.slug);
+  }
+  console.log(`[prerender-routes] DB overlay applied: ${blogSlugs.length} blog routes`);
+}
 if (blogSlugs.length === 0) {
   throw new Error("generate-prerender-routes: no blog slugs parsed from blogPosts.ts");
 }

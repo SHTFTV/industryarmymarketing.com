@@ -7,6 +7,7 @@ import { Link, useSearchParams } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { blogPosts } from "@/data/blogPosts";
+import { useBlogPostsOverlay } from "@/hooks/useBlogPostsOverlay";
 import { useMemo, useCallback, useEffect, useRef, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Search, X, ChevronLeft, ChevronRight } from "lucide-react";
@@ -17,13 +18,19 @@ const PAGE_SIZE = 12;
 const SEARCH_DEBOUNCE_MS = 300;
 
 const Blog = () => {
+  // DB overlay: after hydration, filter to is_published=true rows and
+  // let admin display_order + is_featured override the static ordering.
+  // On first render (SSR/prerender/hydration), falls back to the static
+  // list so crawler HTML matches what react-snap captured.
+  const { posts: overlayPosts, featured: dbFeatured } = useBlogPostsOverlay();
   // Pin the Weddings.io case study as featured for 3 months, then rotate.
   const PINNED_SLUG = "battle-for-the-brand-weddings-io";
   const PIN_UNTIL = new Date("2026-09-26T00:00:00Z");
   const pinActive = Date.now() < PIN_UNTIL.getTime();
-  const pinnedPost = pinActive ? blogPosts.find((p) => p.slug === PINNED_SLUG) : undefined;
-  const featured = pinnedPost ?? blogPosts[0];
-  const rest = blogPosts.filter((p) => p.slug !== featured.slug);
+  // Precedence: admin-featured (DB) → time-limited pin → newest published.
+  const pinnedPost = pinActive ? overlayPosts.find((p) => p.slug === PINNED_SLUG) : undefined;
+  const featured = dbFeatured ?? pinnedPost ?? overlayPosts[0] ?? blogPosts[0];
+  const rest = overlayPosts.filter((p) => p.slug !== featured.slug);
   // Persist search state in URL so filtered views are shareable and
   // survive page reloads. Empty/default values are stripped so the URL
   // stays clean ("/blog" instead of "/blog?q=&city=all&category=all").

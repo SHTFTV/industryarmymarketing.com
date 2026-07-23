@@ -2,6 +2,7 @@
 
 import { readFileSync, statSync, writeFileSync } from "fs";
 import { resolve } from "path";
+import { fetchPublishedBlogPosts } from "./lib/blog-source";
 
 const BASE_URL = "https://industryarmymarketing.com";
 const OG_IMAGE_PATH = "/og-image.jpg";
@@ -77,7 +78,37 @@ const posts = slugs
   })
   .sort((a, b) => b.sortTime - a.sortTime || b.sourceIndex - a.sourceIndex);
 
-const items = posts
+// DB overlay: filter to slugs currently is_published=true in the DB, and
+// append DB-only posts (created via /admin/blog). Static file remains the
+// fallback source when DB is unreachable.
+const dbRows = await fetchPublishedBlogPosts();
+let filteredPosts = posts;
+if (dbRows) {
+  const dbBySlug = new Map(dbRows.map((r) => [r.slug, r]));
+  const staticSlugSet = new Set(posts.map((p) => p.slug));
+  filteredPosts = posts.filter((p) => dbBySlug.has(p.slug));
+  for (const row of dbRows) {
+    if (staticSlugSet.has(row.slug)) continue;
+    const d = (row.data ?? {}) as Record<string, unknown>;
+    const t = Date.parse(row.published_at) || Date.now();
+    filteredPosts.push({
+      slug: row.slug,
+      title: row.title,
+      description: (d.metaDescription as string) || (d.excerpt as string) || row.title,
+      date: (d.date as string) || new Date(t).toISOString().slice(0, 10),
+      category: (d.category as string) || "Blog",
+      publishedAt: row.published_at,
+      sourceIndex: filteredPosts.length,
+      sortTime: t,
+    });
+  }
+  filteredPosts.sort((a, b) => b.sortTime - a.sortTime || b.sourceIndex - a.sourceIndex);
+  console.log(`[rss] DB overlay applied: ${filteredPosts.length} live items`);
+} else {
+  console.log(`[rss] DB overlay unavailable — using static blogPosts.ts`);
+}
+
+const items = filteredPosts
   .map((post) => {
     const link = `${BASE_URL}/blog/${post.slug}`;
     return [
@@ -117,4 +148,4 @@ const xml = [
 ].join("\n");
 
 writeFileSync(resolve("public/rss.xml"), xml);
-console.log(`rss.xml written (${slugs.length} items)`);
+console.log(`rss.xml written (${filteredPosts.length} items)`);
