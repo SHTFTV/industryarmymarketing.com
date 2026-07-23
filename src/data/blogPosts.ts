@@ -227,7 +227,7 @@ const rawBlogPosts: BlogPost[] = [
     "province": "BC",
     "category": "Brand Protection",
     "date": "July 2026",
-    "publishedAt": "2026-07-23T20:00:00Z",
+    "publishedAt": "2026-07-27T15:00:00Z",
     "title": "Weddings.io: The Public Record of Prior Use, Continuous Operation, and Brand Authority",
     "metaDescription": "The public record of Weddings.io — a decade of continuous operation, prior use, and brand authority. Industry Army Marketing's formal position on the Weddings.io brand and intellectual property.",
     "authorName": "Industry Army Marketing",
