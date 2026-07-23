@@ -290,6 +290,10 @@ const SeoAudit = () => {
   const runDeepDive = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!scan || !email.trim()) return;
+    if (!user) {
+      toast.error("Sign in required", { description: "The AI-powered deep dive requires an account. Please sign in to continue." });
+      return;
+    }
     setDiving(true);
     try {
       const { data, error } = await supabase.functions.invoke("audit-deep-dive", {
