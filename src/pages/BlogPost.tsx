@@ -593,6 +593,48 @@ const BlogPost = () => {
               ))}
             </div>
           </section>
+
+          {(newerPost || olderPost) && (
+            <nav
+              aria-label="Blog post navigation"
+              className="mt-16 grid gap-4 sm:grid-cols-2"
+            >
+              {newerPost ? (
+                <Link
+                  to={`/blog/${newerPost.slug}`}
+                  rel="prev"
+                  className="group flex flex-col p-5 rounded-lg bg-card border border-border hover:border-primary/50 transition-colors sm:col-start-1"
+                >
+                  <span className="inline-flex items-center gap-1 text-primary text-[10px] uppercase tracking-[0.3em] mb-2">
+                    <ChevronLeft className="h-3.5 w-3.5" aria-hidden="true" />
+                    Previous article
+                  </span>
+                  <span className="font-display text-lg text-foreground leading-tight group-hover:text-primary transition-colors">
+                    {newerPost.cardTitle ?? newerPost.title}
+                  </span>
+                </Link>
+              ) : (
+                <div className="hidden sm:block" aria-hidden="true" />
+              )}
+              {olderPost ? (
+                <Link
+                  to={`/blog/${olderPost.slug}`}
+                  rel="next"
+                  className="group flex flex-col p-5 rounded-lg bg-card border border-border hover:border-primary/50 transition-colors sm:col-start-2 sm:text-right sm:items-end"
+                >
+                  <span className="inline-flex items-center gap-1 text-primary text-[10px] uppercase tracking-[0.3em] mb-2">
+                    Next article
+                    <ChevronRight className="h-3.5 w-3.5" aria-hidden="true" />
+                  </span>
+                  <span className="font-display text-lg text-foreground leading-tight group-hover:text-primary transition-colors">
+                    {olderPost.cardTitle ?? olderPost.title}
+                  </span>
+                </Link>
+              ) : (
+                <div className="hidden sm:block" aria-hidden="true" />
+              )}
+            </nav>
+          )}
         </div>
       </article>
     </Layout>
