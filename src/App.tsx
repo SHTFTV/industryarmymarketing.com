@@ -56,6 +56,7 @@ import AffordableSeo from "./pages/services/AffordableSeo.tsx";
 import DofollowBacklinksService from "./pages/services/DofollowBacklinksService.tsx";
 import ServiceThankYou from "./pages/services/ServiceThankYou.tsx";
 import AdminServiceLeads from "./pages/admin/AdminServiceLeads.tsx";
+import AdminBlogPosts from "./pages/admin/AdminBlogPosts.tsx";
 import { legacyRedirectRoutes } from "./components/LegacyRedirects";
 import featuredBattle from "@/assets/blog/weddings-vs-aiweddings-battle.png.asset.json";
 
@@ -238,6 +239,7 @@ const App = () => (
           <Route path="/admin/leads" element={<AdminLeads />} />
           <Route path="/admin/proposals" element={<AdminProposals />} />
           <Route path="/admin/ppp-requote" element={<AdminPppRequote />} />
+          <Route path="/admin/blog" element={<AdminBlogPosts />} />
           <Route path="/pwa-check" element={<PwaCheck />} />
           <Route path="/rss-preview" element={<RssPreview />} />
           <Route path="/domain-setup" element={<DomainSetup />} />
