@@ -255,6 +255,52 @@ const BlogPost = () => {
 
   const schemas = [articleSchema, faqSchema, breadcrumbSchema, ...(videoSchema ? [videoSchema] : [])];
 
+  // Press-release / official notice posts get an additional NewsArticle
+  // schema so Google News, Discover, and LLM answer surfaces treat them
+  // as timely corporate statements rather than generic evergreen guides.
+  const isPressRelease =
+    (post.category ?? "").toLowerCase().includes("press release") ||
+    (post.category ?? "").toLowerCase().includes("notice");
+  if (isPressRelease) {
+    const newsArticleSchema = {
+      "@context": "https://schema.org",
+      "@type": "NewsArticle",
+      "@id": `${SITE_URL}/blog/${post.slug}#newsarticle`,
+      headline: post.title,
+      description: post.metaDescription,
+      url: `${SITE_URL}/blog/${post.slug}`,
+      inLanguage: "en-CA",
+      isPartOf: { "@id": `${SITE_URL}/#website` },
+      image: {
+        "@type": "ImageObject",
+        url: absoluteImage,
+        caption: heroImageAlt,
+      },
+      datePublished: isoDate,
+      dateModified: isoDate,
+      articleSection: post.category,
+      author: {
+        "@type": "Organization",
+        name: post.authorName || "Industry Army Marketing",
+        url: SITE_URL,
+      },
+      publisher: {
+        "@type": "Organization",
+        "@id": `${SITE_URL}/#organization`,
+        name: "Industry Army Marketing",
+        url: SITE_URL,
+        logo: {
+          "@type": "ImageObject",
+          url: `${SITE_URL}/icon-512.png`,
+          width: 512,
+          height: 512,
+        },
+      },
+      mainEntityOfPage: { "@type": "WebPage", "@id": `${SITE_URL}/blog/${post.slug}` },
+    };
+    schemas.push(newsArticleSchema);
+  }
+
   const related = blogPosts.filter((p) => p.slug !== post.slug).slice(0, 5);
 
   // Prev/Next navigation — chronological (newest-first) traversal.
