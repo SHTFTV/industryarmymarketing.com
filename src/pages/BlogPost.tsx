@@ -1,7 +1,7 @@
 import { Link, useParams, Navigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { Copy, Check } from "lucide-react";
+import { Copy, Check, ChevronLeft, ChevronRight } from "lucide-react";
 import Layout from "@/components/Layout";
 import Seo, { SITE_URL } from "@/components/Seo";
 import { Button } from "@/components/ui/button";
@@ -256,6 +256,16 @@ const BlogPost = () => {
   const schemas = [articleSchema, faqSchema, breadcrumbSchema, ...(videoSchema ? [videoSchema] : [])];
 
   const related = blogPosts.filter((p) => p.slug !== post.slug).slice(0, 5);
+
+  // Prev/Next navigation — chronological (newest-first) traversal.
+  // "Newer" post is the item before this one in the sorted list; "Older"
+  // is the item after. `blogPosts` is already exported newest-first.
+  const currentIndex = blogPosts.findIndex((p) => p.slug === post.slug);
+  const newerPost = currentIndex > 0 ? blogPosts[currentIndex - 1] : undefined;
+  const olderPost =
+    currentIndex >= 0 && currentIndex < blogPosts.length - 1
+      ? blogPosts[currentIndex + 1]
+      : undefined;
 
   // Auto-generated TOC headings — from richContent when present, else from
   // the fallback `sections` array built above. Adds FAQ + CTA anchors too.
