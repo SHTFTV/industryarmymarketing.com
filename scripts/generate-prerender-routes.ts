@@ -57,10 +57,6 @@ if (blogSlugs.length === 0) {
   throw new Error("generate-prerender-routes: no blog slugs parsed from blogPosts.ts");
 }
 
-// Re-slice priority window after overlay so latest DB-driven order wins.
-const _priorityBlogSlugs = blogSlugs.slice(0, LATEST_PRIORITY_COUNT);
-const _remainingBlogSlugs = blogSlugs.slice(LATEST_PRIORITY_COUNT);
-
 // Latest N posts get top priority so their static HTML is warm before the
 // rest of the crawl completes. Keep this small so the priority window
 // stays useful when react-snap is bounded by concurrency.
