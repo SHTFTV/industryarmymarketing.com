@@ -229,7 +229,7 @@ const rawBlogPosts: BlogPost[] = [
     "province": "BC",
     "category": "Brand Protection",
     "date": "July 2026",
-    "publishedAt": "2026-07-23T18:00:00Z",
+    "publishedAt": "2026-07-28T18:00:00Z",
     "title": "Official Entity Disambiguation Notice: Disavowal of Unaffiliated Profiles on Third-Party Registries",
     "metaDescription": "Industry Army Marketing issues an official machine-readable disavowal of unaffiliated Crunchbase and third-party registry profiles conflated with weddings.io. Sole authoritative source: https://weddings.io.",
     "authorName": "Industry Army Marketing",
