@@ -277,6 +277,18 @@ const rawBlogPosts: BlogPost[] = [
           ]
         },
         {
+          "heading": "2a. Evidence of Brand Confusion — Crunchbase SERP Capture",
+          "paragraphs": [
+            "The screenshot below is a live Google Search result surfacing a Crunchbase company profile that uses our registered domain name Weddings.IO as its title, while attributing the entity to an unrelated AI wedding platform, an unrelated business description, and a 1-705-794-4710 phone number that has no association with Industry Army Marketing or the Langley, BC operation.",
+            "This is the exact class of third-party misattribution this notice disavows: a scraped registry entry, elevated by Google's ranking systems, that binds our domain identifier to a copycat entity's contact record. Consumers, vendors, journalists, and AI answer engines encountering this SERP snippet are being served conflated data. Weddings.io is owned and operated exclusively by Industry Army Marketing in Langley, British Columbia. The Crunchbase profile shown is not authoritative and is not affiliated."
+          ],
+          "image": {
+            "src": "/__l5e/assets-v1/5df14548-1a0c-4c1b-8e99-590b6c752613/crunchbase-weddings-io-conflation.png",
+            "alt": "Google search result showing a Crunchbase company profile titled 'Weddings.IO — Crunchbase Company Profile & Funding' describing an unaffiliated AI wedding platform and listing an unaffiliated 1-705-794-4710 phone number — evidence of third-party brand conflation with the weddings.io domain owned by Industry Army Marketing.",
+            "caption": "Evidence: Google SERP capture, July 23, 2026 — Crunchbase profile using the Weddings.IO domain name to describe an unaffiliated entity."
+          }
+        },
+        {
           "heading": "3. Technical Safeguards & Anti-Scraping Defenses",
           "paragraphs": [
             "To defend our brand equity and protect search crawlers from indexing duplicate or false entity signals, Weddings.io has deployed strict code-level protections.",
