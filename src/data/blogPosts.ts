@@ -224,6 +224,8 @@ const rawBlogPosts: BlogPost[] = [
     "video": null,
     "imageKey": "entity-disambiguation-crunchbase",
     "imageAlt": "Official Entity Disambiguation Notice graphic — Industry Army Marketing, Langley BC, disavowing unaffiliated third-party directory listings tied to weddings.io.",
+    "ogImage": "/__l5e/assets-v1/f70e3ba6-f0c9-4b38-8ea9-d7b80d9704c4/og-entity-disambiguation-notice.jpg",
+    "ogImageAlt": "Official Entity Disambiguation Notice — Industry Army Marketing disavows an unaffiliated Crunchbase profile using the weddings.io domain (marked DISAVOWED).",
     "faqHeading": "Frequently asked: Weddings.io entity disambiguation and third-party registries",
     "city": "Langley",
     "province": "BC",
