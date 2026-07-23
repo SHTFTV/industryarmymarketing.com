@@ -140,6 +140,11 @@ export interface BlogPost {
   cardTitle?: string;
   /** Optional override alt/title text for the hero image. */
   imageAlt?: string;
+  /** Optional dedicated Open Graph / Twitter share image override. When set,
+   *  BlogPost.tsx uses this in <Seo> so social previews reflect a purpose-built
+   *  1200x630 share card instead of the hero. */
+  ogImage?: string;
+  ogImageAlt?: string;
   /** Optional Person author override. When set, BlogPost JSON-LD emits
    *  a Person author alongside the Organization publisher. */
   authorName?: string;
@@ -224,6 +229,8 @@ const rawBlogPosts: BlogPost[] = [
     "video": null,
     "imageKey": "entity-disambiguation-crunchbase",
     "imageAlt": "Official Entity Disambiguation Notice graphic — Industry Army Marketing, Langley BC, disavowing unaffiliated third-party directory listings tied to weddings.io.",
+    "ogImage": "/__l5e/assets-v1/f70e3ba6-f0c9-4b38-8ea9-d7b80d9704c4/og-entity-disambiguation-notice.jpg",
+    "ogImageAlt": "Official Entity Disambiguation Notice — Industry Army Marketing disavows an unaffiliated Crunchbase profile using the weddings.io domain (marked DISAVOWED).",
     "faqHeading": "Frequently asked: Weddings.io entity disambiguation and third-party registries",
     "city": "Langley",
     "province": "BC",
@@ -280,12 +287,14 @@ const rawBlogPosts: BlogPost[] = [
           "heading": "2a. Evidence of Brand Confusion — Crunchbase SERP Capture",
           "paragraphs": [
             "The screenshot below is a live Google Search result surfacing a Crunchbase company profile that uses our registered domain name Weddings.IO as its title, while attributing the entity to an unrelated AI wedding platform, an unrelated business description, and a 1-705-794-4710 phone number that has no association with Industry Army Marketing or the Langley, BC operation.",
-            "This is the exact class of third-party misattribution this notice disavows: a scraped registry entry, elevated by Google's ranking systems, that binds our domain identifier to a copycat entity's contact record. Consumers, vendors, journalists, and AI answer engines encountering this SERP snippet are being served conflated data. Weddings.io is owned and operated exclusively by Industry Army Marketing in Langley, British Columbia. The Crunchbase profile shown is not authoritative and is not affiliated."
+            "This is the exact class of third-party misattribution this notice disavows: a scraped registry entry, elevated by Google's ranking systems, that binds our domain identifier to a copycat entity's contact record. Consumers, vendors, journalists, and AI answer engines encountering this SERP snippet are being served conflated data. Weddings.io is owned and operated exclusively by Industry Army Marketing in Langley, British Columbia. The Crunchbase profile shown is not authoritative and is not affiliated.",
+            "Source & citation: Screenshot captured July 23, 2026 from a Google Search results page surfacing the third-party Crunchbase organization profile at https://www.crunchbase.com/organization/weddings-io. Reproduced here under fair dealing / fair use for the purpose of criticism, review, and news reporting on brand conflation. Crunchbase® is a registered trademark of Crunchbase, Inc.; its inclusion does not imply endorsement of, or by, Industry Army Marketing."
           ],
           "image": {
             "src": "/__l5e/assets-v1/5df14548-1a0c-4c1b-8e99-590b6c752613/crunchbase-weddings-io-conflation.png",
             "alt": "Google search result showing a Crunchbase company profile titled 'Weddings.IO — Crunchbase Company Profile & Funding' describing an unaffiliated AI wedding platform and listing an unaffiliated 1-705-794-4710 phone number — evidence of third-party brand conflation with the weddings.io domain owned by Industry Army Marketing.",
-            "caption": "Evidence: Google SERP capture, July 23, 2026 — Crunchbase profile using the Weddings.IO domain name to describe an unaffiliated entity."
+            "caption": "Evidence: Google SERP capture, July 23, 2026 — Crunchbase profile using the Weddings.IO domain name to describe an unaffiliated entity. Source: crunchbase.com/organization/weddings-io (click image to view the third-party profile).",
+            "href": "https://www.crunchbase.com/organization/weddings-io"
           }
         },
         {

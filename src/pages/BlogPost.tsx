@@ -394,8 +394,8 @@ const BlogPost = () => {
         description={post.metaDescription}
         path={`/blog/${post.slug}`}
         type="article"
-        image={heroImage}
-        imageAlt={heroImageAlt}
+        image={post.ogImage ?? heroImage}
+        imageAlt={post.ogImageAlt ?? heroImageAlt}
         jsonLd={schemas}
       />
       {isRecordRecord && <DisambiguationSchema />}
