@@ -296,6 +296,43 @@ const Blog = () => {
           <p className="text-primary uppercase tracking-[0.3em] text-xs font-semibold mt-16 mb-3">All Intel</p>
           <h3 className="font-display text-3xl text-foreground mb-8">Every trade. Every territory.</h3>
 
+          {/* Quick-filter chips — one-click browsing for common categories,
+              highlighted so visitors can jump straight into "Press Releases
+              / Notices" (official statements) without opening the dropdown. */}
+          <div className="flex flex-wrap gap-2 mb-6" role="group" aria-label="Quick category filters">
+            {[
+              { label: "All Intel", value: "all" },
+              { label: "Press Releases / Notices", value: "Press Releases / Notices", emphasis: true },
+              { label: "Brand Protection", value: "Brand Protection" },
+              { label: "Company", value: "Company" },
+              { label: "SEO Strategy", value: "SEO Strategy" },
+            ].map((chip) => {
+              const active = category === chip.value;
+              return (
+                <button
+                  key={chip.value}
+                  type="button"
+                  onClick={() => {
+                    updateParam("category", chip.value);
+                    trackEvent(BLOG_EVENTS.filterCategory, { category: chip.value });
+                  }}
+                  aria-pressed={active}
+                  className={
+                    "inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-xs uppercase tracking-widest transition-colors " +
+                    (active
+                      ? "bg-primary text-primary-foreground border-primary"
+                      : chip.emphasis
+                        ? "bg-primary/10 text-primary border-primary/40 hover:bg-primary/20"
+                        : "bg-background text-muted-foreground border-border hover:border-primary/40 hover:text-primary")
+                  }
+                >
+                  {chip.emphasis && <span aria-hidden="true">📣</span>}
+                  {chip.label}
+                </button>
+              );
+            })}
+          </div>
+
           <div className="grid md:grid-cols-[1fr_auto_auto_auto] gap-3 mb-8 items-center">
             <div className="relative">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
