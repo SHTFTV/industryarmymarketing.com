@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/table";
 import { Loader2, ArrowUp, ArrowDown, Trash2, Plus, Save, X } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import type { Json } from "@/integrations/supabase/types";
 
 type BlogRow = {
   id: string;
@@ -20,7 +21,7 @@ type BlogRow = {
   is_published: boolean;
   is_featured: boolean;
   display_order: number;
-  data: Record<string, unknown> | null;
+  data: Json | null;
 };
 
 const emptyPost = (): BlogRow => ({
@@ -74,7 +75,7 @@ const AdminBlogPosts = () => {
 
   useEffect(() => { if (authChecked) load(); }, [authChecked, load]);
 
-  const patchRow = async (id: string, patch: Partial<BlogRow>) => {
+  const patchRow = async (id: string, patch: Partial<Omit<BlogRow, "data">> & { data?: Json }) => {
     const prev = rows;
     setRows(rows.map(r => r.id === id ? { ...r, ...patch } : r));
     const { error } = await supabase.from("blog_posts").update(patch).eq("id", id);
@@ -113,9 +114,9 @@ const AdminBlogPosts = () => {
 
   const save = async () => {
     if (!editing) return;
-    let parsed: unknown;
+    let parsed: Json;
     try {
-      parsed = JSON.parse(dataText || "{}");
+      parsed = JSON.parse(dataText || "{}") as Json;
     } catch (e) {
       setDataError((e as Error).message);
       return;
@@ -132,7 +133,7 @@ const AdminBlogPosts = () => {
       is_published: editing.is_published,
       is_featured: editing.is_featured,
       display_order: editing.display_order,
-      data: parsed as Record<string, unknown>,
+      data: parsed,
     };
     const query = editing.id
       ? supabase.from("blog_posts").update(payload).eq("id", editing.id)
