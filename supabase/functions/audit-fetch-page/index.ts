@@ -1,5 +1,95 @@
 import { corsHeaders } from 'npm:@supabase/supabase-js@2/cors';
 
+// SSRF protection: reject non-public hosts, private ranges, and cloud metadata IPs.
+// We resolve DNS before fetch and re-check the resolved IPs. We do NOT allow redirects
+// (redirect: 'error') so a public URL cannot rebind to an internal one mid-request.
+function ipToNumber(ip: string): number | null {
+  const parts = ip.split('.');
+  if (parts.length !== 4) return null;
+  let n = 0;
+  for (const p of parts) {
+    const v = Number(p);
+    if (!Number.isInteger(v) || v < 0 || v > 255) return null;
+    n = n * 256 + v;
+  }
+  return n;
+}
+
+function isBlockedIPv4(ip: string): boolean {
+  const n = ipToNumber(ip);
+  if (n === null) return true;
+  const inRange = (start: string, prefix: number) => {
+    const s = ipToNumber(start)!;
+    const mask = prefix === 0 ? 0 : (~0 << (32 - prefix)) >>> 0;
+    return (n & mask) === (s & mask);
+  };
+  return (
+    inRange('0.0.0.0', 8) ||          // "This" network
+    inRange('10.0.0.0', 8) ||          // Private
+    inRange('100.64.0.0', 10) ||       // CGNAT
+    inRange('127.0.0.0', 8) ||         // Loopback
+    inRange('169.254.0.0', 16) ||      // Link-local + cloud metadata (169.254.169.254)
+    inRange('172.16.0.0', 12) ||       // Private
+    inRange('192.0.0.0', 24) ||        // IETF
+    inRange('192.168.0.0', 16) ||      // Private
+    inRange('198.18.0.0', 15) ||       // Benchmarking
+    inRange('224.0.0.0', 4) ||         // Multicast
+    inRange('240.0.0.0', 4)            // Reserved
+  );
+}
+
+function isBlockedIPv6(ip: string): boolean {
+  const lower = ip.toLowerCase();
+  return (
+    lower === '::1' ||                   // Loopback
+    lower === '::' ||
+    lower.startsWith('fc') ||             // Unique local fc00::/7
+    lower.startsWith('fd') ||
+    lower.startsWith('fe80') ||           // Link-local
+    lower.startsWith('fe9') ||
+    lower.startsWith('fea') ||
+    lower.startsWith('feb') ||
+    lower.startsWith('ff') ||             // Multicast
+    lower.startsWith('::ffff:')           // IPv4-mapped — re-check IPv4
+  );
+}
+
+async function assertPublicHost(host: string): Promise<void> {
+  // Reject bracketed IPv6 literals, non-ASCII, obviously-invalid hosts.
+  const cleanHost = host.replace(/^\[|\]$/g, '');
+  if (!cleanHost || cleanHost.length > 253) throw new Error('invalid host');
+  // If host is a literal IP, check it directly.
+  if (/^[0-9.]+$/.test(cleanHost)) {
+    if (isBlockedIPv4(cleanHost)) throw new Error('host resolves to a blocked address');
+    return;
+  }
+  if (cleanHost.includes(':')) {
+    if (isBlockedIPv6(cleanHost)) throw new Error('host resolves to a blocked address');
+    return;
+  }
+  // Reject localhost aliases without DNS lookup.
+  if (/^(localhost|localhost\.localdomain|ip6-localhost|ip6-loopback)$/i.test(cleanHost)) {
+    throw new Error('host resolves to a blocked address');
+  }
+  // Resolve DNS. Deno.resolveDns requires --allow-net; edge runtime allows it.
+  let records: string[] = [];
+  try {
+    const a = await Deno.resolveDns(cleanHost, 'A').catch(() => [] as string[]);
+    const aaaa = await Deno.resolveDns(cleanHost, 'AAAA').catch(() => [] as string[]);
+    records = [...a, ...aaaa];
+  } catch {
+    throw new Error('dns resolution failed');
+  }
+  if (records.length === 0) throw new Error('dns resolution failed');
+  for (const ip of records) {
+    if (ip.includes(':')) {
+      if (isBlockedIPv6(ip)) throw new Error('host resolves to a blocked address');
+    } else {
+      if (isBlockedIPv4(ip)) throw new Error('host resolves to a blocked address');
+    }
+  }
+}
+
 Deno.serve(async (req) => {
   if (req.method === 'OPTIONS') return new Response('ok', { headers: corsHeaders });
   try {
@@ -7,14 +97,49 @@ Deno.serve(async (req) => {
     if (!url || typeof url !== 'string') {
       return new Response(JSON.stringify({ error: 'url required' }), { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
     }
+    if (url.length > 2048) {
+      return new Response(JSON.stringify({ error: 'url too long' }), { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
+    }
     let target: URL;
     try { target = new URL(url.startsWith('http') ? url : `https://${url}`); }
     catch { return new Response(JSON.stringify({ error: 'invalid url' }), { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }); }
+    if (target.protocol !== 'http:' && target.protocol !== 'https:') {
+      return new Response(JSON.stringify({ error: 'only http(s) URLs allowed' }), { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
+    }
+    // Reject credentials-in-URL and non-standard ports that commonly hit internal services.
+    if (target.username || target.password) {
+      return new Response(JSON.stringify({ error: 'credentials in url not allowed' }), { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
+    }
+    if (target.port && !['', '80', '443', '8080', '8443'].includes(target.port)) {
+      return new Response(JSON.stringify({ error: 'port not allowed' }), { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
+    }
+    try {
+      await assertPublicHost(target.hostname);
+    } catch (e) {
+      return new Response(JSON.stringify({ error: (e as Error).message }), { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
+    }
 
     const started = Date.now();
-    const res = await fetch(target.toString(), { redirect: 'follow', headers: { 'User-Agent': 'IAM-SEO-Audit/1.0' } });
+    // redirect: 'error' — do NOT follow redirects. A redirect could point to a
+    // private address that bypasses the pre-fetch DNS check.
+    const ac = new AbortController();
+    const timeout = setTimeout(() => ac.abort(), 10_000);
+    let res: Response;
+    try {
+      res = await fetch(target.toString(), {
+        redirect: 'error',
+        signal: ac.signal,
+        headers: { 'User-Agent': 'IAM-SEO-Audit/1.0', Accept: 'text/html,application/xhtml+xml' },
+      });
+    } catch (e) {
+      clearTimeout(timeout);
+      return new Response(JSON.stringify({ error: 'fetch failed', detail: (e as Error).message }), { status: 502, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
+    }
+    clearTimeout(timeout);
     const ttfb = Date.now() - started;
-    const html = await res.text();
+    // Cap response size to prevent runaway memory usage on huge documents.
+    const buf = new Uint8Array(await res.arrayBuffer());
+    const html = new TextDecoder().decode(buf.slice(0, 2_000_000));
 
     const pick = (re: RegExp) => { const m = html.match(re); return m ? m[1].trim() : ''; };
     const all = (re: RegExp) => { const out: string[] = []; let m; while ((m = re.exec(html)) !== null) out.push(m[1].trim()); return out; };
