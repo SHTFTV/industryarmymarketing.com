@@ -41,20 +41,20 @@ Deno.serve(async (req) => {
     const safeBodySample = typeof bodySample === 'string' ? bodySample.slice(0, 4000) : '';
     const safeMeta = meta && typeof meta === 'object' ? JSON.stringify(meta).slice(0, 4000) : '{}';
 
-    // Rate limit: max 10 deep-dive runs per user per hour.
-    // We use seo_events (already present) as a lightweight ledger.
+    // Rate limit: max 10 deep-dive runs per user per hour. Uses seo_events with
+    // session_id = userId as the per-user key (existing table has no user_id column).
     const admin = createClient(SUPABASE_URL, Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!);
     const oneHourAgo = new Date(Date.now() - 60 * 60 * 1000).toISOString();
     const { count } = await admin
       .from('seo_events')
       .select('id', { count: 'exact', head: true })
-      .eq('user_id', userId)
+      .eq('session_id', userId)
       .eq('event', 'audit_deep_dive')
       .gte('created_at', oneHourAgo);
     if ((count ?? 0) >= 10) {
       return new Response(JSON.stringify({ error: 'Rate limit exceeded. Try again later.' }), { status: 429, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
     }
-    await admin.from('seo_events').insert({ user_id: userId, event: 'audit_deep_dive', payload: { url, email } }).catch(() => {});
+    await admin.from('seo_events').insert({ event: 'audit_deep_dive', session_id: userId, path: url, meta: { email } }).then(() => {}, () => {});
 
     const prompt = `You are an expert SEO auditor. Analyze the page below and return ONLY valid JSON with this exact shape:
 {"summary":"2-3 sentence executive summary","checks":[{"name":"...","status":"pass|warn|fail","finding":"...","fix":"..."}],"quickWins":["...","...","..."]}
