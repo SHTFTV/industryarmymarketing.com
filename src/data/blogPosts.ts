@@ -140,6 +140,11 @@ export interface BlogPost {
   cardTitle?: string;
   /** Optional override alt/title text for the hero image. */
   imageAlt?: string;
+  /** Optional dedicated Open Graph / Twitter share image override. When set,
+   *  BlogPost.tsx uses this in <Seo> so social previews reflect a purpose-built
+   *  1200x630 share card instead of the hero. */
+  ogImage?: string;
+  ogImageAlt?: string;
   /** Optional Person author override. When set, BlogPost JSON-LD emits
    *  a Person author alongside the Organization publisher. */
   authorName?: string;
