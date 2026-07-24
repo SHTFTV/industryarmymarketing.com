@@ -70,6 +70,10 @@ import decadeContinuousAsset from "@/assets/blog/decade-continuous-operation-wed
 const decadeContinuousImg = decadeContinuousAsset.url;
 import entityDisambigCrunchbaseImg from "@/assets/blog/entity-disambiguation-crunchbase.jpg";
 import dataPollutionImg from "@/assets/blog/data-pollution-inaccurate-corporate-profiles.jpg";
+import dpExhibitA from "@/assets/exhibits/data-pollution/exhibit-a-google-ai-overview-conflation.png.asset.json";
+import dpExhibitB from "@/assets/exhibits/data-pollution/exhibit-b-duckai-ecosystem-summary.png.asset.json";
+import dpExhibitC from "@/assets/exhibits/data-pollution/exhibit-c-duckai-crunchbase-trust-signal.png.asset.json";
+import dpExhibitD from "@/assets/exhibits/data-pollution/exhibit-d-duckai-german-brand-confusion.png.asset.json";
 
 const IMG: Record<string, string> = {
   "kitchen-cabinets": kitchencabinetsImg,
