@@ -69,6 +69,7 @@ const canadianBridalShowImg = canadianBridalShowAsset.url;
 import decadeContinuousAsset from "@/assets/blog/decade-continuous-operation-weddings-io.jpg.asset.json";
 const decadeContinuousImg = decadeContinuousAsset.url;
 import entityDisambigCrunchbaseImg from "@/assets/blog/entity-disambiguation-crunchbase.jpg";
+import dataPollutionImg from "@/assets/blog/data-pollution-inaccurate-corporate-profiles.jpg";
 
 const IMG: Record<string, string> = {
   "kitchen-cabinets": kitchencabinetsImg,
@@ -108,6 +109,7 @@ const IMG: Record<string, string> = {
   "canadian-bridal-show-thank-you": canadianBridalShowImg,
   "decade-continuous-operation-weddings-io": decadeContinuousImg,
   "entity-disambiguation-crunchbase": entityDisambigCrunchbaseImg,
+  "data-pollution-inaccurate-corporate-profiles": dataPollutionImg,
 };
 
 export interface BlogPost {
