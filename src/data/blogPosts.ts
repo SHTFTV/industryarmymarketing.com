@@ -70,6 +70,10 @@ import decadeContinuousAsset from "@/assets/blog/decade-continuous-operation-wed
 const decadeContinuousImg = decadeContinuousAsset.url;
 import entityDisambigCrunchbaseImg from "@/assets/blog/entity-disambiguation-crunchbase.jpg";
 import dataPollutionImg from "@/assets/blog/data-pollution-inaccurate-corporate-profiles.jpg";
+import dpExhibitA from "@/assets/exhibits/data-pollution/exhibit-a-google-ai-overview-conflation.png.asset.json";
+import dpExhibitB from "@/assets/exhibits/data-pollution/exhibit-b-duckai-ecosystem-summary.png.asset.json";
+import dpExhibitC from "@/assets/exhibits/data-pollution/exhibit-c-duckai-crunchbase-trust-signal.png.asset.json";
+import dpExhibitD from "@/assets/exhibits/data-pollution/exhibit-d-duckai-german-brand-confusion.png.asset.json";
 
 const IMG: Record<string, string> = {
   "kitchen-cabinets": kitchencabinetsImg,
@@ -294,6 +298,50 @@ const rawBlogPosts: BlogPost[] = [
             "Push for support escalation: demand manual review when automated tools or low-tier support refuse to fix bad data on DR90+ nodes.",
             "Public accountability: if support refuses to update inaccurate entity records, document the communication publicly to protect your brand's digital authority."
           ]
+        },
+        {
+          "heading": "Exhibit A — Google AI Overview conflating weddings.io with an unrelated Toronto AI startup",
+          "paragraphs": [
+            "Query: \"weddings.io crunchbase\" from a Canadian IP, captured July 23, 2026. Google's AI Overview describes weddings.io as a \"private Canadian artificial intelligence wedding platform\" headquartered in Toronto — a description that conflicts directly with IAM's continuous registration and operation of weddings.io from Langley, BC since May 13, 2015. The AI Overview is generating this answer by triangulating polluted directory data as ground truth."
+          ],
+          "image": {
+            "src": dpExhibitA.url,
+            "alt": "Google AI Overview for the query 'weddings.io crunchbase' describing weddings.io as a private Canadian AI wedding platform headquartered in Toronto — a conflation with an unrelated 2024 Ontario startup.",
+            "caption": "Exhibit A — Google Search / AI Overview, captured 2026-07-23. Source: Google."
+          }
+        },
+        {
+          "heading": "Exhibit B — Duck.ai (DuckDuckGo AI) restating fabricated ecosystem details",
+          "paragraphs": [
+            "Prompt: \"tell me about weddings.io\" on Duck.ai (DuckDuckGo's AI chat), captured July 23, 2026. The model returns a confidently structured summary describing ecosystem components (\"EyeSpyR\" visual verification, \"Talc.tv\", etc.) and then asks the user for clarification on legal entity and leadership details — a classic AEO signature of an entity built from mixed, unverified upstream sources rather than from the domain owner's own schema."
+          ],
+          "image": {
+            "src": dpExhibitB.url,
+            "alt": "Duck.ai chat response summarizing weddings.io ecosystem components including EyeSpyR and Talc.tv, then asking the user to clarify legal entity and leadership details.",
+            "caption": "Exhibit B — Duck.ai, captured 2026-07-23. Source: DuckDuckGo AI."
+          }
+        },
+        {
+          "heading": "Exhibit C — Duck.ai explicitly citing Crunchbase as the trust signal",
+          "paragraphs": [
+            "Same session as Exhibit B. When asked where its facts came from, Duck.ai names Crunchbase and weddingssaas.com as its authoritative sources. This is the AEO seed-node mechanism in action: a DR90+ directory profile is being ingested by a consumer-facing AI answer engine as ground truth, and that answer is being served to end users as if it were the definitive record."
+          ],
+          "image": {
+            "src": dpExhibitC.url,
+            "alt": "Duck.ai response citing Crunchbase and weddingssaas.com as the sources for its weddings.io information.",
+            "caption": "Exhibit C — Duck.ai source attribution, captured 2026-07-23. Source: DuckDuckGo AI."
+          }
+        },
+        {
+          "heading": "Exhibit D — Cross-lingual propagation of the same polluted profile",
+          "paragraphs": [
+            "Duck.ai response to a German-language query about weddings.io, captured July 23, 2026. The same fabricated \"SaaS / Marketplace platform with EyeSpyR visual verification\" description is served in German — demonstrating that the polluted entity data is not a one-off English-language artifact. Once a DR90+ directory anchors a false fact into the knowledge graph, that fact is translated and redistributed across every language surface the answer engine operates in."
+          ],
+          "image": {
+            "src": dpExhibitD.url,
+            "alt": "Duck.ai German-language chat response summarizing weddings.io as a SaaS or Marketplace platform with EyeSpyR visual verification.",
+            "caption": "Exhibit D — Duck.ai, German-language response, captured 2026-07-23. Source: DuckDuckGo AI."
+          }
         },
         {
           "heading": "Editorial Note",
