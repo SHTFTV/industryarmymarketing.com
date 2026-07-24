@@ -229,51 +229,9 @@ const Blog = () => {
         highlight="Blog"
         description="Deep dives on $10 exclusive territory marketing — one guide per trade domain. SEO, AEO, GEO, and the math behind the model."
       />
-      <FeaturedCaseStudy />
-
       <section className="py-16">
         <div className="container mx-auto px-4 max-w-6xl">
-          <div>
-            <p className="text-primary uppercase tracking-[0.3em] text-xs font-semibold mb-3">
-              Company Case Study Blog
-            </p>
-            <div className="grid md:grid-cols-2 gap-5">
-              {companyCaseStudies.map((item) => (
-                <article
-                  key={item.href}
-                  className="rounded-lg bg-card border border-primary/30 hover:border-primary/60 transition-colors overflow-hidden flex flex-col"
-                >
-                  <Link to={item.href} className="block">
-                    <img
-                      src={item.image}
-                      alt={`${item.title} — Industry Army Marketing case study`}
-                      loading="lazy"
-                      width={1280}
-                      height={720}
-                      className="w-full aspect-video object-cover"
-                    />
-                  </Link>
-                  <div className="p-5 flex flex-col flex-1">
-                    <p className="text-primary text-xs uppercase tracking-widest mb-2">{item.label}</p>
-                    <h3 className="font-display text-2xl text-foreground mb-3 leading-tight">
-                      <Link to={item.href} className="hover:text-primary transition-colors">
-                        {item.title}
-                      </Link>
-                    </h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed mb-5">{item.description}</p>
-                    <Link
-                      to={item.href}
-                      className="text-primary text-xs uppercase tracking-widest mt-auto self-start hover:underline"
-                    >
-                      Open case study →
-                    </Link>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-
-          <p className="text-primary uppercase tracking-[0.3em] text-xs font-semibold mt-16 mb-3">All Intel</p>
+          <p className="text-primary uppercase tracking-[0.3em] text-xs font-semibold mb-3">All Intel</p>
           <h3 className="font-display text-3xl text-foreground mb-8">Every trade. Every territory.</h3>
 
           {/* Quick-filter chips — one-click browsing for common categories,
