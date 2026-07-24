@@ -21,15 +21,11 @@ const Blog = () => {
   // let admin display_order + is_featured override the static ordering.
   // On first render (SSR/prerender/hydration), falls back to the static
   // list so crawler HTML matches what react-snap captured.
-  const { posts: overlayPosts, featured: dbFeatured } = useBlogPostsOverlay();
-  // Pin the Weddings.io case study as featured for 3 months, then rotate.
-  const PINNED_SLUG = "battle-for-the-brand-weddings-io";
-  const PIN_UNTIL = new Date("2026-09-26T00:00:00Z");
-  const pinActive = Date.now() < PIN_UNTIL.getTime();
-  // Precedence: admin-featured (DB) → time-limited pin → newest published.
-  const pinnedPost = pinActive ? overlayPosts.find((p) => p.slug === PINNED_SLUG) : undefined;
-  const featured = dbFeatured ?? pinnedPost ?? overlayPosts[0] ?? blogPosts[0];
-  const rest = overlayPosts.filter((p) => p.slug !== featured.slug);
+  const { posts: overlayPosts } = useBlogPostsOverlay();
+  // Uniform grid: no featured card, no pinned override — every post appears
+  // in the same left-to-right chronological roll (newest first).
+  const featured = overlayPosts[0] ?? blogPosts[0];
+  const rest = overlayPosts;
   // Persist search state in URL so filtered views are shareable and
   // survive page reloads. Empty/default values are stripped so the URL
   // stays clean ("/blog" instead of "/blog?q=&city=all&category=all").
