@@ -70,6 +70,7 @@ import decadeContinuousAsset from "@/assets/blog/decade-continuous-operation-wed
 const decadeContinuousImg = decadeContinuousAsset.url;
 import entityDisambigCrunchbaseImg from "@/assets/blog/entity-disambiguation-crunchbase.jpg";
 import dataPollutionImg from "@/assets/blog/data-pollution-inaccurate-corporate-profiles.jpg";
+import categoryDomainImg from "@/assets/blog/category-domain-startup-strategy.jpg";
 import dpExhibitA from "@/assets/exhibits/data-pollution/exhibit-a-google-ai-overview-conflation.png.asset.json";
 import dpExhibitB from "@/assets/exhibits/data-pollution/exhibit-b-duckai-ecosystem-summary.png.asset.json";
 import dpExhibitC from "@/assets/exhibits/data-pollution/exhibit-c-duckai-crunchbase-trust-signal.png.asset.json";
@@ -115,6 +116,7 @@ const IMG: Record<string, string> = {
   "decade-continuous-operation-weddings-io": decadeContinuousImg,
   "entity-disambiguation-crunchbase": entityDisambigCrunchbaseImg,
   "data-pollution-inaccurate-corporate-profiles": dataPollutionImg,
+  "category-domain-startup-strategy": categoryDomainImg,
 };
 
 export interface BlogPost {
@@ -226,6 +228,115 @@ export const postTime = (post: Pick<BlogPost, "slug" | "publishedAt">): number =
 export const compareBlogPostsByNewest = (a: BlogPost, b: BlogPost) => postTime(b) - postTime(a);
 
 const rawBlogPosts: BlogPost[] = [
+  {
+    "slug": "does-your-startup-need-a-category-domain",
+    "brand": "weddings.io",
+    "trade": "Domain Strategy",
+    "cardTitle": "Does Your Startup Actually Need a Category Domain?",
+    "tradeShort": "domain strategy",
+    "plural": "founders and industry builders",
+    "video": null,
+    "imageKey": "category-domain-startup-strategy",
+    "imageAlt": "Editorial illustration of an interconnected ecosystem centered on a category .io domain, representing the compounding authority of a well-built industry platform.",
+    "faqHeading": "Frequently asked: category domains, industry ecosystems, and long-term authority",
+    "city": "Langley",
+    "province": "BC",
+    "category": "Strategy",
+    "date": "July 2026",
+    "publishedAt": "2026-07-30T15:00:00Z",
+    "title": "Does Your Startup Actually Need a Category Domain?",
+    "metaDescription": "The honest answer is not always. But the more interesting question is what happens after the domain is acquired — and what gets built around it.",
+    "authorName": "Weddings.io Editorial",
+    "excerpt": "Great brands have been built on invented names and on category addresses alike. The more interesting question is what gets built around the domain — and which path fits what you are building.",
+    "pain": "Founders often treat the choice between an invented brand name and a category domain as ideology rather than strategy — and lose years to the wrong answer for their business.",
+    "detail": "In trust-first industries like weddings, the address a professional is discovered at can be part of how credibility is established. But a category domain is real estate without a building until content, distribution, editorial voice, and long-term authority are layered on top.",
+    "process": "IAM operates weddings.io, videographers.io, and a portfolio of category .io addresses as connected editorial ecosystems — trade publications with software underneath — where professionals accumulate discoverability over years, not months.",
+    "faqs": [
+      { "q": "Does every startup need a category domain?", "a": "No. Great brands have been built on invented names, catchy phrases, and words that meant nothing until someone made them mean everything. The more useful question is which path fits what you are building — and being honest about it upfront." },
+      { "q": "When does a category domain actually help?", "a": "Category addresses tend to matter most in trust-first industries — weddings, financial planning, healthcare — where credibility is established before the first conversation. They also tend to reward long-term thinking over month-to-month acquisition strategies." },
+      { "q": "Is the domain itself the investment?", "a": "Rarely. In cases where category addresses have generated meaningful long-term value, the domain turned out to be the beginning of a much broader strategy — built around content, distribution, editorial voice, and gradual accumulation of industry authority. A domain without those layers is real estate without a building." },
+      { "q": "How is IAM's model different from a lead-generation platform?", "a": "Leads are transactional; authority compounds. IAM's category properties are structured as trade publications with software underneath — infrastructure that helps professionals build long-term authority in their own markets, not a lead subscription that stops the moment the invoice does." },
+      { "q": "Where does videographers.io fit in?", "a": "Video production is treated as strategic infrastructure for the entire wedding ecosystem, not just another listing category. A single exceptional wedding film showcases the venue, planner, florist, stylist, and caterer — so lifting the visibility of the videographer lifts everyone whose work appears in the frame." }
+    ],
+    "cta": {
+      "eyebrow": "For founders & industry builders",
+      "heading": "Thinking about a category domain — or already sitting on one?",
+      "body": "IAM operates weddings.io, videographers.io, and a portfolio of category .io addresses as connected editorial ecosystems. If you are evaluating whether a category domain fits your business — or figuring out what to build on one you already own — we are happy to compare notes.",
+      "buttonText": "Contact IAM — partnerships@industryarmymarketing.com",
+      "buttonHref": "mailto:partnerships@industryarmymarketing.com?subject=Category%20domain%20strategy"
+    },
+    "richContent": {
+      "intro": "The honest answer is not always. Great brands have been built on invented names, catchy phrases, and words that meant nothing until someone made them mean everything. The more interesting question is what happens after the domain is acquired — and what gets built around it.",
+      "sections": [
+        {
+          "heading": "The Question",
+          "paragraphs": [
+            "Both paths have worked. The question is which one fits what you are building.",
+            "Look at the companies that changed their industries and you will find both kinds. Some built on names that told you nothing until they made those names mean everything — through craft, consistency, and showing up properly for a long time. Others secured the category address early and let the infrastructure compound while everyone else was spending on paid acquisition.",
+            "Neither approach has a monopoly on outcomes. But they require different things from the people building on them — and being clear about which path you are on tends to change every decision that follows.",
+            "In the wedding industry specifically, this question carries some weight. It is a trust-first industry. A couple is not purchasing a subscription. They are handing the most important day of their lives to professionals they found online. The address those professionals are discovered at can be part of how trust is established — often before the first conversation, sometimes before the first click."
+          ]
+        },
+        {
+          "heading": "A Framework",
+          "paragraphs": [
+            "Four questions that tend to clarify the decision faster than most branding theory. There is no universal answer, but in our experience these four get most founders to an honest position fairly quickly.",
+            "1. Is trust established before the first conversation? In industries like weddings, financial planning, and healthcare, the address can function as a credibility signal before anything else is read. In those verticals, category addresses often carry more weight.",
+            "2. Is your moat execution or distribution? If your advantage is speed and product quality, a memorable invented name may serve you better. If your advantage is organic reach and long-term authority, a category address tends to compound that over time.",
+            "3. Are you building a brand or a hub? A brand can be built on almost anything given enough time and consistency. A hub — a platform connecting professionals to clients at scale — can benefit from an address the industry recognises without being told what it is.",
+            "4. Are you thinking in months or years? Category addresses tend to reward patience. The compounding effect on search authority and AI indexation often takes longer to materialise than most early-stage timelines allow for — but it does not depreciate the way paid acquisition does."
+          ]
+        },
+        {
+          "heading": "The Longer Game",
+          "paragraphs": [
+            "History suggests the domain is rarely the end of the investment. The more interesting question is what happens after a category address is acquired. In most cases where these assets have generated meaningful long-term value, the domain turned out to be the beginning of a much broader strategy — built around content, distribution, editorial voice, and the gradual accumulation of industry authority.",
+            "A domain without those layers is real estate without a building. It holds value, and in the right categories that value can be considerable. But the compounding effect — the part that makes the investment genuinely difficult to replicate — tends to come from what is built on top of it over time.",
+            "Search has never rewarded isolated pages as consistently as it rewards connected, authoritative ecosystems. As AI-powered discovery continues to evolve, that distinction may become more important, not less.",
+            "The professionals who understand this tend to think about their digital presence the way they think about their craft. A wedding videographer does not expect a single reel to build a career. They invest in relationships, in refining their work, in being present in the right conversations over a long period. The marketing infrastructure around that work functions the same way — presence and authority accumulate, and over time they work harder than any individual campaign.",
+            "The first value a professional often receives from being part of a connected industry platform is not measured in direct bookings. It is measured in discoverability — in becoming part of a growing body of trusted content that continues working long after it is published."
+          ]
+        },
+        {
+          "heading": "Case Study in the Ecosystem — videographers.io",
+          "paragraphs": [
+            "Video production illustrates the ecosystem thesis particularly well. Every wedding business depends on high-quality visual storytelling, yet the professionals creating that content are often treated as another listing category rather than as strategic contributors to an industry's visibility.",
+            "Viewed through that lens, a dedicated category platform for videographers is not simply another website. It has the potential to become infrastructure supporting the content that elevates venues, planners, photographers, florists and every other professional whose work benefits from exceptional visual presentation.",
+            "A wedding film does not only represent the videographer who created it. It also showcases the venue, the floral design, the styling, the catering presentation, the entertainment — every professional who contributed to the day. Within a connected ecosystem, one exceptional piece of work can strengthen the visibility of everyone involved. That compounding effect is what we are interested in building toward.",
+            "Experienced videographers understand this instinctively. They buy cameras they will not pay off for years. They build reels before they book weddings. They invest in relationships long before they see referrals. The platform is framed the same way — not as a source of immediate leads, but as an asset that compounds in value over the years a professional is building their market.",
+            "[videographers.io](https://videographers.io) currently connects professional video production teams — videographers, production companies, broadcast crews, and drone operators — across 950+ cities worldwide. The infrastructure is live. The indexation is in place. What it rewards is the same thing the wedding industry has always rewarded: professionals who take their craft and their presence seriously over time."
+          ]
+        },
+        {
+          "heading": "Pricing Philosophy",
+          "paragraphs": [
+            "Sustainable pricing is not about charging the maximum the market will bear. Our philosophy is straightforward: the easier it is for exceptional professionals to participate, the stronger the ecosystem becomes. A network is only as valuable as the quality of the people inside it — and structuring access in a way that excludes the best professionals in favour of the ones with the largest marketing budgets would undermine the thing we are trying to build.",
+            "We are not trying to become another lead-generation platform. We are trying to become part of the digital infrastructure that helps professionals build long-term authority in their own markets. Leads are transactional. Authority compounds. Those are different value propositions, and they deserve different pricing structures.",
+            "The professionals who tend to see the most value from platforms like this are the ones already thinking in those terms — who recognise that a presence in a trusted, well-indexed industry ecosystem is an asset they are building, not a service they are renting month to month."
+          ]
+        },
+        {
+          "heading": "Founder's Note — Colin Hamilton",
+          "paragraphs": [
+            "Industry Army Marketing and the properties under it — weddings.io, videographers.io, and the broader portfolio — did not begin with a grand plan. They began with a thesis: that the professionals doing the best work in high-consideration industries were systematically hard to find online, and that the infrastructure to surface them properly did not exist.",
+            "Every asset in this ecosystem exists for a specific purpose. Some were secured early when .io addresses in major categories were still available to anyone paying attention. Others came later, at prices that reflected what the market had learned in the intervening years. Either way the conviction was the same — the right address in a trust-first industry is worth whatever it takes to hold it properly. That thinking runs from weddings.io and videographers.io through to backhaul.io for heavy logistics, errands.io for on-demand services, financialadvisors.io and insurancebrokers.io for professional financial services, PlowWow.com and ProMows.com for the outdoor services market, and LoveOurListing.com for real estate discovery. Different verticals. Same model. Same standard.",
+            "Together they form infrastructure we believe is worth investing in over the long term — not because we have all the answers about what it will become, but because we think the direction is correct.",
+            "We are not building directories. We are building trade publications that happen to have software underneath them. That is a meaningfully different thing — and over the coming months, what that means in practice will become increasingly visible, not just in what we write, but in the products we release and the professionals who are part of the network.",
+            "The wedding industry has more talent in it than any platform has properly surfaced. We have watched it long enough to believe that. The professionals who built serious careers in this industry — who understand its rhythms, its relationships, and what it actually takes to deliver something extraordinary on a day that cannot be repeated — are the ones this infrastructure was built for.",
+            "Sometimes the most interesting conversations start in unexpected places. The wedding industry, of all industries, should understand that.",
+            "Whether this thesis proves correct will ultimately be decided by the market, not by us. If category addresses were the first chapter of the internet, we believe connected ecosystems built around software, editorial, real professionals, and AI-assisted discovery may well become the next. That is the direction we are investing in. Over time, those ideas will speak for themselves.",
+            "— Colin Hamilton, Founder & Principal, Industry Army Marketing / Weddings.io Technologies. admin@weddings.io · weddings.io · videographers.io"
+          ]
+        }
+      ],
+      "sources": [
+        { "label": "videographers.io — Category platform connecting professional video teams across 950+ cities", "href": "https://videographers.io" },
+        { "label": "Weddings.io Domain Provenance & Record of Record — chain of title and continuous commercial use since 2015", "href": "/blog/record-record-domain-provenance-vs-generative-conflation" },
+        { "label": "Business Research Insights (2026) — Global wedding planning software market outlook", "href": "https://www.businessresearchinsights.com/" },
+        { "label": "Industry Army Marketing — Entity Authority Framework and ecosystem documentation", "href": "https://industryarmymarketing.com" }
+      ]
+    }
+  },
   {
     "slug": "exposing-data-pollution-inaccurate-corporate-profiles",
     "brand": "weddings.io",
