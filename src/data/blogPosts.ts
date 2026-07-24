@@ -238,6 +238,8 @@ const rawBlogPosts: BlogPost[] = [
     "video": null,
     "imageKey": "category-domain-startup-strategy",
     "imageAlt": "Editorial illustration of an interconnected ecosystem centered on a category .io domain, representing the compounding authority of a well-built industry platform.",
+    "ogImage": "/__l5e/assets-v1/af741c93-21c0-49ff-ae10-eec529ec6dd1/og-category-domain-startup.jpg",
+    "ogImageAlt": "Does Your Startup Need a Category Domain? — IAM editorial cover in dark tactical style with a stylized .io glyph and an industry ecosystem network.",
     "faqHeading": "Frequently asked: category domains, industry ecosystems, and long-term authority",
     "city": "Langley",
     "province": "BC",
