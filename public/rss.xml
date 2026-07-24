@@ -6,13 +6,22 @@
     <atom:link href="https://industryarmymarketing.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>2,000-word guides on exclusive $10 territory marketing for trade contractors and service pros across Canada.</description>
     <language>en-ca</language>
-    <lastBuildDate>Fri, 24 Jul 2026 01:00:33 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 24 Jul 2026 21:33:55 GMT</lastBuildDate>
     <generator>Industry Army Marketing build pipeline</generator>
     <image>
       <url>https://industryarmymarketing.com/og-image.jpg</url>
       <title>Industry Army Marketing — Intel Blog</title>
       <link>https://industryarmymarketing.com/blog</link>
     </image>
+    <item>
+      <title>Does Your Startup Actually Need a Category Domain?</title>
+      <link>https://industryarmymarketing.com/blog/does-your-startup-need-a-category-domain</link>
+      <guid isPermaLink="true">https://industryarmymarketing.com/blog/does-your-startup-need-a-category-domain</guid>
+      <pubDate>Thu, 30 Jul 2026 15:00:00 GMT</pubDate>
+      <category>Strategy</category>
+      <description>The honest answer is not always. But the more interesting question is what happens after the domain is acquired — and what gets built around it.</description>
+      <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
+    </item>
     <item>
       <title>Exposing Data Pollution: Why Inaccurate Corporate Profiles Hurt the Entire Search Ecosystem</title>
       <link>https://industryarmymarketing.com/blog/exposing-data-pollution-inaccurate-corporate-profiles</link>
