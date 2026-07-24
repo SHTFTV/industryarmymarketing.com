@@ -74,6 +74,7 @@ import dpExhibitA from "@/assets/exhibits/data-pollution/exhibit-a-google-ai-ove
 import dpExhibitB from "@/assets/exhibits/data-pollution/exhibit-b-duckai-ecosystem-summary.png.asset.json";
 import dpExhibitC from "@/assets/exhibits/data-pollution/exhibit-c-duckai-crunchbase-trust-signal.png.asset.json";
 import dpExhibitD from "@/assets/exhibits/data-pollution/exhibit-d-duckai-german-brand-confusion.png.asset.json";
+import dpExhibitE from "@/assets/exhibits/data-pollution/crunchbase-serp-root-domain-misuse.png.asset.json";
 
 const IMG: Record<string, string> = {
   "kitchen-cabinets": kitchencabinetsImg,
@@ -341,6 +342,17 @@ const rawBlogPosts: BlogPost[] = [
             "src": dpExhibitD.url,
             "alt": "Duck.ai German-language chat response summarizing weddings.io as a SaaS or Marketplace platform with EyeSpyR visual verification.",
             "caption": "Exhibit D — Duck.ai, German-language response, captured 2026-07-23. Source: DuckDuckGo AI."
+          }
+        },
+        {
+          "heading": "Exhibit E — Misuse of the weddings.io root domain in the Crunchbase SERP",
+          "paragraphs": [
+            "Google SERP for the query \"weddings.io crunchbase,\" captured July 23, 2026. The organic Crunchbase result and Google's AI Overview both attach the weddings.io root domain to a Toronto-headquartered \"AI wedding platform\" with phone number 1-705-794-4710 — a description and contact that have no connection to the operator of weddings.io. This is the clearest form of root-domain misuse we have documented: a DR90+ directory profile has been permitted to bind an unrelated entity's marketing narrative to our domain string, and Google is now surfacing that binding as a first-page answer and as an AI-generated summary. The domain weddings.io is owned and operated by Industry Army Marketing (Langley, BC); it is not a Toronto AI wedding platform and it does not use the 705 area code. IAM disavows this association in full."
+          ],
+          "image": {
+            "src": dpExhibitE.url,
+            "alt": "Google search results page for the query 'weddings.io crunchbase' showing a Crunchbase result titled 'Weddings.IO - Crunchbase Company Profile & Funding' and an AI Overview describing weddings.io as a private Canadian AI-powered wedding platform headquartered in Toronto, Ontario.",
+            "caption": "Exhibit E — Google SERP + AI Overview, captured 2026-07-23. Source: Google Search (google.com/search?q=weddings.io+crunchbase)."
           }
         },
         {
