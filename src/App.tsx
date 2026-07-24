@@ -246,6 +246,7 @@ const App = () => (
           <Route path="/domain-setup" element={<DomainSetup />} />
           <Route path="/weddings-ecosystem" element={<WeddingsEcosystem />} />
           <Route path="/sitemap" element={<SiteMap />} />
+          <Route path="/case-studies" element={<CaseStudies />} />
           {/* Case study consolidated into the standard blog roll — 301 to the blog post. */}
           <Route
             path="/case-studies/brand-defense-global-territory"
