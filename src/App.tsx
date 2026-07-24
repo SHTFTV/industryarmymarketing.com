@@ -1,5 +1,5 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { MotionConfig } from "framer-motion";
 import { flushCtaAttribution } from "@/lib/analytics";
@@ -245,19 +245,10 @@ const App = () => (
           <Route path="/domain-setup" element={<DomainSetup />} />
           <Route path="/weddings-ecosystem" element={<WeddingsEcosystem />} />
           <Route path="/sitemap" element={<SiteMap />} />
+          {/* Case study consolidated into the standard blog roll — 301 to the blog post. */}
           <Route
             path="/case-studies/brand-defense-global-territory"
-            element={
-              <StaticHtmlPage
-                src="/case-studies/brand-defense-global-territory.html"
-                title="Brand Defense in Global: The $10 Exclusive Territory Guide — weddings.io Case Study"
-                description="How Industry Army Marketing defended weddings.io (registered 2015) against the aiweddings.io AI-wrapper challenger — territory ownership, receipts, and the brand-defense model."
-                path="/case-studies/brand-defense-global-territory"
-                image={featuredBattle.url}
-                imageAlt="Weddings.io vs aiweddings.io — Industry Army Marketing Brand Defense case study"
-                jsonLd={caseStudyJsonLd}
-              />
-            }
+            element={<Navigate to="/blog/brand-defense-global-territory" replace />}
           />
           <Route
             path="/blog/aiweddings-tower-on-our-land"

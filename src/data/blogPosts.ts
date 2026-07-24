@@ -422,6 +422,100 @@ const rawBlogPosts: BlogPost[] = [
     }
   },
   {
+    "slug": "brand-defense-global-territory",
+    "brand": "weddings.io",
+    "trade": "Brand Protection",
+    "cardTitle": "Brand Defense: Global Territory — The Weddings.io Case Study",
+    "tradeShort": "brand protection",
+    "plural": "wedding technology platforms",
+    "video": null,
+    "imageKey": "weddings-battle",
+    "imageAlt": "Brand Defense: Global Territory — Weddings.io vs aiweddings.io case study hero for Industry Army Marketing.",
+    "faqHeading": "Frequently asked: Weddings.io brand defense and global territory",
+    "city": "Langley",
+    "province": "BC",
+    "category": "Company Case Study",
+    "date": "July 2026",
+    "publishedAt": "2026-07-26T20:00:00Z",
+    "title": "Brand Defense: Global Territory — The Weddings.io Case Study",
+    "metaDescription": "The full company case study on defending Weddings.io — 11 years of continuous ownership, 78 Wayback captures, WHOIS receipts, and the IAM brand-defense model behind the $10 exclusive territory playbook.",
+    "authorName": "Industry Army Marketing",
+    "excerpt": "The full company case study on defending Weddings.io: territory ownership, receipts, source links, and the IAM brand-defense model that turned a six-letter .io domain into the prototype for every $10 exclusive-territory platform in the Industry Army Marketing network.",
+    "pain": "Six-letter category-killer domains attract copycats, directory middlemen, and AI-generated conflation the moment the category heats up — unless prior use is documented and the brand is actively defended.",
+    "detail": "Weddings.io was registered May 13, 2015 and has been under continuous ownership by Industry Army Marketing ever since. This case study consolidates the WHOIS record, 78 Wayback Machine captures, the aiweddings.io challenge, and the brand-defense playbook — territory locking, EyeSpyR verification, TALC.tv content, and $10 flat slot pricing — that came out of it.",
+    "process": "The IAM brand-defense model pairs receipts (WHOIS, Wayback, dated marketing artifacts) with active technical safeguards (canonical headers, entity JSON-LD, disavowal directives) and a public editorial trail. Every playbook shipped across the network — from gasfitter.ca to plowwow.com — was pressure-tested on Weddings.io first.",
+    "faqs": [
+      { "q": "When was weddings.io registered?", "a": "May 13, 2015. ICANN WHOIS confirms continuous ownership through 2027. The Internet Archive has 78 Wayback captures dating back to May 17, 2013, making it one of the oldest continuously-held wedding-category domains on the public record." },
+      { "q": "What is the 'battle for the brand'?", "a": "Three fronts: defending the trademark against copycats like aiweddings.io, defending search rankings against directory middlemen that rent traffic, and defending each metro's single-planner slot from being diluted by pay-to-play upsells." },
+      { "q": "How does weddings.io connect to the rest of the IAM network?", "a": "Weddings.io was the prototype. Every IAM playbook — territory locking, EyeSpyR verification, TALC.tv content, and $10 flat slot pricing — was tested on weddings.io before rolling out across gasfitter.ca, plowwow.com, kongtractors.com, and the rest." },
+      { "q": "How much does a weddings.io territory cost?", "a": "$10 per slot per month, flat. Same 250 Scale as every IAM brand. No setup fees, no per-lead pricing, no upsells required." },
+      { "q": "Where can I read the companion editorial?", "a": "The companion editorial 'You Built Your Tower on Our Land' backs the case study with the public timeline and proof trail. Both pieces are cross-linked from this article's Sources section." }
+    ],
+    "cta": {
+      "eyebrow": "Company case study — brand defense",
+      "heading": "Want the receipts behind the IAM brand-defense model?",
+      "body": "The full evidence trail — WHOIS records, Wayback captures, and the companion aiweddings.io editorial — is linked in the Sources section below. For partnership or verification inquiries, reach Industry Army Marketing directly.",
+      "buttonText": "Contact IAM — partnerships@industryarmymarketing.com",
+      "buttonHref": "mailto:partnerships@industryarmymarketing.com?subject=weddings.io%20brand%20defense%20case%20study"
+    },
+    "richContent": {
+      "intro": "Weddings.io is the prototype for the Industry Army Marketing brand-defense model. Registered May 13, 2015 and continuously operated since, it survived three copycat attacks — including the aiweddings.io AI-wrapper challenge — and became the pattern every other IAM territory platform is built on. This is the consolidated company case study: the receipts, the playbook, and the reason $10 exclusive-territory pricing exists at all.",
+      "sections": [
+        {
+          "heading": "1. The Receipts: 11 Years, 78 Captures, One Owner",
+          "paragraphs": [
+            "ICANN WHOIS confirms weddings.io was registered on May 13, 2015 and has been under continuous ownership by Industry Army Marketing through 2027.",
+            "The Internet Archive Wayback Machine holds 78 captures of the domain dating back to May 17, 2013 (under a prior placeholder), making weddings.io one of the oldest continuously-held wedding-category domains on the public record.",
+            "Continuous operation is not a marketing claim — it is a verifiable pattern established through domain records, archived platform states, marketing artifacts, and a decade of investment in technology, brand, and community."
+          ]
+        },
+        {
+          "heading": "2. Why .io Instead of .com",
+          "paragraphs": [
+            "Weddings.com was locked up by a legacy directory in the late 1990s and effectively abandoned as an editorial property.",
+            "The .io TLD signals modern tech, ranks identically for high-intent 'weddings + city' search, and was uncontested when Industry Army Marketing filed in 2015 — three years before the AI wave that would make short, memorable .io names a six-figure category."
+          ]
+        },
+        {
+          "heading": "3. The aiweddings.io Challenge",
+          "paragraphs": [
+            "In 2024 an AI-wrapper competitor, aiweddings.io, launched using a near-identical brand, near-identical positioning, and copy that echoed Weddings.io's own materials. The companion editorial 'You Built Your Tower on Our Land' documents the timeline and the public proof trail in detail.",
+            "The IAM response was not to fight it in the SERP alone. It was to document prior use, publish the receipts, harden the technical safeguards (canonical headers, entity JSON-LD, active disavowal directives), and let the record speak."
+          ]
+        },
+        {
+          "heading": "4. The Brand-Defense Playbook",
+          "paragraphs": [
+            "Territory locking: one planner slot per metro, capped by population. No slot resale. No duplicate leads. This is the same 250 Scale used across every IAM brand.",
+            "EyeSpyR verification: every listed vendor is verified against a real-world footprint before a slot is issued.",
+            "TALC.tv content engine: dedicated content tracks per culture and per metro so the brand ranks for the queries real customers use.",
+            "$10 flat slot pricing: same price everywhere, no upsells, no per-lead pricing. The pricing itself is a defense — it makes pay-to-play middleman economics uncompetitive."
+          ]
+        },
+        {
+          "heading": "5. Global Territory: 1,018 Cities, 24 Countries",
+          "paragraphs": [
+            "Weddings.io is now live across 1,018 cities in 24 countries — the largest territory map in the IAM network. Slots open in priority metros first and are capped at 3 to 10 verified planners per city depending on population.",
+            "Nine cultural tracks are supported: South Asian, Persian, Chinese, Italian, Jewish, Christian, Hindu, Sikh, and secular. Each culture gets a dedicated TALC.tv content track and localised vendor pages."
+          ]
+        },
+        {
+          "heading": "Editorial Note",
+          "paragraphs": [
+            "This case study consolidates the public record on Weddings.io and the IAM brand-defense model. Nothing in this article is legal advice or a judicial determination of any disputed matter. Industry Army Marketing expressly reserves all rights and remedies available under applicable law."
+          ]
+        }
+      ],
+      "sources": [
+        { "label": "You Built Your Tower on Our Land — companion editorial", "href": "/blog/aiweddings-tower-on-our-land" },
+        { "label": "Weddings.io: The Public Record of Prior Use, Continuous Operation, and Brand Authority", "href": "/blog/weddings-io-public-record-prior-use-continuous-operation" },
+        { "label": "Official Entity Disambiguation Notice — Disavowal of Unaffiliated Third-Party Registry Profiles", "href": "/blog/official-entity-disambiguation-notice-crunchbase-third-party-registries" },
+        { "label": "Weddings.io — official platform (sole authoritative source)", "href": "https://weddings.io" },
+        { "label": "IAM master pricing — The 250 Scale", "href": "/pricing" }
+      ]
+    }
+  },
+  {
     "slug": "canadas-bridal-show-did-the-right-thing-weddings-io",
     "brand": "weddings.io",
     "trade": "Brand Protection",

@@ -11,7 +11,6 @@ import { useBlogPostsOverlay } from "@/hooks/useBlogPostsOverlay";
 import { useMemo, useCallback, useEffect, useRef, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Search, X, ChevronLeft, ChevronRight } from "lucide-react";
-import FeaturedCaseStudy from "@/components/FeaturedCaseStudy";
 import { trackEvent, BLOG_EVENTS } from "@/lib/analytics";
 
 const PAGE_SIZE = 12;
@@ -22,15 +21,11 @@ const Blog = () => {
   // let admin display_order + is_featured override the static ordering.
   // On first render (SSR/prerender/hydration), falls back to the static
   // list so crawler HTML matches what react-snap captured.
-  const { posts: overlayPosts, featured: dbFeatured } = useBlogPostsOverlay();
-  // Pin the Weddings.io case study as featured for 3 months, then rotate.
-  const PINNED_SLUG = "battle-for-the-brand-weddings-io";
-  const PIN_UNTIL = new Date("2026-09-26T00:00:00Z");
-  const pinActive = Date.now() < PIN_UNTIL.getTime();
-  // Precedence: admin-featured (DB) → time-limited pin → newest published.
-  const pinnedPost = pinActive ? overlayPosts.find((p) => p.slug === PINNED_SLUG) : undefined;
-  const featured = dbFeatured ?? pinnedPost ?? overlayPosts[0] ?? blogPosts[0];
-  const rest = overlayPosts.filter((p) => p.slug !== featured.slug);
+  const { posts: overlayPosts } = useBlogPostsOverlay();
+  // Uniform grid: no featured card, no pinned override — every post appears
+  // in the same left-to-right chronological roll (newest first).
+  const featured = overlayPosts[0] ?? blogPosts[0];
+  const rest = overlayPosts;
   // Persist search state in URL so filtered views are shareable and
   // survive page reloads. Empty/default values are stripped so the URL
   // stays clean ("/blog" instead of "/blog?q=&city=all&category=all").
@@ -126,25 +121,6 @@ const Blog = () => {
     );
     trackEvent(BLOG_EVENTS.clearFilters);
   }, [setSearchParams]);
-  const companyCaseStudies = [
-    {
-      label: "Company Case Study",
-      title: "Brand Defense: Global Territory",
-      description:
-        "The full company case study on defending Weddings.io, territory ownership, receipts, source links, and the IAM brand-defense model.",
-      href: "/case-studies/brand-defense-global-territory",
-      image: featured.image,
-    },
-    {
-      label: "Companion Blog",
-      title: "You Built Your Tower on Our Land",
-      description:
-        "The aiweddings.io challenge article that backs the case study with the public timeline and proof trail.",
-      href: "/blog/aiweddings-tower-on-our-land",
-      image: featured.image,
-    },
-  ];
-
   const cities = useMemo(
     () => Array.from(new Set(blogPosts.map((p) => p.city))).sort(),
     []
@@ -249,51 +225,9 @@ const Blog = () => {
         highlight="Blog"
         description="Deep dives on $10 exclusive territory marketing — one guide per trade domain. SEO, AEO, GEO, and the math behind the model."
       />
-      <FeaturedCaseStudy />
-
       <section className="py-16">
         <div className="container mx-auto px-4 max-w-6xl">
-          <div>
-            <p className="text-primary uppercase tracking-[0.3em] text-xs font-semibold mb-3">
-              Company Case Study Blog
-            </p>
-            <div className="grid md:grid-cols-2 gap-5">
-              {companyCaseStudies.map((item) => (
-                <article
-                  key={item.href}
-                  className="rounded-lg bg-card border border-primary/30 hover:border-primary/60 transition-colors overflow-hidden flex flex-col"
-                >
-                  <Link to={item.href} className="block">
-                    <img
-                      src={item.image}
-                      alt={`${item.title} — Industry Army Marketing case study`}
-                      loading="lazy"
-                      width={1280}
-                      height={720}
-                      className="w-full aspect-video object-cover"
-                    />
-                  </Link>
-                  <div className="p-5 flex flex-col flex-1">
-                    <p className="text-primary text-xs uppercase tracking-widest mb-2">{item.label}</p>
-                    <h3 className="font-display text-2xl text-foreground mb-3 leading-tight">
-                      <Link to={item.href} className="hover:text-primary transition-colors">
-                        {item.title}
-                      </Link>
-                    </h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed mb-5">{item.description}</p>
-                    <Link
-                      to={item.href}
-                      className="text-primary text-xs uppercase tracking-widest mt-auto self-start hover:underline"
-                    >
-                      Open case study →
-                    </Link>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-
-          <p className="text-primary uppercase tracking-[0.3em] text-xs font-semibold mt-16 mb-3">All Intel</p>
+          <p className="text-primary uppercase tracking-[0.3em] text-xs font-semibold mb-3">All Intel</p>
           <h3 className="font-display text-3xl text-foreground mb-8">Every trade. Every territory.</h3>
 
           {/* Quick-filter chips — one-click browsing for common categories,
