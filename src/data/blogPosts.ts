@@ -69,6 +69,7 @@ const canadianBridalShowImg = canadianBridalShowAsset.url;
 import decadeContinuousAsset from "@/assets/blog/decade-continuous-operation-weddings-io.jpg.asset.json";
 const decadeContinuousImg = decadeContinuousAsset.url;
 import entityDisambigCrunchbaseImg from "@/assets/blog/entity-disambiguation-crunchbase.jpg";
+import dataPollutionImg from "@/assets/blog/data-pollution-inaccurate-corporate-profiles.jpg";
 
 const IMG: Record<string, string> = {
   "kitchen-cabinets": kitchencabinetsImg,
@@ -108,6 +109,7 @@ const IMG: Record<string, string> = {
   "canadian-bridal-show-thank-you": canadianBridalShowImg,
   "decade-continuous-operation-weddings-io": decadeContinuousImg,
   "entity-disambiguation-crunchbase": entityDisambigCrunchbaseImg,
+  "data-pollution-inaccurate-corporate-profiles": dataPollutionImg,
 };
 
 export interface BlogPost {
@@ -219,6 +221,96 @@ export const postTime = (post: Pick<BlogPost, "slug" | "publishedAt">): number =
 export const compareBlogPostsByNewest = (a: BlogPost, b: BlogPost) => postTime(b) - postTime(a);
 
 const rawBlogPosts: BlogPost[] = [
+  {
+    "slug": "exposing-data-pollution-inaccurate-corporate-profiles",
+    "brand": "weddings.io",
+    "trade": "Entity SEO",
+    "cardTitle": "Exposing Data Pollution: Why Inaccurate Corporate Profiles Hurt the Entire Search Ecosystem",
+    "tradeShort": "entity SEO",
+    "plural": "brand owners and SEO teams",
+    "video": null,
+    "imageKey": "data-pollution-inaccurate-corporate-profiles",
+    "imageAlt": "Data pollution across AI answer engines — corrupted corporate profile data flowing from a high-authority directory into Google, Bing, and Duck.ai knowledge graphs.",
+    "faqHeading": "Frequently asked: data pollution, entity resolution, and AEO",
+    "city": "Langley",
+    "province": "BC",
+    "category": "Press Releases / Notices",
+    "date": "July 2026",
+    "publishedAt": "2026-07-29T15:00:00Z",
+    "title": "Exposing Data Pollution: Why Inaccurate Corporate Profiles Hurt the Entire Search Ecosystem",
+    "metaDescription": "High-authority directories like Crunchbase act as seed nodes for AI answer engines. When their profile data is wrong, the pollution cascades into Google, Bing, and Duck.ai — here's why NAP+D integrity matters more than nofollow.",
+    "authorName": "Colin Hamilton",
+    "excerpt": "Crunchbase, Wikipedia, and LinkedIn are the ground-truth data layer for AI Answer Engines. When they host incorrect corporate data, the pollution cascades across the entire web — and nofollow does not save you.",
+    "pain": "Directory-hosted misinformation on DR90+ seed sites gets ingested by AI answer engines as fact, overriding a brand's own schema and knowledge-graph signals.",
+    "detail": "Search is transitioning from keyword indexing to AI-driven Answer Engine Optimization (AEO). AEO runs on entity resolution — triangulated NAP+D signals across authoritative nodes. When Crunchbase, LinkedIn, or Wikipedia hold flawed data, they broadcast that misinformation directly into Google, Bing, and Duck.ai knowledge graphs.",
+    "process": "The IAM entity-defense model pairs on-domain Organization JSON-LD with a public disavowal editorial trail, high-authority directory audits, and escalated support requests when directories refuse to correct verified brand owners' records.",
+    "faqs": [
+      { "q": "What is a 'seed site' in AEO?", "a": "A seed site is a high-authority platform (Crunchbase, Wikipedia, LinkedIn — Domain Rating 90+) whose data is implicitly trusted by search crawlers and AI models. Facts on seed sites propagate downstream into knowledge graphs and answer-engine responses." },
+      { "q": "Does rel=\"nofollow\" protect me from bad data on a directory?", "a": "No. Nofollow may limit raw PageRank flow, but AEO runs on entity corroboration — matching Name, Address, Domain, and Phone across authoritative nodes. A nofollow link on Crunchbase still teaches AI models what your entity supposedly is." },
+      { "q": "Why does one bad Crunchbase entry override my own site's schema?", "a": "AI answer engines weight sources by domain authority. A DR90+ directory outweighs your DR40 startup site during entity resolution, so incorrect data on the directory anchors the wrong facts into the knowledge graph." },
+      { "q": "How do I audit my entity web?", "a": "Query your brand across Duck.ai, ChatGPT, Perplexity, and Gemini and compare the returned facts against your official Organization JSON-LD. Any drift indicates a polluted node upstream — usually a directory profile — that needs manual correction." },
+      { "q": "What if directory support refuses to fix a verified inaccuracy?", "a": "Escalate through documented channels, request manual review with proof of ownership, and — where support still refuses — publish the correspondence as public accountability. Public editorial pressure has repeatedly succeeded where ticket queues have not." }
+    ],
+    "cta": {
+      "eyebrow": "Entity SEO — brand-owner advisory",
+      "heading": "Audit your entity web before AI answer engines anchor bad facts.",
+      "body": "IAM runs entity-resolution audits across Crunchbase, LinkedIn, Google Knowledge Panel, Bing, and Duck.ai to surface polluted profile data before it cascades into AI answers. Reach out for a fixed-scope audit or partnership review.",
+      "buttonText": "Contact IAM — partnerships@industryarmymarketing.com",
+      "buttonHref": "mailto:partnerships@industryarmymarketing.com?subject=Entity%20web%20audit%20request"
+    },
+    "richContent": {
+      "intro": "When managing digital assets, most founders and SEO specialists focus on backlinks, speed, and content architecture. But as search transitions from keyword indexers to AI-driven Answer Engines (AEO), another layer has become critical: Entity Resolution. Platforms like Crunchbase, Wikipedia, and LinkedIn aren't just business directories — they act as the ground-truth data layer for search engines, knowledge graphs, and AI models including Duck.ai, Bing, and Google. When high-authority platforms host incorrect corporate data, it creates a cascade of data pollution across the entire web.",
+      "sections": [
+        {
+          "heading": "1. The Power of High-Authority Seed Sites",
+          "paragraphs": [
+            "Crunchbase sits at a Domain Authority / Rating of 90+. In technical SEO, sites of this caliber act as \"seed nodes.\" Search engine crawlers and AI web scrapers treat data from these nodes with a high degree of implicit trust.",
+            "When an AI engine processes queries about a brand — like Weddings.io — it triangulates information across multiple platforms: your official domain and schema markup (Organization JSON-LD), high-authority directory profiles (Crunchbase, LinkedIn), and knowledge graphs across Google, DuckDuckGo, and Bing.",
+            "If the profile on a top-tier directory contains incorrect location data, wrong corporate structures, or inaccurate ownership details, AI engines ingest those hallucinations and present them as fact."
+          ]
+        },
+        {
+          "heading": "2. Why \"Nofollow\" Doesn't Protect You from Bad Data",
+          "paragraphs": [
+            "A common misconception in basic SEO is that if a link on a directory is marked rel=\"nofollow\", it doesn't matter for rankings. While a nofollow link may not pass raw PageRank equity in the traditional sense, AEO operates on entity matching, not just link juice.",
+            "Entity corroboration: AI systems look for consistent Name, Address, and Domain (NAP+D) signals across authoritative nodes.",
+            "Knowledge graph contamination: inaccurate data on Crunchbase overrides weaker signals on smaller sites, anchoring false facts directly into search index profiles like Duck.ai and Bing.",
+            "Brand confusion: when users or algorithms search for your entity, misaligned metadata weakens your brand's digital footprint."
+          ]
+        },
+        {
+          "heading": "3. Case Study: Weddings.io vs. Standardized Support",
+          "paragraphs": [
+            "During a recent attempt to correct inaccurate company details and geographic targeting on Crunchbase for Weddings.io, standard support channels — including responses from support reps like Khalid — pushed back with boilerplate answers rather than verifying corporate identity.",
+            "The data mismatch is measurable across nodes: Google Search resolves Weddings.io cleanly against the official domain's Organization schema, while Duck.ai and Bing surface a corrupted, misaligned entity derived from the unverified Crunchbase entry.",
+            "When a platform with a 90+ DR holds flawed data, they aren't just hosting a bad page — they are actively broadcasting misinformation to the search algorithms that index the web."
+          ]
+        },
+        {
+          "heading": "4. The Solution: Enforcing Data Integrity",
+          "paragraphs": [
+            "Directory platforms cannot have it both ways. They cannot monetize high-authority business listings while ignoring brand verification requests from actual domain owners.",
+            "Audit your entity web: regularly check how AI models (Duck.ai, ChatGPT, Perplexity, Gemini) render your brand facts.",
+            "Push for support escalation: demand manual review when automated tools or low-tier support refuse to fix bad data on DR90+ nodes.",
+            "Public accountability: if support refuses to update inaccurate entity records, document the communication publicly to protect your brand's digital authority."
+          ]
+        },
+        {
+          "heading": "Editorial Note",
+          "paragraphs": [
+            "This article reflects the position of Industry Army Marketing based on information available at the time of publication. Nothing here should be construed as legal advice or a judicial determination of any disputed matter. IAM expressly reserves all rights and remedies available under applicable law."
+          ]
+        }
+      ],
+      "sources": [
+        { "label": "Official Entity Disambiguation Notice — Crunchbase & Third-Party Registries", "href": "/blog/official-entity-disambiguation-notice-crunchbase-third-party-registries" },
+        { "label": "Weddings.io — The Public Record of Prior Use and Continuous Operation", "href": "/blog/weddings-io-public-record-prior-use-continuous-operation" },
+        { "label": "Weddings.io Entity Conflation — A Case Study", "href": "/blog/weddings-io-entity-conflation-case-study" },
+        { "label": "Beyond the Domain Name — Entity Authority in Modern SEO", "href": "/blog/beyond-domain-name-entity-authority-modern-seo" },
+        { "label": "ICANN WHOIS — weddings.io", "href": "https://www.whois.com/whois/weddings.io" }
+      ]
+    }
+  },
   {
     "slug": "official-entity-disambiguation-notice-crunchbase-third-party-registries",
     "brand": "weddings.io",

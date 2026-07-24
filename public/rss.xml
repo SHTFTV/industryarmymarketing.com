@@ -6,13 +6,22 @@
     <atom:link href="https://industryarmymarketing.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>2,000-word guides on exclusive $10 territory marketing for trade contractors and service pros across Canada.</description>
     <language>en-ca</language>
-    <lastBuildDate>Fri, 24 Jul 2026 00:43:03 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 24 Jul 2026 01:00:33 GMT</lastBuildDate>
     <generator>Industry Army Marketing build pipeline</generator>
     <image>
       <url>https://industryarmymarketing.com/og-image.jpg</url>
       <title>Industry Army Marketing — Intel Blog</title>
       <link>https://industryarmymarketing.com/blog</link>
     </image>
+    <item>
+      <title>Exposing Data Pollution: Why Inaccurate Corporate Profiles Hurt the Entire Search Ecosystem</title>
+      <link>https://industryarmymarketing.com/blog/exposing-data-pollution-inaccurate-corporate-profiles</link>
+      <guid isPermaLink="true">https://industryarmymarketing.com/blog/exposing-data-pollution-inaccurate-corporate-profiles</guid>
+      <pubDate>Wed, 29 Jul 2026 15:00:00 GMT</pubDate>
+      <category>Press Releases / Notices</category>
+      <description>High-authority directories like Crunchbase act as seed nodes for AI answer engines. When their profile data is wrong, the pollution cascades into Google, Bing, and Duck.ai — here&apos;s why NAP+D integrity matters more than nofollow.</description>
+      <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
+    </item>
     <item>
       <title>Official Entity Disambiguation Notice: Disavowal of Unaffiliated Profiles on Third-Party Registries</title>
       <link>https://industryarmymarketing.com/blog/official-entity-disambiguation-notice-crunchbase-third-party-registries</link>
