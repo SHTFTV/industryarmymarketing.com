@@ -11,7 +11,6 @@ import { useBlogPostsOverlay } from "@/hooks/useBlogPostsOverlay";
 import { useMemo, useCallback, useEffect, useRef, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Search, X, ChevronLeft, ChevronRight } from "lucide-react";
-import FeaturedCaseStudy from "@/components/FeaturedCaseStudy";
 import { trackEvent, BLOG_EVENTS } from "@/lib/analytics";
 
 const PAGE_SIZE = 12;
@@ -126,25 +125,6 @@ const Blog = () => {
     );
     trackEvent(BLOG_EVENTS.clearFilters);
   }, [setSearchParams]);
-  const companyCaseStudies = [
-    {
-      label: "Company Case Study",
-      title: "Brand Defense: Global Territory",
-      description:
-        "The full company case study on defending Weddings.io, territory ownership, receipts, source links, and the IAM brand-defense model.",
-      href: "/case-studies/brand-defense-global-territory",
-      image: featured.image,
-    },
-    {
-      label: "Companion Blog",
-      title: "You Built Your Tower on Our Land",
-      description:
-        "The aiweddings.io challenge article that backs the case study with the public timeline and proof trail.",
-      href: "/blog/aiweddings-tower-on-our-land",
-      image: featured.image,
-    },
-  ];
-
   const cities = useMemo(
     () => Array.from(new Set(blogPosts.map((p) => p.city))).sort(),
     []
