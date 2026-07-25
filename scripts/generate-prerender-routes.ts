@@ -3,14 +3,20 @@
 // `reactSnap.include` field so every public route — including ones
 // react-snap's link crawler might miss — is rendered to static HTML.
 
-import { readFileSync, writeFileSync } from "fs";
+import { readdirSync, readFileSync, writeFileSync } from "fs";
 import { resolve } from "path";
 import { fetchPublishedBlogPosts } from "./lib/blog-source";
 
 const cities = ["vancouver", "surrey", "calgary", "edmonton", "toronto", "kelowna"];
 const localCities = ["vancouver", "surrey", "langley"];
 const niches = ["steel-stud", "mining-logistics"];
-const trades = ["plumbing", "roofing", "electrical", "hvac", "framing", "demolition", "excavation", "painting"];
+const contractorRoutes = readdirSync(resolve("src/data/contractors"))
+  .filter((file) => file.endsWith(".ts"))
+  .map((file) => file.replace(/\.ts$/, ""))
+  .map((name) => name.split("__"))
+  .filter((parts): parts is [string, string] => parts.length === 2 && parts.every(Boolean))
+  .map(([trade, city]) => `/contractors/${trade}/${city}`)
+  .sort();
 
 // Regex-parse slugs from blogPosts.ts (same approach as generate-sitemap.ts)
 const blogPostsSource = readFileSync(resolve("src/data/blogPosts.ts"), "utf8");
@@ -98,7 +104,7 @@ const routes: string[] = [
   ...niches.map((n) => `/niches/${n}`),
   ...localCities.map((c) => `/local/${c}`),
   ...cities.map((c) => `/cities/${c}`),
-  ...trades.map((t) => `/contractors/${t}`),
+  ...contractorRoutes,
   ...remainingBlogSlugs.map((s) => `/blog/${s}`),
 ];
 
