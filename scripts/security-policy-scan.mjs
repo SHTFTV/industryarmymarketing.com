@@ -6,6 +6,27 @@
 
 import { readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
+import { execSync } from "node:child_process";
+function changedMigrations() {
+  // On PRs / CI, restrict "new" checks to migrations touched vs. main.
+  try {
+    const base = process.env.GITHUB_BASE_REF
+      ? `origin/${process.env.GITHUB_BASE_REF}`
+      : "origin/main";
+    const out = execSync(`git diff --name-only --diff-filter=AM ${base}...HEAD`, {
+      encoding: "utf8",
+      stdio: ["ignore", "pipe", "ignore"],
+    });
+    return new Set(
+      out
+        .split("\n")
+        .filter((p) => p.startsWith("supabase/migrations/") && p.endsWith(".sql"))
+        .map((p) => p.replace("supabase/migrations/", "")),
+    );
+  } catch {
+    return null; // fall back to "no scope" — treat every file as pre-existing
+  }
+}
 
 const MIGRATIONS = join(process.cwd(), "supabase", "migrations");
 const HISTORY = join(process.cwd(), "public", "security", "findings-history.json");
@@ -21,6 +42,8 @@ function scanMigrations() {
   const combined = files
     .map((f) => readFileSync(join(MIGRATIONS, f), "utf8"))
     .join("\n\n");
+
+  const changed = changedMigrations();
 
   // 1. Forbid reintroduction of the fixed host_allowlist_requests SELECT true policy
   const permissiveAllowlist =
@@ -38,6 +61,9 @@ function scanMigrations() {
 
   // 2. Generic guard: any new public-schema table must GRANT within the same migration
   for (const f of files) {
+    // Only block on brand-new tables introduced in this PR;
+    // legacy migrations without GRANTs are pre-existing and already deployed.
+    if (changed && !changed.has(f)) continue;
     const sql = readFileSync(join(MIGRATIONS, f), "utf8");
     const createMatches = [...sql.matchAll(/CREATE TABLE\s+public\.(\w+)/gi)];
     for (const m of createMatches) {
