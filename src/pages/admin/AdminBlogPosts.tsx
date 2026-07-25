@@ -100,11 +100,20 @@ const AdminBlogPosts = () => {
 
   const patchRow = async (id: string, patch: Partial<Omit<BlogRow, "data">> & { data?: Json }) => {
     const prev = rows;
+    const before = prev.find((r) => r.id === id);
     setRows(rows.map(r => r.id === id ? { ...r, ...patch } : r));
     const { error } = await supabase.from("blog_posts").update(patch).eq("id", id);
     if (error) {
       setRows(prev);
       toast({ title: "Update failed", description: error.message, variant: "destructive" });
+      return;
+    }
+    // Auto-submit when a post transitions to published via the inline switch.
+    if (patch.is_published === true && before && before.is_published !== true) {
+      const url = `https://www.industryarmymarketing.com/blog/${before.slug}`;
+      supabase.functions.invoke("submit-url", {
+        body: { urls: [url], source: "auto-publish-toggle" },
+      });
     }
   };
 
