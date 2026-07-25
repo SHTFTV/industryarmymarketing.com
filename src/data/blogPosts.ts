@@ -746,6 +746,12 @@ const rawBlogPosts: BlogPost[] = [
       "intro": "Weddings.io is not a new brand, a speculative name, or an opportunistic acquisition. It is a decade-long, continuously operated platform with a public, verifiable record of prior use, marketing investment, and brand authority in the wedding technology space. This article consolidates the public record and reaffirms Industry Army Marketing's formal position on the Weddings.io brand and its intellectual property.",
       "sections": [
         {
+          "heading": "Editorial scope and disclaimer",
+          "paragraphs": [
+            "This article states Industry Army Marketing's factual position that the domain weddings.io has been continuously registered and operated by IAM since May 13, 2015, and describes the goodwill accrued in that identifier. It does not assert exclusive rights in the dictionary word 'weddings', does not allege trademark infringement or wrongful intent by any named third party, and is not legal advice. Every reference to a third party is intended neutrally as identification of a distinct legal person. Industry Army Marketing has no record of any corporate affiliation, licensing agreement, or reseller relationship with any variant-suffix registrant, and none has been asserted to us."
+          ]
+        },
+        {
           "heading": "A Decade of Continuous Operation",
           "paragraphs": [
             "Weddings.io has been continuously operated since 2015. Continuous operation is not a marketing claim — it is a verifiable pattern established through domain records, archived platform states, marketing artifacts, third-party mentions, and a decade of ongoing investment in technology, brand, and community.",
