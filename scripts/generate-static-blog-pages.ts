@@ -383,7 +383,11 @@ for (const root of outputRoots) {
     writeFileSync(resolve(root, `${post.slug}.html`), html);
   }
 
-  writeFileSync(resolve(root, "index.html"), renderListing());
+  // NOTE: intentionally do NOT write `${root}/index.html`.
+  // That path shadows the SPA fallback and would serve a bare, un-styled
+  // listing to real users visiting /blog (no nav, no images, no CSS).
+  // Crawlers discover posts via sitemap.xml, rss.xml, and llms.txt;
+  // individual /blog/<slug>/index.html files remain for AI readers.
 
   const stale = resolve(root, "open-letter-platforms-poisoning-ai-information-supply-chain.html.tmp");
   if (existsSync(stale)) rmSync(stale);
