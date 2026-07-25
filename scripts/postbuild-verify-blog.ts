@@ -33,8 +33,9 @@ for (const url of sample) {
   const slug = url.replace(`${CANONICAL_HOST}/blog/`, "").replace(/\/$/, "");
   for (const root of roots) {
     const exact = resolve(root, "blog", slug);
+    const directoryIndex = resolve(root, "blog", slug, "index.html");
     const html = resolve(root, "blog", `${slug}.html`);
-    const filePath = existsSync(exact) ? exact : existsSync(html) ? html : null;
+    const filePath = existsSync(directoryIndex) ? directoryIndex : existsSync(exact) && !statSync(exact).isDirectory() ? exact : existsSync(html) ? html : null;
     if (!filePath) {
       errors.push(`[${root}] missing static file for ${slug}`);
       continue;
