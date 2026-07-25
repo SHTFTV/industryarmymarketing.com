@@ -122,9 +122,11 @@
     "inlineCss": false,
     "puppeteerArgs": [
       "--no-sandbox",
-      "--disable-setuid-sandbox"
+      "--disable-setuid-sandbox",
+      "--disable-dev-shm-usage"
     ],
     "skipThirdPartyRequests": true,
+    "concurrency": 1,
     "crawl": false,
     "include": [
       "/",
