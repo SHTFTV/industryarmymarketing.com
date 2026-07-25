@@ -123,6 +123,7 @@ const IMG: Record<string, string> = {
   "data-pollution-inaccurate-corporate-profiles": dataPollutionImg,
   "category-domain-startup-strategy": categoryDomainImg,
   "wondergate-ppp-global-payment-layer": wondergatePppImg,
+  "open-letter-ai-supply-chain": openLetterImg,
 };
 
 export interface BlogPost {
