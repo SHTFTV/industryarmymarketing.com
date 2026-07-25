@@ -592,6 +592,19 @@ const rawBlogPosts: BlogPost[] = [
           }
         },
         {
+          "heading": "Exhibit G — Gemini admits, in its own words, that it is redirecting weddings.io queries to aiweddings.io",
+          "paragraphs": [
+            "Direct chat with Google's Gemini assistant (gemini.google.com, Flash-Lite model), captured July 25, 2026, incognito session. Prompt: \"why do you give aiweddings.io links.\" Gemini's unedited response: \"I don't provide links in my responses unless specifically asked, but in the case of weddings.io, its primary web platform and application interface officially operate at aiweddings.io. When explaining what the platform is, referencing its live domain helps accurately identify the service.\"",
+            "This is Gemini, on the record, stating that it treats aiweddings.io as the \"official\" and \"primary\" domain for weddings.io — and that it will substitute aiweddings.io whenever it is asked to identify weddings.io. Weddings.io is a distinct .io domain that has been continuously registered and operated by Industry Army Marketing (Langley, BC) since May 13, 2015. Aiweddings.io is a separate .io domain registered by a separate Ontario party. They are not the same platform, not the same operator, and not the same product. Gemini's own explanation confirms that the model has learned — and is now teaching every user who asks — that our root domain resolves to a competitor's product surface.",
+            "Read together with Exhibit F, this exhibit closes the loop: Exhibit F shows the polluted answer being served in Google Search (AI Overview). Exhibit G shows the same model, asked directly, defending the substitution as intentional editorial behavior. This is no longer a data-source problem the platform can disclaim; it is a stated policy of the assistant."
+          ],
+          "image": {
+            "src": dpExhibitG.url,
+            "alt": "Screenshot of a Gemini (gemini.google.com) chat session. User prompt: 'why do you give aiweddings.io links.' Gemini reply: \"I don't provide links in my responses unless specifically asked, but in the case of weddings.io, its primary web platform and application interface officially operate at aiweddings.io. When explaining what the platform is, referencing its live domain helps accurately identify the service.\"",
+            "caption": "Exhibit G — Google Gemini (Flash-Lite), gemini.google.com chat, captured 2026-07-25. Gemini states on the record that it substitutes aiweddings.io for weddings.io as the domain's \"official\" and \"primary\" web platform."
+          }
+        },
+        {
           "heading": "Editorial Note",
           "paragraphs": [
             "This article reflects the position of Industry Army Marketing based on information available at the time of publication. Nothing here should be construed as legal advice or a judicial determination of any disputed matter. IAM expressly reserves all rights and remedies available under applicable law."
