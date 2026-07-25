@@ -231,6 +231,103 @@ export const compareBlogPostsByNewest = (a: BlogPost, b: BlogPost) => postTime(b
 
 const rawBlogPosts: BlogPost[] = [
   {
+    "slug": "wondergate-ppp-pricing-global-wedding-payment-layer",
+    "brand": "weddings.io",
+    "trade": "Payment Infrastructure",
+    "cardTitle": "The Payment Layer Nobody Built — WonderGate, PPP Pricing & the Global Wedding Market",
+    "tradeShort": "payment infrastructure",
+    "plural": "founders, operators, and industry builders",
+    "video": null,
+    "imageKey": "wondergate-ppp-global-payment-layer",
+    "imageAlt": "Editorial illustration of a global payment network — a stylized dark tactical globe with interconnected currency nodes ($, €, ¥, ₹, £) representing cross-border wedding vendor commerce.",
+    "faqHeading": "Frequently asked: cross-border payments, PPP pricing, and the global wedding market",
+    "city": "Langley",
+    "province": "BC",
+    "category": "Fintech",
+    "date": "July 2026",
+    "publishedAt": "2026-07-31T15:00:00Z",
+    "title": "The Payment Layer Nobody Built: WonderGate, PPP Pricing, and the Global Wedding Market",
+    "metaDescription": "WonderGate launched a single-API cross-border payment platform covering 100+ global payment methods. Here is why that matters for the global wedding vendor market — and why PPP pricing changes who gets to participate.",
+    "authorName": "WeddingSaaS Editorial",
+    "excerpt": "WonderGate's launch is a cross-border commerce infrastructure story with direct application to the wedding industry's oldest structural problem: global vendors transacting frictionlessly with global clients — and PPP pricing changes who gets to participate.",
+    "pain": "Every cross-border handshake in the wedding supply chain leaks margin through FX markups, cross-border interchange fees, fraud holds, and delayed settlements — a structural tax on the vendors least equipped to absorb it.",
+    "detail": "Legacy card networks were built for domestic commerce, not for destination weddings where the couple, the venue, and specialist vendors sit across multiple jurisdictions. WonderGate's single-API platform — 100+ payment methods, 200+ countries, HK MSO + US/Canada MSB licenses — is the infrastructure layer the global wedding vendor market has needed for years.",
+    "process": "Weddings.io Technologies pairs category-domain distribution authority with PPP-adjusted pricing and WonderGate-class payment rails so vendors in Tier-2 and Tier-3 markets can participate at prices calibrated to local purchasing power, settled in local currency, without friction at any point in the chain.",
+    "faqs": [
+      { "q": "What did WonderGate actually launch?", "a": "A single-API cross-border payment platform providing access to 100+ global payment methods and local acquiring channels across 200+ countries. It operates under Hong Kong MSO and US/Canada MSB licenses, with automated reconciliation, multi-currency accounts, intelligent routing with 3DS strong authentication, and a real-time risk engine with AML compliance built in." },
+      { "q": "Why does this matter for weddings specifically?", "a": "Destination and multicultural weddings are inherently cross-border. The couple, the venue, and specialist vendors — caterers, planners, florists, videographers — frequently sit in different currencies. Legacy card rails penalise every transaction with FX markups and cross-border interchange. Infrastructure that settles locally removes that structural tax." },
+      { "q": "What is PPP pricing?", "a": "Purchasing Power Parity pricing aligns subscription rates to local economic conditions rather than imposing uniform Western prices globally. Spotify, Netflix, GitHub and Slack have all used it. No major wedding platform has — every significant player prices in USD or Tier-1 currency and applies it uniformly, pricing Tier-2 and Tier-3 vendors out of their own markets." },
+      { "q": "Why is being first on PPP a durable advantage?", "a": "A platform that already built its revenue model on flat Western pricing cannot easily introduce PPP tiers without exposing existing subscribers to confusion and its own cap table to revenue-compression concerns. A platform that builds PPP in from the outset has no such constraint — and the global entity signals compound in AI knowledge graphs." },
+      { "q": "How does this connect to the category-domain thesis?", "a": "Distribution infrastructure (category domains, AEO entity authority) is layer one. Payment infrastructure (cross-border rails, PPP pricing) is layer two. Application-layer features are layer three. Owning one and two lets you become the foundation feature-layer products eventually integrate with — an infrastructure moat that outlasts feature cycles." }
+    ],
+    "cta": {
+      "eyebrow": "For founders, operators & industry builders",
+      "heading": "Building on the infrastructure layer — or evaluating who is?",
+      "body": "Weddings.io Technologies operates the category-domain distribution layer and has committed to PPP pricing as a foundational architectural decision — not a feature to be added after revenue targets are met. If you are thinking about payment infrastructure, cross-border commerce, or where the wedding industry's next moat gets built, we are happy to compare notes.",
+      "buttonText": "Contact IAM — partnerships@industryarmymarketing.com",
+      "buttonHref": "mailto:partnerships@industryarmymarketing.com?subject=Payment%20infrastructure%20%2B%20PPP%20pricing"
+    },
+    "richContent": {
+      "intro": "The global wedding industry is, in structural terms, a cross-border payment problem that nobody in the sector has chosen to solve. This morning, a Hong Kong-based fintech called WonderGate launched a platform that directly addresses it — not for the wedding industry specifically, but for cross-border commerce broadly. The architecture is exactly the infrastructure layer the global wedding vendor market has needed for years and never had.",
+      "sections": [
+        {
+          "heading": "I. The Cross-Border Transaction Problem in Wedding Commerce",
+          "paragraphs": [
+            "A South Asian couple based in Toronto books a destination reception in Kerala. A Latin American planner coordinates vendors across three currencies. A videographer in Bali invoices a client in London. In each case, the financial infrastructure underneath that transaction is a legacy credit card network designed for domestic commerce — not for the way destination weddings actually work.",
+            "The result is predictable. Every cross-border handshake in the wedding supply chain leaks margin through FX conversion penalties, interchange fees, fraud flag delays, and outbound account holds. A regional florist in Southern Europe working with a North American couple loses a measurable percentage of every transaction to infrastructure that was never designed for her. Multiplied across hundreds of thousands of destination and multicultural wedding transactions annually, it represents a structural tax on the professionals least equipped to absorb it.",
+            "Destination weddings and multicultural wedding markets share a defining characteristic: the money rarely stays in one jurisdiction. The couple may be based in one country, the venue in another, and the specialist vendors — the South Asian caterer, the Caribbean live band, the Italian floral designer — distributed across several more.",
+            "Legacy payment gateways were not built for this. They were built for domestic card transactions processed through familiar banking networks. When those networks are stretched across borders, the costs accumulate quickly: forced double-conversion FX markups, high cross-border interchange fees, and delayed settlements that create working capital problems for smaller vendors. The vendors most exposed tend to be the ones operating in the destination markets and emerging economies that represent the fastest-growing segments of the global wedding industry."
+          ]
+        },
+        {
+          "heading": "II. What WonderGate Launched This Morning",
+          "paragraphs": [
+            "WonderGate describes itself as a fintech company specialising in cross-border payment infrastructure. It holds Hong Kong MSO and US/Canada MSB licenses — meaning it operates within established financial regulatory frameworks in multiple jurisdictions rather than as an unregulated payment intermediary.",
+            "The platform launched today is a single-API integration that provides access to over 100 global payment methods and local acquiring channels across 200+ countries. The practical implication is that a business integrating WonderGate's API can accept payments through regional bank rails, local digital wallets, and local real-time payment systems — not just international credit cards — without building separate integrations for each method.",
+            "The platform features automated reconciliation, multi-currency account management, intelligent transaction routing with 3DS strong authentication, and real-time fund flow visibility. For businesses currently managing cross-border payment complexity manually, the automation of reconciliation alone may represent significant operational savings.",
+            "For the wedding industry specifically, the most relevant capability is what WonderGate describes as virtual localised multi-currency receiving accounts. A coordinator in Bali or a venue in Southern Europe can receive funds in their local currency, held in a digital account, without forcing the North American couple to process a high-friction international card payment. The FX conversion happens at the infrastructure level, not at the point of consumer experience."
+          ]
+        },
+        {
+          "heading": "III. Why Infrastructure Moats Outlast Feature Cycles",
+          "paragraphs": [
+            "The wedding technology market has, for most of its history, competed on features. Better seating chart tools. Smarter RSVP flows. Prettier invitation templates. These are real improvements, but they share a structural vulnerability: they can be replicated within a product cycle by any well-funded competitor with a competent engineering team.",
+            "What cannot be replicated on a short timeline is infrastructure — the combination of category distribution authority, established search and AI entity graphs, and now, critically, payment rails that allow a global vendor network to transact without penalty. Each layer reinforces the others. A platform that owns the organic search entry point for the wedding industry and processes transactions frictionlessly in 200+ countries has built something that a feature-focused startup cannot match by shipping a better calendar integration.",
+            "The application layer is where features compete. The infrastructure layer is where categories are won. The distinction matters more in 2026 than it has at any point in the history of vertical SaaS.",
+            "The market dynamic this creates is significant for early-stage platforms in the wedding technology space. A startup building exclusively at the application layer — without distribution infrastructure or payment rails — faces high acquisition costs and a cap table that institutional due diligence will scrutinise closely. The platform that owns layers one and two does not need to win every feature competition. It needs to be the foundation that feature-layer products eventually integrate with."
+          ]
+        },
+        {
+          "heading": "IV. PPP Pricing — The First-Mover Advantage That Compounds",
+          "paragraphs": [
+            "Purchasing Power Parity pricing is not a new concept in software. Spotify, Netflix, GitHub, and Slack have all implemented regional pricing frameworks that reflect local economic conditions rather than imposing uniform Western subscription costs globally. The evidence from those implementations suggests that aligning price to purchasing power increases active user counts in emerging markets without meaningfully compressing revenue from higher-purchasing-power markets.",
+            "No major wedding platform has applied this framework. Every significant player in the space — without exception — prices in USD or another Tier-1 currency and applies that rate uniformly across all geographies. The practical result is that vendors in Latin America, Southeast Asia, Eastern Europe, and across the African continent are effectively priced out of the primary marketplace networks serving their markets.",
+            "The combination of WonderGate-class payment infrastructure with a formalised PPP pricing framework makes this correction possible at scale for the first time. A wedding marketplace can now offer a Tier-3 market vendor a localised subscription price, processed through a local payment method, settled in local currency — without friction at any point in the chain.",
+            "The competitive advantage of executing this framework first is that it is difficult to reverse-engineer after the fact. A platform that has already built its revenue model around flat Western pricing cannot easily introduce PPP tiers without exposing existing subscribers to confusion and its own cap table to revenue compression concerns. A platform that builds PPP into its architecture from the outset has no such constraint.",
+            "The AEO and search indexation implications are also meaningful. A global vendor network — vendors actively transacting across 200+ countries — generates localised entity signals that AI knowledge graphs weight heavily when building their understanding of which platforms are genuinely global versus which are nominally global but operationally concentrated in a handful of Western markets."
+          ]
+        },
+        {
+          "heading": "V. What This Means for the Wedding Technology Market",
+          "paragraphs": [
+            "WonderGate's launch today is not a wedding industry story. It is a cross-border commerce infrastructure story that has direct application to the wedding industry's longest-standing structural problem: the inability of global vendors to transact frictionlessly with global clients.",
+            "The platforms that recognise this application first and build payment infrastructure into their architecture — rather than treating it as a future consideration — will have a meaningful operational advantage over those that do not. The window for that first-mover position is narrower than it appears. Once a platform establishes both the distribution moat and the payment rails, the cost of replicating both compounds rapidly for any competitor attempting to follow.",
+            "Weddings.io Technologies has committed to PPP pricing as a foundational architectural decision — not a feature to be introduced after revenue targets are met. The infrastructure available today to execute that commitment, including platforms like WonderGate, makes that commitment operationally viable at global scale in a way it was not eighteen months ago.",
+            "Whether the thesis that distribution infrastructure plus payment rails plus PPP pricing creates a permanent category moat proves correct will ultimately be determined by the market and by the vendors who choose where to build their presence. What we can say with confidence today is that the infrastructure required to test that thesis has now arrived. The question is who builds on it first."
+          ]
+        }
+      ],
+      "sources": [
+        { "label": "WonderGate — Global Payment SaaS Platform launch, PR Newswire, July 24, 2026", "href": "https://www.prnewswire.com/" },
+        { "label": "WonderGate — Local Payment Methods: A Must-Have for Global Businesses in 2026", "href": "https://wondergate.io/" },
+        { "label": "The Business Research Company (2026) — Wedding Service Global Market Report ($300B+, 38% Asia Pacific)", "href": "https://www.thebusinessresearchcompany.com/" },
+        { "label": "Business Research Insights (2026) — Global wedding planning software market outlook, 15.5% CAGR through 2035", "href": "https://www.businessresearchinsights.com/" },
+        { "label": "Aventis Advisors (2026) — Median private SaaS M&A EV/Revenue multiples", "href": "https://aventis-advisors.com/" },
+        { "label": "Weddings.io Domain Provenance & Record of Record", "href": "/blog/record-record-domain-provenance-vs-generative-conflation" }
+      ]
+    }
+  },
+  {
     "slug": "does-your-startup-need-a-category-domain",
     "brand": "weddings.io",
     "trade": "Domain Strategy",
