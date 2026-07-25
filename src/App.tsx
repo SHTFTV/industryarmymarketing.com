@@ -57,6 +57,7 @@ import DofollowBacklinksService from "./pages/services/DofollowBacklinksService.
 import ServiceThankYou from "./pages/services/ServiceThankYou.tsx";
 import AdminServiceLeads from "./pages/admin/AdminServiceLeads.tsx";
 import AdminBlogPosts from "./pages/admin/AdminBlogPosts.tsx";
+import AdminSubmissionLog from "./pages/admin/AdminSubmissionLog.tsx";
 import CaseStudies from "./pages/CaseStudies.tsx";
 import SecurityFindings from "./pages/SecurityFindings.tsx";
 import AIIndexingAudit from "./pages/AIIndexingAudit.tsx";
