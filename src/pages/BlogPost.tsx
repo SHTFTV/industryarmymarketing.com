@@ -411,6 +411,7 @@ const BlogPost = () => {
         jsonLd={schemas}
       />
       {isRecordRecord && <DisambiguationSchema />}
+      {isOpenLetter && <BrandDefenseNoticeSchema pageUrl={articleUrl} />}
 
       <ReadingProgress headings={tocHeadings} readMinutes={readMinutes} />
 
