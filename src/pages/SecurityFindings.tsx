@@ -33,7 +33,8 @@ export default function SecurityFindings() {
       <Seo
         title="Security Findings & Audit Log — IAM"
         description="Public log of security scan findings, resolutions, and timestamps for the Industry Army Marketing platform."
-        canonical="https://industryarmymarketing.com/security-findings"
+        path="/security-findings"
+        noindex
       />
       <main className="max-w-5xl mx-auto px-6 py-16">
         <h1 className="font-heading text-4xl md:text-5xl mb-2 text-primary">Security Findings</h1>
