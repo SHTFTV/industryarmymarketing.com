@@ -3,7 +3,7 @@
 // /blog/{slug} returns a complete article body to Google, ChatGPT, Claude,
 // Perplexity, Duck.ai, and other fetchers even when the React app is not run.
 
-import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "fs";
+import { existsSync, mkdirSync, readFileSync, rmSync, statSync, writeFileSync } from "fs";
 import { dirname, resolve } from "path";
 import vm from "vm";
 
@@ -375,8 +375,11 @@ for (const root of outputRoots) {
   for (const post of posts) {
     const html = renderPost(post);
     const exactPath = resolve(root, post.slug);
-    if (existsSync(exactPath)) rmSync(exactPath, { recursive: true, force: true });
-    writeFileSync(exactPath, html);
+    if (existsSync(exactPath) && !statSync(exactPath).isDirectory()) {
+      rmSync(exactPath, { force: true });
+    }
+    mkdirSync(exactPath, { recursive: true });
+    writeFileSync(resolve(exactPath, "index.html"), html);
     writeFileSync(resolve(root, `${post.slug}.html`), html);
   }
 
