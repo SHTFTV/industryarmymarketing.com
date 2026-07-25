@@ -250,6 +250,7 @@ const App = () => (
           <Route path="/sitemap" element={<SiteMap />} />
           <Route path="/case-studies" element={<CaseStudies />} />
           <Route path="/ai-indexing-audit" element={<AIIndexingAudit />} />
+          <Route path="/security-findings" element={<SecurityFindings />} />
           {/* Case study consolidated into the standard blog roll — 301 to the blog post. */}
           <Route
             path="/case-studies/brand-defense-global-territory"
