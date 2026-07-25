@@ -30,3 +30,10 @@ jobs:
           name: security-scan-report
           path: /tmp/security-scan-report.json
           if-no-files-found: ignore
+      - name: Notify on new security findings
+        if: always()
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_SECURITY_WEBHOOK_URL }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FINDINGS_URL: https://www.industryarmymarketing.com/security-findings
+        run: node scripts/notify-security.mjs
