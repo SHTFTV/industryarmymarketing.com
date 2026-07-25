@@ -58,6 +58,7 @@ import ServiceThankYou from "./pages/services/ServiceThankYou.tsx";
 import AdminServiceLeads from "./pages/admin/AdminServiceLeads.tsx";
 import AdminBlogPosts from "./pages/admin/AdminBlogPosts.tsx";
 import CaseStudies from "./pages/CaseStudies.tsx";
+import SecurityFindings from "./pages/SecurityFindings.tsx";
 import AIIndexingAudit from "./pages/AIIndexingAudit.tsx";
 import { legacyRedirectRoutes } from "./components/LegacyRedirects";
 import featuredBattle from "@/assets/blog/weddings-vs-aiweddings-battle.png.asset.json";
