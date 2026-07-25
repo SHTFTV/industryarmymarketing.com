@@ -378,6 +378,7 @@ for (const root of outputRoots) {
     const html = renderPost(post);
     writeFileSync(resolve(dir, "index.html"), html);
     writeFileSync(resolve(root, `${post.slug}.html`), html);
+    writeFileSync(resolve(root, post.slug), html);
   }
 
   writeFileSync(resolve(root, "index.html"), renderListing());
