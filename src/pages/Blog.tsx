@@ -12,6 +12,7 @@ import { useMemo, useCallback, useEffect, useRef, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Search, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { trackEvent, BLOG_EVENTS } from "@/lib/analytics";
+import NewsletterSignup from "@/components/NewsletterSignup";
 
 const PAGE_SIZE = 12;
 const SEARCH_DEBOUNCE_MS = 300;
@@ -417,6 +418,9 @@ const Blog = () => {
               </button>
             </nav>
           )}
+          <div className="mt-12 max-w-2xl mx-auto">
+            <NewsletterSignup variant="sidebar" source="blog-listing" />
+          </div>
           </>
           )}
         </div>
