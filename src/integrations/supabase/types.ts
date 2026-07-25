@@ -53,6 +53,45 @@ export type Database = {
         }
         Relationships: []
       }
+      host_allowlist_requests: {
+        Row: {
+          created_at: string
+          decided_at: string | null
+          decided_by: string | null
+          host: string
+          id: string
+          note: string | null
+          source_context: string | null
+          status: string
+          updated_at: string
+          version: number
+        }
+        Insert: {
+          created_at?: string
+          decided_at?: string | null
+          decided_by?: string | null
+          host: string
+          id?: string
+          note?: string | null
+          source_context?: string | null
+          status?: string
+          updated_at?: string
+          version?: number
+        }
+        Update: {
+          created_at?: string
+          decided_at?: string | null
+          decided_by?: string | null
+          host?: string
+          id?: string
+          note?: string | null
+          source_context?: string | null
+          status?: string
+          updated_at?: string
+          version?: number
+        }
+        Relationships: []
+      }
       leads: {
         Row: {
           city: string

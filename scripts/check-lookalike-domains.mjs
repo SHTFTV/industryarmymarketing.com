@@ -9,81 +9,58 @@
  * The allowlist / lookalike list live in src/config/canonicalDomains.ts and
  * are re-parsed here (not imported) so this script has zero TS/runtime deps.
  */
-import { readFileSync, readdirSync, statSync, existsSync } from "node:fs";
-import { join, extname } from "node:path";
+import { mkdirSync, writeFileSync } from "node:fs";
+import { dirname } from "node:path";
+import { scan } from "./lib/lookalike-scan.mjs";
 
-const cfg = readFileSync("src/config/canonicalDomains.ts", "utf8");
-const parseList = (name) => {
-  const m = cfg.match(new RegExp(`export const ${name}\\s*=\\s*\\[([\\s\\S]*?)\\];`));
-  if (!m) return [];
-  return [...m[1].matchAll(/"([^"]+)"/g)].map((x) => x[1].toLowerCase());
-};
-const ALLOWED = new Set(parseList("ALLOWED_HOSTS"));
-const LOOKALIKE = new Set(parseList("LOOKALIKE_HOSTS"));
+const strict = process.argv.includes("--strict"); // fail on unknown hosts too
+const artifactPath = process.env.LOOKALIKE_ARTIFACT ?? "public/audit/lookalike-guard.json";
 
-const ROOTS = ["src", "public/robots.txt", "public/sitemap.xml", "public/rss.xml", "index.html"];
-const EXTS = new Set([".tsx", ".ts", ".jsx", ".js", ".html", ".xml", ".md", ".txt", ".json"]);
-const SKIP_DIRS = new Set(["node_modules", "dist", ".git", "__snapshots__"]);
-// Allow bare-mention of lookalike hosts in editorial/prose contexts (blog
-// posts quoting the copycat) but never as an href/src target. The check
-// below distinguishes the two.
-const URL_RE = /\bhttps?:\/\/([a-z0-9.-]+)(\/[^\s"'`<>)]*)?/gi;
-const HREF_RE = /\b(?:href|src|url|to)\s*[:=]\s*["'`](https?:\/\/[^"'`\s]+)["'`]/gi;
+const report = scan();
 
-const violations = [];
-const unknownCounts = new Map();
+// Always write a machine-readable artifact so CI can upload it and the
+// audit UI (public/audit/unknown-hosts.json is written below) can consume it.
+mkdirSync(dirname(artifactPath), { recursive: true });
+writeFileSync(artifactPath, JSON.stringify(report, null, 2));
 
-function walk(p) {
-  if (!existsSync(p)) return;
-  const s = statSync(p);
-  if (s.isDirectory()) {
-    if (SKIP_DIRS.has(p.split("/").pop())) return;
-    for (const f of readdirSync(p)) walk(join(p, f));
-  } else if (EXTS.has(extname(p))) {
-    const text = readFileSync(p, "utf8");
-    const lines = text.split("\n");
-    lines.forEach((line, i) => {
-      // 1) Any URL — flag lookalikes even in prose.
-      for (const m of line.matchAll(URL_RE)) {
-        const host = m[1].toLowerCase();
-        if (LOOKALIKE.has(host)) {
-          // In editorial contexts, referring to the disavowed host by name is
-          // required. Only fail if it's used as an actual link target (href/src).
-          const isLinkTarget = new RegExp(`(?:href|src|url|to)\\s*[:=]\\s*["'\`]https?://${host.replace(/\./g, "\\.")}`, "i").test(line);
-          if (isLinkTarget) {
-            violations.push(`${p}:${i + 1}  [FORBIDDEN link target: ${host}]\n    > ${line.trim()}`);
-          }
-        }
-      }
-      // 2) Any explicit link target — flag unknown hosts.
-      for (const m of line.matchAll(HREF_RE)) {
-        try {
-          const u = new URL(m[1]);
-          const host = u.host.toLowerCase();
-          if (LOOKALIKE.has(host)) continue; // already reported above
-          if (!ALLOWED.has(host)) {
-            unknownCounts.set(host, (unknownCounts.get(host) ?? 0) + 1);
-          }
-        } catch { /* ignore malformed */ }
-      }
-    });
-  }
-}
-
-for (const r of ROOTS) walk(r);
+// Write a compact list of unknown hosts for the AI-indexing audit page.
+mkdirSync("public/audit", { recursive: true });
+writeFileSync(
+  "public/audit/unknown-hosts.json",
+  JSON.stringify(
+    {
+      generatedAt: report.generatedAt,
+      hosts: report.unknownCounts,
+    },
+    null,
+    2,
+  ),
+);
 
 let failed = false;
-if (violations.length) {
-  console.error(`\n❌ Lookalike-domain guard failed — ${violations.length} link target(s) point at disavowed hosts:\n\n${violations.join("\n\n")}\n`);
+if (report.violations.length) {
+  console.error(
+    `\n❌ Lookalike-domain guard failed — ${report.violations.length} link target(s) point at disavowed hosts:\n`,
+  );
+  for (const v of report.violations) {
+    console.error(`  ${v.file}:${v.line}  [${v.host}]\n    > ${v.snippet}`);
+  }
   failed = true;
 }
 
-if (unknownCounts.size) {
-  const rows = [...unknownCounts.entries()].sort((a, b) => b[1] - a[1]);
-  console.warn(`\n⚠️  Unknown outbound hosts (not on ALLOWED_HOSTS). Add to src/config/canonicalDomains.ts if intentional:`);
-  for (const [host, count] of rows) console.warn(`  ${host}  (${count} link${count > 1 ? "s" : ""})`);
+if (report.unknownCounts.length) {
+  console.warn(
+    `\n⚠️  Unknown outbound hosts (not on ALLOWED_HOSTS). Approve via /ai-indexing-audit or edit src/config/canonicalDomains.ts:`,
+  );
+  for (const { host, count } of report.unknownCounts) {
+    console.warn(`  ${host}  (${count} link${count > 1 ? "s" : ""})`);
+  }
   console.warn("");
+  if (strict) failed = true;
 }
 
+console.log(`\nReport artifact: ${artifactPath}`);
 if (failed) process.exit(1);
-console.log(`✅ Lookalike-domain guard passed. Allowed hosts: ${ALLOWED.size}. Forbidden hosts: ${LOOKALIKE.size}.`);
+console.log(
+  `✅ Lookalike-domain guard passed. Allowed: ${report.allowed.length}. Forbidden: ${report.lookalike.length}. Scanned files: ${report.scannedFiles}.`,
+);
