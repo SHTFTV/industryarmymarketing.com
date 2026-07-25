@@ -81,6 +81,8 @@ import dpExhibitD from "@/assets/exhibits/data-pollution/exhibit-d-duckai-german
 import dpExhibitE from "@/assets/exhibits/data-pollution/crunchbase-serp-root-domain-misuse.png.asset.json";
 import dpExhibitF from "@/assets/exhibits/data-pollution/exhibit-f-google-ai-overview-weddings-io-crunchbase.png.asset.json";
 import dpExhibitG from "@/assets/gemini-admits-aiweddings-redirect.png.asset.json";
+import openLetterGoogleAiOverviewCrunchbaseAsset from "@/assets/exhibits/open-letter/google-ai-overview-crunchbase-weddings-io.png.asset.json";
+const openLetterGoogleAiOverviewCrunchbaseImg = openLetterGoogleAiOverviewCrunchbaseAsset.url;
 
 const IMG: Record<string, string> = {
   "kitchen-cabinets": kitchencabinetsImg,
@@ -346,12 +348,12 @@ const rawBlogPosts: BlogPost[] = [
         {
           "heading": "Exhibit 1 — Google AI Overview inventing features for the wrong entity",
           "paragraphs": [
-            "Google's AI Overview, powered by Gemini, restates polluted Crunchbase data as authoritative fact — attributing a fabricated feature list (Smart Matching, Budget Tools) and a third-party phone number to the weddings.io domain. This is source laundering: unverified directory data becomes a definitive AI answer with zero click-through required to verify. Note: the AI does not know it is wrong. That is exactly the point of Brand KYC."
+            "This is the screenshot provided as evidence. Google's AI Overview, powered by Gemini, restates polluted Crunchbase data as authoritative fact — attributing a fabricated feature list (Smart Matching, Budget Tools) and a third-party phone number to the weddings.io domain. This is source laundering: unverified directory data becomes a definitive AI answer with zero click-through required to verify. Note: the AI does not know it is wrong. That is exactly the point of Brand KYC."
           ],
           "image": {
-            "src": "/__l5e/assets-v1/8ea17398-1530-4cf7-9a25-87da418a402e/exhibit-f-google-ai-overview-weddings-io-crunchbase.png",
+            "src": openLetterGoogleAiOverviewCrunchbaseImg,
             "alt": "Google AI Overview for 'Crunchbase weddings.io' showing fabricated features and an incorrect phone number under the weddings.io domain.",
-            "caption": "Exhibit 1 — Gemini-powered AI Overview surfacing polluted Crunchbase data as fact."
+            "caption": "Exhibit 1 — User-provided Google results screenshot showing Gemini-powered AI Overview surfacing polluted Crunchbase data as fact."
           }
         },
         {
