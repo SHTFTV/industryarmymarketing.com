@@ -1,0 +1,38 @@
+name: Lookalike Domain Guard
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+      - name: Install deps
+        run: bun install --frozen-lockfile || bun install
+      - name: Run lookalike-domain guard
+        run: node scripts/check-lookalike-domains.mjs
+      - name: Export release audit
+        if: always()
+        env:
+          RELEASE: ${{ github.sha }}
+          EXPORT_AUDIT_STRICT: "0"
+        run: node scripts/export-audit.mjs
+      - name: Upload audit artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-audit-${{ github.sha }}
+          path: |
+            audit-report/**
+            public/audit/**
+          retention-days: 30
