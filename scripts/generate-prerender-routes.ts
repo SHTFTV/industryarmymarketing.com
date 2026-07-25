@@ -47,17 +47,20 @@ const uniquePosts = blogPosts.filter((p) => {
 uniquePosts.sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
 let blogSlugs = uniquePosts.map((p) => p.slug);
 
-// DB overlay: filter to live posts and append any DB-only slugs so
-// react-snap prerenders every published route from /admin/blog too.
+// DB overlay: static blogPosts.ts is the source of truth for prerender
+// targets (every post there ships in the client bundle and MUST be
+// crawlable). The DB overlay is purely ADDITIVE — it appends any
+// admin-created slugs that don't exist statically, but never removes a
+// static slug. Filtering static slugs down to the DB set previously
+// silently dropped legitimate posts from SSG when the DB migration lagged
+// behind blogPosts.ts, serving AI crawlers only the SPA shell.
 const dbRows = await fetchPublishedBlogPosts();
 if (dbRows) {
-  const dbSlugSet = new Set(dbRows.map((r) => r.slug));
   const staticSet = new Set(blogSlugs);
-  blogSlugs = blogSlugs.filter((s) => dbSlugSet.has(s));
   for (const row of dbRows) {
     if (!staticSet.has(row.slug)) blogSlugs.push(row.slug);
   }
-  console.log(`[prerender-routes] DB overlay applied: ${blogSlugs.length} blog routes`);
+  console.log(`[prerender-routes] DB overlay applied (additive): ${blogSlugs.length} blog routes`);
 }
 if (blogSlugs.length === 0) {
   throw new Error("generate-prerender-routes: no blog slugs parsed from blogPosts.ts");
