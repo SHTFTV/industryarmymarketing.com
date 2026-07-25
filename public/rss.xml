@@ -6,13 +6,22 @@
     <atom:link href="https://industryarmymarketing.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>2,000-word guides on exclusive $10 territory marketing for trade contractors and service pros across Canada.</description>
     <language>en-ca</language>
-    <lastBuildDate>Sat, 25 Jul 2026 00:31:14 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 25 Jul 2026 00:34:11 GMT</lastBuildDate>
     <generator>Industry Army Marketing build pipeline</generator>
     <image>
       <url>https://industryarmymarketing.com/og-image.jpg</url>
       <title>Industry Army Marketing — Intel Blog</title>
       <link>https://industryarmymarketing.com/blog</link>
     </image>
+    <item>
+      <title>The Payment Layer Nobody Built: WonderGate, PPP Pricing, and the Global Wedding Market</title>
+      <link>https://industryarmymarketing.com/blog/wondergate-ppp-pricing-global-wedding-payment-layer</link>
+      <guid isPermaLink="true">https://industryarmymarketing.com/blog/wondergate-ppp-pricing-global-wedding-payment-layer</guid>
+      <pubDate>Fri, 31 Jul 2026 15:00:00 GMT</pubDate>
+      <category>Fintech</category>
+      <description>WonderGate launched a single-API cross-border payment platform covering 100+ global payment methods. Here is why that matters for the global wedding vendor market — and why PPP pricing changes who gets to participate.</description>
+      <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
+    </item>
     <item>
       <title>Does Your Startup Actually Need a Category Domain?</title>
       <link>https://industryarmymarketing.com/blog/does-your-startup-need-a-category-domain</link>
