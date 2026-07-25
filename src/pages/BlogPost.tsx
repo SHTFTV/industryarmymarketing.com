@@ -14,6 +14,8 @@ import ReadingProgress from "@/components/ReadingProgress";
 import { copySectionLink } from "@/lib/copySectionLink";
 import { Link2 } from "lucide-react";
 import { AIIndexing } from "@/components/AIIndexing";
+import NewsletterSignup from "@/components/NewsletterSignup";
+import SocialShare from "@/components/SocialShare";
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -306,7 +308,12 @@ const BlogPost = () => {
     schemas.push(newsArticleSchema);
   }
 
-  const related = blogPosts.filter((p) => p.slug !== post.slug).slice(0, 5);
+  // Related posts — same category first, then fill with newest others.
+  const others = blogPosts.filter((p) => p.slug !== post.slug);
+  const sameCat = others.filter((p) => p.category === post.category);
+  const rest = others.filter((p) => p.category !== post.category);
+  const related = [...sameCat, ...rest].slice(0, 6);
+  const articleUrl = `${SITE_URL}/blog/${post.slug}`;
 
   // Prev/Next navigation — chronological (newest-first) traversal.
   // "Newer" post is the item before this one in the sorted list; "Older"
@@ -419,6 +426,13 @@ const BlogPost = () => {
           <p className="text-muted-foreground text-xs uppercase tracking-widest mb-8">
             {post.date} · {post.category} · {post.brand} · {readMinutes} min read
           </p>
+
+          <SocialShare
+            url={articleUrl}
+            title={post.title}
+            description={post.metaDescription}
+            className="mb-8"
+          />
 
           <img
             src={heroImage}
@@ -626,10 +640,25 @@ const BlogPost = () => {
             />
           </div>
 
+          <div className="mt-12">
+            <SocialShare
+              url={articleUrl}
+              title={post.title}
+              description={post.metaDescription}
+            />
+          </div>
+
+          <div className="mt-12">
+            <NewsletterSignup
+              variant="footer"
+              source={`blog-post:${post.slug}`}
+            />
+          </div>
+
           <section className="mt-16">
             <p className="text-primary text-xs uppercase tracking-[0.3em] mb-3">Related Intel</p>
             <h3 className="font-display text-2xl text-foreground mb-6">Keep reading</h3>
-            <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
               {related.map((r) => (
                 <Link
                   key={r.slug}
@@ -638,7 +667,7 @@ const BlogPost = () => {
                 >
                   <p className="text-primary text-xs uppercase tracking-widest mb-2">{r.category}</p>
                   <h4 className="font-display text-lg text-foreground leading-tight">
-                    {r.trade} in {r.city}
+                    {r.cardTitle ?? r.title}
                   </h4>
                 </Link>
               ))}
