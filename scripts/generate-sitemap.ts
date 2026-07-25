@@ -51,22 +51,18 @@ for (const slug of blogSlugs) {
   if (m) blogPublishedAt[slug] = m[1];
 }
 
-// DB overlay: if `blog_posts` returns published rows, filter blogSlugs to
-// only those live in the DB and union in any DB-only slugs (posts created
-// through /admin/blog that don't exist in the static file). Static file
-// remains the fallback so a DB outage never breaks the build.
+// DB overlay is additive. Static blogPosts.ts remains the source of truth for
+// shipped posts because those articles are already in the bundle and must stay
+// discoverable even if the DB migration lags behind. Admin-created DB-only
+// published posts are appended without filtering out static slugs.
 const dbRows = await fetchPublishedBlogPosts();
 if (dbRows) {
-  const dbSlugSet = new Set(dbRows.map((r) => r.slug));
   const staticSlugSet = new Set(blogSlugs);
-  // Keep only slugs that are still is_published=true in the DB.
-  blogSlugs = blogSlugs.filter((s) => dbSlugSet.has(s));
-  // Union in DB-only slugs (new admin-created posts).
   for (const row of dbRows) {
     if (!staticSlugSet.has(row.slug)) blogSlugs.push(row.slug);
     if (!blogPublishedAt[row.slug]) blogPublishedAt[row.slug] = row.published_at;
   }
-  console.log(`[sitemap] DB overlay applied: ${blogSlugs.length} live posts`);
+  console.log(`[sitemap] DB overlay applied (additive): ${blogSlugs.length} discoverable posts`);
 } else {
   console.log(`[sitemap] DB overlay unavailable — using static blogPosts.ts`);
 }
@@ -96,6 +92,13 @@ for (const slug of blogSlugs) {
   const mm = MONTHS[m[1]];
   if (!mm) continue;
   blogLastmod[`/blog/${slug}`] = `${m[2]}-${mm}-01`;
+}
+
+for (const slug of blogSlugs) {
+  const path = `/blog/${slug}`;
+  if (!blogLastmod[path] && blogPublishedAt[slug]) {
+    blogLastmod[path] = blogPublishedAt[slug].slice(0, 10);
+  }
 }
 
 // Static HTML case-study / long-form pages are listed individually in

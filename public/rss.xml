@@ -6,13 +6,22 @@
     <atom:link href="https://industryarmymarketing.com/rss.xml" rel="self" type="application/rss+xml" />
     <description>2,000-word guides on exclusive $10 territory marketing for trade contractors and service pros across Canada.</description>
     <language>en-ca</language>
-    <lastBuildDate>Sat, 25 Jul 2026 19:55:16 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 25 Jul 2026 20:54:42 GMT</lastBuildDate>
     <generator>Industry Army Marketing build pipeline</generator>
     <image>
       <url>https://industryarmymarketing.com/og-image.jpg</url>
       <title>Industry Army Marketing — Intel Blog</title>
       <link>https://industryarmymarketing.com/blog</link>
     </image>
+    <item>
+      <title>An Open Letter to the Platforms Poisoning the AI Information Supply Chain</title>
+      <link>https://industryarmymarketing.com/blog/open-letter-platforms-poisoning-ai-information-supply-chain</link>
+      <guid isPermaLink="true">https://industryarmymarketing.com/blog/open-letter-platforms-poisoning-ai-information-supply-chain</guid>
+      <pubDate>Sat, 01 Aug 2026 15:00:00 GMT</pubDate>
+      <category>Press Releases / Notices</category>
+      <description>A formal notice to Google, Meta, TikTok, Microsoft, Anthropic, OpenAI, Perplexity and the smaller directories feeding them — on Brand KYC, platform accountability, and the legal framework arriving in the AI era.</description>
+      <enclosure url="https://industryarmymarketing.com/og-image.jpg" length="291656" type="image/jpeg" />
+    </item>
     <item>
       <title>The Payment Layer Nobody Built: WonderGate, PPP Pricing, and the Global Wedding Market</title>
       <link>https://industryarmymarketing.com/blog/wondergate-ppp-pricing-global-wedding-payment-layer</link>

@@ -78,19 +78,21 @@ const posts = slugs
   })
   .sort((a, b) => b.sortTime - a.sortTime || b.sourceIndex - a.sourceIndex);
 
-// DB overlay: filter to slugs currently is_published=true in the DB, and
-// append DB-only posts (created via /admin/blog). Static file remains the
-// fallback source when DB is unreachable.
+// DB overlay is additive. Static blogPosts.ts remains the source of truth for
+// shipped posts because those articles must stay discoverable even if the DB
+// migration lags behind. Admin-created DB-only published posts are appended.
 const dbRows = await fetchPublishedBlogPosts();
 let filteredPosts = posts;
 if (dbRows) {
-  const dbBySlug = new Map(dbRows.map((r) => [r.slug, r]));
   const staticSlugSet = new Set(posts.map((p) => p.slug));
-  filteredPosts = posts.filter((p) => dbBySlug.has(p.slug));
   for (const row of dbRows) {
     if (staticSlugSet.has(row.slug)) continue;
     const d = (row.data ?? {}) as Record<string, unknown>;
-    const t = Date.parse(row.published_at) || Date.now();
+    const t = Date.parse(row.published_at);
+    if (!Number.isFinite(t)) {
+      console.warn(`[rss] Skipping DB-only post with invalid published_at: ${row.slug}`);
+      continue;
+    }
     filteredPosts.push({
       slug: row.slug,
       title: row.title,
@@ -103,7 +105,7 @@ if (dbRows) {
     });
   }
   filteredPosts.sort((a, b) => b.sortTime - a.sortTime || b.sourceIndex - a.sourceIndex);
-  console.log(`[rss] DB overlay applied: ${filteredPosts.length} live items`);
+  console.log(`[rss] DB overlay applied (additive): ${filteredPosts.length} discoverable items`);
 } else {
   console.log(`[rss] DB overlay unavailable — using static blogPosts.ts`);
 }
