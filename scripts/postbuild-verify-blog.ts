@@ -24,8 +24,11 @@ if (blogUrls.length === 0) {
   process.exit(1);
 }
 
-// Sample: first, last, and a middle URL to catch systemic regressions cheaply.
-const sample = Array.from(new Set([blogUrls[0], blogUrls[Math.floor(blogUrls.length / 2)], blogUrls[blogUrls.length - 1]]));
+// Sample: first, last, middle, and the Open Letter URL that AI tools failed to
+// read in production. This catches systemic regressions and the exact high-risk
+// route customers are asking LLMs to cite.
+const openLetterUrl = `${CANONICAL_HOST}/blog/open-letter-platforms-poisoning-ai-information-supply-chain`;
+const sample = Array.from(new Set([blogUrls[0], blogUrls[Math.floor(blogUrls.length / 2)], blogUrls[blogUrls.length - 1], openLetterUrl]));
 const errors: string[] = [];
 const roots = ["public", "dist"].filter((r) => existsSync(resolve(r)));
 
