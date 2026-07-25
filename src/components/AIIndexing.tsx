@@ -114,7 +114,7 @@ const BRAND = {
 };
 
 // ─── AI platform config ───────────────────────────────────────
-const AI_PLATFORMS = [
+export const AI_PLATFORMS = [
   {
     id:    "chatgpt",
     name:  "ChatGPT",
