@@ -244,6 +244,7 @@ const App = () => (
           <Route path="/admin/proposals" element={<AdminProposals />} />
           <Route path="/admin/ppp-requote" element={<AdminPppRequote />} />
           <Route path="/admin/blog" element={<AdminBlogPosts />} />
+          <Route path="/admin/submission-log" element={<AdminSubmissionLog />} />
           <Route path="/pwa-check" element={<PwaCheck />} />
           <Route path="/rss-preview" element={<RssPreview />} />
           <Route path="/domain-setup" element={<DomainSetup />} />
