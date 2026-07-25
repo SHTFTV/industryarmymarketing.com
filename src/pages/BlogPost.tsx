@@ -9,6 +9,7 @@ import { getPost, blogPosts, type BlogPost as BlogPostType } from "@/data/blogPo
 import { supabase } from "@/integrations/supabase/client";
 import BlogRichContentView from "@/components/BlogRichContent";
 import { DisambiguationSchema } from "@/components/DisambiguationSchema";
+import { BrandDefenseNoticeSchema } from "@/components/BrandDefenseNoticeSchema";
 import BlogToc, { slugifyHeading } from "@/components/BlogToc";
 import ReadingProgress from "@/components/ReadingProgress";
 import { copySectionLink } from "@/lib/copySectionLink";
