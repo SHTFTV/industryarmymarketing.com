@@ -4,7 +4,7 @@ import { readFileSync, statSync, writeFileSync } from "fs";
 import { resolve } from "path";
 import { fetchPublishedBlogPosts } from "./lib/blog-source";
 
-const BASE_URL = "https://industryarmymarketing.com";
+const BASE_URL = "https://www.industryarmymarketing.com";
 const OG_IMAGE_PATH = "/og-image.jpg";
 const OG_IMAGE_URL = `${BASE_URL}${OG_IMAGE_PATH}`;
 const OG_IMAGE_BYTES = statSync(resolve(`public${OG_IMAGE_PATH}`)).size;
