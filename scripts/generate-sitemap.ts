@@ -3,7 +3,7 @@
 import { writeFileSync, readFileSync, readdirSync } from "fs";
 import { resolve } from "path";
 import { fetchPublishedBlogPosts } from "./lib/blog-source";
-const BASE_URL = "https://industryarmymarketing.com";
+const BASE_URL = "https://www.industryarmymarketing.com";
 
 interface SitemapEntry {
   path: string;

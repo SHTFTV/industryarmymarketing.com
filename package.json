@@ -9,7 +9,7 @@
     "dev": "vite",
     "prebuild": "npm run browserslist:update && bunx tsx scripts/generate-sitemap.ts && bunx tsx scripts/generate-identity-txt.ts && bunx tsx scripts/generate-rss.ts && bunx tsx scripts/generate-static-blog-pages.ts && bunx tsx scripts/validate-rss.ts",
     "build": "vite build",
-    "postbuild": "bunx tsx scripts/generate-prerender-routes.ts && node scripts/run-react-snap.mjs && bunx tsx scripts/generate-static-blog-pages.ts",
+    "postbuild": "bunx tsx scripts/generate-prerender-routes.ts && node scripts/run-react-snap.mjs && bunx tsx scripts/generate-static-blog-pages.ts && bunx tsx scripts/postbuild-verify-blog.ts",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",
@@ -25,11 +25,11 @@
     "gsc:poll": "bunx tsx scripts/gsc-poll-indexing.ts",
     "redirects:validate": "bunx tsx scripts/redirect-chain-validator.ts",
     "prerender:check": "bunx tsx scripts/prerender-html-check.ts",
-    "seo:diff": "bunx tsx scripts/seo-diff-report.ts"
-    ,
+    "seo:diff": "bunx tsx scripts/seo-diff-report.ts",
     "guard:lookalike": "node scripts/check-lookalike-domains.mjs",
     "audit:export": "node scripts/export-audit.mjs",
-    "audit:notify": "node scripts/notify-guard.mjs"
+    "audit:notify": "node scripts/notify-guard.mjs",
+    "verify:blog": "bunx tsx scripts/postbuild-verify-blog.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

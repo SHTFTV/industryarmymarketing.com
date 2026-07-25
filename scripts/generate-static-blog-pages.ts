@@ -7,7 +7,7 @@ import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "fs";
 import { dirname, resolve } from "path";
 import vm from "vm";
 
-const BASE_URL = "https://industryarmymarketing.com";
+const BASE_URL = "https://www.industryarmymarketing.com";
 const SOURCE_PATH = resolve("src/data/blogPosts.ts");
 const OUTPUT_ROOT = resolve("public/blog");
 const DIST_OUTPUT_ROOT = resolve("dist/blog");
