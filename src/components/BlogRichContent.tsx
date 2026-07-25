@@ -98,6 +98,9 @@ const BlogRichContentView = ({
   afterIntro?: React.ReactNode;
 }) => {
   const ids = (content.footnotes ?? []).map((f) => f.id);
+  const topEvidenceSections = content.sections.filter(
+    (section) => section.image && /^exhibit\b/i.test(section.heading),
+  );
 
   return (
     <div className="blog-rich-content">
@@ -105,6 +108,43 @@ const BlogRichContentView = ({
         <p className="text-xl md:text-2xl text-foreground/90 leading-relaxed mb-12 font-medium">
           {renderWithFootnotes(content.intro, ids)}
         </p>
+      )}
+
+      {topEvidenceSections.length > 0 && (
+        <section className="mb-12 rounded-lg border border-primary/30 bg-primary/5 p-4 sm:p-5">
+          <h2 className="font-display text-2xl md:text-3xl text-foreground mb-5 leading-tight">
+            Evidence screenshots
+          </h2>
+          <div className="grid gap-5 sm:grid-cols-2">
+            {topEvidenceSections.map((section) => {
+              const image = section.image;
+              if (!image) return null;
+
+              const figure = (
+                <figure className="overflow-hidden rounded-lg border border-border bg-card">
+                  <img
+                    src={resolveImageSrc(image.src)}
+                    alt={image.alt}
+                    title={image.alt}
+                    loading="eager"
+                    className="w-full bg-background object-contain"
+                  />
+                  <figcaption className="p-3 text-muted-foreground text-xs uppercase tracking-widest">
+                    {image.caption ?? section.heading}
+                  </figcaption>
+                </figure>
+              );
+
+              return image.href ? (
+                <SmartLink key={section.heading} href={image.href} className="block">
+                  {figure}
+                </SmartLink>
+              ) : (
+                <div key={section.heading}>{figure}</div>
+              );
+            })}
+          </div>
+        </section>
       )}
 
       {afterIntro}
