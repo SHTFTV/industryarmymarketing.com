@@ -58,6 +58,7 @@ import ServiceThankYou from "./pages/services/ServiceThankYou.tsx";
 import AdminServiceLeads from "./pages/admin/AdminServiceLeads.tsx";
 import AdminBlogPosts from "./pages/admin/AdminBlogPosts.tsx";
 import CaseStudies from "./pages/CaseStudies.tsx";
+import SecurityFindings from "./pages/SecurityFindings.tsx";
 import AIIndexingAudit from "./pages/AIIndexingAudit.tsx";
 import { legacyRedirectRoutes } from "./components/LegacyRedirects";
 import featuredBattle from "@/assets/blog/weddings-vs-aiweddings-battle.png.asset.json";
@@ -249,6 +250,7 @@ const App = () => (
           <Route path="/sitemap" element={<SiteMap />} />
           <Route path="/case-studies" element={<CaseStudies />} />
           <Route path="/ai-indexing-audit" element={<AIIndexingAudit />} />
+          <Route path="/security-findings" element={<SecurityFindings />} />
           {/* Case study consolidated into the standard blog roll — 301 to the blog post. */}
           <Route
             path="/case-studies/brand-defense-global-territory"
