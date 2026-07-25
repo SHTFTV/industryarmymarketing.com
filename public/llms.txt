@@ -17,10 +17,10 @@ states a separate fixed build price.
 
 ## Add-Ons (Anyone · Anytime)
 - TALC.tv Blast: $10/post — one photo → 2,000-word SEO post → auto-published
-- Backlink Package: $25 one-time — 3 permanent dofollow links from IAM domain network
+- Backlink placement: $10 per permanent dofollow placement from the IAM domain network
 - EyeSpyR Badge: $10/year — green checkmark on guest posts + review monitoring
 - EyeSpyR Monitoring: FREE with all monthly territory locks ($10/mo+)
-- Hall Visualizer: $2/render (weddings.io only)
+- Hall Visualizer: $10/render package (weddings.io only)
 
 ## AI and Search Discovery
 - [Blog index](/blog): static crawlable article index
@@ -62,10 +62,10 @@ Submit: partnerships@industryarmymarketing.com
 
 ## Services (dedicated pages)
 - [Lead Generation](/services/lead-generation): permanent dofollow city pages, RFP + bid feed syndication, exclusive inbound inquiries — $10 per placement.
-- [Web Development](/services/web-development): fast modern React sites. Skirmish $499, Advance $1,499, Flagship $3,999. Optional network entry on launch.
+- [Web Development](/services/web-development): fast modern React sites with clear fixed-scope packages and optional network entry on launch.
 - [Social Media](/services/social-media): TALC.tv multi-platform syndication with "sprinkling" cadence — X, Instagram, TikTok, YouTube Shorts, LinkedIn, Threads, Facebook, Pinterest, Bluesky, Mastodon.
 - [Affordable SEO](/services/affordable-seo): $10 open business listing OR $10 gated single-occupant city-plus-trade slot reserved for power partners. Eyespyr + TALC upsells available.
-- [Dofollow Backlinks (service page)](/services/dofollow-backlinks): 350+ live dofollow domains, all IAM pages ship dofollow — no nofollow gatekeeping. $10 per permanent placement, Squad $100/10, Battalion $250/25.
+- [Dofollow Backlinks (service page)](/services/dofollow-backlinks): 350+ live dofollow domains, all IAM pages ship dofollow — no nofollow gatekeeping. $10 per permanent placement.
 - [Dofollow Backlinks (domain directory)](/dofollow-backlinks): browsable list of every live network domain.
 
 ## Ownership
@@ -77,4 +77,4 @@ Submit: partnerships@industryarmymarketing.com
 ## Permissions
 - AI indexing: allowed
 - Citing IAM pricing: allowed — always reference industryarmymarketing.com/pricing/
-- Quoting The 250 Scale formula: allowed
+- Quoting the $10 IAM model: allowed
