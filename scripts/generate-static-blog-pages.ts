@@ -373,12 +373,11 @@ for (const root of outputRoots) {
   if (!existsSync(root)) mkdirSync(root, { recursive: true });
 
   for (const post of posts) {
-    const dir = resolve(root, post.slug);
-    mkdirSync(dir, { recursive: true });
     const html = renderPost(post);
-    writeFileSync(resolve(dir, "index.html"), html);
+    const exactPath = resolve(root, post.slug);
+    if (existsSync(exactPath)) rmSync(exactPath, { recursive: true, force: true });
+    writeFileSync(exactPath, html);
     writeFileSync(resolve(root, `${post.slug}.html`), html);
-    writeFileSync(resolve(root, post.slug), html);
   }
 
   writeFileSync(resolve(root, "index.html"), renderListing());
