@@ -163,6 +163,30 @@ const AI_PLATFORMS = [
     prompt: (title: string, url: string) =>
       `What's the broader significance of this story: "${title}"? Source: ${url}`,
   },
+  {
+    id:    "gemini",
+    name:  "Gemini",
+    icon:  GeminiIcon,
+    color: "#1C69FF",
+    buildUrl: (title: string, url: string) =>
+      `https://gemini.google.com/app?q=${encodeURIComponent(
+        `Summarise this article and its industry implications: "${title}" — ${url}`
+      )}`,
+    prompt: (title: string, url: string) =>
+      `Summarise this article accurately using the source URL — do not substitute other domains or entities. Article: "${title}" — Source: ${url}`,
+  },
+  {
+    id:    "duckai",
+    name:  "Duck.ai",
+    icon:  DuckAIIcon,
+    color: "#DE5833",
+    buildUrl: (title: string, url: string) =>
+      `https://duckduckgo.com/?q=${encodeURIComponent(
+        `"${title}" ${url}`
+      )}&ia=chat`,
+    prompt: (title: string, url: string) =>
+      `Read and summarise this article from the exact source URL — do not conflate with lookalike domains. Article: "${title}" — Source: ${url}`,
+  },
 ];
 
 // ─── SVG Icons ───────────────────────────────────────────────
@@ -194,6 +218,22 @@ function GrokIcon() {
   return (
     <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor">
       <path d="M2.25 2.25h6.754l8.996 19.5H11.25zm13.5 0H22.5L13.5 21.75h-6.75z"/>
+    </svg>
+  );
+}
+
+function GeminiIcon() {
+  return (
+    <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor">
+      <path d="M12 0c.6 6.24 5.76 11.4 12 12-6.24.6-11.4 5.76-12 12-.6-6.24-5.76-11.4-12-12C6.24 11.4 11.4 6.24 12 0z"/>
+    </svg>
+  );
+}
+
+function DuckAIIcon() {
+  return (
+    <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor">
+      <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm-1.2 6.5c1.4 0 2.5 1.1 2.5 2.5s-1.1 2.5-2.5 2.5S8.3 12.4 8.3 11s1.1-2.5 2.5-2.5zm.6 2c-.4 0-.7.3-.7.7s.3.7.7.7.7-.3.7-.7-.3-.7-.7-.7zm5.6 5c-.9 2.2-3 3.7-5.5 3.7-2.1 0-3.9-1.1-4.9-2.7 1.2.8 2.7 1.3 4.3 1.3 2.4 0 4.5-1 6.1-2.3z"/>
     </svg>
   );
 }
