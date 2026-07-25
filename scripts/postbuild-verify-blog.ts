@@ -24,8 +24,11 @@ if (blogUrls.length === 0) {
   process.exit(1);
 }
 
-// Sample: first, last, and a middle URL to catch systemic regressions cheaply.
-const sample = Array.from(new Set([blogUrls[0], blogUrls[Math.floor(blogUrls.length / 2)], blogUrls[blogUrls.length - 1]]));
+// Sample: first, last, middle, and the Open Letter URL that AI tools failed to
+// read in production. This catches systemic regressions and the exact high-risk
+// route customers are asking LLMs to cite.
+const openLetterUrl = `${CANONICAL_HOST}/blog/open-letter-platforms-poisoning-ai-information-supply-chain`;
+const sample = Array.from(new Set([blogUrls[0], blogUrls[Math.floor(blogUrls.length / 2)], blogUrls[blogUrls.length - 1], openLetterUrl]));
 const errors: string[] = [];
 const roots = ["public", "dist"].filter((r) => existsSync(resolve(r)));
 
@@ -33,8 +36,9 @@ for (const url of sample) {
   const slug = url.replace(`${CANONICAL_HOST}/blog/`, "").replace(/\/$/, "");
   for (const root of roots) {
     const exact = resolve(root, "blog", slug);
+    const directoryIndex = resolve(root, "blog", slug, "index.html");
     const html = resolve(root, "blog", `${slug}.html`);
-    const filePath = existsSync(exact) ? exact : existsSync(html) ? html : null;
+    const filePath = existsSync(directoryIndex) ? directoryIndex : existsSync(exact) && !statSync(exact).isDirectory() ? exact : existsSync(html) ? html : null;
     if (!filePath) {
       errors.push(`[${root}] missing static file for ${slug}`);
       continue;

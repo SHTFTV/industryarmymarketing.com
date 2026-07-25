@@ -32,9 +32,9 @@ describe("BlogPost AIIndexing wiring", () => {
     expect(propsBlob).toMatch(/\bpublication\s*=/);
   });
 
-  it("pins articleUrl to the canonical industryarmymarketing.com/blog/{slug}", () => {
+  it("pins articleUrl to the shared canonical SITE_URL/blog/{slug}", () => {
     expect(source).toMatch(
-      /articleUrl=\{`https:\/\/industryarmymarketing\.com\/blog\/\$\{post\.slug\}`\}/,
+      /articleUrl=\{`\$\{SITE_URL\}\/blog\/\$\{post\.slug\}`\}/,
     );
   });
 

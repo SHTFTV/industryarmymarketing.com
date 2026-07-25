@@ -1,13 +1,13 @@
 // E2E: When the blog page is loaded with query/hash tracking parameters
 // (utm_*, gclid, fbclid, #fragment), the analytics payload for every
 // AIIndexing copy — success and failure — must use the canonical
-// articleUrl (https://industryarmymarketing.com/blog/<slug>) and NEVER
+// articleUrl (https://www.industryarmymarketing.com/blog/<slug>) and NEVER
 // the raw window.location.href.
 
 import { test, expect } from "../playwright-fixture";
 
 const SLUG = "iam-vendors-purchasing-power-parity-pricing";
-const CANONICAL = `https://industryarmymarketing.com/blog/${SLUG}`;
+const CANONICAL = `https://www.industryarmymarketing.com/blog/${SLUG}`;
 const TRACKING = "?utm_source=nl&utm_medium=email&utm_campaign=july&gclid=abc123&fbclid=xyz#section-hero";
 
 const PLATFORMS = ["ChatGPT", "Claude", "Perplexity", "Grok"] as const;

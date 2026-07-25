@@ -641,7 +641,7 @@ const BlogPost = () => {
           <div className="mt-16">
             <AIIndexing
               articleTitle={post.title}
-              articleUrl={`https://industryarmymarketing.com/blog/${post.slug}`}
+              articleUrl={`${SITE_URL}/blog/${post.slug}`}
               publication="iam"
             />
           </div>
