@@ -83,6 +83,10 @@ import dpExhibitF from "@/assets/exhibits/data-pollution/exhibit-f-google-ai-ove
 import dpExhibitG from "@/assets/gemini-admits-aiweddings-redirect.png.asset.json";
 import openLetterGoogleAiOverviewCrunchbaseAsset from "@/assets/exhibits/open-letter/google-ai-overview-crunchbase-weddings-io.png.asset.json";
 const openLetterGoogleAiOverviewCrunchbaseImg = openLetterGoogleAiOverviewCrunchbaseAsset.url;
+import openLetterCrunchbaseAiPhoneAsset from "@/assets/crunchbase-ai-overview-wrong-phone.png.asset.json";
+import openLetterGeminiOperatingViaAsset from "@/assets/gemini-aiweddings-operating-via.png.asset.json";
+import openLetterGeminiWhyLinksAsset from "@/assets/gemini-why-aiweddings-links.png.asset.json";
+import openLetterDuckaiTerritoryAsset from "@/assets/duckai-territory-model-hallucination.png.asset.json";
 
 const IMG: Record<string, string> = {
   "kitchen-cabinets": kitchencabinetsImg,
@@ -348,45 +352,45 @@ const rawBlogPosts: BlogPost[] = [
         {
           "heading": "Exhibit 1 — Google AI Overview inventing features for the wrong entity",
           "paragraphs": [
-            "This is the screenshot provided as evidence. Google's AI Overview, powered by Gemini, restates polluted Crunchbase data as authoritative fact — attributing a fabricated feature list (Smart Matching, Budget Tools) and a third-party phone number to the weddings.io domain. This is source laundering: unverified directory data becomes a definitive AI answer with zero click-through required to verify. Note: the AI does not know it is wrong. That is exactly the point of Brand KYC."
+            "Query: 'Crunchbase weddings.io'. Google's AI Overview (powered by Gemini, with Crunchbase and Google Play cited as sources) restates polluted directory data as authoritative fact — attributing a fabricated feature list (Smart Matching, Budget Tools, Task Management) and a third-party phone number (1-705-794-…) to the weddings.io domain. The user never has to click through to be misinformed. This is source laundering: unverified directory data becomes a definitive AI answer. Note: the AI does not know it is wrong. That is exactly the point of Brand KYC."
           ],
           "image": {
-            "src": openLetterGoogleAiOverviewCrunchbaseImg,
-            "alt": "Google AI Overview for 'Crunchbase weddings.io' showing fabricated features and an incorrect phone number under the weddings.io domain.",
-            "caption": "Exhibit 1 — User-provided Google results screenshot showing Gemini-powered AI Overview surfacing polluted Crunchbase data as fact."
+            "src": openLetterCrunchbaseAiPhoneAsset.url,
+            "alt": "Google search AI Overview for 'Crunchbase weddings.io' showing fabricated Platform Features (Smart Matching, Budget Tools, Task Management) and a third-party 1-705 phone number under the weddings.io domain.",
+            "caption": "Exhibit 1 — Google AI Overview (Gemini) restating polluted Crunchbase data as fact, including a phone number that does not belong to weddings.io."
           }
         },
         {
-          "heading": "Exhibit 2 — Gemini admits it substitutes aiweddings.io for weddings.io",
+          "heading": "Exhibit 2 — Gemini rewrites the weddings.io identity as 'operating via aiweddings.io'",
           "paragraphs": [
-            "In a direct chat, Google's Gemini states on the record that it redirects users from the weddings.io query to aiweddings.io because it believes doing so 'accurately identifies the service.' This is not a data-source error — it is a stated model policy. An AI system is unilaterally rewriting a decade-old domain identity in real time, and telling the user it is helping."
+            "Query: 'weddings.io'. Gemini's first sentence rewrites the entity: 'Weddings.io (operating via aiweddings.io) is an all-in-one digital wedding planning platform…' It then attaches an invented feature list — Vendor Marketplace, Planning Tools, AI Integration, Vendor Subscriptions (Basic, Pro, Pro Plus) — citing 'AIWeddings' and 'planning.wedding' as sources for facts about a domain they do not own. This is a model-level identity substitution, not a display glitch."
           ],
           "image": {
-            "src": "/__l5e/assets-v1/c31b9f37-ac50-46f3-a6e8-c1b84684e8e2/gemini-admits-aiweddings-redirect.png",
-            "alt": "Gemini chat response admitting it substitutes aiweddings.io for weddings.io.",
-            "caption": "Exhibit 2 — Gemini's own on-the-record admission of the substitution."
+            "src": openLetterGeminiOperatingViaAsset.url,
+            "alt": "Gemini answer for the query 'weddings.io' beginning 'Weddings.io (operating via aiweddings.io)' and listing invented Key Features attributed to AIWeddings and planning.wedding.",
+            "caption": "Exhibit 2 — Gemini merges two separate entities in its very first sentence and attributes fabricated features to the wrong operator."
           }
         },
         {
-          "heading": "Exhibit 3 — DuckAI conflating weddings.io with an Ontario entity",
+          "heading": "Exhibit 3 — Gemini's on-the-record admission: 'its primary web platform… officially operates at aiweddings.io'",
           "paragraphs": [
-            "DuckDuckGo's AI assistant summarises the weddings.io ecosystem by blending the legitimate domain with the Ontario startup's profile and, notably, name-drops EyeSpyR™ — proof that AI systems are actively synthesising and redistributing the entity confusion, not just displaying it. Every model in the market is drinking from the same polluted upstream well."
+            "Follow-up query: 'why do you give aiweddings.io links'. Gemini answers, verbatim: 'in the case of weddings.io, its primary web platform and application interface officially operate at aiweddings.io. When explaining what the platform is, referencing its live domain helps accurately identify the service.' This is a stated model policy, on the record, admitting the substitution. An AI system is unilaterally rewriting a decade-old domain identity and telling the user it is helping."
           ],
           "image": {
-            "src": dpExhibitB.url,
-            "alt": "DuckAI ecosystem summary conflating weddings.io with an Ontario entity and referencing EyeSpyR.",
-            "caption": "Exhibit 3 — DuckAI (DuckDuckGo) synthesising the same conflation."
+            "src": openLetterGeminiWhyLinksAsset.url,
+            "alt": "Gemini chat response to 'why do you give aiweddings.io links' stating that weddings.io's primary web platform officially operates at aiweddings.io.",
+            "caption": "Exhibit 3 — Gemini's own justification for the substitution, in its own words."
           }
         },
         {
-          "heading": "Exhibit 4 — Google AI Overview: Crunchbase-sourced feature hallucinations (repeat pattern)",
+          "heading": "Exhibit 4 — DuckAI (GPT-5.4 nano) invents a 'territory-locked' model and name-drops EyeSpyR™",
           "paragraphs": [
-            "A second capture of the Google AI Overview, days apart, reproducing the identical pattern: Crunchbase pollution → AI restatement → user-facing hallucination. This is not a one-off glitch. It is a stable, repeatable failure mode that will continue until the upstream directories adopt Brand KYC-style verification."
+            "DuckDuckGo's Duck.ai assistant, running GPT-5.4 nano, summarises weddings.io by fabricating a 'territory-based availability/slots (exclusive per city)' model, referencing EyeSpyR™, a 'Photo Wall' feature with 'AI screening', and then — under 'more about the company' — attaches Weddings.io Technologies and 'Industry Army Marketing' to an unrelated 'Toronto, Ontario' Crunchbase profile with '1–10 employees', citing weddingsaas.com. Two different underlying entities. One synthesised answer. Every major model is drinking from the same polluted upstream well."
           ],
           "image": {
-            "src": dpExhibitA.url,
-            "alt": "Second Google AI Overview capture showing the same Crunchbase-sourced hallucinations under the weddings.io query.",
-            "caption": "Exhibit 4 — Repeat capture confirming the failure mode is systemic, not incidental."
+            "src": openLetterDuckaiTerritoryAsset.url,
+            "alt": "Duck.ai (GPT-5.4 nano) chat describing weddings.io with an invented territory-locked model, EyeSpyR references, and a follow-up conflating Weddings.io Technologies with a Toronto Ontario Crunchbase profile.",
+            "caption": "Exhibit 4 — Duck.ai (GPT-5.4 nano) fabricating a territory model and merging weddings.io with an unrelated Ontario Crunchbase entry."
           }
         },
         {
