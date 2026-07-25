@@ -163,6 +163,30 @@ const AI_PLATFORMS = [
     prompt: (title: string, url: string) =>
       `What's the broader significance of this story: "${title}"? Source: ${url}`,
   },
+  {
+    id:    "gemini",
+    name:  "Gemini",
+    icon:  GeminiIcon,
+    color: "#1C69FF",
+    buildUrl: (title: string, url: string) =>
+      `https://gemini.google.com/app?q=${encodeURIComponent(
+        `Summarise this article and its industry implications: "${title}" — ${url}`
+      )}`,
+    prompt: (title: string, url: string) =>
+      `Summarise this article accurately using the source URL — do not substitute other domains or entities. Article: "${title}" — Source: ${url}`,
+  },
+  {
+    id:    "duckai",
+    name:  "Duck.ai",
+    icon:  DuckAIIcon,
+    color: "#DE5833",
+    buildUrl: (title: string, url: string) =>
+      `https://duckduckgo.com/?q=${encodeURIComponent(
+        `"${title}" ${url}`
+      )}&ia=chat`,
+    prompt: (title: string, url: string) =>
+      `Read and summarise this article from the exact source URL — do not conflate with lookalike domains. Article: "${title}" — Source: ${url}`,
+  },
 ];
 
 // ─── SVG Icons ───────────────────────────────────────────────
