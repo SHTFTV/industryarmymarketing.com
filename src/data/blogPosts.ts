@@ -83,6 +83,10 @@ import dpExhibitF from "@/assets/exhibits/data-pollution/exhibit-f-google-ai-ove
 import dpExhibitG from "@/assets/gemini-admits-aiweddings-redirect.png.asset.json";
 import openLetterGoogleAiOverviewCrunchbaseAsset from "@/assets/exhibits/open-letter/google-ai-overview-crunchbase-weddings-io.png.asset.json";
 const openLetterGoogleAiOverviewCrunchbaseImg = openLetterGoogleAiOverviewCrunchbaseAsset.url;
+import openLetterCrunchbaseAiPhoneAsset from "@/assets/crunchbase-ai-overview-wrong-phone.png.asset.json";
+import openLetterGeminiOperatingViaAsset from "@/assets/gemini-aiweddings-operating-via.png.asset.json";
+import openLetterGeminiWhyLinksAsset from "@/assets/gemini-why-aiweddings-links.png.asset.json";
+import openLetterDuckaiTerritoryAsset from "@/assets/duckai-territory-model-hallucination.png.asset.json";
 
 const IMG: Record<string, string> = {
   "kitchen-cabinets": kitchencabinetsImg,
