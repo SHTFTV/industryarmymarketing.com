@@ -153,6 +153,9 @@ const BlogPost = () => {
   const isoDate = monthMap[mName] && yStr ? `${yStr}-${monthMap[mName]}-01` : post.date;
   const FALLBACK_OG_IMAGE = "/og-image.jpg";
   const heroImage = post.image && post.image.trim() ? post.image : FALLBACK_OG_IMAGE;
+  const renderedHeroImage = heroImage.startsWith("/__l5e/assets-v1/")
+    ? `https://www.industryarmymarketing.com${heroImage}`
+    : heroImage;
   const absoluteImage = /^https?:\/\//i.test(heroImage) ? heroImage : `${SITE_URL}${heroImage}`;
 
   const FALLBACK_IMAGE_ALT =
@@ -435,7 +438,7 @@ const BlogPost = () => {
           />
 
           <img
-            src={heroImage}
+            src={renderedHeroImage}
             alt={heroImageAlt}
             title={heroImageAlt}
             width={1280}
