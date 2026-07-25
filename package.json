@@ -29,7 +29,8 @@
     "guard:lookalike": "node scripts/check-lookalike-domains.mjs",
     "audit:export": "node scripts/export-audit.mjs",
     "audit:notify": "node scripts/notify-guard.mjs",
-    "verify:blog": "bunx tsx scripts/postbuild-verify-blog.ts"
+    "verify:blog": "bunx tsx scripts/postbuild-verify-blog.ts",
+    "verify:live-ai-readable-blog": "bunx tsx scripts/verify-live-ai-readable-blog.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
