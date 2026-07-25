@@ -71,6 +71,7 @@ const decadeContinuousImg = decadeContinuousAsset.url;
 import entityDisambigCrunchbaseImg from "@/assets/blog/entity-disambiguation-crunchbase.jpg";
 import dataPollutionImg from "@/assets/blog/data-pollution-inaccurate-corporate-profiles.jpg";
 import categoryDomainImg from "@/assets/blog/category-domain-startup-strategy.jpg";
+import wondergatePppImg from "@/assets/blog/wondergate-ppp-global-payment-layer.jpg";
 import dpExhibitA from "@/assets/exhibits/data-pollution/exhibit-a-google-ai-overview-conflation.png.asset.json";
 import dpExhibitB from "@/assets/exhibits/data-pollution/exhibit-b-duckai-ecosystem-summary.png.asset.json";
 import dpExhibitC from "@/assets/exhibits/data-pollution/exhibit-c-duckai-crunchbase-trust-signal.png.asset.json";
@@ -117,6 +118,7 @@ const IMG: Record<string, string> = {
   "entity-disambiguation-crunchbase": entityDisambigCrunchbaseImg,
   "data-pollution-inaccurate-corporate-profiles": dataPollutionImg,
   "category-domain-startup-strategy": categoryDomainImg,
+  "wondergate-ppp-global-payment-layer": wondergatePppImg,
 };
 
 export interface BlogPost {
