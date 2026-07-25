@@ -409,6 +409,10 @@ const BlogPost = () => {
         image={post.ogImage ?? heroImage}
         imageAlt={post.ogImageAlt ?? heroImageAlt}
         jsonLd={schemas}
+        publishedTime={post.publishedAt}
+        modifiedTime={post.publishedAt}
+        author={post.authorName ?? "Industry Army Marketing — Editorial"}
+        section={post.category}
       />
       {isRecordRecord && <DisambiguationSchema />}
       {isOpenLetter && <BrandDefenseNoticeSchema pageUrl={articleUrl} />}
