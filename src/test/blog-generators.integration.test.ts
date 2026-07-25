@@ -7,7 +7,7 @@ const CANONICAL_HOST = "https://www.industryarmymarketing.com";
 
 function extractSlugs(): string[] {
   const src = readFileSync(resolve("src/data/blogPosts.ts"), "utf8");
-  return Array.from(src.matchAll(/slug:\s*"([^"]+)"/g)).map((m) => m[1]);
+  return Array.from(src.matchAll(/"slug"\s*:\s*"([^"]+)"/g)).map((m) => m[1]);
 }
 
 describe("blog artifact generators (integration)", () => {
