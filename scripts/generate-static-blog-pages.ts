@@ -102,7 +102,9 @@ function extractBalanced(text: string, startIndex: number, open: string, close: 
 function extractExpressionAfter(label: string, open: string, close: string): string {
   const labelIndex = source.indexOf(label);
   if (labelIndex === -1) throw new Error(`Missing ${label}`);
-  const startIndex = source.indexOf(open, labelIndex);
+  const equalsIndex = source.indexOf("=", labelIndex);
+  const searchFrom = equalsIndex === -1 ? labelIndex : equalsIndex;
+  const startIndex = source.indexOf(open, searchFrom);
   if (startIndex === -1) throw new Error(`Missing ${open} after ${label}`);
   return extractBalanced(source, startIndex, open, close);
 }
