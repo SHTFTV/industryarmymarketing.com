@@ -1,0 +1,32 @@
+name: Security scan (RLS + policy guard)
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  policy-guard:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install deps
+        run: npm ci --ignore-scripts || npm install --ignore-scripts
+      - name: Run RLS + policy guard tests
+        run: npx vitest run src/test/host-allowlist-rls.test.ts
+      - name: Run security policy scanner
+        run: node scripts/security-policy-scan.mjs
+      - name: Upload scan report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: security-scan-report
+          path: /tmp/security-scan-report.json
+          if-no-files-found: ignore
