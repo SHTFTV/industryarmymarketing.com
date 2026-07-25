@@ -451,6 +451,54 @@ export type Database = {
         }
         Relationships: []
       }
+      submission_log: {
+        Row: {
+          attempt: number
+          created_at: string
+          engine: string
+          error: string | null
+          http_status: number | null
+          id: string
+          max_attempts: number
+          next_retry_at: string | null
+          response_body: string | null
+          status: string
+          trigger_source: string | null
+          updated_at: string
+          url: string
+        }
+        Insert: {
+          attempt?: number
+          created_at?: string
+          engine: string
+          error?: string | null
+          http_status?: number | null
+          id?: string
+          max_attempts?: number
+          next_retry_at?: string | null
+          response_body?: string | null
+          status?: string
+          trigger_source?: string | null
+          updated_at?: string
+          url: string
+        }
+        Update: {
+          attempt?: number
+          created_at?: string
+          engine?: string
+          error?: string | null
+          http_status?: number | null
+          id?: string
+          max_attempts?: number
+          next_retry_at?: string | null
+          response_body?: string | null
+          status?: string
+          trigger_source?: string | null
+          updated_at?: string
+          url?: string
+        }
+        Relationships: []
+      }
       user_roles: {
         Row: {
           created_at: string

@@ -9,7 +9,8 @@ import { Switch } from "@/components/ui/switch";
 import {
   Table, TableBody, TableCell, TableHead, TableHeader, TableRow,
 } from "@/components/ui/table";
-import { Loader2, ArrowUp, ArrowDown, Trash2, Plus, Save, X, Search } from "lucide-react";
+import { Loader2, ArrowUp, ArrowDown, Trash2, Plus, Save, X, Search, ListChecks } from "lucide-react";
+import { Link } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
 import type { Json } from "@/integrations/supabase/types";
 
@@ -99,11 +100,20 @@ const AdminBlogPosts = () => {
 
   const patchRow = async (id: string, patch: Partial<Omit<BlogRow, "data">> & { data?: Json }) => {
     const prev = rows;
+    const before = prev.find((r) => r.id === id);
     setRows(rows.map(r => r.id === id ? { ...r, ...patch } : r));
     const { error } = await supabase.from("blog_posts").update(patch).eq("id", id);
     if (error) {
       setRows(prev);
       toast({ title: "Update failed", description: error.message, variant: "destructive" });
+      return;
+    }
+    // Auto-submit when a post transitions to published via the inline switch.
+    if (patch.is_published === true && before && before.is_published !== true) {
+      const url = `https://www.industryarmymarketing.com/blog/${before.slug}`;
+      supabase.functions.invoke("submit-url", {
+        body: { urls: [url], source: "auto-publish-toggle" },
+      });
     }
   };
 
@@ -157,6 +167,10 @@ const AdminBlogPosts = () => {
       display_order: editing.display_order,
       data: parsed,
     };
+    const wasPublished = editing.id
+      ? rows.find((r) => r.id === editing.id)?.is_published === true
+      : false;
+    const becamePublished = editing.is_published && !wasPublished;
     const query = editing.id
       ? supabase.from("blog_posts").update(payload).eq("id", editing.id)
       : supabase.from("blog_posts").insert(payload);
@@ -169,6 +183,28 @@ const AdminBlogPosts = () => {
     toast({ title: editing.id ? "Updated" : "Created", description: editing.title });
     setEditing(null);
     load();
+
+    // Auto-submit: whenever a post becomes published (new or transition),
+    // fire IndexNow + GSC URL inspection without requiring the admin button.
+    if (becamePublished) {
+      const url = `https://www.industryarmymarketing.com/blog/${payload.slug}`;
+      supabase.functions
+        .invoke("submit-url", { body: { urls: [url], source: "auto-publish" } })
+        .then(({ error: subErr }) => {
+          if (subErr) {
+            toast({
+              title: "Auto-submit failed",
+              description: `${subErr.message}. See /admin/submission-log for retry state.`,
+              variant: "destructive",
+            });
+          } else {
+            toast({
+              title: "Auto-submitted to search engines",
+              description: `Queued IndexNow + Google inspection for ${payload.slug}.`,
+            });
+          }
+        });
+    }
   };
 
   if (!authChecked) {
@@ -189,6 +225,9 @@ const AdminBlogPosts = () => {
             <Button variant="outline" onClick={submitToSearchEngines} disabled={submitting}>
               {submitting ? <Loader2 className="w-4 h-4 mr-2 animate-spin" /> : <Search className="w-4 h-4 mr-2" />}
               Submit to search engines
+            </Button>
+            <Button variant="outline" asChild>
+              <Link to="/admin/submission-log"><ListChecks className="w-4 h-4 mr-2" />Submission log</Link>
             </Button>
             <Button onClick={() => openEdit(null)}>
               <Plus className="w-4 h-4 mr-2" /> New post
