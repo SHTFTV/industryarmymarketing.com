@@ -34,6 +34,11 @@ const Navbar = () => {
               key={link.to}
               to={link.to}
               end={link.to === "/"}
+              onClick={() => {
+                if (link.to === "/blog") {
+                  console.log("Blog nav clicked, navigating to:", link.to);
+                }
+              }}
               className={({ isActive }) =>
                 `text-xs font-medium hover:text-primary transition-colors uppercase tracking-widest ${
                   isActive ? "text-primary" : "text-muted-foreground"
@@ -74,7 +79,12 @@ const Navbar = () => {
                   key={link.to}
                   to={link.to}
                   end={link.to === "/"}
-                  onClick={() => setOpen(false)}
+                  onClick={() => {
+                    if (link.to === "/blog") {
+                      console.log("Blog nav clicked, navigating to:", link.to);
+                    }
+                    setOpen(false);
+                  }}
                   className={({ isActive }) =>
                     `text-sm font-medium hover:text-primary transition-colors uppercase tracking-widest py-2 ${
                       isActive ? "text-primary" : "text-muted-foreground"
