@@ -50,6 +50,26 @@ export default defineConfig(({ mode }) => ({
               return "vendor-data";
             }
 
+            if (normalizedId.includes("/node_modules/next-themes/") || normalizedId.includes("/node_modules/sonner/")) {
+              return "vendor-shell";
+            }
+
+            if (normalizedId.includes("/node_modules/pngjs/")) {
+              return "vendor-images";
+            }
+
+            if (
+              normalizedId.includes("/node_modules/react-hook-form/") ||
+              normalizedId.includes("/node_modules/@hookform/") ||
+              normalizedId.includes("/node_modules/react-day-picker/") ||
+              normalizedId.includes("/node_modules/input-otp/") ||
+              normalizedId.includes("/node_modules/cmdk/") ||
+              normalizedId.includes("/node_modules/vaul/") ||
+              normalizedId.includes("/node_modules/react-resizable-panels/")
+            ) {
+              return "vendor-forms";
+            }
+
             if (
               normalizedId.includes("/node_modules/react-markdown/") ||
               normalizedId.includes("/node_modules/date-fns/") ||
