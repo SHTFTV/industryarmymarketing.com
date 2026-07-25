@@ -361,6 +361,7 @@ const BlogPost = () => {
   const readMinutes = Math.max(1, Math.round(totalWords / 220));
 
   const isRecordRecord = post.slug === "record-record-domain-provenance-vs-generative-conflation";
+  const isOpenLetter = post.slug === "open-letter-platforms-poisoning-ai-information-supply-chain";
 
   // Topic-aware SEO package selection. Emphasize the tier that best matches
   // the post's category / audience.
