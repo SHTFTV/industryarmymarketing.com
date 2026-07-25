@@ -16,6 +16,11 @@ interface SeoProps {
   image?: string;
   imageAlt?: string;
   noindex?: boolean;
+  locale?: string;
+  publishedTime?: string;
+  modifiedTime?: string;
+  author?: string;
+  section?: string;
 }
 
 const Seo = ({
@@ -27,6 +32,11 @@ const Seo = ({
   image = "/og-image.jpg",
   imageAlt = "Industry Army Marketing — $10 SEO. 20+ years of authority.",
   noindex = false,
+  locale = "en_CA",
+  publishedTime,
+  modifiedTime,
+  author,
+  section,
 }: SeoProps) => {
   const schemas = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
   const absoluteUrl = toAbsolute(path);
@@ -43,6 +53,19 @@ const Seo = ({
       <meta property="og:type" content={type} />
       <meta property="og:image" content={absoluteImage} />
       <meta property="og:image:alt" content={imageAlt} />
+      <meta property="og:locale" content={locale} />
+      {type === "article" && publishedTime && (
+        <meta property="article:published_time" content={publishedTime} />
+      )}
+      {type === "article" && modifiedTime && (
+        <meta property="article:modified_time" content={modifiedTime} />
+      )}
+      {type === "article" && author && (
+        <meta property="article:author" content={author} />
+      )}
+      {type === "article" && section && (
+        <meta property="article:section" content={section} />
+      )}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
