@@ -344,6 +344,50 @@ const rawBlogPosts: BlogPost[] = [
           ]
         },
         {
+          "heading": "Exhibit 1 — Google AI Overview inventing features for the wrong entity",
+          "paragraphs": [
+            "Google's AI Overview, powered by Gemini, restates polluted Crunchbase data as authoritative fact — attributing a fabricated feature list (Smart Matching, Budget Tools) and a third-party phone number to the weddings.io domain. This is source laundering: unverified directory data becomes a definitive AI answer with zero click-through required to verify. Note: the AI does not know it is wrong. That is exactly the point of Brand KYC."
+          ],
+          "image": {
+            "src": "/__l5e/assets-v1/8ea17398-1530-4cf7-9a25-87da418a402e/exhibit-f-google-ai-overview-weddings-io-crunchbase.png",
+            "alt": "Google AI Overview for 'Crunchbase weddings.io' showing fabricated features and an incorrect phone number under the weddings.io domain.",
+            "caption": "Exhibit 1 — Gemini-powered AI Overview surfacing polluted Crunchbase data as fact."
+          }
+        },
+        {
+          "heading": "Exhibit 2 — Gemini admits it substitutes aiweddings.io for weddings.io",
+          "paragraphs": [
+            "In a direct chat, Google's Gemini states on the record that it redirects users from the weddings.io query to aiweddings.io because it believes doing so 'accurately identifies the service.' This is not a data-source error — it is a stated model policy. An AI system is unilaterally rewriting a decade-old domain identity in real time, and telling the user it is helping."
+          ],
+          "image": {
+            "src": "/__l5e/assets-v1/c31b9f37-ac50-46f3-a6e8-c1b84684e8e2/gemini-admits-aiweddings-redirect.png",
+            "alt": "Gemini chat response admitting it substitutes aiweddings.io for weddings.io.",
+            "caption": "Exhibit 2 — Gemini's own on-the-record admission of the substitution."
+          }
+        },
+        {
+          "heading": "Exhibit 3 — DuckAI conflating weddings.io with an Ontario entity",
+          "paragraphs": [
+            "DuckDuckGo's AI assistant summarises the weddings.io ecosystem by blending the legitimate domain with the Ontario startup's profile and, notably, name-drops EyeSpyR™ — proof that AI systems are actively synthesising and redistributing the entity confusion, not just displaying it. Every model in the market is drinking from the same polluted upstream well."
+          ],
+          "image": {
+            "src": dpExhibitB.url,
+            "alt": "DuckAI ecosystem summary conflating weddings.io with an Ontario entity and referencing EyeSpyR.",
+            "caption": "Exhibit 3 — DuckAI (DuckDuckGo) synthesising the same conflation."
+          }
+        },
+        {
+          "heading": "Exhibit 4 — Google AI Overview: Crunchbase-sourced feature hallucinations (repeat pattern)",
+          "paragraphs": [
+            "A second capture of the Google AI Overview, days apart, reproducing the identical pattern: Crunchbase pollution → AI restatement → user-facing hallucination. This is not a one-off glitch. It is a stable, repeatable failure mode that will continue until the upstream directories adopt Brand KYC-style verification."
+          ],
+          "image": {
+            "src": dpExhibitA.url,
+            "alt": "Second Google AI Overview capture showing the same Crunchbase-sourced hallucinations under the weddings.io query.",
+            "caption": "Exhibit 4 — Repeat capture confirming the failure mode is systemic, not incidental."
+          }
+        },
+        {
           "heading": "IX. Credit Where It Is Due — F6S and Canada's Bridal Show Did the Right Thing",
           "paragraphs": [
             "Two platforms deserve public acknowledgement in the middle of this notice. F6S and Canada's Bridal Show both reviewed our concerns about the misuse of the weddings.io name and took the conflicting profile down. That is proof they recognised the damage unverified profiles cause and acted on it — exactly the Brand KYC-style response this letter is asking every other platform to adopt.",
