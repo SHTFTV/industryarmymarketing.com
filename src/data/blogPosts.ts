@@ -78,6 +78,7 @@ import dpExhibitC from "@/assets/exhibits/data-pollution/exhibit-c-duckai-crunch
 import dpExhibitD from "@/assets/exhibits/data-pollution/exhibit-d-duckai-german-brand-confusion.png.asset.json";
 import dpExhibitE from "@/assets/exhibits/data-pollution/crunchbase-serp-root-domain-misuse.png.asset.json";
 import dpExhibitF from "@/assets/exhibits/data-pollution/exhibit-f-google-ai-overview-weddings-io-crunchbase.png.asset.json";
+import dpExhibitG from "@/assets/gemini-admits-aiweddings-redirect.png.asset.json";
 
 const IMG: Record<string, string> = {
   "kitchen-cabinets": kitchencabinetsImg,
