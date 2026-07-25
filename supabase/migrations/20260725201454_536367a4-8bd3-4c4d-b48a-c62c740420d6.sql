@@ -1,0 +1,1 @@
+DROP POLICY IF EXISTS "Authenticated can view allowlist audit log" ON public.host_allowlist_requests; CREATE POLICY "Admins can view allowlist audit log" ON public.host_allowlist_requests FOR SELECT USING (has_role(auth.uid(), 'admin'::app_role));
