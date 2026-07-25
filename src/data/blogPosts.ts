@@ -479,6 +479,12 @@ const rawBlogPosts: BlogPost[] = [
       "intro": "When managing digital assets, most founders and SEO specialists focus on backlinks, speed, and content architecture. But as search transitions from keyword indexers to AI-driven Answer Engines (AEO), another layer has become critical: Entity Resolution. Platforms like Crunchbase, Wikipedia, and LinkedIn aren't just business directories — they act as the ground-truth data layer for search engines, knowledge graphs, and AI models including Duck.ai, Bing, and Google. When high-authority platforms host incorrect corporate data, it creates a cascade of data pollution across the entire web.",
       "sections": [
         {
+          "heading": "Editorial scope and disclaimer",
+          "paragraphs": [
+            "This post concerns the accuracy of third-party records and the retrieval behaviour of search and AI-answer surfaces that ingest them. It does not allege trademark infringement, passing off, fraud, or wrongful intent by any named entity. Every reference to a third party is intended neutrally as identification of a distinct legal person, and the complaint is directed at the record and the platform surfacing it — not at the third party's right to operate under its own identifier. Screenshots are reproduced under fair dealing / fair use for the purposes of criticism, review, and news reporting. Where a screenshot is dated, that date is the capture date; retrieval outputs on the platforms concerned change over time. This post is editorial and not legal advice."
+          ]
+        },
+        {
           "heading": "1. The Power of High-Authority Seed Sites",
           "paragraphs": [
             "Crunchbase sits at a Domain Authority / Rating of 90+. In technical SEO, sites of this caliber act as \"seed nodes.\" Search engine crawlers and AI web scrapers treat data from these nodes with a high degree of implicit trust.",
