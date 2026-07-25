@@ -236,6 +236,127 @@ export const compareBlogPostsByNewest = (a: BlogPost, b: BlogPost) => postTime(b
 
 const rawBlogPosts: BlogPost[] = [
   {
+    "slug": "open-letter-platforms-poisoning-ai-information-supply-chain",
+    "brand": "weddings.io",
+    "trade": "Brand Defense",
+    "cardTitle": "An Open Letter to the Platforms Poisoning the AI Information Supply Chain",
+    "tradeShort": "brand defense",
+    "plural": "founders, operators, platforms, and legal teams",
+    "video": null,
+    "imageKey": "open-letter-ai-supply-chain",
+    "imageAlt": "Editorial cover — a broken supply-chain link shatters into scattered corporate profile cards and AI platform glyphs, with legal scales in silhouette. Dark tactical composition with neon-green accents.",
+    "faqHeading": "Frequently asked: platform accountability, Brand KYC, and AI supply-chain liability",
+    "city": "Langley",
+    "province": "BC",
+    "category": "Press Releases / Notices",
+    "date": "July 2026",
+    "publishedAt": "2026-08-01T15:00:00Z",
+    "title": "An Open Letter to the Platforms Poisoning the AI Information Supply Chain",
+    "metaDescription": "A formal notice to Google, Meta, TikTok, Microsoft, Anthropic, OpenAI, Perplexity and the smaller directories feeding them — on Brand KYC, platform accountability, and the legal framework arriving in the AI era.",
+    "authorName": "Industry Army Marketing — Editorial",
+    "excerpt": "This is not a complaint. This is a notice. To Google, Meta, TikTok, Microsoft, Anthropic, OpenAI, Perplexity — and to the directories feeding them. The era of platform innocence is over.",
+    "pain": "Unverified corporate profiles on startup directories and social platforms enter the AI information supply chain and are synthesized at global scale, degrading identity for every legitimate brand owner.",
+    "detail": "This letter documents the failure mode, the case law being assembled, the Section 32 filing in Ontario, and the Brand KYC standard IAM has already implemented via EyeSpyR™ — and puts every named platform on formal notice.",
+    "process": "IAM is documenting AI-generated confusion as evidentiary exhibits, filing compliance notices with Meta, YouTube, and TikTok IP teams, and pursuing legal remedies against the duplicate Ontario corporate registration under Section 32 of the Business Names Act.",
+    "faqs": [
+      { "q": "Is this a lawsuit?", "a": "No. This is a public notice. It establishes constructive knowledge across every platform named so that the 'we didn't know' defense — the core of Tiffany v. eBay-style contributory-liability protection — no longer applies from the date of publication forward." },
+      { "q": "What is Brand KYC?", "a": "The business-identity equivalent of the Know Your Customer standard financial institutions have used for decades: verify domain ownership history, corporate registration conflicts, social-handle prior use, historical timeline, and active legal objections before publishing a profile that will be ingested by AI systems." },
+      { "q": "Which cases underpin the framework?", "a": "Gemini Data Inc. v. Google LLC (N.D. Cal. 3:24-cv-06484), Tiffany v. eBay (2d Cir. 2010), 1-800 Contacts v. Lens.com (10th Cir. 2013), Perfect 10 v. Amazon/Google (9th Cir. 2007), Force v. Facebook (2d Cir. 2019), and the Ontario Business Names Act, R.S.O. 1990, c. B.17, s. 32." },
+      { "q": "What is EyeSpyR™?", "a": "IAM's proprietary Brand KYC verification layer. It runs corporate registration analysis, domain-ownership history, geographic verification, licensing checks, cross-platform identity correlation, reputation mapping, and historical timeline analysis before any business enters the 150+ digital properties in the IAM ecosystem." },
+      { "q": "Are you attacking AI companies?", "a": "No. AI companies are downstream of the supply chain. The letter names them so they can pressure their upstream data sources to adopt Brand KYC — because AI systems are only as reliable as the identity data feeding them." }
+    ],
+    "cta": {
+      "eyebrow": "For platforms, IP counsel, and brand owners",
+      "heading": "Notice received. What comes next.",
+      "body": "This letter constitutes formal notice. If you represent a platform named in this document, an IP legal team, or a brand owner facing the same supply-chain failure, IAM welcomes direct correspondence. Documentation is available upon formal request.",
+      "buttonText": "Contact IAM — partnerships@industryarmymarketing.com",
+      "buttonHref": "mailto:partnerships@industryarmymarketing.com?subject=Open%20Letter%20%E2%80%94%20Platform%20Accountability"
+    },
+    "richContent": {
+      "intro": "This is not a complaint. This is a notice. To Google. To Meta. To TikTok. To Microsoft. To Anthropic. To OpenAI. To Perplexity. And to the smaller platforms feeding them — Crunchbase, F6S, startup directories, business listing services, and social networks that have spent years treating identity verification as someone else's problem. It is no longer someone else's problem. It is yours. And the legal and commercial consequences of ignoring it are arriving.",
+      "sections": [
+        {
+          "heading": "I. The Supply Chain Nobody Wants to Talk About",
+          "paragraphs": [
+            "Here is how the modern AI identity crisis actually works. It does not start inside Gemini. It does not start inside ChatGPT. It does not start inside Claude or Perplexity. It starts with Crunchbase. It starts with F6S. It starts with every startup directory, business listing platform, and social network that allows unverified entities to register names, handles, and profiles that directly conflict with established, documented, historically verified digital assets.",
+            "When an Ontario-incorporated startup registers a corporate name that mirrors a domain held continuously since May 13, 2015, and that startup is permitted to list pricing data on Crunchbase, claim the exact handle @weddings.io on TikTok, and push unverified profiles across indexable startup directories — that data enters the global information supply chain.",
+            "Once it is in the supply chain, every AI platform that ingests it becomes part of the problem. Google's Gemini synthesizes it. Meta AI summarizes it. Perplexity packages it. Microsoft Copilot cites it. None of them created the confusion. But all of them are now distributing it at scale. This is algorithmic poisoning — and it begins with the platforms that refused to verify identity before they published."
+          ]
+        },
+        {
+          "heading": "II. Why This Moment Matters — Beyond One Brand",
+          "paragraphs": [
+            "The dispute over Weddings.io — a domain asset held and actively defended since 2015 — against an Ontario startup operating on the variant domain aiweddings.io is not simply one company versus another. It is a documented, evidence-backed case study that exposes the exact failure mode threatening every legitimate brand operating in the AI era.",
+            "If a startup can register a lookalike corporate name, secure an exact-match social handle, push unverified listings to startup databases, and have those records ingested and synthesized by the world's most powerful AI systems — then no established brand is safe. Not yours. Not anyone's. The precedent set here will define how the internet handles identity for the next decade."
+          ]
+        },
+        {
+          "heading": "III. The Legal Architecture Is Already in Place",
+          "paragraphs": [
+            "We are not theorizing. We are not threatening. We are documenting and executing. The cases that inform this pursuit are already on the books.",
+            "Gemini Data Inc. v. Google LLC (N.D. Cal., Case No. 3:24-cv-06484). Google's active decision to rebrand its AI product to 'Gemini' despite an existing federal trademark holder demonstrates that AI companies cannot claim neutrality when they make active platform decisions that create marketplace confusion. This case establishes the framework for AI-era naming liability.",
+            "Tiffany Inc. v. eBay (2d Cir., 2010). Once a platform receives actual knowledge of infringement and fails to act, contributory-liability protection disappears. We are establishing actual knowledge across every platform named in this document. The clock is now running.",
+            "1-800 Contacts Inc. v. Lens.com (10th Cir., 2013). Exact-match identifier confusion in digital environments is actionable. An exact-match social handle used by a competitor to redirect audience traffic is not a technicality.",
+            "Perfect 10 v. Amazon/Google (9th Cir., 2007). Active indexing, processing, and serving of content shifts platform responsibility beyond passive hosting. AI synthesis goes further than anything Perfect 10 addressed — which only strengthens the argument.",
+            "Force v. Facebook (2d Cir., 2019). Algorithmic curation and recommendation is not passive hosting. When an AI system actively synthesizes business-identity data into a consumer-facing answer, Section 230 immunity arguments become substantially harder to sustain.",
+            "Ontario Business Names Act, Section 32. A formal Statement of Objection was filed on July 2, 2026, with the Ministry of Public and Business Service Delivery against the Ontario startup's duplicate corporate registration. That filing establishes constructive notice to every platform that has indexed the profile on or after that date. Editorial note: the word 'Official' in this notice denotes issuance by the domain registrant of record; no governmental or judicial status is claimed for the notice itself."
+          ]
+        },
+        {
+          "heading": "IV. To the Smaller Platforms — You Are Not Innocent Bystanders",
+          "paragraphs": [
+            "Crunchbase. F6S. Startup directories. Business listing services. You have spent years arguing that you are simply neutral databases. That argument is finished.",
+            "When your platforms publish unverified pricing structures, funding data, and company profiles under names that directly conflict with documented, established digital assets — and when those records are ingested daily by the AI systems powering global commerce — you are not a neutral database. You are a data source. And data sources carry responsibility for the integrity of what they publish.",
+            "The industry standard for financial institutions has long been Know Your Customer (KYC). Before a financial institution processes a transaction, it verifies identity. The AI era now demands the equivalent for business identity. Brand KYC. Before a platform publishes a company profile, it should verify: who owns the domain associated with the name; whether the corporate registration conflicts with existing entities; whether the social handle conflicts with a documented legacy asset; whether there is a historical timeline that establishes prior use; and whether there are active legal objections on record.",
+            "This is not complicated. It is not expensive. It is a choice. And platforms that have chosen not to build it have chosen to allow their infrastructure to be weaponized against legitimate brand owners."
+          ]
+        },
+        {
+          "heading": "V. To the AI Giants — We Are Protecting You Too",
+          "paragraphs": [
+            "Google, we are not simply attacking you. We are holding you accountable to your own standards. Gemini is one of the most powerful information systems ever built. It is also only as reliable as the identity data feeding it.",
+            "When Gemini synthesizes conflicting business records sourced from unverified startup directories and generates a definitive answer that blends two entirely separate corporate entities — it is not Gemini's original failure. It is a supply-chain failure that Gemini is now amplifying. The same is true for Anthropic's Claude, OpenAI, Perplexity, Meta AI, and Microsoft Copilot.",
+            "These systems were built to serve accurate information at global scale. That mission is compromised every time unverified identity data enters the pipeline upstream. We are not your enemy. We are the enforcement mechanism that forces the upstream infrastructure to become reliable enough for your systems to trust. Brand KYC is not a threat to AI development. It is the foundation AI needs to be trustworthy."
+          ]
+        },
+        {
+          "heading": "VI. EyeSpyR™ — Proof That Better Verification Is Possible",
+          "paragraphs": [
+            "While the largest technology companies in the world have accepted unverified identity as an industry norm, IAM built EyeSpyR™ — a proprietary Brand KYC protection layer engineered to do what platforms refuse to do themselves. It verifies before it publishes.",
+            "Corporate registration analysis. Domain ownership history. Geographic verification against real physical locations. Business licensing checks. Cross-platform identity correlation. Reputation mapping. Historical timeline analysis. Every business entering our ecosystem of 150+ digital properties passes through EyeSpyR before their information becomes machine-readable.",
+            "EyeSpyR was not built as a product pitch. It was built because the alternative — trusting platforms to verify identity on our behalf — had already failed. EyeSpyR now serves as our primary evidence engine in active legal proceedings. When we submit an EyeSpyR forensic audit to a platform's legal-compliance team, we are not submitting a complaint. We are submitting documented proof that the platform had the opportunity to prevent the confusion it is now distributing."
+          ]
+        },
+        {
+          "heading": "VII. The Mandate",
+          "paragraphs": [
+            "To every platform named in this document: you are formally on notice. IAM has filed documentation with the Ontario Ministry of Public and Business Service Delivery. IAM is pursuing legal remedies against the duplicate corporate registration. IAM is submitting compliance notices to the intellectual property teams of Meta, YouTube, and TikTok. IAM is logging AI-generated confusion metrics as evidentiary exhibits. IAM is building the case law that will define platform responsibility in the AI era.",
+            "The choice is straightforward. Act on this notice. Update verification protocols. Remove or flag conflicting profiles. Or continue to host them, and allow the legal defense of 'we didn't know' to expire. Because as of today, you know."
+          ]
+        },
+        {
+          "heading": "VIII. The Bigger Picture",
+          "paragraphs": [
+            "This dispute began over one domain. But the implications reach every business operating in the digital economy. Every company that has spent years building a brand, securing a domain, defending a digital identity is vulnerable to exactly what is happening here if the platforms refuse to act.",
+            "The AI era did not just change how information is distributed. It changed the consequences of getting identity wrong. A mistake in a printed directory stayed in that directory. A mistake in an AI-generated answer travels everywhere Gemini, ChatGPT, Claude, and Perplexity are used — the entire connected world.",
+            "The era of platform innocence is over. The era of platform accountability has begun. And this case — Weddings.io, EyeSpyR™, Brand KYC, and the legal framework being assembled right now — is where that era starts.",
+            "Industry Army Marketing | Weddings.io | EyeSpyR™. Active legal proceedings are underway. Documentation available upon formal request to legal counsel. Statement of Objection filed under Section 32, Ontario Business Names Act — July 2, 2026."
+          ]
+        }
+      ],
+      "sources": [
+        { "label": "Gemini Data Inc. v. Google LLC — N.D. Cal., Case No. 3:24-cv-06484", "href": "https://www.courtlistener.com/docket/68861234/gemini-data-inc-v-google-llc/" },
+        { "label": "Tiffany (NJ) Inc. v. eBay Inc. — 600 F.3d 93 (2d Cir. 2010)", "href": "https://caselaw.findlaw.com/court/us-2nd-circuit/1516030.html" },
+        { "label": "1-800 Contacts, Inc. v. Lens.com, Inc. — 722 F.3d 1229 (10th Cir. 2013)", "href": "https://caselaw.findlaw.com/court/us-10th-circuit/1637957.html" },
+        { "label": "Perfect 10, Inc. v. Amazon.com, Inc. — 508 F.3d 1146 (9th Cir. 2007)", "href": "https://caselaw.findlaw.com/court/us-9th-circuit/1206302.html" },
+        { "label": "Force v. Facebook, Inc. — 934 F.3d 53 (2d Cir. 2019)", "href": "https://caselaw.findlaw.com/court/us-2nd-circuit/1949213.html" },
+        { "label": "Business Names Act, R.S.O. 1990, c. B.17, s. 32", "href": "https://www.ontario.ca/laws/statute/90b17" },
+        { "label": "Weddings.io Domain Provenance & Record of Record", "href": "/blog/record-record-domain-provenance-vs-generative-conflation" },
+        { "label": "Exposing Data Pollution — Inaccurate Corporate Profiles Hurt the Entire Search Ecosystem", "href": "/blog/exposing-data-pollution-inaccurate-corporate-profiles" }
+      ]
+    }
+  },
+  {
     "slug": "wondergate-ppp-pricing-global-wedding-payment-layer",
     "brand": "weddings.io",
     "trade": "Payment Infrastructure",
