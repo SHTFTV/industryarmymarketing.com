@@ -28,7 +28,8 @@
     "seo:diff": "bunx tsx scripts/seo-diff-report.ts"
     ,
     "guard:lookalike": "node scripts/check-lookalike-domains.mjs",
-    "audit:export": "node scripts/export-audit.mjs"
+    "audit:export": "node scripts/export-audit.mjs",
+    "audit:notify": "node scripts/notify-guard.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
