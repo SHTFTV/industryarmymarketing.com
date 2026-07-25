@@ -13,7 +13,7 @@
  *   node scripts/export-audit.mjs
  *   RELEASE=v1.4.2 node scripts/export-audit.mjs
  */
-import { readFileSync, mkdirSync, writeFileSync, existsSync } from "node:fs";
+import { readFileSync, mkdirSync, writeFileSync, existsSync, copyFileSync } from "node:fs";
 import { join } from "node:path";
 import { scan } from "./lib/lookalike-scan.mjs";
 
@@ -94,6 +94,36 @@ console.log(`\n📦 Export audit written to ${outDir}`);
 console.log(`   • audit.json     (${json.configuredModels.length} models, ${json.requiredCanonicalUrls.length} URLs)`);
 console.log(`   • audit.html`);
 if (pdfPath) console.log(`   • ${pdfPath}`);
+
+// Mirror the newest report to public/audit/latest/ so the AI Indexing Audit
+// page can offer a "Download latest report" button. Skip by setting
+// EXPORT_AUDIT_PUBLISH_LATEST=0.
+if (process.env.EXPORT_AUDIT_PUBLISH_LATEST !== "0") {
+  const latestDir = "public/audit/latest";
+  mkdirSync(latestDir, { recursive: true });
+  writeFileSync(join(latestDir, "audit.json"), JSON.stringify(json, null, 2));
+  writeFileSync(join(latestDir, "audit.html"), html);
+  writeFileSync(
+    join(latestDir, "manifest.json"),
+    JSON.stringify({
+      release,
+      generatedAt: json.generatedAt,
+      commit: json.commit,
+      hasPdf: !!pdfPath,
+      counts: {
+        models: json.configuredModels.length,
+        requiredUrls: json.requiredCanonicalUrls.length,
+        violations: guard.violations.length,
+        unknownHosts: guard.unknownCounts.length,
+      },
+    }, null, 2),
+  );
+  if (pdfPath && existsSync(pdfPath)) {
+    copyFileSync(pdfPath, join(latestDir, "audit.pdf"));
+  }
+  console.log(`   • mirrored to ${latestDir}/`);
+}
+
 console.log(
   `   Guard: ${guard.violations.length} violation(s), ${guard.unknownCounts.length} unknown host(s).`,
 );

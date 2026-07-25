@@ -20,6 +20,8 @@ jobs:
       - name: Install deps
         run: bun install --frozen-lockfile || bun install
       - name: Run lookalike-domain guard
+        id: guard
+        continue-on-error: true
         run: node scripts/check-lookalike-domains.mjs
       - name: Export release audit
         if: always()
@@ -29,6 +31,7 @@ jobs:
         run: node scripts/export-audit.mjs
       - name: Upload audit artifact
         if: always()
+        id: upload
         uses: actions/upload-artifact@v4
         with:
           name: release-audit-${{ github.sha }}
@@ -36,3 +39,14 @@ jobs:
             audit-report/**
             public/audit/**
           retention-days: 30
+      - name: Notify Slack / GitHub
+        if: always()
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RELEASE: ${{ github.sha }}
+          AUDIT_ARTIFACT_URL: ${{ steps.upload.outputs.artifact-url }}
+        run: node scripts/notify-guard.mjs
+      - name: Fail if guard failed
+        if: steps.guard.outcome == 'failure'
+        run: exit 1
