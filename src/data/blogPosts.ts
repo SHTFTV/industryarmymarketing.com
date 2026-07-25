@@ -424,6 +424,15 @@ const rawBlogPosts: BlogPost[] = [
           ]
         },
         {
+          "heading": "IX-E. The Four Pillars of Brand KYC",
+          "paragraphs": [
+            "Verification Before Publication. Platforms, registries, and startup databases — Crunchbase and every peer directory included — can no longer operate as uncurated, 'neutral' drop-boxes. Before a profile is pushed into the global data supply chain, the operator must verify domain-ownership history, corporate filings, social-handle provenance, and any active legal objections on record. Publication is a distribution decision, not a data-entry convenience.",
+            "The Death of Algorithmic Complicity. Brand KYC eliminates the excuse of 'AI hallucination' or 'passive hosting'. When a large language model or search engine synthesises false data because its upstream sources failed to verify who actually owns an asset, the platform is not experiencing a glitch — it is distributing actionable marketplace confusion. The remedy is upstream: platforms must clean their ingestion pipes before the models ever see the data.",
+            "Zero Tolerance for Copycat Arbitrage. Lookalike domain variants — including the attempt to siphon authority via aiweddings.io against the legitimate legacy asset weddings.io — must be treated as structural vulnerabilities, not edge cases. Automated brand-protection layers such as EyeSpyR™ can and should intercept these patterns at ingestion, before a single profile, listing, or AI answer ever reaches a user.",
+            "Direct Legal Accountability. Once a platform is formally notified of a discrepancy — as every recipient of this letter now is — continued distribution of the unverified data shifts the platform from an innocent aggregator to a knowing party. Under Tiffany v. eBay and its progeny, that shift carries direct liability for trademark and identity dilution. Notice has been served. The clock is running."
+          ]
+        },
+        {
           "heading": "IX. Credit Where It Is Due — F6S and Canada's Bridal Show Did the Right Thing",
           "paragraphs": [
             "Two platforms deserve public acknowledgement in the middle of this notice. F6S and Canada's Bridal Show both reviewed our concerns about the misuse of the weddings.io name and took the conflicting profile down. That is proof they recognised the damage unverified profiles cause and acted on it — exactly the Brand KYC-style response this letter is asking every other platform to adopt.",
