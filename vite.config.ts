@@ -26,10 +26,6 @@ export default defineConfig(({ mode }) => ({
           const normalizedId = id.split(path.sep).join("/");
 
           if (normalizedId.includes("/node_modules/")) {
-            if (/[\\/]node_modules[\\/](react|react-dom)[\\/]/.test(id)) {
-              return "vendor-react";
-            }
-
             if (/[\\/]node_modules[\\/](react-router-dom|react-router|react-helmet-async|@tanstack)[\\/]/.test(id)) {
               return "vendor-routing";
             }
