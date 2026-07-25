@@ -77,6 +77,7 @@ import dpExhibitB from "@/assets/exhibits/data-pollution/exhibit-b-duckai-ecosys
 import dpExhibitC from "@/assets/exhibits/data-pollution/exhibit-c-duckai-crunchbase-trust-signal.png.asset.json";
 import dpExhibitD from "@/assets/exhibits/data-pollution/exhibit-d-duckai-german-brand-confusion.png.asset.json";
 import dpExhibitE from "@/assets/exhibits/data-pollution/crunchbase-serp-root-domain-misuse.png.asset.json";
+import dpExhibitF from "@/assets/exhibits/data-pollution/exhibit-f-google-ai-overview-weddings-io-crunchbase.png.asset.json";
 
 const IMG: Record<string, string> = {
   "kitchen-cabinets": kitchencabinetsImg,
@@ -571,6 +572,22 @@ const rawBlogPosts: BlogPost[] = [
             "src": dpExhibitE.url,
             "alt": "Google search results page for the query 'weddings.io crunchbase' showing a Crunchbase result titled 'Weddings.IO - Crunchbase Company Profile & Funding' and an AI Overview describing weddings.io as a private Canadian AI-powered wedding platform headquartered in Toronto, Ontario.",
             "caption": "Exhibit E — Google SERP + AI Overview, captured 2026-07-23. Source: Google Search (google.com/search?q=weddings.io+crunchbase)."
+          }
+        },
+        {
+          "heading": "Exhibit F — Google AI Overview restates the polluted Crunchbase profile as authoritative fact",
+          "paragraphs": [
+            "Google SERP + AI Overview for the query \"Crunchbase weddings.io,\" captured July 25, 2026. This exhibit isolates four distinct failure modes stacked on a single results page:",
+            "1. Source laundering. The AI Overview cites Crunchbase (and a Google Play tile) as its underlying sources, then rewrites the polluted profile in Google's own voice — \"Weddings.IO is an AI-powered wedding platform that connects couples with local vendors\" — with no hedging, no attribution in the sentence, and no disambiguation from the actual weddings.io operator.",
+            "2. Fabricated feature list. The \"Platform Features\" block (Smart Matching, Budget Tools, Task Management) is generated on top of the incorrect entity binding. None of these features describe the weddings.io network operated by Industry Army Marketing (Langley, BC). Once the entity is wrong, every downstream fact inherits that error and is presented as verified product information.",
+            "3. Contact-data pollution promoted above the fold. The organic Crunchbase snippet surfaces a \"Phone Number 1-705-794-…\" line directly under the domain string weddings.io. IAM does not operate a 705 area code line. Publishing an unrelated third party's phone number under our root domain creates a direct consumer-harm vector — misdirected sales calls, misdirected support requests, and misdirected complaints — all attributable in the public record to weddings.io.",
+            "4. Zero-click authority transfer. Because the AI Overview answers the query without requiring a click, the incorrect entity description is what the majority of searchers will actually read. The DR90+ Crunchbase profile is no longer just a stale directory listing; it is the training signal Google's answer layer is repeating verbatim to every user who searches our brand + Crunchbase.",
+            "Taken together, Exhibits A–F show the full pollution pipeline: a single incorrect third-party registry profile (Crunchbase) is ingested by multiple answer engines (Google AI Overview, Duck.ai, cross-lingual surfaces) and re-emitted as first-person authoritative product copy, complete with a working phone number, against the wrong domain. This is the harm the post is documenting, captured in a single frame."
+          ],
+          "image": {
+            "src": dpExhibitF.url,
+            "alt": "Google search results page for the query 'Crunchbase weddings.io' showing an AI Overview that describes Weddings.IO as an AI-powered wedding platform with Smart Matching, Budget Tools, and Task Management, sourced from Crunchbase and Google Play, alongside an organic Crunchbase result listing a 1-705-794 phone number under the weddings.io domain.",
+            "caption": "Exhibit F — Google SERP + AI Overview for 'Crunchbase weddings.io,' captured 2026-07-25. Source: Google Search."
           }
         },
         {
