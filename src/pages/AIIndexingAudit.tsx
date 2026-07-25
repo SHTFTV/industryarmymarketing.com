@@ -18,6 +18,13 @@ type AllowlistRequest = {
   created_at: string;
   source_context: string | null;
 };
+type LatestManifest = {
+  release: string;
+  generatedAt: string;
+  commit: string | null;
+  hasPdf: boolean;
+  counts: { models: number; requiredUrls: number; violations: number; unknownHosts: number };
+};
 
 // Canonical citation targets each AI model must point to. This is the
 // authoritative list an operator uses to verify whether a model's answer
@@ -39,6 +46,7 @@ export default function AIIndexingAudit() {
   const [requests, setRequests] = useState<AllowlistRequest[]>([]);
   const [notes, setNotes] = useState<Record<string, string>>({});
   const [busyHost, setBusyHost] = useState<string | null>(null);
+  const [manifest, setManifest] = useState<LatestManifest | null>(null);
 
   useEffect(() => {
     fetch("/audit/unknown-hosts.json", { cache: "no-store" })
@@ -49,6 +57,10 @@ export default function AIIndexingAudit() {
         setUnknownGeneratedAt(json.generatedAt ?? null);
       })
       .catch(() => { /* file absent in dev */ });
+    fetch("/audit/latest/manifest.json", { cache: "no-store" })
+      .then((r) => (r.ok ? r.json() : null))
+      .then((m) => m && setManifest(m))
+      .catch(() => { /* absent in dev */ });
   }, []);
 
   useEffect(() => {
@@ -102,6 +114,42 @@ export default function AIIndexingAudit() {
   const latestDecision = (host: string) =>
     requests.find((r) => r.host === host);
 
+  // ─── Diff view: compare successive versions per host ────────────
+  // Groups requests by host, sorts by version, then computes the transition
+  // between v(n-1) and v(n). This gives operators a clean audit trail of
+  // when a host's status flipped and who changed the note.
+  const hostVersionDiffs = (() => {
+    const byHost = new Map<string, AllowlistRequest[]>();
+    for (const r of requests) {
+      if (!byHost.has(r.host)) byHost.set(r.host, []);
+      byHost.get(r.host)!.push(r);
+    }
+    const diffs: {
+      host: string;
+      from: AllowlistRequest | null;
+      to: AllowlistRequest;
+      changes: { field: string; before: string; after: string }[];
+    }[] = [];
+    for (const [host, list] of byHost) {
+      const sorted = [...list].sort((a, b) => a.version - b.version);
+      for (let i = 0; i < sorted.length; i++) {
+        const to = sorted[i];
+        const from = i > 0 ? sorted[i - 1] : null;
+        const changes: { field: string; before: string; after: string }[] = [];
+        if (!from) {
+          changes.push({ field: "status", before: "(new)", after: to.status });
+        } else {
+          if (from.status !== to.status) changes.push({ field: "status", before: from.status, after: to.status });
+          if ((from.note ?? "") !== (to.note ?? "")) changes.push({ field: "note", before: from.note ?? "—", after: to.note ?? "—" });
+        }
+        if (changes.length) diffs.push({ host, from, to, changes });
+      }
+    }
+    return diffs.sort((a, b) =>
+      (b.to.decided_at ?? b.to.created_at).localeCompare(a.to.decided_at ?? a.to.created_at),
+    );
+  })();
+
   return (
     <>
       <Helmet>
@@ -127,6 +175,51 @@ export default function AIIndexingAudit() {
             the strict citation prompt each model receives, and the canonical URLs the model is required to cite. Use it to verify a model's
             answer against the real source.
           </p>
+
+          {/* Download latest audit report */}
+          <section className="mb-10 rounded-lg border border-primary/40 bg-primary/5 p-4">
+            <h2 className="font-display text-xl mb-2">Latest release audit report</h2>
+            {manifest ? (
+              <>
+                <p className="text-xs text-muted-foreground mb-3">
+                  Release <code>{manifest.release}</code> · Generated {new Date(manifest.generatedAt).toLocaleString()} ·
+                  {" "}{manifest.counts.models} models, {manifest.counts.requiredUrls} URLs,
+                  {" "}<span className={manifest.counts.violations ? "text-destructive font-semibold" : "text-primary font-semibold"}>
+                    {manifest.counts.violations} violation{manifest.counts.violations === 1 ? "" : "s"}
+                  </span>, {manifest.counts.unknownHosts} unknown host{manifest.counts.unknownHosts === 1 ? "" : "s"}.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <a
+                    href="/audit/latest/audit.html"
+                    download
+                    className="text-xs rounded bg-primary text-primary-foreground px-3 py-1.5 font-semibold"
+                  >
+                    Download HTML
+                  </a>
+                  {manifest.hasPdf && (
+                    <a
+                      href="/audit/latest/audit.pdf"
+                      download
+                      className="text-xs rounded border border-primary text-primary px-3 py-1.5 font-semibold"
+                    >
+                      Download PDF
+                    </a>
+                  )}
+                  <a
+                    href="/audit/latest/audit.json"
+                    download
+                    className="text-xs rounded border border-border text-muted-foreground px-3 py-1.5"
+                  >
+                    Download JSON
+                  </a>
+                </div>
+              </>
+            ) : (
+              <p className="text-xs text-muted-foreground">
+                No published report yet. Run <code>bun run audit:export</code> or wait for the next CI build.
+              </p>
+            )}
+          </section>
 
           {/* Configured models */}
           <section className="mb-14">
@@ -251,6 +344,46 @@ export default function AIIndexingAudit() {
                     </li>
                   ))}
                 </ul>
+              </div>
+            )}
+          </section>
+
+          {/* Allowlist change diff view */}
+          <section className="mb-14">
+            <h2 className="font-display text-2xl md:text-3xl mb-2">Allowlist change diff — version history</h2>
+            <p className="text-xs text-muted-foreground mb-4">
+              Every approve/reject on a host bumps its version. This view shows the diff between v(n-1) and v(n) with timestamps,
+              so operators can audit exactly when a host's status or note changed.
+            </p>
+            {hostVersionDiffs.length === 0 ? (
+              <p className="text-sm text-muted-foreground">No versioned changes yet.</p>
+            ) : (
+              <div className="space-y-2">
+                {hostVersionDiffs.slice(0, 50).map((d) => (
+                  <div key={`${d.host}-${d.to.version}`} className="rounded border border-border bg-card p-3">
+                    <div className="flex items-center justify-between flex-wrap gap-2 mb-2">
+                      <div>
+                        <code className="text-sm">{d.host}</code>
+                        <span className="text-xs text-muted-foreground ml-2">
+                          {d.from ? `v${d.from.version} → v${d.to.version}` : `v${d.to.version} (initial)`}
+                        </span>
+                      </div>
+                      <span className="text-xs text-muted-foreground font-mono">
+                        {new Date(d.to.decided_at ?? d.to.created_at).toISOString()}
+                      </span>
+                    </div>
+                    <ul className="text-xs font-mono space-y-1">
+                      {d.changes.map((c, i) => (
+                        <li key={i} className="flex gap-2">
+                          <span className="text-muted-foreground w-14">{c.field}:</span>
+                          <span className="text-destructive line-through">{c.before}</span>
+                          <span className="text-muted-foreground">→</span>
+                          <span className="text-primary">{c.after}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
               </div>
             )}
           </section>
