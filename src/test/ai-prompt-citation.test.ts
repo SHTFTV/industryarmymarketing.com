@@ -11,7 +11,7 @@ import { LOOKALIKE_HOSTS } from "@/config/canonicalDomains";
 // buildUrl form, so a regression in either place fails the test.
 
 const TITLE = "IAM Test Article — Do Not Conflate";
-const URL = "https://www.industryarmymarketing.com/blog/test-canonical-url";
+const CANONICAL_URL = "https://www.industryarmymarketing.com/blog/test-canonical-url";
 
 const STRICT_MODELS = ["gemini", "duckai", "meta", "huggingchat", "poe"] as const;
 
@@ -31,13 +31,13 @@ describe("AI indexing — strict citation prompt contract", () => {
     const p = AI_PLATFORMS.find((x) => x.id === id);
     it(`${id}: prompt template embeds the canonical URL verbatim`, () => {
       expect(p, `platform ${id} must be configured`).toBeDefined();
-      const prompt = p!.prompt(TITLE, URL);
-      expect(prompt).toContain(URL);
+      const prompt = p!.prompt(TITLE, CANONICAL_URL);
+      expect(prompt).toContain(CANONICAL_URL);
       expect(prompt).toMatch(/STRICT CITATION MODE/);
     });
 
     it(`${id}: prompt forbids lookalike-domain substitution`, () => {
-      const prompt = p!.prompt(TITLE, URL);
+      const prompt = p!.prompt(TITLE, CANONICAL_URL);
       // At minimum, mention "lookalike" explicitly.
       expect(prompt.toLowerCase()).toMatch(/lookalike|do not substitute|do not conflate/);
       // And must NOT swap the canonical URL for any known lookalike host.
@@ -48,16 +48,16 @@ describe("AI indexing — strict citation prompt contract", () => {
     });
 
     it(`${id}: prompt defines the mandatory unreachable-URL fallback`, () => {
-      const prompt = p!.prompt(TITLE, URL);
+      const prompt = p!.prompt(TITLE, CANONICAL_URL);
       expect(prompt).toMatch(/I cannot access[^"]*please open it directly/i);
       // Fallback string must reference the exact URL — no synthesis allowed.
-      expect(prompt).toContain(URL);
+      expect(prompt).toContain(CANONICAL_URL);
     });
 
     it(`${id}: buildUrl carries the same strict-citation contract`, () => {
-      const built = p!.buildUrl(TITLE, URL);
+      const built = p!.buildUrl(TITLE, CANONICAL_URL);
       const decoded = decodedFrom(built);
-      expect(decoded).toContain(URL);
+      expect(decoded).toContain(CANONICAL_URL);
       expect(decoded).toMatch(/STRICT CITATION MODE|cannot access/i);
     });
   }
