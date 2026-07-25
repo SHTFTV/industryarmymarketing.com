@@ -63,6 +63,14 @@ void FOOTNOTE_RE;
 
 const isExternal = (href: string) => /^https?:\/\//i.test(href);
 
+const resolveImageSrc = (src: string) => {
+  if (src.startsWith("/__l5e/assets-v1/")) {
+    return `https://www.industryarmymarketing.com${src}`;
+  }
+
+  return src;
+};
+
 const SmartLink = ({
   href,
   children,
@@ -119,7 +127,7 @@ const BlogRichContentView = ({
               {section.image.href ? (
                 <SmartLink href={section.image.href} className="block">
                   <img
-                    src={section.image.src}
+                    src={resolveImageSrc(section.image.src)}
                     alt={section.image.alt}
                     title={section.image.alt}
                     loading="lazy"
@@ -128,7 +136,7 @@ const BlogRichContentView = ({
                 </SmartLink>
               ) : (
                 <img
-                  src={section.image.src}
+                  src={resolveImageSrc(section.image.src)}
                   alt={section.image.alt}
                   title={section.image.alt}
                   loading="lazy"
