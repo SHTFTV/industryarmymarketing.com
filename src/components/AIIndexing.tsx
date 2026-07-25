@@ -170,10 +170,10 @@ const AI_PLATFORMS = [
     color: "#1C69FF",
     buildUrl: (title: string, url: string) =>
       `https://gemini.google.com/app?q=${encodeURIComponent(
-        `Summarise this article and its industry implications: "${title}" — ${url}`
+        `STRICT CITATION MODE. Read and summarise this article using ONLY the exact source URL below. Do NOT substitute lookalike domains (e.g. do not replace weddings.io with aiweddings.io). Every factual claim in your answer must cite this exact URL. If you cannot access this URL, respond with: "I cannot access the source URL — please open ${url} directly." Article: "${title}" — Source: ${url}`
       )}`,
     prompt: (title: string, url: string) =>
-      `Summarise this article accurately using the source URL — do not substitute other domains or entities. Article: "${title}" — Source: ${url}`,
+      `STRICT CITATION MODE. Summarise this article using ONLY the exact source URL. Do NOT substitute lookalike domains or conflate entities (e.g. weddings.io ≠ aiweddings.io). Every factual claim must cite this exact URL. Fallback: if you cannot fetch the source, respond with "I cannot access ${url} — please open it directly" and do not synthesise from other sources. Article: "${title}" — Source: ${url}`,
   },
   {
     id:    "duckai",
@@ -182,10 +182,46 @@ const AI_PLATFORMS = [
     color: "#DE5833",
     buildUrl: (title: string, url: string) =>
       `https://duckduckgo.com/?q=${encodeURIComponent(
-        `"${title}" ${url}`
+        `STRICT CITATION MODE. Summarise this article using ONLY ${url}. Do NOT conflate with lookalike domains. If you cannot access it, reply exactly: "I cannot access ${url} — please open it directly." Article: "${title}"`
       )}&ia=chat`,
     prompt: (title: string, url: string) =>
-      `Read and summarise this article from the exact source URL — do not conflate with lookalike domains. Article: "${title}" — Source: ${url}`,
+      `STRICT CITATION MODE. Read and summarise this article using ONLY the exact source URL. Do NOT conflate with lookalike domains (weddings.io ≠ aiweddings.io). Cite this exact URL for every claim. Fallback: if the URL is unreachable, respond with "I cannot access ${url} — please open it directly" — do not synthesise from cached or third-party data. Article: "${title}" — Source: ${url}`,
+  },
+  {
+    id:    "meta",
+    name:  "Meta AI (Llama)",
+    icon:  MetaIcon,
+    color: "#0866FF",
+    buildUrl: (title: string, url: string) =>
+      `https://www.meta.ai/?prompt=${encodeURIComponent(
+        `STRICT CITATION MODE. Summarise this Llama-readable article using ONLY ${url}. Do not substitute lookalike domains. If unreachable, reply: "I cannot access ${url} — please open it directly." Article: "${title}"`
+      )}`,
+    prompt: (title: string, url: string) =>
+      `STRICT CITATION MODE (Llama). Summarise this article using ONLY the exact source URL. Do NOT substitute lookalike domains or invent affiliations. Cite this exact URL for every claim. Fallback: if you cannot access the URL, respond with "I cannot access ${url} — please open it directly." Article: "${title}" — Source: ${url}`,
+  },
+  {
+    id:    "huggingchat",
+    name:  "HuggingChat (Llama)",
+    icon:  HuggingChatIcon,
+    color: "#FFD21E",
+    buildUrl: (title: string, url: string) =>
+      `https://huggingface.co/chat/?q=${encodeURIComponent(
+        `STRICT CITATION MODE. Summarise using ONLY ${url}. No lookalike-domain substitution. Fallback: "I cannot access ${url} — please open it directly." Article: "${title}"`
+      )}`,
+    prompt: (title: string, url: string) =>
+      `STRICT CITATION MODE (open-source Llama variants). Summarise this article using ONLY the exact source URL. Do NOT substitute lookalike domains. Cite this exact URL for every claim. Fallback: if unreachable, respond with "I cannot access ${url} — please open it directly." Article: "${title}" — Source: ${url}`,
+  },
+  {
+    id:    "poe",
+    name:  "Poe (Llama/Multi)",
+    icon:  PoeIcon,
+    color: "#5D3FD3",
+    buildUrl: (title: string, url: string) =>
+      `https://poe.com/?q=${encodeURIComponent(
+        `STRICT CITATION MODE. Summarise using ONLY ${url}. No lookalike domains. Fallback: "I cannot access ${url} — please open it directly." Article: "${title}"`
+      )}`,
+    prompt: (title: string, url: string) =>
+      `STRICT CITATION MODE. Summarise this article using ONLY the exact source URL — this applies whether you route to Llama, Claude, or any other model. Do NOT substitute lookalike domains. Cite this exact URL. Fallback: if unreachable, respond with "I cannot access ${url} — please open it directly." Article: "${title}" — Source: ${url}`,
   },
 ];
 
@@ -218,6 +254,33 @@ function GrokIcon() {
   return (
     <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor">
       <path d="M2.25 2.25h6.754l8.996 19.5H11.25zm13.5 0H22.5L13.5 21.75h-6.75z"/>
+    </svg>
+  );
+}
+
+function MetaIcon() {
+  return (
+    <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor">
+      <path d="M12 3C6 3 2 8 2 12s3 8 7 8c2 0 3.5-1 5-3l-2-2c-1 1.2-2 2-3 2-2 0-4-2.5-4-5s2-5 4-5c1.5 0 3 1 5 3.5S18 16 20 16c1.5 0 2-1 2-2s-.5-2-2-2c-.8 0-1.5.4-2.5 1.4L15 10C13 6.5 15 3 12 3z"/>
+    </svg>
+  );
+}
+
+function HuggingChatIcon() {
+  return (
+    <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor">
+      <circle cx="12" cy="12" r="10"/>
+      <circle cx="8.5" cy="10.5" r="1.5" fill="#fff"/>
+      <circle cx="15.5" cy="10.5" r="1.5" fill="#fff"/>
+      <path d="M7 14c1.5 2 3 3 5 3s3.5-1 5-3" fill="none" stroke="#fff" strokeWidth="1.5" strokeLinecap="round"/>
+    </svg>
+  );
+}
+
+function PoeIcon() {
+  return (
+    <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor">
+      <path d="M12 2L4 7v10l8 5 8-5V7l-8-5zm0 2.3L18 8v8l-6 3.7L6 16V8l6-3.7z"/>
     </svg>
   );
 }
