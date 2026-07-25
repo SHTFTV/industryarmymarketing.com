@@ -273,12 +273,12 @@ const rawBlogPosts: BlogPost[] = [
       "buttonHref": "mailto:partnerships@industryarmymarketing.com?subject=Open%20Letter%20%E2%80%94%20Platform%20Accountability"
     },
     "richContent": {
-      "intro": "This is not a complaint. This is a notice. To Google. To Meta. To TikTok. To Microsoft. To Anthropic. To OpenAI. To Perplexity. And to the smaller platforms feeding them — Crunchbase, F6S, startup directories, business listing services, and social networks that have spent years treating identity verification as someone else's problem. It is no longer someone else's problem. It is yours. And the legal and commercial consequences of ignoring it are arriving.",
+      "intro": "This is not a complaint. This is a notice. To Google. To Meta. To TikTok. To Microsoft. To Anthropic. To OpenAI. To Perplexity. And to the smaller platforms feeding them — Crunchbase, startup directories, business listing services, and social networks that have spent years treating identity verification as someone else's problem. It is no longer someone else's problem. It is yours. And the legal and commercial consequences of ignoring it are arriving. Not every platform has behaved this way: F6S and Canada's Bridal Show both reviewed our concerns and removed the conflicting profile from their platforms. Their conduct is the standard the rest of the industry should meet.",
       "sections": [
         {
           "heading": "I. The Supply Chain Nobody Wants to Talk About",
           "paragraphs": [
-            "Here is how the modern AI identity crisis actually works. It does not start inside Gemini. It does not start inside ChatGPT. It does not start inside Claude or Perplexity. It starts with Crunchbase. It starts with F6S. It starts with every startup directory, business listing platform, and social network that allows unverified entities to register names, handles, and profiles that directly conflict with established, documented, historically verified digital assets.",
+            "Here is how the modern AI identity crisis actually works. It does not start inside Gemini. It does not start inside ChatGPT. It does not start inside Claude or Perplexity. It starts with Crunchbase. It starts with every startup directory, business listing platform, and social network that allows unverified entities to register names, handles, and profiles that directly conflict with established, documented, historically verified digital assets.",
             "When an Ontario-incorporated startup registers a corporate name that mirrors a domain held continuously since May 13, 2015, and that startup is permitted to list pricing data on Crunchbase, claim the exact handle @weddings.io on TikTok, and push unverified profiles across indexable startup directories — that data enters the global information supply chain.",
             "Once it is in the supply chain, every AI platform that ingests it becomes part of the problem. Google's Gemini synthesizes it. Meta AI summarizes it. Perplexity packages it. Microsoft Copilot cites it. None of them created the confusion. But all of them are now distributing it at scale. This is algorithmic poisoning — and it begins with the platforms that refused to verify identity before they published."
           ]
@@ -305,7 +305,7 @@ const rawBlogPosts: BlogPost[] = [
         {
           "heading": "IV. To the Smaller Platforms — You Are Not Innocent Bystanders",
           "paragraphs": [
-            "Crunchbase. F6S. Startup directories. Business listing services. You have spent years arguing that you are simply neutral databases. That argument is finished.",
+            "Crunchbase. Startup directories. Business listing services. You have spent years arguing that you are simply neutral databases. That argument is finished.",
             "When your platforms publish unverified pricing structures, funding data, and company profiles under names that directly conflict with documented, established digital assets — and when those records are ingested daily by the AI systems powering global commerce — you are not a neutral database. You are a data source. And data sources carry responsibility for the integrity of what they publish.",
             "The industry standard for financial institutions has long been Know Your Customer (KYC). Before a financial institution processes a transaction, it verifies identity. The AI era now demands the equivalent for business identity. Brand KYC. Before a platform publishes a company profile, it should verify: who owns the domain associated with the name; whether the corporate registration conflicts with existing entities; whether the social handle conflicts with a documented legacy asset; whether there is a historical timeline that establishes prior use; and whether there are active legal objections on record.",
             "This is not complicated. It is not expensive. It is a choice. And platforms that have chosen not to build it have chosen to allow their infrastructure to be weaponized against legitimate brand owners."
@@ -342,6 +342,31 @@ const rawBlogPosts: BlogPost[] = [
             "The era of platform innocence is over. The era of platform accountability has begun. And this case — Weddings.io, EyeSpyR™, Brand KYC, and the legal framework being assembled right now — is where that era starts.",
             "Industry Army Marketing | Weddings.io | EyeSpyR™. Active legal proceedings are underway. Documentation available upon formal request to legal counsel. Statement of Objection filed under Section 32, Ontario Business Names Act — July 2, 2026."
           ]
+        },
+        {
+          "heading": "IX. Credit Where It Is Due — F6S and Canada's Bridal Show Did the Right Thing",
+          "paragraphs": [
+            "Two platforms deserve public acknowledgement in the middle of this notice. F6S and Canada's Bridal Show both reviewed our concerns about the misuse of the weddings.io name and took the conflicting profile down. That is proof they recognised the damage unverified profiles cause and acted on it — exactly the Brand KYC-style response this letter is asking every other platform to adopt.",
+            "The screenshots below are the receipts. They are also the answer to anyone asking whether responsible platform conduct is even possible in 2026. It is. F6S and Canada's Bridal Show just demonstrated it. Full write-ups: [F6S Did the Right Thing](/blog/f6s-protecting-weddings-io-brand-intellectual-property) and [Canada's Bridal Show Did the Right Thing](/blog/canadas-bridal-show-did-the-right-thing-weddings-io)."
+          ],
+          "image": {
+            "src": "/__l5e/assets-v1/8cf33694-7fb5-4911-85e0-0fff5297fc64/f6s-protecting-weddings-io.png",
+            "alt": "F6S public acknowledgement — the platform reviewed weddings.io brand concerns and took the conflicting profile down.",
+            "caption": "Exhibit — F6S removed the conflicting profile after IAM raised concerns.",
+            "href": "/blog/f6s-protecting-weddings-io-brand-intellectual-property"
+          }
+        },
+        {
+          "heading": "X. Canada's Bridal Show — Same Standard, Same Result",
+          "paragraphs": [
+            "Canada's Bridal Show, one of the longest-running bridal event operators in Canada, handled our concerns the same way: reviewed, acted, resolved. No litigation, no back-and-forth, no denial. The conflicting branding came down. This is what platform accountability looks like when a responsible operator is on the other side of the email."
+          ],
+          "image": {
+            "src": "/__l5e/assets-v1/d0f66328-6ce3-4bd8-ad15-a4e1e58f602b/canadian-bridal-show-thank-you.png",
+            "alt": "Canada's Bridal Show public acknowledgement — professional response to weddings.io brand concerns.",
+            "caption": "Exhibit — Canada's Bridal Show reviewed and addressed the branding concern.",
+            "href": "/blog/canadas-bridal-show-did-the-right-thing-weddings-io"
+          }
         }
       ],
       "sources": [
