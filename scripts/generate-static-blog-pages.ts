@@ -10,6 +10,7 @@ import vm from "vm";
 const BASE_URL = "https://industryarmymarketing.com";
 const SOURCE_PATH = resolve("src/data/blogPosts.ts");
 const OUTPUT_ROOT = resolve("public/blog");
+const DIST_OUTPUT_ROOT = resolve("dist/blog");
 const DEFAULT_IMAGE = "/og-image.jpg";
 
 type BlogRichSection = {
@@ -366,19 +367,23 @@ function renderListing(): string {
 <html lang="en-CA"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Blog — Industry Army Marketing</title><meta name="description" content="Crawlable Industry Army Marketing articles for search engines and AI readers."><meta name="robots" content="index,follow"><link rel="canonical" href="${BASE_URL}/blog"><link rel="alternate" type="application/rss+xml" href="${BASE_URL}/rss.xml"><script type="application/ld+json">${JSON.stringify({ "@context": "https://schema.org", "@type": "WebPage", "@id": `${BASE_URL}/blog`, name: "Industry Army Marketing Blog", url: `${BASE_URL}/blog` })}</script><script type="application/ld+json">${JSON.stringify({ "@context": "https://schema.org", "@type": "ItemList", "@id": `${BASE_URL}/blog#latest`, itemListElement: itemList })}</script><style>:root{color-scheme:dark}body{margin:0;background:#070a07;color:#f2f7ef;font-family:Inter,Arial,sans-serif;line-height:1.6}main{max-width:1000px;margin:0 auto;padding:48px 20px}a{color:#39ff14}li{margin:12px 0;color:#b8c5b4}h1{font-size:clamp(2.5rem,7vw,5rem);line-height:1.05}</style></head><body><main><h1>Industry Army Marketing Blog</h1><p>Static, crawlable article index for search engines, AI readers, and RSS consumers.</p><p><a href="${BASE_URL}/llms.txt">AI reading guide</a> · <a href="${BASE_URL}/sitemap.xml">Sitemap</a> · <a href="${BASE_URL}/rss.xml">RSS</a></p><ol>${posts.map((post) => `<li><a href="${BASE_URL}/blog/${post.slug}">${esc(post.title)}</a><br>${esc(post.metaDescription)}</li>`).join("\n")}</ol></main></body></html>`;
 }
 
-if (!existsSync(OUTPUT_ROOT)) mkdirSync(OUTPUT_ROOT, { recursive: true });
+const outputRoots = [OUTPUT_ROOT, ...(existsSync(resolve("dist")) ? [DIST_OUTPUT_ROOT] : [])];
 
-for (const post of posts) {
-  const dir = resolve(OUTPUT_ROOT, post.slug);
-  mkdirSync(dir, { recursive: true });
-  const html = renderPost(post);
-  writeFileSync(resolve(dir, "index.html"), html);
-  writeFileSync(resolve(OUTPUT_ROOT, `${post.slug}.html`), html);
+for (const root of outputRoots) {
+  if (!existsSync(root)) mkdirSync(root, { recursive: true });
+
+  for (const post of posts) {
+    const dir = resolve(root, post.slug);
+    mkdirSync(dir, { recursive: true });
+    const html = renderPost(post);
+    writeFileSync(resolve(dir, "index.html"), html);
+    writeFileSync(resolve(root, `${post.slug}.html`), html);
+  }
+
+  writeFileSync(resolve(root, "index.html"), renderListing());
+
+  const stale = resolve(root, "open-letter-platforms-poisoning-ai-information-supply-chain.html.tmp");
+  if (existsSync(stale)) rmSync(stale);
 }
 
-writeFileSync(resolve(OUTPUT_ROOT, "index.html"), renderListing());
-
-const stale = resolve(OUTPUT_ROOT, "open-letter-platforms-poisoning-ai-information-supply-chain.html.tmp");
-if (existsSync(stale)) rmSync(stale);
-
-console.log(`static blog HTML written (${posts.length} posts)`);
+console.log(`static blog HTML written (${posts.length} posts × ${outputRoots.length} output root${outputRoots.length === 1 ? "" : "s"})`);
