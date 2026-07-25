@@ -9,7 +9,14 @@
       "status": "fixed",
       "detected_at": "2026-07-24T15:12:00Z",
       "fixed_at": "2026-07-24T15:40:00Z",
-      "resolution": "Revoked EXECUTE from PUBLIC/authenticated; kept SECURITY DEFINER for RLS policies only."
+      "resolution": "Revoked EXECUTE from PUBLIC/authenticated; kept SECURITY DEFINER for RLS policies only.",
+      "category": "database",
+      "affected": ["public.has_role(uuid, app_role)"],
+      "policy_or_query": "REVOKE EXECUTE ON FUNCTION public.has_role(uuid, public.app_role) FROM PUBLIC, authenticated;\nGRANT EXECUTE ON FUNCTION public.has_role(uuid, public.app_role) TO service_role;",
+      "details": "SECURITY DEFINER functions executable by the `authenticated` role can be invoked with arbitrary arguments to probe role membership across users. The function is only needed inside RLS policies, which run as the policy owner regardless of caller EXECUTE privileges, so the client-facing EXECUTE grant was revoked.",
+      "references": [
+        "https://supabase.com/docs/guides/database/postgres/row-level-security#security-definer-functions"
+      ]
     },
     {
       "internal_id": "audit_fetch_page_ssrf",
@@ -19,7 +26,12 @@
       "status": "fixed",
       "detected_at": "2026-07-24T18:02:00Z",
       "fixed_at": "2026-07-24T19:11:00Z",
-      "resolution": "Added DNS pre-resolution with private-range blocklist and canonical URL validation."
+      "resolution": "Added DNS pre-resolution with private-range blocklist and canonical URL validation.",
+      "category": "edge_function",
+      "affected": ["supabase/functions/audit-fetch-page/index.ts"],
+      "policy_or_query": "// Pre-resolve DNS and reject private / link-local / metadata ranges before fetch()\nconst { address } = await Deno.resolveDns(host, 'A');\nif (isPrivateRange(address)) return 400;",
+      "details": "Unrestricted server-side fetch allowed attackers to probe internal IP space (169.254.169.254, 10.0.0.0/8, ::1). The endpoint now enforces https, resolves DNS ahead of time, rejects private ranges and metadata endpoints, and caps response size.",
+      "references": ["https://owasp.org/www-community/attacks/Server_Side_Request_Forgery"]
     },
     {
       "internal_id": "audit_deep_dive_unauthenticated",
@@ -29,7 +41,12 @@
       "status": "fixed",
       "detected_at": "2026-07-24T18:02:00Z",
       "fixed_at": "2026-07-24T19:20:00Z",
-      "resolution": "Enforced JWT verification and admin role check inside the function handler."
+      "resolution": "Enforced JWT verification and admin role check inside the function handler.",
+      "category": "edge_function",
+      "affected": ["supabase/functions/audit-deep-dive/index.ts"],
+      "policy_or_query": "const { data: claimData } = await supabase.auth.getClaims(token);\nif (!claimData?.claims?.sub) return 401;\n// per-user rate limit via seo_events (10/hour)",
+      "details": "Endpoint calls a paid AI gateway. Public access allowed credit exhaustion attacks. Handler now requires a valid Supabase JWT and applies a 10/hour per-user rate limit.",
+      "references": []
     },
     {
       "internal_id": "host_allowlist_requests_public_select",
@@ -39,7 +56,12 @@
       "status": "fixed",
       "detected_at": "2026-07-25T20:14:16Z",
       "fixed_at": "2026-07-25T20:20:00Z",
-      "resolution": "Replaced permissive SELECT policy (USING true) with admin-only policy using has_role(auth.uid(), 'admin')."
+      "resolution": "Replaced permissive SELECT policy (USING true) with admin-only policy using has_role(auth.uid(), 'admin').",
+      "category": "rls_policy",
+      "affected": ["public.host_allowlist_requests"],
+      "policy_or_query": "DROP POLICY \"Authenticated can view allowlist audit log\" ON public.host_allowlist_requests;\nCREATE POLICY \"Admins can view allowlist audit log\"\n  ON public.host_allowlist_requests FOR SELECT\n  TO authenticated\n  USING (public.has_role(auth.uid(), 'admin'::public.app_role));",
+      "details": "The internal allowlist audit log includes triage notes, decisions, and operator identifiers. A permissive USING (true) policy exposed those to every authenticated user. Restricted read access to admins via has_role() to preserve confidentiality of moderation activity.",
+      "references": []
     }
   ]
 }

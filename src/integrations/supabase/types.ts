@@ -199,6 +199,39 @@ export type Database = {
           },
         ]
       }
+      security_scan_runs: {
+        Row: {
+          created_at: string
+          finding_count: number
+          findings: Json
+          generated_at: string
+          id: string
+          notes: string | null
+          source: string
+          triggered_by: string | null
+        }
+        Insert: {
+          created_at?: string
+          finding_count?: number
+          findings?: Json
+          generated_at?: string
+          id?: string
+          notes?: string | null
+          source?: string
+          triggered_by?: string | null
+        }
+        Update: {
+          created_at?: string
+          finding_count?: number
+          findings?: Json
+          generated_at?: string
+          id?: string
+          notes?: string | null
+          source?: string
+          triggered_by?: string | null
+        }
+        Relationships: []
+      }
       seo_audits: {
         Row: {
           checks: Json
