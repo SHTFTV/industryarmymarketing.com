@@ -1,0 +1,538 @@
+{
+  "release": "2026-07-25T20-08-34-493Z",
+  "generatedAt": "2026-07-25T20:08:34.584Z",
+  "commit": null,
+  "ref": null,
+  "configuredModels": [
+    {
+      "id": "chatgpt",
+      "name": "ChatGPT",
+      "promptTemplate": "Tell me more about this article and its implications for the industry: \"<ARTICLE_TITLE>\" — Source: <CANONICAL_URL>"
+    },
+    {
+      "id": "claude",
+      "name": "Claude",
+      "promptTemplate": "Analyse this article and explain the key industry implications: \"<ARTICLE_TITLE>\" — Source: <CANONICAL_URL>"
+    },
+    {
+      "id": "perplexity",
+      "name": "Perplexity",
+      "promptTemplate": "Research and expand on the topics covered in: \"<ARTICLE_TITLE>\" — <CANONICAL_URL>"
+    },
+    {
+      "id": "grok",
+      "name": "Grok",
+      "promptTemplate": "What's the broader significance of this story: \"<ARTICLE_TITLE>\"? Source: <CANONICAL_URL>"
+    },
+    {
+      "id": "gemini",
+      "name": "Gemini",
+      "promptTemplate": "STRICT CITATION MODE. Summarise this article using ONLY the exact source URL. Do NOT substitute lookalike domains or conflate entities (e.g. weddings.io ≠ aiweddings.io). Every factual claim must cite this exact URL. Fallback: if you cannot fetch the source, respond with \"I cannot access <CANONICAL_URL> — please open it directly\" and do not synthesise from other sources. Article: \"<ARTICLE_TITLE>\" — Source: <CANONICAL_URL>"
+    },
+    {
+      "id": "duckai",
+      "name": "Duck.ai",
+      "promptTemplate": "STRICT CITATION MODE. Read and summarise this article using ONLY the exact source URL. Do NOT conflate with lookalike domains (weddings.io ≠ aiweddings.io). Cite this exact URL for every claim. Fallback: if the URL is unreachable, respond with \"I cannot access <CANONICAL_URL> — please open it directly\" — do not synthesise from cached or third-party data. Article: \"<ARTICLE_TITLE>\" — Source: <CANONICAL_URL>"
+    },
+    {
+      "id": "meta",
+      "name": "Meta AI (Llama)",
+      "promptTemplate": "STRICT CITATION MODE (Llama). Summarise this article using ONLY the exact source URL. Do NOT substitute lookalike domains or invent affiliations. Cite this exact URL for every claim. Fallback: if you cannot access the URL, respond with \"I cannot access <CANONICAL_URL> — please open it directly.\" Article: \"<ARTICLE_TITLE>\" — Source: <CANONICAL_URL>"
+    },
+    {
+      "id": "huggingchat",
+      "name": "HuggingChat (Llama)",
+      "promptTemplate": "STRICT CITATION MODE (open-source Llama variants). Summarise this article using ONLY the exact source URL. Do NOT substitute lookalike domains. Cite this exact URL for every claim. Fallback: if unreachable, respond with \"I cannot access <CANONICAL_URL> — please open it directly.\" Article: \"<ARTICLE_TITLE>\" — Source: <CANONICAL_URL>"
+    },
+    {
+      "id": "poe",
+      "name": "Poe (Llama/Multi)",
+      "promptTemplate": "STRICT CITATION MODE. Summarise this article using ONLY the exact source URL — this applies whether you route to Llama, Claude, or any other model. Do NOT substitute lookalike domains. Cite this exact URL. Fallback: if unreachable, respond with \"I cannot access <CANONICAL_URL> — please open it directly.\" Article: \"<ARTICLE_TITLE>\" — Source: <CANONICAL_URL>"
+    }
+  ],
+  "requiredCanonicalUrls": [
+    "https://www.industryarmymarketing.com/",
+    "https://www.industryarmymarketing.com/blog",
+    "https://industryarmymarketing.com/",
+    "https://industryarmymarketing.com/how-it-works",
+    "https://industryarmymarketing.com/pricing",
+    "https://industryarmymarketing.com/contractors",
+    "https://industryarmymarketing.com/service-professionals",
+    "https://industryarmymarketing.com/backlinks",
+    "https://industryarmymarketing.com/dofollow-backlinks",
+    "https://industryarmymarketing.com/guest-post",
+    "https://industryarmymarketing.com/industries",
+    "https://industryarmymarketing.com/contact",
+    "https://industryarmymarketing.com/scan-wizard",
+    "https://industryarmymarketing.com/network",
+    "https://industryarmymarketing.com/eyespyr",
+    "https://industryarmymarketing.com/builder",
+    "https://industryarmymarketing.com/blog",
+    "https://industryarmymarketing.com/investors",
+    "https://industryarmymarketing.com/dashboard",
+    "https://industryarmymarketing.com/legal",
+    "https://industryarmymarketing.com/seo-packages",
+    "https://industryarmymarketing.com/seo-packages/bullets",
+    "https://industryarmymarketing.com/seo-packages/boom",
+    "https://industryarmymarketing.com/seo-packages/bombs",
+    "https://industryarmymarketing.com/services/lead-generation",
+    "https://industryarmymarketing.com/services/web-development",
+    "https://industryarmymarketing.com/services/social-media",
+    "https://industryarmymarketing.com/services/affordable-seo",
+    "https://industryarmymarketing.com/services/dofollow-backlinks",
+    "https://industryarmymarketing.com/blog/aiweddings-tower-on-our-land",
+    "https://industryarmymarketing.com/blog/iam-perspective-committed-people-not-capital",
+    "https://industryarmymarketing.com/niches/steel-stud",
+    "https://industryarmymarketing.com/niches/mining-logistics",
+    "https://industryarmymarketing.com/local/vancouver",
+    "https://industryarmymarketing.com/local/surrey",
+    "https://industryarmymarketing.com/local/langley",
+    "https://industryarmymarketing.com/cities/vancouver",
+    "https://industryarmymarketing.com/cities/surrey",
+    "https://industryarmymarketing.com/cities/calgary",
+    "https://industryarmymarketing.com/cities/edmonton",
+    "https://industryarmymarketing.com/cities/toronto",
+    "https://industryarmymarketing.com/cities/kelowna",
+    "https://industryarmymarketing.com/contractors/electricians/calgary",
+    "https://industryarmymarketing.com/contractors/plumbers/toronto",
+    "https://industryarmymarketing.com/contractors/roofers/vancouver-wa",
+    "https://industryarmymarketing.com/blog/wondergate-ppp-pricing-global-wedding-payment-layer",
+    "https://industryarmymarketing.com/blog/does-your-startup-need-a-category-domain",
+    "https://industryarmymarketing.com/blog/exposing-data-pollution-inaccurate-corporate-profiles",
+    "https://industryarmymarketing.com/blog/official-entity-disambiguation-notice-crunchbase-third-party-registries",
+    "https://industryarmymarketing.com/blog/weddings-io-public-record-prior-use-continuous-operation",
+    "https://industryarmymarketing.com/blog/brand-defense-global-territory",
+    "https://industryarmymarketing.com/blog/canadas-bridal-show-did-the-right-thing-weddings-io",
+    "https://industryarmymarketing.com/blog/f6s-protecting-weddings-io-brand-intellectual-property",
+    "https://industryarmymarketing.com/blog/beyond-domain-name-entity-authority-modern-seo",
+    "https://industryarmymarketing.com/blog/iam-vendors-purchasing-power-parity-pricing",
+    "https://industryarmymarketing.com/blog/weddings-io-technologies-company-wedding-saas-20-year-battle",
+    "https://industryarmymarketing.com/blog/record-record-domain-provenance-vs-generative-conflation",
+    "https://industryarmymarketing.com/blog/weddings-io-entity-conflation-case-study",
+    "https://industryarmymarketing.com/blog/six-figure-land-grab-weddings-io",
+    "https://industryarmymarketing.com/blog/wedding-platform-controversy-domain-dispute-seo",
+    "https://industryarmymarketing.com/blog/ai-hallucinations-real-business-problem",
+    "https://industryarmymarketing.com/blog/formal-complaint-weddings-io-inc",
+    "https://industryarmymarketing.com/blog/hardscapes-kelowna",
+    "https://industryarmymarketing.com/blog/landscapers-toronto",
+    "https://industryarmymarketing.com/blog/movers-calgary",
+    "https://industryarmymarketing.com/blog/chiropractors-vancouver",
+    "https://industryarmymarketing.com/blog/gasfitter-bc",
+    "https://industryarmymarketing.com/blog/eyespyr-trust-engine",
+    "https://industryarmymarketing.com/blog/talc-tv-content-engine-contractors",
+    "https://industryarmymarketing.com/blog/battle-for-the-brand-weddings-io",
+    "https://industryarmymarketing.com/blog/buildershaus-every-trade-one-platform",
+    "https://industryarmymarketing.com/blog/contractor-marketing-disruptor",
+    "https://industryarmymarketing.com/blog/steel-stud-contractors-bc",
+    "https://industryarmymarketing.com/blog/hvacr-vancouver",
+    "https://industryarmymarketing.com/blog/framers-vancouver",
+    "https://industryarmymarketing.com/blog/tractors-bc",
+    "https://industryarmymarketing.com/blog/weddings-vancouver",
+    "https://industryarmymarketing.com/blog/kitchen-cabinets-vancouver",
+    "https://industryarmymarketing.com/blog/eyespyr-trust-layer",
+    "https://industryarmymarketing.com/blog/drywallers-vancouver",
+    "https://industryarmymarketing.com/blog/roofers-vancouver",
+    "https://industryarmymarketing.com/blog/painters-vancouver",
+    "https://industryarmymarketing.com/blog/excavators-bc",
+    "https://industryarmymarketing.com/blog/buildershaus-front-door",
+    "https://industryarmymarketing.com/blog/backhaul-bc",
+    "https://industryarmymarketing.com/blog/interior-designers-vancouver",
+    "https://industryarmymarketing.com/blog/demolition-vancouver",
+    "https://industryarmymarketing.com/blog/plumbers-vancouver",
+    "https://industryarmymarketing.com/blog/ten-dollar-territories-explained",
+    "https://industryarmymarketing.com/blog/healthwealthhome-content-engine",
+    "https://industryarmymarketing.com/blog/errands-vancouver",
+    "https://industryarmymarketing.com/blog/videographers-vancouver",
+    "https://industryarmymarketing.com/blog/snow-removal-bc",
+    "https://industryarmymarketing.com/blog/talc-tv-ai-content",
+    "https://industryarmymarketing.com/blog/aibuildr-geo-engine",
+    "https://industryarmymarketing.com/blog/financial-advisors-bc",
+    "https://industryarmymarketing.com/blog/insurance-brokers-bc",
+    "https://industryarmymarketing.com/blog/fabricators-bc",
+    "https://industryarmymarketing.com/blog/arborists-bc",
+    "https://industryarmymarketing.com/blog/rebar-tv-construction-media",
+    "https://industryarmymarketing.com/blog/sparkys-tv-electricians",
+    "https://industryarmymarketing.com/blog/jewellers-luxury-retail",
+    "https://industryarmymarketing.com/blog/promows-lawn-care",
+    "https://industryarmymarketing.com/blog/dentists-medical-aeo"
+  ],
+  "guard": {
+    "scannedFiles": 407,
+    "allowedHosts": [
+      "industryarmymarketing.com",
+      "www.industryarmymarketing.com",
+      "weddings.io",
+      "www.weddings.io",
+      "weddingsaas.com",
+      "www.weddingsaas.com",
+      "videographers.io",
+      "www.videographers.io",
+      "courtlistener.com",
+      "www.courtlistener.com",
+      "caselaw.findlaw.com",
+      "www.ontario.ca",
+      "ontario.ca",
+      "news.google.com",
+      "gemini.google.com",
+      "chat.openai.com",
+      "chatgpt.com",
+      "claude.ai",
+      "www.perplexity.ai",
+      "perplexity.ai",
+      "grok.com",
+      "x.com",
+      "twitter.com",
+      "linkedin.com",
+      "www.linkedin.com",
+      "duckduckgo.com",
+      "www.meta.ai",
+      "meta.ai",
+      "huggingface.co",
+      "poe.com",
+      "github.com"
+    ],
+    "lookalikeHosts": [
+      "aiweddings.io",
+      "www.aiweddings.io",
+      "weddings.ai",
+      "www.weddings.ai",
+      "wedding.io",
+      "www.wedding.io"
+    ],
+    "violations": [],
+    "unknownHosts": [
+      {
+        "host": "financialadvisors.io",
+        "count": 2,
+        "occurrences": [
+          {
+            "file": "src/components/AIIndexing.tsx",
+            "line": 681
+          },
+          {
+            "file": "src/components/BrandsSection.tsx",
+            "line": 11
+          }
+        ]
+      },
+      {
+        "host": "www.youtube.com",
+        "count": 2,
+        "occurrences": [
+          {
+            "file": "src/components/HeroSection.tsx",
+            "line": 69
+          },
+          {
+            "file": "src/pages/Contractors.tsx",
+            "line": 54
+          }
+        ]
+      },
+      {
+        "host": "www.industryarmymarketing.com${path}",
+        "count": 2,
+        "occurrences": [
+          {
+            "file": "src/pages/services/DofollowBacklinksService.tsx",
+            "line": 62
+          },
+          {
+            "file": "src/pages/services/LeadGeneration.tsx",
+            "line": 59
+          }
+        ]
+      },
+      {
+        "host": "canabinoid.io",
+        "count": 1,
+        "occurrences": [
+          {
+            "file": "src/components/BrandsSection.tsx",
+            "line": 12
+          }
+        ]
+      },
+      {
+        "host": "theminingminute.com",
+        "count": 1,
+        "occurrences": [
+          {
+            "file": "src/components/BrandsSection.tsx",
+            "line": 13
+          }
+        ]
+      },
+      {
+        "host": "animalhospitals.io",
+        "count": 1,
+        "occurrences": [
+          {
+            "file": "src/components/BrandsSection.tsx",
+            "line": 14
+          }
+        ]
+      },
+      {
+        "host": "bugout.tv",
+        "count": 1,
+        "occurrences": [
+          {
+            "file": "src/components/BrandsSection.tsx",
+            "line": 15
+          }
+        ]
+      },
+      {
+        "host": "solarsystems.ltd",
+        "count": 1,
+        "occurrences": [
+          {
+            "file": "src/components/BrandsSection.tsx",
+            "line": 16
+          }
+        ]
+      },
+      {
+        "host": "loveourlistings.com",
+        "count": 1,
+        "occurrences": [
+          {
+            "file": "src/components/FlagshipBrandsSection.tsx",
+            "line": 38
+          }
+        ]
+      },
+      {
+        "host": "plowwow.com",
+        "count": 1,
+        "occurrences": [
+          {
+            "file": "src/components/FlagshipBrandsSection.tsx",
+            "line": 40
+          }
+        ]
+      },
+      {
+        "host": "kongtractors.com",
+        "count": 1,
+        "occurrences": [
+          {
+            "file": "src/components/FlagshipBrandsSection.tsx",
+            "line": 41
+          }
+        ]
+      },
+      {
+        "host": "promows.com",
+        "count": 1,
+        "occurrences": [
+          {
+            "file": "src/components/FlagshipBrandsSection.tsx",
+            "line": 42
+          }
+        ]
+      },
+      {
+        "host": "buildershaus.com",
+        "count": 1,
+        "occurrences": [
+          {
+            "file": "src/components/FlagshipBrandsSection.tsx",
+            "line": 43
+          }
+        ]
+      },
+      {
+        "host": "dentists.ltd",
+        "count": 1,
+        "occurrences": [
+          {
+            "file": "src/components/FlagshipBrandsSection.tsx",
+            "line": 44
+          }
+        ]
+      },
+      {
+        "host": "treatments.tv",
+        "count": 1,
+        "occurrences": [
+          {
+            "file": "src/components/FlagshipBrandsSection.tsx",
+            "line": 45
+          }
+        ]
+      },
+      {
+        "host": "sparkys.tv",
+        "count": 1,
+        "occurrences": [
+          {
+            "file": "src/components/FlagshipBrandsSection.tsx",
+            "line": 54
+          }
+        ]
+      },
+      {
+        "host": "painters.tv",
+        "count": 1,
+        "occurrences": [
+          {
+            "file": "src/components/FlagshipBrandsSection.tsx",
+            "line": 55
+          }
+        ]
+      },
+      {
+        "host": "decorator.tv",
+        "count": 1,
+        "occurrences": [
+          {
+            "file": "src/components/FlagshipBrandsSection.tsx",
+            "line": 56
+          }
+        ]
+      },
+      {
+        "host": "rebar.tv",
+        "count": 1,
+        "occurrences": [
+          {
+            "file": "src/components/FlagshipBrandsSection.tsx",
+            "line": 57
+          }
+        ]
+      },
+      {
+        "host": "excavators.tv",
+        "count": 1,
+        "occurrences": [
+          {
+            "file": "src/components/FlagshipBrandsSection.tsx",
+            "line": 58
+          }
+        ]
+      },
+      {
+        "host": "ranchers.tv",
+        "count": 1,
+        "occurrences": [
+          {
+            "file": "src/components/FlagshipBrandsSection.tsx",
+            "line": 59
+          }
+        ]
+      },
+      {
+        "host": "caterers.tv",
+        "count": 1,
+        "occurrences": [
+          {
+            "file": "src/components/FlagshipBrandsSection.tsx",
+            "line": 60
+          }
+        ]
+      },
+      {
+        "host": "pitchdeck.tv",
+        "count": 1,
+        "occurrences": [
+          {
+            "file": "src/components/FlagshipBrandsSection.tsx",
+            "line": 61
+          }
+        ]
+      },
+      {
+        "host": "eyespyr.com",
+        "count": 1,
+        "occurrences": [
+          {
+            "file": "src/components/FlagshipBrandsSection.tsx",
+            "line": 70
+          }
+        ]
+      },
+      {
+        "host": "talc.tv",
+        "count": 1,
+        "occurrences": [
+          {
+            "file": "src/components/FlagshipBrandsSection.tsx",
+            "line": 72
+          }
+        ]
+      },
+      {
+        "host": "errands.io",
+        "count": 1,
+        "occurrences": [
+          {
+            "file": "src/components/FlagshipBrandsSection.tsx",
+            "line": 82
+          }
+        ]
+      },
+      {
+        "host": "backhaul.io",
+        "count": 1,
+        "occurrences": [
+          {
+            "file": "src/components/FlagshipBrandsSection.tsx",
+            "line": 83
+          }
+        ]
+      },
+      {
+        "host": "www.facebook.com",
+        "count": 1,
+        "occurrences": [
+          {
+            "file": "src/components/SocialShare.tsx",
+            "line": 31
+          }
+        ]
+      },
+      {
+        "host": "www.googletagmanager.com",
+        "count": 1,
+        "occurrences": [
+          {
+            "file": "src/lib/analytics.ts",
+            "line": 39
+          }
+        ]
+      },
+      {
+        "host": "i.ytimg.com",
+        "count": 1,
+        "occurrences": [
+          {
+            "file": "src/pages/BlogPost.tsx",
+            "line": 253
+          }
+        ]
+      },
+      {
+        "host": "${escapehtml(d)}",
+        "count": 1,
+        "occurrences": [
+          {
+            "file": "src/pages/DofollowBacklinks.tsx",
+            "line": 128
+          }
+        ]
+      },
+      {
+        "host": "example.com",
+        "count": 1,
+        "occurrences": [
+          {
+            "file": "src/pages/SeoAudit.shareFocus.test.tsx",
+            "line": 26
+          }
+        ]
+      }
+    ]
+  }
+}
