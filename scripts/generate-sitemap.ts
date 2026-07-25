@@ -1,6 +1,6 @@
 // Runs before `vite dev` and `vite build` (predev/prebuild hooks); writes public/sitemap.xml.
 
-import { writeFileSync, readFileSync } from "fs";
+import { writeFileSync, readFileSync, readdirSync } from "fs";
 import { resolve } from "path";
 import { fetchPublishedBlogPosts } from "./lib/blog-source";
 const BASE_URL = "https://industryarmymarketing.com";
@@ -14,7 +14,13 @@ interface SitemapEntry {
 const cities = ["vancouver", "surrey", "calgary", "edmonton", "toronto", "kelowna"];
 const localCities = ["vancouver", "surrey", "langley"];
 const niches = ["steel-stud", "mining-logistics"];
-const trades = ["plumbing","roofing","electrical","hvac","framing","demolition","excavation","painting"];
+const contractorRoutes = readdirSync(resolve("src/data/contractors"))
+  .filter((file) => file.endsWith(".ts"))
+  .map((file) => file.replace(/\.ts$/, ""))
+  .map((name) => name.split("__"))
+  .filter((parts): parts is [string, string] => parts.length === 2 && parts.every(Boolean))
+  .map(([trade, city]) => `/contractors/${trade}/${city}`)
+  .sort();
 
 // Auto-derived from src/data/blogPosts.ts so new posts appear in the
 // sitemap the next time predev/prebuild runs — no manual edits needed.
@@ -132,13 +138,11 @@ const entries: SitemapEntry[] = [
     changefreq: "monthly" as const,
     priority: "0.7",
   })),
-  ...trades.flatMap((t) =>
-    cities.map((c) => ({
-      path: `/contractors/${t}/${c}`,
-      changefreq: "monthly" as const,
-      priority: "0.6",
-    })),
-  ),
+  ...contractorRoutes.map((path) => ({
+    path,
+    changefreq: "monthly" as const,
+    priority: "0.6",
+  })),
   ...blogSlugs.map((s) => ({
     path: `/blog/${s}`,
     changefreq: "monthly" as const,
