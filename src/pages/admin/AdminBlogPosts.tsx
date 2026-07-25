@@ -9,7 +9,7 @@ import { Switch } from "@/components/ui/switch";
 import {
   Table, TableBody, TableCell, TableHead, TableHeader, TableRow,
 } from "@/components/ui/table";
-import { Loader2, ArrowUp, ArrowDown, Trash2, Plus, Save, X } from "lucide-react";
+import { Loader2, ArrowUp, ArrowDown, Trash2, Plus, Save, X, Search } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import type { Json } from "@/integrations/supabase/types";
 
@@ -45,6 +45,28 @@ const AdminBlogPosts = () => {
   const [dataText, setDataText] = useState("");
   const [dataError, setDataError] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+
+  const submitToSearchEngines = async () => {
+    setSubmitting(true);
+    try {
+      const { data, error } = await supabase.functions.invoke("submit-to-search-engines");
+      if (error) throw error;
+      const summary = data as { totalBlogUrls?: number; sitemapSubmit?: { status?: number }; indexNow?: { status?: number } };
+      toast({
+        title: "Submitted to search engines",
+        description: `${summary.totalBlogUrls ?? 0} URLs · Google sitemap ${summary.sitemapSubmit?.status ?? "?"} · IndexNow ${summary.indexNow?.status ?? "?"}`,
+      });
+    } catch (err) {
+      toast({
+        title: "Submission failed",
+        description: err instanceof Error ? err.message : String(err),
+        variant: "destructive",
+      });
+    } finally {
+      setSubmitting(false);
+    }
+  };
 
   useEffect(() => {
     const { data: sub } = supabase.auth.onAuthStateChange((_e, session) => {
@@ -163,9 +185,15 @@ const AdminBlogPosts = () => {
               Manage published posts, featured status, and display order. Source of truth for sitemap/RSS.
             </p>
           </div>
-          <Button onClick={() => openEdit(null)}>
-            <Plus className="w-4 h-4 mr-2" /> New post
-          </Button>
+          <div className="flex gap-2">
+            <Button variant="outline" onClick={submitToSearchEngines} disabled={submitting}>
+              {submitting ? <Loader2 className="w-4 h-4 mr-2 animate-spin" /> : <Search className="w-4 h-4 mr-2" />}
+              Submit to search engines
+            </Button>
+            <Button onClick={() => openEdit(null)}>
+              <Plus className="w-4 h-4 mr-2" /> New post
+            </Button>
+          </div>
         </div>
 
         <div className="border rounded-lg overflow-hidden">
