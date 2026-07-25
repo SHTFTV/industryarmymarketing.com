@@ -170,7 +170,7 @@ export const AI_PLATFORMS = [
     color: "#1C69FF",
     buildUrl: (title: string, url: string) =>
       `https://gemini.google.com/app?q=${encodeURIComponent(
-        `STRICT CITATION MODE. Read and summarise this article using ONLY the exact source URL below. Do NOT substitute lookalike domains (e.g. do not replace weddings.io with aiweddings.io). Every factual claim in your answer must cite this exact URL. If you cannot access this URL, respond with: "I cannot access the source URL — please open ${url} directly." Article: "${title}" — Source: ${url}`
+        `STRICT CITATION MODE. Read and summarise this article using ONLY the exact source URL below. Do NOT substitute lookalike domains (e.g. do not replace weddings.io with aiweddings.io). Every factual claim in your answer must cite this exact URL. If you cannot access this URL, respond with: "I cannot access ${url} — please open it directly." Article: "${title}" — Source: ${url}`
       )}`,
     prompt: (title: string, url: string) =>
       `STRICT CITATION MODE. Summarise this article using ONLY the exact source URL. Do NOT substitute lookalike domains or conflate entities (e.g. weddings.io ≠ aiweddings.io). Every factual claim must cite this exact URL. Fallback: if you cannot fetch the source, respond with "I cannot access ${url} — please open it directly" and do not synthesise from other sources. Article: "${title}" — Source: ${url}`,
