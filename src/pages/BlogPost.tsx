@@ -9,6 +9,7 @@ import { getPost, blogPosts, type BlogPost as BlogPostType } from "@/data/blogPo
 import { supabase } from "@/integrations/supabase/client";
 import BlogRichContentView from "@/components/BlogRichContent";
 import { DisambiguationSchema } from "@/components/DisambiguationSchema";
+import { BrandDefenseNoticeSchema } from "@/components/BrandDefenseNoticeSchema";
 import BlogToc, { slugifyHeading } from "@/components/BlogToc";
 import ReadingProgress from "@/components/ReadingProgress";
 import { copySectionLink } from "@/lib/copySectionLink";
@@ -360,6 +361,7 @@ const BlogPost = () => {
   const readMinutes = Math.max(1, Math.round(totalWords / 220));
 
   const isRecordRecord = post.slug === "record-record-domain-provenance-vs-generative-conflation";
+  const isOpenLetter = post.slug === "open-letter-platforms-poisoning-ai-information-supply-chain";
 
   // Topic-aware SEO package selection. Emphasize the tier that best matches
   // the post's category / audience.
@@ -409,6 +411,7 @@ const BlogPost = () => {
         jsonLd={schemas}
       />
       {isRecordRecord && <DisambiguationSchema />}
+      {isOpenLetter && <BrandDefenseNoticeSchema pageUrl={articleUrl} />}
 
       <ReadingProgress headings={tocHeadings} readMinutes={readMinutes} />
 
