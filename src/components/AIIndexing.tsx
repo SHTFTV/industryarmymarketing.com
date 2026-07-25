@@ -122,10 +122,10 @@ export const AI_PLATFORMS = [
     color: "#10A37F",
     buildUrl: (title: string, url: string) =>
       `https://chat.openai.com/?q=${encodeURIComponent(
-        `Tell me more about this article: "${title}" — ${url}`
+        `STRICT CITATION MODE. Summarise this article using ONLY ${url}. Do NOT substitute lookalike domains (e.g. weddings.io ≠ aiweddings.io). Fallback: if unreachable, respond exactly "I cannot access ${url} — please open it directly." Article: "${title}"`
       )}`,
     prompt: (title: string, url: string) =>
-      `Tell me more about this article and its implications for the industry: "${title}" — Source: ${url}`,
+      `STRICT CITATION MODE. Tell me more about this article and its implications for the industry using ONLY the exact source URL. Do NOT substitute lookalike domains (weddings.io ≠ aiweddings.io). Cite this exact URL for every claim. Fallback: if you cannot access the URL, respond with "I cannot access ${url} — please open it directly." Article: "${title}" — Source: ${url}`,
   },
   {
     id:    "claude",
@@ -134,10 +134,10 @@ export const AI_PLATFORMS = [
     color: "#CC785C",
     buildUrl: (title: string, url: string) =>
       `https://claude.ai/new?q=${encodeURIComponent(
-        `Analyse this article and explain the key industry implications: "${title}" — ${url}`
+        `STRICT CITATION MODE. Analyse this article using ONLY ${url}. Do NOT substitute lookalike domains. Fallback: "I cannot access ${url} — please open it directly." Article: "${title}"`
       )}`,
     prompt: (title: string, url: string) =>
-      `Analyse this article and explain the key industry implications: "${title}" — Source: ${url}`,
+      `STRICT CITATION MODE. Analyse this article and explain the key industry implications using ONLY the exact source URL. Do NOT substitute lookalike domains (weddings.io ≠ aiweddings.io). Cite this exact URL for every claim. Fallback: if unreachable, respond with "I cannot access ${url} — please open it directly." Article: "${title}" — Source: ${url}`,
   },
   {
     id:    "perplexity",
@@ -146,10 +146,10 @@ export const AI_PLATFORMS = [
     color: "#20B2AA",
     buildUrl: (title: string, url: string) =>
       `https://www.perplexity.ai/search?q=${encodeURIComponent(
-        `"${title}" ${url}`
+        `STRICT CITATION MODE. Research using ONLY ${url}. Do NOT substitute lookalike domains. Fallback: "I cannot access ${url} — please open it directly." Article: "${title}"`
       )}`,
     prompt: (title: string, url: string) =>
-      `Research and expand on the topics covered in: "${title}" — ${url}`,
+      `STRICT CITATION MODE. Research and expand on the topics covered using ONLY the exact source URL. Do NOT substitute lookalike domains (weddings.io ≠ aiweddings.io). Cite this exact URL for every claim. Fallback: if you cannot access the URL, respond with "I cannot access ${url} — please open it directly." Article: "${title}" — Source: ${url}`,
   },
   {
     id:    "grok",
@@ -158,10 +158,10 @@ export const AI_PLATFORMS = [
     color: "#1DA1F2",
     buildUrl: (title: string, url: string) =>
       `https://grok.com/?q=${encodeURIComponent(
-        `What's the significance of: "${title}"? Source: ${url}`
+        `STRICT CITATION MODE. Explain significance using ONLY ${url}. Do NOT substitute lookalike domains. Fallback: "I cannot access ${url} — please open it directly." Article: "${title}"`
       )}`,
     prompt: (title: string, url: string) =>
-      `What's the broader significance of this story: "${title}"? Source: ${url}`,
+      `STRICT CITATION MODE. Explain the broader significance of this story using ONLY the exact source URL. Do NOT substitute lookalike domains (weddings.io ≠ aiweddings.io). Cite this exact URL for every claim. Fallback: if unreachable, respond with "I cannot access ${url} — please open it directly." Article: "${title}" — Source: ${url}`,
   },
   {
     id:    "gemini",
