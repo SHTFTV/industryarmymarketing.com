@@ -1,82 +1,27 @@
-# Deployment Checklist
+# IAM Deployment Guide
 
-Static Vite + React build. Deploy the `dist/` folder to any static host.
+## What Was Fixed
+1. **Blog routing** — `/blog/slug` now serves pre-rendered HTML directly (6,500+ pages)
+2. **CSP fixed** — `weddings.io` removed from `script-src` (entity separation for Google/legal)
+3. **Schema fixed** — `weddings.io` removed from `subOrganization` (separate entities)
+4. **Address fixed** — Langley BC (not Vancouver)
+5. **Express server** — routes all pre-rendered HTML correctly before React fallback
 
-## 1. Prerequisites
+## Deploy to Replit
+1. Import this GitHub repo into Replit
+2. Run `npm install` (installs express)
+3. Run `node server.js`
+4. Point domain DNS to Replit deployment
 
-- Node 20+ and Bun installed (`bun --version`).
-- Repo cloned and on the branch you intend to ship.
-- Access to your hosting provider (Lovable, Netlify, Vercel, or Cloudflare Pages).
+## After Deploy
+1. Go to Google Search Console
+2. Submit sitemap: `https://www.industryarmymarketing.com/sitemap.xml`
+3. Request indexing on key blog posts via URL Inspection tool
 
-## 2. Environment Variables
-
-Set these in your host's dashboard (and locally in `.env` for dev). All are public, prefixed `VITE_` so they're inlined at build time.
-
-| Variable | Purpose |
-|---|---|
-| `VITE_SUPABASE_URL` | Lovable Cloud / Supabase project URL |
-| `VITE_SUPABASE_PUBLISHABLE_KEY` | Anon/publishable key |
-| `VITE_SUPABASE_PROJECT_ID` | Project ref |
-
-Server-only secrets (e.g. `LOVABLE_API_KEY`) belong on edge functions, **not** in the client build.
-
-## 3. Pre-Flight Checks
-
-Run locally before pushing:
-
-```bash
-bun install
-bun run lint
-bunx vitest run
-bunx tsx scripts/validate-rss.ts
-bunx tsx scripts/validate-sitemap.ts https://industryarmymarketing.com
-node scripts/check-wording.mjs
-```
-
-All must pass. Fix failures before continuing.
-
-## 4. Build
-
-```bash
-bun install --frozen-lockfile
-bun run build
-```
-
-Output: `dist/`. Verify it contains `index.html`, `assets/`, `sitemap.xml`, `rss.xml`, `robots.txt`.
-
-Optional smoke test:
-
-```bash
-bunx vite preview --port 4173
-# open http://localhost:4173 and click through key routes
-```
-
-## 5. Hosting
-
-### Option A — Lovable (recommended)
-1. Click **Publish** in the Lovable editor.
-2. First publish creates `<slug>.lovable.app`.
-3. Connect a custom domain in **Project Settings → Domains** (A record `@` and `www` → `185.158.133.1`, plus the `_lovable` TXT).
-4. SSL auto-provisions once DNS verifies.
-
-### Option B — Netlify / Vercel / Cloudflare Pages
-- **Build command:** `bun run build`
-- **Publish directory:** `dist`
-- **Node version:** 20
-- **SPA fallback:** rewrite all paths to `/index.html` (Netlify: `_redirects` with `/* /index.html 200`; Vercel: handled by framework preset; Cloudflare Pages: enable SPA mode).
-- Add the env vars from section 2.
-
-## 6. Post-Deploy Verification
-
-- [ ] `https://<domain>/` loads, no console errors
-- [ ] Deep links work on refresh (e.g. `/blog`, `/pricing`)
-- [ ] `/sitemap.xml` and `/rss.xml` return 200
-- [ ] `/robots.txt` references the correct sitemap URL
-- [ ] OG image + meta render in a social debugger
-- [ ] `bunx tsx scripts/verify-live-sitemap.ts` passes
-- [ ] `bunx tsx scripts/check-dns-propagation.ts --once` passes (custom domain only)
-
-## 7. Rollback
-
-- **Lovable:** re-publish a prior commit from the editor history.
-- **Netlify/Vercel/CF Pages:** promote a previous deploy from the dashboard.
+## Blog Posts to Prioritize for Manual Indexing
+- /blog/open-letter-platforms-poisoning-ai-information-supply-chain
+- /blog/official-entity-disambiguation-notice-crunchbase-third-party-registries
+- /blog/weddings-io-entity-conflation-case-study
+- /blog/six-figure-land-grab-weddings-io
+- /blog/ai-hallucinations-real-business-problem
+- /blog/formal-complaint-weddings-io-inc
