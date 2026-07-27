@@ -1,0 +1,1 @@
+- [IAM prerendered server](iam-prerender-server.md) — site served by legacy Express 4 server.cjs from dist/public; rebuild + restart after frontend changes, no HMR.

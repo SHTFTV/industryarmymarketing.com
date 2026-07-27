@@ -1,0 +1,35 @@
+kind = "web"
+previewPath = "/"
+title = "Industry Army Marketing"
+version = "1.0.0"
+id = "artifacts/industry-army"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 25540
+
+[services.development]
+run = "node server.cjs"
+
+[services.production]
+
+[services.production.build]
+args = [ "pnpm", "--filter", "@workspace/industry-army", "run", "build" ]
+
+[services.production.build.env]
+NODE_ENV = "production"
+BASE_PATH = "/"
+PORT = "25540"
+
+[services.production.run]
+args = [ "node", "artifacts/industry-army/server.cjs" ]
+
+[services.production.run.env]
+PORT = "25540"
+NODE_ENV = "production"
+
+[services.env]
+PORT = "25540"
+BASE_PATH = "/"

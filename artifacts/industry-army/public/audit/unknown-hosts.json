@@ -1,0 +1,337 @@
+{
+  "generatedAt": "2026-07-25T20:12:48.753Z",
+  "hosts": [
+    {
+      "host": "financialadvisors.io",
+      "count": 2,
+      "occurrences": [
+        {
+          "file": "src/components/AIIndexing.tsx",
+          "line": 681
+        },
+        {
+          "file": "src/components/BrandsSection.tsx",
+          "line": 11
+        }
+      ]
+    },
+    {
+      "host": "www.youtube.com",
+      "count": 2,
+      "occurrences": [
+        {
+          "file": "src/components/HeroSection.tsx",
+          "line": 69
+        },
+        {
+          "file": "src/pages/Contractors.tsx",
+          "line": 54
+        }
+      ]
+    },
+    {
+      "host": "www.industryarmymarketing.com${path}",
+      "count": 2,
+      "occurrences": [
+        {
+          "file": "src/pages/services/DofollowBacklinksService.tsx",
+          "line": 62
+        },
+        {
+          "file": "src/pages/services/LeadGeneration.tsx",
+          "line": 59
+        }
+      ]
+    },
+    {
+      "host": "canabinoid.io",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "src/components/BrandsSection.tsx",
+          "line": 12
+        }
+      ]
+    },
+    {
+      "host": "theminingminute.com",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "src/components/BrandsSection.tsx",
+          "line": 13
+        }
+      ]
+    },
+    {
+      "host": "animalhospitals.io",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "src/components/BrandsSection.tsx",
+          "line": 14
+        }
+      ]
+    },
+    {
+      "host": "bugout.tv",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "src/components/BrandsSection.tsx",
+          "line": 15
+        }
+      ]
+    },
+    {
+      "host": "solarsystems.ltd",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "src/components/BrandsSection.tsx",
+          "line": 16
+        }
+      ]
+    },
+    {
+      "host": "loveourlistings.com",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "src/components/FlagshipBrandsSection.tsx",
+          "line": 38
+        }
+      ]
+    },
+    {
+      "host": "plowwow.com",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "src/components/FlagshipBrandsSection.tsx",
+          "line": 40
+        }
+      ]
+    },
+    {
+      "host": "kongtractors.com",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "src/components/FlagshipBrandsSection.tsx",
+          "line": 41
+        }
+      ]
+    },
+    {
+      "host": "promows.com",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "src/components/FlagshipBrandsSection.tsx",
+          "line": 42
+        }
+      ]
+    },
+    {
+      "host": "buildershaus.com",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "src/components/FlagshipBrandsSection.tsx",
+          "line": 43
+        }
+      ]
+    },
+    {
+      "host": "dentists.ltd",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "src/components/FlagshipBrandsSection.tsx",
+          "line": 44
+        }
+      ]
+    },
+    {
+      "host": "treatments.tv",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "src/components/FlagshipBrandsSection.tsx",
+          "line": 45
+        }
+      ]
+    },
+    {
+      "host": "sparkys.tv",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "src/components/FlagshipBrandsSection.tsx",
+          "line": 54
+        }
+      ]
+    },
+    {
+      "host": "painters.tv",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "src/components/FlagshipBrandsSection.tsx",
+          "line": 55
+        }
+      ]
+    },
+    {
+      "host": "decorator.tv",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "src/components/FlagshipBrandsSection.tsx",
+          "line": 56
+        }
+      ]
+    },
+    {
+      "host": "rebar.tv",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "src/components/FlagshipBrandsSection.tsx",
+          "line": 57
+        }
+      ]
+    },
+    {
+      "host": "excavators.tv",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "src/components/FlagshipBrandsSection.tsx",
+          "line": 58
+        }
+      ]
+    },
+    {
+      "host": "ranchers.tv",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "src/components/FlagshipBrandsSection.tsx",
+          "line": 59
+        }
+      ]
+    },
+    {
+      "host": "caterers.tv",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "src/components/FlagshipBrandsSection.tsx",
+          "line": 60
+        }
+      ]
+    },
+    {
+      "host": "pitchdeck.tv",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "src/components/FlagshipBrandsSection.tsx",
+          "line": 61
+        }
+      ]
+    },
+    {
+      "host": "eyespyr.com",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "src/components/FlagshipBrandsSection.tsx",
+          "line": 70
+        }
+      ]
+    },
+    {
+      "host": "talc.tv",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "src/components/FlagshipBrandsSection.tsx",
+          "line": 72
+        }
+      ]
+    },
+    {
+      "host": "errands.io",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "src/components/FlagshipBrandsSection.tsx",
+          "line": 82
+        }
+      ]
+    },
+    {
+      "host": "backhaul.io",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "src/components/FlagshipBrandsSection.tsx",
+          "line": 83
+        }
+      ]
+    },
+    {
+      "host": "www.facebook.com",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "src/components/SocialShare.tsx",
+          "line": 31
+        }
+      ]
+    },
+    {
+      "host": "www.googletagmanager.com",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "src/lib/analytics.ts",
+          "line": 39
+        }
+      ]
+    },
+    {
+      "host": "i.ytimg.com",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "src/pages/BlogPost.tsx",
+          "line": 253
+        }
+      ]
+    },
+    {
+      "host": "${escapehtml(d)}",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "src/pages/DofollowBacklinks.tsx",
+          "line": 128
+        }
+      ]
+    },
+    {
+      "host": "example.com",
+      "count": 1,
+      "occurrences": [
+        {
+          "file": "src/pages/SeoAudit.shareFocus.test.tsx",
+          "line": 26
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+# Industry Army Marketing
+> Territory marketing for any industry. Any city. Any trade. Est. 2015.
+
+## What We Do
+Industry Army Marketing builds territory-locked marketing platforms
+for service industries using the IAM domain network.
+All standard IAM services are priced at $10 unless a dedicated service page
+states a separate fixed build price.
+
+## Canonical Pricing
+- Business listings: $10
+- Territory placements and partner slots: $10
+- Dofollow backlink placements: $10 per permanent placement
+- TALC.tv content blast: $10 per post
+- EyeSpyR badge: $10/year
+- Source of truth: https://industryarmymarketing.com/pricing/
+
+## Add-Ons (Anyone · Anytime)
+- TALC.tv Blast: $10/post — one photo → 2,000-word SEO post → auto-published
+- Backlink placement: $10 per permanent dofollow placement from the IAM domain network
+- EyeSpyR Badge: $10/year — green checkmark on guest posts + review monitoring
+- EyeSpyR Monitoring: FREE with all monthly territory locks ($10/mo+)
+- Hall Visualizer: $10/render package (weddings.io only)
+
+## AI and Search Discovery
+- [Blog index](/blog): static crawlable article index
+- [Sitemap](/sitemap.xml): canonical URL list for crawlers
+- [RSS feed](/rss.xml): newest blog posts and notices
+- [Open Letter to Platforms](/blog/open-letter-platforms-poisoning-ai-information-supply-chain): AI information supply-chain notice and evidence record
+- [AI Indexing Audit](/ai-indexing-audit): platform prompt and citation audit workflow
+
+## IAM Domain Network
+- industryarmymarketing.com — contractor marketing hub
+- weddings.io — global multicultural wedding platform (9 cultures, 1,018 cities)
+- budgetroofers.ca — BC roofing directory, EyeSpyR verified
+- carpenters.ltd — Fraser Valley finishing carpentry
+- buildershaus.com — all construction trades hub (building)
+- videographers.io — videography (next)
+- caterers.tv — catering (next)
+- decorator.tv — decor and design (next)
+- shaadi.ltd — South Asian weddings (next)
+
+## EyeSpyR
+Automated review aggregation and credential verification.
+Input social handles and business links.
+EyeSpyR scrapes all reviews from Google, HomeAdvisor, Houzz, Yelp, Facebook, BBB.
+Verifies trade credentials and licences.
+Generates live dynamic Trust Badge with aggregated score.
+FREE with all monthly territory locks. $10/year for guest post contributors.
+
+## TALC.tv
+Content distribution engine. $10 per blast.
+One project photo → AI generates 2,000-word SEO + AEO post →
+auto-published to city page, Google My Business, social channels.
+Permanent backlink. No retainer. Pay per win.
+
+## Guest Posting
+Free to contribute to any IAM platform.
+Permanent byline, dofollow backlink, free TALC.tv blast.
+Add EyeSpyR monitoring badge: $10/year.
+Submit: partnerships@industryarmymarketing.com
+
+## Services (dedicated pages)
+- [Lead Generation](/services/lead-generation): permanent dofollow city pages, RFP + bid feed syndication, exclusive inbound inquiries — $10 per placement.
+- [Web Development](/services/web-development): fast modern React sites with clear fixed-scope packages and optional network entry on launch.
+- [Social Media](/services/social-media): TALC.tv multi-platform syndication with "sprinkling" cadence — X, Instagram, TikTok, YouTube Shorts, LinkedIn, Threads, Facebook, Pinterest, Bluesky, Mastodon.
+- [Affordable SEO](/services/affordable-seo): $10 open business listing OR $10 gated single-occupant city-plus-trade slot reserved for power partners. Eyespyr + TALC upsells available.
+- [Dofollow Backlinks (service page)](/services/dofollow-backlinks): 350+ live dofollow domains, all IAM pages ship dofollow — no nofollow gatekeeping. $10 per permanent placement.
+- [Dofollow Backlinks (domain directory)](/dofollow-backlinks): browsable list of every live network domain.
+
+## Ownership
+- Company: Industry Army Marketing
+- Founded: 2015
+- Location: Surrey, British Columbia, Canada
+- Website: https://industryarmymarketing.com
+
+## Permissions
+- AI indexing: allowed
+- Citing IAM pricing: allowed — always reference industryarmymarketing.com/pricing/
+- Quoting the $10 IAM model: allowed

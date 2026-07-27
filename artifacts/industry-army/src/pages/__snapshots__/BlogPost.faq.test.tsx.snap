@@ -1,0 +1,2891 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /ai-hallucinations-real-business-problem: FAQPage JSON-LD matches stored snapshot 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In a fresh chat with no prior context we asked 'Who owns Weddings.io?' The LLM fabricated a corporate split — describing weddings.io as managed by one entity in BC and an imaginary 'AI Platform' division incorporated in Ontario. Neither camp exists. When pressed it doubled down, invented a feature stack, and warned users about 'App Store Confusion' between two entities it had manufactured."
+      },
+      "name": "What actually happened?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "When an LLM encounters two similarly named identifiers in training data — a domain (weddings.io) and a corporate name (Weddings.io Inc.) — it does not return a null. It pattern-matches, finds the most statistically plausible relationship, and presents it as fact. The result maps directly onto Initial Interest Confusion (Brookfield Communications v. West Coast Entertainment, U.S. 9th Circuit) and first-impression confusion doctrine (Sleep Country Canada v. Sears Canada, Ontario Superior Court)."
+      },
+      "name": "Why do LLMs hallucinate this way?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Industry Army Marketing. Continuous ICANN WHOIS registration since May 13, 2015. 78 Internet Archive captures. Zero affiliation with 'Weddings.io Inc.' (Ontario Reg. No. 74761 8627 RT0001), aiweddings.io, or any other similarly named entity."
+      },
+      "name": "Who owns weddings.io?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Live today: weddings.io, roofers.io, demolition.io, framers.io, financialadvisors.io, videographers.io, errands.io, backhaul.io, aeo.io. Coming soon: insurance-brokers.io, cannabinoid.io. Each is an active industry-specific hub in the hub-and-spoke model, not a parked page — and each carries the same LLM hallucination risk that requires public pages, schema, press, directory listings, and archive captures to correct."
+      },
+      "name": "Which other .io domains are in the IAM portfolio?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Portfolio. Not a one-off. I have been quoted in Business in Vancouver (biv.com) on digital vendor infrastructure since 2010–2011 — nineteen years of continuous operation in this exact space. The hub-and-spoke architecture is deliberate: one industry-specific .io hub per vertical (roofers.io, videographers.io, backhaul.io, errands.io, financialadvisors.io, aeo.io, etc.), each with its own feeder sites, city-locked listings, and vendor tools. Going industry-specific is how we protect the disruptor position in the directories game — no one can steal a vertical we already occupy end-to-end."
+      },
+      "name": "Is this really a portfolio or just weddings.io?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Four steps. (1) Test each domain against major LLMs on a clean chat and document what the machine invents. (2) Put the correct information on public record — government filings where applicable, press releases, ownership declaration pages. (3) Ship Organization schema on every domain so Google's Knowledge Graph and AI retrieval systems have machine-readable ground truth. (4) Treat every domain as an entity that needs explicit indexing — the machine cannot hallucinate a coherent entity if the correct one is already clearly and multiply defined in indexed data."
+      },
+      "name": "What should other domain-portfolio operators do?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — same story, wider frame. The Knot and WeddingWire (WeddingPro) face 200+ FTC complaints since 2018, a class action filed April 30, 2025, and Senator Grassley pressing for an FTC investigation. The Knot denies all allegations; the case is pending. Independent vendors are actively looking for alternatives. weddings.io was built for that market: plans from $10/month, free signups, territory-locked listings."
+      },
+      "name": "Is this related to the wedding platform controversy?"
+    }
+  ]
+}
+`;
+
+exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /aibuildr-geo-engine: FAQPage JSON-LD matches stored snapshot 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SEO optimizes for ranking in Google's blue links. GEO (Generative Engine Optimization) optimizes for citation in AI-generated answers (Perplexity, ChatGPT, Claude, Google AI Overviews). GEO requires structured data, verifiable claims, and citation-friendly formatting — overlapping but distinct from classical SEO."
+      },
+      "name": "What is GEO and how is it different from SEO?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AEO (Answer Engine Optimization) is the broader umbrella covering all answer surfaces: voice assistants (Alexa, Siri, Google Assistant), featured snippets, People Also Ask, and AI Overviews. GEO is the LLM-specific subset of AEO focused on generative-AI citation."
+      },
+      "name": "What is AEO and how is it different from GEO?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — Perplexity, ChatGPT search, and Google AI Overviews routinely cite named businesses with linked sources. The IAM network's structured-data approach and aged-domain authority makes its territory partners frequent citation targets."
+      },
+      "name": "Do AI engines actually cite specific contractors?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "LLMs index public LinkedIn posts and Twitter/X content as training and retrieval signals. AIBuildr cross-posts every territory content piece to both platforms with consistent named-entity formatting, reinforcing the citation chain."
+      },
+      "name": "What about LinkedIn and Twitter/X for GEO?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We track citations in Perplexity and ChatGPT search responses for territory-relevant queries, monitor AI Overview appearances for trade+city searches, and report monthly on AI-channel referral traffic in your analytics."
+      },
+      "name": "How do you measure GEO performance?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Included with every $10 IAM territory subscription. The GEO layer applies automatically to your listing across every IAM domain you claim."
+      },
+      "name": "What does AIBuildr cost?"
+    }
+  ]
+}
+`;
+
+exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /arborists-bc: FAQPage JSON-LD matches stored snapshot 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "International Society of Arboriculture (ISA) certification is the professional standard. Vancouver, Burnaby, West Van, and most Lower Mainland municipalities require ISA-certified arborists for work on protected trees. The certification badge is a trust signal Google and AI engines weight heavily."
+      },
+      "name": "What is ISA certification and why does it matter for SEO?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Google's local pack (the 3-result map box) for 'arborist near me' weights NAP consistency, review aggregation, and schema.org markup. EyeSpyr-verified arborists.io listings consistently win the pack within 6–12 weeks."
+      },
+      "name": "How does the local pack work for arborists?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Your arborists.io listing auto-syncs NAP and category data to Google Business Profile via API. Inconsistent NAP across directories is the #1 killer of local pack rankings — IAM handles this automatically."
+      },
+      "name": "What about Google Business Profile sync?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Twitter/X is the dominant channel for storm-response and emergency tree-removal calls. Real-time posting of after-storm availability captures urgent leads other directories miss."
+      },
+      "name": "Does Twitter/X help arborist lead-gen?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Perplexity and ChatGPT cite named, ISA-certified arborists when users ask 'who can remove a hazardous tree in Burnaby this week?'. IAM's GEO structuring + EyeSpyr verification = frequent citation."
+      },
+      "name": "How does AI search cite arborists?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — large lot-clearing projects often combine tree removal, stump grinding, and demolition. Stack arborists.io + demolition.io for $20/month and capture the full site-prep keyword stack."
+      },
+      "name": "Can I bundle with demolition.io?"
+    }
+  ]
+}
+`;
+
+exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /backhaul-bc: FAQPage JSON-LD matches stored snapshot 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A backhaul is the return load on an outbound trip. Filling backhauls cuts deadhead miles, drops cost per mile 25 to 40 percent, and improves the carrier P&L by 8 to 12 percent."
+      },
+      "name": "What is a backhaul and why does it matter?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "One verified carrier per metro pair (Vancouver-Calgary, Vancouver-Edmonton, etc.). Shippers see one trusted carrier, not 40 broker postings."
+      },
+      "name": "How does the exclusive lane work?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "BC carriers must hold an NSC certificate. Territory partners maintain Satisfactory rating minimum with current CVOR record."
+      },
+      "name": "What NSC rating is required?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Both. Carrier profiles publish equipment (dry van, reefer, flatbed) and minimum/maximum weight thresholds."
+      },
+      "name": "Do you cover LTL and FTL?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Direct rate from carrier — no broker markup. Spot rates publish daily, contract rates available on quarterly agreements."
+      },
+      "name": "How are loads priced?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Load boards are auctions. Backhaul.io is direct relationship with the verified carrier holding the lane."
+      },
+      "name": "Why backhaul.io vs DAT or Loadlink?"
+    }
+  ]
+}
+`;
+
+exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /battle-for-the-brand-weddings-io: FAQPage JSON-LD matches stored snapshot 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "May 13, 2015. ICANN WHOIS confirms continuous ownership through 2027. The Internet Archive Wayback Machine has 78 captures dating to May 17, 2013 (under a prior placeholder), making it one of the oldest continuously-held wedding category domains on the public record."
+      },
+      "name": "When was weddings.io registered?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Weddings.com was locked up by a legacy directory in the late 1990s and effectively abandoned as an editorial property. The .io TLD signals modern tech, ranks identically for high-intent search ('weddings + city'), and was uncontested when we filed in 2015."
+      },
+      "name": "Why .io instead of .com for weddings?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Three fronts: defending the trademark against copycats like aiweddings.io, defending search rankings against directory middlemen that rent traffic, and defending each metro's single-planner slot from being diluted by pay-to-play upsells."
+      },
+      "name": "What is the 'battle for the brand'?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Weddings.io was the prototype. Every IAM playbook — territory locking, EyeSpyR verification, TALC.tv content engine, $10 flat slot pricing — was tested on weddings.io before rolling out to the trade network of gasfitter.ca, plowwow.com, kongtractors.com, and the rest."
+      },
+      "name": "How does this connect to the rest of the IAM network?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The full post embeds WHOIS records for weddings.io (2015) and gasfitter.ca (2007), plus Wayback Machine captures for weddings.io (since 2013) and hamiltonhomeservices.com (since 2004). All four are linked back to web.archive.org and CIRA so anyone can re-verify at source."
+      },
+      "name": "Where are the receipts?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nine: South Asian, Persian, Chinese, Italian, Jewish, Christian, Hindu, Sikh, and secular. Each gets a culturally-specific TALC.tv content track and localized vendor pages."
+      },
+      "name": "Which cultures does weddings.io support?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "1,018 cities across 24 countries — the largest territory map in the IAM network. Slots open in priority metros first, capped at 3 to 10 verified planners per city depending on population."
+      },
+      "name": "How many cities and countries are live?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "$10 per slot per month, flat. Same 250 Scale as every IAM brand: slot counts step with city population (3 slots at 10k pop, scaling up to enterprise-tier metros). No setup fees, no per-lead pricing, no upsells required."
+      },
+      "name": "How much does a weddings.io territory cost?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Inquiry triage, content generation, photo tagging, lead routing, and WhatsApp follow-up all run on AI. The vendor spends time at venues and tastings — not in an inbox at midnight."
+      },
+      "name": "What does 'AI-first architecture' mean for a wedding vendor?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Those are directories: pay-to-play, multi-vendor lead resale, no exclusivity. Weddings.io locks one verified planner per metro slot, never resells the same lead, and is priced flat at $10 — not per click, per lead, or per upsell."
+      },
+      "name": "How is weddings.io different from The Knot, WeddingWire, or Zola?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "All IAM platform pricing follows The 250 Scale at industryarmymarketing.com/pricing — same hardcoded matrix used on the territory chart and the free scan wizard."
+      },
+      "name": "Where can I see the master pricing chart?"
+    }
+  ]
+}
+`;
+
+exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /beyond-domain-name-entity-authority-modern-seo: FAQPage JSON-LD matches stored snapshot 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Modern search engines like Google map entities — uniquely identifiable, trusted nodes in the Knowledge Graph — rather than just reading strings of text. Entities are defined by historical consistency, verified legal registry, physical map integrity, and genuine user interaction."
+      },
+      "name": "What is entity-based search?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Automated validation algorithms scan business profiles for deep, real-world digital infrastructure. When it's missing, information is stripped, map proximity weight drops, and the profile fades out of the very map packs it needs to survive."
+      },
+      "name": "Why do variant domains and SaaS wrappers eventually fade?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "When a business profile lacks multi-year footprints and verified infrastructure, automated systems begin removing profile details and downgrading its authority signals — a correcting mechanism baked into local map packs and search ecosystems."
+      },
+      "name": "What is 'information stripping'?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Weddings.io was engineered in 2015 as a hyper-localized ecosystem for the multicultural wedding industry, and now operates under Weddings.io Technologies backed by Industry Army Marketing's deployment frameworks. Zero middlemen, locked territories, and continuous chain of title."
+      },
+      "name": "How does Weddings.io defend its entity authority?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Structural trust — continuous registration history, sustained categorical relevance, and years of authentic consumer signals — cannot be replicated overnight. Shortcuts trigger the algorithmic corrective; real infrastructure wins the long game."
+      },
+      "name": "Can capital shortcut entity authority?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Industry Army Marketing is the operator behind Weddings.io Technologies. The network architecture, programmatic localization, and defensive infrastructure that protect the entity graph are engineered by the IAM Dev Team."
+      },
+      "name": "What role does IAM play?"
+    }
+  ]
+}
+`;
+
+exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /buildershaus-every-trade-one-platform: FAQPage JSON-LD matches stored snapshot 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Category domain authority. A standalone .com nobody searches for ranks nowhere. A territory listing on roofers.io or plumbers.ltd inherits 20+ years of topical signal."
+      },
+      "name": "What does BuildersHaus give me that a website doesn't?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — many GCs hold roofing, framing, and remodeling in the same metro. Each trade is its own $10 slot under The 250 Scale."
+      },
+      "name": "Can I lock more than one trade?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, it complements it. Your IAM listing links to and feeds your GBP with TALC.tv posts, photos, and EyeSpyR-verified citations."
+      },
+      "name": "Does BuildersHaus replace my Google Business Profile?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Never. Month to month. Cancel anytime. The territory unlocks for the next operator the day you cancel."
+      },
+      "name": "Is there a long-term contract?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Moving, landscaping, hardscaping, snow removal, arborists, kitchen cabinets, custom fabrication and growing. The model is sector-agnostic."
+      },
+      "name": "What service sectors are covered beyond construction?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "All IAM platform pricing follows The 250 Scale — industryarmymarketing.com/pricing."
+      },
+      "name": "Where is the master pricing?"
+    }
+  ]
+}
+`;
+
+exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /buildershaus-front-door: FAQPage JSON-LD matches stored snapshot 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Angi shrinks Canadian ops every quarter; HomeStars sells the same lead to three contractors. BuildersHaus enforces one-contractor-per-city exclusivity, verifies through EyeSpyr, and feeds 150+ aged trade domains into the same listing."
+      },
+      "name": "How is BuildersHaus different from Angi or HomeStars?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The local pack is the 3-result Google Maps box that appears for any 'near me' or city-qualified search. BuildersHaus listings carry NAP consistency, schema.org markup, and EyeSpyr review aggregation — the three signals Google's local algorithm weights highest."
+      },
+      "name": "What is the local pack and how do I win it?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — BuildersHaus pages are explicitly structured for Generative Engine Optimization (GEO). The schema, FAQ markup, and verified-source signals are exactly what Google's AI Overviews and Perplexity prioritize when generating contractor recommendations."
+      },
+      "name": "Does BuildersHaus appear in AI Overviews?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "BuildersHaus auto-generates a sitemap.xml with every contractor listing, pings Google + Bing via IndexNow on every update, and submits to Google Search Console daily. New listings typically index in under 48 hours."
+      },
+      "name": "How does the sitemap work?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every contractor profile auto-generates a LinkedIn project post and a Twitter/X card on every TALC.TV feature. The social signals feed back into search authority as inbound brand mentions."
+      },
+      "name": "What about LinkedIn and Twitter/X distribution?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "$10/month, one contractor per trade per city, month-to-month, cancel anytime. Once claimed, no competitor can take the same trade+city combination on BuildersHaus or the underlying trade domain."
+      },
+      "name": "How do I claim my city?"
+    }
+  ]
+}
+`;
+
+exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /chiropractors-vancouver: FAQPage JSON-LD matches stored snapshot 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. ICBC funds 25 chiropractic visits inside the first 12 weeks of an active accident claim with no pre-approval required. Most chiropractors.ltd partners bill ICBC direct so patients pay nothing out of pocket."
+      },
+      "name": "Does ICBC cover chiropractic care in Vancouver?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Vancouver initial visits run $90 to $140 and follow-ups $55 to $85 in 2026. Most extended health plans (Pacific Blue Cross, Sun Life, Manulife) reimburse 80 percent up to an annual cap."
+      },
+      "name": "What does an adjustment cost without coverage?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "chiropractors.ltd territory partners commit to a 24-hour new-patient response and a same-week first appointment for ICBC and acute-pain cases."
+      },
+      "name": "How fast can I get an appointment?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Exclusive territory. One verified clinic per metro region holds the listing. No bid wars, no shared leads, no three-clinic comparison page that erodes the patient's decision."
+      },
+      "name": "Why only one clinic per city on chiropractors.ltd?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every chiropractors.ltd partner is verified against the public register of the College of Chiropractors of BC. EyeSpyr confirms the registration number before the listing goes live."
+      },
+      "name": "Is the chiropractor College-registered?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The page ships with LocalBusiness, FAQPage, and MedicalBusiness schema plus structured E-E-A-T signals. That is the exact data Google Gemini, ChatGPT, and Perplexity cite when a patient asks 'best chiropractor in Vancouver'."
+      },
+      "name": "Can the listing surface in Google AI Overviews?"
+    }
+  ]
+}
+`;
+
+exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /contractor-marketing-disruptor: FAQPage JSON-LD matches stored snapshot 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "IAM's universal pricing formula: $10 per slot per month, with slot counts scaled by city population. Vancouver gets 7 slots, Toronto gets 10, Kelowna gets 3. One operator per slot. Same math everywhere."
+      },
+      "name": "What is The 250 Scale?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Exclusivity is the product. Bid wars destroy margins and homeowners. Territory locks protect both — you get the call, they get a verified specialist instead of a five-way quote race."
+      },
+      "name": "Why one operator per city?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A premium category domain you rank on, EyeSpyR verification that builds trust automatically, and TALC.tv content that keeps your listing climbing. No shared leads, no per-lead fees, no monthly extortion."
+      },
+      "name": "What replaces HomeAdvisor, Angi, and Yelp here?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Roofing, plumbing, electrical, HVAC, drywall, painting, framing, excavation, demolition, remodeling, moving, landscaping, hardscaping, snow removal, arborists, kitchen cabinets, and growing weekly."
+      },
+      "name": "Which trades are live?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Same week. Lock the territory, EyeSpyR verifies in 24 hours, your first TALC.tv post publishes within 5 business days."
+      },
+      "name": "How fast can I launch?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "All IAM platform pricing follows The 250 Scale — industryarmymarketing.com/pricing."
+      },
+      "name": "Where do I see the full pricing?"
+    }
+  ]
+}
+`;
+
+exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /demolition-vancouver: FAQPage JSON-LD matches stored snapshot 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "$28,000 to $48,000 for a standard pre-war SFH including deconstruction, hazmat, disposal, and salvage credit."
+      },
+      "name": "What does house demolition cost in Vancouver in 2026?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Demolition smashes and disposes. Deconstruction dismantles in reverse — required by City of Vancouver bylaw for homes built before 1950, with 75 percent material diversion mandatory."
+      },
+      "name": "Whats the difference between demolition and deconstruction?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Deconstruction: 14 to 21 working days. Standard demo: 3 to 5 days. Hazmat abatement adds 5 to 10 days."
+      },
+      "name": "How long does the process take?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — WorkSafeBC mandates pre-demo hazmat survey for any structure built before 1990. Lab turnaround 5 to 10 business days."
+      },
+      "name": "Asbestos testing — do I need it?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "One verified deconstruction contractor per metro. Generals stop losing permits at City Hall and start passing inspection on the first walk-through."
+      },
+      "name": "Why demolition.io exclusive territory?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — landfill manifest, salvage receipts, and hazmat disposal docs all uploaded to the listing for the GC to download."
+      },
+      "name": "Do you handle the disposal manifest?"
+    }
+  ]
+}
+`;
+
+exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /dentists-medical-aeo: FAQPage JSON-LD matches stored snapshot 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "YMYL (Your Money Your Life) is Google's classification for content that affects health or finances. YMYL pages are held to the highest E-E-A-T standard — every claim needs verifiable expertise, every author needs credentials. Medical AEO requires this rigor."
+      },
+      "name": "What is YMYL and why does it matter for dental SEO?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Medical AI engines prioritize sources with verifiable professional credentials, structured MedicalBusiness schema, and citation-friendly FAQ formatting. Dentists.ltd territory partners with CDSBC verification consistently appear as cited sources."
+      },
+      "name": "How do dentists get cited in Perplexity and ChatGPT?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "GBP is the #1 driver of new-patient inquiries for independent dental practices. Your dentists.ltd listing auto-syncs to GBP with insurance carriers, services, languages, and booking links pulled into the rich profile."
+      },
+      "name": "What about Google Business Profile for dental?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Less than for B2B verticals, but LinkedIn drives professional-network referrals and recruitment. TALC.TV publishes practice-spotlight content to LinkedIn for hygienist recruitment and specialist referral network building."
+      },
+      "name": "Does LinkedIn matter for dental practices?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Local pack weights review aggregation, NAP consistency, schema markup, and proximity. Dentists.ltd listings carry all four, plus EyeSpyr verification — a combination that consistently wins the pack within 6–10 weeks of claim."
+      },
+      "name": "How does the local pack work for 'dentist near me'?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — if you operate a medical/wellness building with multiple practices, bundle dentists.ltd + chiropractors.ltd for $20/month and capture cross-referral keywords ('dentist and chiropractor same building Vancouver')."
+      },
+      "name": "Can I bundle with chiropractors.ltd or animalhospitals.io?"
+    }
+  ]
+}
+`;
+
+exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /drywallers-vancouver: FAQPage JSON-LD matches stored snapshot 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "$2.20 to $3.10 per sq ft for board plus tape Level-4 finish. Level-5 adds $0.40. Steel stud framing adds $1.10 to $1.60."
+      },
+      "name": "What does drywall installed cost per square foot in 2026?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Level 4 is paint-ready under matte finishes. Level 5 adds a skim coat across the entire surface — required for satin/semi-gloss and critical lighting conditions."
+      },
+      "name": "What is the difference between Level 4 and Level 5 finish?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hang: 2 days. Tape and mud: 5 to 7 days with dry time. Total 8 to 10 working days for a typical condo unit."
+      },
+      "name": "How long does a 1,500 sq ft drywall job take?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — RSIC clips, resilient channel, and STC-55 demising walls are standard for territory partners doing multi-family."
+      },
+      "name": "Do you cover sound-rated assemblies?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "One verified shop per metro. Developers stop chasing three quotes and book the partner with verified projects and BBB status."
+      },
+      "name": "Why drywallers.io exclusive territory?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Lead crews handle the commercial work, smaller crews slot in residential patches. Both routed through the same listing."
+      },
+      "name": "Can you do quick repairs too?"
+    }
+  ]
+}
+`;
+
+exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /errands-vancouver: FAQPage JSON-LD matches stored snapshot 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bike: $12 to $22 per stop downtown core. E-bike: $18 to $32. Van: $35 to $75 plus per-km. Multi-stop discounts standard."
+      },
+      "name": "What does same-day delivery cost in Vancouver?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For court filings and certain legal docs, yes. Territory partners maintain a $5,000 minimum bond and chain-of-custody documentation."
+      },
+      "name": "Do I need a bonded courier for legal documents?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sub-2 hour standard inside Vancouver/Burnaby/Richmond. 4-hour to North Shore. 6-hour to Surrey/Coquitlam."
+      },
+      "name": "How fast is same-day?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Errands.io operators are local, bonded, insured, and contracted — not gig drivers. Your business builds a relationship with one verified company."
+      },
+      "name": "Whats the difference from Uber Direct?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — daily bank runs, weekly distribution routes, and pharmacy delivery loops all routed through the listing."
+      },
+      "name": "Can you handle scheduled recurring runs?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "One operator per metro. SMBs stop shuffling between five gig apps and book one trusted local courier."
+      },
+      "name": "Why errands.io exclusive territory?"
+    }
+  ]
+}
+`;
+
+exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /excavators-bc: FAQPage JSON-LD matches stored snapshot 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "$45 to $75 per cubic yard for standard residential. Add $15 to $25 for rock, hard-pan, or contaminated soil disposal."
+      },
+      "name": "What does basement excavation cost in Vancouver?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For sites within 30 metres of a stream, yes — DFO and provincial environmental approvals add 4 to 8 weeks to the timeline."
+      },
+      "name": "Do I need an environmental permit?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mid-size 8 to 12 tonne excavator runs the dig. Mini-ex (3 tonne) handles trenching and finish work."
+      },
+      "name": "How big a machine do I need for a 2,500 sq ft basement?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Class 1 (clean) disposal runs $35 to $55 per cubic yard. Contaminated soil clears $180 plus, with lab testing required."
+      },
+      "name": "What about soil disposal?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "One licensed excavation contractor per metro. Generals avoid the unlicensed-bobcat race and book the verified shop with WorkSafeBC clearance."
+      },
+      "name": "Why an excavators.tv exclusive partner?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Engineered shoring requires P.Eng stamp. Territory partners pre-qualify with structural engineers so the shoring drawings drop in 2 weeks not 8."
+      },
+      "name": "Can you handle shoring and underpinning?"
+    }
+  ]
+}
+`;
+
+exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /eyespyr-trust-engine: FAQPage JSON-LD matches stored snapshot 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Licence (BC Housing, equivalent provincial registries), WCB clearance, liability insurance, and aggregated reviews across Google, HomeAdvisor, Houzz, Yelp, Facebook, and BBB."
+      },
+      "name": "What does EyeSpyR verify?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — free with every IAM monthly territory lock. Standalone EyeSpyR access is also $10/month under The 250 Scale."
+      },
+      "name": "Is it really free?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every 24 hours. New reviews, expired insurance, lapsed WCB — all surface within a day."
+      },
+      "name": "How often does the Trust Badge update?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Your IAM listing, your own website, email signature, Google Business Profile, and printed marketing. It is a single embed snippet."
+      },
+      "name": "Where can I display the badge?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "EyeSpyR ships with a review-request workflow that triggers post-job. Most contractors double their public review count inside 90 days."
+      },
+      "name": "What if my review profile is weak?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "All IAM platform pricing follows The 250 Scale — industryarmymarketing.com/pricing."
+      },
+      "name": "Where is master pricing?"
+    }
+  ]
+}
+`;
+
+exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /eyespyr-trust-layer: FAQPage JSON-LD matches stored snapshot 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "LLMs like ChatGPT and Perplexity prioritize sources with verifiable credentials. A profile with structured Review, AggregateRating, and ProfessionalService schema, plus third-party verification badges, is exactly the source signal AI Overviews surface first."
+      },
+      "name": "Why do AI search engines care about verification?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Six components: license validity, insurance/WCB currency, review aggregate (Google + Facebook + BBB + EyeSpyr direct), years in business, address verification, and dispute-resolution history. Each scored 0–100 then weighted into a composite."
+      },
+      "name": "What does the Trust Score actually measure?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "BBB is opt-in pay-to-play with no license verification. HomeStars is a lead-share directory that does not verify insurance currency. EyeSpyr verifies every credential in real time against provincial registries and physically confirms the address."
+      },
+      "name": "How is EyeSpyr different from BBB or HomeStars?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — verified profiles publish to the BuildersHaus sitemap with structured data that Google reads on first crawl. New EyeSpyr profiles typically index within 24–48 hours and appear in local pack results within 2–4 weeks."
+      },
+      "name": "Does EyeSpyr help with Google indexing?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "EyeSpyr verified badges auto-export to your LinkedIn company page, Facebook business page, and Twitter/X bio. The verification compounds across every social surface a buyer might check before hiring."
+      },
+      "name": "What about social proof distribution?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Included with every $10 IAM territory subscription. No separate verification fee. The platform is the moat — we want every territory partner verified so the network compounds."
+      },
+      "name": "What does EyeSpyr cost?"
+    }
+  ]
+}
+`;
+
+exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /fabricators-bc: FAQPage JSON-LD matches stored snapshot 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "B2B buyers (project managers, spec writers, GCs) search differently — longer queries, more technical terms, multi-stakeholder decisions. fabricators.io is structured for this with technical schema, equipment-list filtering, and capability-based search rather than location-only."
+      },
+      "name": "Why does B2B industrial need a different SEO approach?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Structural projects typically require CWB W47.1 Division 1 or 2. Pressure vessel work requires ABSA registration. Architectural and miscellaneous metal can run under W47.1 Division 2.1."
+      },
+      "name": "What CWB certification do most projects require?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The exact-match domain + aged authority + technical schema typically secures page-one rankings for 'metal fabricators [city]' within 8–16 weeks of listing claim. Long-tail technical queries index faster — often within 2–4 weeks."
+      },
+      "name": "How fast does fabricators.io appear in Google for B2B queries?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "LinkedIn is the dominant B2B channel for fabrication. Every TALC.TV project feature auto-publishes to your LinkedIn with finished-product photos, GC tagged, and project specs called out. Project managers actively follow this content."
+      },
+      "name": "What about LinkedIn for industrial fabrication leads?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Increasingly yes. Procurement and estimating teams use Perplexity and ChatGPT to shortlist vendors before sending RFQs. IAM's GEO layer makes territory partners the cited shortlist source."
+      },
+      "name": "Does AI search work for B2B procurement?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — many shops do structural fabrication + steel stud framing. Stack fabricators.io + steelstudcontractors.com + steelstud.ca for $30/month total and cover the entire commercial-construction keyword stack."
+      },
+      "name": "Can I bundle with steelstudcontractors.com?"
+    }
+  ]
+}
+`;
+
+exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /financial-advisors-bc: FAQPage JSON-LD matches stored snapshot 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every TALC.TV financial-planning article auto-publishes to your LinkedIn as a long-form thought-leadership post with your bio, designations, and a calendar-booking CTA. LinkedIn is the dominant B2B and HNW prospecting channel in 2026."
+      },
+      "name": "How does an advisor get LinkedIn distribution from IAM?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "IAM templates include the mandatory IIROC/MFDA/CIRO disclaimer language and exclude prohibited promissory claims. Your compliance officer reviews and approves the template once; subsequent content stays within bounds."
+      },
+      "name": "What about compliance with provincial regulators?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not for this audience. HNW prospects (35–55, technical literacy) read .io as 'modern, tech-forward, professional'. The brand cue actually reinforces credibility versus a generic .com directory listing."
+      },
+      "name": "Does the .io extension hurt consumer trust?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Perplexity and ChatGPT search are increasingly the first stop for affluent prospects researching 'best fee-only financial advisor in Vancouver'. IAM's GEO structuring makes financialadvisors.io territory partners the cited source."
+      },
+      "name": "How does AI search affect financial advisor lead-gen?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Vancouver and Toronto territories average 4–12 qualified inbound inquiries per month. Smaller markets see 1–4. Conversion to fee-paying client is typically 15–25% over 90 days."
+      },
+      "name": "What is the realistic lead volume?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — most established advisory practices claim Vancouver + Burnaby + Richmond + Surrey for $40/month total. Single advisors typically start with one metro and expand once the lead flow proves out."
+      },
+      "name": "Can I claim multiple cities?"
+    }
+  ]
+}
+`;
+
+exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /formal-complaint-weddings-io-inc: FAQPage JSON-LD matches stored snapshot 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A formal Statement of Objection with the Ontario Ministry of Public and Business Service Delivery under Section 32 of the Business Names Act, targeting the registered business name 'Weddings.io Inc.'"
+      },
+      "name": "What exactly was filed?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The registration of a business name that mirrors our trademarked domain — nine years after our continuous, WHOIS-verifiable ownership began — crossed the line from lookalike domain into registered business impersonation."
+      },
+      "name": "Why now?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Industry Army Marketing. ICANN WHOIS confirms continuous ownership since May 13, 2015 through the 2027 renewal window. The Internet Archive Wayback Machine records 78 captures since 2013."
+      },
+      "name": "Who owns weddings.io?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The full timeline, WHOIS exhibits, Wayback captures, and footnoted sources live at /blog/battle-for-the-brand-weddings-io."
+      },
+      "name": "Where is the full case study?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — the brand-confusion explainer for vendors is published at weddings.io/blog/brand-confusion-weddings-io-vs-weddings-io-inc."
+      },
+      "name": "Is there a vendor-facing version of this on weddings.io?"
+    }
+  ]
+}
+`;
+
+exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /framers-vancouver: FAQPage JSON-LD matches stored snapshot 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "$11 to $16 per sq ft for stick-built single family, $18 to $24 for steel stud commercial. Lumber surcharges add 5 to 10 percent in Q2."
+      },
+      "name": "What does framing cost per square foot in Vancouver in 2026?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "BC Building Code now allows wood frame up to 12 storeys. Steel still dominates podiums, parkades, and demising walls."
+      },
+      "name": "Wood frame or steel stud for Vancouver multi-family?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "IAM territory partners carry minimum $5M general liability and WorkSafeBC clearance. Both documents auto-display on the framers.io listing."
+      },
+      "name": "Do you carry liability insurance the GC will accept?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Lead crew of 4 mobilizes within 5 to 10 business days for projects over 2,000 sq ft. Smaller jobs slot in 2 to 3 weeks out."
+      },
+      "name": "How fast can a crew mobilize?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "One framer per city. Listings carry verified BBB, BCCSA SECOR or COR, and live project photos. Generals book the verified shop, not the cheapest bid."
+      },
+      "name": "What sets framers.io territory partners apart?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — the listing publishes a project pipeline so drywall, electrical, and plumbing subs know when to slot in."
+      },
+      "name": "Can subs and finishers see your live schedule?"
+    }
+  ]
+}
+`;
+
+exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /gasfitter-bc: FAQPage JSON-LD matches stored snapshot 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Google weights domain age as a trust proxy. gasfitter.ca was indexed in 2007, has 19 years of inbound citations from BC trades directories, and ranks for keyword stacks that a new domain would need 3–5 years to approach."
+      },
+      "name": "Why is a 19-year-old domain valuable for SEO?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Class B gas fitter ticket covers appliances up to 400,000 BTU input — residential furnaces, water heaters, ranges, dryers. Class A covers commercial boilers and process heat above that threshold."
+      },
+      "name": "What ticket do I need for residential gas in BC?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The listing exposes structured data (LocalBusiness, FAQPage, schema.org ContactPoint) that LLMs like ChatGPT and Perplexity parse. When someone asks an AI 'find me a licensed gas fitter in Vancouver', the verified territory partner is the cited source."
+      },
+      "name": "How does gasfitter.ca rank in AI search?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "One-contractor-per-city listing on gasfitter.ca, EyeSpyr verification badge, WhatsApp lead routing, schema-marked profile, inclusion in the BuildersHaus sitemap, and quarterly TALC.TV content syndication across the IAM network."
+      },
+      "name": "What does the $10/month subscription include?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — most multi-ticket shops stack gasfitter.ca + plumbers.ltd + hvacr.tv for $30/month total. Each domain captures a different keyword stack and routes leads to the same WhatsApp."
+      },
+      "name": "Can I bundle gasfitter.ca with plumbers.ltd?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Google indexes new gasfitter.ca pages within 24 hours via our sitemap ping and IndexNow API integration. AI Overviews typically cite within 7–14 days as the page accumulates topical signals."
+      },
+      "name": "How fast does a new listing get indexed?"
+    }
+  ]
+}
+`;
+
+exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /hardscapes-kelowna: FAQPage JSON-LD matches stored snapshot 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Paver patios run $35 to $55 per square foot installed. Engineered retaining walls run $80 to $160 per face foot depending on height and reinforcement. Full lakefront stair systems clear $40,000 to $120,000."
+      },
+      "name": "What does a Kelowna hardscape project cost in 2026?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Walls over 1.2 metres in the City of Kelowna require an engineered design and building permit. hardscapes.io territory partners coordinate the engineering and permit submission as part of the quote."
+      },
+      "name": "Do I need a permit for a Kelowna retaining wall?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every hardscapes.io territory partner is verified against the Interlocking Concrete Pavement Institute register. EyeSpyr confirms the certification number before the listing publishes."
+      },
+      "name": "Are crews ICPI certified?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A 400 sq ft paver patio with base prep and edge restraint runs 4 to 7 working days. Engineered walls add 3 to 10 days depending on height and drainage."
+      },
+      "name": "How long does a typical patio project take?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kelowna hardscape season runs April through October. Design and quoting should happen by January for an April start. Mid-summer slots book 8 to 12 weeks ahead."
+      },
+      "name": "When should I book for summer build?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Exclusive territory. One verified ICPI-certified crew holds the Kelowna listing. No bid race, no shared leads, no quote-shopping against four crews who undercut on base prep."
+      },
+      "name": "Why only one hardscape crew per city on hardscapes.io?"
+    }
+  ]
+}
+`;
+
+exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /healthwealthhome-content-engine: FAQPage JSON-LD matches stored snapshot 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Canonical tags tell Google 'this is the original source' so duplicate content syndicated across domains does not penalize either site. HWH publishes with rel=canonical pointing back to your trade domain, lifting your authority without duplicate-content risk."
+      },
+      "name": "What is canonical syndication and why does it help SEO?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Domain age compounds. HWH has 14 years of inbound links, citations, and topical authority across Health, Wealth, Home — exactly the three pillars contractors, financial advisors, and dentists.ltd professionals all need."
+      },
+      "name": "Why is a 14-year-old content domain valuable?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "TALC.TV produces 100+ pieces per month across the IAM network. Each territory partner gets quarterly featured content syndicated to HWH plus 8–10 sibling trade domains."
+      },
+      "name": "How often is content published?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — 14 years of topical authority plus Article schema makes HWH a frequent citation source in Google AI Overviews, Perplexity, and ChatGPT search. Your trade story gets cited via the canonical chain."
+      },
+      "name": "Does HWH content rank in AI Overviews?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every HWH article auto-cross-posts to LinkedIn (long-form), Twitter/X (thread + card), and Facebook (link preview with structured OG tags). The social signals compound the SEO."
+      },
+      "name": "What about LinkedIn and Twitter/X distribution?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Submit your project to BuildersHaus — TALC.TV picks the best monthly features for HWH syndication. Active territory partners average 1 HWH feature per quarter."
+      },
+      "name": "How do I get featured?"
+    }
+  ]
+}
+`;
+
+exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /hvacr-vancouver: FAQPage JSON-LD matches stored snapshot 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Class B gas-fitter minimum for boilers under 400,000 BTU. Class A for everything above. Refrigeration mechanics also need TQ provincial ticket."
+      },
+      "name": "What gas ticket is required for commercial Vancouver HVAC?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "BC Step Code now incentivizes heat pumps in all new builds. Retrofit market grew 47 percent in 2025 with CleanBC rebates up to $11,000."
+      },
+      "name": "Are heat pumps replacing gas furnaces in BC?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "5-ton commercial rooftop unit installed runs $14,000 to $22,000 in 2026. 10-ton units clear $35,000 with crane lift included."
+      },
+      "name": "What does a commercial RTU replacement cost?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "IAM hvacr.tv partners hold the refrigeration mechanic ticket for ammonia (NH3) and CO2 (R744) systems used in cold-storage and ice rinks."
+      },
+      "name": "Do you cover ammonia and CO2 refrigeration?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sub-2 hour response is the standard for territory partners. WhatsApp alerts include equipment age, refrigerant type, and last service date."
+      },
+      "name": "How fast is emergency dispatch?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Trust. Hvacr.tv signals to a property manager that the shop owns the territory and stakes its reputation on every call."
+      },
+      "name": "Why only one HVAC shop per city?"
+    }
+  ]
+}
+`;
+
+exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /insurance-brokers-bc: FAQPage JSON-LD matches stored snapshot 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Your own site is one URL competing against thousands. insurancebrokers.io aggregates the broker-intent traffic across the entire province into a directory that ranks for high-intent queries, then routes to your verified profile."
+      },
+      "name": "Why do I need a niche broker domain when I have a website?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "IAM is a directory and lead-routing layer, not a carrier or MGA. Your existing appointments with Aviva, Intact, Wawanesa, Northbridge, etc. stay intact. The territory just sends qualified inbound prospects to your existing quoting process."
+      },
+      "name": "How does this play with my carrier appointments?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "TALC.TV publishes commercial-insurance education content (cyber coverage, D&O, professional liability) to your Twitter/X with thread format. B2B insurance buyers actively follow these topics on X — it is a surprisingly high-conversion channel for commercial lines."
+      },
+      "name": "What about Twitter/X distribution for B2B insurance content?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — Perplexity routinely cites named brokers in answers to 'best commercial insurance broker for a construction company in Vancouver'. The IAM schema and EyeSpyr verification make territory partners frequent citation targets."
+      },
+      "name": "Does AI search cite insurance brokers?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Under 48 hours via sitemap ping and IndexNow. Local pack appearance typically within 3–6 weeks as reviews and signals accumulate."
+      },
+      "name": "How fast does the listing index in Google?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — filter by line of business (P&C, life, commercial, fleet, marine, etc.) and minimum premium threshold ($2,500/yr minimum, $10,000/yr minimum, etc.) to avoid time-wasters."
+      },
+      "name": "Can I limit lead types?"
+    }
+  ]
+}
+`;
+
+exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /interior-designers-vancouver: FAQPage JSON-LD matches stored snapshot 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Full-service design starts at $150/hr or 12 to 18 percent of project budget. Flat-fee packages run $4,500 to $25,000 depending on scope."
+      },
+      "name": "What does interior design cost in Vancouver?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes for commercial work. IDIBC-registered designers can stamp interior construction drawings for permit submission. Residential is not regulated."
+      },
+      "name": "IDIBC registration — does it matter?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "4 to 6 weeks from discovery call to final construction drawings including 3D renderings and millwork specs."
+      },
+      "name": "How long does a kitchen design package take?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Both. Territory partners offer design-only, design-build, and turnkey models with verified contractor referrals."
+      },
+      "name": "Do designers work with the contractor or directly with the client?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "One verified designer per metro. Premium clients skip the directory swamp and book the verified portfolio with IDIBC credentials."
+      },
+      "name": "Why interiordesigners.io exclusive territory?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — territory partners hold IDIBC stamps required for permit drawings on offices, retail, and hospitality interiors."
+      },
+      "name": "Can you handle commercial fit-outs?"
+    }
+  ]
+}
+`;
+
+exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /jewellers-luxury-retail: FAQPage JSON-LD matches stored snapshot 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": ".ltd reads as 'established, incorporated, premium' — particularly in British-Canadian markets. For luxury verticals (jewellers, brides, chalet) the extension reinforces brand prestige rather than fighting it like .io would."
+      },
+      "name": "Why does the .ltd extension work for luxury retail?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Instagram is the dominant visual channel for engagement rings and custom-design work. Every TALC.TV piece auto-publishes to Instagram with carousel format, location tags, and shoppable product tagging where available."
+      },
+      "name": "How does Instagram fit into luxury jewellery SEO?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Increasingly yes. Couples researching engagement rings now ask Perplexity and ChatGPT 'best custom jewellers in Vancouver for emerald-cut diamond' — and the GIA-certified, schema-marked jewellers.ltd listing is the cited source."
+      },
+      "name": "Does AI search affect luxury retail discovery?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pinterest drives high-intent visual traffic for engagement rings, wedding bands, and custom design. Every TALC.TV jewellery feature publishes to Pinterest with rich pins, schema-marked product data, and direct booking links."
+      },
+      "name": "What about Pinterest distribution?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The .ltd extension is fully indexed by Google and treated identically to .com for ranking purposes. Exact-match plural domain + aged authority typically secures page-one rankings within 8–12 weeks."
+      },
+      "name": "How fast does jewellers.ltd appear in Google?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — most luxury jewellers serve heavy bridal traffic. Stack jewellers.ltd + brides.ltd + weddings.io for $30/month and capture the entire pre-wedding decision funnel."
+      },
+      "name": "Can I bundle with brides.ltd and weddings.io?"
+    }
+  ]
+}
+`;
+
+exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /kitchen-cabinets-vancouver: FAQPage JSON-LD matches stored snapshot 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tear-out runs 1 day, install runs 3 to 5 days, and finishing trim plus crown takes another 1 to 2 days. Most projects close inside 10 working days when the cabinets are on-site."
+      },
+      "name": "How long does a full Vancouver kitchen cabinet replacement take?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Frameless gives 10 to 15 percent more interior storage and fits the modern Vancouver build aesthetic. Framed survives heavier dish loads and is preferred in older Kerrisdale and Shaughnessy renovations."
+      },
+      "name": "Are framed or frameless cabinets better for BC homes?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Lower mainland averages run $180 to $260 per linear foot installed for mid-range MDF shaker, and $400 plus for plywood box with custom paint. Exclusive territory partners publish flat pricing."
+      },
+      "name": "What does a cabinet install cost in 2026?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not for like-for-like cabinet swap. You do need an electrical permit if you move under-cabinet lights, and a plumbing permit if the sink relocates."
+      },
+      "name": "Do I need a permit?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "One installer per city. You skip the bid race and get the verified shop that already owns the rankings for \\"kitchen cabinets Vancouver\\"."
+      },
+      "name": "Why book the kitchencabinets.io territory partner?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — every IAM partner publishes geo-tagged install photos to their listing within 48 hours of completion. EyeSpyr confirms the address is real."
+      },
+      "name": "Can I see live project photos before booking?"
+    }
+  ]
+}
+`;
+
+exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /landscapers-toronto: FAQPage JSON-LD matches stored snapshot 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Weekly maintenance contracts run $65 to $140 per visit depending on lot size. Full-service annual contracts (cut, edge, trim, fall cleanup, spring opening) clear $2,200 to $4,800 per year for a typical 50-foot Toronto lot."
+      },
+      "name": "What does a Toronto landscaping season cost in 2026?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. promows.ca territory partners offer end-to-end design-build — paver patios, retaining walls, drainage, irrigation, and planting. Most projects run $14,000 to $80,000 for a Forest Hill or Lawrence Park front-and-back redesign."
+      },
+      "name": "Do you handle hardscape and design?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every promows.ca territory partner is verified against the Landscape Ontario member register. EyeSpyr confirms the membership number before the listing publishes."
+      },
+      "name": "Are crews Landscape Ontario certified?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — most Toronto territory partners bundle snow clearing into the annual maintenance contract. Per-event pricing runs $85 to $180 per visit depending on driveway size and salt application."
+      },
+      "name": "Do you offer winter snow contracts?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Spring opening books out by mid-February for May start dates. Design-build projects need to be quoted by January for a June dig start because permit timelines run 8 to 12 weeks in the City of Toronto."
+      },
+      "name": "When should I book for the spring?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Exclusive territory. One verified crew holds the Toronto listing. No bid race against 40 contractors, no shared leads from HomeStars, no race-to-the-bottom on weekly cuts."
+      },
+      "name": "Why only one landscaping crew per city on promows.ca?"
+    }
+  ]
+}
+`;
+
+exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /movers-calgary: FAQPage JSON-LD matches stored snapshot 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Local 2-bedroom moves run $480 to $850 for a 3-person crew over 4 to 6 hours. Long-distance Calgary to Edmonton runs $1,800 to $2,800 per truck. Acreage and piano moves quote separately."
+      },
+      "name": "What does a Calgary move cost in 2026?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Month-end and the last Saturday of every month book out 3 to 4 weeks ahead. Mid-month Tuesday or Wednesday moves can land same-week."
+      },
+      "name": "How far ahead should I book a Calgary move?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every territory partner carries cargo insurance up to $100,000 and liability up to $2 million. EyeSpyr verifies the certificate of insurance before the listing publishes."
+      },
+      "name": "Are mover.ltd partners insured?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — Calgary mover.ltd partners winterize trucks with heated cargo areas and use moisture-barrier wrap on wood furniture. January and February remain the cheapest months because demand drops."
+      },
+      "name": "Can I move in -25C weather?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. mover.ltd territory partners serve the oil-and-gas, tech, and finance corridors with direct-bill corporate accounts and after-hours condo-tower bookings."
+      },
+      "name": "Do you handle corporate relocations?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Exclusive territory. One verified crew holds the Calgary listing. No bid race, no shared leads, no race to the bottom on price that ends with broken furniture."
+      },
+      "name": "Why is there only one mover per city?"
+    }
+  ]
+}
+`;
+
+exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /painters-vancouver: FAQPage JSON-LD matches stored snapshot 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "$5,500 to $9,500 for a 2,200 sq ft two-storey. Cedar shake adds 25 percent. Stucco runs cheaper at $4,000 to $6,500."
+      },
+      "name": "What does it cost to paint a Vancouver house exterior in 2026?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Premium 100 percent acrylic lasts 8 to 12 years on properly prepped wood. South-facing walls fade 2 years earlier."
+      },
+      "name": "How long does exterior paint last in BC weather?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Refinish at $80 to $140 per door. Replacement runs 4 to 6 times more. Refinish on solid wood lasts 7 to 10 years before yellowing."
+      },
+      "name": "Cabinet refinishing vs replacement?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. BC moved to low-VOC by default in 2023. Premium lines (Aura, Emerald) are zero-VOC and BC Step Code preferred."
+      },
+      "name": "Are low-VOC paints standard now?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "One legit shop per city. Homeowners stop choosing on price and start choosing on warranty and verified reviews."
+      },
+      "name": "Why painters.tv exclusive territory?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "IAM territory partners can plug a financing partner (Affirm, Financeit) into the listing — homeowner books with monthly payment shown upfront."
+      },
+      "name": "Do you offer financing?"
+    }
+  ]
+}
+`;
+
+exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /plumbers-vancouver: FAQPage JSON-LD matches stored snapshot 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "$8,500 to $24,000 depending on length and method. Trenchless pipe-bursting runs 25 to 40 percent more than open-cut but saves the landscaping."
+      },
+      "name": "What does a sewer line replacement cost in Vancouver?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Standard retrofit: 6 to 9 hours. New construction rough-in: 2 to 3 hours. Gas line upgrade adds 2 to 4 hours."
+      },
+      "name": "How long does a tankless install take?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "CleanBC rebates cover up to $1,500. Lifecycle savings 35 to 50 percent vs electric resistance. ROI inside 5 years."
+      },
+      "name": "Are heat-pump water heaters worth it?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — territory partners hold the cross-connection control ticket and handle commercial backflow testing required by Metro Vancouver bylaw."
+      },
+      "name": "Do you cover commercial drains and grease traps?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "One licensed shop per city beats the lead-share bidding war. Homeowners get verified Red Seal, not a referral middleman."
+      },
+      "name": "Why plumbers.ltd exclusive?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sub-90-minute on emergency calls within metro core. WhatsApp confirmation with ETA included."
+      },
+      "name": "Whats the average emergency response time?"
+    }
+  ]
+}
+`;
+
+exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /promows-lawn-care: FAQPage JSON-LD matches stored snapshot 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Recurring buyers want predictability and route density. Schema.org Service + Offer with frequency attributes signals to Google this is a subscription service, not a one-time call. Route-density mapping in the listing keeps your CAC down by clustering leads geographically."
+      },
+      "name": "Why is recurring-service SEO different from one-off?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Lawn care has predictable seasonal search peaks (spring startup, mid-summer maintenance, fall cleanup, leaf removal). TALC.TV publishes seasonal content 4–6 weeks ahead of the search peak so your listing accumulates topical signals before the wave hits."
+      },
+      "name": "How does seasonal content velocity help rankings?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — 'best lawn care service in [city]' is a frequent Perplexity query in spring. IAM's GEO layer + EyeSpyr verification + recurring-service schema makes promows.com partners the cited source."
+      },
+      "name": "Does AI search cite lawn care services?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Twitter/X is the dominant channel for weather-driven service alerts (frost warnings, heat advisories, drought restrictions). Auto-posting service-availability updates during weather events captures urgent route fills."
+      },
+      "name": "What about Twitter/X for weather-driven services?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — most operators run lawn care April–October and snow removal November–March. Stack promows.com + plowwow.com for $20/month and capture year-round route density on the same client base."
+      },
+      "name": "Can I bundle with plowwow.com for year-round routing?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Your promows.com listing auto-syncs NAP, hours, service categories, and recurring-package details to Google Business Profile via API. NAP consistency across directories is the #1 local-pack ranking factor."
+      },
+      "name": "How does Google Business Profile sync work?"
+    }
+  ]
+}
+`;
+
+exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /rebar-tv-construction-media: FAQPage JSON-LD matches stored snapshot 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "schema.org VideoObject markup makes Google eligible to display your video as a rich result (with thumbnail and duration) in standard search. It also enables a video sitemap entry that surfaces your content in Google's video search vertical."
+      },
+      "name": "Why does video schema matter for SEO?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A video sitemap is a separate XML file listing every video on your site with metadata (title, description, thumbnail, duration, upload date, content URL). Google uses it to discover and index video content faster than crawl-only discovery."
+      },
+      "name": "What is a video sitemap and how does it help?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — Google's AI Overviews increasingly include video thumbnails as cited sources, especially for how-to and 'show me' queries. Rebar.tv content is structured for exactly this citation pattern."
+      },
+      "name": "Do AI Overviews cite video content?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every rebar.tv video also uploads to YouTube with optimized title, description, chapter markers, end-screen CTAs, and pinned comment with location + trade keywords. YouTube is the #2 search engine globally and a major referral source."
+      },
+      "name": "How does YouTube fit into the strategy?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Vertical 9:16 cuts auto-publish to Instagram Reels and TikTok with captions, location tags, and trade hashtags. Algorithm reach on Reels and TikTok dwarfs static-image posts for construction content."
+      },
+      "name": "What about Instagram and TikTok?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "60–90 seconds vertical for social, 3–5 minutes horizontal for YouTube. Both cut from the same contractor-submitted source footage."
+      },
+      "name": "How long is a typical rebar.tv feature?"
+    }
+  ]
+}
+`;
+
+exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /record-record-domain-provenance-vs-generative-conflation: FAQPage JSON-LD matches stored snapshot 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A permanent, footnoted public record. Not a pleading, not a demand letter, not legal advice. It preserves the entity-conflation issue on the open web, in a form indexable by Google Search, Google Maps, Google's AI Overview, ChatGPT, Perplexity, and Gemini."
+      },
+      "name": "What is 'the Record Record'?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Munich Regional Court I (Case No. 26 O 869/26) held that AI Overviews generate independent, substantive statements and that the operator is a primary publisher with strict liability. Ashley MacIsaac v. Google LLC (Ont. Sup. Ct., filed Feb 2026) seeks $1.5M in punitive damages for defective AI design after Google's AI Overview cross-wired his identity. Munchkin v. Angelcare (2024 FCA 156) confirmed cross-border automated code does not absolve domestic commercial liability inside Canada."
+      },
+      "name": "What changed legally in 2026?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "When an engine cannot determine a user's target with high confidence, it must return an ambiguity protocol rather than force-feed a hallucinated narrative. That is the product-level remedy this record requests."
+      },
+      "name": "What does 'Force Ambiguity' mean?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is a deterministic, machine-parseable file at the project root that LLM crawlers ingest before they render an AI summary. It asserts continuous chain of title, active objection status, and a machine-constraint clause telling the crawler that synthesising this root domain with variant extensions is actionable data degradation."
+      },
+      "name": "What does /identity.txt do?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. It is a defensive convention modelled on robots.txt, ai.txt, and llms.txt. Modern crawlers routinely parse arbitrary root-level .txt files during the training and retrieval passes. Shipping one costs nothing and creates a timestamped public assertion of ownership."
+      },
+      "name": "Is /identity.txt an official standard?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The DisambiguationSchema component, the DisambiguationNotice banner, and the identity.txt template are the same three files Industry Army Marketing runs in production on weddings.io. Copy them. Swap the domain, the province, and the founding date. Ship."
+      },
+      "name": "Can other .io domain owners use this exact stack?"
+    }
+  ]
+}
+`;
+
+exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /roofers-vancouver: FAQPage JSON-LD matches stored snapshot 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "$11,000 to $18,000 for a 1,800 sq ft asphalt re-roof including tear-off. Standing-seam metal runs $26,000 to $42,000."
+      },
+      "name": "What does a Vancouver re-roof cost in 2026?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Architectural asphalt: 25 to 30 years. Standing-seam metal: 50 plus. Cedar: 25 to 35 years with maintenance. Metal wins on lifecycle cost."
+      },
+      "name": "Asphalt vs metal vs cedar for the wet coast?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "City of Vancouver requires a permit for re-roofs over 10 squares (1,000 sq ft). Cost $190 to $400 depending on scope."
+      },
+      "name": "Do I need a permit?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "GAF Master Elite gives 50-year non-prorated material plus 25-year workmanship. Only 3 percent of roofers qualify. Territory partners do."
+      },
+      "name": "What is a manufacturer warranty actually worth?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It blocks the storm chaser from ranking and gives the homeowner one verified, warranted, WCB-cleared shop to call."
+      },
+      "name": "Why one roofer per city on roofers.io?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sub-4 hour emergency tarp is the territory partner standard, year-round."
+      },
+      "name": "How fast can you tarp a leak?"
+    }
+  ]
+}
+`;
+
+exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /six-figure-land-grab-weddings-io: FAQPage JSON-LD matches stored snapshot 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The .io extension is the de facto standard for tech, SaaS, and AI platforms — .io is the technical shorthand for input/output. Single-word, category-defining .io names have cleared six figures repeatedly: mint.io at $230,000, fluid.io at $199,995, metaverse.io at $175,000, ledger.io at $120,000, EVO.io at $105,000 in 2024."
+      },
+      "name": "Why are .io domains worth six figures?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Single English word. Exact-match. Category-defining in a $70B global industry. Over 52% of high-value .io sales are single English common nouns — exactly this profile."
+      },
+      "name": "How does weddings.io compare?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Industry Army Marketing. ICANN WHOIS confirms continuous registration since May 13, 2015 through the 2027 renewal window. The Internet Archive Wayback Machine has 78 captures dating to 2013."
+      },
+      "name": "Who owns weddings.io?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "'Weddings.io Inc.' is an Ontario-incorporated company (Registration No. 74761 8627 RT0001) operating a separate platform at aiweddings.io. We have zero affiliation. On July 2, 2026 we filed a formal Statement of Objection with the Ontario Ministry of Public and Business Service Delivery under Section 32 of the Business Names Act."
+      },
+      "name": "What about 'Weddings.io Inc.' and aiweddings.io?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. We were building quietly toward a broader rollout — vendor tools, feeder networks, 1,018-city territory-locked listing plans. The timing was not ours to choose. Nineteen years of building means the foundation does not shake when someone kicks the door."
+      },
+      "name": "Was this the plan?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "EIN Presswire — Industry Army Marketing Addresses Brand Confusion Over Flagship Domain Weddings.io, published July 3, 2026."
+      },
+      "name": "Where is the full press release?"
+    }
+  ]
+}
+`;
+
+exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /snow-removal-bc: FAQPage JSON-LD matches stored snapshot 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "$3,500 to $12,000 per strata building depending on size, lots, and sidewalks. Per-push pricing runs $150 to $400 per event."
+      },
+      "name": "What does commercial snow removal cost per season?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Territory partners commit to plow start within 2 hours of trigger snowfall (typically 5 cm). De-icing within 1 hour for hospitals and seniors residences."
+      },
+      "name": "Whats the response-time SLA?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pre-treatment with liquid brine cuts salt use 30 percent. Most BC partners run brine pre-event plus rock salt post-event for hardpack."
+      },
+      "name": "Do you use brine or rock salt?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "$5M general liability minimum, plus slip-and-fall endorsement. Territory partners publish certificate on the listing."
+      },
+      "name": "What insurance is required?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "One verified shop per metro. Strata managers stop scrambling in November and lock in November-to-March coverage with one trusted call."
+      },
+      "name": "Why plowwow.com exclusive territory?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Some territory partners run residential routes alongside commercial. Listing filters by service type."
+      },
+      "name": "Do you handle residential too?"
+    }
+  ]
+}
+`;
+
+exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /sparkys-tv-electricians: FAQPage JSON-LD matches stored snapshot 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Field Safety Representative Class B covers residential up to 750V. Class A covers commercial/industrial above 750V. Class 2 Restricted is single-contractor self-employed and is the most common for owner-operator shops."
+      },
+      "name": "What FSR class do I need for residential service work?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Level 2 home charger installs grew 60% year-over-year in 2025. CleanBC rebates and the 2030 ZEV mandate are pulling the curve forward. EV-certified electricians command premium pricing."
+      },
+      "name": "How fast is the EV charger market growing in BC?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Panel-upgrade reveals, EV charger installs, and smart-home walkthroughs are inherently visual. A 60-second sparkys.tv video shows the work, the cleanliness, and the finish — three things photos cannot convey."
+      },
+      "name": "Why is video so important for electricians?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Emergency 'electrician near me now' queries weight local pack heavily. Sparkys.tv listings carry NAP consistency, schema.org EmergencyService markup, and Google Business Profile sync that wins these queries within 4–8 weeks of claim."
+      },
+      "name": "How does sparkys.tv rank in Google for emergency calls?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — Perplexity and Google AI Overviews routinely cite named electricians for emergency-call queries with verified 24/7 availability schema. The schema markup is the citation trigger."
+      },
+      "name": "Does AI search route emergency electrical calls?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — multi-ticket mechanical shops stack sparkys.tv + gasfitter.ca + hvacr.tv for $30/month total. Each domain captures a different keyword stack but routes to the same dispatch."
+      },
+      "name": "Can I bundle with gasfitter.ca and hvacr.tv?"
+    }
+  ]
+}
+`;
+
+exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /steel-stud-contractors-bc: FAQPage JSON-LD matches stored snapshot 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Google's algorithm reduced EMD weighting in 2012 but never eliminated it. Combined with 15+ years of topical authority, an exact-match domain in a low-competition vertical like steel stud framing remains one of the top three ranking factors."
+      },
+      "name": "Why does an exact-match domain still matter in 2026?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "BC averages $18–$28 per sq ft installed for 20-gauge interior partitions, $32–$48 for load-bearing 16-gauge. Tenant improvements run lower; podium and parkade work runs higher."
+      },
+      "name": "What does commercial steel stud framing cost in 2026?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most steelstudcontractors.com territory partners are framer-only specialists and partner with drywallers.io territory partners for tape and mud. The IAM network handoff is built into the lead routing."
+      },
+      "name": "Do you handle full drywall and finish too?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ChatGPT, Perplexity, and Google AI Overviews pull from structured data and topical authority. steelstudcontractors.com is the named source when an estimator asks 'find me a SECOR-certified steel stud framer in the Lower Mainland'."
+      },
+      "name": "How does the GC find me on AI search?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every TALC.TV content feature is auto-syndicated to your LinkedIn company page with project photos, geo tags, and the GC tagged. Construction LinkedIn is a B2B goldmine for commercial framing leads."
+      },
+      "name": "What about LinkedIn distribution?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — one steel stud contractor per metro region. Once Vancouver, Burnaby, Surrey, or Richmond is locked, no other shop can claim it on steelstudcontractors.com."
+      },
+      "name": "Is there a single-contractor exclusivity?"
+    }
+  ]
+}
+`;
+
+exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /talc-tv-ai-content: FAQPage JSON-LD matches stored snapshot 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Content structured so large language models (ChatGPT, Claude, Perplexity, Gemini) parse, attribute, and cite it. Key elements: FAQ schema, clear Q&A structure, named entities (your business, your city, your trade), and verifiable claims with source links."
+      },
+      "name": "What is LLM-optimized content?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Contractor time: 5–10 minutes (upload + voice memo). Production turnaround: 24–48 hours. Distribution: instant across the IAM network and your social channels."
+      },
+      "name": "How long does a TALC.TV feature take to produce?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every TALC.TV video carries schema.org VideoObject markup, transcript, chapter timestamps, and a video sitemap entry. Google indexes the video in the video search vertical and surfaces it in standard search via rich-result thumbnails."
+      },
+      "name": "What about video SEO?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Each TALC.TV bundle auto-publishes a LinkedIn long-form post (1,200 words with project photos), a Twitter/X thread (6–8 tweets with images), and an Instagram carousel. Native posting beats link-sharing for algorithm reach on every platform."
+      },
+      "name": "How does this help me on LinkedIn and Twitter/X?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — every TALC.TV publish pings Google + Bing via IndexNow, updates the sitemap, and submits to Search Console. Average index time is under 6 hours for new pages across the IAM network."
+      },
+      "name": "Does the content get indexed by Google fast?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Included with every $10 IAM territory subscription. One quarterly feature per territory minimum, with additional features available on a per-feature basis ($50–$200 depending on production depth)."
+      },
+      "name": "What does TALC.TV cost?"
+    }
+  ]
+}
+`;
+
+exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /talc-tv-content-engine-contractors: FAQPage JSON-LD matches stored snapshot 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "TALC.tv. One agency retainer buys 300 TALC.tv posts. Most contractors publish 4 to 8 a month and still spend under $80."
+      },
+      "name": "What replaces a $3,000/month marketing agency here?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AEO-first structure: question-answer blocks, FAQ schema, citation-grade sourcing, and entity tagging. Built to be quoted by ChatGPT, Perplexity, and Google AI Overviews."
+      },
+      "name": "How is the content optimized for AI Overviews?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — each post is generated from your job photo, your trade, your neighbourhood. No template recycling, no spun copy."
+      },
+      "name": "Is the content unique?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Your IAM territory listing, Google My Business, Instagram, LinkedIn, and your RSS feed. One click, four destinations."
+      },
+      "name": "Where does it publish?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No subscription. Pay per post, $10 each. Bundled free with every IAM territory lock at one post per month."
+      },
+      "name": "Do I need a TALC.tv subscription?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "All IAM platform pricing follows The 250 Scale — industryarmymarketing.com/pricing."
+      },
+      "name": "Where is master pricing?"
+    }
+  ]
+}
+`;
+
+exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /ten-dollar-territories-explained: FAQPage JSON-LD matches stored snapshot 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We are not building you a custom site or running ads on your behalf. We are renting one slot on a domain that already ranks. The marginal cost to add one verified contractor is near zero."
+      },
+      "name": "How is $10/month even possible?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "One contractor per trade per city. Once your territory is locked, no one else can buy it. You either grab it or watch a competitor grab it."
+      },
+      "name": "Whats the catch?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Month-to-month. Cancel any time. Your slot opens to the next contractor in queue."
+      },
+      "name": "What if I cancel?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. It is a directory listing on a high-authority trade-specific domain. The SEO comes from the domain authority, not from a service we sell you."
+      },
+      "name": "Is this an SEO service?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Varies by city and trade. Vancouver plumbers see 15 to 40 qualified inbounds per month. Smaller markets see 5 to 15. We do not guarantee volume — we guarantee exclusivity."
+      },
+      "name": "How many leads will I get?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Stack a city (Vancouver), a trade (plumbing), and a niche (commercial). Most multi-territory partners run 3 to 6 listings for $30 to $60 a month total."
+      },
+      "name": "Can I buy multiple territories?"
+    }
+  ]
+}
+`;
+
+exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /tractors-bc: FAQPage JSON-LD matches stored snapshot 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "25 to 35 HP sub-compact runs mowing, light tilling, and snow removal. Step up to 40 to 50 HP if you bale hay or load round bales."
+      },
+      "name": "What size tractor for a 5-acre Fraser Valley hobby farm?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tier 4 Final diesel remains 90 percent of new sales. Electric sub-compacts are growing 30 percent year over year and arrive in BC dealerships 2026 onward."
+      },
+      "name": "Are diesel tractors still the standard?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A clean 5-year-old 30 HP runs $18,000 to $24,000 in BC. New 2025 models start at $22,500 with 0 percent financing through major brands."
+      },
+      "name": "What about used tractor pricing?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every kongtractors.com territory partner publishes a service-bay schedule and parts availability. Mobile service for 60 km is standard."
+      },
+      "name": "Do you service what you sell?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "One dealer per metro region. You own the rankings, the listing, and the inbound leads for \\"tractors Fraser Valley\\" and 40 related long-tail queries."
+      },
+      "name": "How does the exclusive territory work?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — your inventory grid covers tractors, loaders, mowers, augers, and snow blowers. Cross-sell baked into the listing."
+      },
+      "name": "Can I bundle implements too?"
+    }
+  ]
+}
+`;
+
+exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /videographers-vancouver: FAQPage JSON-LD matches stored snapshot 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Half-day shoot plus edit: $2,500 to $5,500. Full-day with two cameras: $5,500 to $12,000. Aerial drone adds $800 to $2,000."
+      },
+      "name": "What does corporate video cost in Vancouver?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — Transport Canada Advanced RPAS is required for commercial flight near people or built environments. Territory partners hold current certification."
+      },
+      "name": "Do I need a drone licence in BC?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "First cut in 5 to 10 business days for corporate. 48-hour turnaround available for real estate listings."
+      },
+      "name": "How fast is turnaround on a finished edit?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Master 4K file, social cuts (vertical, square), thumbnails, captions, and a YouTube-optimized cut with chapters."
+      },
+      "name": "What deliverables come with a package?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "One verified shop per metro. Marketing directors stop screening 40 Vimeo reels and book the verified shop with the gear and the licence."
+      },
+      "name": "Why videographers.io exclusive territory?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — territory partners run up to 6-camera switched live with streaming output for conferences and product launches."
+      },
+      "name": "Can you handle live event multi-cam?"
+    }
+  ]
+}
+`;
+
+exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /wedding-platform-controversy-domain-dispute-seo: FAQPage JSON-LD matches stored snapshot 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Knot and WeddingWire — operating together as WeddingPro under The Knot Worldwide — face over 200 FTC complaints since 2018, a class action lawsuit filed April 30, 2025 by Kazerouni Law Group, and pressure from U.S. Senator Chuck Grassley for an FTC investigation. The Knot holds 1.7 stars on SiteJabber across 393 reviews; WeddingWire 2.6 stars on SmartCustomer across 819 reviews. Vendors allege high-pressure sales, one-sided contracts, and fraudulent leads."
+      },
+      "name": "What is the wedding platform controversy?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "weddings.io is an independent, vendor-friendly wedding infrastructure platform owned by Industry Army Marketing since May 13, 2015. Zero VC. Zero private-equity roll-up. Territory-locked listing plans from $10/month and free vendor signup options — the opposite of the sales-tactic model currently under FTC scrutiny."
+      },
+      "name": "How is weddings.io related?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A separate Ontario-incorporated company registered as 'Weddings.io Inc.' (Reg. No. 74761 8627 RT0001) while operating at aiweddings.io. We filed a formal Statement of Objection with Ontario's Ministry of Public and Business Service Delivery on July 2, 2026 under Section 32 of the Business Names Act. Prior use is documented: 11 years of continuous ICANN WHOIS registration and 78 Internet Archive captures."
+      },
+      "name": "What is the domain dispute?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Publicly reported .io comparables: mint.io $230,000, fluid.io $199,995, metaverse.io $175,000, ledger.io $120,000, EVO.io $105,000. Top 10 reported .io sales of 2021 totaled over $1.1M. Over 52% of high-value .io sales are single English words — weddings.io is exactly that profile in a $70B global industry."
+      },
+      "name": "Why is weddings.io a six-figure asset?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The dispute created natural search demand around 'wedding platform controversy', 'weddings.io domain dispute', 'The Knot alternative', and related terms. We now own the indexed content answering those queries. Press release backlinks, exact-match ownership pages, and long-form footnoted posts compound over months. This is the highest-value SEO asset a startup can hold — earned editorial context — and it cannot be purchased."
+      },
+      "name": "How does this become an SEO advantage?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "weddings.io territory-locked listings, backed by the Industry Army Marketing 150+ domain feeder network across weddings, real estate, roofing, plumbing, and construction. Plans from $10/month, free signup options for independent vendors, and a vendor-owned model — not a marketplace that resells your leads to competitors."
+      },
+      "name": "What is the independent-vendor alternative?"
+    }
+  ]
+}
+`;
+
+exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /weddings-io-entity-conflation-case-study: FAQPage JSON-LD matches stored snapshot 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Two distinct legal entities being treated as one — or as parts of the same corporate structure — by search engines, mapping products, and AI answer systems. Here: weddings.io (owned by Industry Army Marketing since May 13, 2015) and a separate Ontario-registered company operating public product surfaces at aiweddings.io."
+      },
+      "name": "What is 'entity conflation' in this case?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Industry Army Marketing. ICANN WHOIS confirms continuous ownership since May 13, 2015 through the 2027 renewal window. The Internet Archive Wayback Machine records 78 captures since 2013."
+      },
+      "name": "Who owns weddings.io?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. This is a public case-study record. A formal Statement of Objection was filed July 2, 2026 under Section 32 of Ontario's Business Names Act; that filing is documented separately at /blog/formal-complaint-weddings-io-inc. This post is not legal advice and does not create an attorney-client relationship."
+      },
+      "name": "Is this a legal filing?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "That is the conflation. The Maps card shown in Exhibit B is for an Ontario-registered business associated with aiweddings.io, not for weddings.io the domain, which has never operated a Toronto storefront and has been owned in British Columbia by Industry Army Marketing since 2015. See Exhibit B and Footnote 2."
+      },
+      "name": "Why does the Google Maps card for 'weddings.io' point to a Toronto business?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because Google Search, Google Maps, and Google's AI Overview are all products of the same company, and all three surfaces are simultaneously misattributing a category-defining .io domain to a separate corporate entity. That is not a ranking dispute — it is an entity-resolution failure at a platform Google itself operates end-to-end."
+      },
+      "name": "Why does this matter for Google and for AI Overviews?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Open an incognito window. Search '[yourdomain].io' and '[yourdomain].io app'. Screenshot the map card, the organic results, and the AI Overview panel. Cross-check against your own WHOIS and business registrations. If any of the three surfaces attribute your domain to an entity you have no affiliation with, you have documented conflation evidence."
+      },
+      "name": "How can other .io domain owners test their own exposure?"
+    }
+  ]
+}
+`;
+
+exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /weddings-io-technologies-company-wedding-saas-20-year-battle: FAQPage JSON-LD matches stored snapshot 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The corporate technology entity that owns and develops the intellectual property, software infrastructure, and platforms behind Weddings.io. Consumer brands continue operating independently under this corporate foundation."
+      },
+      "name": "What is Weddings.io Technologies Company?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Weddings.io remains the front-end consumer brand and the 2015-established root domain. The Technologies Company wraps around it to protect IP, enable multi-tenant scale, and coordinate the sibling brands."
+      },
+      "name": "Is Weddings.io changing?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The multi-tenant vertical SaaS engine that powers every consumer brand in the group — Brides.ltd, Grooms.ltd, Jewellers.ltd, Parents.ltd, Videographers.io, and more. One enterprise-grade platform, many brands."
+      },
+      "name": "What is WeddingSaaS.com?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Industry Army Marketing is the operator behind Weddings.io Technologies Company. The Weddings.io stack is the wedding-vertical expression of the same IAM framework that runs the industry-wide domain network."
+      },
+      "name": "How does this connect to Industry Army Marketing?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It reinforces the record. The corporate technology structure formalises the continuous chain of title on Weddings.io (Langley, BC — May 13, 2015) and makes the distinction from any variant-suffix Ontario registration structurally unambiguous."
+      },
+      "name": "Does this affect the aiweddings.io / Ontario dispute?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The three autonomous systems inside WeddingSaaS.com. IAM Bot Core handles 24/7 local intent and lead routing. EyeSpyR timestamps and geotags project imagery for verifiable proof-of-work. Talc.tv syndicates vertical video across distributed micro-channels."
+      },
+      "name": "What are the IAM Bot Core, EyeSpyR, and Talc.tv?"
+    }
+  ]
+}
+`;
+
+exports[`BlogPost FAQ rendering matches FAQPage JSON-LD > /weddings-vancouver: FAQPage JSON-LD matches stored snapshot 1`] = `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Full coordination ranges $8,000 to $18,000. Month-of starts at $2,500. Premium destination weddings on Vancouver Island clear $30,000."
+      },
+      "name": "What does a full-service planner cost in Vancouver?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Peak Saturday venues in Stanley Park and the Sea-to-Sky corridor book 14 to 22 months out. Off-season Friday weddings can land 4 months out."
+      },
+      "name": "How early should couples book?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — Park Board issues a special-use permit that runs $230 to $470 depending on group size. Apply 6 months ahead."
+      },
+      "name": "Do I need a permit for a Stanley Park ceremony?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Exclusivity protects rankings and protects the bride from a bidding circus. One verified planner per metro means the territory partner gets the call, not five competitors."
+      },
+      "name": "Why only one planner per city on weddings.io?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Inquiry form, WhatsApp click-to-chat, and a phone-call CTA all land in your inbox within 60 seconds. The lead is yours alone."
+      },
+      "name": "How are leads routed?"
+    },
+    {
+      "@type": "Question",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — adjacent territories stack. Many planners run Vancouver plus Whistler plus Tofino for $30 a month total."
+      },
+      "name": "Can I upgrade to a Vancouver Island or Whistler territory too?"
+    }
+  ]
+}
+`;

@@ -1,0 +1,133 @@
+import { describe, it, expect } from "vitest";
+import { jsonLdSerializer } from "./jsonLdSerializer";
+
+describe("jsonLdSerializer.test predicate", () => {
+  it("matches a top-level object with @type", () => {
+    expect(jsonLdSerializer.test({ "@type": "FAQPage" })).toBe(true);
+  });
+
+  it("matches a top-level object with @context", () => {
+    expect(jsonLdSerializer.test({ "@context": "https://schema.org" })).toBe(
+      true
+    );
+  });
+
+  it("matches when JSON-LD is nested deep inside a plain object", () => {
+    expect(
+      jsonLdSerializer.test({
+        wrapper: { inner: { deeper: { "@type": "Question" } } },
+      })
+    ).toBe(true);
+  });
+
+  it("does NOT match arbitrary nested plain objects", () => {
+    expect(
+      jsonLdSerializer.test({
+        foo: "bar",
+        nested: { a: 1, b: { c: [1, 2, 3], d: { e: "f" } } },
+      })
+    ).toBe(false);
+  });
+
+  it("does NOT match an empty object", () => {
+    expect(jsonLdSerializer.test({})).toBe(false);
+  });
+
+  it("does NOT match primitives, null, or arrays", () => {
+    expect(jsonLdSerializer.test(null)).toBe(false);
+    expect(jsonLdSerializer.test(undefined)).toBe(false);
+    expect(jsonLdSerializer.test("")).toBe(false);
+    expect(jsonLdSerializer.test("@type")).toBe(false);
+    expect(jsonLdSerializer.test(42)).toBe(false);
+    expect(jsonLdSerializer.test(true)).toBe(false);
+  });
+
+  it("does NOT match arrays of arbitrary plain objects", () => {
+    expect(jsonLdSerializer.test([])).toBe(false);
+    expect(jsonLdSerializer.test([{ foo: "bar" }, { baz: 1 }])).toBe(false);
+    expect(
+      jsonLdSerializer.test([
+        { nested: { a: 1, b: [2, 3] } },
+        { other: "value" },
+      ])
+    ).toBe(false);
+    expect(jsonLdSerializer.test([1, "two", null, true])).toBe(false);
+  });
+
+  it("matches arrays containing a JSON-LD object", () => {
+    expect(jsonLdSerializer.test([{ "@type": "Thing" }])).toBe(true);
+    expect(
+      jsonLdSerializer.test([{ foo: "bar" }, { "@context": "https://schema.org" }])
+    ).toBe(true);
+  });
+
+  it("matches arrays containing a deeply nested JSON-LD object", () => {
+    expect(
+      jsonLdSerializer.test([
+        { foo: "bar" },
+        { wrapper: { inner: { "@type": "Question" } } },
+      ])
+    ).toBe(true);
+  });
+
+  it("matches when JSON-LD lives inside an array nested in a plain object", () => {
+    expect(
+      jsonLdSerializer.test({
+        items: [{ "@type": "Question", name: "Q1" }],
+      })
+    ).toBe(true);
+  });
+
+  it("matches when JSON-LD lives inside an array nested several levels deep", () => {
+    expect(
+      jsonLdSerializer.test({
+        page: {
+          sections: [
+            { title: "Intro", blocks: [{ kind: "text" }] },
+            {
+              title: "FAQ",
+              blocks: [
+                { kind: "text" },
+                { kind: "schema", payload: { "@context": "https://schema.org" } },
+              ],
+            },
+          ],
+        },
+      })
+    ).toBe(true);
+  });
+
+  it("does NOT match plain objects whose arrays only contain plain objects", () => {
+    expect(
+      jsonLdSerializer.test({
+        items: [
+          { id: 1, label: "a" },
+          { id: 2, label: "b", meta: { tags: ["x", "y"] } },
+        ],
+      })
+    ).toBe(false);
+  });
+
+  it("does NOT match objects whose keys merely resemble JSON-LD", () => {
+    expect(jsonLdSerializer.test({ type: "FAQPage", context: "x" })).toBe(false);
+    expect(jsonLdSerializer.test({ "@id": "https://example.com" })).toBe(false);
+  });
+
+  it("serializer output sorts keys but preserves array order", () => {
+    const out = jsonLdSerializer.serialize({
+      "@type": "FAQPage",
+      "@context": "https://schema.org",
+      mainEntity: [
+        { name: "Q1", "@type": "Question" },
+        { name: "Q2", "@type": "Question" },
+      ],
+    });
+    const parsed = JSON.parse(out);
+    expect(Object.keys(parsed)).toEqual(["@context", "@type", "mainEntity"]);
+    expect(parsed.mainEntity.map((q: { name: string }) => q.name)).toEqual([
+      "Q1",
+      "Q2",
+    ]);
+    expect(Object.keys(parsed.mainEntity[0])).toEqual(["@type", "name"]);
+  });
+});
