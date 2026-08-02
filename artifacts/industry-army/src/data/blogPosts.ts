@@ -242,6 +242,94 @@ export const compareBlogPostsByNewest = (a: BlogPost, b: BlogPost) => postTime(b
 
 const rawBlogPosts: BlogPost[] = [
   {
+    "slug": "eyespyr-watermark-client-attribution",
+    "brand": "EyeSpyR",
+    "trade": "Verification",
+    "cardTitle": "Why Every Project Photo We Publish Is Watermarked, Credited, and Verified",
+    "tradeShort": "verification",
+    "plural": "contractors, vendors, and trade businesses",
+    "video": null,
+    "imageKey": "eyespyr-watermark",
+    "imageAlt": "EyeSpyR watermark system — client attribution and verification badge on project photo",
+    "publishedAt": "2026-08-01",
+    "readingMinutes": 4,
+    "excerpt": "When a contractor submits a project photo to the IAM network, it gets watermarked, credited, and verified before it appears anywhere. Here is exactly how it works and why it matters for your business.",
+    "metaDescription": "Industry Army Marketing watermarks and permanently attributes every client-submitted project photo with EyeSpyR verification. Full pipeline explained.",
+    "focusKeyword": "EyeSpyR verification watermark",
+    "body": [
+      {
+        "type": "paragraph",
+        "text": "When a contractor submits a project photo to the IAM network, something specific happens before that photo ever appears on a city page, gets blasted on social, or ends up in a Google search result. It gets watermarked. It gets credited. And it gets verified."
+      },
+      {
+        "type": "h2",
+        "text": "Step 1 — EyeSpyR Verifies the Work"
+      },
+      {
+        "type": "paragraph",
+        "text": "GPS coordinates, timestamp, and credential check happen first. If the work isn't real and on-site, it doesn't pass. This protects every client listed in the network from fake reviews and fabricated portfolios that damage the industry. No verification, no publication. Simple."
+      },
+      {
+        "type": "h2",
+        "text": "Step 2 — Your Business Gets Permanently Credited"
+      },
+      {
+        "type": "paragraph",
+        "text": "Every photo carries your business name — bottom-left, every time it's shared. '© [Your Business] | EyeSpyR Verified'. Whether it ends up on a city page, a social post, or gets reshared by someone else — your name stays on it. The watermark travels with the image permanently."
+      },
+      {
+        "type": "h2",
+        "text": "Step 3 — Schema Attribution Is Injected"
+      },
+      {
+        "type": "paragraph",
+        "text": "Before the photo goes live, we inject full JSON-LD ImageObject schema identifying you as the creator and copyrightHolder. Google reads this. AI systems read this. Your business gets credited at the machine level, not just the visual level. This is what builds entity authority."
+      },
+      {
+        "type": "h2",
+        "text": "Step 4 — TALC.tv Distributes With Your Byline"
+      },
+      {
+        "type": "paragraph",
+        "text": "When the $10 content blast fires, every platform gets: 'Submitted by [Your Business] — EyeSpyR Verified.' TikTok, Pinterest, Instagram, X, LinkedIn — your name goes with the content everywhere it lands. One photo. Permanent credit across the entire network."
+      },
+      {
+        "type": "h2",
+        "text": "Step 5 — You Get a Permanent Verified Profile"
+      },
+      {
+        "type": "paragraph",
+        "text": "Every verified submission builds your profile at eyespyr.com. A permanent, crawlable record of your real work. Backlinked. Schema-tagged. Indexed. The industry spent a decade lying about work with stock photos and fake reviews. We built the system that ends that."
+      },
+      {
+        "type": "h2",
+        "text": "This Is $10"
+      },
+      {
+        "type": "paragraph",
+        "text": "One photo. One blast. Watermarked. Credited. Verified. Schema-attributed. Distributed to social with your byline. Permanent record on EyeSpyR. And a dofollow backlink to your site from the IAM network. That is the entire value stack for $10. No retainer. No contract. Pay per win."
+      }
+    ],
+    "faq": [
+      {
+        "question": "What does EyeSpyR watermarking do?",
+        "answer": "EyeSpyR watermarking adds your business name and a green verified badge to every project photo you submit. The credit line reads '© [Your Business] | EyeSpyR Verified' and travels with the image permanently across every platform it appears on."
+      },
+      {
+        "question": "How does schema attribution work?",
+        "answer": "Every published photo gets JSON-LD ImageObject schema injected with you listed as the creator and copyrightHolder. Google and AI systems read this data to establish your business as the source of the verified work."
+      },
+      {
+        "question": "What is a TALC.tv content blast?",
+        "answer": "A TALC.tv blast takes one verified project photo and generates a 2,000-word SEO post that auto-publishes to your city page and syndicates to TikTok, Pinterest, Instagram, X, LinkedIn, and other platforms — all with your business byline and a dofollow backlink."
+      },
+      {
+        "question": "How much does it cost?",
+        "answer": "$10 per verified content blast. This includes the watermark, EyeSpyR badge, schema attribution, TALC.tv distribution to all platforms, and a permanent dofollow backlink. No retainer, no contract."
+      }
+    ]
+  },
+  {
     "slug": "open-letter-platforms-poisoning-ai-information-supply-chain",
     "brand": "weddings.io",
     "trade": "Brand Defense",
