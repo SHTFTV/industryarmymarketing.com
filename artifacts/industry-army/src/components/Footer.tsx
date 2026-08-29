@@ -19,6 +19,7 @@ const cols = [
       { label: "Investors", to: "/investors" },
       { label: "Blog", to: "/blog" },
       { label: "Contractors", to: "/contractors" },
+      { label: "Apply as a Contractor", to: "/apply/contractors" },
       { label: "Service Pros", to: "/service-professionals" },
     ],
   },
