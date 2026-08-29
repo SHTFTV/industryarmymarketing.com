@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 
-export const SITE_URL = "https://industryarmymarketing.com";
+export const SITE_URL = "https://www.industryarmymarketing.com";
 
 const toAbsolute = (path: string) => {
   if (/^https?:\/\//i.test(path)) return path;
