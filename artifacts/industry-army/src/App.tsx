@@ -11,6 +11,7 @@ import Index from "./pages/Index.tsx";
 import HowItWorks from "./pages/HowItWorks.tsx";
 import Pricing from "./pages/Pricing.tsx";
 import Contractors from "./pages/Contractors.tsx";
+import ContractorApply from "./pages/ContractorApply.tsx";
 import ServiceProfessionals from "./pages/ServiceProfessionals.tsx";
 import Backlinks from "./pages/Backlinks.tsx";
 import DofollowBacklinks from "./pages/DofollowBacklinks.tsx";
@@ -214,6 +215,7 @@ const App = () => (
           <Route path="/services/:slug/thank-you" element={<ServiceThankYou />} />
           <Route path="/admin/service-leads" element={<AdminServiceLeads />} />
           <Route path="/contractors" element={<Contractors />} />
+          <Route path="/apply/contractors" element={<ContractorApply />} />
           <Route path="/service-professionals" element={<ServiceProfessionals />} />
           <Route path="/backlinks" element={<Backlinks />} />
           <Route path="/dofollow-backlinks" element={<DofollowBacklinks />} />
