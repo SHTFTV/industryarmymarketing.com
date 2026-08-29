@@ -30,7 +30,7 @@ const Contractors = () => (
       description="Exclusive territory. One contractor per trade per city. Premium industry domains with 20+ years of authority. Lock out your competition today."
     >
       <div className="flex flex-wrap gap-3">
-        <Button variant="hero" asChild><Link to="/contact">Claim Your Trade</Link></Button>
+        <Button variant="hero" asChild><Link to="/apply/contractors">Apply For Your Territory</Link></Button>
         <Button variant="heroOutline" asChild><Link to="/pricing">See Pricing</Link></Button>
       </div>
     </PageHeader>
