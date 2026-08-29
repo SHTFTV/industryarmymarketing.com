@@ -116,6 +116,7 @@ export const PUBLIC_ROUTES_TO_SCAN = [
   "/pricing",
   "/seo-packages",
   "/contractors",
+  "/apply/contractors",
   "/service-professionals",
   "/backlinks",
   "/dofollow-backlinks",
