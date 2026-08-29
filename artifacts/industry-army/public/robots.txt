@@ -37,4 +37,4 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
-Sitemap: https://industryarmymarketing.com/sitemap.xml
+Sitemap: https://www.industryarmymarketing.com/sitemap.xml
