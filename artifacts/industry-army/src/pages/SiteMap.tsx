@@ -41,6 +41,7 @@ const groups: SitemapGroup[] = [
     title: "Services",
     links: [
       { label: "Contractors", to: "/contractors" },
+      { label: "Contractor Application", to: "/apply/contractors" },
       { label: "Service Professionals", to: "/service-professionals" },
       { label: "Industries", to: "/industries" },
       { label: "Backlinks", to: "/backlinks" },
