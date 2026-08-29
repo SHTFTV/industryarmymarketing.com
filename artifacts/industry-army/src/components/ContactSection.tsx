@@ -45,7 +45,23 @@ export type LeadPayload = Omit<z.infer<typeof leadSchema>, "website"> & {
 const fieldCls = "bg-card border-border focus:border-primary";
 const errCls = "text-destructive text-xs mt-1";
 
-const ContactSection = () => {
+interface ContactSectionProps {
+  source?: string;
+  eyebrow?: string;
+  title?: string;
+  intro?: string;
+  submitLabel?: string;
+  successDescription?: string;
+}
+
+const ContactSection = ({
+  source = "contact-page",
+  eyebrow = "Get In Touch",
+  title = "Contact Us",
+  intro = "Have a question about our services? Ready to claim your territory? Fill out the form and our SEO experts will contact you soon.",
+  submitLabel = "Send Message",
+  successDescription = "We'll confirm availability in your city within 24 hours.",
+}: ContactSectionProps) => {
   const [params] = useSearchParams();
   const tierParam = (params.get("tier") || "").toLowerCase();
   const tier: "directory" | "exclusive" | null =
@@ -95,7 +111,7 @@ const ContactSection = () => {
     setSubmitting(true);
     try {
       const { website: _hp, ...clean } = parsed.data;
-      const source = tier ? `pricing-${tier}` : "contact-page";
+      const leadSource = tier ? `pricing-${tier}` : source;
       const { error } = await supabase.from("leads").insert({
         name: clean.name,
         email: clean.email,
@@ -103,14 +119,14 @@ const ContactSection = () => {
         trade: clean.trade,
         city: clean.city,
         message: clean.message,
-        source,
+        source: leadSource,
         user_agent: typeof navigator !== "undefined" ? navigator.userAgent : null,
       });
       if (error) throw error;
 
       toast({
         title: "Message received",
-        description: "We'll confirm availability in your city within 24 hours.",
+        description: successDescription,
       });
       setForm({ name: "", email: "", phone: "", trade: "", city: "", message: "", website: "" });
       setErrors({});
@@ -134,8 +150,8 @@ const ContactSection = () => {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-16"
         >
-          <p className="text-primary uppercase tracking-[0.3em] text-sm font-semibold mb-3">Get In Touch</p>
-          <h2 className="font-display text-5xl md:text-6xl text-foreground">Contact Us</h2>
+          <p className="text-primary uppercase tracking-[0.3em] text-sm font-semibold mb-3">{eyebrow}</p>
+          <h2 className="font-display text-5xl md:text-6xl text-foreground">{title}</h2>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
@@ -145,10 +161,7 @@ const ContactSection = () => {
             animate={{ opacity: 1, x: 0 }}
             className="flex flex-col gap-8"
           >
-            <p className="text-muted-foreground leading-relaxed">
-              Have a question about our services? Ready to claim your territory? 
-              Fill out the form and our SEO experts will contact you soon.
-            </p>
+            <p className="text-muted-foreground leading-relaxed">{intro}</p>
             {contactInfo.map((item) => (
               <div key={item.label} className="flex items-start gap-4">
                 <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
@@ -248,7 +261,7 @@ const ContactSection = () => {
               aria-hidden="true"
             />
             <Button variant="hero" size="lg" type="submit" disabled={submitting} className="self-end">
-              {submitting ? <><Loader2 className="w-4 h-4 mr-2 animate-spin" />Sending...</> : "Send Message"}
+              {submitting ? <><Loader2 className="w-4 h-4 mr-2 animate-spin" />Sending...</> : submitLabel}
             </Button>
           </motion.form>
         </div>
