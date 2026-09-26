@@ -9,44 +9,42 @@ import { PenSquare, Link2, Infinity, Building2, ShieldCheck, Mail, Globe, CheckC
 import { domains } from "@/data/domains";
 
 const includes = [
-  { icon: PenSquare, title: "1,500–2,500 Word Post", body: "Original, well-researched guest article published under your byline (or ours, your call)." },
-  { icon: Link2, title: "1–2 Dofollow Backlinks", body: "Contextual, in-body dofollow links to your site with the anchor text you choose. No rel=nofollow, no rel=sponsored." },
-  { icon: Building2, title: "20+ Year-Old Host Domain", body: "Placed on an aged, niche-relevant IAM domain — the kind of authority money can't buy quickly." },
-  { icon: Infinity, title: "Permanent — Never Removed", body: "$10 one-time. No monthly fee. No expiry. The post stays live as long as the domain is live." },
-  { icon: ShieldCheck, title: "White-Hat & Editorial", body: "Real editorial content on a real publication. No PBNs, no spun text, no link farms. Safe for Google." },
-  { icon: Globe, title: "Indexed & Crawlable", body: "Every post is submitted to Google, Bing, and IndexNow within 24 hours of going live." },
+  { icon: PenSquare, title: "Your Practical Expertise", body: "Bring an original article, project story or useful industry lesson. Explain what readers can learn from your experience." },
+  { icon: Link2, title: "Relevant Sources and Connections", body: "Use links where they help a reader understand the topic or find the business behind the work. Paid placements must disclose sponsorship and qualify commercial links." },
+  { icon: Building2, title: "A Relevant Industry Home", body: "We review the topic and proposed hub together. The goal is useful content for that publication’s audience." },
+  { icon: Infinity, title: "Accessible Participation", body: "$10 CAD per accepted guest-post placement, separate from annual hub registration. Confirm the placement and terms before payment." },
+  { icon: ShieldCheck, title: "Editorial Review", body: "Contributions are reviewed for relevance, accuracy and usefulness. Payment does not guarantee acceptance or search rankings." },
+  { icon: Globe, title: "A Growing Catalog", body: "Explore specialist sites across the network and propose the audience your contribution can help." },
 ];
-
 const process = [
-  { n: "01", t: "Send Us Your Brief", b: "Email your topic, target URL, preferred anchor text, and 2–3 angles. We'll suggest the best domain match from the network." },
-  { n: "02", t: "Pay $10", b: "One flat payment per guest post. Volume discounts after 10 posts. E-transfer, card, or PayPal." },
-  { n: "03", t: "We Write & Edit", b: "Our editorial team drafts the post, runs it through EyeSpyr quality scoring (must hit 4.8/5.0), and sends you a preview." },
-  { n: "04", t: "Live Within 5 Days", b: "Approved post goes live with your dofollow links, indexed, and the URL is sent to you for reporting." },
+  { n: "01", t: "Share Your Idea", b: "Send your topic, intended audience, original draft or project outline, and relevant examples." },
+  { n: "02", t: "Find the Right Fit", b: "Review the proposed industry hub, your contribution and any changes needed before agreeing to publication." },
+  { n: "03", t: "Agree the Details", b: "Confirm the placement, $10 CAD fee and timing. Writing or other hands-on content services are scoped separately." },
+  { n: "04", t: "Publish Useful Work", b: "After acceptance, prepare the agreed contribution for publication. Share the published resource with people who can use it." },
 ];
-
 const rules = [
-  "Topic must be relevant to the host domain's niche",
-  "No casino, adult, pharma, crypto-scam, or hate content",
-  "Target URL must load (no broken pages, no redirects to spam)",
-  "Anchor text must read naturally — no aggressive exact-match",
-  "Original content only — we run plagiarism checks before publishing",
+  "Help the host site’s actual industry audience",
+  "Share original work and credit sources accurately",
+  "Use project details, photographs and names only with permission",
+  "Make links relevant and disclose commercial relationships",
+  "Distinguish your completed work from referrals and unconfirmed outcomes",
 ];
 
 const GuestPost = () => (
   <Layout>
     <Seo
-      title="Guest Post Service | $10 Dofollow Backlinks on Aged Domains"
-      description="Submit a guest post and get a permanent dofollow backlink on a 20+ year-old IAM network domain. $10 flat. White-hat, editorial, niche-relevant. Available worldwide."
+      title="Share Your Expertise | Industry Guest Contributions | IAM"
+      description="Share original industry knowledge, project stories and useful guest articles with a relevant IAM hub. Contributions are reviewed for fit and usefulness."
       path="/guest-post"
       jsonLd={[
         {
           "@context": "https://schema.org",
           "@type": "Service",
-          name: "Guest Post with Dofollow Backlinks",
+          name: "Industry Guest Contributions",
           provider: { "@type": "Organization", name: "Industry Army Marketing" },
           areaServed: "Worldwide",
           description:
-            "Editorial guest post placement with permanent dofollow backlinks on aged, niche-relevant domains.",
+            "Reviewed guest contributions for relevant industry audiences.",
           offers: { "@type": "Offer", price: "10", priceCurrency: "CAD" },
         },
         breadcrumbList([
@@ -56,22 +54,22 @@ const GuestPost = () => (
       ]}
     />
     <PageHeader
-      eyebrow="Guest Posting · Dofollow"
-      title="Guest Post Service"
-      highlight="$10 · Permanent Dofollow"
-      description="One editorial guest post. One or two dofollow backlinks. Published on an aged, niche-relevant domain from the IAM network. Permanent — no monthly fee, no expiry. Open to clients worldwide."
+      eyebrow="Useful Content · Industry Connections"
+      title="Your Knowledge Belongs"
+      highlight="With Your Industry"
+      description="We want your useful ideas, project experience and practical knowledge. Propose a contribution to a relevant industry hub and help build a resource your peers and customers can use."
     >
       <div className="flex flex-wrap gap-3">
-        <Button variant="hero" asChild><Link to="/contact">Submit a Guest Post</Link></Button>
-        <Button variant="heroOutline" asChild><Link to="/dofollow-backlinks">Browse Host Domains</Link></Button>
+        <Button variant="hero" asChild><Link to="/contact?request=guest-post">Propose a Contribution</Link></Button>
+        <Button variant="heroOutline" asChild><Link to="/network">Browse Host Domains</Link></Button>
       </div>
     </PageHeader>
 
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <p className="text-primary uppercase tracking-[0.3em] text-xs font-semibold mb-3">What Every Guest Post Includes</p>
-          <h2 className="font-display text-4xl md:text-5xl text-foreground">Editorial Quality. Real Authority.</h2>
+          <p className="text-primary uppercase tracking-[0.3em] text-xs font-semibold mb-3">Why Contribute</p>
+          <h2 className="font-display text-4xl md:text-5xl text-foreground">Find Your Trade. Share What You Know.</h2>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {includes.map((f, i) => (
@@ -134,9 +132,9 @@ const GuestPost = () => (
             <Mail className="w-8 h-8 text-primary mb-3" />
             <h3 className="font-display text-2xl text-foreground mb-2">Submit Your Guest Post</h3>
             <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-              Email your brief to <a className="text-primary hover:underline" href="mailto:colin@industryarmymarketing.com">colin@industryarmymarketing.com</a> with subject line <span className="text-foreground font-mono">"Guest Post"</span>. Include your target URL, anchor text, topic ideas, and any deadline. We respond within one business day.
+              Email your brief to <a className="text-primary hover:underline" href="mailto:colin@industryarmymarketing.com">colin@industryarmymarketing.com</a> with subject line <span className="text-foreground font-mono">"Guest Post"</span>. Include your topic, intended readers, original work or project examples, and any preferred timing. We will review the fit and next steps.
             </p>
-            <Button variant="hero" asChild><Link to="/contact">Start a Submission</Link></Button>
+            <Button variant="hero" asChild><Link to="/contact?request=guest-post">Start a Submission</Link></Button>
           </div>
         </div>
       </div>
@@ -148,7 +146,7 @@ const GuestPost = () => (
           <p className="text-primary uppercase tracking-[0.3em] text-xs font-semibold mb-3">Sample Host Domains</p>
           <h2 className="font-display text-4xl md:text-5xl text-foreground">Where Your Post Could Live</h2>
           <p className="text-muted-foreground mt-3 max-w-2xl mx-auto text-sm">
-            150+ niche-relevant publications. All 20+ years old. We'll pick the best fit for your topic — or you can request one.
+            Explore the catalog and suggest a relevant home for your contribution. Availability, editorial fit and placement are confirmed during review.
           </p>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
@@ -165,13 +163,13 @@ const GuestPost = () => (
                 <span className="text-xl">{d.emoji}</span>
               </div>
               <p className="text-foreground text-sm">{d.niche}</p>
-              <p className="text-muted-foreground text-xs mt-2">⏱ 20+ years active · dofollow</p>
+              <p className="text-muted-foreground text-xs mt-2">Industry contribution proposals welcome</p>
             </motion.div>
           ))}
         </div>
         <div className="text-center mt-8">
           <Button variant="heroOutline" asChild>
-            <Link to="/dofollow-backlinks">View Full Domain Network →</Link>
+            <Link to="/network">View Full Domain Network →</Link>
           </Button>
         </div>
       </div>

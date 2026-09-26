@@ -28,9 +28,9 @@ const HeroSection = () => {
           transition={{ duration: 0.7, delay: 0.15 }}
           className="font-display text-6xl md:text-8xl lg:text-9xl leading-none mb-6 text-glow text-primary"
         >
-          Built for Your Industry
+          Find Your Trade.
           <br />
-          Grow With the Network
+          Find Your People.
         </motion.h1>
 
         <motion.p
@@ -39,11 +39,10 @@ const HeroSection = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-muted-foreground max-w-2xl mx-auto text-lg mb-10 leading-relaxed"
         >
-          Years of industry websites and hands-on SEO work have built the foundation.
-          Now we are inviting more businesses to join, share their work and make each hub more useful.
-          Register your business on one industry hub site for $10/year.
-          Our separate city-page upgrade is reserved for the right-fit creators who contribute
-          content and help grow the network. Apply to discuss fit, scope and pricing.
+          Your expertise is worth more than a high membership fee. You have projects to show,
+          lessons to share and customers you can help. Register your business on one relevant
+          industry hub for $10 USD a year, and help build a useful home for your trade.
+          We value the knowledge you bring and the connections we can build together.
         </motion.p>
 
         <motion.div
@@ -53,10 +52,10 @@ const HeroSection = () => {
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
           <Button variant="hero" size="lg" asChild>
-            <a href="#contact">Get Started</a>
+            <a href="/contact?tier=directory">Join One Hub — $10/year</a>
           </Button>
           <Button variant="heroOutline" size="lg" asChild>
-            <a href="#services">Our Services</a>
+            <a href="#industry-catalog">Explore the Industry Catalog</a>
           </Button>
         </motion.div>
 

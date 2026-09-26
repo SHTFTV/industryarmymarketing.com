@@ -153,7 +153,7 @@ const Pricing = () => (
       eyebrow="Simple Pricing"
       title="Simple Pricing."
       highlight="Serious Results."
-      description="Register on one hub site for $10/year. Apply separately for a city-page partnership: we are holding these upgrades for the right-fit creators who help grow the network."
+      description="Join one relevant hub for $10 USD/year. We keep participation accessible because your expertise, project stories and useful contributions help the network grow. City-page partnerships and hands-on marketing services are separately scoped."
     />
 
     {/* Two-tier grid */}

@@ -45,8 +45,8 @@ const Footer = () => {
         <div>
           <Link to="/" className="font-display text-3xl text-primary text-glow tracking-wider">IAM</Link>
           <p className="text-muted-foreground text-sm mt-3 leading-relaxed">
-            Industry Army Marketing. Own your city. Lock out your competition.
-            150+ premium domains. 20+ years of authority.
+            Industry Army Marketing. Find your trade. Share your work. Find your people.
+            Specialist industry hubs built around useful content and real business connections.
           </p>
         </div>
         {cols.map((c) => (
