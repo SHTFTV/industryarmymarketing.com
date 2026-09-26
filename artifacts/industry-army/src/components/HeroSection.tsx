@@ -28,9 +28,9 @@ const HeroSection = () => {
           transition={{ duration: 0.7, delay: 0.15 }}
           className="font-display text-6xl md:text-8xl lg:text-9xl leading-none mb-6 text-glow text-primary"
         >
-          The $10 Marketing
+          Built for Your Industry
           <br />
-          Revolution
+          Grow With the Network
         </motion.h1>
 
         <motion.p
@@ -39,6 +39,8 @@ const HeroSection = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-muted-foreground max-w-2xl mx-auto text-lg mb-10 leading-relaxed"
         >
+          Years of industry websites and hands-on SEO work have built the foundation.
+          Now we are inviting more businesses to join, share their work and make each hub more useful.
           Register your business on one industry hub site for $10/year.
           Our separate city-page upgrade is reserved for the right-fit creators who contribute
           content and help grow the network. Apply to discuss fit, scope and pricing.
