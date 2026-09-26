@@ -8,7 +8,7 @@ const Contact = () => (
   <Layout>
     <Seo
       title="Contact | Industry Army Marketing"
-      description="Tell us your trade and your city. We'll confirm territory availability within 24 hours and get you live on the network within 48."
+      description="Ask about contractor marketing, industry listings, guest posts, or a network partnership. Tell us your trade and city."
       path="/contact"
       jsonLd={breadcrumbList([
         { name: "Home", path: "/" },
@@ -17,9 +17,9 @@ const Contact = () => (
     />
     <PageHeader
       eyebrow="Get In Touch"
-      title="Let's Lock In"
-      highlight="Your Territory"
-      description="Tell us your trade and your city. We'll confirm availability within 24 hours and get you live on the network within 48."
+      title="Grow With"
+      highlight="Your Industry"
+      description="Tell us your industry, city, and what you need: marketing, a listing, guest posting, or a partnership."
     />
     <ContactSection />
   </Layout>

@@ -19,7 +19,7 @@ const HeroSection = () => {
           transition={{ duration: 0.6 }}
           className="text-primary uppercase tracking-[0.3em] text-sm font-semibold mb-4"
         >
-          Foolproof Strategy Reveals How To
+          Contractor Marketing · Business Listings · Local Visibility
         </motion.p>
 
         <motion.h1
@@ -28,9 +28,9 @@ const HeroSection = () => {
           transition={{ duration: 0.7, delay: 0.15 }}
           className="font-display text-6xl md:text-8xl lg:text-9xl leading-none mb-6 text-glow text-primary"
         >
-          The $10 Marketing
+          Built for Your Industry
           <br />
-          Revolution
+          Grow With the Network
         </motion.h1>
 
         <motion.p
@@ -39,9 +39,11 @@ const HeroSection = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-muted-foreground max-w-2xl mx-auto text-lg mb-10 leading-relaxed"
         >
-          Over 20 years, marketing has transformed—and now the power is in your hands. 
-          Claim your exclusive territory, crush the competition, and become the go-to 
-          business in your area before anyone else.
+          Years of industry websites and hands-on SEO work have built the foundation.
+          Now we are inviting more businesses to join, share their work and make each hub more useful.
+          Register your business on one industry hub site for $10/year.
+          Our separate city-page upgrade is reserved for the right-fit creators who contribute
+          content and help grow the network. Apply to discuss fit, scope and pricing.
         </motion.p>
 
         <motion.div

@@ -148,7 +148,7 @@ const LatestBlogPosts = () => {
               Latest from the <span className="text-primary text-glow">Blog</span>
             </h2>
             <p className="text-muted-foreground mt-3 max-w-xl">
-              Fresh 2,000-word guides on exclusive $10 territories — one trade per city.
+              Guides to contractor marketing, business listings, and exclusive market opportunities.
             </p>
           </div>
           <Button variant="hero" asChild className="self-start md:self-end">

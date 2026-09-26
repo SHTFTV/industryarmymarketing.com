@@ -4,9 +4,10 @@
   "license": "MIT",
   "scripts": {
     "preinstall": "sh -c 'rm -f package-lock.json yarn.lock; case \"$npm_config_user_agent\" in pnpm/*) ;; *) echo \"Use pnpm instead\" >&2; exit 1 ;; esac'",
-    "build": "cd artifacts/industry-army && npx vite build",
+    "build": "pnpm --filter @workspace/industry-army build",
     "typecheck:libs": "tsc --build",
-    "typecheck": "echo \"typecheck skipped on Vercel\""
+    "typecheck": "echo \"typecheck skipped on Vercel\"",
+    "test:site-audit": "node --test scripts/site-audit/*.test.mjs"
   },
   "private": true,
   "dependencies": {

@@ -1,67 +1,48 @@
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const plans = [
   {
-    tier: "BASELINE",
-    name: "Annual Listing",
+    tier: "TIER 1 · REGISTRATION",
+    name: "Hub Site Registration",
     price: "$10",
     unit: "/year",
-    subtitle: "Basic Listing • No EyeSpyR",
+    subtitle: "Your business registered on one industry hub site",
     featured: false,
     features: [
-      "Business name on directory",
-      "Phone & address listed",
-      "Service area shown",
-      "Permanent placement",
-      "EyeSpyR locked (upgrade to monthly)",
+      "Directory listing on one relevant hub site",
+      "Business name and contact details",
+      "Your trade and service area",
+      "Annual registration — $10 per hub site",
+      "City-page upgrades are a separate plan",
     ],
-    cta: "GET LISTED",
+    cta: "REGISTER ON A HUB SITE",
+    href: "/contact?tier=directory",
   },
   {
-    tier: "SEO TERRITORY",
-    name: "City Commander",
-    price: "$10",
-    unit: "/slot/mo",
-    subtitle: "Flat slot pricing · One contractor per trade per city",
+    tier: "TIER 2 · SELECTIVE UPGRADE",
+    name: "City-Page Partnership",
+    price: "By application",
+    unit: "",
+    subtitle: "Separate pricing agreed after a fit review",
     featured: true,
-    badge: "LOCK OUT COMPETITORS",
+    badge: "RIGHT FIT FIRST",
     features: [
-      "1 contractor per trade per city",
-      "The 250 Scale: 3–10 slots by population",
-      "City landing page with domain authority",
-      "EyeSpyR INCLUDED FREE — review scraping + credential verification",
-      "TALC.tv content blasts — $10/post",
-      "Backlink package — $25 one-time",
-      "Cancel anytime with 30 days notice",
+      "City-page opportunity for selected partners",
+      "Reserved for creators who contribute useful content",
+      "Share real projects, photos, videos and industry knowledge",
+      "Help grow your industry hub and the wider network",
+      "City, category, scope and pricing agreed before activation",
+      "Applying does not reserve or activate a city page",
     ],
-    cta: "CLAIM YOUR TERRITORY",
-  },
-  {
-    tier: "CONTENT",
-    name: "TALC.tv Blast",
-    price: "$10",
-    unit: "/post",
-    subtitle: "Anyone · Anytime · No Lock Required",
-    featured: false,
-    features: [
-      "One completed project photo",
-      "AI generates 2,000-word SEO post",
-      "Auto-published to city page + GMB",
-      "Permanent backlink to your site",
-      "No retainer — pay per win",
-    ],
-    cta: "SUBMIT A BLAST",
+    cta: "APPLY FOR A CITY PAGE",
+    href: "/apply/contractors",
   },
 ];
 
-
-// IAM PRICING NOTE: All pricing follows The 250 Scale
-// Source of truth: industryarmymarketing.com/pricing/
-// Backlink Package: $25 one-time — anyone, anytime
-// EyeSpyR Badge (guest posts): $10/year
-// EyeSpyR Monitoring: FREE with all monthly locks
+// Keep offers aligned with the detailed /pricing page.
 const PricingSection = () => {
   return (
     <section id="pricing" className="py-20 md:py-32 bg-background">
@@ -76,13 +57,13 @@ const PricingSection = () => {
             CONTRACTOR <span className="text-primary">PRICING</span>
           </h2>
           <p className="text-muted-foreground mt-3 text-lg">
-            <span className="text-primary font-semibold">$10</span> — the flat price that matches
-            most of our offers. Listings, territory slots, TALC.tv blasts, EyeSpyR badges — all $10.
+            Register on one hub site for <span className="text-primary font-semibold">$10/year</span>.
+            City-page partnerships are a separate upgrade, held for the right-fit content creators.
           </p>
           <p className="text-xs uppercase tracking-[0.3em] text-primary mt-2">All Pricing in USD</p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto items-start">
           {plans.map((plan, i) => (
             <motion.div
               key={plan.name}
@@ -128,12 +109,18 @@ const PricingSection = () => {
               <Button
                 variant={plan.featured ? "hero" : "heroOutline"}
                 className="w-full"
+                asChild
               >
-                {plan.cta}
+                <Link to={plan.href}>{plan.cta}</Link>
               </Button>
             </motion.div>
           ))}
         </div>
+
+        <p className="mt-8 max-w-3xl mx-auto text-center text-sm text-muted-foreground">
+          Optional content service: TALC.tv blasts are $10 per post, priced separately from
+          registration and city-page partnerships. <Link to="/contact" className="text-primary underline">Ask about content services</Link>.
+        </p>
 
         {/* Enterprise banner */}
         <motion.div
@@ -149,7 +136,7 @@ const PricingSection = () => {
             ENTERPRISE LEVEL DOMINATION
           </h3>
           <p className="text-muted-foreground mt-4 max-w-2xl mx-auto text-sm">
-            We offer custom pricing for individual packages, websites, product sales, and full marketing builds — territory slots stay flat at $10/mo. Multi-location contractors, franchises, and enterprise accounts welcome.
+            Websites, SEO packages and other marketing services are priced separately. For a city-page partnership, we review your fit, content contribution and market before agreeing the scope and price.
           </p>
         </motion.div>
       </div>

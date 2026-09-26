@@ -2,9 +2,9 @@ import { motion } from "framer-motion";
 import { Shield, Target, Zap } from "lucide-react";
 
 const stats = [
-  { icon: Shield, value: "20+", label: "Years Experience" },
-  { icon: Target, value: "500+", label: "Businesses Served" },
-  { icon: Zap, value: "$10", label: "Starting Price" },
+  { icon: Shield, value: "LSFencing", label: "Years of SEO work" },
+  { icon: Target, value: "Steelstud", label: "Documented enquiry-to-award example" },
+  { icon: Zap, value: "$10/year", label: "Registration on one industry hub" },
 ];
 
 const AboutSection = () => {
@@ -23,14 +23,16 @@ const AboutSection = () => {
               <span className="text-primary text-glow">Get An Army Behind You</span>
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              Industry Army Marketing is a Vancouver-based digital marketing powerhouse with over 
-              20 years of experience transforming local businesses into market leaders. We believe 
-              every business deserves enterprise-level marketing—without the enterprise price tag.
+              IAM brings together years of website building, SEO work and practical industry
+              experience. Our long-term work with LSFencing is part of that foundation,
+              alongside the industry sites we have built and developed across the network.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              From SEO domination to lead generation, we deploy proven strategies that put you 
-              on top. Our $10 marketing revolution has helped hundreds of contractors, service 
-              providers, and local businesses claim their territory and crush the competition.
+              The next stage is participation: more businesses sharing real projects, useful
+              knowledge and clear service information. We want each hub to become more useful
+              to the people searching it, attract more users and create more opportunities
+              for its participating businesses. Register on one hub for $10/year, or apply
+              for a separately priced city-page partnership if you are ready to contribute content.
             </p>
           </motion.div>
 
