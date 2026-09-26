@@ -14,12 +14,12 @@ const steps = [
   {
     icon: CheckCircle2,
     title: "Contractor review",
-    body: "We look for a real operating business, credible work, and a strong fit for the network.",
+    body: "We look for a real operating business, credible work and creators ready to share useful project content and help grow the network.",
   },
   {
     icon: Clock3,
     title: "Limited activation",
-    body: "Applications stay active while onboarding opens in controlled batches. Good operators are not turned away.",
+    body: "City pages are held for the right-fit partners. Applying does not reserve a page or guarantee acceptance; scope, content expectations and pricing are agreed before activation.",
   },
 ];
 
@@ -27,7 +27,7 @@ const ContractorApply = () => (
   <Layout>
     <Seo
       title="Apply for Contractor Territory | Industry Army Marketing"
-      description="Apply for a selective contractor marketing territory. IAM reviews one contractor per trade and city, with limited onboarding and no shared-lead auction."
+      description="Apply for IAM's City-Page Partnership, a separate upgrade from $10/year hub registration. Selected creators contribute content and help grow the industry network."
       path="/apply/contractors"
       jsonLd={breadcrumbList([
         { name: "Home", path: "/" },
@@ -38,8 +38,8 @@ const ContractorApply = () => (
     <PageHeader
       eyebrow="Applications Open · Onboarding Limited"
       title="Apply For Your"
-      highlight="Contractor Territory"
-      description="We are building the construction network carefully. Tell us where you operate and what you do. If your territory is available, your application enters the review queue for the next activation window."
+      highlight="City-Page Partnership"
+      description="This is a separate upgrade from $10/year registration on one hub site. We are holding city pages for the right-fit creators who contribute useful content and help grow their industry hub and the wider network."
     >
       <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-sm text-foreground">
         <LockKeyhole className="h-4 w-4 text-primary" />
@@ -63,7 +63,7 @@ const ContractorApply = () => (
       source="contractor-application"
       eyebrow="Contractor Application"
       title="Join The Review Queue"
-      intro="Applications are open even when a territory is not being activated immediately. Give us enough detail to understand your company, service area, and the kind of work you want more of."
+      intro="Tell us about your business, city and the hub site you want to work with. In your message, include examples or links to project photos, videos or articles, and explain the content you could contribute. We review fit first, then discuss scope, content expectations and separate pricing."
       submitLabel="Submit Application"
       successDescription="Application received. We'll review your trade and territory and contact you with the next available step."
     />
