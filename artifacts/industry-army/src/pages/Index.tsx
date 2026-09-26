@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import Seo from "@/components/Seo";
 import featuredBattle from "@/assets/blog/weddings-vs-aiweddings-battle.png.asset.json";
@@ -35,6 +36,40 @@ const Index = () => {
         }}
       />
       <HeroSection />
+      <section id="network-results" aria-labelledby="network-results-title" className="py-16 md:py-24 bg-card border-y border-border">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <p className="text-primary uppercase tracking-[0.2em] text-sm font-semibold mb-3">From the IAM network</p>
+          <h2 id="network-results-title" className="font-display text-4xl md:text-6xl text-foreground">
+            A Steelstud enquiry. A closed school project.
+          </h2>
+          <article className="mt-8 rounded-lg border border-primary/30 bg-background p-6 md:p-8">
+            <div className="flex flex-wrap items-center gap-3 mb-4">
+              <a href="https://steelstud.ca/" className="text-primary underline font-semibold">Steelstud.ca</a>
+              <span className="rounded-full bg-primary/10 px-3 py-1 text-sm text-primary">Closed deal</span>
+            </div>
+            <h3 className="font-display text-2xl md:text-3xl text-foreground">Academy school dropped-ceiling project</h3>
+            <p className="mt-4 text-muted-foreground leading-relaxed max-w-3xl">
+              The enquiry for this school dropped-ceiling project came through Steelstud.ca,
+              part of the IAM network, and became a closed deal. It is one concrete example
+              of an industry website generating an enquiry that turned into a job.
+            </p>
+            <ol className="grid gap-4 sm:grid-cols-3 mt-6" aria-label="Project enquiry to closed deal">
+              <li className="rounded border border-border p-4"><span className="text-primary font-semibold">1. Industry site</span><p className="mt-1 text-foreground">Steelstud.ca</p></li>
+              <li className="rounded border border-border p-4"><span className="text-primary font-semibold">2. Project enquiry</span><p className="mt-1 text-foreground">School dropped ceiling</p></li>
+              <li className="rounded border border-border p-4"><span className="text-primary font-semibold">3. Business outcome</span><p className="mt-1 text-foreground">Closed deal</p></li>
+            </ol>
+          </article>
+          <p className="mt-6 text-muted-foreground leading-relaxed">
+            Register on one industry hub for $10/year. For creators ready to contribute useful
+            content and help grow the network, city-page partnerships are a separate upgrade
+            offered after a fit review.
+          </p>
+          <div className="flex flex-wrap gap-6 mt-4">
+            <Link to="/pricing" className="text-primary underline font-semibold">Compare registration and city-page partnerships</Link>
+            <Link to="/contact?request=marketing&ref_page=%2F%23network-results" className="text-primary underline font-semibold">Discuss your industry</Link>
+          </div>
+        </div>
+      </section>
       <ServicesSection />
       <ContractorTradesGrid limit={12} showCta />
       <PricingSection />
