@@ -39,8 +39,9 @@ const HeroSection = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-muted-foreground max-w-2xl mx-auto text-lg mb-10 leading-relaxed"
         >
-          Get your business listed from $10/year, or ask about exclusive marketing in your city.
-          Tell us your trade and location to confirm what is available and what it costs.
+          Register your business on one industry hub site for $10/year.
+          Our separate city-page upgrade is reserved for the right-fit creators who contribute
+          content and help grow the network. Apply to discuss fit, scope and pricing.
         </motion.p>
 
         <motion.div
