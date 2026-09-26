@@ -15,7 +15,7 @@ const Index = () => {
     <Layout>
       <Seo
         title="Industry Army Marketing | Contractor SEO & Territory Marketing"
-        description="Contractor marketing, business listings, and exclusive market opportunities. Directory listings start at $10/year; contact IAM for your market rate."
+        description="Register on one industry hub site for $10/year. Apply separately for a city-page partnership built around useful content and growing the IAM network."
         path="/"
         image={featuredBattle.url}
         imageAlt="Weddings.io vs aiweddings.io — Industry Army Marketing Battle for the Brand case study"
