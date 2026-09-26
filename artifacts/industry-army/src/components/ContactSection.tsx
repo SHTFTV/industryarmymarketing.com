@@ -1,3 +1,4 @@
+import { captureReferral, referralNote } from "@/lib/enquiryAttribution";
 import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -66,11 +67,17 @@ const ContactSection = ({
   const tierParam = (params.get("tier") || "").toLowerCase();
   const tier: "directory" | "exclusive" | null =
     tierParam === "directory" || tierParam === "exclusive" ? tierParam : null;
+  const request = ["marketing", "guest-post", "partnership"].includes(params.get("request") || "") ? params.get("request")! : "";
+  const requestMessages: Record<string, string> = {
+    marketing: "I would like to discuss marketing for my business.",
+    "guest-post": "I would like to discuss a guest post for this industry. My proposed topic is:",
+    partnership: "I would like to discuss a partnership with the IAM network.",
+  };
   const prefillMessage = tier === "directory"
     ? "I'm interested in the $10/year Directory Listing. My trade and city are above — please confirm availability."
     : tier === "exclusive"
       ? "I'm interested in Exclusive Market Ownership. Please confirm my market rate and slot availability."
-      : "";
+      : requestMessages[request] || "";
 
   const [form, setForm] = useState({
     name: "",
@@ -111,14 +118,15 @@ const ContactSection = ({
     setSubmitting(true);
     try {
       const { website: _hp, ...clean } = parsed.data;
-      const leadSource = tier ? `pricing-${tier}` : source;
+      const leadSource = tier ? `pricing-${tier}` : request ? `network-${request}` : source;
+      const context = referralNote(captureReferral(), request);
       const { error } = await supabase.from("leads").insert({
         name: clean.name,
         email: clean.email,
         phone: clean.phone || null,
         trade: clean.trade,
         city: clean.city,
-        message: clean.message,
+        message: clean.message + context,
         source: leadSource,
         user_agent: typeof navigator !== "undefined" ? navigator.userAgent : null,
       });
@@ -169,7 +177,11 @@ const ContactSection = ({
                 </div>
                 <div>
                   <p className="text-foreground font-semibold text-sm">{item.label}</p>
-                  <p className="text-muted-foreground text-sm">{item.value}</p>
+                  {item.label === "Email" ? (
+                    <a className="text-primary text-sm underline break-all" href={`mailto:${item.value}`}>{item.value}</a>
+                  ) : (
+                    <p className="text-muted-foreground text-sm">{item.value}</p>
+                  )}
                 </div>
               </div>
             ))}
