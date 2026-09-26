@@ -15,7 +15,7 @@ const Index = () => {
     <Layout>
       <Seo
         title="Industry Army Marketing | Contractor SEO & Territory Marketing"
-        description="Permanent dofollow backlinks and exclusive city-trade territories on 20+ year-old industry domains. One contractor per trade per city — pricing scales with city population."
+        description="Contractor marketing, business listings, and exclusive market opportunities. Directory listings start at $10/year; contact IAM for your market rate."
         path="/"
         image={featuredBattle.url}
         imageAlt="Weddings.io vs aiweddings.io — Industry Army Marketing Battle for the Brand case study"
@@ -35,10 +35,10 @@ const Index = () => {
         }}
       />
       <HeroSection />
-      <FlagshipBrandsSection />
       <ServicesSection />
       <ContractorTradesGrid limit={12} showCta />
       <PricingSection />
+      <FlagshipBrandsSection />
       <AboutSection />
       <LatestBlogPosts />
       <ContactSection />
