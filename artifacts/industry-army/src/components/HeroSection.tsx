@@ -19,7 +19,7 @@ const HeroSection = () => {
           transition={{ duration: 0.6 }}
           className="text-primary uppercase tracking-[0.3em] text-sm font-semibold mb-4"
         >
-          Foolproof Strategy Reveals How To
+          Contractor Marketing · Business Listings · Local Visibility
         </motion.p>
 
         <motion.h1
@@ -39,9 +39,8 @@ const HeroSection = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-muted-foreground max-w-2xl mx-auto text-lg mb-10 leading-relaxed"
         >
-          Over 20 years, marketing has transformed—and now the power is in your hands. 
-          Claim your exclusive territory, crush the competition, and become the go-to 
-          business in your area before anyone else.
+          Get your business listed from $10/year, or ask about exclusive marketing in your city.
+          Tell us your trade and location to confirm what is available and what it costs.
         </motion.p>
 
         <motion.div
