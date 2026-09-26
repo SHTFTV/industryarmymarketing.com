@@ -6,13 +6,13 @@ const services = [
   {
     icon: Search,
     title: "SEO Domination",
-    description: "Rank #1 on Google. We deploy battle-tested SEO strategies that crush your competition and own your local market.",
+    description: "Improve how customers find your business with relevant pages, technical SEO, and clear enquiry paths. Rankings and results vary by market.",
     to: "/seo-packages",
   },
   {
     icon: Link,
     title: "Dofollow Backlinks",
-    description: "Every page we build ships with dofollow links—no nofollow gatekeeping. Real trust signals that push you to the front of Google, every time.",
+    description: "Build a useful presence on relevant industry directories. We focus on accurate business information, relevant placements, and qualified enquiries.",
     to: "/services/dofollow-backlinks",
     ctaLabel: "See the Backlink Program",
   },
@@ -40,7 +40,7 @@ const services = [
   {
     icon: TrendingUp,
     title: "Affordable SEO",
-    description: "$10 business listing gets you in. The other $10 spots are hard-earned—reserved for power partners who show up online and prove it. Best of the best only. Eyespyr TALC upsells available.",
+    description: "Start with a $10/year directory listing. Exclusive market pricing depends on your location; contact us to confirm the rate, scope, and availability.",
     to: "/services/affordable-seo",
     ctaLabel: "See Both Doors",
   },
