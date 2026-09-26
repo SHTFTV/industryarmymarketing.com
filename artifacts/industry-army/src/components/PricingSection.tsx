@@ -58,7 +58,8 @@ const PricingSection = () => {
           </h2>
           <p className="text-muted-foreground mt-3 text-lg">
             Register on one hub site for <span className="text-primary font-semibold">$10/year</span>.
-            City-page partnerships are a separate upgrade, held for the right-fit content creators.
+            The low fee makes participation accessible. Bring your expertise, real projects and useful ideas.
+            City-page partnerships remain a separate, selective upgrade.
           </p>
           <p className="text-xs uppercase tracking-[0.3em] text-primary mt-2">All Pricing in USD</p>
         </motion.div>
@@ -130,10 +131,10 @@ const PricingSection = () => {
           className="mt-16 max-w-5xl mx-auto rounded-lg border border-border bg-surface-elevated p-10 text-center"
         >
           <h3 className="font-display text-2xl md:text-3xl text-foreground">
-            WE FIT ANY BUDGET • ANY SIZE •
+            BRING YOUR KNOWLEDGE. SHARE YOUR WORK.
           </h3>
           <h3 className="font-display text-2xl md:text-3xl text-primary mt-1">
-            ENTERPRISE LEVEL DOMINATION
+            BUILD CONNECTIONS IN YOUR INDUSTRY
           </h3>
           <p className="text-muted-foreground mt-4 max-w-2xl mx-auto text-sm">
             Websites, SEO packages and other marketing services are priced separately. For a city-page partnership, we review your fit, content contribution and market before agreeing the scope and price.
