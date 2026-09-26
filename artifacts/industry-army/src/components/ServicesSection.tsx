@@ -40,7 +40,7 @@ const services = [
   {
     icon: TrendingUp,
     title: "Affordable SEO",
-    description: "Start with a $10/year directory listing. Exclusive market pricing depends on your location; contact us to confirm the rate, scope, and availability.",
+    description: "Register on one hub site for $10/year. City-page partnerships are a separate upgrade for selected content creators, with scope and pricing agreed after a fit review.",
     to: "/services/affordable-seo",
     ctaLabel: "See Both Doors",
   },
