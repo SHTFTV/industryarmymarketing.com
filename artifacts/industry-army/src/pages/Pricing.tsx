@@ -18,21 +18,20 @@ import {
 } from "@/components/ui/accordion";
 
 const directoryFeatures = [
-  "Get listed in the platform directory",
-  "EyeSpyR verified rating — pulled from 22+ independent sources, never self-reported",
-  "Automatic review requests after every completed job via TALC",
-  "Fully searchable by couples and clients",
-  "No exclusivity — multiple vendors per category per market permitted",
-  "Available to everyone regardless of market size or location",
+  "Business registration and directory listing on one relevant industry hub site",
+  "Business name, contact details, trade and service area",
+  "$10 per year for registration on that hub site",
+  "Open registration — multiple businesses can be listed in the same category",
+  "City-page partnerships are a separate upgrade",
 ];
 
 const exclusiveFeatures = [
-  "ONE vendor per category per market — strictly enforced, no exceptions",
-  "Your listing appears above every directory vendor in every search and transaction",
-  "Featured placement across the entire platform",
-  "EyeSpyR verified rating",
-  "TALC automatic review trigger after every job",
-  "Your market, your category, yours alone",
+  "City-page opportunity for selected partners in an agreed category and market",
+  "Reserved for creators who contribute useful, original industry content",
+  "Share real projects, photos, videos, articles and practical knowledge",
+  "Help grow your industry hub and the wider IAM network",
+  "Fit, content expectations, placement and pricing agreed before activation",
+  "Application and review required — registration alone does not reserve a city page",
 ];
 
 const culturalCategories = [
@@ -67,52 +66,49 @@ const industries: { heading: string; body: string }[] = [
 ];
 
 const globalRules = [
-  "Directory ($10/year) is always open — any vendor can list regardless of whether exclusive slots are taken.",
-  "Exclusive vendor always appears above all directory listings — every search, every transaction, no exceptions.",
-  "Exclusive slots are strictly enforced — zero double-booking permitted under any circumstances.",
-  "TALC fires automatically on job completion for all tiers.",
-  "EyeSpyR ratings are always pulled from 22+ verified independent sources — never self-reported.",
-  "Monthly exclusive pricing is population/market based — contact us for your market rate.",
+  "$10/year covers registration on one hub site. Additional hub registrations and other services are separate.",
+  "Hub registration remains open when a city-page partnership is occupied or held for a future partner.",
+  "City-page upgrades are held for the right-fit creators, with an emphasis on useful content and network growth.",
+  "Applying does not reserve a city page, guarantee acceptance or activate an upgrade.",
+  "City or neighborhood, category, content expectations, pricing and billing terms are agreed before activation.",
+  "Any exclusivity applies to the agreed city-page placement, not every directory listing or Google search result.",
 ];
 
 const faqs: { q: string; a: string }[] = [
   {
-    q: "What's included in the $10/year Directory Listing?",
-    a: "A full directory profile on the platform, EyeSpyR verified rating (pulled from 22+ independent sources), automatic TALC review requests after every completed job, and full searchability by clients — available to every trade in every market.",
+    q: "What does the $10/year registration cover?",
+    a: "It covers your business registration and directory listing on one relevant industry hub site, including your business name, contact details, trade and service area. It is the entry-level plan; a city-page partnership is a separate upgrade.",
   },
   {
-    q: "What's included in Exclusive Market Ownership?",
-    a: "One vendor per category per market — no competitors in your slot. Your listing appears above every directory vendor in every search and transaction, plus featured placement, EyeSpyR verified rating, and TALC auto-review triggers.",
+    q: "Does $10 register me across the entire network?",
+    a: "No. The $10 annual fee is for registration on one hub site. Contact IAM if you want to register on additional hubs or discuss other marketing services.",
   },
   {
-    q: "Are there any limits on directory listings?",
-    a: "No. The Directory tier is always open regardless of whether the exclusive slot for your category is taken. Multiple vendors per category per market are permitted at the directory level.",
+    q: "Who is the city-page upgrade for?",
+    a: "We are holding city pages for the right-fit creators and businesses who can contribute useful project photos, videos, articles or industry knowledge and help grow their hub and the wider network. We review fit before offering the upgrade.",
   },
   {
-    q: "How is Exclusive pricing determined?",
-    a: "Exclusive monthly pricing is based on market population. Larger markets command higher monthly rates. Contact us with your city and category and we'll confirm your specific rate within 24 hours.",
+    q: "Can I buy or reserve a city page immediately?",
+    a: "City-page partnerships are by application and review. Paying the registration fee or submitting an application does not reserve a city page or guarantee acceptance. Tell us about your business, market and the content you can contribute.",
   },
   {
-    q: "How does billing and renewal work?",
-    a: "Directory Listings are billed $10/year and renew annually. Exclusive Market Ownership is billed monthly at your market's rate and renews month-to-month while your slot is active. You can cancel Exclusive anytime — the slot returns to the market when your term ends.",
+    q: "How much does the city-page upgrade cost?",
+    a: "It has separate pricing. After reviewing fit, we discuss your market, scope and content contribution, then agree the price and billing terms before activation. The $10/year registration fee is not the city-page upgrade price.",
   },
   {
-    q: "What happens if I let my Exclusive slot lapse?",
-    a: "Your listing reverts to the Directory tier (if active) and the exclusive slot opens for another vendor in your category and market. Exclusive slots are strictly enforced — no double-booking under any circumstances.",
+    q: "How does renewal work?",
+    a: "Hub registration is $10 per year and renews annually. City-page partnerships have separate terms agreed before activation. If a partnership ends, an active hub registration can remain in place; future city-page partners still go through the fit review.",
   },
 ];
 
 const comparisonRows: { feature: string; directory: string; exclusive: string }[] = [
-  { feature: "Price", directory: "$10 / year", exclusive: "Monthly · market-based" },
-  { feature: "Directory listing", directory: "Yes", exclusive: "Yes" },
-  { feature: "Vendors per category / market", directory: "Unlimited", exclusive: "One — you" },
-  { feature: "Placement above directory", directory: "No", exclusive: "Yes — every search" },
-  { feature: "Featured placement platform-wide", directory: "No", exclusive: "Yes" },
-  { feature: "EyeSpyR verified rating (22+ sources)", directory: "Yes", exclusive: "Yes" },
-  { feature: "TALC auto review requests", directory: "Yes", exclusive: "Yes" },
-  { feature: "Market exclusivity", directory: "No", exclusive: "Strictly enforced" },
-  { feature: "Billing cadence", directory: "Annual", exclusive: "Monthly" },
-  { feature: "Cancel anytime", directory: "Yes (renews yearly)", exclusive: "Yes (month-to-month)" },
+  { feature: "Price", directory: "$10 / year per hub site", exclusive: "Separate quote after fit review" },
+  { feature: "Purpose", directory: "Register your business on one industry hub", exclusive: "Develop a city-page partnership" },
+  { feature: "Availability", directory: "Open registration", exclusive: "Held for the right-fit creators" },
+  { feature: "Content contribution", directory: "Business listing details", exclusive: "Useful projects, photos, videos or articles; expectations agreed together" },
+  { feature: "City-page placement", directory: "Separate upgrade", exclusive: "Scope and availability confirmed before activation" },
+  { feature: "Selection", directory: "Choose a relevant hub site", exclusive: "Application and fit review" },
+  { feature: "Billing", directory: "Annual", exclusive: "Separate terms agreed before activation" },
 ];
 
 const faqSchema = {
@@ -140,8 +136,8 @@ const seoPackagesItemList = {
 const Pricing = () => (
   <Layout>
     <Seo
-      title="Pricing — $10/yr Directory & Exclusive Market Ownership | IAM"
-      description="Two tiers. $10/year Directory Listing open to every trade. Exclusive Market Ownership — one vendor per category per market, priced by population. Contact IAM for your rate."
+      title="Pricing — $10/year Hub Registration & City-Page Partnerships | IAM"
+      description="Register on one hub site for $10/year. City-page partnerships are a separate upgrade for selected content creators, with scope and pricing agreed after a fit review."
       path="/pricing"
       jsonLd={[
         breadcrumbList([
@@ -157,7 +153,7 @@ const Pricing = () => (
       eyebrow="Simple Pricing"
       title="Simple Pricing."
       highlight="Serious Results."
-      description="One low-cost entry point for every trade. One exclusive spot per market for those who want to own it."
+      description="Register on one hub site for $10/year. Apply separately for a city-page partnership: we are holding these upgrades for the right-fit creators who help grow the network."
     />
 
     {/* Two-tier grid */}
@@ -173,17 +169,17 @@ const Pricing = () => (
           >
             <div className="flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-muted-foreground mb-3">
               <Shield className="w-4 h-4 text-primary" />
-              Tier 1 · Directory Listing
+              Tier 1 · Hub Registration
             </div>
             <h2 className="font-display text-4xl md:text-5xl text-foreground mb-2">
-              Directory Listing
+              Hub Site Registration
             </h2>
             <div className="flex items-baseline gap-2 mb-4">
               <span className="font-display text-6xl text-primary">$10</span>
               <span className="text-muted-foreground">/ year</span>
             </div>
             <p className="text-muted-foreground mb-6">
-              Open to every trade, every category, every city.
+              The entrance fee for registration on one relevant industry hub site.
             </p>
             <ul className="space-y-3 mb-8 flex-1">
               {directoryFeatures.map((f) => (
@@ -225,23 +221,23 @@ const Pricing = () => (
             className="relative rounded-lg border border-primary bg-surface-elevated shadow-[0_0_20px_hsl(var(--primary)/0.2)] p-8 flex flex-col"
           >
             <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded">
-              Own Your Market
+              Right Fit First
             </div>
             <div className="flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-muted-foreground mb-3">
               <Star className="w-4 h-4 text-primary" />
-              Tier 2 · Exclusive Market Ownership
+              Tier 2 · City-Page Partnership
             </div>
             <h2 className="font-display text-4xl md:text-5xl text-foreground mb-2">
-              Exclusive Market Ownership
+              City-Page Partnership
             </h2>
             <div className="flex items-baseline gap-2 mb-1">
               <span className="font-display text-4xl text-primary">Contact us</span>
             </div>
             <p className="text-sm text-muted-foreground italic mb-4">
-              Monthly rate — based on your market size.
+              Separate pricing — agreed after a fit review.
             </p>
             <p className="text-muted-foreground mb-6">
-              Own your category in your market. No competitors. Just you.
+              City pages are held for creators who contribute useful content and help grow their hub and the wider network.
             </p>
             <ul className="space-y-3 mb-8 flex-1">
               {exclusiveFeatures.map((f) => (
@@ -253,24 +249,24 @@ const Pricing = () => (
             </ul>
             <div className="rounded border border-primary/30 bg-background/60 p-4 mb-6">
               <p className="text-sm text-foreground">
-                Pricing is based on market population. Larger markets command
-                higher monthly rates.{" "}
+                Registration does not include or reserve a city page. We agree the
+                market, scope, content expectations and price before activation.{" "}
                 <span className="text-primary font-semibold">
-                  Contact IAM for your specific market rate.
+                  Tell us what you create and how you can contribute.
                 </span>
               </p>
             </div>
             <Button variant="hero" asChild className="w-full">
               <Link
-                to="/contact?tier=exclusive"
+                to="/apply/contractors"
                 onClick={() =>
                   trackEvent("pricing_tier_click", {
                     tier: "exclusive",
-                    cta: "Contact Us for Your Market Rate",
+                    cta: "Apply for a City Page",
                   })
                 }
               >
-                Contact Us for Your Market Rate
+                Apply for a City Page
               </Link>
             </Button>
           </motion.div>
@@ -523,12 +519,12 @@ const Pricing = () => (
         <div className="mt-12 text-center">
           <Button variant="hero" size="lg" asChild>
             <Link
-              to="/contact"
+              to="/apply/contractors"
               onClick={() =>
                 trackEvent("pricing_contact_click", { location: "global_rules_footer" })
               }
             >
-              Contact Us for Your Market Rate
+              Apply for a City Page
             </Link>
           </Button>
         </div>
@@ -546,10 +542,10 @@ const Pricing = () => (
             Side by Side
           </p>
           <h2 className="font-display text-4xl md:text-5xl text-foreground">
-            Directory vs <span className="text-primary">Exclusive</span>
+            Registration vs <span className="text-primary">City Page</span>
           </h2>
           <p className="text-muted-foreground mt-3">
-            Same platform. Different level of ownership.
+            One hub registration. A separate, selective city-page upgrade.
           </p>
         </div>
 
@@ -557,7 +553,7 @@ const Pricing = () => (
         <div className="hidden md:block overflow-x-auto rounded-lg border border-border bg-card">
           <table
             className="w-full text-sm"
-            aria-label="Directory versus Exclusive tier comparison"
+            aria-label="Hub registration versus city-page partnership comparison"
           >
             <thead>
               <tr className="border-b border-border">
@@ -565,12 +561,12 @@ const Pricing = () => (
                   Feature
                 </th>
                 <th scope="col" className="text-left p-4 font-display text-lg text-foreground">
-                  Directory
+                  Hub Registration
                   <div className="text-xs text-muted-foreground font-sans normal-case tracking-normal">$10 / year</div>
                 </th>
                 <th scope="col" className="text-left p-4 font-display text-lg text-primary">
-                  Exclusive
-                  <div className="text-xs text-muted-foreground font-sans normal-case tracking-normal">Contact for market rate</div>
+                  City-Page Partnership
+                  <div className="text-xs text-muted-foreground font-sans normal-case tracking-normal">By application · separate quote</div>
                 </th>
               </tr>
             </thead>
@@ -592,7 +588,7 @@ const Pricing = () => (
         </div>
 
         {/* Mobile stacked list */}
-        <ul className="md:hidden space-y-3" aria-label="Directory versus Exclusive tier comparison">
+        <ul className="md:hidden space-y-3" aria-label="Hub registration versus city-page partnership comparison">
           {comparisonRows.map((row) => (
             <li
               key={row.feature}
@@ -603,11 +599,11 @@ const Pricing = () => (
               </p>
               <div className="grid grid-cols-2 gap-3 text-sm">
                 <div>
-                  <p className="text-[10px] uppercase tracking-widest text-muted-foreground mb-1">Directory</p>
+                  <p className="text-[10px] uppercase tracking-widest text-muted-foreground mb-1">Hub Registration</p>
                   <p className="text-foreground">{row.directory}</p>
                 </div>
                 <div>
-                  <p className="text-[10px] uppercase tracking-widest text-primary mb-1">Exclusive</p>
+                  <p className="text-[10px] uppercase tracking-widest text-primary mb-1">City-Page Partnership</p>
                   <p className="text-foreground">{row.exclusive}</p>
                 </div>
               </div>
