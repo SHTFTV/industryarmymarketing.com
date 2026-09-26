@@ -5,61 +5,42 @@ import { Button } from "@/components/ui/button";
 
 const plans = [
   {
-    tier: "BASELINE",
-    name: "Annual Listing",
+    tier: "TIER 1 · REGISTRATION",
+    name: "Hub Site Registration",
     price: "$10",
     unit: "/year",
-    subtitle: "Directory Listing • EyeSpyR rating included",
+    subtitle: "Your business registered on one industry hub site",
     featured: false,
     features: [
-      "Business name on directory",
-      "Phone & address listed",
-      "Service area shown",
-      "Annual directory listing",
-      "EyeSpyR verified rating",
+      "Directory listing on one relevant hub site",
+      "Business name and contact details",
+      "Your trade and service area",
+      "Annual registration — $10 per hub site",
+      "City-page upgrades are a separate plan",
     ],
-    cta: "GET LISTED",
+    cta: "REGISTER ON A HUB SITE",
     href: "/contact?tier=directory",
   },
   {
-    tier: "SEO TERRITORY",
-    name: "Exclusive Market Ownership",
-    price: "Contact us",
+    tier: "TIER 2 · SELECTIVE UPGRADE",
+    name: "City-Page Partnership",
+    price: "By application",
     unit: "",
-    subtitle: "Monthly pricing based on your market size",
+    subtitle: "Separate pricing agreed after a fit review",
     featured: true,
-    badge: "LOCK OUT COMPETITORS",
+    badge: "RIGHT FIT FIRST",
     features: [
-      "1 contractor per trade per city",
-      "City or neighborhood scope confirmed before signup",
-      "Featured placement in your market",
-      "EyeSpyR verified rating",
-      "TALC.tv content blasts — $10/post",
-      "Confirm your rate and availability before joining",
-      "Month-to-month subscription",
+      "City-page opportunity for selected partners",
+      "Reserved for creators who contribute useful content",
+      "Share real projects, photos, videos and industry knowledge",
+      "Help grow your industry hub and the wider network",
+      "City, category, scope and pricing agreed before activation",
+      "Applying does not reserve or activate a city page",
     ],
-    cta: "CHECK YOUR MARKET RATE",
-    href: "/contact?tier=exclusive",
-  },
-  {
-    tier: "CONTENT",
-    name: "TALC.tv Blast",
-    price: "$10",
-    unit: "/post",
-    subtitle: "Anyone · Anytime · No Lock Required",
-    featured: false,
-    features: [
-      "One completed project photo",
-      "AI generates 2,000-word SEO post",
-      "Auto-published to city page + GMB",
-      "Permanent backlink to your site",
-      "No retainer — pay per win",
-    ],
-    cta: "ASK ABOUT A BLAST",
-    href: "/contact",
+    cta: "APPLY FOR A CITY PAGE",
+    href: "/apply/contractors",
   },
 ];
-
 
 // Keep offers aligned with the detailed /pricing page.
 const PricingSection = () => {
@@ -76,13 +57,13 @@ const PricingSection = () => {
             CONTRACTOR <span className="text-primary">PRICING</span>
           </h2>
           <p className="text-muted-foreground mt-3 text-lg">
-            Directory listings start at <span className="text-primary font-semibold">$10/year</span>.
-            Exclusive market pricing depends on your city or neighborhood.
+            Register on one hub site for <span className="text-primary font-semibold">$10/year</span>.
+            City-page partnerships are a separate upgrade, held for the right-fit content creators.
           </p>
           <p className="text-xs uppercase tracking-[0.3em] text-primary mt-2">All Pricing in USD</p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto items-start">
           {plans.map((plan, i) => (
             <motion.div
               key={plan.name}
@@ -136,6 +117,11 @@ const PricingSection = () => {
           ))}
         </div>
 
+        <p className="mt-8 max-w-3xl mx-auto text-center text-sm text-muted-foreground">
+          Optional content service: TALC.tv blasts are $10 per post, priced separately from
+          registration and city-page partnerships. <Link to="/contact" className="text-primary underline">Ask about content services</Link>.
+        </p>
+
         {/* Enterprise banner */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -150,7 +136,7 @@ const PricingSection = () => {
             ENTERPRISE LEVEL DOMINATION
           </h3>
           <p className="text-muted-foreground mt-4 max-w-2xl mx-auto text-sm">
-            We offer custom pricing for individual packages, websites, product sales, and full marketing builds — exclusive territory rates depend on market size. Multi-location contractors, franchises, and enterprise accounts welcome.
+            Websites, SEO packages and other marketing services are priced separately. For a city-page partnership, we review your fit, content contribution and market before agreeing the scope and price.
           </p>
         </motion.div>
       </div>
