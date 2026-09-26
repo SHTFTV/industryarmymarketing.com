@@ -1,11 +1,13 @@
 import { ReactNode, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { captureReferral } from "@/lib/enquiryAttribution";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { DisambiguationNotice } from "./DisambiguationNotice";
 
 const Layout = ({ children }: { children: ReactNode }) => {
-  const { pathname } = useLocation();
+  const { pathname, search } = useLocation();
+  useEffect(() => { captureReferral(); }, [pathname, search]);
   useEffect(() => {
     window.scrollTo({ top: 0 });
   }, [pathname]);
