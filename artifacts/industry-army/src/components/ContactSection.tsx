@@ -59,9 +59,9 @@ const ContactSection = ({
   source = "contact-page",
   eyebrow = "Get In Touch",
   title = "Contact Us",
-  intro = "Have a question about our services? Ready to claim your territory? Fill out the form and our SEO experts will contact you soon.",
+  intro = "Ask about $10/year registration on one hub site, a city-page partnership, guest posting or other marketing services. City-page upgrades require a fit review before activation.",
   submitLabel = "Send Message",
-  successDescription = "We'll confirm availability in your city within 24 hours.",
+  successDescription = "We'll review your enquiry and contact you about the next step.",
 }: ContactSectionProps) => {
   const [params] = useSearchParams();
   const tierParam = (params.get("tier") || "").toLowerCase();
@@ -74,9 +74,9 @@ const ContactSection = ({
     partnership: "I would like to discuss a partnership with the IAM network.",
   };
   const prefillMessage = tier === "directory"
-    ? "I'm interested in the $10/year Directory Listing. My trade and city are above — please confirm availability."
+    ? "I'd like to register my business on one hub site for $10/year. Please help me choose the relevant industry hub."
     : tier === "exclusive"
-      ? "I'm interested in Exclusive Market Ownership. Please confirm my market rate and slot availability."
+      ? "I'm interested in the separate City-Page Partnership. Please review my fit and discuss scope and pricing. The content I can contribute is:"
       : requestMessages[request] || "";
 
   const [form, setForm] = useState({
