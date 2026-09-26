@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -8,35 +9,37 @@ const plans = [
     name: "Annual Listing",
     price: "$10",
     unit: "/year",
-    subtitle: "Basic Listing • No EyeSpyR",
+    subtitle: "Directory Listing • EyeSpyR rating included",
     featured: false,
     features: [
       "Business name on directory",
       "Phone & address listed",
       "Service area shown",
-      "Permanent placement",
-      "EyeSpyR locked (upgrade to monthly)",
+      "Annual directory listing",
+      "EyeSpyR verified rating",
     ],
     cta: "GET LISTED",
+    href: "/contact?tier=directory",
   },
   {
     tier: "SEO TERRITORY",
-    name: "City Commander",
-    price: "$10",
-    unit: "/slot/mo",
-    subtitle: "Flat slot pricing · One contractor per trade per city",
+    name: "Exclusive Market Ownership",
+    price: "Contact us",
+    unit: "",
+    subtitle: "Monthly pricing based on your market size",
     featured: true,
     badge: "LOCK OUT COMPETITORS",
     features: [
       "1 contractor per trade per city",
-      "The 250 Scale: 3–10 slots by population",
-      "City landing page with domain authority",
-      "EyeSpyR INCLUDED FREE — review scraping + credential verification",
+      "City or neighborhood scope confirmed before signup",
+      "Featured placement in your market",
+      "EyeSpyR verified rating",
       "TALC.tv content blasts — $10/post",
-      "Backlink package — $25 one-time",
-      "Cancel anytime with 30 days notice",
+      "Confirm your rate and availability before joining",
+      "Month-to-month subscription",
     ],
-    cta: "CLAIM YOUR TERRITORY",
+    cta: "CHECK YOUR MARKET RATE",
+    href: "/contact?tier=exclusive",
   },
   {
     tier: "CONTENT",
@@ -52,16 +55,13 @@ const plans = [
       "Permanent backlink to your site",
       "No retainer — pay per win",
     ],
-    cta: "SUBMIT A BLAST",
+    cta: "ASK ABOUT A BLAST",
+    href: "/contact",
   },
 ];
 
 
-// IAM PRICING NOTE: All pricing follows The 250 Scale
-// Source of truth: industryarmymarketing.com/pricing/
-// Backlink Package: $25 one-time — anyone, anytime
-// EyeSpyR Badge (guest posts): $10/year
-// EyeSpyR Monitoring: FREE with all monthly locks
+// Keep offers aligned with the detailed /pricing page.
 const PricingSection = () => {
   return (
     <section id="pricing" className="py-20 md:py-32 bg-background">
@@ -76,8 +76,8 @@ const PricingSection = () => {
             CONTRACTOR <span className="text-primary">PRICING</span>
           </h2>
           <p className="text-muted-foreground mt-3 text-lg">
-            <span className="text-primary font-semibold">$10</span> — the flat price that matches
-            most of our offers. Listings, territory slots, TALC.tv blasts, EyeSpyR badges — all $10.
+            Directory listings start at <span className="text-primary font-semibold">$10/year</span>.
+            Exclusive market pricing depends on your city or neighborhood.
           </p>
           <p className="text-xs uppercase tracking-[0.3em] text-primary mt-2">All Pricing in USD</p>
         </motion.div>
@@ -128,8 +128,9 @@ const PricingSection = () => {
               <Button
                 variant={plan.featured ? "hero" : "heroOutline"}
                 className="w-full"
+                asChild
               >
-                {plan.cta}
+                <Link to={plan.href}>{plan.cta}</Link>
               </Button>
             </motion.div>
           ))}
@@ -149,7 +150,7 @@ const PricingSection = () => {
             ENTERPRISE LEVEL DOMINATION
           </h3>
           <p className="text-muted-foreground mt-4 max-w-2xl mx-auto text-sm">
-            We offer custom pricing for individual packages, websites, product sales, and full marketing builds — territory slots stay flat at $10/mo. Multi-location contractors, franchises, and enterprise accounts welcome.
+            We offer custom pricing for individual packages, websites, product sales, and full marketing builds — exclusive territory rates depend on market size. Multi-location contractors, franchises, and enterprise accounts welcome.
           </p>
         </motion.div>
       </div>
