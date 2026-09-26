@@ -8,15 +8,14 @@ import ServicesSection from "@/components/ServicesSection";
 import PricingSection from "@/components/PricingSection";
 import AboutSection from "@/components/AboutSection";
 import ContactSection from "@/components/ContactSection";
-import ContractorTradesGrid from "@/components/ContractorTradesGrid";
 import LatestBlogPosts from "@/components/LatestBlogPosts";
 
 const Index = () => {
   return (
     <Layout>
       <Seo
-        title="Industry Army Marketing | Contractor SEO & Territory Marketing"
-        description="Register on one industry hub site for $10/year. Apply separately for a city-page partnership built around useful content and growing the IAM network."
+        title="Industry Army Marketing | Find Your Trade. Find Your People."
+        description="Join one industry hub for $10 USD/year. Share your expertise, explore specialist websites and connect through business profiles, project stories and guest contributions."
         path="/"
         image={featuredBattle.url}
         imageAlt="Weddings.io vs aiweddings.io — Industry Army Marketing Battle for the Brand case study"
@@ -36,6 +35,30 @@ const Index = () => {
         }}
       />
       <HeroSection />
+      <section id="industry-catalog" aria-labelledby="participation-title" className="py-16 md:py-24 bg-background">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <h2 id="participation-title" className="font-display text-4xl md:text-6xl text-foreground">Your Expertise Is Worth More Than a High Membership Fee</h2>
+          <p className="mt-6 text-lg text-muted-foreground max-w-3xl leading-relaxed">You know your trade. Through business profiles, project stories and guest contributions, we want to help people discover the businesses and expertise behind each industry. Our growing catalog of specialist websites gives those contributions a relevant home.</p>
+          <p className="mt-5 text-muted-foreground max-w-3xl leading-relaxed">The price is small because we want participation to be accessible. Bring your best work, useful ideas and a willingness to participate. The value comes from the people, knowledge and connections we build together.</p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-10">
+            {[
+              ["BuildersHaus", "https://www.buildershaus.com/", "Building and renovation projects"],
+              ["Steelstud.ca", "https://www.steelstud.ca/", "Steel framing, drywall and ceiling work"],
+              ["Drywallers.io", "https://www.drywallers.io/", "Drywall planning and contractor resources"],
+              ["Framers.io", "https://www.framers.io/", "Framing projects and industry resources"],
+              ["Plumbers.ltd", "https://www.plumbers.ltd/", "Plumbing services and trade resources"],
+              ["Hardscapes.io", "https://www.hardscapes.io/", "Outdoor projects and hardscaping resources"],
+            ].map(([name, href, description]) => <a key={name} href={href} className="rounded-lg border border-border p-6 bg-card hover:border-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary"><h3 className="font-display text-2xl text-primary">{name}</h3><p className="mt-2 text-muted-foreground">{description}</p></a>)}
+          </div>
+          <div className="flex flex-wrap gap-6 mt-8">
+            <Link to="/network" className="text-primary underline font-semibold">Browse the Industry Catalog</Link>
+            <Link to="/guest-post" className="text-primary underline font-semibold">Share Your Expertise</Link>
+            <Link to="/contact?tier=directory" className="text-primary underline font-semibold">Join One Industry Hub — $10/year</Link>
+          </div>
+          <p className="mt-6 text-sm text-muted-foreground">Guest contributions are reviewed for relevance and usefulness. City-page partnerships and hands-on marketing services are separate, with scope and pricing agreed upfront.</p>
+        </div>
+      </section>
+
       <section id="network-results" aria-labelledby="network-results-title" className="py-16 md:py-24 bg-card border-y border-border">
         <div className="container mx-auto px-4 max-w-5xl">
           <p className="text-primary uppercase tracking-[0.2em] text-sm font-semibold mb-3">Industry experience and real outcomes</p>
@@ -87,7 +110,6 @@ const Index = () => {
         </div>
       </section>
       <ServicesSection />
-      <ContractorTradesGrid limit={12} showCta />
       <PricingSection />
       <FlagshipBrandsSection />
       <AboutSection />
