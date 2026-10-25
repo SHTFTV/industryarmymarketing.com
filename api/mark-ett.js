@@ -10,7 +10,8 @@ module.exports=async function handler(req,res){
  let messages;
  try {messages=validate(typeof req.body==='string'?JSON.parse(req.body):req.body);}catch{return send(400,{error:'Please shorten the conversation or start a new chat.'});}
  if(!allow(req.headers['x-vercel-forwarded-for']||req.headers['x-forwarded-for']||req.socket?.remoteAddress)){res.setHeader('Retry-After','600');return send(429,{error:'Please wait a few minutes before asking more questions. You can also contact Colin directly.'});}
- const key=process.env.AI_GATEWAY_API_KEY||process.env.VERCEL_OIDC_TOKEN;
+ let key=process.env.AI_GATEWAY_API_KEY;
+ if(!key){try{const {getVercelOidcToken}=await import('@vercel/oidc');key=await getVercelOidcToken();}catch{/* No platform credential available. */}}
  if(!key)return send(503,{error:'Mark Ett is temporarily unavailable. Please use the IAM contact form.'});
  try {
   const response=await fetch('https://ai-gateway.vercel.sh/v1/chat/completions',{method:'POST',signal:AbortSignal.timeout(22000),headers:{Authorization:`Bearer ${key}`,'Content-Type':'application/json'},body:JSON.stringify({model:process.env.MARK_ETT_MODEL||'google/gemini-2.5-flash',max_tokens:1200,messages:[{role:'system',content:SYSTEM},...messages]})});
