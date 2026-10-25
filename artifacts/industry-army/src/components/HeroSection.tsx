@@ -23,11 +23,11 @@ export default function HeroSection() {
     <img className="iam-studio-backdrop" src={heroBg} alt="" width={1920} height={1080}/><div className="iam-studio-veil"/>
     <div className="iam-network-hero-layout"><div className="iam-studio-intro">
       <img className="iam-studio-seal" src="/brand-journal/iam-seal.webp" width={100} height={100} alt="Industry Army Marketing" fetchPriority="high"/>
-      <p className="iam-studio-kicker">OWNED INDUSTRY BRANDS · pSEO · FULL-SERVICE MARKETING</p>
-      <h1>Your pSEO powerhouse.<br/><span>A network of our own brands.</span></h1>
-      <p className="iam-studio-lead">IAM brings brand creation, websites, apps and SEO together across its own industry network. Join a relevant hub from $10 a year, or commission a complete brand and search-marketing scope.</p>
+      <p className="iam-studio-kicker">A CONNECTED BRAND & SEARCH ECOSYSTEM · EST. 2011</p>
+      <h1>Your content.<br/><span>Further. Faster. With IAM.</span></h1>
+      <p className="iam-studio-lead">An ecosystem of industry brands, lightweight publishing systems and connected SEO services. Build your identity, publish useful content and extend its reach through relevant IAM channels. Hub registration starts at $10 a year; broader services are scoped around your business.</p>
       <div className="iam-studio-actions"><a href="#flagship-brands">Explore the IAM network ↓</a><a className="iam-studio-secondary" href="/brand-creation-management-vancouver">Branding & SEO services ↗</a></div>
-      <p className="iam-studio-signoff">Industry Army Marketing <span>WE MAKE BUSINESS BOOM.</span></p>
+      <p className="iam-studio-signoff">Industry Army Marketing · Established November 18, 2011 <span>WE MAKE BUSINESS BOOM.</span></p>
     </div><figure className="iam-brand-reel"><video ref={video} controls muted loop playsInline preload="metadata" poster="/brand-journal/iam-brands-reel-poster.jpg" aria-label="IAM brand showcase: Kong Tractors, PlowWow, Love Our Listings, Dentists.ltd, Roofers.io, Weddings.io and Treatments.tv"><source src="/brand-journal/iam-brands-reel.mp4" type="video/mp4"/></video><figcaption>IAM brand showcase · Existing brand artwork, including illustrated concepts. Silent loop; pause or play using the video controls. <a href="#iam-story">Watch the original IAM story →</a></figcaption></figure></div>
   </section>;
 }

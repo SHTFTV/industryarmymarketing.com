@@ -14,8 +14,8 @@ const Index = () => {
   return (
     <Layout>
       <Seo
-        title="IAM pSEO Network | Brand Creation, Websites & SEO"
-        description="Explore IAM’s pSEO network and 25 showcase brands. Hub registration starts at $10 per year per site; branding, websites, apps and full SEO services are scoped separately."
+        title="IAM Brand & SEO Ecosystem | Further. Faster. Since 2011"
+        description="An ecosystem of industry brands, lightweight publishing systems, websites, apps and SEO. Established November 18, 2011, with earlier roots in construction marketing."
         path="/"
         image="/brand-journal/brand-to-rollout-iam-build-journal-share.jpg"
         imageAlt="IAM: from brand identity to websites, apps and rollout"
@@ -23,6 +23,7 @@ const Index = () => {
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
           name: "Industry Army Marketing",
+          foundingDate: "2011-11-18",
           email: "colin@industryarmymarketing.com",
           priceRange: "$10+",
           address: {

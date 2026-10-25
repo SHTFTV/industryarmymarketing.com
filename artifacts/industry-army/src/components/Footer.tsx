@@ -78,7 +78,7 @@ const Footer = () => {
       <div className="border-t border-border">
         <div className="container mx-auto px-4 py-5 flex flex-col md:flex-row items-center justify-between gap-3">
           <p className="text-muted-foreground text-xs">© {new Date().getFullYear()} Industry Army Marketing · Vancouver, BC</p>
-          <p className="text-muted-foreground text-xs uppercase tracking-widest">The $10 Marketing Revolution · Est. 2011</p>
+          <p className="text-muted-foreground text-xs uppercase tracking-widest">Brand & Search Ecosystem · Est. November 18, 2011</p>
         </div>
       </div>
     <div data-iam-credit="true" style={{ boxSizing: 'border-box', width: '100%', gridColumn: '1 / -1', padding: '16px 24px', textAlign: 'center', fontSize: '12px', lineHeight: 1.5, color: 'inherit' }}>Powered by <a href="https://industryarmymarketing.com/" style={{ color: 'inherit', textDecoration: 'underline', textUnderlineOffset: '3px' }}>Industry Army Marketing</a></div>
