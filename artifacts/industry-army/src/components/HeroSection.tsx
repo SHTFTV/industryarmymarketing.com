@@ -1,87 +1,18 @@
-import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
 import heroBg from "@/assets/hero-bg.jpg";
+import "./brand-studio.css";
 
-const HeroSection = () => {
-  return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0">
-        <img src={heroBg} alt="" className="w-full h-full object-cover opacity-40" width={1920} height={1080} />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/80 to-background" />
-      </div>
-
-      {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 text-center">
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-primary uppercase tracking-[0.3em] text-sm font-semibold mb-4"
-        >
-          Contractor Marketing · Business Listings · Local Visibility
-        </motion.p>
-
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.15 }}
-          className="font-display text-6xl md:text-8xl lg:text-9xl leading-none mb-6 text-glow text-primary"
-        >
-          Find Your Trade.
-          <br />
-          Find Your People.
-        </motion.h1>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="text-muted-foreground max-w-2xl mx-auto text-lg mb-10 leading-relaxed"
-        >
-          Your expertise is worth more than a high membership fee. You have projects to show,
-          lessons to share and customers you can help. Register your business on one relevant
-          industry hub for $10 USD a year, and help build a useful home for your trade.
-          We value the knowledge you bring and the connections we can build together.
-        </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.45 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center"
-        >
-          <Button variant="hero" size="lg" asChild>
-            <a href="/contact?tier=directory">Join One Hub — $10/year</a>
-          </Button>
-          <Button variant="heroOutline" size="lg" asChild>
-            <a href="#industry-catalog">Explore the Industry Catalog</a>
-          </Button>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.6 }}
-          className="mt-14 max-w-4xl mx-auto"
-        >
-          <div className="relative w-full overflow-hidden rounded-xl border border-primary/30 shadow-[0_0_40px_rgba(34,197,94,0.15)]" style={{ aspectRatio: "16 / 9" }}>
-            <iframe
-              src="https://www.youtube.com/embed/JhZLiYdoaJA"
-              title="The Story of IAM — How We Turned Trades Into a Digital Army"
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-              className="absolute inset-0 w-full h-full"
-            />
-          </div>
-        </motion.div>
-      </div>
-
-      {/* Bottom gradient line */}
-      <div className="absolute bottom-0 left-0 right-0 h-px gradient-neon-line opacity-40" />
-    </section>
-  );
-};
-
-export default HeroSection;
+export default function HeroSection() {
+  return <section id="home" className="iam-studio-hero">
+    <img className="iam-studio-backdrop" src={heroBg} alt="" width={1920} height={1080}/>
+    <div className="iam-studio-veil"/>
+    <div className="iam-studio-intro">
+      <img className="iam-studio-seal" src="/brand-journal/iam-seal.webp" width={140} height={140} alt="Industry Army Marketing" fetchPriority="high"/>
+      <p className="iam-studio-kicker">Brand strategy · Identity · Websites · Apps · Rollout</p>
+      <h1>We build the brand.<br/><span>Then put it to work.</span></h1>
+      <p className="iam-studio-lead">A name people remember. A look they recognise. A website or app with a job to do. IAM brings the pieces together—and shows the work as it goes live.</p>
+      <div className="iam-studio-actions"><a href="/contact?request=branding">Let’s build your brand ↗</a><a className="iam-studio-secondary" href="#work">Explore the work ↓</a></div>
+      <p className="iam-studio-signoff">Industry Army Marketing <span>WE MAKE BUSINESS BOOM.</span></p>
+    </div>
+    <div className="iam-story-film"><div><p className="iam-studio-kicker">The story behind the work</p><h2>Built from the industries<br/>we work in.</h2><p>Keep the original IAM story in view. Then follow the journal for the brands, products and public releases taking shape now.</p><a href="/blog">Read the Build Journal →</a></div><div className="iam-story-player"><iframe src="https://www.youtube.com/embed/JhZLiYdoaJA" title="The Story of IAM — How We Turned Trades Into a Digital Army" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen/></div></div>
+  </section>;
+}

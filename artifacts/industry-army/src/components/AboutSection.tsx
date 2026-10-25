@@ -18,12 +18,13 @@ const AboutSection = () => {
           >
             <p className="text-primary uppercase tracking-[0.3em] text-sm font-semibold mb-3">About IAM</p>
             <h2 className="font-display text-5xl md:text-6xl text-foreground mb-6">
-              Join Your Industry
+              Build Something Recognisable
               <br />
-              <span className="text-primary text-glow">Get An Army Behind You</span>
+              <span className="text-primary text-glow">Put An Army Behind It</span>
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              IAM brings together years of website building, SEO work and practical industry
+              IAM connects brand identity, website and app development, publishing and rollout.
+              We bring together years of website building, SEO work and practical industry
               experience. Our long-term work with LSFencing is part of that foundation,
               alongside the industry sites we have built and developed across the network.
             </p>

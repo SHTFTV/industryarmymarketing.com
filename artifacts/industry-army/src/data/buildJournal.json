@@ -1,0 +1,355 @@
+[
+  {
+    "brand": "Industry Army Marketing",
+    "trade": "Branding and digital products",
+    "tradeShort": "brand",
+    "plural": "brands",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Vancouver",
+    "province": "BC",
+    "category": "Build Journal",
+    "date": "October 25, 2026",
+    "publishedAt": "2026-10-25T07:39:14.648943Z",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "faqHeading": "About this build update",
+    "faqs": [
+      {
+        "q": "Does every build-journal entry announce a new launch?",
+        "a": "No. Entries distinguish verified releases, work in beta, design concepts and practical lessons from existing public work."
+      }
+    ],
+    "cta": {
+      "eyebrow": "Build with IAM",
+      "heading": "Have a brand or product worth building?",
+      "body": "Tell us what the business does, who it serves and what you need to put into the world. We will discuss the identity, website, app and rollout scope with you.",
+      "buttonText": "Discuss a brand or app",
+      "buttonHref": "/contact?request=branding"
+    },
+    "slug": "brand-to-rollout-iam-build-journal",
+    "title": "From brand to rollout: what IAM is building now",
+    "cardTitle": "From brand to rollout: what IAM is building now",
+    "excerpt": "A closer look at the identities, websites, apps and publishing systems behind IAM’s recent work—and the build journal that will make that work visible.",
+    "metaDescription": "A closer look at the identities, websites, apps and publishing systems behind IAM’s recent work—and the build journal that will make that work visible.",
+    "image": "/brand-journal/brand-board.jpg",
+    "imageAlt": "IAM brand board using the approved IAM seal, AI-illustrated Wow mascot and a Rambo Langley project photo. Photo: Mason McKenzie / Rambo Wall & Ceiling Limited.",
+    "ogImage": "/brand-journal/brand-to-rollout-iam-build-journal-share.jpg",
+    "ogImageAlt": "From brand to rollout: what IAM is building now — IAM build journal",
+    "richContent": {
+      "intro": "A closer look at the identities, websites, apps and publishing systems behind IAM’s recent work—and the build journal that will make that work visible.",
+      "sections": [
+        {
+          "heading": "The brand should be visible in the product",
+          "paragraphs": [
+            "A business identity needs to do more than sit in a navigation bar. Its language, images and character should help people understand the offer, recognise the business and know what to do next. IAM’s work connects that identity to websites, app interfaces, real project stories and useful enquiry routes.",
+            "That connection has not been clear enough on our own homepage. We have been showing the industry network more prominently than the branding and product work that helps make its businesses recognisable. This journal starts correcting that: show the work, explain the decisions and link to what is actually live."
+          ]
+        },
+        {
+          "heading": "Three different jobs, three different identities",
+          "paragraphs": [
+            "[PlowWow™](https://www.plowwow.com/intelligence) uses the approved Wow character in a blue beanie and orange high-visibility vest. Its Snow Intelligence story is in its first year of beta. The brand can be distinctive while the software’s development status stays explicit.",
+            "[Rambo Wall & Ceiling](https://www.rambowalls.com/blog/vancouver-commercial-tbar-grid-before-panels) starts with actual trade photography. A recent Vancouver T-bar archive image became a project planning article and a matching Google Business Profile update. The work remains credited, and project enquiries go to Rambo.",
+            "[The Mining Minute](https://theminingminute.com/) needs a publication identity: an image-led magazine, sector desks, readable short briefs and source context. Its recent expansion gave it at least two articles in each of its twelve categories, alongside core pages and a contributor invitation. That describes the verified release, rather than a promise about traffic or investment results."
+          ]
+        },
+        {
+          "heading": "What the daily journal will cover",
+          "paragraphs": [
+            "The journal will follow brand identity, approved logos and mascots, app development, website releases, client publishing and meaningful product updates. A daily article can explain one useful decision instead of stretching a list of small edits into a launch announcement.",
+            "A release is called live only after checking the actual page. A beta stays a beta. A design concept is labelled as a concept. An existing article can support a practical lesson without being presented as newly completed work. We will show the relevant images, link to the public result and give the next step a clear destination."
+          ]
+        },
+        {
+          "heading": "A brand with a job to do",
+          "paragraphs": [
+            "For a contractor, the next step might be sending drawings to the right business. For a publication, it may be reading a one-minute brief or applying to contribute. For an app, it may be understanding what is available today and what is still being evaluated.",
+            "That is the standard IAM is working toward: a recognisable identity, a useful digital experience and a rollout people can see and use. Start with the work, then judge the story against the actual result."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "label": "PlowWow Snow Intelligence beta",
+          "href": "https://www.plowwow.com/intelligence"
+        },
+        {
+          "label": "Rambo Vancouver T-bar feature",
+          "href": "https://www.rambowalls.com/blog/vancouver-commercial-tbar-grid-before-panels"
+        },
+        {
+          "label": "The Mining Minute magazine",
+          "href": "https://theminingminute.com/"
+        }
+      ]
+    },
+    "contactBusiness": "iam"
+  },
+  {
+    "brand": "Industry Army Marketing",
+    "trade": "Branding and digital products",
+    "tradeShort": "brand",
+    "plural": "brands",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Vancouver",
+    "province": "BC",
+    "category": "Build Journal",
+    "date": "October 25, 2026",
+    "publishedAt": "2026-10-25T07:39:14.648943Z",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "faqHeading": "About this build update",
+    "faqs": [
+      {
+        "q": "Is Snow Intelligence a mature, fully verified software suite?",
+        "a": "No. It is in its first year of beta; advanced capabilities remain planned or under evaluation until verified end to end."
+      }
+    ],
+    "cta": {
+      "eyebrow": "Build with IAM",
+      "heading": "Have a brand or product worth building?",
+      "body": "Tell us what the business does, who it serves and what you need to put into the world. We will discuss the identity, website, app and rollout scope with you.",
+      "buttonText": "Discuss a brand or app",
+      "buttonHref": "/contact?request=branding"
+    },
+    "slug": "plowwow-brand-character-first-year-beta",
+    "title": "PlowWow™: a recognisable character, an honest beta story",
+    "cardTitle": "PlowWow™: a recognisable character, an honest beta story",
+    "excerpt": "How the approved Wow mascot, useful regional content and clear first-year beta language work together in PlowWow’s public rollout.",
+    "metaDescription": "How the approved Wow mascot, useful regional content and clear first-year beta language work together in PlowWow’s public rollout.",
+    "image": "/brand-journal/wow-scene.jpg",
+    "imageAlt": "Approved Wow mascot in the blue beanie and orange high-visibility vest. AI-illustrated PlowWow brand artwork; not a photograph of a crew.",
+    "ogImage": "/brand-journal/plowwow-brand-character-first-year-beta-share.jpg",
+    "ogImageAlt": "PlowWow™: a recognisable character, an honest beta story — IAM build journal",
+    "richContent": {
+      "intro": "How the approved Wow mascot, useful regional content and clear first-year beta language work together in PlowWow’s public rollout.",
+      "sections": [
+        {
+          "heading": "Keep the character consistent",
+          "paragraphs": [
+            "Wow is meant to be recognisable across the PlowWow website and promotional material. The approved details matter: blue beanie, orange high-visibility vest and the same friendly character, rather than a different mascot on each page.",
+            "A recent footer correction restored the preferred solo-to-multiplying-crew loop. Pause controls and reduced-motion support were retained, and the result was checked on desktop and phone. The animation is branded illustration, not footage of an actual snow crew."
+          ]
+        },
+        {
+          "heading": "Connect the brand to a useful decision",
+          "paragraphs": [
+            "The public [Abbotsford pricing and five-hour-route article](https://www.plowwow.com/abbotsford-snow-removal-pricing-five-hour-routes) gives the brand a practical context: starting a pricing enquiry and discussing a place on a planned route. A route label alone does not promise a particular arrival time or create a confirmed booking.",
+            "Identity should help a customer connect the character, service story and next step. That is more useful than putting a logo on an article that never explains the service or links to a real enquiry destination."
+          ]
+        },
+        {
+          "heading": "Make the development stage explicit",
+          "paragraphs": [
+            "[Snow Intelligence](https://www.plowwow.com/intelligence) is in its first year of beta. Its ambition draws on the founder’s reported fifteen snow-removal seasons, four seasons of North American marketing under a previous brand and twenty-five years in contracting. Those are not years of app maturity or a claim that PlowWow operated under its current name for that whole period.",
+            "Advanced ideas such as visual salt-density assessment, augmented-reality hazard overlays, automatic billing and municipal bylaw checks remain planned or under evaluation until their complete workflows are verified. A promotional illustration is not evidence that a technical feature is production-ready."
+          ]
+        },
+        {
+          "heading": "What this rollout teaches",
+          "paragraphs": [
+            "A distinctive mascot and candid product language belong together. We can make the brand feel confident without inventing certifications, insurance outcomes, rankings or competitor comparisons.",
+            "For snow-service questions, [contact PlowWow](https://www.plowwow.com/quote). For a discussion about building an identity and digital rollout for another business, [contact IAM](/contact?request=branding)."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "label": "Snow Intelligence: current public beta page",
+          "href": "https://www.plowwow.com/intelligence"
+        },
+        {
+          "label": "Abbotsford pricing and route planning",
+          "href": "https://www.plowwow.com/abbotsford-snow-removal-pricing-five-hour-routes"
+        }
+      ]
+    },
+    "contactBusiness": "plowwow"
+  },
+  {
+    "brand": "Industry Army Marketing",
+    "trade": "Branding and digital products",
+    "tradeShort": "brand",
+    "plural": "brands",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Vancouver",
+    "province": "BC",
+    "category": "Build Journal",
+    "date": "October 25, 2026",
+    "publishedAt": "2026-10-25T07:39:14.648943Z",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "faqHeading": "About this build update",
+    "faqs": [
+      {
+        "q": "Who receives enquiries about Rambo’s photographed work?",
+        "a": "Rambo Wall & Ceiling Limited. Its call number is 778-773-2790, text number is 778-954-7555 and email is rambowallceiling@gmail.com."
+      }
+    ],
+    "cta": {
+      "eyebrow": "Build with IAM",
+      "heading": "Have a brand or product worth building?",
+      "body": "Tell us what the business does, who it serves and what you need to put into the world. We will discuss the identity, website, app and rollout scope with you.",
+      "buttonText": "Discuss a brand or app",
+      "buttonHref": "/contact?request=branding"
+    },
+    "slug": "rambo-project-photos-working-client-pages",
+    "title": "Rambo: turning project photographs into useful client pages",
+    "cardTitle": "Rambo: turning project photographs into useful client pages",
+    "excerpt": "Real project imagery, clear attribution and direct contractor enquiries make a stronger story than a text-only promotional article.",
+    "metaDescription": "Real project imagery, clear attribution and direct contractor enquiries make a stronger story than a text-only promotional article.",
+    "image": "/brand-journal/rambo-langley.webp",
+    "imageAlt": "Steel stud partitions in a Langley tenant improvement. Photo supplied by Mason McKenzie / Rambo Wall & Ceiling Limited.",
+    "ogImage": "/brand-journal/rambo-project-photos-working-client-pages-share.jpg",
+    "ogImageAlt": "Rambo: turning project photographs into useful client pages — IAM build journal",
+    "richContent": {
+      "intro": "Real project imagery, clear attribution and direct contractor enquiries make a stronger story than a text-only promotional article.",
+      "sections": [
+        {
+          "heading": "Start with the supplied work",
+          "paragraphs": [
+            "Mason McKenzie supplied a Vancouver commercial T-bar photograph. It became a [Rambo project-planning feature](https://www.rambowalls.com/blog/vancouver-commercial-tbar-grid-before-panels) about the open grid, overhead services and the information to bring to a ceiling enquiry. A matching photo update was published on Rambo’s existing Google Business Profile.",
+            "The installation date was not supplied, so the image was identified as a project archive photograph. The article does not invent a client, an installation date, acoustic results or code compliance from the picture."
+          ]
+        },
+        {
+          "heading": "A page has to help the business",
+          "paragraphs": [
+            "A project article needs a relevant photograph near its heading, a useful explanation and a clear route to the company behind the work. The [Langley partition guide](https://www.steelstudcontractors.com/blog/langley-commercial-steel-stud-partition-quote) was incomplete when it lacked that visual and those direct links.",
+            "The correction added actual Langley project images, accurate credits, Rambo branding, links to the original project and an inline enquiry section. Readers can now connect the planning advice to the pictured work and discuss a similar scope with the team."
+          ]
+        },
+        {
+          "heading": "Keep the enquiry with the right contractor",
+          "paragraphs": [
+            "The floating-card rollout covers Rambo-attributed content on Acustiq.ca, SteelStud.ca and SteelStudContractors.com. The production check covered 130 affected pages and their card/contact destinations. That is evidence of that specific correction, not a claim that every aspect of those sites has passed a full audit.",
+            "Rambo’s card supplies its verified call, text, email and Google links. A generic host-site card should not take over the project enquiry. The owner excluded SPS from this Rambo-card rollout, so its existing assignments were left unchanged."
+          ]
+        },
+        {
+          "heading": "Keep the photographs coming",
+          "paragraphs": [
+            "A small amount of source information improves every story: city, work performed, approximate project date where known, the current stage and permission to publish the photographs. Private customer details stay out of the public article.",
+            "[Browse Rambo’s work](https://www.rambowalls.com/projects), or contact Rambo directly about a project. IAM’s role is to help turn that genuine field material into clear, well-presented pages and an accountable publishing trail."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "label": "Rambo Vancouver T-bar archive feature",
+          "href": "https://www.rambowalls.com/blog/vancouver-commercial-tbar-grid-before-panels"
+        },
+        {
+          "label": "Langley article with project photos and Rambo enquiries",
+          "href": "https://www.steelstudcontractors.com/blog/langley-commercial-steel-stud-partition-quote"
+        },
+        {
+          "label": "Rambo project gallery",
+          "href": "https://www.rambowalls.com/projects"
+        }
+      ]
+    },
+    "contactBusiness": "rambo"
+  },
+  {
+    "brand": "Industry Army Marketing",
+    "trade": "Branding and digital products",
+    "tradeShort": "brand",
+    "plural": "brands",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Vancouver",
+    "province": "BC",
+    "category": "Build Journal",
+    "date": "October 25, 2026",
+    "publishedAt": "2026-10-25T07:39:14.648943Z",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "faqHeading": "About this build update",
+    "faqs": [
+      {
+        "q": "Are watchlist entries investment recommendations?",
+        "a": "No. The publication distinguishes editorial watchlists, verified source information and commercial advertising; it does not promise investment returns."
+      }
+    ],
+    "cta": {
+      "eyebrow": "Build with IAM",
+      "heading": "Have a brand or product worth building?",
+      "body": "Tell us what the business does, who it serves and what you need to put into the world. We will discuss the identity, website, app and rollout scope with you.",
+      "buttonText": "Discuss a brand or app",
+      "buttonHref": "/contact?request=branding"
+    },
+    "slug": "mining-minute-magazine-sector-foundations",
+    "title": "The Mining Minute: building a magazine, one useful brief at a time",
+    "cardTitle": "The Mining Minute: building a magazine, one useful brief at a time",
+    "excerpt": "An image-led magazine, deeper sector coverage and a contributor invitation give The Mining Minute a stronger publishing foundation.",
+    "metaDescription": "An image-led magazine, deeper sector coverage and a contributor invitation give The Mining Minute a stronger publishing foundation.",
+    "image": "/brand-journal/mining-magazine.jpg",
+    "imageAlt": "The Mining Minute editorial artwork. Illustrative open-pit stock photo: Mark Thomas / Pexels; not a project featured in this build update.",
+    "ogImage": "/brand-journal/mining-minute-magazine-sector-foundations-share.jpg",
+    "ogImageAlt": "The Mining Minute: building a magazine, one useful brief at a time — IAM build journal",
+    "richContent": {
+      "intro": "An image-led magazine, deeper sector coverage and a contributor invitation give The Mining Minute a stronger publishing foundation.",
+      "sections": [
+        {
+          "heading": "The publication needs to look like a publication",
+          "paragraphs": [
+            "A mining publication needs more than a feed container. Readers should see what it covers, find an interesting lead story and recognise a consistent editorial structure. [The Mining Minute](https://theminingminute.com/) now presents a magazine-style front page with subject imagery, a lead feature, sector navigation and supporting articles.",
+            "Illustrative mining photography is identified as illustrative. The image used in this update is an open-pit stock photograph credited to Mark Thomas / Pexels, rather than an unverified photograph of a company discussed in a brief."
+          ]
+        },
+        {
+          "heading": "Build depth before promising scale",
+          "paragraphs": [
+            "The recent core expansion produced twenty-five articles across twelve categories, with at least two in each category. The site also gained core information, a watchlist framework, an industry-perspective section and a [Join Us page](https://theminingminute.com/join-us/).",
+            "Those are dated release facts. Article counts change as the publication develops; they are not audience figures, a claim about search indexing or a promise of daily investment opportunities. The point is to give readers more than an empty category."
+          ]
+        },
+        {
+          "heading": "Use one minute to add context",
+          "paragraphs": [
+            "A one-minute brief should tell the reader what happened, why it matters, a useful number where verified and what to watch next. It needs the original source, a truthful date and the correct company, exchange and ticker when relevant.",
+            "A short format is not permission to copy someone else’s reporting or remove material qualifications. The daily editorial workflow selects verified developments and writes original summaries. Exploration results, resources, reserves, studies and production remain different stages."
+          ]
+        },
+        {
+          "heading": "Invite people with knowledge to contribute",
+          "paragraphs": [
+            "The [contributor invitation](https://theminingminute.com/join-us/) is aimed at writers, broadcasters, industry contributors and people who can help explain mining clearly. Submission is an invitation to editorial review, not a claim that a new contributor has already joined.",
+            "The next stage is consistent useful coverage and a stronger grassroots network. The magazine foundation supports that effort; it does not replace editorial judgement, source checking or the work of earning an audience."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "label": "The Mining Minute magazine",
+          "href": "https://theminingminute.com/"
+        },
+        {
+          "label": "Sector categories",
+          "href": "https://theminingminute.com/categories/"
+        },
+        {
+          "label": "Contributor invitation",
+          "href": "https://theminingminute.com/join-us/"
+        },
+        {
+          "label": "Illustrative stock photograph: Mark Thomas / Pexels",
+          "href": "https://www.pexels.com/photo/massive-open-pit-mine-with-haul-trucks-31721779/"
+        }
+      ]
+    },
+    "contactBusiness": "iam"
+  }
+]

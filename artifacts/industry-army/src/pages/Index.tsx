@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import Seo from "@/components/Seo";
-import featuredBattle from "@/assets/blog/weddings-vs-aiweddings-battle.png.asset.json";
+import BrandStudioSection from "@/components/BrandStudioSection";
 import HeroSection from "@/components/HeroSection";
 import FlagshipBrandsSection from "@/components/FlagshipBrandsSection";
 import ServicesSection from "@/components/ServicesSection";
@@ -14,11 +14,11 @@ const Index = () => {
   return (
     <Layout>
       <Seo
-        title="Industry Army Marketing | Find Your Trade. Find Your People."
-        description="Join one industry hub for $10 USD/year. Share your expertise, explore specialist websites and connect through business profiles, project stories and guest contributions."
+        title="Branding, Websites, Apps & Rollouts | Industry Army Marketing"
+        description="IAM connects brand strategy, visual identity, websites, apps and real-world rollout. Explore recent work and the daily build journal."
         path="/"
-        image={featuredBattle.url}
-        imageAlt="Weddings.io vs aiweddings.io — Industry Army Marketing Battle for the Brand case study"
+        image="/brand-journal/brand-to-rollout-iam-build-journal-share.jpg"
+        imageAlt="IAM: from brand identity to websites, apps and rollout"
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
@@ -35,6 +35,8 @@ const Index = () => {
         }}
       />
       <HeroSection />
+      <BrandStudioSection />
+      <LatestBlogPosts />
       <section id="industry-catalog" aria-labelledby="participation-title" className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4 max-w-6xl">
           <h2 id="participation-title" className="font-display text-4xl md:text-6xl text-foreground">Your Expertise Is Worth More Than a High Membership Fee</h2>
@@ -113,8 +115,7 @@ const Index = () => {
       <PricingSection />
       <FlagshipBrandsSection />
       <AboutSection />
-      <LatestBlogPosts />
-      <ContactSection />
+      <ContactSection intro="Tell us about the brand, website, app or rollout you want to build. Include your audience, what you already have and the next outcome you need. Industry-hub registration and city-page partnerships are also available as separate offers." />
     </Layout>
   );
 };

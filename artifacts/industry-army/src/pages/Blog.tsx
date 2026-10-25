@@ -2,11 +2,10 @@ import Layout from "@/components/Layout";
 import Seo from "@/components/Seo";
 import { SITE_URL } from "@/components/Seo";
 import PageHeader from "@/components/PageHeader";
-import featuredBattle from "@/assets/blog/weddings-vs-aiweddings-battle.png.asset.json";
 import { Link, useSearchParams } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { blogPosts } from "@/data/blogPosts";
+import { blogPosts, buildJournalPosts } from "@/data/blogPosts";
 import { useBlogPostsOverlay } from "@/hooks/useBlogPostsOverlay";
 import { useMemo, useCallback, useEffect, useRef, useState } from "react";
 import { Input } from "@/components/ui/input";
@@ -25,8 +24,8 @@ const Blog = () => {
   const { posts: overlayPosts } = useBlogPostsOverlay();
   // Uniform grid: no featured card, no pinned override — every post appears
   // in the same left-to-right chronological roll (newest first).
-  const featured = overlayPosts[0] ?? blogPosts[0];
-  const rest = overlayPosts;
+  const rest = [...buildJournalPosts, ...overlayPosts.filter(p => p.category !== "Build Journal")];
+  const featured = rest[0] ?? blogPosts[0];
   // Persist search state in URL so filtered views are shareable and
   // survive page reloads. Empty/default values are stripped so the URL
   // stays clean ("/blog" instead of "/blog?q=&city=all&category=all").
@@ -171,17 +170,17 @@ const Blog = () => {
   return (
     <Layout>
       <Seo
-        title="Blog — Industry Army Intel | $10 Exclusive Trade Territories"
-        description="2,000-word guides to exclusive territory marketing for contractors, trades, and service pros across BC and Canada. One trade per city. $10/month."
+        title="Build Journal & Industry Intel | Industry Army Marketing"
+        description="Follow IAM’s branding, websites, apps, launches and publishing updates, alongside the existing industry-marketing archive."
         path="/blog"
-        image={featuredBattle.url}
-        imageAlt="Weddings.io vs aiweddings.io — Industry Army Marketing Battle for the Brand case study"
+        image="/brand-journal/brand-to-rollout-iam-build-journal-share.jpg"
+        imageAlt="IAM brand-to-rollout build journal"
         jsonLd={[
           {
             "@context": "https://schema.org",
             "@type": "Blog",
             "@id": `${SITE_URL}/blog#blog`,
-            name: "Industry Army Intel",
+            name: "IAM Build Journal & Industry Intel",
             url: `${SITE_URL}/blog`,
             description:
               "Guides on $10 exclusive territory marketing across trade and lifestyle domains — SEO, AEO, GEO, and the math behind the model.",
@@ -221,15 +220,15 @@ const Blog = () => {
         ]}
       />
       <PageHeader
-        eyebrow="Industry Army Intel"
+        eyebrow="Inside the build"
         title="The"
-        highlight="Blog"
-        description="Deep dives on $10 exclusive territory marketing — one guide per trade domain. SEO, AEO, GEO, and the math behind the model."
-      />
+        highlight="Build Journal"
+        description="Brand identities, websites, apps and rollouts. Follow the work, the decisions and what is actually live."
+      ><figure style={{maxWidth:760,margin:0}}><img src="/brand-journal/brand-board.jpg" width={1200} height={630} alt="IAM brand board with the approved IAM seal, Wow character and project media" style={{width:'100%',height:'auto',borderRadius:12}}/><figcaption className="text-xs text-muted-foreground mt-3">IAM artwork; AI-illustrated Wow. Rambo photo: Mason McKenzie. Illustrative mining photo: Mark Thomas / Pexels.</figcaption></figure></PageHeader>
       <section className="py-16">
         <div className="container mx-auto px-4 max-w-6xl">
           <p className="text-primary uppercase tracking-[0.3em] text-xs font-semibold mb-3">All Intel</p>
-          <h3 className="font-display text-3xl text-foreground mb-8">Every trade. Every territory.</h3>
+          <h3 className="font-display text-3xl text-foreground mb-8">Recent builds. Useful industry thinking.</h3>
 
           {/* Quick-filter chips — one-click browsing for common categories,
               highlighted so visitors can jump straight into "Press Releases

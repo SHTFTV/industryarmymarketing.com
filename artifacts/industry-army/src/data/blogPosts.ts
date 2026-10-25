@@ -1,3 +1,4 @@
+import buildJournalData from "./buildJournal.json";
 // AUTO-GENERATED. Edit /tmp/gen-posts.mjs and regen if you need to change content shape.
 import kitchencabinetsImg from "@/assets/blog/kitchen-cabinets.jpg";
 import weddingsImg from "@/assets/blog/weddings.jpg";
@@ -133,6 +134,7 @@ const IMG: Record<string, string> = {
 };
 
 export interface BlogPost {
+  contactBusiness?: "iam" | "rambo" | "plowwow";
   slug: string;
   brand: string;
   trade: string;
@@ -240,7 +242,10 @@ export const postTime = (post: Pick<BlogPost, "slug" | "publishedAt">): number =
 
 export const compareBlogPostsByNewest = (a: BlogPost, b: BlogPost) => postTime(b) - postTime(a);
 
+export const buildJournalPosts = buildJournalData as BlogPost[];
+
 const rawBlogPosts: BlogPost[] = [
+  ...buildJournalPosts.slice().reverse(),
   {
     "slug": "eyespyr-watermark-client-attribution",
     "brand": "EyeSpyR",
@@ -4542,7 +4547,7 @@ const rawBlogPosts: BlogPost[] = [
       ]
     }
   }
-].map((p) => ({ ...p, image: IMG[p.imageKey] }));
+].map((p) => ({ ...p, image: IMG[p.imageKey] ?? p.image }));
 
 // Validate first so a missing/invalid publishedAt fails loudly at import time
 // — before any consumer (carousel, /blog, RSS, sitemap) gets a chance to render.

@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --config vite.config.ts --host 0.0.0.0",
-    "build": "vite build && node ../../scripts/site-audit/repair-static.mjs dist",
+    "build": "vite build && node ../../scripts/site-audit/repair-static.mjs dist && node scripts/build-journal.mjs",
     "serve": "vite preview --config vite.config.ts --host 0.0.0.0",
     "typecheck": "echo \"typecheck skipped\"",
     "start": "node server.cjs"

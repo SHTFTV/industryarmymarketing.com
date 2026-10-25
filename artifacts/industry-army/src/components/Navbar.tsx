@@ -11,7 +11,7 @@ const navLinks = [
   { label: "SEO Packages", to: "/seo-packages" },
   { label: "Network", to: "/network" },
   { label: "EyeSpyr", to: "/eyespyr" },
-  { label: "Blog", to: "/blog" },
+  { label: "Build Journal", to: "/blog" },
   { label: "Guest Post", to: "/guest-post" },
   { label: "Free Scan", to: "/scan-wizard" },
   { label: "Contact", to: "/contact" },
@@ -24,7 +24,7 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
       <div className="container mx-auto flex items-center justify-between h-16 px-4">
         <Link to="/" className="font-display text-2xl tracking-wider text-primary text-glow">
-          IAM
+          <span className="flex items-center gap-2"><img src="/brand-journal/iam-seal.webp" width="34" height="34" alt="" />IAM</span>
         </Link>
 
         {/* Desktop */}

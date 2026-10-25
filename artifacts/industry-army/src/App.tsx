@@ -1,5 +1,5 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Navigate, Route, Routes, useLocation } from "react-router-dom";
+import { BrowserRouter, MemoryRouter, Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { MotionConfig } from "framer-motion";
 import { flushCtaAttribution } from "@/lib/analytics";
@@ -188,7 +188,9 @@ const CtaAttributionListener = () => {
   return null;
 };
 
-const App = () => (
+const App = ({ ssrPath }: { ssrPath?: string } = {}) => {
+  const Router = ssrPath ? MemoryRouter : BrowserRouter;
+  return (
   <QueryClientProvider client={queryClient}>
     {/* reducedMotion="always" forces motion components to skip their initial
         hidden state and render at the final `animate` state immediately.
@@ -199,7 +201,7 @@ const App = () => (
         <Toaster />
         <Sonner />
         <ComingSoonModal />
-        <BrowserRouter>
+        <Router {...(ssrPath ? { initialEntries: [ssrPath] } : {})}>
         <CtaAttributionListener />
         <Routes>
           <Route path="/" element={<Index />} />
@@ -291,10 +293,11 @@ const App = () => (
             {legacyRedirectRoutes()}
             <Route path="*" element={<NotFound />} />
           </Routes>
-        </BrowserRouter>
+        </Router>
       </TooltipProvider>
     </MotionConfig>
   </QueryClientProvider>
 );
+};
 
 export default App;

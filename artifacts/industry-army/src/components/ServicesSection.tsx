@@ -3,6 +3,7 @@ import { Search, Link, BarChart3, Globe, Megaphone, TrendingUp } from "lucide-re
 import { Link as RouterLink } from "react-router-dom";
 
 const services = [
+  { icon: Megaphone, title: "Brand Strategy & Identity", description: "Positioning, names, visual identity, approved logos and mascots—built to carry through your website, app and public rollout.", to: "/contact?request=branding", ctaLabel: "Build your brand" },
   {
     icon: Search,
     title: "SEO Domination",
@@ -25,8 +26,8 @@ const services = [
   },
   {
     icon: Globe,
-    title: "Web Development",
-    description: "Fast, modern sites built to convert. Three tiers: Starter $499, Growth $1,499, Flagship $3,999. Join the Army network on launch—or don't. Your call.",
+    title: "Websites & Apps",
+    description: "Websites, booking experiences and operational interfaces built around a useful customer journey. App scope and pricing are agreed after review.",
     to: "/services/web-development",
     ctaLabel: "See the Tiers",
   },

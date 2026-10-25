@@ -142,20 +142,21 @@ const LatestBlogPosts = () => {
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
           <div>
             <p className="text-primary uppercase tracking-[0.3em] text-xs font-semibold mb-3">
-              Industry Army Intel
+              Inside the build
             </p>
             <h2 className="font-display text-4xl md:text-5xl text-foreground leading-tight">
-              Latest from the <span className="text-primary text-glow">Blog</span>
+              The <span className="text-primary text-glow">Build Journal</span>
             </h2>
             <p className="text-muted-foreground mt-3 max-w-xl">
-              Guides to contractor marketing, business listings, and exclusive market opportunities.
+              Brand identities, websites, apps and rollouts. See what changed, why it matters and what is actually live.
             </p>
           </div>
           <Button variant="hero" asChild className="self-start md:self-end">
-            <Link to="/blog">View all guides</Link>
+            <Link to="/blog">Read the journal</Link>
           </Button>
         </div>
 
+        <p className="text-sm text-muted-foreground mb-6">Latest publication: <time dateTime={latest[0]?.publishedAt}>{latest[0]?.date}</time></p>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {latest.map((p, i) => (
             <motion.article
@@ -187,7 +188,7 @@ const LatestBlogPosts = () => {
                   </Link>
                 </h3>
                 <p className="text-muted-foreground text-xs uppercase tracking-widest mb-3">
-                  {p.date}
+                  <time dateTime={p.publishedAt}>{p.date}</time>
                 </p>
                 <p className="text-muted-foreground text-sm leading-relaxed line-clamp-3 mb-4">
                   {p.excerpt || p.pain}

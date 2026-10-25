@@ -1,3 +1,6 @@
+import RamboContactCard from "@/components/RamboContactCard";
+import PlowWowContactCard from "@/components/PlowWowContactCard";
+import "@/components/rambo-contact.css";
 import { Link, useParams, Navigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
@@ -417,12 +420,14 @@ const BlogPost = () => {
       {isRecordRecord && <DisambiguationSchema />}
       {isOpenLetter && <BrandDefenseNoticeSchema pageUrl={articleUrl} />}
 
+      {post.contactBusiness === "rambo" && <RamboContactCard/>}
+      {post.contactBusiness === "plowwow" && <PlowWowContactCard/>}
       <ReadingProgress headings={tocHeadings} readMinutes={readMinutes} />
 
       <article className="pt-32 pb-20">
         <div className="container mx-auto px-4 max-w-4xl">
           <Link to="/blog" className="text-primary text-xs uppercase tracking-[0.3em] hover:underline">
-            ← Back to Intel
+            ← Back to the journal
           </Link>
 
           <motion.h1
@@ -453,7 +458,8 @@ const BlogPost = () => {
             className="w-full rounded-lg border border-border mb-10"
           />
 
-          <aside className="mb-10 rounded-lg border border-primary/30 bg-primary/5 p-5 sm:p-6">
+          {post.category === "Build Journal" && <p className="text-xs text-muted-foreground mb-8 leading-relaxed">{post.imageAlt}</p>}
+          {post.category !== "Build Journal" && <aside className="mb-10 rounded-lg border border-primary/30 bg-primary/5 p-5 sm:p-6">
             <p className="text-primary text-[10px] uppercase tracking-[0.3em] font-semibold mb-2">
               {copy.eyebrow}
             </p>
@@ -489,7 +495,7 @@ const BlogPost = () => {
                 Territory pricing →
               </Link>
             </div>
-          </aside>
+          </aside>}
 
           {post.video && (
             <figure className="mb-10">
