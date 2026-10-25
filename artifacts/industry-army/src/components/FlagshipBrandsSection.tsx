@@ -144,15 +144,15 @@ const FlagshipBrandsSection = () => {
                     href={brand.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group rounded-lg bg-card border border-border hover:border-primary/50 hover:border-glow transition-all duration-300 flex flex-col overflow-hidden"
+                    className="iam-animated-brand group rounded-lg bg-card border border-border hover:border-primary/50 hover:border-glow transition-all duration-300 flex flex-col overflow-hidden"
                   >
                     {brand.image && (
-                      <div className="relative aspect-square overflow-hidden bg-background">
+                      <div className="iam-brand-picture relative aspect-square overflow-hidden bg-background">
                         <img
                           src={brand.image}
                           alt={`${brand.name} — ${brand.tagline}`}
                           loading="lazy"
-                          className={`w-full h-full group-hover:scale-[1.03] transition-transform duration-500 ${
+                          className={`iam-brand-art w-full h-full ${
                             brand.contain ? "object-contain p-6" : "object-cover"
                           }`}
                         />
