@@ -27,7 +27,7 @@ export default function HeroSection() {
     return () => { preference.removeEventListener("change", update); document.removeEventListener("visibilitychange", visibility); };
   }, []);
   return <section ref={hero} id="home" className="iam-studio-hero iam-network-hero iam-film-hero">
-    <video ref={film} className="iam-industry-army-film" muted loop playsInline preload="metadata" poster="/brand-journal/iam-industry-army-poster.jpg" aria-label="One IAM army character multiplies into matching construction, healthcare, transport, electrical and agriculture workers"><source src="/brand-journal/iam-industry-army-v1.mp4" type="video/mp4"/></video>
+    <video ref={film} className="iam-industry-army-film" muted loop playsInline preload="metadata" poster="/brand-journal/iam-industry-army-poster-v2.jpg" aria-label="A full crew of matching IAM army characters changes into construction, healthcare, transport, electrical and agriculture uniforms"><source src="/brand-journal/iam-industry-army-v2.mp4" type="video/mp4"/></video>
     <div className="iam-network-hero-layout"><div className="iam-studio-intro">
       <img className="iam-studio-seal" src="/brand-journal/iam-seal.webp" width={100} height={100} alt="Industry Army Marketing" fetchPriority="high"/>
       <p className="iam-studio-kicker">A CONNECTED BRAND & SEARCH ECOSYSTEM · EST. 2011</p>
