@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import heroBg from "@/assets/hero-bg.jpg";
 import "./brand-studio.css";
 
 export function IamStoryFilm() {
@@ -16,8 +15,9 @@ export default function HeroSection() {
     return () => { preference.removeEventListener("change", update); document.removeEventListener("visibilitychange", visibility); };
   }, []);
   return <section id="home" className="iam-studio-hero iam-network-hero iam-film-hero">
-    <img className="iam-studio-backdrop" src={heroBg} alt="" width={1920} height={1080}/>{playing && <div className="iam-film-backdrop" aria-hidden="true"><iframe title="IAM industry army background film" src="https://www.youtube-nocookie.com/embed/gUw8wuj5gFQ?autoplay=1&mute=1&loop=1&playlist=gUw8wuj5gFQ&controls=0&playsinline=1&rel=0" allow="autoplay; encrypted-media" tabIndex={-1}/></div>}<div className="iam-studio-veil"/>
-    <div className="iam-network-hero-layout"><div className="iam-studio-intro">
+    <div className="iam-network-hero-layout"><div className="iam-film-letterbox" aria-label="IAM industry army animation">
+      {playing ? <iframe title="IAM industry army animation" src="https://www.youtube-nocookie.com/embed/gUw8wuj5gFQ?autoplay=1&mute=1&loop=1&playlist=gUw8wuj5gFQ&controls=0&playsinline=1&rel=0" allow="autoplay; encrypted-media" tabIndex={-1}/> : <div className="iam-film-paused"><img src="/brand-journal/iam-seal.webp" alt="Industry Army Marketing" width={100} height={100}/><p>Industry army animation paused</p></div>}
+    </div><div className="iam-studio-intro">
       <img className="iam-studio-seal" src="/brand-journal/iam-seal.webp" width={100} height={100} alt="Industry Army Marketing" fetchPriority="high"/>
       <p className="iam-studio-kicker">A CONNECTED BRAND & SEARCH ECOSYSTEM · EST. 2011</p>
       <h1>Join your<br/><span>industry’s army.</span></h1>

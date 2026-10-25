@@ -7,12 +7,18 @@ body:has(.rambo-contact-card) #iam-floater,body:has(.pw-contact) #iam-floater{di
 
 /* Brand-card motion is an explicit hover/focus affordance, never a change of identity. */
 .iam-animated-brand{position:relative;isolation:isolate}.iam-brand-picture::after{content:"";position:absolute;inset:-35%;pointer-events:none;background:linear-gradient(115deg,transparent 38%,rgba(229,255,161,.22) 49%,transparent 61%);transform:translateX(-100%) rotate(-8deg);opacity:0}.iam-brand-art{transform-origin:center;will-change:auto}.iam-animated-brand:hover .iam-brand-art,.iam-animated-brand:focus-visible .iam-brand-art{animation:iam-brand-float 3.6s ease-in-out infinite;will-change:transform}.iam-animated-brand:hover .iam-brand-picture::after,.iam-animated-brand:focus-visible .iam-brand-picture::after{animation:iam-brand-shine 1.15s ease-out 1}.iam-animated-brand:hover,.iam-animated-brand:focus-visible{box-shadow:0 0 0 1px #c9f77a66,0 12px 35px #a8df3820;outline-offset:4px}.iam-animated-brand:focus-visible{outline:2px solid #c9f77a}@keyframes iam-brand-float{0%,100%{transform:scale(1.025) translateY(0) rotate(0)}35%{transform:scale(1.055) translateY(-4px) rotate(-.7deg)}70%{transform:scale(1.045) translateY(2px) rotate(.6deg)}}@keyframes iam-brand-shine{0%{transform:translateX(-100%) rotate(-8deg);opacity:0}25%{opacity:1}100%{transform:translateX(100%) rotate(-8deg);opacity:0}}@media(prefers-reduced-motion:reduce){.iam-animated-brand .iam-brand-art,.iam-animated-brand .iam-brand-picture::after{animation:none!important;transform:none!important}.iam-animated-brand{transition:none!important}}
-/* Mission-film backdrop with explicit motion control. */
-.iam-network-hero.iam-film-hero{position:relative;overflow:hidden;min-height:740px}
-.iam-film-backdrop{position:absolute;inset:0;overflow:hidden;pointer-events:none}
-.iam-film-backdrop iframe{position:absolute;left:50%;top:50%;width:max(100vw,177.78vh);height:max(56.25vw,100vh);transform:translate(-50%,-50%);border:0}
-.iam-film-hero .iam-studio-veil{background:linear-gradient(90deg,rgba(0,0,0,.86),rgba(0,0,0,.55) 65%,rgba(0,0,0,.4))}
-.iam-film-hero .iam-network-hero-layout{display:block;position:relative;z-index:1}
-.iam-film-hero .iam-studio-intro{max-width:950px}
-.iam-film-hero .iam-film-control{margin-top:18px;border:1px solid #b4d25b;border-radius:6px;padding:10px 16px;background:#10170be6;color:#fff}
-@media(max-width:640px){.iam-network-hero.iam-film-hero{min-height:760px}.iam-film-hero .iam-studio-veil{background:rgba(0,0,0,.75)}}
+/* Full-frame letterbox: keep artwork lettering clear of the sales copy. */
+.iam-network-hero.iam-film-hero{position:relative;overflow:hidden;min-height:0;background:#080d09;padding:40px 90px 48px 32px}
+.iam-film-hero .iam-network-hero-layout{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:32px;align-items:center;max-width:1440px}
+.iam-film-letterbox{width:100%;aspect-ratio:16/9;position:relative;background:#000;border:1px solid #526044;border-radius:12px;overflow:hidden}
+.iam-film-letterbox iframe{display:block;position:absolute;inset:0;width:100%;height:100%;border:0}
+.iam-film-paused{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;height:100%;color:#e6d293;font-size:14px}
+.iam-film-hero .iam-studio-intro{max-width:100%;background:#10180f;border:1px solid #34412b;border-radius:12px;padding:28px;text-align:left}
+.iam-film-hero .iam-studio-seal{width:64px;height:64px;margin-bottom:16px}
+.iam-film-hero h1{font-size:clamp(36px,3.4vw,52px);line-height:1.08;margin:16px 0 20px}
+.iam-film-hero .iam-studio-lead{font-size:16px;line-height:1.7;color:#ecede3}
+.iam-film-hero .iam-studio-kicker{font-size:10px}
+.iam-film-hero .iam-studio-actions{gap:10px;margin-top:22px}.iam-film-hero .iam-studio-actions a{font-size:13px;padding:13px 16px}
+.iam-film-hero .iam-film-control{margin-top:16px;border:1px solid #b4d25b;border-radius:6px;padding:10px 16px;background:#10170b;color:#fff}
+@media(max-width:1000px){.iam-film-hero .iam-network-hero-layout{grid-template-columns:1fr}.iam-network-hero.iam-film-hero{padding:24px 80px 32px 24px}.iam-film-hero .iam-studio-intro{max-width:100%}}
+@media(max-width:640px){.iam-network-hero.iam-film-hero{padding:18px 16px 32px}.iam-film-hero .iam-network-hero-layout{gap:16px}.iam-film-hero .iam-studio-intro{padding:22px 18px}.iam-film-hero h1{font-size:38px}.iam-film-hero .iam-studio-actions{flex-direction:column;align-items:stretch}}
