@@ -15,7 +15,7 @@ module.exports=async function handler(req,res){
  if(!key)return send(503,{error:'Mark Ett is temporarily unavailable. Please use the IAM contact form.'});
  try {
   const response=await fetch('https://ai-gateway.vercel.sh/v1/chat/completions',{method:'POST',signal:AbortSignal.timeout(22000),headers:{Authorization:`Bearer ${key}`,'Content-Type':'application/json'},body:JSON.stringify({model:process.env.MARK_ETT_MODEL||'google/gemini-2.5-flash',max_tokens:1200,messages:[{role:'system',content:SYSTEM},...messages]})});
-  if(!response.ok){console.error('mark_ett_gateway_status',response.status);return send(503,{error:'Mark Ett could not reach the AI service. Please try again or contact IAM.'});}
+  if(!response.ok){const problem=await response.json().catch(()=>null);const detail=JSON.stringify(problem);let category='unclassified';if(/free tier.*(?:model|access)/i.test(detail))category='free_model_restricted';else if(/customer.verification.required|payment method|verify.{0,25}customer/i.test(detail))category='customer_verification_required';else if(/credit|funds|balance/i.test(detail))category='credits';else if(/oidc|token|unauthori/i.test(detail))category='authentication';else if(/access.denied/i.test(detail))category='access_denied';console.error('mark_ett_gateway_status',response.status,category);return send(503,{error:'Mark Ett could not reach the AI service. Please try again or contact IAM.'});}
   const data=await response.json();const reply=data.choices?.[0]?.message?.content?.trim();
   if(!reply)return send(503,{error:'No reply was returned. Please try again.'});
   return send(200,{reply});
