@@ -7,6 +7,11 @@ export function IamStoryFilm() {
 
 export default function HeroSection() {
   const [playing, setPlaying] = useState(false);
+  const [industry, setIndustry] = useState("Your industry’s army");
+  const syncIndustry = (time: number) => {
+    const names = ["Your industry’s army", "Healthcare", "Construction", "Transportation", "Professional Services"];
+    setIndustry(names[Math.floor((time + 0.4) / 4) % names.length]);
+  };
   const hero = useRef<HTMLElement>(null);
   const film = useRef<HTMLVideoElement>(null);
   useEffect(() => { const element=film.current; if (!element) return; if (playing) void element.play().catch(() => setPlaying(false)); else element.pause(); }, [playing]);
@@ -27,7 +32,8 @@ export default function HeroSection() {
     return () => { preference.removeEventListener("change", update); document.removeEventListener("visibilitychange", visibility); };
   }, []);
   return <section ref={hero} id="home" className="iam-studio-hero iam-network-hero iam-film-hero">
-    <video ref={film} className="iam-industry-army-film" muted loop playsInline preload="metadata" poster="/brand-journal/iam-general-mark-poster-v4.jpg" aria-label="General Mark stays front centre in army uniform as the complete marching formation changes together from army to healthcare, construction, transportation and legal-professional uniforms, then back to army"><source src="/brand-journal/iam-general-mark-army-v4.mp4" type="video/mp4"/></video>
+    <video ref={film} onTimeUpdate={event => syncIndustry(event.currentTarget.currentTime)} className="iam-industry-army-film" muted loop playsInline preload="metadata" poster="/brand-journal/iam-general-mark-poster-v4.jpg" aria-label="General Mark stays front centre in army uniform as the complete marching formation changes together from army to healthcare, construction, transportation and legal-professional uniforms, then back to army"><source src="/brand-journal/iam-general-mark-army-v4.mp4" type="video/mp4"/></video>
+    <div className="iam-crew-industry" aria-label={"Current crew: " + industry}><span>JOIN YOUR INDUSTRY</span><strong>{industry}</strong></div>
     <div className="iam-network-hero-layout"><div className="iam-studio-intro">
       <img className="iam-studio-seal" src="/brand-journal/iam-seal.webp" width={100} height={100} alt="Industry Army Marketing" fetchPriority="high"/>
       <p className="iam-studio-kicker">A CONNECTED BRAND & SEARCH ECOSYSTEM · EST. 2011</p>
