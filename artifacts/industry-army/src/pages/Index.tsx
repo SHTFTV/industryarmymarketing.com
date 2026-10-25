@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import Seo from "@/components/Seo";
 import BrandStudioSection from "@/components/BrandStudioSection";
-import HeroSection from "@/components/HeroSection";
+import HeroSection, { IamStoryFilm } from "@/components/HeroSection";
 import FlagshipBrandsSection from "@/components/FlagshipBrandsSection";
 import ServicesSection from "@/components/ServicesSection";
 import PricingSection from "@/components/PricingSection";
@@ -35,6 +35,8 @@ const Index = () => {
         }}
       />
       <HeroSection />
+      <FlagshipBrandsSection />
+      <IamStoryFilm />
       <BrandStudioSection />
       <LatestBlogPosts />
       <section id="industry-catalog" aria-labelledby="participation-title" className="py-16 md:py-24 bg-background">
@@ -113,7 +115,6 @@ const Index = () => {
       </section>
       <ServicesSection />
       <PricingSection />
-      <FlagshipBrandsSection />
       <AboutSection />
       <ContactSection intro="Tell us about the brand, website, app or rollout you want to build. Include your audience, what you already have and the next outcome you need. Industry-hub registration and city-page partnerships are also available as separate offers." />
     </Layout>
