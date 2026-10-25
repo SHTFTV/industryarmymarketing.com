@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useState } from "react";
 import heroBg from "@/assets/hero-bg.jpg";
 import "./brand-studio.css";
 
@@ -7,27 +7,25 @@ export function IamStoryFilm() {
 }
 
 export default function HeroSection() {
-  const video = useRef<HTMLVideoElement>(null);
+  const [playing, setPlaying] = useState(false);
   useEffect(() => {
-    const element = video.current;
-    if (!element) return;
     const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const applyPreference = () => { if (preference.matches) element.pause(); else void element.play().catch(() => {}); };
-    const visibility = () => { if (document.hidden) element.pause(); };
-    applyPreference();
-    preference.addEventListener("change", applyPreference);
-    document.addEventListener("visibilitychange", visibility);
-    return () => { preference.removeEventListener("change", applyPreference); document.removeEventListener("visibilitychange", visibility); };
+    const update = () => setPlaying(!preference.matches && !document.hidden);
+    const visibility = () => { if (document.hidden) setPlaying(false); };
+    update(); preference.addEventListener("change", update); document.addEventListener("visibilitychange", visibility);
+    return () => { preference.removeEventListener("change", update); document.removeEventListener("visibilitychange", visibility); };
   }, []);
-  return <section id="home" className="iam-studio-hero iam-network-hero">
-    <img className="iam-studio-backdrop" src={heroBg} alt="" width={1920} height={1080}/><div className="iam-studio-veil"/>
+  return <section id="home" className="iam-studio-hero iam-network-hero iam-film-hero">
+    <img className="iam-studio-backdrop" src={heroBg} alt="" width={1920} height={1080}/>{playing && <div className="iam-film-backdrop" aria-hidden="true"><iframe title="IAM industry army background film" src="https://www.youtube-nocookie.com/embed/gUw8wuj5gFQ?autoplay=1&mute=1&loop=1&playlist=gUw8wuj5gFQ&controls=0&playsinline=1&rel=0" allow="autoplay; encrypted-media" tabIndex={-1}/></div>}<div className="iam-studio-veil"/>
     <div className="iam-network-hero-layout"><div className="iam-studio-intro">
       <img className="iam-studio-seal" src="/brand-journal/iam-seal.webp" width={100} height={100} alt="Industry Army Marketing" fetchPriority="high"/>
       <p className="iam-studio-kicker">A CONNECTED BRAND & SEARCH ECOSYSTEM · EST. 2011</p>
-      <h1>Your content.<br/><span>Further. Faster. With IAM.</span></h1>
-      <p className="iam-studio-lead">An ecosystem of industry brands, lightweight publishing systems and connected SEO services. Build your identity, publish useful content and extend its reach through relevant IAM channels. Hub registration starts at $10 a year; broader services are scoped around your business.</p>
-      <div className="iam-studio-actions"><a href="#flagship-brands">Explore the IAM network ↓</a><a className="iam-studio-secondary" href="/brand-creation-management-vancouver">Branding & SEO services ↗</a></div>
+      <h1>Join your<br/><span>industry’s army.</span></h1>
+      <p className="iam-studio-lead">From $10 a month for approved businesses. Put IAM’s pSEO ecosystem, industry brands and connected publishing approach behind your business—and give the little guy more ways to compete. Monthly participation is subject to business approval and an agreed scope.</p>
+      <div className="iam-studio-actions"><a href="/contact?request=network">Apply to join your industry’s army ↗</a><a className="iam-studio-secondary" href="/brand-creation-management-vancouver">Branding & SEO services ↗</a></div>
       <p className="iam-studio-signoff">Industry Army Marketing · Established November 18, 2011 <span>WE MAKE BUSINESS BOOM.</span></p>
-    </div><figure className="iam-brand-reel"><video ref={video} controls muted loop playsInline preload="metadata" poster="/brand-journal/iam-brands-reel-poster.jpg" aria-label="IAM brand showcase: Kong Tractors, PlowWow, Love Our Listings, Dentists.ltd, Roofers.io, Weddings.io and Treatments.tv"><source src="/brand-journal/iam-brands-reel.mp4" type="video/mp4"/></video><figcaption>IAM brand showcase · Existing brand artwork, including illustrated concepts. Silent loop; pause or play using the video controls. <a href="#iam-story">Watch the original IAM story →</a></figcaption></figure></div>
+      <p className="iam-studio-signoff">Annual directory-only registration is a separate offer. <a href="/pricing">Compare participation options →</a></p>
+      <button type="button" className="iam-film-control" onClick={() => setPlaying(value => !value)} aria-pressed={playing}>{playing ? "Pause background video" : "Play background video"}</button>
+    </div></div>
   </section>;
 }
