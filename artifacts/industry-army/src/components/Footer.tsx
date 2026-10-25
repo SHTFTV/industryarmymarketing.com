@@ -17,6 +17,7 @@ const cols = [
   {
     title: "Company",
     links: [
+      { label: "Our Mission & Client Beta", to: "/mission" },
       { label: "Site Builder", to: "/builder" },
       { label: "Investors", to: "/investors" },
       { label: "Blog", to: "/blog" },

@@ -8,6 +8,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import ComingSoonModal from "@/components/ComingSoonModal";
 import SeoMarketPage, { SeoMarketDirectory } from "./pages/SeoMarkets";
+import Mission from "./pages/Mission.tsx";
 import BrandCreationVancouver from "./pages/BrandCreationVancouver.tsx";
 import Index from "./pages/Index.tsx";
 import HowItWorks from "./pages/HowItWorks.tsx";
@@ -227,6 +228,7 @@ const App = ({ ssrPath }: { ssrPath?: string } = {}) => {
           <Route path="/industries" element={<Industries />} />
           <Route path="/seo" element={<SeoMarketDirectory />} />
           <Route path="/seo/:city" element={<SeoMarketPage />} />
+          <Route path="/mission" element={<Mission />} />
           <Route path="/brand-creation-management-vancouver" element={<BrandCreationVancouver />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/cities/:city" element={<CityPage />} />
