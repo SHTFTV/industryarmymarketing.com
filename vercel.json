@@ -7,8 +7,13 @@
   "cleanUrls": true,
   "rewrites": [
     {
-      "source": "/(.*)",
+      "source": "/((?!api/).*)",
       "destination": "/"
     }
-  ]
+  ],
+  "functions": {
+    "api/mark-ett.js": {
+      "maxDuration": 30
+    }
+  }
 }

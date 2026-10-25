@@ -18,3 +18,11 @@ October 25 owner-authorised portfolio batch: 25 original brand stories are in bu
 - `seoMarkets.json` holds distinct illustrative buyer briefs, questions and evidence checklists. Do not describe these as local offices, client results, market research or guaranteed service delivery. Mexico content is English planning content, not a promise of Spanish-language production.
 - Prerender every listed route through build-journal.mjs; keep unique canonical metadata and city share cards. Unknown `/seo/:city` routes use the existing noindex not-found component.
 - Existing `/cities` territory pages are legacy and were not audited or endorsed by this release. Do not copy their old pricing, exclusivity, domain-age or lead promises into the new section.
+
+## Mark Ett public IAM assistant
+- Shared Layout mounts MarkEttAssistant; the bot is labelled AI and uses the approved officer artwork, not another brand mascot.
+- `/api/mark-ett` is a server-side Vercel Function. Its public brief is intentionally separate from the older MarkEtt funding briefing; never import confidential plans, historical price promises or unverified capabilities.
+- Authentication remains server-only via Vercel OIDC or existing AI_GATEWAY_API_KEY. No credentials in browser bundles. Model ID google/gemini-2.5-flash was checked against the live model catalogue before launch.
+- Chat does not capture a lead, send email, execute actions or save transcripts in app storage. It links visitors to IAM's actual contact form. The AI provider receives submitted messages; do not claim provider zero retention.
+- Input length/history limits, same-origin browser checks, provider timeout and best-effort per-instance throttling are included. In-memory throttling is not a durable/global abuse or billing cap. Do not describe it as such.
+- Regression checks must include a real generated reply, failure state, no invented prices or guaranteed rankings, close/reopen/new-chat controls, phone layout and preservation of existing pages.

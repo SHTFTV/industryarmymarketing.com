@@ -1,6 +1,7 @@
 import { ReactNode, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { captureReferral } from "@/lib/enquiryAttribution";
+import MarkEttAssistant from "./MarkEttAssistant";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { DisambiguationNotice } from "./DisambiguationNotice";
@@ -19,6 +20,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
         <DisambiguationNotice />
       </div>
       <Footer />
+      <MarkEttAssistant />
     </div>
   );
 };
