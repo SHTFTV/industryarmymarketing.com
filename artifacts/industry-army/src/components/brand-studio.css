@@ -34,3 +34,5 @@ body:has(.rambo-contact-card) #iam-floater,body:has(.pw-contact) #iam-floater{di
 @media(max-width:1000px){.iam-network-hero.iam-film-hero{min-height:0;padding:0 20px 28px}.iam-industry-army-film{position:relative;display:block;aspect-ratio:16/9;width:100%;height:auto;object-fit:contain}.iam-film-hero .iam-studio-intro{width:100%;margin-top:0}.iam-film-hero .iam-network-hero-layout{margin-top:0}}
 @media(prefers-reduced-motion:reduce){.iam-industry-army-film{animation:none}}
 .iam-film-hero .iam-studio-intro{margin-left:0;margin-right:0}
+
+.iam-army-industry{font:700 22px/1.35 Inter,Arial,sans-serif;color:#e5cb80;margin:20px 0}.iam-army-industry a{text-decoration:underline;text-underline-offset:5px}

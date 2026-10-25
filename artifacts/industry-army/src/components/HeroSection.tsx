@@ -27,13 +27,14 @@ export default function HeroSection() {
     return () => { preference.removeEventListener("change", update); document.removeEventListener("visibilitychange", visibility); };
   }, []);
   return <section ref={hero} id="home" className="iam-studio-hero iam-network-hero iam-film-hero">
-    <video ref={film} className="iam-industry-army-film" muted loop playsInline preload="metadata" poster="/brand-journal/iam-industry-army-poster-v2.jpg" aria-label="A full crew of matching IAM army characters changes into construction, healthcare, transport, electrical and agriculture uniforms"><source src="/brand-journal/iam-industry-army-v2.mp4" type="video/mp4"/></video>
+    <video ref={film} className="iam-industry-army-film" muted loop playsInline preload="metadata" poster="/brand-journal/iam-industry-army-poster-v3.jpg" aria-label="A marching IAM crew changes together from army to healthcare, construction, transport, electrical and agriculture uniforms while the front-centre leader remains in army uniform"><source src="/brand-journal/iam-industry-army-march-v3.mp4" type="video/mp4"/></video>
     <div className="iam-network-hero-layout"><div className="iam-studio-intro">
       <img className="iam-studio-seal" src="/brand-journal/iam-seal.webp" width={100} height={100} alt="Industry Army Marketing" fetchPriority="high"/>
       <p className="iam-studio-kicker">A CONNECTED BRAND & SEARCH ECOSYSTEM · EST. 2011</p>
       <h1>Industry Army<br/><span>Marketing.</span></h1>
       <h2 className="iam-army-promise">Join your industry and have an army working with you.</h2>
       <p className="iam-studio-lead">Build your presence city by city with IAM’s pSEO ecosystem, industry brands and connected publishing. Bring us your expertise and target cities; we shape an agreed content and marketing plan to help your business reach the people it serves.</p>
+      <p className="iam-army-industry"><a href="/industries">150+ industries. Choose yours. ↗</a></p>
       <p className="iam-army-price">From $10 a month · For approved businesses</p>
       <div className="iam-studio-actions"><a href="/contact?request=network">Apply for your industry and city ↗</a><a className="iam-studio-secondary" href="/brand-creation-management-vancouver">Branding & SEO services ↗</a></div>
       <p className="iam-studio-signoff">Industry Army Marketing · Established November 18, 2011 <span>WE MAKE BUSINESS BOOM.</span></p>
