@@ -245,7 +245,7 @@ export const compareBlogPostsByNewest = (a: BlogPost, b: BlogPost) => postTime(b
 export const buildJournalPosts = buildJournalData as BlogPost[];
 
 const rawBlogPosts: BlogPost[] = [
-  ...buildJournalPosts.slice().reverse(),
+  ...buildJournalPosts,
   {
     "slug": "eyespyr-watermark-client-attribution",
     "brand": "EyeSpyR",

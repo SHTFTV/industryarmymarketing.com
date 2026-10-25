@@ -1,3 +1,4 @@
+import brandPortfolio from "@/data/brandPortfolio.json";
 import { motion } from "framer-motion";
 import { Crown, Cpu, Truck, Tv, ExternalLink } from "lucide-react";
 import loveourlistingsImg from "@/assets/flagship/loveourlistings.png.asset.json";
@@ -139,8 +140,8 @@ const FlagshipBrandsSection = () => {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 {group.brands.map((brand) => (
+                  <div key={brand.name} className="flex flex-col">
                   <a
-                    key={brand.name}
                     href={brand.url}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -198,8 +199,11 @@ const FlagshipBrandsSection = () => {
                         <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0 mt-1" />
                       </div>
                       <p className="text-muted-foreground text-sm">{brand.tagline}</p>
+                      <span className="text-xs text-muted-foreground mt-3">Explore this brand ↗</span>
                     </div>
                   </a>
+                  {brandPortfolio.find(p => p.url.replace(/\/$/, "") === brand.url.replace(/\/$/, "")) && <a className="text-sm text-primary underline px-2 py-3" href={"/blog/" + brandPortfolio.find(p => p.url.replace(/\/$/, "") === brand.url.replace(/\/$/, ""))!.slug}>IAM brand story & marketing approach →</a>}
+                  </div>
                 ))}
               </div>
             </motion.div>

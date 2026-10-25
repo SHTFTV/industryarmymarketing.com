@@ -4,6 +4,7 @@ const cols = [
   {
     title: "Platform",
     links: [
+      { label: "Branding & SEO", to: "/brand-creation-management-vancouver" },
       { label: "Domain Network", to: "/network" },
       { label: "How It Works", to: "/how-it-works" },
       { label: "Pricing", to: "/pricing" },

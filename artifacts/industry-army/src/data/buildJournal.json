@@ -1,6 +1,1956 @@
 [
   {
     "brand": "Industry Army Marketing",
+    "trade": "Equipment publishing and contractor branding",
+    "tradeShort": "brand",
+    "plural": "brands",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Vancouver",
+    "province": "BC",
+    "category": "Build Journal",
+    "date": "October 25, 2026",
+    "publishedAt": "2026-10-25T20:16:53.949900+00:00",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "faqHeading": "Working with IAM",
+    "faqs": [
+      {
+        "q": "Can IAM create a brand or manage my existing identity?",
+        "a": "Contact IAM with your business, audience and priorities to discuss brand identity, website, content and marketing scope. Deliverables and pricing are agreed for the project."
+      }
+    ],
+    "cta": {
+      "eyebrow": "Brand creation · Brand management · SEO",
+      "heading": "Make your business recognisable—and easier to understand.",
+      "body": "Tell IAM what you do, who you serve and what you want to build next. Vancouver, the Lower Mainland and broader markets.",
+      "buttonText": "Discuss your brand with IAM",
+      "buttonHref": "/contact?request=branding"
+    },
+    "contactBusiness": "iam",
+    "slug": "kong-tractors-iam-brand-creation-management",
+    "title": "Kong Tractors: building a memorable voice for a practical industry",
+    "cardTitle": "Kong Tractors: building a memorable voice for a practical industry",
+    "excerpt": "IAM’s Kong Tractors brand portfolio: equipment publishing and contractor branding, practical brand management and a useful search strategy. Explore the work and discuss your own brand.",
+    "metaDescription": "Explore Kong Tractors in IAM’s brand-creation portfolio. Branding, brand management and SEO thinking for Vancouver businesses and beyond.",
+    "image": "/brand-portfolio/kong-tractors-iam-brand-creation-management.jpg",
+    "imageAlt": "IAM original portfolio composition featuring Kong Tractors brand imagery",
+    "ogImage": "/brand-portfolio/kong-tractors-iam-brand-creation-management.jpg",
+    "ogImageAlt": "Kong Tractors: building a memorable voice for a practical industry",
+    "richContent": {
+      "intro": "Kong Tractors is part of Industry Army Marketing’s brand-creation and brand-management portfolio. This note explains the positioning, content and search thinking behind the brand, and what another business can learn from it. IAM works on branding, websites and marketing from Vancouver for businesses in the Lower Mainland and beyond.",
+      "sections": [
+        {
+          "heading": "The idea behind Kong Tractors",
+          "paragraphs": [
+            "Equipment buyers and working owners have different questions from casual fans of machinery. Kong gives that subject a recognisable character and a place for useful tractor and contractor coverage. In IAM’s brand-creation portfolio, the important relationship is between the strong visual identity and the practical editorial promise. The character should help someone remember where they found a useful explanation."
+          ]
+        },
+        {
+          "heading": "Brand management: the meaning behind the identity",
+          "paragraphs": [
+            "Brand management means keeping the gorilla identity consistent while the editorial work stays precise. A manufacturer announcement, an original equipment comparison and a contractor’s project story need different labels. None should imply IAM has operated a machine or independently tested a specification without evidence. The existing innovation series makes that distinction especially important: enthusiasm can invite attention, while dates, sources and model-specific details earn a reader’s confidence."
+          ]
+        },
+        {
+          "heading": "SEO and content with a specific audience",
+          "paragraphs": [
+            "The search opportunity is a library of specific equipment questions: model differences, applications, attachments and maintenance planning. A generic tractor keyword cannot replace that structure. IAM’s approach connects a clear article title, a useful answer, original-source links and a related next read. Product questions should reach the manufacturer or appropriate dealer; marketing enquiries about creating a brand like Kong should reach IAM."
+          ]
+        },
+        {
+          "heading": "What this means for your own business",
+          "paragraphs": [
+            "For a Vancouver equipment or trade business, the lesson is to create an identity people recognise and give them a reason to return. A mascot is one part of that system; a useful publishing rhythm and clear commercial boundaries are equally important.",
+            "Explore [the Kong Tractors brand](https://kongtractors.com) and compare the identity with the purpose described here. This portfolio note connects the public brand presentation with IAM’s identity and marketing approach."
+          ]
+        },
+        {
+          "heading": "Build with IAM in Vancouver and beyond",
+          "paragraphs": [
+            "A useful first brief tells us what your business does, who it serves and the decision you want a visitor to make. Bring your existing website, brand files and permission-cleared examples of your work. IAM can discuss brand creation, brand management, a website or app, and an SEO/content plan as a connected scope. Services, deliverables and pricing are agreed for your project.",
+            "See [IAM’s Vancouver brand creation, management and SEO services](/brand-creation-management-vancouver), or [tell IAM about your business](/contact?request=branding). Joining an existing industry network is a separate option to discuss; it does not transfer ownership of your business or promise a particular search result."
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
+    "trade": "Service branding and app positioning",
+    "tradeShort": "brand",
+    "plural": "brands",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Vancouver",
+    "province": "BC",
+    "category": "Build Journal",
+    "date": "October 25, 2026",
+    "publishedAt": "2026-10-25T20:16:53.949900+00:00",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "faqHeading": "Working with IAM",
+    "faqs": [
+      {
+        "q": "Can IAM create a brand or manage my existing identity?",
+        "a": "Contact IAM with your business, audience and priorities to discuss brand identity, website, content and marketing scope. Deliverables and pricing are agreed for the project."
+      }
+    ],
+    "cta": {
+      "eyebrow": "Brand creation · Brand management · SEO",
+      "heading": "Make your business recognisable—and easier to understand.",
+      "body": "Tell IAM what you do, who you serve and what you want to build next. Vancouver, the Lower Mainland and broader markets.",
+      "buttonText": "Discuss your brand with IAM",
+      "buttonHref": "/contact?request=branding"
+    },
+    "contactBusiness": "iam",
+    "slug": "plowwow-iam-brand-creation-management",
+    "title": "PlowWow™: connecting a snow-service character with an honest app story",
+    "cardTitle": "PlowWow™: connecting a snow-service character with an honest app story",
+    "excerpt": "IAM’s PlowWow™ brand portfolio: service branding and app positioning, practical brand management and a useful search strategy. Explore the work and discuss your own brand.",
+    "metaDescription": "Explore PlowWow™ in IAM’s brand-creation portfolio. Branding, brand management and SEO thinking for Vancouver businesses and beyond.",
+    "image": "/brand-portfolio/plowwow-iam-brand-creation-management.jpg",
+    "imageAlt": "IAM original portfolio composition featuring PlowWow™ brand imagery",
+    "ogImage": "/brand-portfolio/plowwow-iam-brand-creation-management.jpg",
+    "ogImageAlt": "PlowWow™: connecting a snow-service character with an honest app story",
+    "richContent": {
+      "intro": "PlowWow™ is part of Industry Army Marketing’s brand-creation and brand-management portfolio. This note explains the positioning, content and search thinking behind the brand, and what another business can learn from it. IAM works on branding, websites and marketing from Vancouver for businesses in the Lower Mainland and beyond.",
+      "sections": [
+        {
+          "heading": "The idea behind PlowWow™",
+          "paragraphs": [
+            "Snow service is often understood through a truck, a price and a promise to arrive. PlowWow adds a recognisable Wow character and a Snow Intelligence story focused on the questions property owners ask about a visit. IAM’s brand work brings the character, regional content, pricing explanations and beta language into the same conversation. The offer needs to remain understandable when the weather becomes the priority."
+          ]
+        },
+        {
+          "heading": "Brand management: the meaning behind the identity",
+          "paragraphs": [
+            "The Snow Intelligence application is in its first year of beta. That status belongs beside the ambition. Ordinary service records and customer communication should be described only to the extent demonstrated, while advanced scanning, augmented-reality hazards, automated billing and bylaw checks remain planned or under evaluation. Brand management protects that distinction across the main website, regional articles, app pages and promotional material. A confident visual identity does not require claims that software has already passed tests it has not completed."
+          ]
+        },
+        {
+          "heading": "SEO and content with a specific audience",
+          "paragraphs": [
+            "Regional search content should answer a different operational question in each place. Abbotsford’s five-hour route and pricing discussion, Surrey arrival visibility and a council’s service-record questions offer distinct angles. Changing a city name in the same article does not create local usefulness. IAM connects those stories back to the actual beta and the right snow-service contact without promising route availability, legal protection or lower insurance premiums."
+          ]
+        },
+        {
+          "heading": "What this means for your own business",
+          "paragraphs": [
+            "For a Vancouver service business building an app, the useful sequence is a clear service promise, a recognisable identity, a workable customer enquiry and a truthful product status. IAM can discuss that branding and rollout scope for your own business.",
+            "Explore [the PlowWow™ brand](https://plowwow.com) and compare the identity with the purpose described here. This portfolio note connects the public brand presentation with IAM’s identity and marketing approach."
+          ]
+        },
+        {
+          "heading": "Build with IAM in Vancouver and beyond",
+          "paragraphs": [
+            "A useful first brief tells us what your business does, who it serves and the decision you want a visitor to make. Bring your existing website, brand files and permission-cleared examples of your work. IAM can discuss brand creation, brand management, a website or app, and an SEO/content plan as a connected scope. Services, deliverables and pricing are agreed for your project.",
+            "See [IAM’s Vancouver brand creation, management and SEO services](/brand-creation-management-vancouver), or [tell IAM about your business](/contact?request=branding). Joining an existing industry network is a separate option to discuss; it does not transfer ownership of your business or promise a particular search result."
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
+    "trade": "Real-estate publishing and visual identity",
+    "tradeShort": "brand",
+    "plural": "brands",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Vancouver",
+    "province": "BC",
+    "category": "Build Journal",
+    "date": "October 25, 2026",
+    "publishedAt": "2026-10-25T20:16:53.949900+00:00",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "faqHeading": "Working with IAM",
+    "faqs": [
+      {
+        "q": "Can IAM create a brand or manage my existing identity?",
+        "a": "Contact IAM with your business, audience and priorities to discuss brand identity, website, content and marketing scope. Deliverables and pricing are agreed for the project."
+      }
+    ],
+    "cta": {
+      "eyebrow": "Brand creation · Brand management · SEO",
+      "heading": "Make your business recognisable—and easier to understand.",
+      "body": "Tell IAM what you do, who you serve and what you want to build next. Vancouver, the Lower Mainland and broader markets.",
+      "buttonText": "Discuss your brand with IAM",
+      "buttonHref": "/contact?request=branding"
+    },
+    "contactBusiness": "iam",
+    "slug": "love-our-listings-iam-brand-creation-management",
+    "title": "Love Our Listings: creating a property magazine people can recognise",
+    "cardTitle": "Love Our Listings: creating a property magazine people can recognise",
+    "excerpt": "IAM’s Love Our Listings brand portfolio: real-estate publishing and visual identity, practical brand management and a useful search strategy. Explore the work and discuss your own brand.",
+    "metaDescription": "Explore Love Our Listings in IAM’s brand-creation portfolio. Branding, brand management and SEO thinking for Vancouver businesses and beyond.",
+    "image": "/brand-portfolio/love-our-listings-iam-brand-creation-management.jpg",
+    "imageAlt": "IAM original portfolio composition featuring Love Our Listings brand imagery",
+    "ogImage": "/brand-portfolio/love-our-listings-iam-brand-creation-management.jpg",
+    "ogImageAlt": "Love Our Listings: creating a property magazine people can recognise",
+    "richContent": {
+      "intro": "Love Our Listings is part of Industry Army Marketing’s brand-creation and brand-management portfolio. This note explains the positioning, content and search thinking behind the brand, and what another business can learn from it. IAM works on branding, websites and marketing from Vancouver for businesses in the Lower Mainland and beyond.",
+      "sections": [
+        {
+          "heading": "The idea behind Love Our Listings",
+          "paragraphs": [
+            "A property magazine needs an editorial point of view as well as attractive homes. Love Our Listings uses its heart identity to connect architecture, setting, design and the experience of a property. IAM’s brand-creation work gives that publishing idea a recognisable home. A waterfront house, penthouse and working ranch can all belong to the magazine while retaining the details that make each story worth reading."
+          ]
+        },
+        {
+          "heading": "Brand management: the meaning behind the identity",
+          "paragraphs": [
+            "Keeping that identity useful means maintaining a clear difference between magazine commentary and a property listing. Asking prices, availability and listing contacts need checking at the original source. Photographs and videos require appropriate rights or authorised embeds. The heart artwork identifies the magazine; it does not establish a brokerage relationship, an inspection or an endorsement of a seller. Brand management extends from the cover image to the credit and contact link beneath it."
+          ]
+        },
+        {
+          "heading": "SEO and content with a specific audience",
+          "paragraphs": [
+            "Property-type collections and genuinely distinct stories can help readers explore a subject instead of encountering an undifferentiated feed. A waterfront feature should connect with a waterfront collection and relevant market context. A design article should not pretend a property remains for sale if that has not been verified. SEO here means readable titles, sensible archives, accurate dates and useful relationships between pages, with purchase enquiries going to the actual listing representative."
+          ]
+        },
+        {
+          "heading": "What this means for your own business",
+          "paragraphs": [
+            "For Vancouver real-estate and lifestyle businesses, the lesson is that a strong publishing brand can support discovery while respecting who represents the property. IAM marketing enquiries remain separate from showing or purchase requests.",
+            "Explore [the Love Our Listings brand](https://loveourlistings.com) and compare the identity with the purpose described here. This portfolio note connects the public brand presentation with IAM’s identity and marketing approach."
+          ]
+        },
+        {
+          "heading": "Build with IAM in Vancouver and beyond",
+          "paragraphs": [
+            "A useful first brief tells us what your business does, who it serves and the decision you want a visitor to make. Bring your existing website, brand files and permission-cleared examples of your work. IAM can discuss brand creation, brand management, a website or app, and an SEO/content plan as a connected scope. Services, deliverables and pricing are agreed for your project.",
+            "See [IAM’s Vancouver brand creation, management and SEO services](/brand-creation-management-vancouver), or [tell IAM about your business](/contact?request=branding). Joining an existing industry network is a separate option to discuss; it does not transfer ownership of your business or promise a particular search result."
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
+    "trade": "Dental-practice branding",
+    "tradeShort": "brand",
+    "plural": "brands",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Vancouver",
+    "province": "BC",
+    "category": "Build Journal",
+    "date": "October 25, 2026",
+    "publishedAt": "2026-10-25T20:16:53.949900+00:00",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "faqHeading": "Working with IAM",
+    "faqs": [
+      {
+        "q": "Can IAM create a brand or manage my existing identity?",
+        "a": "Contact IAM with your business, audience and priorities to discuss brand identity, website, content and marketing scope. Deliverables and pricing are agreed for the project."
+      }
+    ],
+    "cta": {
+      "eyebrow": "Brand creation · Brand management · SEO",
+      "heading": "Make your business recognisable—and easier to understand.",
+      "body": "Tell IAM what you do, who you serve and what you want to build next. Vancouver, the Lower Mainland and broader markets.",
+      "buttonText": "Discuss your brand with IAM",
+      "buttonHref": "/contact?request=branding"
+    },
+    "contactBusiness": "iam",
+    "slug": "dentists-ltd-iam-brand-creation-management",
+    "title": "Dentists.ltd: a friendly identity with a careful healthcare brief",
+    "cardTitle": "Dentists.ltd: a friendly identity with a careful healthcare brief",
+    "excerpt": "IAM’s Dentists.ltd brand portfolio: dental-practice branding, practical brand management and a useful search strategy. Explore the work and discuss your own brand.",
+    "metaDescription": "Explore Dentists.ltd in IAM’s brand-creation portfolio. Branding, brand management and SEO thinking for Vancouver businesses and beyond.",
+    "image": "/brand-portfolio/dentists-ltd-iam-brand-creation-management.jpg",
+    "imageAlt": "IAM original portfolio composition featuring Dentists.ltd brand imagery",
+    "ogImage": "/brand-portfolio/dentists-ltd-iam-brand-creation-management.jpg",
+    "ogImageAlt": "Dentists.ltd: a friendly identity with a careful healthcare brief",
+    "richContent": {
+      "intro": "Dentists.ltd is part of Industry Army Marketing’s brand-creation and brand-management portfolio. This note explains the positioning, content and search thinking behind the brand, and what another business can learn from it. IAM works on branding, websites and marketing from Vancouver for businesses in the Lower Mainland and beyond.",
+      "sections": [
+        {
+          "heading": "The idea behind Dentists.ltd",
+          "paragraphs": [
+            "Dental communication has to make an unfamiliar service easier to understand without trivialising it. The Dentists.ltd tooth character gives the brand an approachable visual cue. In IAM’s portfolio, that identity is a starting point for organising practice information, service explanations and appropriate enquiry routes. The creative task is to reduce confusion while leaving clinical judgment with the actual dental professional."
+          ]
+        },
+        {
+          "heading": "Brand management: the meaning behind the identity",
+          "paragraphs": [
+            "A dental brand needs consistent names, contact details and service descriptions, but it also needs restraint. A character cannot demonstrate a dentist’s qualifications, a treatment outcome or the suitability of a procedure for a patient. Testimonials, credentials and before-and-after material require their own evidence and permissions. A responsible brand-management brief keeps those claims separate from design choices such as the logo, colour, navigation and tone of voice."
+          ]
+        },
+        {
+          "heading": "SEO and content with a specific audience",
+          "paragraphs": [
+            "A useful practice website should distinguish a general explanation from a provider-specific service page. Patients may search for an appointment, a location or an explanation of a procedure; those are different intents. IAM can discuss page structure, clear contact paths and content presentation without publishing personalised clinical advice or promising a ranking. Local information must match the actual practice rather than every city a business hopes to reach."
+          ]
+        },
+        {
+          "heading": "What this means for your own business",
+          "paragraphs": [
+            "For a Vancouver practice considering new branding or a website, begin with what patients need to understand and where the enquiry should go. IAM’s role is the brand and marketing experience; clinical services belong with the properly identified provider.",
+            "Explore [the Dentists.ltd brand](https://dentists.ltd) and compare the identity with the purpose described here. This portfolio note connects the public brand presentation with IAM’s identity and marketing approach."
+          ]
+        },
+        {
+          "heading": "Build with IAM in Vancouver and beyond",
+          "paragraphs": [
+            "A useful first brief tells us what your business does, who it serves and the decision you want a visitor to make. Bring your existing website, brand files and permission-cleared examples of your work. IAM can discuss brand creation, brand management, a website or app, and an SEO/content plan as a connected scope. Services, deliverables and pricing are agreed for your project.",
+            "See [IAM’s Vancouver brand creation, management and SEO services](/brand-creation-management-vancouver), or [tell IAM about your business](/contact?request=branding). Joining an existing industry network is a separate option to discuss; it does not transfer ownership of your business or promise a particular search result."
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
+    "trade": "Roofing-contractor brand management",
+    "tradeShort": "brand",
+    "plural": "brands",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Vancouver",
+    "province": "BC",
+    "category": "Build Journal",
+    "date": "October 25, 2026",
+    "publishedAt": "2026-10-25T20:16:53.949900+00:00",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "faqHeading": "Working with IAM",
+    "faqs": [
+      {
+        "q": "Can IAM create a brand or manage my existing identity?",
+        "a": "Contact IAM with your business, audience and priorities to discuss brand identity, website, content and marketing scope. Deliverables and pricing are agreed for the project."
+      }
+    ],
+    "cta": {
+      "eyebrow": "Brand creation · Brand management · SEO",
+      "heading": "Make your business recognisable—and easier to understand.",
+      "body": "Tell IAM what you do, who you serve and what you want to build next. Vancouver, the Lower Mainland and broader markets.",
+      "buttonText": "Discuss your brand with IAM",
+      "buttonHref": "/contact?request=branding"
+    },
+    "contactBusiness": "iam",
+    "slug": "roofers-io-iam-brand-creation-management",
+    "title": "Roofers.io: making roofing expertise easier to explain online",
+    "cardTitle": "Roofers.io: making roofing expertise easier to explain online",
+    "excerpt": "IAM’s Roofers.io brand portfolio: roofing-contractor brand management, practical brand management and a useful search strategy. Explore the work and discuss your own brand.",
+    "metaDescription": "Explore Roofers.io in IAM’s brand-creation portfolio. Branding, brand management and SEO thinking for Vancouver businesses and beyond.",
+    "image": "/brand-portfolio/roofers-io-iam-brand-creation-management.jpg",
+    "imageAlt": "IAM original portfolio composition featuring Roofers.io brand imagery",
+    "ogImage": "/brand-portfolio/roofers-io-iam-brand-creation-management.jpg",
+    "ogImageAlt": "Roofers.io: making roofing expertise easier to explain online",
+    "richContent": {
+      "intro": "Roofers.io is part of Industry Army Marketing’s brand-creation and brand-management portfolio. This note explains the positioning, content and search thinking behind the brand, and what another business can learn from it. IAM works on branding, websites and marketing from Vancouver for businesses in the Lower Mainland and beyond.",
+      "sections": [
+        {
+          "heading": "The idea behind Roofers.io",
+          "paragraphs": [
+            "Roofing customers often arrive with an immediate problem but little vocabulary for describing it. Roofers.io gives a broad trade a direct category identity. The brand-creation question is how to turn that immediate recognition into useful information: what kind of building, what visible concern, what service is being requested and which contractor should respond. A clear name earns attention; a clear page helps the customer use it."
+          ]
+        },
+        {
+          "heading": "Brand management: the meaning behind the identity",
+          "paragraphs": [
+            "The visual system should support genuine project evidence. Roof photographs, material descriptions and repair stories need accurate attribution, location and scope. A roof pictured on a website is not proof that every listed contractor installed it. Brand management keeps the business identity, project credits and enquiry owner aligned as new content is added. It also avoids turning an enquiry page into a promise about a leak diagnosis or an unseen assembly."
+          ]
+        },
+        {
+          "heading": "SEO and content with a specific audience",
+          "paragraphs": [
+            "Useful roofing content separates repair questions, replacement planning, materials and property types. A strata roof-maintenance article needs a different structure from a homeowner’s initial enquiry. Vancouver context can be introduced through real service coverage and practical access or coordination questions, rather than unsupported weather claims or repeated city pages. Search presentation should make the subject understandable before the reader opens the result."
+          ]
+        },
+        {
+          "heading": "What this means for your own business",
+          "paragraphs": [
+            "For a roofing company, IAM can scope a recognisable identity, a project-led website and an ongoing content plan. The commercial discussion should begin with the contractor’s real service area and proof of work, not an invented traffic or lead target.",
+            "Explore [the Roofers.io brand](https://roofers.io) and compare the identity with the purpose described here. This portfolio note connects the public brand presentation with IAM’s identity and marketing approach."
+          ]
+        },
+        {
+          "heading": "Build with IAM in Vancouver and beyond",
+          "paragraphs": [
+            "A useful first brief tells us what your business does, who it serves and the decision you want a visitor to make. Bring your existing website, brand files and permission-cleared examples of your work. IAM can discuss brand creation, brand management, a website or app, and an SEO/content plan as a connected scope. Services, deliverables and pricing are agreed for your project.",
+            "See [IAM’s Vancouver brand creation, management and SEO services](/brand-creation-management-vancouver), or [tell IAM about your business](/contact?request=branding). Joining an existing industry network is a separate option to discuss; it does not transfer ownership of your business or promise a particular search result."
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
+    "trade": "Wedding-platform brand creation",
+    "tradeShort": "brand",
+    "plural": "brands",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Vancouver",
+    "province": "BC",
+    "category": "Build Journal",
+    "date": "October 25, 2026",
+    "publishedAt": "2026-10-25T20:16:53.949900+00:00",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "faqHeading": "Working with IAM",
+    "faqs": [
+      {
+        "q": "Can IAM create a brand or manage my existing identity?",
+        "a": "Contact IAM with your business, audience and priorities to discuss brand identity, website, content and marketing scope. Deliverables and pricing are agreed for the project."
+      }
+    ],
+    "cta": {
+      "eyebrow": "Brand creation · Brand management · SEO",
+      "heading": "Make your business recognisable—and easier to understand.",
+      "body": "Tell IAM what you do, who you serve and what you want to build next. Vancouver, the Lower Mainland and broader markets.",
+      "buttonText": "Discuss your brand with IAM",
+      "buttonHref": "/contact?request=branding"
+    },
+    "contactBusiness": "iam",
+    "slug": "weddings-io-iam-brand-creation-management",
+    "title": "Weddings.io: building a wedding brand around discovery and trust",
+    "cardTitle": "Weddings.io: building a wedding brand around discovery and trust",
+    "excerpt": "IAM’s Weddings.io brand portfolio: wedding-platform brand creation, practical brand management and a useful search strategy. Explore the work and discuss your own brand.",
+    "metaDescription": "Explore Weddings.io in IAM’s brand-creation portfolio. Branding, brand management and SEO thinking for Vancouver businesses and beyond.",
+    "image": "/brand-portfolio/weddings-io-iam-brand-creation-management.jpg",
+    "imageAlt": "IAM original portfolio composition featuring Weddings.io brand imagery",
+    "ogImage": "/brand-portfolio/weddings-io-iam-brand-creation-management.jpg",
+    "ogImageAlt": "Weddings.io: building a wedding brand around discovery and trust",
+    "richContent": {
+      "intro": "Weddings.io is part of Industry Army Marketing’s brand-creation and brand-management portfolio. This note explains the positioning, content and search thinking behind the brand, and what another business can learn from it. IAM works on branding, websites and marketing from Vancouver for businesses in the Lower Mainland and beyond.",
+      "sections": [
+        {
+          "heading": "The idea behind Weddings.io",
+          "paragraphs": [
+            "Wedding discovery combines emotion with practical decisions. A couple may begin with a style, tradition or venue and eventually need a clear conversation with a real supplier. Weddings.io gives IAM a category-focused brand around that journey. The identity, imagery and editorial voice should help people explore without making every page feel like a form to complete before they understand the offer."
+          ]
+        },
+        {
+          "heading": "Brand management: the meaning behind the identity",
+          "paragraphs": [
+            "Wedding brand management means consistent presentation across venues, planners, photographers and other contributors while respecting their separate identities. A magazine story is not evidence that a vendor is an active member or has available dates. Traditions need thoughtful sourcing, and private wedding material needs permission. Existing launch or access restrictions must remain explicit. The wider brand should not make functionality appear available simply because it has been described as a future direction."
+          ]
+        },
+        {
+          "heading": "SEO and content with a specific audience",
+          "paragraphs": [
+            "Search opportunities range from cultural planning questions to venue types and supplier services. Each needs a useful answer and a sensible next page. Editorial stories should connect to appropriate categories rather than competing with every vendor profile for the same phrase. International readers also need accurate locations and understandable terminology. A recognisable brand can connect those different journeys without flattening them into identical content."
+          ]
+        },
+        {
+          "heading": "What this means for your own business",
+          "paragraphs": [
+            "Vancouver wedding businesses can approach IAM about brand identity, websites and marketing or enquire about the relevant network opportunity. Participation, availability and service scope are confirmed separately; the brand story is an invitation to discuss fit.",
+            "Explore [the Weddings.io brand](https://weddings.io) and compare the identity with the purpose described here. This portfolio note connects the public brand presentation with IAM’s identity and marketing approach."
+          ]
+        },
+        {
+          "heading": "Build with IAM in Vancouver and beyond",
+          "paragraphs": [
+            "A useful first brief tells us what your business does, who it serves and the decision you want a visitor to make. Bring your existing website, brand files and permission-cleared examples of your work. IAM can discuss brand creation, brand management, a website or app, and an SEO/content plan as a connected scope. Services, deliverables and pricing are agreed for your project.",
+            "See [IAM’s Vancouver brand creation, management and SEO services](/brand-creation-management-vancouver), or [tell IAM about your business](/contact?request=branding). Joining an existing industry network is a separate option to discuss; it does not transfer ownership of your business or promise a particular search result."
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
+    "trade": "Health and wellness video branding",
+    "tradeShort": "brand",
+    "plural": "brands",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Vancouver",
+    "province": "BC",
+    "category": "Build Journal",
+    "date": "October 25, 2026",
+    "publishedAt": "2026-10-25T20:16:53.949900+00:00",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "faqHeading": "Working with IAM",
+    "faqs": [
+      {
+        "q": "Can IAM create a brand or manage my existing identity?",
+        "a": "Contact IAM with your business, audience and priorities to discuss brand identity, website, content and marketing scope. Deliverables and pricing are agreed for the project."
+      }
+    ],
+    "cta": {
+      "eyebrow": "Brand creation · Brand management · SEO",
+      "heading": "Make your business recognisable—and easier to understand.",
+      "body": "Tell IAM what you do, who you serve and what you want to build next. Vancouver, the Lower Mainland and broader markets.",
+      "buttonText": "Discuss your brand with IAM",
+      "buttonHref": "/contact?request=branding"
+    },
+    "contactBusiness": "iam",
+    "slug": "treatments-tv-iam-brand-creation-management",
+    "title": "Treatments.tv: shaping a visual brand for clearer service explanations",
+    "cardTitle": "Treatments.tv: shaping a visual brand for clearer service explanations",
+    "excerpt": "IAM’s Treatments.tv brand portfolio: health and wellness video branding, practical brand management and a useful search strategy. Explore the work and discuss your own brand.",
+    "metaDescription": "Explore Treatments.tv in IAM’s brand-creation portfolio. Branding, brand management and SEO thinking for Vancouver businesses and beyond.",
+    "image": "/brand-portfolio/treatments-tv-iam-brand-creation-management.jpg",
+    "imageAlt": "IAM original portfolio composition featuring Treatments.tv brand imagery",
+    "ogImage": "/brand-portfolio/treatments-tv-iam-brand-creation-management.jpg",
+    "ogImageAlt": "Treatments.tv: shaping a visual brand for clearer service explanations",
+    "richContent": {
+      "intro": "Treatments.tv is part of Industry Army Marketing’s brand-creation and brand-management portfolio. This note explains the positioning, content and search thinking behind the brand, and what another business can learn from it. IAM works on branding, websites and marketing from Vancouver for businesses in the Lower Mainland and beyond.",
+      "sections": [
+        {
+          "heading": "The idea behind Treatments.tv",
+          "paragraphs": [
+            "Some services are easier to understand when the space, practitioner and process can be seen. Treatments.tv is the visual publishing direction in IAM’s health and wellness portfolio. Its identity suggests a place for explanation and discovery. The design brief is to help a visitor understand what they are watching, who is speaking and where to take an appropriate enquiry."
+          ]
+        },
+        {
+          "heading": "Brand management: the meaning behind the identity",
+          "paragraphs": [
+            "A treatment video needs more than a branded frame. Provider identity, qualifications, commercial relationships and the limits of an explanation must stay clear. Illustrative scenes should not be presented as patient outcomes or footage of a named clinic. Before-and-after claims require particular care. Brand management should help contributors maintain a consistent presentation without implying IAM provides clinical advice or has independently verified every claim in submitted material."
+          ]
+        },
+        {
+          "heading": "SEO and content with a specific audience",
+          "paragraphs": [
+            "Topic descriptions, readable transcripts where available and useful related pages can make a video experience easier to navigate. They are also a clearer basis for search content than an unlabelled wall of clips. Services, locations and professional roles should be described accurately. A viewer seeking general information and someone ready to contact a clinic need different next steps, and marketing enquiries should not be confused with patient requests."
+          ]
+        },
+        {
+          "heading": "What this means for your own business",
+          "paragraphs": [
+            "For a Vancouver clinic or wellness business, IAM can discuss the brand, website and content experience around existing permission-cleared material. A proposal should specify the actual production and distribution work, without implying an untested platform or guaranteed booking result.",
+            "Explore [the Treatments.tv brand](https://treatments.tv) and compare the identity with the purpose described here. This portfolio note connects the public brand presentation with IAM’s identity and marketing approach."
+          ]
+        },
+        {
+          "heading": "Build with IAM in Vancouver and beyond",
+          "paragraphs": [
+            "A useful first brief tells us what your business does, who it serves and the decision you want a visitor to make. Bring your existing website, brand files and permission-cleared examples of your work. IAM can discuss brand creation, brand management, a website or app, and an SEO/content plan as a connected scope. Services, deliverables and pricing are agreed for your project.",
+            "See [IAM’s Vancouver brand creation, management and SEO services](/brand-creation-management-vancouver), or [tell IAM about your business](/contact?request=branding). Joining an existing industry network is a separate option to discuss; it does not transfer ownership of your business or promise a particular search result."
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
+    "trade": "Lawn and grounds-care branding",
+    "tradeShort": "brand",
+    "plural": "brands",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Vancouver",
+    "province": "BC",
+    "category": "Build Journal",
+    "date": "October 25, 2026",
+    "publishedAt": "2026-10-25T20:16:53.949900+00:00",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "faqHeading": "Working with IAM",
+    "faqs": [
+      {
+        "q": "Can IAM create a brand or manage my existing identity?",
+        "a": "Contact IAM with your business, audience and priorities to discuss brand identity, website, content and marketing scope. Deliverables and pricing are agreed for the project."
+      }
+    ],
+    "cta": {
+      "eyebrow": "Brand creation · Brand management · SEO",
+      "heading": "Make your business recognisable—and easier to understand.",
+      "body": "Tell IAM what you do, who you serve and what you want to build next. Vancouver, the Lower Mainland and broader markets.",
+      "buttonText": "Discuss your brand with IAM",
+      "buttonHref": "/contact?request=branding"
+    },
+    "contactBusiness": "iam",
+    "slug": "promows-iam-brand-creation-management",
+    "title": "ProMows: giving a grounds-care business a repeatable visual system",
+    "cardTitle": "ProMows: giving a grounds-care business a repeatable visual system",
+    "excerpt": "IAM’s ProMows brand portfolio: lawn and grounds-care branding, practical brand management and a useful search strategy. Explore the work and discuss your own brand.",
+    "metaDescription": "Explore ProMows in IAM’s brand-creation portfolio. Branding, brand management and SEO thinking for Vancouver businesses and beyond.",
+    "image": "/brand-portfolio/promows-iam-brand-creation-management.jpg",
+    "imageAlt": "IAM original portfolio composition featuring ProMows brand imagery",
+    "ogImage": "/brand-portfolio/promows-iam-brand-creation-management.jpg",
+    "ogImageAlt": "ProMows: giving a grounds-care business a repeatable visual system",
+    "richContent": {
+      "intro": "ProMows is part of Industry Army Marketing’s brand-creation and brand-management portfolio. This note explains the positioning, content and search thinking behind the brand, and what another business can learn from it. IAM works on branding, websites and marketing from Vancouver for businesses in the Lower Mainland and beyond.",
+      "sections": [
+        {
+          "heading": "The idea behind ProMows",
+          "paragraphs": [
+            "A grounds-care brand appears in many places: a vehicle, a crew’s clothing, an estimate and a phone screen. ProMows gives IAM a practical identity for that repeated customer encounter. The name and vehicle-oriented artwork make the service category easy to recognise. The broader design task is to keep the same business legible when the format becomes a small article card or a compact contact panel."
+          ]
+        },
+        {
+          "heading": "Brand management: the meaning behind the identity",
+          "paragraphs": [
+            "The brand-management brief should keep lawn care, landscape maintenance and larger project work understandable as distinct scopes. Photographs need to show whose work is being presented, and a stylised vehicle image should not be treated as evidence of a real fleet. Service areas, seasonal availability and quote recipients need regular attention. A coherent identity is useful only when the enquiry reaches the person responsible for the work being advertised."
+          ]
+        },
+        {
+          "heading": "SEO and content with a specific audience",
+          "paragraphs": [
+            "Grounds-care content can answer practical differences between ongoing maintenance, a one-time cleanup and a separate landscaping project. Commercial and strata enquiries may also need access arrangements and clear scope records. Those questions produce more useful pages than repeating a generic lawn-service paragraph for every municipality. IAM’s SEO work can connect specific questions with relevant services while preserving the business’s actual operating boundaries."
+          ]
+        },
+        {
+          "heading": "What this means for your own business",
+          "paragraphs": [
+            "A Vancouver grounds-care company can use the ProMows example to think beyond a single logo file. The opportunity is a consistent brand system across customer touchpoints, supported by an accurate website and a manageable publishing plan.",
+            "Explore [the ProMows brand](https://promows.com) and compare the identity with the purpose described here. This portfolio note connects the public brand presentation with IAM’s identity and marketing approach."
+          ]
+        },
+        {
+          "heading": "Build with IAM in Vancouver and beyond",
+          "paragraphs": [
+            "A useful first brief tells us what your business does, who it serves and the decision you want a visitor to make. Bring your existing website, brand files and permission-cleared examples of your work. IAM can discuss brand creation, brand management, a website or app, and an SEO/content plan as a connected scope. Services, deliverables and pricing are agreed for your project.",
+            "See [IAM’s Vancouver brand creation, management and SEO services](/brand-creation-management-vancouver), or [tell IAM about your business](/contact?request=branding). Joining an existing industry network is a separate option to discuss; it does not transfer ownership of your business or promise a particular search result."
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
+    "trade": "Construction-network identity",
+    "tradeShort": "brand",
+    "plural": "brands",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Vancouver",
+    "province": "BC",
+    "category": "Build Journal",
+    "date": "October 25, 2026",
+    "publishedAt": "2026-10-25T20:16:53.949900+00:00",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "faqHeading": "Working with IAM",
+    "faqs": [
+      {
+        "q": "Can IAM create a brand or manage my existing identity?",
+        "a": "Contact IAM with your business, audience and priorities to discuss brand identity, website, content and marketing scope. Deliverables and pricing are agreed for the project."
+      }
+    ],
+    "cta": {
+      "eyebrow": "Brand creation · Brand management · SEO",
+      "heading": "Make your business recognisable—and easier to understand.",
+      "body": "Tell IAM what you do, who you serve and what you want to build next. Vancouver, the Lower Mainland and broader markets.",
+      "buttonText": "Discuss your brand with IAM",
+      "buttonHref": "/contact?request=branding"
+    },
+    "contactBusiness": "iam",
+    "slug": "buildershaus-iam-brand-creation-management",
+    "title": "BuildersHaus: a brand architecture for connecting building expertise",
+    "cardTitle": "BuildersHaus: a brand architecture for connecting building expertise",
+    "excerpt": "IAM’s BuildersHaus brand portfolio: construction-network identity, practical brand management and a useful search strategy. Explore the work and discuss your own brand.",
+    "metaDescription": "Explore BuildersHaus in IAM’s brand-creation portfolio. Branding, brand management and SEO thinking for Vancouver businesses and beyond.",
+    "image": "/brand-portfolio/buildershaus-iam-brand-creation-management.jpg",
+    "imageAlt": "IAM original portfolio composition featuring BuildersHaus brand imagery",
+    "ogImage": "/brand-portfolio/buildershaus-iam-brand-creation-management.jpg",
+    "ogImageAlt": "BuildersHaus: a brand architecture for connecting building expertise",
+    "richContent": {
+      "intro": "BuildersHaus is part of Industry Army Marketing’s brand-creation and brand-management portfolio. This note explains the positioning, content and search thinking behind the brand, and what another business can learn from it. IAM works on branding, websites and marketing from Vancouver for businesses in the Lower Mainland and beyond.",
+      "sections": [
+        {
+          "heading": "The idea behind BuildersHaus",
+          "paragraphs": [
+            "Building projects bring together many separate specialisms. BuildersHaus gives IAM a hub identity capable of introducing those businesses without erasing their individual brands. The name and architectural artwork provide the common setting. The design challenge is to make the relationship understandable: a reader should know whether they are looking at the hub, a contractor’s own business or an editorial explanation of a project."
+          ]
+        },
+        {
+          "heading": "Brand management: the meaning behind the identity",
+          "paragraphs": [
+            "Brand management at a hub is partly a matter of boundaries. Rambo, BeeWarm and other featured businesses need accurate descriptions and their own appropriate contact routes. Their photographs should remain credited to them. A directory or partner page should not imply the hub performed construction, holds another firm’s licences or takes every enquiry itself. The shared visual system should make discovery easier while leaving accountability with the named provider."
+          ]
+        },
+        {
+          "heading": "SEO and content with a specific audience",
+          "paragraphs": [
+            "Construction search journeys often begin with a project category and narrow toward a particular trade or business. A useful hub links those levels clearly, avoiding competing copies of the same contractor biography. Original project stories can explain coordination and scope, while the actual contractor remains identifiable. Location information should reflect real coverage rather than an assumption that every business serves every city in the network."
+          ]
+        },
+        {
+          "heading": "What this means for your own business",
+          "paragraphs": [
+            "For a Vancouver construction business, this is a useful distinction between creating your own brand and participating in a broader industry hub. IAM can discuss both routes, with separate expectations for identity, publishing and hands-on marketing work.",
+            "Explore [the BuildersHaus brand](https://buildershaus.com) and compare the identity with the purpose described here. This portfolio note connects the public brand presentation with IAM’s identity and marketing approach."
+          ]
+        },
+        {
+          "heading": "Build with IAM in Vancouver and beyond",
+          "paragraphs": [
+            "A useful first brief tells us what your business does, who it serves and the decision you want a visitor to make. Bring your existing website, brand files and permission-cleared examples of your work. IAM can discuss brand creation, brand management, a website or app, and an SEO/content plan as a connected scope. Services, deliverables and pricing are agreed for your project.",
+            "See [IAM’s Vancouver brand creation, management and SEO services](/brand-creation-management-vancouver), or [tell IAM about your business](/contact?request=branding). Joining an existing industry network is a separate option to discuss; it does not transfer ownership of your business or promise a particular search result."
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
+    "trade": "Concept branding and launch communication",
+    "tradeShort": "brand",
+    "plural": "brands",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Vancouver",
+    "province": "BC",
+    "category": "Build Journal",
+    "date": "October 25, 2026",
+    "publishedAt": "2026-10-25T20:16:53.949900+00:00",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "faqHeading": "Working with IAM",
+    "faqs": [
+      {
+        "q": "Can IAM create a brand or manage my existing identity?",
+        "a": "Contact IAM with your business, audience and priorities to discuss brand identity, website, content and marketing scope. Deliverables and pricing are agreed for the project."
+      }
+    ],
+    "cta": {
+      "eyebrow": "Brand creation · Brand management · SEO",
+      "heading": "Make your business recognisable—and easier to understand.",
+      "body": "Tell IAM what you do, who you serve and what you want to build next. Vancouver, the Lower Mainland and broader markets.",
+      "buttonText": "Discuss your brand with IAM",
+      "buttonHref": "/contact?request=branding"
+    },
+    "contactBusiness": "iam",
+    "slug": "med-bee-tate-iam-brand-creation-management",
+    "title": "Med Bee Tate: making a developing concept clear before launch",
+    "cardTitle": "Med Bee Tate: making a developing concept clear before launch",
+    "excerpt": "IAM’s Med Bee Tate brand portfolio: concept branding and launch communication, practical brand management and a useful search strategy. Explore the work and discuss your own brand.",
+    "metaDescription": "Explore Med Bee Tate in IAM’s brand-creation portfolio. Branding, brand management and SEO thinking for Vancouver businesses and beyond.",
+    "image": "/brand-portfolio/med-bee-tate-iam-brand-creation-management.jpg",
+    "imageAlt": "IAM original portfolio composition featuring Med Bee Tate brand imagery",
+    "ogImage": "/brand-portfolio/med-bee-tate-iam-brand-creation-management.jpg",
+    "ogImageAlt": "Med Bee Tate: making a developing concept clear before launch",
+    "richContent": {
+      "intro": "Med Bee Tate is part of Industry Army Marketing’s brand-creation and brand-management portfolio. This note explains the positioning, content and search thinking behind the brand, and what another business can learn from it. IAM works on branding, websites and marketing from Vancouver for businesses in the Lower Mainland and beyond.",
+      "sections": [
+        {
+          "heading": "The idea behind Med Bee Tate",
+          "paragraphs": [
+            "A new concept needs an identity before every operating detail has been settled. Med Bee Tate brings a bee-inspired meditation, gathering and rest-space idea into IAM’s portfolio. Its connection with the wider bee-brand family gives it a visual starting point. The useful creative task is to make the idea recognisable without making a visitor believe an unfinished location is already open."
+          ]
+        },
+        {
+          "heading": "Brand management: the meaning behind the identity",
+          "paragraphs": [
+            "The current direction is a developing Langley-based greenhouse and rest-space concept, not a promise that visits or bookings are available. Brand management needs to keep that status beside the imagery and invitation. A concept rendering, mascot or mood image should be labelled appropriately. Opening dates, facilities, accessibility and programme details must be confirmed before they are marketed as delivered experiences."
+          ]
+        },
+        {
+          "heading": "SEO and content with a specific audience",
+          "paragraphs": [
+            "Pre-launch content can explain the concept, intended audience and development questions without manufacturing news. It should make updates easy to distinguish from a booking offer. Local references need a factual basis, while broader health and wellness topics should avoid therapeutic claims. The search goal at this stage is clear understanding of the brand, rather than attracting visitors with a service that cannot yet be booked."
+          ]
+        },
+        {
+          "heading": "What this means for your own business",
+          "paragraphs": [
+            "For a Vancouver or Fraser Valley founder, the lesson is to separate brand development from operational readiness. IAM can help develop the identity and communication plan while keeping the public invitation proportionate to what is actually available.",
+            "Explore [the Med Bee Tate brand](https://medbeetate.com) and compare the identity with the purpose described here. This portfolio note connects the public brand presentation with IAM’s identity and marketing approach."
+          ]
+        },
+        {
+          "heading": "Build with IAM in Vancouver and beyond",
+          "paragraphs": [
+            "A useful first brief tells us what your business does, who it serves and the decision you want a visitor to make. Bring your existing website, brand files and permission-cleared examples of your work. IAM can discuss brand creation, brand management, a website or app, and an SEO/content plan as a connected scope. Services, deliverables and pricing are agreed for your project.",
+            "See [IAM’s Vancouver brand creation, management and SEO services](/brand-creation-management-vancouver), or [tell IAM about your business](/contact?request=branding). Joining an existing industry network is a separate option to discuss; it does not transfer ownership of your business or promise a particular search result."
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
+    "trade": "Product-brand development",
+    "tradeShort": "brand",
+    "plural": "brands",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Vancouver",
+    "province": "BC",
+    "category": "Build Journal",
+    "date": "October 25, 2026",
+    "publishedAt": "2026-10-25T20:16:53.949900+00:00",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "faqHeading": "Working with IAM",
+    "faqs": [
+      {
+        "q": "Can IAM create a brand or manage my existing identity?",
+        "a": "Contact IAM with your business, audience and priorities to discuss brand identity, website, content and marketing scope. Deliverables and pricing are agreed for the project."
+      }
+    ],
+    "cta": {
+      "eyebrow": "Brand creation · Brand management · SEO",
+      "heading": "Make your business recognisable—and easier to understand.",
+      "body": "Tell IAM what you do, who you serve and what you want to build next. Vancouver, the Lower Mainland and broader markets.",
+      "buttonText": "Discuss your brand with IAM",
+      "buttonHref": "/contact?request=branding"
+    },
+    "contactBusiness": "iam",
+    "slug": "beegoods-iam-brand-creation-management",
+    "title": "BeeGoods: connecting a product direction to a wider brand family",
+    "cardTitle": "BeeGoods: connecting a product direction to a wider brand family",
+    "excerpt": "IAM’s BeeGoods brand portfolio: product-brand development, practical brand management and a useful search strategy. Explore the work and discuss your own brand.",
+    "metaDescription": "Explore BeeGoods in IAM’s brand-creation portfolio. Branding, brand management and SEO thinking for Vancouver businesses and beyond.",
+    "image": "/brand-portfolio/beegoods-iam-brand-creation-management.jpg",
+    "imageAlt": "IAM original portfolio composition featuring BeeGoods brand imagery",
+    "ogImage": "/brand-portfolio/beegoods-iam-brand-creation-management.jpg",
+    "ogImageAlt": "BeeGoods: connecting a product direction to a wider brand family",
+    "richContent": {
+      "intro": "BeeGoods is part of Industry Army Marketing’s brand-creation and brand-management portfolio. This note explains the positioning, content and search thinking behind the brand, and what another business can learn from it. IAM works on branding, websites and marketing from Vancouver for businesses in the Lower Mainland and beyond.",
+      "sections": [
+        {
+          "heading": "The idea behind BeeGoods",
+          "paragraphs": [
+            "A brand family can create recognition across different experiences, but each new offer still needs its own purpose. BeeGoods is a developing bee-inspired goods direction connected with Med Bee Tate and IAM’s wider portfolio. The creative brief is to give the goods a recognisable identity while explaining what belongs to this brand rather than relying entirely on another project’s story."
+          ]
+        },
+        {
+          "heading": "Brand management: the meaning behind the identity",
+          "paragraphs": [
+            "Product availability is still being developed. That distinction affects every customer-facing detail: collection imagery, launch language, purchase links and enquiry copy. A concept presentation must not imply stocked inventory, confirmed shipping or a functioning checkout. Brand management should establish a consistent naming and visual system now, then introduce verified product information as the offer becomes concrete."
+          ]
+        },
+        {
+          "heading": "SEO and content with a specific audience",
+          "paragraphs": [
+            "Useful product content eventually needs specific material, use, care and availability information. Before those facts are established, a smaller honest concept page is more helpful than a catalogue of imagined products. The opportunity is to build a coherent vocabulary around the brand and an appropriate route for updates. Search visibility should follow the actual offer rather than promises about a range that has not been finalised."
+          ]
+        },
+        {
+          "heading": "What this means for your own business",
+          "paragraphs": [
+            "For founders in Vancouver and beyond, the BeeGoods example shows why an identity project and an ecommerce launch are separate scopes. IAM can discuss the brand family, presentation and rollout plan without treating design assets as proof that a retail operation is ready.",
+            "Explore [the BeeGoods brand](https://beegoods.co) and compare the identity with the purpose described here. This portfolio note connects the public brand presentation with IAM’s identity and marketing approach."
+          ]
+        },
+        {
+          "heading": "Build with IAM in Vancouver and beyond",
+          "paragraphs": [
+            "A useful first brief tells us what your business does, who it serves and the decision you want a visitor to make. Bring your existing website, brand files and permission-cleared examples of your work. IAM can discuss brand creation, brand management, a website or app, and an SEO/content plan as a connected scope. Services, deliverables and pricing are agreed for your project.",
+            "See [IAM’s Vancouver brand creation, management and SEO services](/brand-creation-management-vancouver), or [tell IAM about your business](/contact?request=branding). Joining an existing industry network is a separate option to discuss; it does not transfer ownership of your business or promise a particular search result."
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
+    "trade": "Electrical-trade video branding",
+    "tradeShort": "brand",
+    "plural": "brands",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Vancouver",
+    "province": "BC",
+    "category": "Build Journal",
+    "date": "October 25, 2026",
+    "publishedAt": "2026-10-25T20:16:53.949900+00:00",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "faqHeading": "Working with IAM",
+    "faqs": [
+      {
+        "q": "Can IAM create a brand or manage my existing identity?",
+        "a": "Contact IAM with your business, audience and priorities to discuss brand identity, website, content and marketing scope. Deliverables and pricing are agreed for the project."
+      }
+    ],
+    "cta": {
+      "eyebrow": "Brand creation · Brand management · SEO",
+      "heading": "Make your business recognisable—and easier to understand.",
+      "body": "Tell IAM what you do, who you serve and what you want to build next. Vancouver, the Lower Mainland and broader markets.",
+      "buttonText": "Discuss your brand with IAM",
+      "buttonHref": "/contact?request=branding"
+    },
+    "contactBusiness": "iam",
+    "slug": "sparkys-tv-iam-brand-creation-management",
+    "title": "Sparkys.tv: creating a clear video identity for electrical work",
+    "cardTitle": "Sparkys.tv: creating a clear video identity for electrical work",
+    "excerpt": "IAM’s Sparkys.tv brand portfolio: electrical-trade video branding, practical brand management and a useful search strategy. Explore the work and discuss your own brand.",
+    "metaDescription": "Explore Sparkys.tv in IAM’s brand-creation portfolio. Branding, brand management and SEO thinking for Vancouver businesses and beyond.",
+    "image": "/brand-portfolio/sparkys-tv-iam-brand-creation-management.jpg",
+    "imageAlt": "IAM original portfolio composition featuring Sparkys.tv brand imagery",
+    "ogImage": "/brand-portfolio/sparkys-tv-iam-brand-creation-management.jpg",
+    "ogImageAlt": "Sparkys.tv: creating a clear video identity for electrical work",
+    "richContent": {
+      "intro": "Sparkys.tv is part of Industry Army Marketing’s brand-creation and brand-management portfolio. This note explains the positioning, content and search thinking behind the brand, and what another business can learn from it. IAM works on branding, websites and marketing from Vancouver for businesses in the Lower Mainland and beyond.",
+      "sections": [
+        {
+          "heading": "The idea behind Sparkys.tv",
+          "paragraphs": [
+            "Electrical work can be difficult for customers to describe accurately. Sparkys.tv gives that trade a direct, approachable publishing identity. In IAM’s brand portfolio, the video-first direction offers a way to show project context and explain the enquiry process. The identity should make the service category recognisable while leaving technical decisions with the appropriately qualified provider."
+          ]
+        },
+        {
+          "heading": "Brand management: the meaning behind the identity",
+          "paragraphs": [
+            "A branded video can show a project, a service explanation or an introduction to a business. Those formats should not be confused. Credits need to identify the actual contractor, and credentials must be supported rather than inferred from professional-looking artwork. Illustrative equipment is not proof of a completed installation. Brand management connects those distinctions with consistent titles, graphics and contact destinations."
+          ]
+        },
+        {
+          "heading": "SEO and content with a specific audience",
+          "paragraphs": [
+            "Electrical content should help customers identify the type of enquiry without becoming a do-it-yourself procedure for hazardous work. Service pages, project stories and explanatory videos can be linked around a clear topic. Accurate locations, captions and company names matter more than spreading the same copy across many cities. Marketing enquiries about the network remain separate from a request for an electrician."
+          ]
+        },
+        {
+          "heading": "What this means for your own business",
+          "paragraphs": [
+            "For a Vancouver electrical contractor, IAM can scope a brand presentation that makes genuine project material easier to find and understand. The work can include identity, a website and a publishing plan, with the commercial and professional boundaries agreed upfront.",
+            "Explore [the Sparkys.tv brand](https://sparkys.tv) and compare the identity with the purpose described here. This portfolio note connects the public brand presentation with IAM’s identity and marketing approach."
+          ]
+        },
+        {
+          "heading": "Build with IAM in Vancouver and beyond",
+          "paragraphs": [
+            "A useful first brief tells us what your business does, who it serves and the decision you want a visitor to make. Bring your existing website, brand files and permission-cleared examples of your work. IAM can discuss brand creation, brand management, a website or app, and an SEO/content plan as a connected scope. Services, deliverables and pricing are agreed for your project.",
+            "See [IAM’s Vancouver brand creation, management and SEO services](/brand-creation-management-vancouver), or [tell IAM about your business](/contact?request=branding). Joining an existing industry network is a separate option to discuss; it does not transfer ownership of your business or promise a particular search result."
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
+    "trade": "Painting-contractor content strategy",
+    "tradeShort": "brand",
+    "plural": "brands",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Vancouver",
+    "province": "BC",
+    "category": "Build Journal",
+    "date": "October 25, 2026",
+    "publishedAt": "2026-10-25T20:16:53.949900+00:00",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "faqHeading": "Working with IAM",
+    "faqs": [
+      {
+        "q": "Can IAM create a brand or manage my existing identity?",
+        "a": "Contact IAM with your business, audience and priorities to discuss brand identity, website, content and marketing scope. Deliverables and pricing are agreed for the project."
+      }
+    ],
+    "cta": {
+      "eyebrow": "Brand creation · Brand management · SEO",
+      "heading": "Make your business recognisable—and easier to understand.",
+      "body": "Tell IAM what you do, who you serve and what you want to build next. Vancouver, the Lower Mainland and broader markets.",
+      "buttonText": "Discuss your brand with IAM",
+      "buttonHref": "/contact?request=branding"
+    },
+    "contactBusiness": "iam",
+    "slug": "painters-tv-iam-brand-creation-management",
+    "title": "Painters.tv: branding the decisions behind a finished surface",
+    "cardTitle": "Painters.tv: branding the decisions behind a finished surface",
+    "excerpt": "IAM’s Painters.tv brand portfolio: painting-contractor content strategy, practical brand management and a useful search strategy. Explore the work and discuss your own brand.",
+    "metaDescription": "Explore Painters.tv in IAM’s brand-creation portfolio. Branding, brand management and SEO thinking for Vancouver businesses and beyond.",
+    "image": "/brand-portfolio/painters-tv-iam-brand-creation-management.jpg",
+    "imageAlt": "IAM original portfolio composition featuring Painters.tv brand imagery",
+    "ogImage": "/brand-portfolio/painters-tv-iam-brand-creation-management.jpg",
+    "ogImageAlt": "Painters.tv: branding the decisions behind a finished surface",
+    "richContent": {
+      "intro": "Painters.tv is part of Industry Army Marketing’s brand-creation and brand-management portfolio. This note explains the positioning, content and search thinking behind the brand, and what another business can learn from it. IAM works on branding, websites and marketing from Vancouver for businesses in the Lower Mainland and beyond.",
+      "sections": [
+        {
+          "heading": "The idea behind Painters.tv",
+          "paragraphs": [
+            "A painting photograph usually shows the final colour. A useful brand can also explain preparation, access, finish selection and the scope behind that image. Painters.tv gives IAM a category-specific video identity for those stories. The creative opportunity is to show why two projects that look similar in a thumbnail may require different planning and different conversations with a contractor."
+          ]
+        },
+        {
+          "heading": "Brand management: the meaning behind the identity",
+          "paragraphs": [
+            "Project images need a clear connection with the business that supplied them. An attractive room should not imply that a named painter completed it unless that relationship is established. The brand-management brief includes consistent credits, readable service descriptions and a clear distinction between editorial inspiration and a contractor’s own project record. Colour references should also be described carefully across photographs and screens."
+          ]
+        },
+        {
+          "heading": "SEO and content with a specific audience",
+          "paragraphs": [
+            "Good painting content can address occupied-space scheduling, surface preparation, project access and the questions that make estimates easier to compare. These subjects create distinct useful pages without inventing technical specifications. Interior, exterior, commercial and strata needs should be organised so a reader can find the relevant discussion. A local page should identify the actual business and coverage, not simply repeat a city keyword."
+          ]
+        },
+        {
+          "heading": "What this means for your own business",
+          "paragraphs": [
+            "For Vancouver painting businesses, IAM can help connect a recognisable identity with the substance of the service. The aim is a better-informed enquiry and a coherent customer experience; a particular ranking or number of leads is not something the branding itself can guarantee.",
+            "Explore [the Painters.tv brand](https://painters.tv) and compare the identity with the purpose described here. This portfolio note connects the public brand presentation with IAM’s identity and marketing approach."
+          ]
+        },
+        {
+          "heading": "Build with IAM in Vancouver and beyond",
+          "paragraphs": [
+            "A useful first brief tells us what your business does, who it serves and the decision you want a visitor to make. Bring your existing website, brand files and permission-cleared examples of your work. IAM can discuss brand creation, brand management, a website or app, and an SEO/content plan as a connected scope. Services, deliverables and pricing are agreed for your project.",
+            "See [IAM’s Vancouver brand creation, management and SEO services](/brand-creation-management-vancouver), or [tell IAM about your business](/contact?request=branding). Joining an existing industry network is a separate option to discuss; it does not transfer ownership of your business or promise a particular search result."
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
+    "trade": "Interior-design and decorating identity",
+    "tradeShort": "brand",
+    "plural": "brands",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Vancouver",
+    "province": "BC",
+    "category": "Build Journal",
+    "date": "October 25, 2026",
+    "publishedAt": "2026-10-25T20:16:53.949900+00:00",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "faqHeading": "Working with IAM",
+    "faqs": [
+      {
+        "q": "Can IAM create a brand or manage my existing identity?",
+        "a": "Contact IAM with your business, audience and priorities to discuss brand identity, website, content and marketing scope. Deliverables and pricing are agreed for the project."
+      }
+    ],
+    "cta": {
+      "eyebrow": "Brand creation · Brand management · SEO",
+      "heading": "Make your business recognisable—and easier to understand.",
+      "body": "Tell IAM what you do, who you serve and what you want to build next. Vancouver, the Lower Mainland and broader markets.",
+      "buttonText": "Discuss your brand with IAM",
+      "buttonHref": "/contact?request=branding"
+    },
+    "contactBusiness": "iam",
+    "slug": "decorator-tv-iam-brand-creation-management",
+    "title": "Decorator.tv: giving a visual profession a coherent publishing brand",
+    "cardTitle": "Decorator.tv: giving a visual profession a coherent publishing brand",
+    "excerpt": "IAM’s Decorator.tv brand portfolio: interior-design and decorating identity, practical brand management and a useful search strategy. Explore the work and discuss your own brand.",
+    "metaDescription": "Explore Decorator.tv in IAM’s brand-creation portfolio. Branding, brand management and SEO thinking for Vancouver businesses and beyond.",
+    "image": "/brand-portfolio/decorator-tv-iam-brand-creation-management.jpg",
+    "imageAlt": "IAM original portfolio composition featuring Decorator.tv brand imagery",
+    "ogImage": "/brand-portfolio/decorator-tv-iam-brand-creation-management.jpg",
+    "ogImageAlt": "Decorator.tv: giving a visual profession a coherent publishing brand",
+    "richContent": {
+      "intro": "Decorator.tv is part of Industry Army Marketing’s brand-creation and brand-management portfolio. This note explains the positioning, content and search thinking behind the brand, and what another business can learn from it. IAM works on branding, websites and marketing from Vancouver for businesses in the Lower Mainland and beyond.",
+      "sections": [
+        {
+          "heading": "The idea behind Decorator.tv",
+          "paragraphs": [
+            "Decorating work is visual, but a portfolio needs more than a succession of attractive rooms. Decorator.tv gives IAM a publishing identity for discussing choices, style and the experience of a space. The creative task is to make individual practitioners’ work understandable within a consistent setting, without making different designers look interchangeable."
+          ]
+        },
+        {
+          "heading": "Brand management: the meaning behind the identity",
+          "paragraphs": [
+            "A room image needs its designer, photographer and context. Brand management should preserve that authorship rather than allowing the platform identity to absorb it. Mood boards, renderings, staged scenes and completed commissions are different kinds of evidence and need accurate captions. The visual system can unify navigation and presentation while keeping each contributor’s role explicit."
+          ]
+        },
+        {
+          "heading": "SEO and content with a specific audience",
+          "paragraphs": [
+            "Readers may arrive with a room problem, a style reference or a search for a professional. Those intents deserve different content and contact routes. An article about a decorating principle should link to a relevant example or explanation, rather than presenting inspiration as a service promise. Local business details need verification; the brand’s broader editorial reach does not establish an individual provider’s service area."
+          ]
+        },
+        {
+          "heading": "What this means for your own business",
+          "paragraphs": [
+            "For a Vancouver decorator or design business, IAM can discuss how identity, project presentation and ongoing publishing fit together. Bringing permission-cleared images and a clear description of your own role makes that discussion much more concrete.",
+            "Explore [the Decorator.tv brand](https://decorator.tv) and compare the identity with the purpose described here. This portfolio note connects the public brand presentation with IAM’s identity and marketing approach."
+          ]
+        },
+        {
+          "heading": "Build with IAM in Vancouver and beyond",
+          "paragraphs": [
+            "A useful first brief tells us what your business does, who it serves and the decision you want a visitor to make. Bring your existing website, brand files and permission-cleared examples of your work. IAM can discuss brand creation, brand management, a website or app, and an SEO/content plan as a connected scope. Services, deliverables and pricing are agreed for your project.",
+            "See [IAM’s Vancouver brand creation, management and SEO services](/brand-creation-management-vancouver), or [tell IAM about your business](/contact?request=branding). Joining an existing industry network is a separate option to discuss; it does not transfer ownership of your business or promise a particular search result."
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
+    "trade": "Reinforcement-trade branding",
+    "tradeShort": "brand",
+    "plural": "brands",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Vancouver",
+    "province": "BC",
+    "category": "Build Journal",
+    "date": "October 25, 2026",
+    "publishedAt": "2026-10-25T20:16:53.949900+00:00",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "faqHeading": "Working with IAM",
+    "faqs": [
+      {
+        "q": "Can IAM create a brand or manage my existing identity?",
+        "a": "Contact IAM with your business, audience and priorities to discuss brand identity, website, content and marketing scope. Deliverables and pricing are agreed for the project."
+      }
+    ],
+    "cta": {
+      "eyebrow": "Brand creation · Brand management · SEO",
+      "heading": "Make your business recognisable—and easier to understand.",
+      "body": "Tell IAM what you do, who you serve and what you want to build next. Vancouver, the Lower Mainland and broader markets.",
+      "buttonText": "Discuss your brand with IAM",
+      "buttonHref": "/contact?request=branding"
+    },
+    "contactBusiness": "iam",
+    "slug": "rebar-tv-iam-brand-creation-management",
+    "title": "Rebar.tv: making specialised trade expertise visible without oversimplifying it",
+    "cardTitle": "Rebar.tv: making specialised trade expertise visible without oversimplifying it",
+    "excerpt": "IAM’s Rebar.tv brand portfolio: reinforcement-trade branding, practical brand management and a useful search strategy. Explore the work and discuss your own brand.",
+    "metaDescription": "Explore Rebar.tv in IAM’s brand-creation portfolio. Branding, brand management and SEO thinking for Vancouver businesses and beyond.",
+    "image": "/brand-portfolio/rebar-tv-iam-brand-creation-management.jpg",
+    "imageAlt": "IAM original portfolio composition featuring Rebar.tv brand imagery",
+    "ogImage": "/brand-portfolio/rebar-tv-iam-brand-creation-management.jpg",
+    "ogImageAlt": "Rebar.tv: making specialised trade expertise visible without oversimplifying it",
+    "richContent": {
+      "intro": "Rebar.tv is part of Industry Army Marketing’s brand-creation and brand-management portfolio. This note explains the positioning, content and search thinking behind the brand, and what another business can learn from it. IAM works on branding, websites and marketing from Vancouver for businesses in the Lower Mainland and beyond.",
+      "sections": [
+        {
+          "heading": "The idea behind Rebar.tv",
+          "paragraphs": [
+            "Specialist construction work is often hidden by the completed building. Rebar.tv gives IAM a category identity for the people, coordination and project information behind reinforcement work. The brand-creation brief is to make that expertise discoverable while respecting the fact that an attractive image cannot establish an engineered assembly’s adequacy."
+          ]
+        },
+        {
+          "heading": "Brand management: the meaning behind the identity",
+          "paragraphs": [
+            "A reinforcement photograph needs project context and attribution. Editorial descriptions should not infer load capacity, design compliance or installation acceptance from appearance. Brand management therefore includes more than consistent colours and titles: it keeps the contributor, the drawing context and the enquiry destination clear. It should help a contractor explain its actual role without turning a portfolio into unsupported engineering advice."
+          ]
+        },
+        {
+          "heading": "SEO and content with a specific audience",
+          "paragraphs": [
+            "Useful topics include what information belongs in an enquiry, how project responsibilities are described and what can be learned from a properly documented example. The content should separate a general trade introduction from project-specific requirements. A narrow, accurate article is a stronger foundation than broad claims about being the best reinforcement contractor in every city."
+          ]
+        },
+        {
+          "heading": "What this means for your own business",
+          "paragraphs": [
+            "Vancouver construction specialists can use this example to consider a brand built around their actual expertise. IAM’s role is the identity and marketing system; project design and acceptance remain with the appropriate qualified parties.",
+            "Explore [the Rebar.tv brand](https://rebar.tv) and compare the identity with the purpose described here. This portfolio note connects the public brand presentation with IAM’s identity and marketing approach."
+          ]
+        },
+        {
+          "heading": "Build with IAM in Vancouver and beyond",
+          "paragraphs": [
+            "A useful first brief tells us what your business does, who it serves and the decision you want a visitor to make. Bring your existing website, brand files and permission-cleared examples of your work. IAM can discuss brand creation, brand management, a website or app, and an SEO/content plan as a connected scope. Services, deliverables and pricing are agreed for your project.",
+            "See [IAM’s Vancouver brand creation, management and SEO services](/brand-creation-management-vancouver), or [tell IAM about your business](/contact?request=branding). Joining an existing industry network is a separate option to discuss; it does not transfer ownership of your business or promise a particular search result."
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
+    "trade": "Excavation and equipment publishing",
+    "tradeShort": "brand",
+    "plural": "brands",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Vancouver",
+    "province": "BC",
+    "category": "Build Journal",
+    "date": "October 25, 2026",
+    "publishedAt": "2026-10-25T20:16:53.949900+00:00",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "faqHeading": "Working with IAM",
+    "faqs": [
+      {
+        "q": "Can IAM create a brand or manage my existing identity?",
+        "a": "Contact IAM with your business, audience and priorities to discuss brand identity, website, content and marketing scope. Deliverables and pricing are agreed for the project."
+      }
+    ],
+    "cta": {
+      "eyebrow": "Brand creation · Brand management · SEO",
+      "heading": "Make your business recognisable—and easier to understand.",
+      "body": "Tell IAM what you do, who you serve and what you want to build next. Vancouver, the Lower Mainland and broader markets.",
+      "buttonText": "Discuss your brand with IAM",
+      "buttonHref": "/contact?request=branding"
+    },
+    "contactBusiness": "iam",
+    "slug": "excavators-tv-iam-brand-creation-management",
+    "title": "Excavators.tv: building an equipment brand around useful project questions",
+    "cardTitle": "Excavators.tv: building an equipment brand around useful project questions",
+    "excerpt": "IAM’s Excavators.tv brand portfolio: excavation and equipment publishing, practical brand management and a useful search strategy. Explore the work and discuss your own brand.",
+    "metaDescription": "Explore Excavators.tv in IAM’s brand-creation portfolio. Branding, brand management and SEO thinking for Vancouver businesses and beyond.",
+    "image": "/brand-portfolio/excavators-tv-iam-brand-creation-management.jpg",
+    "imageAlt": "IAM original portfolio composition featuring Excavators.tv brand imagery",
+    "ogImage": "/brand-portfolio/excavators-tv-iam-brand-creation-management.jpg",
+    "ogImageAlt": "Excavators.tv: building an equipment brand around useful project questions",
+    "richContent": {
+      "intro": "Excavators.tv is part of Industry Army Marketing’s brand-creation and brand-management portfolio. This note explains the positioning, content and search thinking behind the brand, and what another business can learn from it. IAM works on branding, websites and marketing from Vancouver for businesses in the Lower Mainland and beyond.",
+      "sections": [
+        {
+          "heading": "The idea behind Excavators.tv",
+          "paragraphs": [
+            "Excavation connects machines, attachments, operators and the conditions of a site. Excavators.tv gives IAM a video-oriented identity broad enough to cover that range while keeping a clear industry focus. The creative brief is to make equipment and project stories inviting without confusing a machine feature with a contractor’s service offer."
+          ]
+        },
+        {
+          "heading": "Brand management: the meaning behind the identity",
+          "paragraphs": [
+            "A manufacturer specification, an operator account and a project photograph need different source labels. Brand management should preserve model and configuration details and avoid claiming firsthand testing where none occurred. It also needs to identify the business responsible for a service enquiry. An equipment illustration or magazine banner cannot stand in for evidence of a contractor’s actual fleet, availability or work history."
+          ]
+        },
+        {
+          "heading": "SEO and content with a specific audience",
+          "paragraphs": [
+            "The content structure can separate equipment, attachments, buying questions and project planning. A reader exploring an attachment needs a different path from someone requesting a site assessment. Specific topics and related links help that distinction. Local pages should describe the named provider’s real work and coverage, while equipment journalism can have a broader audience without pretending every product is available locally."
+          ]
+        },
+        {
+          "heading": "What this means for your own business",
+          "paragraphs": [
+            "For a Vancouver excavation business, the example shows how a recognisable publishing identity can support genuine technical and project evidence. IAM can scope the website and marketing work around that evidence, without manufacturing a test programme or a sales result.",
+            "Explore [the Excavators.tv brand](https://excavators.tv) and compare the identity with the purpose described here. This portfolio note connects the public brand presentation with IAM’s identity and marketing approach."
+          ]
+        },
+        {
+          "heading": "Build with IAM in Vancouver and beyond",
+          "paragraphs": [
+            "A useful first brief tells us what your business does, who it serves and the decision you want a visitor to make. Bring your existing website, brand files and permission-cleared examples of your work. IAM can discuss brand creation, brand management, a website or app, and an SEO/content plan as a connected scope. Services, deliverables and pricing are agreed for your project.",
+            "See [IAM’s Vancouver brand creation, management and SEO services](/brand-creation-management-vancouver), or [tell IAM about your business](/contact?request=branding). Joining an existing industry network is a separate option to discuss; it does not transfer ownership of your business or promise a particular search result."
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
+    "trade": "Rural-industry storytelling",
+    "tradeShort": "brand",
+    "plural": "brands",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Vancouver",
+    "province": "BC",
+    "category": "Build Journal",
+    "date": "October 25, 2026",
+    "publishedAt": "2026-10-25T20:16:53.949900+00:00",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "faqHeading": "Working with IAM",
+    "faqs": [
+      {
+        "q": "Can IAM create a brand or manage my existing identity?",
+        "a": "Contact IAM with your business, audience and priorities to discuss brand identity, website, content and marketing scope. Deliverables and pricing are agreed for the project."
+      }
+    ],
+    "cta": {
+      "eyebrow": "Brand creation · Brand management · SEO",
+      "heading": "Make your business recognisable—and easier to understand.",
+      "body": "Tell IAM what you do, who you serve and what you want to build next. Vancouver, the Lower Mainland and broader markets.",
+      "buttonText": "Discuss your brand with IAM",
+      "buttonHref": "/contact?request=branding"
+    },
+    "contactBusiness": "iam",
+    "slug": "ranchers-tv-iam-brand-creation-management",
+    "title": "Ranchers.tv: creating space for land, livestock and the people doing the work",
+    "cardTitle": "Ranchers.tv: creating space for land, livestock and the people doing the work",
+    "excerpt": "IAM’s Ranchers.tv brand portfolio: rural-industry storytelling, practical brand management and a useful search strategy. Explore the work and discuss your own brand.",
+    "metaDescription": "Explore Ranchers.tv in IAM’s brand-creation portfolio. Branding, brand management and SEO thinking for Vancouver businesses and beyond.",
+    "image": "/brand-portfolio/ranchers-tv-iam-brand-creation-management.jpg",
+    "imageAlt": "IAM original portfolio composition featuring Ranchers.tv brand imagery",
+    "ogImage": "/brand-portfolio/ranchers-tv-iam-brand-creation-management.jpg",
+    "ogImageAlt": "Ranchers.tv: creating space for land, livestock and the people doing the work",
+    "richContent": {
+      "intro": "Ranchers.tv is part of Industry Army Marketing’s brand-creation and brand-management portfolio. This note explains the positioning, content and search thinking behind the brand, and what another business can learn from it. IAM works on branding, websites and marketing from Vancouver for businesses in the Lower Mainland and beyond.",
+      "sections": [
+        {
+          "heading": "The idea behind Ranchers.tv",
+          "paragraphs": [
+            "Ranching stories combine place, work and decisions that are difficult to reduce to a product card. Ranchers.tv gives IAM a video and editorial identity for that broader context. The branding opportunity is a recognisable setting for contributors while leaving room for differences between operations, regions and the people behind them."
+          ]
+        },
+        {
+          "heading": "Brand management: the meaning behind the identity",
+          "paragraphs": [
+            "A livestock or landscape image should not imply ownership, location or operating results without evidence. The brand-management brief keeps those facts visible and gives contributors proper credit. It also distinguishes a general story from an actual property, equipment or livestock offer. Seasonal and regional context matters, so an older account should not be republished with a new date simply to appear current."
+          ]
+        },
+        {
+          "heading": "SEO and content with a specific audience",
+          "paragraphs": [
+            "A useful archive can organise stories around genuine reader questions and clearly identified subjects rather than an unstructured video feed. Country and region references need to belong to the actual story. Editorial interest does not establish investment merit or an endorsement of an operation. The contact path should match the purpose: contributor, advertiser or the business actually making an offer."
+          ]
+        },
+        {
+          "heading": "What this means for your own business",
+          "paragraphs": [
+            "For businesses reaching rural audiences from Vancouver or elsewhere, IAM can discuss a brand and content system that respects those distinctions. A coherent identity should make the human and operational story easier to follow, not replace it with generic promotional copy.",
+            "Explore [the Ranchers.tv brand](https://ranchers.tv) and compare the identity with the purpose described here. This portfolio note connects the public brand presentation with IAM’s identity and marketing approach."
+          ]
+        },
+        {
+          "heading": "Build with IAM in Vancouver and beyond",
+          "paragraphs": [
+            "A useful first brief tells us what your business does, who it serves and the decision you want a visitor to make. Bring your existing website, brand files and permission-cleared examples of your work. IAM can discuss brand creation, brand management, a website or app, and an SEO/content plan as a connected scope. Services, deliverables and pricing are agreed for your project.",
+            "See [IAM’s Vancouver brand creation, management and SEO services](/brand-creation-management-vancouver), or [tell IAM about your business](/contact?request=branding). Joining an existing industry network is a separate option to discuss; it does not transfer ownership of your business or promise a particular search result."
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
+    "trade": "Catering and hospitality branding",
+    "tradeShort": "brand",
+    "plural": "brands",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Vancouver",
+    "province": "BC",
+    "category": "Build Journal",
+    "date": "October 25, 2026",
+    "publishedAt": "2026-10-25T20:16:53.949900+00:00",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "faqHeading": "Working with IAM",
+    "faqs": [
+      {
+        "q": "Can IAM create a brand or manage my existing identity?",
+        "a": "Contact IAM with your business, audience and priorities to discuss brand identity, website, content and marketing scope. Deliverables and pricing are agreed for the project."
+      }
+    ],
+    "cta": {
+      "eyebrow": "Brand creation · Brand management · SEO",
+      "heading": "Make your business recognisable—and easier to understand.",
+      "body": "Tell IAM what you do, who you serve and what you want to build next. Vancouver, the Lower Mainland and broader markets.",
+      "buttonText": "Discuss your brand with IAM",
+      "buttonHref": "/contact?request=branding"
+    },
+    "contactBusiness": "iam",
+    "slug": "caterers-tv-iam-brand-creation-management",
+    "title": "Caterers.tv: connecting an appetising identity with practical event planning",
+    "cardTitle": "Caterers.tv: connecting an appetising identity with practical event planning",
+    "excerpt": "IAM’s Caterers.tv brand portfolio: catering and hospitality branding, practical brand management and a useful search strategy. Explore the work and discuss your own brand.",
+    "metaDescription": "Explore Caterers.tv in IAM’s brand-creation portfolio. Branding, brand management and SEO thinking for Vancouver businesses and beyond.",
+    "image": "/brand-portfolio/caterers-tv-iam-brand-creation-management.jpg",
+    "imageAlt": "IAM original portfolio composition featuring Caterers.tv brand imagery",
+    "ogImage": "/brand-portfolio/caterers-tv-iam-brand-creation-management.jpg",
+    "ogImageAlt": "Caterers.tv: connecting an appetising identity with practical event planning",
+    "richContent": {
+      "intro": "Caterers.tv is part of Industry Army Marketing’s brand-creation and brand-management portfolio. This note explains the positioning, content and search thinking behind the brand, and what another business can learn from it. IAM works on branding, websites and marketing from Vancouver for businesses in the Lower Mainland and beyond.",
+      "sections": [
+        {
+          "heading": "The idea behind Caterers.tv",
+          "paragraphs": [
+            "Food imagery attracts attention, but a catering enquiry quickly becomes a planning conversation. Caterers.tv gives IAM a visual identity around menus, events and the businesses delivering them. The brand-creation task is to connect the appealing presentation with the information a planner needs to start a realistic discussion."
+          ]
+        },
+        {
+          "heading": "Brand management: the meaning behind the identity",
+          "paragraphs": [
+            "Menu imagery should be credited and should not imply a particular caterer prepared it without confirmation. Dietary accommodation, guest numbers, staffing and availability are facts to establish with the provider. Brand management keeps the event story, service descriptions and contact destination aligned. It should also distinguish editorial inspiration from a current priced package or a confirmed ability to serve a particular requirement."
+          ]
+        },
+        {
+          "heading": "SEO and content with a specific audience",
+          "paragraphs": [
+            "A useful content structure can separate event types, service formats, planning questions and provider introductions. Readers comparing a plated dinner with another format need a clear explanation, not a universal recommendation. Location pages should reflect genuine coverage, and current menu or date claims need checking. Marketing content can help a planner prepare a better brief before requesting a quote."
+          ]
+        },
+        {
+          "heading": "What this means for your own business",
+          "paragraphs": [
+            "For a Vancouver caterer or hospitality business, IAM can discuss identity, a visual website and an ongoing publishing plan using permission-cleared material. Event service enquiries belong with the caterer; branding and network-participation enquiries belong with IAM.",
+            "Explore [the Caterers.tv brand](https://caterers.tv) and compare the identity with the purpose described here. This portfolio note connects the public brand presentation with IAM’s identity and marketing approach."
+          ]
+        },
+        {
+          "heading": "Build with IAM in Vancouver and beyond",
+          "paragraphs": [
+            "A useful first brief tells us what your business does, who it serves and the decision you want a visitor to make. Bring your existing website, brand files and permission-cleared examples of your work. IAM can discuss brand creation, brand management, a website or app, and an SEO/content plan as a connected scope. Services, deliverables and pricing are agreed for your project.",
+            "See [IAM’s Vancouver brand creation, management and SEO services](/brand-creation-management-vancouver), or [tell IAM about your business](/contact?request=branding). Joining an existing industry network is a separate option to discuss; it does not transfer ownership of your business or promise a particular search result."
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
+    "trade": "Founder communication and pitch identity",
+    "tradeShort": "brand",
+    "plural": "brands",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Vancouver",
+    "province": "BC",
+    "category": "Build Journal",
+    "date": "October 25, 2026",
+    "publishedAt": "2026-10-25T20:16:53.949900+00:00",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "faqHeading": "Working with IAM",
+    "faqs": [
+      {
+        "q": "Can IAM create a brand or manage my existing identity?",
+        "a": "Contact IAM with your business, audience and priorities to discuss brand identity, website, content and marketing scope. Deliverables and pricing are agreed for the project."
+      }
+    ],
+    "cta": {
+      "eyebrow": "Brand creation · Brand management · SEO",
+      "heading": "Make your business recognisable—and easier to understand.",
+      "body": "Tell IAM what you do, who you serve and what you want to build next. Vancouver, the Lower Mainland and broader markets.",
+      "buttonText": "Discuss your brand with IAM",
+      "buttonHref": "/contact?request=branding"
+    },
+    "contactBusiness": "iam",
+    "slug": "pitchdeck-tv-iam-brand-creation-management",
+    "title": "PitchDeck.tv: a brand for explaining a business without turning the story into a promise",
+    "cardTitle": "PitchDeck.tv: a brand for explaining a business without turning the story into a promise",
+    "excerpt": "IAM’s PitchDeck.tv brand portfolio: founder communication and pitch identity, practical brand management and a useful search strategy. Explore the work and discuss your own brand.",
+    "metaDescription": "Explore PitchDeck.tv in IAM’s brand-creation portfolio. Branding, brand management and SEO thinking for Vancouver businesses and beyond.",
+    "image": "/brand-portfolio/pitchdeck-tv-iam-brand-creation-management.jpg",
+    "imageAlt": "IAM original portfolio composition featuring PitchDeck.tv brand imagery",
+    "ogImage": "/brand-portfolio/pitchdeck-tv-iam-brand-creation-management.jpg",
+    "ogImageAlt": "PitchDeck.tv: a brand for explaining a business without turning the story into a promise",
+    "richContent": {
+      "intro": "PitchDeck.tv is part of Industry Army Marketing’s brand-creation and brand-management portfolio. This note explains the positioning, content and search thinking behind the brand, and what another business can learn from it. IAM works on branding, websites and marketing from Vancouver for businesses in the Lower Mainland and beyond.",
+      "sections": [
+        {
+          "heading": "The idea behind PitchDeck.tv",
+          "paragraphs": [
+            "A pitch has to make a business understandable before it can ask for commitment. PitchDeck.tv gives IAM a category-focused identity for that explanation. The visual and editorial brief is to help founders introduce a problem, an offer and the evidence behind them, while making clear what is already operating and what remains a plan."
+          ]
+        },
+        {
+          "heading": "Brand management: the meaning behind the identity",
+          "paragraphs": [
+            "Brand management in a pitch context includes consistency between the public story and the underlying facts. A polished deck does not establish traction, an investment relationship or a return. Numbers need dates and definitions. A concept needs to remain labelled as a concept. The design system should improve communication without making preliminary assumptions appear to be independently verified outcomes."
+          ]
+        },
+        {
+          "heading": "SEO and content with a specific audience",
+          "paragraphs": [
+            "Founders may look for examples, communication guidance or a service provider; those are separate search journeys. Useful content should identify the audience and stage of the discussion. A public explanatory article should not pretend to be investment advice or an invitation to invest in a specific issuer. Contact routes need to distinguish marketing work from an actual regulated financial transaction."
+          ]
+        },
+        {
+          "heading": "What this means for your own business",
+          "paragraphs": [
+            "Vancouver founders and businesses elsewhere can approach IAM about positioning, visual presentation and website storytelling. A good brief starts with the audience, the action being requested and the evidence that can be shown, rather than a promise that presentation alone will raise capital.",
+            "Explore [the PitchDeck.tv brand](https://pitchdeck.tv) and compare the identity with the purpose described here. This portfolio note connects the public brand presentation with IAM’s identity and marketing approach."
+          ]
+        },
+        {
+          "heading": "Build with IAM in Vancouver and beyond",
+          "paragraphs": [
+            "A useful first brief tells us what your business does, who it serves and the decision you want a visitor to make. Bring your existing website, brand files and permission-cleared examples of your work. IAM can discuss brand creation, brand management, a website or app, and an SEO/content plan as a connected scope. Services, deliverables and pricing are agreed for your project.",
+            "See [IAM’s Vancouver brand creation, management and SEO services](/brand-creation-management-vancouver), or [tell IAM about your business](/contact?request=branding). Joining an existing industry network is a separate option to discuss; it does not transfer ownership of your business or promise a particular search result."
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
+    "trade": "Trust-brand positioning",
+    "tradeShort": "brand",
+    "plural": "brands",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Vancouver",
+    "province": "BC",
+    "category": "Build Journal",
+    "date": "October 25, 2026",
+    "publishedAt": "2026-10-25T20:16:53.949900+00:00",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "faqHeading": "Working with IAM",
+    "faqs": [
+      {
+        "q": "Can IAM create a brand or manage my existing identity?",
+        "a": "Contact IAM with your business, audience and priorities to discuss brand identity, website, content and marketing scope. Deliverables and pricing are agreed for the project."
+      }
+    ],
+    "cta": {
+      "eyebrow": "Brand creation · Brand management · SEO",
+      "heading": "Make your business recognisable—and easier to understand.",
+      "body": "Tell IAM what you do, who you serve and what you want to build next. Vancouver, the Lower Mainland and broader markets.",
+      "buttonText": "Discuss your brand with IAM",
+      "buttonHref": "/contact?request=branding"
+    },
+    "contactBusiness": "iam",
+    "slug": "eyespyr-iam-brand-creation-management",
+    "title": "EyeSpyR: designing a trust-oriented identity with precise boundaries",
+    "cardTitle": "EyeSpyR: designing a trust-oriented identity with precise boundaries",
+    "excerpt": "IAM’s EyeSpyR brand portfolio: trust-brand positioning, practical brand management and a useful search strategy. Explore the work and discuss your own brand.",
+    "metaDescription": "Explore EyeSpyR in IAM’s brand-creation portfolio. Branding, brand management and SEO thinking for Vancouver businesses and beyond.",
+    "image": "/brand-portfolio/eyespyr-iam-brand-creation-management.jpg",
+    "imageAlt": "IAM original portfolio composition featuring EyeSpyR brand imagery",
+    "ogImage": "/brand-portfolio/eyespyr-iam-brand-creation-management.jpg",
+    "ogImageAlt": "EyeSpyR: designing a trust-oriented identity with precise boundaries",
+    "richContent": {
+      "intro": "EyeSpyR is part of Industry Army Marketing’s brand-creation and brand-management portfolio. This note explains the positioning, content and search thinking behind the brand, and what another business can learn from it. IAM works on branding, websites and marketing from Vancouver for businesses in the Lower Mainland and beyond.",
+      "sections": [
+        {
+          "heading": "The idea behind EyeSpyR",
+          "paragraphs": [
+            "A trust-oriented name creates a demanding communication task: people need to understand exactly what is checked and what a symbol means. EyeSpyR is part of IAM’s portfolio direction around that problem. Its brand identity can make a standard or review process recognisable, but the visual mark cannot establish that a complete verification service has been implemented."
+          ]
+        },
+        {
+          "heading": "Brand management: the meaning behind the identity",
+          "paragraphs": [
+            "Brand management needs to define the distinction between an identity concept, a documented process and an actual check performed for a named business. A badge must not imply background screening, certification or regulatory approval unless those claims are supported. When a capability is still developing, the public copy should say so. Consistency is useful only if the meaning being repeated is accurate."
+          ]
+        },
+        {
+          "heading": "SEO and content with a specific audience",
+          "paragraphs": [
+            "Useful public content can explain the questions behind verification: which evidence is requested, who reviews it, when it was checked and what the process excludes. Those are better foundations than broad claims that a badge makes a contractor safe or best. The search and enquiry experience should also separate interest in the developing brand from a claim that a provider has already passed an active standard."
+          ]
+        },
+        {
+          "heading": "What this means for your own business",
+          "paragraphs": [
+            "For a Vancouver business building a trust-led product, IAM can discuss the naming, visual system and precise language around its actual process. The marketing work should make the limits understandable at the same time as the intended value.",
+            "Explore [the EyeSpyR brand](https://eyespyr.com) and compare the identity with the purpose described here. This portfolio note connects the public brand presentation with IAM’s identity and marketing approach."
+          ]
+        },
+        {
+          "heading": "Build with IAM in Vancouver and beyond",
+          "paragraphs": [
+            "A useful first brief tells us what your business does, who it serves and the decision you want a visitor to make. Bring your existing website, brand files and permission-cleared examples of your work. IAM can discuss brand creation, brand management, a website or app, and an SEO/content plan as a connected scope. Services, deliverables and pricing are agreed for your project.",
+            "See [IAM’s Vancouver brand creation, management and SEO services](/brand-creation-management-vancouver), or [tell IAM about your business](/contact?request=branding). Joining an existing industry network is a separate option to discuss; it does not transfer ownership of your business or promise a particular search result."
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
+    "trade": "Creative-service network branding",
+    "tradeShort": "brand",
+    "plural": "brands",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Vancouver",
+    "province": "BC",
+    "category": "Build Journal",
+    "date": "October 25, 2026",
+    "publishedAt": "2026-10-25T20:16:53.949900+00:00",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "faqHeading": "Working with IAM",
+    "faqs": [
+      {
+        "q": "Can IAM create a brand or manage my existing identity?",
+        "a": "Contact IAM with your business, audience and priorities to discuss brand identity, website, content and marketing scope. Deliverables and pricing are agreed for the project."
+      }
+    ],
+    "cta": {
+      "eyebrow": "Brand creation · Brand management · SEO",
+      "heading": "Make your business recognisable—and easier to understand.",
+      "body": "Tell IAM what you do, who you serve and what you want to build next. Vancouver, the Lower Mainland and broader markets.",
+      "buttonText": "Discuss your brand with IAM",
+      "buttonHref": "/contact?request=branding"
+    },
+    "contactBusiness": "iam",
+    "slug": "videographers-io-iam-brand-creation-management",
+    "title": "Videographers.io: giving creative talent a clear route from portfolio to enquiry",
+    "cardTitle": "Videographers.io: giving creative talent a clear route from portfolio to enquiry",
+    "excerpt": "IAM’s Videographers.io brand portfolio: creative-service network branding, practical brand management and a useful search strategy. Explore the work and discuss your own brand.",
+    "metaDescription": "Explore Videographers.io in IAM’s brand-creation portfolio. Branding, brand management and SEO thinking for Vancouver businesses and beyond.",
+    "image": "/brand-portfolio/videographers-io-iam-brand-creation-management.jpg",
+    "imageAlt": "IAM original portfolio composition featuring Videographers.io brand imagery",
+    "ogImage": "/brand-portfolio/videographers-io-iam-brand-creation-management.jpg",
+    "ogImageAlt": "Videographers.io: giving creative talent a clear route from portfolio to enquiry",
+    "richContent": {
+      "intro": "Videographers.io is part of Industry Army Marketing’s brand-creation and brand-management portfolio. This note explains the positioning, content and search thinking behind the brand, and what another business can learn from it. IAM works on branding, websites and marketing from Vancouver for businesses in the Lower Mainland and beyond.",
+      "sections": [
+        {
+          "heading": "The idea behind Videographers.io",
+          "paragraphs": [
+            "A video portfolio can demonstrate style, but it does not automatically answer whether a creator fits a particular brief. Videographers.io gives IAM a direct category identity around that discovery problem. The creative opportunity is to make the work, its authorship and the enquiry path easy to understand without reducing distinct creators to interchangeable thumbnails."
+          ]
+        },
+        {
+          "heading": "Brand management: the meaning behind the identity",
+          "paragraphs": [
+            "Project credits matter: filming, editing, production and other roles may belong to different people. Brand management should preserve those distinctions and the creator’s rights. A featured reel does not establish date availability or permission to reuse its footage in another campaign. The shared network identity can make navigation consistent while keeping the actual professional and project context visible."
+          ]
+        },
+        {
+          "heading": "SEO and content with a specific audience",
+          "paragraphs": [
+            "A useful website can organise work by the type of project and the question a buyer is trying to answer. Someone planning an event may need a different example from a business seeking a product film. Location, services and production roles should be accurate. An editorial profile or showcase should not imply a commission, employment relationship or endorsement that has not been confirmed."
+          ]
+        },
+        {
+          "heading": "What this means for your own business",
+          "paragraphs": [
+            "For Vancouver creative businesses and clients further afield, IAM can discuss the brand, portfolio presentation and enquiry experience. A good starting brief identifies the intended audience, use of the footage, timing and what material is already cleared for publication.",
+            "Explore [the Videographers.io brand](https://videographers.io) and compare the identity with the purpose described here. This portfolio note connects the public brand presentation with IAM’s identity and marketing approach."
+          ]
+        },
+        {
+          "heading": "Build with IAM in Vancouver and beyond",
+          "paragraphs": [
+            "A useful first brief tells us what your business does, who it serves and the decision you want a visitor to make. Bring your existing website, brand files and permission-cleared examples of your work. IAM can discuss brand creation, brand management, a website or app, and an SEO/content plan as a connected scope. Services, deliverables and pricing are agreed for your project.",
+            "See [IAM’s Vancouver brand creation, management and SEO services](/brand-creation-management-vancouver), or [tell IAM about your business](/contact?request=branding). Joining an existing industry network is a separate option to discuss; it does not transfer ownership of your business or promise a particular search result."
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
+    "trade": "Media-network brand management",
+    "tradeShort": "brand",
+    "plural": "brands",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Vancouver",
+    "province": "BC",
+    "category": "Build Journal",
+    "date": "October 25, 2026",
+    "publishedAt": "2026-10-25T20:16:53.949900+00:00",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "faqHeading": "Working with IAM",
+    "faqs": [
+      {
+        "q": "Can IAM create a brand or manage my existing identity?",
+        "a": "Contact IAM with your business, audience and priorities to discuss brand identity, website, content and marketing scope. Deliverables and pricing are agreed for the project."
+      }
+    ],
+    "cta": {
+      "eyebrow": "Brand creation · Brand management · SEO",
+      "heading": "Make your business recognisable—and easier to understand.",
+      "body": "Tell IAM what you do, who you serve and what you want to build next. Vancouver, the Lower Mainland and broader markets.",
+      "buttonText": "Discuss your brand with IAM",
+      "buttonHref": "/contact?request=branding"
+    },
+    "contactBusiness": "iam",
+    "slug": "talc-tv-iam-brand-creation-management",
+    "title": "TALC.tv: making a distribution brand explain the path from content to audience",
+    "cardTitle": "TALC.tv: making a distribution brand explain the path from content to audience",
+    "excerpt": "IAM’s TALC.tv brand portfolio: media-network brand management, practical brand management and a useful search strategy. Explore the work and discuss your own brand.",
+    "metaDescription": "Explore TALC.tv in IAM’s brand-creation portfolio. Branding, brand management and SEO thinking for Vancouver businesses and beyond.",
+    "image": "/brand-portfolio/talc-tv-iam-brand-creation-management.jpg",
+    "imageAlt": "IAM original portfolio composition featuring TALC.tv brand imagery",
+    "ogImage": "/brand-portfolio/talc-tv-iam-brand-creation-management.jpg",
+    "ogImageAlt": "TALC.tv: making a distribution brand explain the path from content to audience",
+    "richContent": {
+      "intro": "TALC.tv is part of Industry Army Marketing’s brand-creation and brand-management portfolio. This note explains the positioning, content and search thinking behind the brand, and what another business can learn from it. IAM works on branding, websites and marketing from Vancouver for businesses in the Lower Mainland and beyond.",
+      "sections": [
+        {
+          "heading": "The idea behind TALC.tv",
+          "paragraphs": [
+            "Publishing a video and distributing it are different jobs. TALC.tv gives IAM a brand direction for discussing that wider path from a finished piece of content to the places it can be presented. The identity needs to make the relationship understandable without treating a network name as proof that every destination is connected or every feature is available."
+          ]
+        },
+        {
+          "heading": "Brand management: the meaning behind the identity",
+          "paragraphs": [
+            "Brand management should keep current publishing channels, planned integrations and actual release evidence separate. A content item is not distributed everywhere merely because a list of destinations exists. Each destination needs the appropriate rights, account access and verified publication. The visual system can unify a campaign while the reporting remains specific about what was prepared, posted and checked."
+          ]
+        },
+        {
+          "heading": "SEO and content with a specific audience",
+          "paragraphs": [
+            "Clear explanatory content can answer what distribution includes, which audience a piece is designed for and how a business can evaluate a rollout. Search copy should not promise reach, views or indexing without evidence. Useful case notes can link the actual published destinations and explain the decisions behind them. They should also state when a capability remains part of a developing direction."
+          ]
+        },
+        {
+          "heading": "What this means for your own business",
+          "paragraphs": [
+            "For Vancouver businesses and brands reaching wider markets, IAM can scope the content and marketing work around a concrete channel plan. The proposal should define deliverables and verification, rather than treating a distribution brand as a guarantee of audience response.",
+            "Explore [the TALC.tv brand](https://talc.tv) and compare the identity with the purpose described here. This portfolio note connects the public brand presentation with IAM’s identity and marketing approach."
+          ]
+        },
+        {
+          "heading": "Build with IAM in Vancouver and beyond",
+          "paragraphs": [
+            "A useful first brief tells us what your business does, who it serves and the decision you want a visitor to make. Bring your existing website, brand files and permission-cleared examples of your work. IAM can discuss brand creation, brand management, a website or app, and an SEO/content plan as a connected scope. Services, deliverables and pricing are agreed for your project.",
+            "See [IAM’s Vancouver brand creation, management and SEO services](/brand-creation-management-vancouver), or [tell IAM about your business](/contact?request=branding). Joining an existing industry network is a separate option to discuss; it does not transfer ownership of your business or promise a particular search result."
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
+    "trade": "B2B publishing and brand differentiation",
+    "tradeShort": "brand",
+    "plural": "brands",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Vancouver",
+    "province": "BC",
+    "category": "Build Journal",
+    "date": "October 25, 2026",
+    "publishedAt": "2026-10-25T20:16:53.949900+00:00",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "faqHeading": "Working with IAM",
+    "faqs": [
+      {
+        "q": "Can IAM create a brand or manage my existing identity?",
+        "a": "Contact IAM with your business, audience and priorities to discuss brand identity, website, content and marketing scope. Deliverables and pricing are agreed for the project."
+      }
+    ],
+    "cta": {
+      "eyebrow": "Brand creation · Brand management · SEO",
+      "heading": "Make your business recognisable—and easier to understand.",
+      "body": "Tell IAM what you do, who you serve and what you want to build next. Vancouver, the Lower Mainland and broader markets.",
+      "buttonText": "Discuss your brand with IAM",
+      "buttonHref": "/contact?request=branding"
+    },
+    "contactBusiness": "iam",
+    "slug": "weddingsaas-iam-brand-creation-management",
+    "title": "WeddingSaaS: a distinct business-software voice within the wedding portfolio",
+    "cardTitle": "WeddingSaaS: a distinct business-software voice within the wedding portfolio",
+    "excerpt": "IAM’s WeddingSaaS brand portfolio: b2b publishing and brand differentiation, practical brand management and a useful search strategy. Explore the work and discuss your own brand.",
+    "metaDescription": "Explore WeddingSaaS in IAM’s brand-creation portfolio. Branding, brand management and SEO thinking for Vancouver businesses and beyond.",
+    "image": "/brand-portfolio/weddingsaas-iam-brand-creation-management.jpg",
+    "imageAlt": "IAM original portfolio composition featuring WeddingSaaS brand imagery",
+    "ogImage": "/brand-portfolio/weddingsaas-iam-brand-creation-management.jpg",
+    "ogImageAlt": "WeddingSaaS: a distinct business-software voice within the wedding portfolio",
+    "richContent": {
+      "intro": "WeddingSaaS is part of Industry Army Marketing’s brand-creation and brand-management portfolio. This note explains the positioning, content and search thinking behind the brand, and what another business can learn from it. IAM works on branding, websites and marketing from Vancouver for businesses in the Lower Mainland and beyond.",
+      "sections": [
+        {
+          "heading": "The idea behind WeddingSaaS",
+          "paragraphs": [
+            "Wedding couples and wedding businesses are not looking for the same information. WeddingSaaS gives IAM a separate identity for software, operations and the business side of the industry. That distinction helps the wider wedding portfolio: a practical workflow article can speak directly to a planner or venue without competing with consumer inspiration for the same role."
+          ]
+        },
+        {
+          "heading": "Brand management: the meaning behind the identity",
+          "paragraphs": [
+            "The brand-management brief keeps product reporting separate from product development. Covering another company’s software does not imply a partnership, a first-hand test or an endorsement. Features need checking against current official material and must be distinguished from a supplier’s roadmap. The publishing identity should make the audience and byline clear while keeping commercial relationships transparent."
+          ]
+        },
+        {
+          "heading": "SEO and content with a specific audience",
+          "paragraphs": [
+            "Wedding-business search can begin with an operational question: enquiries, proposals, scheduling, payments or the client view of a workflow. A useful article identifies the specific question and explains the limits of the evidence. It should not repeat the same broad software description for every vendor. Related links can connect a practical check to other business topics without sending a couple into an unrelated B2B journey."
+          ]
+        },
+        {
+          "heading": "What this means for your own business",
+          "paragraphs": [
+            "For a Vancouver software or wedding-business founder, this example shows why adjacent audiences can need separate brands. IAM can discuss positioning, publication structure and marketing around the audience a product actually serves.",
+            "Explore [the WeddingSaaS brand](https://weddingsaas.com) and compare the identity with the purpose described here. This portfolio note connects the public brand presentation with IAM’s identity and marketing approach."
+          ]
+        },
+        {
+          "heading": "Build with IAM in Vancouver and beyond",
+          "paragraphs": [
+            "A useful first brief tells us what your business does, who it serves and the decision you want a visitor to make. Bring your existing website, brand files and permission-cleared examples of your work. IAM can discuss brand creation, brand management, a website or app, and an SEO/content plan as a connected scope. Services, deliverables and pricing are agreed for your project.",
+            "See [IAM’s Vancouver brand creation, management and SEO services](/brand-creation-management-vancouver), or [tell IAM about your business](/contact?request=branding). Joining an existing industry network is a separate option to discuss; it does not transfer ownership of your business or promise a particular search result."
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
+    "trade": "Emerging-service brand positioning",
+    "tradeShort": "brand",
+    "plural": "brands",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Vancouver",
+    "province": "BC",
+    "category": "Build Journal",
+    "date": "October 25, 2026",
+    "publishedAt": "2026-10-25T20:16:53.949900+00:00",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "faqHeading": "Working with IAM",
+    "faqs": [
+      {
+        "q": "Can IAM create a brand or manage my existing identity?",
+        "a": "Contact IAM with your business, audience and priorities to discuss brand identity, website, content and marketing scope. Deliverables and pricing are agreed for the project."
+      }
+    ],
+    "cta": {
+      "eyebrow": "Brand creation · Brand management · SEO",
+      "heading": "Make your business recognisable—and easier to understand.",
+      "body": "Tell IAM what you do, who you serve and what you want to build next. Vancouver, the Lower Mainland and broader markets.",
+      "buttonText": "Discuss your brand with IAM",
+      "buttonHref": "/contact?request=branding"
+    },
+    "contactBusiness": "iam",
+    "slug": "errands-io-iam-brand-creation-management",
+    "title": "Errands.io: creating a service identity while keeping future delivery ideas honest",
+    "cardTitle": "Errands.io: creating a service identity while keeping future delivery ideas honest",
+    "excerpt": "IAM’s Errands.io brand portfolio: emerging-service brand positioning, practical brand management and a useful search strategy. Explore the work and discuss your own brand.",
+    "metaDescription": "Explore Errands.io in IAM’s brand-creation portfolio. Branding, brand management and SEO thinking for Vancouver businesses and beyond.",
+    "image": "/brand-portfolio/errands-io-iam-brand-creation-management.jpg",
+    "imageAlt": "IAM original portfolio composition featuring Errands.io brand imagery",
+    "ogImage": "/brand-portfolio/errands-io-iam-brand-creation-management.jpg",
+    "ogImageAlt": "Errands.io: creating a service identity while keeping future delivery ideas honest",
+    "richContent": {
+      "intro": "Errands.io is part of Industry Army Marketing’s brand-creation and brand-management portfolio. This note explains the positioning, content and search thinking behind the brand, and what another business can learn from it. IAM works on branding, websites and marketing from Vancouver for businesses in the Lower Mainland and beyond.",
+      "sections": [
+        {
+          "heading": "The idea behind Errands.io",
+          "paragraphs": [
+            "The word errands is familiar, while drone and last-mile service ideas introduce less familiar operating questions. Errands.io brings those directions into IAM’s portfolio. The brand-creation task is to connect the everyday need with a clear explanation of the proposed service, without making a developing delivery concept look like an operating fleet."
+          ]
+        },
+        {
+          "heading": "Brand management: the meaning behind the identity",
+          "paragraphs": [
+            "Availability, delivery areas, operating permissions, payload and timing are separate facts to verify before they become a customer promise. Brand management should keep concept artwork and future capabilities labelled. A strong domain and a polished interface are not evidence that a regulated transport operation is ready. The public enquiry should match the current stage, such as a discussion of the concept or a specifically confirmed service."
+          ]
+        },
+        {
+          "heading": "SEO and content with a specific audience",
+          "paragraphs": [
+            "Content can explain the problem, intended users and decision questions while the offer develops. It should distinguish ordinary local-service requests from specialised drone operations. Search pages should not imply immediate coverage in every municipality or fabricate delivery prices. Useful early content makes the limits and next steps understandable instead of collecting customers for an unconfirmed capability."
+          ]
+        },
+        {
+          "heading": "What this means for your own business",
+          "paragraphs": [
+            "For Vancouver founders exploring emerging services, IAM can help frame the identity, website and launch communication. Operational readiness needs its own evidence and scope; the branding should make that boundary easier for customers to understand.",
+            "Explore [the Errands.io brand](https://errands.io) and compare the identity with the purpose described here. This portfolio note connects the public brand presentation with IAM’s identity and marketing approach."
+          ]
+        },
+        {
+          "heading": "Build with IAM in Vancouver and beyond",
+          "paragraphs": [
+            "A useful first brief tells us what your business does, who it serves and the decision you want a visitor to make. Bring your existing website, brand files and permission-cleared examples of your work. IAM can discuss brand creation, brand management, a website or app, and an SEO/content plan as a connected scope. Services, deliverables and pricing are agreed for your project.",
+            "See [IAM’s Vancouver brand creation, management and SEO services](/brand-creation-management-vancouver), or [tell IAM about your business](/contact?request=branding). Joining an existing industry network is a separate option to discuss; it does not transfer ownership of your business or promise a particular search result."
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
+    "trade": "Freight and logistics identity",
+    "tradeShort": "brand",
+    "plural": "brands",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Vancouver",
+    "province": "BC",
+    "category": "Build Journal",
+    "date": "October 25, 2026",
+    "publishedAt": "2026-10-25T20:16:53.949900+00:00",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "faqHeading": "Working with IAM",
+    "faqs": [
+      {
+        "q": "Can IAM create a brand or manage my existing identity?",
+        "a": "Contact IAM with your business, audience and priorities to discuss brand identity, website, content and marketing scope. Deliverables and pricing are agreed for the project."
+      }
+    ],
+    "cta": {
+      "eyebrow": "Brand creation · Brand management · SEO",
+      "heading": "Make your business recognisable—and easier to understand.",
+      "body": "Tell IAM what you do, who you serve and what you want to build next. Vancouver, the Lower Mainland and broader markets.",
+      "buttonText": "Discuss your brand with IAM",
+      "buttonHref": "/contact?request=branding"
+    },
+    "contactBusiness": "iam",
+    "slug": "backhaul-io-iam-brand-creation-management",
+    "title": "Backhaul.io: a logistics brand built around a specific business problem",
+    "cardTitle": "Backhaul.io: a logistics brand built around a specific business problem",
+    "excerpt": "IAM’s Backhaul.io brand portfolio: freight and logistics identity, practical brand management and a useful search strategy. Explore the work and discuss your own brand.",
+    "metaDescription": "Explore Backhaul.io in IAM’s brand-creation portfolio. Branding, brand management and SEO thinking for Vancouver businesses and beyond.",
+    "image": "/brand-portfolio/backhaul-io-iam-brand-creation-management.jpg",
+    "imageAlt": "IAM original portfolio composition featuring Backhaul.io brand imagery",
+    "ogImage": "/brand-portfolio/backhaul-io-iam-brand-creation-management.jpg",
+    "ogImageAlt": "Backhaul.io: a logistics brand built around a specific business problem",
+    "richContent": {
+      "intro": "Backhaul.io is part of Industry Army Marketing’s brand-creation and brand-management portfolio. This note explains the positioning, content and search thinking behind the brand, and what another business can learn from it. IAM works on branding, websites and marketing from Vancouver for businesses in the Lower Mainland and beyond.",
+      "sections": [
+        {
+          "heading": "The idea behind Backhaul.io",
+          "paragraphs": [
+            "A freight brand becomes easier to understand when it is anchored to a specific operational question. Backhaul.io gives IAM a focused identity around freight and return-trip opportunities. The creative task is to explain who the intended participants are and what a useful enquiry needs, while avoiding the impression that a domain alone represents an active matching or dispatch system."
+          ]
+        },
+        {
+          "heading": "Brand management: the meaning behind the identity",
+          "paragraphs": [
+            "Brand management should distinguish an informational network, a developing platform and a confirmed carrier service. Loads, lanes, availability and operating credentials need evidence from the responsible business. A map, dashboard concept or vehicle illustration cannot establish live capacity or tracking. The identity should help people understand the offer without implying a brokerage role or transaction that has not been confirmed."
+          ]
+        },
+        {
+          "heading": "SEO and content with a specific audience",
+          "paragraphs": [
+            "Useful logistics content can organise questions around shipment requirements, route context and the information needed to assess a move. A specific explanation is more valuable than many near-identical city pages. Dates and availability matter, and a published example should not become a standing promise. Marketing enquiries about the brand or platform should be separated from a time-sensitive request for freight service."
+          ]
+        },
+        {
+          "heading": "What this means for your own business",
+          "paragraphs": [
+            "For Vancouver logistics businesses and operators in broader markets, IAM can discuss naming, website structure and a clear commercial story. The proposal should identify the actual product stage and enquiry owner before advertising functionality or geographic reach.",
+            "Explore [the Backhaul.io brand](https://backhaul.io) and compare the identity with the purpose described here. This portfolio note connects the public brand presentation with IAM’s identity and marketing approach."
+          ]
+        },
+        {
+          "heading": "Build with IAM in Vancouver and beyond",
+          "paragraphs": [
+            "A useful first brief tells us what your business does, who it serves and the decision you want a visitor to make. Bring your existing website, brand files and permission-cleared examples of your work. IAM can discuss brand creation, brand management, a website or app, and an SEO/content plan as a connected scope. Services, deliverables and pricing are agreed for your project.",
+            "See [IAM’s Vancouver brand creation, management and SEO services](/brand-creation-management-vancouver), or [tell IAM about your business](/contact?request=branding). Joining an existing industry network is a separate option to discuss; it does not transfer ownership of your business or promise a particular search result."
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
     "trade": "Branding and digital products",
     "tradeShort": "brand",
     "plural": "brands",
