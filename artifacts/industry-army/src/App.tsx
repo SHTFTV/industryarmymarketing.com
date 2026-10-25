@@ -7,6 +7,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import ComingSoonModal from "@/components/ComingSoonModal";
+import SeoMarketPage, { SeoMarketDirectory } from "./pages/SeoMarkets";
 import BrandCreationVancouver from "./pages/BrandCreationVancouver.tsx";
 import Index from "./pages/Index.tsx";
 import HowItWorks from "./pages/HowItWorks.tsx";
@@ -224,6 +225,8 @@ const App = ({ ssrPath }: { ssrPath?: string } = {}) => {
           <Route path="/dofollow-backlinks" element={<DofollowBacklinks />} />
           <Route path="/guest-post" element={<GuestPost />} />
           <Route path="/industries" element={<Industries />} />
+          <Route path="/seo" element={<SeoMarketDirectory />} />
+          <Route path="/seo/:city" element={<SeoMarketPage />} />
           <Route path="/brand-creation-management-vancouver" element={<BrandCreationVancouver />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/cities/:city" element={<CityPage />} />
