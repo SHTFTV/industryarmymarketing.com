@@ -1,3 +1,4 @@
+import PseoNetworkPitch from "./PseoNetworkPitch";
 import brandPortfolio from "@/data/brandPortfolio.json";
 import { motion } from "framer-motion";
 import { Crown, Cpu, Truck, Tv, ExternalLink } from "lucide-react";
@@ -55,7 +56,7 @@ const groups: { icon: typeof Crown; eyebrow: string; title: string; blurb: strin
     icon: Tv,
     eyebrow: "TV Media Network",
     title: "Our .TV Video Networks",
-    blurb: "Premium .tv domains built as full video showcases — long-form storytelling, vendor reels, and category authority.",
+    blurb: "Video-led publishing brands for industry knowledge, real projects and creators.",
     brands: [
       { name: "Sparkys.tv", url: "https://sparkys.tv", tagline: "Electricians Video Network", image: sparkysImg.url },
       { name: "Painters.tv", url: "https://painters.tv", tagline: "Pro Painter Showcase Network", image: paintersImg.url },
@@ -71,7 +72,7 @@ const groups: { icon: typeof Crown; eyebrow: string; title: string; blurb: strin
     icon: Cpu,
     eyebrow: "Marketing Tech",
     title: "Our In-House Stack",
-    blurb: "Proprietary tools that power every campaign we run — and that you get access to inside the ecosystem.",
+    blurb: "Specialist publications and developing technology brands. Access, availability and deliverables are confirmed for each engagement.",
     brands: [
       { name: "EyeSpyR.com", url: "https://eyespyr.com", tagline: "Contractor Verification & Trust Badge", image: eyespyrImg.url, contain: true },
       { name: "Videographers.io", url: "https://videographers.io", tagline: "Curated Talent For Your Next Project", image: videographersImg.url },
@@ -114,6 +115,7 @@ const FlagshipBrandsSection = () => {
           <a href="/contact?request=network" className="inline-flex mt-6 px-6 py-3 rounded-md bg-primary text-primary-foreground font-semibold">Talk to IAM about joining ↗</a>
         </motion.div>
 
+        <PseoNetworkPitch />
         <div className="space-y-14">
           {groups.map((group, gi) => (
             <motion.div

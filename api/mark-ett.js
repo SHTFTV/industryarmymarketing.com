@@ -13,7 +13,7 @@ module.exports=async function handler(req,res){
  const key=process.env.AI_GATEWAY_API_KEY||process.env.VERCEL_OIDC_TOKEN;
  if(!key)return send(503,{error:'Mark Ett is temporarily unavailable. Please use the IAM contact form.'});
  try {
-  const response=await fetch('https://ai-gateway.vercel.sh/v1/chat/completions',{method:'POST',signal:AbortSignal.timeout(22000),headers:{Authorization:`Bearer ${key}`,'Content-Type':'application/json'},body:JSON.stringify({model:process.env.MARK_ETT_MODEL||'google/gemini-2.5-flash',max_tokens:600,messages:[{role:'system',content:SYSTEM},...messages]})});
+  const response=await fetch('https://ai-gateway.vercel.sh/v1/chat/completions',{method:'POST',signal:AbortSignal.timeout(22000),headers:{Authorization:`Bearer ${key}`,'Content-Type':'application/json'},body:JSON.stringify({model:process.env.MARK_ETT_MODEL||'google/gemini-2.5-flash',max_tokens:1200,messages:[{role:'system',content:SYSTEM},...messages]})});
   if(!response.ok){console.error('mark_ett_gateway_status',response.status);return send(503,{error:'Mark Ett could not reach the AI service. Please try again or contact IAM.'});}
   const data=await response.json();const reply=data.choices?.[0]?.message?.content?.trim();
   if(!reply)return send(503,{error:'No reply was returned. Please try again.'});

@@ -14,8 +14,8 @@ const Index = () => {
   return (
     <Layout>
       <Seo
-        title="Branding, Websites, Apps & Rollouts | Industry Army Marketing"
-        description="IAM connects brand strategy, visual identity, websites, apps and real-world rollout. Explore recent work and the daily build journal."
+        title="IAM pSEO Network | Brand Creation, Websites & SEO"
+        description="Explore IAM’s pSEO network and 25 showcase brands. Hub registration starts at $10 per year per site; branding, websites, apps and full SEO services are scoped separately."
         path="/"
         image="/brand-journal/brand-to-rollout-iam-build-journal-share.jpg"
         imageAlt="IAM: from brand identity to websites, apps and rollout"

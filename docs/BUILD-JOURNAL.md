@@ -26,3 +26,10 @@ October 25 owner-authorised portfolio batch: 25 original brand stories are in bu
 - Chat does not capture a lead, send email, execute actions or save transcripts in app storage. It links visitors to IAM's actual contact form. The AI provider receives submitted messages; do not claim provider zero retention.
 - Input length/history limits, same-origin browser checks, provider timeout and best-effort per-instance throttling are included. In-memory throttling is not a durable/global abuse or billing cap. Do not describe it as such.
 - Regression checks must include a real generated reply, failure state, no invented prices or guaranteed rankings, close/reopen/new-chat controls, phone layout and preservation of existing pages.
+
+## IAM pSEO positioning and price boundaries
+- Homepage positions IAM as a pSEO powerhouse built around its own industry brands, with a linked 25-brand showcase and 60 market briefs derived from source manifests.
+- Published hub entry price is $10/year for business registration and a directory listing on ONE relevant hub site. Availability and applicable terms must be confirmed; never imply it purchases all network sites, a city partnership or full SEO delivery.
+- Brand creation, websites, apps and SEO retain separate agreed deliverables/pricing. Broad service copy describes work that can be commissioned, not work included automatically in hub registration.
+- The agency-pricing context links to Ahrefs' survey of 439 providers, updated August 15, 2024. This is background, not a like-for-like savings calculation or a claim IAM beats every competitor's quote. Compare billing period, scope and currency.
+- OIDC for the existing IAM project was explicitly approved by the user on October 25 and enabled alone. A broader autoExposeSystemEnvs change was rejected and was not applied. AI replies still require a new deployment and a real end-to-end check before being called live.
