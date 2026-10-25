@@ -47,8 +47,8 @@ const groups: { icon: typeof Crown; eyebrow: string; title: string; blurb: strin
       { name: "Treatments.tv", url: "https://treatments.tv", tagline: "Health & Wellness Video Network", image: treatmentsImg.url },
       { name: "ProMows.com", url: "https://promows.com", tagline: "Lawn Care & Grounds Network", image: promowsImg.url },
       { name: "BuildersHaus.com", url: "https://buildershaus.com", tagline: "Premium Builder & Renovation Hub", image: buildershausImg.url },
-      { name: "Med Bee Tate", url: "https://medbeetate.com", tagline: "Bee-inspired meditation & gathering concept", image: "/images/bee-portfolio/med-bee-tate.webp" },
-      { name: "BeeGoods.co", url: "https://beegoods.co", tagline: "The next chapter in bee-inspired goods", image: "/images/bee-portfolio/beegoods.webp" },
+      { name: "Med Bee Tate", url: "https://medbeetate.com", tagline: "Bee-inspired meditation & gathering concept", image: "/images/bee-portfolio/med-bee-tate.webp", logoOverlay: "/images/bee-portfolio/med-bee-tate-wordmark.svg" },
+      { name: "BeeGoods.co", url: "https://beegoods.co", tagline: "The next chapter in bee-inspired goods", image: "/images/bee-portfolio/beegoods.webp", logoOverlay: "/images/bee-portfolio/beegoods-wordmark.svg" },
     ],
   },
   {
