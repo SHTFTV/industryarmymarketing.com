@@ -8,6 +8,8 @@ export function IamStoryFilm() {
 export default function HeroSection() {
   const [playing, setPlaying] = useState(false);
   const hero = useRef<HTMLElement>(null);
+  const film = useRef<HTMLVideoElement>(null);
+  useEffect(() => { const element=film.current; if (!element) return; if (playing) void element.play().catch(() => setPlaying(false)); else element.pause(); }, [playing]);
   useEffect(() => {
     const element = hero.current;
     if (!element) return;
@@ -25,9 +27,8 @@ export default function HeroSection() {
     return () => { preference.removeEventListener("change", update); document.removeEventListener("visibilitychange", visibility); };
   }, []);
   return <section ref={hero} id="home" className="iam-studio-hero iam-network-hero iam-film-hero">
-    <div className="iam-network-hero-layout"><div className="iam-film-letterbox" aria-label="IAM industry army animation">
-      {playing ? <iframe title="IAM industry army animation" src="https://www.youtube-nocookie.com/embed/gUw8wuj5gFQ?autoplay=1&mute=1&loop=1&playlist=gUw8wuj5gFQ&controls=0&playsinline=1&rel=0" allow="autoplay; encrypted-media" tabIndex={-1}/> : <div className="iam-film-paused"><img src="/brand-journal/iam-seal.webp" alt="Industry Army Marketing" width={100} height={100}/><p>Industry army animation paused</p></div>}
-    </div><div className="iam-studio-intro">
+    <video ref={film} className="iam-industry-army-film" muted loop playsInline preload="metadata" poster="/brand-journal/iam-industry-army-poster.jpg" aria-label="One IAM army character multiplies into matching construction, healthcare, transport, electrical and agriculture workers"><source src="/brand-journal/iam-industry-army-v1.mp4" type="video/mp4"/></video>
+    <div className="iam-network-hero-layout"><div className="iam-studio-intro">
       <img className="iam-studio-seal" src="/brand-journal/iam-seal.webp" width={100} height={100} alt="Industry Army Marketing" fetchPriority="high"/>
       <p className="iam-studio-kicker">A CONNECTED BRAND & SEARCH ECOSYSTEM · EST. 2011</p>
       <h1>Industry Army<br/><span>Marketing.</span></h1>
