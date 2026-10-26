@@ -61,6 +61,7 @@
           "heading": "Give the name a home and a recognisable voice",
           "paragraphs": [
             "The domain [rambowalls.com](https://www.rambowalls.com/) gives the business a clear home. The live site pairs a direct Rambo voice with a practical explanation of the offer: walls, ceilings and steel stud framing for commercial interiors, tenant improvements and other suitable projects across Vancouver and the Lower Mainland.",
+            "The domain milestone is dated: [Verisign’s .com registry record](https://rdap.verisign.com/com/v1/domain/rambowalls.com) shows rambowalls.com was registered on March 24, 2026. That gives the domain part of this new-company build a concrete starting point.",
             "Brand development carries through the language, visual presentation and next step. “Ready. Referred. Rambo.” sets the tone; project photographs and service information give that tone something concrete to stand on. A memorable identity helps introduce the business. A useful page helps a buyer decide whether to start a conversation."
           ]
         },
@@ -130,6 +131,10 @@
         {
           "label": "Earlier IAM feature: photographs, publishing and contractor contact routes",
           "href": "/blog/rambo-project-photos-working-client-pages"
+        },
+        {
+          "label": "Verisign .com registry: rambowalls.com registered March 24, 2026",
+          "href": "https://rdap.verisign.com/com/v1/domain/rambowalls.com"
         }
       ]
     }
