@@ -37,10 +37,11 @@ const Index = () => {
           areaServed: ["Vancouver", "Surrey", "Calgary", "Edmonton", "Toronto", "Kelowna"],
         }}
       />
+      <aside aria-label="IAM client qualification requirement" className="border-y border-primary/40 bg-primary/10"><a href="#verified-clients" className="container mx-auto flex max-w-7xl flex-col gap-2 px-5 py-4 md:flex-row md:items-center md:justify-between md:gap-6 group"><span><strong className="text-primary text-sm md:text-base">What makes us different? We KYC every client.</strong><span className="block text-sm text-foreground mt-1">EyeSpyR verification comes first. We qualify the business before taking it on—we don’t take your money just to take your money.</span></span><span className="text-primary text-sm font-semibold underline underline-offset-4 shrink-0">Read our standard before applying ↗</span></a></aside>
       <HeroSection />
-      <VerifiedClientPrinciple />
       <FlagshipBrandsSection />
       <ClientPublishingFlow />
+      <VerifiedClientPrinciple />
       <IamStoryFilm />
       <BrandStudioSection />
       <LatestBlogPosts />
