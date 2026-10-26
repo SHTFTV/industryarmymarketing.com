@@ -119,7 +119,7 @@ const PricingSection = () => {
         </div>
 
         <p className="mt-8 max-w-3xl mx-auto text-center text-sm text-muted-foreground">
-          Optional content service: TALC.tv shout-outs are $20 each, priced separately from
+          Optional content service: TALC.tv shout-outs are $10 each, including six verified reposts, priced separately from
           registration and city-page partnerships. <Link to="/contact" className="text-primary underline">Ask about content services</Link>.
         </p>
 

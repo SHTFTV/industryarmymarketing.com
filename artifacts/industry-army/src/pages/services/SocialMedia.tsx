@@ -40,7 +40,7 @@ const faqs = [
   },
   {
     q: "How is this priced?",
-    a: "TALC.tv syndication is a $20 per shout-out. Channels, placement and timing are agreed before publication; custom plans are available.",
+    a: "TALC.tv syndication is a $10 per shout-out with six verified reposts. Channels, placement and timing are agreed before publication; custom plans are available.",
   },
   {
     q: "Does social media actually generate leads for contractors?",
@@ -231,7 +231,7 @@ const SocialMedia = () => {
         <section className="text-center py-10 border-t border-border">
           <Tv className="w-10 h-10 text-primary mx-auto mb-4" />
           <h2 className="font-display text-3xl md:text-4xl mb-3">Broadcast once. Land everywhere.</h2>
-          <p className="text-muted-foreground mb-6 max-w-xl mx-auto">Add TALC.tv to your stack for $20 per shout-out, with custom plans available.</p>
+          <p className="text-muted-foreground mb-6 max-w-xl mx-auto">Add TALC.tv to your stack for $10 per shout-out with six verified reposts, with custom plans available.</p>
           <Button variant="hero" size="lg" asChild><Link to="/contact">Turn On TALC</Link></Button>
         </section>
 
