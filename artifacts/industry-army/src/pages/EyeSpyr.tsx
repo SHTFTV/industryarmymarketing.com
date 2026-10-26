@@ -41,7 +41,7 @@ const EyeSpyr = () => (
           <EyeSpyLogo size="xl" />
         </div>
         <p className="text-muted-foreground max-w-2xl text-lg leading-relaxed">
-          The trust badge that separates real contractors from scams. Every IAM network member earns it. No one can buy it.
+          We KYC all our clients. We research and qualify every potential client before acceptance. EyeSpyR verification comes first; IAM marketing activation comes after approval. Payment does not buy verified status.
         </p>
       </div>
       <div className="absolute bottom-0 left-0 right-0 h-px gradient-neon-line opacity-50" />
@@ -50,7 +50,7 @@ const EyeSpyr = () => (
     <section className="py-20">
       <div className="container mx-auto px-4 max-w-6xl">
         <p className="text-primary uppercase tracking-[0.3em] text-xs font-semibold mb-3">The Four Pillars</p>
-        <h2 className="font-display text-4xl md:text-5xl text-foreground mb-10">What We Check</h2>
+        <h2 className="font-display text-4xl md:text-5xl text-foreground mb-5">We KYC. We qualify. We research.</h2><p className="text-muted-foreground max-w-3xl mb-10 leading-relaxed">Every potential client is researched before acceptance: business identity, authority to represent it, registration, applicable licences, public business records, online presence and supporting work. We review the evidence for the business and its actual service area. An application alone does not establish eligibility.</p>
         <FeatureGrid features={pillars} />
       </div>
     </section>
