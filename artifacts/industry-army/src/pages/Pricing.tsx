@@ -1,3 +1,4 @@
+import VerifiedClientPrinciple from "@/components/VerifiedClientPrinciple";
 import ClientPublishingFlow from "@/components/ClientPublishingFlow";
 import Layout from "@/components/Layout";
 import Seo from "@/components/Seo";
@@ -657,7 +658,7 @@ const Pricing = () => (
         </div>
       </div>
     </section>
-  <ClientPublishingFlow /></Layout>
+  <ClientPublishingFlow /><VerifiedClientPrinciple /></Layout>
 );
 
 const PricingAnalytics = () => {

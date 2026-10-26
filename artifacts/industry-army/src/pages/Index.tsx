@@ -1,3 +1,4 @@
+import VerifiedClientPrinciple from "@/components/VerifiedClientPrinciple";
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import Seo from "@/components/Seo";
@@ -37,6 +38,7 @@ const Index = () => {
         }}
       />
       <HeroSection />
+      <VerifiedClientPrinciple />
       <FlagshipBrandsSection />
       <ClientPublishingFlow />
       <IamStoryFilm />

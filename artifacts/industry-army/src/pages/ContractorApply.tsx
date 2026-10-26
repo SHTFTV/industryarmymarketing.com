@@ -1,3 +1,4 @@
+import VerifiedClientPrinciple from "@/components/VerifiedClientPrinciple";
 import { CheckCircle2, Clock3, LockKeyhole, MapPin } from "lucide-react";
 import Layout from "@/components/Layout";
 import Seo from "@/components/Seo";
@@ -67,7 +68,7 @@ const ContractorApply = () => (
       submitLabel="Submit Application"
       successDescription="Application received. We'll review your trade and territory and contact you with the next available step."
     />
-  </Layout>
+  <VerifiedClientPrinciple /></Layout>
 );
 
 export default ContractorApply;

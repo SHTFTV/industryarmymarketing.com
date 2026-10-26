@@ -1,3 +1,4 @@
+import VerifiedClientPrinciple from "@/components/VerifiedClientPrinciple";
 import Layout from "@/components/Layout";
 import Seo from "@/components/Seo";
 import { breadcrumbList } from "@/lib/breadcrumb";
@@ -45,6 +46,7 @@ const EyeSpyr = () => (
       </div>
       <div className="absolute bottom-0 left-0 right-0 h-px gradient-neon-line opacity-50" />
     </section>
+    <VerifiedClientPrinciple />
     <section className="py-20">
       <div className="container mx-auto px-4 max-w-6xl">
         <p className="text-primary uppercase tracking-[0.3em] text-xs font-semibold mb-3">The Four Pillars</p>
