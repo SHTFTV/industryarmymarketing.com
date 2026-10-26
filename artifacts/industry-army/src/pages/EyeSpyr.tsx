@@ -4,7 +4,6 @@ import Seo from "@/components/Seo";
 import { breadcrumbList } from "@/lib/breadcrumb";
 import FeatureGrid from "@/components/FeatureGrid";
 import CtaBanner from "@/components/CtaBanner";
-import EyeSpyLogo from "@/components/EyeSpyLogo";
 
 const pillars = [
   { icon: "🏢", title: "Business Verification", body: "We cross-reference your BC or Canadian business license, GST/HST registration, and confirm your physical service area. No shell companies. No fake addresses." },
@@ -38,7 +37,7 @@ const EyeSpyr = () => (
           Verification Standard
         </p>
         <div className="mb-6">
-          <EyeSpyLogo size="xl" />
+          <img src="/__l5e/assets-v1/7d1aa780-8174-459d-9cc5-8f7f09aacc04/eyespyr-logo.png" alt="EyeSpyR" width={1920} height={773} className="w-full max-w-md h-auto rounded-lg"/>
         </div>
         <p className="text-muted-foreground max-w-2xl text-lg leading-relaxed">
           We KYC all our clients. We research and qualify every potential client before acceptance. EyeSpyR verification comes first; IAM marketing activation comes after approval. Payment does not buy verified status.
