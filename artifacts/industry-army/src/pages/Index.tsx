@@ -1,3 +1,4 @@
+import PseoNetworkPitch from "@/components/PseoNetworkPitch";
 import VerifiedClientPrinciple from "@/components/VerifiedClientPrinciple";
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
@@ -40,8 +41,9 @@ const Index = () => {
       <HeroSection />
       <aside aria-label="IAM client qualification requirement" className="border-y border-primary/40 bg-primary/10"><a href="#verified-clients" className="container mx-auto grid max-w-7xl grid-cols-[110px_1fr] items-center gap-x-4 gap-y-2 px-5 py-3 md:grid-cols-[150px_1fr_auto] md:gap-6"><img src="/__l5e/assets-v1/7d1aa780-8174-459d-9cc5-8f7f09aacc04/eyespyr-logo.png" alt="EyeSpyR" width={1920} height={773} className="w-full h-auto rounded-md"/><span><strong className="text-primary text-sm md:text-base">What makes us different? We KYC every client.</strong><span className="block text-sm text-foreground mt-1">EyeSpyR verification comes first. We qualify the business before taking it on—we don’t take your money just to take your money.</span></span><span className="col-span-2 text-primary text-sm font-semibold underline underline-offset-4 md:col-span-1">Read our standard before applying ↗</span></a></aside>
       <FlagshipBrandsSection />
-      <ClientPublishingFlow />
       <VerifiedClientPrinciple />
+      <div className="container mx-auto px-5"><PseoNetworkPitch /></div>
+      <ClientPublishingFlow />
       <IamStoryFilm />
       <BrandStudioSection />
       <LatestBlogPosts />

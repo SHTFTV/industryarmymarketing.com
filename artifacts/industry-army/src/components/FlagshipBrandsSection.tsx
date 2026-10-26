@@ -1,4 +1,3 @@
-import PseoNetworkPitch from "./PseoNetworkPitch";
 import brandPortfolio from "@/data/brandPortfolio.json";
 import { motion } from "framer-motion";
 import { Crown, Cpu, Truck, Tv, ExternalLink } from "lucide-react";
@@ -112,11 +111,10 @@ const FlagshipBrandsSection = () => {
           <p className="text-muted-foreground leading-relaxed">
             IAM creates and manages distinctive brands, then develops them into useful hubs for their industries. Identity, websites, professional profiles, original content and distribution come together around the people and businesses in each field.
           </p>
-          <p className="text-muted-foreground leading-relaxed mt-4">pSEO connects the useful pages within that bigger system. Bring your expertise, real work or a new product—and talk to us about the right industry hub or a brand of your own.</p>
+          <p className="text-muted-foreground leading-relaxed mt-4">Our reach spans equipment, real estate, health, weddings, media, transport and more. Explore the complete family of brands below—from Kong and PlowWow to Errands and Backhaul. Bring your expertise, your business or a new idea; we’ll explore the right industry home or a brand of your own.</p>
           <a href="/contact?request=network" className="inline-flex mt-6 px-6 py-3 rounded-md bg-primary text-primary-foreground font-semibold">Find your place in an IAM hub ↗</a>
         </motion.div>
 
-        <PseoNetworkPitch />
         <div className="space-y-14" id="iam-industry-doors">
           {groups.map((group, gi) => (
             <motion.div
