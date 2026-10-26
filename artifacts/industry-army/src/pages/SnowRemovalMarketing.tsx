@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import Seo from "@/components/Seo";
@@ -23,6 +23,23 @@ const faqs=[
 ];
 export default function SnowRemovalMarketing(){
  const hero=useRef<HTMLElement>(null);
+ const videoRef=useRef<HTMLVideoElement>(null);
+ const [videoPaused,setVideoPaused]=useState(false);
+ const [motionAllowed,setMotionAllowed]=useState(false);
+ useEffect(()=>{
+  const preference=window.matchMedia("(prefers-reduced-motion: reduce)");
+  const update=()=>setMotionAllowed(!preference.matches);
+  update();preference.addEventListener("change",update);
+  return()=>preference.removeEventListener("change",update);
+ },[]);
+ useEffect(()=>{
+  const video=videoRef.current;if(!video)return;
+  let visible=true;
+  const sync=()=>{if(videoPaused||!motionAllowed||document.hidden||!visible)video.pause();else void video.play().catch(()=>{});};
+  const observer=new IntersectionObserver(([entry])=>{visible=Boolean(entry?.isIntersecting);sync();},{threshold:.05});
+  observer.observe(video);document.addEventListener("visibilitychange",sync);sync();
+  return()=>{observer.disconnect();document.removeEventListener("visibilitychange",sync);video.pause();};
+ },[videoPaused,motionAllowed]);
  useEffect(()=>{
   const element=hero.current;if(!element)return;
   const observer=new IntersectionObserver(([entry])=>document.body.classList.toggle("iam-snow-hero-visible",entry.isIntersecting),{threshold:0});
@@ -30,7 +47,10 @@ export default function SnowRemovalMarketing(){
  },[]);
  return <Layout><Seo title="Snow Removal Marketing & pSEO for Snow Companies | IAM" description="Put a snow-industry brand behind your business. Explore PlowWow, PlowInstallations.com, Plow.news, Snowplow.tv and targeted pSEO with Industry Army Marketing." path="/snow-removal-marketing" image="/snow-marketing/snow-marketing-share.jpg" imageAlt="Wow in a blue beanie and high-visibility vest beside IAM snow-removal marketing and pSEO branding" jsonLd={{"@context":"https://schema.org","@type":"Service",name:"Snow removal marketing and programmatic SEO",serviceType:"Brand participation, content and SEO for snow-industry businesses",url:"https://www.industryarmymarketing.com/snow-removal-marketing",provider:{"@type":"Organization",name:"Industry Army Marketing",url:"https://www.industryarmymarketing.com/"}}}/>
  <div className="iam-snow-page">
- <section ref={hero} className="snow-hero"><div className="snow-wrap snow-hero-grid"><div><p className="snow-kicker">INDUSTRY ARMY MARKETING / THE SNOW-INDUSTRY ECOSYSTEM</p><h1>Snow removal marketing.<br/><span>With a brand behind you.</span></h1><p className="snow-deck">Don’t start from zero. Put your business into a snow-and-ice network built around the work you do.</p><p>IAM connects brand identity, pSEO, service-area content and industry publishing—from the contractor’s route to the installer’s shop and the Plow.news reading desk. Bring your company, city and expertise. We’ll discuss the brand and scope that fit.</p><div className="snow-actions"><a href="#snow-enquiry">Find my snow-industry fit ↗</a><a className="snow-secondary" href={email}>Email Colin my city & website</a></div><p className="snow-price">From $10/month for approved network participation.<br/><small>Exact placement and deliverables are agreed before activation. Full campaigns and brand rights are scoped separately.</small></p></div><figure className="snow-wow"><img src="/brand-journal/wow-approved.webp" width={1024} height={1000} alt="Wow, the PlowWow mascot, wearing the approved blue beanie and orange high-visibility vest" fetchPriority="high"/><figcaption>Wow is PlowWow™ brand artwork. Marketing enquiries on this page go to Industry Army Marketing.</figcaption></figure></div></section>
+ <section ref={hero} className="snow-hero snow-brand-hero" aria-labelledby="snow-brand-title">
+ <div className="snow-brand-stage"><video ref={videoRef} className="snow-brand-film" muted loop playsInline preload="metadata" poster="https://www.plowwow.com/quote-media/estimator-plow-hero.jpg" aria-label="PlowWow illustrative snow removal promotional video"><source src="https://www.plowwow.com/videos/plowwow-snow-removal-operations.mp4" type="video/mp4"/></video><div className="snow-brand-veil" aria-hidden="true"/><img className="snow-brand-wow" src="/brand-journal/wow-approved.webp" width={1024} height={1000} alt="Wow, the PlowWow mascot in his blue beanie and orange safety vest, welcoming your snow business" fetchPriority="high"/><button className="snow-brand-motion" type="button" disabled={!motionAllowed} onClick={()=>setVideoPaused(value=>!value)} aria-pressed={videoPaused||!motionAllowed}>{!motionAllowed?"Reduced motion":videoPaused?"Play snow video":"Pause snow video"}</button></div>
+ <div className="snow-wrap snow-brand-copy"><p className="snow-kicker">PLOWWOW™ / A BRAND BEHIND YOUR SNOW BUSINESS</p><h1 id="snow-brand-title">Put the Wow<br/><span>in your snow business.</span></h1><p className="snow-deck">You bring the snow expertise.<br/>We bring the brand and a plan to get you seen.</p><p>Build your presence with a recognisable snow-removal identity, a character customers remember and IAM’s connected snow-and-ice network. Start with PlowWow™, then shape the marketing, service-area content and industry stories around the work your company does.</p><div className="snow-actions"><a href="#snow-enquiry">Bring PlowWow to my business ↗</a><a className="snow-secondary" href={email}>Talk brand &amp; city with Colin</a></div><p className="snow-price">From $10/month for approved network participation.<br/><small>Brand use, placement and deliverables are agreed before activation. Full campaigns and brand rights are scoped separately.</small></p><p className="snow-brand-credit">Original PlowWow™ mascot · Illustrative snow-removal promotional footage from PlowWow. Marketing enquiries go to Industry Army Marketing.</p></div>
+ </section>
  <section className="snow-strip"><div className="snow-wrap">PLOWING <span>+</span> SALTING & BRINE <span>+</span> INSTALLATION & REPAIR <span>+</span> EQUIPMENT <span>+</span> INDUSTRY STORIES</div></section>
  <section className="snow-services snow-wrap snow-section" aria-labelledby="snow-growth-heading"><p className="snow-kicker">ONE INDUSTRY. FIVE WAYS TO BUILD YOUR PRESENCE.</p><h2 id="snow-growth-heading">Snow removal marketing.<br/>Built for the way customers search.</h2><div className="snow-skinny-stack">{[
  ["BRAND", "Snow removal marketing", "Give your snow business an identity, a clear offer and a place in the industry. Connect your website, project stories, approved network placements and enquiry routes.", "Brand + publishing"],
