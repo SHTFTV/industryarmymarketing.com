@@ -26,6 +26,26 @@
       "source": "/pseo-for-snow-removal-companies",
       "destination": "/snow-removal-marketing",
       "permanent": true
+    },
+    {
+      "source": "/marketing/steel-stud-drywall",
+      "destination": "/steel-stud-drywall-marketing",
+      "permanent": true
+    },
+    {
+      "source": "/steel-stud-marketing",
+      "destination": "/steel-stud-drywall-marketing",
+      "permanent": true
+    },
+    {
+      "source": "/drywall-contractor-marketing",
+      "destination": "/steel-stud-drywall-marketing",
+      "permanent": true
+    },
+    {
+      "source": "/niches/steel-stud",
+      "destination": "/steel-stud-drywall-marketing",
+      "permanent": true
     }
   ]
 }

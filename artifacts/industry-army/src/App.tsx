@@ -8,6 +8,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import ComingSoonModal from "@/components/ComingSoonModal";
 import SeoMarketPage, { SeoMarketDirectory } from "./pages/SeoMarkets";
+import SteelDrywallMarketing from "./pages/SteelDrywallMarketing.tsx";
 import SnowRemovalMarketing from "./pages/SnowRemovalMarketing.tsx";
 import Mission from "./pages/Mission.tsx";
 import BrandCreationVancouver from "./pages/BrandCreationVancouver.tsx";
@@ -31,7 +32,6 @@ import BlogPost from "./pages/BlogPost.tsx";
 import Investors from "./pages/Investors.tsx";
 import Dashboard from "./pages/Dashboard.tsx";
 import Legal from "./pages/Legal.tsx";
-import SteelStud from "./pages/SteelStud.tsx";
 import MiningLogistics from "./pages/MiningLogistics.tsx";
 import ScanWizard from "./pages/ScanWizard.tsx";
 import LocalVancouver from "./pages/local/Vancouver.tsx";
@@ -230,6 +230,10 @@ const App = ({ ssrPath }: { ssrPath?: string } = {}) => {
           <Route path="/seo" element={<SeoMarketDirectory />} />
           <Route path="/seo/united-states" element={<SeoMarketDirectory country="United States" />} />
           <Route path="/seo/:city" element={<SeoMarketPage />} />
+          <Route path="/steel-stud-drywall-marketing" element={<SteelDrywallMarketing />} />
+          <Route path="/marketing/steel-stud-drywall" element={<Navigate to="/steel-stud-drywall-marketing" replace />} />
+          <Route path="/steel-stud-marketing" element={<Navigate to="/steel-stud-drywall-marketing" replace />} />
+          <Route path="/drywall-contractor-marketing" element={<Navigate to="/steel-stud-drywall-marketing" replace />} />
           <Route path="/snow-removal-marketing" element={<SnowRemovalMarketing />} />
           <Route path="/marketing/snow-removal" element={<Navigate to="/snow-removal-marketing" replace />} />
           <Route path="/pseo-for-snow-removal-companies" element={<Navigate to="/snow-removal-marketing" replace />} />
@@ -250,7 +254,7 @@ const App = ({ ssrPath }: { ssrPath?: string } = {}) => {
           <Route path="/investors" element={<Investors />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/legal" element={<Legal />} />
-          <Route path="/niches/steel-stud" element={<SteelStud />} />
+          <Route path="/niches/steel-stud" element={<Navigate to="/steel-stud-drywall-marketing" replace />} />
           <Route path="/niches/mining-logistics" element={<MiningLogistics />} />
           <Route path="/local/vancouver" element={<LocalVancouver />} />
           <Route path="/local/surrey" element={<LocalSurrey />} />
