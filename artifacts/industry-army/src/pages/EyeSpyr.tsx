@@ -1,103 +1,30 @@
-import VerifiedClientPrinciple from "@/components/VerifiedClientPrinciple";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { BadgeCheck, MessageSquareText, Radio, Globe2, ArrowDown, Search, ExternalLink } from "lucide-react";
 import Layout from "@/components/Layout";
 import Seo from "@/components/Seo";
 import { breadcrumbList } from "@/lib/breadcrumb";
-import FeatureGrid from "@/components/FeatureGrid";
-import CtaBanner from "@/components/CtaBanner";
-
-const pillars = [
-  { icon: "🏢", title: "Business Verification", body: "We cross-reference your BC or Canadian business license, GST/HST registration, and confirm your physical service area. No shell companies. No fake addresses." },
-  { icon: "⭐", title: "Review Audit", body: "We analyze your review profile across Google, HomeStars, Facebook, and Yelp. Fake reviews, review gating, or suspicious patterns flag your account for manual review." },
-  { icon: "🌐", title: "Website & Online Health", body: "We check your website for HTTPS, mobile responsiveness, speed, and content quality. A score below 4.5 holds your listing until issues are resolved." },
-  { icon: "📍", title: "Location Confirmation", body: "We verify you actually operate in the city you're claiming. Territory fraud — claiming a city you don't serve — results in immediate suspension." },
-  { icon: "📞", title: "Contact Validation", body: "Phone numbers, emails, and contact methods are tested. Dead lines, fake contact info, or call centres impersonating local businesses are disqualified." },
-  { icon: "🔄", title: "Ongoing Monitoring", body: "Verification isn't one-and-done. I-Spy-R monitors your score continuously. If it drops below 4.5, we notify you before your listing is affected." },
+import "./eyespyr-page.css";
+const logo="/__l5e/assets-v1/7d1aa780-8174-459d-9cc5-8f7f09aacc04/eyespyr-logo.png";
+const sources=[
+ {name:"Credentials",icon:BadgeCheck,title:"Who is the business—and who is responsible?",body:"We research business identity, who represents it, registration, applicable licences and the actual service area. Supporting records need to match the business and the work it offers.",example:"Identity and business name → registration source → applicable trade licence → service-area match."},
+ {name:"Reviews",icon:MessageSquareText,title:"Look at the good, the bad and the response.",body:"We research public review sources for positive and critical feedback. We consider the date, context, traceable source and the company’s response. A single complaint is not automatically a finding, and a star average is not the whole picture.",example:"Review source → original review → date and context → business response → points that need clarification."},
+ {name:"Social channels",icon:Radio,title:"Does the public story match the business?",body:"We look into public business social channels: the work shown, consistent company details, customer interactions and how the business communicates. Social popularity alone does not establish a qualification.",example:"Official business channel → consistent identity → documented work → public customer interaction."},
+ {name:"Across the web",icon:Globe2,title:"Follow the references beyond one profile.",body:"We search and collect accessible public web references, including business websites, relevant directories, project credits and mentions. We cross-reference what we find and distinguish a supported fact from a claim that needs checking.",example:"Business website → independent reference → matching business details → source and review date."},
 ];
-
-const tiers = [
-  { range: "4.5 – 5.0", label: "VERIFIED — Listed & Active", tone: "text-primary" },
-  { range: "4.0 – 4.4", label: "REVIEW NEEDED — Issues Flagged", tone: "text-yellow-400" },
-  { range: "Below 4.0", label: "NOT ELIGIBLE — Requires Remediation", tone: "text-destructive" },
+const faqs=[
+ ["What does EyeSpyR research?","Business identity, registration, applicable licensing, public reviews, business social channels and relevant web references. The scope depends on the business, location and information available. IAM reviews the evidence before client acceptance."],
+ ["Do negative reviews automatically disqualify a business?","No single review tells the entire story. We consider the source, context, patterns, supporting information and the business’s response. A concern may require clarification. Payment does not remove a concern or buy approval."],
+ ["Does a verified profile guarantee good work?","No. It records the review scope and supported information at a point in time. Credentials can expire and circumstances can change, so profile details need to remain current."],
+ ["Can an EyeSpyR profile help with AEO and AI discovery?","A useful, publicly accessible profile can give people and search systems clearer information about a business, its credentials and linked sources. Crawlability, indexing and inclusion in an answer are separate decisions made by each platform; they are not guaranteed."],
+ ["What does $10 cover?","The yearly profile-update offer has a $10 USD base, adjusted for purchasing-power parity by country. The local price, review scope and deliverables are confirmed before payment. The fee does not purchase verified status, a favourable assessment or search rankings."],
 ];
-
-const EyeSpyr = () => (
-  <Layout>
-    <Seo
-      title="EyeSpy® Verification — The Industry's Trust Standard | IAM"
-      description="EyeSpy® is IAM's proprietary contractor verification system. Cross-referenced business licence, reviews, web health, and location data. The badge can only be earned."
-      path="/eyespyr"
-      jsonLd={breadcrumbList([
-        { name: "Home", path: "/" },
-        { name: "EyeSpy®", path: "/eyespyr" },
-      ])}
-    />
-    <section className="relative overflow-hidden border-b border-border gradient-tactical">
-      <div className="container mx-auto px-4 py-20 md:py-28 relative">
-        <p className="text-primary uppercase tracking-[0.3em] text-xs font-semibold mb-4">
-          Verification Standard
-        </p>
-        <div className="mb-6">
-          <img src="/__l5e/assets-v1/7d1aa780-8174-459d-9cc5-8f7f09aacc04/eyespyr-logo.png" alt="EyeSpyR" width={1920} height={773} className="w-full max-w-md h-auto rounded-lg"/>
-        </div>
-        <p className="text-muted-foreground max-w-2xl text-lg leading-relaxed">
-          We KYC all our clients. We research and qualify every potential client before acceptance. EyeSpyR verification comes first; IAM marketing activation comes after approval. Payment does not buy verified status.
-        </p>
-      </div>
-      <div className="absolute bottom-0 left-0 right-0 h-px gradient-neon-line opacity-50" />
-    </section>
-    <VerifiedClientPrinciple />
-    <section className="py-20">
-      <div className="container mx-auto px-4 max-w-6xl">
-        <p className="text-primary uppercase tracking-[0.3em] text-xs font-semibold mb-3">The Four Pillars</p>
-        <h2 className="font-display text-4xl md:text-5xl text-foreground mb-5">We KYC. We qualify. We research.</h2><p className="text-muted-foreground max-w-3xl mb-10 leading-relaxed">Every potential client is researched before acceptance: business identity, authority to represent it, registration, applicable licences, public business records, online presence and supporting work. We review the evidence for the business and its actual service area. An application alone does not establish eligibility.</p>
-        <FeatureGrid features={pillars} />
-      </div>
-    </section>
-    <section className="py-20 border-t border-border bg-card/30">
-      <div className="container mx-auto px-4 max-w-3xl text-center">
-        <p className="text-primary uppercase tracking-[0.3em] text-xs font-semibold mb-3">Scoring</p>
-        <h2 className="font-display text-4xl md:text-5xl text-foreground mb-10">The 5.0 Scale</h2>
-        <div className="space-y-3">
-          {tiers.map((t) => (
-            <div key={t.range} className="flex items-center justify-between p-5 rounded-md bg-card border border-border">
-              <span className="font-display text-2xl text-foreground">{t.range}</span>
-              <span className={`text-sm uppercase tracking-widest ${t.tone}`}>{t.label}</span>
-            </div>
-          ))}
-        </div>
-        <p className="text-muted-foreground mt-8 text-sm leading-relaxed">
-          Most legitimate contractors score between 4.3 and 4.9 on their first scan. Run a free scan to see exactly where you stand.
-        </p>
-      </div>
-    </section>
-    <section className="border-y border-border bg-card py-12"><div className="container mx-auto px-5 max-w-4xl"><p className="text-primary text-xs tracking-widest">KEEP YOUR BUSINESS INFORMATION CURRENT</p><h2 className="font-display text-3xl mt-3">EyeSpyR yearly update · $10 USD</h2><p className="text-muted-foreground mt-4">Review your profile details and supporting information each year. The update fee is separate from an assessment outcome; it does not buy a badge or endorsement.</p><p className="text-muted-foreground mt-4">Brand management starts from $10 USD/month, with work and deliverables agreed in your plan. TALC.tv shout-outs are available separately at $20 USD each.</p><a href="/contact?request=eyespyr-update" className="inline-block mt-5 text-primary underline">Discuss my profile and plan →</a></div></section>
-    <CtaBanner
-      title="Earn Your"
-      highlight="Badge Today."
-      description="Start with a free EyeSpyr scan. Takes 60 seconds. No credit card required."
-      primaryLabel="Run Free Scan"
-      primaryTo="/scan-wizard"
-    />
-  
-      {/* EyeSpyR Pricing */}
-      <div className="mt-8 p-6 border border-green-500/20 rounded-xl bg-green-500/5">
-        <p className="text-xs uppercase tracking-widest text-green-400 mb-3">EyeSpyR Pricing</p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div>
-            <div className="text-2xl font-bold text-green-400">FREE</div>
-            <div className="text-xs text-muted-foreground mt-1">with all monthly territory locks ($10/mo+)</div>
-            <div className="text-sm text-muted-foreground mt-2">Full review scraping · credential verification · live Trust Badge · auto-monitoring</div>
-          </div>
-          <div>
-            <div className="text-2xl font-bold text-primary">$10/year</div>
-            <div className="text-xs text-muted-foreground mt-1">for guest post contributors</div>
-            <div className="text-sm text-muted-foreground mt-2">Green checkmark on posts · review monitoring · credential verification</div>
-          </div>
-        </div>
-        <p className="text-xs text-muted-foreground mt-4">Annual baseline ($10/year listing): EyeSpyR locked — upgrade to monthly to activate.</p>
-      </div>
-
-    </Layout>
-);
-
-export default EyeSpyr;
+export default function EyeSpyr(){const [active,setActive]=useState(0);const item=sources[active];return <Layout><Seo title="EyeSpyR — Credentials, Reviews & a Clearer Business Picture | IAM" description="IAM researches and qualifies every potential client. EyeSpyR brings business credentials, public reviews, social channels and web references into a clearer, sourced business profile." path="/eyespyr" image="/brand-portfolio/eyespyr-iam-brand-creation-management.jpg" imageAlt="EyeSpyR: business credibility and evidence-led profile research" jsonLd={breadcrumbList([{name:"Home",path:"/"},{name:"EyeSpyR",path:"/eyespyr"}])}/>
+<main className="eye-page">
+<section className="eye-hero"><div><img src={logo} alt="EyeSpyR" width={1920} height={773} className="eye-logo"/><p className="eye-kicker">WE KYC. WE QUALIFY. WE RESEARCH.</p><h1>Your reputation.<br/><em>A clearer picture.</em></h1><p className="eye-lead">Credentials tell part of the story. Reviews, public social channels and references across the web help fill in the picture. EyeSpyR brings those pieces together so we can understand the business behind the claim.</p><p>IAM researches every potential client. The clearer the evidence, the stronger the credentials and the more traceable the recommendations, the stronger the case for working together.</p><div className="eye-actions"><Link to="/contact?request=eyespyr-review">Request an EyeSpyR review ↗</Link><a href="#eye-evidence" className="eye-secondary">Explore the evidence ↓</a></div><p className="eye-small">Yearly profile update: $10 USD base · PPP-adjusted by country. Your local price and scope are confirmed before payment.</p></div><figure className="eye-map"><div className="eye-map-head"><Search aria-hidden="true"/><span>MORE THAN A STAR RATING</span></div><div className="eye-map-sources">{sources.map(({name,icon:Icon})=><div key={name}><Icon aria-hidden="true"/><strong>{name}</strong></div>)}</div><ArrowDown className="eye-map-arrow" aria-hidden="true"/><div className="eye-map-result"><img src={logo} alt="" width={1920} height={773}/><strong>A sourced business picture</strong><span>Identity + qualifications + reputation + context</span></div><figcaption>EyeSpyR research workflow illustration. Not a live scan, a customer assessment or a verification result.</figcaption></figure></section>
+<section id="eye-evidence" className="eye-section eye-pale"><div className="eye-wrap"><p className="eye-kicker">FOLLOW THE EVIDENCE</p><h2>Four views.<br/>One business to understand.</h2><p className="eye-intro">We search and collect publicly accessible information, then review what it supports. Explore each part of the process.</p><div className="eye-tabs" role="tablist" aria-label="EyeSpyR evidence sources">{sources.map(({name,icon:Icon},i)=><button key={name} type="button" role="tab" id={`eye-tab-${i}`} aria-selected={active===i} aria-controls="eye-evidence-panel" tabIndex={active===i?0:-1} onKeyDown={event=>{const next=event.key==="ArrowRight"?(i+1)%sources.length:event.key==="ArrowLeft"?(i+sources.length-1)%sources.length:event.key==="Home"?0:event.key==="End"?sources.length-1:-1;if(next>=0){event.preventDefault();setActive(next);document.getElementById(`eye-tab-${next}`)?.focus();}}} onClick={()=>setActive(i)}><Icon aria-hidden="true"/>{name}</button>)}</div><article className="eye-evidence-panel" role="tabpanel" id="eye-evidence-panel" aria-labelledby={`eye-tab-${active}`}><div><item.icon aria-hidden="true"/><h3>{item.title}</h3><p>{item.body}</p></div><aside><span>EXAMPLE RESEARCH PATH</span><p>{item.example}</p><small>An explanatory sequence, not a report on a named business.</small></aside></article></div></section>
+<section className="eye-section"><div className="eye-wrap eye-split"><div><p className="eye-kicker">CREDIBILITY HAS CONTEXT</p><h2>We want the whole picture.</h2><p>We don’t build a business assessment from selected five-star reviews alone. We look for supporting records, verifiable recommendations, concerns that need an answer and evidence of how the business handles its responsibilities.</p><p>We review public business social channels and web references alongside credentials. A positive mention should have a source. A critical claim needs context. Where information is missing or inconsistent, we ask for more.</p><p><strong>An EyeSpyR-verified listing is required before IAM accepts a client or activates its marketing.</strong> Neither a payment nor a polished profile replaces qualification.</p></div><div className="eye-profile"><p className="eye-kicker">WHAT A CLEAR PROFILE SHOULD SHOW</p><div><span>BUSINESS</span><strong>Identity and service area</strong><small>Consistent details and who represents the company</small></div><div><span>CREDENTIALS</span><strong>Records with sources</strong><small>Applicable qualifications and the scope reviewed</small></div><div><span>REPUTATION</span><strong>Recommendations with context</strong><small>Traceable reviews, public references and responses</small></div><div><span>CURRENT INFORMATION</span><strong>A review date and next update</strong><small>Credentials and business circumstances can change</small></div><p className="eye-small">Illustrative profile structure. No example scores or verified-client claims.</p></div></div></section>
+<section className="eye-section eye-pale"><div className="eye-wrap eye-split"><div><p className="eye-kicker">TRUST + DISCOVERABILITY</p><h2>Give people—and search systems—more to understand.</h2><p>A public profile can connect the business name, service area, credentials, website and original reference sources in one useful place. That gives a prospective customer more to assess and a search system clearer information to interpret.</p><p>This supports the same foundations discussed in answer-engine optimisation (AEO): clear answers, consistent identity, useful content and accessible sources. Public credentials can become discoverable when their pages are crawled and indexed. AI and LLM-based search services make their own choices about what to retrieve or cite.</p><p className="eye-small">Google says its usual helpful-content and technical SEO foundations apply to its AI search features. There is no special AI schema or guaranteed inclusion.</p><a className="eye-source" href="https://developers.google.com/search/docs/appearance/ai-features">Read Google’s AI search guidance <ExternalLink aria-hidden="true"/></a></div><div className="eye-link-visual" aria-label="A profile connects public evidence with a business website"><div>Public credentials &amp; original sources</div><ArrowDown aria-hidden="true"/><div className="eye-link-centre">Your EyeSpyR profile</div><ArrowDown aria-hidden="true"/><div>Your business website &amp; next step</div><p>A link with context.<br/>A business people can research.</p></div></div></section>
+<section className="eye-section"><div className="eye-wrap eye-price"><div><p className="eye-kicker">MAKE YOUR PROFILE WORK HARDER</p><h2>A useful reference.<br/>A clearer route to your business.</h2><p>An EyeSpyR profile brings evidence, context and a relevant website link together. The value is a maintained business reference that people can inspect—not a promise to sell ranking credit.</p><p>Paid placements are identified appropriately. A profile fee does not buy approval, indexing, AI citations or a particular search position.</p></div><div className="eye-price-card"><span>YEARLY PROFILE UPDATE</span><strong>$10 <small>USD base / year</small></strong><p>Purchasing-power-parity adjustment by country. Your local price and the included work are confirmed before payment.</p><Link to="/contact?request=eyespyr-review">Try it: request your review ↗</Link><a href="https://eyespyr.com/">Visit EyeSpyR.com ↗</a></div></div></section>
+<section className="eye-section eye-pale"><div className="eye-wrap eye-faq"><p className="eye-kicker">BEFORE YOU START</p><h2>A few clear answers.</h2>{faqs.map(([q,a])=><details key={q}><summary>{q}</summary><p>{a}</p></details>)}<p className="eye-small">Start with your business name, website, country, service area and public profile links. Please don’t send identity documents or private licence records through the public form. IAM will confirm an appropriate review process.</p><div className="eye-actions"><Link to="/contact?request=eyespyr-review">Introduce your business ↗</Link><a href="/#client-publishing-flow" className="eye-secondary">See the wider IAM plan →</a></div></div></section>
+</main></Layout>}
