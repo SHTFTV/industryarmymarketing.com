@@ -116,14 +116,8 @@ const FlagshipBrandsSection = () => {
           <a href="/contact?request=network" className="inline-flex mt-6 px-6 py-3 rounded-md bg-primary text-primary-foreground font-semibold">Find your place in an IAM hub ↗</a>
         </motion.div>
 
-        <div className="iam-industry-doors" id="iam-industry-doors" aria-label="Choose an industry marketing plan">
-          <a href="/snow-removal-marketing"><img src="/brand-journal/wow-approved.webp" alt="PlowWow snow-industry brand artwork" width={1200} height={630} loading="lazy"/><div><span>SNOW &amp; ICE</span><h3>Start with Wow.</h3><p>Snow removal marketing ↗</p></div></a>
-          <a href="/steel-stud-drywall-marketing"><img src="/contractor-brands/steelstud-structural-job.webp" alt="Structural steel frame from the SteelStud.ca project archive" width={1400} height={787} loading="lazy"/><div><span>STEEL STUD &amp; DRYWALL</span><h3>Build your presence.</h3><p>Explore the contractor beta ↗</p></div></a>
-          <a href="/contractors"><img src="/contractor-brands/buildershaus.webp" alt="BuildersHaus construction-network brand artwork" width={1200} height={630} loading="lazy"/><div><span>CONSTRUCTION</span><h3>Your trade. Connected.</h3><p>Contractor marketing ↗</p></div></a>
-          <a href="/network"><img src="/__l5e/assets-v1/ba7e13bb-db20-45ec-bc97-ddf24d1d866d/dentists-card.jpg" alt="Dentists.ltd practice-brand artwork" width={1200} height={630} loading="lazy"/><div><span>MORE INDUSTRIES</span><h3>Find your own fit.</h3><p>Explore the industry network ↗</p></div></a>
-        </div><p className="iam-doors-credit">IAM brand artwork · Steel framing photograph: SteelStud.ca archive. Steel stud &amp; drywall beta applications exclude the Lower Mainland.</p>
         <PseoNetworkPitch />
-        <div className="space-y-14">
+        <div className="space-y-14" id="iam-industry-doors">
           {groups.map((group, gi) => (
             <motion.div
               key={group.eyebrow}
