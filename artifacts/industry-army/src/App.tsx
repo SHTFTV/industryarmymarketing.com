@@ -227,6 +227,7 @@ const App = ({ ssrPath }: { ssrPath?: string } = {}) => {
           <Route path="/guest-post" element={<GuestPost />} />
           <Route path="/industries" element={<Industries />} />
           <Route path="/seo" element={<SeoMarketDirectory />} />
+          <Route path="/seo/united-states" element={<SeoMarketDirectory country="United States" />} />
           <Route path="/seo/:city" element={<SeoMarketPage />} />
           <Route path="/mission" element={<Mission />} />
           <Route path="/brand-creation-management-vancouver" element={<BrandCreationVancouver />} />
