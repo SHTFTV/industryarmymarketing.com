@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import "./brand-studio.css";
+import "./iam-home-opening.css";
 
 export function IamStoryFilm() {
   return <section id="iam-story" className="iam-story-archive"><div className="iam-story-film"><div><p className="iam-studio-kicker">The story behind the work</p><h2>Built from the industries<br/>we work in.</h2><p>Watch the original IAM story, then follow the Build Journal for the brands, products and releases taking shape now.</p><a href="/blog">Read the Build Journal →</a></div><div className="iam-story-player"><iframe src="https://www.youtube.com/embed/JhZLiYdoaJA" title="The Story of IAM — How We Turned Trades Into a Digital Army" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen/></div></div></section>;
@@ -10,7 +11,7 @@ export default function HeroSection() {
   const [industry, setIndustry] = useState("Your industry’s army");
   const syncIndustry = (time: number) => {
     const names = ["Your industry’s army", "Healthcare", "Construction", "Transportation", "Professional Services"];
-    setIndustry(time >= 18.4 ? "We have 150+ industries. Join yours today." : names[Math.floor((time + 0.4) / 4) % names.length]);
+    setIndustry(time >= 18.4 ? "Find your industry" : names[Math.floor((time + 0.4) / 4) % names.length]);
   };
   const hero = useRef<HTMLElement>(null);
   const film = useRef<HTMLVideoElement>(null);
@@ -31,21 +32,13 @@ export default function HeroSection() {
     update(); preference.addEventListener("change", update); document.addEventListener("visibilitychange", visibility);
     return () => { preference.removeEventListener("change", update); document.removeEventListener("visibilitychange", visibility); };
   }, []);
-  return <section ref={hero} id="home" className="iam-studio-hero iam-network-hero iam-film-hero">
-    <video ref={film} onTimeUpdate={event => syncIndustry(event.currentTarget.currentTime)} className="iam-industry-army-film" muted loop playsInline preload="metadata" poster="/brand-journal/iam-general-mark-poster-v4.jpg" aria-label="General Mark stays front centre in army uniform as the complete marching formation changes together from army to healthcare, construction, transportation and legal-professional uniforms, then back to army"><source src="/brand-journal/iam-general-mark-army-v5.mp4" type="video/mp4"/></video>
-    <div className="iam-crew-industry" aria-label={"Current crew: " + industry}><span>JOIN YOUR INDUSTRY</span><strong>{industry}</strong></div>
-    <div className="iam-network-hero-layout"><div className="iam-studio-intro">
-      <img className="iam-studio-seal" src="/brand-journal/iam-seal.webp" width={100} height={100} alt="Industry Army Marketing" fetchPriority="high"/>
-      <p className="iam-studio-kicker">A CONNECTED BRAND & SEARCH ECOSYSTEM · EST. 2011</p>
-      <h1>Industry Army<br/><span>Marketing.</span></h1>
-      <h2 className="iam-army-promise">Join your industry and have an army working with you.</h2>
-      <p className="iam-studio-lead">Build your presence city by city with IAM’s pSEO ecosystem, industry brands and connected publishing. Bring us your expertise and target cities; we shape an agreed content and marketing plan to help your business reach the people it serves.</p>
-      <p className="iam-army-industry"><a href="/industries">150+ industries. Choose yours. ↗</a></p>
-      <p className="iam-army-price">From $10 a month · For approved businesses</p>
-      <div className="iam-studio-actions"><a href="/contact?request=network">Apply for your industry and city ↗</a><a className="iam-studio-secondary" href="/brand-creation-management-vancouver">Branding & SEO services ↗</a></div>
-      <p className="iam-studio-signoff">Industry Army Marketing · Established November 18, 2011 <span>WE MAKE BUSINESS BOOM.</span></p>
-      <p className="iam-studio-signoff">Annual directory-only registration is a separate offer. <a href="/pricing">Compare participation options →</a></p>
-      <button type="button" className="iam-film-control" onClick={() => setPlaying(value => !value)} aria-pressed={playing}>{playing ? "Pause background video" : "Play background video"}</button>
-    </div></div>
+  return <section ref={hero} id="home" className="iam-home-hero">
+    <div className="iam-home-hero-grid"><div className="iam-home-motion">
+      <video ref={film} onTimeUpdate={event => syncIndustry(event.currentTarget.currentTime)} className="iam-home-crew-film" muted loop playsInline preload="metadata" poster="/brand-journal/iam-general-mark-poster-v4.jpg" aria-label="General Mark and the IAM crew changing between army, healthcare, construction, transport and professional uniforms"><source src="/brand-journal/iam-general-mark-army-v5.mp4" type="video/mp4"/></video>
+      <img className="iam-home-seal" src="/brand-journal/iam-seal.webp" width={100} height={100} alt="Industry Army Marketing" fetchPriority="high"/>
+      <div className="iam-home-crew-label"><span>YOUR INDUSTRY’S ARMY</span><strong>{industry}</strong></div>
+      <button type="button" className="iam-home-film-control" onClick={() => setPlaying(value => !value)} aria-pressed={playing}>{playing ? "Pause crew video" : "Play crew video"}</button>
+    </div><div className="iam-home-intro"><p className="iam-home-eyebrow">INDUSTRY ARMY MARKETING · EST. 2011</p><h1>Your industry.<br/>Your city.<br/><span>Your army.</span></h1><p className="iam-home-promise">Put your expertise<br/>in front of the right people.</p><p className="iam-home-lead">Your brand, real projects and useful city pages—connected through IAM’s industry network and pSEO system.</p><div className="iam-home-actions"><a href="#iam-industry-doors">Find your industry ↗</a><a href="#iam-pseo">See how pSEO works ↓</a></div><p className="iam-home-price">Marketing participation from $10/month for approved businesses. <a href="/pricing">Compare the options →</a></p></div></div>
+    <div className="iam-home-signal"><span>BRAND</span><b>+</b><span>YOUR WORK</span><b>+</b><span>YOUR CITY</span><b>→</b><strong>More ways to be found.</strong></div>
   </section>;
 }

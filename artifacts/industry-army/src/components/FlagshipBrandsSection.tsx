@@ -94,27 +94,33 @@ const groups: { icon: typeof Crown; eyebrow: string; title: string; blurb: strin
 
 const FlagshipBrandsSection = () => {
   return (
-    <section id="flagship-brands" className="py-24 bg-background border-y border-border">
+    <section id="flagship-brands" className="iam-home-brand-section py-24 bg-background border-y border-border">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center max-w-3xl mx-auto mb-16"
+          className="text-center max-w-3xl mx-auto mb-8 iam-brands-intro"
         >
           <p className="text-primary uppercase tracking-[0.3em] text-sm font-semibold mb-3">
             OUR BRANDS / YOUR OPPORTUNITY
           </p>
           <h2 className="font-display text-5xl md:text-6xl text-foreground mb-5">
-            Brands we create and market.<br />
-            <span className="text-primary text-glow">Networks you can join</span>
+            Find your industry.<br />
+            <span className="text-primary text-glow">Bring your business.</span>
           </h2>
           <p className="text-muted-foreground leading-relaxed">
-            These are IAM’s own brand platforms and publishing networks. They give businesses a relevant place to tell their story, show their work and connect with their industry. Explore a brand below, then talk with us about the participation, content or marketing option that fits your business. Availability, scope and terms are confirmed for each network.
+            Start with a relevant brand. Bring your expertise and real work. We’ll discuss the marketing and publishing plan that fits your business.
           </p>
           <a href="/contact?request=network" className="inline-flex mt-6 px-6 py-3 rounded-md bg-primary text-primary-foreground font-semibold">Talk to IAM about joining ↗</a>
         </motion.div>
 
+        <div className="iam-industry-doors" id="iam-industry-doors" aria-label="Choose an industry marketing plan">
+          <a href="/snow-removal-marketing"><img src="/brand-journal/wow-approved.webp" alt="PlowWow snow-industry brand artwork" width={1200} height={630} loading="lazy"/><div><span>SNOW &amp; ICE</span><h3>Start with Wow.</h3><p>Snow removal marketing ↗</p></div></a>
+          <a href="/steel-stud-drywall-marketing"><img src="/contractor-brands/steelstud-structural-job.webp" alt="Structural steel frame from the SteelStud.ca project archive" width={1400} height={787} loading="lazy"/><div><span>STEEL STUD &amp; DRYWALL</span><h3>Build your presence.</h3><p>Explore the contractor beta ↗</p></div></a>
+          <a href="/contractors"><img src="/contractor-brands/buildershaus.webp" alt="BuildersHaus construction-network brand artwork" width={1200} height={630} loading="lazy"/><div><span>CONSTRUCTION</span><h3>Your trade. Connected.</h3><p>Contractor marketing ↗</p></div></a>
+          <a href="/network"><img src="/__l5e/assets-v1/ba7e13bb-db20-45ec-bc97-ddf24d1d866d/dentists-card.jpg" alt="Dentists.ltd practice-brand artwork" width={1200} height={630} loading="lazy"/><div><span>MORE INDUSTRIES</span><h3>Find your own fit.</h3><p>Explore the industry network ↗</p></div></a>
+        </div><p className="iam-doors-credit">IAM brand artwork · Steel framing photograph: SteelStud.ca archive. Steel stud &amp; drywall beta applications exclude the Lower Mainland.</p>
         <PseoNetworkPitch />
         <div className="space-y-14">
           {groups.map((group, gi) => (
@@ -140,7 +146,7 @@ const FlagshipBrandsSection = () => {
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="iam-compact-brand-grid grid grid-cols-2 lg:grid-cols-4 gap-4">
                 {group.brands.map((brand) => (
                   <div key={brand.name} className="flex flex-col">
                   <a
