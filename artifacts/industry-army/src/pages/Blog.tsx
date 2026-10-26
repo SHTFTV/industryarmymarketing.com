@@ -173,7 +173,7 @@ const Blog = () => {
         title="Build Journal & Industry Intel | Industry Army Marketing"
         description="Follow IAM’s branding, websites, apps, launches and publishing updates, alongside the existing industry-marketing archive."
         path="/blog"
-        image="/brand-journal/brand-to-rollout-iam-build-journal-share.jpg"
+        image="/industry-army-marketing-share-v2.jpg"
         imageAlt="IAM brand-to-rollout build journal"
         jsonLd={[
           {

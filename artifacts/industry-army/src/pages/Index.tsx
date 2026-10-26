@@ -17,11 +17,11 @@ const Index = () => {
   return (
     <Layout>
       <Seo
-        title="IAM Brand & SEO Ecosystem | Further. Faster. Since 2011"
+        title="Industry Army Marketing"
         description="IAM creates and manages brands that grow into industry hubs. Brand identity, websites, apps, publishing, client qualification and distribution, supported by pSEO. Established in 2011."
         path="/"
-        image="/brand-journal/brand-to-rollout-iam-build-journal-share.jpg"
-        imageAlt="IAM: from brand identity to websites, apps and rollout"
+        image="/industry-army-marketing-share-v2.jpg"
+        imageAlt="Industry Army Marketing — name and green logo"
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
