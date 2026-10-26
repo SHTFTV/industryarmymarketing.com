@@ -658,7 +658,7 @@ const Pricing = () => (
         </div>
       </div>
     </section>
-  <ClientPublishingFlow /><VerifiedClientPrinciple /></Layout>
+  <section className="container mx-auto px-5 py-10 max-w-5xl"><p className="text-primary text-xs tracking-widest">THE $10 SEO COMPANY · NORTH AMERICA FIRST</p><h2 className="font-display text-3xl mt-3">A small starting point. A bigger industry ecosystem.</h2><p className="text-muted-foreground mt-4">IAM builds brands and industry hubs. We’re testing the participation and marketing model in North America first. Entry offers start at $10; a full SEO campaign, brand build or wider marketing plan has its own agreed scope. EyeSpyR country pricing uses a $10 USD yearly base and PPP adjustment, with the actual local quote confirmed before payment. Wider availability will follow the pilot.</p></section><ClientPublishingFlow /><VerifiedClientPrinciple /></Layout>
 );
 
 const PricingAnalytics = () => {
