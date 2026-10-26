@@ -1,3 +1,4 @@
+import ClientPublishingFlow from "@/components/ClientPublishingFlow";
 import Layout from "@/components/Layout";
 import Seo from "@/components/Seo";
 import { breadcrumbList } from "@/lib/breadcrumb";
@@ -93,7 +94,7 @@ const faqs: { q: string; a: string }[] = [
   },
   {
     q: "How much does the city-page upgrade cost?",
-    a: "It has separate pricing. After reviewing fit, we discuss your market, scope and content contribution, then agree the price and billing terms before activation. The $10/year registration fee is not the city-page upgrade price.",
+    a: "City-page partnerships are $10/month per 100,000 residents for one selected business per trade and city, by application. Population basis, availability and scope are agreed before activation. The $10/year hub registration is separate.",
   },
   {
     q: "How does renewal work?",
@@ -102,7 +103,7 @@ const faqs: { q: string; a: string }[] = [
 ];
 
 const comparisonRows: { feature: string; directory: string; exclusive: string }[] = [
-  { feature: "Price", directory: "$10 / year per hub site", exclusive: "Separate quote after fit review" },
+  { feature: "Price", directory: "$10 / year per hub site", exclusive: "$10/month per 100,000 residents" },
   { feature: "Purpose", directory: "Register your business on one industry hub", exclusive: "Develop a city-page partnership" },
   { feature: "Availability", directory: "Open registration", exclusive: "Held for the right-fit creators" },
   { feature: "Content contribution", directory: "Business listing details", exclusive: "Useful projects, photos, videos or articles; expectations agreed together" },
@@ -656,7 +657,7 @@ const Pricing = () => (
         </div>
       </div>
     </section>
-  </Layout>
+  <ClientPublishingFlow /></Layout>
 );
 
 const PricingAnalytics = () => {

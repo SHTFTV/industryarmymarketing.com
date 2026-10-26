@@ -35,7 +35,7 @@ const faqs = [
   },
   {
     q: "What TALC upsells are available?",
-    a: "TALC.tv social syndication ($10 per placement or $99/month standalone), TALC dofollow amplification (auto-cross-links your placement from every network sibling for $10 one-time), and TALC content refresh (quarterly rewrite of your landing page for $10 per pass). All optional. All flat-priced.",
+    a: "TALC.tv social syndication ($20 per shout-out; custom plans available), TALC dofollow amplification (auto-cross-links your placement from every network sibling for $10 one-time), and TALC content refresh (quarterly rewrite of your landing page for $10 per pass). All optional. All flat-priced.",
   },
   {
     q: "What is the catch?",
@@ -57,7 +57,7 @@ const AffordableSeo = () => {
       name: "Affordable SEO — $10 Business Listing and City Slot Program",
       serviceType: "Search Engine Optimization",
       provider: { "@type": "Organization", name: "Industry Army Marketing", url: "https://www.industryarmymarketing.com" },
-      description: "Enterprise-grade SEO at $10 per placement. Open $10 business listing plus a gated $10 city-plus-trade slot reserved for verified power partners across North America.",
+      description: "Enterprise-grade SEO at $20 per shout-out. Open $10 business listing plus a gated $10 city-plus-trade slot reserved for verified power partners across North America.",
       image: `https://www.industryarmymarketing.com${image}`,
       offers: [
         { "@type": "Offer", name: "Business Listing", price: "10.00", priceCurrency: "USD", description: "Open $10 directory listing, permanent dofollow" },
@@ -204,7 +204,7 @@ const AffordableSeo = () => {
           <div className="grid md:grid-cols-3 gap-4">
             {[
               { title: "Eyespyr Competitor Monitoring", body: "Weekly diff on every competitor in your city — new backlinks, new content, ranking moves. So you always know who is chasing your slot." },
-              { title: "TALC.tv Social Syndication", body: "Your placement is fanned out across X, Instagram, TikTok, YouTube Shorts, LinkedIn, Threads and more, on a sprinkled cadence. $10 per placement." },
+              { title: "TALC.tv Social Syndication", body: "Your placement is fanned out across X, Instagram, TikTok, YouTube Shorts, LinkedIn, Threads and more, on a sprinkled cadence. $20 per shout-out." },
               { title: "TALC Content Refresh", body: "Quarterly rewrite of your landing page — fresh copy, updated schema, new photos. Keeps the placement ranking as competitors move. $10 per pass." },
             ].map((u) => (
               <div key={u.title} className="p-6 rounded-lg bg-card border border-border">

@@ -24,9 +24,9 @@ const plans = [
   {
     tier: "TIER 2 · SELECTIVE UPGRADE",
     name: "City-Page Partnership",
-    price: "By application",
-    unit: "",
-    subtitle: "Separate pricing agreed after a fit review",
+    price: "$10",
+    unit: "/month per 100,000 residents",
+    subtitle: "One selected business per trade and city · By application",
     featured: true,
     badge: "RIGHT FIT FIRST",
     features: [
@@ -119,7 +119,7 @@ const PricingSection = () => {
         </div>
 
         <p className="mt-8 max-w-3xl mx-auto text-center text-sm text-muted-foreground">
-          Optional content service: TALC.tv blasts are $10 per post, priced separately from
+          Optional content service: TALC.tv shout-outs are $20 each, priced separately from
           registration and city-page partnerships. <Link to="/contact" className="text-primary underline">Ask about content services</Link>.
         </p>
 

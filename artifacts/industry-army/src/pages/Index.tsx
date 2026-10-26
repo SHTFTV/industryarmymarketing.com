@@ -8,6 +8,7 @@ import ServicesSection from "@/components/ServicesSection";
 import PricingSection from "@/components/PricingSection";
 import AboutSection from "@/components/AboutSection";
 import ContactSection from "@/components/ContactSection";
+import ClientPublishingFlow from "@/components/ClientPublishingFlow";
 import LatestBlogPosts from "@/components/LatestBlogPosts";
 
 const Index = () => {
@@ -37,6 +38,7 @@ const Index = () => {
       />
       <HeroSection />
       <FlagshipBrandsSection />
+      <ClientPublishingFlow />
       <IamStoryFilm />
       <BrandStudioSection />
       <LatestBlogPosts />

@@ -69,6 +69,7 @@ const EyeSpyr = () => (
         </p>
       </div>
     </section>
+    <section className="border-y border-border bg-card py-12"><div className="container mx-auto px-5 max-w-4xl"><p className="text-primary text-xs tracking-widest">KEEP YOUR BUSINESS INFORMATION CURRENT</p><h2 className="font-display text-3xl mt-3">EyeSpyR yearly update · $10 USD</h2><p className="text-muted-foreground mt-4">Review your profile details and supporting information each year. The update fee is separate from an assessment outcome; it does not buy a badge or endorsement.</p><p className="text-muted-foreground mt-4">Brand management starts from $10 USD/month, with work and deliverables agreed in your plan. TALC.tv shout-outs are available separately at $20 USD each.</p><a href="/contact?request=eyespyr-update" className="inline-block mt-5 text-primary underline">Discuss my profile and plan →</a></div></section>
     <CtaBanner
       title="Earn Your"
       highlight="Badge Today."
