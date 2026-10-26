@@ -32,6 +32,7 @@ const Contractors = () => (
       <div className="flex flex-wrap gap-3">
         <Button variant="hero" asChild><Link to="/contact?request=marketing">Discuss Your Marketing</Link></Button>
         <Button variant="heroOutline" asChild><Link to="/pricing">See Pricing</Link></Button>
+        <Button variant="heroOutline" asChild><Link to="/snow-removal-marketing">Snow Removal Marketing</Link></Button>
       </div>
     </PageHeader>
 

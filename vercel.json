@@ -15,5 +15,17 @@
     "api/mark-ett.js": {
       "maxDuration": 30
     }
-  }
+  },
+  "redirects": [
+    {
+      "source": "/marketing/snow-removal",
+      "destination": "/snow-removal-marketing",
+      "permanent": true
+    },
+    {
+      "source": "/pseo-for-snow-removal-companies",
+      "destination": "/snow-removal-marketing",
+      "permanent": true
+    }
+  ]
 }

@@ -43,11 +43,15 @@ export type LeadPayload = Omit<z.infer<typeof leadSchema>, "website"> & {
   submittedAt: string;
 };
 
+const leadStorageConfigured = Boolean(import.meta.env.VITE_SUPABASE_URL && import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY) && !String(import.meta.env.VITE_SUPABASE_URL).includes("placeholder");
+
 const fieldCls = "bg-card border-border focus:border-primary";
 const errCls = "text-destructive text-xs mt-1";
 
 interface ContactSectionProps {
   source?: string;
+  defaultTrade?: string;
+  defaultMessage?: string;
   eyebrow?: string;
   title?: string;
   intro?: string;
@@ -57,6 +61,8 @@ interface ContactSectionProps {
 
 const ContactSection = ({
   source = "contact-page",
+  defaultTrade = "",
+  defaultMessage = "",
   eyebrow = "Get In Touch",
   title = "Contact Us",
   intro = "Ask about $10/year registration on one hub site, a city-page partnership, guest posting or other marketing services. City-page upgrades require a fit review before activation.",
@@ -77,23 +83,25 @@ const ContactSection = ({
     ? "I'd like to register my business on one hub site for $10/year. Please help me choose the relevant industry hub."
     : tier === "exclusive"
       ? "I'm interested in the separate City-Page Partnership. Please review my fit and discuss scope and pricing. The content I can contribute is:"
-      : requestMessages[request] || "";
+      : requestMessages[request] || defaultMessage;
 
   const [form, setForm] = useState({
     name: "",
     email: "",
     phone: "",
-    trade: "",
+    trade: trades.includes(params.get("industry") || defaultTrade) ? (params.get("industry") || defaultTrade) : "",
     city: "",
     message: prefillMessage,
     website: "",
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitting, setSubmitting] = useState(false);
+  const [emailDraft, setEmailDraft] = useState("");
   const { toast } = useToast();
 
   const set = <K extends keyof typeof form>(k: K, v: string) => {
     setForm((f) => ({ ...f, [k]: v }));
+    setEmailDraft("");
     if (errors[k]) setErrors((e) => ({ ...e, [k]: "" }));
   };
 
@@ -120,6 +128,16 @@ const ContactSection = ({
       const { website: _hp, ...clean } = parsed.data;
       const leadSource = tier ? `pricing-${tier}` : request ? `network-${request}` : source;
       const context = referralNote(captureReferral(), request);
+      if (!leadStorageConfigured) {
+        const body = [
+          `Name: ${clean.name}`, `Reply email: ${clean.email}`,
+          `Phone: ${clean.phone || "Not provided"}`, `Trade: ${clean.trade}`,
+          `City: ${clean.city}`, `Source: ${leadSource}`, "", clean.message + context,
+        ].join("\n");
+        setEmailDraft("mailto:colin@industryarmymarketing.com?subject=" + encodeURIComponent(`IAM enquiry — ${clean.trade} — ${clean.city}`) + "&body=" + encodeURIComponent(body));
+        toast({title: "Your email brief is ready", description: "Open the draft below and send it from your mail app. Nothing has been sent yet."});
+        return;
+      }
       const { error } = await supabase.from("leads").insert({
         name: clean.name,
         email: clean.email,
@@ -151,7 +169,7 @@ const ContactSection = ({
   };
 
   return (
-    <section id="contact" className="py-24 bg-background">
+    <section data-enquiry-mode={leadStorageConfigured ? "stored-lead" : "email-draft"} id="contact" className="py-24 bg-background">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -241,6 +259,7 @@ const ContactSection = ({
             </div>
             <div>
               <select
+                aria-label="Trade"
                 value={form.trade}
                 onChange={(e) => set("trade", e.target.value)}
                 aria-invalid={!!errors.trade}
@@ -273,8 +292,10 @@ const ContactSection = ({
               aria-hidden="true"
             />
             <Button variant="hero" size="lg" type="submit" disabled={submitting} className="self-end">
-              {submitting ? <><Loader2 className="w-4 h-4 mr-2 animate-spin" />Sending...</> : submitLabel}
+              {submitting ? <><Loader2 className="w-4 h-4 mr-2 animate-spin" />{leadStorageConfigured ? "Sending..." : "Preparing..."}</> : leadStorageConfigured ? submitLabel : "Prepare my email brief"}
             </Button>
+          {!leadStorageConfigured && <p className="text-sm text-muted-foreground leading-relaxed mt-4">Preparing a brief does not submit a message. Open the draft and send it from your email app to contact IAM.</p>}
+            {emailDraft && <div className="mt-5 rounded-lg border border-primary p-4" role="status"><p className="text-sm mb-3">Your brief is ready. Nothing has been sent yet.</p><a href={emailDraft} className="inline-flex rounded-md bg-primary text-primary-foreground px-5 py-3 font-semibold">Open my draft email to Colin ↗</a><p className="text-xs text-muted-foreground mt-3">Review and send the message in your mail app. Prefer a new message? Email colin@industryarmymarketing.com.</p></div>}
           </motion.form>
         </div>
       </div>

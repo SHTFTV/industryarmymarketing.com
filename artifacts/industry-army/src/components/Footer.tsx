@@ -5,6 +5,7 @@ const cols = [
     title: "Platform",
     links: [
       { label: "SEO by city", to: "/seo" },
+      { label: "Snow removal marketing", to: "/snow-removal-marketing" },
       { label: "US SEO markets", to: "/seo/united-states" },
       { label: "Branding & SEO", to: "/brand-creation-management-vancouver" },
       { label: "Domain Network", to: "/network" },
