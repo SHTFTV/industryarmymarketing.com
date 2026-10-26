@@ -17,7 +17,7 @@ const Index = () => {
     <Layout>
       <Seo
         title="IAM Brand & SEO Ecosystem | Further. Faster. Since 2011"
-        description="An ecosystem of industry brands, lightweight publishing systems, websites, apps and SEO. Established November 18, 2011, with earlier roots in construction marketing."
+        description="IAM creates and manages brands that grow into industry hubs. Brand identity, websites, apps, publishing, client qualification and distribution, supported by pSEO. Established in 2011."
         path="/"
         image="/brand-journal/brand-to-rollout-iam-build-journal-share.jpg"
         imageAlt="IAM: from brand identity to websites, apps and rollout"

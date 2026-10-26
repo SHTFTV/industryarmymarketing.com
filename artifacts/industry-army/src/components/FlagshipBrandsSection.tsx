@@ -103,16 +103,17 @@ const FlagshipBrandsSection = () => {
           className="text-center max-w-3xl mx-auto mb-8 iam-brands-intro"
         >
           <p className="text-primary uppercase tracking-[0.3em] text-sm font-semibold mb-3">
-            OUR BRANDS / YOUR OPPORTUNITY
+            WE BUILD THE BRANDS / YOU BRING THE EXPERTISE
           </p>
           <h2 className="font-display text-5xl md:text-6xl text-foreground mb-5">
-            Find your industry.<br />
-            <span className="text-primary text-glow">Bring your business.</span>
+            We build brands.<br />
+            <span className="text-primary text-glow">We grow industry hubs.</span>
           </h2>
           <p className="text-muted-foreground leading-relaxed">
-            Start with a relevant brand. Bring your expertise and real work. We’ll discuss the marketing and publishing plan that fits your business.
+            IAM creates and manages distinctive brands, then develops them into useful hubs for their industries. Identity, websites, professional profiles, original content and distribution come together around the people and businesses in each field.
           </p>
-          <a href="/contact?request=network" className="inline-flex mt-6 px-6 py-3 rounded-md bg-primary text-primary-foreground font-semibold">Talk to IAM about joining ↗</a>
+          <p className="text-muted-foreground leading-relaxed mt-4">pSEO connects the useful pages within that bigger system. Bring your expertise, real work or a new product—and talk to us about the right industry hub or a brand of your own.</p>
+          <a href="/contact?request=network" className="inline-flex mt-6 px-6 py-3 rounded-md bg-primary text-primary-foreground font-semibold">Find your place in an IAM hub ↗</a>
         </motion.div>
 
         <div className="iam-industry-doors" id="iam-industry-doors" aria-label="Choose an industry marketing plan">
