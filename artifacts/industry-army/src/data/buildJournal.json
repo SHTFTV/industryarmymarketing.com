@@ -1,6 +1,165 @@
 [
   {
     "brand": "Industry Army Marketing",
+    "trade": "Vancouver SEO and exclusive client representation",
+    "tradeShort": "SEO",
+    "plural": "businesses",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Vancouver",
+    "province": "BC",
+    "category": "Vancouver SEO",
+    "date": "October 27, 2026",
+    "publishedAt": "2026-10-27T17:20:26.456107+00:00",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "contactBusiness": "iam",
+    "slug": "vancouver-seo-company-one-client-per-industry-region",
+    "title": "A Vancouver SEO company that will turn down your competitor’s cheque",
+    "cardTitle": "One industry. One region. One committed SEO partner.",
+    "excerpt": "IAM takes on one SEO client per industry in an agreed region. Why we decline conflicting campaigns—and what that means for businesses that take their work seriously.",
+    "metaDescription": "Looking for a Vancouver SEO company? IAM represents one client per industry in an agreed region. Check your fit for focused SEO and brand marketing.",
+    "image": "/brand-journal/exclusive-vancouver-seo-hero.jpg",
+    "imageAlt": "IAM editorial graphic: One industry. One region. Your corner.",
+    "ogImage": "/brand-journal/exclusive-vancouver-seo-share.jpg",
+    "ogImageAlt": "Industry Army Marketing — Vancouver SEO with exclusive client representation",
+    "faqHeading": "Questions about IAM’s exclusive SEO representation",
+    "faqs": [
+      {
+        "q": "Does IAM represent competing SEO clients in the same region?",
+        "a": "Our policy is one SEO client per industry in an agreed region. We check the proposed services and geography against existing client commitments before accepting an engagement."
+      },
+      {
+        "q": "Does an enquiry reserve my industry or region?",
+        "a": "No. Sending an enquiry begins the availability and fit discussion. Services, geography and the engagement terms need to be agreed in writing."
+      },
+      {
+        "q": "Does exclusivity guarantee rankings or enquiries?",
+        "a": "No. Exclusivity describes IAM’s client representation policy. It does not guarantee rankings, AI citations, traffic or business outcomes."
+      }
+    ],
+    "cta": {
+      "eyebrow": "Vancouver SEO · Focused representation",
+      "heading": "Is your industry and region a fit?",
+      "body": "Tell us your business, website, main service and target region. We will check existing commitments and discuss an appropriate scope.",
+      "buttonText": "Check your industry and region",
+      "buttonHref": "/contact?request=exclusive-seo"
+    },
+    "richContent": {
+      "intro": "We will not take your competitor’s money for a conflicting campaign in the same agreed region. Industry Army Marketing’s SEO policy is one client per industry, per region—because the quality of a client relationship matters more than adding another competing retainer. We want to put focused work behind companies that take genuine pride in their products and services.",
+      "sections": [
+        {
+          "heading": "One client. One industry. One agreed region.",
+          "paragraphs": [
+            "Industry Army Marketing’s position is straightforward: we take on one SEO client per industry in an agreed region. We do not accept competing campaigns in that same scope simply because another business is willing to pay. A client should know where our commitment sits before the work begins, rather than discovering a conflict after sharing their plans, margins and ambitions.",
+            "This is our approach to client representation, not a claim that a business owns a city or can exclude competitors from search. Other companies will continue to compete. Our responsibility is to make sure we are not taking payment to advance both sides of the same commercial contest. The industry, geography and services covered need to be clear in the engagement."
+          ]
+        },
+        {
+          "heading": "Why we will turn down the second cheque",
+          "paragraphs": [
+            "An SEO engagement can involve more than page titles. You may tell your agency which jobs are profitable, which customers you want, where you can serve reliably and which services you intend to launch. That information helps shape the work. It also makes competing representation a serious business question, even when the companies have different names or slightly different websites.",
+            "We do not want our incentive to be collecting as many competing retainers as possible. We want to build a focused relationship with a company whose work deserves attention. If your direct competitor asks us for the same campaign in the same agreed region, accepting that fee would cut across the commitment we made to you. Our policy is to decline that conflicting work."
+          ]
+        },
+        {
+          "heading": "Vancouver SEO should start with the business behind the website",
+          "paragraphs": [
+            "We want to work with businesses that take their products and services seriously. A polished website cannot substitute for good workmanship, useful products, responsive communication and fair dealings. Our aim is to help the right people find and understand those strengths. We are interested in what you actually do well, and in the evidence that makes your business a sensible choice.",
+            "That means asking practical questions. What work are you equipped to deliver? What does a customer need to know before booking? Do your photographs show your own work? Which qualifications apply to the particular service? What happens when something goes wrong? These are useful foundations for a credible online presence. We do not need to invent superlatives when the real work gives us a better story."
+          ]
+        },
+        {
+          "heading": "Agree the region before calling it exclusive",
+          "paragraphs": [
+            "“Vancouver” can mean the City of Vancouver, a particular neighbourhood or the wider Metro Vancouver market in everyday conversation. Those are different commercial scopes. A contractor based in Langley may serve several municipalities; a professional office may draw clients from a smaller area. We should define the region you are asking us to represent rather than leaving it as a vague line in a sales pitch.",
+            "The same applies to the industry. A general contractor, a specialist drywall company and a tenant-improvement contractor can overlap on some work without being identical businesses. We need to discuss the services and customer groups that create a direct conflict. Availability is checked against existing commitments before an engagement is accepted. Reading this article or sending an enquiry does not reserve a region or establish an exclusive agreement."
+          ]
+        },
+        {
+          "heading": "Build pages that help a customer make a decision",
+          "paragraphs": [
+            "A useful service page explains the work, the area served, the limits of the offer and how to take the next step. It should help a buyer decide whether to call. For a construction business that might mean showing the difference between framing, boarding, finishing and a complete interior scope. For a professional practice it might mean explaining the process, eligibility and documents needed for an initial conversation.",
+            "We favour clear answers and relevant supporting material over repeating a city name in every paragraph. Customers should be able to find the actual provider, understand the offer and reach the correct person. A large collection of pages is not automatically useful. Each page needs a reason to exist, accurate information and a sensible place in the website."
+          ]
+        },
+        {
+          "heading": "Real projects give the brand something concrete to stand on",
+          "paragraphs": [
+            "Project photographs, service explanations and carefully described examples can make a business easier to understand. A photograph should belong to the work being discussed, with permission to use it and credit where appropriate. An archive photograph should not be presented as a job completed this morning. A familiar client name should not quietly become an endorsement the client never gave.",
+            "For an example of our approach to brand building, read [the Rambo Walls case study](/blog/rambo-walls-company-name-to-vancouver-contractor-brand). It describes IAM’s account of developing the domain, identity, website, media and connected content from a company-name brief. Construction enquiries remain with Rambo. Enquiries about your own brand, website or marketing belong with IAM. Keeping that ownership clear matters across every page."
+          ]
+        },
+        {
+          "heading": "SEO, answer engines and a consistent business identity",
+          "paragraphs": [
+            "People encounter businesses through search results, maps, websites, recommendations and AI-generated answers. We want the information we publish to describe the same real business across those surfaces. The company name, contact details, service area, authorship and evidence should be consistent. Search visibility is more useful when a potential customer can confirm who you are and what you offer.",
+            "Our [Vancouver SEO information](/seo/vancouver) and [brand creation and management page](/brand-creation-management-vancouver) explain the wider conversation. Depending on the agreed scope, the work can include the website, service content, project presentation and the technical information that helps systems interpret a page. No agency controls which answer an AI service generates or which position a search engine assigns. We will not sell that uncertainty as a guaranteed outcome."
+          ]
+        },
+        {
+          "heading": "A focused campaign needs a focused brief",
+          "paragraphs": [
+            "Tell us the work you want more of, the customers you are best placed to serve and the region where you can deliver. “More traffic” is not a complete business objective. A specialist company might prefer a smaller number of suitable commercial enquiries to a large volume of requests for services it does not provide. Your capacity, location and priorities should shape the plan.",
+            "We also need to understand the starting point. That includes the current website, access to the assets you own, the material available for publication and any existing marketing commitments. A clear brief helps us propose a practical scope. It also helps us spot conflicts early, before either side invests time in a campaign that does not fit."
+          ]
+        },
+        {
+          "heading": "The standard is honest representation",
+          "paragraphs": [
+            "Wanting to work with the best businesses does not give us permission to award them invented credentials. Claims about insurance, certification, experience and specialist capability should be supported and described accurately. Customer reviews should be real. Project outcomes should be attributed to evidence. A strong company deserves marketing that can withstand a closer look, not a collection of claims nobody checked.",
+            "We are not promising that marketing will repair a poor service experience. We are looking for businesses willing to contribute the information, photographs and attention that make a website worth reading. If you care about the quality of your work and want that quality reflected online, there is a useful conversation to have. Our commitment is to represent the business honestly and give the agreed campaign our focus."
+          ]
+        },
+        {
+          "heading": "Measure the work against the reason you hired us",
+          "paragraphs": [
+            "Before starting, we should agree what is being delivered and what evidence will be reviewed. A website launch, corrected contact information, a project archive and suitable enquiries are different things. It is important to distinguish completed work from observed outcomes, and observed outcomes from assumptions about which channel caused them. We do not need to pretend every change has a proven commercial effect.",
+            "Where measurement is available and included in the scope, the discussion should stay connected to your business goals. Are the right services clear? Can a prospective customer reach the correct person? Are enquiries relevant to the work you want? What still needs improvement? An honest review leaves room to adjust. It does not depend on a promise that every month will outperform the one before it."
+          ]
+        },
+        {
+          "heading": "What to send with your first enquiry",
+          "paragraphs": [
+            "You can make the first conversation more useful with a few simple details: your business name, website address, the services you want to promote and the municipalities you can realistically serve. Include the kinds of jobs or customers that suit your business. If you already have project photographs or written service information, tell us what is available. You do not need to email private customer documents to introduce yourself.",
+            "It also helps to tell us who makes decisions about the website and who will answer incoming enquiries. Marketing can attract attention, but the customer still needs a clear route to a responsible person. If a form goes to an inbox nobody checks, the presentation and the handoff are working against each other. We want to understand that route when defining the work, rather than assuming a new page alone completes the job."
+          ]
+        },
+        {
+          "heading": "Separate client representation from advertising and editorial",
+          "paragraphs": [
+            "An article, directory listing, advertising placement and an SEO representation agreement are different relationships. The existence of a business on an IAM-connected website does not by itself mean that business has an exclusive SEO engagement with us. Likewise, linking to a project for context does not make the project owner an IAM client or imply that a named organisation endorses our services.",
+            "That distinction should be addressed when we check your proposed scope. We need to understand which services are being purchased and which activities could create a real conflict. The agreement should make the boundaries understandable to both sides. We would rather resolve the question before work starts than rely on a loose interpretation later. If the scope changes, the conflict check needs another look too."
+          ]
+        },
+        {
+          "heading": "Start with a scope you can assess",
+          "paragraphs": [
+            "An effective proposal should make it possible to understand what you are buying. Which website or brand is covered? What content or technical work is included? What material does your business need to supply? Who approves factual claims and project details? How will progress be discussed? Those questions help turn an ambitious marketing conversation into an engagement with clear responsibilities.",
+            "We do not publish a universal price for the work described in this article. A service-specific SEO engagement and a broader brand or website project may require different scopes. The next step is to discuss your situation and agree the work before committing. Our exclusivity policy is part of that conversation: focused representation, clearly defined, for a company we can represent with confidence."
+          ]
+        },
+        {
+          "heading": "Check your industry and region with IAM",
+          "paragraphs": [
+            "We are welcoming enquiries from Vancouver and Lower Mainland businesses that want a more focused approach to SEO and brand presentation. Start with your company name, website, main service and the region you want to discuss. Tell us what makes your product or service worth choosing, and what kind of customer you want to reach. You do not need a perfect marketing brief to begin.",
+            "We will check whether the proposed scope conflicts with an existing client commitment. If there is a conflict, we should say so. If there is a potential fit, the next step is a discussion about the work, responsibilities and written scope. There is no invented countdown and no claim that your region is the last one available. The decision should make commercial sense for both sides."
+          ]
+        },
+        {
+          "heading": "Good businesses deserve committed representation",
+          "paragraphs": [
+            "Our policy is a choice about how we want to operate. We would rather build a focused relationship than take competing fees that compromise it. We want the companies we represent to offer products and services they can stand behind, and we want their online presence to show that quality clearly. Ethics are most meaningful when they affect the business you are prepared to decline.",
+            "If you are looking for a Vancouver SEO company, ask the conflict question directly: will the same agency also take on your direct competitor for the same services in your region? Our answer is the policy at the top of this page. One client per industry in an agreed region. [Contact Industry Army Marketing](/contact?request=exclusive-seo) to check your fit and discuss a campaign built around your business."
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
     "trade": "Contractor brand creation and Vancouver SEO",
     "tradeShort": "brand",
     "plural": "brands",
