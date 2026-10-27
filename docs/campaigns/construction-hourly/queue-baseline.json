@@ -1,0 +1,1813 @@
+{
+  "campaign": "construction-hourly-2026-10-27",
+  "domain": "industryarmymarketing.com",
+  "repository": "SHTFTV/industryarmymarketing.com",
+  "projectId": "prj_kMHNECehkyI6R7zANWDzyXMOLrtP",
+  "targetIntervalSeconds": 3600,
+  "scope": "38corebuildingtrades,then15adjacentconstructionservices/equipment. One original IAM article per site.",
+  "articles": [
+    {
+      "slug": "buildershaus-contractor-project-story-submission-guide",
+      "expectedTitle": "Your Work, Your Name: A Contractor’s Guide to Contributing Through BuildersHaus",
+      "canonical": "https://www.industryarmymarketing.com/blog/buildershaus-contractor-project-story-submission-guide",
+      "stage": "planned",
+      "discovery": [
+        "https://www.industryarmymarketing.com/blog",
+        "https://www.industryarmymarketing.com/sitemap.xml",
+        "https://www.industryarmymarketing.com/rss.xml"
+      ],
+      "requiredContact": "https://www.industryarmymarketing.com/contact?request=guest-post&ref_site=buildershaus.com",
+      "publishedDate": "2026-10-27",
+      "siteDomain": "buildershaus.com",
+      "intent": "BuildersHaus: connect a building brief to the right trade without losing project context",
+      "contentFocus": "BuildersHaus: connect a building brief to the right trade without losing project context",
+      "guestUrl": "https://www.industryarmymarketing.com/contact?ref_site=buildershaus.com&industry=Building+and+Renovation&ref_page=%2F&utm_source=buildershaus.com&utm_medium=referral&utm_campaign=builder-network&request=guest-post",
+      "guestStatus": "Audited; exact current findings remain in local audit evidence and must be rechecked on source before article.",
+      "classification": "core_building_trades",
+      "ownershipBasis": [
+        {
+          "type": "public_site_credit_or_network_mention",
+          "url": "https://www.buildershaus.com/"
+        },
+        {
+          "type": "IAM_current_brandPortfolio",
+          "url": "SHTFTV/industryarmymarketing.com/artifacts/industry-army/src/data/brandPortfolio.json"
+        }
+      ],
+      "primarySources": [
+        "https://www.buildershaus.com/",
+        "https://www.industryarmymarketing.com/contact?ref_site=buildershaus.com&industry=Building+and+Renovation&ref_page=%2F&utm_source=buildershaus.com&utm_medium=referral&utm_campaign=builder-network&request=guest-post"
+      ],
+      "nextIssue": "Existing contributor CTA correctly routes to IAM contact with referral/query parameters. Canonical /contact correctly consolidates query variants. Verify current form handler and authorized delivery test before claiming end-to-end intake; no canonical repair needed.",
+      "titleState": "confirmed",
+      "rights": "Recheck source/approvedIAM assets before using media. No thirdparty copying or unverified rights.",
+      "guestRemediation": "Audit evidence retained separately; never promote broken/untested submission as working.",
+      "contactControl": "IAM · Construction marketing"
+    },
+    {
+      "slug": "framers-io-industry-marketing-project-content-guide",
+      "expectedTitle": "Framers.io: turn framing stages and authentic job photographs into a clear scope story",
+      "canonical": "https://www.industryarmymarketing.com/blog/framers-io-industry-marketing-project-content-guide",
+      "stage": "planned",
+      "discovery": [
+        "https://www.industryarmymarketing.com/blog",
+        "https://www.industryarmymarketing.com/sitemap.xml",
+        "https://www.industryarmymarketing.com/rss.xml"
+      ],
+      "requiredContact": "https://www.industryarmymarketing.com/contact?request=guest-post&ref_site=framers.io",
+      "publishedDate": null,
+      "siteDomain": "framers.io",
+      "intent": "Framers.io: turn framing stages and authentic job photographs into a clear scope story",
+      "contentFocus": "Framers.io: turn framing stages and authentic job photographs into a clear scope story",
+      "guestUrl": "mailto:build@buildershaus.com",
+      "guestStatus": "Audited; exact current findings remain in local audit evidence and must be rechecked on source before article.",
+      "classification": "core_building_trades",
+      "ownershipBasis": [
+        {
+          "type": "public_site_credit_or_network_mention",
+          "url": "https://www.framers.io/"
+        }
+      ],
+      "primarySources": [
+        "https://www.framers.io/",
+        "https://www.framers.io/guest-post"
+      ],
+      "nextIssue": "Review contributor source/intake and passpublicationacceptance beforedraftrelease.",
+      "titleState": "provisional_until_draft",
+      "rights": "Recheck source/approvedIAM assets before using media. No thirdparty copying or unverified rights.",
+      "guestRemediation": "Audit evidence retained separately; never promote broken/untested submission as working.",
+      "contactControl": "IAM · Construction marketing"
+    },
+    {
+      "slug": "drywallers-io-industry-marketing-project-content-guide",
+      "expectedTitle": "Drywallers.io: distinguish repair, boarding and finishing in a useful customer brief",
+      "canonical": "https://www.industryarmymarketing.com/blog/drywallers-io-industry-marketing-project-content-guide",
+      "stage": "planned",
+      "discovery": [
+        "https://www.industryarmymarketing.com/blog",
+        "https://www.industryarmymarketing.com/sitemap.xml",
+        "https://www.industryarmymarketing.com/rss.xml"
+      ],
+      "requiredContact": "https://www.industryarmymarketing.com/contact?request=guest-post&ref_site=drywallers.io",
+      "publishedDate": null,
+      "siteDomain": "drywallers.io",
+      "intent": "Drywallers.io: distinguish repair, boarding and finishing in a useful customer brief",
+      "contentFocus": "Drywallers.io: distinguish repair, boarding and finishing in a useful customer brief",
+      "guestUrl": "https://www.drywallers.io/guest-post",
+      "guestStatus": "Audited; exact current findings remain in local audit evidence and must be rechecked on source before article.",
+      "classification": "core_building_trades",
+      "ownershipBasis": [
+        {
+          "type": "public_site_credit_or_network_mention",
+          "url": "https://www.drywallers.io/"
+        }
+      ],
+      "primarySources": [
+        "https://www.drywallers.io/",
+        "https://www.drywallers.io/guest-post"
+      ],
+      "nextIssue": "FixguestpagecanonicaltoitsactualpublicURL; verify currentintake/contactownershipwithoutsubmittingtests.",
+      "titleState": "provisional_until_draft",
+      "rights": "Recheck source/approvedIAM assets before using media. No thirdparty copying or unverified rights.",
+      "guestRemediation": "Audit evidence retained separately; never promote broken/untested submission as working.",
+      "contactControl": "IAM · Construction marketing"
+    },
+    {
+      "slug": "steelstudcontractors-com-industry-marketing-project-content-guide",
+      "expectedTitle": "Steel Stud Contractors: build a trade directory around proof and relevant enquiries",
+      "canonical": "https://www.industryarmymarketing.com/blog/steelstudcontractors-com-industry-marketing-project-content-guide",
+      "stage": "planned",
+      "discovery": [
+        "https://www.industryarmymarketing.com/blog",
+        "https://www.industryarmymarketing.com/sitemap.xml",
+        "https://www.industryarmymarketing.com/rss.xml"
+      ],
+      "requiredContact": "https://www.industryarmymarketing.com/contact?request=guest-post&ref_site=steelstudcontractors.com",
+      "publishedDate": null,
+      "siteDomain": "steelstudcontractors.com",
+      "intent": "Steel Stud Contractors: build a trade directory around proof and relevant enquiries",
+      "contentFocus": "Steel Stud Contractors: build a trade directory around proof and relevant enquiries",
+      "guestUrl": "https://www.steelstudcontractors.com/guest-post",
+      "guestStatus": "Audited; exact current findings remain in local audit evidence and must be rechecked on source before article.",
+      "classification": "core_building_trades",
+      "ownershipBasis": [
+        {
+          "type": "public_site_credit_or_network_mention",
+          "url": "https://www.steelstudcontractors.com/"
+        }
+      ],
+      "primarySources": [
+        "https://www.steelstudcontractors.com/",
+        "https://www.steelstudcontractors.com/guest-post"
+      ],
+      "nextIssue": "FixguestpagecanonicaltoitsactualpublicURL; verify currentintake/contactownershipwithoutsubmittingtests.",
+      "titleState": "provisional_until_draft",
+      "rights": "Recheck source/approvedIAM assets before using media. No thirdparty copying or unverified rights.",
+      "guestRemediation": "Audit evidence retained separately; never promote broken/untested submission as working.",
+      "contactControl": "IAM · Construction marketing"
+    },
+    {
+      "slug": "steelstud-ca-industry-marketing-project-content-guide",
+      "expectedTitle": "SteelStud.ca: make framing, drywall and ceiling scopes visible before the quote",
+      "canonical": "https://www.industryarmymarketing.com/blog/steelstud-ca-industry-marketing-project-content-guide",
+      "stage": "planned",
+      "discovery": [
+        "https://www.industryarmymarketing.com/blog",
+        "https://www.industryarmymarketing.com/sitemap.xml",
+        "https://www.industryarmymarketing.com/rss.xml"
+      ],
+      "requiredContact": "https://www.industryarmymarketing.com/contact?request=guest-post&ref_site=steelstud.ca",
+      "publishedDate": null,
+      "siteDomain": "steelstud.ca",
+      "intent": "SteelStud.ca: make framing, drywall and ceiling scopes visible before the quote",
+      "contentFocus": "SteelStud.ca: make framing, drywall and ceiling scopes visible before the quote",
+      "guestUrl": null,
+      "guestStatus": "Audited; exact current findings remain in local audit evidence and must be rechecked on source before article.",
+      "classification": "core_building_trades",
+      "ownershipBasis": [
+        {
+          "type": "public_site_credit_or_network_mention",
+          "url": "https://www.steelstud.ca/"
+        }
+      ],
+      "primarySources": [
+        "https://www.steelstud.ca/"
+      ],
+      "nextIssue": "No guestpagefoundin renderedhomenavigation/sitemap; inspect source for a realroute or scopedintakeimplementation. Do not claim noneexistsfromthislimitedaudit.",
+      "titleState": "provisional_until_draft",
+      "rights": "Recheck source/approvedIAM assets before using media. No thirdparty copying or unverified rights.",
+      "guestRemediation": "Audit evidence retained separately; never promote broken/untested submission as working.",
+      "contactControl": "IAM · Construction marketing"
+    },
+    {
+      "slug": "demolition-io-industry-marketing-project-content-guide",
+      "expectedTitle": "Demolition.io: tell the site-clearance story without inventing permits or safety credentials",
+      "canonical": "https://www.industryarmymarketing.com/blog/demolition-io-industry-marketing-project-content-guide",
+      "stage": "planned",
+      "discovery": [
+        "https://www.industryarmymarketing.com/blog",
+        "https://www.industryarmymarketing.com/sitemap.xml",
+        "https://www.industryarmymarketing.com/rss.xml"
+      ],
+      "requiredContact": "https://www.industryarmymarketing.com/contact?request=guest-post&ref_site=demolition.io",
+      "publishedDate": null,
+      "siteDomain": "demolition.io",
+      "intent": "Demolition.io: tell the site-clearance story without inventing permits or safety credentials",
+      "contentFocus": "Demolition.io: tell the site-clearance story without inventing permits or safety credentials",
+      "guestUrl": null,
+      "guestStatus": "Audited; exact current findings remain in local audit evidence and must be rechecked on source before article.",
+      "classification": "core_building_trades",
+      "ownershipBasis": [
+        {
+          "type": "public_site_credit_or_network_mention",
+          "url": "https://www.demolition.io/"
+        }
+      ],
+      "primarySources": [
+        "https://www.demolition.io/"
+      ],
+      "nextIssue": "No guestpagefoundin renderedhomenavigation/sitemap; inspect source for a realroute or scopedintakeimplementation. Do not claim noneexistsfromthislimitedaudit.",
+      "titleState": "provisional_until_draft",
+      "rights": "Recheck source/approvedIAM assets before using media. No thirdparty copying or unverified rights.",
+      "guestRemediation": "Audit evidence retained separately; never promote broken/untested submission as working.",
+      "contactControl": "IAM · Construction marketing"
+    },
+    {
+      "slug": "finishingcarpenters-com-industry-marketing-project-content-guide",
+      "expectedTitle": "Finishing Carpenters: photograph the detail and explain the finish scope",
+      "canonical": "https://www.industryarmymarketing.com/blog/finishingcarpenters-com-industry-marketing-project-content-guide",
+      "stage": "planned",
+      "discovery": [
+        "https://www.industryarmymarketing.com/blog",
+        "https://www.industryarmymarketing.com/sitemap.xml",
+        "https://www.industryarmymarketing.com/rss.xml"
+      ],
+      "requiredContact": "https://www.industryarmymarketing.com/contact?request=guest-post&ref_site=finishingcarpenters.com",
+      "publishedDate": null,
+      "siteDomain": "finishingcarpenters.com",
+      "intent": "Finishing Carpenters: photograph the detail and explain the finish scope",
+      "contentFocus": "Finishing Carpenters: photograph the detail and explain the finish scope",
+      "guestUrl": null,
+      "guestStatus": "Audited; exact current findings remain in local audit evidence and must be rechecked on source before article.",
+      "classification": "core_building_trades",
+      "ownershipBasis": [
+        {
+          "type": "portfolio_hosting_inventory_only",
+          "url": ""
+        }
+      ],
+      "primarySources": [
+        "https://finishingcarpenters.com/"
+      ],
+      "nextIssue": "No guestpagefoundin renderedhomenavigation/sitemap; inspect source for a realroute or scopedintakeimplementation. Do not claim noneexistsfromthislimitedaudit. ConfirmIAMrelationshipbeforeclaimingbrandcreation/ownership.",
+      "titleState": "provisional_until_draft",
+      "rights": "Recheck source/approvedIAM assets before using media. No thirdparty copying or unverified rights.",
+      "guestRemediation": "Audit evidence retained separately; never promote broken/untested submission as working.",
+      "contactControl": "IAM · Construction marketing"
+    },
+    {
+      "slug": "roofers-io-industry-marketing-project-content-guide",
+      "expectedTitle": "Roofers.io: a roofing publication needs evidence before inspection and certification claims",
+      "canonical": "https://www.industryarmymarketing.com/blog/roofers-io-industry-marketing-project-content-guide",
+      "stage": "planned",
+      "discovery": [
+        "https://www.industryarmymarketing.com/blog",
+        "https://www.industryarmymarketing.com/sitemap.xml",
+        "https://www.industryarmymarketing.com/rss.xml"
+      ],
+      "requiredContact": "https://www.industryarmymarketing.com/contact?request=guest-post&ref_site=roofers.io",
+      "publishedDate": null,
+      "siteDomain": "roofers.io",
+      "intent": "Roofers.io: a roofing publication needs evidence before inspection and certification claims",
+      "contentFocus": "Roofers.io: a roofing publication needs evidence before inspection and certification claims",
+      "guestUrl": null,
+      "guestStatus": "Audited; exact current findings remain in local audit evidence and must be rechecked on source before article.",
+      "classification": "core_building_trades",
+      "ownershipBasis": [
+        {
+          "type": "IAM_current_brandPortfolio",
+          "url": "SHTFTV/industryarmymarketing.com/artifacts/industry-army/src/data/brandPortfolio.json"
+        }
+      ],
+      "primarySources": [
+        "https://roofers.io/"
+      ],
+      "nextIssue": "Resolve actualpublicdomainaccess: 451",
+      "titleState": "provisional_until_draft",
+      "rights": "Recheck source/approvedIAM assets before using media. No thirdparty copying or unverified rights.",
+      "guestRemediation": "Audit evidence retained separately; never promote broken/untested submission as working.",
+      "contactControl": "IAM · Construction marketing"
+    },
+    {
+      "slug": "generalcontractors-ltd-industry-marketing-project-content-guide",
+      "expectedTitle": "General Contractors: explain coordination between trades instead of a generic service list",
+      "canonical": "https://www.industryarmymarketing.com/blog/generalcontractors-ltd-industry-marketing-project-content-guide",
+      "stage": "planned",
+      "discovery": [
+        "https://www.industryarmymarketing.com/blog",
+        "https://www.industryarmymarketing.com/sitemap.xml",
+        "https://www.industryarmymarketing.com/rss.xml"
+      ],
+      "requiredContact": "https://www.industryarmymarketing.com/contact?request=guest-post&ref_site=generalcontractors.ltd",
+      "publishedDate": null,
+      "siteDomain": "generalcontractors.ltd",
+      "intent": "General Contractors: explain coordination between trades instead of a generic service list",
+      "contentFocus": "General Contractors: explain coordination between trades instead of a generic service list",
+      "guestUrl": null,
+      "guestStatus": "Audited; exact current findings remain in local audit evidence and must be rechecked on source before article.",
+      "classification": "core_building_trades",
+      "ownershipBasis": [
+        {
+          "type": "public_site_credit_or_network_mention",
+          "url": "https://generalcontractors.ltd/"
+        }
+      ],
+      "primarySources": [
+        "https://generalcontractors.ltd/"
+      ],
+      "nextIssue": "No guestpagefoundin renderedhomenavigation/sitemap; inspect source for a realroute or scopedintakeimplementation. Do not claim noneexistsfromthislimitedaudit.",
+      "titleState": "provisional_until_draft",
+      "rights": "Recheck source/approvedIAM assets before using media. No thirdparty copying or unverified rights.",
+      "guestRemediation": "Audit evidence retained separately; never promote broken/untested submission as working.",
+      "contactControl": "IAM · Construction marketing"
+    },
+    {
+      "slug": "rambowalls-com-industry-marketing-project-content-guide",
+      "expectedTitle": "Rambo Walls: project location and scope as the bridge from genuine work to enquiry",
+      "canonical": "https://www.industryarmymarketing.com/blog/rambowalls-com-industry-marketing-project-content-guide",
+      "stage": "planned",
+      "discovery": [
+        "https://www.industryarmymarketing.com/blog",
+        "https://www.industryarmymarketing.com/sitemap.xml",
+        "https://www.industryarmymarketing.com/rss.xml"
+      ],
+      "requiredContact": "https://www.industryarmymarketing.com/contact?request=guest-post&ref_site=rambowalls.com",
+      "publishedDate": null,
+      "siteDomain": "rambowalls.com",
+      "intent": "Rambo Walls: project location and scope as the bridge from genuine work to enquiry",
+      "contentFocus": "Rambo Walls: project location and scope as the bridge from genuine work to enquiry",
+      "guestUrl": null,
+      "guestStatus": "Audited; exact current findings remain in local audit evidence and must be rechecked on source before article.",
+      "classification": "core_building_trades",
+      "ownershipBasis": [
+        {
+          "type": "public_site_credit_or_network_mention",
+          "url": "https://www.rambowalls.com/"
+        }
+      ],
+      "primarySources": [
+        "https://www.rambowalls.com/"
+      ],
+      "nextIssue": "No guestpagefoundin renderedhomenavigation/sitemap; inspect source for a realroute or scopedintakeimplementation. Do not claim noneexistsfromthislimitedaudit.",
+      "titleState": "provisional_until_draft",
+      "rights": "Recheck source/approvedIAM assets before using media. No thirdparty copying or unverified rights.",
+      "guestRemediation": "Audit evidence retained separately; never promote broken/untested submission as working.",
+      "contactControl": "IAM · Construction marketing"
+    },
+    {
+      "slug": "tenantimprovementcontractors-com-industry-marketing-project-content-guide",
+      "expectedTitle": "Tenant Improvement Contractors: show occupied-space planning and client handovers",
+      "canonical": "https://www.industryarmymarketing.com/blog/tenantimprovementcontractors-com-industry-marketing-project-content-guide",
+      "stage": "planned",
+      "discovery": [
+        "https://www.industryarmymarketing.com/blog",
+        "https://www.industryarmymarketing.com/sitemap.xml",
+        "https://www.industryarmymarketing.com/rss.xml"
+      ],
+      "requiredContact": "https://www.industryarmymarketing.com/contact?request=guest-post&ref_site=tenantimprovementcontractors.com",
+      "publishedDate": null,
+      "siteDomain": "tenantimprovementcontractors.com",
+      "intent": "Tenant Improvement Contractors: show occupied-space planning and client handovers",
+      "contentFocus": "Tenant Improvement Contractors: show occupied-space planning and client handovers",
+      "guestUrl": "https://www.tenantimprovementcontractors.com/guest-post",
+      "guestStatus": "Audited; exact current findings remain in local audit evidence and must be rechecked on source before article.",
+      "classification": "core_building_trades",
+      "ownershipBasis": [
+        {
+          "type": "public_site_credit_or_network_mention",
+          "url": "https://www.tenantimprovementcontractors.com/"
+        }
+      ],
+      "primarySources": [
+        "https://www.tenantimprovementcontractors.com/",
+        "https://www.tenantimprovementcontractors.com/guest-post",
+        "https://www.tenantimprovementcontractors.com/blog/guest-post-construction-niche-10-dollars"
+      ],
+      "nextIssue": "Review contributor source/intake and passpublicationacceptance beforedraftrelease.",
+      "titleState": "provisional_until_draft",
+      "rights": "Recheck source/approvedIAM assets before using media. No thirdparty copying or unverified rights.",
+      "guestRemediation": "Audit evidence retained separately; never promote broken/untested submission as working.",
+      "contactControl": "IAM · Construction marketing"
+    },
+    {
+      "slug": "acustiq-ca-industry-marketing-project-content-guide",
+      "expectedTitle": "Acustiq: connect ceiling-system inspiration to a genuine specification conversation",
+      "canonical": "https://www.industryarmymarketing.com/blog/acustiq-ca-industry-marketing-project-content-guide",
+      "stage": "planned",
+      "discovery": [
+        "https://www.industryarmymarketing.com/blog",
+        "https://www.industryarmymarketing.com/sitemap.xml",
+        "https://www.industryarmymarketing.com/rss.xml"
+      ],
+      "requiredContact": "https://www.industryarmymarketing.com/contact?request=guest-post&ref_site=acustiq.ca",
+      "publishedDate": null,
+      "siteDomain": "acustiq.ca",
+      "intent": "Acustiq: connect ceiling-system inspiration to a genuine specification conversation",
+      "contentFocus": "Acustiq: connect ceiling-system inspiration to a genuine specification conversation",
+      "guestUrl": "mailto:build@buildershaus.com",
+      "guestStatus": "Audited; exact current findings remain in local audit evidence and must be rechecked on source before article.",
+      "classification": "core_building_trades",
+      "ownershipBasis": [
+        {
+          "type": "public_site_credit_or_network_mention",
+          "url": "https://www.acustiq.ca/"
+        }
+      ],
+      "primarySources": [
+        "https://www.acustiq.ca/",
+        "https://www.acustiq.ca/for-matt",
+        "https://www.acustiq.ca/guest-post"
+      ],
+      "nextIssue": "Correct publishedcontributorroute/content; HTTP200currentlyconcealswrongpageorsoft404.",
+      "titleState": "provisional_until_draft",
+      "rights": "Recheck source/approvedIAM assets before using media. No thirdparty copying or unverified rights.",
+      "guestRemediation": "Audit evidence retained separately; never promote broken/untested submission as working.",
+      "contactControl": "IAM · Construction marketing"
+    },
+    {
+      "slug": "barriergates-ca-industry-marketing-project-content-guide",
+      "expectedTitle": "Barrier Gates: clarify access use, controls and responsibility in the customer brief",
+      "canonical": "https://www.industryarmymarketing.com/blog/barriergates-ca-industry-marketing-project-content-guide",
+      "stage": "planned",
+      "discovery": [
+        "https://www.industryarmymarketing.com/blog",
+        "https://www.industryarmymarketing.com/sitemap.xml",
+        "https://www.industryarmymarketing.com/rss.xml"
+      ],
+      "requiredContact": "https://www.industryarmymarketing.com/contact?request=guest-post&ref_site=barriergates.ca",
+      "publishedDate": null,
+      "siteDomain": "barriergates.ca",
+      "intent": "Barrier Gates: clarify access use, controls and responsibility in the customer brief",
+      "contentFocus": "Barrier Gates: clarify access use, controls and responsibility in the customer brief",
+      "guestUrl": null,
+      "guestStatus": "Audited; exact current findings remain in local audit evidence and must be rechecked on source before article.",
+      "classification": "core_building_trades",
+      "ownershipBasis": [
+        {
+          "type": "public_site_credit_or_network_mention",
+          "url": "https://barriergates.ca/"
+        }
+      ],
+      "primarySources": [
+        "https://barriergates.ca/"
+      ],
+      "nextIssue": "No guestpagefoundin renderedhomenavigation/sitemap; inspect source for a realroute or scopedintakeimplementation. Do not claim noneexistsfromthislimitedaudit.",
+      "titleState": "provisional_until_draft",
+      "rights": "Recheck source/approvedIAM assets before using media. No thirdparty copying or unverified rights.",
+      "guestRemediation": "Audit evidence retained separately; never promote broken/untested submission as working.",
+      "contactControl": "IAM · Construction marketing"
+    },
+    {
+      "slug": "chainlinkfencing-ca-industry-marketing-project-content-guide",
+      "expectedTitle": "Chain Link Fencing: show the boundary, access and site questions before pricing",
+      "canonical": "https://www.industryarmymarketing.com/blog/chainlinkfencing-ca-industry-marketing-project-content-guide",
+      "stage": "planned",
+      "discovery": [
+        "https://www.industryarmymarketing.com/blog",
+        "https://www.industryarmymarketing.com/sitemap.xml",
+        "https://www.industryarmymarketing.com/rss.xml"
+      ],
+      "requiredContact": "https://www.industryarmymarketing.com/contact?request=guest-post&ref_site=chainlinkfencing.ca",
+      "publishedDate": null,
+      "siteDomain": "chainlinkfencing.ca",
+      "intent": "Chain Link Fencing: show the boundary, access and site questions before pricing",
+      "contentFocus": "Chain Link Fencing: show the boundary, access and site questions before pricing",
+      "guestUrl": null,
+      "guestStatus": "Audited; exact current findings remain in local audit evidence and must be rechecked on source before article.",
+      "classification": "core_building_trades",
+      "ownershipBasis": [
+        {
+          "type": "public_site_credit_or_network_mention",
+          "url": "https://chainlinkfencing.ca/"
+        }
+      ],
+      "primarySources": [
+        "https://chainlinkfencing.ca/"
+      ],
+      "nextIssue": "No guestpagefoundin renderedhomenavigation/sitemap; inspect source for a realroute or scopedintakeimplementation. Do not claim noneexistsfromthislimitedaudit.",
+      "titleState": "provisional_until_draft",
+      "rights": "Recheck source/approvedIAM assets before using media. No thirdparty copying or unverified rights.",
+      "guestRemediation": "Audit evidence retained separately; never promote broken/untested submission as working.",
+      "contactControl": "IAM · Construction marketing"
+    },
+    {
+      "slug": "decorator-tv-industry-marketing-project-content-guide",
+      "expectedTitle": "Decorator.tv: make a decorating identity legible before claiming a live publication",
+      "canonical": "https://www.industryarmymarketing.com/blog/decorator-tv-industry-marketing-project-content-guide",
+      "stage": "planned",
+      "discovery": [
+        "https://www.industryarmymarketing.com/blog",
+        "https://www.industryarmymarketing.com/sitemap.xml",
+        "https://www.industryarmymarketing.com/rss.xml"
+      ],
+      "requiredContact": "https://www.industryarmymarketing.com/contact?request=guest-post&ref_site=decorator.tv",
+      "publishedDate": null,
+      "siteDomain": "decorator.tv",
+      "intent": "Decorator.tv: make a decorating identity legible before claiming a live publication",
+      "contentFocus": "Decorator.tv: make a decorating identity legible before claiming a live publication",
+      "guestUrl": null,
+      "guestStatus": "Audited; exact current findings remain in local audit evidence and must be rechecked on source before article.",
+      "classification": "core_building_trades",
+      "ownershipBasis": [
+        {
+          "type": "IAM_current_brandPortfolio",
+          "url": "SHTFTV/industryarmymarketing.com/artifacts/industry-army/src/data/brandPortfolio.json"
+        }
+      ],
+      "primarySources": [
+        "https://decorator.tv/"
+      ],
+      "nextIssue": "No guestpagefoundin renderedhomenavigation/sitemap; inspect source for a realroute or scopedintakeimplementation. Do not claim noneexistsfromthislimitedaudit.",
+      "titleState": "provisional_until_draft",
+      "rights": "Recheck source/approvedIAM assets before using media. No thirdparty copying or unverified rights.",
+      "guestRemediation": "Audit evidence retained separately; never promote broken/untested submission as working.",
+      "contactControl": "IAM · Construction marketing"
+    },
+    {
+      "slug": "estimators-io-industry-marketing-project-content-guide",
+      "expectedTitle": "Estimators.io: make assumptions and exclusions visible before presenting a cost",
+      "canonical": "https://www.industryarmymarketing.com/blog/estimators-io-industry-marketing-project-content-guide",
+      "stage": "planned",
+      "discovery": [
+        "https://www.industryarmymarketing.com/blog",
+        "https://www.industryarmymarketing.com/sitemap.xml",
+        "https://www.industryarmymarketing.com/rss.xml"
+      ],
+      "requiredContact": "https://www.industryarmymarketing.com/contact?request=guest-post&ref_site=estimators.io",
+      "publishedDate": null,
+      "siteDomain": "estimators.io",
+      "intent": "Estimators.io: make assumptions and exclusions visible before presenting a cost",
+      "contentFocus": "Estimators.io: make assumptions and exclusions visible before presenting a cost",
+      "guestUrl": null,
+      "guestStatus": "Audited; exact current findings remain in local audit evidence and must be rechecked on source before article.",
+      "classification": "core_building_trades",
+      "ownershipBasis": [
+        {
+          "type": "portfolio_hosting_inventory_only",
+          "url": ""
+        }
+      ],
+      "primarySources": [
+        "https://www.estimators.io/"
+      ],
+      "nextIssue": "No guestpagefoundin renderedhomenavigation/sitemap; inspect source for a realroute or scopedintakeimplementation. Do not claim noneexistsfromthislimitedaudit. ConfirmIAMrelationshipbeforeclaimingbrandcreation/ownership.",
+      "titleState": "provisional_until_draft",
+      "rights": "Recheck source/approvedIAM assets before using media. No thirdparty copying or unverified rights.",
+      "guestRemediation": "Audit evidence retained separately; never promote broken/untested submission as working.",
+      "contactControl": "IAM · Construction marketing"
+    },
+    {
+      "slug": "gasfitter-ca-industry-marketing-project-content-guide",
+      "expectedTitle": "Gasfitter.ca: publish service intent with accurate local enquiry ownership",
+      "canonical": "https://www.industryarmymarketing.com/blog/gasfitter-ca-industry-marketing-project-content-guide",
+      "stage": "planned",
+      "discovery": [
+        "https://www.industryarmymarketing.com/blog",
+        "https://www.industryarmymarketing.com/sitemap.xml",
+        "https://www.industryarmymarketing.com/rss.xml"
+      ],
+      "requiredContact": "https://www.industryarmymarketing.com/contact?request=guest-post&ref_site=gasfitter.ca",
+      "publishedDate": null,
+      "siteDomain": "gasfitter.ca",
+      "intent": "Gasfitter.ca: publish service intent with accurate local enquiry ownership",
+      "contentFocus": "Gasfitter.ca: publish service intent with accurate local enquiry ownership",
+      "guestUrl": null,
+      "guestStatus": "Audited; exact current findings remain in local audit evidence and must be rechecked on source before article.",
+      "classification": "core_building_trades",
+      "ownershipBasis": [
+        {
+          "type": "public_site_credit_or_network_mention",
+          "url": "https://www.gasfitter.ca/"
+        }
+      ],
+      "primarySources": [
+        "https://www.gasfitter.ca/"
+      ],
+      "nextIssue": "No guestpagefoundin renderedhomenavigation/sitemap; inspect source for a realroute or scopedintakeimplementation. Do not claim noneexistsfromthislimitedaudit.",
+      "titleState": "provisional_until_draft",
+      "rights": "Recheck source/approvedIAM assets before using media. No thirdparty copying or unverified rights.",
+      "guestRemediation": "Audit evidence retained separately; never promote broken/untested submission as working.",
+      "contactControl": "IAM · Construction marketing"
+    },
+    {
+      "slug": "gasfitter-io-industry-marketing-project-content-guide",
+      "expectedTitle": "Gasfitter.io: repair the contributor route before promoting trade expertise",
+      "canonical": "https://www.industryarmymarketing.com/blog/gasfitter-io-industry-marketing-project-content-guide",
+      "stage": "planned",
+      "discovery": [
+        "https://www.industryarmymarketing.com/blog",
+        "https://www.industryarmymarketing.com/sitemap.xml",
+        "https://www.industryarmymarketing.com/rss.xml"
+      ],
+      "requiredContact": "https://www.industryarmymarketing.com/contact?request=guest-post&ref_site=gasfitter.io",
+      "publishedDate": null,
+      "siteDomain": "gasfitter.io",
+      "intent": "Gasfitter.io: repair the contributor route before promoting trade expertise",
+      "contentFocus": "Gasfitter.io: repair the contributor route before promoting trade expertise",
+      "guestUrl": "https://www.gasfitter.io/knowledge",
+      "guestStatus": "Audited; exact current findings remain in local audit evidence and must be rechecked on source before article.",
+      "classification": "core_building_trades",
+      "ownershipBasis": [
+        {
+          "type": "public_site_credit_or_network_mention",
+          "url": "https://www.gasfitter.io/"
+        }
+      ],
+      "primarySources": [
+        "https://www.gasfitter.io/",
+        "https://www.gasfitter.io/knowledge",
+        "https://gasfitter.io/guest-post"
+      ],
+      "nextIssue": "Correct publishedcontributorroute/content; HTTP200currentlyconcealswrongpageorsoft404.",
+      "titleState": "provisional_until_draft",
+      "rights": "Recheck source/approvedIAM assets before using media. No thirdparty copying or unverified rights.",
+      "guestRemediation": "Audit evidence retained separately; never promote broken/untested submission as working.",
+      "contactControl": "IAM · Construction marketing"
+    },
+    {
+      "slug": "hibarinsulation-com-industry-marketing-project-content-guide",
+      "expectedTitle": "HiBAR: turn fire-spray enquiries into an evidence-led scope discussion",
+      "canonical": "https://www.industryarmymarketing.com/blog/hibarinsulation-com-industry-marketing-project-content-guide",
+      "stage": "planned",
+      "discovery": [
+        "https://www.industryarmymarketing.com/blog",
+        "https://www.industryarmymarketing.com/sitemap.xml",
+        "https://www.industryarmymarketing.com/rss.xml"
+      ],
+      "requiredContact": "https://www.industryarmymarketing.com/contact?request=guest-post&ref_site=hibarinsulation.com",
+      "publishedDate": null,
+      "siteDomain": "hibarinsulation.com",
+      "intent": "HiBAR: turn fire-spray enquiries into an evidence-led scope discussion",
+      "contentFocus": "HiBAR: turn fire-spray enquiries into an evidence-led scope discussion",
+      "guestUrl": null,
+      "guestStatus": "Audited; exact current findings remain in local audit evidence and must be rechecked on source before article.",
+      "classification": "core_building_trades",
+      "ownershipBasis": [
+        {
+          "type": "public_site_credit_or_network_mention",
+          "url": "https://www.hibarinsulation.com/"
+        }
+      ],
+      "primarySources": [
+        "https://www.hibarinsulation.com/"
+      ],
+      "nextIssue": "No guestpagefoundin renderedhomenavigation/sitemap; inspect source for a realroute or scopedintakeimplementation. Do not claim noneexistsfromthislimitedaudit.",
+      "titleState": "provisional_until_draft",
+      "rights": "Recheck source/approvedIAM assets before using media. No thirdparty copying or unverified rights.",
+      "guestRemediation": "Audit evidence retained separately; never promote broken/untested submission as working.",
+      "contactControl": "IAM · Construction marketing"
+    },
+    {
+      "slug": "hvacr-tv-industry-marketing-project-content-guide",
+      "expectedTitle": "HVACR: keep equipment education distinct from verified service and model support",
+      "canonical": "https://www.industryarmymarketing.com/blog/hvacr-tv-industry-marketing-project-content-guide",
+      "stage": "planned",
+      "discovery": [
+        "https://www.industryarmymarketing.com/blog",
+        "https://www.industryarmymarketing.com/sitemap.xml",
+        "https://www.industryarmymarketing.com/rss.xml"
+      ],
+      "requiredContact": "https://www.industryarmymarketing.com/contact?request=guest-post&ref_site=hvacr.tv",
+      "publishedDate": null,
+      "siteDomain": "hvacr.tv",
+      "intent": "HVACR: keep equipment education distinct from verified service and model support",
+      "contentFocus": "HVACR: keep equipment education distinct from verified service and model support",
+      "guestUrl": null,
+      "guestStatus": "Audited; exact current findings remain in local audit evidence and must be rechecked on source before article.",
+      "classification": "core_building_trades",
+      "ownershipBasis": [
+        {
+          "type": "public_site_credit_or_network_mention",
+          "url": "https://hvacr.tv/"
+        }
+      ],
+      "primarySources": [
+        "https://hvacr.tv/"
+      ],
+      "nextIssue": "No guestpagefoundin renderedhomenavigation/sitemap; inspect source for a realroute or scopedintakeimplementation. Do not claim noneexistsfromthislimitedaudit.",
+      "titleState": "provisional_until_draft",
+      "rights": "Recheck source/approvedIAM assets before using media. No thirdparty copying or unverified rights.",
+      "guestRemediation": "Audit evidence retained separately; never promote broken/untested submission as working.",
+      "contactControl": "IAM · Construction marketing"
+    },
+    {
+      "slug": "industrialcoatings-co-industry-marketing-project-content-guide",
+      "expectedTitle": "Industrial Coatings: communicate the substrate, exposure and system questions",
+      "canonical": "https://www.industryarmymarketing.com/blog/industrialcoatings-co-industry-marketing-project-content-guide",
+      "stage": "planned",
+      "discovery": [
+        "https://www.industryarmymarketing.com/blog",
+        "https://www.industryarmymarketing.com/sitemap.xml",
+        "https://www.industryarmymarketing.com/rss.xml"
+      ],
+      "requiredContact": "https://www.industryarmymarketing.com/contact?request=guest-post&ref_site=industrialcoatings.co",
+      "publishedDate": null,
+      "siteDomain": "industrialcoatings.co",
+      "intent": "Industrial Coatings: communicate the substrate, exposure and system questions",
+      "contentFocus": "Industrial Coatings: communicate the substrate, exposure and system questions",
+      "guestUrl": null,
+      "guestStatus": "Audited; exact current findings remain in local audit evidence and must be rechecked on source before article.",
+      "classification": "core_building_trades",
+      "ownershipBasis": [
+        {
+          "type": "public_site_credit_or_network_mention",
+          "url": "https://industrialcoatings.co/"
+        }
+      ],
+      "primarySources": [
+        "https://industrialcoatings.co/"
+      ],
+      "nextIssue": "No guestpagefoundin renderedhomenavigation/sitemap; inspect source for a realroute or scopedintakeimplementation. Do not claim noneexistsfromthislimitedaudit.",
+      "titleState": "provisional_until_draft",
+      "rights": "Recheck source/approvedIAM assets before using media. No thirdparty copying or unverified rights.",
+      "guestRemediation": "Audit evidence retained separately; never promote broken/untested submission as working.",
+      "contactControl": "IAM · Construction marketing"
+    },
+    {
+      "slug": "justdoors-co-industry-marketing-project-content-guide",
+      "expectedTitle": "Just Doors: a door enquiry needs dimensions, use and installation responsibility",
+      "canonical": "https://www.industryarmymarketing.com/blog/justdoors-co-industry-marketing-project-content-guide",
+      "stage": "planned",
+      "discovery": [
+        "https://www.industryarmymarketing.com/blog",
+        "https://www.industryarmymarketing.com/sitemap.xml",
+        "https://www.industryarmymarketing.com/rss.xml"
+      ],
+      "requiredContact": "https://www.industryarmymarketing.com/contact?request=guest-post&ref_site=justdoors.co",
+      "publishedDate": null,
+      "siteDomain": "justdoors.co",
+      "intent": "Just Doors: a door enquiry needs dimensions, use and installation responsibility",
+      "contentFocus": "Just Doors: a door enquiry needs dimensions, use and installation responsibility",
+      "guestUrl": null,
+      "guestStatus": "Audited; exact current findings remain in local audit evidence and must be rechecked on source before article.",
+      "classification": "core_building_trades",
+      "ownershipBasis": [
+        {
+          "type": "portfolio_hosting_inventory_only",
+          "url": ""
+        }
+      ],
+      "primarySources": [
+        "https://www.justdoors.co/"
+      ],
+      "nextIssue": "No guestpagefoundin renderedhomenavigation/sitemap; inspect source for a realroute or scopedintakeimplementation. Do not claim noneexistsfromthislimitedaudit. ConfirmIAMrelationshipbeforeclaimingbrandcreation/ownership.",
+      "titleState": "provisional_until_draft",
+      "rights": "Recheck source/approvedIAM assets before using media. No thirdparty copying or unverified rights.",
+      "guestRemediation": "Audit evidence retained separately; never promote broken/untested submission as working.",
+      "contactControl": "IAM · Construction marketing"
+    },
+    {
+      "slug": "logcabins-ltd-industry-marketing-project-content-guide",
+      "expectedTitle": "Log Cabins: communicate cabin inspiration separately from verified build availability",
+      "canonical": "https://www.industryarmymarketing.com/blog/logcabins-ltd-industry-marketing-project-content-guide",
+      "stage": "planned",
+      "discovery": [
+        "https://www.industryarmymarketing.com/blog",
+        "https://www.industryarmymarketing.com/sitemap.xml",
+        "https://www.industryarmymarketing.com/rss.xml"
+      ],
+      "requiredContact": "https://www.industryarmymarketing.com/contact?request=guest-post&ref_site=logcabins.ltd",
+      "publishedDate": null,
+      "siteDomain": "logcabins.ltd",
+      "intent": "Log Cabins: communicate cabin inspiration separately from verified build availability",
+      "contentFocus": "Log Cabins: communicate cabin inspiration separately from verified build availability",
+      "guestUrl": null,
+      "guestStatus": "Audited; exact current findings remain in local audit evidence and must be rechecked on source before article.",
+      "classification": "core_building_trades",
+      "ownershipBasis": [
+        {
+          "type": "portfolio_hosting_inventory_only",
+          "url": ""
+        }
+      ],
+      "primarySources": [
+        "https://www.logcabins.ltd/"
+      ],
+      "nextIssue": "No guestpagefoundin renderedhomenavigation/sitemap; inspect source for a realroute or scopedintakeimplementation. Do not claim noneexistsfromthislimitedaudit. ConfirmIAMrelationshipbeforeclaimingbrandcreation/ownership.",
+      "titleState": "provisional_until_draft",
+      "rights": "Recheck source/approvedIAM assets before using media. No thirdparty copying or unverified rights.",
+      "guestRemediation": "Audit evidence retained separately; never promote broken/untested submission as working.",
+      "contactControl": "IAM · Construction marketing"
+    },
+    {
+      "slug": "lsfence-ca-industry-marketing-project-content-guide",
+      "expectedTitle": "LS Fence: a clear boundary brief creates a more useful contractor conversation",
+      "canonical": "https://www.industryarmymarketing.com/blog/lsfence-ca-industry-marketing-project-content-guide",
+      "stage": "planned",
+      "discovery": [
+        "https://www.industryarmymarketing.com/blog",
+        "https://www.industryarmymarketing.com/sitemap.xml",
+        "https://www.industryarmymarketing.com/rss.xml"
+      ],
+      "requiredContact": "https://www.industryarmymarketing.com/contact?request=guest-post&ref_site=lsfence.ca",
+      "publishedDate": null,
+      "siteDomain": "lsfence.ca",
+      "intent": "LS Fence: a clear boundary brief creates a more useful contractor conversation",
+      "contentFocus": "LS Fence: a clear boundary brief creates a more useful contractor conversation",
+      "guestUrl": null,
+      "guestStatus": "Audited; exact current findings remain in local audit evidence and must be rechecked on source before article.",
+      "classification": "core_building_trades",
+      "ownershipBasis": [
+        {
+          "type": "public_site_credit_or_network_mention",
+          "url": "https://lsfence.ca/"
+        }
+      ],
+      "primarySources": [
+        "https://lsfence.ca/"
+      ],
+      "nextIssue": "No guestpagefoundin renderedhomenavigation/sitemap; inspect source for a realroute or scopedintakeimplementation. Do not claim noneexistsfromthislimitedaudit.",
+      "titleState": "provisional_until_draft",
+      "rights": "Recheck source/approvedIAM assets before using media. No thirdparty copying or unverified rights.",
+      "guestRemediation": "Audit evidence retained separately; never promote broken/untested submission as working.",
+      "contactControl": "IAM · Construction marketing"
+    },
+    {
+      "slug": "lsfencingandmetalwork-com-industry-marketing-project-content-guide",
+      "expectedTitle": "LS Fencing and Metalwork: preserve named-business ownership when marketing real work",
+      "canonical": "https://www.industryarmymarketing.com/blog/lsfencingandmetalwork-com-industry-marketing-project-content-guide",
+      "stage": "planned",
+      "discovery": [
+        "https://www.industryarmymarketing.com/blog",
+        "https://www.industryarmymarketing.com/sitemap.xml",
+        "https://www.industryarmymarketing.com/rss.xml"
+      ],
+      "requiredContact": "https://www.industryarmymarketing.com/contact?request=guest-post&ref_site=lsfencingandmetalwork.com",
+      "publishedDate": null,
+      "siteDomain": "lsfencingandmetalwork.com",
+      "intent": "LS Fencing and Metalwork: preserve named-business ownership when marketing real work",
+      "contentFocus": "LS Fencing and Metalwork: preserve named-business ownership when marketing real work",
+      "guestUrl": null,
+      "guestStatus": "Audited; exact current findings remain in local audit evidence and must be rechecked on source before article.",
+      "classification": "core_building_trades",
+      "ownershipBasis": [
+        {
+          "type": "public_site_credit_or_network_mention",
+          "url": "https://lsfencingandmetalwork.com/"
+        }
+      ],
+      "primarySources": [
+        "https://lsfencingandmetalwork.com/"
+      ],
+      "nextIssue": "No guestpagefoundin renderedhomenavigation/sitemap; inspect source for a realroute or scopedintakeimplementation. Do not claim noneexistsfromthislimitedaudit.",
+      "titleState": "provisional_until_draft",
+      "rights": "Recheck source/approvedIAM assets before using media. No thirdparty copying or unverified rights.",
+      "guestRemediation": "Audit evidence retained separately; never promote broken/untested submission as working.",
+      "contactControl": "IAM · Construction marketing"
+    },
+    {
+      "slug": "monoglassinsulation-com-industry-marketing-project-content-guide",
+      "expectedTitle": "Monoglass Insulation: separate assembly requirements from product storytelling",
+      "canonical": "https://www.industryarmymarketing.com/blog/monoglassinsulation-com-industry-marketing-project-content-guide",
+      "stage": "planned",
+      "discovery": [
+        "https://www.industryarmymarketing.com/blog",
+        "https://www.industryarmymarketing.com/sitemap.xml",
+        "https://www.industryarmymarketing.com/rss.xml"
+      ],
+      "requiredContact": "https://www.industryarmymarketing.com/contact?request=guest-post&ref_site=monoglassinsulation.com",
+      "publishedDate": null,
+      "siteDomain": "monoglassinsulation.com",
+      "intent": "Monoglass Insulation: separate assembly requirements from product storytelling",
+      "contentFocus": "Monoglass Insulation: separate assembly requirements from product storytelling",
+      "guestUrl": "https://monoglassinsulation.com/guest-post/",
+      "guestStatus": "Audited; exact current findings remain in local audit evidence and must be rechecked on source before article.",
+      "classification": "core_building_trades",
+      "ownershipBasis": [
+        {
+          "type": "public_site_credit_or_network_mention",
+          "url": "https://monoglassinsulation.com/"
+        }
+      ],
+      "primarySources": [
+        "https://monoglassinsulation.com/",
+        "https://monoglassinsulation.com/guest-post/"
+      ],
+      "nextIssue": "Review contributor source/intake and passpublicationacceptance beforedraftrelease.",
+      "titleState": "provisional_until_draft",
+      "rights": "Recheck source/approvedIAM assets before using media. No thirdparty copying or unverified rights.",
+      "guestRemediation": "Audit evidence retained separately; never promote broken/untested submission as working.",
+      "contactControl": "IAM · Construction marketing"
+    },
+    {
+      "slug": "naturalgasgenerators-ca-industry-marketing-project-content-guide",
+      "expectedTitle": "Natural Gas Generators: explain planning questions before a standby-power promise",
+      "canonical": "https://www.industryarmymarketing.com/blog/naturalgasgenerators-ca-industry-marketing-project-content-guide",
+      "stage": "planned",
+      "discovery": [
+        "https://www.industryarmymarketing.com/blog",
+        "https://www.industryarmymarketing.com/sitemap.xml",
+        "https://www.industryarmymarketing.com/rss.xml"
+      ],
+      "requiredContact": "https://www.industryarmymarketing.com/contact?request=guest-post&ref_site=naturalgasgenerators.ca",
+      "publishedDate": null,
+      "siteDomain": "naturalgasgenerators.ca",
+      "intent": "Natural Gas Generators: explain planning questions before a standby-power promise",
+      "contentFocus": "Natural Gas Generators: explain planning questions before a standby-power promise",
+      "guestUrl": null,
+      "guestStatus": "Audited; exact current findings remain in local audit evidence and must be rechecked on source before article.",
+      "classification": "core_building_trades",
+      "ownershipBasis": [
+        {
+          "type": "public_site_credit_or_network_mention",
+          "url": "https://naturalgasgenerators.ca/"
+        }
+      ],
+      "primarySources": [
+        "https://naturalgasgenerators.ca/"
+      ],
+      "nextIssue": "No guestpagefoundin renderedhomenavigation/sitemap; inspect source for a realroute or scopedintakeimplementation. Do not claim noneexistsfromthislimitedaudit.",
+      "titleState": "provisional_until_draft",
+      "rights": "Recheck source/approvedIAM assets before using media. No thirdparty copying or unverified rights.",
+      "guestRemediation": "Audit evidence retained separately; never promote broken/untested submission as working.",
+      "contactControl": "IAM · Construction marketing"
+    },
+    {
+      "slug": "painters-tv-industry-marketing-project-content-guide",
+      "expectedTitle": "Painters.tv: distinguish preparation, surfaces and finish decisions in project content",
+      "canonical": "https://www.industryarmymarketing.com/blog/painters-tv-industry-marketing-project-content-guide",
+      "stage": "planned",
+      "discovery": [
+        "https://www.industryarmymarketing.com/blog",
+        "https://www.industryarmymarketing.com/sitemap.xml",
+        "https://www.industryarmymarketing.com/rss.xml"
+      ],
+      "requiredContact": "https://www.industryarmymarketing.com/contact?request=guest-post&ref_site=painters.tv",
+      "publishedDate": null,
+      "siteDomain": "painters.tv",
+      "intent": "Painters.tv: distinguish preparation, surfaces and finish decisions in project content",
+      "contentFocus": "Painters.tv: distinguish preparation, surfaces and finish decisions in project content",
+      "guestUrl": "https://painters.tv/guest-posts",
+      "guestStatus": "Audited; exact current findings remain in local audit evidence and must be rechecked on source before article.",
+      "classification": "core_building_trades",
+      "ownershipBasis": [
+        {
+          "type": "public_site_credit_or_network_mention",
+          "url": "https://painters.tv/"
+        },
+        {
+          "type": "IAM_current_brandPortfolio",
+          "url": "SHTFTV/industryarmymarketing.com/artifacts/industry-army/src/data/brandPortfolio.json"
+        }
+      ],
+      "primarySources": [
+        "https://painters.tv/",
+        "https://painters.tv/guest-posts"
+      ],
+      "nextIssue": "Review contributor source/intake and passpublicationacceptance beforedraftrelease.",
+      "titleState": "provisional_until_draft",
+      "rights": "Recheck source/approvedIAM assets before using media. No thirdparty copying or unverified rights.",
+      "guestRemediation": "Audit evidence retained separately; never promote broken/untested submission as working.",
+      "contactControl": "IAM · Construction marketing"
+    },
+    {
+      "slug": "plumbers-ltd-industry-marketing-project-content-guide",
+      "expectedTitle": "Plumbers.ltd: distinguish urgent contact from a planned project proposal",
+      "canonical": "https://www.industryarmymarketing.com/blog/plumbers-ltd-industry-marketing-project-content-guide",
+      "stage": "planned",
+      "discovery": [
+        "https://www.industryarmymarketing.com/blog",
+        "https://www.industryarmymarketing.com/sitemap.xml",
+        "https://www.industryarmymarketing.com/rss.xml"
+      ],
+      "requiredContact": "https://www.industryarmymarketing.com/contact?request=guest-post&ref_site=plumbers.ltd",
+      "publishedDate": null,
+      "siteDomain": "plumbers.ltd",
+      "intent": "Plumbers.ltd: distinguish urgent contact from a planned project proposal",
+      "contentFocus": "Plumbers.ltd: distinguish urgent contact from a planned project proposal",
+      "guestUrl": "https://www.plumbers.ltd/guest-post",
+      "guestStatus": "Audited; exact current findings remain in local audit evidence and must be rechecked on source before article.",
+      "classification": "core_building_trades",
+      "ownershipBasis": [
+        {
+          "type": "public_site_credit_or_network_mention",
+          "url": "https://www.plumbers.ltd/"
+        }
+      ],
+      "primarySources": [
+        "https://www.plumbers.ltd/",
+        "https://www.plumbers.ltd/guest-post",
+        "https://plumbers.ltd/guest-post"
+      ],
+      "nextIssue": "FixguestpagecanonicaltoitsactualpublicURL; verify currentintake/contactownershipwithoutsubmittingtests.",
+      "titleState": "provisional_until_draft",
+      "rights": "Recheck source/approvedIAM assets before using media. No thirdparty copying or unverified rights.",
+      "guestRemediation": "Audit evidence retained separately; never promote broken/untested submission as working.",
+      "contactControl": "IAM · Construction marketing"
+    },
+    {
+      "slug": "plumbingdrainage-ca-industry-marketing-project-content-guide",
+      "expectedTitle": "Plumbing Drainage: describe the observed issue without diagnosing from a photograph",
+      "canonical": "https://www.industryarmymarketing.com/blog/plumbingdrainage-ca-industry-marketing-project-content-guide",
+      "stage": "planned",
+      "discovery": [
+        "https://www.industryarmymarketing.com/blog",
+        "https://www.industryarmymarketing.com/sitemap.xml",
+        "https://www.industryarmymarketing.com/rss.xml"
+      ],
+      "requiredContact": "https://www.industryarmymarketing.com/contact?request=guest-post&ref_site=plumbingdrainage.ca",
+      "publishedDate": null,
+      "siteDomain": "plumbingdrainage.ca",
+      "intent": "Plumbing Drainage: describe the observed issue without diagnosing from a photograph",
+      "contentFocus": "Plumbing Drainage: describe the observed issue without diagnosing from a photograph",
+      "guestUrl": "https://www.plumbingdrainage.ca/guest-post",
+      "guestStatus": "Audited; exact current findings remain in local audit evidence and must be rechecked on source before article.",
+      "classification": "core_building_trades",
+      "ownershipBasis": [
+        {
+          "type": "public_site_credit_or_network_mention",
+          "url": "https://www.plumbingdrainage.ca/"
+        }
+      ],
+      "primarySources": [
+        "https://www.plumbingdrainage.ca/",
+        "https://www.plumbingdrainage.ca/guest-post"
+      ],
+      "nextIssue": "Review contributor source/intake and passpublicationacceptance beforedraftrelease.",
+      "titleState": "provisional_until_draft",
+      "rights": "Recheck source/approvedIAM assets before using media. No thirdparty copying or unverified rights.",
+      "guestRemediation": "Audit evidence retained separately; never promote broken/untested submission as working.",
+      "contactControl": "IAM · Construction marketing"
+    },
+    {
+      "slug": "prefabulous-co-industry-marketing-project-content-guide",
+      "expectedTitle": "Prefabulous: explain an additional-space idea before promising occupancy or installation",
+      "canonical": "https://www.industryarmymarketing.com/blog/prefabulous-co-industry-marketing-project-content-guide",
+      "stage": "planned",
+      "discovery": [
+        "https://www.industryarmymarketing.com/blog",
+        "https://www.industryarmymarketing.com/sitemap.xml",
+        "https://www.industryarmymarketing.com/rss.xml"
+      ],
+      "requiredContact": "https://www.industryarmymarketing.com/contact?request=guest-post&ref_site=prefabulous.co",
+      "publishedDate": null,
+      "siteDomain": "prefabulous.co",
+      "intent": "Prefabulous: explain an additional-space idea before promising occupancy or installation",
+      "contentFocus": "Prefabulous: explain an additional-space idea before promising occupancy or installation",
+      "guestUrl": null,
+      "guestStatus": "Audited; exact current findings remain in local audit evidence and must be rechecked on source before article.",
+      "classification": "core_building_trades",
+      "ownershipBasis": [
+        {
+          "type": "public_site_credit_or_network_mention",
+          "url": "https://prefabulous.co/"
+        }
+      ],
+      "primarySources": [
+        "https://prefabulous.co/"
+      ],
+      "nextIssue": "No guestpagefoundin renderedhomenavigation/sitemap; inspect source for a realroute or scopedintakeimplementation. Do not claim noneexistsfromthislimitedaudit.",
+      "titleState": "provisional_until_draft",
+      "rights": "Recheck source/approvedIAM assets before using media. No thirdparty copying or unverified rights.",
+      "guestRemediation": "Audit evidence retained separately; never promote broken/untested submission as working.",
+      "contactControl": "IAM · Construction marketing"
+    },
+    {
+      "slug": "prefabulousbuildings-com-industry-marketing-project-content-guide",
+      "expectedTitle": "Prefabulous Buildings: separate building supply, sitework and approvals in a useful brief",
+      "canonical": "https://www.industryarmymarketing.com/blog/prefabulousbuildings-com-industry-marketing-project-content-guide",
+      "stage": "planned",
+      "discovery": [
+        "https://www.industryarmymarketing.com/blog",
+        "https://www.industryarmymarketing.com/sitemap.xml",
+        "https://www.industryarmymarketing.com/rss.xml"
+      ],
+      "requiredContact": "https://www.industryarmymarketing.com/contact?request=guest-post&ref_site=prefabulousbuildings.com",
+      "publishedDate": null,
+      "siteDomain": "prefabulousbuildings.com",
+      "intent": "Prefabulous Buildings: separate building supply, sitework and approvals in a useful brief",
+      "contentFocus": "Prefabulous Buildings: separate building supply, sitework and approvals in a useful brief",
+      "guestUrl": null,
+      "guestStatus": "Audited; exact current findings remain in local audit evidence and must be rechecked on source before article.",
+      "classification": "core_building_trades",
+      "ownershipBasis": [
+        {
+          "type": "public_site_credit_or_network_mention",
+          "url": "https://prefabulousbuildings.com/"
+        }
+      ],
+      "primarySources": [
+        "https://prefabulousbuildings.com/"
+      ],
+      "nextIssue": "No guestpagefoundin renderedhomenavigation/sitemap; inspect source for a realroute or scopedintakeimplementation. Do not claim noneexistsfromthislimitedaudit.",
+      "titleState": "provisional_until_draft",
+      "rights": "Recheck source/approvedIAM assets before using media. No thirdparty copying or unverified rights.",
+      "guestRemediation": "Audit evidence retained separately; never promote broken/untested submission as working.",
+      "contactControl": "IAM · Construction marketing"
+    },
+    {
+      "slug": "sparkys-tv-industry-marketing-project-content-guide",
+      "expectedTitle": "Sparkys: use electrical project stories without replacing licensed assessment",
+      "canonical": "https://www.industryarmymarketing.com/blog/sparkys-tv-industry-marketing-project-content-guide",
+      "stage": "planned",
+      "discovery": [
+        "https://www.industryarmymarketing.com/blog",
+        "https://www.industryarmymarketing.com/sitemap.xml",
+        "https://www.industryarmymarketing.com/rss.xml"
+      ],
+      "requiredContact": "https://www.industryarmymarketing.com/contact?request=guest-post&ref_site=sparkys.tv",
+      "publishedDate": null,
+      "siteDomain": "sparkys.tv",
+      "intent": "Sparkys: use electrical project stories without replacing licensed assessment",
+      "contentFocus": "Sparkys: use electrical project stories without replacing licensed assessment",
+      "guestUrl": "https://sparkys.tv/guest-posts/",
+      "guestStatus": "Audited; exact current findings remain in local audit evidence and must be rechecked on source before article.",
+      "classification": "core_building_trades",
+      "ownershipBasis": [
+        {
+          "type": "public_site_credit_or_network_mention",
+          "url": "https://sparkys.tv/"
+        },
+        {
+          "type": "IAM_current_brandPortfolio",
+          "url": "SHTFTV/industryarmymarketing.com/artifacts/industry-army/src/data/brandPortfolio.json"
+        }
+      ],
+      "primarySources": [
+        "https://sparkys.tv/",
+        "https://sparkys.tv/guest-posts/"
+      ],
+      "nextIssue": "Review contributor source/intake and passpublicationacceptance beforedraftrelease.",
+      "titleState": "provisional_until_draft",
+      "rights": "Recheck source/approvedIAM assets before using media. No thirdparty copying or unverified rights.",
+      "guestRemediation": "Audit evidence retained separately; never promote broken/untested submission as working.",
+      "contactControl": "IAM · Construction marketing"
+    },
+    {
+      "slug": "sprayinsulations-ca-industry-marketing-project-content-guide",
+      "expectedTitle": "Spray Insulations: explain access and assembly questions without invented performance",
+      "canonical": "https://www.industryarmymarketing.com/blog/sprayinsulations-ca-industry-marketing-project-content-guide",
+      "stage": "planned",
+      "discovery": [
+        "https://www.industryarmymarketing.com/blog",
+        "https://www.industryarmymarketing.com/sitemap.xml",
+        "https://www.industryarmymarketing.com/rss.xml"
+      ],
+      "requiredContact": "https://www.industryarmymarketing.com/contact?request=guest-post&ref_site=sprayinsulations.ca",
+      "publishedDate": null,
+      "siteDomain": "sprayinsulations.ca",
+      "intent": "Spray Insulations: explain access and assembly questions without invented performance",
+      "contentFocus": "Spray Insulations: explain access and assembly questions without invented performance",
+      "guestUrl": "https://sprayinsulations.ca/guest-post/",
+      "guestStatus": "Audited; exact current findings remain in local audit evidence and must be rechecked on source before article.",
+      "classification": "core_building_trades",
+      "ownershipBasis": [
+        {
+          "type": "public_site_credit_or_network_mention",
+          "url": "https://sprayinsulations.ca/"
+        }
+      ],
+      "primarySources": [
+        "https://sprayinsulations.ca/",
+        "https://sprayinsulations.ca/guest-post/"
+      ],
+      "nextIssue": "Review contributor source/intake and passpublicationacceptance beforedraftrelease.",
+      "titleState": "provisional_until_draft",
+      "rights": "Recheck source/approvedIAM assets before using media. No thirdparty copying or unverified rights.",
+      "guestRemediation": "Audit evidence retained separately; never promote broken/untested submission as working.",
+      "contactControl": "IAM · Construction marketing"
+    },
+    {
+      "slug": "steelfencing-ca-industry-marketing-project-content-guide",
+      "expectedTitle": "Steel Fencing: separate design inspiration from verified fabrication specifications",
+      "canonical": "https://www.industryarmymarketing.com/blog/steelfencing-ca-industry-marketing-project-content-guide",
+      "stage": "planned",
+      "discovery": [
+        "https://www.industryarmymarketing.com/blog",
+        "https://www.industryarmymarketing.com/sitemap.xml",
+        "https://www.industryarmymarketing.com/rss.xml"
+      ],
+      "requiredContact": "https://www.industryarmymarketing.com/contact?request=guest-post&ref_site=steelfencing.ca",
+      "publishedDate": null,
+      "siteDomain": "steelfencing.ca",
+      "intent": "Steel Fencing: separate design inspiration from verified fabrication specifications",
+      "contentFocus": "Steel Fencing: separate design inspiration from verified fabrication specifications",
+      "guestUrl": null,
+      "guestStatus": "Audited; exact current findings remain in local audit evidence and must be rechecked on source before article.",
+      "classification": "core_building_trades",
+      "ownershipBasis": [
+        {
+          "type": "portfolio_hosting_inventory_only",
+          "url": ""
+        }
+      ],
+      "primarySources": [
+        "https://www.steelfencing.ca/"
+      ],
+      "nextIssue": "No guestpagefoundin renderedhomenavigation/sitemap; inspect source for a realroute or scopedintakeimplementation. Do not claim noneexistsfromthislimitedaudit. ConfirmIAMrelationshipbeforeclaimingbrandcreation/ownership.",
+      "titleState": "provisional_until_draft",
+      "rights": "Recheck source/approvedIAM assets before using media. No thirdparty copying or unverified rights.",
+      "guestRemediation": "Audit evidence retained separately; never promote broken/untested submission as working.",
+      "contactControl": "IAM · Construction marketing"
+    },
+    {
+      "slug": "strataroofers-com-industry-marketing-project-content-guide",
+      "expectedTitle": "Strata Roofers: separate council decisions, access and contractor scope in roofing content",
+      "canonical": "https://www.industryarmymarketing.com/blog/strataroofers-com-industry-marketing-project-content-guide",
+      "stage": "planned",
+      "discovery": [
+        "https://www.industryarmymarketing.com/blog",
+        "https://www.industryarmymarketing.com/sitemap.xml",
+        "https://www.industryarmymarketing.com/rss.xml"
+      ],
+      "requiredContact": "https://www.industryarmymarketing.com/contact?request=guest-post&ref_site=strataroofers.com",
+      "publishedDate": null,
+      "siteDomain": "strataroofers.com",
+      "intent": "Strata Roofers: separate council decisions, access and contractor scope in roofing content",
+      "contentFocus": "Strata Roofers: separate council decisions, access and contractor scope in roofing content",
+      "guestUrl": null,
+      "guestStatus": "Audited; exact current findings remain in local audit evidence and must be rechecked on source before article.",
+      "classification": "core_building_trades",
+      "ownershipBasis": [
+        {
+          "type": "public_site_credit_or_network_mention",
+          "url": "https://www.strataroofers.com/"
+        }
+      ],
+      "primarySources": [
+        "https://www.strataroofers.com/"
+      ],
+      "nextIssue": "No guestpagefoundin renderedhomenavigation/sitemap; inspect source for a realroute or scopedintakeimplementation. Do not claim noneexistsfromthislimitedaudit.",
+      "titleState": "provisional_until_draft",
+      "rights": "Recheck source/approvedIAM assets before using media. No thirdparty copying or unverified rights.",
+      "guestRemediation": "Audit evidence retained separately; never promote broken/untested submission as working.",
+      "contactControl": "IAM · Construction marketing"
+    },
+    {
+      "slug": "wesprayit-ca-industry-marketing-project-content-guide",
+      "expectedTitle": "WeSprayIt: show large-space preparation and the boundaries of a spray-work enquiry",
+      "canonical": "https://www.industryarmymarketing.com/blog/wesprayit-ca-industry-marketing-project-content-guide",
+      "stage": "planned",
+      "discovery": [
+        "https://www.industryarmymarketing.com/blog",
+        "https://www.industryarmymarketing.com/sitemap.xml",
+        "https://www.industryarmymarketing.com/rss.xml"
+      ],
+      "requiredContact": "https://www.industryarmymarketing.com/contact?request=guest-post&ref_site=wesprayit.ca",
+      "publishedDate": null,
+      "siteDomain": "wesprayit.ca",
+      "intent": "WeSprayIt: show large-space preparation and the boundaries of a spray-work enquiry",
+      "contentFocus": "WeSprayIt: show large-space preparation and the boundaries of a spray-work enquiry",
+      "guestUrl": null,
+      "guestStatus": "Audited; exact current findings remain in local audit evidence and must be rechecked on source before article.",
+      "classification": "core_building_trades",
+      "ownershipBasis": [
+        {
+          "type": "public_site_credit_or_network_mention",
+          "url": "https://wesprayit.ca/"
+        }
+      ],
+      "primarySources": [
+        "https://wesprayit.ca/"
+      ],
+      "nextIssue": "No guestpagefoundin renderedhomenavigation/sitemap; inspect source for a realroute or scopedintakeimplementation. Do not claim noneexistsfromthislimitedaudit.",
+      "titleState": "provisional_until_draft",
+      "rights": "Recheck source/approvedIAM assets before using media. No thirdparty copying or unverified rights.",
+      "guestRemediation": "Audit evidence retained separately; never promote broken/untested submission as working.",
+      "contactControl": "IAM · Construction marketing"
+    },
+    {
+      "slug": "wnpd-ca-industry-marketing-project-content-guide",
+      "expectedTitle": "WNPD: local drainage content should connect symptoms, location and the next enquiry",
+      "canonical": "https://www.industryarmymarketing.com/blog/wnpd-ca-industry-marketing-project-content-guide",
+      "stage": "planned",
+      "discovery": [
+        "https://www.industryarmymarketing.com/blog",
+        "https://www.industryarmymarketing.com/sitemap.xml",
+        "https://www.industryarmymarketing.com/rss.xml"
+      ],
+      "requiredContact": "https://www.industryarmymarketing.com/contact?request=guest-post&ref_site=wnpd.ca",
+      "publishedDate": null,
+      "siteDomain": "wnpd.ca",
+      "intent": "WNPD: local drainage content should connect symptoms, location and the next enquiry",
+      "contentFocus": "WNPD: local drainage content should connect symptoms, location and the next enquiry",
+      "guestUrl": null,
+      "guestStatus": "Audited; exact current findings remain in local audit evidence and must be rechecked on source before article.",
+      "classification": "core_building_trades",
+      "ownershipBasis": [
+        {
+          "type": "public_site_credit_or_network_mention",
+          "url": "https://wnpd.ca/"
+        }
+      ],
+      "primarySources": [
+        "https://wnpd.ca/"
+      ],
+      "nextIssue": "No guestpagefoundin renderedhomenavigation/sitemap; inspect source for a realroute or scopedintakeimplementation. Do not claim noneexistsfromthislimitedaudit.",
+      "titleState": "provisional_until_draft",
+      "rights": "Recheck source/approvedIAM assets before using media. No thirdparty copying or unverified rights.",
+      "guestRemediation": "Audit evidence retained separately; never promote broken/untested submission as working.",
+      "contactControl": "IAM · Construction marketing"
+    },
+    {
+      "slug": "arborists-io-industry-marketing-project-content-guide",
+      "expectedTitle": "Arborists: explain site access and tree-care questions without remote diagnosis",
+      "canonical": "https://www.industryarmymarketing.com/blog/arborists-io-industry-marketing-project-content-guide",
+      "stage": "planned",
+      "discovery": [
+        "https://www.industryarmymarketing.com/blog",
+        "https://www.industryarmymarketing.com/sitemap.xml",
+        "https://www.industryarmymarketing.com/rss.xml"
+      ],
+      "requiredContact": "https://www.industryarmymarketing.com/contact?request=guest-post&ref_site=arborists.io",
+      "publishedDate": null,
+      "siteDomain": "arborists.io",
+      "intent": "Arborists: explain site access and tree-care questions without remote diagnosis",
+      "contentFocus": "Arborists: explain site access and tree-care questions without remote diagnosis",
+      "guestUrl": null,
+      "guestStatus": "Audited; exact current findings remain in local audit evidence and must be rechecked on source before article.",
+      "classification": "adjacent_equipment_grounds_maintenance",
+      "ownershipBasis": [
+        {
+          "type": "public_site_credit_or_network_mention",
+          "url": "https://www.arborists.io/"
+        }
+      ],
+      "primarySources": [
+        "https://www.arborists.io/"
+      ],
+      "nextIssue": "No guestpagefoundin renderedhomenavigation/sitemap; inspect source for a realroute or scopedintakeimplementation. Do not claim noneexistsfromthislimitedaudit.",
+      "titleState": "provisional_until_draft",
+      "rights": "Recheck source/approvedIAM assets before using media. No thirdparty copying or unverified rights.",
+      "guestRemediation": "Audit evidence retained separately; never promote broken/untested submission as working.",
+      "contactControl": "IAM · Construction marketing"
+    },
+    {
+      "slug": "beewarm-ca-industry-marketing-project-content-guide",
+      "expectedTitle": "BeeWarm: distinguish fireplace service enquiries from confirmed coordinated bookings",
+      "canonical": "https://www.industryarmymarketing.com/blog/beewarm-ca-industry-marketing-project-content-guide",
+      "stage": "planned",
+      "discovery": [
+        "https://www.industryarmymarketing.com/blog",
+        "https://www.industryarmymarketing.com/sitemap.xml",
+        "https://www.industryarmymarketing.com/rss.xml"
+      ],
+      "requiredContact": "https://www.industryarmymarketing.com/contact?request=guest-post&ref_site=beewarm.ca",
+      "publishedDate": null,
+      "siteDomain": "beewarm.ca",
+      "intent": "BeeWarm: distinguish fireplace service enquiries from confirmed coordinated bookings",
+      "contentFocus": "BeeWarm: distinguish fireplace service enquiries from confirmed coordinated bookings",
+      "guestUrl": null,
+      "guestStatus": "Audited; exact current findings remain in local audit evidence and must be rechecked on source before article.",
+      "classification": "adjacent_equipment_grounds_maintenance",
+      "ownershipBasis": [
+        {
+          "type": "public_site_credit_or_network_mention",
+          "url": "https://beewarm.ca/"
+        }
+      ],
+      "primarySources": [
+        "https://beewarm.ca/"
+      ],
+      "nextIssue": "No guestpagefoundin renderedhomenavigation/sitemap; inspect source for a realroute or scopedintakeimplementation. Do not claim noneexistsfromthislimitedaudit.",
+      "titleState": "provisional_until_draft",
+      "rights": "Recheck source/approvedIAM assets before using media. No thirdparty copying or unverified rights.",
+      "guestRemediation": "Audit evidence retained separately; never promote broken/untested submission as working.",
+      "contactControl": "IAM · Construction marketing"
+    },
+    {
+      "slug": "brinesalters-com-industry-marketing-project-content-guide",
+      "expectedTitle": "BrineSalters: separate material planning education from operational instructions",
+      "canonical": "https://www.industryarmymarketing.com/blog/brinesalters-com-industry-marketing-project-content-guide",
+      "stage": "planned",
+      "discovery": [
+        "https://www.industryarmymarketing.com/blog",
+        "https://www.industryarmymarketing.com/sitemap.xml",
+        "https://www.industryarmymarketing.com/rss.xml"
+      ],
+      "requiredContact": "https://www.industryarmymarketing.com/contact?request=guest-post&ref_site=brinesalters.com",
+      "publishedDate": null,
+      "siteDomain": "brinesalters.com",
+      "intent": "BrineSalters: separate material planning education from operational instructions",
+      "contentFocus": "BrineSalters: separate material planning education from operational instructions",
+      "guestUrl": "https://brinesalters.com/guest-posts/",
+      "guestStatus": "Audited; exact current findings remain in local audit evidence and must be rechecked on source before article.",
+      "classification": "adjacent_equipment_grounds_maintenance",
+      "ownershipBasis": [
+        {
+          "type": "public_site_credit_or_network_mention",
+          "url": "https://brinesalters.com/"
+        }
+      ],
+      "primarySources": [
+        "https://brinesalters.com/",
+        "https://brinesalters.com/guest-posts/"
+      ],
+      "nextIssue": "Review contributor source/intake and passpublicationacceptance beforedraftrelease.",
+      "titleState": "provisional_until_draft",
+      "rights": "Recheck source/approvedIAM assets before using media. No thirdparty copying or unverified rights.",
+      "guestRemediation": "Audit evidence retained separately; never promote broken/untested submission as working.",
+      "contactControl": "IAM · Construction marketing"
+    },
+    {
+      "slug": "bugout-tv-industry-marketing-project-content-guide",
+      "expectedTitle": "BugOut: separate off-grid inspiration from tested vehicle or retreat capabilities",
+      "canonical": "https://www.industryarmymarketing.com/blog/bugout-tv-industry-marketing-project-content-guide",
+      "stage": "planned",
+      "discovery": [
+        "https://www.industryarmymarketing.com/blog",
+        "https://www.industryarmymarketing.com/sitemap.xml",
+        "https://www.industryarmymarketing.com/rss.xml"
+      ],
+      "requiredContact": "https://www.industryarmymarketing.com/contact?request=guest-post&ref_site=bugout.tv",
+      "publishedDate": null,
+      "siteDomain": "bugout.tv",
+      "intent": "BugOut: separate off-grid inspiration from tested vehicle or retreat capabilities",
+      "contentFocus": "BugOut: separate off-grid inspiration from tested vehicle or retreat capabilities",
+      "guestUrl": null,
+      "guestStatus": "Audited; exact current findings remain in local audit evidence and must be rechecked on source before article.",
+      "classification": "adjacent_equipment_grounds_maintenance",
+      "ownershipBasis": [
+        {
+          "type": "public_site_credit_or_network_mention",
+          "url": "https://bugout.tv/"
+        }
+      ],
+      "primarySources": [
+        "https://bugout.tv/"
+      ],
+      "nextIssue": "No guestpagefoundin renderedhomenavigation/sitemap; inspect source for a realroute or scopedintakeimplementation. Do not claim noneexistsfromthislimitedaudit.",
+      "titleState": "provisional_until_draft",
+      "rights": "Recheck source/approvedIAM assets before using media. No thirdparty copying or unverified rights.",
+      "guestRemediation": "Audit evidence retained separately; never promote broken/untested submission as working.",
+      "contactControl": "IAM · Construction marketing"
+    },
+    {
+      "slug": "excavators-tv-industry-marketing-project-content-guide",
+      "expectedTitle": "Excavators: equipment identification and actual project context make stronger publishing",
+      "canonical": "https://www.industryarmymarketing.com/blog/excavators-tv-industry-marketing-project-content-guide",
+      "stage": "planned",
+      "discovery": [
+        "https://www.industryarmymarketing.com/blog",
+        "https://www.industryarmymarketing.com/sitemap.xml",
+        "https://www.industryarmymarketing.com/rss.xml"
+      ],
+      "requiredContact": "https://www.industryarmymarketing.com/contact?request=guest-post&ref_site=excavators.tv",
+      "publishedDate": null,
+      "siteDomain": "excavators.tv",
+      "intent": "Excavators: equipment identification and actual project context make stronger publishing",
+      "contentFocus": "Excavators: equipment identification and actual project context make stronger publishing",
+      "guestUrl": "https://www.industryarmymarketing.com/guest-post",
+      "guestStatus": "Audited; exact current findings remain in local audit evidence and must be rechecked on source before article.",
+      "classification": "adjacent_equipment_grounds_maintenance",
+      "ownershipBasis": [
+        {
+          "type": "public_site_credit_or_network_mention",
+          "url": "https://excavators.tv/"
+        },
+        {
+          "type": "IAM_current_brandPortfolio",
+          "url": "SHTFTV/industryarmymarketing.com/artifacts/industry-army/src/data/brandPortfolio.json"
+        }
+      ],
+      "primarySources": [
+        "https://excavators.tv/",
+        "https://www.industryarmymarketing.com/guest-post"
+      ],
+      "nextIssue": "Review contributor source/intake and passpublicationacceptance beforedraftrelease.",
+      "titleState": "provisional_until_draft",
+      "rights": "Recheck source/approvedIAM assets before using media. No thirdparty copying or unverified rights.",
+      "guestRemediation": "Audit evidence retained separately; never promote broken/untested submission as working.",
+      "contactControl": "IAM · Construction marketing"
+    },
+    {
+      "slug": "hardscapes-io-industry-marketing-project-content-guide",
+      "expectedTitle": "Hardscapes: connect an outdoor design idea to drainage and scope questions",
+      "canonical": "https://www.industryarmymarketing.com/blog/hardscapes-io-industry-marketing-project-content-guide",
+      "stage": "planned",
+      "discovery": [
+        "https://www.industryarmymarketing.com/blog",
+        "https://www.industryarmymarketing.com/sitemap.xml",
+        "https://www.industryarmymarketing.com/rss.xml"
+      ],
+      "requiredContact": "https://www.industryarmymarketing.com/contact?request=guest-post&ref_site=hardscapes.io",
+      "publishedDate": null,
+      "siteDomain": "hardscapes.io",
+      "intent": "Hardscapes: connect an outdoor design idea to drainage and scope questions",
+      "contentFocus": "Hardscapes: connect an outdoor design idea to drainage and scope questions",
+      "guestUrl": "https://www.hardscapes.io/guest-post",
+      "guestStatus": "Audited; exact current findings remain in local audit evidence and must be rechecked on source before article.",
+      "classification": "adjacent_equipment_grounds_maintenance",
+      "ownershipBasis": [
+        {
+          "type": "public_site_credit_or_network_mention",
+          "url": "https://www.hardscapes.io/"
+        }
+      ],
+      "primarySources": [
+        "https://www.hardscapes.io/",
+        "https://www.hardscapes.io/guest-post",
+        "https://hardscapes.io/guest-post"
+      ],
+      "nextIssue": "FixguestpagecanonicaltoitsactualpublicURL; verify currentintake/contactownershipwithoutsubmittingtests.",
+      "titleState": "provisional_until_draft",
+      "rights": "Recheck source/approvedIAM assets before using media. No thirdparty copying or unverified rights.",
+      "guestRemediation": "Audit evidence retained separately; never promote broken/untested submission as working.",
+      "contactControl": "IAM · Construction marketing"
+    },
+    {
+      "slug": "kongtractors-com-industry-marketing-project-content-guide",
+      "expectedTitle": "Kong Tractors: turn model-specific curiosity into useful equipment publishing",
+      "canonical": "https://www.industryarmymarketing.com/blog/kongtractors-com-industry-marketing-project-content-guide",
+      "stage": "planned",
+      "discovery": [
+        "https://www.industryarmymarketing.com/blog",
+        "https://www.industryarmymarketing.com/sitemap.xml",
+        "https://www.industryarmymarketing.com/rss.xml"
+      ],
+      "requiredContact": "https://www.industryarmymarketing.com/contact?request=guest-post&ref_site=kongtractors.com",
+      "publishedDate": null,
+      "siteDomain": "kongtractors.com",
+      "intent": "Kong Tractors: turn model-specific curiosity into useful equipment publishing",
+      "contentFocus": "Kong Tractors: turn model-specific curiosity into useful equipment publishing",
+      "guestUrl": "https://kongtractors.com/guest-post.html",
+      "guestStatus": "Audited; exact current findings remain in local audit evidence and must be rechecked on source before article.",
+      "classification": "adjacent_equipment_grounds_maintenance",
+      "ownershipBasis": [
+        {
+          "type": "public_site_credit_or_network_mention",
+          "url": "https://kongtractors.com/"
+        },
+        {
+          "type": "IAM_current_brandPortfolio",
+          "url": "SHTFTV/industryarmymarketing.com/artifacts/industry-army/src/data/brandPortfolio.json"
+        }
+      ],
+      "primarySources": [
+        "https://kongtractors.com/",
+        "https://kongtractors.com/guest-post.html"
+      ],
+      "nextIssue": "Review contributor source/intake and passpublicationacceptance beforedraftrelease.",
+      "titleState": "provisional_until_draft",
+      "rights": "Recheck source/approvedIAM assets before using media. No thirdparty copying or unverified rights.",
+      "guestRemediation": "Audit evidence retained separately; never promote broken/untested submission as working.",
+      "contactControl": "IAM · Construction marketing"
+    },
+    {
+      "slug": "plow-ltd-industry-marketing-project-content-guide",
+      "expectedTitle": "Plow.ltd: restore a reachable publication before promoting a territory offer",
+      "canonical": "https://www.industryarmymarketing.com/blog/plow-ltd-industry-marketing-project-content-guide",
+      "stage": "planned",
+      "discovery": [
+        "https://www.industryarmymarketing.com/blog",
+        "https://www.industryarmymarketing.com/sitemap.xml",
+        "https://www.industryarmymarketing.com/rss.xml"
+      ],
+      "requiredContact": "https://www.industryarmymarketing.com/contact?request=guest-post&ref_site=plow.ltd",
+      "publishedDate": null,
+      "siteDomain": "plow.ltd",
+      "intent": "Plow.ltd: restore a reachable publication before promoting a territory offer",
+      "contentFocus": "Plow.ltd: restore a reachable publication before promoting a territory offer",
+      "guestUrl": null,
+      "guestStatus": "Audited; exact current findings remain in local audit evidence and must be rechecked on source before article.",
+      "classification": "adjacent_equipment_grounds_maintenance",
+      "ownershipBasis": [
+        {
+          "type": "portfolio_hosting_inventory_only",
+          "url": ""
+        }
+      ],
+      "primarySources": [
+        "https://plow.ltd"
+      ],
+      "nextIssue": "Resolve actualpublicdomainaccess: page.goto: net::ERR_NAME_NOT_RESOLVED at https://plow.ltd/\nCall log:\n\u001b[2m  - navigating to \"https://plow.ltd/\", waiting until \"domcontentloaded\"\u001b[22m\n ConfirmIAMrelationshipbeforeclaimingbrandcreation/ownership.",
+      "titleState": "provisional_until_draft",
+      "rights": "Recheck source/approvedIAM assets before using media. No thirdparty copying or unverified rights.",
+      "guestRemediation": "Audit evidence retained separately; never promote broken/untested submission as working.",
+      "contactControl": "IAM · Construction marketing"
+    },
+    {
+      "slug": "plow-news-industry-marketing-project-content-guide",
+      "expectedTitle": "Plow.news: build winter-industry coverage around evidence and contractor decisions",
+      "canonical": "https://www.industryarmymarketing.com/blog/plow-news-industry-marketing-project-content-guide",
+      "stage": "planned",
+      "discovery": [
+        "https://www.industryarmymarketing.com/blog",
+        "https://www.industryarmymarketing.com/sitemap.xml",
+        "https://www.industryarmymarketing.com/rss.xml"
+      ],
+      "requiredContact": "https://www.industryarmymarketing.com/contact?request=guest-post&ref_site=plow.news",
+      "publishedDate": null,
+      "siteDomain": "plow.news",
+      "intent": "Plow.news: build winter-industry coverage around evidence and contractor decisions",
+      "contentFocus": "Plow.news: build winter-industry coverage around evidence and contractor decisions",
+      "guestUrl": "https://www.plow.news/contribute/",
+      "guestStatus": "Audited; exact current findings remain in local audit evidence and must be rechecked on source before article.",
+      "classification": "adjacent_equipment_grounds_maintenance",
+      "ownershipBasis": [
+        {
+          "type": "public_site_credit_or_network_mention",
+          "url": "https://www.plow.news/"
+        }
+      ],
+      "primarySources": [
+        "https://www.plow.news/",
+        "https://www.plow.news/contribute/"
+      ],
+      "nextIssue": "Review contributor source/intake and passpublicationacceptance beforedraftrelease.",
+      "titleState": "provisional_until_draft",
+      "rights": "Recheck source/approvedIAM assets before using media. No thirdparty copying or unverified rights.",
+      "guestRemediation": "Audit evidence retained separately; never promote broken/untested submission as working.",
+      "contactControl": "IAM · Construction marketing"
+    },
+    {
+      "slug": "plowinstallations-com-industry-marketing-project-content-guide",
+      "expectedTitle": "Plow Installations: compatibility questions belong ahead of an installation price",
+      "canonical": "https://www.industryarmymarketing.com/blog/plowinstallations-com-industry-marketing-project-content-guide",
+      "stage": "planned",
+      "discovery": [
+        "https://www.industryarmymarketing.com/blog",
+        "https://www.industryarmymarketing.com/sitemap.xml",
+        "https://www.industryarmymarketing.com/rss.xml"
+      ],
+      "requiredContact": "https://www.industryarmymarketing.com/contact?request=guest-post&ref_site=plowinstallations.com",
+      "publishedDate": null,
+      "siteDomain": "plowinstallations.com",
+      "intent": "Plow Installations: compatibility questions belong ahead of an installation price",
+      "contentFocus": "Plow Installations: compatibility questions belong ahead of an installation price",
+      "guestUrl": "mailto:build@buildershaus.com",
+      "guestStatus": "Audited; exact current findings remain in local audit evidence and must be rechecked on source before article.",
+      "classification": "adjacent_equipment_grounds_maintenance",
+      "ownershipBasis": [
+        {
+          "type": "public_site_credit_or_network_mention",
+          "url": "https://www.plowinstallations.com/"
+        }
+      ],
+      "primarySources": [
+        "https://www.plowinstallations.com/"
+      ],
+      "nextIssue": "Email-onlycontributorCTA; mailboxdeliveryunverified. Donotrepresentitasa storedsubmissionform.",
+      "titleState": "provisional_until_draft",
+      "rights": "Recheck source/approvedIAM assets before using media. No thirdparty copying or unverified rights.",
+      "guestRemediation": "Audit evidence retained separately; never promote broken/untested submission as working.",
+      "contactControl": "IAM · Construction marketing"
+    },
+    {
+      "slug": "plowwow-com-industry-marketing-project-content-guide",
+      "expectedTitle": "PlowWow: explain demonstrated request workflows and keep beta concepts labelled",
+      "canonical": "https://www.industryarmymarketing.com/blog/plowwow-com-industry-marketing-project-content-guide",
+      "stage": "planned",
+      "discovery": [
+        "https://www.industryarmymarketing.com/blog",
+        "https://www.industryarmymarketing.com/sitemap.xml",
+        "https://www.industryarmymarketing.com/rss.xml"
+      ],
+      "requiredContact": "https://www.industryarmymarketing.com/contact?request=guest-post&ref_site=plowwow.com",
+      "publishedDate": null,
+      "siteDomain": "plowwow.com",
+      "intent": "PlowWow: explain demonstrated request workflows and keep beta concepts labelled",
+      "contentFocus": "PlowWow: explain demonstrated request workflows and keep beta concepts labelled",
+      "guestUrl": "https://www.plowwow.com/guest-post",
+      "guestStatus": "Audited; exact current findings remain in local audit evidence and must be rechecked on source before article.",
+      "classification": "adjacent_equipment_grounds_maintenance",
+      "ownershipBasis": [
+        {
+          "type": "public_site_credit_or_network_mention",
+          "url": "https://www.plowwow.com/"
+        },
+        {
+          "type": "IAM_current_brandPortfolio",
+          "url": "SHTFTV/industryarmymarketing.com/artifacts/industry-army/src/data/brandPortfolio.json"
+        }
+      ],
+      "primarySources": [
+        "https://www.plowwow.com/",
+        "https://www.plowwow.com/guest-post"
+      ],
+      "nextIssue": "Inspect actualformhandler andstoredsubmission/emaildelivery throughauthorizedtestbeforeclaimingendtoendfunctional; preserveexistingpricing.",
+      "titleState": "provisional_until_draft",
+      "rights": "Recheck source/approvedIAM assets before using media. No thirdparty copying or unverified rights.",
+      "guestRemediation": "Audit evidence retained separately; never promote broken/untested submission as working.",
+      "contactControl": "IAM · Construction marketing"
+    },
+    {
+      "slug": "promows-com-industry-marketing-project-content-guide",
+      "expectedTitle": "ProMows: give recurring grounds-care enquiries a clear service boundary",
+      "canonical": "https://www.industryarmymarketing.com/blog/promows-com-industry-marketing-project-content-guide",
+      "stage": "planned",
+      "discovery": [
+        "https://www.industryarmymarketing.com/blog",
+        "https://www.industryarmymarketing.com/sitemap.xml",
+        "https://www.industryarmymarketing.com/rss.xml"
+      ],
+      "requiredContact": "https://www.industryarmymarketing.com/contact?request=guest-post&ref_site=promows.com",
+      "publishedDate": null,
+      "siteDomain": "promows.com",
+      "intent": "ProMows: give recurring grounds-care enquiries a clear service boundary",
+      "contentFocus": "ProMows: give recurring grounds-care enquiries a clear service boundary",
+      "guestUrl": null,
+      "guestStatus": "Audited; exact current findings remain in local audit evidence and must be rechecked on source before article.",
+      "classification": "adjacent_equipment_grounds_maintenance",
+      "ownershipBasis": [
+        {
+          "type": "public_site_credit_or_network_mention",
+          "url": "https://www.promows.com/"
+        },
+        {
+          "type": "IAM_current_brandPortfolio",
+          "url": "SHTFTV/industryarmymarketing.com/artifacts/industry-army/src/data/brandPortfolio.json"
+        }
+      ],
+      "primarySources": [
+        "https://www.promows.com/"
+      ],
+      "nextIssue": "No guestpagefoundin renderedhomenavigation/sitemap; inspect source for a realroute or scopedintakeimplementation. Do not claim noneexistsfromthislimitedaudit.",
+      "titleState": "provisional_until_draft",
+      "rights": "Recheck source/approvedIAM assets before using media. No thirdparty copying or unverified rights.",
+      "guestRemediation": "Audit evidence retained separately; never promote broken/untested submission as working.",
+      "contactControl": "IAM · Construction marketing"
+    },
+    {
+      "slug": "snowplow-tv-industry-marketing-project-content-guide",
+      "expectedTitle": "Snowplow.tv: video publishing should show the decision behind a winter route",
+      "canonical": "https://www.industryarmymarketing.com/blog/snowplow-tv-industry-marketing-project-content-guide",
+      "stage": "planned",
+      "discovery": [
+        "https://www.industryarmymarketing.com/blog",
+        "https://www.industryarmymarketing.com/sitemap.xml",
+        "https://www.industryarmymarketing.com/rss.xml"
+      ],
+      "requiredContact": "https://www.industryarmymarketing.com/contact?request=guest-post&ref_site=snowplow.tv",
+      "publishedDate": null,
+      "siteDomain": "snowplow.tv",
+      "intent": "Snowplow.tv: video publishing should show the decision behind a winter route",
+      "contentFocus": "Snowplow.tv: video publishing should show the decision behind a winter route",
+      "guestUrl": "https://snowplow.tv/guest-posts/",
+      "guestStatus": "Audited; exact current findings remain in local audit evidence and must be rechecked on source before article.",
+      "classification": "adjacent_equipment_grounds_maintenance",
+      "ownershipBasis": [
+        {
+          "type": "public_site_credit_or_network_mention",
+          "url": "https://snowplow.tv/"
+        }
+      ],
+      "primarySources": [
+        "https://snowplow.tv/",
+        "https://snowplow.tv/guest-posts/"
+      ],
+      "nextIssue": "Review contributor source/intake and passpublicationacceptance beforedraftrelease.",
+      "titleState": "provisional_until_draft",
+      "rights": "Recheck source/approvedIAM assets before using media. No thirdparty copying or unverified rights.",
+      "guestRemediation": "Audit evidence retained separately; never promote broken/untested submission as working.",
+      "contactControl": "IAM · Construction marketing"
+    },
+    {
+      "slug": "snowremoval-tv-industry-marketing-project-content-guide",
+      "expectedTitle": "SnowRemoval.tv: service records start with agreed scope and honest status",
+      "canonical": "https://www.industryarmymarketing.com/blog/snowremoval-tv-industry-marketing-project-content-guide",
+      "stage": "planned",
+      "discovery": [
+        "https://www.industryarmymarketing.com/blog",
+        "https://www.industryarmymarketing.com/sitemap.xml",
+        "https://www.industryarmymarketing.com/rss.xml"
+      ],
+      "requiredContact": "https://www.industryarmymarketing.com/contact?request=guest-post&ref_site=snowremoval.tv",
+      "publishedDate": null,
+      "siteDomain": "snowremoval.tv",
+      "intent": "SnowRemoval.tv: service records start with agreed scope and honest status",
+      "contentFocus": "SnowRemoval.tv: service records start with agreed scope and honest status",
+      "guestUrl": "https://snowremoval.tv/guest-posts/",
+      "guestStatus": "Audited; exact current findings remain in local audit evidence and must be rechecked on source before article.",
+      "classification": "adjacent_equipment_grounds_maintenance",
+      "ownershipBasis": [
+        {
+          "type": "public_site_credit_or_network_mention",
+          "url": "https://snowremoval.tv/"
+        }
+      ],
+      "primarySources": [
+        "https://snowremoval.tv/",
+        "https://snowremoval.tv/guest-posts/"
+      ],
+      "nextIssue": "Review contributor source/intake and passpublicationacceptance beforedraftrelease.",
+      "titleState": "provisional_until_draft",
+      "rights": "Recheck source/approvedIAM assets before using media. No thirdparty copying or unverified rights.",
+      "guestRemediation": "Audit evidence retained separately; never promote broken/untested submission as working.",
+      "contactControl": "IAM · Construction marketing"
+    },
+    {
+      "slug": "stratapropertyservices-com-industry-marketing-project-content-guide",
+      "expectedTitle": "Strata Property Services: name the decision owner before coordinating contractors",
+      "canonical": "https://www.industryarmymarketing.com/blog/stratapropertyservices-com-industry-marketing-project-content-guide",
+      "stage": "planned",
+      "discovery": [
+        "https://www.industryarmymarketing.com/blog",
+        "https://www.industryarmymarketing.com/sitemap.xml",
+        "https://www.industryarmymarketing.com/rss.xml"
+      ],
+      "requiredContact": "https://www.industryarmymarketing.com/contact?request=guest-post&ref_site=stratapropertyservices.com",
+      "publishedDate": null,
+      "siteDomain": "stratapropertyservices.com",
+      "intent": "Strata Property Services: name the decision owner before coordinating contractors",
+      "contentFocus": "Strata Property Services: name the decision owner before coordinating contractors",
+      "guestUrl": null,
+      "guestStatus": "Audited; exact current findings remain in local audit evidence and must be rechecked on source before article.",
+      "classification": "adjacent_equipment_grounds_maintenance",
+      "ownershipBasis": [
+        {
+          "type": "public_site_credit_or_network_mention",
+          "url": "https://www.stratapropertyservices.com/"
+        }
+      ],
+      "primarySources": [
+        "https://www.stratapropertyservices.com/"
+      ],
+      "nextIssue": "No guestpagefoundin renderedhomenavigation/sitemap; inspect source for a realroute or scopedintakeimplementation. Do not claim noneexistsfromthislimitedaudit.",
+      "titleState": "provisional_until_draft",
+      "rights": "Recheck source/approvedIAM assets before using media. No thirdparty copying or unverified rights.",
+      "guestRemediation": "Audit evidence retained separately; never promote broken/untested submission as working.",
+      "contactControl": "IAM · Construction marketing"
+    }
+  ]
+}

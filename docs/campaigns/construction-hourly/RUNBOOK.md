@@ -1,0 +1,44 @@
+# Construction campaign acceptance and handover
+
+This is a finite queue and verification toolkit, not an unattended publisher. It creates no schedule, publishes no source, changes no provider or account, opens no user tabs, and never changes `operations-recovery/jobs.sqlite`. Its SQLite file is separate: `construction-hourly-campaign/campaign.sqlite`. Tests use disposable databases only.
+
+## Queue contract
+
+```json
+{"campaign":"construction-hourly-2026-10-27","domain":"industryarmymarketing.com","articles":[{"slug":"unique-article-slug","expectedTitle":"Exact rendered article H1","canonical":"https://www.industryarmymarketing.com/blog/unique-article-slug","stage":"planned","discovery":["https://www.industryarmymarketing.com/blog/","https://www.industryarmymarketing.com/sitemap.xml"],"requiredContact":"colin@industryarmymarketing.com","publishedDate":"2026-10-27","siteDomain":"buildershaus.com","intent":"contractor brand creation","contentFocus":"distinct source-brand case study","guestUrl":null,"guestStatus":"not_requested"}]}
+```
+
+`domain` is the publication host; `siteDomain` is the construction brand the article concerns. No article is manufactured from the template. All titles, dates, contacts, source evidence and availability claims must come from reviewed source. Keep the queue finite; no automatic new-topic generation or endless retries. Empty queue is not proof work is complete.
+
+## Mandatory writer coordination
+
+**Every IAM writer, including the routine build-journal job, must use the same `queue.py lease --queue QUEUE --owner UNIQUE_WORKER` gate before source mutations. Planned `publishedDate` can remain null until due; update the next planned row to its actual Vancouver local release date and correct title before claiming. Reseeding refreshes only planned payloads and preserves canonical/stages; claimed, blocked and verified rows are never overwritten.** This toolkit cannot automatically retrofit a worker that does not call it. Parent/operator must add that instruction to the routine job and honor its existing operations-recovery job lease as well. The new global `iam-publish` lease is stored only in the toolkit database, lasts30minutes, and prevents compliant writers running concurrently. Renew every10minutes (`renew --slug SLUG --token TOKEN` to extend article and global leases together); release after the source/release transaction (`release`). Do not delete database files or steal active leases. `claim` acquires this lease as well, supports up to3articles with independent exact tokens, but this hourly campaign ALWAYS uses `--limit 1` and30minute expiry. All workers must use the default shared database path, not separate `--db` overrides in real runs.
+
+## Each hourly run
+
+1. `python3 checks.py --queue QUEUE --phase preflight` validates the queue and checks the latest3verified releases. This uses full1440/390browser checks every run (stronger than every3articles). First run with no releases is only structural preflight, clearly marked as such.
+2. `python3 queue.py claim --queue QUEUE --owner UNIQUE_WORKER --limit 1` atomically claims the next single article. Claims enforce at least3600seconds since the latest verified release in this campaign; `status.nextDue` exposes when to resume. No results means check `status`: allverified = complete; blocked/claimed = held, not complete. Three failed/reclaimed attempts exhaust the article; explicit recovery with reason is needed. Do not silently skip it or invent a newslug.
+3. For each claimedarticle, read current source and actualhost, check relevant source evidence and rights, write one substantive original article, build and deploy through canonical existing framework/project using an expected-head lease. A saved draft, commit or READY deployment is not publication proof. This toolkit does not perform these steps.
+4. After actual release, `python3 checks.py --queue QUEUE --phase postrelease --new-url EXACT_CANONICAL`. Newestarticle and latest3verified receive fullbrowser checks. It stops nonzero on failure with a HELD message. This covers aftereach3releases and everyhourlyrun; never suppress a failed recheck.
+5. `smoke.cjs` can also run directly: `NODE smoke.cjs --queue QUEUE --urls URLS_JSON --output EVIDENCE_JSON`. URLfile is an array or newline list; everyURLmust match an exact queued canonical. It checks actualcustomdomainHTTP200/finalhost, exactH1, substantive maintext, soft404/shell rejection, canonical, OGURL/title/image, Article/BlogPosting/date, nearheadinghero, decodedimages and OGresponse, requiredcontact, markedadvertisement, discovery content, desktop1440/phone390 and overflow. Screenshots saved beside evidence. Human/agent must visually inspect crop and readability, confirm meaningfulcontent/claims and correct namedbusiness ownership; automated checks cannot establish those facts.
+6. Postrelease writes a separate `SLUG-evidence.json` containing only that article’s two viewport checks. Add `commit` and `deployment` to that perarticle passing result (not the combined recent-URL report). `queue.py record --queue QUEUE --slug SLUG --token TOKEN --evidence FILE` requires both1440/390results, checkedAt, exactcanonical and passingacceptance. Update the existing `operations-recovery/batch.py` perarticle row separately using its fullacceptance contract; no generic job is proof allarticlespassed.
+7. Failure: `queue.py blocked --queue QUEUE --slug SLUG --token TOKEN --evidence BLOCKER_JSON`, where JSON includes `error` and `nextAction`. Report a short held-up message naming the exact failure and next step. Recovery requires explicit `recover --reason ...`; no automatic fourthattempt. Renew/releaseleases normally; no waiting silently or requesting already-granted postingpermission again.
+8. `queue.py status --queue QUEUE`. Only complete when nonemptyqueue has allarticlesverified. At completion report verifiedURLs, leave scheduler paused/finished under its owner's existing mechanism; **this toolkit cannot self-pause a scheduler and must not claim it did**. Parent must wire finite-completion stop/pause into existing job. No newjobs or automated infinitequeue.
+
+## Constraints and honest limits
+
+No secrets or cookies are read. Browser uses isolated headlessChrome, not the user's logged-in profile. No dependencies installed. Python uses standardlibrary; Node requires existingPlaywright at the known runtime path. If paths are unavailable, record exactruntimeblocker. Alias URLs are rejected rather than treated as publication. Existing localstandards TCCdenial does not become a newpermissionrequest; use the accepted currentrepository instructions/source of truth and record the precise gap. Every claim explicitly requires checking the actual canonical before source mutations; on an expired claim first test whether a prior worker already published it. If live and matching, validate/adopt the existing release rather than publishing a duplicate. Global coordination is only as strong as everywriter adopting its gate. Fullunattended recovery has **not** been proven by these unit tests.
+
+Tests: `python3 test_queue.py` and `NODE test_smoke.cjs`. Negative cases include HTTP200soft404, provideralias, missinghero, shelltext, wrongcanonical, brokenimage, wrongcontact, missingdiscovery, duplicatequeued/publishedslug and competingIAMwriters.
+
+## Native contact forms and exact active-claim correction
+
+`requiredContact` may be a verified email/tel destination or the **exact HTTPS IAM `/contact` URL including its expected query/ref_site/request**. For a native details card add `contactControl`: the summary label (for example `IAM · Construction marketing`). The checker physically opens that summary before collecting anchors. A form route is accepted only on the actual publication host with `/contact` or `/contact/`; an arbitrary same-host pricing/about link does not qualify. The exact link must be present, then the browser independently visits it and requires HTTP200, unchanged host/path/query, a rendered form and a non404 H1. It never types into or submits the form.
+
+If the active claim has an incorrect assumed contact gate, do not alter the site to add an invented email or reset the claim. Create a small JSON patch containing only `requiredContact`/`contactControl` (or a verified title/date correction). Run:
+
+```
+python3 queue.py amend --queue QUEUE --slug SLUG --token TOKEN --owner OWNER --patch PATCH_JSON --reason 'Correct the gate to the verified native IAM form'
+```
+
+This requires the exact active article token plus current global owner lease. It records the reason/fields, changes no canonical/stage/attempt count, and cannot amend verified or expired claims. Also update the queue JSON to the same verified values so browser checks use the corrected gate. Planned rows can use ordinary safe reseeding; claimed rows require this explicit correction. Run acceptance again before marking verified.
