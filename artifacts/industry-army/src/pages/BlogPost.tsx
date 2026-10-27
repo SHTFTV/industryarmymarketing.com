@@ -1,3 +1,4 @@
+import CampaignContactCard from "@/components/CampaignContactCard";
 import { publicationDate } from "@/lib/publicationDate";
 import RamboContactCard from "@/components/RamboContactCard";
 import PlowWowContactCard from "@/components/PlowWowContactCard";
@@ -417,7 +418,7 @@ const BlogPost = () => {
 
       {post.contactBusiness === "rambo" && <RamboContactCard/>}
       {post.contactBusiness === "plowwow" && <PlowWowContactCard/>}
-      {post.slug === "buildershaus-contractor-project-story-submission-guide" && <details style={{position:"fixed",bottom:112,right:100,zIndex:45,maxWidth:250,padding:"12px 16px",borderRadius:10,border:"1px solid #b6c943",background:"#14211a",color:"#f5f3e9",fontSize:14}}><summary style={{cursor:"pointer"}}>IAM · Construction marketing</summary><p style={{margin:"10px 0"}}>Your brand, website or project-story enquiry belongs with IAM.</p><a style={{textDecoration:"underline",color:"#d6ed52"}} href="/contact?request=guest-post&ref_site=buildershaus.com">Discuss your project story</a></details>}
+      <CampaignContactCard site={post.campaignSite} label={post.campaignLabel ?? post.tradeShort}/>
 
       <ReadingProgress headings={tocHeadings} readMinutes={readMinutes} />
 

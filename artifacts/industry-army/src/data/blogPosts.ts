@@ -134,6 +134,10 @@ const IMG: Record<string, string> = {
 };
 
 export interface BlogPost {
+  /** Source hostname for owner-approved IAM campaign articles only. */
+  campaignSite?: string;
+  /** Short industry label for the shared IAM campaign enquiry card. */
+  campaignLabel?: string;
   contactBusiness?: "iam" | "rambo" | "plowwow";
   slug: string;
   brand: string;
