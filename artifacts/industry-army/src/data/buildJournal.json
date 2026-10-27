@@ -1,6 +1,140 @@
 [
   {
     "brand": "Industry Army Marketing",
+    "trade": "Framing contractor marketing and SEO content",
+    "tradeShort": "Framing",
+    "plural": "framing contractors",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Vancouver and beyond",
+    "province": "BC",
+    "category": "Build Journal",
+    "date": "October 27, 2026",
+    "publishedAt": "2026-10-27T16:21:48-07:00",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "contactBusiness": "iam",
+    "campaignSite": "framers.io",
+    "campaignLabel": "Framing contractor marketing",
+    "slug": "framers-io-industry-marketing-project-content-guide",
+    "title": "Framing Contractor Marketing: Show the Stage, Explain the Scope",
+    "cardTitle": "Show the framing stage. Explain your scope.",
+    "excerpt": "A practical Framers.io content brief: turn authentic framing progress photographs into useful scope explanations, clear captions and the right enquiry route.",
+    "metaDescription": "Framing contractor marketing and SEO content: use authentic stage photographs, clear scope captions and relevant Framers.io context. An original IAM guide.",
+    "image": "/brand-journal/rambo-langley.webp",
+    "imageAlt": "Langley steel-stud project archive photograph supplied by Mason McKenzie / Rambo Wall & Ceiling Limited. An authentic framing example, not a new Framers.io installation.",
+    "ogImage": "/brand-journal/framers-stage-scope-share.jpg",
+    "ogImageAlt": "Original IAM graphic for framing contractor marketing: show the stage, explain the scope, with context, detail and next-stage panels. Not a construction drawing.",
+    "faqHeading": "Framing marketing questions",
+    "faqs": [
+      {
+        "q": "Can a framing photograph prove a technical rating?",
+        "a": "No. Structural, fire, acoustic or inspection claims require their own project evidence and suitable professional review."
+      },
+      {
+        "q": "Does this guide advertise a newly completed Framers.io job?",
+        "a": "No. The pictured Langley project is a credited Rambo archive example used to explain an original IAM content approach."
+      },
+      {
+        "q": "Where should a framing marketing enquiry go?",
+        "a": "Use IAM’s marketing enquiry route. Enquiries about a named contractor’s construction work belong to that contractor."
+      }
+    ],
+    "cta": {
+      "eyebrow": "ADVERTISEMENT · IAM / FRAMING MARKETING",
+      "heading": "Make the stage understandable",
+      "body": "Bring one permitted photo sequence, your actual framing scope and the buyer question you want to answer. Discuss an original content and branding plan with IAM.",
+      "buttonText": "Discuss framing marketing",
+      "buttonHref": "/contact?request=guest-post&ref_site=framers.io"
+    },
+    "richContent": {
+      "intro": "A wall in progress can say more than a generic promise of quality—if the page explains what the reader is looking at. This original IAM guide uses Framers.io as the trade context and a credited Rambo framing photograph as an example. The goal is useful framing contractor marketing: clear stages, accurate scope and a direct route to the business responsible.",
+      "sections": [
+        {
+          "heading": "The photo should explain a stage, not claim the whole building",
+          "paragraphs": [
+            "Framing is temporary in the finished building but central to the construction story. Once surfaces close, the work can become difficult for a prospective customer to picture. An authentic progress photograph gives a framing company a useful opportunity: explain what was being built, what stage it had reached and what information another owner should bring to a similar enquiry.",
+            "The photograph above is a Langley steel-stud project archive image supplied by Mason McKenzie / Rambo Wall & Ceiling Limited. It is used here to illustrate how framing can be explained. It does not establish that a new job finished today, that Framers.io performed the installation or that every visible service belongs to the framing contractor. The accompanying scope and credit do that important work."
+          ],
+          "image": {
+            "src": "/brand-journal/framers-context-strip.svg",
+            "alt": "Original IAM explanatory banner: start with context, identifying which part of the job is pictured.",
+            "caption": "IAM original visual brief. Illustrative publishing guidance, not a construction detail."
+          }
+        },
+        {
+          "heading": "Build a three-picture explanation around one buyer question",
+          "paragraphs": [
+            "Rather than choosing the three most dramatic photographs, choose three different jobs for the pictures to do. First establish the room or work area. Then show a relevant detail. Finally show a later stage, if you genuinely have one and can identify when it was taken. A sequence can help a reader understand the work without claiming an inspection or technical result from its appearance.",
+            "For example, a partition story could explain how a proposed room layout becomes visible before boarding. The first caption identifies the area. The second identifies the particular framing scope being discussed. The third explains the next decision the owner needs to resolve with the project team. If there is no later photograph, say so; do not manufacture a before-and-after comparison from unrelated jobs."
+          ]
+        },
+        {
+          "heading": "Keep marketing language separate from technical approval",
+          "paragraphs": [
+            "Name what is shown without guessing why a detail was designed that way. A photograph alone does not establish load capacity, a fire-resistance rating, acoustic performance, a completed inspection or compliance with the applicable design. Those claims need their own project evidence and appropriate review. This article is a communications exercise, not a framing specification.",
+            "A useful caption can be precise without overreaching: identify a work stage and the company that supplied the photograph, then explain the question it raises for planning. If a dimension, assembly or approval status matters, ask the responsible project professional for the supporting record before publishing the claim. An honest unanswered question is more useful than a confident invented answer."
+          ],
+          "image": {
+            "src": "/brand-journal/framers-detail-strip.svg",
+            "alt": "Original IAM explanatory banner: explain the detail, name the scope and credit the company.",
+            "caption": "IAM original visual brief. Technical claims require evidence beyond the image."
+          }
+        },
+        {
+          "heading": "Write for the enquiry you actually want to receive",
+          "paragraphs": [
+            "A framing contractor marketing page should help the next customer describe a suitable job. Ask for the broad location, building type, whether the scope concerns a new structure or an interior change, the drawings or brief available, and the intended timing. State what needs review before a proposal can be prepared. Do not turn an illustrative example into an assertion of available capacity or a confirmed service area.",
+            "The page should also identify the boundary of the offer. Framing, boarding, taping, ceilings and a complete tenant improvement are different scopes even when one company can discuss several of them. Organising those choices gives the reader a better starting point and gives the contractor a clearer initial conversation. It is a practical content objective; it is not a promise of more leads."
+          ]
+        },
+        {
+          "heading": "Use the relevant trade setting and preserve the company name",
+          "paragraphs": [
+            "[Framers.io](https://www.framers.io/) currently brings together framing categories and illustrated project guides. Its public footer credits Industry Army Marketing, and its project coverage identifies named contractors and supplied photographs. Those visible relationships support this guide’s network context; they are not a claim that the directory owns the featured contractors or completed their work.",
+            "For a reader researching framing, link directly to the relevant framing explanation. For a broader coordinated construction brief, [BuildersHaus](https://www.buildershaus.com/) supplies a different network starting point. IAM’s [contractor marketing page](/contractors) explains how the trade brands fit the wider branding and publishing approach. Keep each link attached to a useful decision instead of adding every brand name to the same paragraph."
+          ],
+          "image": {
+            "src": "/brand-journal/framers-handoff-strip.svg",
+            "alt": "Original IAM explanatory banner: show the next step, one reader question and one clear contact route.",
+            "caption": "IAM original visual brief. Construction enquiries and marketing enquiries have different owners."
+          }
+        },
+        {
+          "heading": "Separate the project contact from the publishing conversation",
+          "paragraphs": [
+            "Someone asking about the pictured construction work should reach the named contractor. For this archive example, [Rambo’s own project site](https://www.rambowalls.com/) identifies the construction business and its enquiry route. Someone asking IAM to create a brand, improve a website or develop a framing-content plan should use the IAM marketing contact. A shared industry setting should make this distinction easier to understand.",
+            "Framers.io has a public [featured-content page](https://www.framers.io/guest-post) and contribution contact links. We checked that public page on October 27; we did not submit a form, buy a placement or test email delivery. Discuss current editorial fit, permissions, commercial terms and the destination for enquiries before treating a contribution as agreed. No ranking or publication acceptance is guaranteed."
+          ]
+        },
+        {
+          "heading": "Turn a real sequence into a useful SEO content brief",
+          "paragraphs": [
+            "A practical framing SEO brief joins the buyer question, the genuine scope and the evidence. A title about interior steel-stud partitions should lead to that subject, not an unrelated general construction pitch. Use descriptive headings, readable captions and links to the relevant service information. Location belongs in the story when it is accurate and permitted, rather than as a city name pasted into dozens of identical pages.",
+            "Start with one sequence you can explain well. Record the photograph source, who may approve its use, the stage shown, the company role and the correct public contact. Then [discuss your framing marketing brief with IAM](/contact?request=guest-post&ref_site=framers.io). Our earlier [BuildersHaus contribution guide](/blog/buildershaus-contractor-project-story-submission-guide) covers the wider submission process; this guide focuses on making a framing stage understandable to the next buyer."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "label": "Framers.io — framing categories, illustrated projects and network credit, checked October 27, 2026",
+          "href": "https://www.framers.io/"
+        },
+        {
+          "label": "Framers.io featured-content page — public route only; submission and delivery untested",
+          "href": "https://www.framers.io/guest-post"
+        },
+        {
+          "label": "Rambo — original named construction business for the archive example",
+          "href": "https://www.rambowalls.com/"
+        }
+      ]
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
     "trade": "Construction marketing and project-story contributions",
     "tradeShort": "Construction",
     "plural": "contractors",
