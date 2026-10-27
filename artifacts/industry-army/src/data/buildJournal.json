@@ -1,6 +1,116 @@
 [
   {
     "brand": "Industry Army Marketing",
+    "trade": "Construction marketing and project-story contributions",
+    "tradeShort": "Construction",
+    "plural": "contractors",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Vancouver and beyond",
+    "province": "BC",
+    "category": "Build Journal",
+    "date": "October 27, 2026",
+    "publishedAt": "2026-10-27T14:40:21-07:00",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "contactBusiness": "iam",
+    "slug": "buildershaus-contractor-project-story-submission-guide",
+    "title": "Your Work, Your Name: A Contractor’s Guide to Contributing Through BuildersHaus",
+    "cardTitle": "Bring the project. Keep your business front and centre.",
+    "excerpt": "What contractors should submit for a useful BuildersHaus project story—and how IAM keeps scope, photo credits, trade context and enquiry ownership clear.",
+    "metaDescription": "Prepare a contractor project story for BuildersHaus: scope, approved photos, trade context and correct contacts. A practical IAM construction marketing guide.",
+    "image": "/contractor-brands/steelstud-structural-job.webp",
+    "imageAlt": "Actual structural-steel construction photograph from the approved SteelStud.ca archive. BuildersHaus is the network brand, not the identified steel erector.",
+    "ogImage": "/brand-journal/buildershaus-project-submission-share.jpg",
+    "ogImageAlt": "BuildersHaus project-story submissions: show the work, name the trade, keep the enquiry with the business. Structural-steel archive photograph credited to SteelStud.ca.",
+    "faqHeading": "Questions about contributing a contractor project story",
+    "faqs": [
+      {
+        "q": "Does sending a project brief guarantee publication?",
+        "a": "No. IAM reviews editorial fit, evidence, permissions, enquiry ownership and any commercial terms before agreeing publication."
+      },
+      {
+        "q": "Does a network article transfer ownership of my business?",
+        "a": "No. The named contractor retains its identity and construction enquiry route. IAM marketing enquiries remain separate."
+      },
+      {
+        "q": "Is a BuildersHaus story a guaranteed SEO result?",
+        "a": "No. Relevant publishing and accurate business information do not guarantee rankings, AI citations or enquiries."
+      }
+    ],
+    "cta": {
+      "eyebrow": "IAM / CONSTRUCTION STORIES",
+      "heading": "Bring us one project worth explaining",
+      "body": "Tell IAM your trade, permitted project scope, approved photo source and correct business contact. We will discuss the appropriate editorial and marketing scope.",
+      "buttonText": "Send your project-story brief",
+      "buttonHref": "/contact?request=guest-post&ref_site=buildershaus.com"
+    },
+    "richContent": {
+      "intro": "Your project photographs should introduce your business, not disappear into a generic construction article. Through BuildersHaus and IAM’s related trade brands, the useful starting point is a clear, permission-ready account of real work. This original contractor marketing guide explains what to send, what needs checking and how the finished story should preserve the name and contact of the company that did the work.",
+      "sections": [
+        {
+          "heading": "Start with one job a customer can understand",
+          "paragraphs": [
+            "A project story works best when it answers a real buyer’s question. Choose one job and one useful decision: how an interior scope was coordinated, why a particular sequence mattered, or what the owner needed to know before requesting a quote. Do not begin with a list of every service your company hopes to sell. A focused story gives a reader something concrete to evaluate.",
+            "Bring the company name you actually trade under, your website, the agreed contact and the service area you can support. Identify your role accurately: general contractor, specialist subcontractor, supplier or another participant. A photograph of the whole site should not quietly suggest your company delivered every trade on it."
+          ]
+        },
+        {
+          "heading": "Send a brief, not a finished advertising claim",
+          "paragraphs": [
+            "For an initial submission, prepare a short account of the work, the broad location you have permission to identify, the project stage shown, and the practical question the story can answer. Explain the scope your company carried out and anything excluded. Add the approximate date or archive period so an older photograph is not presented as work completed this week.",
+            "A useful starting format is six lines: company; trade and role; permitted location; work shown; buyer question; correct enquiry destination. Then add a short explanation of the sequence. If a detail is uncertain, label it for review. IAM can discuss the editorial and marketing work needed to turn that material into a useful page. Sending a brief does not itself secure publication."
+          ]
+        },
+        {
+          "heading": "Choose photographs that show the work",
+          "paragraphs": [
+            "Pick a small sequence with context, a meaningful detail and the stage reached. Explain what each photograph shows and who supplied it. Confirm you have permission to publish the images and identify any required credit. Flag people, private addresses, client documents, access codes and identifying details that should not appear. A visible business logo on a jobsite is not automatic permission to imply that business endorses the contractor.",
+            "The structural-steel photograph above comes from the approved SteelStud.ca archive. It supplies genuine construction context for this IAM guide; it is not evidence that BuildersHaus erected that structure or that another applicant worked on it. That distinction should remain equally clear when we present your project."
+          ]
+        },
+        {
+          "heading": "Match the trade brand to the actual scope",
+          "paragraphs": [
+            "BuildersHaus is the construction-network starting point. The specialist setting should follow the work: roofing belongs in a roofing context, framing in a framing context, and finishing work in a finishing context. IAM’s [contractor marketing page](/contractors) shows the construction brands and explains the wider approach. A relevant connection is more useful than inserting every network name into every article.",
+            "A building story may involve several trades, but that does not make every participant your client or partner. Identify documented relationships and relevant sources. If a project genuinely supports two different reader questions, separate the angles and explain the link. Avoid publishing the same article repeatedly with only a trade or city name changed."
+          ]
+        },
+        {
+          "heading": "Keep construction enquiries with the named business",
+          "paragraphs": [
+            "A reader interested in the construction work should reach the contractor identified in the story through the agreed contact route. An enquiry about IAM branding, publishing or SEO belongs with IAM. Those are different decisions, and the page should make both routes understandable. Participation in an industry brand does not transfer ownership of the contractor’s company to the network.",
+            "Before publication, review the business name, phone or email destination, relevant website link and the wording around the work. A floating card or call to action should name the business it reaches. If contact information later changes, the published page and its shared destinations need to be updated together rather than leaving an old number in an archive card."
+          ]
+        },
+        {
+          "heading": "Give pSEO a useful information foundation",
+          "paragraphs": [
+            "Programmatic SEO can help organise consistent service and location information across a site. It still needs accurate source material, a clear page purpose and editorial checks. Your actual scope, permitted project details and real service area provide that foundation. A repeated template alone does not establish expertise, a local office, available capacity or a search ranking.",
+            "IAM can discuss brand creation, websites, project publishing, internal links and SEO as an agreed scope. We do not promise that an article will rank first, produce leads immediately or be quoted by an AI service. Evaluate the result by whether a prospective buyer can understand the work, identify the provider and take the appropriate next step; assess business outcomes only when evidence is available."
+          ]
+        },
+        {
+          "heading": "Use the existing contribution route",
+          "paragraphs": [
+            "On the BuildersHaus homepage, the guest-contribution link currently leads to [IAM’s BuildersHaus guest-story enquiry](https://www.industryarmymarketing.com/contact?ref_site=buildershaus.com&industry=Building%20and%20Renovation&utm_source=buildershaus.com&utm_medium=referral&utm_campaign=builder-network&request=guest-post). This is an enquiry route, not a separate verified BuildersHaus upload portal. We checked the public route without submitting a form or claiming delivery to an inbox.",
+            "Use that route to introduce the company and the story you want to contribute. Start with a concise brief and public portfolio links; agree a suitable method before sending private project files. Editorial fit, permissions, any commercial placement, deliverables and applicable terms need review. Existing directory entry pricing is separate from a commissioned content or SEO engagement."
+          ]
+        },
+        {
+          "heading": "Build a repeatable project-story habit",
+          "paragraphs": [
+            "After one story is agreed, keep the same brief structure for the next job. Retain the source photographs, credits, scope notes and approved contact in a working record. A second person should be able to understand what can be published without reconstructing the job from an unlabelled photo folder. That is how a useful publishing process becomes repeatable.",
+            "Our earlier [BuildersHaus brand-creation note](/blog/buildershaus-iam-brand-creation-management) explains the network identity. This guide is the next practical step: bring evidence of the work, define who it belongs to, and give the right reader a clear route to the right business. [Tell IAM about your construction project story](/contact?request=guest-post&ref_site=buildershaus.com) when you have that first brief ready."
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
     "trade": "Vancouver SEO and exclusive client representation",
     "tradeShort": "SEO",
     "plural": "businesses",

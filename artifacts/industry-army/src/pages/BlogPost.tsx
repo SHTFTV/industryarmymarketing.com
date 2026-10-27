@@ -1,3 +1,4 @@
+import { publicationDate } from "@/lib/publicationDate";
 import RamboContactCard from "@/components/RamboContactCard";
 import PlowWowContactCard from "@/components/PlowWowContactCard";
 import "@/components/rambo-contact.css";
@@ -148,13 +149,7 @@ const BlogPost = () => {
     },
   ];
 
-  const monthMap: Record<string, string> = {
-    January: "01", February: "02", March: "03", April: "04",
-    May: "05", June: "06", July: "07", August: "08",
-    September: "09", October: "10", November: "11", December: "12",
-  };
-  const [mName, yStr] = post.date.split(" ");
-  const isoDate = monthMap[mName] && yStr ? `${yStr}-${monthMap[mName]}-01` : post.date;
+  const isoDate = publicationDate(post.date, post.publishedAt);
   const FALLBACK_OG_IMAGE = "/og-image.jpg";
   const heroImage = post.image && post.image.trim() ? post.image : FALLBACK_OG_IMAGE;
   const renderedHeroImage = heroImage.startsWith("/__l5e/assets-v1/")
@@ -256,7 +251,7 @@ const BlogPost = () => {
           url: `https://i.ytimg.com/vi/${post.video}/maxresdefault.jpg`,
           caption: heroImageAlt,
         },
-        uploadDate: `${isoDate}T00:00:00Z`,
+        uploadDate: isoDate ? `${isoDate}T00:00:00Z` : undefined,
         contentUrl: `https://www.youtube.com/watch?v=${post.video}`,
         embedUrl: `https://www.youtube.com/embed/${post.video}`,
       }
@@ -422,6 +417,8 @@ const BlogPost = () => {
 
       {post.contactBusiness === "rambo" && <RamboContactCard/>}
       {post.contactBusiness === "plowwow" && <PlowWowContactCard/>}
+      {post.slug === "buildershaus-contractor-project-story-submission-guide" && <details style={{position:"fixed",bottom:112,right:100,zIndex:45,maxWidth:250,padding:"12px 16px",borderRadius:10,border:"1px solid #b6c943",background:"#14211a",color:"#f5f3e9",fontSize:14}}><summary style={{cursor:"pointer"}}>IAM · Construction marketing</summary><p style={{margin:"10px 0"}}>Your brand, website or project-story enquiry belongs with IAM.</p><a style={{textDecoration:"underline",color:"#d6ed52"}} href="/contact?request=guest-post&ref_site=buildershaus.com">Discuss your project story</a></details>}
+
       <ReadingProgress headings={tocHeadings} readMinutes={readMinutes} />
 
       <article className="pt-32 pb-20">
@@ -459,6 +456,8 @@ const BlogPost = () => {
           />
 
           {post.category === "Build Journal" && <p className="text-xs text-muted-foreground mb-8 leading-relaxed">{post.imageAlt}</p>}
+          {post.slug === "buildershaus-contractor-project-story-submission-guide" && <aside className="mb-8 flex flex-wrap items-center gap-4 rounded-lg border border-primary/30 bg-card px-4 py-3"><img src="/contractor-brands/buildershaus-mark.webp" width="64" height="64" alt="BuildersHaus construction network"/><div className="flex-1"><p className="text-xs uppercase tracking-widest text-primary">IAM / Construction marketing</p><p className="text-sm text-muted-foreground">Project stories, trade brands and a clear route back to your business.</p></div><a className="text-sm underline text-primary" href="/contact?request=guest-post&ref_site=buildershaus.com">Discuss your story →</a></aside>}
+
           {post.category !== "Build Journal" && <aside className="mb-10 rounded-lg border border-primary/30 bg-primary/5 p-5 sm:p-6">
             <p className="text-primary text-[10px] uppercase tracking-[0.3em] font-semibold mb-2">
               {copy.eyebrow}
