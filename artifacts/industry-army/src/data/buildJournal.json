@@ -1,6 +1,136 @@
 [
   {
     "brand": "Industry Army Marketing",
+    "trade": "Demolition contractor marketing and SEO content",
+    "tradeShort": "Demolition",
+    "plural": "demolition contractors",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Vancouver and beyond",
+    "province": "BC",
+    "category": "Build Journal",
+    "date": "October 27, 2026",
+    "publishedAt": "2026-10-27T21:14:55-07:00",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "contactBusiness": "iam",
+    "campaignSite": "demolition.io",
+    "campaignLabel": "Demolition contractor marketing",
+    "slug": "demolition-io-industry-marketing-project-content-guide",
+    "title": "Demolition Contractor Marketing: Explain What Goes and What Stays",
+    "cardTitle": "Explain what goes, what stays and what needs review.",
+    "excerpt": "An original demolition contractor content approach: clarify the proposed boundary, support project claims and preserve the correct construction enquiry owner.",
+    "metaDescription": "Demolition contractor marketing and SEO: explain proposed removal boundaries, use honest project evidence and give readers the right enquiry route.",
+    "image": "/contractor-brands/demolition.webp",
+    "imageAlt": "Approved Demolition.io brand artwork from IAM’s construction showcase. An illustrative scene, not a photograph of a contractor’s project, an approved work plan or proof of credentials.",
+    "ogImage": "/brand-journal/demolition-boundary-brief-share.jpg",
+    "ogImageAlt": "Original IAM communications graphic separating proposed removal, retained areas and questions to confirm. Not a demolition plan.",
+    "faqHeading": "Demolition marketing questions",
+    "faqs": [
+      {
+        "q": "Is this article a guide to carrying out demolition?",
+        "a": "No. It is an original marketing and enquiry-communications guide. The actual project scope, requirements and methods need the appropriate contractor and project review."
+      },
+      {
+        "q": "Does the hero document a completed project?",
+        "a": "No. It is approved illustrative Demolition.io brand artwork, clearly identified separately from real project evidence."
+      },
+      {
+        "q": "Does a directory listing prove qualifications or availability?",
+        "a": "No. Those facts need their own current evidence and confirmation. A listing or marketing image does not establish them."
+      }
+    ],
+    "cta": {
+      "eyebrow": "ADVERTISEMENT · IAM / DEMOLITION MARKETING",
+      "heading": "Make the removal brief worth discussing",
+      "body": "Bring your real service focus, permitted project material and correct enquiry contact. Discuss a distinct contractor website and content plan with IAM.",
+      "buttonText": "Discuss demolition marketing",
+      "buttonHref": "/contact?request=guest-post&ref_site=demolition.io"
+    },
+    "richContent": {
+      "intro": "Demolition marketing needs more than an attention-grabbing image. The reader needs to understand the proposed work, its boundaries and the business that can discuss it. This original IAM guide uses Demolition.io as the industry context and sets out a clearer way to explain a project story—without inventing approvals, credentials, a price or a completed job.",
+      "sections": [
+        {
+          "heading": "Start with the kind of enquiry, not the dramatic picture",
+          "paragraphs": [
+            "A person asking about an interior strip-out has a different starting question from someone considering a whole-building removal or a concrete-removal scope. A useful demolition marketing page helps the reader identify that difference before asking for a quote. It should describe the conversation the contractor is prepared to have, without pretending a short online request defines the work.",
+            "[Demolition.io](https://www.demolition.io/) currently separates several demolition-related service categories in its public navigation and credits Industry Army Marketing. That provides this guide’s industry context. The content approach below is an original IAM recommendation; it does not establish contractor vetting, service availability, a price or a tested estimate process."
+          ]
+        },
+        {
+          "heading": "Make the proposed removal boundary understandable",
+          "paragraphs": [
+            "Our suggested first brief separates three things: what the customer wants discussed for removal, what they expect to retain, and what remains uncertain. For an interior enquiry, that might begin with a room or work area rather than the entire property. The contractor and appropriate project team still need to determine the actual scope and requirements.",
+            "A website can help someone describe their intention without offering a do-it-yourself plan. Use plain questions and leave room for uncertainty. Do not let a checkbox or a marked-up marketing image stand in for a professional decision about a wall, service, structure or other building element. The purpose is a clearer initial conversation, not permission to proceed."
+          ],
+          "image": {
+            "src": "/brand-journal/demolition-boundary-strip.svg",
+            "alt": "Original IAM marketing brief showing proposed removal, retained areas and open questions as different information fields.",
+            "caption": "Original IAM communications graphic. It is not a demolition plan or an instruction to remove anything."
+          }
+        },
+        {
+          "heading": "Ask for useful context without collecting unnecessary private detail",
+          "paragraphs": [
+            "A practical enquiry can identify the broad location, property type, proposed work area and intended timing. Ask what project information is already available and who is coordinating the discussion. Let the responsible team decide which drawings, records or site review are needed next. Avoid promising that photographs alone will settle the price or method.",
+            "Public portfolio material needs a different level of detail from a private project review. Agree what can be published, which company names may be used and how the photographs should be credited. Do not publish access codes, identifying paperwork or an occupied property’s private details merely to make a case study more specific."
+          ]
+        },
+        {
+          "heading": "Show evidence of the work instead of borrowing authority",
+          "paragraphs": [
+            "For a real project story, identify the company’s role and the work actually documented. A subcontractor’s photograph of a larger site should not quietly suggest that it delivered the whole project. A cleared-looking area does not by itself establish that every obligation has been completed or that the site is ready for its next use.",
+            "The hero above is existing approved Demolition.io brand artwork from IAM’s construction showcase. It is illustrative, not a photograph of a contractor’s job. A commissioned project feature needs its own permitted evidence. Keep any statements about approvals, qualifications or checks tied to actual records rather than inferring them from a directory presence or a brand graphic."
+          ],
+          "image": {
+            "src": "/brand-journal/demolition-record-strip.svg",
+            "alt": "Original IAM marketing brief connecting an account of actual work to the company role and permitted project images.",
+            "caption": "Original IAM explanatory graphic. Brand artwork and directory presence are not project evidence or credential verification."
+          }
+        },
+        {
+          "heading": "Describe the handoff before using the word complete",
+          "paragraphs": [
+            "An enquiry may involve removal, material handling, clearance and work by other participants. The marketing copy should make the proposed boundary understandable instead of bundling every possible task into “full service.” State what the company wants to discuss and what needs a separate agreement. Do not turn a general service description into an assumed commitment for a specific job.",
+            "A project feature can explain what stage the documented work reached and what question remained for the next team. Keep that account factual. Claims about material recovery, disposal, quantities, environmental outcomes or completion need their own support; a photograph of a tidy area cannot establish them. This guide supplies a communications structure, not technical, safety or regulatory instructions."
+          ],
+          "image": {
+            "src": "/brand-journal/demolition-handoff-strip.svg",
+            "alt": "Original IAM content brief asking where the documented scope ends and what still needs review.",
+            "caption": "Original IAM communications graphic. A narrative handoff does not certify completion or site readiness."
+          }
+        },
+        {
+          "heading": "Build demolition SEO around a useful decision",
+          "paragraphs": [
+            "Give an interior-removal explanation a different purpose from a general contractor profile or a broader site-planning article. Use headings, captions and links that match that purpose. A local reference belongs where it is accurate and permitted, not as a city name substituted across copies of the same text.",
+            "[BuildersHaus](https://www.buildershaus.com/) offers a broader construction-network context, while IAM’s [contractor marketing page](/contractors) explains the branding and publishing conversation. Connect those resources when they answer the reader’s next question. Distinct useful pages can support a more coherent website; publication alone does not prove search rankings, AI citations or lead delivery."
+          ]
+        },
+        {
+          "heading": "Send the right brief to the right business",
+          "paragraphs": [
+            "A construction enquiry should reach the contractor identified for that particular scope through an agreed public contact route. An enquiry about branding, a website or project publishing belongs with IAM. Do not imply that a marketing company is providing demolition work simply because its article discusses the industry.",
+            "To [discuss a demolition marketing brief with IAM](/contact?request=guest-post&ref_site=demolition.io), bring the actual service focus, the customer question, permitted project evidence and the intended enquiry owner. Agree rights, editorial fit, any paid placement and deliverables before publication. The first useful outcome is a reader who understands the offer and knows whom to contact; assess business results only when evidence exists."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "label": "Demolition.io — actual rendered service categories and IAM attribution, checked October 27, 2026",
+          "href": "https://www.demolition.io/"
+        },
+        {
+          "label": "IAM contractor marketing — relevant network and marketing scope",
+          "href": "https://www.industryarmymarketing.com/contractors"
+        }
+      ]
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
     "trade": "Coordinated interior contractor marketing",
     "tradeShort": "Commercial interiors",
     "plural": "interior contractors",
