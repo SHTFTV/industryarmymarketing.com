@@ -1,6 +1,140 @@
 [
   {
     "brand": "Industry Army Marketing",
+    "trade": "Steel stud contractor directory marketing",
+    "tradeShort": "Steel stud",
+    "plural": "steel stud contractors",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Vancouver and beyond",
+    "province": "BC",
+    "category": "Build Journal",
+    "date": "October 27, 2026",
+    "publishedAt": "2026-10-27T18:50:21-07:00",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "contactBusiness": "iam",
+    "campaignSite": "steelstudcontractors.com",
+    "campaignLabel": "Steel stud contractor marketing",
+    "slug": "steelstudcontractors-com-industry-marketing-project-content-guide",
+    "title": "Steel Stud Contractor Marketing: Make Directory Profiles Useful",
+    "cardTitle": "A trade profile should explain who does what.",
+    "excerpt": "A useful steel-stud contractor profile connects business identity, project role, relevant evidence and an accurate enquiry route—without invented verification claims.",
+    "metaDescription": "Steel stud contractor marketing: make directory profiles useful with clear business identity, project roles, evidence and the correct construction enquiry route.",
+    "image": "/brand-journal/ssc-club-champion-framing.webp",
+    "imageAlt": "Club Champion steel-stud framing archive image supplied by Mason McKenzie / Rambo Wall & Ceiling Limited. Framing and drywall: Rambo; general contractor: White Knight Construction Ltd. Not a new completion.",
+    "ogImage": "/brand-journal/ssc-directory-profile-share.jpg",
+    "ogImageAlt": "Original IAM directory-profile planning graphic with identity, scope and evidence fields. Not a verified contractor record.",
+    "faqHeading": "Steel stud directory marketing questions",
+    "faqs": [
+      {
+        "q": "Does a directory entry establish that a contractor is verified?",
+        "a": "No. Any verification statement needs an actual check with an accurately described scope. A listing or project photograph alone does not establish credentials."
+      },
+      {
+        "q": "Does a city entry mean the company is available?",
+        "a": "No. Location, stated service area and current availability are different facts. Confirm suitability and timing with the contractor."
+      },
+      {
+        "q": "Who receives the project enquiry?",
+        "a": "The named contractor receives construction enquiries through its agreed route. IAM handles separate branding, website and marketing enquiries."
+      }
+    ],
+    "cta": {
+      "eyebrow": "ADVERTISEMENT · IAM / STEEL STUD MARKETING",
+      "heading": "Build a profile that explains the business",
+      "body": "Bring the company identity, actual trade scope, approved project evidence and correct contact. Discuss an original directory and website content plan with IAM.",
+      "buttonText": "Discuss steel stud marketing",
+      "buttonHref": "/contact?request=guest-post&ref_site=steelstudcontractors.com"
+    },
+    "richContent": {
+      "intro": "A trade directory is most useful when a buyer can tell who the company is, what work it does and where to ask the next question. This original IAM guide focuses on the content of a steel-stud contractor profile. It uses SteelStudContractors.com and a credited Rambo archive project as context, without treating a listing as proof of credentials, availability or results.",
+      "sections": [
+        {
+          "heading": "A directory entry should answer a buying question",
+          "paragraphs": [
+            "A company name and a telephone number give a reader a starting point, but they do not explain whether the business fits the work. For a steel-stud enquiry, the useful questions include the type of interior, the proposed scope, the company’s role and the information needed before a proposal. A directory profile should help the buyer move from a broad category to a relevant conversation.",
+            "This is IAM’s proposed content brief for steel stud contractor marketing, using [SteelStudContractors.com](https://www.steelstudcontractors.com/) as the trade context. The site currently includes illustrated project coverage. The profile structure described here is a marketing recommendation, not a claim that an automated verification or matching system has been tested."
+          ],
+          "image": {
+            "src": "/brand-journal/ssc-identity-strip.svg",
+            "alt": "Original IAM profile-planning banner: name the business, then identify its project role.",
+            "caption": "Original IAM explanatory graphic. A proposed content brief, not a verification badge."
+          }
+        },
+        {
+          "heading": "Put the business identity beside the scope",
+          "paragraphs": [
+            "Begin with the business name it actually uses, its public website and the agreed project contact. Then describe the services it wants to discuss in language a buyer can understand. An interior-partition subcontractor should not be described as the general contractor merely because its photographs show a large jobsite.",
+            "Our suggested profile fields separate the name, trade scope and project role. Add the appropriate person to contact about the work, rather than a generic publisher contact attached to every entry. If a business has several trading names or a supplied name needs clarification, resolve that before publishing. Consistent information helps the visitor assess the company without turning the directory into an implied endorsement."
+          ]
+        },
+        {
+          "heading": "Show which part of a project belongs to the contractor",
+          "paragraphs": [
+            "The Club Champion archive example illustrates why role information matters. The public project coverage identifies framing and drywall by Rambo Wall & Ceiling Limited and names White Knight Construction Ltd as general contractor. The photograph used above was supplied by Mason McKenzie / Rambo. Those credits explain a documented contribution; they do not make every visible component the work of one company.",
+            "A useful profile can link to a relevant project story, identify the work stage pictured and give the reader a short explanation of the company’s involvement. The [Club Champion steel-stud project guide](https://www.steelstudcontractors.com/blog/club-champion-steel-stud-framing-surrey) supplies context for this example. Keep older archive work accurately dated instead of presenting it as a contract completed today."
+          ],
+          "image": {
+            "src": "/brand-journal/ssc-evidence-strip.svg",
+            "alt": "Original IAM profile-planning banner connecting a project claim to its scope, image and credit.",
+            "caption": "Original IAM explanatory graphic. Project documentation supports a specific account; it does not certify every service."
+          }
+        },
+        {
+          "heading": "Treat credentials as facts to check, not decorative labels",
+          "paragraphs": [
+            "A profile should distinguish information supplied by a business from information that has actually been reviewed. Do not add “verified,” “approved” or “fully insured” simply because an entry has photographs or appears in a trade directory. State the scope of any check accurately and give the reader an appropriate route for current project-specific questions.",
+            "Likewise, an image of steel studs does not establish a structural rating, a fire-resistance assembly, acoustic performance or inspection status. Those questions require the applicable project records and qualified review. A marketing page can explain what evidence a business should provide, but it cannot replace that evidence with confident language or a badge."
+          ]
+        },
+        {
+          "heading": "Separate location, service area and the next available slot",
+          "paragraphs": [
+            "A project location shows where particular work took place. A company’s stated service area describes where it is prepared to discuss work. Neither tells a buyer that a crew is currently available for a proposed schedule. Present those as different facts instead of treating a city-page appearance as an automatic service commitment.",
+            "For the next enquiry, ask for the broad location, property type, scope and intended timing. Let the contractor decide what further information is needed and whether the work is suitable. Do not publish a private address or client detail simply to make a location heading look more specific. Useful local context comes from the actual project question, not the number of city names on the page."
+          ],
+          "image": {
+            "src": "/brand-journal/ssc-contact-strip.svg",
+            "alt": "Original IAM profile-planning banner: distinguish a service area from confirmed availability and keep the next step clear.",
+            "caption": "Original IAM explanatory graphic. A directory enquiry is not a confirmed appointment or accepted project."
+          }
+        },
+        {
+          "heading": "Keep construction enquiries and marketing enquiries distinct",
+          "paragraphs": [
+            "A reader asking about Rambo’s construction work should reach [Rambo’s own business site](https://www.rambowalls.com/) and its current project contact. A company asking IAM to create a brand, improve a profile or develop a website should use IAM’s marketing route. A relevant network connection should preserve the featured contractor’s identity and enquiry ownership.",
+            "[BuildersHaus](https://www.buildershaus.com/) provides broader construction context, while IAM’s [contractor marketing page](/contractors) explains the branding and publishing approach. Link those resources where they answer the reader’s next question. Do not imply a commercial relationship, legal ownership or completed work from a directory entry or a footer credit alone."
+          ]
+        },
+        {
+          "heading": "Maintain the profile as the business changes",
+          "paragraphs": [
+            "Assign someone to review the public name, service description, project links and contact destination. Record when those details were confirmed and what still needs checking. If a contact changes, update the profile and related project pages together so an old archive does not keep sending readers to the wrong person.",
+            "To discuss a profile or content plan, [bring IAM your steel-stud marketing brief](/contact?request=guest-post&ref_site=steelstudcontractors.com): the actual company name, work scope, permitted project evidence and intended enquiry contact. Agree editorial fit, rights, any paid placement and deliverables before publication. A useful profile makes the business easier to understand; it does not guarantee a ranking, lead or hiring outcome."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "label": "SteelStudContractors.com — current project coverage and IAM credit, checked October 27, 2026",
+          "href": "https://www.steelstudcontractors.com/"
+        },
+        {
+          "label": "Club Champion project guide — named scope, contractor role and photo credit",
+          "href": "https://www.steelstudcontractors.com/blog/club-champion-steel-stud-framing-surrey"
+        },
+        {
+          "label": "Rambo — original named construction business",
+          "href": "https://www.rambowalls.com/"
+        }
+      ]
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
     "trade": "Drywall contractor marketing and SEO content",
     "tradeShort": "Drywall",
     "plural": "drywall contractors",
