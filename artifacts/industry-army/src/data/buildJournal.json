@@ -1,6 +1,136 @@
 [
   {
     "brand": "Industry Army Marketing",
+    "trade": "Tenant improvement marketing and occupied-space enquiry content",
+    "tradeShort": "Tenant improvements",
+    "plural": "tenant improvement contractors",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Vancouver and beyond",
+    "province": "BC",
+    "category": "Build Journal",
+    "date": "October 28, 2026",
+    "publishedAt": "2026-10-28T12:50:18-07:00",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "contactBusiness": "iam",
+    "campaignSite": "tenantimprovementcontractors.com",
+    "campaignLabel": "Tenant improvement marketing",
+    "slug": "tenantimprovementcontractors-com-industry-marketing-project-content-guide",
+    "title": "Tenant Improvement Marketing: Explain the Occupied-Space Brief",
+    "cardTitle": "Explain the occupied-space brief before promising the plan.",
+    "excerpt": "Original tenant improvement marketing guidance: separate business operating needs from confirmed work arrangements and publish only the project account the evidence supports.",
+    "metaDescription": "Tenant improvement marketing: explain an occupied-space enquiry, distinguish requests from agreed arrangements and make contributor expectations clear.",
+    "image": "/brand-journal/ti-occupied-brief-hero.svg",
+    "imageAlt": "Original IAM concept diagram separating a business operating need from an agreed work arrangement. Not a site logistics or safety plan, and not a client project image.",
+    "ogImage": "/brand-journal/ti-occupied-brief-share.jpg",
+    "ogImageAlt": "Original IAM marketing graphic: an occupied space and a clearer brief, separating business needs from agreed work.",
+    "faqHeading": "Tenant improvement marketing questions",
+    "faqs": [
+      {
+        "q": "Does an operating requirement mean occupancy is confirmed?",
+        "a": "No. A customer’s business need is a starting point for review, not an accepted construction or occupancy arrangement."
+      },
+      {
+        "q": "Does a project photograph prove the business stayed open?",
+        "a": "No. That account needs its own documented evidence."
+      },
+      {
+        "q": "Does the proposal page automatically submit an article?",
+        "a": "The current site prepares an email draft. It must be sent from the email app, and acceptance still requires editorial review."
+      }
+    ],
+    "cta": {
+      "eyebrow": "ADVERTISEMENT · IAM / TENANT IMPROVEMENT MARKETING",
+      "heading": "Make the customer’s real question visible",
+      "body": "Bring your distinct service question, permitted project evidence and correct business contact. Discuss an original marketing and content plan with IAM.",
+      "buttonText": "Discuss tenant improvement marketing",
+      "buttonHref": "/contact?request=guest-post&ref_site=tenantimprovementcontractors.com"
+    },
+    "richContent": {
+      "intro": "A commercial renovation enquiry can involve two different things: what the business hopes to keep doing and what work arrangement is actually confirmed. This original IAM guide uses TenantImprovementContractors.com’s current publishing context to explain that distinction without promising uninterrupted operations.",
+      "sections": [
+        {
+          "heading": "The premises are also somebody’s working day",
+          "paragraphs": [
+            "A tenant improvement visitor may be thinking about a reception desk, meeting room or retail floor. They may also be wondering where their staff will work and what happens to a normal business day. A marketing page that speaks only about the finished interior misses that second conversation.",
+            "TenantImprovementContractors.com currently publishes commercial renovation resources, project examples and a contributor route. Its homepage also distinguishes an email prepared by the page from an email actually sent. Those are checked public facts. The framework below is original IAM marketing analysis, not an assurance that a business can remain open during particular construction work."
+          ]
+        },
+        {
+          "heading": "Let the customer describe what continuity means",
+          "paragraphs": [
+            "“We need to keep operating” can mean several things. It might refer to customer appointments, a team using part of the premises or a date the business wants to discuss. An enquiry should let the customer describe that need without treating it as a construction arrangement already accepted by the contractor.",
+            "Ask for the business activity, the broad area under discussion and any important dates. Separate a preferred outcome from a fixed commitment, and give the visitor space to say that an arrangement is still undecided. The purpose is to make an initial conversation more useful, not to turn a short website form into a project management plan."
+          ],
+          "image": {
+            "src": "/brand-journal/ti-business-brief.svg",
+            "alt": "Original IAM enquiry diagram showing people, business activities and important dates.",
+            "caption": "Original IAM communications graphic. A business need requires review before it becomes an agreed arrangement."
+          }
+        },
+        {
+          "heading": "Name the questions without promising the answers",
+          "paragraphs": [
+            "A visitor may want to ask about access, working hours or which areas are included. Marketing can make those topics easy to raise. It should not imply that a particular access arrangement, evening schedule or continued occupancy is automatically suitable or available. The relevant project participants need to review the actual situation.",
+            "Use language that keeps the distinction visible: “tell us your operating needs” is different from “your business will stay open.” A clear question is useful even when the answer is not yet known. Avoid presenting a preferred date or a customer’s request as a confirmed programme in either the enquiry confirmation or later project content."
+          ],
+          "image": {
+            "src": "/brand-journal/ti-review-brief.svg",
+            "alt": "Original IAM diagram separating customer preference, review questions and the confirmed record.",
+            "caption": "Original IAM marketing diagram. Requests and agreed work remain separate."
+          }
+        },
+        {
+          "heading": "A photograph cannot prove uninterrupted operations",
+          "paragraphs": [
+            "A real project image can show a partition stage, an interior feature or a completed appearance. On its own, it does not show whether the premises remained occupied or how the business managed its activities. A case study must have evidence for that account rather than adding a convenient continuity story to attractive pictures.",
+            "The hero here is an original labelled diagram of two conversations: the business need and the work arrangement. It is not a site logistics drawing or safety plan. If a contributor supplies genuine project photographs, name the documented scope and work stage, credit the permitted source and describe operating conditions only when they are actually known."
+          ]
+        },
+        {
+          "heading": "Give handover language a precise meaning",
+          "paragraphs": [
+            "“Ready” can mean different things to a contractor, a customer and a marketing writer. A page should not collapse a photographed work stage, an agreed handover discussion and permission to use a space into one claim. Explain what the record actually describes and identify any limitations that are relevant to the published account.",
+            "An original project feature might describe the information prepared for a client conversation and the open questions recorded at that stage. It should not invent an inspection outcome, approval, opening date or customer endorsement. The value is a prospective reader who understands the story’s boundaries and can ask a better question about their own premises."
+          ],
+          "image": {
+            "src": "/brand-journal/ti-handover-brief.svg",
+            "alt": "Original IAM record diagram connecting a documented work stage, open items and the next conversation.",
+            "caption": "Original IAM explanatory graphic. No approval or occupancy decision is established by this diagram."
+          }
+        },
+        {
+          "heading": "Make a contributor proposal useful before it is promotional",
+          "paragraphs": [
+            "The site’s [construction guest-article page](https://www.tenantimprovementcontractors.com/guest-post) advertises $10 per approved post and asks for editorial review before payment arrangements are confirmed. Its proposal control prepares an email to Build@buildershaus.com; opening that draft does not submit an article. Delivery and acceptance have not been tested for this guide.",
+            "For an occupied-space story, bring a specific reader question, an original outline, evidence for factual claims and permission for supplied images. Identify the author and commercial relationships. Paid placements require disclosure and sponsored-link treatment under the published terms. A fee is not proof of acceptance, a publication date or search performance."
+          ]
+        },
+        {
+          "heading": "Keep the business and marketing conversations recognizable",
+          "paragraphs": [
+            "The [actual TI Contractors homepage](https://www.tenantimprovementcontractors.com/) publishes Build@buildershaus.com for its project enquiries and identifies the featured contractor separately. Use that current site route for the relevant construction discussion; confirm the proposed scope and availability with the business. This IAM article does not accept construction work.",
+            "For the wider approach, explore [IAM contractor marketing](/contractors). A distinct service story should help a real customer decision, rather than repeat city names or promise rankings. [Discuss tenant improvement content with IAM](/contact?request=guest-post&ref_site=tenantimprovementcontractors.com) when the need is branding or publishing. Bring a useful question, accurate evidence and the correct project contact, then agree the deliverables before work begins."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "label": "TI Contractors — current homepage, named project enquiry route and public resources checked October 28, 2026",
+          "href": "https://www.tenantimprovementcontractors.com/"
+        },
+        {
+          "label": "Construction guest articles — current terms and email-draft explanation checked October 28, 2026",
+          "href": "https://www.tenantimprovementcontractors.com/guest-post"
+        }
+      ]
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
     "trade": "Ceiling contractor marketing and enquiry content",
     "tradeShort": "Ceilings",
     "plural": "ceiling contractors",
