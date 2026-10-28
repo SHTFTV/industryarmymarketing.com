@@ -1,6 +1,136 @@
 [
   {
     "brand": "Industry Army Marketing",
+    "trade": "Roofing contractor marketing and SEO content",
+    "tradeShort": "Roofing",
+    "plural": "roofing contractors",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Vancouver and beyond",
+    "province": "BC",
+    "category": "Build Journal",
+    "date": "October 27, 2026",
+    "publishedAt": "2026-10-27T23:44:27-07:00",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "contactBusiness": "iam",
+    "campaignSite": "roofers.io",
+    "campaignLabel": "Roofing contractor marketing",
+    "slug": "roofers-io-industry-marketing-project-content-guide",
+    "title": "Roofing Marketing: Turn a Roof Concern into a Clear Brief",
+    "cardTitle": "Separate the concern, the assessment and the proposal.",
+    "excerpt": "An original roofing marketing approach: help customers describe a concern, distinguish documented findings and preserve the correct enquiry owner.",
+    "metaDescription": "Roofing contractor marketing and SEO: turn a roof concern into a useful brief, use honest visual evidence and clarify the next enquiry step.",
+    "image": "/contractor-brands/roofers.webp",
+    "imageAlt": "Approved Roofers.io illustrative brand artwork from IAM’s construction showcase. Not a photograph of a completed contractor project or an inspection.",
+    "ogImage": "/brand-journal/roofing-concern-brief-share.jpg",
+    "ogImageAlt": "Original IAM marketing graphic separating customer observation, assessment and proposal.",
+    "faqHeading": "Roofing marketing questions",
+    "faqs": [
+      {
+        "q": "Is a customer observation a roof diagnosis?",
+        "a": "No. The responsible business needs to determine the appropriate review; this article concerns marketing communication."
+      },
+      {
+        "q": "Does the hero show a completed roofing job?",
+        "a": "No. It is approved illustrative Roofers.io brand artwork."
+      },
+      {
+        "q": "Does publication demonstrate contractor credentials or search results?",
+        "a": "No. Credentials, availability and measured outcomes require their own evidence."
+      }
+    ],
+    "cta": {
+      "eyebrow": "ADVERTISEMENT · IAM / ROOFING MARKETING",
+      "heading": "Give your roofing content a clearer purpose",
+      "body": "Bring your real service focus, permitted project evidence and correct enquiry contact. Discuss a distinct website and publishing plan with IAM.",
+      "buttonText": "Discuss roofing marketing",
+      "buttonHref": "/contact?request=guest-post&ref_site=roofers.io"
+    },
+    "richContent": {
+      "intro": "A roof concern is the beginning of a conversation. It is not automatically a diagnosis, an inspection result or an agreed job. This original IAM guide uses Roofers.io as the industry context to explain how clearer roofing content can connect a customer’s observation with a useful enquiry—without inventing findings, qualifications or business results.",
+      "sections": [
+        {
+          "heading": "Start where the customer is, without inventing a diagnosis",
+          "paragraphs": [
+            "A homeowner who notices a stain and a property manager planning a roof replacement do not arrive with the same question. Roofing marketing becomes more useful when it recognizes that starting point. An initial page can help the reader describe a concern without telling them what caused it or which repair they need.",
+            "[Roofers.io](https://www.roofers.io/) currently presents several roofing service categories and identifies Industry Army Marketing in its footer. That is the verified publication context for this original IAM analysis. The recommendations here concern website content and enquiry communication; they do not establish a particular contractor’s qualifications, service coverage or a working assessment tool."
+          ]
+        },
+        {
+          "heading": "Give an observation its own place in the brief",
+          "paragraphs": [
+            "Ask what the customer noticed, when they noticed it and what information they already have. An observation is useful even when the person cannot name a roof system or explain a cause. Leave space for “not sure.” A form that forces a customer to choose a diagnosis can make the first conversation less accurate.",
+            "Images already available to the customer may help explain the question, subject to privacy and permission. Marketing copy should not encourage someone to climb onto a roof to supply a photograph. A page can invite a description and existing records while leaving the responsible business to decide what review is appropriate. This article does not provide inspection or repair instructions."
+          ],
+          "image": {
+            "src": "/brand-journal/roofing-observation-strip.svg",
+            "alt": "Original IAM marketing brief separating what a customer noticed, when it happened and what remains uncertain.",
+            "caption": "Original IAM communications graphic. A reported observation is not a diagnosis."
+          }
+        },
+        {
+          "heading": "Keep an assessment separate from a photograph",
+          "paragraphs": [
+            "A project image can illustrate a location or a visible condition. It does not automatically prove the cause of a problem, the condition of hidden materials or the suitability of a proposed solution. If an article discusses an actual assessment, identify the responsible business and the documented scope of that review.",
+            "Use the words report, inspection and certification carefully. A website should explain what a named deliverable contains, who supplies it and any relevant limitations instead of allowing a polished graphic to stand in for evidence. Do not infer credentials or a guarantee from a logo, a directory listing or an automated-looking interface."
+          ],
+          "image": {
+            "src": "/brand-journal/roofing-assessment-strip.svg",
+            "alt": "Original IAM content brief asking who reviewed the roof concern, what was reviewed and the stated limitations.",
+            "caption": "Original IAM explanatory graphic. It does not document an inspection or certify a roof."
+          }
+        },
+        {
+          "heading": "Build a proposal page that answers a different question",
+          "paragraphs": [
+            "Once an actual business has reviewed the enquiry, its proposal serves a different purpose from the first web page. The reader needs to understand the proposed scope, the options being discussed, the assumptions and the questions that still require agreement. Marketing can explain that sequence without promising that an online request determines a final price.",
+            "For a genuine project story, distinguish the condition reported by the customer, the findings actually documented and the work eventually agreed. Those stages should not collapse into a single before-and-after caption. Claims about costs avoided, remaining roof life, energy savings or long-term performance require their own support; the presence of a new-looking roof is not enough."
+          ],
+          "image": {
+            "src": "/brand-journal/roofing-proposal-strip.svg",
+            "alt": "Original IAM communications brief connecting a proposed scope with options and outstanding questions.",
+            "caption": "Original IAM marketing graphic. An enquiry does not confirm a price, scope or appointment."
+          }
+        },
+        {
+          "heading": "Use roofing imagery to explain, rather than imply",
+          "paragraphs": [
+            "The hero above is existing approved Roofers.io artwork from IAM’s construction showcase. It is illustrative brand artwork, not a photograph of a completed contractor project. A real case study should use permitted project media, accurate credits and a clear account of the company’s actual role.",
+            "Pair a useful context image with details that the written story can explain. Agree what property information can be made public, and keep private records out of the image. Avoid a dramatic visual that implies storm response, a completed assessment or a customer endorsement that the evidence does not establish."
+          ]
+        },
+        {
+          "heading": "Give each search page a useful job",
+          "paragraphs": [
+            "A roofing repair enquiry, a replacement-planning explanation and a company profile should help with different decisions. Give each a distinct question and relevant supporting material. Use an accurate local reference when the business or permitted project evidence supports it; do not manufacture coverage by substituting city names into identical copy.",
+            "IAM’s [contractor marketing page](/contractors) describes the broader branding and publishing conversation. A useful roofing content plan connects those resources to the customer’s next question. Publication can improve the clarity of a website, but it is not proof of rankings, search traffic, AI citations or delivered leads. Measure outcomes separately when evidence is available."
+          ]
+        },
+        {
+          "heading": "Make the enquiry owner unmistakable",
+          "paragraphs": [
+            "The current Roofers.io homepage publishes [build@buildershaus.com](mailto:build@buildershaus.com) as its contact. That is the public project-enquiry route checked for this article. The business still needs to confirm the actual scope, suitability and availability; this IAM article does not accept roofing work or certify a provider.",
+            "For branding, website content and publishing, [discuss a roofing marketing brief with IAM](/contact?request=guest-post&ref_site=roofers.io). Bring the actual service focus, the customer question, permitted media and the business contact that should receive enquiries. Agree the evidence, rights, deliverables and any paid placement before publication. A clearer brief gives the next conversation a useful starting point."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "label": "Roofers.io — rendered www homepage, public contact and IAM attribution checked October 27, 2026",
+          "href": "https://www.roofers.io/"
+        },
+        {
+          "label": "IAM contractor marketing — relevant marketing scope",
+          "href": "https://www.industryarmymarketing.com/contractors"
+        }
+      ]
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
     "trade": "Finish carpentry marketing and SEO content",
     "tradeShort": "Finish carpentry",
     "plural": "finish carpenters",
