@@ -7,6 +7,14 @@
   "cleanUrls": true,
   "rewrites": [
     {
+      "source": "/blog/steelstud-ca-industry-marketing-project-content-guide",
+      "destination": "/api/withdrawn-article"
+    },
+    {
+      "source": "/blog/steelstud-ca-industry-marketing-project-content-guide/:path*",
+      "destination": "/api/withdrawn-article"
+    },
+    {
       "source": "/((?!api/).*)",
       "destination": "/"
     }
