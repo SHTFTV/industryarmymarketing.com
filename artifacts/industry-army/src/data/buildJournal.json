@@ -1,6 +1,143 @@
 [
   {
     "brand": "Industry Army Marketing",
+    "trade": "Architectural ceiling product content and marketing",
+    "tradeShort": "Ceiling product content",
+    "plural": "architectural ceiling businesses",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Vancouver and beyond",
+    "province": "BC",
+    "category": "Build Journal",
+    "date": "October 28, 2026",
+    "publishedAt": "2026-10-28T14:54:32-07:00",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "contactBusiness": "iam",
+    "campaignSite": "acustiq.ca",
+    "campaignLabel": "Architectural ceiling marketing",
+    "slug": "acustiq-ca-industry-marketing-project-content-guide",
+    "title": "Acustiq Marketing: Give Ceiling Inspiration a Product Record",
+    "cardTitle": "Connect the ceiling idea to a useful product record.",
+    "excerpt": "Original architectural ceiling marketing guidance: keep identity, current sources, image rights and the next question attached to product discovery.",
+    "metaDescription": "Acustiq marketing: connect ceiling inspiration to a clear product record with source context, accurate image purpose and an honest next conversation.",
+    "image": "/brand-journal/acustiq-product-record-hero.svg",
+    "imageAlt": "Original IAM publishing concept connecting an illustrative ceiling rhythm to a product record. Not a product specification, performance model or actual installation photograph.",
+    "ogImage": "/brand-journal/acustiq-product-record-share.jpg",
+    "ogImageAlt": "Original IAM graphic: a ceiling look needs a product record, connecting identity, source and an open question.",
+    "faqHeading": "Architectural ceiling content questions",
+    "faqs": [
+      {
+        "q": "Does this guide verify the products in ACUSTIQ’s library?",
+        "a": "No. It is original marketing analysis. Product-specific facts require their own current primary documentation and review."
+      },
+      {
+        "q": "Is the hero an actual product or installation?",
+        "a": "No. It is a clearly labelled original IAM publishing concept."
+      },
+      {
+        "q": "Are the contributor routes tested submission forms?",
+        "a": "No. The checked guest-post and for-matt paths redirect to product knowledge. No submission, upload or delivery is claimed."
+      }
+    ],
+    "cta": {
+      "eyebrow": "ADVERTISEMENT · IAM / ARCHITECTURAL CEILING MARKETING",
+      "heading": "Give useful product knowledge a clear record",
+      "body": "Bring original context, current source documents and permitted media. Discuss a distinct product-content and marketing plan with IAM.",
+      "buttonText": "Discuss architectural ceiling marketing",
+      "buttonHref": "/contact?request=guest-post&ref_site=acustiq.ca"
+    },
+    "richContent": {
+      "intro": "An image can introduce a ceiling idea. A product record should help the reader understand what they are actually looking at and where the next answer comes from. This original IAM guide uses ACUSTIQ’s current educational library as the context for better product publishing, without turning discovery content into a project specification.",
+      "sections": [
+        {
+          "heading": "Inspiration attracts attention; the record earns a second look",
+          "paragraphs": [
+            "A ceiling image can make a reader pause. It cannot carry every detail needed to understand the product behind a similar appearance. A useful publishing page keeps the visual idea connected to an identifiable record, rather than leaving the reader with a striking photograph and a vague label.",
+            "ACUSTIQ’s current product-knowledge page presents educational product references and sourcing leads, and tells readers to confirm selected-product information with current manufacturer documentation. That is the checked public context. This article is original IAM analysis of how to publish those records clearly; it does not independently validate the products, ratings or configurations in the library."
+          ]
+        },
+        {
+          "heading": "Give each record an identity that survives sharing",
+          "paragraphs": [
+            "Start with the manufacturer and the named product or family. When a particular configuration is being discussed, keep that identity with the image and explanatory text. A detached room picture can travel much further than its caption, leaving readers to assume that every similar-looking system is the same product.",
+            "A marketing record should make it easy to recover the original context. Use a descriptive heading, a useful source link and an image credit where permission allows the image to be used. Do not relabel a project photograph as a manufacturer installation simply because it resembles a product family. If the exact product is unknown, say so."
+          ],
+          "image": {
+            "src": "/brand-journal/acustiq-record-identity.svg",
+            "alt": "Original IAM publishing diagram connecting manufacturer, product family and selected configuration.",
+            "caption": "Original IAM content diagram. The illustration does not identify or specify an actual ceiling product."
+          }
+        },
+        {
+          "heading": "Keep the source beside the statement",
+          "paragraphs": [
+            "A short product card is easier to read when the reader can see where its factual statement came from. Keep the source document and its date visible in the editorial record. A useful link should lead to the relevant material rather than force someone to search a large manufacturer homepage for the basis of a claim.",
+            "For the publisher, this also creates a review trail. Record what was checked, what the source actually supports and what remains unconfirmed. An older summary should not quietly inherit the authority of a newer document that nobody has reviewed. The process is about accurate publishing, not a substitute for the responsible project team’s technical review."
+          ],
+          "image": {
+            "src": "/brand-journal/acustiq-record-source.svg",
+            "alt": "Original IAM record diagram showing a source link, document date and stated limitations.",
+            "caption": "Original IAM explanatory graphic. Source context remains attached to the published claim."
+          }
+        },
+        {
+          "heading": "Do not turn a library card into a specification",
+          "paragraphs": [
+            "Discovery content has a useful job: helping the reader recognize a family of ideas and find the next source. It becomes misleading when a compact summary implies that a product has already been selected for someone’s building. A page should keep educational context separate from a project-specific decision.",
+            "This guide deliberately repeats no performance figures from the library. Those claims need their own current product and configuration evidence. Instead, the marketing task is to make the boundary clear: what the record describes, which documentation it points toward and which question still needs a qualified response. A well-organized page can support that conversation without pretending to complete it."
+          ]
+        },
+        {
+          "heading": "Use images with a declared purpose",
+          "paragraphs": [
+            "A project photograph may explain visible rhythm, colour or geometry. Manufacturer media may show an identified product, subject to its rights and conditions. A concept illustration can explain an idea without showing a real installation. These are different kinds of evidence, and their captions should make the difference easy to understand.",
+            "The hero and narrow diagrams here are original IAM publishing illustrations. They are not product models, measured performance diagrams or photographs of a customer’s ceiling. When a real product record uses supplied media, obtain appropriate permission, keep the credit and avoid suggesting an endorsement or installation relationship that has not been documented."
+          ]
+        },
+        {
+          "heading": "A useful comparison can include an unanswered question",
+          "paragraphs": [
+            "A reader does not need a false winner at the end of every comparison. A page can explain which information is known and identify the missing item that prevents a responsible conclusion. That makes the next conversation more concrete than a generic button asking someone to “learn more.”",
+            "For example, a publishing brief can note that a selected finish or configuration still needs confirmation from the relevant source. It should not invent availability, suitability or a promised installation date to close the gap. The marketing benefit is clarity about what to ask next, not an unsupported claim that the choice is already settled."
+          ],
+          "image": {
+            "src": "/brand-journal/acustiq-record-question.svg",
+            "alt": "Original IAM publishing diagram separating known information, an open point and the correct next conversation.",
+            "caption": "Original IAM communications graphic. An open question remains visible rather than becoming a fabricated answer."
+          }
+        },
+        {
+          "heading": "Keep contribution routes as accurate as product records",
+          "paragraphs": [
+            "At this check, ACUSTIQ’s /guest-post and /for-matt addresses redirect to the product-knowledge destination. This article does not describe either address as a working submission form or tested asset-upload service. Use the actual [product-knowledge library](https://www.acustiq.ca/product-knowledge) for the current educational context and confirm any contribution arrangement separately.",
+            "For an IAM publishing discussion, bring the proposed audience, original outline, current source documents and permission for the intended media. Identify commercial relationships and agree any paid placement and link treatment in advance. A visible page or email address does not prove delivery, acceptance or a publication schedule."
+          ]
+        },
+        {
+          "heading": "Make the next page worth following",
+          "paragraphs": [
+            "A library record, an industry guide and a project story serve different reader needs. Relevant links should explain that relationship, with each destination offering its own useful information. Repeating one product paragraph across multiple cities does not create a new answer for the reader.",
+            "See [IAM contractor marketing](/contractors) for the broader approach, or [discuss architectural ceiling content with IAM](/contact?request=guest-post&ref_site=acustiq.ca). This is the marketing enquiry route, separate from any product selection or installation conversation. Clear records and useful original publishing are practical work; publication alone does not prove rankings, AI citations, sales or lead delivery."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "label": "ACUSTIQ — current educational system and project context checked October 28, 2026",
+          "href": "https://www.acustiq.ca/"
+        },
+        {
+          "label": "ACUSTIQ product knowledge — discovery purpose and documentation boundary checked October 28, 2026",
+          "href": "https://www.acustiq.ca/product-knowledge"
+        }
+      ]
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
     "trade": "Tenant improvement marketing and occupied-space enquiry content",
     "tradeShort": "Tenant improvements",
     "plural": "tenant improvement contractors",
