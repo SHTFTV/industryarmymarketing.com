@@ -1,6 +1,140 @@
 [
   {
     "brand": "Industry Army Marketing",
+    "trade": "General contractor marketing and project communication",
+    "tradeShort": "General contractors",
+    "plural": "general contractors",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Vancouver and beyond",
+    "province": "BC",
+    "category": "Build Journal",
+    "date": "October 28, 2026",
+    "publishedAt": "2026-10-28T10:12:42-07:00",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "contactBusiness": "iam",
+    "campaignSite": "generalcontractors.ltd",
+    "campaignLabel": "General contractor marketing",
+    "slug": "generalcontractors-ltd-industry-marketing-project-content-guide",
+    "title": "General Contractor Marketing: Show Who Owns the Next Decision",
+    "cardTitle": "Make the coordinating role and next decision clear.",
+    "excerpt": "An original contractor marketing approach: explain role boundaries, show decision ownership and use evidence of the company’s actual contribution.",
+    "metaDescription": "General contractor marketing and SEO: explain coordination roles, show who owns the next decision and preserve the correct construction enquiry contact.",
+    "image": "/brand-journal/general-trade-interface-hero.svg",
+    "imageAlt": "Original IAM conceptual diagram of an interior trade interface, a question, an owner and an agreed record. Not a project drawing, specification or client photograph.",
+    "ogImage": "/brand-journal/general-decision-owner-share.jpg",
+    "ogImageAlt": "Original IAM marketing graphic connecting a project question with its responsible responder and agreed record.",
+    "faqHeading": "General contractor marketing questions",
+    "faqs": [
+      {
+        "q": "Does a service list establish overall project responsibility?",
+        "a": "No. The actual role and scope need to be agreed with the responsible business and project participants."
+      },
+      {
+        "q": "Is the hero a real project or construction plan?",
+        "a": "No. It is an original IAM conceptual communications diagram, clearly labelled."
+      },
+      {
+        "q": "Who receives construction enquiries?",
+        "a": "GeneralContractors.ltd currently identifies SteelStud.ca as the company contact. IAM receives branding and marketing enquiries separately."
+      }
+    ],
+    "cta": {
+      "eyebrow": "ADVERTISEMENT · IAM / GENERAL CONTRACTOR MARKETING",
+      "heading": "Explain the work between the trades",
+      "body": "Bring your actual role, permitted project evidence and correct company contact. Discuss a distinct website and content plan with IAM.",
+      "buttonText": "Discuss contractor marketing",
+      "buttonHref": "/contact?request=guest-post&ref_site=generalcontractors.ltd"
+    },
+    "richContent": {
+      "intro": "A list of trades tells a buyer what work might be involved. It does not tell them who owns the next decision. This original IAM guide uses GeneralContractors.ltd as the context for a more useful marketing approach: explain the role, make interfaces understandable and show the company’s documented contribution without claiming responsibility it has not agreed to take.",
+      "sections": [
+        {
+          "heading": "A service list does not explain a coordinating role",
+          "paragraphs": [
+            "A customer can read “framing, drywall and ceilings” and still not know who is coordinating the interfaces. That uncertainty matters when a project involves several businesses and decisions that cross their scopes. General contractor marketing should explain the proposed role before suggesting that one company is responsible for everything.",
+            "[GeneralContractors.ltd](https://generalcontractors.ltd/) currently describes a commercial interior trade package and identifies SteelStud.ca as the company contact. Its public wording distinguishes an interior trade partner from a broader project team. That is this article’s verified context. The communication framework below is original IAM analysis, not a statement that a particular business has accepted overall responsibility for a project."
+          ]
+        },
+        {
+          "heading": "Put the role boundary where the buyer can find it",
+          "paragraphs": [
+            "Start a service explanation with the work the business wants to discuss and the role it proposes to take. A specialist trade scope, a coordinated package and overall project coordination are different offers. A page should help the customer recognize that distinction instead of stretching the phrase “full service” across every possible responsibility.",
+            "Use the project enquiry to confirm the actual arrangement. Ask whether another contractor or project coordinator is already involved, which scope is under discussion and which decisions remain open. The website can make those questions understandable; it cannot replace the agreement between the responsible participants."
+          ],
+          "image": {
+            "src": "/brand-journal/general-role-strip.svg",
+            "alt": "Original IAM communications graphic separating a trade scope, a coordinating role and the agreed responsibility boundary.",
+            "caption": "Original IAM marketing diagram. The actual role and scope require agreement with the business."
+          }
+        },
+        {
+          "heading": "Show a decision passing between participants",
+          "paragraphs": [
+            "An illustrative story might describe a ceiling feature that needs an agreed layout before related work is settled. Its marketing value lies in explaining the question, who needs to respond and how the result is recorded. Do not present the example as a completed customer job or a technical instruction.",
+            "This is more useful than saying “we handle coordination” without showing what that means. A permitted real case study can identify an actual interface, the company’s documented contribution and the decision reached. Keep the account proportionate to the evidence; a contributor to a discussion should not quietly become the designer or coordinator of the entire project."
+          ],
+          "image": {
+            "src": "/brand-journal/general-decision-strip.svg",
+            "alt": "Original IAM decision brief with three fields: the question, the responsible responder and the agreed record.",
+            "caption": "Original IAM explanatory graphic. It is a communications example, not a project instruction."
+          }
+        },
+        {
+          "heading": "Explain change without promising that nothing changes",
+          "paragraphs": [
+            "A customer may ask about timing, access, a selected finish or a detail that has not been finalized. A useful website explains how the business wants those questions raised and reviewed. It should avoid turning general planning language into a promise that every change can be absorbed without cost or delay.",
+            "For marketing content, describe the communication route and the information the business asks for. In a real project story, distinguish the original brief from a later agreed change and state only the outcome supported by records. Do not invent a scheduling success, avoided expense or dispute-free process to make coordination sound more impressive."
+          ]
+        },
+        {
+          "heading": "Choose evidence that reveals the company’s contribution",
+          "paragraphs": [
+            "A finished room can show an attractive result while concealing which company did what. Pair permitted project images with a short explanation of the documented role and work stage. Accurate credits and scope descriptions help a prospective customer assess relevance without suggesting that every visible trade belonged to the featured company.",
+            "The hero here is an original IAM conceptual diagram of trade interfaces. It is not a project drawing, a specification or a photograph of a client’s site. The three narrow diagrams serve the same explanatory purpose. Genuine project material needs its own permissions and facts; these graphics do not substitute for that evidence."
+          ],
+          "image": {
+            "src": "/brand-journal/general-evidence-strip.svg",
+            "alt": "Original IAM content brief connecting a documented company role, permitted evidence and an appropriate next step.",
+            "caption": "Original IAM marketing diagram. Conceptual illustrations remain separate from genuine project evidence."
+          }
+        },
+        {
+          "heading": "Give each contractor page a distinct decision to support",
+          "paragraphs": [
+            "A service page can explain a proposed role; a project feature can demonstrate a documented contribution; an enquiry page can gather the starting questions. Those pages should work together while answering different needs. Repeating the same general services paragraph across every page makes it harder to understand why each destination exists.",
+            "IAM’s [contractor marketing page](/contractors) provides the broader branding and publishing context. Use relevant links and accurate local references when they help the reader, rather than creating city-name copies. A clearer content structure is a practical improvement to a website; it does not itself prove rankings, search traffic, AI citations or lead delivery."
+          ]
+        },
+        {
+          "heading": "Keep the project conversation with the named company",
+          "paragraphs": [
+            "The actual [GeneralContractors contact page](https://generalcontractors.ltd/contact/) identifies SteelStud.ca and publishes frameinsteel@gmail.com and 604-761-1518. That is the construction enquiry ownership checked for this article. The company still needs to confirm scope and availability. This marketing guide does not accept construction work or expand the company’s contractual role.",
+            "For branding, website content or project publishing, [bring a contractor marketing brief to IAM](/contact?request=guest-post&ref_site=generalcontractors.ltd). Identify the actual business role, the customer question, permitted evidence and the right project contact. Agree rights, deliverables and any paid placement before publishing. The goal is a reader who understands the next decision and knows whom to ask."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "label": "GeneralContractors.ltd — actual company role and IAM attribution checked October 28, 2026",
+          "href": "https://generalcontractors.ltd/"
+        },
+        {
+          "label": "Services — actual scope destination checked October 28, 2026",
+          "href": "https://generalcontractors.ltd/services/"
+        },
+        {
+          "label": "Contact — named company ownership checked October 28, 2026",
+          "href": "https://generalcontractors.ltd/contact/"
+        }
+      ]
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
     "trade": "Roofing contractor marketing and SEO content",
     "tradeShort": "Roofing",
     "plural": "roofing contractors",
