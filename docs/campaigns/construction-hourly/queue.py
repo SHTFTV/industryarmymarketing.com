@@ -2,7 +2,7 @@
 import argparse,datetime,json,pathlib,sqlite3,uuid
 from urllib.parse import urlparse
 ROOT=pathlib.Path(__file__).resolve().parent
-STAGES=('planned','claimed','verified','blocked')
+STAGES=('planned','claimed','verified','blocked','withdrawn')
 def validate(q):
  if not q.get('campaign') or not q.get('domain') or not isinstance(q.get('articles'),list):raise ValueError('campaign, domain and articles required')
  seen=set()
@@ -52,7 +52,7 @@ def amend(c,campaign,domain,slug,token,owner,patch,reason):
  c.execute('UPDATE articles SET payload=?,evidence=? WHERE campaign=? AND domain=? AND slug=?',(json.dumps(payload),json.dumps(e),campaign,domain,slug));c.commit();return {'amended':True,'slug':slug,'payload':payload}
 def claim(c,campaign,limit=1,owner='worker'):
  if not 1<=limit<=3:raise ValueError('claim size must be1..3')
- latest=c.execute("SELECT MAX(verified_at) AS v FROM articles WHERE campaign=? AND stage='verified'",(campaign,)).fetchone()['v']
+ latest=c.execute("SELECT MAX(verified_at) AS v FROM articles WHERE campaign=?",(campaign,)).fetchone()['v']
  if latest and (now()-datetime.datetime.fromisoformat(latest)).total_seconds()<3600:return []
  lease(c,owner)
  c.execute('BEGIN IMMEDIATE')
@@ -83,18 +83,26 @@ def record(c,campaign,domain,slug,token,e):
  for key in ('commit','deployment'):
   if not e.get(key):raise ValueError('Missing release '+key)
  c.execute("UPDATE articles SET stage='verified',verified_at=?,evidence=?,token=NULL,lease_until=NULL WHERE campaign=? AND domain=? AND slug=?",(now().isoformat(),json.dumps(e),campaign,domain,slug));c.commit()
+def withdraw(c,campaign,domain,slug,owner,reason,e):
+ if not reason or not e.get('passed') or not e.get('commit') or not e.get('deployment') or not e.get('checked_at') or e.get('http') not in (404,410) or not e.get('discoveryRemoved'):raise ValueError('Explicit reason and verified withdrawal evidence required')
+ c.execute('BEGIN IMMEDIATE');r=c.execute('SELECT * FROM articles WHERE campaign=? AND domain=? AND slug=?',(campaign,domain,slug)).fetchone();g=c.execute("SELECT * FROM leases WHERE resource='iam-publish'").fetchone()
+ if not r or r['stage']!='verified' or not g or g['owner']!=owner or g['until']<now().isoformat():c.rollback();raise ValueError('Verified article and active exact global owner lease required')
+ if e.get('url')!=json.loads(r['payload'])['canonical']:c.rollback();raise ValueError('Exact canonical withdrawal evidence required')
+ prior=json.loads(r['evidence'] or '{}');prior['ownerWithdrawal']={'at':now().isoformat(),'reason':reason,'evidence':e}
+ c.execute("UPDATE articles SET stage='withdrawn',evidence=?,token=NULL,lease_until=NULL WHERE campaign=? AND domain=? AND slug=?",(json.dumps(prior),campaign,domain,slug));c.commit();return report(c,campaign)
 def report(c,campaign):
  rows=[dict(x) for x in c.execute('SELECT slug,stage,verified_at,lease_until,evidence FROM articles WHERE campaign=?',(campaign,))];n=sum(x['stage']=='verified' for x in rows)
  latest=max((x['verified_at'] for x in rows if x['verified_at']),default=None);due=(datetime.datetime.fromisoformat(latest)+datetime.timedelta(seconds=3600)).isoformat() if latest else None
- return {'nextDue':due,'campaign':campaign,'articles':rows,'remaining':sum(x['stage']!='verified' for x in rows),'complete':bool(rows) and all(x['stage']=='verified' for x in rows),'verifiedCount':n,'recheckEveryRun':True,'recheckAfterEveryThreeArticles':True}
+ return {'nextDue':due,'campaign':campaign,'articles':rows,'remaining':sum(x['stage'] not in ('verified','withdrawn') for x in rows),'complete':bool(rows) and all(x['stage'] in ('verified','withdrawn') for x in rows),'verifiedCount':n,'historicalVerifiedCount':sum(bool(x['verified_at']) for x in rows),'withdrawnCount':sum(x['stage']=='withdrawn' for x in rows),'activeTarget':sum(x['stage']!='withdrawn' for x in rows),'recheckEveryRun':True,'recheckAfterEveryThreeArticles':True}
 def main():
- p=argparse.ArgumentParser();p.add_argument('action',choices=['preflight','claim','record','status','recent','blocked','lease','renew','release','recover','amend']);p.add_argument('--queue',required=True);p.add_argument('--db');p.add_argument('--owner',default='worker');p.add_argument('--reason');p.add_argument('--patch');p.add_argument('--limit',type=int,default=1);p.add_argument('--slug');p.add_argument('--token');p.add_argument('--evidence');a=p.parse_args();q=validate(json.loads(pathlib.Path(a.queue).read_text()));c=connect(a.db);seed(c,q)
+ p=argparse.ArgumentParser();p.add_argument('action',choices=['preflight','claim','record','status','recent','blocked','lease','renew','release','recover','amend','withdraw']);p.add_argument('--queue',required=True);p.add_argument('--db');p.add_argument('--owner',default='worker');p.add_argument('--reason');p.add_argument('--patch');p.add_argument('--limit',type=int,default=1);p.add_argument('--slug');p.add_argument('--token');p.add_argument('--evidence');a=p.parse_args();q=validate(json.loads(pathlib.Path(a.queue).read_text()));c=connect(a.db);seed(c,q)
  if a.action=='lease':out=lease(c,a.owner)
  elif a.action=='renew':
   if bool(a.slug)!=bool(a.token):raise ValueError('Both --slug and --token required to renew article')
   out=renew_claim(c,q['campaign'],q['domain'],a.slug,a.token,a.owner) if a.slug else lease(c,a.owner,True)
  elif a.action=='release':c.execute("DELETE FROM leases WHERE resource='iam-publish' AND owner=?",(a.owner,));c.commit();out={'released':True}
  elif a.action=='amend':out=amend(c,q['campaign'],q['domain'],a.slug,a.token,a.owner,json.loads(pathlib.Path(a.patch).read_text()),a.reason)
+ elif a.action=='withdraw':out=withdraw(c,q['campaign'],q['domain'],a.slug,a.owner,a.reason,json.loads(pathlib.Path(a.evidence).read_text()))
  elif a.action=='recover':
   if not a.reason:raise ValueError('Explicit recovery reason required')
   c.execute("UPDATE articles SET stage='planned',evidence=? WHERE campaign=? AND domain=? AND slug=? AND stage='blocked'",(json.dumps({'recoveryReason':a.reason}),q['campaign'],q['domain'],a.slug));c.execute('DELETE FROM attempts WHERE campaign=? AND domain=? AND slug=?',(q['campaign'],q['domain'],a.slug));c.commit();out=report(c,q['campaign'])

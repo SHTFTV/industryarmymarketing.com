@@ -150,7 +150,7 @@
       "slug": "steelstud-ca-industry-marketing-project-content-guide",
       "expectedTitle": "SteelStud.ca: make framing, drywall and ceiling scopes visible before the quote",
       "canonical": "https://www.industryarmymarketing.com/blog/steelstud-ca-industry-marketing-project-content-guide",
-      "stage": "planned",
+      "stage": "withdrawn",
       "discovery": [
         "https://www.industryarmymarketing.com/blog",
         "https://www.industryarmymarketing.com/sitemap.xml",
@@ -177,7 +177,9 @@
       "titleState": "provisional_until_draft",
       "rights": "Recheck source/approvedIAM assets before using media. No thirdparty copying or unverified rights.",
       "guestRemediation": "Audit evidence retained separately; never promote broken/untested submission as working.",
-      "contactControl": "IAM · Construction marketing"
+      "contactControl": "IAM · Construction marketing",
+      "ownerExcluded": true,
+      "exclusionReason": "Owner requested IAM article withdrawal October27; retain original live release evidence in authoritative runtime ledger; never republish this item."
     },
     {
       "slug": "demolition-io-industry-marketing-project-content-guide",
@@ -1809,5 +1811,7 @@
       "guestRemediation": "Audit evidence retained separately; never promote broken/untested submission as working.",
       "contactControl": "IAM · Construction marketing"
     }
-  ]
+  ],
+  "activeTarget": 52,
+  "historicalInventoryCount": 53
 }
