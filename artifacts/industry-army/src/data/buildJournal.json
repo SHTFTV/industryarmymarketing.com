@@ -1,6 +1,140 @@
 [
   {
     "brand": "Industry Army Marketing",
+    "trade": "Finish carpentry marketing and SEO content",
+    "tradeShort": "Finish carpentry",
+    "plural": "finish carpenters",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Vancouver and beyond",
+    "province": "BC",
+    "category": "Build Journal",
+    "date": "October 27, 2026",
+    "publishedAt": "2026-10-27T22:29:46-07:00",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "contactBusiness": "iam",
+    "campaignSite": "finishingcarpenters.com",
+    "campaignLabel": "Finish carpentry marketing",
+    "slug": "finishingcarpenters-com-industry-marketing-project-content-guide",
+    "title": "Finish Carpentry Marketing: Make the Detail Visible",
+    "cardTitle": "Make the room, the detail and the scope understandable.",
+    "excerpt": "An original finish-carpentry marketing approach: show context and detail, clarify supplied and installed scope, and give readers the correct enquiry route.",
+    "metaDescription": "Finish carpentry marketing and SEO: show genuine detail, explain the scope and connect project stories to a useful customer enquiry.",
+    "image": "/contractor-brands/finishing.webp",
+    "imageAlt": "Approved IAM construction-showcase artwork for FinishingCarpenters.com. Illustrative wood-themed scene, not a photograph of a contractor’s project.",
+    "ogImage": "/brand-journal/finishing-detail-brief-share.jpg",
+    "ogImageAlt": "Original IAM explanatory graphic connecting scope, visible detail and the correct enquiry owner.",
+    "faqHeading": "Finish carpentry marketing questions",
+    "faqs": [
+      {
+        "q": "Does the hero show a completed project?",
+        "a": "No. It is approved illustrative brand artwork, clearly distinguished from genuine project photography."
+      },
+      {
+        "q": "What should a project story explain?",
+        "a": "Explain the actual scope, the company role, what the permitted images show and which business handles the enquiry."
+      },
+      {
+        "q": "Does a published page prove search results?",
+        "a": "No. Rankings, AI citations and lead delivery need separate evidence."
+      }
+    ],
+    "cta": {
+      "eyebrow": "ADVERTISEMENT · IAM / FINISH CARPENTRY MARKETING",
+      "heading": "Make the detail worth a closer look",
+      "body": "Bring your actual service focus, permitted project images and correct enquiry contact. Discuss a distinct website and publishing plan with IAM.",
+      "buttonText": "Discuss finish carpentry marketing",
+      "buttonHref": "/contact?request=guest-post&ref_site=finishingcarpenters.com"
+    },
+    "richContent": {
+      "intro": "Finish carpentry is judged in the details, but marketing has to show the whole offer. This original IAM guide uses FinishingCarpenters.com as the industry context to explain how room photographs, detail images, clear scope and a useful enquiry route can work together. It makes no claim about a particular contractor’s credentials, availability or measured business results.",
+      "sections": [
+        {
+          "heading": "Show the room and the detail together",
+          "paragraphs": [
+            "A close-up can show a crisp-looking joint without showing what the customer commissioned. A wide room photograph can communicate atmosphere while hiding the work the carpenter actually delivered. A useful finish-carpentry portfolio pairs context with detail, then explains the company’s role in plain language. The reader should understand the offer before opening an enquiry form.",
+            "[FinishingCarpenters.com](https://finishingcarpenters.com/) currently identifies itself as a BuildersHaus craft resource. Its public service navigation includes interior trim, doors, architectural mouldings, built-ins and other finishing scopes. Those are the verified industry context for this article. The presentation approach below is original IAM marketing analysis, not an assessment of a particular installation or a promise of contractor availability."
+          ]
+        },
+        {
+          "heading": "Name the scope behind the finished appearance",
+          "paragraphs": [
+            "“Beautiful interiors” is an ambition, not a useful scope description. A project story can identify whether the documented work involved baseboards, door casing, interior doors, a feature wall or a built-in. Explain what the company supplied and installed, and which stages belonged to other participants. Do not let the completed room imply responsibility for every visible surface.",
+            "The distinction between supplied, installed and painted is especially useful in an initial conversation. A customer may expect all three when a company is discussing only one. A website can make that question visible early, while leaving the actual specification, price and agreement to the responsible business. This is a marketing brief, not an installation method."
+          ],
+          "image": {
+            "src": "/brand-journal/finishing-scope-strip.svg",
+            "alt": "Original IAM brief separating supplied, installed and finished scope.",
+            "caption": "Original IAM communications graphic. The actual project scope must be agreed with the business."
+          }
+        },
+        {
+          "heading": "Help the customer describe the look they mean",
+          "paragraphs": [
+            "A useful enquiry asks about the room, the intended result and the material or profile choices already considered. Invite the customer to identify existing drawings or reference images they have permission to share. Ask which decisions remain open rather than treating an inspiration photograph as a complete specification.",
+            "Explain specialist terms where they help a buyer make a decision. A service page can distinguish a trim discussion from a built-in discussion without becoming a catalogue of every possible product. The strongest next step is a better conversation about fit, scope and expectations. It is not an automated assurance that the proposed detail will suit the property."
+          ]
+        },
+        {
+          "heading": "Give genuine project images a clear job",
+          "paragraphs": [
+            "For a real portfolio feature, choose one permitted context image and a small set of details that support the written account. Caption what the photograph actually shows. Identify the company’s role, acknowledge collaborators where appropriate and agree location disclosure with the project owner. Avoid exposing private documents or access information.",
+            "The hero on this article is existing approved FinishingCarpenters.com artwork from IAM’s construction showcase. It is an illustrative wood-themed brand scene, not a photograph of a contractor’s project. Real project claims need their own permitted evidence; a polished image alone does not establish credentials, workmanship standards or a customer endorsement."
+          ],
+          "image": {
+            "src": "/brand-journal/finishing-evidence-strip.svg",
+            "alt": "Original IAM content brief pairing room context, detail and an accurate company role.",
+            "caption": "Original IAM explanatory graphic. Illustrative brand artwork is kept separate from actual project evidence."
+          }
+        },
+        {
+          "heading": "Make the quote conversation easier to follow",
+          "paragraphs": [
+            "FinishingCarpenters.com has a public [quote-comparison guide](https://finishingcarpenters.com/guides/hiring-a-finish-carpenter/) and an [interior trim service page](https://finishingcarpenters.com/services/trim/). Both destinations were checked for this article. They provide relevant places for readers to continue, rather than sending every question to an unrelated homepage.",
+            "Our recommendation is to make the page-to-enquiry handoff equally specific: identify the work area, the intended scope, the decisions already made and the questions still open. Timing is a request to discuss, not an appointment confirmation. A public marketing form should not imply that photos alone produce a final quote or establish site conditions."
+          ],
+          "image": {
+            "src": "/brand-journal/finishing-handoff-strip.svg",
+            "alt": "Original IAM marketing brief showing scope, choices and questions flowing into an enquiry.",
+            "caption": "Original IAM communications graphic. An enquiry begins a review; it does not confirm a booking or price."
+          }
+        },
+        {
+          "heading": "Build search content around distinct finishing decisions",
+          "paragraphs": [
+            "An interior-trim explanation should answer a different question from a built-in portfolio or a general company profile. Give each a useful heading, a clear account of the work and relevant links. A genuine local project can include an accurate, permitted location; swapping city names into identical copy does not add project evidence.",
+            "IAM’s [contractor marketing page](/contractors) describes the broader branding and publishing conversation. Use that network context when it helps the reader understand the next step. Publishing a coherent set of pages is useful work, but it does not by itself demonstrate search rankings, AI citations or delivered leads. Those outcomes need separate evidence."
+          ]
+        },
+        {
+          "heading": "Keep construction enquiries and marketing enquiries distinct",
+          "paragraphs": [
+            "The current FinishingCarpenters.com homepage directs project conversations to [build@buildershaus.com](mailto:build@buildershaus.com) and identifies BuildersHaus in its footer. That is the public construction enquiry route checked for this guide. Confirm the actual fit and availability with the team; this article does not accept construction work on its behalf.",
+            "For branding, a website or project publishing, [discuss your finish-carpentry marketing brief with IAM](/contact?request=guest-post&ref_site=finishingcarpenters.com). Bring the real service focus, permitted images and the business contact that should receive enquiries. Agree rights, editorial fit, any paid placement and deliverables before publication. Make the detail visible, then make the next conversation clear."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "label": "FinishingCarpenters.com — BuildersHaus attribution, service navigation and project contact checked October 27, 2026",
+          "href": "https://finishingcarpenters.com/"
+        },
+        {
+          "label": "Interior trim service — actual destination checked October 27, 2026",
+          "href": "https://finishingcarpenters.com/services/trim/"
+        },
+        {
+          "label": "How to compare a finish carpentry quote — actual destination checked October 27, 2026",
+          "href": "https://finishingcarpenters.com/guides/hiring-a-finish-carpenter/"
+        }
+      ]
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
     "trade": "Demolition contractor marketing and SEO content",
     "tradeShort": "Demolition",
     "plural": "demolition contractors",
