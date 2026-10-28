@@ -1,6 +1,136 @@
 [
   {
     "brand": "Industry Army Marketing",
+    "trade": "Ceiling contractor marketing and enquiry content",
+    "tradeShort": "Ceilings",
+    "plural": "ceiling contractors",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Vancouver and beyond",
+    "province": "BC",
+    "category": "Build Journal",
+    "date": "October 28, 2026",
+    "publishedAt": "2026-10-28T11:38:05-07:00",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "contactBusiness": "iam",
+    "campaignSite": "rambowalls.com",
+    "campaignLabel": "Ceiling contractor marketing",
+    "slug": "rambowalls-com-industry-marketing-project-content-guide",
+    "title": "Rambo Walls Marketing: Give Ceiling Enquiries Their Own Brief",
+    "cardTitle": "Give ceiling enquiries their own useful brief.",
+    "excerpt": "A distinct ceiling marketing guide: help a buyer explain the room, separate acoustic intentions from proof and keep the construction conversation with Mason.",
+    "metaDescription": "Ceiling contractor marketing: a practical Rambo Walls enquiry brief using authentic project context, useful questions and clearly separated company contacts.",
+    "image": "/brand-journal/steelstud-autodesk-ceiling.webp",
+    "imageAlt": "Archive Autodesk floating-ceiling project photograph supplied by Mason McKenzie / Rambo. Work-stage context; no new completion date, acoustic rating or client endorsement implied.",
+    "ogImage": "/brand-journal/rambo-ceiling-brief-share.jpg",
+    "ogImageAlt": "Original IAM graphic: give ceiling enquiries a brief covering the room, the question and the records.",
+    "faqHeading": "Ceiling marketing questions",
+    "faqs": [
+      {
+        "q": "Does an acoustic goal establish a performance rating?",
+        "a": "No. A customer’s intention is separate from product selection, assessment and verified performance."
+      },
+      {
+        "q": "Is this a new Rambo project launch?",
+        "a": "No. It is an original marketing guide using existing public service and archive project context."
+      },
+      {
+        "q": "Who receives ceiling construction enquiries?",
+        "a": "Mason / Rambo receives construction enquiries at the verified current company contacts. IAM handles marketing enquiries separately."
+      }
+    ],
+    "cta": {
+      "eyebrow": "ADVERTISEMENT · IAM / CEILING CONTRACTOR MARKETING",
+      "heading": "Give each service a useful next conversation",
+      "body": "Bring the customer question, permitted project images and correct company contact. Discuss distinct service content and branding with IAM.",
+      "buttonText": "Discuss ceiling contractor marketing",
+      "buttonHref": "/contact?request=guest-post&ref_site=rambowalls.com"
+    },
+    "richContent": {
+      "intro": "A ceiling enquiry starts with a room and a question. This original IAM guide looks at how Rambo Walls’ existing service and project destinations can support that conversation: explain what is known, leave room for uncertainty and send the construction enquiry to the actual company.",
+      "sections": [
+        {
+          "heading": "A ceiling question deserves a ceiling destination",
+          "paragraphs": [
+            "A visitor considering a ceiling does not necessarily want a complete interior package. They may be trying to explain a particular room, understand which service to ask about, or establish what information a contractor needs first. A page that sends every visitor into the same broad construction pitch loses that useful distinction.",
+            "Rambo Walls has a public acoustic-ceiling service page and an Autodesk floating-ceiling project page. Those are verified destinations, not evidence of a new launch today. This guide is original IAM marketing analysis of how a ceiling-specific enquiry can help a buyer describe their need. It does not prescribe an assembly or assess a building."
+          ]
+        },
+        {
+          "heading": "Begin with the room and the question",
+          "paragraphs": [
+            "A useful opening asks what the space is used for and what the visitor wants to discuss. Is the enquiry about a proposed ceiling, an existing area, or a project with drawings already prepared? Offer room for “not sure.” Making someone choose a technical system before speaking to the contractor can produce a confident-looking answer that means very little.",
+            "Keep the first step short. A plain-language room description, a broad location and the actual question can start the conversation. If the visitor already knows the ceiling type, that information is helpful; if not, the page should let them explain what they can see without pretending the website has identified it."
+          ],
+          "image": {
+            "src": "/brand-journal/rambo-ceiling-purpose.svg",
+            "alt": "Original IAM ceiling enquiry diagram: room use, the ceiling question and information already available.",
+            "caption": "Original IAM communications diagram. It gathers a starting brief, not a construction specification."
+          }
+        },
+        {
+          "heading": "An acoustic goal is not an acoustic rating",
+          "paragraphs": [
+            "A customer may describe a room as noisy or say they want a different feel. That describes an intention. It does not establish the cause, select a product or prove that a proposed ceiling will achieve a measured result. Marketing copy should preserve that distinction rather than turning a visitor’s concern into a performance promise.",
+            "Ask what records are already available and let the responsible contractor review the enquiry. Where drawings or specifications exist, identify them as existing project information. Do not assign a rating, compliance status or guaranteed improvement to an archive photograph. The buyer needs an accurate next conversation, not a number inferred from an image."
+          ],
+          "image": {
+            "src": "/brand-journal/rambo-ceiling-records.svg",
+            "alt": "Original IAM diagram separating the desired ceiling outcome, existing records and contractor review.",
+            "caption": "Original IAM explanatory graphic. An expressed goal is separate from verified performance."
+          }
+        },
+        {
+          "heading": "Use a real photograph to explain the work stage",
+          "paragraphs": [
+            "The hero is an archive photograph credited to Mason McKenzie / Rambo showing the Autodesk floating-ceiling work. Its value here is visual context: a ceiling project has a visible stage and surrounding work, rather than existing as a paragraph of service keywords. The photograph does not establish a new completion date or a client endorsement.",
+            "Pair a project image with the correct project link and a restrained caption. Let readers see the named work and ask a relevant question. Avoid presenting everything visible in a photograph as the featured company’s scope, or claiming that an attractive room proves an acoustic outcome. Authentic images work harder when the accompanying explanation stays precise."
+          ]
+        },
+        {
+          "heading": "Make related questions easy to raise",
+          "paragraphs": [
+            "A buyer may already be coordinating lighting, access to services or other project participants. The enquiry page can ask whether those matters are already being discussed and whether relevant records exist. These are prompts for the contractor’s review, not instructions about how any ceiling should be designed or installed.",
+            "That distinction gives the page a useful boundary. It helps the visitor organize what they know while allowing the business to confirm scope, responsibilities and next steps. A website should not imply that submitting a form approves a layout, reserves a crew or confirms that every requested service is available."
+          ]
+        },
+        {
+          "heading": "Keep the next step specific to the service",
+          "paragraphs": [
+            "A ceiling service page should offer a ceiling conversation. Link the relevant project example where it helps explain the question, and keep the enquiry route recognizable. Repeating a generic “we do everything” paragraph around every image makes it harder for the visitor to understand what to send.",
+            "Rambo construction enquiries belong to Mason / Rambo: the current public number is 778-773-2790 and the published email is rambowallceiling@gmail.com. The [acoustic-ceiling service page](https://www.rambowalls.com/acoustic-ceiling-contractors) is the relevant company destination checked for this article. Scope and availability still need confirmation with the business."
+          ],
+          "image": {
+            "src": "/brand-journal/rambo-ceiling-route.svg",
+            "alt": "Original IAM contact ownership diagram: ceiling enquiries go to Mason and marketing enquiries go to IAM.",
+            "caption": "Original IAM marketing diagram. Construction and marketing enquiry ownership remain separate."
+          }
+        },
+        {
+          "heading": "Build a useful service story within the wider brand",
+          "paragraphs": [
+            "IAM’s earlier [Rambo company-to-brand case study](/blog/rambo-walls-company-name-to-vancouver-contractor-brand) explains the broader build and its attributed project history. This article addresses a narrower reader decision: what to include when asking about ceilings. It is not another launch announcement or a new claim about business results.",
+            "For the wider publishing approach, see [IAM contractor marketing](/contractors). Distinct service questions, truthful project context and clear contacts are useful foundations for content. Publication alone does not prove rankings, AI citations or enquiries. For an IAM marketing discussion, bring the service question, permitted images and correct company contact to the separate marketing route below."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "label": "Rambo Walls acoustic-ceiling service — current destination and Mason contact checked October 28, 2026",
+          "href": "https://www.rambowalls.com/acoustic-ceiling-contractors"
+        },
+        {
+          "label": "Autodesk floating-ceiling project — archive context and photography credit checked October 28, 2026",
+          "href": "https://www.rambowalls.com/project/autodesk-floating-ceiling"
+        }
+      ]
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
     "trade": "General contractor marketing and project communication",
     "tradeShort": "General contractors",
     "plural": "general contractors",
