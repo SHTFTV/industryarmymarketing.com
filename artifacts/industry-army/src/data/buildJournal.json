@@ -1,6 +1,136 @@
 [
   {
     "brand": "Industry Army Marketing",
+    "trade": "Drywall contractor marketing and SEO content",
+    "tradeShort": "Drywall",
+    "plural": "drywall contractors",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Vancouver and beyond",
+    "province": "BC",
+    "category": "Build Journal",
+    "date": "October 27, 2026",
+    "publishedAt": "2026-10-27T17:35:44-07:00",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "contactBusiness": "iam",
+    "campaignSite": "drywallers.io",
+    "campaignLabel": "Drywall contractor marketing",
+    "slug": "drywallers-io-industry-marketing-project-content-guide",
+    "title": "Drywall Contractor Marketing: Make the Finish Scope Clear",
+    "cardTitle": "Make the finish scope clear before the enquiry.",
+    "excerpt": "A practical Drywallers.io content approach: distinguish repairs, boarding and finishing, show honest project evidence and send the enquiry to the right business.",
+    "metaDescription": "Drywall contractor marketing and SEO: explain repair, boarding and finish scope, use credited progress photos and preserve the correct enquiry route.",
+    "image": "/brand-journal/drywallers-mission-taping.webp",
+    "imageAlt": "Installation-stage board and joint preparation at Rambo’s Regus Mission office project. Archive photograph supplied by Mason McKenzie / Rambo Wall & Ceiling Limited; not a repair before-and-after or new completion.",
+    "ogImage": "/brand-journal/drywallers-scope-share.jpg",
+    "ogImageAlt": "Original IAM drywall enquiry graphic separating repair, boarding and finishing. Planning illustration, not a repair specification.",
+    "faqHeading": "Drywall marketing questions",
+    "faqs": [
+      {
+        "q": "Does a small patch always mean a small finishing scope?",
+        "a": "The surrounding surface and agreed finish boundary need discussion. The contractor determines the appropriate project scope; a page or photograph cannot do that alone."
+      },
+      {
+        "q": "Is the hero a newly completed drywall repair?",
+        "a": "No. It is an authentic Rambo Regus Mission installation-stage archive photograph, credited to Mason McKenzie / Rambo."
+      },
+      {
+        "q": "Does IAM handle the construction enquiry?",
+        "a": "IAM handles the branding, website and marketing conversation. Construction scope and availability belong with the named contractor."
+      }
+    ],
+    "cta": {
+      "eyebrow": "ADVERTISEMENT · IAM / DRYWALL MARKETING",
+      "heading": "Explain the finish your customer is asking for",
+      "body": "Bring your real service boundary, permitted project images and the customer questions your website needs to answer. Discuss a distinct drywall content plan with IAM.",
+      "buttonText": "Discuss drywall marketing",
+      "buttonHref": "/contact?request=guest-post&ref_site=drywallers.io"
+    },
+    "richContent": {
+      "intro": "The patch, the board and the finished surface are different starting points for a customer. A strong drywall marketing page makes those differences easy to understand. Using Drywallers.io’s public repair-planning approach as context, this original IAM guide explains how to turn an unclear request into a useful enquiry without inventing a price, a booking or a technical result.",
+      "sections": [
+        {
+          "heading": "Start with the customer’s version of the problem",
+          "paragraphs": [
+            "“I need some drywall done” can mean a small access opening, a new room waiting for board, or a surface that is ready for joint finishing. Those requests should not lead to the same explanation. A useful drywall contractor marketing page lets the visitor recognise their situation before asking for project details.",
+            "The current [Drywallers.io](https://www.drywallers.io/) homepage makes repair planning its starting point, with separate installation and project resources. It asks readers to distinguish the condition, scope and next step. This guide develops that communications idea for a contractor’s own website. It is original IAM marketing analysis, not a new repair method or a report of completed customer work."
+          ],
+          "image": {
+            "src": "/brand-journal/drywallers-condition-strip.svg",
+            "alt": "Original IAM visual brief: show the condition with a room view, close-up and approximate extent.",
+            "caption": "Original IAM enquiry-planning graphic. Images help describe the request; they do not establish a repair specification."
+          }
+        },
+        {
+          "heading": "Give repair, boarding and finishing their own explanation",
+          "paragraphs": [
+            "A repair page should begin with what the customer can observe: an opening, damaged surface, recurring line or other condition. Ask whether the reason for the damage is known and whether related work has been reviewed. A boarding enquiry starts somewhere else: the work area, drawings available, access and the proposed wall or ceiling scope. Finishing raises questions about the existing surface and the finish expected.",
+            "These distinctions are useful for content organisation. They do not determine the right repair, assembly or preparation for a particular property. Keep technical recommendations with the responsible contractor or project professional. On the marketing page, the practical task is to help a person describe the work clearly enough for that conversation to start."
+          ]
+        },
+        {
+          "heading": "Name the finishing boundary before describing the result",
+          "paragraphs": [
+            "A visitor may use “finished” to mean ready for paint, painted, textured to match, or visually blended into a whole wall. Explain what the company is offering and what still needs agreement. Board replacement, joint work, texture, primer and paint should not disappear into one vague promise.",
+            "Use questions the customer can answer without technical expertise. Is the affected surface part of a larger room? Is there an existing texture? Is painting included in the request or handled separately? Are there occupied rooms, access arrangements or protection needs to discuss? Those details can guide a useful enquiry without pretending a photograph is a final quotation."
+          ],
+          "image": {
+            "src": "/brand-journal/drywallers-boundary-strip.svg",
+            "alt": "Original IAM visual brief listing board, joints, texture, primer and paint as separate scope questions.",
+            "caption": "Original IAM scope graphic. Inclusion and finish expectations need agreement for the actual project."
+          }
+        },
+        {
+          "heading": "Use authentic progress photographs without selling an invented repair",
+          "paragraphs": [
+            "The hero photograph is from Rambo’s Regus Mission office archive, supplied by Mason McKenzie / Rambo Wall & Ceiling Limited. It shows installation-stage board and joint preparation. It is not a repair before-and-after, proof of a completed decorative finish or evidence of a newly finished contract today.",
+            "That distinction matters when building a portfolio. A progress image can help explain the work behind a finished surface, but the caption should identify the stage honestly. If the company has a permitted repair sequence, show the same area at the relevant stages and explain the work actually carried out. If it does not, use the available photograph for the narrower point it supports instead of implying a transformation it cannot show."
+          ]
+        },
+        {
+          "heading": "Make one enquiry page collect the right starting information",
+          "paragraphs": [
+            "Our suggested initial brief is short: location at a suitable level of detail, property type, the condition or proposed work, approximate extent, access considerations and the desired timing. Invite a wider room photograph and a detail photograph where appropriate. Do not ask people to upload private paperwork or expose identifying household information merely to make the form look comprehensive.",
+            "Describe what happens after submission in terms the team can support. A request for review is not a confirmed booking. A preliminary discussion is not an agreed price. Name the business that will assess the construction scope, and let the contractor confirm suitability and availability directly. A clear process is more credible than an instant promise that the business cannot verify."
+          ],
+          "image": {
+            "src": "/brand-journal/drywallers-enquiry-strip.svg",
+            "alt": "Original IAM visual brief separating a construction enquiry to the contractor from a marketing enquiry to IAM.",
+            "caption": "Original IAM contact-ownership graphic. Do not silently divert the featured contractor’s enquiries."
+          }
+        },
+        {
+          "heading": "Connect drywall SEO to useful page decisions",
+          "paragraphs": [
+            "A repair guide, an installation guide and a contractor marketing article have different jobs. Give each a specific heading, relevant images and a clear next step. Use location details when they are accurate and useful to the reader; do not turn one paragraph into a row of near-identical city pages. Explain genuine scope rather than trying to make every page answer every search.",
+            "[BuildersHaus](https://www.buildershaus.com/) provides a broader construction-network context, while IAM’s [contractor marketing page](/contractors) explains brand and publishing services. Link to those resources when they answer the next question. For the pictured construction work, [Rambo’s project site](https://www.rambowalls.com/) remains the named-business destination. Relevant connections should preserve the contractor’s identity."
+          ]
+        },
+        {
+          "heading": "Agree a publishing brief before promising exposure",
+          "paragraphs": [
+            "For a drywall content project, bring IAM a real buyer question, the actual service boundary, permitted photographs and the correct public business contact. We can discuss the branding, website and editorial work needed to turn those materials into a useful explanation. [Start a drywall marketing conversation with IAM](/contact?request=guest-post&ref_site=drywallers.io).",
+            "A marketing enquiry does not by itself confirm a feature or placement. Agree editorial fit, media permissions, any commercial placement and deliverables before publishing. Use an agreed communication route for private project material rather than assuming a public page provides an upload portal. Neither a directory connection nor an article guarantees a ranking, AI citation or enquiry."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "label": "Drywallers.io — repair, installation and enquiry planning, checked October 27, 2026",
+          "href": "https://www.drywallers.io/"
+        },
+        {
+          "label": "Rambo — named construction business and original project context",
+          "href": "https://www.rambowalls.com/"
+        }
+      ]
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
     "trade": "Framing contractor marketing and SEO content",
     "tradeShort": "Framing",
     "plural": "framing contractors",
