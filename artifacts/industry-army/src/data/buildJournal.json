@@ -1,6 +1,140 @@
 [
   {
     "brand": "Industry Army Marketing",
+    "trade": "Chain link fencing marketing and quote-scope content",
+    "tradeShort": "Chain link fencing",
+    "plural": "chain link fencing businesses",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Vancouver and beyond",
+    "province": "BC",
+    "category": "Build Journal",
+    "date": "October 28, 2026",
+    "publishedAt": "2026-10-28T18:19:40-07:00",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "contactBusiness": "iam",
+    "campaignSite": "chainlinkfencing.ca",
+    "campaignLabel": "Chain link fencing marketing",
+    "slug": "chainlinkfencing-ca-industry-marketing-project-content-guide",
+    "title": "Chain Link Fencing Marketing: Make the Quote Scope Comparable",
+    "cardTitle": "Compare the fencing scope before comparing the total.",
+    "excerpt": "Original fencing marketing guidance: give proposals the same starting brief, make included and optional items visible and preserve named-company enquiry ownership.",
+    "metaDescription": "Chain link fencing marketing: explain a comparable quote scope with clear assumptions, honest visual evidence and the correct company contact.",
+    "image": "/brand-journal/chainlink-quote-scope-hero.svg",
+    "imageAlt": "Original IAM conceptual fence and quote-scope diagram. Not a site survey, construction design, real customer proposal or contractor project photograph.",
+    "ogImage": "/brand-journal/chainlink-quote-scope-share.jpg",
+    "ogImageAlt": "Original IAM graphic: compare the fencing scope, then the total; included, optional and not yet known.",
+    "faqHeading": "Fencing marketing questions",
+    "faqs": [
+      {
+        "q": "Is the example an actual fencing quote?",
+        "a": "No. It is a clearly identified conceptual example about marketing communication, with no price or site assessment."
+      },
+      {
+        "q": "Does a photograph establish the full proposal scope?",
+        "a": "No. The visible image and its attribution are separate from the written work arrangement."
+      },
+      {
+        "q": "Who handles enquiries on ChainlinkFencing.ca?",
+        "a": "The current general contact is BuildersHaus. Named L.S. Fencing project and service destinations retain L.S. Fencing contacts. IAM handles marketing separately."
+      }
+    ],
+    "cta": {
+      "eyebrow": "ADVERTISEMENT · IAM / CHAIN LINK FENCING MARKETING",
+      "heading": "Make the scope behind the story clear",
+      "body": "Bring your customer question, actual business role and permitted evidence. Discuss distinct fencing content and branding with IAM.",
+      "buttonText": "Discuss fencing marketing",
+      "buttonHref": "/contact?request=guest-post&ref_site=chainlinkfencing.ca"
+    },
+    "richContent": {
+      "intro": "Two fencing totals are difficult to compare when they describe different work. This original IAM guide uses ChainlinkFencing.ca’s current planning and contact context to explain a clearer marketing task: make the scope understandable before asking a customer to judge the price.",
+      "sections": [
+        {
+          "heading": "A headline total can hide two different jobs",
+          "paragraphs": [
+            "A customer comparing fencing proposals may see two totals before noticing that the descriptions cover different work. One might discuss replacing a section; another may leave a related item for later review. Marketing content can help the reader recognize that comparison problem without pretending the website has priced the site.",
+            "ChainlinkFencing.ca currently presents fence-system ideas, planning guides and explicit company contact routes. Its product page asks readers to discuss a project-specific written scope. That is the checked public context. The approach below is original IAM marketing analysis of quote communication, not an estimate, material recommendation or assessment of a property boundary."
+          ]
+        },
+        {
+          "heading": "Publish a common starting brief",
+          "paragraphs": [
+            "A useful enquiry page helps the customer describe the intended work and the information already available. State whether the discussion concerns a new fence, a change to an existing section or an idea still being explored. Keep unknown information visible instead of forcing every field to look complete.",
+            "For a marketing example, imagine a customer asking about a fence section and an existing access opening. That is only a conceptual example, not a real enquiry. Its useful question is whether each proposal addresses the same requested items. A website illustration cannot confirm the legal boundary, site dimensions or permission to undertake the work."
+          ],
+          "image": {
+            "src": "/brand-journal/chainlink-same-brief.svg",
+            "alt": "Original IAM proposal communications diagram showing intended work, known information and unresolved questions.",
+            "caption": "Original IAM conceptual example. It is not a site survey or an actual customer brief."
+          }
+        },
+        {
+          "heading": "Make included and optional work easy to distinguish",
+          "paragraphs": [
+            "A proposal explanation should let the reader identify what is included, what is an option and what remains to be confirmed. These distinctions should be expressed in plain language rather than left for the customer to infer from an attractive finished photograph. The marketing page can show the questions to ask without deciding the answers.",
+            "In the conceptual example, the customer might ask whether a related gate is part of the proposed discussion or a separate item. A question about removal or reinstatement may also need clarification. Do not fill the gaps with assumed work, a default price or a statement that every contractor includes the same things."
+          ],
+          "image": {
+            "src": "/brand-journal/chainlink-scope-columns.svg",
+            "alt": "Original IAM scope record with included, optional, excluded and unconfirmed categories.",
+            "caption": "Original IAM communications graphic. The responsible business must confirm the actual proposal."
+          }
+        },
+        {
+          "heading": "Explain a difference before calling it better value",
+          "paragraphs": [
+            "A lower total is not an explanation of why proposals differ. A useful article can encourage readers to ask which described item, assumption or option changed. Keep the comparison tied to the written information rather than suggesting that one unexplained price proves better quality or a more complete service.",
+            "For a business publishing its own work, describe the documented scope and the customer decision the story helps explain. Do not invent avoided costs, savings or a successful tender result. If the records do not establish a comparison, an honest service explanation can still be useful without claiming a commercial outcome."
+          ]
+        },
+        {
+          "heading": "Keep visual proof separate from planning art",
+          "paragraphs": [
+            "ChainlinkFencing.ca labels its retained illustrative media separately from a collection credited to L.S. Fencing & Metal Work. That distinction matters when a reader is deciding which business actually performed photographed work. Preserve the relevant caption and attribution instead of letting a general brand gallery become an undocumented portfolio.",
+            "The hero and narrow diagrams in this article are original IAM concepts for explaining a quote conversation. They are not fence drawings, survey records or customer proposals. Authentic project images need their own permissions and facts; their visible appearance alone does not establish every material, hidden condition or contractual responsibility."
+          ],
+          "image": {
+            "src": "/brand-journal/chainlink-quote-difference.svg",
+            "alt": "Original IAM explanation diagram connecting a changed scope item, a supported description and the next decision question.",
+            "caption": "Original IAM marketing graphic. No price, saving or winning proposal is represented."
+          }
+        },
+        {
+          "heading": "Use the right company route for the work being discussed",
+          "paragraphs": [
+            "The current [general contact page](https://chainlinkfencing.ca/contact/) names BuildersHaus and build@buildershaus.com. The homepage separately directs enquiries about named L.S. Fencing project photographs to L.S. Fencing at 604-758-0014 and its published company email. General brand enquiries and named contractor work should not be silently combined.",
+            "The site explains that direct email and phone links open the visitor’s own application; they do not store an order, confirm an appointment or submit a website form. No message was sent in this check. Use the contact attached to the relevant company and confirm the proposed scope and availability directly."
+          ]
+        },
+        {
+          "heading": "A useful industry page helps the reader compare meaning",
+          "paragraphs": [
+            "A product overview, a genuine project account and an enquiry page can each answer a different question. Link them when the reader needs that next piece of context. A series of near-identical city paragraphs does not make an unclear proposal easier to understand.",
+            "See [IAM contractor marketing](/contractors) for the broader publishing approach. For branding, original service content or project storytelling, [discuss fencing marketing with IAM](/contact?request=guest-post&ref_site=chainlinkfencing.ca). Bring the actual business role, permitted evidence and correct construction contact. Agree the deliverables and any paid placement before publication; a new page is not proof of rankings, citations, enquiries or sales."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "label": "ChainlinkFencing.ca — current media labels and named-company enquiry ownership checked October 28, 2026",
+          "href": "https://chainlinkfencing.ca/"
+        },
+        {
+          "label": "Fence systems — current scope discussion destination checked October 28, 2026",
+          "href": "https://chainlinkfencing.ca/products/"
+        },
+        {
+          "label": "General contact — BuildersHaus ownership and direct-link limitations checked October 28, 2026",
+          "href": "https://chainlinkfencing.ca/contact/"
+        }
+      ]
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
     "trade": "Barrier gate marketing and access enquiry content",
     "tradeShort": "Barrier gates",
     "plural": "barrier gate contractors",
