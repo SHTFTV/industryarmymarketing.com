@@ -1,6 +1,136 @@
 [
   {
     "brand": "Industry Army Marketing",
+    "trade": "Door supply and installation marketing",
+    "tradeShort": "Door marketing",
+    "plural": "door suppliers and installers",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Vancouver and beyond",
+    "province": "BC",
+    "category": "Build Journal",
+    "date": "October 29, 2026",
+    "publishedAt": "2026-10-29T13:44:23-07:00",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "contactBusiness": "iam",
+    "campaignSite": "justdoors.co",
+    "campaignLabel": "Door marketing",
+    "slug": "justdoors-co-industry-marketing-project-content-guide",
+    "title": "Door Marketing: Give Every Opening a Clear Record",
+    "cardTitle": "Give every opening a clear record.",
+    "excerpt": "Original IAM door-industry marketing analysis: connect opening identity, documented scope and the actual project recipient without turning a planning worksheet into an approval.",
+    "metaDescription": "Door marketing: keep opening records, proposed scope, project evidence and Rambo versus IAM enquiry ownership clear. Original industry content guidance.",
+    "image": "/brand-journal/door-opening-record-hero.jpg",
+    "imageAlt": "Original AI editorial concept of commercial and timber doors beside planning records. Not a customer project, exact product or technical assembly drawing.",
+    "ogImage": "/brand-journal/door-opening-record-share.jpg",
+    "ogImageAlt": "Original IAM editorial illustration for door-industry marketing: opening identity, records and a clear next discussion.",
+    "faqHeading": "Door marketing and enquiry questions",
+    "faqs": [
+      {
+        "q": "Does a completed planning worksheet approve a door assembly?",
+        "a": "No. A planning record organises a discussion; project-specific selection and acceptance need their own applicable review."
+      },
+      {
+        "q": "Who handles the checked Just Doors installation enquiries?",
+        "a": "The current website identifies Rambo Walls & Ceilings,778-773-2790 and rambowallceiling@gmail.com. Confirm scope and availability directly."
+      },
+      {
+        "q": "Does IAM receive construction enquiries through this article?",
+        "a": "The IAM route is for marketing and editorial enquiries. Door project discussions remain with the named project contact."
+      }
+    ],
+    "cta": {
+      "eyebrow": "ADVERTISEMENT · IAM / DOOR MARKETING",
+      "heading": "Give the work around the opening a clearer story",
+      "body": "Bring your actual business contribution, permitted project evidence and customer question. Discuss original door-industry content with IAM.",
+      "buttonText": "Discuss door marketing",
+      "buttonHref": "/contact?request=guest-post&ref_site=justdoors.co"
+    },
+    "richContent": {
+      "intro": "A door enquiry becomes easier to discuss when the opening, the supporting record and the next responsible person stay connected. This original IAM marketing guide examines that handoff using Just Doors’ public planning and project-contact context.",
+      "sections": [
+        {
+          "heading": "One opening can collect several different descriptions",
+          "paragraphs": [
+            "A door enquiry may start with a photograph, a room name or a sentence such as replace the back door. A supplier, installer and building representative may then describe the same opening in different ways. Marketing becomes more useful when it helps the reader carry one recognisable record into those conversations, rather than simply adding more product vocabulary.",
+            "This original IAM analysis uses Just Doors’ current public planning context to examine that handoff. The subject is how a business explains an enquiry and its supporting information. It is not advice on measuring an opening, choosing hardware, determining a fire rating or installing a door. A clear story can organise a question without answering a technical question prematurely."
+          ],
+          "image": {
+            "src": "/brand-journal/door-opening-record-identity.svg",
+            "alt": "Original IAM narrow diagram: opening mark, observed context and record date.",
+            "caption": "Original IAM communications framework. A project record supports a discussion; it does not approve a door assembly."
+          }
+        },
+        {
+          "heading": "Give the opening a name before giving the offer a headline",
+          "paragraphs": [
+            "A useful enquiry record identifies the opening in language the project team can recognise. For a hypothetical building discussion, west service entrance is more useful than a second file called door photo final. Keep the supplied project reference, the area and the date together. If a description is uncertain, preserve that uncertainty rather than turning it into a product specification. This is an editorial example, not a customer project.",
+            "For marketing, the same discipline makes case studies easier to understand. Explain what the business was asked to review and which part of the project it actually contributed. A door leaf, frame, hardware package and surrounding construction can involve different responsibilities. An attractive headline should help a reader understand that contribution, not imply that one company supplied or approved every part."
+          ]
+        },
+        {
+          "heading": "Separate a planning record from an accepted selection",
+          "paragraphs": [
+            "The current [Just Doors website](https://www.justdoors.co/) includes a door-schedule planning tool. Its wording explains that a selected reference file remains in the browser and that the user must attach the original file in their email app. Those visible controls support preparation; they are not proof that a file reached a contractor or that a proposed item was accepted.",
+            "That distinction suggests a useful content structure: show the question, identify the information available and state what still needs review. A draft schedule can organise a discussion, while a supplier proposal records an offer and a later project record may establish an agreed decision. Keep their status visible. Do not rename a worksheet as an approved schedule simply because it looks complete or exports cleanly."
+          ],
+          "image": {
+            "src": "/brand-journal/door-opening-record-decision.svg",
+            "alt": "Original IAM narrow diagram separating a planning note, proposed scope and confirmed decision.",
+            "caption": "Original IAM communications framework. A project record supports a discussion; it does not approve a door assembly."
+          }
+        },
+        {
+          "heading": "Explain the boundary around the door",
+          "paragraphs": [
+            "A door story often needs to say what happens around the opening. Existing finishes, access arrangements, adjacent work and the handover can shape the conversation even when the central product looks familiar. A marketing brief should name the business role and the questions it is prepared to discuss, while leaving project-specific conditions with the responsible reviewers.",
+            "Just Doors’ public installation section identifies Rambo Walls & Ceilings as its current installation and related-construction contact. The marketing lesson is to keep that named role attached to the relevant work. It does not establish the accepted scope of a particular project, current availability, a product listing or an approval. Confirm those details directly rather than importing them from a general service description."
+          ]
+        },
+        {
+          "heading": "Let each photograph establish a limited, useful fact",
+          "paragraphs": [
+            "A photograph can show the appearance of an opening or a documented stage of work. On its own, it cannot establish the rating, compatibility or accepted performance of the assembly. A useful caption explains what is shown, who supplied the image and what contribution is being documented. Keep technical conclusions attached to the applicable records and professional review.",
+            "The hero in this article is an original AI editorial concept of commercial and timber doors beside planning records. It is not a Just Doors installation, a manufacturer product photograph or evidence of a particular assembly. A real project story would need permission-cleared images and accurate project credit. Where the evidence is limited, a smaller truthful account is more useful than an impressive unsupported claim."
+          ]
+        },
+        {
+          "heading": "Keep the recipient visible at the point of action",
+          "paragraphs": [
+            "The checked Just Doors project route displays Rambo’s 778-773-2790 and rambowallceiling@gmail.com. Its schedule workflow opens an email draft; the visitor still needs to attach the documents and send through their own email app. No file upload, delivery, contractor response, booking or payment was tested in this review. A visible email action is a route to a conversation, not confirmation of service.",
+            "The separate IAM enquiry below concerns marketing and editorial work. It does not receive a door order on Rambo’s behalf. This separation should remain clear in the copy, button label and follow-up expectation: readers need to know whether they are preparing notes, opening a draft or contacting the business responsible for the work. The existing [Rambo website](https://rambowalls.com/) provides related business context."
+          ],
+          "image": {
+            "src": "/brand-journal/door-opening-record-handoff.svg",
+            "alt": "Original IAM narrow diagram connecting project record, named recipient and confirmed next action.",
+            "caption": "Original IAM communications framework. A project record supports a discussion; it does not approve a door assembly."
+          }
+        },
+        {
+          "heading": "Build the article around the next useful decision",
+          "paragraphs": [
+            "A strong door-business article can move from an identifiable opening to a documented contribution and then to the correct recipient. That gives the reader a reason to continue beyond a product image. It also creates a practical editorial test: does every heading help someone understand the work, the evidence or the next conversation?",
+            "For a door supplier, installer or related trade, explore [IAM contractor marketing](/contractors) and [Vancouver SEO and industry marketing](/seo/vancouver). [Discuss an original door-industry content brief with IAM](/contact?request=guest-post&ref_site=justdoors.co). Bring the actual service scope, permitted project material and the buyer question. Original content and a verified release do not establish rankings, enquiry volume or sales."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "label": "Just Doors — current door planning and named project contact,checked October 29, 2026",
+          "href": "https://www.justdoors.co/"
+        },
+        {
+          "label": "Rambo Walls & Ceilings — related business context and project enquiry ownership",
+          "href": "https://rambowalls.com/"
+        }
+      ]
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
     "trade": "Industrial coatings marketing and project content",
     "tradeShort": "Coatings marketing",
     "plural": "industrial coatings businesses",
