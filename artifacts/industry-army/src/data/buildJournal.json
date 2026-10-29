@@ -1,6 +1,140 @@
 [
   {
     "brand": "Industry Army Marketing",
+    "trade": "Gas-service marketing and accurate enquiry content",
+    "tradeShort": "Gas-service marketing",
+    "plural": "gas-service businesses",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Vancouver and beyond",
+    "province": "BC",
+    "category": "Build Journal",
+    "date": "October 28, 2026",
+    "publishedAt": "2026-10-28T23:02:23-07:00",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "contactBusiness": "iam",
+    "campaignSite": "gasfitter.ca",
+    "campaignLabel": "Gas-service marketing",
+    "slug": "gasfitter-ca-industry-marketing-project-content-guide",
+    "title": "Gas-Service Marketing: Separate an Assessment Enquiry from a Booking",
+    "cardTitle": "Make the question, recipient and confirmed step clear.",
+    "excerpt": "Original Gasfitter.ca marketing guidance: distinguish an assessment enquiry from a booking, explain email-draft behaviour and preserve the named service contact.",
+    "metaDescription": "Gas-service marketing: clarify the visitor question, contact action and confirmed arrangement while preserving Gasfitter.ca’s named enquiry owner.",
+    "image": "/brand-journal/gasfitter-enquiry-stage-hero.svg",
+    "imageAlt": "Original IAM conceptual furnace and water-heater artwork explaining a gas-service enquiry. No specific equipment model, actual installation, technical connection or booking system is represented.",
+    "ogImage": "/brand-journal/gasfitter-enquiry-stage-share.jpg",
+    "ogImageAlt": "Original IAM graphic: an enquiry is not a confirmed visit; question, recipient and agreement.",
+    "faqHeading": "Gas-service marketing questions",
+    "faqs": [
+      {
+        "q": "Does an email button confirm a service visit?",
+        "a": "No. A draft, a sent enquiry and a separately confirmed business arrangement are different stages."
+      },
+      {
+        "q": "Is this article gas-fitting advice?",
+        "a": "No. It is original IAM marketing analysis about page intent and contact ownership, not technical instruction or an equipment assessment."
+      },
+      {
+        "q": "Who is the checked Gasfitter.ca enquiry contact?",
+        "a": "The current home, Vancouver and furnace pages identify Colin at colin@gasfitter.ca. IAM marketing enquiries use the separate IAM route."
+      }
+    ],
+    "cta": {
+      "eyebrow": "ADVERTISEMENT · IAM / GAS-SERVICE MARKETING",
+      "heading": "Make the next service conversation clear",
+      "body": "Bring the real business details, permitted visual evidence and the customer question. Discuss original service content and branding with IAM.",
+      "buttonText": "Discuss gas-service marketing",
+      "buttonHref": "/contact?request=guest-post&ref_site=gasfitter.ca"
+    },
+    "richContent": {
+      "intro": "A service page can help someone ask a clearer question without pretending an appointment has been booked. This original IAM guide uses Gasfitter.ca’s current public pages to separate the visitor’s intention, the named enquiry recipient and the work that still needs confirmation.",
+      "sections": [
+        {
+          "heading": "A service word can conceal different intentions",
+          "paragraphs": [
+            "A visitor reading about a furnace, boiler or fireplace may want a different conversation from the next person on the same page. One may be gathering information about existing equipment; another may be considering a change. Marketing should help identify the question without pretending the page has diagnosed the equipment or agreed the work.",
+            "Gasfitter.ca currently publishes equipment and location guides with a named email contact. Its public Vancouver and furnace pages keep the enquiry with Colin at colin@gasfitter.ca. This article is original IAM analysis of that service-page communication, not gas-fitting instruction, a technical assessment or a claim that a contractor is available."
+          ]
+        },
+        {
+          "heading": "Ask which conversation the visitor wants to start",
+          "paragraphs": [
+            "A useful first step can distinguish an enquiry about existing equipment from a question about a proposed project. Let the visitor describe the topic in ordinary language. The page does not need to force a technical diagnosis or select a replacement before the responsible professional has reviewed the actual situation.",
+            "For a conceptual marketing example, imagine a homeowner asking whether the next discussion concerns an assessment or a proposed replacement. That is not a real service call or advice about which option to choose. Its value is showing how the enquiry can state the question clearly while leaving the decision open."
+          ],
+          "image": {
+            "src": "/brand-journal/gasfitter-question-stage.svg",
+            "alt": "Original IAM marketing diagram separating an existing-equipment question, a planned change and a point for professional review.",
+            "caption": "Original IAM communications example. No equipment condition or required work is established."
+          }
+        },
+        {
+          "heading": "Name the contact action accurately",
+          "paragraphs": [
+            "A button that opens an email draft does not send the message, reserve a visit or dispatch a technician. The current Gasfitter.ca contact wording explains that the visitor sends the draft from their own email application. Keep that description close to the action so the visitor knows what still needs to happen.",
+            "The next stage also needs care. A sent enquiry is not proof that a person has reviewed it or accepted the work. Avoid a confirmation message that implies a booking, fixed response time or emergency service unless the actual arrangement supports that statement. This is a marketing distinction, not a description of a tested Gasfitter.ca dispatch system."
+          ],
+          "image": {
+            "src": "/brand-journal/gasfitter-action-stage.svg",
+            "alt": "Original IAM contact-stage diagram separating an email draft, a sent enquiry and a separately confirmed arrangement.",
+            "caption": "Original IAM publishing diagram. No message delivery or appointment is represented."
+          }
+        },
+        {
+          "heading": "Let the location page explain its role",
+          "paragraphs": [
+            "A city guide can help a reader find relevant planning context without establishing a local office, a dedicated crew or confirmed coverage at an address. The [Gasfitter.ca Vancouver page](https://www.gasfitter.ca/vancouver/) presents a local planning reference and retains the named email route. A reader still needs the actual project and provider arrangements confirmed.",
+            "For marketing content, make that role understandable rather than quietly turning the city heading into a service promise. Keep the same business identity and recipient throughout the page. If another named provider is featured in a separate article, verify that article’s contact instead of replacing every route across the publication."
+          ]
+        },
+        {
+          "heading": "Illustrations should explain the topic, not prove the work",
+          "paragraphs": [
+            "Gasfitter.ca labels its concept imagery rather than presenting it as completed installation photography. That is an important distinction for a service business: a visual can introduce a category without demonstrating who performed a job or what happened at a customer property.",
+            "The hero and narrow diagrams here are original IAM communications illustrations. They are not photographs, equipment designs, diagnostic guides or screenshots of a booking application. Genuine project material needs its own permissions, accurate work description and named contributor. A polished diagram should not be used as evidence of credentials, inspection results or completed service."
+          ]
+        },
+        {
+          "heading": "Keep the planning recipient and performing provider distinct",
+          "paragraphs": [
+            "The current [Gasfitter.ca homepage](https://www.gasfitter.ca/) identifies colin@gasfitter.ca and asks readers to confirm contractor availability and project scope directly. This article preserves that public route. It does not transfer these enquiries to BeeWarm, invent a service telephone number or imply that IAM’s marketing form accepts gas work.",
+            "The relevant person still needs to confirm who will perform an assessment, what the agreed work includes and whether a visit is available. Those are later business arrangements, not outcomes established by reading a guide or opening an email. No enquiry was sent during this review and no inbox delivery was tested."
+          ],
+          "image": {
+            "src": "/brand-journal/gasfitter-owner-stage.svg",
+            "alt": "Original IAM ownership diagram distinguishing a planning publication, its named contact and the responsible service provider.",
+            "caption": "Original IAM marketing graphic. The actual provider and work arrangement require confirmation."
+          }
+        },
+        {
+          "heading": "Give the marketing page its own clear next step",
+          "paragraphs": [
+            "A service explanation, a location guide and a project account each have a different job. Connect them when the link answers the reader’s next question. Keep factual sources and real contact ownership attached instead of filling a page with repeated location phrases or unsupported service claims.",
+            "For branding, websites and original trade publishing, explore [IAM’s Vancouver SEO and industry marketing](/seo/vancouver) or [contractor marketing](/contractors). [Discuss a gas-service marketing brief with IAM](/contact?request=guest-post&ref_site=gasfitter.ca) when the need is marketing. Bring the actual company details, permitted media and the customer question to clarify. A published page is not proof of rankings, bookings, enquiries or revenue."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "label": "Gasfitter.ca — current planning context, imagery labels and named contact checked October28,2026",
+          "href": "https://www.gasfitter.ca/"
+        },
+        {
+          "label": "Vancouver guide — actual local planning role and enquiry contact checked October28,2026",
+          "href": "https://www.gasfitter.ca/vancouver/"
+        },
+        {
+          "label": "Furnace service page — actual topic and contact destination checked October28,2026",
+          "href": "https://www.gasfitter.ca/furnaces/"
+        }
+      ]
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
     "trade": "Estimating business marketing and cost-context content",
     "tradeShort": "Estimating businesses",
     "plural": "estimating businesses",
