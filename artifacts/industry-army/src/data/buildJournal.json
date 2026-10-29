@@ -1,6 +1,146 @@
 [
   {
     "brand": "Industry Army Marketing",
+    "trade": "Branding, useful tools and named-business publishing",
+    "tradeShort": "Brand and build journal",
+    "plural": "independent businesses",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Vancouver and beyond",
+    "province": "BC",
+    "category": "Build Journal",
+    "date": "October 28, 2026",
+    "publishedAt": "2026-10-28T20:38:12-07:00",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "contactBusiness": "iam",
+    "slug": "useful-tools-clear-enquiries-plowwow-beewarm",
+    "title": "Useful Tools, Clear Enquiries: PlowWow and BeeWarm’s Latest Build",
+    "cardTitle": "Useful tools. Recognizable brands. Clear next conversations.",
+    "excerpt": "Tonight’s verified IAM portfolio work connects PlowWow’s editable city worksheets and Wow visuals with Robert’s BeeWarm equipment guides, preserving clear limits and service contacts.",
+    "metaDescription": "IAM’s October 28 build journal: PlowWow calculator city resources and Wow visuals, plus BeeWarm model guides with accurate context and named-business enquiries.",
+    "image": "/brand-journal/wow-scene.jpg",
+    "imageAlt": "Approved AI-illustrated Wow brand artwork from IAM’s PlowWow media library. Brand illustration, not service footage or a customer project; the wider Snow Intelligence story remains a first-year beta.",
+    "ogImage": "/brand-journal/daily-oct28-tools-share.jpg",
+    "ogImageAlt": "Original IAM October28 journal graphic connecting useful PlowWow and BeeWarm resources with clear enquiries.",
+    "faqHeading": "Questions about this release",
+    "faqs": [
+      {
+        "q": "Does the snow worksheet provide a contractor quote?",
+        "a": "No. Its fictional starting assumptions are editable and its result is educational. Actual scope, price and availability need review with PlowWow."
+      },
+      {
+        "q": "Were the equipment guides personal product tests by Robert?",
+        "a": "No. They are disclosed editorially prepared BeeWarm series guides using linked manufacturer sources, not personal tests or completed-installation reports."
+      },
+      {
+        "q": "Does publication prove search or business results?",
+        "a": "No. The verified outcome is live content and checked page functionality, not indexing, rankings, enquiries or sales."
+      }
+    ],
+    "cta": {
+      "eyebrow": "INDUSTRY ARMY MARKETING · BRAND + BUILD",
+      "heading": "Build the useful next step around your brand",
+      "body": "Bring your customer question, current business information and permitted media. Discuss a connected brand, website and publishing scope with IAM.",
+      "buttonText": "Discuss a brand and publishing project",
+      "buttonHref": "/contact?request=branding"
+    },
+    "richContent": {
+      "intro": "A useful page should leave its reader better prepared for the next conversation. Tonight’s verified IAM portfolio work joins a recognizable snow brand, editable planning tools and carefully bounded equipment guides—while keeping the actual service enquiries with PlowWow and Robert at BeeWarm.",
+      "sections": [
+        {
+          "heading": "Build the brand around a useful first question",
+          "paragraphs": [
+            "A recognizable character can help someone remember a snow brand. A model-specific guide can help a homeowner recognize the equipment they are asking about. Neither replaces the information a business needs to discuss actual work. The useful connection is a page that helps the reader prepare, then makes the right contact easy to find.",
+            "This October 28 journal edition groups verified releases from PlowWow’s educational calculator and Robert Hamilton’s BeeWarm guide series. These are published resources and visual improvements, not evidence of new customers, measured search gains or completed installations. The common business purpose is clearer preparation before an enquiry."
+          ]
+        },
+        {
+          "heading": "PlowWow’s calculator now gives 27 places a starting point",
+          "paragraphs": [
+            "The [Lower Mainland calculator directory](https://snowremovalcalculator.com/lower-mainland/) now links 27 municipality pages covering Metro Vancouver and the Fraser Valley Regional District. The directory distinguishes similarly named jurisdictions, including Langley City and Township and the City and District of North Vancouver. Each page provides a property scenario and an editable worksheet rather than asserting one citywide price.",
+            "The [Vancouver example](https://snowremovalcalculator.com/snow-removal-cost/vancouver/) separates pedestrian and vehicle work in its fictional planning brief. Its inputs can be changed, and its result is explicitly a modelled sample. It is not a local market average, an address-derived estimate, a weather forecast, a reviewed contractor quote or a booking. A city page does not confirm service at every address."
+          ],
+          "image": {
+            "src": "/brand-journal/daily-oct28-snow.svg",
+            "alt": "Original IAM diagram connecting PlowWow educational assumptions, editable inputs and a separately reviewed quote.",
+            "caption": "Original IAM explanatory graphic. A worksheet result remains separate from a contractor’s offer."
+          }
+        },
+        {
+          "heading": "Wow makes the tool recognizable without disguising its stage",
+          "paragraphs": [
+            "The calculator’s latest visual release brings the approved Wow character and illustrated video forward on the homepage, directory and city pages. Desktop and phone views were checked on the actual domain, including video decoding, pause control and page overflow. The animation is labelled as illustration, not customer service footage.",
+            "That is a branding improvement with a practical role: visitors can recognize the resource as PlowWow while exploring a specific question. It does not establish route capacity, advanced scanning, AR, billing or bylaw functionality. PlowWow’s wider Snow Intelligence story retains its beta and planned-feature boundaries; this calculator release should not be used as proof that those separate ideas are working."
+          ]
+        },
+        {
+          "heading": "BeeWarm’s generator guide narrows the equipment question",
+          "paragraphs": [
+            "The new [KOHLER 20RCA guide](https://naturalgasgenerators.ca/guides/kohler-20rca-18kw-natural-gas-home-backup) is organized around the exact model and fuel context. It explains the distinction between the manufacturer’s natural-gas and propane output figures instead of treating the model’s headline number as a universal household promise. The reader is directed toward an actual property and load discussion.",
+            "The article identifies Robert Hamilton at BeeWarm as the local enquiry contact and links its manufacturer sources. Its editorial preparation is disclosed; it does not claim Robert personally tested that generator, completed a pictured installation or holds manufacturer authorization. Its conceptual diagrams explain the planning conversation without impersonating equipment photographs."
+          ],
+          "image": {
+            "src": "/brand-journal/daily-oct28-model.svg",
+            "alt": "Original IAM diagram connecting exact model context, current sources and the household question for BeeWarm.",
+            "caption": "Original IAM publishing diagram. It is not equipment sizing or an installation design."
+          }
+        },
+        {
+          "heading": "The hot-water guide separates labels that are easy to confuse",
+          "paragraphs": [
+            "The new [Bradford White RG240T6N guide](https://hotwatertankinstallation.ca/blog/bradford-white-rg240t6n-40-gallon-capacity-age-recovery) uses the existing singular hotwatertankinstallation.ca domain. It distinguishes the tank’s stated capacity from recovery and first-hour delivery, then separates manufacture date, installation history and warranty questions. The aim is a more precise household brief, not a universal lifespan or shower-duration claim.",
+            "Like the generator article, this is an editorially prepared BeeWarm series guide with direct source links and original explanatory artwork. It supports a conversation with Robert; it is not a property assessment or proof that a model suits every home. Each guide retains its own equipment question and source context, giving the reader a specific starting point rather than a generic service pitch."
+          ]
+        },
+        {
+          "heading": "The next contact belongs to the business doing the work",
+          "paragraphs": [
+            "Snow-service questions go to [PlowWow’s quote route](https://www.plowwow.com/quote), with actual scope, price, timing and availability confirmed directly. Generator or hot-water project questions go to [Robert at BeeWarm](https://beewarm.ca/contact/): call or text 604-765-8424, or email bee@beewarm.ca. The published guides keep that ownership visible instead of sending a service enquiry into a general marketing conversation.",
+            "IAM handles branding, website and publishing discussions through its own contact route. Those marketing conversations remain separate from a snow-service request or heating project. The linked service pages keep their named-business contact routes and controls. No enquiry was sent during verification, and no inbox delivery or confirmed appointment is claimed."
+          ],
+          "image": {
+            "src": "/brand-journal/daily-oct28-contact.svg",
+            "alt": "Original IAM enquiry ownership diagram: snow to PlowWow, heating projects to Robert and marketing to IAM.",
+            "caption": "Original IAM communications graphic. Named-business enquiry ownership stays separate."
+          }
+        },
+        {
+          "heading": "What another business can take from this build",
+          "paragraphs": [
+            "Start with a question that helps a real person prepare. Give a calculator editable assumptions, a product guide an exact model and sources, and a visual brand an honest explanation of what the artwork represents. Then identify which business can review the actual request and what remains unconfirmed. Those choices make a page useful before any ranking or conversion claim is available.",
+            "The work verified tonight is the publication of resources and a tested visual release on their actual domains. It is not a claim about indexing, traffic, leads or sales. For a similar brand-and-content project, [tell IAM what your customers need to understand](/contact?request=branding). Bring the existing business details, permitted media and the next conversation you want the website to support."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "label": "PlowWow calculator — live27-city directory and illustrative planning boundary, checked October28",
+          "href": "https://snowremovalcalculator.com/lower-mainland/"
+        },
+        {
+          "label": "Vancouver worksheet — live editable example and quote destination, checked October28",
+          "href": "https://snowremovalcalculator.com/snow-removal-cost/vancouver/"
+        },
+        {
+          "label": "BeeWarm series — published KOHLER20RCA guide and manufacturer links, October28",
+          "href": "https://naturalgasgenerators.ca/guides/kohler-20rca-18kw-natural-gas-home-backup"
+        },
+        {
+          "label": "BeeWarm series — published BradfordWhiteRG240T6N guide and source links, October28",
+          "href": "https://hotwatertankinstallation.ca/blog/bradford-white-rg240t6n-40-gallon-capacity-age-recovery"
+        },
+        {
+          "label": "Robert at BeeWarm — actual contact and direct-email limitations, checkedOctober28",
+          "href": "https://beewarm.ca/contact/"
+        }
+      ]
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
     "trade": "Decorating marketing and project-choice content",
     "tradeShort": "Decorating",
     "plural": "decorating businesses",
