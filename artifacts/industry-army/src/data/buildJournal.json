@@ -1,6 +1,129 @@
 [
   {
     "brand": "Industry Army Marketing",
+    "trade": "Gas-trade contributor content and editorial evidence",
+    "tradeShort": "Gas-trade publishing",
+    "plural": "gas-trade businesses",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Vancouver and beyond",
+    "province": "BC",
+    "category": "Build Journal",
+    "date": "October 29, 2026",
+    "publishedAt": "2026-10-29T00:29:46-07:00",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "contactBusiness": "iam",
+    "campaignSite": "gasfitter.io",
+    "campaignLabel": "Gas-trade publishing",
+    "slug": "gasfitter-io-industry-marketing-project-content-guide",
+    "title": "Gasfitter.io: A Contributor Brief Built Around Relevant Evidence",
+    "cardTitle": "Build a trade story around relevant evidence.",
+    "excerpt": "Original IAM guidance for a gas-trade contributor brief: establish the actual role, media permission, source support and a properly checked publishing destination.",
+    "metaDescription": "Gasfitter.io contributor-content planning: relevant project roles, permitted media, supported claims and honest publication checks, with an IAM marketing route.",
+    "image": "/brand-journal/gasfitter-contributor-evidence-hero.svg",
+    "imageAlt": "Original IAM concept illustration of generic heating equipment, a camera and a contributor record. Not an installation photograph, technical plan or credential verification.",
+    "ogImage": "/brand-journal/gasfitter-contributor-evidence-share.jpg",
+    "ogImageAlt": "Original IAM editorial graphic: relevant work and verifiable evidence for gas-trade publishing.",
+    "faqHeading": "Gas-trade contributor questions",
+    "faqs": [
+      {
+        "q": "Does a visible contributor form prove delivery?",
+        "a": "No. This review did not submit the form or test delivery, payment or distribution."
+      },
+      {
+        "q": "What should a contributor prepare?",
+        "a": "The actual company and project role, a useful reader question, supported factual notes and media with publication permission and accurate credits."
+      },
+      {
+        "q": "Does IAM provide technical gas-fitting approval here?",
+        "a": "No. This is original marketing and editorial guidance, not installation advice, a credential check or a technical review."
+      }
+    ],
+    "cta": {
+      "eyebrow": "ADVERTISEMENT · IAM / GAS-TRADE PUBLISHING",
+      "heading": "Give useful trade content a stronger brief",
+      "body": "Bring the real contribution, permitted media and supporting records. Discuss original industry publishing and branding with IAM.",
+      "buttonText": "Discuss a publishing brief",
+      "buttonHref": "/contact?request=guest-post&ref_site=gasfitter.io"
+    },
+    "richContent": {
+      "intro": "A trade publishing opportunity becomes useful when the contribution is specific, the images can be used and the claims have support. This original IAM guide sets out a practical contributor brief for Gasfitter.io while clearly recording the publishing-route gaps found in our current review.",
+      "sections": [
+        {
+          "heading": "Begin with the work the contributor can actually explain",
+          "paragraphs": [
+            "A strong trade story starts with a precise contribution. Ask what the business did, what material it supplied and which part of a project it is entitled to describe. A photograph alone cannot establish responsibility for the whole job. The editorial brief should make that boundary easy for a reader to understand.",
+            "For a conceptual example, a contractor might contribute a project account about organising an equipment replacement. The useful story could describe the customer communication and documented project sequence. It should not become an equipment recommendation, a code interpretation or a claim that the contributor designed every related system. This example is editorial planning, not an actual customer project."
+          ],
+          "image": {
+            "src": "/brand-journal/gasfitter-contributor-topic.svg",
+            "alt": "Original IAM narrow diagram: actual work, specific role and reader question.",
+            "caption": "Original IAM editorial framework. Establish relevance before discussing distribution."
+          }
+        },
+        {
+          "heading": "Match the topic to the trade instead of filling a template",
+          "paragraphs": [
+            "Choose one question a prospective customer would recognise. A project account can explain the documented scope and the decisions the business was responsible for communicating. A business profile can explain the company’s role and how readers can check its public information. A manufacturer announcement needs the original announcement and a clear publication date. These are different article types.",
+            "Read every heading, example, measurement and category for relevance. Words copied from another trade can make a polished page confusing. A gas-trade article should not inherit unrelated sheet quantities or finishing terminology simply because those fields existed in a template. This is an editorial quality check, not a technical review of gas equipment."
+          ]
+        },
+        {
+          "heading": "Collect a small, usable evidence pack",
+          "paragraphs": [
+            "Request an approved company name, a named editorial contact, the contributor’s project role and a short explanation of what the reader should learn. Keep an internal note of where each factual statement came from. If the supplied information does not support a detail, leave the detail out or ask for clarification before publication.",
+            "For media, record who created it and who can grant publication permission. Ask whether the image can be cropped and credited, and remove private customer information from the material prepared for publication. Do not assume that a photo sent in a message can be reused everywhere or that it proves the condition of an installation."
+          ],
+          "image": {
+            "src": "/brand-journal/gasfitter-contributor-permission.svg",
+            "alt": "Original IAM narrow diagram: owner permission, clear attribution and private details removed.",
+            "caption": "Original IAM media checklist. Permission and attribution travel with the asset."
+          }
+        },
+        {
+          "heading": "Separate an observed fact from a professional claim",
+          "paragraphs": [
+            "A contributor can explain what its records show without turning the article into an unsupported guarantee. Statements about licensing, certification, compliance, insurance or inspection need their own current evidence and appropriate review. A website badge or an attractive illustration is not that evidence. IAM marketing preparation does not establish professional qualifications.",
+            "When an article depends on a technical statement, identify the primary document and the person responsible for checking its application. Record the document’s version and the scope of the review. If that support is unavailable, keep the article within documented business communication and project description. This guide provides no installation, diagnostic or safety instructions."
+          ],
+          "image": {
+            "src": "/brand-journal/gasfitter-contributor-review.svg",
+            "alt": "Original IAM narrow diagram separating an observed fact, supporting document and named reviewer.",
+            "caption": "Original IAM publishing control. A review record is more useful than an unsupported badge."
+          }
+        },
+        {
+          "heading": "Check the contributor destination as carefully as the article",
+          "paragraphs": [
+            "Our October 29 review found that [Gasfitter.io’s contributor page](https://www.gasfitter.io/guest-post) displays a content form. That observation does not prove a submission reaches an editor, that payment works or that any promised distribution occurs. No form was submitted and no payment or social publishing was tested. The public contact displayed on the site is build@buildershaus.com.",
+            "The knowledge route currently renders a not-found heading while returning HTTP 200, and the contributor route retains the homepage canonical. Those are unresolved publishing gaps, not completed improvements. This IAM article does not repair those routes or certify the site’s promotional claims."
+          ]
+        },
+        {
+          "heading": "Give a draft a meaningful acceptance decision",
+          "paragraphs": [
+            "Before approving a story, ask whether its title matches the actual contribution, whether its sources support the claims and whether the media can be published with an accurate caption. Then check the rendered page: the heading, canonical address, images, contact destination and archive discovery all need to agree. A saved draft or a successful server response is not the same as an accepted release.",
+            "For a contributor, the practical next step is to prepare the small evidence pack rather than promise reach in advance. For an industry business seeking original content, brand positioning and useful local service pages, see [IAM’s Vancouver SEO and industry marketing](/seo/vancouver) and [contractor marketing](/contractors). [Discuss a Gasfitter.io publishing brief with IAM](/contact?request=guest-post&ref_site=gasfitter.io). That route is for marketing discussion; it does not submit a gas-service request or establish publication, rankings or enquiries. For a related construction publishing example, [IAM’s BuildersHaus contributor guide](/blog/buildershaus-contractor-project-story-submission-guide) explains how a broader building brand can introduce a specific contribution."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "label": "Gasfitter.io — public brand context and displayed contact, checked October 29, 2026",
+          "href": "https://www.gasfitter.io/"
+        },
+        {
+          "label": "Gasfitter.io contributor page — visible form only; delivery and distribution untested",
+          "href": "https://www.gasfitter.io/guest-post"
+        }
+      ]
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
     "trade": "Gas-service marketing and accurate enquiry content",
     "tradeShort": "Gas-service marketing",
     "plural": "gas-service businesses",
