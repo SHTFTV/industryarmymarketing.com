@@ -1,6 +1,139 @@
 [
   {
     "brand": "Industry Army Marketing",
+    "trade": "Log cabin marketing",
+    "tradeShort": "Cabin marketing",
+    "plural": "cabin businesses",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Vancouver and beyond",
+    "province": "BC",
+    "category": "Build Journal",
+    "date": "October 29, 2026",
+    "publishedAt": "2026-10-29T22:42:10.842562+00:00",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "contactBusiness": "iam",
+    "campaignSite": "logcabins.ltd",
+    "campaignLabel": "Log cabin marketing",
+    "slug": "logcabins-ltd-industry-marketing-project-content-guide",
+    "title": "Log Cabin Marketing: Turn Inspiration Into a Clear Project Brief",
+    "cardTitle": "From cabin inspiration to a clear brief.",
+    "excerpt": "Original IAM log-cabin marketing analysis: connect design inspiration, a clear offer boundary and the right project conversation.",
+    "metaDescription": "Log cabin marketing: explain design inspiration, offer scope, regional context, permitted project photos and the next enquiry. Original IAM industry analysis.",
+    "image": "/brand-journal/log-cabin-project-brief-hero.jpg",
+    "imageAlt": "Original AI editorial illustration of a fictional timber cabin beside a design sketch and timber sample. Not a LogCabins property, product model or completed client project.",
+    "ogImage": "/brand-journal/log-cabin-project-brief-share.jpg",
+    "ogImageAlt": "IAM log cabin marketing: inspiration, scope and a clear project brief. Original fictional timber-cabin illustration.",
+    "faqHeading": "Cabin marketing and enquiry questions",
+    "faqs": [
+      {
+        "q": "Does a cabin concept image establish build availability?",
+        "a": "No. Current offers, location, scope and scheduling need confirmation with the responsible provider."
+      },
+      {
+        "q": "What should a cabin marketing brief explain first?",
+        "a": "The intended use, broad project area, actual offer boundary, source of images and the next question to discuss."
+      },
+      {
+        "q": "Does the IAM contact card receive cabin orders?",
+        "a": "No. The IAM route concerns marketing and editorial work; project enquiries remain with the responsible cabin business."
+      }
+    ],
+    "cta": {
+      "eyebrow": "ADVERTISEMENT · IAM / CABIN MARKETING",
+      "heading": "Give cabin inspiration a useful next step",
+      "body": "Bring your actual offer, permitted project material and the buyer question. Discuss an original cabin-industry content brief with IAM.",
+      "buttonText": "Discuss cabin marketing",
+      "buttonHref": "/contact?request=guest-post&ref_site=logcabins.ltd"
+    },
+    "richContent": {
+      "intro": "A cabin image can start a dream. A clear project brief helps the right business understand what the reader actually wants to discuss. This original IAM guide connects cabin inspiration, offer boundaries and the next useful enquiry.",
+      "sections": [
+        {
+          "heading": "Start with the life the cabin is meant to support",
+          "paragraphs": [
+            "A cabin photograph can suggest a quieter morning, a place to work or room for visiting family. Those are useful starting points for a marketing story. They become a more useful enquiry when the reader can explain the intended use in their own words. An occasional retreat, a home office and a proposed full-time residence raise different questions; a beautiful exterior should not silently answer them all.",
+            "For a cabin business, the first content decision is therefore a buyer question rather than a list of timber adjectives. What will someone do here, who will use the space and what needs discussing next? A short example can make the distinction tangible: a hypothetical buyer likes a large glazed living area but wants to discuss privacy and furniture placement. That is a design conversation, not a confirmed product selection or a construction booking."
+          ]
+        },
+        {
+          "heading": "Give inspiration a visible status",
+          "paragraphs": [
+            "The current [LogCabins.ltd website](https://www.logcabins.ltd/) presents cabin models, a style gallery and a simulated construction sequence. This article uses that public presentation as context for original IAM marketing analysis. It does not validate displayed inventory, pricing, technical calculations, project permissions or build slots. A visitor should confirm any proposed purchase and service directly with the responsible business.",
+            "A useful editorial label tells the reader whether an image is a design concept, a supplied product photograph or a documented completed project. Keep that label with the image when it becomes a social card or a downloadable brief. A rendering can explain an idea very well; its value depends on the caption describing its real purpose. The fictional timber-cabin illustration above introduces this article’s topic and is not a LogCabins property or named model."
+          ],
+          "image": {
+            "src": "/brand-journal/log-cabin-brief-band-1.svg",
+            "alt": "Style, scope and next step in a cabin marketing brief.",
+            "caption": "Original IAM editorial framework for a clearer project conversation."
+          }
+        },
+        {
+          "heading": "Make the offer boundary easy to find",
+          "paragraphs": [
+            "Cabin marketing often brings several offers into one page: design discussion, a building package, delivery, installation, finishing or land. A reader may reasonably wonder which of these is actually being proposed. Explain the offer in ordinary language before using a broad term such as turnkey. Where the scope is still being discussed, identify the unanswered parts instead of presenting the widest possible interpretation.",
+            "An original content brief can use three columns: included in the proposed discussion, separately confirmed and not yet assessed. The publisher should obtain those statements from the actual provider rather than filling them from a photograph. For example, a picture of a furnished cabin does not establish that furniture, utility connections or site preparation are included. Clear boundaries help a buyer ask a more precise question without pretending the article is a quotation."
+          ]
+        },
+        {
+          "heading": "Keep place, currency and availability together",
+          "paragraphs": [
+            "A cabin page can reach readers far outside its intended market. That makes geography a practical content issue. State where the business is prepared to discuss work, what the displayed currency means and how the reader should obtain a current offer. Location belongs beside the relevant service statement rather than only in a footer. An inspirational gallery may cover one setting while a supplier serves another.",
+            "A useful enquiry can identify the broad project area and the buyer’s intended use without asking for private title documents or a full home address in public comments. Current scheduling, delivery arrangements and the accepted service area still need a direct discussion. Repeating a seasonal headline in a later article does not reconfirm a build slot. Marketing should give the reader a route to a current answer."
+          ],
+          "image": {
+            "src": "/brand-journal/log-cabin-brief-band-2.svg",
+            "alt": "Separate a concept, proposal and confirmed agreement.",
+            "caption": "Original IAM editorial framework for a clearer project conversation."
+          }
+        },
+        {
+          "heading": "Let the project story show a contribution",
+          "paragraphs": [
+            "For a genuine completed-project feature, explain who supplied the photographs and what the named company contributed. A timber package supplier, an installer and a finishing contractor can each have a worthwhile story about the same cabin. Give each role its own accurate description. A wide view of the finished property should not imply that every visible element came from the featured business.",
+            "A strong sequence might show the overall setting, one relevant detail and the stage being discussed. Captions should identify the actual work and the permitted level of location detail. Obtain permission before publishing clients, neighbours, personal possessions or identifying documents. When the only available material is an early design image, write a design discussion instead of inventing a completed-project narrative."
+          ]
+        },
+        {
+          "heading": "Build a brief that survives the first handoff",
+          "paragraphs": [
+            "Give a prospective customer a compact structure for the next conversation: intended use, broad area, preferred features, stage of planning and the question they want answered first. Allow an honest unknown. Someone who has not settled on a site should be able to say that without being presented as ready to order a building. Someone with an existing concept should be able to identify its source and status.",
+            "The business can then explain what information it needs next and who will review it. That is more useful than an indiscriminate download containing every cabin picture. Keep the discussion record, any subsequent proposal and a confirmed agreement distinguishable. A completed enquiry form is a request for contact; it does not itself establish an accepted design, a site assessment or a booking."
+          ],
+          "image": {
+            "src": "/brand-journal/log-cabin-brief-band-3.svg",
+            "alt": "Send a clear brief to a named business and clarify the next reply.",
+            "caption": "Original IAM editorial framework for a clearer project conversation."
+          }
+        },
+        {
+          "heading": "Use each page to answer one useful cabin question",
+          "paragraphs": [
+            "A coherent content programme can cover different decisions without repeating the same sales page. One article might compare ways to describe the intended use. Another could explain what a supplier needs to understand a delivery discussion. A permission-cleared project feature can show a specific contribution. Link them according to the reader’s next question, with a clear service page that explains the business behind the material.",
+            "For search-focused publishing, the cabin subject, actual business scope and regional context should agree. Adding a city name to an unchanged gallery does not create local evidence. Use original explanations and documented project material where it exists, preserving uncertainty where it does not. Publishing a well-structured page is a useful deliverable; it is not proof of search placement, AI citation, enquiries or sales."
+          ]
+        },
+        {
+          "heading": "Bring the right enquiry to the right business",
+          "paragraphs": [
+            "The checked LogCabins page displays a telephone enquiry route at 604-866-1460. A visible route is not confirmation of a specific cabin offer, response time or service availability. Product, land and construction questions should be directed to the business responsible for the proposed work, with the scope confirmed in that conversation.",
+            "The IAM card on this article is separate: it is for marketing and editorial enquiries. If your business needs clearer cabin content, explore [IAM contractor marketing](/contractors) and [industry-focused SEO planning](/seo/vancouver), then [discuss a log-cabin marketing brief](/contact?request=guest-post&ref_site=logcabins.ltd). Bring your actual offer, permitted images and the buyer question you can help answer. A useful story starts with evidence your business can stand behind."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "label": "LogCabins.ltd — public cabin presentation and telephone enquiry route, checked October 29, 2026",
+          "href": "https://www.logcabins.ltd/"
+        }
+      ]
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
     "trade": "Door supply and installation marketing",
     "tradeShort": "Door marketing",
     "plural": "door suppliers and installers",
