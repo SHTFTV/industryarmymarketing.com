@@ -73,9 +73,13 @@ const ContactSection = ({
   const tierParam = (params.get("tier") || "").toLowerCase();
   const tier: "directory" | "exclusive" | null =
     tierParam === "directory" || tierParam === "exclusive" ? tierParam : null;
-  const request = ["marketing", "guest-post", "partnership"].includes(params.get("request") || "") ? params.get("request")! : "";
+  const marketIsVancouver = params.get("market") === "vancouver";
+  const request = ["marketing", "branding", "guest-post", "partnership"].includes(params.get("request") || "") ? params.get("request")! : "";
   const requestMessages: Record<string, string> = {
-    marketing: "I would like to discuss marketing for my business.",
+    marketing: marketIsVancouver
+      ? "I would like to discuss Vancouver SEO and industry marketing.\nWebsite:\nIndustry and main service:\nCustomers I want to reach:\nWhat I want to improve:\n"
+      : "I would like to discuss marketing for my business.",
+    branding: "I would like to discuss branding, my website and a useful publishing plan. My business and priorities are:",
     "guest-post": "I would like to discuss a guest post for this industry. My proposed topic is:",
     partnership: "I would like to discuss a partnership with the IAM network.",
   };
@@ -90,7 +94,7 @@ const ContactSection = ({
     email: "",
     phone: "",
     trade: trades.includes(params.get("industry") || defaultTrade) ? (params.get("industry") || defaultTrade) : "",
-    city: "",
+    city: marketIsVancouver ? "Vancouver" : "",
     message: prefillMessage,
     website: "",
   });

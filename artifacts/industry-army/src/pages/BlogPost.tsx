@@ -591,6 +591,8 @@ const BlogPost = () => {
             </div>
           </section>
 
+          {post.category === "Build Journal" && post.contactBusiness === "iam" ? <aside className="my-8 border-y border-primary/25 py-5" aria-label="IAM marketing services"><p className="text-xs uppercase tracking-widest text-primary mb-2">Industry Army Marketing · services</p><h2 className="text-xl font-semibold mb-3">Put a clear marketing plan behind your own work.</h2><p className="text-sm text-muted-foreground leading-relaxed">Explore <Link className="text-primary underline underline-offset-4" to="/seo/vancouver">Vancouver SEO and industry marketing</Link>, or see <Link className="text-primary underline underline-offset-4" to="/contractors">IAM’s contractor marketing approach</Link>. These are IAM service discussions; construction and other client enquiries stay with the businesses named in the article.</p></aside> : null}
+
           {(() => {
             const href = post.cta?.buttonHref ?? "/contact";
             const label = post.cta?.buttonText ?? `Claim my ${post.city} territory`;
