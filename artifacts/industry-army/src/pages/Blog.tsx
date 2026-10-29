@@ -378,7 +378,7 @@ const Blog = () => {
           </div>
           {totalPages > 1 && (
             <nav
-              className="mt-10 flex items-center justify-center gap-2"
+              className="mt-10 flex flex-wrap items-center justify-center gap-2"
               aria-label="Blog pagination"
             >
               <button
