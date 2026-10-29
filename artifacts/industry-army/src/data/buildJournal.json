@@ -1,6 +1,137 @@
 [
   {
     "brand": "Industry Army Marketing",
+    "trade": "Insulation marketing and project-brief publishing",
+    "tradeShort": "Insulation marketing",
+    "plural": "insulation businesses",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Vancouver and beyond",
+    "province": "BC",
+    "category": "Build Journal",
+    "date": "October 29, 2026",
+    "publishedAt": "2026-10-29T01:50:22-07:00",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "contactBusiness": "iam",
+    "campaignSite": "hibarinsulation.com",
+    "campaignLabel": "Insulation marketing",
+    "slug": "hibarinsulation-com-industry-marketing-project-content-guide",
+    "title": "HiBAR Marketing: Put the Project Brief Before the Performance Claim",
+    "cardTitle": "Put the project brief before the performance claim.",
+    "excerpt": "Original IAM analysis of HiBAR project communication: identify the requested work, connect available records and preserve PSI’s separate project contact.",
+    "metaDescription": "HiBAR insulation marketing: build a clear project brief, label evidence and preserve the distinction between a planning resource, PSI and IAM marketing.",
+    "image": "/brand-journal/hibar-project-brief-hero.svg",
+    "imageAlt": "Original IAM concept of coated building elements beside a project brief. Not an assembly design, installation detail, real project or rating evidence.",
+    "ogImage": "/brand-journal/hibar-project-brief-share.jpg",
+    "ogImageAlt": "Original IAM HiBAR marketing graphic: define the requested work, connect records and keep contacts clear.",
+    "faqHeading": "Insulation marketing questions",
+    "faqs": [
+      {
+        "q": "Does this article establish a fire rating?",
+        "a": "No. It is original IAM marketing analysis, not an assembly design, installation specification or technical approval."
+      },
+      {
+        "q": "What should a project brief explain?",
+        "a": "The location and work area, requested response, available dated records and questions requiring project-specific review."
+      },
+      {
+        "q": "Who handles a PSI project discussion?",
+        "a": "The checked WeSprayIt PSI profile lists 778-779-4353 and insulatevancouver@gmail.com. Confirm scope and availability directly; IAM marketing uses its separate route."
+      }
+    ],
+    "cta": {
+      "eyebrow": "ADVERTISEMENT · IAM / INSULATION MARKETING",
+      "heading": "Make the next project conversation useful",
+      "body": "Bring the real business role, permitted media and reader question. Discuss original insulation-industry content and branding with IAM.",
+      "buttonText": "Discuss insulation marketing",
+      "buttonHref": "/contact?request=guest-post&ref_site=hibarinsulation.com"
+    },
+    "richContent": {
+      "intro": "Useful insulation marketing begins with the building and the question, then connects the reader to the right records and recipient. This original IAM analysis uses HiBAR’s current planning resource and PSI partner profile to explain how a clearer project brief can support that first conversation.",
+      "sections": [
+        {
+          "heading": "A material name does not tell the whole project story",
+          "paragraphs": [
+            "An insulation business needs more than a prominent product name to help a prospective buyer begin a useful conversation. The reader may be looking at a damaged area, preparing new work or comparing proposals for a replacement. Those situations call for different information. A marketing page should help the reader identify the request before it reaches for a performance claim.",
+            "The current HiBAR resource separates repairs, new installations and complete replacement. It also distinguishes the independent planning publication from the manufacturer and performing contractor. This original IAM article examines that communication structure. It does not establish a fire rating, approve a system or determine what work a building needs."
+          ],
+          "image": {
+            "src": "/brand-journal/hibar-project-intent.svg",
+            "alt": "Original IAM narrow diagram distinguishing a repair review, new work and replacement scope.",
+            "caption": "Original IAM marketing framework. The requested work still needs project-specific review."
+          }
+        },
+        {
+          "heading": "Turn a vague enquiry into a specific question",
+          "paragraphs": [
+            "Start the brief with the location, building use and area under discussion. Ask which existing information is available and what response the reader wants next. A useful request might seek a review of missing information rather than an immediate fixed quotation. The page can explain this distinction without prescribing the technical answer.",
+            "Consider a conceptual office-building enquiry: the sender has photographs of an overhead area and a drawing that identifies a proposed work zone. The marketing task is to help label those records and state the question. It is not to decide from the photographs whether the coating is adequate or to convert a visible patch into a complete repair specification. This is an illustrative communication example, not an actual PSI project."
+          ]
+        },
+        {
+          "heading": "Keep the evidence connected to the area it describes",
+          "paragraphs": [
+            "A useful document pack is small enough to review and specific enough to locate. Identify the work area on the relevant drawing, retain the document date and note what remains unknown. A photograph should have a location and an honest caption. An image without that context may be attractive while adding little to the first conversation.",
+            "For public marketing, select only records and media that can be shared. Remove private customer details and explain whether an image is a real project, manufacturer reference or original illustration. The conceptual coated-building hero here is IAM artwork. Its appearance does not demonstrate an installed product, thickness, assembly or tested performance."
+          ],
+          "image": {
+            "src": "/brand-journal/hibar-project-records.svg",
+            "alt": "Original IAM narrow diagram connecting a named work area, dated document and open question.",
+            "caption": "Original IAM editorial diagram. Records support a discussion; they do not replace an accepted specification."
+          }
+        },
+        {
+          "heading": "Explain what the source material can support",
+          "paragraphs": [
+            "The [HiBAR project-enquiry guide](https://www.hibarinsulation.com/blog/hibar-project-enquiry-checklist/) asks readers to bring building context and available records to the next discussion. In marketing terms, that is useful because it gives the reader a concrete preparation task. The guide remains a planning article, with its own earlier publication date, rather than a new technical approval announced today.",
+            "Product descriptions, fire-resistance claims and assembly requirements need appropriate current manufacturer documents and responsible project review. This article deliberately supplies no installation instructions, numerical ratings or certification claims. IAM’s role here is clear business communication and original publishing; it does not substitute for the person responsible for the project’s technical decisions."
+          ]
+        },
+        {
+          "heading": "Give the partner profile a clear job",
+          "paragraphs": [
+            "HiBAR links to [Performance Spray Insulation’s profile on WeSprayIt](https://wesprayit.ca/contractors/performance-spray-insulation), where supplied work material and direct contractor contacts can be reviewed together. That is a useful network connection: the planning resource explains the question, while the named contractor profile identifies who can discuss a possible project. It does not prove availability or acceptance of a particular scope.",
+            "The current PSI profile lists 778-779-4353 and insulatevancouver@gmail.com. HiBAR’s general contact page separately opens an email draft to build@buildershaus.com and explicitly says the visitor must send it from their email application. Keep those purposes distinct. No email, test lead or form submission was sent during this review."
+          ],
+          "image": {
+            "src": "/brand-journal/hibar-project-ownership.svg",
+            "alt": "Original IAM narrow diagram separating the planning resource, PSI project discussion and IAM marketing.",
+            "caption": "Original IAM contact-ownership graphic. Confirm the actual work and availability directly with PSI."
+          }
+        },
+        {
+          "heading": "Publish for the next decision, then check the whole page",
+          "paragraphs": [
+            "A useful insulation page should leave a reader better prepared: they know which work category they are discussing, which records to gather and which recipient handles the next question. A project story can then show a documented contribution with proper permission and credit. That is stronger communication than repeating unsupported performance language across a collection of city pages.",
+            "For an insulation or coatings business, [IAM’s contractor marketing](/contractors) and [Vancouver SEO and industry marketing](/seo/vancouver) connect original trade content with a clear business proposition. [Discuss a HiBAR-related marketing brief with IAM](/contact?request=guest-post&ref_site=hibarinsulation.com). Publication, imagery and a working contact link do not demonstrate rankings, enquiries or sales; those outcomes require their own evidence."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "label": "HiBAR independent planning resource — current scope and partner links checked October 29, 2026",
+          "href": "https://www.hibarinsulation.com/"
+        },
+        {
+          "label": "HiBAR project-enquiry guide — earlier guide retained with its actual date",
+          "href": "https://www.hibarinsulation.com/blog/hibar-project-enquiry-checklist/"
+        },
+        {
+          "label": "HiBAR contact page — email-draft behaviour and general recipient",
+          "href": "https://www.hibarinsulation.com/contact/"
+        },
+        {
+          "label": "PSI profile on WeSprayIt — supplied work context and direct contacts",
+          "href": "https://wesprayit.ca/contractors/performance-spray-insulation"
+        }
+      ]
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
     "trade": "Gas-trade contributor content and editorial evidence",
     "tradeShort": "Gas-trade publishing",
     "plural": "gas-trade businesses",
