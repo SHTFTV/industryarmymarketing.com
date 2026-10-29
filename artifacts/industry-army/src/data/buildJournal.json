@@ -1,6 +1,136 @@
 [
   {
     "brand": "Industry Army Marketing",
+    "trade": "Decorating marketing and project-choice content",
+    "tradeShort": "Decorating",
+    "plural": "decorating businesses",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Vancouver and beyond",
+    "province": "BC",
+    "category": "Build Journal",
+    "date": "October 28, 2026",
+    "publishedAt": "2026-10-28T19:53:43-07:00",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "contactBusiness": "iam",
+    "campaignSite": "decorator.tv",
+    "campaignLabel": "Decorating marketing",
+    "slug": "decorator-tv-industry-marketing-project-content-guide",
+    "title": "Decorator.tv Marketing: Show the Choice Behind the Room",
+    "cardTitle": "Show the decorating choice, its stage and its evidence.",
+    "excerpt": "Original decorating marketing guidance: explain a specific choice, distinguish mood boards from completed work and keep contributors and enquiry ownership clear.",
+    "metaDescription": "Decorator.tv marketing: turn a decorating choice into an accurate project story with clear stages, media permissions and separate project and publishing enquiries.",
+    "image": "/brand-journal/decorator-choice-hero.svg",
+    "imageAlt": "Original IAM illustrative room and selection-record concept. Not a real Decorator.tv commission, installed finish or client project photograph.",
+    "ogImage": "/brand-journal/decorator-choice-share.jpg",
+    "ogImageAlt": "Original IAM graphic: explain the room question, the selection and the evidence.",
+    "faqHeading": "Decorating marketing questions",
+    "faqs": [
+      {
+        "q": "Is the room illustration a real decorating commission?",
+        "a": "No. It is a clearly labelled original IAM publishing concept."
+      },
+      {
+        "q": "Does a mood board establish that work was completed?",
+        "a": "No. Inspiration, proposals, selections and completed work are different stages."
+      },
+      {
+        "q": "Was the contributor upload or payment flow tested?",
+        "a": "No. The page was inspected, but no upload, payment or enquiry was made and no delivery or publication timing was verified."
+      }
+    ],
+    "cta": {
+      "eyebrow": "ADVERTISEMENT · IAM / DECORATING MARKETING",
+      "heading": "Tell the useful story behind the room",
+      "body": "Bring the decision, its documented stage and permission-cleared media. Discuss original decorating content and branding with IAM.",
+      "buttonText": "Discuss decorating marketing",
+      "buttonHref": "/contact?request=guest-post&ref_site=decorator.tv"
+    },
+    "richContent": {
+      "intro": "An attractive room is a beginning, not the whole story. This original IAM guide uses Decorator.tv’s current publishing context to explain a more useful project article: show the choice, identify its stage and keep the evidence and contributors attached.",
+      "sections": [
+        {
+          "heading": "A finished image can hide the useful decision",
+          "paragraphs": [
+            "A decorating portfolio can show an appealing room while leaving the reader unsure what the featured professional actually helped decide. An original article can reveal that contribution by explaining one choice in context. The purpose is not to turn every attractive image into a sweeping transformation claim.",
+            "Decorator.tv’s current public app has decorating-service navigation, a journal and a visible contributor page. IAM’s existing portfolio note explains the brand’s identity and authorship principles. This guide takes a different practical angle: how to record a decorating choice so the published story distinguishes inspiration, a proposal, a selection and completed work."
+          ]
+        },
+        {
+          "heading": "Begin with the question the client wanted to resolve",
+          "paragraphs": [
+            "A useful story starts with a bounded question rather than a string of style labels. What did the client want to discuss, and what part of that discussion can be shared? Describe the actual brief only when it is documented and permission allows it. A public case study should not reveal private household circumstances to make the introduction more dramatic.",
+            "For a conceptual example, imagine someone comparing two room palettes. That is an illustration of content structure, not a real Decorator.tv commission or a recommendation for a particular home. The article could explain the question being explored and which information was still needed, without claiming that one option is universally correct."
+          ],
+          "image": {
+            "src": "/brand-journal/decorator-choice-question.svg",
+            "alt": "Original IAM decorating story diagram connecting a room question, considered ideas and an actual selection.",
+            "caption": "Original IAM content example. No real client or decorating commission is represented."
+          }
+        },
+        {
+          "heading": "Do not let a proposed option become a completed project",
+          "paragraphs": [
+            "A mood board can describe an intention. A proposed option can show something under consideration. A selection record can identify a documented decision. A completed-work photograph describes a later stage. Marketing should keep those stages legible instead of allowing a compelling presentation to collapse them into a single before-and-after story.",
+            "In the conceptual palette example, a caption might identify the board as a proposed direction and leave the final selection open. That is useful information, not an embarrassing gap to conceal. Do not add a completion date, approval or installed-product claim merely because the graphic looks finished."
+          ],
+          "image": {
+            "src": "/brand-journal/decorator-choice-record.svg",
+            "alt": "Original IAM stage diagram separating inspiration, proposed option, selected item and completed work.",
+            "caption": "Original IAM publishing graphic. Visual polish does not establish a project’s stage."
+          }
+        },
+        {
+          "heading": "Show the reason without inventing a testimonial",
+          "paragraphs": [
+            "When the record supports it, a project article can explain why a particular option was selected and which part the featured business contributed. Keep the account proportionate. A writer’s interpretation should not quietly become a client quotation, professional endorsement or claim of improved resale value.",
+            "A useful selection story might explain a documented preference and the alternatives discussed. If that explanation is not available, say what the image actually establishes and ask the contributor for the missing context before publication. The result can still be visually strong without fabricated reactions or commercial outcomes."
+          ]
+        },
+        {
+          "heading": "Let contributor credit travel with the image",
+          "paragraphs": [
+            "Decorating content may involve a decorator, a photographer, an installer and other participants. A shared platform identity should not absorb their separate roles. Keep the permitted image credit and documented contribution close to the picture, particularly when a card or cropped preview may be shared without the entire article.",
+            "The hero and narrow visuals here are original IAM illustrations, not Decorator.tv project photographs. They demonstrate a publishing approach without implying a real customer, installed finish or design service outcome. Actual room media requires its own rights and accurate attribution; a publicly visible image is not permission to reuse it."
+          ],
+          "image": {
+            "src": "/brand-journal/decorator-choice-credit.svg",
+            "alt": "Original IAM contributor record connecting documented role, permitted evidence and the appropriate contact.",
+            "caption": "Original IAM communications diagram. Contributor roles and media permissions remain explicit."
+          }
+        },
+        {
+          "heading": "A visible contribution page is the start of a discussion",
+          "paragraphs": [
+            "The rendered [Decorator.tv guest page](https://decorator.tv/guest-post/) currently advertises a $10 USD before-and-after contribution and asks for images and a description. Its submission, upload, payment and publication-timing claims were not tested in this review. No material was uploaded and no payment or enquiry was sent.",
+            "Before arranging a contribution, confirm the accepted outline, permissions, editorial review, disclosure of commercial relationships, any paid-link treatment and the actual publication arrangements with the editor. Do not treat a keyword request or payment control as proof that an article will rank, be accepted or reach a particular audience."
+          ]
+        },
+        {
+          "heading": "Keep a project enquiry separate from a publishing enquiry",
+          "paragraphs": [
+            "The current public site identifies Build@buildershaus.com in its company footer; contributor questions identify colin@industryarmymarketing.com. These are different conversations. Confirm the responsible business, proposed services and availability directly rather than treating the IAM marketing card on this article as a decorating booking.",
+            "For the wider context, see [IAM contractor marketing](/contractors) and the earlier [Decorator.tv brand portfolio note](/blog/decorator-tv-iam-brand-creation-management). To discuss original content or brand presentation, [bring a decorating marketing brief to IAM](/contact?request=guest-post&ref_site=decorator.tv). Start with one useful decision, the evidence for its stage and permission-cleared media. Agree the deliverables before publishing; a new page alone does not prove search visibility, enquiries or sales."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "label": "Decorator.tv — actual rendered public navigation and company footer checked October 28, 2026",
+          "href": "https://decorator.tv/"
+        },
+        {
+          "label": "Guest contributions — actual rendered terms inspected; submission/payment untested, October 28, 2026",
+          "href": "https://decorator.tv/guest-post/"
+        }
+      ]
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
     "trade": "Chain link fencing marketing and quote-scope content",
     "tradeShort": "Chain link fencing",
     "plural": "chain link fencing businesses",
