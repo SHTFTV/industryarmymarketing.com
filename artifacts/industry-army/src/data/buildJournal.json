@@ -1,6 +1,137 @@
 [
   {
     "brand": "Industry Army Marketing",
+    "trade": "HVAC and refrigeration marketing",
+    "tradeShort": "HVACR marketing",
+    "plural": "HVAC and refrigeration businesses",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Vancouver and beyond",
+    "province": "BC",
+    "category": "Build Journal",
+    "date": "October 29, 2026",
+    "publishedAt": "2026-10-29T10:43:51-07:00",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "contactBusiness": "iam",
+    "campaignSite": "hvacr.tv",
+    "campaignLabel": "HVACR marketing",
+    "slug": "hvacr-tv-industry-marketing-project-content-guide",
+    "title": "HVACR Marketing: Connect Equipment Education to an Honest Next Step",
+    "cardTitle": "Connect equipment education to an honest next step.",
+    "excerpt": "Original IAM guidance for HVACR marketing: distinguish equipment education, documented project work, model support and the action a contact page actually performs.",
+    "metaDescription": "HVACR.tv marketing analysis: connect equipment education with supported business information and clear contact actions without implying model support or bookings.",
+    "image": "/brand-journal/hvacr-education-hero.svg",
+    "imageAlt": "Original IAM concept of a generic outdoor HVAC unit beside an equipment record. Not a product demonstration, installation or model-support claim.",
+    "ogImage": "/brand-journal/hvacr-education-share.jpg",
+    "ogImageAlt": "Original IAM HVACR marketing graphic: equipment education and an honest next step.",
+    "faqHeading": "HVACR marketing questions",
+    "faqs": [
+      {
+        "q": "Does an equipment guide confirm model support?",
+        "a": "No. General education does not establish that a business installs, repairs or stocks a particular model."
+      },
+      {
+        "q": "Does the checked Find a Pro worksheet send an enquiry?",
+        "a": "The current page explicitly says matching is not connected and the worksheet does not send or save the details."
+      },
+      {
+        "q": "Where does HVACR display its contractor-team contact?",
+        "a": "The checked Market with us page displays pros@hvacr.tv. IAM marketing discussions use a separate IAM route."
+      }
+    ],
+    "cta": {
+      "eyebrow": "ADVERTISEMENT · IAM / HVACR MARKETING",
+      "heading": "Give your equipment content a clear business purpose",
+      "body": "Bring your actual services, supported project material and the reader question. Discuss original HVACR content and branding with IAM.",
+      "buttonText": "Discuss HVACR marketing",
+      "buttonHref": "/contact?request=guest-post&ref_site=hvacr.tv"
+    },
+    "richContent": {
+      "intro": "Equipment education helps a reader ask a better question. Honest industry marketing explains what the page can establish and what needs a separate business confirmation. This original IAM guide uses HVACR.tv’s current equipment, contributor and worksheet routes to connect those stages clearly.",
+      "sections": [
+        {
+          "heading": "A useful equipment guide starts a better question",
+          "paragraphs": [
+            "People often reach an HVAC website before they know the name of the system they are researching. A category guide can explain the vocabulary and help them organise questions. A service page has a different role: it needs to explain the business contribution and how to discuss a real request. Clear marketing connects these purposes without pretending that reading a guide establishes service support.",
+            "HVACR.tv currently separates an equipment library, service topics, a journal and a contractor-marketing route. This original IAM analysis looks at how that structure can support a more useful first conversation. It is not a diagnosis, equipment recommendation or confirmation that a contractor handles a particular model."
+          ],
+          "image": {
+            "src": "/brand-journal/hvacr-education-identity.svg",
+            "alt": "Original IAM narrow diagram: equipment category, actual model and dated source.",
+            "caption": "Original IAM publishing framework. A category is a starting point, not a model-specific conclusion."
+          }
+        },
+        {
+          "heading": "Carry the identity of the equipment into the story",
+          "paragraphs": [
+            "A familiar product category does not identify every detail of an installed system. For marketing content, keep any supplied model reference attached to the source that supports it. Do not quietly extend a general guide into a claim that a business installs, repairs or stocks every model in the category. Those statements need current business evidence.",
+            "For a conceptual example, a reader researching an outdoor heat-pump unit may have a manufacturer name but not the full model. A useful guide can explain what information the next conversation will need. It should not infer capacity, compatibility or a repair from a generic photograph. This example explains editorial intent, not how to inspect or work on equipment."
+          ]
+        },
+        {
+          "heading": "Let education and documented work reinforce each other",
+          "paragraphs": [
+            "The [HVACR equipment library](https://hvacr.tv/equipment) introduces different kinds of heating, cooling and refrigeration systems. A project story can add a specific, permission-cleared account of a business contribution. Link these when they answer the reader’s next question, while keeping the general explanation separate from what the project records actually demonstrate.",
+            "Use honest captions. A generic illustration can introduce a subject; it cannot prove an installation, manufacturer relationship or measured result. The hero here is original IAM concept art of a generic outdoor unit. It is not a product demonstration, a customer photograph or evidence that a named contractor supports a model."
+          ],
+          "image": {
+            "src": "/brand-journal/hvacr-education-content.svg",
+            "alt": "Original IAM narrow diagram assigning separate jobs to topic explanation, supported work and the next action.",
+            "caption": "Original IAM content-planning diagram. Each page should establish its own useful purpose."
+          }
+        },
+        {
+          "heading": "Make an unconnected workflow understandable",
+          "paragraphs": [
+            "The current [Find a Pro page](https://hvacr.tv/find-a-pro) explicitly says contractor matching is not connected. Its worksheet keeps details on the page and does not send an enquiry. That boundary matters: a reader should not mistake preparing notes for reaching a contractor. No matching, delivery, booking or dispatch was tested in this review.",
+            "The marketing lesson is practical. Put the true action next to its control and repeat it where a visitor might reasonably expect a confirmation. If a workflow only helps prepare a brief, describe that preparation. A polished form does not establish an operating intake service, and an equipment article should not imply that it does."
+          ]
+        },
+        {
+          "heading": "Give contributors a specific, reviewable proposition",
+          "paragraphs": [
+            "HVACR’s [Market with us page](https://hvacr.tv/market-with-us) invites project stories with context, documented decisions, outcomes and image permission, subject to editorial review. Its displayed contractor-team email is pros@hvacr.tv. The page also links marketing support through BuildersHaus; placement and services are agreed directly rather than guaranteed by this article.",
+            "A useful contributor pitch identifies the business role, the reader question and the records available to support the account. Mark an outcome as reported if it has not been independently measured, and disclose a commercial relationship. Keep technical statements within supported source material and appropriate review rather than borrowing authority from the publication’s design."
+          ],
+          "image": {
+            "src": "/brand-journal/hvacr-education-handoff.svg",
+            "alt": "Original IAM narrow diagram: read a guide, prepare a brief and confirm the recipient.",
+            "caption": "Original IAM communications graphic. Preparation is distinct from sending a request or confirming service."
+          }
+        },
+        {
+          "heading": "Build a customer journey around what is ready today",
+          "paragraphs": [
+            "An industry publication can make a complicated category more understandable while a business website explains a particular offer. Connect the equipment topic, the relevant work and the actual contact destination with natural links. Recheck the rendered page, imagery and wording whenever the underlying workflow changes; keep older articles’ real dates intact.",
+            "For an HVAC or refrigeration business, explore [IAM contractor marketing](/contractors) and [Vancouver SEO and industry marketing](/seo/vancouver). [Discuss an HVACR marketing brief with IAM](/contact?request=guest-post&ref_site=hvacr.tv) for original content and brand positioning. This separate IAM route does not arrange equipment service. Page publication and a clear next action are not proof of rankings, lead volume or business results."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "label": "HVACR.tv — current public channel structure, checked October 29, 2026",
+          "href": "https://hvacr.tv/"
+        },
+        {
+          "label": "Equipment library — category education, not model-support verification",
+          "href": "https://hvacr.tv/equipment"
+        },
+        {
+          "label": "Find a Pro — current unsent worksheet and disconnected matching notice",
+          "href": "https://hvacr.tv/find-a-pro"
+        },
+        {
+          "label": "Market with us — contributor review and displayed contractor-team contact",
+          "href": "https://hvacr.tv/market-with-us"
+        }
+      ]
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
     "trade": "Insulation marketing and project-brief publishing",
     "tradeShort": "Insulation marketing",
     "plural": "insulation businesses",
