@@ -1,6 +1,133 @@
 [
   {
     "brand": "Industry Army Marketing",
+    "trade": "Industrial coatings marketing and project content",
+    "tradeShort": "Coatings marketing",
+    "plural": "industrial coatings businesses",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Vancouver and beyond",
+    "province": "BC",
+    "category": "Build Journal",
+    "date": "October 29, 2026",
+    "publishedAt": "2026-10-29T11:55:40-07:00",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "contactBusiness": "iam",
+    "campaignSite": "industrialcoatings.co",
+    "campaignLabel": "Coatings marketing",
+    "slug": "industrialcoatings-co-industry-marketing-project-content-guide",
+    "title": "Industrial Coatings Marketing: Show the Conditions Behind the Finish",
+    "cardTitle": "Show the conditions behind the finish.",
+    "excerpt": "Original IAM industrial-coatings marketing guidance: explain the work area, credit the actual contribution and keep performance claims and project contacts grounded.",
+    "metaDescription": "Industrial coatings marketing: connect surface and use questions with documented project evidence, clear scope and accurate PSI versus IAM contact ownership.",
+    "image": "/brand-journal/coatings-conditions-hero.svg",
+    "imageAlt": "Original IAM illustration of a conceptual coated work area, roller and conditions record. Not a customer project, coating endorsement or application method.",
+    "ogImage": "/brand-journal/coatings-conditions-share.jpg",
+    "ogImageAlt": "Original IAM graphic: conditions, evidence and clear scope behind industrial-coatings marketing.",
+    "faqHeading": "Industrial coatings marketing questions",
+    "faqs": [
+      {
+        "q": "Does a finished-surface photo establish system performance?",
+        "a": "No. Identify what the photograph supports and retain the relevant project records and responsible review."
+      },
+      {
+        "q": "Who handles the checked PSI project enquiries?",
+        "a": "The current project guides list 778-779-4353 and insulatevancouver@gmail.com. Confirm actual scope and availability directly."
+      },
+      {
+        "q": "Does this article provide coating application advice?",
+        "a": "No. It is original IAM marketing analysis, not product selection, preparation instructions or professional approval."
+      }
+    ],
+    "cta": {
+      "eyebrow": "ADVERTISEMENT · IAM / COATINGS MARKETING",
+      "heading": "Give the work behind the finish a clearer story",
+      "body": "Bring your actual contribution, permitted visual evidence and the customer question. Discuss original industrial-coatings content with IAM.",
+      "buttonText": "Discuss coatings marketing",
+      "buttonHref": "/contact?request=guest-post&ref_site=industrialcoatings.co"
+    },
+    "richContent": {
+      "intro": "A finished surface attracts attention; a clear account of the conditions, contribution and accepted scope helps a reader decide what to ask next. This original IAM guide uses IndustrialCoatings.co’s current project context to connect those parts without overstating what a photograph proves.",
+      "sections": [
+        {
+          "heading": "A glossy result is only the beginning of the explanation",
+          "paragraphs": [
+            "A finished surface can make a strong first impression while leaving a buyer unsure what work the business actually performed. An industrial-coatings story should explain the contribution behind the image: the work area, the intended use and the questions that shaped the scope. The photograph is a useful entry point, not a complete specification or proof of performance.",
+            "IndustrialCoatings.co currently frames its public information around conditions and system questions. This original IAM article examines how that approach can make business content more useful. It does not select a coating, prescribe preparation or establish that a particular assembly has passed an inspection."
+          ],
+          "image": {
+            "src": "/brand-journal/coatings-conditions-conditions.svg",
+            "alt": "Original IAM narrow diagram identifying surface, use and access as separate information categories.",
+            "caption": "Original IAM marketing framework. Describe the questions before suggesting a conclusion."
+          }
+        },
+        {
+          "heading": "Describe what the space needs to do",
+          "paragraphs": [
+            "A coating enquiry can begin with the way a space operates. Ask the owner to explain the work area, the normal activity and any constraints already known. Keep an uncertain detail marked as uncertain. A marketing page should not convert the phrase warehouse floor into a universal product recommendation or assume that every space has the same operating conditions.",
+            "For a conceptual example, two proposals might describe the same room but differ in the areas included, access arrangements or handover records. Put those descriptions side by side and mark the differences before comparing totals. The point is a clearer business discussion, not advice on which coating or preparation method to use. This example is not an actual customer project."
+          ]
+        },
+        {
+          "heading": "Give project images a location, stage and contributor",
+          "paragraphs": [
+            "A useful caption explains what an image supports. Identify the documented work stage and the contributor’s role, with permission and accurate credit. A product container visible in a photograph may help identify material shown; it does not establish the accepted system, final performance or every detail of the completed work. Keep those conclusions tied to appropriate records and review.",
+            "The current [Nanaimo Ocean View project record](https://industrialcoatings.co/guides/nanaimo-ocean-view-dc315-coating) credits Performance Spray Insulation for supplied photographs and video. Its wording separates the documented work from certification or acceptance. That distinction is useful for marketing: show the actual contribution without adding an unsupported claim to make the story sound stronger."
+          ],
+          "image": {
+            "src": "/brand-journal/coatings-conditions-evidence.svg",
+            "alt": "Original IAM narrow diagram connecting location, work stage and contributor to an image.",
+            "caption": "Original IAM editorial diagram. A caption explains the evidence rather than expanding its meaning."
+          }
+        },
+        {
+          "heading": "Keep a technical question open until it is reviewed",
+          "paragraphs": [
+            "If a project account refers to a specified system, retain the document identity and the scope of the statement. Ask who is responsible for reviewing a proposed change and what records will support the handover. Avoid lifting a number or acceptance phrase from another building simply because it appears relevant. This article supplies no application instructions, product rating or professional approval.",
+            "The [DC315 scope-and-handover guide](https://industrialcoatings.co/guides/dc315-coating-scope-and-handover) provides a related planning reference. It should be read as a guide with its own real publication history, not a new technical determination announced here. IAM’s role in this article is original business communication; the actual project decisions remain with the responsible people."
+          ],
+          "image": {
+            "src": "/brand-journal/coatings-conditions-decision.svg",
+            "alt": "Original IAM narrow diagram separating a supporting source, open question and named reviewer.",
+            "caption": "Original IAM publishing control. A technical claim needs its own applicable evidence and review."
+          }
+        },
+        {
+          "heading": "Preserve the contact attached to the actual work",
+          "paragraphs": [
+            "IndustrialCoatings.co’s general homepage contact is build@buildershaus.com. The checked PSI project guides use a separate direct contractor route: 778-779-4353 and insulatevancouver@gmail.com. Keep those roles explicit rather than sending every project question to a marketing contact. Confirm availability and accepted work with the contractor; publication does not reserve a visit.",
+            "The checked legacy guest-post address returned a not-found response. It is not promoted here as a working submission route, and no old fee, verification or distribution claim is repeated. No form, email or payment was sent during this review."
+          ]
+        },
+        {
+          "heading": "Make original trade content lead to the right discussion",
+          "paragraphs": [
+            "A useful coating story connects the buyer’s question, the documented contribution and the actual recipient. It can sit beside a service explanation or a broader construction resource without pretending every page is a technical specification. Label concept illustrations honestly; the roller and work-area hero here are original IAM artwork, not a customer site or an application demonstration.",
+            "For an industrial or spray-applied business, explore [IAM contractor marketing](/contractors) and [Vancouver SEO and industry marketing](/seo/vancouver). [Discuss an industrial-coatings marketing brief with IAM](/contact?request=guest-post&ref_site=industrialcoatings.co). Bring the actual business role, permitted media and useful customer question. A published page does not establish rankings, enquiries or sales, and this separate IAM discussion does not accept a coating project on a contractor’s behalf."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "label": "IndustrialCoatings.co — current condition-led resource and general contact, checked October 29, 2026",
+          "href": "https://industrialcoatings.co/"
+        },
+        {
+          "label": "PSI Ocean View project record — supplied-media credit and direct contractor route",
+          "href": "https://industrialcoatings.co/guides/nanaimo-ocean-view-dc315-coating"
+        },
+        {
+          "label": "DC315 scope and handover guide — planning context with project-review boundaries",
+          "href": "https://industrialcoatings.co/guides/dc315-coating-scope-and-handover"
+        }
+      ]
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
     "trade": "HVAC and refrigeration marketing",
     "tradeShort": "HVACR marketing",
     "plural": "HVAC and refrigeration businesses",
