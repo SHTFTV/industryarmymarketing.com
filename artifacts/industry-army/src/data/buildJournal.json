@@ -1,6 +1,136 @@
 [
   {
     "brand": "Industry Army Marketing",
+    "trade": "Estimating business marketing and cost-context content",
+    "tradeShort": "Estimating businesses",
+    "plural": "estimating businesses",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Vancouver and beyond",
+    "province": "BC",
+    "category": "Build Journal",
+    "date": "October 28, 2026",
+    "publishedAt": "2026-10-28T21:17:28-07:00",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "contactBusiness": "iam",
+    "campaignSite": "estimators.io",
+    "campaignLabel": "Estimator marketing",
+    "slug": "estimators-io-industry-marketing-project-content-guide",
+    "title": "Estimator Marketing: Give Every Number a Basis and a Date",
+    "cardTitle": "Keep the number’s purpose, basis and date together.",
+    "excerpt": "Original estimator marketing guidance: explain intended use, retain version context and keep assumptions, sample rights and service availability clear.",
+    "metaDescription": "Estimator marketing: give a result its purpose, basis and review date, with honest sample content and distinct business and IAM marketing enquiries.",
+    "image": "/brand-journal/estimators-basis-record-hero.svg",
+    "imageAlt": "Original IAM basis-record publishing illustration. Not a customer estimate, pricing model, app screenshot or professional estimating standard.",
+    "ogImage": "/brand-journal/estimators-basis-record-share.jpg",
+    "ogImageAlt": "Original IAM graphic: every number needs a basis and a date; purpose, inputs and review date.",
+    "faqHeading": "Estimator marketing questions",
+    "faqs": [
+      {
+        "q": "Does this guide establish an estimating standard?",
+        "a": "No. It is original marketing analysis about communicating a result and its context, not a professional estimating classification or project calculation."
+      },
+      {
+        "q": "Are the illustrated records real customer estimates?",
+        "a": "No. All diagrams are original conceptual publishing examples with no customer rates or quantities."
+      },
+      {
+        "q": "Was a human estimating service booked or tested?",
+        "a": "No. Public routes and wording were checked, but no request, booking, payment or delivery test occurred."
+      }
+    ],
+    "cta": {
+      "eyebrow": "ADVERTISEMENT · IAM / ESTIMATOR MARKETING",
+      "heading": "Make the purpose behind your deliverable clear",
+      "body": "Bring your customer decision, permitted sample context and correct business contact. Discuss original estimating content and branding with IAM.",
+      "buttonText": "Discuss estimator marketing",
+      "buttonHref": "/contact?request=guest-post&ref_site=estimators.io"
+    },
+    "richContent": {
+      "intro": "A cost result needs more than a headline number. This original IAM guide uses Estimators.io’s current public workflow as the context for explaining the purpose, information and date that should remain attached when an estimating story is published.",
+      "sections": [
+        {
+          "heading": "A result can travel further than its explanation",
+          "paragraphs": [
+            "An estimating business may explain a preliminary result carefully in a meeting, then find that only the headline number survives in a forwarded message. Marketing content can help prevent that separation by showing what information belongs with a result and which decision it is meant to support.",
+            "Estimators.io currently describes app-only planning, app plus human review and human-only enquiries. Its public service page distinguishes a ballpark planning scenario from a measured takeoff, bid or guaranteed quote, and credits IAM. That is existing public context, not a new platform launch. The approach below is original IAM analysis of estimating communication, not a professional estimating standard or a project cost calculation."
+          ]
+        },
+        {
+          "heading": "State what the reader is trying to decide",
+          "paragraphs": [
+            "A website should help a potential client explain why they need estimating help. Exploring whether to investigate an idea is different from requesting a defined deliverable for a decision already underway. The marketing page can describe those conversations without implying that one output is suitable for every purpose.",
+            "Put the intended use near the service explanation and keep it with any permitted sample. A planning discussion should not be promoted as a fixed contractor offer simply because a number appears in a polished document. Ask the responsible estimator to confirm the assignment, deliverable and limits before work starts."
+          ],
+          "image": {
+            "src": "/brand-journal/estimators-purpose-record.svg",
+            "alt": "Original IAM record diagram connecting a planning question, the intended use and required review.",
+            "caption": "Original IAM marketing diagram. It does not define an estimate class or professional standard."
+          }
+        },
+        {
+          "heading": "Make the basis record easy to keep",
+          "paragraphs": [
+            "For a conceptual publishing example, imagine a project brief whose drawing version is later revised. The useful story is not a fabricated price change. It is the need to identify which information the earlier result used and which new information needs review. No real customer, quantity or cost is represented by that example.",
+            "An original service article can show a compact basis record: the purpose, referenced information, what was assumed and the date of the review. Keep an unresolved point labelled as unresolved. Do not fill an empty field with an invented rate or present an assumption as a measured fact merely to make a sample look complete."
+          ],
+          "image": {
+            "src": "/brand-journal/estimators-version-record.svg",
+            "alt": "Original IAM diagram keeping document version, source date and open assumptions attached to a result.",
+            "caption": "Original IAM publishing concept. No actual project documents or confidential rates are shown."
+          }
+        },
+        {
+          "heading": "Explain the change, not just the new total",
+          "paragraphs": [
+            "If the assignment changes, a later account should explain what changed in the information or scope being discussed. A prospective customer can then understand why version control matters without being offered a fictional savings story. Keep the explanation within the evidence and permissions available for the published example.",
+            "A revision note is useful when it identifies the affected issue and the next question for review. It should not claim that a service automatically catches every omission or guarantees cost certainty. Marketing can make a disciplined communication process understandable while leaving the responsible professional to assess the actual information."
+          ],
+          "image": {
+            "src": "/brand-journal/estimators-change-record.svg",
+            "alt": "Original IAM change record connecting a revised input, affected scope and the next review question.",
+            "caption": "Original IAM communications graphic. It is not a pricing calculation or change order."
+          }
+        },
+        {
+          "heading": "Give the sample enough context without exposing the client",
+          "paragraphs": [
+            "A sample deliverable can show organization without publishing private drawings, client identities or sensitive commercial information. Obtain permission and agree what can be shown. Removing a name alone may not make a document safe to publish if other details identify the project or reveal information the client has not authorized.",
+            "The hero and diagrams here are original IAM illustrations, not screenshots of a customer estimate or evidence that an app performed a takeoff. They explain a content structure. Actual samples need accurate role descriptions and their own review; conceptual graphics should not be passed off as proof of completed professional work."
+          ]
+        },
+        {
+          "heading": "Keep software status separate from human availability",
+          "paragraphs": [
+            "The current [Estimators.io service comparison](https://www.estimators.io/estimating-services) offers three enquiry routes and says human availability, fees and turnaround require scope review. Its human-help controls are described as email enquiries, not bookings or payments. This review did not submit a request, test a human matching service or verify delivery.",
+            "The homepage also describes a broader platform roadmap. A marketing article should distinguish that roadmap from functionality actually checked. Do not convert a list of planned business tools into a claim that scheduling, payments, project verification or every trade workflow has been tested end to end."
+          ]
+        },
+        {
+          "heading": "Send the right brief to the right conversation",
+          "paragraphs": [
+            "Estimators.io publishes build@buildershaus.com for its business enquiries. Use its current service route to discuss the relevant estimating scope and confirm the recipient before sharing confidential project files. The performing estimator, availability, fee and deliverables still need agreement; this IAM article does not accept an estimating commission.",
+            "For website, brand or original publishing work, explore [IAM’s Vancouver SEO and industry marketing](/seo/vancouver) or [contractor marketing](/contractors), then [bring an estimating-business brief to IAM](/contact?request=guest-post&ref_site=estimators.io). Start with the customer decision, permitted evidence and correct business contact. A clear public record is useful work; publication alone does not prove rankings, enquiries or revenue."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "label": "Estimators.io — current public workflow, roadmap wording and IAM credit checked October28,2026",
+          "href": "https://www.estimators.io/"
+        },
+        {
+          "label": "Estimating services — actual route comparison and human-enquiry limitations checked October28,2026",
+          "href": "https://www.estimators.io/estimating-services"
+        }
+      ]
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
     "trade": "Branding, useful tools and named-business publishing",
     "tradeShort": "Brand and build journal",
     "plural": "independent businesses",
