@@ -1,6 +1,146 @@
 [
   {
     "brand": "Industry Army Marketing",
+    "trade": "Brand imagery and project publishing",
+    "tradeShort": "Visual publishing",
+    "plural": "independent businesses",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Vancouver and beyond",
+    "province": "BC",
+    "category": "Build Journal",
+    "date": "October 29, 2026",
+    "publishedAt": "2026-10-29T20:47:06.227139-07:00",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "contactBusiness": "iam",
+    "slug": "different-images-different-jobs-beewarm-rambo-acustiq",
+    "title": "Different Images, Different Jobs: BeeWarm, Rambo and ACUSTIQ",
+    "cardTitle": "Choose the image for the job it needs to do.",
+    "excerpt": "Why representative equipment illustrations and credited installation photographs need different captions, claims and enquiry routes.",
+    "metaDescription": "IAM’s October29 visual-publishing lesson: BeeWarm equipment illustrations, Rambo’s credited ceiling record and ACUSTIQ’s educational use, with clear limits.",
+    "image": "/brand-journal/daily-oct29-image-roles-hero.webp",
+    "imageAlt": "Original IAM AI-generated editorial illustration of representative equipment and a fictional ceiling-documentation setting. Not a product selection, installation design or photograph of BeeWarm/Rambo work.",
+    "ogImage": "/brand-journal/daily-oct29-image-roles-share.png",
+    "ogImageAlt": "Different images, different jobs: IAM’s visual-publishing lesson. Original explanatory illustration, not client project photography.",
+    "faqHeading": "Questions about this visual publishing lesson",
+    "faqs": [
+      {
+        "q": "Are BeeWarm’s five system pictures customer installation photographs?",
+        "a": "No. They are labelled original representative equipment illustrations, not product/model listings or installation diagrams."
+      },
+      {
+        "q": "Do the ceiling photographs establish a tested acoustic rating?",
+        "a": "No. The credited installation-stage views do not establish product identity or a tested assembly performance result."
+      },
+      {
+        "q": "Are the six new Google photographs publicly accepted?",
+        "a": "At the October29 check they were pending moderation. The verified website records do not establish public Google visibility."
+      }
+    ],
+    "cta": {
+      "eyebrow": "ADVERTISEMENT · IAM / VISUAL PUBLISHING",
+      "heading": "Give each image a clear role in your brand",
+      "body": "Bring the reader question, permitted media and correct business contact. Discuss original imagery, project publishing and the supporting website scope with IAM.",
+      "buttonText": "Discuss your visual publishing brief",
+      "buttonHref": "/contact?request=brand-visuals"
+    },
+    "richContent": {
+      "intro": "A strong visual identity should help people understand the page, not leave them guessing what an image proves. Tonight’s build lesson connects BeeWarm’s representative equipment artwork with Rambo and ACUSTIQ’s credited installation records. Each visual needs a clear role, an honest caption and a recognizable next contact.",
+      "sections": [
+        {
+          "heading": "Choose the image for the question it needs to answer",
+          "paragraphs": [
+            "An equipment illustration and a photograph of construction work can both make a website more useful. They do different jobs. One can help a visitor recognize a category; the other can record a particular view of real work. The brand brief should establish that purpose before an image is selected, rather than adding an attractive picture after the copy is finished.",
+            "Tonight’s verified updates put that distinction into practice on BeeWarm, Rambo and ACUSTIQ. This is an original IAM branding and publishing lesson grounded in their live pages. It reports visual and editorial changes, not new equipment launches, measured customer outcomes or a claim that every pictured system or installation has been independently assessed."
+          ]
+        },
+        {
+          "heading": "BeeWarm’s system pictures make the subject recognizable",
+          "paragraphs": [
+            "The current [BeeWarm system section](https://beewarm.ca/#systems) now presents five original equipment illustrations: furnace, heat pump, water heater, boiler and fireplace. The images connect recognizable subjects with existing service pages. The accompanying label identifies them as representative illustrations rather than manufacturer/model listings, installation diagrams or customer-work photographs.",
+            "That choice supports a practical first decision: which subject does the visitor want to discuss with Robert? A coherent illustration style can make the site easier to navigate without borrowing the authority of a product photograph. The image should not imply a specific model is supported, in stock, correctly sized or suitable for a particular home. Those questions belong to the actual service discussion and relevant product information."
+          ],
+          "image": {
+            "src": "/brand-journal/daily-oct29-image-roles-band-1.svg",
+            "alt": "Representative imagery identifies a category; it does not identify a particular model.",
+            "caption": "Original IAM publishing diagram. An illustration is not a product selection or customer installation."
+          }
+        },
+        {
+          "heading": "The ceiling photographs carry a different kind of record",
+          "paragraphs": [
+            "[Rambo’s Slocan T-bar article](https://www.rambowalls.com/blog/slocan-centre-health-complexity-tbar-installation) uses six photographs supplied by Mason McKenzie on October 29. The published record identifies an installation stage, with ceiling grid, selected panels and open areas visible. Its captions credit Mason / Rambo and distinguish the photographs from an announcement that the ceiling package or the building is complete.",
+            "For the reader, the value is the connection between a detail and its setting. A wider view helps explain where an edge or opening sits; a closer view records what is visible at that junction. Neither view automatically identifies the full assembly, every trade’s responsibility or a tested performance result. A useful project page retains those boundaries while giving the work enough context to be understood."
+          ]
+        },
+        {
+          "heading": "A second publication should add another useful reading",
+          "paragraphs": [
+            "[ACUSTIQ’s companion field note](https://www.acustiq.ca/insights/open-ceiling-installation-record-acoustic-specification) approaches the same ceiling record as an educational reference. The installer’s project account and a ceiling-knowledge article need different editorial purposes. Repeating the same promotional paragraph on two websites would not create that distinction.",
+            "The useful question for a product-oriented reader is what additional record is needed: product identity, current specification and applicable supporting documentation. A photograph does not supply those missing facts. The ACUSTIQ article does not establish that an ACUSTIQ-branded product was installed or that a particular acoustic rating was achieved. Keeping that limit visible preserves the difference between a photographed work stage and a product-performance claim."
+          ],
+          "image": {
+            "src": "/brand-journal/daily-oct29-image-roles-band-2.svg",
+            "alt": "A real photograph records the visible stage; a product record supports a separate specification question.",
+            "caption": "Original IAM publishing diagram. A photographed stage is not a measured acoustic result."
+          }
+        },
+        {
+          "heading": "Keep the caption and the enquiry owner together",
+          "paragraphs": [
+            "A caption is part of the service explanation. For representative art, say that it illustrates a category. For supplied work photographs, identify the source, the work shown and any established stage or date. A publication date should not quietly become an installation date, and a public project reference should not turn into an implied customer endorsement.",
+            "Heating and home-comfort enquiries belong with [Robert at BeeWarm](https://beewarm.ca/contact/): call or text [604-765-8424](tel:+16047658424), or email [bee@beewarm.ca](mailto:bee@beewarm.ca). Rambo installation questions belong with [Mason / Rambo](https://www.rambowalls.com/#contact): [778-773-2790](tel:+17787732790) and [rambowallceiling@gmail.com](mailto:rambowallceiling@gmail.com). ACUSTIQ’s educational/platform context and IAM’s marketing enquiries remain separate from those contractor conversations."
+          ]
+        },
+        {
+          "heading": "Treat website publication and distribution as separate states",
+          "paragraphs": [
+            "The BeeWarm imagery and the Rambo/ACUSTIQ records were checked on their actual public domains, including desktop and phone presentation, image loading and contact destinations. Those checks support a claim that the website material is published and readable. They do not establish a service booking, inbox delivery, search ranking or a measured improvement in enquiries.",
+            "At the October 29 check, the six new Rambo photographs uploaded to the Google business listing were still pending moderation. The website releases therefore should not be reported as proof that the Google copies are publicly visible. A small status distinction prevents a distribution task from being marked complete simply because another destination has already passed its own acceptance checks."
+          ],
+          "image": {
+            "src": "/brand-journal/daily-oct29-image-roles-band-3.svg",
+            "alt": "The website records are verified live; the six Google uploads remain pending at the October29 check.",
+            "caption": "Original IAM status diagram, October29. Google moderation remains separate from website acceptance."
+          }
+        },
+        {
+          "heading": "Make the visual role part of the next brand brief",
+          "paragraphs": [
+            "Before commissioning the next page, write down what its main image should help the reader understand, where the source comes from and what the image cannot establish. Then choose the supporting visuals around the article’s actual decisions. A narrow explanatory break can clarify a distinction; an unrelated picture between paragraphs adds little.",
+            "Preserve the existing brand, useful pages and correct enquiry route as the visual library grows. Tonight’s BeeWarm change retained its earlier articles, Robert’s actual work photographs and the existing brand film; the ceiling records retained their own credits and project limits. For a similar brief, [discuss visual publishing with IAM](/contact?request=brand-visuals). Bring the audience question and permitted source material first. Our earlier [tools-and-enquiries edition](/blog/useful-tools-clear-enquiries-plowwow-beewarm) covers a different planning-resource question and keeps its original October 28 date."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "label": "BeeWarm — actual five-system imagery and representative-art label, checked October29",
+          "href": "https://beewarm.ca/#systems"
+        },
+        {
+          "label": "Rambo — published Slocan installation-stage record and credited Mason photographs, October29",
+          "href": "https://www.rambowalls.com/blog/slocan-centre-health-complexity-tbar-installation"
+        },
+        {
+          "label": "ACUSTIQ — published educational ceiling record and product/performance limits, October29",
+          "href": "https://www.acustiq.ca/insights/open-ceiling-installation-record-acoustic-specification"
+        },
+        {
+          "label": "Robert at BeeWarm — named service enquiry route",
+          "href": "https://beewarm.ca/contact/"
+        },
+        {
+          "label": "Mason / Rambo — separate installation enquiry route",
+          "href": "https://www.rambowalls.com/#contact"
+        }
+      ]
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
     "trade": "Metalwork portfolio marketing",
     "tradeShort": "Metalwork marketing",
     "plural": "metalwork businesses",
