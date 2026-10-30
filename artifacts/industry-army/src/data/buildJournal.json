@@ -1,6 +1,151 @@
 [
   {
     "brand": "Industry Army Marketing",
+    "trade": "Fence contractor marketing",
+    "tradeShort": "Fence marketing",
+    "plural": "fencing businesses",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Fraser Valley and beyond",
+    "province": "BC",
+    "category": "Build Journal",
+    "date": "October 29, 2026",
+    "publishedAt": "2026-10-30T00:19:40.941606+00:00",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "contactBusiness": "iam",
+    "campaignSite": "lsfence.ca",
+    "campaignLabel": "Fence contractor marketing",
+    "slug": "lsfence-ca-industry-marketing-project-content-guide",
+    "title": "Fence Contractor Marketing: Give the First Enquiry a Clear Brief",
+    "cardTitle": "Give the first fence enquiry a clear brief.",
+    "excerpt": "Original IAM fence-contractor marketing analysis: useful enquiry prompts, honest project captions and the right named-business contact.",
+    "metaDescription": "Fence contractor marketing: connect planning guides, a useful first enquiry, accurate project captions and the right LS contact. Original IAM analysis.",
+    "image": "/brand-journal/lsfence-project-brief-hero.jpg",
+    "imageAlt": "Barrier gate across a wooded access lane in Chilliwack, supplied by LS Fencing & Metal Work. Archive photograph; installation date not supplied.",
+    "ogImage": "/brand-journal/lsfence-project-brief-share.jpg",
+    "ogImageAlt": "IAM fence contractor marketing: purpose, evidence and the right contact.",
+    "faqHeading": "Fence marketing and enquiry questions",
+    "faqs": [
+      {
+        "q": "Does an enquiry confirm a fencing appointment or price?",
+        "a": "No. An enquiry starts a discussion; assessment, pricing, availability and any agreement must be confirmed with the responsible contractor."
+      },
+      {
+        "q": "Which contact handles an LS construction question?",
+        "a": "Use the actual LS contact page. Its published call number is 604-758-0014 and separate text number is 604-808-7496; confirm the project directly."
+      },
+      {
+        "q": "What does the IAM contact card handle?",
+        "a": "IAM marketing and editorial enquiries. It does not replace the named contractor’s project contact."
+      }
+    ],
+    "cta": {
+      "eyebrow": "ADVERTISEMENT · IAM / FENCE MARKETING",
+      "heading": "Make the next project conversation clearer",
+      "body": "Bring your actual scope, permitted project material and the buyer question. Discuss original contractor content with IAM.",
+      "buttonText": "Discuss fence marketing",
+      "buttonHref": "/contact?request=guest-post&ref_site=lsfence.ca"
+    },
+    "richContent": {
+      "intro": "A fence website can do more than show a finished line. It can help a visitor explain the project question, label the evidence they have and reach the right business. This original IAM guide uses LSFence.ca’s planning role as context.",
+      "sections": [
+        {
+          "heading": "A photograph should lead to a better question",
+          "paragraphs": [
+            "A fence photograph is often the first thing a prospective customer understands. They can see a finish, an opening or a line crossing a landscape. What they cannot necessarily see is the purpose of the enquiry. Is the person asking about a new boundary, an existing gate, a repair or a different way to use an entrance? Good contractor marketing helps the visitor name that question before asking for a quotation.",
+            "The photograph above is credited LS Fencing & Metal Work archive material, publicly identified as a barrier gate in Chilliwack. It illustrates a real contribution without establishing its installation date, dimensions, current condition or suitability for another property. Those limits belong with the image. A useful marketing story can start with what is visible while leaving the actual site assessment to the contractor."
+          ]
+        },
+        {
+          "heading": "Use the planning website for its stated purpose",
+          "paragraphs": [
+            "The current [LSFence.ca homepage](https://lsfence.ca/) describes the site as the planning side of LS Fencing & Metal Work and links to the separate [main company showcase](https://lsfencingandmetalwork.com/). That is a useful editorial distinction: one destination can help someone formulate a question, while the other provides company and project context. The two pages do not need to make identical promises to be connected.",
+            "This article is original IAM marketing analysis of that public presentation, not a technical fencing guide or an independent assessment of LS workmanship. A publisher can explain how a planning resource supports a first conversation without inventing service availability, professional certification or a measurable improvement in enquiries. The planning content remains useful even when the reader still has unanswered questions."
+          ],
+          "image": {
+            "src": "/brand-journal/lsfence-brief-band-1.svg",
+            "alt": "Purpose, evidence and the right next question.",
+            "caption": "Original IAM communication framework; not a fencing specification."
+          }
+        },
+        {
+          "heading": "Replace the empty message box with a useful starting point",
+          "paragraphs": [
+            "A broad invitation to tell us about your project can leave an otherwise interested reader unsure what to send. An editorial brief can offer four plain prompts: what you want to discuss, the broad project area, what already exists and the question you need answered next. These are communication prompts rather than a design specification. Make room for a reader to say that the scope is not settled.",
+            "Consider a hypothetical property manager who wants to discuss an entrance used by maintenance vehicles. The useful initial message identifies that use and asks what information the contractor needs. It does not declare a particular gate system safe or suitable, assume an automation upgrade is available or quote a price from another job. A second hypothetical reader with a damaged existing fence needs a different conversation. Give those enquiries separate starting points instead of treating every photograph as a ready-to-order product."
+          ]
+        },
+        {
+          "heading": "Keep observations separate from conclusions",
+          "paragraphs": [
+            "A reader may have an old photograph, a rough sketch or a measurement they have not checked. The marketing page should help them describe the status of that material. A rough estimate should remain a rough estimate; an unclear property boundary should remain a question for the appropriate professional. The content should not invite readers to turn uncertain information into a definitive claim just to complete a form.",
+            "The checked [LS gate-enquiry field note](https://lsfence.ca/journal/gate-opening-measurements/) distinguishes the useful opening, movement space and approach. Link to the original explanation when it answers the reader’s next question. IAM does not repeat those details here as installation instructions or certify a proposed layout. The marketing lesson is that a short supporting guide can explain why context matters before the business reviews the actual proposal."
+          ],
+          "image": {
+            "src": "/brand-journal/lsfence-brief-band-2.svg",
+            "alt": "Observed, estimated and still unknown: preserve the status of information.",
+            "caption": "Original IAM communication framework; not a fencing specification."
+          }
+        },
+        {
+          "heading": "Let a project caption carry the evidence",
+          "paragraphs": [
+            "A photograph library becomes more useful when each selected image carries a precise, permitted caption. Identify the supplied subject and the named business contribution. Retain a broad location only when the source actually provides it. The date a photograph was supplied is different from the installation date. A gallery grouped under a city heading should not silently relocate every image to that city.",
+            "For an enquiry-focused article, one clearly described overall view can be more useful than a carousel of unexplained details. If a later case study has permission to describe a completed scope, it can add that evidence. Until then, do not manufacture a customer story, a testimonial, a performance rating or a before-and-after result. The image credit and honest limits give the reader a firmer basis for the next conversation."
+          ]
+        },
+        {
+          "heading": "Explain who receives the project question",
+          "paragraphs": [
+            "LSFence.ca publicly lists calls to 604-758-0014, texts to 604-808-7496 and Lsfencingandmetalwork@gmail.com for LS enquiries. Its [contact page](https://lsfence.ca/contact/) is the relevant route for someone discussing the actual fencing or metalwork project. Keep those destinations visible beside the project context and preserve the distinction between the call and text numbers.",
+            "The IAM card on this page serves a separate purpose: marketing and editorial enquiries. A source credit or network relationship does not transfer construction enquiries to IAM or establish legal ownership of the contractor. Nor does a visible email link prove that a message has been delivered, reviewed or accepted. No enquiry, test lead or contribution was submitted for this article."
+          ],
+          "image": {
+            "src": "/brand-journal/lsfence-brief-band-3.svg",
+            "alt": "LS project enquiries stay with LS; IAM marketing enquiries stay with IAM.",
+            "caption": "Original IAM communication framework; not a fencing specification."
+          }
+        },
+        {
+          "heading": "Make the response stage understandable",
+          "paragraphs": [
+            "A good first-message guide should also explain what the visitor has and has not done. Sending a question starts a conversation. It does not confirm an assessment appointment, a quotation, a material order or an agreement to perform work. Where a business has a documented response process, describe it accurately. Where it does not, ask the reader to confirm the next step directly rather than inventing a turnaround promise.",
+            "This distinction matters when content moves between a search result, a shared article and the company website. Each handoff should retain the responsible business and the question being discussed. Avoid giving a generic marketing button the appearance of a contractor booking control. A clear route is a useful publishing deliverable; it is not evidence of delivered leads, search rankings, AI citations or completed projects."
+          ]
+        },
+        {
+          "heading": "Build the content around decisions you can support",
+          "paragraphs": [
+            "A practical fence-content programme can answer different communication questions: how to describe an existing problem, how to identify the source of a project image and what belongs in an initial scope discussion. These are distinct editorial tasks. Repeating one company page under different city names does not add local project evidence or help someone explain their situation.",
+            "For an original industry-content brief, start with the actual business offer, the questions customers ask and the material the business has permission to publish. Explore [IAM contractor marketing](/contractors) and [search-focused content planning](/seo/vancouver), then [discuss an LS Fence marketing brief](/contact?request=guest-post&ref_site=lsfence.ca). Bring the evidence and the enquiry boundary together before choosing the headline."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "label": "LSFence.ca — public planning presentation and credited LS project archive, reviewed October29,2026",
+          "href": "https://lsfence.ca/"
+        },
+        {
+          "label": "LSFence.ca — gate-enquiry field note, published October18,2026",
+          "href": "https://lsfence.ca/journal/gate-opening-measurements/"
+        },
+        {
+          "label": "LSFence.ca — actual LS call, text and email routes; no message submitted",
+          "href": "https://lsfence.ca/contact/"
+        },
+        {
+          "label": "LS Fencing & Metal Work — separate main company showcase and supplied photograph",
+          "href": "https://lsfencingandmetalwork.com/"
+        }
+      ]
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
     "trade": "Log cabin marketing",
     "tradeShort": "Cabin marketing",
     "plural": "cabin businesses",
