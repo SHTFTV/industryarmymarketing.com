@@ -1,6 +1,148 @@
 [
   {
     "brand": "Industry Army Marketing",
+    "trade": "Modular-building scope marketing",
+    "tradeShort": "Modular-building scope",
+    "plural": "modular-building businesses",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Canada",
+    "province": "BC",
+    "category": "Build Journal",
+    "date": "October 30, 2026",
+    "publishedAt": "2026-10-30T14:08:07.609916-07:00",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "contactBusiness": "iam",
+    "campaignSite": "prefabulousbuildings.com",
+    "campaignLabel": "Modular-building marketing",
+    "slug": "prefabulousbuildings-com-industry-marketing-project-content-guide",
+    "title": "Modular-Building Content: Make the Supply Boundary Visible Before Comparing Offers",
+    "cardTitle": "An attractive building image is not the written supply boundary.",
+    "excerpt": "Original IAM analysis: explain what a modular-building offer describes, distinguish adjacent responsibilities and compare written scope before interpreting a promotional image.",
+    "metaDescription": "Modular-building marketing: distinguish a concept, written supply scope and adjacent project responsibilities. Original IAM analysis with clear company and marketing contacts.",
+    "image": "/brand-journal/modular-scope-hero.webp",
+    "imageAlt": "Original IAM AI-generated fictional modular-office model with separate site-base and delivery models on a planning table. Conceptual editorial art, not a PreFabulous Buildings product, actual project, included specification or construction instruction.",
+    "ogImage": "/brand-journal/modular-scope-share.webp",
+    "ogImageAlt": "Original IAM conceptual modular-building scope illustration.",
+    "faqHeading": "Modular-building content and scope questions",
+    "faqs": [
+      {
+        "q": "Does a promotional building image show everything included in an offer?",
+        "a": "No. Read the actual written scope and ask which elements are confirmed, excluded or unresolved. This article does not establish an individual supplier\u2019s offer or a project\u2019s technical requirements."
+      },
+      {
+        "q": "Who receives PreFabulous Buildings project enquiries?",
+        "a": "The reviewed current pages identify SteelStud.ca, 604-761-1518 and frameinsteel@gmail.com as the company contact. The separate IAM card is for marketing and publishing discussions."
+      },
+      {
+        "q": "Does this article confirm approvals, delivery or a contribution submission?",
+        "a": "No. It reviews public information and marketing clarity. No project feasibility, approval, supplier availability, editorial acceptance or backend delivery was tested."
+      }
+    ],
+    "cta": {
+      "eyebrow": "ADVERTISEMENT \u00b7 IAM / MODULAR-BUILDING MARKETING",
+      "heading": "Make the offer easier to understand",
+      "body": "Bring a reviewed scope description, permitted visuals and accurate company contacts. Discuss modular-industry branding and original content with IAM.",
+      "buttonText": "Discuss modular content",
+      "buttonHref": "/contact?request=guest-post&ref_site=prefabulousbuildings.com"
+    },
+    "richContent": {
+      "intro": "Two modular-building images can look comparable while the offers behind them describe different things. One may illustrate a design direction; another may accompany a specific written supply scope. A useful business page makes that difference visible before readers compare prices or assume the surrounding project work is included. This original IAM analysis looks at PreFabulous Buildings\u2019 current concept-led presentation and the publishing choices that can make a scope conversation clearer.",
+      "sections": [
+        {
+          "heading": "Name the document behind the picture",
+          "paragraphs": [
+            "PreFabulous Buildings currently presents container and modular-space concepts. Its pages explicitly distinguish illustrative designs from completed buildings and included specifications, and direct project enquiries to SteelStud.ca. That public boundary is important: the image introduces a possibility while the actual project discussion establishes what is being considered.",
+            "A marketing article can help a reader recognise the difference between a concept description, a proposed scope and a confirmed offer. Identify which kind of material the page contains. Avoid allowing a beautifully finished interior to imply that furniture, services, surrounding works or a particular level of completion has been included in an agreement."
+          ]
+        },
+        {
+          "heading": "Give a fictional comparison a visible supply boundary",
+          "paragraphs": [
+            "Consider a fictional editorial example: two proposals are being discussed for a small workspace. The public images look equally finished, but the written descriptions group the work differently. A useful comparison begins by placing those descriptions side by side and marking the differences. It does not begin by deciding that the lower total buys the same thing.",
+            "For each stated element, identify what the actual document says and which organisation is responsible for confirming it. An unanswered question should remain unanswered in the comparison until the appropriate party supplies the information. This is a method for explaining an offer, not a price estimate or a determination of the components a real project requires."
+          ],
+          "image": {
+            "src": "/brand-journal/modular-scope-band-1.svg",
+            "alt": "Original IAM offer-reading framework: document, stated boundary and open item.",
+            "caption": "ORIGINAL IAM OFFER-READING FRAMEWORK \u00b7 Compare the actual words before interpreting the promotional scene."
+          }
+        },
+        {
+          "heading": "Separate adjacent work without inventing a package",
+          "paragraphs": [
+            "The reviewed site asks readers to bring the site, scope and approvals into a project conversation. Its journal also discusses project-team responsibilities. An IAM article can describe why those distinctions matter without claiming a universal modular-building package or assigning work to an unconfirmed contractor.",
+            "A useful public story might explain how a business labels its supplied element and describes the adjacent questions that need separate confirmation. Keep the language tied to the real reviewed offer. Do not add a delivery commitment, site-preparation service, professional appointment or approval responsibility merely because the overall project will involve a conversation about it."
+          ]
+        },
+        {
+          "heading": "Use the edge of the image as an editorial checkpoint",
+          "paragraphs": [
+            "A rendering may show a building resting neatly in a landscaped setting. The visual edge does not reveal where a supplier\u2019s responsibility starts or stops. An honest caption identifies the scene as illustrative, while nearby text explains that the surrounding context is not automatically an included specification.",
+            "If a later project story uses actual photographs, distinguish the supplier\u2019s documented contribution from work performed by others. Credit the photographer and the relevant business accurately. A broad project photograph should not turn one participant\u2019s role into a claim that it delivered every visible part of the project."
+          ],
+          "image": {
+            "src": "/brand-journal/modular-scope-band-2.svg",
+            "alt": "Original IAM project-story distinction: pictured context, documented role and separate responsibility.",
+            "caption": "ORIGINAL IAM ATTRIBUTION CHECK \u00b7 The full scene and one business\u2019s confirmed contribution are different records."
+          }
+        },
+        {
+          "heading": "Turn a contribution into a useful reading example",
+          "paragraphs": [
+            "A proposed industry contribution could show how an anonymised scope comparison made two offers easier to discuss. Use a fictional example or material that is genuinely permitted for publication, and clearly identify which it is. Explain the question, the difference found in the wording and the information still needed, without inventing a customer outcome.",
+            "Current home navigation and the sitemap did not surface a dedicated contributor route. That limited review does not establish whether a separate contribution arrangement exists. A project-contact link must not be advertised as a tested editorial submission channel. No proposal, email or form was sent."
+          ]
+        },
+        {
+          "heading": "Keep the project company separate from the marketing publisher",
+          "paragraphs": [
+            "The reviewed PreFabulous Buildings pages identify SteelStud.ca, 604-761-1518 and frameinsteel@gmail.com for project enquiries. Preserve that named recipient when discussing the brand. IAM\u2019s shared card on this article is for branding, website messaging and publishing; it does not book a building, establish a project assessment or confirm availability.",
+            "BuildersHaus\u2019s contractor-marketing resource supplies a related business-development context. IAM\u2019s own contractor resource explains the wider marketing conversation. These links help a reader continue the relevant task; they are not independent endorsements of a supplier, technical approval or proof that a particular enquiry was delivered."
+          ],
+          "image": {
+            "src": "/brand-journal/modular-scope-band-3.svg",
+            "alt": "Original IAM recipient map: source company, scope question and marketing publisher.",
+            "caption": "ORIGINAL IAM ENQUIRY MAP \u00b7 Match the reader\u2019s purpose to the responsible business."
+          }
+        },
+        {
+          "heading": "Make the next article explain one boundary well",
+          "paragraphs": [
+            "Choose one point where readers commonly assume more than the page says. Ask the business for the current reviewed wording, decide what can be published and pair it with a properly labelled visual. A narrow explanation of one boundary can be more useful than adding another broad claim about a complete solution.",
+            "The result should help someone prepare a better question and understand who can answer it. Whether a particular proposal is suitable, what requirements apply and how the work will proceed remain separate project matters. The marketing achievement is a clearer explanation, not an unverified installation result or search-performance promise."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "label": "PreFabulous Buildings \u2014 current modular-space concept presentation and company attribution",
+          "href": "https://prefabulousbuildings.com/"
+        },
+        {
+          "label": "PreFabulous Buildings \u2014 current services/planning presentation, not an individual offer",
+          "href": "https://prefabulousbuildings.com/services/"
+        },
+        {
+          "label": "PreFabulous Buildings \u2014 named project-company contact",
+          "href": "https://prefabulousbuildings.com/contact/"
+        },
+        {
+          "label": "Related IAM resource \u2014 contractor branding and useful website content",
+          "href": "https://www.industryarmymarketing.com/contractors"
+        },
+        {
+          "label": "Related trade-business resource \u2014 BuildersHaus contractor marketing",
+          "href": "https://www.buildershaus.com/contractor-marketing"
+        }
+      ]
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
     "trade": "Compact-home concept marketing",
     "tradeShort": "Compact-home concepts",
     "plural": "compact-home businesses",
