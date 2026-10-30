@@ -1,6 +1,148 @@
 [
   {
     "brand": "Industry Army Marketing",
+    "trade": "Drainage observation content marketing",
+    "tradeShort": "Drainage content",
+    "plural": "drainage businesses",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Canada",
+    "province": "BC",
+    "category": "Build Journal",
+    "date": "October 30, 2026",
+    "publishedAt": "2026-10-30T10:38:50.933020-07:00",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "contactBusiness": "iam",
+    "campaignSite": "plumbingdrainage.ca",
+    "campaignLabel": "Drainage content marketing",
+    "slug": "plumbingdrainage-ca-industry-marketing-project-content-guide",
+    "title": "Drainage Content: Record the Observation Before Naming the Cause",
+    "cardTitle": "A useful record says what was seen, where and when.",
+    "excerpt": "Original IAM analysis: separate an observed drainage concern, its time/location context and a later professional interpretation in project content.",
+    "metaDescription": "Drainage website content: keep observations, time/location records and professional interpretation distinct. Original IAM marketing and contributor guide.",
+    "image": "/brand-journal/drainage-record-hero.webp",
+    "imageAlt": "Original IAM AI-generated fictional drainage-documentation scene with a closed-screen camera reel and notebook. Not an actual inspection, defect diagnosis, repair record or instruction to perform work.",
+    "ogImage": "/brand-journal/drainage-record-share.webp",
+    "ogImageAlt": "Original IAM drainage-content artwork: observation, context and interpretation.",
+    "faqHeading": "Drainage content and evidence questions",
+    "faqs": [
+      {
+        "q": "Can a marketing photograph establish the cause of a drainage concern?",
+        "a": "No. Describe what the available record shows and distinguish any later professional interpretation. This article does not diagnose defects or provide inspection or repair instructions."
+      },
+      {
+        "q": "What makes an observation useful in a project story?",
+        "a": "Its source, relevant time and location context, the visible stage and the question it helped someone discuss. Keep private details out of public copies and identify what remains unconfirmed."
+      },
+      {
+        "q": "Was the contributor email or contractor response tested?",
+        "a": "No email, form, proposal or payment was sent. The review checked the current published contributor page and visible destination, not acceptance, delivery or contractor availability."
+      }
+    ],
+    "cta": {
+      "eyebrow": "ADVERTISEMENT \u00b7 IAM / DRAINAGE CONTENT MARKETING",
+      "heading": "Make your project record easier to understand",
+      "body": "Bring a useful reader question, permitted records and accurate business contacts. Discuss original drainage-industry content and website marketing with IAM.",
+      "buttonText": "Discuss drainage content",
+      "buttonHref": "/contact?request=guest-post&ref_site=plumbingdrainage.ca"
+    },
+    "richContent": {
+      "intro": "A drainage photograph can attract attention while leaving the most important distinction unstated: what was observed, and what was later interpreted? Good project content preserves that boundary. This original IAM analysis uses PlumbingDrainage.ca\u2019s current information and contributor pages to show how a business can publish a more useful observation record without turning a website image into a remote diagnosis.",
+      "sections": [
+        {
+          "heading": "Begin with a record, not a conclusion",
+          "paragraphs": [
+            "The most confident caption is not necessarily the most informative one. A project photograph may show a visible condition at a particular moment. It does not automatically establish the origin of that condition, the work required or the result of a later inspection. A useful editorial record keeps those statements separate.",
+            "PlumbingDrainage.ca currently presents drainage and inspection topics and a contributor route for practical industry material. That creates an opportunity for specific, evidence-led explanations. It does not mean this IAM feature has verified the site\u2019s broader contractor coverage, credentials, customer reviews or service availability. The discussion here concerns publishing quality, not a technical assessment or service endorsement."
+          ]
+        },
+        {
+          "heading": "Give the observation enough context to remain identifiable",
+          "paragraphs": [
+            "For a conceptual project file, imagine an existing permissioned photograph supplied for an editorial story. Its accompanying note could identify the general area shown, the date recorded, the person who supplied it and the project stage. The point is to preserve the record\u2019s identity when the image is separated from the original message. This is not a request to undertake an inspection or collect images in an unsafe setting.",
+            "The public caption may need less detail than the private project file. A broad location description can explain the setting without publishing an address, resident information or access arrangements. Keep a restricted original record and a suitable public copy where permissions require that separation. More detail is not automatically better if it exposes information the reader does not need."
+          ],
+          "image": {
+            "src": "/brand-journal/drainage-record-band-1.svg",
+            "alt": "Original IAM record framework: observation, time context and location context.",
+            "caption": "ORIGINAL IAM PUBLISHING FRAMEWORK \u00b7 Identify the available record without inferring a diagnosis."
+          }
+        },
+        {
+          "heading": "Keep a professional interpretation attached to its source",
+          "paragraphs": [
+            "If a qualified professional later provides an interpretation, identify the source and the scope of that statement accurately. Do not silently rewrite the original observation as though the cause had been established from the outset. A useful project story can show how understanding developed while leaving the dated record intact.",
+            "For example, an editorial timeline might contain a supplied image, a later report reference and a subsequent discussion about scope. Those are three different records. The article should explain which statement comes from which record instead of blending them into a single dramatic before-and-after claim. No inspection result or customer outcome is being asserted by this conceptual example."
+          ]
+        },
+        {
+          "heading": "Before-and-after publishing needs more than two images",
+          "paragraphs": [
+            "A pair of photographs can be visually persuasive, especially when the framing or lighting changes. A stronger account identifies whether the views show the same area, what dates or stages are established and what the contributor is actually able to explain. If the record is incomplete, say which comparison cannot be made rather than filling the gap with a performance claim.",
+            "The same discipline applies to video or report excerpts. Permission to use an image does not necessarily permit publishing an entire customer report, private address or identifiable conversation. Choose the minimum relevant excerpt, retain its source context and obtain the appropriate permission. This is editorial record management, not a statement about inspection methods or repair effectiveness."
+          ],
+          "image": {
+            "src": "/brand-journal/drainage-record-band-2.svg",
+            "alt": "Original IAM evidence framework: original record, later interpretation, stated limitation.",
+            "caption": "ORIGINAL IAM PUBLISHING FRAMEWORK \u00b7 Keep the sequence of evidence visible."
+          }
+        },
+        {
+          "heading": "Build the contribution around one useful question",
+          "paragraphs": [
+            "An effective industry contribution can explain a communication decision: how a team kept records identifiable, how a report reference was described clearly or how a project story avoided implying more than its evidence supported. A narrow question gives the reader a practical idea without pretending that a general article resolves an individual building concern.",
+            "The current published contributor page asks for original educational material, relevant imagery and an author bio, and gives info@buildershaus.com as the submission destination. It states a 1,500-word minimum and exclusivity requirement for contributions to that site. Those are the source site\u2019s published terms, not a requirement that this separate IAM analysis is submitting or fulfilling. No pitch was sent and editorial acceptance or email delivery was not tested."
+          ]
+        },
+        {
+          "heading": "Give the public copy a clear owner and purpose",
+          "paragraphs": [
+            "The named contributor should remain attached to their own work. A directory or information platform should not turn a supplied project record into an implied installation by the platform itself. Likewise, a reader asking about a project should not be told that an IAM marketing enquiry constitutes a contractor assessment or appointment.",
+            "This page\u2019s shared IAM card is for content and business marketing. The source contributor route has its own stated destination. BuildersHaus\u2019s contractor-marketing resource provides a separate business-development context. Label those intentions so the reader can choose the conversation they actually want."
+          ],
+          "image": {
+            "src": "/brand-journal/drainage-record-band-3.svg",
+            "alt": "Original IAM publishing distinction: contributor record, public story, correct recipient.",
+            "caption": "ORIGINAL IAM PUBLISHING FRAMEWORK \u00b7 Preserve authorship, privacy and enquiry ownership."
+          }
+        },
+        {
+          "heading": "Review the caption before expanding the story",
+          "paragraphs": [
+            "For a next publishing brief, choose one permitted record and ask four questions: what is visible, what time and location context is established, which later statement has its own source and which information should remain private? The answers can form an original story outline before more photographs, city pages or promotional copy are added.",
+            "IAM\u2019s construction-brand resource connects that editorial work to the broader business website. The immediate goal is an understandable, accurately attributed record. Search performance, enquiry quality and completed project results need separate evidence; a newly published article does not establish them."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "label": "PlumbingDrainage.ca \u2014 current drainage-information presentation, reviewed as editorial context",
+          "href": "https://www.plumbingdrainage.ca/"
+        },
+        {
+          "label": "Current published contributor page \u2014 educational terms and visible BuildersHaus destination",
+          "href": "https://www.plumbingdrainage.ca/guest-post"
+        },
+        {
+          "label": "Source site\u2019s information archive \u2014 related drainage subject context, not a property assessment",
+          "href": "https://www.plumbingdrainage.ca/blog"
+        },
+        {
+          "label": "Related IAM resource \u2014 construction brands and original business website content",
+          "href": "https://www.industryarmymarketing.com/contractors"
+        },
+        {
+          "label": "Related trade-business resource \u2014 BuildersHaus contractor marketing",
+          "href": "https://www.buildershaus.com/contractor-marketing"
+        }
+      ]
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
     "trade": "Plumbing enquiry marketing",
     "tradeShort": "Plumbing marketing",
     "plural": "plumbing businesses",
