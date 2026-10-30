@@ -1,6 +1,148 @@
 [
   {
     "brand": "Industry Army Marketing",
+    "trade": "Plumbing enquiry marketing",
+    "tradeShort": "Plumbing marketing",
+    "plural": "plumbing businesses",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Canada",
+    "province": "BC",
+    "category": "Build Journal",
+    "date": "October 30, 2026",
+    "publishedAt": "2026-10-30T03:43:57.818573-07:00",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "contactBusiness": "iam",
+    "campaignSite": "plumbers.ltd",
+    "campaignLabel": "Plumbing enquiry marketing",
+    "slug": "plumbers-ltd-industry-marketing-project-content-guide",
+    "title": "Plumbing Marketing: Keep Urgent Contact Separate from Project Planning",
+    "cardTitle": "Different intentions need different next steps.",
+    "excerpt": "Original IAM analysis: distinguish time-sensitive contact, a planned plumbing-project brief and an editorial proposal without implying dispatch or confirmed availability.",
+    "metaDescription": "Plumbing website marketing: separate urgent-contact intent, planned project briefs and editorial enquiries with accurate actions and business ownership.",
+    "image": "/brand-journal/plumbers-intent-hero.webp",
+    "imageAlt": "Original IAM AI-generated fictional kitchen and plumbing-planning scene. Not an actual customer project, emergency, repair instruction or evidence that a plumber is available.",
+    "ogImage": "/brand-journal/plumbers-intent-share.webp",
+    "ogImageAlt": "Original IAM plumbing-marketing artwork: different intentions, clear next steps.",
+    "faqHeading": "Plumbing website and enquiry questions",
+    "faqs": [
+      {
+        "q": "Does a plumbing website form confirm emergency dispatch?",
+        "a": "No. A visible form or call-to-action does not establish that a service request was received, accepted or dispatched. This article is marketing analysis, not emergency guidance or a service-availability endorsement."
+      },
+      {
+        "q": "What belongs in a planned-project content brief?",
+        "a": "Describe the project context, the questions the owner wants to discuss, available records and the intended business recipient. The example here is not technical plumbing advice or a quotation."
+      },
+      {
+        "q": "Was the Plumbers.ltd contact or editorial delivery tested?",
+        "a": "No form, email, payment or proposal was submitted. The review inspected current rendered pages and visible destinations only."
+      }
+    ],
+    "cta": {
+      "eyebrow": "ADVERTISEMENT \u00b7 IAM / PLUMBING MARKETING",
+      "heading": "Make your website\u2019s next action more precise",
+      "body": "Bring the audience intention, permitted business material and correct contact details. Discuss original plumbing-industry content and website marketing with IAM.",
+      "buttonText": "Discuss plumbing marketing",
+      "buttonHref": "/contact?request=guest-post&ref_site=plumbers.ltd"
+    },
+    "richContent": {
+      "intro": "Someone looking for a time-sensitive contact and someone planning a future plumbing project should not have to decode the same vague button. A useful plumbing website explains which conversation each action begins. This original IAM analysis uses the current Plumbers.ltd presentation to examine intention, enquiry wording and the distinction between a visible contact route and an accepted service request.",
+      "sections": [
+        {
+          "heading": "Treat urgency language as a business commitment",
+          "paragraphs": [
+            "Urgency is more than a headline style. If a page uses immediate-service language, a reader may interpret its next action as a way to reach an available operator. The marketing review should ask whether the named business, contact destination and stated response conditions support that expectation. Attractive wording cannot supply missing operational evidence.",
+            "Plumbers.ltd currently presents service information, a general contact page and a contributor page. Its visible email destination is build@buildershaus.com. This review did not verify dispatch, operating hours, service-area coverage or contractor credentials, and does not endorse the site\u2019s broader service promises. The useful lesson is to make the action and its actual recipient explicit."
+          ]
+        },
+        {
+          "heading": "Give a planned project room for a different conversation",
+          "paragraphs": [
+            "A future renovation has a different editorial starting point. In a conceptual bathroom-project brief, an owner might describe the room, the intended change, the timing they want to discuss and which drawings or records they already have. That description organizes a conversation; it is not a design, diagnosis, quotation or instruction for carrying out work.",
+            "The page can help by showing what kind of question belongs at this stage. A short example of a well-framed enquiry is often more useful than an undifferentiated list of services. Explain what the business would need to discuss next, while leaving technical evaluation and accepted scope to the appropriate people."
+          ],
+          "image": {
+            "src": "/brand-journal/plumbers-intent-band-1.svg",
+            "alt": "Original IAM intention diagram: contact question, project context, next conversation.",
+            "caption": "ORIGINAL IAM FRAMEWORK \u00b7 Organize a marketing conversation, not an emergency response or technical assessment."
+          }
+        },
+        {
+          "heading": "Do not hide every intention behind \u201csend\u201d",
+          "paragraphs": [
+            "One form can collect several kinds of request, but its surrounding explanation should still distinguish them. A project enquiry, a directory question and an editorial pitch have different recipients and expectations. If the interface gives them the same label, the reader may assume a level of coordination that the website has not demonstrated.",
+            "A useful review follows the visible action without submitting a test lead: read its label, inspect its destination and check the business named beside it. Then ask what happens only after a real recipient responds. A button does not prove delivery, an automated confirmation does not prove acceptance, and neither establishes a scheduled visit. This article did not test those outcomes."
+          ]
+        },
+        {
+          "heading": "Let the brief preserve the unanswered questions",
+          "paragraphs": [
+            "For planned work, useful content can distinguish the owner\u2019s goal from the facts that still need confirmation. A simple project narrative might identify the room under discussion, the records available and the questions the owner wants the business to address. Avoid presenting an example as a universal package or a ready-to-accept scope.",
+            "This approach also improves project stories. Describe the stage actually documented, identify the source of permitted images and say which decisions the record supports. A photograph of a finished room cannot establish the hidden work, an inspection result or the suitability of a similar arrangement elsewhere. Those claims need their own evidence."
+          ],
+          "image": {
+            "src": "/brand-journal/plumbers-intent-band-2.svg",
+            "alt": "Original IAM project-record diagram: owner goal, available record, open question.",
+            "caption": "ORIGINAL IAM FRAMEWORK \u00b7 Keep established information separate from what still needs review."
+          }
+        },
+        {
+          "heading": "Keep platform marketing separate from a plumbing appointment",
+          "paragraphs": [
+            "A shared industry platform may have an editorial or marketing contact that is different from a contractor accepting work. That distinction belongs beside the action, not only in a footer. A reader should be able to tell whether they are contacting a named service business or asking about publishing and promotion.",
+            "On this IAM feature, the construction-marketing card opens IAM\u2019s own enquiry route. It does not request a plumber or confirm availability. BuildersHaus\u2019s contractor-marketing resource is a related business-development destination. Those routes should not be described as service dispatch, and the platform email visible on the source site should not be turned into an invented local contractor number."
+          ],
+          "image": {
+            "src": "/brand-journal/plumbers-intent-band-3.svg",
+            "alt": "Original IAM recipient distinction: service business, platform editorial, IAM marketing.",
+            "caption": "ORIGINAL IAM FRAMEWORK \u00b7 Name the organization and the conversation each action begins."
+          }
+        },
+        {
+          "heading": "Review a contributor proposal on its own terms",
+          "paragraphs": [
+            "A plumbing-industry contribution can explain a useful communication decision: how a project question was clarified, how records were organized or how a customer handover became easier to understand. Identify the author\u2019s actual role, evidence, image permissions and commercial interests before promising a finished publication.",
+            "Plumbers.ltd has a visible contributor page and a BuildersHaus email destination. Its current presentation includes paid-placement promotion. This feature does not verify publication arrangements, permanent placement, traffic or backlink benefits. No proposal, payment or email was sent. Discuss the actual editorial scope and terms directly instead of treating promotional language as proof of results."
+          ]
+        },
+        {
+          "heading": "Read the promise and the recipient together",
+          "paragraphs": [
+            "For the next website review, place the headline, action label and destination side by side. Do they describe the same intention? Is the business identifiable? Does a planned-project page give enough context for a useful conversation? Does any response-time claim have current operational support? These are concrete editorial questions that can be reviewed before adding more pages.",
+            "IAM\u2019s construction-brand resource provides the broader context for business positioning and useful website content. The immediate objective is a more accurate next step. Search rankings, enquiry quality, contractor response and completed work remain separate outcomes requiring separate evidence."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "label": "Plumbers.ltd \u2014 current rendered service presentation, reviewed as marketing context only",
+          "href": "https://www.plumbers.ltd/"
+        },
+        {
+          "label": "Plumbers.ltd contact \u2014 visible general platform destination; no submission or dispatch test",
+          "href": "https://www.plumbers.ltd/contact"
+        },
+        {
+          "label": "Plumbers.ltd contributor page \u2014 current presentation, not an endorsement of placement or backlink claims",
+          "href": "https://www.plumbers.ltd/guest-post"
+        },
+        {
+          "label": "Related IAM resource \u2014 construction brands and useful website marketing",
+          "href": "https://www.industryarmymarketing.com/contractors"
+        },
+        {
+          "label": "Related business-development resource \u2014 BuildersHaus contractor marketing",
+          "href": "https://www.buildershaus.com/contractor-marketing"
+        }
+      ]
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
     "trade": "Painting project content marketing",
     "tradeShort": "Painting marketing",
     "plural": "painting businesses",
