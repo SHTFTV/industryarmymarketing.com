@@ -1,6 +1,153 @@
 [
   {
     "brand": "Industry Army Marketing",
+    "trade": "Standby power planning marketing",
+    "tradeShort": "Generator marketing",
+    "plural": "generator businesses",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Canada",
+    "province": "BC",
+    "category": "Build Journal",
+    "date": "October 30, 2026",
+    "publishedAt": "2026-10-30T00:24:09.975092-07:00",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "contactBusiness": "iam",
+    "campaignSite": "naturalgasgenerators.ca",
+    "campaignLabel": "Generator planning marketing",
+    "slug": "naturalgasgenerators-ca-industry-marketing-project-content-guide",
+    "title": "Standby Power Marketing: Make the Planning Question the Next Step",
+    "cardTitle": "A clearer planning question is a better next step.",
+    "excerpt": "Original IAM analysis of generator content: connect outage priorities, exact equipment records and the right enquiry without promising a universal solution.",
+    "metaDescription": "Standby generator marketing: organize buyer planning questions, model records and project enquiries clearly. Original IAM content and conversion analysis.",
+    "image": "/brand-journal/generator-planning-hero.webp",
+    "imageAlt": "Original IAM AI-generated editorial scene showing a fictional standby generator and planning notebook. Not a named model, customer installation, placement design or equipment-operating claim.",
+    "ogImage": "/brand-journal/generator-planning-share.webp",
+    "ogImageAlt": "Original IAM editorial artwork: standby power marketing, priorities before promises.",
+    "faqHeading": "Standby power content and marketing questions",
+    "faqs": [
+      {
+        "q": "Does a generator planning page establish that a model fits my property?",
+        "a": "No. A model record and an individual project assessment answer different questions. Relevant professionals must confirm the actual equipment, design and accepted scope."
+      },
+      {
+        "q": "Is the IAM marketing enquiry a generator installation booking?",
+        "a": "No. IAM\u2019s campaign contact is for marketing and editorial work. Use the generator website\u2019s actual project route or the named BeeWarm service contact where applicable."
+      },
+      {
+        "q": "Was the generator website\u2019s enquiry delivery tested for this article?",
+        "a": "No enquiry or form was submitted. The review checked visible content and destinations, not backend delivery, acceptance, scheduling or installation availability."
+      }
+    ],
+    "cta": {
+      "eyebrow": "ADVERTISEMENT \u00b7 IAM / GENERATOR MARKETING",
+      "heading": "Give the next enquiry a clearer starting point",
+      "body": "Bring your audience, permitted equipment material and actual business contacts. Discuss original generator-industry content and website marketing with IAM.",
+      "buttonText": "Discuss generator marketing",
+      "buttonHref": "/contact?request=guest-post&ref_site=naturalgasgenerators.ca"
+    },
+    "richContent": {
+      "intro": "Standby-power interest often begins with a broad concern: what happens when the electricity stops? A useful marketing page should help that concern become a specific planning question. This original IAM analysis uses NaturalGasGenerators.ca as the context for an editorial approach that connects priorities, equipment information and the correct enquiry route without turning a website promise into a project assessment.",
+      "sections": [
+        {
+          "heading": "Choose the next question before the next slogan",
+          "paragraphs": [
+            "A prospect may be thinking about essential household activities, an interruption to business operations or simply how to begin comparing equipment. The first editorial decision is which question a page will help that person ask next. A clear heading and a useful example can do more work than a broad assurance about uninterrupted power.",
+            "NaturalGasGenerators.ca currently separates residential and commercial planning, sizing, installation and maintenance information. Its homepage also presents Robert\u2019s BeeWarm model guides. That structure allows a reader to approach the subject by an immediate planning question or by an identified piece of equipment. The marketing opportunity is to make the transition between those paths explicit."
+          ]
+        },
+        {
+          "heading": "Turn an outage concern into a short priorities record",
+          "paragraphs": [
+            "Consider a conceptual owner who wants to describe the activities that matter during an interruption. A useful content exercise is to write those priorities in everyday language before trying to choose a product: the activity, why it matters, who uses it and what remains uncertain. This is an editorial example, not a load calculation or a recommendation to connect particular equipment.",
+            "A planning page can provide that structure without pretending to finish the design. For example, an enquiry brief could have separate spaces for the property context, the owner\u2019s priorities, existing records and the question for the next reviewer. The value is that uncertainty stays visible rather than being concealed by a confident product headline."
+          ],
+          "image": {
+            "src": "/brand-journal/generator-planning-band-1.svg",
+            "alt": "Original IAM editorial sequence: concern, priorities record, planning question.",
+            "caption": "ORIGINAL IAM FRAMEWORK \u00b7 Organizing a conversation, not calculating electrical demand."
+          }
+        },
+        {
+          "heading": "Give a model page a defined editorial boundary",
+          "paragraphs": [
+            "An exact model name helps a reader keep documents and comparisons attached to the right item. It does not make the item a suitable choice for every property. The current generator site\u2019s source content distinguishes general planning from site-specific professional design and equipment selection. That boundary should survive the social excerpt, page heading and contact prompt.",
+            "For a generator business, a useful model article can identify the document being discussed, explain which reader question it addresses and state what still needs confirmation. If a specification changes, the record should be updated with an accurate date. A visually attractive card should never be allowed to imply a tested installation, supplier relationship or current stock position that has not been established."
+          ]
+        },
+        {
+          "heading": "Write the enquiry prompt to match the page",
+          "paragraphs": [
+            "A general \u201ccontact us\u201d button leaves the reader to reconstruct the purpose of the page. A more useful prompt names the next conversation. A page about beginning a project can ask the reader to bring a priorities record; a page about an identified model can ask which product document or package needs clarification. The wording should help the receiving business understand the request.",
+            "This does not require claiming that a form automatically sizes equipment, confirms appointments or sends a qualified lead. Those would be separate functionality claims requiring evidence. For this review, no generator form was submitted and no delivery or accepted project was tested. The visible project form is a route to an enquiry, not proof of the outcome."
+          ],
+          "image": {
+            "src": "/brand-journal/generator-planning-band-2.svg",
+            "alt": "Original IAM diagram: page question, enquiry brief, human review.",
+            "caption": "ORIGINAL IAM FRAMEWORK \u00b7 A visible enquiry path is not a confirmed assessment or booking."
+          }
+        },
+        {
+          "heading": "Keep the named business visible at the handoff",
+          "paragraphs": [
+            "The current general contact page identifies colin@gasfitter.ca. The Lower Mainland service-area and model-guide context also provides a distinct BeeWarm route for Robert. A marketing feature should explain that distinction rather than collect every project request under the IAM campaign contact. Readers should know which business they are approaching.",
+            "The practical check is simple: follow the page\u2019s action as a reader would, compare the visible business name with the destination and make sure the surrounding sentence describes the same intention. For a multi-property information network, that small consistency check is particularly useful because a shared design can otherwise make different organizations look interchangeable."
+          ],
+          "image": {
+            "src": "/brand-journal/generator-planning-band-3.svg",
+            "alt": "Original IAM contact distinction: project enquiry, named BeeWarm context, IAM marketing.",
+            "caption": "ORIGINAL IAM FRAMEWORK \u00b7 Preserve each business\u2019s actual enquiry ownership."
+          }
+        },
+        {
+          "heading": "Invite expertise without inventing a publishing programme",
+          "paragraphs": [
+            "Useful industry content can come from a well-defined question and permitted original material: how an owner organizes an initial brief, how a business keeps equipment records current, or how a service team explains what information to have ready. A contributor outline should identify the audience, evidence, author\u2019s role and any commercial interest before a finished article is promised.",
+            "The current navigation, sitemap and source review did not establish a dedicated guest-contribution route on NaturalGasGenerators.ca. This IAM feature does not advertise one as available. A business can discuss a content brief through IAM\u2019s separate marketing route, while project enquiries remain with the destinations identified on the generator website."
+          ]
+        },
+        {
+          "heading": "Review the promise and the action together",
+          "paragraphs": [
+            "When refreshing a standby-power page, read its headline and next action as one sentence. Does the action actually begin the conversation promised by the headline? Can the reader distinguish an educational model record from a project decision? Does a concept illustration have an honest caption? Does the contact destination identify the intended business?",
+            "These are reviewable content and conversion improvements. They do not demonstrate rankings, enquiry quality, equipment performance or sales. Those results need their own evidence. The immediate publishing goal is narrower and useful: make the question clearer, preserve the unknowns and give the reader an accurate next step.",
+            "For a broader business brief, IAM\u2019s construction-brand resource connects positioning, website content and the next marketing conversation. BeeWarm\u2019s own contact page remains a separate route for its service enquiries; the related links below identify both destinations explicitly."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "label": "NaturalGasGenerators.ca \u2014 current planning navigation and Robert\u2019s model-guide presentation",
+          "href": "https://naturalgasgenerators.ca/"
+        },
+        {
+          "label": "Generator project contact \u2014 actual visible general enquiry route; no submission made",
+          "href": "https://naturalgasgenerators.ca/contact"
+        },
+        {
+          "label": "Lower Mainland service-area context \u2014 separate BeeWarm business contact",
+          "href": "https://naturalgasgenerators.ca/service-areas#lower-mainland"
+        },
+        {
+          "label": "Generator installation planning \u2014 educational context, not an assessment of an individual property",
+          "href": "https://naturalgasgenerators.ca/installation-planning"
+        },
+        {
+          "label": "Related IAM service \u2014 construction brands, useful content and business website marketing",
+          "href": "https://www.industryarmymarketing.com/contractors"
+        },
+        {
+          "label": "Related named trade business \u2014 BeeWarm\u2019s own service contact, separate from IAM marketing",
+          "href": "https://beewarm.ca/contact/"
+        }
+      ]
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
     "trade": "Insulation information marketing",
     "tradeShort": "Insulation marketing",
     "plural": "insulation businesses",
