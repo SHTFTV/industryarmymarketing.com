@@ -1,6 +1,151 @@
 [
   {
     "brand": "Industry Army Marketing",
+    "trade": "Metalwork portfolio marketing",
+    "tradeShort": "Metalwork marketing",
+    "plural": "metalwork businesses",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Fraser Valley and beyond",
+    "province": "BC",
+    "category": "Build Journal",
+    "date": "October 29, 2026",
+    "publishedAt": "2026-10-29T20:04:10.375000-07:00",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "contactBusiness": "iam",
+    "campaignSite": "lsfencingandmetalwork.com",
+    "campaignLabel": "Metalwork portfolio marketing",
+    "slug": "lsfencingandmetalwork-com-industry-marketing-project-content-guide",
+    "title": "Metalwork Marketing: Keep the Maker, the Photograph and the Enquiry Together",
+    "cardTitle": "Keep the maker visible wherever the work appears.",
+    "excerpt": "Original IAM analysis of metalwork portfolio publishing: preserve the maker, source record and correct LS business contact across related pages.",
+    "metaDescription": "Metalwork portfolio marketing: keep LS Fencing & Metal Work, credited gate photographs and the right customer enquiry connected. Original IAM analysis.",
+    "image": "/brand-journal/lsmetal-cantilever-hero.jpg",
+    "imageAlt": "Cantilever gate beside an agricultural field. Archive photograph supplied by Luke / LS Fencing & Metal Work; location and installation date not established for this article.",
+    "ogImage": "/brand-journal/lsmetal-ownership-share.png",
+    "ogImageAlt": "IAM metalwork portfolio marketing: keep the maker, photograph and company enquiry together. Original explanatory illustration.",
+    "faqHeading": "Metalwork portfolio marketing questions",
+    "faqs": [
+      {
+        "q": "Does appearing in an IAM article transfer a contractor’s business to IAM?",
+        "a": "No. The named business retains its identity and construction enquiry route. IAM marketing enquiries are separate."
+      },
+      {
+        "q": "Does a new article mean a pictured installation was completed today?",
+        "a": "No. Publication and installation dates are different. This feature uses a credited archive photograph without claiming a new completion."
+      },
+      {
+        "q": "Where should a customer discuss LS construction work?",
+        "a": "Use LS Fencing & Metal Work’s actual company contact page. IAM’s card handles marketing and editorial enquiries."
+      }
+    ],
+    "cta": {
+      "eyebrow": "ADVERTISEMENT · IAM / METALWORK MARKETING",
+      "heading": "Give your portfolio a clear source and a clear next step",
+      "body": "Bring the named business, permitted project material and accurate contact. Discuss an original industry-content brief with IAM.",
+      "buttonText": "Discuss metalwork marketing",
+      "buttonHref": "/contact?request=guest-post&ref_site=lsfencingandmetalwork.com"
+    },
+    "richContent": {
+      "intro": "A portfolio photograph can travel further than the company page that first explained it. This original IAM metalwork marketing guide uses LS Fencing & Metal Work’s public showcase to examine how the maker, image credit and customer enquiry stay connected across service pages and related editorial features.",
+      "sections": [
+        {
+          "heading": "A portfolio is a chain of attribution",
+          "paragraphs": [
+            "A metal gate can appear on the fabricator’s website, in a planning guide and in an agency case study. Each page serves a different purpose, but the underlying work still belongs to the named business. The useful marketing task is to preserve that connection as the photograph moves: who supplied it, what it shows and which company should receive the construction question.",
+            "The [LS Fencing & Metal Work company website](https://lsfencingandmetalwork.com/) presents fencing, gates and metalwork in the Fraser Valley and Lower Mainland. Its supplied photograph above shows a cantilever gate beside an agricultural field. We retain that subject description without adding an installation date or location. This is IAM’s original portfolio analysis, not a new installation announcement or an independent inspection of the work."
+          ]
+        },
+        {
+          "heading": "Distinguish the maker from the publisher",
+          "paragraphs": [
+            "Put the business name beside the work rather than relying on a logo several screens away. A reader landing directly on an article should be able to identify LS Fencing & Metal Work without reconstructing the relationship between several websites. An agency credit can explain who publishes or markets a page; it should not replace the identity of the company being discussed.",
+            "A short attribution record names the business, identifies the photograph and retains its supplied location. A separate publishing credit identifies IAM’s role. A network footer does not establish that IAM owns the contractor, fabricated the gate or accepts the construction contract. Consistent naming prevents those different roles from becoming blurred."
+          ],
+          "image": {
+            "src": "/brand-journal/lsmetal-ownership-band-1.svg",
+            "alt": "Maker, photograph and stated business role remain connected.",
+            "caption": "Original IAM publishing framework, not a construction specification or verification badge."
+          }
+        },
+        {
+          "heading": "Give the photograph a record that survives sharing",
+          "paragraphs": [
+            "Keep the original source, a plain description, the credited business and any permitted location or date together. The installation date is different from the date a photograph was supplied or an article published. If the installation date is not established, leave it unclaimed. A new article can discuss archive material without making old work look newly completed.",
+            "Consider a hypothetical portfolio review in which a gate image moves into a broader metalwork feature. Before changing the headline, check that the caption still describes the gate. Do not turn it into a handrail project, relocate it to the city in the article title or attach a customer endorsement that was never provided. Preserve the evidence rather than making the photograph carry a bigger claim."
+          ]
+        },
+        {
+          "heading": "Keep gates and handrails as different buying decisions",
+          "paragraphs": [
+            "A company may offer several related services while customers arrive with different needs. Someone interested in a storefront gate is not necessarily asking the same question as a reader reviewing a handrail. Separate descriptions and relevant examples help the visitor choose the appropriate conversation instead of treating every metalwork photograph as an interchangeable product image.",
+            "The current [gate page](https://lsfencingandmetalwork.com/metal-gates) and [barrier-gate and handrail page](https://lsfencingandmetalwork.com/barrier-gates) provide distinct destinations. Link to the one matching the subject. Actual design, specification, suitability and agreement remain matters for the responsible business and appropriate project professionals; a marketing feature does not supply installation instructions or establish compliance."
+          ]
+        },
+        {
+          "heading": "Keep the destination recognizable",
+          "paragraphs": [
+            "A useful portfolio path has three understandable stages: the reader sees the project context, follows a relevant service explanation and reaches the named business’s enquiry route. The button should describe the next action accurately. Displaying a project photograph does not turn a publisher’s page into a contractor booking system.",
+            "LS publishes 604-758-0014 for calls and Lsfencingandmetalwork@gmail.com for company enquiries. Its [actual contact page](https://lsfencingandmetalwork.com/contact) is the route for discussing the work and confirming the current process. A visible link does not establish that a message was received or a job accepted. No enquiry, test lead or booking request was sent for this guide."
+          ],
+          "image": {
+            "src": "/brand-journal/lsmetal-ownership-band-2.svg",
+            "alt": "Original portfolio, relevant service and direct company enquiry.",
+            "caption": "Original IAM publishing framework, not a construction specification or verification badge."
+          }
+        },
+        {
+          "heading": "Separate construction questions from editorial proposals",
+          "paragraphs": [
+            "An owner asking about a gate should reach LS. Someone asking IAM to prepare branding, a portfolio feature or search-focused content should reach IAM. Those paths can coexist when the labels identify the recipient. Avoid assuming that the contractor’s customer inbox is also a guest-article submission service.",
+            "The reviewed LS navigation and source routes did not reveal a dedicated contributor intake. That limited finding does not establish that LS accepts no outside material, and it is not a reason to invent an upload portal. Use [IAM’s metalwork editorial enquiry](/contact?request=guest-post&ref_site=lsfencingandmetalwork.com) to discuss an IAM publishing brief. It is a contact route, not guaranteed editorial acceptance or proven inbox delivery."
+          ]
+        },
+        {
+          "heading": "Review the connected public record",
+          "paragraphs": [
+            "When a company changes a contact or corrects a caption, review the places repeating it: the feature, service links, image description and share presentation. Retain a source note so another editor can understand the correction without guessing which version is current. An accurate company name in the body is little help if a prominent control sends the visitor elsewhere.",
+            "[BuildersHaus](https://buildershaus.com/) offers a relevant construction-network starting point, while [IAM contractor marketing](/contractors) explains the marketing discussion. Choose these links because they answer the reader’s next question. A connected portfolio should add useful context without inventing endorsements or commercial relationships."
+          ],
+          "image": {
+            "src": "/brand-journal/lsmetal-ownership-band-3.svg",
+            "alt": "LS handles construction enquiries; IAM handles marketing enquiries.",
+            "caption": "Original IAM publishing framework, not a construction specification or verification badge."
+          }
+        },
+        {
+          "heading": "Judge the publishing work by its actual deliverable",
+          "paragraphs": [
+            "The immediate deliverable is a coherent public explanation: a recognizable business, correctly attributed work and a suitable next contact. Search rankings, lead volume, conversion changes and signed contracts require their own dated evidence. They should not be inferred from an article going live.",
+            "This portfolio-ownership angle complements our earlier [fence enquiry-planning guide](/blog/lsfence-ca-industry-marketing-project-content-guide), which addresses how readers describe a first question. Here the focus is retaining the maker and source record across the company showcase and related publishing. Bring that evidence to [IAM’s industry marketing discussion](/contact?request=guest-post&ref_site=lsfencingandmetalwork.com) before agreeing a new content scope."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "label": "LS Fencing & Metal Work — current company presentation and contact, reviewed October29,2026",
+          "href": "https://lsfencingandmetalwork.com/"
+        },
+        {
+          "label": "LS supplied archive — Luke photograph of a cantilever gate, supplied October23,2026; installation date not established",
+          "href": "https://lsfencingandmetalwork.com/luke-photos/luke-2026-10-23-01.jpg"
+        },
+        {
+          "label": "LS barrier gates and handrails — separate service destination",
+          "href": "https://lsfencingandmetalwork.com/barrier-gates"
+        },
+        {
+          "label": "LS contact — actual company enquiry route, no message submitted",
+          "href": "https://lsfencingandmetalwork.com/contact"
+        }
+      ]
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
     "trade": "Fence contractor marketing",
     "tradeShort": "Fence marketing",
     "plural": "fencing businesses",
