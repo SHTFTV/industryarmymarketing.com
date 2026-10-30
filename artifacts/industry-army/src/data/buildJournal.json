@@ -1,6 +1,148 @@
 [
   {
     "brand": "Industry Army Marketing",
+    "trade": "Painting project content marketing",
+    "tradeShort": "Painting marketing",
+    "plural": "painting businesses",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Canada",
+    "province": "BC",
+    "category": "Build Journal",
+    "date": "October 30, 2026",
+    "publishedAt": "2026-10-30T01:38:15.825633-07:00",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "contactBusiness": "iam",
+    "campaignSite": "painters.tv",
+    "campaignLabel": "Painting project marketing",
+    "slug": "painters-tv-industry-marketing-project-content-guide",
+    "title": "Painting Marketing: Show the Decisions Behind the Finish",
+    "cardTitle": "The finished room is only part of the story.",
+    "excerpt": "Original IAM analysis: help a painting portfolio explain the surfaces, preparation decisions and finish record behind a photograph.",
+    "metaDescription": "Painting portfolio marketing: explain surfaces, preparation decisions and finish records with honest project captions and a clear editorial route. Original IAM analysis.",
+    "image": "/brand-journal/painters-decisions-hero.webp",
+    "imageAlt": "Original IAM AI-generated fictional interior painting-planning scene with sample boards, colour swatches and tools. Not an actual customer project, a before-and-after record or a product recommendation.",
+    "ogImage": "/brand-journal/painters-decisions-share.webp",
+    "ogImageAlt": "Original IAM painting-marketing artwork: show the decisions behind the finish.",
+    "faqHeading": "Painting portfolio and contributor questions",
+    "faqs": [
+      {
+        "q": "Can a finished-room photograph establish the preparation or product used?",
+        "a": "No. Identify those facts through an accurate project record. A photograph should not be used to invent hidden work, product identity, durability or a technical result."
+      },
+      {
+        "q": "Does a Painters.tv city guide confirm an available painter?",
+        "a": "No. The current site says contractor listings are being restored and city pages do not confirm availability. Verify the actual business and accepted scope separately."
+      },
+      {
+        "q": "Does sending an editorial proposal guarantee publication?",
+        "a": "No. The current contributor page requires review, sources, image permissions and disclosure. No proposal, payment or delivery test was made for this IAM feature."
+      }
+    ],
+    "cta": {
+      "eyebrow": "ADVERTISEMENT \u00b7 IAM / PAINTING MARKETING",
+      "heading": "Give your painting portfolio a stronger explanation",
+      "body": "Bring the audience question, permitted work records and correct business contact. Discuss original painting-industry content and website marketing with IAM.",
+      "buttonText": "Discuss painting marketing",
+      "buttonHref": "/contact?request=guest-post&ref_site=painters.tv"
+    },
+    "richContent": {
+      "intro": "A finished-room image can show colour and character in a moment. It often leaves the more useful buying questions unanswered: what surfaces were included, what decisions came before the finish and what record will help the next conversation? This original IAM analysis uses Painters.tv\u2019s current project-planning and contributor pages to outline a more informative painting portfolio.",
+      "sections": [
+        {
+          "heading": "One room can contain three different stories",
+          "paragraphs": [
+            "The room photograph is the opening, not the whole explanation. A painting project can have a surface story, a preparation story and a finish story. Keeping those distinct gives a prospect something more useful to assess than an attractive image with a generic promise underneath it.",
+            "Painters.tv\u2019s current homepage organizes its brief around surfaces, preparation and finish. Its journal also includes a finish-record article and a guide to comparing written scopes. For a painting business, those are useful editorial directions: explain what the reader is comparing before asking them to admire the result. This is a content strategy, not a claim that a portfolio image verifies workmanship."
+          ]
+        },
+        {
+          "heading": "Name what the photograph includes\u2014and what it leaves out",
+          "paragraphs": [
+            "In a conceptual living-room repaint story, a caption could identify walls, trim and doors as separate subjects. The written project record should establish which of those were actually included. A wide photograph can make several surfaces look like one completed package even when the agreed scope was more limited.",
+            "A useful portfolio page can therefore include a short scope statement beside the image: the area discussed, the stage shown and any important exclusion relevant to the story. Avoid filling in missing facts from appearance. A sharp-looking door in the frame does not prove that it was refinished, and an attractive wall does not establish the condition behind its coating."
+          ],
+          "image": {
+            "src": "/brand-journal/painters-decisions-band-1.svg",
+            "alt": "Original IAM portfolio sequence: visible surface, recorded scope, stated boundary.",
+            "caption": "ORIGINAL IAM FRAMEWORK \u00b7 Describe what the record establishes, not everything visible in the frame."
+          }
+        },
+        {
+          "heading": "Tell the preparation story through decisions, not guesses",
+          "paragraphs": [
+            "A preparation photograph is most useful when the explanation identifies the question it helped resolve. The reader might need to understand which areas were discussed, how the owner recorded an existing condition or why a scope changed. The record should distinguish what was observed from what was later agreed.",
+            "This is not an invitation to diagnose a surface through a marketing image or publish application instructions. If a technical statement matters to the article, identify its source and appropriate reviewer. The editorial task is to preserve the decision and its evidence, rather than invent a hidden sequence of work because a before-and-after pair seems persuasive."
+          ]
+        },
+        {
+          "heading": "A finish record should survive the social photograph",
+          "paragraphs": [
+            "A colour name by itself can lose its context when an image is shared. A better publishing record keeps the identified space, agreed finish information and relevant care-document reference together where those facts are actually available. The purpose is continuity: the next person should know which record to consult instead of trying to reverse-engineer a product from a screen.",
+            "Lighting, camera processing and the viewing device also change the appearance of a picture. Treat an online image as a visual reference, not a promise that another room or screen will reproduce the same appearance. If a sample discussion is part of the story, explain how the decision was recorded without turning that example into a universal product recommendation."
+          ],
+          "image": {
+            "src": "/brand-journal/painters-decisions-band-2.svg",
+            "alt": "Original IAM record diagram: space, finish identity, supporting notes.",
+            "caption": "ORIGINAL IAM FRAMEWORK \u00b7 An image introduces the finish; the record preserves its identity."
+          }
+        },
+        {
+          "heading": "Give the contributor pitch a useful centre",
+          "paragraphs": [
+            "A strong painting contribution can focus on one decision: how a scope was clarified, how finish information was organized or what a team learned about communicating a change. That is more informative than a general sales pitch with project photographs attached. State what the author knows directly and what depends on another source.",
+            "The current Painters.tv contributor page asks for author background, original project details, sources, image credits, permission and commercial disclosures. Publication is subject to review. Its visible IAM editorial email was inspected; no proposal or payment was sent and receiving-system delivery was not tested. Keep a proposed story separate from an accepted publication arrangement."
+          ]
+        },
+        {
+          "heading": "Do not let a local guide become an availability claim",
+          "paragraphs": [
+            "The current site describes a developing directory and says city guides do not confirm contractor availability. A marketing page should preserve that distinction. A local planning article can help a reader prepare questions; it does not establish that a named painter is accepting the job or that a listing has been verified.",
+            "The same clarity belongs in the action label. An email-draft planning tool is different from a delivered request, a contractor response and an appointment. Explain which step a tool prepares, then keep the named business and accepted scope visible when a real conversation begins. No end-to-end enquiry or booking was tested for this article."
+          ],
+          "image": {
+            "src": "/brand-journal/painters-decisions-band-3.svg",
+            "alt": "Original IAM distinction: planning guide, business enquiry, accepted scope.",
+            "caption": "ORIGINAL IAM FRAMEWORK \u00b7 A useful local guide does not establish an available appointment."
+          }
+        },
+        {
+          "heading": "Connect the portfolio to a business brief",
+          "paragraphs": [
+            "For the next portfolio refresh, choose one permitted project record and ask whether its page answers three questions: what does the image show, what decision does the explanation document and who should receive the next enquiry? Add the missing context before multiplying the page into more locations or social excerpts.",
+            "IAM\u2019s construction-brand resource provides the broader marketing context, while BuildersHaus\u2019s contractor-marketing destination covers the related trade-business conversation. Those links are separate from a painter accepting a project. Better captions and clearer actions are reviewable publishing improvements; rankings, enquiry quality and sales still require their own evidence."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "label": "Painters.tv \u2014 current surface/preparation/finish presentation and directory-status disclosure",
+          "href": "https://painters.tv/"
+        },
+        {
+          "label": "Painters.tv contributor page \u2014 editorial proposal, permissions and disclosure requirements",
+          "href": "https://painters.tv/guest-posts"
+        },
+        {
+          "label": "Painting finish records \u2014 related planning article, original date retained",
+          "href": "https://painters.tv/journal/keep-a-paint-finish-record"
+        },
+        {
+          "label": "Related IAM resource \u2014 construction brands and useful business website content",
+          "href": "https://www.industryarmymarketing.com/contractors"
+        },
+        {
+          "label": "Related trade-marketing destination \u2014 BuildersHaus contractor marketing",
+          "href": "https://www.buildershaus.com/contractor-marketing"
+        }
+      ]
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
     "trade": "Standby power planning marketing",
     "tradeShort": "Generator marketing",
     "plural": "generator businesses",
