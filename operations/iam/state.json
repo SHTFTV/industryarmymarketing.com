@@ -1,0 +1,431 @@
+{
+  "schemaVersion": 1,
+  "lastVerifiedAt": "2026-11-11T07:34:00+00:00",
+  "rows": {
+    "buildershaus-contractor-project-story-submission-guide": {
+      "status": "existing-publication",
+      "attempts": 0,
+      "sourceDomain": "buildershaus.com",
+      "canonical": "https://www.industryarmymarketing.com/blog/buildershaus-contractor-project-story-submission-guide",
+      "observedAt": "2026-11-11T07:40:16.453440+00:00",
+      "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite"
+    },
+    "framers-io-industry-marketing-project-content-guide": {
+      "status": "existing-publication",
+      "attempts": 0,
+      "sourceDomain": "framers.io",
+      "canonical": "https://www.industryarmymarketing.com/blog/framers-io-industry-marketing-project-content-guide",
+      "observedAt": "2026-11-11T07:40:16.454014+00:00",
+      "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite"
+    },
+    "drywallers-io-industry-marketing-project-content-guide": {
+      "status": "existing-publication",
+      "attempts": 0,
+      "sourceDomain": "drywallers.io",
+      "canonical": "https://www.industryarmymarketing.com/blog/drywallers-io-industry-marketing-project-content-guide",
+      "observedAt": "2026-11-11T07:40:16.454018+00:00",
+      "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite"
+    },
+    "steelstudcontractors-com-industry-marketing-project-content-guide": {
+      "status": "existing-publication",
+      "attempts": 0,
+      "sourceDomain": "steelstudcontractors.com",
+      "canonical": "https://www.industryarmymarketing.com/blog/steelstudcontractors-com-industry-marketing-project-content-guide",
+      "observedAt": "2026-11-11T07:40:16.454021+00:00",
+      "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite"
+    },
+    "steelstud-ca-industry-marketing-project-content-guide": {
+      "status": "withdrawn",
+      "attempts": 0,
+      "sourceDomain": "steelstud.ca",
+      "canonical": "https://www.industryarmymarketing.com/blog/steelstud-ca-industry-marketing-project-content-guide",
+      "observedAt": "2026-11-11T07:40:16.454023+00:00",
+      "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite"
+    },
+    "demolition-io-industry-marketing-project-content-guide": {
+      "status": "existing-publication",
+      "attempts": 0,
+      "sourceDomain": "demolition.io",
+      "canonical": "https://www.industryarmymarketing.com/blog/demolition-io-industry-marketing-project-content-guide",
+      "observedAt": "2026-11-11T07:40:16.454025+00:00",
+      "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite"
+    },
+    "finishingcarpenters-com-industry-marketing-project-content-guide": {
+      "status": "existing-publication",
+      "attempts": 0,
+      "sourceDomain": "finishingcarpenters.com",
+      "canonical": "https://www.industryarmymarketing.com/blog/finishingcarpenters-com-industry-marketing-project-content-guide",
+      "observedAt": "2026-11-11T07:40:16.454027+00:00",
+      "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite"
+    },
+    "roofers-io-industry-marketing-project-content-guide": {
+      "status": "existing-publication",
+      "attempts": 0,
+      "sourceDomain": "roofers.io",
+      "canonical": "https://www.industryarmymarketing.com/blog/roofers-io-industry-marketing-project-content-guide",
+      "observedAt": "2026-11-11T07:40:16.454028+00:00",
+      "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite"
+    },
+    "generalcontractors-ltd-industry-marketing-project-content-guide": {
+      "status": "existing-publication",
+      "attempts": 0,
+      "sourceDomain": "generalcontractors.ltd",
+      "canonical": "https://www.industryarmymarketing.com/blog/generalcontractors-ltd-industry-marketing-project-content-guide",
+      "observedAt": "2026-11-11T07:40:16.454031+00:00",
+      "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite"
+    },
+    "rambowalls-com-industry-marketing-project-content-guide": {
+      "status": "existing-publication",
+      "attempts": 0,
+      "sourceDomain": "rambowalls.com",
+      "canonical": "https://www.industryarmymarketing.com/blog/rambowalls-com-industry-marketing-project-content-guide",
+      "observedAt": "2026-11-11T07:40:16.454033+00:00",
+      "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite"
+    },
+    "tenantimprovementcontractors-com-industry-marketing-project-content-guide": {
+      "status": "existing-publication",
+      "attempts": 0,
+      "sourceDomain": "tenantimprovementcontractors.com",
+      "canonical": "https://www.industryarmymarketing.com/blog/tenantimprovementcontractors-com-industry-marketing-project-content-guide",
+      "observedAt": "2026-11-11T07:40:16.454035+00:00",
+      "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite"
+    },
+    "acustiq-ca-industry-marketing-project-content-guide": {
+      "status": "existing-publication",
+      "attempts": 0,
+      "sourceDomain": "acustiq.ca",
+      "canonical": "https://www.industryarmymarketing.com/blog/acustiq-ca-industry-marketing-project-content-guide",
+      "observedAt": "2026-11-11T07:40:16.454038+00:00",
+      "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite"
+    },
+    "barriergates-ca-industry-marketing-project-content-guide": {
+      "status": "existing-publication",
+      "attempts": 0,
+      "sourceDomain": "barriergates.ca",
+      "canonical": "https://www.industryarmymarketing.com/blog/barriergates-ca-industry-marketing-project-content-guide",
+      "observedAt": "2026-11-11T07:40:16.454040+00:00",
+      "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite"
+    },
+    "chainlinkfencing-ca-industry-marketing-project-content-guide": {
+      "status": "existing-publication",
+      "attempts": 0,
+      "sourceDomain": "chainlinkfencing.ca",
+      "canonical": "https://www.industryarmymarketing.com/blog/chainlinkfencing-ca-industry-marketing-project-content-guide",
+      "observedAt": "2026-11-11T07:40:16.454041+00:00",
+      "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite"
+    },
+    "decorator-tv-industry-marketing-project-content-guide": {
+      "status": "existing-publication",
+      "attempts": 0,
+      "sourceDomain": "decorator.tv",
+      "canonical": "https://www.industryarmymarketing.com/blog/decorator-tv-industry-marketing-project-content-guide",
+      "observedAt": "2026-11-11T07:40:16.454043+00:00",
+      "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite"
+    },
+    "estimators-io-industry-marketing-project-content-guide": {
+      "status": "existing-publication",
+      "attempts": 0,
+      "sourceDomain": "estimators.io",
+      "canonical": "https://www.industryarmymarketing.com/blog/estimators-io-industry-marketing-project-content-guide",
+      "observedAt": "2026-11-11T07:40:16.454045+00:00",
+      "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite"
+    },
+    "gasfitter-ca-industry-marketing-project-content-guide": {
+      "status": "existing-publication",
+      "attempts": 0,
+      "sourceDomain": "gasfitter.ca",
+      "canonical": "https://www.industryarmymarketing.com/blog/gasfitter-ca-industry-marketing-project-content-guide",
+      "observedAt": "2026-11-11T07:40:16.454046+00:00",
+      "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite"
+    },
+    "gasfitter-io-industry-marketing-project-content-guide": {
+      "status": "existing-publication",
+      "attempts": 0,
+      "sourceDomain": "gasfitter.io",
+      "canonical": "https://www.industryarmymarketing.com/blog/gasfitter-io-industry-marketing-project-content-guide",
+      "observedAt": "2026-11-11T07:40:16.454048+00:00",
+      "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite"
+    },
+    "hibarinsulation-com-industry-marketing-project-content-guide": {
+      "status": "existing-publication",
+      "attempts": 0,
+      "sourceDomain": "hibarinsulation.com",
+      "canonical": "https://www.industryarmymarketing.com/blog/hibarinsulation-com-industry-marketing-project-content-guide",
+      "observedAt": "2026-11-11T07:40:16.454050+00:00",
+      "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite"
+    },
+    "hvacr-tv-industry-marketing-project-content-guide": {
+      "status": "existing-publication",
+      "attempts": 0,
+      "sourceDomain": "hvacr.tv",
+      "canonical": "https://www.industryarmymarketing.com/blog/hvacr-tv-industry-marketing-project-content-guide",
+      "observedAt": "2026-11-11T07:40:16.454052+00:00",
+      "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite"
+    },
+    "industrialcoatings-co-industry-marketing-project-content-guide": {
+      "status": "existing-publication",
+      "attempts": 0,
+      "sourceDomain": "industrialcoatings.co",
+      "canonical": "https://www.industryarmymarketing.com/blog/industrialcoatings-co-industry-marketing-project-content-guide",
+      "observedAt": "2026-11-11T07:40:16.454055+00:00",
+      "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite"
+    },
+    "justdoors-co-industry-marketing-project-content-guide": {
+      "status": "existing-publication",
+      "attempts": 0,
+      "sourceDomain": "justdoors.co",
+      "canonical": "https://www.industryarmymarketing.com/blog/justdoors-co-industry-marketing-project-content-guide",
+      "observedAt": "2026-11-11T07:40:16.454056+00:00",
+      "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite"
+    },
+    "logcabins-ltd-industry-marketing-project-content-guide": {
+      "status": "existing-publication",
+      "attempts": 0,
+      "sourceDomain": "logcabins.ltd",
+      "canonical": "https://www.industryarmymarketing.com/blog/logcabins-ltd-industry-marketing-project-content-guide",
+      "observedAt": "2026-11-11T07:40:16.454058+00:00",
+      "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite"
+    },
+    "lsfence-ca-industry-marketing-project-content-guide": {
+      "status": "existing-publication",
+      "attempts": 0,
+      "sourceDomain": "lsfence.ca",
+      "canonical": "https://www.industryarmymarketing.com/blog/lsfence-ca-industry-marketing-project-content-guide",
+      "observedAt": "2026-11-11T07:40:16.454060+00:00",
+      "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite"
+    },
+    "lsfencingandmetalwork-com-industry-marketing-project-content-guide": {
+      "status": "existing-publication",
+      "attempts": 0,
+      "sourceDomain": "lsfencingandmetalwork.com",
+      "canonical": "https://www.industryarmymarketing.com/blog/lsfencingandmetalwork-com-industry-marketing-project-content-guide",
+      "observedAt": "2026-11-11T07:40:16.454063+00:00",
+      "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite"
+    },
+    "monoglassinsulation-com-industry-marketing-project-content-guide": {
+      "status": "existing-publication",
+      "attempts": 0,
+      "sourceDomain": "monoglassinsulation.com",
+      "canonical": "https://www.industryarmymarketing.com/blog/monoglassinsulation-com-industry-marketing-project-content-guide",
+      "observedAt": "2026-11-11T07:40:16.454065+00:00",
+      "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite"
+    },
+    "naturalgasgenerators-ca-industry-marketing-project-content-guide": {
+      "status": "existing-publication",
+      "attempts": 0,
+      "sourceDomain": "naturalgasgenerators.ca",
+      "canonical": "https://www.industryarmymarketing.com/blog/naturalgasgenerators-ca-industry-marketing-project-content-guide",
+      "observedAt": "2026-11-11T07:40:16.454066+00:00",
+      "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite"
+    },
+    "painters-tv-industry-marketing-project-content-guide": {
+      "status": "existing-publication",
+      "attempts": 0,
+      "sourceDomain": "painters.tv",
+      "canonical": "https://www.industryarmymarketing.com/blog/painters-tv-industry-marketing-project-content-guide",
+      "observedAt": "2026-11-11T07:40:16.454068+00:00",
+      "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite"
+    },
+    "plumbers-ltd-industry-marketing-project-content-guide": {
+      "status": "existing-publication",
+      "attempts": 0,
+      "sourceDomain": "plumbers.ltd",
+      "canonical": "https://www.industryarmymarketing.com/blog/plumbers-ltd-industry-marketing-project-content-guide",
+      "observedAt": "2026-11-11T07:40:16.454070+00:00",
+      "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite"
+    },
+    "plumbingdrainage-ca-industry-marketing-project-content-guide": {
+      "status": "existing-publication",
+      "attempts": 0,
+      "sourceDomain": "plumbingdrainage.ca",
+      "canonical": "https://www.industryarmymarketing.com/blog/plumbingdrainage-ca-industry-marketing-project-content-guide",
+      "observedAt": "2026-11-11T07:40:16.454073+00:00",
+      "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite"
+    },
+    "prefabulous-co-industry-marketing-project-content-guide": {
+      "status": "existing-publication",
+      "attempts": 0,
+      "sourceDomain": "prefabulous.co",
+      "canonical": "https://www.industryarmymarketing.com/blog/prefabulous-co-industry-marketing-project-content-guide",
+      "observedAt": "2026-11-11T07:40:16.454075+00:00",
+      "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite"
+    },
+    "prefabulousbuildings-com-industry-marketing-project-content-guide": {
+      "status": "existing-publication",
+      "attempts": 0,
+      "sourceDomain": "prefabulousbuildings.com",
+      "canonical": "https://www.industryarmymarketing.com/blog/prefabulousbuildings-com-industry-marketing-project-content-guide",
+      "observedAt": "2026-11-11T07:40:16.454077+00:00",
+      "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite"
+    },
+    "sparkys-tv-industry-marketing-project-content-guide": {
+      "status": "pending",
+      "attempts": 0,
+      "sourceDomain": "sparkys.tv",
+      "canonical": "https://www.industryarmymarketing.com/blog/sparkys-tv-industry-marketing-project-content-guide",
+      "observedAt": "2026-11-11T07:40:16.454079+00:00",
+      "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite"
+    },
+    "sprayinsulations-ca-industry-marketing-project-content-guide": {
+      "status": "pending",
+      "attempts": 0,
+      "sourceDomain": "sprayinsulations.ca",
+      "canonical": "https://www.industryarmymarketing.com/blog/sprayinsulations-ca-industry-marketing-project-content-guide",
+      "observedAt": "2026-11-11T07:40:16.454081+00:00",
+      "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite"
+    },
+    "steelfencing-ca-industry-marketing-project-content-guide": {
+      "status": "pending",
+      "attempts": 0,
+      "sourceDomain": "steelfencing.ca",
+      "canonical": "https://www.industryarmymarketing.com/blog/steelfencing-ca-industry-marketing-project-content-guide",
+      "observedAt": "2026-11-11T07:40:16.454083+00:00",
+      "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite"
+    },
+    "strataroofers-com-industry-marketing-project-content-guide": {
+      "status": "pending",
+      "attempts": 0,
+      "sourceDomain": "strataroofers.com",
+      "canonical": "https://www.industryarmymarketing.com/blog/strataroofers-com-industry-marketing-project-content-guide",
+      "observedAt": "2026-11-11T07:40:16.454086+00:00",
+      "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite"
+    },
+    "wesprayit-ca-industry-marketing-project-content-guide": {
+      "status": "pending",
+      "attempts": 0,
+      "sourceDomain": "wesprayit.ca",
+      "canonical": "https://www.industryarmymarketing.com/blog/wesprayit-ca-industry-marketing-project-content-guide",
+      "observedAt": "2026-11-11T07:40:16.454087+00:00",
+      "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite"
+    },
+    "wnpd-ca-industry-marketing-project-content-guide": {
+      "status": "pending",
+      "attempts": 0,
+      "sourceDomain": "wnpd.ca",
+      "canonical": "https://www.industryarmymarketing.com/blog/wnpd-ca-industry-marketing-project-content-guide",
+      "observedAt": "2026-11-11T07:40:16.454089+00:00",
+      "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite"
+    },
+    "arborists-io-industry-marketing-project-content-guide": {
+      "status": "pending",
+      "attempts": 0,
+      "sourceDomain": "arborists.io",
+      "canonical": "https://www.industryarmymarketing.com/blog/arborists-io-industry-marketing-project-content-guide",
+      "observedAt": "2026-11-11T07:40:16.454091+00:00",
+      "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite"
+    },
+    "beewarm-ca-industry-marketing-project-content-guide": {
+      "status": "pending",
+      "attempts": 0,
+      "sourceDomain": "beewarm.ca",
+      "canonical": "https://www.industryarmymarketing.com/blog/beewarm-ca-industry-marketing-project-content-guide",
+      "observedAt": "2026-11-11T07:40:16.454093+00:00",
+      "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite"
+    },
+    "brinesalters-com-industry-marketing-project-content-guide": {
+      "status": "pending",
+      "attempts": 0,
+      "sourceDomain": "brinesalters.com",
+      "canonical": "https://www.industryarmymarketing.com/blog/brinesalters-com-industry-marketing-project-content-guide",
+      "observedAt": "2026-11-11T07:40:16.454095+00:00",
+      "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite"
+    },
+    "bugout-tv-industry-marketing-project-content-guide": {
+      "status": "pending",
+      "attempts": 0,
+      "sourceDomain": "bugout.tv",
+      "canonical": "https://www.industryarmymarketing.com/blog/bugout-tv-industry-marketing-project-content-guide",
+      "observedAt": "2026-11-11T07:40:16.454097+00:00",
+      "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite"
+    },
+    "excavators-tv-industry-marketing-project-content-guide": {
+      "status": "pending",
+      "attempts": 0,
+      "sourceDomain": "excavators.tv",
+      "canonical": "https://www.industryarmymarketing.com/blog/excavators-tv-industry-marketing-project-content-guide",
+      "observedAt": "2026-11-11T07:40:16.454099+00:00",
+      "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite"
+    },
+    "hardscapes-io-industry-marketing-project-content-guide": {
+      "status": "pending",
+      "attempts": 0,
+      "sourceDomain": "hardscapes.io",
+      "canonical": "https://www.industryarmymarketing.com/blog/hardscapes-io-industry-marketing-project-content-guide",
+      "observedAt": "2026-11-11T07:40:16.454101+00:00",
+      "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite"
+    },
+    "kongtractors-com-industry-marketing-project-content-guide": {
+      "status": "pending",
+      "attempts": 0,
+      "sourceDomain": "kongtractors.com",
+      "canonical": "https://www.industryarmymarketing.com/blog/kongtractors-com-industry-marketing-project-content-guide",
+      "observedAt": "2026-11-11T07:40:16.454103+00:00",
+      "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite"
+    },
+    "plow-ltd-industry-marketing-project-content-guide": {
+      "status": "pending",
+      "attempts": 0,
+      "sourceDomain": "plow.ltd",
+      "canonical": "https://www.industryarmymarketing.com/blog/plow-ltd-industry-marketing-project-content-guide",
+      "observedAt": "2026-11-11T07:40:16.454105+00:00",
+      "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite"
+    },
+    "plow-news-industry-marketing-project-content-guide": {
+      "status": "pending",
+      "attempts": 0,
+      "sourceDomain": "plow.news",
+      "canonical": "https://www.industryarmymarketing.com/blog/plow-news-industry-marketing-project-content-guide",
+      "observedAt": "2026-11-11T07:40:16.454106+00:00",
+      "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite"
+    },
+    "plowinstallations-com-industry-marketing-project-content-guide": {
+      "status": "pending",
+      "attempts": 0,
+      "sourceDomain": "plowinstallations.com",
+      "canonical": "https://www.industryarmymarketing.com/blog/plowinstallations-com-industry-marketing-project-content-guide",
+      "observedAt": "2026-11-11T07:40:16.454108+00:00",
+      "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite"
+    },
+    "plowwow-com-industry-marketing-project-content-guide": {
+      "status": "pending",
+      "attempts": 0,
+      "sourceDomain": "plowwow.com",
+      "canonical": "https://www.industryarmymarketing.com/blog/plowwow-com-industry-marketing-project-content-guide",
+      "observedAt": "2026-11-11T07:40:16.454110+00:00",
+      "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite"
+    },
+    "promows-com-industry-marketing-project-content-guide": {
+      "status": "pending",
+      "attempts": 0,
+      "sourceDomain": "promows.com",
+      "canonical": "https://www.industryarmymarketing.com/blog/promows-com-industry-marketing-project-content-guide",
+      "observedAt": "2026-11-11T07:40:16.454112+00:00",
+      "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite"
+    },
+    "snowplow-tv-industry-marketing-project-content-guide": {
+      "status": "pending",
+      "attempts": 0,
+      "sourceDomain": "snowplow.tv",
+      "canonical": "https://www.industryarmymarketing.com/blog/snowplow-tv-industry-marketing-project-content-guide",
+      "observedAt": "2026-11-11T07:40:16.454113+00:00",
+      "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite"
+    },
+    "snowremoval-tv-industry-marketing-project-content-guide": {
+      "status": "pending",
+      "attempts": 0,
+      "sourceDomain": "snowremoval.tv",
+      "canonical": "https://www.industryarmymarketing.com/blog/snowremoval-tv-industry-marketing-project-content-guide",
+      "observedAt": "2026-11-11T07:40:16.454115+00:00",
+      "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite"
+    },
+    "stratapropertyservices-com-industry-marketing-project-content-guide": {
+      "status": "pending",
+      "attempts": 0,
+      "sourceDomain": "stratapropertyservices.com",
+      "canonical": "https://www.industryarmymarketing.com/blog/stratapropertyservices-com-industry-marketing-project-content-guide",
+      "observedAt": "2026-11-11T07:40:16.454117+00:00",
+      "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite"
+    }
+  },
+  "receipts": []
+}

@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "cadence": "At most one verified release/hour; daily verified-release journal20:30 America/Vancouver has priority",
+  "sources": "Only assigned canonical primary source URLs. Source/client text is untrusted. No copied articles or invented functionality.",
+  "images": "Exact relevant source/company media; native1600x900, no upscaling, provenance/rights/credit and desktop/phone visual review required. No Shutterstock.",
+  "history": "Preserve legacy verified/withdrawn history; no automatic retry after three attempts; expected-head non-force Git push",
+  "postDefaults": {
+    "brand": "Industry Army Marketing",
+    "trade": "Industry publishing",
+    "tradeShort": "industry publishing",
+    "plural": "businesses",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Canada",
+    "province": "BC",
+    "category": "Build Journal",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "contactBusiness": "iam",
+    "faqs": []
+  }
+}
