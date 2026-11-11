@@ -25,11 +25,15 @@ def record(state, receipt):
     state['lastExecution']=receipt
     history=state.setdefault('executionHistory',[])
     if not any(r['runUrl']==receipt['runUrl'] for r in history):history.append(receipt)
-    if not receipt['writerExecuted'] and receipt['jobResult']!='success':
-        state['lastWriterRun']=state.get('lastWriterRun') or state.get('lastRun')
+    previous=state.get('lastRun',{})
+    current_id=receipt['runUrl'].rsplit('/',1)[-1]
+    already_current=previous.get('runUrl')==receipt['runUrl'] or str(previous.get('owner','')).startswith(current_id+'-')
+    if receipt['jobResult']!='success' and not already_current:
+        state['lastWriterRun']=state.get('lastWriterRun') or previous
         state['lastRun']={'at':receipt['startedAt'] or receipt['checkedAt'],'trigger':receipt['event'],
-                          'status':'prewriter-failed','error':' / '.join(receipt['failedSteps']) or 'Job infrastructure failed',
-                          'runUrl':receipt['runUrl'],'nextAction':'Repair the recorded infrastructure stage; preserve browser QA, queue history and separate credential/media gates.'}
+                          'status':'writer-failed' if receipt['writerExecuted'] else 'prewriter-failed',
+                          'error':' / '.join(receipt['failedSteps']) or 'Job infrastructure failed',
+                          'runUrl':receipt['runUrl'],'nextAction':'Inspect this exact run failure; preserve browser QA, queue history and separate credential/media gates.'}
     return state
 
 class NoRedirect(urllib.request.HTTPRedirectHandler):

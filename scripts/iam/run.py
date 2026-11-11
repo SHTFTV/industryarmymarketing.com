@@ -17,7 +17,7 @@ JOURNAL=ROOT/'artifacts/industry-army/src/data/buildJournal.json'
 PUBLIC=ROOT/'artifacts/industry-army/public'
 
 def git(*args):
-    return subprocess.check_output(['git',*args],text=True).strip()
+    return subprocess.check_output(['git','-c','safe.directory='+str(ROOT),*args],text=True).strip()
 
 def persist(message):
     # Expected parent ancestry is checked by a non-force push; never overwrite concurrent work.

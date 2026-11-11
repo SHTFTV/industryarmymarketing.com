@@ -24,5 +24,13 @@ class ExecutionTests(unittest.TestCase):
     def test_receipt_deduplication(self):
         c=self.context();s={};r=execution([{'name':'publish','conclusion':'failure','steps':[]}],s,c)
         record(s,r);record(s,r);self.assertEqual(len(s['executionHistory']),1)
+    def test_writer_failure_with_failed_state_commit_replaces_old_attempt(self):
+        c=self.context('workflow_dispatch');s={'lastRun':{'at':'old','status':'prewriter-failed'}}
+        r=execution([{'name':'publish','conclusion':'failure','steps':[{'name':'One source-to-verified-publication transaction','conclusion':'failure'}]}],s,c)
+        record(s,r);self.assertEqual(s['lastRun']['runUrl'],c['runUrl']);self.assertEqual(s['lastRun']['status'],'writer-failed')
+    def test_precise_current_writer_error_is_preserved(self):
+        c=self.context();prior={'owner':'123-1','error':'precise current writer gate','status':'failed'};s={'lastRun':copy.deepcopy(prior)}
+        r=execution([{'name':'publish','conclusion':'failure','steps':[{'name':'One source-to-verified-publication transaction','conclusion':'failure'}]}],s,c)
+        record(s,r);self.assertEqual(s['lastRun'],prior)
 
 if __name__=='__main__':unittest.main()
