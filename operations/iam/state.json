@@ -492,8 +492,22 @@
     "error": "IAM_OPENAI_KEY_MISSING: install separate authorized repository secret; never copy another restricted key",
     "nextAction": "Resolve the exact recorded gate; do not reset attempts, reseed history or count zero as publication"
   },
-  "lease": {
-    "owner": "manual-apitherapy-banners-01a1c77f",
-    "until": "2026-11-11T18:19:31.155Z"
-  }
+  "manualUpdates": [
+    {
+      "slug": "apitherapy-io-explore-the-hive-understand-the-evidence",
+      "type": "existing-article-visual-update",
+      "commit": "4320b2373366091db9fec29636e66b5163b65550",
+      "deployment": "dpl_Hggd9Usc55My4s5zs7fz8vqRZBdK",
+      "verifiedAt": "2026-11-11T17:53:21.001Z",
+      "url": "https://www.industryarmymarketing.com/blog/apitherapy-io-explore-the-hive-understand-the-evidence",
+      "checks": {
+        "http": true,
+        "desktop": true,
+        "phone": true,
+        "media": true,
+        "discovery": true
+      },
+      "automaticPublication": false
+    }
+  ]
 }
