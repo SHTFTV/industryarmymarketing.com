@@ -429,6 +429,46 @@
   },
   "receipts": [],
   "lastRun": {
+    "at": "2026-11-11T16:24:47Z",
+    "trigger": "schedule",
+    "status": "prewriter-failed",
+    "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43058071700",
+    "error": "Browser dependency installation: DNS resolution failed for Ubuntu package mirrors; writer was skipped",
+    "nextAction": "Deploy verified browser-image repair; preserve remaining credential/media gates and article/withdrawal history"
+  },
+  "lastExecution": {
+    "checkedAt": "2026-11-11T17:21:50.528Z",
+    "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43058071700",
+    "event": "schedule",
+    "startedAt": "2026-11-11T16:24:47Z",
+    "completedAt": "2026-11-11T16:35:16Z",
+    "jobResult": "failure",
+    "failedSteps": [
+      "Install browser and image verifier"
+    ],
+    "writerExecuted": false,
+    "verifiedPublicationCount": 0,
+    "scheduledExecutionObserved": true,
+    "automaticPublicationVerified": false
+  },
+  "executionHistory": [
+    {
+      "checkedAt": "2026-11-11T17:21:50.528Z",
+      "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43058071700",
+      "event": "schedule",
+      "startedAt": "2026-11-11T16:24:47Z",
+      "completedAt": "2026-11-11T16:35:16Z",
+      "jobResult": "failure",
+      "failedSteps": [
+        "Install browser and image verifier"
+      ],
+      "writerExecuted": false,
+      "verifiedPublicationCount": 0,
+      "scheduledExecutionObserved": true,
+      "automaticPublicationVerified": false
+    }
+  ],
+  "lastWriterRun": {
     "at": "2026-11-11T07:44:15.261170+00:00",
     "owner": "42981592465-1",
     "trigger": "workflow_dispatch",

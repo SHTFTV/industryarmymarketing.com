@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-11T17:21:50.528Z",
+  "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43058071700",
+  "event": "schedule",
+  "startedAt": "2026-11-11T16:24:47Z",
+  "completedAt": "2026-11-11T16:35:16Z",
+  "jobResult": "failure",
+  "failedSteps": [
+    "Install browser and image verifier"
+  ],
+  "writerExecuted": false,
+  "verifiedPublicationCount": 0,
+  "scheduledExecutionObserved": true,
+  "automaticPublicationVerified": false,
+  "credentialAndMediaGates": "Independent requirements; successful infrastructure is not provider access or publication proof",
+  "independentAlertDeliveryVerified": false
+}
