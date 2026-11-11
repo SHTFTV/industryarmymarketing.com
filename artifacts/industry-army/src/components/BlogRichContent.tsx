@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import type { BlogRichContent as RichContent } from "@/data/blogPosts";
 import { slugifyHeading } from "@/components/BlogToc";
+import BlogVideoBanner from "@/components/BlogVideoBanner";
 
 const FOOTNOTE_RE = /\[\^([a-z0-9_-]+)\]/gi;
 // Inline markdown link: [text](href)
@@ -103,7 +104,7 @@ const BlogRichContentView = ({
   );
 
   return (
-    <div className="blog-rich-content">
+    <div className={`blog-rich-content ${content.theme === "hive" ? "rounded-xl bg-[#faf6eb] p-5 sm:p-8 [&_h2]:font-serif" : ""}`} style={content.theme === "hive" ? { "--foreground": "145 32% 17%", "--muted-foreground": "130 10% 34%", "--primary": "36 71% 33%", "--card": "48 40% 94%", "--border": "80 16% 80%" } as React.CSSProperties : undefined}>
       {content.intro && (
         <p className="text-xl md:text-2xl text-foreground/90 leading-relaxed mb-12 font-medium">
           {renderWithFootnotes(content.intro, ids)}
@@ -151,6 +152,7 @@ const BlogRichContentView = ({
 
       {content.sections.map((section, i) => (
         <section key={i} className="mb-12">
+          {section.video && <BlogVideoBanner banner={section.video} />}
           <h2
             id={slugifyHeading(section.heading)}
             className="font-display text-2xl md:text-3xl text-foreground mb-5 leading-tight scroll-mt-24"

@@ -198,6 +198,7 @@ export interface BlogPost {
 export interface BlogRichSection {
   heading: string;
   paragraphs: string[];
+  video?: { src: string; poster: string; label: string; credit: string; creditUrl: string };
   image?: { src: string; alt: string; caption?: string; href?: string };
 }
 
@@ -219,6 +220,7 @@ export interface BlogSource {
 }
 
 export interface BlogRichContent {
+  theme?: "hive";
   intro?: string;
   sections: BlogRichSection[];
   timeline?: BlogTimelineEntry[];
