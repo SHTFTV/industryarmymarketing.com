@@ -429,12 +429,13 @@
   },
   "receipts": [],
   "lastRun": {
-    "at": "2026-11-11T16:24:47Z",
-    "trigger": "schedule",
-    "status": "prewriter-failed",
-    "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43058071700",
-    "error": "Browser dependency installation: DNS resolution failed for Ubuntu package mirrors; writer was skipped",
-    "nextAction": "Deploy verified browser-image repair; preserve remaining credential/media gates and article/withdrawal history"
+    "at": "2026-11-11T17:57:34.366307+00:00",
+    "owner": "43072994572-1",
+    "trigger": "workflow_dispatch",
+    "status": "failed",
+    "policyDigest": "ab1639931848bf2eb2000365da96649afcc031be8ca3f6230a993f0041888247",
+    "error": "IAM_OPENAI_KEY_MISSING: install separate authorized repository secret; never copy another restricted key",
+    "nextAction": "Resolve the exact recorded gate; do not reset attempts, reseed history or count zero as publication"
   },
   "lastExecution": {
     "checkedAt": "2026-11-11T17:24:44.983772+00:00",
