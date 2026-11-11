@@ -427,5 +427,14 @@
       "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite"
     }
   },
-  "receipts": []
+  "receipts": [],
+  "lastRun": {
+    "at": "2026-11-11T07:44:15.261170+00:00",
+    "owner": "42981592465-1",
+    "trigger": "workflow_dispatch",
+    "status": "failed",
+    "policyDigest": "ab1639931848bf2eb2000365da96649afcc031be8ca3f6230a993f0041888247",
+    "error": "IAM_OPENAI_KEY_MISSING: install separate authorized repository secret; never copy another restricted key",
+    "nextAction": "Resolve the exact recorded gate; do not reset attempts, reseed history or count zero as publication"
+  }
 }
