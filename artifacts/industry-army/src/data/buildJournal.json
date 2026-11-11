@@ -17,128 +17,59 @@
     "authorName": "Colin Hamilton",
     "contactBusiness": "iam",
     "slug": "hvacr-news-joins-industry-army",
-    "title": "HVACR.news Joins the Industry Army: A Clearer Signal for the Mechanical Trades",
-    "cardTitle": "A focused industry publication joins the network.",
-    "excerpt": "HVACR.news joins the Industry Army publishing family. Here is the editorial opportunity: make industry developments easier to trace, distinguish reporting from marketing, and give mechanical-trade businesses a useful place in the conversation.",
-    "metaDescription": "HVACR.news joins the Industry Army family, connecting mechanical-trade publishing with clear sources, original context and a separate IAM marketing enquiry route.",
-    "image": "/brand-journal/hvacr-news-army-hero.webp",
-    "imageAlt": "Original IAM conceptual illustration of a mechanical-airflow circuit beside an HVACR.news publishing panel. Editorial artwork, not an installed system, product test or customer project.",
-    "ogImage": "/brand-journal/hvacr-news-army-share.png",
-    "ogImageAlt": "Original IAM announcement artwork: HVACR.news joins the Industry Army.",
-    "faqHeading": "HVACR.news and the Industry Army",
-    "faqs": [
-      {
-        "q": "What is being announced?",
-        "a": "HVACR.news is joining the Industry Army publishing family. This article explains that addition and its editorial purpose; it does not announce a contractor acquisition, field-service booking system or a technical certification."
-      },
-      {
-        "q": "Is an industry article a recommendation for a particular installation?",
-        "a": "No. Reporting, manufacturer documentation and a project-specific professional assessment serve different purposes. An editorial article should make its sources and limits clear."
-      },
-      {
-        "q": "Who handles marketing enquiries connected with this announcement?",
-        "a": "Industry Army Marketing handles its own branding, websites and publishing discussions through its existing contact route. A marketing enquiry is separate from a request for mechanical-trade service."
-      }
-    ],
+    "title": "Industry Army Marketing Announces HVACR.news",
+    "cardTitle": "Introducing HVACR.news",
+    "excerpt": "Our new publication covers heating, ventilation, air conditioning and refrigeration, with manufacturer news and direct links to the original sources.",
+    "metaDescription": "Industry Army Marketing introduces HVACR.news, a new publication for heating, ventilation, air conditioning and refrigeration news.",
+    "image": "/brand-journal/hvacr-news-launch-v2.jpg",
+    "imageAlt": "Original conceptual launch artwork for Industry Army Marketing announcing HVACR.news, showing HVACR equipment. Illustration, not a photograph of an actual installation.",
+    "ogImage": "/brand-journal/hvacr-news-launch-share-v2.jpg",
+    "ogImageAlt": "Industry Army Marketing announces HVACR.news \u2014 heating, ventilation, air conditioning and refrigeration.",
+    "faqs": [],
     "cta": {
-      "eyebrow": "ADVERTISEMENT \u00b7 INDUSTRY ARMY MARKETING",
-      "heading": "Bring a useful industry story to the conversation",
-      "body": "Discuss mechanical-trade branding, original content and clear website messaging with IAM. Bring the actual source, the business context and permission-cleared material.",
-      "buttonText": "Discuss industry publishing",
+      "eyebrow": "INDUSTRY ARMY MARKETING",
+      "heading": "Have a story for HVACR.news?",
+      "body": "Tell us about your industry news, project or publishing enquiry.",
+      "buttonText": "Contact IAM",
       "buttonHref": "/contact?request=industry-publishing&ref_site=hvacr.news"
     },
     "richContent": {
-      "intro": "HVACR.news is joining the Industry Army family with a clear editorial focus: manufacturer news for heating, ventilation, air-conditioning and refrigeration, presented with original context and links back to the source. The current publication brings six source-linked briefs into one readable front page, organised by the work and equipment subjects that contractors and building professionals recognise. This is a new addition to the network\u2019s publishing conversation, not a claim that those six manufacturer announcements happened today.",
+      "intro": "Industry Army Marketing is introducing HVACR.news, a new publication for the people who build, install, maintain and specify the systems behind our buildings. Heating, ventilation, air conditioning and refrigeration now have a dedicated news home in the Industry Army network.",
       "sections": [
         {
-          "heading": "A focused front page for a connected industry",
+          "heading": "A new home for HVACR news",
           "paragraphs": [
-            "The live publication introduces itself as \u201cManufacturer news. A clearer view.\u201d Its navigation separates Heating, Ventilation & IAQ, Air Conditioning and Refrigeration, while a source directory and RSS feed provide two different ways to follow the material. The structure gives the brand a specific purpose inside the wider Industry Army family: make manufacturer developments easier to find and easier to trace.",
-            "The reviewed front page contains briefs concerning an Automated Logic and Logical Solutions agreement in Texas, Carrier commercial-HVAC orders, Daikin refrigerant collection and COP31, Rheem\u2019s Torin air-to-water heat pump, Trane\u2019s HSWE chiller in Asia-Pacific and Daikin heat-pump manufacturing in Poland. Those are distinct industry subjects, rather than six variations on an IAM service advertisement. Their original reference dates run from May to November 2026 and remain source dates, not a fabricated launch date for HVACR.news."
+            "HVACR.news brings manufacturer announcements and equipment developments into one publication. Readers can browse Heating, Ventilation & IAQ, Air Conditioning and Refrigeration, search the published stories, or follow the RSS feed.",
+            "The first six briefs cover Carrier, Daikin, Rheem and Trane. Subjects range from building controls and commercial HVAC demand to heat pumps, refrigerant collection and data-centre cooling. Each brief links to its original source and identifies the announcement\u2019s date and market."
           ]
         },
         {
-          "heading": "The reference date belongs to the source",
+          "heading": "Why we built it",
           "paragraphs": [
-            "The Automated Logic item carries a November 5 source reference; the Carrier commercial-HVAC item refers to October 29. The other reviewed briefs point to September, July and May material. Showing those dates gives a reader a more accurate starting point than presenting every card as breaking news simply because the publication has joined the network.",
-            "A new industry publication can still make older material useful by explaining its context and linking to the original statement. The important distinction is between when the manufacturer released the information and when the publisher produced its own account. For an equipment announcement, readers should be able to continue to the manufacturer\u2019s current material before drawing a conclusion about specifications, geography or availability."
-          ],
-          "image": {
-            "src": "/brand-journal/hvacr-news-source-band.svg",
-            "alt": "Original IAM publishing framework: original reference, factual boundary and useful reader question.",
-            "caption": "ORIGINAL IAM EDITORIAL FRAMEWORK \u00b7 The manufacturer\u2019s reference date and the publisher\u2019s own article date are separate facts."
-          }
-        },
-        {
-          "heading": "Show the reader how to check the story",
-          "paragraphs": [
-            "The site links to manufacturer sources including Carrier, Daikin, Rheem and Trane, and provides a separate source directory. Its RSS feed gives readers a way to follow published material without confusing a social-media card with the underlying reference. The visible editorial and corrections attribution identifies Industry Army Marketing as the publisher\u2019s contact; that is a clearer responsibility than leaving readers to guess who wrote a summary.",
-            "This source-led approach matters when one brief concerns a business agreement and another concerns a named piece of equipment. They should not be assessed as the same kind of claim. A reader may want the original announcement, a product document or a later correction. The useful publishing choice is to preserve that route, explain the subject in ordinary language and leave unsupported conclusions outside the article."
+            "The mechanical trades connect homes, workplaces, hospitals, shops and industrial facilities. The equipment changes, manufacturers release new products, and businesses need to keep up with developments across several closely related fields. HVACR.news gives that conversation a focused publication.",
+            "It also adds a distinct editorial destination to the Industry Army family. IAM builds industry brands around the people and work in each field; HVACR.news is our news publication for this sector."
           ]
         },
         {
-          "heading": "Make business stories useful without manufacturing results",
+          "heading": "Take a look",
           "paragraphs": [
-            "For a mechanical-trade business, the interesting opportunity is a story that adds information to that industry context. A contractor\u2019s documented decision, a supplier\u2019s properly attributed explanation or a clear account of a project contribution can give readers something useful beyond a copied announcement. The story needs a real source, accurate scope and permission for the material shown.",
-            "This is where IAM\u2019s branding and website work connects naturally with industry publishing. A business should be recognisable, its actual offer understandable and its contact route clear. Editorial visibility is not a guaranteed lead, a ranking position or proof that a service is available everywhere a page can be read. A better explanation is worth pursuing without claiming an outcome the evidence cannot establish."
-          ],
-          "image": {
-            "src": "/brand-journal/hvacr-news-business-band.svg",
-            "alt": "Original IAM story brief: documented decision, permitted example and accurate business contact.",
-            "caption": "ORIGINAL IAM STORY BRIEF \u00b7 Explain the actual contribution instead of inventing a result."
-          }
-        },
-        {
-          "heading": "Respect the difference between a source and reusable media",
-          "paragraphs": [
-            "HVACR.news\u2019s visible front page labels its original illustration as an editorial image rather than a product photograph. This announcement follows the same distinction: its mechanical-airflow artwork is an original conceptual IAM graphic, not evidence of a manufacturer\u2019s equipment or a completed installation. A recognisable industry subject does not need a misleading picture to give it relevance.",
-            "Future equipment and project media still require their own permissions and accurate credits. A photograph being publicly visible beside an announcement does not automatically grant a publisher the right to reuse it or make a promotional video from it. Source links establish where the information came from; image rights establish what can be republished. Those are separate checks."
-          ]
-        },
-        {
-          "heading": "Give each enquiry the right destination",
-          "paragraphs": [
-            "Readers looking for an industry reference should be able to follow the source. A business discussing branding, website messaging or original publishing should reach IAM\u2019s own marketing contact. A person asking for mechanical-trade service needs the appropriate service business and a separately confirmed scope. Those are related conversations, but they are not interchangeable.",
-            "The IAM contact on this article is for marketing and publishing discussions. It does not book HVACR work, establish contractor availability or confirm that an editorial contribution has been accepted. Clear ownership of the next conversation protects the reader\u2019s purpose and makes the publication easier to trust."
-          ],
-          "image": {
-            "src": "/brand-journal/hvacr-news-enquiry-band.svg",
-            "alt": "Original IAM enquiry map: industry reference, marketing discussion and separately confirmed service request.",
-            "caption": "ORIGINAL IAM ENQUIRY MAP \u00b7 Match the next step to the reader\u2019s actual purpose."
-          }
-        },
-        {
-          "heading": "A stronger network begins with a useful industry signal",
-          "paragraphs": [
-            "HVACR.news gives the Industry Army family a recognisable manufacturer-news publication with four topic sections, source-linked briefs, a source directory and an RSS feed already visible on the public site. The addition is meaningful because the editorial subject is clear. It creates room for reporting and explanation that serve mechanical-trade readers while IAM\u2019s own marketing offer remains separately identified.",
-            "Visit HVACR.news to review its current published material, and use IAM\u2019s existing contact route to discuss a properly sourced story or a marketing brief. The next useful contribution should explain one real development well. The announcement opens that conversation without promising a contractor, a commercial result or a capability that has not been verified."
+            "Visit [HVACR.news](https://hvacr.news/) to read the opening briefs, browse the [source directory](https://hvacr.news/sources/) or subscribe through the [RSS feed](https://hvacr.news/feed.xml).",
+            "Have a manufacturer announcement, a project story or an industry development to bring to our attention? Contact Industry Army Marketing through the enquiry link below."
           ]
         }
       ],
       "sources": [
         {
-          "label": "HVACR.news \u2014 reviewed current front page and six source-linked briefs",
+          "label": "HVACR.news \u2014 latest briefs",
           "href": "https://hvacr.news/"
         },
         {
-          "label": "HVACR.news \u2014 source directory",
+          "label": "HVACR.news \u2014 sources",
           "href": "https://hvacr.news/sources/"
         },
         {
-          "label": "HVACR.news \u2014 about and editorial context",
+          "label": "HVACR.news \u2014 editorial policy",
           "href": "https://hvacr.news/about/"
-        },
-        {
-          "label": "HVACR.news \u2014 public RSS feed",
-          "href": "https://hvacr.news/feed.xml"
-        },
-        {
-          "label": "HVACR.news \u2014 Automated Logic / Logical Solutions brief",
-          "href": "https://hvacr.news/news/automated-logic-logical-solutions-agreement/"
-        },
-        {
-          "label": "Industry Army Marketing \u2014 brand creation and management",
-          "href": "https://www.industryarmymarketing.com/brand-creation-management-vancouver"
         }
       ]
     }

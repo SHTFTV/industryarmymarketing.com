@@ -1,0 +1,25 @@
+{
+  "slug": "hvacr-news-joins-industry-army",
+  "reference": "exec-d484505c-3a6a-4017-97d5-490ccb72d379.png",
+  "manualVisualReview": true,
+  "ownerApprovedReference": true,
+  "assets": [
+    {
+      "path": "artifacts/industry-army/public/brand-journal/hvacr-news-launch-v2.jpg",
+      "sha256": "366098c2c6c81ef22d95897f0f2fb19abae48c26832c4bdd3363fc406e394125",
+      "width": 1732,
+      "height": 908,
+      "bytes": 749975,
+      "visualReview": "Reviewed detailed HVACR plant, readable full announcement branding, no sparse placeholder symbols; user approved exact generated reference."
+    },
+    {
+      "path": "artifacts/industry-army/public/brand-journal/hvacr-news-launch-share-v2.jpg",
+      "sha256": "4c0a16429d2a877d23570f392dfc5b8e343e489eb2cfd534077c88311bdac145",
+      "width": 1200,
+      "height": 630,
+      "bytes": 400864,
+      "visualReview": "Reviewed detailed HVACR plant, readable full announcement branding, no sparse placeholder symbols; user approved exact generated reference."
+    }
+  ],
+  "cause": "Original sparse diagram passed technical checks and agent visual inspection; review incorrectly accepted placeholder-like composition. Pixel checks alone do not establish editorial quality."
+}
