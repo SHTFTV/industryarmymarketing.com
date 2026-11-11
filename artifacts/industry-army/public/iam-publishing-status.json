@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-11-11T17:24:44.983772+00:00",
-  "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43067717591",
+  "checkedAt": "2026-11-11T17:57:58.522771+00:00",
+  "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43072994572",
   "event": "workflow_dispatch",
-  "startedAt": "2026-11-11T17:23:39Z",
-  "completedAt": "2026-11-11T17:24:30Z",
+  "startedAt": "2026-11-11T17:56:48Z",
+  "completedAt": "2026-11-11T17:57:45Z",
   "jobResult": "failure",
   "failedSteps": [
     "One source-to-verified-publication transaction"
