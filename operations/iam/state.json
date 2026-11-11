@@ -271,13 +271,16 @@
       "nextAction": "Exact company/source media and actual visual review missing for sparkys.tv"
     },
     "sprayinsulations-ca-industry-marketing-project-content-guide": {
-      "status": "claimed",
+      "status": "blocked",
       "attempts": 1,
       "sourceDomain": "sprayinsulations.ca",
       "canonical": "https://www.industryarmymarketing.com/blog/sprayinsulations-ca-industry-marketing-project-content-guide",
       "observedAt": "2026-11-11T07:40:16.454081+00:00",
       "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite",
-      "owner": "43115291818-1"
+      "owner": "43115291818-1",
+      "blockedAt": "2026-11-11T22:53:22.574997+00:00",
+      "stage": "publication-gate",
+      "nextAction": "Exact company/source media and actual visual review missing for sprayinsulations.ca"
     },
     "steelfencing-ca-industry-marketing-project-content-guide": {
       "status": "pending",
@@ -437,8 +440,10 @@
     "at": "2026-11-11T22:53:11.123167+00:00",
     "owner": "43115291818-1",
     "trigger": "schedule",
-    "status": "checking",
-    "policyDigest": "ab1639931848bf2eb2000365da96649afcc031be8ca3f6230a993f0041888247"
+    "status": "failed",
+    "policyDigest": "ab1639931848bf2eb2000365da96649afcc031be8ca3f6230a993f0041888247",
+    "error": "Exact company/source media and actual visual review missing for sprayinsulations.ca",
+    "nextAction": "Resolve the exact recorded gate; do not reset attempts, reseed history or count zero as publication"
   },
   "lastExecution": {
     "checkedAt": "2026-11-11T21:15:57.015165+00:00",
@@ -543,9 +548,5 @@
       },
       "automaticPublication": false
     }
-  ],
-  "lease": {
-    "owner": "43115291818-1",
-    "until": "2026-11-11T23:23:11.135649+00:00"
-  }
+  ]
 }
