@@ -1,17 +1,17 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-11-11T21:15:57.015165+00:00",
-  "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43101348695",
-  "event": "workflow_dispatch",
-  "startedAt": "2026-11-11T21:14:44Z",
-  "completedAt": "2026-11-11T21:15:44Z",
+  "checkedAt": "2026-11-11T22:53:43.334021+00:00",
+  "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43115291818",
+  "event": "schedule",
+  "startedAt": "2026-11-11T22:52:27Z",
+  "completedAt": "2026-11-11T22:53:29Z",
   "jobResult": "failure",
   "failedSteps": [
     "One source-to-verified-publication transaction"
   ],
   "writerExecuted": true,
   "verifiedPublicationCount": 0,
-  "scheduledExecutionObserved": false,
+  "scheduledExecutionObserved": true,
   "automaticPublicationVerified": false,
   "credentialAndMediaGates": "Independent requirements; successful infrastructure is not provider access or publication proof",
   "independentAlertDeliveryVerified": false
