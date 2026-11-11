@@ -1,0 +1,9 @@
+{
+  "scope": "One HVACR.news announcement and owner-requested homepage section removal",
+  "authorization": "Owner explicitly authorized bounded replacement path because original kk runtime is inaccessible. Historical campaign state is untouched.",
+  "slug": "hvacr-news-joins-industry-army",
+  "publishedAt": "2026-11-10T19:05:00.167513-07:00",
+  "state": "prepared",
+  "baseCommit": "fabbff0936a9e7c78cc5c35ccda0732e56ce296a",
+  "deduplication": "No matching slug in canonical journal or current RSS. Only one post; no schedule or historical queue reseed."
+}

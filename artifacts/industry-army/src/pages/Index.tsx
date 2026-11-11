@@ -3,7 +3,6 @@ import VerifiedClientPrinciple from "@/components/VerifiedClientPrinciple";
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import Seo from "@/components/Seo";
-import BrandStudioSection from "@/components/BrandStudioSection";
 import HeroSection, { IamStoryFilm } from "@/components/HeroSection";
 import FlagshipBrandsSection from "@/components/FlagshipBrandsSection";
 import ServicesSection from "@/components/ServicesSection";
@@ -45,7 +44,6 @@ const Index = () => {
       <div className="container mx-auto px-5"><PseoNetworkPitch /></div>
       <ClientPublishingFlow />
       <IamStoryFilm />
-      <BrandStudioSection />
       <LatestBlogPosts />
       <section id="industry-catalog" aria-labelledby="participation-title" className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4 max-w-6xl">
