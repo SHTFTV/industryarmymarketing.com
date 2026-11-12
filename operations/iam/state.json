@@ -525,11 +525,28 @@
       }
     },
     "fireproofing-tv-welcome-owner-planning-guides": {
-      "status": "pending",
-      "attempts": 0,
+      "status": "claimed",
+      "attempts": 1,
       "sourceDomain": "fireproofing.tv",
       "canonical": "https://www.industryarmymarketing.com/blog/fireproofing-tv-welcome-owner-planning-guides",
-      "basis": "Explicit user-authorized launch; reviewed exact manuscript, existing shared writer"
+      "basis": "Explicit user-authorized launch; reviewed exact manuscript, existing shared writer",
+      "owner": "43141067688-2",
+      "attemptHistory": [
+        {
+          "attempt": 1,
+          "owner": "43141067688-2",
+          "at": "2026-11-12T02:40:13.835425+00:00",
+          "rules": {
+            "sourceCommit": "a261012cd044e5e434c2fc9b5486562a2fe586c2",
+            "hashes": {
+              "docs/IAM-SOT.md": "bee6bafd970b63fd3a7cbb2faea7fb35fa900f1a2789fcf80ffc52bc55afd146",
+              "operations/iam/policy.json": "15a61feccc19e28b6a28d884de19ec0acb818d399201d8e643edd8bd2240ad54",
+              "operations/iam/build-contract.json": "006ee864333b76530c16cc8d552e47f9dff6c74fbdade940d74f00efee7cb494"
+            },
+            "sotVersion": 2
+          }
+        }
+      ]
     }
   },
   "receipts": [
@@ -558,13 +575,13 @@
     }
   ],
   "lastRun": {
-    "at": "2026-11-12T02:25:08.340649+00:00",
-    "owner": "43141067688-1",
+    "at": "2026-11-12T02:40:13.824398+00:00",
+    "owner": "43141067688-2",
     "trigger": "push",
-    "status": "cadence-not-due",
+    "status": "checking",
     "policyDigest": "ab1639931848bf2eb2000365da96649afcc031be8ca3f6230a993f0041888247",
     "rules": {
-      "sourceCommit": "08f34a2ca4d2a9850fc8bb9cc0564c0bd3130c88",
+      "sourceCommit": "a261012cd044e5e434c2fc9b5486562a2fe586c2",
       "hashes": {
         "docs/IAM-SOT.md": "bee6bafd970b63fd3a7cbb2faea7fb35fa900f1a2789fcf80ffc52bc55afd146",
         "operations/iam/policy.json": "15a61feccc19e28b6a28d884de19ec0acb818d399201d8e643edd8bd2240ad54",
@@ -832,7 +849,7 @@
   ],
   "approvedLaunchIssues": [],
   "loadedRules": {
-    "sourceCommit": "08f34a2ca4d2a9850fc8bb9cc0564c0bd3130c88",
+    "sourceCommit": "a261012cd044e5e434c2fc9b5486562a2fe586c2",
     "hashes": {
       "docs/IAM-SOT.md": "bee6bafd970b63fd3a7cbb2faea7fb35fa900f1a2789fcf80ffc52bc55afd146",
       "operations/iam/policy.json": "15a61feccc19e28b6a28d884de19ec0acb818d399201d8e643edd8bd2240ad54",
@@ -897,5 +914,9 @@
       "resolvedAt": "2026-11-12T02:11:15.963613+00:00",
       "resolution": "Required measured gate now passes"
     }
+  },
+  "lease": {
+    "owner": "43141067688-2",
+    "until": "2026-11-12T03:10:13.835425+00:00"
   }
 }
