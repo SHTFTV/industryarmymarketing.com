@@ -743,7 +743,7 @@
       }
     },
     "kongtractors-com-industry-marketing-project-content-guide": {
-      "status": "blocked",
+      "status": "retry",
       "attempts": 1,
       "sourceDomain": "kongtractors.com",
       "canonical": "https://www.industryarmymarketing.com/blog/kongtractors-com-industry-marketing-project-content-guide",
@@ -766,8 +766,8 @@
           }
         }
       ],
-      "stage": "media",
-      "nextAction": "Exact company/source media and actual visual review missing for kongtractors.com",
+      "stage": "media-reviewed-awaiting-publisher",
+      "nextAction": "Existing sole publisher may retry this exact campaign item; retain independent factual audit and production checks.",
       "lastFailure": {
         "slug": "kongtractors-com-industry-marketing-project-content-guide",
         "at": "2026-11-12T04:30:17.740787+00:00",
@@ -786,7 +786,17 @@
           },
           "sotVersion": 2
         }
-      }
+      },
+      "recoveryHistory": [
+        {
+          "at": "2026-11-12T04:49:56Z",
+          "reason": "Exact relevant owner-approved original company asset recovered; byte identity, native dimensions and desktop/phone image review verified. Resume existing item, preserve prior failed attempt.",
+          "previousStatus": "blocked",
+          "previousAttempts": 1,
+          "mediaSha256": "dbc6e9a04b4fe783a773c5cc8dd5e9efa22020871de8b28a1fae1c37b026ced9"
+        }
+      ],
+      "nextRetryAt": "2026-11-12T04:49:56Z"
     },
     "plow-ltd-industry-marketing-project-content-guide": {
       "status": "blocked",

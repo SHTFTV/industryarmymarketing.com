@@ -76,5 +76,33 @@
       "rightsEvidence": "Explicit user-authorized new site and IAM launch. Original brand assets and exact production homepage HTML/CSS fetched with normal domain TLS at fresh public DNS address. Native preview screenshot; no Shutterstock.",
       "visualReview": "Original site layout, logo, headline and content reviewed at native1600x900 and390px phone; no overflow. This is a production-content preview, not a claim of browser custom-domain DNS QA."
     }
+  },
+  "kongtractors-com-industry-marketing-project-content-guide": {
+    "hero": {
+      "path": "/brand-journal/kong-original-approved-poster.jpg",
+      "sha256": "dbc6e9a04b4fe783a773c5cc8dd5e9efa22020871de8b28a1fae1c37b026ced9",
+      "nativeSize": [
+        1600,
+        900
+      ],
+      "upscaled": false,
+      "credit": "Kong Tractors — illustrative poster from its owner-approved website artwork. Equipment model, ownership and field results are not verified by this image.",
+      "rightsEvidence": "Owner-approved original Kong website asset recovered byte-for-byte from the owner-provided source export; continued IAM company campaign explicitly authorizes use of relevant original approved company imagery. Exact live asset SHA256 matches reviewed source. No separate third-party licence or documentary claim is asserted.",
+      "sourceUrl": "https://kongtractors.com/assets/kong-original/kong-tractor-poster.jpg",
+      "visualReview": "Native 1600x900 asset inspected. Actual live image reviewed in browser at 1440x1000 and 390x844; decoded dimensions 1600x900, no overflow, full tractor retained. Actual IAM article desktop/phone verification remains required by sole publisher."
+    },
+    "share": {
+      "path": "/brand-journal/kong-original-approved-poster.jpg",
+      "sha256": "dbc6e9a04b4fe783a773c5cc8dd5e9efa22020871de8b28a1fae1c37b026ced9",
+      "nativeSize": [
+        1600,
+        900
+      ],
+      "upscaled": false,
+      "credit": "Kong Tractors — illustrative poster from its owner-approved website artwork. Equipment model, ownership and field results are not verified by this image.",
+      "rightsEvidence": "Owner-approved original Kong website asset recovered byte-for-byte from the owner-provided source export; continued IAM company campaign explicitly authorizes use of relevant original approved company imagery. Exact live asset SHA256 matches reviewed source. No separate third-party licence or documentary claim is asserted.",
+      "sourceUrl": "https://kongtractors.com/assets/kong-original/kong-tractor-poster.jpg",
+      "visualReview": "Native 1600x900 asset inspected. Actual live image reviewed in browser at 1440x1000 and 390x844; decoded dimensions 1600x900, no overflow, full tractor retained. Actual IAM article desktop/phone verification remains required by sole publisher."
+    }
   }
 }
