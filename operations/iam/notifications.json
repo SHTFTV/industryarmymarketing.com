@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 1,
+  "site": "industryarmymarketing.com",
+  "route": "owner-configured-codex-relay",
+  "events": [
+    {
+      "eventId": "iam-notice-343aa4502db2cfe08527",
+      "kind": "publication_verified",
+      "lifecycle": "open",
+      "deliveryStatus": "queued",
+      "triggeredAt": "2026-11-12T02:58:02.271324+00:00",
+      "deliveryAttempts": 0,
+      "deliveryReceipt": null,
+      "siteDomain": "irrigation.ltd",
+      "articleSlug": "irrigation-ltd-launch-practical-guides-planning",
+      "articleUrl": "https://www.industryarmymarketing.com/blog/irrigation-ltd-launch-practical-guides-planning",
+      "status": "verified",
+      "verifiedAt": "2026-11-12T00:31:03.007Z",
+      "reconciled": true,
+      "summary": "irrigation.ltd IAM article is verified live.",
+      "nextAction": "Read the verified article; no publication retry is needed.",
+      "proof": {
+        "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/commit/fac80518317c663b709fa121c3b9a05b2a72c0fc",
+        "publicationVerified": true,
+        "generatedAndAudited": false
+      }
+    },
+    {
+      "eventId": "iam-notice-3891d70055ed233141f8",
+      "kind": "publication_verified",
+      "lifecycle": "open",
+      "deliveryStatus": "queued",
+      "triggeredAt": "2026-11-12T02:58:02.271324+00:00",
+      "deliveryAttempts": 0,
+      "deliveryReceipt": null,
+      "siteDomain": "naturopaths.io",
+      "articleSlug": "naturopaths-io-welcome-clearer-health-questions",
+      "articleUrl": "https://www.industryarmymarketing.com/blog/naturopaths-io-welcome-clearer-health-questions",
+      "status": "verified",
+      "verifiedAt": "2026-11-12T01:38:47.450012+00:00",
+      "reconciled": true,
+      "summary": "naturopaths.io IAM article is verified live.",
+      "nextAction": "Read the verified article; no publication retry is needed.",
+      "proof": {
+        "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43135533487",
+        "publicationVerified": true,
+        "generatedAndAudited": false
+      }
+    },
+    {
+      "eventId": "iam-notice-04407759ecd594a4e60c",
+      "kind": "publication_verified",
+      "lifecycle": "open",
+      "deliveryStatus": "queued",
+      "triggeredAt": "2026-11-12T02:58:02.271324+00:00",
+      "deliveryAttempts": 0,
+      "deliveryReceipt": null,
+      "siteDomain": "fireproofing.tv",
+      "articleSlug": "fireproofing-tv-welcome-owner-planning-guides",
+      "articleUrl": "https://www.industryarmymarketing.com/blog/fireproofing-tv-welcome-owner-planning-guides",
+      "status": "verified",
+      "verifiedAt": "2026-11-12T02:41:39.664150+00:00",
+      "reconciled": true,
+      "summary": "fireproofing.tv IAM article is verified live.",
+      "nextAction": "Read the verified article; no publication retry is needed.",
+      "proof": {
+        "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43141067688",
+        "publicationVerified": true,
+        "generatedAndAudited": true
+      }
+    },
+    {
+      "eventId": "iam-notice-ad25d96d0d875ce37a7b",
+      "kind": "publishing_blocked",
+      "lifecycle": "open",
+      "deliveryStatus": "queued",
+      "triggeredAt": "2026-11-12T02:58:02.271324+00:00",
+      "deliveryAttempts": 0,
+      "deliveryReceipt": null,
+      "siteDomain": "sparkys.tv",
+      "articleSlug": "sparkys-tv-industry-marketing-project-content-guide",
+      "status": "blocked",
+      "reasonCode": "media_review_missing",
+      "summary": "sparkys.tv publishing item remains blocked.",
+      "nextAction": "Review the exact company image and provenance for this item; other eligible items can continue.",
+      "proof": {
+        "blockedAt": "2026-11-11T21:15:34.555658+00:00",
+        "attempts": 1
+      }
+    },
+    {
+      "eventId": "iam-notice-9c9e23bf922e6f7a741b",
+      "kind": "publishing_blocked",
+      "lifecycle": "open",
+      "deliveryStatus": "queued",
+      "triggeredAt": "2026-11-12T02:58:02.271324+00:00",
+      "deliveryAttempts": 0,
+      "deliveryReceipt": null,
+      "siteDomain": "sprayinsulations.ca",
+      "articleSlug": "sprayinsulations-ca-industry-marketing-project-content-guide",
+      "status": "blocked",
+      "reasonCode": "media_review_missing",
+      "summary": "sprayinsulations.ca publishing item remains blocked.",
+      "nextAction": "Review the exact company image and provenance for this item; other eligible items can continue.",
+      "proof": {
+        "blockedAt": "2026-11-11T22:53:22.574997+00:00",
+        "attempts": 1
+      }
+    },
+    {
+      "eventId": "iam-notice-c12ac812303a54302687",
+      "kind": "spacing_hold",
+      "lifecycle": "resolved",
+      "deliveryStatus": "not_sent_historical",
+      "triggeredAt": null,
+      "deliveryAttempts": 0,
+      "deliveryReceipt": null,
+      "siteDomain": "industryarmymarketing.com",
+      "status": "held",
+      "articleSlugs": [
+        "fireproofing-tv-welcome-owner-planning-guides",
+        "naturopaths-io-welcome-clearer-health-questions"
+      ],
+      "eligibleAfter": "2026-11-12T01:31:03.007000+00:00",
+      "reasonCode": "required_one_hour_release_gap",
+      "summary": "Historical one-hour IAM release hold; now resolved by a verified publication.",
+      "nextAction": "None; relevant launch articles are now verified live.",
+      "observedAt": "2026-11-12T00:57:39.922421+00:00",
+      "resolvedAt": "2026-11-12T01:38:47.450012+00:00",
+      "proof": {
+        "stateCommit": "5f04f8a549f2820d201d0a37fc65b87d0e3aaf32",
+        "originalNoticeDelivered": false
+      }
+    },
+    {
+      "eventId": "iam-notice-ba1990605e77b8c77147",
+      "kind": "spacing_hold",
+      "lifecycle": "resolved",
+      "deliveryStatus": "not_sent_historical",
+      "triggeredAt": null,
+      "deliveryAttempts": 0,
+      "deliveryReceipt": null,
+      "siteDomain": "industryarmymarketing.com",
+      "status": "held",
+      "articleSlugs": [
+        "fireproofing-tv-welcome-owner-planning-guides"
+      ],
+      "eligibleAfter": "2026-11-12T02:38:47.450012+00:00",
+      "reasonCode": "required_one_hour_release_gap",
+      "summary": "Historical one-hour IAM release hold; now resolved by a verified publication.",
+      "nextAction": "None; relevant launch articles are now verified live.",
+      "observedAt": "2026-11-12T02:25:08.340649+00:00",
+      "resolvedAt": "2026-11-12T02:41:39.664150+00:00",
+      "proof": {
+        "stateCommit": "13fc2c0af630a7c64439235c8ab5452a304199ee",
+        "originalNoticeDelivered": false
+      }
+    }
+  ],
+  "producer": {
+    "stage": "prepared",
+    "preparedAt": "2026-11-12T02:58:02.271324+00:00",
+    "queueIsDelivery": false
+  }
+}
