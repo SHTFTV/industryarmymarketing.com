@@ -488,18 +488,16 @@
     "policyDigest": "ab1639931848bf2eb2000365da96649afcc031be8ca3f6230a993f0041888247"
   },
   "lastExecution": {
-    "checkedAt": "2026-11-11T22:53:43.334021+00:00",
-    "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43115291818",
-    "event": "schedule",
-    "startedAt": "2026-11-11T22:52:27Z",
-    "completedAt": "2026-11-11T22:53:29Z",
-    "jobResult": "failure",
-    "failedSteps": [
-      "One source-to-verified-publication transaction"
-    ],
+    "checkedAt": "2026-11-12T00:58:03.463808+00:00",
+    "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43131000603",
+    "event": "push",
+    "startedAt": "2026-11-12T00:56:53Z",
+    "completedAt": "2026-11-12T00:57:51Z",
+    "jobResult": "success",
+    "failedSteps": [],
     "writerExecuted": true,
     "verifiedPublicationCount": 0,
-    "scheduledExecutionObserved": true,
+    "scheduledExecutionObserved": false,
     "automaticPublicationVerified": false
   },
   "executionHistory": [
@@ -576,6 +574,19 @@
       "writerExecuted": true,
       "verifiedPublicationCount": 0,
       "scheduledExecutionObserved": true,
+      "automaticPublicationVerified": false
+    },
+    {
+      "checkedAt": "2026-11-12T00:58:03.463808+00:00",
+      "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43131000603",
+      "event": "push",
+      "startedAt": "2026-11-12T00:56:53Z",
+      "completedAt": "2026-11-12T00:57:51Z",
+      "jobResult": "success",
+      "failedSteps": [],
+      "writerExecuted": true,
+      "verifiedPublicationCount": 0,
+      "scheduledExecutionObserved": false,
       "automaticPublicationVerified": false
     }
   ],
