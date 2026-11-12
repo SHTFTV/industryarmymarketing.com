@@ -15,6 +15,100 @@
     "authorName": "Colin Hamilton",
     "contactBusiness": "iam",
     "faqs": [],
+    "slug": "sprayinsulations-ca-industry-marketing-project-content-guide",
+    "title": "Spray Insulations: Ask About Access and Assembly Before Performance",
+    "cardTitle": "Spray Insulations: Ask About Access and Assembly Before Performance",
+    "excerpt": "A useful insulation brief describes the building, the route to the work and what will be concealed\u2014not an unsupported promise about a material.",
+    "metaDescription": "A useful insulation brief describes the building, the route to the work and what will be concealed\u2014not an unsupported promise about a material.",
+    "publishedAt": "2026-11-12T13:09:03.564436+00:00",
+    "date": "November 12, 2026",
+    "image": "/brand-journal/wesprayit-p0327-exposed-floor.jpg",
+    "ogImage": "/brand-journal/wesprayit-p0327-exposed-floor.jpg",
+    "imageAlt": "WeSprayIt.ca archive, photo P0327, via SprayInsulations.ca. Product, installer, location and installation date are not confirmed; the photograph does not establish performance or compliance.",
+    "ogImageAlt": "WeSprayIt.ca archive, photo P0327, via SprayInsulations.ca. Product, installer, location and installation date are not confirmed; the photograph does not establish performance or compliance.",
+    "campaignSite": "sprayinsulations.ca",
+    "campaignLabel": "Spray Insulations: explain access and assembly questions without invented performance",
+    "richContent": {
+      "intro": "Insulation publishing should help a property owner describe the job before choosing a product. [Spray Insulations](https://sprayinsulations.ca/) takes that planning-first position, presenting independent information for Canadian property owners rather than acting as a manufacturer or certification body. For industry publishers, its useful editorial distinction is between explaining what an assessment needs to establish and claiming what an installation will achieve.",
+      "sections": [
+        {
+          "heading": "Start with the assembly, not the material",
+          "paragraphs": [
+            "The site frames material comparison around the actual assembly and project constraints. Its spray-foam guidance likewise directs readers toward the proposed assembly, named product and installation arrangements. That gives an article a more useful opening than a generic argument for one insulation type.",
+            "An editorial brief can follow that sequence: identify the part of the building, describe its existing condition and state what the owner wants investigated. Leave the material decision open where the necessary assessment has not happened."
+          ]
+        },
+        {
+          "heading": "Make access part of the scope",
+          "paragraphs": [
+            "Spray Insulations asks readers to describe both the route into the building and obstacles at the work area. Its occupied-home guidance also calls for discussion of access, separation and return to use. These are distinct questions, not details to bury beneath a product description.",
+            "A practical article should prompt an owner to ask how the contractor will reach the assembly, which spaces are involved and what arrangements apply during installation. Present those as questions for the contractor, not as operating procedures the publisher can prescribe."
+          ]
+        },
+        {
+          "heading": "Keep symptoms separate from conclusions",
+          "paragraphs": [
+            "The site's crawl-space guidance puts water history and assessment ahead of choosing insulation. Its condensation article similarly treats moisture as something to investigate rather than a ready-made product specification. The editorial lesson is to preserve that uncertainty instead of turning a cold floor or damp surface into a diagnosis.",
+            "Invite readers to record where the concern appears, when they notice it and what building history they can supply. Avoid translating those observations into a promised remedy, thickness or performance result."
+          ]
+        },
+        {
+          "heading": "Explain what photographs cannot establish",
+          "paragraphs": [
+            "The homepage's framing photograph carries a source credit and explicitly leaves the product, installer and project location unconfirmed. Its photography guidance also says pictures support early planning without replacing an assessment of hidden conditions or a measured final scope.",
+            "Use that boundary in captions and article structure. Describe visible framing or access without identifying an unverified system. Pair an image with questions about the assembly rather than using it as proof of workmanship, compliance or an outcome that the available record does not establish."
+          ]
+        },
+        {
+          "heading": "Carry the brief through to concealed work",
+          "paragraphs": [
+            "Spray Insulations connects renovation planning with coordination before finishes close the assembly, and recommends arranging a review while insulation work remains accessible. Its quote-comparison guidance also warns that similar headline areas can conceal different included scopes.",
+            "A useful publishing sequence therefore moves from existing conditions to access, proposed work, exclusions and review timing. Encourage readers to compare written proposals against one shared brief. Do not imply that equal areas, matching material labels or a lower total make two offers equivalent."
+          ]
+        },
+        {
+          "heading": "Give each enquiry the right destination",
+          "paragraphs": [
+            "The site directs general project enquiries to build@buildershaus.com and says city pages identify their assigned contractor contacts; availability and final scope require direct confirmation. Its separate contribution page requests an outline first and makes acceptance conditional.",
+            "Keep those purposes distinct in IAM coverage. An insulation project enquiry belongs with the site's project contact, while an editorial proposal follows its contribution instructions. Neither should be relabelled as an IAM marketing enquiry, and IAM coverage should not suggest that sending a message confirms a booking or publication."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "label": "https://sprayinsulations.ca/",
+          "href": "https://sprayinsulations.ca/"
+        },
+        {
+          "label": "https://sprayinsulations.ca/guest-post/",
+          "href": "https://sprayinsulations.ca/guest-post/"
+        }
+      ]
+    },
+    "cta": {
+      "eyebrow": "INDUSTRY ARMY MARKETING",
+      "heading": "Explain your work clearly",
+      "body": "Discuss your branding and publishing with IAM. Project enquiries stay with the named source company.",
+      "buttonText": "Talk with IAM",
+      "buttonHref": "https://www.industryarmymarketing.com/contact?request=guest-post&ref_site=sprayinsulations.ca"
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
+    "trade": "Industry publishing",
+    "tradeShort": "industry publishing",
+    "plural": "businesses",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Canada",
+    "province": "BC",
+    "category": "Build Journal",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "contactBusiness": "iam",
+    "faqs": [],
     "slug": "sparkys-tv-industry-marketing-project-content-guide",
     "title": "Sparkys.tv: Let Electrical Stories Prepare the Questions, Not Replace the Assessment",
     "cardTitle": "Sparkys.tv: Let Electrical Stories Prepare the Questions, Not Replace the Assessment",
