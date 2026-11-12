@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "lastVerifiedAt": "2026-11-12T01:38:47.450012+00:00",
+  "lastVerifiedAt": "2026-11-12T02:41:39.664150+00:00",
   "rows": {
     "buildershaus-contractor-project-story-submission-guide": {
       "status": "existing-publication",
@@ -525,7 +525,7 @@
       }
     },
     "fireproofing-tv-welcome-owner-planning-guides": {
-      "status": "claimed",
+      "status": "verified",
       "attempts": 1,
       "sourceDomain": "fireproofing.tv",
       "canonical": "https://www.industryarmymarketing.com/blog/fireproofing-tv-welcome-owner-planning-guides",
@@ -546,7 +546,51 @@
             "sotVersion": 2
           }
         }
-      ]
+      ],
+      "sourceFailures": [],
+      "stage": "verified",
+      "publicationAuthorship": "generated",
+      "sourceEvidence": [
+        {
+          "url": "https://fireproofing.tv/",
+          "sha256": "474a9f8ae58c5e967249bad39f5e2b6708c17b58ef51d1d5a93a3303cb358c10"
+        },
+        {
+          "url": "https://fireproofing.tv/about/",
+          "sha256": "6dc350f2af442f8711e9235f4e9da1a853d67d221f9f13c17a6c3b5870d787fd"
+        },
+        {
+          "url": "https://fireproofing.tv/for-contractors/",
+          "sha256": "2ed5e1e52e7103e9131fcfa14d9e6fbb223762b49c21ce05cacd1f87b0f621de"
+        }
+      ],
+      "articleSha256": "b446eb1e9e625d831d30a6a9462e64c416090987c5ba119889ca6f820364b66d",
+      "verifiedAt": "2026-11-12T02:41:39.664150+00:00",
+      "evidence": {
+        "http": true,
+        "canonical": true,
+        "schema": true,
+        "discovery": true,
+        "desktop": true,
+        "phone": true,
+        "image": true,
+        "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43141067688",
+        "trigger": "push",
+        "browserVersion": "156.0.8078.79",
+        "browserExecutable": "/usr/bin/google-chrome",
+        "rules": {
+          "sourceCommit": "a261012cd044e5e434c2fc9b5486562a2fe586c2",
+          "hashes": {
+            "docs/IAM-SOT.md": "bee6bafd970b63fd3a7cbb2faea7fb35fa900f1a2789fcf80ffc52bc55afd146",
+            "operations/iam/policy.json": "15a61feccc19e28b6a28d884de19ec0acb818d399201d8e643edd8bd2240ad54",
+            "operations/iam/build-contract.json": "006ee864333b76530c16cc8d552e47f9dff6c74fbdade940d74f00efee7cb494"
+          },
+          "sotVersion": 2
+        },
+        "productionVerified": true,
+        "generatedAndAudited": true
+      },
+      "nextAction": "Verified; prior attempt evidence retained"
     }
   },
   "receipts": [
@@ -572,13 +616,30 @@
         },
         "sotVersion": 2
       }
+    },
+    {
+      "slug": "fireproofing-tv-welcome-owner-planning-guides",
+      "verifiedAt": "2026-11-12T02:41:39.664150+00:00",
+      "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43141067688",
+      "trigger": "push",
+      "generatedAndAudited": true,
+      "productionVerified": true,
+      "rules": {
+        "sourceCommit": "a261012cd044e5e434c2fc9b5486562a2fe586c2",
+        "hashes": {
+          "docs/IAM-SOT.md": "bee6bafd970b63fd3a7cbb2faea7fb35fa900f1a2789fcf80ffc52bc55afd146",
+          "operations/iam/policy.json": "15a61feccc19e28b6a28d884de19ec0acb818d399201d8e643edd8bd2240ad54",
+          "operations/iam/build-contract.json": "006ee864333b76530c16cc8d552e47f9dff6c74fbdade940d74f00efee7cb494"
+        },
+        "sotVersion": 2
+      }
     }
   ],
   "lastRun": {
     "at": "2026-11-12T02:40:13.824398+00:00",
     "owner": "43141067688-2",
     "trigger": "push",
-    "status": "checking",
+    "status": "verified-publication",
     "policyDigest": "ab1639931848bf2eb2000365da96649afcc031be8ca3f6230a993f0041888247",
     "rules": {
       "sourceCommit": "a261012cd044e5e434c2fc9b5486562a2fe586c2",
@@ -914,9 +975,5 @@
       "resolvedAt": "2026-11-12T02:11:15.963613+00:00",
       "resolution": "Required measured gate now passes"
     }
-  },
-  "lease": {
-    "owner": "43141067688-2",
-    "until": "2026-11-12T03:10:13.835425+00:00"
   }
 }
