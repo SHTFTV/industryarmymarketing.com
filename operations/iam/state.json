@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "lastVerifiedAt": "2026-11-12T05:04:38.651336+00:00",
+  "lastVerifiedAt": "2026-11-12T10:22:16.385409+00:00",
   "rows": {
     "buildershaus-contractor-project-story-submission-guide": {
       "status": "existing-publication",
@@ -259,7 +259,7 @@
       "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite"
     },
     "sparkys-tv-industry-marketing-project-content-guide": {
-      "status": "claimed",
+      "status": "verified",
       "attempts": 2,
       "sourceDomain": "sparkys.tv",
       "canonical": "https://www.industryarmymarketing.com/blog/sparkys-tv-industry-marketing-project-content-guide",
@@ -267,8 +267,8 @@
       "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite",
       "owner": "43199356432-1",
       "blockedAt": "2026-11-11T21:15:34.555658+00:00",
-      "stage": "publication-gate",
-      "nextAction": "Existing sole publisher must source-ground, independently audit and verify live article with reviewed website-screenshot credit; no installation evidence inferred",
+      "stage": "verified",
+      "nextAction": "Verified; prior attempt evidence retained",
       "recoveryHistory": [
         {
           "at": "2026-11-12T10:17:47.424Z",
@@ -278,7 +278,6 @@
           "mediaSha256": "63ebddadf19ddc20f0a42774b55ea22b6b0e2616b8d949132bf4795283c8bfcb"
         }
       ],
-      "nextRetryAt": "2026-11-12T10:17:47.424Z",
       "attemptHistory": [
         {
           "attempt": 2,
@@ -294,7 +293,49 @@
             "sotVersion": 2
           }
         }
-      ]
+      ],
+      "sourceFailures": [],
+      "publicationAuthorship": "generated",
+      "sourceEvidence": [
+        {
+          "url": "https://sparkys.tv/",
+          "sha256": "9671aad541d7c63eaad0a607345414b039a952a27407b3bb9b723bdcd06aa02b"
+        },
+        {
+          "url": "https://sparkys.tv/guest-posts/",
+          "sha256": "a7da0c87972e552e670d14bea4a6a1d056c3ee79ca090485d416a76038d0b40c"
+        }
+      ],
+      "articleSha256": "013369fca12c2ecba9ba9722ac52a7d75c53eda77e5baa73f28e80fffda48628",
+      "verifiedAt": "2026-11-12T10:22:16.385409+00:00",
+      "evidence": {
+        "http": true,
+        "canonical": true,
+        "schema": true,
+        "discovery": true,
+        "desktop": true,
+        "phone": true,
+        "image": true,
+        "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43199356432",
+        "trigger": "workflow_dispatch",
+        "browserVersion": "156.0.8078.79",
+        "browserExecutable": "/usr/bin/google-chrome",
+        "rules": {
+          "sourceCommit": "b2fbbb0f2692847de82a0df46b66bb00e82c373e",
+          "hashes": {
+            "docs/IAM-SOT.md": "bee6bafd970b63fd3a7cbb2faea7fb35fa900f1a2789fcf80ffc52bc55afd146",
+            "operations/iam/policy.json": "15a61feccc19e28b6a28d884de19ec0acb818d399201d8e643edd8bd2240ad54",
+            "operations/iam/build-contract.json": "006ee864333b76530c16cc8d552e47f9dff6c74fbdade940d74f00efee7cb494"
+          },
+          "sotVersion": 2
+        },
+        "productionVerified": true,
+        "generatedAndAudited": true,
+        "automaticRecovery": {
+          "verified": false,
+          "reason": "Not an automatic health recovery dispatch"
+        }
+      }
     },
     "sprayinsulations-ca-industry-marketing-project-content-guide": {
       "status": "blocked",
@@ -1473,13 +1514,34 @@
         "originEvent": "push",
         "reason": "Actual same-repository health run and GitHub Actions bot verified"
       }
+    },
+    {
+      "slug": "sparkys-tv-industry-marketing-project-content-guide",
+      "verifiedAt": "2026-11-12T10:22:16.385409+00:00",
+      "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43199356432",
+      "trigger": "workflow_dispatch",
+      "generatedAndAudited": true,
+      "productionVerified": true,
+      "rules": {
+        "sourceCommit": "b2fbbb0f2692847de82a0df46b66bb00e82c373e",
+        "hashes": {
+          "docs/IAM-SOT.md": "bee6bafd970b63fd3a7cbb2faea7fb35fa900f1a2789fcf80ffc52bc55afd146",
+          "operations/iam/policy.json": "15a61feccc19e28b6a28d884de19ec0acb818d399201d8e643edd8bd2240ad54",
+          "operations/iam/build-contract.json": "006ee864333b76530c16cc8d552e47f9dff6c74fbdade940d74f00efee7cb494"
+        },
+        "sotVersion": 2
+      },
+      "automaticRecovery": {
+        "verified": false,
+        "reason": "Not an automatic health recovery dispatch"
+      }
     }
   ],
   "lastRun": {
     "at": "2026-11-12T10:20:04.936227+00:00",
     "owner": "43199356432-1",
     "trigger": "workflow_dispatch",
-    "status": "checking",
+    "status": "verified-publication",
     "policyDigest": "ab1639931848bf2eb2000365da96649afcc031be8ca3f6230a993f0041888247",
     "rules": {
       "sourceCommit": "b2fbbb0f2692847de82a0df46b66bb00e82c373e",
@@ -2479,9 +2541,5 @@
       },
       "publicationVerified": true
     }
-  ],
-  "lease": {
-    "owner": "43199356432-1",
-    "until": "2026-11-12T10:50:04.953217+00:00"
-  }
+  ]
 }
