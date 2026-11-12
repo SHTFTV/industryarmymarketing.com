@@ -7,6 +7,7 @@ import test_approved_launches as launchfixtures
 from prebuild import assess, rules
 from recovery import fetch_all, recover_expired, eligible
 from blockers import observe
+from writer import write_article
 
 class RecoveryTests(unittest.TestCase):
     setUp=launchfixtures.ApprovedLaunchTests.setUp
@@ -68,3 +69,27 @@ class RecoveryTests(unittest.TestCase):
         observe(state,{'blockers':[]},'2026-11-12T01:05:00Z')
         self.assertEqual(state['persistentBlockers']['iam:first:media']['status'],'open')
         self.assertFalse(outbox['deliveryVerified'])
+
+    def test_flagged_welcome_uses_generation_and_records_real_authorship_path(self):
+        draft={'title':'A generated welcome','excerpt':'Actual new site','intro':'A useful new site',
+               'sections':[{'heading':'Purpose','paragraphs':['Source-supported explanation.']}],'claims':[]}
+        state,journal=self.invoke_writer(generation_draft=draft)
+        self.assertEqual(len(journal),1)
+        self.assertTrue(state['rows']['first-launch']['evidence']['generatedAndAudited'])
+        self.assertEqual(state['rows']['first-launch']['publicationAuthorship'],'generated')
+        self.assertTrue(state['receipts'][0]['generatedAndAudited'])
+
+    def test_required_launch_title_and_brand_are_inside_independent_audit(self):
+        draft={'title':'An unfocused title','excerpt':'Launch','intro':'Introduction',
+               'sections':[{'heading':str(i),'paragraphs':[' '.join(['test']*120)]} for i in range(4)],
+               'claims':[{'claim':'A source fact','sourceUrl':'https://example.com/','exactSupportingExcerpt':'Example primary source text'}]}
+        seen=[]
+        def response(instructions,data,schema):
+            seen.append(data)
+            return draft if len(seen)==1 else {'pass':True,'issues':[]}
+        context={'policy':{'ownerAuthorizedLaunch':True},'sourceEvidence':[{'url':'https://example.com/','text':'Example primary source text'}],
+                 'requiredTitle':'IAM welcomes the exact site','requiredBrandStatement':'Powered by Industry Army Marketing. A division of Parent.tv.'}
+        with patch('writer.response_json',side_effect=response):article=write_article(context)
+        self.assertEqual(article['title'],context['requiredTitle'])
+        self.assertEqual(seen[1]['proposedArticle']['title'],context['requiredTitle'])
+        self.assertIn(context['requiredBrandStatement'],seen[1]['proposedArticle']['sections'][-1]['paragraphs'])

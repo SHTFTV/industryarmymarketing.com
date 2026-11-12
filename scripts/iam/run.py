@@ -119,8 +119,8 @@ def cycle(excluded):
             if unresolved: raise RuntimeError('Remaining campaign is blocked, not complete')
             state['lastRun']['status']='finite-campaign-complete'
             return
-        if not (pending[0].get('approvedPost') or pending[0].get('resumePost')) and not os.environ.get('OPENAI_API_KEY'): raise RuntimeError('IAM_OPENAI_KEY_MISSING: install separate authorized repository secret; never copy another restricted key')
-        if not (pending[0].get('approvedPost') or pending[0].get('resumePost')) and not os.environ.get('OPENAI_MODEL'): raise RuntimeError('IAM_OPENAI_MODEL_MISSING: select model available to IAM key')
+        if not ((pending[0].get('approvedPost') and not pending[0].get('generateAndAudit')) or pending[0].get('resumePost')) and not os.environ.get('OPENAI_API_KEY'): raise RuntimeError('IAM_OPENAI_KEY_MISSING: install separate authorized repository secret; never copy another restricted key')
+        if not ((pending[0].get('approvedPost') and not pending[0].get('generateAndAudit')) or pending[0].get('resumePost')) and not os.environ.get('OPENAI_MODEL'): raise RuntimeError('IAM_OPENAI_MODEL_MISSING: select model available to IAM key')
         now=dt.datetime.now(dt.timezone.utc)
         if state.get('lastVerifiedAt') and (now-dt.datetime.fromisoformat(state['lastVerifiedAt'])).total_seconds()<3600:
             state['lastRun']['status']='cadence-not-due'; return
@@ -146,7 +146,8 @@ def cycle(excluded):
             state['rows'][slug]['sourceFailures']=source_failures
             if not sources: raise __import__('urllib.error',fromlist=['URLError']).URLError('All assigned sources failed')
             stage='generation'
-            if article.get('approvedPost'):
+            manual=bool(article.get('approvedPost')) and not article.get('generateAndAudit')
+            if manual:
                 post=source_checked_post(article,sources)
                 if post['image']!=media['hero']['path'] or post['ogImage']!=media['share']['path']:
                     raise ValueError('Reviewed manuscript/media mismatch')
@@ -154,7 +155,11 @@ def cycle(excluded):
             else:
                 context=policy_context(policy,sources)
                 context['policy']={**policy,'canonicalSot':(ROOT/'docs/IAM-SOT.md').read_text()}
-                context.update(intent=article['intent'],existingTitles=[p['title'] for p in journal],siteDomain=article['siteDomain'])
+                if article.get('generateAndAudit'):
+                    template=source_checked_post(article,sources)
+                    context.update(requiredTitle=template['title'],requiredBrandStatement=article.get('requiredBrandStatement'))
+                    context['policy']['ownerAuthorizedLaunch']={'site':article['siteDomain'],'title':template['title'],'relationship':article.get('requiredBrandStatement')}
+                context.update(intent=('Welcome '+article['siteDomain']+' as a new IAM network site; describe its actual launch purpose and features, preserve its verified parent brand' if article.get('generateAndAudit') else article['intent']),existingTitles=[p['title'] for p in journal],siteDomain=article['siteDomain'])
                 draft=write_article(context)
                 if digest(read('operations/iam/policy.json'))!=policy_hash: raise ValueError('Approved policy changed; discard stale draft')
                 post={**policy['postDefaults'],'slug':slug,'title':draft['title'],'cardTitle':draft['title'],
@@ -171,13 +176,13 @@ def cycle(excluded):
                 raise RuntimeError('Loaded canonical rules changed before publication')
             stage='publication'
             if any(p['slug']==slug for p in journal): raise ValueError('Duplicate existing canonical')
-            state['rows'][slug].update(stage='uploading',publicationAuthorship='manual' if article.get('approvedPost') else 'generated',sourceEvidence=[{'url':v['url'],'sha256':v.get('sha256')} for v in sources],articleSha256=hashlib.sha256(json.dumps(post,sort_keys=True).encode()).hexdigest())
-            if not article.get('approvedPost'):save(ROOT/'operations/iam/drafts'/(slug+'.json'),draft)
-            journal.insert(0,post);save(JOURNAL,journal);persist('IAM: publish reviewed authorized launch' if article.get('approvedPost') else 'IAM: publish one independently audited network article')
+            state['rows'][slug].update(stage='uploading',publicationAuthorship='manual' if manual else 'generated',sourceEvidence=[{'url':v['url'],'sha256':v.get('sha256')} for v in sources],articleSha256=hashlib.sha256(json.dumps(post,sort_keys=True).encode()).hexdigest())
+            if not manual:save(ROOT/'operations/iam/drafts'/(slug+'.json'),draft)
+            journal.insert(0,post);save(JOURNAL,journal);persist('IAM: publish reviewed authorized launch' if manual else 'IAM: publish one independently audited network article')
             published=True;stage='verification'
             evidence=live_check(post,draft['intro'],state,owner)
-            evidence.update(rules=loaded,productionVerified=True,generatedAndAudited=not bool(article.get('approvedPost')))
-            if article.get('approvedPost'):
+            evidence.update(rules=loaded,productionVerified=True,generatedAndAudited=not manual)
+            if manual:
                 evidence.update(authorship='user-authorized-manual',automaticAuthorship=False)
             complete(state,slug,owner,evidence,dt.datetime.now(dt.timezone.utc))
             if daily:

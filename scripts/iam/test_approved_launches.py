@@ -51,8 +51,12 @@ class ApprovedLaunchTests(unittest.TestCase):
         post['title']='Changed after loading'
         self.assertNotEqual(post['title'],candidate['approvedPost']['title'])
 
-    def invoke_writer(self,last=None,media_failure_first=False,initial=None,journal_records=None):
+    def invoke_writer(self,last=None,media_failure_first=False,initial=None,journal_records=None,generation_draft=None):
         import run
+        if generation_draft:
+            manifest=json.loads((self.ops/'approved-launches.json').read_text())
+            manifest['releases'][0].update(generateAndAudit=True,requiredBrandStatement='Powered by Industry Army Marketing. A division of Parent.tv.')
+            (self.ops/'approved-launches.json').write_text(json.dumps(manifest))
         journal=self.root/'artifacts/industry-army/src/data/buildJournal.json'
         journal.parent.mkdir(parents=True)
         journal.write_text(json.dumps(journal_records or []))
@@ -63,10 +67,10 @@ class ApprovedLaunchTests(unittest.TestCase):
         (self.ops/'build-contract.json').write_text('{}')
         (self.ops/'policy.json').write_text(json.dumps({'postDefaults':{}}))
         (self.ops/'state.json').write_text(json.dumps({'rows':{},'receipts':[],**({'lastVerifiedAt':last} if last else {}),**(initial or {})}))
-        (self.ops/'media.json').write_text(json.dumps({e['slug']:{'hero':{'path':'/launch.jpg'},'share':{'path':'/launch.jpg'}} for e in self.entries}))
+        (self.ops/'media.json').write_text(json.dumps({e['slug']:{'hero':{'path':'/launch.jpg','credit':'Synthetic original-site preview fixture'},'share':{'path':'/launch.jpg','credit':'Synthetic original-site preview fixture'}} for e in self.entries}))
         evidence={k:True for k in ['http','canonical','schema','discovery','desktop','phone','image']}
         evidence.update(runUrl='https://github.com/example/run',trigger='schedule')
-        with patch.dict(os.environ,{},clear=True),patch.object(run,'ROOT',self.root),patch.object(run,'STATE',self.ops/'state.json'),patch.object(run,'JOURNAL',journal),patch.object(run,'persist'),patch.object(run,'media_ok',side_effect=[ValueError('Bad first media'),None] if media_failure_first else None),patch.object(run,'fetch_source',return_value={'text':'Example Parent.tv','url':'https://example.com/'}),patch.object(run,'live_check',return_value=evidence),patch.object(run,'write_article',side_effect=AssertionError('Approved launch must not call generation')):
+        with patch.dict(os.environ,{'OPENAI_API_KEY':'synthetic-test-only','OPENAI_MODEL':'test-model'} if generation_draft else {},clear=True),patch.object(run,'ROOT',self.root),patch.object(run,'STATE',self.ops/'state.json'),patch.object(run,'JOURNAL',journal),patch.object(run,'persist'),patch.object(run,'media_ok',side_effect=[ValueError('Bad first media'),None] if media_failure_first else None),patch.object(run,'fetch_source',return_value={'text':'Example Parent.tv','url':'https://example.com/'}),patch.object(run,'live_check',return_value=evidence),patch.object(run,'write_article',return_value=generation_draft,side_effect=None if generation_draft else AssertionError('Approved launch must not call generation')):
             old=Path.cwd()
             try:
                 os.chdir(self.root);run.main()

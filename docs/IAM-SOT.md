@@ -1,6 +1,6 @@
 # Industry Army Marketing — canonical operating source of truth
 
-Version 2, November 11, 2026. Owner-authorized original-seven worker retrofit.
+Version 2, revision 2.1, November 11, 2026. Owner-authorized original-seven worker retrofit.
 
 Canonical source: SHTFTV/industryarmymarketing.com, main. Existing Vercel project industryarmymarketing, prj_kMHNECehkyI6R7zANWDzyXMOLrtP. Public canonical https://www.industryarmymarketing.com/. Preserve the current React/Vite journal, routes, customer enquiry ownership, existing services and publication dates.
 
@@ -29,3 +29,6 @@ Actual custom-domain title/content, canonical/schema/date, decoded image, homepa
 Each source URL and item has its own bounded attempt and sanitized reason. One bad source must not stop later sources in the same item; one media/source/editorial item failure must not prevent other eligible items in the same invocation. Bound invocation time and candidate count. Retain each failure/attempt, dedup and pending issue after unrelated successes. Transient failures use bounded backoff; three attempts require explicit reasoned recovery. Expired leases may be recovered only after checking whether the canonical already exists; never steal an active lease. Provider credential/global runtime/publishing failures and shared-site regressions are distinct global holds.
 
 Persistent blocker receipts are site-local until an actual shared alert adapter and delivery receipt are supplied. An outbox or public status document is not delivered notification. Do not claim the retrofit operationally complete until source-to-production, required runtime services, generated publishing, current unattended execution, recovery and delivered alerting have actual evidence.
+
+## Authorized generated welcome template
+A user-authorized launch explicitly marked generateAndAudit uses its reviewed exact template identity, source URLs, parent statement and approved image as constraints, then creates original source-grounded body copy and runs the independent factual audit before publication. Preserve the required welcome title and verified relationship in the audited article. This is automatic authorship and must be recorded separately from a directly published reviewed manuscript. It does not authorize a second post, a cadence exception or changed ownership.

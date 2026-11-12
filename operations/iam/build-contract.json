@@ -3,9 +3,27 @@
   "site": "industryarmymarketing.com",
   "canonicalSot": "docs/IAM-SOT.md",
   "enforcement": "python scripts/iam/prebuild.py --require-ready",
-  "requiredOrder": ["source-to-production", "required-runtime-service-access", "minimal-generated-production-workflow"],
-  "independentAuthorizedWork": ["repair prerequisites", "maintain existing healthy service", "existing exact authorized welcome manuscripts"],
-  "sharedStandard": {"versionRequired": 2, "verifiedInterface": null, "status": "blocked-interface-not-yet-supplied"},
-  "alertDelivery": {"status": "unproven", "outboxIsDelivery": false},
+  "requiredOrder": [
+    "source-to-production",
+    "required-runtime-service-access",
+    "minimal-generated-production-workflow"
+  ],
+  "independentAuthorizedWork": [
+    "repair prerequisites",
+    "maintain existing healthy service",
+    "existing exact authorized welcome manuscripts"
+  ],
+  "sharedStandard": {
+    "versionRequired": 2,
+    "verifiedInterface": null,
+    "status": "blocked-required-v2-not-in-canonical-main",
+    "observedCanonicalVersion": 1,
+    "observedCanonicalRepository": "SHTFTV/markett-ca",
+    "observedCanonicalPath": "lib/site-job-standard.mjs"
+  },
+  "alertDelivery": {
+    "status": "unproven",
+    "outboxIsDelivery": false
+  },
   "operationallyComplete": false
 }

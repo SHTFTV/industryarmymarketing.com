@@ -19,7 +19,7 @@ def main():
             with urllib.request.urlopen(request,timeout=15) as response:actual=json.load(response)
             if actual.get('repository')!='SHTFTV/industryarmymarketing.com' or actual.get('journalSha256')!=expected or actual.get('sotSha256')!=hashlib.sha256((root/'docs/IAM-SOT.md').read_bytes()).hexdigest() or not actual.get('sourceCommit'):
                 raise ValueError('Production does not yet expose matching canonical source provenance')
-            receipt.update(status='verified',production=actual);break
+            receipt.update(status='verified',production=actual);receipt.pop('reason',None);break
         except Exception as error:
             receipt.update(reason=type(error).__name__)
             if attempt<24:time.sleep(5)

@@ -54,6 +54,8 @@ def pending_launches(root, state, journal):
             pending.append({'slug': slug, 'siteDomain': domain, 'intent': post.get('campaignLabel', 'Network launch'),
                             'primarySources': urls, 'approvedPost': copy.deepcopy(post),
                             'requiredSourceText': entry.get('requiredSourceText', []),
+                            'generateAndAudit': entry.get('generateAndAudit') is True,
+                            'requiredBrandStatement': entry.get('requiredBrandStatement'),
                             'requiredContact': post['cta']['buttonHref']})
         except (ValueError, KeyError, OSError, TypeError) as error:
             issues.append({'slug': slug, 'status': 'held', 'reason': str(error)[:250]})
@@ -65,3 +67,4 @@ def source_checked_post(article, sources):
     if any(value.casefold() not in text for value in article.get('requiredSourceText', [])):
         raise ValueError('Live source no longer matches the approved launch identity')
     return copy.deepcopy(article['approvedPost'])
+

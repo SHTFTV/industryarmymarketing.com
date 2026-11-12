@@ -35,6 +35,10 @@ def assess(root,now=None):
         if value.get('status')!='verified' or not fresh or not bound:blockers.append(label+' lacks a fresh real runtime receipt')
     if not any(r.get('generatedAndAudited') and r.get('productionVerified') for r in state.get('receipts',[])):
         blockers.append('Minimal generated-and-audited production publication has not been verified')
+    if not any(r.get('trigger')=='schedule' and r.get('generatedAndAudited') and r.get('productionVerified') for r in state.get('receipts',[])):
+        blockers.append('Native scheduled generated publication not yet proven')
+    recovery=read('recovery-acceptance.json')
+    if recovery.get('status')!='verified':blockers.append('Live failure-isolation and recovery acceptance not yet proven; local tests are separate')
     if not contract.get('sharedStandard',{}).get('verifiedInterface'):blockers.append('Shared operating-standard v2 interface not yet verified/pinned')
     if contract.get('alertDelivery',{}).get('status')!='verified':blockers.append('Persistent blocker notification delivery unproven')
     return {'checkedAt':now.isoformat(),'dependentExtensionsAllowed':not blockers,'operationallyComplete':not blockers,'blockers':blockers}

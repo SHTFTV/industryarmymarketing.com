@@ -36,7 +36,9 @@
       "requiredSourceText": [
         "Fireproofing",
         "BuildersHaus.com"
-      ]
+      ],
+      "generateAndAudit": true,
+      "requiredBrandStatement": "Powered by Industry Army Marketing. A division of BuildersHaus.com."
     }
   ]
 }
