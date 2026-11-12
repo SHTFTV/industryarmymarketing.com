@@ -459,14 +459,88 @@
         "blockedAt": null,
         "attempts": 1
       }
+    },
+    {
+      "eventId": "iam-notice-4b6953d52a38f8d82189",
+      "kind": "publishing_blocked",
+      "lifecycle": "open",
+      "deliveryStatus": "queued",
+      "triggeredAt": "2026-11-12T04:41:11.740591+00:00",
+      "deliveryAttempts": 0,
+      "deliveryReceipt": null,
+      "siteDomain": "snowplow.tv",
+      "articleSlug": "snowplow-tv-industry-marketing-project-content-guide",
+      "status": "blocked",
+      "reasonCode": "media_review_missing",
+      "summary": "snowplow.tv publishing item remains blocked.",
+      "nextAction": "Review the exact company image and provenance for this item; other eligible items can continue.",
+      "proof": {
+        "blockedAt": null,
+        "attempts": 1
+      }
+    },
+    {
+      "eventId": "iam-notice-babec36c57d51b2659cf",
+      "kind": "publishing_blocked",
+      "lifecycle": "open",
+      "deliveryStatus": "queued",
+      "triggeredAt": "2026-11-12T04:41:11.740591+00:00",
+      "deliveryAttempts": 0,
+      "deliveryReceipt": null,
+      "siteDomain": "snowremoval.tv",
+      "articleSlug": "snowremoval-tv-industry-marketing-project-content-guide",
+      "status": "blocked",
+      "reasonCode": "media_review_missing",
+      "summary": "snowremoval.tv publishing item remains blocked.",
+      "nextAction": "Review the exact company image and provenance for this item; other eligible items can continue.",
+      "proof": {
+        "blockedAt": null,
+        "attempts": 1
+      }
+    },
+    {
+      "eventId": "iam-notice-93bcbafa541bf36d5413",
+      "kind": "publishing_blocked",
+      "lifecycle": "open",
+      "deliveryStatus": "queued",
+      "triggeredAt": "2026-11-12T04:41:11.740591+00:00",
+      "deliveryAttempts": 0,
+      "deliveryReceipt": null,
+      "siteDomain": "stratapropertyservices.com",
+      "articleSlug": "stratapropertyservices-com-industry-marketing-project-content-guide",
+      "status": "blocked",
+      "reasonCode": "media_review_missing",
+      "summary": "stratapropertyservices.com publishing item remains blocked.",
+      "nextAction": "Review the exact company image and provenance for this item; other eligible items can continue.",
+      "proof": {
+        "blockedAt": null,
+        "attempts": 1
+      }
+    },
+    {
+      "eventId": "iam-notice-61a4ec8350c73700b141",
+      "kind": "publishing_failure",
+      "lifecycle": "open",
+      "deliveryStatus": "queued",
+      "triggeredAt": "2026-11-12T04:41:11.740591+00:00",
+      "deliveryAttempts": 0,
+      "deliveryReceipt": null,
+      "siteDomain": "industryarmymarketing.com",
+      "status": "failed",
+      "reasonCode": "publisher_run_failed",
+      "summary": "IAM cloud publication run failed; a green wrapper is not publication proof.",
+      "nextAction": "Inspect the exact retained run and issue; continue independent eligible work.",
+      "proof": {
+        "runUrl": "43156262803"
+      }
     }
   ],
   "producer": {
     "stage": "fired",
-    "firedAt": "2026-11-12T04:31:39.539232+00:00",
-    "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43155109729",
+    "firedAt": "2026-11-12T04:41:11.741225+00:00",
+    "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43156262803",
     "rules": {
-      "sourceCommit": "6db9f4b7d92eb0d337401c30dd37bc63920b4505",
+      "sourceCommit": "93146b0478f8ef2b1e68cde00c341340b09785cf",
       "hashes": {
         "docs/IAM-SOT.md": "bee6bafd970b63fd3a7cbb2faea7fb35fa900f1a2789fcf80ffc52bc55afd146",
         "operations/iam/policy.json": "15a61feccc19e28b6a28d884de19ec0acb818d399201d8e643edd8bd2240ad54",
