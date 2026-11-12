@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "site": "industryarmymarketing.com",
-  "checkedAt": "2026-11-12T04:17:44.527270+00:00",
+  "checkedAt": "2026-11-12T04:31:22.271927+00:00",
   "deliveryVerified": false,
   "adapter": "shared-owner-interface-pending",
   "issues": [
@@ -11,7 +11,7 @@
       "firstSeenAt": "2026-11-12T01:39:03.441379+00:00",
       "delivery": "unproven",
       "status": "open",
-      "lastSeenAt": "2026-11-12T04:17:44.527270+00:00",
+      "lastSeenAt": "2026-11-12T04:31:22.271927+00:00",
       "reason": "Shared operating-standard v2 interface not yet verified/pinned"
     },
     {
@@ -20,7 +20,7 @@
       "firstSeenAt": "2026-11-12T01:39:03.441379+00:00",
       "delivery": "unproven",
       "status": "open",
-      "lastSeenAt": "2026-11-12T04:17:44.527270+00:00",
+      "lastSeenAt": "2026-11-12T04:31:22.271927+00:00",
       "reason": "Persistent blocker notification delivery unproven"
     },
     {
@@ -29,7 +29,7 @@
       "firstSeenAt": "2026-11-12T01:48:13.376513+00:00",
       "delivery": "unproven",
       "status": "open",
-      "lastSeenAt": "2026-11-12T04:17:44.527270+00:00",
+      "lastSeenAt": "2026-11-12T04:31:22.271927+00:00",
       "reason": "Native scheduled generated publication not yet proven"
     },
     {
@@ -38,7 +38,7 @@
       "firstSeenAt": "2026-11-12T01:48:13.376513+00:00",
       "delivery": "unproven",
       "status": "open",
-      "lastSeenAt": "2026-11-12T04:17:44.527270+00:00",
+      "lastSeenAt": "2026-11-12T04:31:22.271927+00:00",
       "reason": "Live failure-isolation and recovery acceptance not yet proven; local tests are separate"
     },
     {
@@ -111,6 +111,78 @@
       "reason": "Exact company/source media and actual visual review missing for bugout.tv",
       "stage": "media",
       "lastSeenAt": "2026-11-12T04:17:28.971478+00:00",
+      "delivery": "unproven"
+    },
+    {
+      "id": "iam:excavators-tv-industry-marketing-project-content-guide:media",
+      "slug": "excavators-tv-industry-marketing-project-content-guide",
+      "status": "open",
+      "reason": "Exact company/source media and actual visual review missing for excavators.tv",
+      "stage": "media",
+      "lastSeenAt": "2026-11-12T04:29:59.417912+00:00",
+      "delivery": "unproven"
+    },
+    {
+      "id": "iam:hardscapes-io-industry-marketing-project-content-guide:media",
+      "slug": "hardscapes-io-industry-marketing-project-content-guide",
+      "status": "open",
+      "reason": "Exact company/source media and actual visual review missing for hardscapes.io",
+      "stage": "media",
+      "lastSeenAt": "2026-11-12T04:30:09.175832+00:00",
+      "delivery": "unproven"
+    },
+    {
+      "id": "iam:kongtractors-com-industry-marketing-project-content-guide:media",
+      "slug": "kongtractors-com-industry-marketing-project-content-guide",
+      "status": "open",
+      "reason": "Exact company/source media and actual visual review missing for kongtractors.com",
+      "stage": "media",
+      "lastSeenAt": "2026-11-12T04:30:17.740787+00:00",
+      "delivery": "unproven"
+    },
+    {
+      "id": "iam:plow-ltd-industry-marketing-project-content-guide:media",
+      "slug": "plow-ltd-industry-marketing-project-content-guide",
+      "status": "open",
+      "reason": "Exact company/source media and actual visual review missing for plow.ltd",
+      "stage": "media",
+      "lastSeenAt": "2026-11-12T04:30:26.646304+00:00",
+      "delivery": "unproven"
+    },
+    {
+      "id": "iam:plow-news-industry-marketing-project-content-guide:media",
+      "slug": "plow-news-industry-marketing-project-content-guide",
+      "status": "open",
+      "reason": "Exact company/source media and actual visual review missing for plow.news",
+      "stage": "media",
+      "lastSeenAt": "2026-11-12T04:30:35.613622+00:00",
+      "delivery": "unproven"
+    },
+    {
+      "id": "iam:plowinstallations-com-industry-marketing-project-content-guide:media",
+      "slug": "plowinstallations-com-industry-marketing-project-content-guide",
+      "status": "open",
+      "reason": "Exact company/source media and actual visual review missing for plowinstallations.com",
+      "stage": "media",
+      "lastSeenAt": "2026-11-12T04:30:44.787973+00:00",
+      "delivery": "unproven"
+    },
+    {
+      "id": "iam:plowwow-com-industry-marketing-project-content-guide:media",
+      "slug": "plowwow-com-industry-marketing-project-content-guide",
+      "status": "open",
+      "reason": "Exact company/source media and actual visual review missing for plowwow.com",
+      "stage": "media",
+      "lastSeenAt": "2026-11-12T04:30:54.698459+00:00",
+      "delivery": "unproven"
+    },
+    {
+      "id": "iam:promows-com-industry-marketing-project-content-guide:media",
+      "slug": "promows-com-industry-marketing-project-content-guide",
+      "status": "open",
+      "reason": "Exact company/source media and actual visual review missing for promows.com",
+      "stage": "media",
+      "lastSeenAt": "2026-11-12T04:31:04.243971+00:00",
       "delivery": "unproven"
     }
   ]
