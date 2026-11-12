@@ -28,9 +28,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   publish:
-    runs-on: ubuntu-latest
-    container:
-      image: mcr.microsoft.com/playwright/python:v1.56.0-noble@sha256:508b37a524219d210a67a7190beb079efda72553e0dcb9ef21d4dae8f8a7686b
+    runs-on: ubuntu-24.04
     timeout-minutes: 28
     steps:
       - uses: actions/checkout@v4
@@ -42,10 +40,10 @@ jobs:
           python-version: '3.12'
       - name: Runtime regressions
         run: python -m unittest discover -s scripts/iam -p 'test_*.py' -v
-      - name: Install matching verifier package (browsers and system dependencies are pinned in image)
+      - name: Install verifier library and use the runner existing Chrome
         run: |
           python -m pip install --retries 3 --timeout 30 pillow==12.0.0 playwright==1.56.0 tzdata
-          python -c 'from playwright.sync_api import sync_playwright; p=sync_playwright().start(); b=p.chromium.launch(); print("Actual Chromium launch passed"); b.close(); p.stop()'
+          python -c 'import os,shutil; from playwright.sync_api import sync_playwright; executable=shutil.which("google-chrome"); assert executable, "Runner Chrome missing"; open(os.environ["GITHUB_ENV"],"a").write("IAM_BROWSER_EXECUTABLE_PATH="+executable+"\n"); p=sync_playwright().start(); b=p.chromium.launch(executable_path=executable); print("Actual installed Chrome launch passed",b.version); b.close(); p.stop()'
       - name: Measure canonical source reaching actual production
         continue-on-error: true
         env:
@@ -81,7 +79,7 @@ jobs:
   report:
     needs: publish
     if: always()
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4

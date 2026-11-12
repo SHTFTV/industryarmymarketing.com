@@ -51,7 +51,8 @@ def live_check(post, expected_text, state, owner):
     url='https://www.industryarmymarketing.com/blog/'+post['slug']
     discovery=['https://www.industryarmymarketing.com'+p for p in ('/','/blog','/rss.xml','/sitemap.xml')]
     with sync_playwright() as pw:
-        browser=pw.chromium.launch()
+        launch_options={'executable_path':os.environ['IAM_BROWSER_EXECUTABLE_PATH']} if os.environ.get('IAM_BROWSER_EXECUTABLE_PATH') else {}
+        browser=pw.chromium.launch(**launch_options)
         try:
             # Deployment is asynchronous. Poll within a bounded lease and renew it.
             for attempt in range(30):
@@ -76,7 +77,7 @@ def live_check(post, expected_text, state, owner):
                 r=page.request.get(link)
                 if r.status!=200 or post['slug'] not in r.text(): raise ValueError('Missing discovery link: '+link)
             return dict(http=True,canonical=True,schema=True,discovery=True,desktop=True,phone=True,image=True,
-                        runUrl=os.environ['IAM_RUN_URL'],trigger=os.environ.get('GITHUB_EVENT_NAME','unknown'))
+                        runUrl=os.environ['IAM_RUN_URL'],trigger=os.environ.get('GITHUB_EVENT_NAME','unknown'),browserVersion=browser.version,browserExecutable=os.environ.get('IAM_BROWSER_EXECUTABLE_PATH','bundled-chromium'))
         finally: browser.close()
 
 def cycle(excluded):
