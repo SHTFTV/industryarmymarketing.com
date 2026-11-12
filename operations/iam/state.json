@@ -1065,12 +1065,29 @@
       }
     },
     "snowremoval-tv-industry-marketing-project-content-guide": {
-      "status": "pending",
-      "attempts": 0,
+      "status": "claimed",
+      "attempts": 1,
       "sourceDomain": "snowremoval.tv",
       "canonical": "https://www.industryarmymarketing.com/blog/snowremoval-tv-industry-marketing-project-content-guide",
       "observedAt": "2026-11-11T07:40:16.454115+00:00",
-      "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite"
+      "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite",
+      "owner": "43156262803-1",
+      "attemptHistory": [
+        {
+          "attempt": 1,
+          "owner": "43156262803-1",
+          "at": "2026-11-12T04:40:22.084576+00:00",
+          "rules": {
+            "sourceCommit": "5f9ddfcf0cba595aef7eb06cdaaaccf99f31770d",
+            "hashes": {
+              "docs/IAM-SOT.md": "bee6bafd970b63fd3a7cbb2faea7fb35fa900f1a2789fcf80ffc52bc55afd146",
+              "operations/iam/policy.json": "15a61feccc19e28b6a28d884de19ec0acb818d399201d8e643edd8bd2240ad54",
+              "operations/iam/build-contract.json": "006ee864333b76530c16cc8d552e47f9dff6c74fbdade940d74f00efee7cb494"
+            },
+            "sotVersion": 2
+          }
+        }
+      ]
     },
     "stratapropertyservices-com-industry-marketing-project-content-guide": {
       "status": "pending",
@@ -1282,13 +1299,13 @@
     }
   ],
   "lastRun": {
-    "at": "2026-11-12T04:40:10.169244+00:00",
+    "at": "2026-11-12T04:40:22.083870+00:00",
     "owner": "43156262803-1",
     "trigger": "workflow_dispatch",
-    "status": "item-held-continuing",
+    "status": "checking",
     "policyDigest": "ab1639931848bf2eb2000365da96649afcc031be8ca3f6230a993f0041888247",
     "rules": {
-      "sourceCommit": "485cf5f09142e5675aefbd3e23cadb63d701b732",
+      "sourceCommit": "5f9ddfcf0cba595aef7eb06cdaaaccf99f31770d",
       "hashes": {
         "docs/IAM-SOT.md": "bee6bafd970b63fd3a7cbb2faea7fb35fa900f1a2789fcf80ffc52bc55afd146",
         "operations/iam/policy.json": "15a61feccc19e28b6a28d884de19ec0acb818d399201d8e643edd8bd2240ad54",
@@ -1302,9 +1319,7 @@
       "originRun": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43155109656",
       "originEvent": "push",
       "reason": "Actual same-repository health run and GitHub Actions bot verified"
-    },
-    "error": "Item held: snowplow-tv-industry-marketing-project-content-guide",
-    "nextAction": "Resolve the exact recorded gate; do not reset attempts, reseed history or count zero as publication"
+    }
   },
   "lastExecution": {
     "checkedAt": "2026-11-12T04:31:22.271927+00:00",
@@ -1624,7 +1639,7 @@
   ],
   "approvedLaunchIssues": [],
   "loadedRules": {
-    "sourceCommit": "485cf5f09142e5675aefbd3e23cadb63d701b732",
+    "sourceCommit": "5f9ddfcf0cba595aef7eb06cdaaaccf99f31770d",
     "hashes": {
       "docs/IAM-SOT.md": "bee6bafd970b63fd3a7cbb2faea7fb35fa900f1a2789fcf80ffc52bc55afd146",
       "operations/iam/policy.json": "15a61feccc19e28b6a28d884de19ec0acb818d399201d8e643edd8bd2240ad54",
@@ -2169,5 +2184,9 @@
         "sotVersion": 2
       }
     }
-  ]
+  ],
+  "lease": {
+    "owner": "43156262803-1",
+    "until": "2026-11-12T05:10:22.084576+00:00"
+  }
 }
