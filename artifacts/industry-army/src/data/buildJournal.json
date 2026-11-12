@@ -15,6 +15,97 @@
     "authorName": "Colin Hamilton",
     "contactBusiness": "iam",
     "faqs": [],
+    "slug": "fireproofing-tv-welcome-owner-planning-guides",
+    "title": "Industry Army Marketing Welcomes Fireproofing.tv",
+    "cardTitle": "Industry Army Marketing Welcomes Fireproofing.tv",
+    "excerpt": "Meet Fireproofing.tv, an educational publication helping property owners and building teams understand fireproofing questions before commissioning work.",
+    "metaDescription": "Meet Fireproofing.tv, an educational publication helping property owners and building teams understand fireproofing questions before commissioning work.",
+    "publishedAt": "2026-11-12T02:40:25.179124+00:00",
+    "date": "November 11, 2026",
+    "image": "/brand-journal/fireproofing-tv-launch.jpg",
+    "ogImage": "/brand-journal/fireproofing-tv-launch.jpg",
+    "imageAlt": "Industry Army Marketing \u2014 fireproofing.tv launch homepage production-content preview, November 11, 2026",
+    "ogImageAlt": "Industry Army Marketing \u2014 fireproofing.tv launch homepage production-content preview, November 11, 2026",
+    "campaignSite": "fireproofing.tv",
+    "campaignLabel": "New passive fire protection publication",
+    "richContent": {
+      "intro": "Industry Army Marketing welcomes Fireproofing.tv to its network: an educational publication focused on the questions property owners and building teams face before commissioning fireproofing work. Its starting point is understanding the protection being discussed, gathering relevant information and identifying decisions that belong with qualified professionals. The launch introduces a planning resource\u2014not an installation service or a building-certification programme.\n\nPowered by Industry Army Marketing. A division of BuildersHaus.com.",
+      "sections": [
+        {
+          "heading": "Start with the building question",
+          "paragraphs": [
+            "The [Fireproofing.tv homepage](https://fireproofing.tv/) introduces an important distinction: structural protection, penetration firestopping and fire-resistance-rated assemblies have different jobs. Rather than treating \u201cfireproofing\u201d as one interchangeable service, the publication asks readers to begin with the building question, available records and the qualified people responsible for the answer.",
+            "That gives the welcome a practical focus. Readers are invited to understand what they are asking for before commissioning work. The opening guide maps the different meanings behind the term, while another separates fire resistance from flame spread instead of presenting either classification as an answer to every fire-safety question."
+          ]
+        },
+        {
+          "heading": "A library organised around planning decisions",
+          "paragraphs": [
+            "The launch library presents 16 starting points across introductory guidance, materials, renovation, planning and estimates, and care and maintenance. Materials topics include spray-applied fire-resistive materials and intumescent finishes for exposed structural steel. Renovation topics include reviewing firestopping before adding cables or pipes and planning service penetrations in mass-timber buildings.",
+            "The range makes the site's purpose concrete: it addresses preparation before a quote, a renovation or a repair discussion. Readers can also find guides on gathering information for an estimate, requesting handover records and assessing a proposed substitution. These are framed as planning questions, not ready-made specifications for an individual building."
+          ]
+        },
+        {
+          "heading": "Evidence before product assumptions",
+          "paragraphs": [
+            "One guide centres on the principle that a product is not the whole system, asking for documentation connecting a proposed product to the actual construction. Other topics address conditions that do not match a tested detail and why an office fire-protection detail should not be treated as an industrial specification.",
+            "These subjects give readers specific questions to carry into professional discussions: what evidence connects the proposal to this construction, and what review is needed when conditions differ? The publication's [editorial policy](https://fireproofing.tv/about/) says its explanations draw on primary authority, testing and manufacturer sources. Source traceability is part of its stated educational approach."
+          ]
+        },
+        {
+          "heading": "Clear limits on what education can provide",
+          "paragraphs": [
+            "Fireproofing.tv explicitly says it does not certify buildings, recommend an unreviewed rated assembly or provide installation instructions. Its articles distinguish general context from decisions requiring a qualified professional and the relevant local authority. Those boundaries matter when reading guides about damage, repairs or proposed changes.",
+            "For example, the library frames damaged fireproofing as a reason to plan an assessment before repair, and a gap around a fire door as a matter for the right specialist review. The useful takeaway is a better-defined question and review path\u2014not permission to select a product or carry out work from an article alone."
+          ]
+        },
+        {
+          "heading": "Business enquiries without implied contractor approval",
+          "paragraphs": [
+            "The [contractor participation page](https://fireproofing.tv/for-contractors/) states that contractor applications are not open and that no directory placement, verification badge or approval is offered. It also asks visitors not to send sensitive project records. The welcome should therefore not be read as the launch of a contractor-matching or accreditation service.",
+            "Business enquiries are directed to Industry Army Marketing; the editorial page also directs corrections and commercial enquiries there. Those IAM contacts are distinct from obtaining project-specific design, installation or approval. Fireproofing.tv's role remains independent planning education, with the project's professional decisions left to qualified people and the relevant authority."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "label": "https://fireproofing.tv/",
+          "href": "https://fireproofing.tv/"
+        },
+        {
+          "label": "https://fireproofing.tv/about/",
+          "href": "https://fireproofing.tv/about/"
+        },
+        {
+          "label": "https://fireproofing.tv/for-contractors/",
+          "href": "https://fireproofing.tv/for-contractors/"
+        }
+      ]
+    },
+    "cta": {
+      "eyebrow": "INDUSTRY ARMY MARKETING",
+      "heading": "Explain your work clearly",
+      "body": "Discuss your branding and publishing with IAM. Project enquiries stay with the named source company.",
+      "buttonText": "Talk with IAM",
+      "buttonHref": "/contact?request=industry-publishing&ref_site=fireproofing.tv"
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
+    "trade": "Industry publishing",
+    "tradeShort": "industry publishing",
+    "plural": "businesses",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Canada",
+    "province": "BC",
+    "category": "Build Journal",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "contactBusiness": "iam",
+    "faqs": [],
     "slug": "naturopaths-io-welcome-clearer-health-questions",
     "campaignSite": "naturopaths.io",
     "campaignLabel": "New health education site",
