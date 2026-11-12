@@ -155,14 +155,166 @@
         "stateCommit": "13fc2c0af630a7c64439235c8ab5452a304199ee",
         "originalNoticeDelivered": false
       }
+    },
+    {
+      "eventId": "iam-notice-d0cac3dec1325b1341d2",
+      "kind": "publishing_blocked",
+      "lifecycle": "open",
+      "deliveryStatus": "queued",
+      "triggeredAt": "2026-11-12T04:18:00.515874+00:00",
+      "deliveryAttempts": 0,
+      "deliveryReceipt": null,
+      "siteDomain": "steelfencing.ca",
+      "articleSlug": "steelfencing-ca-industry-marketing-project-content-guide",
+      "status": "blocked",
+      "reasonCode": "media_review_missing",
+      "summary": "steelfencing.ca publishing item remains blocked.",
+      "nextAction": "Review the exact company image and provenance for this item; other eligible items can continue.",
+      "proof": {
+        "blockedAt": null,
+        "attempts": 1
+      }
+    },
+    {
+      "eventId": "iam-notice-2c6d94278a15f02c4d44",
+      "kind": "publishing_blocked",
+      "lifecycle": "open",
+      "deliveryStatus": "queued",
+      "triggeredAt": "2026-11-12T04:18:00.515874+00:00",
+      "deliveryAttempts": 0,
+      "deliveryReceipt": null,
+      "siteDomain": "strataroofers.com",
+      "articleSlug": "strataroofers-com-industry-marketing-project-content-guide",
+      "status": "blocked",
+      "reasonCode": "media_review_missing",
+      "summary": "strataroofers.com publishing item remains blocked.",
+      "nextAction": "Review the exact company image and provenance for this item; other eligible items can continue.",
+      "proof": {
+        "blockedAt": null,
+        "attempts": 1
+      }
+    },
+    {
+      "eventId": "iam-notice-484dab94b21fe4d1fea2",
+      "kind": "publishing_blocked",
+      "lifecycle": "open",
+      "deliveryStatus": "queued",
+      "triggeredAt": "2026-11-12T04:18:00.515874+00:00",
+      "deliveryAttempts": 0,
+      "deliveryReceipt": null,
+      "siteDomain": "wesprayit.ca",
+      "articleSlug": "wesprayit-ca-industry-marketing-project-content-guide",
+      "status": "blocked",
+      "reasonCode": "media_review_missing",
+      "summary": "wesprayit.ca publishing item remains blocked.",
+      "nextAction": "Review the exact company image and provenance for this item; other eligible items can continue.",
+      "proof": {
+        "blockedAt": null,
+        "attempts": 1
+      }
+    },
+    {
+      "eventId": "iam-notice-64de6c4ca449334ce485",
+      "kind": "publishing_blocked",
+      "lifecycle": "open",
+      "deliveryStatus": "queued",
+      "triggeredAt": "2026-11-12T04:18:00.515874+00:00",
+      "deliveryAttempts": 0,
+      "deliveryReceipt": null,
+      "siteDomain": "wnpd.ca",
+      "articleSlug": "wnpd-ca-industry-marketing-project-content-guide",
+      "status": "blocked",
+      "reasonCode": "media_review_missing",
+      "summary": "wnpd.ca publishing item remains blocked.",
+      "nextAction": "Review the exact company image and provenance for this item; other eligible items can continue.",
+      "proof": {
+        "blockedAt": null,
+        "attempts": 1
+      }
+    },
+    {
+      "eventId": "iam-notice-57e0e520187477a6ff6f",
+      "kind": "publishing_blocked",
+      "lifecycle": "open",
+      "deliveryStatus": "queued",
+      "triggeredAt": "2026-11-12T04:18:00.515874+00:00",
+      "deliveryAttempts": 0,
+      "deliveryReceipt": null,
+      "siteDomain": "arborists.io",
+      "articleSlug": "arborists-io-industry-marketing-project-content-guide",
+      "status": "blocked",
+      "reasonCode": "media_review_missing",
+      "summary": "arborists.io publishing item remains blocked.",
+      "nextAction": "Review the exact company image and provenance for this item; other eligible items can continue.",
+      "proof": {
+        "blockedAt": null,
+        "attempts": 1
+      }
+    },
+    {
+      "eventId": "iam-notice-9ac31d9e135efb8e49fc",
+      "kind": "publishing_blocked",
+      "lifecycle": "open",
+      "deliveryStatus": "queued",
+      "triggeredAt": "2026-11-12T04:18:00.515874+00:00",
+      "deliveryAttempts": 0,
+      "deliveryReceipt": null,
+      "siteDomain": "beewarm.ca",
+      "articleSlug": "beewarm-ca-industry-marketing-project-content-guide",
+      "status": "blocked",
+      "reasonCode": "media_review_missing",
+      "summary": "beewarm.ca publishing item remains blocked.",
+      "nextAction": "Review the exact company image and provenance for this item; other eligible items can continue.",
+      "proof": {
+        "blockedAt": null,
+        "attempts": 1
+      }
+    },
+    {
+      "eventId": "iam-notice-1377e0f2be00b7e12cca",
+      "kind": "publishing_blocked",
+      "lifecycle": "open",
+      "deliveryStatus": "queued",
+      "triggeredAt": "2026-11-12T04:18:00.515874+00:00",
+      "deliveryAttempts": 0,
+      "deliveryReceipt": null,
+      "siteDomain": "brinesalters.com",
+      "articleSlug": "brinesalters-com-industry-marketing-project-content-guide",
+      "status": "blocked",
+      "reasonCode": "media_review_missing",
+      "summary": "brinesalters.com publishing item remains blocked.",
+      "nextAction": "Review the exact company image and provenance for this item; other eligible items can continue.",
+      "proof": {
+        "blockedAt": null,
+        "attempts": 1
+      }
+    },
+    {
+      "eventId": "iam-notice-b69aebc3437f7a70dd29",
+      "kind": "publishing_blocked",
+      "lifecycle": "open",
+      "deliveryStatus": "queued",
+      "triggeredAt": "2026-11-12T04:18:00.515874+00:00",
+      "deliveryAttempts": 0,
+      "deliveryReceipt": null,
+      "siteDomain": "bugout.tv",
+      "articleSlug": "bugout-tv-industry-marketing-project-content-guide",
+      "status": "blocked",
+      "reasonCode": "media_review_missing",
+      "summary": "bugout.tv publishing item remains blocked.",
+      "nextAction": "Review the exact company image and provenance for this item; other eligible items can continue.",
+      "proof": {
+        "blockedAt": null,
+        "attempts": 1
+      }
     }
   ],
   "producer": {
     "stage": "fired",
-    "firedAt": "2026-11-12T03:00:57.822604+00:00",
-    "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43145180707",
+    "firedAt": "2026-11-12T04:18:00.516310+00:00",
+    "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43153625476",
     "rules": {
-      "sourceCommit": "52eefd936ce65c81cec9cd2aae9548984c907c28",
+      "sourceCommit": "2910295f053530825c63b427dde44c8db0e40c3c",
       "hashes": {
         "docs/IAM-SOT.md": "bee6bafd970b63fd3a7cbb2faea7fb35fa900f1a2789fcf80ffc52bc55afd146",
         "operations/iam/policy.json": "15a61feccc19e28b6a28d884de19ec0acb818d399201d8e643edd8bd2240ad54",
