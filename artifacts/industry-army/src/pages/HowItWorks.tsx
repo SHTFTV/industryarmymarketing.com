@@ -10,26 +10,26 @@ const steps = [
   {
     n: "01",
     icon: "🎯",
-    title: "Claim Your Territory",
-    body: "Pick your trade and city. Once you're in, no other business in your trade can join in your city. Ever. Your territory is 100% exclusive and locked the moment you sign up.",
+    title: "Ask About Your Industry",
+    body: "Tell us your industry, location and the customers you want to reach. We review fit and availability before agreeing to a listing or city-page partnership. An enquiry does not reserve a territory.",
   },
   {
     n: "02",
     icon: "🌐",
-    title: "Inherit the Authority",
-    body: "Your business gets a dedicated page on your trade's premium domain — like roofers.io or gasfitter.ca — carrying 20+ years of SEO authority. You don't build it. You inherit it.",
+    title: "Choose the Right Scope",
+    body: "Hub registration and a city-page partnership are separate offers. Confirm the relevant publication, what is included and any partnership terms before activation. Domain age does not guarantee rankings.",
   },
   {
     n: "03",
     icon: "📡",
-    title: "The Army Amplifies You",
-    body: "Your content syndicates across 150+ industry sites. Every site cross-links to your page. The whole network amplifies your brand simultaneously.",
+    title: "Contribute Useful Work",
+    body: "Any contribution needs a relevant audience, accurate sources and editorial review. Links and distribution must be useful and agreed; automatic network-wide cross-linking is not promised. Guest article submissions are currently closed.",
   },
   {
     n: "04",
     icon: "📈",
-    title: "Leads Come To You",
-    body: "Homeowners and businesses searching for your trade in your city find you first. AI search engines surface you. Google Maps ranks you. Calls and quotes start landing.",
+    title: "Measure Actual Enquiries",
+    body: "Review visibility and genuine received enquiries against the agreed goals. Search rankings, AI recommendations, Google Maps placement and lead volume are not guaranteed. Company verification and editorial acceptance are separate decisions.",
   },
 ];
 
@@ -37,7 +37,7 @@ const HowItWorks = () => (
   <Layout>
     <Seo
       title="How It Works | Industry Army Marketing"
-      description="Four steps to owning your trade in your city: choose city, lock category, get listed on 20+ year domains, and start fielding leads — from $10/month."
+      description="How IAM reviews industry-network fit, separates hub registration from city-page partnerships, scopes contributions and measures actual enquiries."
       path="/how-it-works"
       jsonLd={breadcrumbList([
         { name: "Home", path: "/" },
@@ -48,7 +48,7 @@ const HowItWorks = () => (
       eyebrow="The Process"
       title="How It"
       highlight="Works"
-      description="Four simple steps to owning your trade in your city. No long-term contracts. No agency markup. No hidden fees."
+      description="Start with your industry and goals. Review the fit, agree the scope and terms, and measure the results. City-page partnerships require review before activation."
     />
     <section className="py-20 md:py-28">
       <div className="container mx-auto px-4 max-w-5xl">
@@ -75,7 +75,7 @@ const HowItWorks = () => (
 
         <div className="mt-16 text-center">
           <Button variant="hero" size="lg" asChild>
-            <Link to="/contact">Claim Your Territory</Link>
+            <Link to="/contact">Ask About Your Industry</Link>
           </Button>
         </div>
       </div>

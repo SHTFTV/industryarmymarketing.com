@@ -183,7 +183,7 @@ const Network = () => {
   <Layout>
     <Seo
       title="Domain Network — 80+ Premium Trade Domains | IAM"
-      description="Industry Army Marketing's network of 80+ premium .io, .tv, .ltd, and .ca trade domains. One exclusive contractor per city, per domain."
+      description="Industry Army Marketing's network of 80+ premium .io, .tv, .ltd, and .ca trade domains. Hub registration and city-page partnerships are separate; availability and fit require review."
       path="/network"
       jsonLd={breadcrumbList([
         { name: "Home", path: "/" },
@@ -194,7 +194,7 @@ const Network = () => {
       eyebrow="The IAM Domain Army"
       title="The"
       highlight="Network"
-      description="Over 80 premium trade and niche domains across construction, wellness, mining, law, and more. One exclusive contractor per city, per domain."
+      description="Over 80 premium trade and niche domains across construction, wellness, mining, law, and more. Hub registration and city-page partnerships are separate; availability and fit require review."
     />
     {import.meta.env.DEV && report && <DomainSyncBanner report={report} />}
     <section className="py-20">

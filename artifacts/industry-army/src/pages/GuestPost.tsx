@@ -33,7 +33,7 @@ const rules = [
 const GuestPost = () => (
   <Layout>
     <Seo
-      title="Share Your Expertise | Industry Guest Contributions | IAM"
+      title="Guest Post Guidelines & Future Contributions | IAM"
       description="Guest article submissions are currently closed. Ask about future IAM industry contributions, editorial review and public company verification."
       path="/guest-post"
       jsonLd={[
