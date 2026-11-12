@@ -636,13 +636,13 @@
     }
   ],
   "lastRun": {
-    "at": "2026-11-12T02:40:13.824398+00:00",
-    "owner": "43141067688-2",
+    "at": "2026-11-12T03:00:23.378115+00:00",
+    "owner": "43145180707-1",
     "trigger": "push",
-    "status": "verified-publication",
+    "status": "cadence-not-due",
     "policyDigest": "ab1639931848bf2eb2000365da96649afcc031be8ca3f6230a993f0041888247",
     "rules": {
-      "sourceCommit": "a261012cd044e5e434c2fc9b5486562a2fe586c2",
+      "sourceCommit": "7b4c54d06dd2c4f4e0d89177ef4f54de6ef39815",
       "hashes": {
         "docs/IAM-SOT.md": "bee6bafd970b63fd3a7cbb2faea7fb35fa900f1a2789fcf80ffc52bc55afd146",
         "operations/iam/policy.json": "15a61feccc19e28b6a28d884de19ec0acb818d399201d8e643edd8bd2240ad54",
@@ -910,7 +910,7 @@
   ],
   "approvedLaunchIssues": [],
   "loadedRules": {
-    "sourceCommit": "a261012cd044e5e434c2fc9b5486562a2fe586c2",
+    "sourceCommit": "7b4c54d06dd2c4f4e0d89177ef4f54de6ef39815",
     "hashes": {
       "docs/IAM-SOT.md": "bee6bafd970b63fd3a7cbb2faea7fb35fa900f1a2789fcf80ffc52bc55afd146",
       "operations/iam/policy.json": "15a61feccc19e28b6a28d884de19ec0acb818d399201d8e643edd8bd2240ad54",
