@@ -835,12 +835,29 @@
       }
     },
     "plow-news-industry-marketing-project-content-guide": {
-      "status": "pending",
-      "attempts": 0,
+      "status": "claimed",
+      "attempts": 1,
       "sourceDomain": "plow.news",
       "canonical": "https://www.industryarmymarketing.com/blog/plow-news-industry-marketing-project-content-guide",
       "observedAt": "2026-11-11T07:40:16.454106+00:00",
-      "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite"
+      "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite",
+      "owner": "43155109729-1",
+      "attemptHistory": [
+        {
+          "attempt": 1,
+          "owner": "43155109729-1",
+          "at": "2026-11-12T04:30:27.760774+00:00",
+          "rules": {
+            "sourceCommit": "33f4ef25d0b0bba9e9285202b1a97ca8b1182dd4",
+            "hashes": {
+              "docs/IAM-SOT.md": "bee6bafd970b63fd3a7cbb2faea7fb35fa900f1a2789fcf80ffc52bc55afd146",
+              "operations/iam/policy.json": "15a61feccc19e28b6a28d884de19ec0acb818d399201d8e643edd8bd2240ad54",
+              "operations/iam/build-contract.json": "006ee864333b76530c16cc8d552e47f9dff6c74fbdade940d74f00efee7cb494"
+            },
+            "sotVersion": 2
+          }
+        }
+      ]
     },
     "plowinstallations-com-industry-marketing-project-content-guide": {
       "status": "pending",
@@ -1092,13 +1109,13 @@
     }
   ],
   "lastRun": {
-    "at": "2026-11-12T04:30:18.859728+00:00",
+    "at": "2026-11-12T04:30:27.760251+00:00",
     "owner": "43155109729-1",
     "trigger": "push",
-    "status": "item-held-continuing",
+    "status": "checking",
     "policyDigest": "ab1639931848bf2eb2000365da96649afcc031be8ca3f6230a993f0041888247",
     "rules": {
-      "sourceCommit": "fe6a3c82545d3bf6e27b301b7c4e43fb88391dd1",
+      "sourceCommit": "33f4ef25d0b0bba9e9285202b1a97ca8b1182dd4",
       "hashes": {
         "docs/IAM-SOT.md": "bee6bafd970b63fd3a7cbb2faea7fb35fa900f1a2789fcf80ffc52bc55afd146",
         "operations/iam/policy.json": "15a61feccc19e28b6a28d884de19ec0acb818d399201d8e643edd8bd2240ad54",
@@ -1109,9 +1126,7 @@
     "automaticRecovery": {
       "verified": false,
       "reason": "Not an automatic health recovery dispatch"
-    },
-    "error": "Item held: plow-ltd-industry-marketing-project-content-guide",
-    "nextAction": "Resolve the exact recorded gate; do not reset attempts, reseed history or count zero as publication"
+    }
   },
   "lastExecution": {
     "checkedAt": "2026-11-12T04:17:44.527270+00:00",
@@ -1414,7 +1429,7 @@
   ],
   "approvedLaunchIssues": [],
   "loadedRules": {
-    "sourceCommit": "fe6a3c82545d3bf6e27b301b7c4e43fb88391dd1",
+    "sourceCommit": "33f4ef25d0b0bba9e9285202b1a97ca8b1182dd4",
     "hashes": {
       "docs/IAM-SOT.md": "bee6bafd970b63fd3a7cbb2faea7fb35fa900f1a2789fcf80ffc52bc55afd146",
       "operations/iam/policy.json": "15a61feccc19e28b6a28d884de19ec0acb818d399201d8e643edd8bd2240ad54",
@@ -1819,5 +1834,9 @@
         "sotVersion": 2
       }
     }
-  ]
+  ],
+  "lease": {
+    "owner": "43155109729-1",
+    "until": "2026-11-12T05:00:27.760774+00:00"
+  }
 }
