@@ -962,17 +962,25 @@
     "nextAction": "Resolve the exact recorded gate; do not reset attempts, reseed history or count zero as publication"
   },
   "lastExecution": {
-    "checkedAt": "2026-11-12T03:00:41.875483+00:00",
-    "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43145180707",
+    "checkedAt": "2026-11-12T04:17:44.527270+00:00",
+    "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43153625476",
     "event": "push",
-    "startedAt": "2026-11-12T03:00:06Z",
-    "completedAt": "2026-11-12T03:00:29Z",
-    "jobResult": "success",
-    "failedSteps": [],
+    "startedAt": "2026-11-12T04:15:47Z",
+    "completedAt": "2026-11-12T04:17:32Z",
+    "jobResult": "failure",
+    "failedSteps": [
+      "One source-to-verified-publication transaction"
+    ],
     "writerExecuted": true,
     "verifiedPublicationCount": 0,
     "scheduledExecutionObserved": false,
-    "automaticPublicationVerified": false
+    "automaticPublicationVerified": false,
+    "automaticRecovery": {
+      "verified": false,
+      "reason": "Not an automatic health recovery dispatch"
+    },
+    "unattendedRecoveryExecutionVerified": false,
+    "verifiedRecoveryPublication": false
   },
   "executionHistory": [
     {
@@ -1179,6 +1187,27 @@
       "verifiedPublicationCount": 0,
       "scheduledExecutionObserved": false,
       "automaticPublicationVerified": false
+    },
+    {
+      "checkedAt": "2026-11-12T04:17:44.527270+00:00",
+      "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43153625476",
+      "event": "push",
+      "startedAt": "2026-11-12T04:15:47Z",
+      "completedAt": "2026-11-12T04:17:32Z",
+      "jobResult": "failure",
+      "failedSteps": [
+        "One source-to-verified-publication transaction"
+      ],
+      "writerExecuted": true,
+      "verifiedPublicationCount": 0,
+      "scheduledExecutionObserved": false,
+      "automaticPublicationVerified": false,
+      "automaticRecovery": {
+        "verified": false,
+        "reason": "Not an automatic health recovery dispatch"
+      },
+      "unattendedRecoveryExecutionVerified": false,
+      "verifiedRecoveryPublication": false
     }
   ],
   "lastWriterRun": {
@@ -1259,7 +1288,7 @@
       "firstSeenAt": "2026-11-12T01:39:03.441379+00:00",
       "delivery": "unproven",
       "status": "open",
-      "lastSeenAt": "2026-11-12T03:00:41.875483+00:00",
+      "lastSeenAt": "2026-11-12T04:17:44.527270+00:00",
       "reason": "Shared operating-standard v2 interface not yet verified/pinned"
     },
     "iam:prebuild:7e1910d7c6043aa9": {
@@ -1268,7 +1297,7 @@
       "firstSeenAt": "2026-11-12T01:39:03.441379+00:00",
       "delivery": "unproven",
       "status": "open",
-      "lastSeenAt": "2026-11-12T03:00:41.875483+00:00",
+      "lastSeenAt": "2026-11-12T04:17:44.527270+00:00",
       "reason": "Persistent blocker notification delivery unproven"
     },
     "iam:prebuild:9dce8c88d1a3325f": {
@@ -1277,7 +1306,7 @@
       "firstSeenAt": "2026-11-12T01:48:13.376513+00:00",
       "delivery": "unproven",
       "status": "open",
-      "lastSeenAt": "2026-11-12T03:00:41.875483+00:00",
+      "lastSeenAt": "2026-11-12T04:17:44.527270+00:00",
       "reason": "Native scheduled generated publication not yet proven"
     },
     "iam:prebuild:698d3bdd18e30a56": {
@@ -1286,7 +1315,7 @@
       "firstSeenAt": "2026-11-12T01:48:13.376513+00:00",
       "delivery": "unproven",
       "status": "open",
-      "lastSeenAt": "2026-11-12T03:00:41.875483+00:00",
+      "lastSeenAt": "2026-11-12T04:17:44.527270+00:00",
       "reason": "Live failure-isolation and recovery acceptance not yet proven; local tests are separate"
     },
     "iam:prebuild:21f066a453f255be": {

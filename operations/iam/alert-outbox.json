@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "site": "industryarmymarketing.com",
-  "checkedAt": "2026-11-12T03:00:41.875483+00:00",
+  "checkedAt": "2026-11-12T04:17:44.527270+00:00",
   "deliveryVerified": false,
   "adapter": "shared-owner-interface-pending",
   "issues": [
@@ -11,7 +11,7 @@
       "firstSeenAt": "2026-11-12T01:39:03.441379+00:00",
       "delivery": "unproven",
       "status": "open",
-      "lastSeenAt": "2026-11-12T03:00:41.875483+00:00",
+      "lastSeenAt": "2026-11-12T04:17:44.527270+00:00",
       "reason": "Shared operating-standard v2 interface not yet verified/pinned"
     },
     {
@@ -20,7 +20,7 @@
       "firstSeenAt": "2026-11-12T01:39:03.441379+00:00",
       "delivery": "unproven",
       "status": "open",
-      "lastSeenAt": "2026-11-12T03:00:41.875483+00:00",
+      "lastSeenAt": "2026-11-12T04:17:44.527270+00:00",
       "reason": "Persistent blocker notification delivery unproven"
     },
     {
@@ -29,7 +29,7 @@
       "firstSeenAt": "2026-11-12T01:48:13.376513+00:00",
       "delivery": "unproven",
       "status": "open",
-      "lastSeenAt": "2026-11-12T03:00:41.875483+00:00",
+      "lastSeenAt": "2026-11-12T04:17:44.527270+00:00",
       "reason": "Native scheduled generated publication not yet proven"
     },
     {
@@ -38,8 +38,80 @@
       "firstSeenAt": "2026-11-12T01:48:13.376513+00:00",
       "delivery": "unproven",
       "status": "open",
-      "lastSeenAt": "2026-11-12T03:00:41.875483+00:00",
+      "lastSeenAt": "2026-11-12T04:17:44.527270+00:00",
       "reason": "Live failure-isolation and recovery acceptance not yet proven; local tests are separate"
+    },
+    {
+      "id": "iam:steelfencing-ca-industry-marketing-project-content-guide:media",
+      "slug": "steelfencing-ca-industry-marketing-project-content-guide",
+      "status": "open",
+      "reason": "Exact company/source media and actual visual review missing for steelfencing.ca",
+      "stage": "media",
+      "lastSeenAt": "2026-11-12T04:16:16.111867+00:00",
+      "delivery": "unproven"
+    },
+    {
+      "id": "iam:strataroofers-com-industry-marketing-project-content-guide:media",
+      "slug": "strataroofers-com-industry-marketing-project-content-guide",
+      "status": "open",
+      "reason": "Exact company/source media and actual visual review missing for strataroofers.com",
+      "stage": "media",
+      "lastSeenAt": "2026-11-12T04:16:26.574050+00:00",
+      "delivery": "unproven"
+    },
+    {
+      "id": "iam:wesprayit-ca-industry-marketing-project-content-guide:media",
+      "slug": "wesprayit-ca-industry-marketing-project-content-guide",
+      "status": "open",
+      "reason": "Exact company/source media and actual visual review missing for wesprayit.ca",
+      "stage": "media",
+      "lastSeenAt": "2026-11-12T04:16:36.954833+00:00",
+      "delivery": "unproven"
+    },
+    {
+      "id": "iam:wnpd-ca-industry-marketing-project-content-guide:media",
+      "slug": "wnpd-ca-industry-marketing-project-content-guide",
+      "status": "open",
+      "reason": "Exact company/source media and actual visual review missing for wnpd.ca",
+      "stage": "media",
+      "lastSeenAt": "2026-11-12T04:16:47.426676+00:00",
+      "delivery": "unproven"
+    },
+    {
+      "id": "iam:arborists-io-industry-marketing-project-content-guide:media",
+      "slug": "arborists-io-industry-marketing-project-content-guide",
+      "status": "open",
+      "reason": "Exact company/source media and actual visual review missing for arborists.io",
+      "stage": "media",
+      "lastSeenAt": "2026-11-12T04:16:57.277002+00:00",
+      "delivery": "unproven"
+    },
+    {
+      "id": "iam:beewarm-ca-industry-marketing-project-content-guide:media",
+      "slug": "beewarm-ca-industry-marketing-project-content-guide",
+      "status": "open",
+      "reason": "Exact company/source media and actual visual review missing for beewarm.ca",
+      "stage": "media",
+      "lastSeenAt": "2026-11-12T04:17:07.649675+00:00",
+      "delivery": "unproven"
+    },
+    {
+      "id": "iam:brinesalters-com-industry-marketing-project-content-guide:media",
+      "slug": "brinesalters-com-industry-marketing-project-content-guide",
+      "status": "open",
+      "reason": "Exact company/source media and actual visual review missing for brinesalters.com",
+      "stage": "media",
+      "lastSeenAt": "2026-11-12T04:17:18.629926+00:00",
+      "delivery": "unproven"
+    },
+    {
+      "id": "iam:bugout-tv-industry-marketing-project-content-guide:media",
+      "slug": "bugout-tv-industry-marketing-project-content-guide",
+      "status": "open",
+      "reason": "Exact company/source media and actual visual review missing for bugout.tv",
+      "stage": "media",
+      "lastSeenAt": "2026-11-12T04:17:28.971478+00:00",
+      "delivery": "unproven"
     }
   ]
 }
