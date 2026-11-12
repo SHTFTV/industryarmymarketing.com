@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "lastVerifiedAt": "2026-11-12T10:22:16.385409+00:00",
+  "lastVerifiedAt": "2026-11-12T13:10:41.089647+00:00",
   "rows": {
     "buildershaus-contractor-project-story-submission-guide": {
       "status": "existing-publication",
@@ -338,7 +338,7 @@
       }
     },
     "sprayinsulations-ca-industry-marketing-project-content-guide": {
-      "status": "claimed",
+      "status": "verified",
       "attempts": 2,
       "sourceDomain": "sprayinsulations.ca",
       "canonical": "https://www.industryarmymarketing.com/blog/sprayinsulations-ca-industry-marketing-project-content-guide",
@@ -346,8 +346,8 @@
       "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite",
       "owner": "43224323290-1",
       "blockedAt": "2026-11-11T22:53:22.574997+00:00",
-      "stage": "publication-gate",
-      "nextAction": "Existing sole writer verifies original factual copy and live article using credited P0327 photo; preserve one-hour minimum spacing and all prior failures",
+      "stage": "verified",
+      "nextAction": "Verified; prior attempt evidence retained",
       "recoveryHistory": [
         {
           "at": "2026-11-12T10:24:19.973Z",
@@ -359,7 +359,6 @@
           "originalSha256": "90b0a75c18d91215873c7f634ce7747961ed0b5abd173c314ff4ad31b7d8b635"
         }
       ],
-      "nextRetryAt": "2026-11-12T10:24:19.973Z",
       "attemptHistory": [
         {
           "attempt": 2,
@@ -375,7 +374,52 @@
             "sotVersion": 2
           }
         }
-      ]
+      ],
+      "sourceFailures": [],
+      "publicationAuthorship": "generated",
+      "sourceEvidence": [
+        {
+          "url": "https://sprayinsulations.ca/",
+          "sha256": "371cc85e9b58fc8a76d8751c740b9bb85265793ced8922fc0af43b9b4c2af318"
+        },
+        {
+          "url": "https://sprayinsulations.ca/guest-post/",
+          "sha256": "e9d79d067df4b169ba5c47d57d9907db25f5c12b5246710d7a1eca7a35a97b92"
+        }
+      ],
+      "articleSha256": "5da427a23f0b728c5b2b824f1ff821faca04388f262b6377f9a19a52dec084c8",
+      "verifiedAt": "2026-11-12T13:10:41.089647+00:00",
+      "evidence": {
+        "http": true,
+        "canonical": true,
+        "schema": true,
+        "discovery": true,
+        "desktop": true,
+        "phone": true,
+        "image": true,
+        "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43224323290",
+        "trigger": "workflow_dispatch",
+        "browserVersion": "156.0.8078.79",
+        "browserExecutable": "/usr/bin/google-chrome",
+        "rules": {
+          "sourceCommit": "f34e60bfa6649255d4f1c49efe1be7d2324ba73f",
+          "hashes": {
+            "docs/IAM-SOT.md": "bee6bafd970b63fd3a7cbb2faea7fb35fa900f1a2789fcf80ffc52bc55afd146",
+            "operations/iam/policy.json": "15a61feccc19e28b6a28d884de19ec0acb818d399201d8e643edd8bd2240ad54",
+            "operations/iam/build-contract.json": "006ee864333b76530c16cc8d552e47f9dff6c74fbdade940d74f00efee7cb494"
+          },
+          "sotVersion": 2
+        },
+        "productionVerified": true,
+        "generatedAndAudited": true,
+        "automaticRecovery": {
+          "verified": true,
+          "kind": "verified-health-recovery",
+          "originRun": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43224278654",
+          "originEvent": "schedule",
+          "reason": "Actual same-repository health run and GitHub Actions bot verified"
+        }
+      }
     },
     "steelfencing-ca-industry-marketing-project-content-guide": {
       "status": "blocked",
@@ -1563,13 +1607,37 @@
         "verified": false,
         "reason": "Not an automatic health recovery dispatch"
       }
+    },
+    {
+      "slug": "sprayinsulations-ca-industry-marketing-project-content-guide",
+      "verifiedAt": "2026-11-12T13:10:41.089647+00:00",
+      "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43224323290",
+      "trigger": "workflow_dispatch",
+      "generatedAndAudited": true,
+      "productionVerified": true,
+      "rules": {
+        "sourceCommit": "f34e60bfa6649255d4f1c49efe1be7d2324ba73f",
+        "hashes": {
+          "docs/IAM-SOT.md": "bee6bafd970b63fd3a7cbb2faea7fb35fa900f1a2789fcf80ffc52bc55afd146",
+          "operations/iam/policy.json": "15a61feccc19e28b6a28d884de19ec0acb818d399201d8e643edd8bd2240ad54",
+          "operations/iam/build-contract.json": "006ee864333b76530c16cc8d552e47f9dff6c74fbdade940d74f00efee7cb494"
+        },
+        "sotVersion": 2
+      },
+      "automaticRecovery": {
+        "verified": true,
+        "kind": "verified-health-recovery",
+        "originRun": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43224278654",
+        "originEvent": "schedule",
+        "reason": "Actual same-repository health run and GitHub Actions bot verified"
+      }
     }
   ],
   "lastRun": {
     "at": "2026-11-12T13:08:13.469724+00:00",
     "owner": "43224323290-1",
     "trigger": "workflow_dispatch",
-    "status": "checking",
+    "status": "verified-publication",
     "policyDigest": "ab1639931848bf2eb2000365da96649afcc031be8ca3f6230a993f0041888247",
     "rules": {
       "sourceCommit": "f34e60bfa6649255d4f1c49efe1be7d2324ba73f",
@@ -2588,9 +2656,5 @@
       },
       "publicationVerified": true
     }
-  ],
-  "lease": {
-    "owner": "43224323290-1",
-    "until": "2026-11-12T13:38:13.486846+00:00"
-  }
+  ]
 }
