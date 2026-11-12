@@ -41,7 +41,7 @@ const LatestBlogPosts = () => {
           </div>
           <Button variant="hero" asChild className="self-start md:self-end"><Link to="/blog">Read the journal</Link></Button>
         </div>
-        {posts[0] && <p className="text-sm text-muted-foreground mb-5">Latest publication: <time dateTime={posts[0].publishedAt}>{homepagePublicationLabel(posts[0].publishedAt)}</time></p>}
+        {posts[0] && <p className="text-sm text-muted-foreground mb-5">Latest publication: <time dateTime={posts[0].publishedAt}>{homepagePublicationLabel(posts[0].publishedAt, posts[0].date)}</time></p>}
         <Carousel opts={{ align: 'start', loop: false, slidesToScroll: 1 }} aria-label="Published Build Journal stories, newest first" className="pt-14">
           <div className="absolute right-0 top-0 flex gap-3">
             <CarouselPrevious className="static translate-y-0 h-11 w-11" />
@@ -57,7 +57,7 @@ const LatestBlogPosts = () => {
                   <div className="p-5 flex flex-col flex-1">
                     <p className="text-primary text-xs uppercase tracking-widest mb-2">{p.category} · {p.brand}</p>
                     <h3 className="font-display text-xl text-foreground mb-3 leading-tight"><Link to={`/blog/${p.slug}`} className="hover:text-primary transition-colors">{p.title}</Link></h3>
-                    <p className="text-muted-foreground text-sm mb-3"><time dateTime={p.publishedAt}>{homepagePublicationLabel(p.publishedAt)}</time></p>
+                    <p className="text-muted-foreground text-sm mb-3"><time dateTime={p.publishedAt}>{homepagePublicationLabel(p.publishedAt, p.date)}</time></p>
                     <p className="text-muted-foreground text-sm leading-relaxed line-clamp-3 mb-4">{p.excerpt || p.pain}</p>
                     <Link to={`/blog/${p.slug}`} className="text-primary text-sm mt-auto self-start hover:underline">Read the story →</Link>
                   </div>
