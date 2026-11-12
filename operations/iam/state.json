@@ -456,6 +456,20 @@
         "deployment": "dpl_2vLoeuEwN2v15yUGUgA6pBiHkvY1",
         "automaticPublication": false
       }
+    },
+    "naturopaths-io-welcome-clearer-health-questions": {
+      "status": "pending",
+      "attempts": 0,
+      "sourceDomain": "naturopaths.io",
+      "canonical": "https://www.industryarmymarketing.com/blog/naturopaths-io-welcome-clearer-health-questions",
+      "basis": "Explicit user-authorized launch; reviewed exact manuscript, existing shared writer"
+    },
+    "fireproofing-tv-welcome-owner-planning-guides": {
+      "status": "pending",
+      "attempts": 0,
+      "sourceDomain": "fireproofing.tv",
+      "canonical": "https://www.industryarmymarketing.com/blog/fireproofing-tv-welcome-owner-planning-guides",
+      "basis": "Explicit user-authorized launch; reviewed exact manuscript, existing shared writer"
     }
   },
   "receipts": [
@@ -467,13 +481,11 @@
     }
   ],
   "lastRun": {
-    "at": "2026-11-11T22:53:11.123167+00:00",
-    "owner": "43115291818-1",
-    "trigger": "schedule",
-    "status": "failed",
-    "policyDigest": "ab1639931848bf2eb2000365da96649afcc031be8ca3f6230a993f0041888247",
-    "error": "Exact company/source media and actual visual review missing for sprayinsulations.ca",
-    "nextAction": "Resolve the exact recorded gate; do not reset attempts, reseed history or count zero as publication"
+    "at": "2026-11-12T00:57:39.922421+00:00",
+    "owner": "43131000603-1",
+    "trigger": "push",
+    "status": "cadence-not-due",
+    "policyDigest": "ab1639931848bf2eb2000365da96649afcc031be8ca3f6230a993f0041888247"
   },
   "lastExecution": {
     "checkedAt": "2026-11-11T22:53:43.334021+00:00",
@@ -616,5 +628,6 @@
       },
       "automaticPublication": false
     }
-  ]
+  ],
+  "approvedLaunchIssues": []
 }
