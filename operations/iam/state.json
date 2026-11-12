@@ -421,12 +421,29 @@
       }
     },
     "wnpd-ca-industry-marketing-project-content-guide": {
-      "status": "pending",
-      "attempts": 0,
+      "status": "claimed",
+      "attempts": 1,
       "sourceDomain": "wnpd.ca",
       "canonical": "https://www.industryarmymarketing.com/blog/wnpd-ca-industry-marketing-project-content-guide",
       "observedAt": "2026-11-11T07:40:16.454089+00:00",
-      "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite"
+      "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite",
+      "owner": "43153625476-1",
+      "attemptHistory": [
+        {
+          "attempt": 1,
+          "owner": "43153625476-1",
+          "at": "2026-11-12T04:16:38.066476+00:00",
+          "rules": {
+            "sourceCommit": "e3e8bad14c8fdec627d5b52e317b376502e5b9c5",
+            "hashes": {
+              "docs/IAM-SOT.md": "bee6bafd970b63fd3a7cbb2faea7fb35fa900f1a2789fcf80ffc52bc55afd146",
+              "operations/iam/policy.json": "15a61feccc19e28b6a28d884de19ec0acb818d399201d8e643edd8bd2240ad54",
+              "operations/iam/build-contract.json": "006ee864333b76530c16cc8d552e47f9dff6c74fbdade940d74f00efee7cb494"
+            },
+            "sotVersion": 2
+          }
+        }
+      ]
     },
     "arborists-io-industry-marketing-project-content-guide": {
       "status": "pending",
@@ -750,13 +767,13 @@
     }
   ],
   "lastRun": {
-    "at": "2026-11-12T04:16:27.836075+00:00",
+    "at": "2026-11-12T04:16:38.065784+00:00",
     "owner": "43153625476-1",
     "trigger": "push",
-    "status": "item-held-continuing",
+    "status": "checking",
     "policyDigest": "ab1639931848bf2eb2000365da96649afcc031be8ca3f6230a993f0041888247",
     "rules": {
-      "sourceCommit": "1ed28798c44e1be96ce837430908f40a250c5239",
+      "sourceCommit": "e3e8bad14c8fdec627d5b52e317b376502e5b9c5",
       "hashes": {
         "docs/IAM-SOT.md": "bee6bafd970b63fd3a7cbb2faea7fb35fa900f1a2789fcf80ffc52bc55afd146",
         "operations/iam/policy.json": "15a61feccc19e28b6a28d884de19ec0acb818d399201d8e643edd8bd2240ad54",
@@ -767,9 +784,7 @@
     "automaticRecovery": {
       "verified": false,
       "reason": "Not an automatic health recovery dispatch"
-    },
-    "error": "Item held: wesprayit-ca-industry-marketing-project-content-guide",
-    "nextAction": "Resolve the exact recorded gate; do not reset attempts, reseed history or count zero as publication"
+    }
   },
   "lastExecution": {
     "checkedAt": "2026-11-12T03:00:41.875483+00:00",
@@ -1043,7 +1058,7 @@
   ],
   "approvedLaunchIssues": [],
   "loadedRules": {
-    "sourceCommit": "1ed28798c44e1be96ce837430908f40a250c5239",
+    "sourceCommit": "e3e8bad14c8fdec627d5b52e317b376502e5b9c5",
     "hashes": {
       "docs/IAM-SOT.md": "bee6bafd970b63fd3a7cbb2faea7fb35fa900f1a2789fcf80ffc52bc55afd146",
       "operations/iam/policy.json": "15a61feccc19e28b6a28d884de19ec0acb818d399201d8e643edd8bd2240ad54",
@@ -1196,5 +1211,9 @@
         "sotVersion": 2
       }
     }
-  ]
+  ],
+  "lease": {
+    "owner": "43153625476-1",
+    "until": "2026-11-12T04:46:38.066476+00:00"
+  }
 }
