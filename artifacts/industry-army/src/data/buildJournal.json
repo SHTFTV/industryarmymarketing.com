@@ -15,6 +15,93 @@
     "authorName": "Colin Hamilton",
     "contactBusiness": "iam",
     "faqs": [],
+    "slug": "sparkys-tv-industry-marketing-project-content-guide",
+    "title": "Sparkys.tv: Let Electrical Stories Prepare the Questions, Not Replace the Assessment",
+    "cardTitle": "Sparkys.tv: Let Electrical Stories Prepare the Questions, Not Replace the Assessment",
+    "excerpt": "Electrical publishing is most useful when inspiration becomes a clearer project brief\u2014not an installation verdict, a contractor booking or a promise of availability.",
+    "metaDescription": "Electrical publishing is most useful when inspiration becomes a clearer project brief\u2014not an installation verdict, a contractor booking or a promise of availability.",
+    "publishedAt": "2026-11-12T10:21:02.067757+00:00",
+    "date": "November 12, 2026",
+    "image": "/brand-journal/sparkys-website-source.jpg",
+    "ogImage": "/brand-journal/sparkys-website-source.jpg",
+    "imageAlt": "Sparkys.tv \u2014 screenshot of its existing website and labelled illustrative promotional imagery; not a photograph of a documented installation.",
+    "ogImageAlt": "Sparkys.tv \u2014 screenshot of its existing website and labelled illustrative promotional imagery; not a photograph of a documented installation.",
+    "campaignSite": "sparkys.tv",
+    "campaignLabel": "Sparkys: use electrical project stories without replacing licensed assessment",
+    "richContent": {
+      "intro": "An electrical project story should help a reader describe what they want, not convince them that a property has already been assessed. [Sparkys.tv](https://sparkys.tv/) offers a useful foundation for that distinction: its homepage connects lighting, EV charging, solar and other electrical projects with planning resources, while telling readers to confirm the work with a qualified electrician. For Industry Army Marketing, the editorial opportunity is to make that boundary productive: publish stories that improve the next conversation without pretending to replace it.",
+      "sections": [
+        {
+          "heading": "Make the story end with a better question",
+          "paragraphs": [
+            "Sparkys\u2019 journal includes \u201cEV charging starts with the parking space\u201d and \u201cLighting: plan the room before buying the fixtures.\u201d Those titles put the setting ahead of the equipment. That is a useful model for electrical publishing: begin with the reader\u2019s intended use, then identify what still needs discussion.",
+            "An article should leave the reader with questions to bring to an assessment, rather than a verdict about what can be installed. For a charging story, ask readers to describe their parking arrangements and expected use. For lighting, ask them to explain the room and daily routines. Keep those prompts separate from technical conclusions."
+          ]
+        },
+        {
+          "heading": "Give each project its own planning context",
+          "paragraphs": [
+            "The homepage distinguishes residential work, commercial work, solar, residential and commercial lighting, and EV charging. Its planning descriptions refer to room-by-room briefs, managed properties, energy goals, layouts and parking details. That specificity should carry into the stories rather than disappear beneath a generic invitation to enquire.",
+            "A practical editorial structure is to name the space, describe the intended change and list the information the reader should gather. Sparkys already asks for property details, preferred timing, photos, access notes and drawings. Organize those details as material for a qualified contractor to assess\u2014not as evidence that the publication has approved the project."
+          ]
+        },
+        {
+          "heading": "Keep inspiration visibly separate from completed work",
+          "paragraphs": [
+            "Sparkys labels its hero video as illustrative promotional material, not documented installation footage. Its journal cards also identify concept illustrations. Those distinctions deserve to remain visible wherever imagery supports a story.",
+            "The editorial lesson is straightforward: an attractive image can introduce an idea without proving that somebody installed it. Captions should explain the image\u2019s role, and the surrounding copy should avoid turning a concept into a case study. Reserve descriptions of completed work for material supported by an actual project record. The reader should never have to infer which kind of evidence they are seeing."
+          ]
+        },
+        {
+          "heading": "Commission expertise without borrowing authority",
+          "paragraphs": [
+            "The [contributor page](https://sparkys.tv/guest-posts/) welcomes proposals about project planning, quotations and coordination. It asks contributors for a topic outline, relevant experience and sources, and requires clear authorship, authoritative support for technical claims and disclosure of commercial relationships.",
+            "Use that brief to commission narrowly useful explanations rather than broad assurances. Ask a contributor to explain the questions a quotation should answer or the information needed for an assessment. Keep the author\u2019s experience visible, but do not treat authorship as permission to make unsupported recommendations. Sparkys also states that proposals and links remain subject to review; submission is not acceptance."
+          ]
+        },
+        {
+          "heading": "Separate project interest from marketing interest",
+          "paragraphs": [
+            "Sparkys says its enquiry network is in preparation: sending an enquiry does not reserve a contractor, confirm service in a city or create a booking. It also states that contractor matching and booking are not yet available. An article\u2019s closing invitation should preserve those limits.",
+            "Keep the two audiences distinct. A property owner needs a project-planning next step; a business seeking promotion needs a clearly labelled marketing route. Sparkys identifies itself as powered by Industry Army Marketing, but that attribution should not make an IAM marketing enquiry look like an electrical-service request. The strongest close is an honest one: prepare the brief, identify the unanswered questions and leave the assessment to a qualified professional."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "label": "https://sparkys.tv/",
+          "href": "https://sparkys.tv/"
+        },
+        {
+          "label": "https://sparkys.tv/guest-posts/",
+          "href": "https://sparkys.tv/guest-posts/"
+        }
+      ]
+    },
+    "cta": {
+      "eyebrow": "INDUSTRY ARMY MARKETING",
+      "heading": "Explain your work clearly",
+      "body": "Discuss your branding and publishing with IAM. Project enquiries stay with the named source company.",
+      "buttonText": "Talk with IAM",
+      "buttonHref": "https://www.industryarmymarketing.com/contact?request=guest-post&ref_site=sparkys.tv"
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
+    "trade": "Industry publishing",
+    "tradeShort": "industry publishing",
+    "plural": "businesses",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Canada",
+    "province": "BC",
+    "category": "Build Journal",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "contactBusiness": "iam",
+    "faqs": [],
     "slug": "kongtractors-com-industry-marketing-project-content-guide",
     "title": "Kong Tractors: Turn Model-Specific Curiosity into Useful Equipment Publishing",
     "cardTitle": "Kong Tractors: Turn Model-Specific Curiosity into Useful Equipment Publishing",
