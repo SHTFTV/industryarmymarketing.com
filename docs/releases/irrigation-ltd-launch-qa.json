@@ -1,0 +1,43 @@
+{
+  "slug": "irrigation-ltd-launch-practical-guides-planning",
+  "source": "https://irrigation.ltd/",
+  "checkedAt": "2026-11-12T00:27:19.696Z",
+  "manualVisualReview": true,
+  "asset": {
+    "path": "artifacts/industry-army/public/brand-journal/irrigation-ltd-launch.jpg",
+    "width": 1600,
+    "height": 900,
+    "nativeSize": [
+      1600,
+      900
+    ],
+    "upscaled": false,
+    "sha256": "c144d4864191b261fcd87a3a466fc97f14f2e6e7219bcc34449fc362ae05f6fa",
+    "credit": "Industry Army Marketing — screenshot of its network site Irrigation.ltd, November 11, 2026",
+    "rightsEvidence": "User explicitly authorized Irrigation.ltd launch, existing site brand assets and IAM announcement. Actual live site screenshot; original conceptual illustration is visibly labeled.",
+    "visualReview": "Live homepage reviewed at native1600x900: logo, headline, garden artwork, labels and navigation readable; no stock or misleading physical project depiction."
+  },
+  "sourceChecks": {
+    "https": true,
+    "sixteenArticles": true,
+    "consumerGuides": 14,
+    "businessGuides": 2,
+    "footerGuestPost": true,
+    "footerMarketing": true,
+    "seoArticle": true
+  },
+  "brandResolution": {
+    "approved": "BuildersHaus.com",
+    "source": "Irrigation.ltd SITE-SOT.md and live footer",
+    "voiceVariant": "BuildersHouse.com",
+    "voiceVariantStatus": "Returns parking lander; not used as link"
+  },
+  "preflight": {
+    "recent3": true,
+    "desktop1440": true,
+    "phone390": true,
+    "imagesDecodedAfterLazyLoad": true
+  },
+  "manualPublication": true,
+  "automaticPublication": false
+}

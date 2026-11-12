@@ -1,1 +1,28 @@
-{}
+{
+  "irrigation-ltd-launch-practical-guides-planning": {
+    "hero": {
+      "path": "/brand-journal/irrigation-ltd-launch.jpg",
+      "sha256": "c144d4864191b261fcd87a3a466fc97f14f2e6e7219bcc34449fc362ae05f6fa",
+      "nativeSize": [
+        1600,
+        900
+      ],
+      "upscaled": false,
+      "credit": "Industry Army Marketing — screenshot of its network site Irrigation.ltd, November 11, 2026",
+      "rightsEvidence": "User explicitly authorized Irrigation.ltd launch, existing site brand assets and IAM announcement. Actual live site screenshot; original conceptual illustration is visibly labeled.",
+      "visualReview": "Live homepage reviewed at native1600x900: logo, headline, garden artwork, labels and navigation readable; no stock or misleading physical project depiction."
+    },
+    "share": {
+      "path": "/brand-journal/irrigation-ltd-launch.jpg",
+      "sha256": "c144d4864191b261fcd87a3a466fc97f14f2e6e7219bcc34449fc362ae05f6fa",
+      "nativeSize": [
+        1600,
+        900
+      ],
+      "upscaled": false,
+      "credit": "Industry Army Marketing — screenshot of its network site Irrigation.ltd, November 11, 2026",
+      "rightsEvidence": "User explicitly authorized Irrigation.ltd launch, existing site brand assets and IAM announcement. Actual live site screenshot; original conceptual illustration is visibly labeled.",
+      "visualReview": "Live homepage reviewed at native1600x900: logo, headline, garden artwork, labels and navigation readable; no stock or misleading physical project depiction."
+    }
+  }
+}
