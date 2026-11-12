@@ -259,26 +259,42 @@
       "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite"
     },
     "sparkys-tv-industry-marketing-project-content-guide": {
-      "status": "retry",
-      "attempts": 1,
+      "status": "claimed",
+      "attempts": 2,
       "sourceDomain": "sparkys.tv",
       "canonical": "https://www.industryarmymarketing.com/blog/sparkys-tv-industry-marketing-project-content-guide",
       "observedAt": "2026-11-11T07:40:16.454079+00:00",
       "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite",
-      "owner": "43101348695-1",
+      "owner": "43199356432-1",
       "blockedAt": "2026-11-11T21:15:34.555658+00:00",
       "stage": "publication-gate",
       "nextAction": "Existing sole publisher must source-ground, independently audit and verify live article with reviewed website-screenshot credit; no installation evidence inferred",
       "recoveryHistory": [
         {
           "at": "2026-11-12T10:17:47.424Z",
-          "reason": "Exact first-party website screenshot now captured at native1600×900 with honest concept/source credit and desktop/phone source review; original undersized-photo hold retained",
+          "reason": "Exact first-party website screenshot now captured at native1600\u00d7900 with honest concept/source credit and desktop/phone source review; original undersized-photo hold retained",
           "previousStatus": "blocked",
           "previousAttempts": 1,
           "mediaSha256": "63ebddadf19ddc20f0a42774b55ea22b6b0e2616b8d949132bf4795283c8bfcb"
         }
       ],
-      "nextRetryAt": "2026-11-12T10:17:47.424Z"
+      "nextRetryAt": "2026-11-12T10:17:47.424Z",
+      "attemptHistory": [
+        {
+          "attempt": 2,
+          "owner": "43199356432-1",
+          "at": "2026-11-12T10:20:04.953217+00:00",
+          "rules": {
+            "sourceCommit": "b2fbbb0f2692847de82a0df46b66bb00e82c373e",
+            "hashes": {
+              "docs/IAM-SOT.md": "bee6bafd970b63fd3a7cbb2faea7fb35fa900f1a2789fcf80ffc52bc55afd146",
+              "operations/iam/policy.json": "15a61feccc19e28b6a28d884de19ec0acb818d399201d8e643edd8bd2240ad54",
+              "operations/iam/build-contract.json": "006ee864333b76530c16cc8d552e47f9dff6c74fbdade940d74f00efee7cb494"
+            },
+            "sotVersion": 2
+          }
+        }
+      ]
     },
     "sprayinsulations-ca-industry-marketing-project-content-guide": {
       "status": "blocked",
@@ -1460,13 +1476,13 @@
     }
   ],
   "lastRun": {
-    "at": "2026-11-12T05:02:33.706425+00:00",
-    "owner": "43158636901-1",
+    "at": "2026-11-12T10:20:04.936227+00:00",
+    "owner": "43199356432-1",
     "trigger": "workflow_dispatch",
-    "status": "verified-publication",
+    "status": "checking",
     "policyDigest": "ab1639931848bf2eb2000365da96649afcc031be8ca3f6230a993f0041888247",
     "rules": {
-      "sourceCommit": "c80796e7c407f63a9bdc0d1c29b03b22a218658c",
+      "sourceCommit": "b2fbbb0f2692847de82a0df46b66bb00e82c373e",
       "hashes": {
         "docs/IAM-SOT.md": "bee6bafd970b63fd3a7cbb2faea7fb35fa900f1a2789fcf80ffc52bc55afd146",
         "operations/iam/policy.json": "15a61feccc19e28b6a28d884de19ec0acb818d399201d8e643edd8bd2240ad54",
@@ -1475,11 +1491,8 @@
       "sotVersion": 2
     },
     "automaticRecovery": {
-      "verified": true,
-      "kind": "verified-health-recovery",
-      "originRun": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43155109656",
-      "originEvent": "push",
-      "reason": "Actual same-repository health run and GitHub Actions bot verified"
+      "verified": false,
+      "reason": "Not an automatic health recovery dispatch"
     }
   },
   "lastExecution": {
@@ -1849,7 +1862,7 @@
   ],
   "approvedLaunchIssues": [],
   "loadedRules": {
-    "sourceCommit": "c80796e7c407f63a9bdc0d1c29b03b22a218658c",
+    "sourceCommit": "b2fbbb0f2692847de82a0df46b66bb00e82c373e",
     "hashes": {
       "docs/IAM-SOT.md": "bee6bafd970b63fd3a7cbb2faea7fb35fa900f1a2789fcf80ffc52bc55afd146",
       "operations/iam/policy.json": "15a61feccc19e28b6a28d884de19ec0acb818d399201d8e643edd8bd2240ad54",
@@ -2466,5 +2479,9 @@
       },
       "publicationVerified": true
     }
-  ]
+  ],
+  "lease": {
+    "owner": "43199356432-1",
+    "until": "2026-11-12T10:50:04.953217+00:00"
+  }
 }
