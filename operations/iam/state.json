@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "lastVerifiedAt": "2026-11-12T00:31:03.007Z",
+  "lastVerifiedAt": "2026-11-12T01:38:47.450012+00:00",
   "rows": {
     "buildershaus-contractor-project-story-submission-guide": {
       "status": "existing-publication",
@@ -458,7 +458,7 @@
       }
     },
     "naturopaths-io-welcome-clearer-health-questions": {
-      "status": "claimed",
+      "status": "verified",
       "attempts": 1,
       "sourceDomain": "naturopaths.io",
       "canonical": "https://www.industryarmymarketing.com/blog/naturopaths-io-welcome-clearer-health-questions",
@@ -479,7 +479,50 @@
             "sotVersion": 2
           }
         }
-      ]
+      ],
+      "sourceFailures": [],
+      "stage": "uploading",
+      "publicationAuthorship": "manual",
+      "sourceEvidence": [
+        {
+          "url": "https://naturopaths.io/",
+          "sha256": "b65530d54ff67bd2d2b7ad95d13be8aef2f985d53b3f19961838a197184504c3"
+        },
+        {
+          "url": "https://naturopaths.io/about/",
+          "sha256": "844bf3da800add719f5938ec968bb1c741238ada7aa05bb794c8136bbba083b5"
+        },
+        {
+          "url": "https://naturopaths.io/practitioners/",
+          "sha256": "3c0e3d429209b29559f261bff0454fe7cc85d3b1d0d21c1d753bb7fb1101a83a"
+        }
+      ],
+      "articleSha256": "8beea255ce460201ba6fac99c083bda132fa147b8ca96717a096559d79dd8eb7",
+      "verifiedAt": "2026-11-12T01:38:47.450012+00:00",
+      "evidence": {
+        "http": true,
+        "canonical": true,
+        "schema": true,
+        "discovery": true,
+        "desktop": true,
+        "phone": true,
+        "image": true,
+        "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43135533487",
+        "trigger": "push",
+        "rules": {
+          "sourceCommit": "c9c89065a422f13e0afed33f715d84ef32310038",
+          "hashes": {
+            "docs/IAM-SOT.md": "992b0abf9f9910da9034b1c7767cedae873710121a9e91694b66ca4ee4f5d7d0",
+            "operations/iam/policy.json": "15a61feccc19e28b6a28d884de19ec0acb818d399201d8e643edd8bd2240ad54",
+            "operations/iam/build-contract.json": "cbae7766fb73ee15f18c10b2f0ba43e07bd0d8cac623edddd55aa356fa3e4e91"
+          },
+          "sotVersion": 2
+        },
+        "productionVerified": true,
+        "generatedAndAudited": false,
+        "authorship": "user-authorized-manual",
+        "automaticAuthorship": false
+      }
     },
     "fireproofing-tv-welcome-owner-planning-guides": {
       "status": "pending",
@@ -495,13 +538,30 @@
       "verifiedAt": "2026-11-12T00:31:03.007Z",
       "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/commit/fac80518317c663b709fa121c3b9a05b2a72c0fc",
       "trigger": "user-authorized-manual"
+    },
+    {
+      "slug": "naturopaths-io-welcome-clearer-health-questions",
+      "verifiedAt": "2026-11-12T01:38:47.450012+00:00",
+      "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43135533487",
+      "trigger": "push",
+      "generatedAndAudited": false,
+      "productionVerified": true,
+      "rules": {
+        "sourceCommit": "c9c89065a422f13e0afed33f715d84ef32310038",
+        "hashes": {
+          "docs/IAM-SOT.md": "992b0abf9f9910da9034b1c7767cedae873710121a9e91694b66ca4ee4f5d7d0",
+          "operations/iam/policy.json": "15a61feccc19e28b6a28d884de19ec0acb818d399201d8e643edd8bd2240ad54",
+          "operations/iam/build-contract.json": "cbae7766fb73ee15f18c10b2f0ba43e07bd0d8cac623edddd55aa356fa3e4e91"
+        },
+        "sotVersion": 2
+      }
     }
   ],
   "lastRun": {
     "at": "2026-11-12T01:37:01.129038+00:00",
     "owner": "43135533487-1",
     "trigger": "push",
-    "status": "checking",
+    "status": "verified-publication",
     "policyDigest": "ab1639931848bf2eb2000365da96649afcc031be8ca3f6230a993f0041888247",
     "rules": {
       "sourceCommit": "c9c89065a422f13e0afed33f715d84ef32310038",
@@ -675,9 +735,5 @@
       "operations/iam/build-contract.json": "cbae7766fb73ee15f18c10b2f0ba43e07bd0d8cac623edddd55aa356fa3e4e91"
     },
     "sotVersion": 2
-  },
-  "lease": {
-    "owner": "43135533487-1",
-    "until": "2026-11-12T02:07:01.147300+00:00"
   }
 }
