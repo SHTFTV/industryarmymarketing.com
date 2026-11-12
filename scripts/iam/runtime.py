@@ -69,7 +69,7 @@ def complete(state, slug, owner, evidence, now):
     row.update(status='verified', stage='verified', verifiedAt=now.isoformat(), evidence=evidence,nextAction='Verified; prior attempt evidence retained')
     row.pop('nextRetryAt',None)
     state['lastVerifiedAt'] = now.isoformat()
-    state['receipts'].append({'slug': slug, 'verifiedAt': now.isoformat(), 'runUrl': evidence['runUrl'], 'trigger': evidence['trigger'],'generatedAndAudited':evidence.get('generatedAndAudited',False),'productionVerified':True,'rules':evidence.get('rules')})
+    state['receipts'].append({'slug': slug, 'verifiedAt': now.isoformat(), 'runUrl': evidence['runUrl'], 'trigger': evidence['trigger'],'generatedAndAudited':evidence.get('generatedAndAudited',False),'productionVerified':True,'rules':evidence.get('rules'),'automaticRecovery':evidence.get('automaticRecovery')})
     for issue in state.get('persistentBlockers',{}).values():
         if issue.get('slug')==slug and issue.get('kind')!='source-feed' and issue.get('status')=='open':issue.update(status='resolved',resolvedAt=now.isoformat(),resolution='Exact canonical verified')
     state.pop('lease', None)

@@ -12,6 +12,7 @@ from source import fetch_source
 from writer import write_article
 from prebuild import rules
 from preparation import prepared_draft
+from automatic_trigger import verify as verify_automatic_trigger
 from recovery import ItemHold, eligible, recover_expired, fetch_all, retain_failure, retain_source_results
 from approved_launches import pending_launches, source_checked_post
 
@@ -87,9 +88,10 @@ def cycle(excluded):
     journal=read(JOURNAL)
     state=reconcile(read(STATE),journal,read('docs/campaigns/construction-hourly/queue-baseline.json'))
     recover_expired(state,journal,dt.datetime.now(dt.timezone.utc))
+    automatic=verify_automatic_trigger()
     state['loadedRules']=loaded
     owner=os.environ.get('GITHUB_RUN_ID','local-dryrun')+'-'+os.environ.get('GITHUB_RUN_ATTEMPT','1')
-    state['lastRun']={'at':stamp(),'owner':owner,'trigger':os.environ.get('GITHUB_EVENT_NAME','local'),'status':'checking','policyDigest':policy_hash,'rules':loaded}
+    state['lastRun']={'at':stamp(),'owner':owner,'trigger':os.environ.get('GITHUB_EVENT_NAME','local'),'status':'checking','policyDigest':policy_hash,'rules':loaded,'automaticRecovery':automatic}
     pending=[a for a in read('docs/campaigns/construction-hourly/queue-baseline.json')['articles'] if state['rows'][a['slug']]['status'] in ('pending','retry')]
     approved = pending_launches(ROOT, state, journal)
     if approved: pending = approved + pending
@@ -133,7 +135,7 @@ def cycle(excluded):
         try:
             if article.get('resumePost'):
                 post=article['resumePost'];evidence=live_check(post,'',state,owner)
-                evidence.update(rules=loaded,recoveredExistingCanonical=True,productionVerified=True,generatedAndAudited=state['rows'][slug].get('publicationAuthorship')=='generated')
+                evidence.update(rules=loaded,recoveredExistingCanonical=True,automaticRecovery=automatic,productionVerified=True,generatedAndAudited=state['rows'][slug].get('publicationAuthorship')=='generated')
                 complete(state,slug,owner,evidence,dt.datetime.now(dt.timezone.utc))
                 state['lastRun']['status']='verified-recovered-publication';return
             # Real shared-site regressions stop new publishing, even if the next draft is ready.
@@ -185,7 +187,7 @@ def cycle(excluded):
             journal.insert(0,post);save(JOURNAL,journal);persist('IAM: publish reviewed authorized launch' if manual else 'IAM: publish one independently audited network article')
             published=True;stage='verification'
             evidence=live_check(post,draft['intro'],state,owner)
-            evidence.update(rules=loaded,productionVerified=True,generatedAndAudited=not manual)
+            evidence.update(rules=loaded,productionVerified=True,generatedAndAudited=not manual,automaticRecovery=automatic)
             if manual:
                 evidence.update(authorship='user-authorized-manual',automaticAuthorship=False)
             complete(state,slug,owner,evidence,dt.datetime.now(dt.timezone.utc))

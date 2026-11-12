@@ -3,6 +3,15 @@ on:
   schedule:
     - cron: '*/5 * * * *'
   workflow_dispatch:
+    inputs:
+      automatic_recovery:
+        description: Health-origin claim must be independently verified
+        type: boolean
+        default: false
+      recovery_origin_run:
+        description: Actual same-repository health run URL
+        type: string
+        default: ''
   push:
     branches: [main]
     paths:
@@ -32,6 +41,10 @@ jobs:
       executed: ${{ steps.decide.outputs.executed }}
     runs-on: ubuntu-24.04
     timeout-minutes: 28
+    env:
+      GITHUB_TOKEN: ${{ github.token }}
+      IAM_AUTOMATIC_RECOVERY: ${{ github.event.inputs.automatic_recovery || 'false' }}
+      IAM_RECOVERY_ORIGIN_RUN: ${{ github.event.inputs.recovery_origin_run || '' }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -103,6 +116,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
           IAM_JOB_RESULT: ${{ needs.publish.result }}
+          IAM_AUTOMATIC_RECOVERY: ${{ github.event.inputs.automatic_recovery || 'false' }}
+          IAM_RECOVERY_ORIGIN_RUN: ${{ github.event.inputs.recovery_origin_run || '' }}
         run: python scripts/iam/report_execution.py
 
 

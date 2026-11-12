@@ -8,6 +8,7 @@ import subprocess
 import urllib.request
 from prebuild import assess
 from blockers import observe
+from automatic_trigger import verify as verify_automatic_trigger
 
 def execution(jobs, state, context):
     publish=next((j for j in jobs if j['name']=='publish'),None)
@@ -50,6 +51,12 @@ def main():
     path=pathlib.Path('operations/iam/state.json');state=json.loads(path.read_text())
     receipt=execution(jobs,state,{'runUrl':f'https://github.com/{repository}/actions/runs/{run}',
         'checkedAt':dt.datetime.now(dt.timezone.utc).isoformat(),'event':os.environ['GITHUB_EVENT_NAME'],'jobResult':os.environ['IAM_JOB_RESULT']})
+    automatic=verify_automatic_trigger()
+    receipt['automaticRecovery']=automatic
+    receipt['unattendedRecoveryExecutionVerified']=bool(automatic.get('verified') and receipt['writerExecuted'] and receipt['jobResult']=='success')
+    receipt['verifiedRecoveryPublication']=bool(receipt['unattendedRecoveryExecutionVerified'] and receipt['verifiedPublicationCount'])
+    if receipt['unattendedRecoveryExecutionVerified'] and not any(r.get('runUrl')==receipt['runUrl'] for r in state.get('recoveryExecutions',[])):
+        state.setdefault('recoveryExecutions',[]).append({'runUrl':receipt['runUrl'],'checkedAt':receipt['checkedAt'],'origin':automatic,'publicationVerified':receipt['verifiedRecoveryPublication']})
     record(state,receipt)
     readiness=assess(pathlib.Path.cwd())
     outbox=observe(state,readiness,receipt['checkedAt'])
