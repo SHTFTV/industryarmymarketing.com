@@ -375,7 +375,7 @@
       }
     },
     "wesprayit-ca-industry-marketing-project-content-guide": {
-      "status": "claimed",
+      "status": "blocked",
       "attempts": 1,
       "sourceDomain": "wesprayit.ca",
       "canonical": "https://www.industryarmymarketing.com/blog/wesprayit-ca-industry-marketing-project-content-guide",
@@ -397,7 +397,28 @@
             "sotVersion": 2
           }
         }
-      ]
+      ],
+      "stage": "media",
+      "nextAction": "Exact company/source media and actual visual review missing for wesprayit.ca",
+      "lastFailure": {
+        "slug": "wesprayit-ca-industry-marketing-project-content-guide",
+        "at": "2026-11-12T04:16:36.954833+00:00",
+        "stage": "media",
+        "status": "blocked",
+        "errorType": "ValueError",
+        "reason": "Exact company/source media and actual visual review missing for wesprayit.ca",
+        "httpStatus": null,
+        "attempt": 1,
+        "rules": {
+          "sourceCommit": "1ed28798c44e1be96ce837430908f40a250c5239",
+          "hashes": {
+            "docs/IAM-SOT.md": "bee6bafd970b63fd3a7cbb2faea7fb35fa900f1a2789fcf80ffc52bc55afd146",
+            "operations/iam/policy.json": "15a61feccc19e28b6a28d884de19ec0acb818d399201d8e643edd8bd2240ad54",
+            "operations/iam/build-contract.json": "006ee864333b76530c16cc8d552e47f9dff6c74fbdade940d74f00efee7cb494"
+          },
+          "sotVersion": 2
+        }
+      }
     },
     "wnpd-ca-industry-marketing-project-content-guide": {
       "status": "pending",
@@ -732,7 +753,7 @@
     "at": "2026-11-12T04:16:27.836075+00:00",
     "owner": "43153625476-1",
     "trigger": "push",
-    "status": "checking",
+    "status": "item-held-continuing",
     "policyDigest": "ab1639931848bf2eb2000365da96649afcc031be8ca3f6230a993f0041888247",
     "rules": {
       "sourceCommit": "1ed28798c44e1be96ce837430908f40a250c5239",
@@ -746,7 +767,9 @@
     "automaticRecovery": {
       "verified": false,
       "reason": "Not an automatic health recovery dispatch"
-    }
+    },
+    "error": "Item held: wesprayit-ca-industry-marketing-project-content-guide",
+    "nextAction": "Resolve the exact recorded gate; do not reset attempts, reseed history or count zero as publication"
   },
   "lastExecution": {
     "checkedAt": "2026-11-12T03:00:41.875483+00:00",
@@ -1104,6 +1127,15 @@
       "stage": "media",
       "lastSeenAt": "2026-11-12T04:16:26.574050+00:00",
       "delivery": "unproven"
+    },
+    "iam:wesprayit-ca-industry-marketing-project-content-guide:media": {
+      "id": "iam:wesprayit-ca-industry-marketing-project-content-guide:media",
+      "slug": "wesprayit-ca-industry-marketing-project-content-guide",
+      "status": "open",
+      "reason": "Exact company/source media and actual visual review missing for wesprayit.ca",
+      "stage": "media",
+      "lastSeenAt": "2026-11-12T04:16:36.954833+00:00",
+      "delivery": "unproven"
     }
   },
   "attemptReceipts": [
@@ -1144,10 +1176,25 @@
         },
         "sotVersion": 2
       }
+    },
+    {
+      "slug": "wesprayit-ca-industry-marketing-project-content-guide",
+      "at": "2026-11-12T04:16:36.954833+00:00",
+      "stage": "media",
+      "status": "blocked",
+      "errorType": "ValueError",
+      "reason": "Exact company/source media and actual visual review missing for wesprayit.ca",
+      "httpStatus": null,
+      "attempt": 1,
+      "rules": {
+        "sourceCommit": "1ed28798c44e1be96ce837430908f40a250c5239",
+        "hashes": {
+          "docs/IAM-SOT.md": "bee6bafd970b63fd3a7cbb2faea7fb35fa900f1a2789fcf80ffc52bc55afd146",
+          "operations/iam/policy.json": "15a61feccc19e28b6a28d884de19ec0acb818d399201d8e643edd8bd2240ad54",
+          "operations/iam/build-contract.json": "006ee864333b76530c16cc8d552e47f9dff6c74fbdade940d74f00efee7cb494"
+        },
+        "sotVersion": 2
+      }
     }
-  ],
-  "lease": {
-    "owner": "43153625476-1",
-    "until": "2026-11-12T04:46:27.836743+00:00"
-  }
+  ]
 }
