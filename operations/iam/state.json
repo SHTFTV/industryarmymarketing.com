@@ -1657,11 +1657,11 @@
     }
   },
   "lastExecution": {
-    "checkedAt": "2026-11-12T10:22:33.471700+00:00",
-    "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43199356432",
+    "checkedAt": "2026-11-12T13:10:59.034618+00:00",
+    "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43224323290",
     "event": "workflow_dispatch",
-    "startedAt": "2026-11-12T10:19:41Z",
-    "completedAt": "2026-11-12T10:22:21Z",
+    "startedAt": "2026-11-12T13:07:47Z",
+    "completedAt": "2026-11-12T13:10:45Z",
     "jobResult": "success",
     "failedSteps": [],
     "writerExecuted": true,
@@ -1669,11 +1669,14 @@
     "scheduledExecutionObserved": false,
     "automaticPublicationVerified": false,
     "automaticRecovery": {
-      "verified": false,
-      "reason": "Not an automatic health recovery dispatch"
+      "verified": true,
+      "kind": "verified-health-recovery",
+      "originRun": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43224278654",
+      "originEvent": "schedule",
+      "reason": "Actual same-repository health run and GitHub Actions bot verified"
     },
-    "unattendedRecoveryExecutionVerified": false,
-    "verifiedRecoveryPublication": false
+    "unattendedRecoveryExecutionVerified": true,
+    "verifiedRecoveryPublication": true
   },
   "executionHistory": [
     {
@@ -1985,6 +1988,28 @@
       },
       "unattendedRecoveryExecutionVerified": false,
       "verifiedRecoveryPublication": false
+    },
+    {
+      "checkedAt": "2026-11-12T13:10:59.034618+00:00",
+      "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43224323290",
+      "event": "workflow_dispatch",
+      "startedAt": "2026-11-12T13:07:47Z",
+      "completedAt": "2026-11-12T13:10:45Z",
+      "jobResult": "success",
+      "failedSteps": [],
+      "writerExecuted": true,
+      "verifiedPublicationCount": 1,
+      "scheduledExecutionObserved": false,
+      "automaticPublicationVerified": false,
+      "automaticRecovery": {
+        "verified": true,
+        "kind": "verified-health-recovery",
+        "originRun": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43224278654",
+        "originEvent": "schedule",
+        "reason": "Actual same-repository health run and GitHub Actions bot verified"
+      },
+      "unattendedRecoveryExecutionVerified": true,
+      "verifiedRecoveryPublication": true
     }
   ],
   "lastWriterRun": {
@@ -2065,7 +2090,7 @@
       "firstSeenAt": "2026-11-12T01:39:03.441379+00:00",
       "delivery": "unproven",
       "status": "open",
-      "lastSeenAt": "2026-11-12T10:22:33.471700+00:00",
+      "lastSeenAt": "2026-11-12T13:10:59.034618+00:00",
       "reason": "Shared operating-standard v2 interface not yet verified/pinned"
     },
     "iam:prebuild:7e1910d7c6043aa9": {
@@ -2074,7 +2099,7 @@
       "firstSeenAt": "2026-11-12T01:39:03.441379+00:00",
       "delivery": "unproven",
       "status": "open",
-      "lastSeenAt": "2026-11-12T10:22:33.471700+00:00",
+      "lastSeenAt": "2026-11-12T13:10:59.034618+00:00",
       "reason": "Persistent blocker notification delivery unproven"
     },
     "iam:prebuild:9dce8c88d1a3325f": {
@@ -2083,7 +2108,7 @@
       "firstSeenAt": "2026-11-12T01:48:13.376513+00:00",
       "delivery": "unproven",
       "status": "open",
-      "lastSeenAt": "2026-11-12T10:22:33.471700+00:00",
+      "lastSeenAt": "2026-11-12T13:10:59.034618+00:00",
       "reason": "Native scheduled generated publication not yet proven"
     },
     "iam:prebuild:698d3bdd18e30a56": {
@@ -2092,7 +2117,7 @@
       "firstSeenAt": "2026-11-12T01:48:13.376513+00:00",
       "delivery": "unproven",
       "status": "open",
-      "lastSeenAt": "2026-11-12T10:22:33.471700+00:00",
+      "lastSeenAt": "2026-11-12T13:10:59.034618+00:00",
       "reason": "Live failure-isolation and recovery acceptance not yet proven; local tests are separate"
     },
     "iam:prebuild:21f066a453f255be": {
@@ -2652,6 +2677,18 @@
         "kind": "verified-health-recovery",
         "originRun": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43155109656",
         "originEvent": "push",
+        "reason": "Actual same-repository health run and GitHub Actions bot verified"
+      },
+      "publicationVerified": true
+    },
+    {
+      "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43224323290",
+      "checkedAt": "2026-11-12T13:10:59.034618+00:00",
+      "origin": {
+        "verified": true,
+        "kind": "verified-health-recovery",
+        "originRun": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43224278654",
+        "originEvent": "schedule",
         "reason": "Actual same-repository health run and GitHub Actions bot verified"
       },
       "publicationVerified": true
