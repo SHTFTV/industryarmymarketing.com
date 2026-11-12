@@ -105,9 +105,15 @@ def cycle(excluded):
             raise RuntimeError('Active IAM writer lease: do not compete')
         now=dt.datetime.now(dt.timezone.utc)
         if daily_due(now,state):
-            intake=read('operations/iam/release-intake.json')
+            try:intake=read('operations/iam/release-intake.json')
+            except (OSError,ValueError):intake={}
             if not intake.get('checkedAt') or (now-dt.datetime.fromisoformat(intake['checkedAt'])).total_seconds()>3600:
-                raise RuntimeError('DAILY_RELEASE_INTAKE_STALE: connect verified release receipts; an empty fixture is not a healthy no-news check')
+                state.setdefault('persistentBlockers',{})['iam:daily-release-intake']={
+                    'id':'iam:daily-release-intake','kind':'daily-intake','status':'open','observedAt':stamp(),
+                    'reason':'DAILY_RELEASE_INTAKE_STALE','nextAction':'Connect fresh verified release receipts; independent campaign items continue.'}
+                intake={'releases':[],'checkedAt':None}
+            elif state.get('persistentBlockers',{}).get('iam:daily-release-intake',{}).get('status')=='open':
+                state['persistentBlockers']['iam:daily-release-intake'].update(status='resolved',resolvedAt=stamp(),resolution='Fresh intake receipt observed')
             releases=[r for r in intake['releases'] if r.get('verifiedAt') and r.get('http')==200 and r.get('receiptUrl') and not r.get('usedInJournal')]
             if releases:
                 r=releases[0];slug=r['slug']
@@ -115,7 +121,7 @@ def cycle(excluded):
                     state['rows'][slug]={'status':'pending','attempts':0,'sourceDomain':r['sourceDomain'],'canonical':'https://www.industryarmymarketing.com/blog/'+slug}
                 pending=[{'slug':slug,'siteDomain':r['sourceDomain'],'intent':r['intent'],'primarySources':r['sourceUrls'],'requiredContact':'/contact?request=industry-publishing'}]
                 daily=True
-            else:
+            elif intake.get('checkedAt'):
                 state['dailyJournalDate']=now.astimezone(__import__('zoneinfo').ZoneInfo('America/Vancouver')).date().isoformat()
                 state['lastDailyCheck']={'at':stamp(),'status':'healthy-no-verified-release','intakeCheckedAt':intake['checkedAt']}
         if not pending:
@@ -218,7 +224,12 @@ def main():
             cycle(excluded);return
         except ItemHold as error:
             excluded.add(error.slug)
-    raise RuntimeError('Bounded IAM invocation retained item holds; later candidates remain queued')
+    state=read(STATE)
+    state.setdefault('lastRun',{}).update(status='bounded-item-holds',heldSlugs=sorted(excluded),
+        nextAction='Exact item holds retained; later candidates remain queued for the next bounded invocation. No publication implied.')
+    save(STATE,state)
+    if os.environ.get('GITHUB_ACTIONS')=='true':persist('IAM: retain bounded item holds without stopping later queue work')
+    return {'status':'bounded-item-holds','heldSlugs':sorted(excluded),'publicationVerified':False}
 
 if __name__=='__main__': main()
 

@@ -15,6 +15,21 @@ import hashlib
 class RecoveryTests(unittest.TestCase):
     setUp=launchfixtures.ApprovedLaunchTests.setUp
     invoke_writer=launchfixtures.ApprovedLaunchTests.invoke_writer
+    def test_stale_daily_intake_does_not_starve_independent_authorized_launch(self):
+        (self.ops/'release-intake.json').write_text('{"checkedAt":"2000-01-01T00:00:00+00:00","releases":[]}')
+        with patch('run.daily_due',return_value=True):state,journal=self.invoke_writer()
+        self.assertEqual(journal[0]['slug'],'first-launch')
+        self.assertEqual(state['persistentBlockers']['iam:daily-release-intake']['status'],'open')
+        self.assertNotIn('dailyJournalDate',state)
+    def test_batch_item_limit_is_durable_deferred_work_not_fatal_job_failure(self):
+        import run
+        state={'lastRun':{'status':'item-held-continuing'}}
+        with patch('run.cycle',side_effect=[run.ItemHold('held-'+str(i)) for i in range(8)]),patch('run.read',return_value=state),patch('run.save') as save,patch('run.persist'),patch.dict('os.environ',{'GITHUB_ACTIONS':'false'}):
+            result=run.main()
+        self.assertEqual(result['status'],'bounded-item-holds')
+        self.assertEqual(len(state['lastRun']['heldSlugs']),8)
+        self.assertFalse(result['publicationVerified'])
+        save.assert_called_once()
     def test_bad_media_does_not_stop_next_launch_same_invocation(self):
         state,journal=self.invoke_writer(media_failure_first=True)
         self.assertEqual([p['slug'] for p in journal],['second-launch'])
