@@ -72,8 +72,8 @@
     {
       "eventId": "iam-notice-ad25d96d0d875ce37a7b",
       "kind": "publishing_blocked",
-      "lifecycle": "open",
-      "deliveryStatus": "queued",
+      "lifecycle": "resolved",
+      "deliveryStatus": "superseded",
       "triggeredAt": "2026-11-12T02:58:02.271324+00:00",
       "deliveryAttempts": 0,
       "deliveryReceipt": null,
@@ -86,7 +86,8 @@
       "proof": {
         "blockedAt": "2026-11-11T21:15:34.555658+00:00",
         "attempts": 1
-      }
+      },
+      "resolvedAt": "2026-11-12T10:22:49.183048+00:00"
     },
     {
       "eventId": "iam-notice-9c9e23bf922e6f7a741b",
@@ -557,14 +558,36 @@
         "publicationVerified": true,
         "generatedAndAudited": true
       }
+    },
+    {
+      "eventId": "iam-notice-c4a70cf92972f3221f68",
+      "kind": "publication_verified",
+      "lifecycle": "open",
+      "deliveryStatus": "queued",
+      "triggeredAt": "2026-11-12T10:22:49.183048+00:00",
+      "deliveryAttempts": 0,
+      "deliveryReceipt": null,
+      "siteDomain": "sparkys.tv",
+      "articleSlug": "sparkys-tv-industry-marketing-project-content-guide",
+      "articleUrl": "https://www.industryarmymarketing.com/blog/sparkys-tv-industry-marketing-project-content-guide",
+      "status": "verified",
+      "verifiedAt": "2026-11-12T10:22:16.385409+00:00",
+      "reconciled": false,
+      "summary": "sparkys.tv IAM article is verified live.",
+      "nextAction": "Read the verified article; no publication retry is needed.",
+      "proof": {
+        "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43199356432",
+        "publicationVerified": true,
+        "generatedAndAudited": true
+      }
     }
   ],
   "producer": {
     "stage": "fired",
-    "firedAt": "2026-11-12T05:05:09.379183+00:00",
-    "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43158636901",
+    "firedAt": "2026-11-12T10:22:49.183271+00:00",
+    "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43199356432",
     "rules": {
-      "sourceCommit": "f7ae7d45dd538bc614c62f744636765c3a004c13",
+      "sourceCommit": "297b4028c3b4fe6e8dace17c14c3954f191b0b19",
       "hashes": {
         "docs/IAM-SOT.md": "bee6bafd970b63fd3a7cbb2faea7fb35fa900f1a2789fcf80ffc52bc55afd146",
         "operations/iam/policy.json": "15a61feccc19e28b6a28d884de19ec0acb818d399201d8e643edd8bd2240ad54",
