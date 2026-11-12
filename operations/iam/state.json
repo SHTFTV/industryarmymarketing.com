@@ -1019,12 +1019,29 @@
       }
     },
     "snowplow-tv-industry-marketing-project-content-guide": {
-      "status": "pending",
-      "attempts": 0,
+      "status": "claimed",
+      "attempts": 1,
       "sourceDomain": "snowplow.tv",
       "canonical": "https://www.industryarmymarketing.com/blog/snowplow-tv-industry-marketing-project-content-guide",
       "observedAt": "2026-11-11T07:40:16.454113+00:00",
-      "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite"
+      "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite",
+      "owner": "43156262803-1",
+      "attemptHistory": [
+        {
+          "attempt": 1,
+          "owner": "43156262803-1",
+          "at": "2026-11-12T04:40:10.183001+00:00",
+          "rules": {
+            "sourceCommit": "485cf5f09142e5675aefbd3e23cadb63d701b732",
+            "hashes": {
+              "docs/IAM-SOT.md": "bee6bafd970b63fd3a7cbb2faea7fb35fa900f1a2789fcf80ffc52bc55afd146",
+              "operations/iam/policy.json": "15a61feccc19e28b6a28d884de19ec0acb818d399201d8e643edd8bd2240ad54",
+              "operations/iam/build-contract.json": "006ee864333b76530c16cc8d552e47f9dff6c74fbdade940d74f00efee7cb494"
+            },
+            "sotVersion": 2
+          }
+        }
+      ]
     },
     "snowremoval-tv-industry-marketing-project-content-guide": {
       "status": "pending",
@@ -1244,13 +1261,13 @@
     }
   ],
   "lastRun": {
-    "at": "2026-11-12T04:30:55.784881+00:00",
-    "owner": "43155109729-1",
-    "trigger": "push",
-    "status": "bounded-item-holds",
+    "at": "2026-11-12T04:40:10.169244+00:00",
+    "owner": "43156262803-1",
+    "trigger": "workflow_dispatch",
+    "status": "checking",
     "policyDigest": "ab1639931848bf2eb2000365da96649afcc031be8ca3f6230a993f0041888247",
     "rules": {
-      "sourceCommit": "4d28afd6a0659f0dfff2103817703d23fc67de79",
+      "sourceCommit": "485cf5f09142e5675aefbd3e23cadb63d701b732",
       "hashes": {
         "docs/IAM-SOT.md": "bee6bafd970b63fd3a7cbb2faea7fb35fa900f1a2789fcf80ffc52bc55afd146",
         "operations/iam/policy.json": "15a61feccc19e28b6a28d884de19ec0acb818d399201d8e643edd8bd2240ad54",
@@ -1259,21 +1276,12 @@
       "sotVersion": 2
     },
     "automaticRecovery": {
-      "verified": false,
-      "reason": "Not an automatic health recovery dispatch"
-    },
-    "error": "Item held: promows-com-industry-marketing-project-content-guide",
-    "nextAction": "Exact item holds retained; later candidates remain queued for the next bounded invocation. No publication implied.",
-    "heldSlugs": [
-      "excavators-tv-industry-marketing-project-content-guide",
-      "hardscapes-io-industry-marketing-project-content-guide",
-      "kongtractors-com-industry-marketing-project-content-guide",
-      "plow-ltd-industry-marketing-project-content-guide",
-      "plow-news-industry-marketing-project-content-guide",
-      "plowinstallations-com-industry-marketing-project-content-guide",
-      "plowwow-com-industry-marketing-project-content-guide",
-      "promows-com-industry-marketing-project-content-guide"
-    ]
+      "verified": true,
+      "kind": "verified-health-recovery",
+      "originRun": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43155109656",
+      "originEvent": "push",
+      "reason": "Actual same-repository health run and GitHub Actions bot verified"
+    }
   },
   "lastExecution": {
     "checkedAt": "2026-11-12T04:31:22.271927+00:00",
@@ -1593,7 +1601,7 @@
   ],
   "approvedLaunchIssues": [],
   "loadedRules": {
-    "sourceCommit": "4d28afd6a0659f0dfff2103817703d23fc67de79",
+    "sourceCommit": "485cf5f09142e5675aefbd3e23cadb63d701b732",
     "hashes": {
       "docs/IAM-SOT.md": "bee6bafd970b63fd3a7cbb2faea7fb35fa900f1a2789fcf80ffc52bc55afd146",
       "operations/iam/policy.json": "15a61feccc19e28b6a28d884de19ec0acb818d399201d8e643edd8bd2240ad54",
@@ -2110,5 +2118,9 @@
         "sotVersion": 2
       }
     }
-  ]
+  ],
+  "lease": {
+    "owner": "43156262803-1",
+    "until": "2026-11-12T05:10:10.183001+00:00"
+  }
 }
