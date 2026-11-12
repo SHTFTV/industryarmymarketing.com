@@ -1,6 +1,6 @@
 # Industry Army Marketing — canonical operating source of truth
 
-Version 2, revision 2.1, November 11, 2026. Owner-authorized original-seven worker retrofit.
+Version 2, revision 2.2, November 11, 2026. Owner-authorized original-seven worker retrofit.
 
 Canonical source: SHTFTV/industryarmymarketing.com, main. Existing Vercel project industryarmymarketing, prj_kMHNECehkyI6R7zANWDzyXMOLrtP. Public canonical https://www.industryarmymarketing.com/. Preserve the current React/Vite journal, routes, customer enquiry ownership, existing services and publication dates.
 
@@ -14,7 +14,7 @@ The executable contract is operations/iam/build-contract.json. Shared MarkEtt op
 
 ## Existing sole publisher and finite state
 
-Use only .github/workflows/iam-publisher.yml and scripts/iam/run.py, concurrency group iam-publish. The current cloud shared lease and finite campaign authority are operations/iam/state.json. Historical SQLite/toolkit instructions remain provenance and must not create a second writer or reseed current state. Preserve all withdrawn, claimed, failed, pending and verified history and exact expected-head non-force Git pushes. At most one verified release per 3600 seconds. The 20:30 America/Vancouver verified-release journal retains priority. Existing hourly scheduling is polling, not proven continuous uptime.
+Use only .github/workflows/iam-publisher.yml and scripts/iam/run.py, concurrency group iam-publish. The current cloud shared lease and finite campaign authority are operations/iam/state.json. Historical SQLite/toolkit instructions remain provenance and must not create a second writer or reseed current state. Preserve all withdrawn, claimed, failed, pending and verified history and exact expected-head non-force Git pushes. At most one verified release per 3600 seconds. The 20:30 America/Vancouver verified-release journal retains priority. The existing sole workflow polls every five minutes, while the shared lease still enforces at least 3600 seconds between verified publications. A held scheduled poll is read-only: skip browser/model/deployment work and retain the GitHub run receipt without generating a Vercel deployment. Polling is not proven continuous uptime.
 
 Load this canonical SOT and operations/iam/policy.json from the actual checkout on each cycle. Record exact commit, rule paths and SHA256 in run and attempt receipts; compare latest canonical main rules again before source publication. A changed SOT fences the old attempt. A missing rule or unavailable canonical check is a visible global block.
 
