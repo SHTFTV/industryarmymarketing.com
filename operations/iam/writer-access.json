@@ -1,14 +1,16 @@
 {
-  "checkedAt": "2026-11-12T01:55:02.532594+00:00",
+  "checkedAt": "2026-11-12T02:00:24.764646+00:00",
   "status": "blocked",
   "configured": true,
   "modelConfigured": true,
   "model": "gpt-6.1-sol",
   "credentialsRecorded": false,
+  "runtimeAccessVerified": false,
+  "maximumProviderCalls": 2,
   "published": false,
-  "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43137675826",
+  "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43138253440",
   "rules": {
-    "sourceCommit": "56f843375db01183bd2a7c455cedac10e7b87e38",
+    "sourceCommit": "5111a75cd1d59b59d239c5052c027ed491079efa",
     "hashes": {
       "docs/IAM-SOT.md": "336b4ce78cb0e4bb3990ca9de406603f5128210bc19520f92db8c64cfd835574",
       "operations/iam/policy.json": "15a61feccc19e28b6a28d884de19ec0acb818d399201d8e643edd8bd2240ad54",
@@ -18,6 +20,14 @@
   },
   "targetSlug": "fireproofing-tv-welcome-owner-planning-guides",
   "templateDigest": "8418facb9c2e20e9a3f1e63d18bdb5f62ef5bb87880368b106db1ce89575df6e",
-  "reason": "Independent factual/editorial audit failed",
+  "sourceUrl": "https://fireproofing.tv/",
+  "sourceSha256": "474a9f8ae58c5e967249bad39f5e2b6708c17b58ef51d1d5a93a3303cb358c10",
+  "sourceHashes": {
+    "https://fireproofing.tv/": "474a9f8ae58c5e967249bad39f5e2b6708c17b58ef51d1d5a93a3303cb358c10",
+    "https://fireproofing.tv/about/": "6dc350f2af442f8711e9235f4e9da1a853d67d221f9f13c17a6c3b5870d787fd",
+    "https://fireproofing.tv/for-contractors/": "2ed5e1e52e7103e9131fcfa14d9e6fbb223762b49c21ce05cacd1f87b0f621de"
+  },
+  "sourceFailures": [],
+  "reason": "Substantive article format failed",
   "errorType": "ValueError"
 }
