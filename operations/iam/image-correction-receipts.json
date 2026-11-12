@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "scope": "Actual owner-authorized media correction; original article publication dates unchanged; no new publication or publisher activation",
+  "receipts": [
+    {
+      "site": "fireproofing-tv",
+      "image": "/brand-journal/fireproofing-tv-announcement-v3.webp",
+      "httpStatus": 200,
+      "sha256": "2c3bb53205d4d28e6cc9e88d7be6d0fd645ac0a76f9b33dae728bf2868665238",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "nativeSize": [
+        1672,
+        941
+      ],
+      "upscaled": false,
+      "imageType": "ai-illustration",
+      "credit": "Original AI editorial illustration by Industry Army Marketing; labelled in artwork and article caption.",
+      "desktopVerified": true,
+      "desktopViewport": [
+        1440,
+        1000
+      ],
+      "phoneVerified": true,
+      "phoneViewport": [
+        390,
+        844
+      ],
+      "sourceCommit": "1062b5b737bd57f2b048ae23a1104628feb65750",
+      "checkedAt": "2026-11-12T18:44:34.168420+00:00"
+    },
+    {
+      "site": "naturopaths-io",
+      "image": "/brand-journal/naturopaths-io-announcement-v3.webp",
+      "httpStatus": 200,
+      "sha256": "12eb4c00384f71c22d90a4827671a709718821fa6ec53b94389cfdc39aa75c95",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "nativeSize": [
+        1672,
+        941
+      ],
+      "upscaled": false,
+      "imageType": "ai-illustration",
+      "credit": "Original AI editorial illustration by Industry Army Marketing; labelled in artwork and article caption.",
+      "desktopVerified": true,
+      "desktopViewport": [
+        1440,
+        1000
+      ],
+      "phoneVerified": true,
+      "phoneViewport": [
+        390,
+        844
+      ],
+      "sourceCommit": "1062b5b737bd57f2b048ae23a1104628feb65750",
+      "checkedAt": "2026-11-12T18:44:34.310662+00:00"
+    },
+    {
+      "site": "irrigation-ltd",
+      "image": "/brand-journal/irrigation-ltd-announcement-v3.webp",
+      "httpStatus": 200,
+      "sha256": "f8d877a7ca1ef05dc96560da9d861163114f1a1e9555e90ed61ef50a8975f118",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "nativeSize": [
+        1672,
+        941
+      ],
+      "upscaled": false,
+      "imageType": "ai-illustration",
+      "credit": "Original AI editorial illustration by Industry Army Marketing; labelled in artwork and article caption.",
+      "desktopVerified": true,
+      "desktopViewport": [
+        1440,
+        1000
+      ],
+      "phoneVerified": true,
+      "phoneViewport": [
+        390,
+        844
+      ],
+      "sourceCommit": "1062b5b737bd57f2b048ae23a1104628feb65750",
+      "checkedAt": "2026-11-12T18:44:34.454479+00:00"
+    }
+  ]
+}
