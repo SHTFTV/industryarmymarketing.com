@@ -209,7 +209,7 @@ export function trackEvent(name: string, meta: Record<string, unknown> = {}) {
       session_id: sessionId(),
       path: typeof window !== "undefined" ? window.location.pathname : null,
       meta: meta as unknown as Json,
-    });
+    }).then(() => undefined, () => undefined);
   } catch {
     /* noop */
   }
