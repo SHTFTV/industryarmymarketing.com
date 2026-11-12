@@ -83,3 +83,17 @@
     background: linear-gradient(90deg, transparent, hsl(72 100% 50%), transparent);
   }
 }
+
+/* Journal images and credits stay unobstructed on phones; contact tools remain below the article. */
+@media (max-width: 767px) {
+  body:has(article[data-iam-journal-article]) [data-iam-campaign-contact],
+  body:has(article[data-iam-journal-article]) .iam-mark-ett,
+  body:has(article[data-iam-journal-article]) #iam-floater {
+    position: static !important;
+    inset: auto !important;
+    margin: 16px !important;
+    max-width: calc(100% - 32px) !important;
+    max-height: none !important;
+    align-self: flex-start;
+  }
+}

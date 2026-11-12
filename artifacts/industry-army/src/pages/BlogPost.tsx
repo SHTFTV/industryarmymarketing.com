@@ -418,11 +418,10 @@ const BlogPost = () => {
 
       {post.contactBusiness === "rambo" && <RamboContactCard/>}
       {post.contactBusiness === "plowwow" && <PlowWowContactCard/>}
-      <CampaignContactCard site={post.campaignSite} label={post.campaignLabel ?? post.tradeShort}/>
 
       <ReadingProgress headings={tocHeadings} readMinutes={readMinutes} />
 
-      <article className="pt-32 pb-20">
+      <article data-iam-journal-article className="pt-32 pb-20">
         <div className="container mx-auto px-4 max-w-4xl">
           <Link to="/blog" className="text-primary text-xs uppercase tracking-[0.3em] hover:underline">
             ← Back to the journal
@@ -735,6 +734,7 @@ const BlogPost = () => {
           )}
         </div>
       </article>
+      <CampaignContactCard site={post.campaignSite} label={post.campaignLabel ?? post.tradeShort}/>
     </Layout>
   );
 };
