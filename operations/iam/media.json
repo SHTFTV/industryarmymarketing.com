@@ -104,5 +104,39 @@
       "sourceUrl": "https://kongtractors.com/assets/kong-original/kong-tractor-poster.jpg",
       "visualReview": "Native 1600x900 asset inspected. Actual live image reviewed in browser at 1440x1000 and 390x844; decoded dimensions 1600x900, no overflow, full tractor retained. Actual IAM article desktop/phone verification remains required by sole publisher."
     }
+  },
+  "sparkys-tv-industry-marketing-project-content-guide": {
+    "hero": {
+      "path": "/brand-journal/sparkys-website-source.jpg",
+      "sha256": "63ebddadf19ddc20f0a42774b55ea22b6b0e2616b8d949132bf4795283c8bfcb",
+      "nativeSize": [
+        1600,
+        900
+      ],
+      "upscaled": false,
+      "credit": "Sparkys.tv — screenshot of its existing website and labelled illustrative promotional imagery; not a photograph of a documented installation.",
+      "rightsEvidence": "Owner authorized IAM portfolio features using existing owned site assets. Exact Sparkys.tv website screenshot captured at native1600×900; public footer identifies Industry Army Marketing. No third-party stock photograph or new image generation used.",
+      "visualReview": "Actual Sparkys homepage reviewed at1600×900 desktop and390×844 phone: logo, headline and project-planning context render; original concept-video disclaimer and unavailable-booking notice retained in source. Screenshot is website evidence, not installation evidence. IAM article still requires actual live desktop/phone verification.",
+      "sourceUrl": "https://sparkys.tv/",
+      "capturedAt": "2026-11-12T10:17:47.424Z",
+      "mediaType": "website-screenshot",
+      "sourcePhotoSearchResult": "Existing site bitmaps1200×800 and1536×1024 are below required native width; not upscaled or presented as new installation photographs."
+    },
+    "share": {
+      "path": "/brand-journal/sparkys-website-source.jpg",
+      "sha256": "63ebddadf19ddc20f0a42774b55ea22b6b0e2616b8d949132bf4795283c8bfcb",
+      "nativeSize": [
+        1600,
+        900
+      ],
+      "upscaled": false,
+      "credit": "Sparkys.tv — screenshot of its existing website and labelled illustrative promotional imagery; not a photograph of a documented installation.",
+      "rightsEvidence": "Owner authorized IAM portfolio features using existing owned site assets. Exact Sparkys.tv website screenshot captured at native1600×900; public footer identifies Industry Army Marketing. No third-party stock photograph or new image generation used.",
+      "visualReview": "Actual Sparkys homepage reviewed at1600×900 desktop and390×844 phone: logo, headline and project-planning context render; original concept-video disclaimer and unavailable-booking notice retained in source. Screenshot is website evidence, not installation evidence. IAM article still requires actual live desktop/phone verification.",
+      "sourceUrl": "https://sparkys.tv/",
+      "capturedAt": "2026-11-12T10:17:47.424Z",
+      "mediaType": "website-screenshot",
+      "sourcePhotoSearchResult": "Existing site bitmaps1200×800 and1536×1024 are below required native width; not upscaled or presented as new installation photographs."
+    }
   }
 }
