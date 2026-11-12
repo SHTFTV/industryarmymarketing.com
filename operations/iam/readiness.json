@@ -1,9 +1,8 @@
 {
-  "checkedAt": "2026-11-12T02:01:19.846960+00:00",
+  "checkedAt": "2026-11-12T02:11:15.963683+00:00",
   "dependentExtensionsAllowed": false,
   "operationallyComplete": false,
   "blockers": [
-    "Required writing-service access lacks a fresh real runtime receipt",
     "Minimal generated-and-audited production publication has not been verified",
     "Native scheduled generated publication not yet proven",
     "Live failure-isolation and recovery acceptance not yet proven; local tests are separate",
