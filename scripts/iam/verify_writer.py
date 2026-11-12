@@ -7,7 +7,7 @@ import pathlib
 import urllib.error
 from runtime import read, save, policy_context, digest
 from source import fetch_source
-from writer import write_article
+from writer import write_article, EditorialAuditError
 from prebuild import rules
 from approved_launches import pending_launches, source_checked_post
 from recovery import fetch_all
@@ -16,7 +16,7 @@ def main():
     root=pathlib.Path.cwd();now=dt.datetime.now(dt.timezone.utc)
     receipt={'checkedAt':now.isoformat(),'status':'blocked','configured':bool(os.environ.get('OPENAI_API_KEY')),
              'modelConfigured':bool(os.environ.get('OPENAI_MODEL')),'model':os.environ.get('OPENAI_MODEL'),
-             'credentialsRecorded':False,'published':False,'runUrl':os.environ.get('IAM_RUN_URL')}
+             'credentialsRecorded':False,'runtimeAccessVerified':False,'maximumProviderCalls':2,'published':False,'runUrl':os.environ.get('IAM_RUN_URL')}
     try:
         receipt['rules']=rules(root,remote=os.environ.get('GITHUB_ACTIONS')=='true')
         state=read('operations/iam/state.json');journal=read('artifacts/industry-army/src/data/buildJournal.json')
@@ -41,10 +41,14 @@ def main():
             context.update(intent='Welcome '+target['siteDomain']+' as a new IAM network site; describe its actual launch purpose and features with the verified parent brand',siteDomain=target['siteDomain'],requiredTitle=template['title'],requiredBrandStatement=target.get('requiredBrandStatement'))
             context['policy']['ownerAuthorizedLaunch']={'site':target['siteDomain'],'title':template['title'],'relationship':target.get('requiredBrandStatement')}
             receipt.update(targetSlug=target['slug'],templateDigest=digest(target['approvedPost']))
+        receipt.update(sourceUrl=source['url'],sourceSha256=source['sha256'],sourceHashes={s['url']:s['sha256'] for s in sources},sourceFailures=failures)
         article=write_article(context)
         save('operations/iam/runtime-probe-draft.json',article)
-        receipt.update(status='verified',generationAndIndependentAuditPassed=True,sourceUrl=source['url'],sourceSha256=source['sha256'],
+        receipt.update(status='verified',runtimeAccessVerified=True,generationAndIndependentAuditPassed=True,sourceUrl=source['url'],sourceSha256=source['sha256'],
                        draftSha256=hashlib.sha256(json.dumps(article,sort_keys=True).encode()).hexdigest(),maximumProviderCalls=2,sourceHashes={s['url']:s['sha256'] for s in sources},sourceFailures=failures)
+    except EditorialAuditError as error:
+        save('operations/iam/rejected-probe-draft.json',{'article':error.article,'auditIssues':error.issues,'checkedAt':receipt['checkedAt']})
+        receipt.update(reason=str(error),runtimeAccessVerified=True,generationAndIndependentAuditPassed=False,auditIssues=error.issues,errorType='editorial-audit')
     except urllib.error.HTTPError as error:receipt.update(reason='Provider rejected the real runtime request',httpStatus=error.code,errorType='provider-http')
     except Exception as error:receipt.update(reason=str(error)[:250] if isinstance(error,(ValueError,RuntimeError)) else type(error).__name__,errorType=type(error).__name__)
     save('operations/iam/writer-access.json',receipt)

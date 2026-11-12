@@ -7,7 +7,7 @@ import test_approved_launches as launchfixtures
 from prebuild import assess, rules
 from recovery import fetch_all, recover_expired, eligible, retain_source_results
 from blockers import observe
-from writer import write_article
+from writer import write_article, EditorialAuditError
 from preparation import prepared_draft
 from runtime import digest
 import hashlib
@@ -123,3 +123,11 @@ class RecoveryTests(unittest.TestCase):
             self.assertIsNone(prepared_draft(self.root,target,[{**sources[0],'sha256':'changed-source'}]))
             (self.ops/'runtime-probe-draft.json').write_text('{"title":"Changed after audit"}')
             self.assertIsNone(prepared_draft(self.root,target,sources))
+
+    def test_editorial_rejection_retains_the_actual_draft_and_specific_findings(self):
+        draft={'title':'Launch','excerpt':'Example','intro':'Introduction',
+               'sections':[{'heading':str(i),'paragraphs':[' '.join(['test']*120)]} for i in range(4)],'claims':[]}
+        with patch('writer.response_json',side_effect=[draft,{'pass':False,'issues':['Specific unsupported source claim']} ]):
+            with self.assertRaises(EditorialAuditError) as caught:write_article({'policy':{},'sourceEvidence':[]})
+        self.assertEqual(caught.exception.article['title'],'Launch')
+        self.assertEqual(caught.exception.issues,['Specific unsupported source claim'])
