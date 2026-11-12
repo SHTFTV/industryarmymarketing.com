@@ -6,6 +6,8 @@ on:
   push:
     branches: [main]
     paths:
+      - '.github/workflows/iam-publisher.yml'
+      - 'scripts/iam/**'
       - 'scripts/iam/approved_launches.py'
       - 'scripts/iam/test_approved_launches.py'
       - 'scripts/iam/run.py'

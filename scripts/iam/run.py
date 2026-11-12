@@ -11,7 +11,8 @@ from runtime import read, save, stamp, reconcile, claim, block, complete, policy
 from source import fetch_source
 from writer import write_article
 from prebuild import rules
-from recovery import ItemHold, eligible, recover_expired, fetch_all, retain_failure
+from preparation import prepared_draft
+from recovery import ItemHold, eligible, recover_expired, fetch_all, retain_failure, retain_source_results
 from approved_launches import pending_launches, source_checked_post
 
 ROOT=pathlib.Path.cwd()
@@ -144,6 +145,7 @@ def cycle(excluded):
             stage='source'
             sources,source_failures=fetch_all(article.get('primarySources',[]),fetch_source)
             state['rows'][slug]['sourceFailures']=source_failures
+            retain_source_results(state,slug,sources,source_failures,stamp())
             if not sources: raise __import__('urllib.error',fromlist=['URLError']).URLError('All assigned sources failed')
             stage='generation'
             manual=bool(article.get('approvedPost')) and not article.get('generateAndAudit')
@@ -160,7 +162,8 @@ def cycle(excluded):
                     context.update(requiredTitle=template['title'],requiredBrandStatement=article.get('requiredBrandStatement'))
                     context['policy']['ownerAuthorizedLaunch']={'site':article['siteDomain'],'title':template['title'],'relationship':article.get('requiredBrandStatement')}
                 context.update(intent=('Welcome '+article['siteDomain']+' as a new IAM network site; describe its actual launch purpose and features, preserve its verified parent brand' if article.get('generateAndAudit') else article['intent']),existingTitles=[p['title'] for p in journal],siteDomain=article['siteDomain'])
-                draft=write_article(context)
+                draft=prepared_draft(ROOT,article,sources) if article.get('generateAndAudit') else None
+                if draft is None:draft=write_article(context)
                 if digest(read('operations/iam/policy.json'))!=policy_hash: raise ValueError('Approved policy changed; discard stale draft')
                 post={**policy['postDefaults'],'slug':slug,'title':draft['title'],'cardTitle':draft['title'],
                       'excerpt':draft['excerpt'],'metaDescription':draft['excerpt'],'publishedAt':stamp(),

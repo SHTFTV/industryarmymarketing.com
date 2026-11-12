@@ -5,9 +5,12 @@ import urllib.error
 import unittest
 import test_approved_launches as launchfixtures
 from prebuild import assess, rules
-from recovery import fetch_all, recover_expired, eligible
+from recovery import fetch_all, recover_expired, eligible, retain_source_results
 from blockers import observe
 from writer import write_article
+from preparation import prepared_draft
+from runtime import digest
+import hashlib
 
 class RecoveryTests(unittest.TestCase):
     setUp=launchfixtures.ApprovedLaunchTests.setUp
@@ -93,3 +96,30 @@ class RecoveryTests(unittest.TestCase):
         self.assertEqual(article['title'],context['requiredTitle'])
         self.assertEqual(seen[1]['proposedArticle']['title'],context['requiredTitle'])
         self.assertIn(context['requiredBrandStatement'],seen[1]['proposedArticle']['sections'][-1]['paragraphs'])
+
+    def test_source_failure_survives_unrelated_success_until_exact_source_recovers(self):
+        state={};now='2026-11-12T01:00:00Z'
+        retain_source_results(state,'launch',[{'url':'https://example.com/good'}],[{'url':'https://example.com/bad','errorType':'HTTPError','httpStatus':503}],now)
+        retain_source_results(state,'launch',[{'url':'https://example.com/good'}],[],now)
+        self.assertEqual(next(iter(state['persistentBlockers'].values()))['status'],'open')
+        retain_source_results(state,'launch',[{'url':'https://example.com/bad'}],[],now)
+        self.assertEqual(next(iter(state['persistentBlockers'].values()))['status'],'resolved')
+
+    def test_prepared_generation_is_bound_to_exact_rules_sources_template_and_bytes(self):
+        (self.root/'docs').mkdir(exist_ok=True)
+        (self.root/'docs/IAM-SOT.md').write_text('Current SOT')
+        (self.ops/'policy.json').write_text('{}');(self.ops/'build-contract.json').write_text('{}')
+        template=json.loads((self.ops/'approved-launches/first-launch.json').read_text())
+        target={'slug':'first-launch','approvedPost':template}
+        sources=[{'url':'https://example.com/','sha256':'exact-source-hash'}]
+        draft={'title':'Approved generated draft'}
+        (self.ops/'runtime-probe-draft.json').write_text(json.dumps(draft))
+        receipt={'status':'verified','generationAndIndependentAuditPassed':True,'targetSlug':'first-launch','model':'test-model',
+                 'rules':rules(self.root),'templateDigest':digest(template),'sourceHashes':{sources[0]['url']:sources[0]['sha256']},
+                 'checkedAt':dt.datetime.now(dt.timezone.utc).isoformat(),'draftSha256':hashlib.sha256(json.dumps(draft,sort_keys=True).encode()).hexdigest()}
+        (self.ops/'writer-access.json').write_text(json.dumps(receipt))
+        with patch.dict('os.environ',{'OPENAI_MODEL':'test-model'}):
+            self.assertEqual(prepared_draft(self.root,target,sources),draft)
+            self.assertIsNone(prepared_draft(self.root,target,[{**sources[0],'sha256':'changed-source'}]))
+            (self.ops/'runtime-probe-draft.json').write_text('{"title":"Changed after audit"}')
+            self.assertIsNone(prepared_draft(self.root,target,sources))

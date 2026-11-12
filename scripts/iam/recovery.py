@@ -1,6 +1,7 @@
 """Bounded recovery and durable item/source failure isolation for the existing writer."""
 import datetime as dt
 import urllib.error
+import hashlib
 
 class ItemHold(RuntimeError):
     def __init__(self,slug):self.slug=slug;super().__init__('Item held: '+slug)
@@ -27,6 +28,17 @@ def fetch_all(urls,fetch):
         try:sources.append(fetch(url))
         except Exception as error:failures.append({'url':url,'errorType':type(error).__name__,'httpStatus':getattr(error,'code',None)})
     return sources,failures
+
+def retain_source_results(state,slug,sources,failures,now):
+    issues=state.setdefault('persistentBlockers',{})
+    def key(url):return 'iam:source:'+hashlib.sha256(url.encode()).hexdigest()[:20]
+    for failure in failures:
+        issue_id=key(failure['url'])
+        item=issues.setdefault(issue_id,{'id':issue_id,'kind':'source-feed','slug':slug,'sourceUrl':failure['url'],'firstSeenAt':now,'delivery':'unproven'})
+        item.update(status='open',lastSeenAt=now,reason=failure['errorType'],httpStatus=failure.get('httpStatus'))
+    for source in sources:
+        item=issues.get(key(source['url']))
+        if item and item.get('status')=='open':item.update(status='resolved',resolvedAt=now,resolution='Exact failed source fetched successfully')
 
 def retain_failure(state,slug,stage,error,now,published=False):
     row=state['rows'][slug]
