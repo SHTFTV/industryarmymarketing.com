@@ -34,7 +34,7 @@ def assess(root,now=None):
         bound=bool(loaded) and (value.get('rules',{}).get('hashes')==loaded['hashes'] if label=='Required writing-service access' else value.get('production',{}).get('sotSha256')==loaded['hashes']['docs/IAM-SOT.md'])
         passed=(value.get('status')=='verified' or value.get('runtimeAccessVerified') is True) if label=='Required writing-service access' else value.get('status')=='verified'
         if not passed or not fresh or not bound:blockers.append(label+' lacks a fresh real runtime receipt')
-    if access.get('errorType')=='editorial-audit':blockers.append('Prepared launch editorial audit failed: '+str(access.get('targetSlug','runtime probe')))
+    if access.get('errorType') in ('editorial-audit','draft-validation'):blockers.append('Prepared launch validation failed: '+str(access.get('targetSlug','runtime probe'))+' — '+str(access.get('reason','unknown')))
     if not any(r.get('generatedAndAudited') and r.get('productionVerified') for r in state.get('receipts',[])):
         blockers.append('Minimal generated-and-audited production publication has not been verified')
     if not any(r.get('trigger')=='schedule' and r.get('generatedAndAudited') and r.get('productionVerified') for r in state.get('receipts',[])):
