@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "lastVerifiedAt": "2026-11-11T07:34:00+00:00",
+  "lastVerifiedAt": "2026-11-12T00:31:03.007Z",
   "rows": {
     "buildershaus-contractor-project-story-submission-guide": {
       "status": "existing-publication",
@@ -435,15 +435,37 @@
       "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite"
     },
     "irrigation-ltd-launch-practical-guides-planning": {
-      "status": "claimed",
+      "status": "verified",
       "attempts": 1,
       "sourceDomain": "irrigation.ltd",
       "canonical": "https://www.industryarmymarketing.com/blog/irrigation-ltd-launch-practical-guides-planning",
       "owner": "iam-irrigation-manual-20261111-1794443165260",
-      "basis": "Explicitly authorized new network launch; manual factual article under existing shared writer lease"
+      "basis": "Explicitly authorized new network launch; manual factual article under existing shared writer lease",
+      "verifiedAt": "2026-11-12T00:31:03.007Z",
+      "evidence": {
+        "http": true,
+        "canonical": true,
+        "schema": true,
+        "discovery": true,
+        "desktop": true,
+        "phone": true,
+        "image": true,
+        "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/commit/fac80518317c663b709fa121c3b9a05b2a72c0fc",
+        "trigger": "user-authorized-manual",
+        "url": "https://www.industryarmymarketing.com/blog/irrigation-ltd-launch-practical-guides-planning",
+        "deployment": "dpl_2vLoeuEwN2v15yUGUgA6pBiHkvY1",
+        "automaticPublication": false
+      }
     }
   },
-  "receipts": [],
+  "receipts": [
+    {
+      "slug": "irrigation-ltd-launch-practical-guides-planning",
+      "verifiedAt": "2026-11-12T00:31:03.007Z",
+      "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/commit/fac80518317c663b709fa121c3b9a05b2a72c0fc",
+      "trigger": "user-authorized-manual"
+    }
+  ],
   "lastRun": {
     "at": "2026-11-11T22:53:11.123167+00:00",
     "owner": "43115291818-1",
@@ -570,10 +592,29 @@
         "discovery": true
       },
       "automaticPublication": false
+    },
+    {
+      "slug": "irrigation-ltd-launch-practical-guides-planning",
+      "type": "new-network-launch",
+      "commit": "fac80518317c663b709fa121c3b9a05b2a72c0fc",
+      "deployment": "dpl_2vLoeuEwN2v15yUGUgA6pBiHkvY1",
+      "verifiedAt": "2026-11-12T00:31:03.007Z",
+      "url": "https://www.industryarmymarketing.com/blog/irrigation-ltd-launch-practical-guides-planning",
+      "checks": {
+        "http": true,
+        "canonical": true,
+        "schema": true,
+        "discovery": true,
+        "desktop": true,
+        "phone": true,
+        "image": true,
+        "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/commit/fac80518317c663b709fa121c3b9a05b2a72c0fc",
+        "trigger": "user-authorized-manual",
+        "url": "https://www.industryarmymarketing.com/blog/irrigation-ltd-launch-practical-guides-planning",
+        "deployment": "dpl_2vLoeuEwN2v15yUGUgA6pBiHkvY1",
+        "automaticPublication": false
+      },
+      "automaticPublication": false
     }
-  ],
-  "lease": {
-    "owner": "iam-irrigation-manual-20261111-1794443165260",
-    "until": "2026-11-12T00:56:05.260Z"
-  }
+  ]
 }

@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "site": "irrigation.ltd",
+  "iamArticle": "https://www.industryarmymarketing.com/blog/irrigation-ltd-launch-practical-guides-planning",
+  "publishedAt": "2026-11-12T00:26:04.774Z",
+  "verifiedAt": "2026-11-12T00:31:03.007Z",
+  "commit": "fac80518317c663b709fa121c3b9a05b2a72c0fc",
+  "deployment": "dpl_2vLoeuEwN2v15yUGUgA6pBiHkvY1",
+  "checks": {
+    "http": true,
+    "canonical": true,
+    "schema": true,
+    "discovery": true,
+    "desktop": true,
+    "phone": true,
+    "image": true,
+    "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/commit/fac80518317c663b709fa121c3b9a05b2a72c0fc",
+    "trigger": "user-authorized-manual",
+    "url": "https://www.industryarmymarketing.com/blog/irrigation-ltd-launch-practical-guides-planning",
+    "deployment": "dpl_2vLoeuEwN2v15yUGUgA6pBiHkvY1",
+    "automaticPublication": false
+  },
+  "preservedOtherJournalEntries": 66,
+  "sourceDomainHttps": 200,
+  "sourceTlsCertificate": "cert_2GVYs4uc1rWcrrjD1iWoFveu",
+  "approvedParentBrand": "BuildersHaus.com",
+  "manualPublication": true,
+  "automaticPublication": false
+}
