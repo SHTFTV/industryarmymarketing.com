@@ -158,8 +158,17 @@
     }
   ],
   "producer": {
-    "stage": "prepared",
-    "preparedAt": "2026-11-12T02:58:02.271324+00:00",
-    "queueIsDelivery": false
+    "stage": "fired",
+    "firedAt": "2026-11-12T03:00:57.822604+00:00",
+    "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43145180707",
+    "rules": {
+      "sourceCommit": "52eefd936ce65c81cec9cd2aae9548984c907c28",
+      "hashes": {
+        "docs/IAM-SOT.md": "bee6bafd970b63fd3a7cbb2faea7fb35fa900f1a2789fcf80ffc52bc55afd146",
+        "operations/iam/policy.json": "15a61feccc19e28b6a28d884de19ec0acb818d399201d8e643edd8bd2240ad54",
+        "operations/iam/build-contract.json": "006ee864333b76530c16cc8d552e47f9dff6c74fbdade940d74f00efee7cb494"
+      },
+      "sotVersion": 2
+    }
   }
 }
