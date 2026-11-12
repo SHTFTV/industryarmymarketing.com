@@ -25,7 +25,7 @@ def main():
     config=json.loads((ROOT/'operations/iam/build-contract.json').read_text())
     role_ref=assert_scope(config)
     revision=re.search(r'revision ([0-9.]+)',(ROOT/'docs/IAM-SOT.md').read_text()).group(1)
-    result={'site':'industryarmymarketing.com','role':'visual-checker','roleSotRef':role_ref,'loadedRevision':revision,'loadedHash':loaded['hashes']['docs/IAM-SOT.md'],'rules':loaded,'pageQualityVersion':1,'checkedAt':dt.datetime.now(dt.timezone.utc).isoformat(),'trigger':os.environ.get('GITHUB_EVENT_NAME','local'),'observerSourceCommit':loaded['sourceCommit'],'observerRunHeadSha':os.environ.get('GITHUB_SHA'),'runRef':'https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/'+os.environ.get('GITHUB_RUN_ID','local'),'publicationMutation':False,'leadSubmission':False,'checks':[],'errors':[],'status':'checking'}
+    result={'site':'industryarmymarketing.com','role':'visual-checker','roleSotRef':role_ref,'loadedRevision':revision,'loadedHash':loaded['hashes']['docs/IAM-SOT.md'],'rules':loaded,'pageQualityVersion':1,'checkedAt':dt.datetime.now(dt.timezone.utc).isoformat(),'trigger':os.environ.get('GITHUB_EVENT_NAME','local'),'observerSourceCommit':loaded['sourceCommit'],'observerRunHeadSha':os.environ.get('GITHUB_SHA'),'runRef':'https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/'+os.environ.get('GITHUB_RUN_ID','local'),'publicationMutation':False,'leadSubmission':False,'imageCheckScope':'Images intersecting each captured viewport; offscreen lazy images are not reported as broken before loading','checks':[],'errors':[],'status':'checking'}
     try:
         executable=shutil.which('google-chrome') or shutil.which('google-chrome-stable')
         if not executable:raise RuntimeError('Runner Chrome executable missing')
@@ -56,8 +56,8 @@ def main():
                             expected=canonical_for(route)
                             if page.locator('link[rel="canonical"]').get_attribute('href')!=expected:raise AssertionError('Wrong canonical')
                             if page.locator('h1').count()!=1:raise AssertionError('Expected one visible page heading')
-                            page.wait_for_function('''() => [...document.images].filter(i=>i.getBoundingClientRect().width>100).every(i=>i.complete&&i.naturalWidth>0)''',timeout=15000)
-                            layout=page.evaluate('''() => ({width:innerWidth,overflow:document.documentElement.scrollWidth>innerWidth,broken:[...document.images].filter(i=>i.getBoundingClientRect().width>100&&(!i.complete||!i.naturalWidth)).length})''')
+                            page.wait_for_function('''() => [...document.images].filter(i=>{const r=i.getBoundingClientRect();return r.width>0&&r.height>0&&r.bottom>0&&r.top<innerHeight&&r.right>0&&r.left<innerWidth}).every(i=>i.complete&&i.naturalWidth>0)''',timeout=15000)
+                            layout=page.evaluate('''() => ({width:innerWidth,overflow:document.documentElement.scrollWidth>innerWidth,broken:[...document.images].filter(i=>{const r=i.getBoundingClientRect();return r.width>0&&r.height>0&&r.bottom>0&&r.top<innerHeight&&r.right>0&&r.left<innerWidth&&(!i.complete||!i.naturalWidth)}).length})''')
                             if layout['overflow'] or layout['broken']:raise AssertionError('Overflow or visible broken image')
                             if route=='/guest-post' and 'Guest article submissions are currently closed' not in page.locator('body').inner_text():raise AssertionError('Guest article gate missing')
                             if route.startswith('/contact'):
