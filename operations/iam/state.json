@@ -835,7 +835,7 @@
       }
     },
     "plow-news-industry-marketing-project-content-guide": {
-      "status": "claimed",
+      "status": "blocked",
       "attempts": 1,
       "sourceDomain": "plow.news",
       "canonical": "https://www.industryarmymarketing.com/blog/plow-news-industry-marketing-project-content-guide",
@@ -857,7 +857,28 @@
             "sotVersion": 2
           }
         }
-      ]
+      ],
+      "stage": "media",
+      "nextAction": "Exact company/source media and actual visual review missing for plow.news",
+      "lastFailure": {
+        "slug": "plow-news-industry-marketing-project-content-guide",
+        "at": "2026-11-12T04:30:35.613622+00:00",
+        "stage": "media",
+        "status": "blocked",
+        "errorType": "ValueError",
+        "reason": "Exact company/source media and actual visual review missing for plow.news",
+        "httpStatus": null,
+        "attempt": 1,
+        "rules": {
+          "sourceCommit": "33f4ef25d0b0bba9e9285202b1a97ca8b1182dd4",
+          "hashes": {
+            "docs/IAM-SOT.md": "bee6bafd970b63fd3a7cbb2faea7fb35fa900f1a2789fcf80ffc52bc55afd146",
+            "operations/iam/policy.json": "15a61feccc19e28b6a28d884de19ec0acb818d399201d8e643edd8bd2240ad54",
+            "operations/iam/build-contract.json": "006ee864333b76530c16cc8d552e47f9dff6c74fbdade940d74f00efee7cb494"
+          },
+          "sotVersion": 2
+        }
+      }
     },
     "plowinstallations-com-industry-marketing-project-content-guide": {
       "status": "pending",
@@ -1112,7 +1133,7 @@
     "at": "2026-11-12T04:30:27.760251+00:00",
     "owner": "43155109729-1",
     "trigger": "push",
-    "status": "checking",
+    "status": "item-held-continuing",
     "policyDigest": "ab1639931848bf2eb2000365da96649afcc031be8ca3f6230a993f0041888247",
     "rules": {
       "sourceCommit": "33f4ef25d0b0bba9e9285202b1a97ca8b1182dd4",
@@ -1126,7 +1147,9 @@
     "automaticRecovery": {
       "verified": false,
       "reason": "Not an automatic health recovery dispatch"
-    }
+    },
+    "error": "Item held: plow-news-industry-marketing-project-content-guide",
+    "nextAction": "Resolve the exact recorded gate; do not reset attempts, reseed history or count zero as publication"
   },
   "lastExecution": {
     "checkedAt": "2026-11-12T04:17:44.527270+00:00",
@@ -1603,6 +1626,15 @@
       "stage": "media",
       "lastSeenAt": "2026-11-12T04:30:26.646304+00:00",
       "delivery": "unproven"
+    },
+    "iam:plow-news-industry-marketing-project-content-guide:media": {
+      "id": "iam:plow-news-industry-marketing-project-content-guide:media",
+      "slug": "plow-news-industry-marketing-project-content-guide",
+      "status": "open",
+      "reason": "Exact company/source media and actual visual review missing for plow.news",
+      "stage": "media",
+      "lastSeenAt": "2026-11-12T04:30:35.613622+00:00",
+      "delivery": "unproven"
     }
   },
   "attemptReceipts": [
@@ -1833,10 +1865,25 @@
         },
         "sotVersion": 2
       }
+    },
+    {
+      "slug": "plow-news-industry-marketing-project-content-guide",
+      "at": "2026-11-12T04:30:35.613622+00:00",
+      "stage": "media",
+      "status": "blocked",
+      "errorType": "ValueError",
+      "reason": "Exact company/source media and actual visual review missing for plow.news",
+      "httpStatus": null,
+      "attempt": 1,
+      "rules": {
+        "sourceCommit": "33f4ef25d0b0bba9e9285202b1a97ca8b1182dd4",
+        "hashes": {
+          "docs/IAM-SOT.md": "bee6bafd970b63fd3a7cbb2faea7fb35fa900f1a2789fcf80ffc52bc55afd146",
+          "operations/iam/policy.json": "15a61feccc19e28b6a28d884de19ec0acb818d399201d8e643edd8bd2240ad54",
+          "operations/iam/build-contract.json": "006ee864333b76530c16cc8d552e47f9dff6c74fbdade940d74f00efee7cb494"
+        },
+        "sotVersion": 2
+      }
     }
-  ],
-  "lease": {
-    "owner": "43155109729-1",
-    "until": "2026-11-12T05:00:27.760774+00:00"
-  }
+  ]
 }
