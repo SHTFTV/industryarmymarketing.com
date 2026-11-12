@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-11-12T02:24:25.637280+00:00",
+  "checkedAt": "2026-11-12T21:37:34.942941+00:00",
   "status": "verified",
   "configured": true,
   "modelConfigured": true,
@@ -8,26 +8,22 @@
   "runtimeAccessVerified": true,
   "maximumProviderCalls": 2,
   "published": false,
-  "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43141067688",
+  "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43311956576",
   "rules": {
-    "sourceCommit": "e95906aa7dbc0f0792ad35ae753372f7c0dc474d",
+    "sourceCommit": "d5198b977bd7c86d7a99662346f861758e863d77",
     "hashes": {
-      "docs/IAM-SOT.md": "bee6bafd970b63fd3a7cbb2faea7fb35fa900f1a2789fcf80ffc52bc55afd146",
+      "docs/IAM-SOT.md": "327c746c010100ad3fea5e2a6200aab04890d0579cc98ffddbf4df12fe95002e",
       "operations/iam/policy.json": "15a61feccc19e28b6a28d884de19ec0acb818d399201d8e643edd8bd2240ad54",
-      "operations/iam/build-contract.json": "006ee864333b76530c16cc8d552e47f9dff6c74fbdade940d74f00efee7cb494"
+      "operations/iam/build-contract.json": "82390b2923839a7126647c778b34fabb26035ae939d21c8ae5f888072d97a0b1"
     },
     "sotVersion": 2
   },
-  "targetSlug": "fireproofing-tv-welcome-owner-planning-guides",
-  "templateDigest": "8418facb9c2e20e9a3f1e63d18bdb5f62ef5bb87880368b106db1ce89575df6e",
-  "sourceUrl": "https://fireproofing.tv/",
-  "sourceSha256": "474a9f8ae58c5e967249bad39f5e2b6708c17b58ef51d1d5a93a3303cb358c10",
+  "sourceUrl": "https://irrigation.ltd/",
+  "sourceSha256": "caec082aa5154b14fff22e4be8ae4900d78dc52766f8bd02478ed652fc74d42f",
   "sourceHashes": {
-    "https://fireproofing.tv/": "474a9f8ae58c5e967249bad39f5e2b6708c17b58ef51d1d5a93a3303cb358c10",
-    "https://fireproofing.tv/about/": "6dc350f2af442f8711e9235f4e9da1a853d67d221f9f13c17a6c3b5870d787fd",
-    "https://fireproofing.tv/for-contractors/": "2ed5e1e52e7103e9131fcfa14d9e6fbb223762b49c21ce05cacd1f87b0f621de"
+    "https://irrigation.ltd/": "caec082aa5154b14fff22e4be8ae4900d78dc52766f8bd02478ed652fc74d42f"
   },
   "sourceFailures": [],
   "generationAndIndependentAuditPassed": true,
-  "draftSha256": "9fac221c5cd520199cc6899856bffa359077b4c0c907f4044235488f4d1a46ba"
+  "draftSha256": "16cd53c5a744d3e3ee9a0bd155cb031d5b44157149dc8fd8b1fd68a52b57f4c4"
 }
