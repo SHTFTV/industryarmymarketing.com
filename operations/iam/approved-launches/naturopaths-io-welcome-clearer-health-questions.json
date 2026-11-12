@@ -1,0 +1,87 @@
+{
+  "brand": "Industry Army Marketing",
+  "trade": "Industry publishing",
+  "tradeShort": "industry publishing",
+  "plural": "businesses",
+  "video": null,
+  "imageKey": "build-journal",
+  "city": "Canada",
+  "province": "BC",
+  "category": "Build Journal",
+  "pain": "",
+  "detail": "",
+  "process": "",
+  "authorName": "Colin Hamilton",
+  "contactBusiness": "iam",
+  "faqs": [],
+  "slug": "naturopaths-io-welcome-clearer-health-questions",
+  "campaignSite": "naturopaths.io",
+  "campaignLabel": "New health education site",
+  "title": "Industry Army Marketing Welcomes Naturopaths.io",
+  "cardTitle": "Meet Naturopaths.io",
+  "excerpt": "Naturopaths.io joins the network with sixteen guides on evidence, practitioner credentials and everyday wellbeing. A division of Treatments.tv, powered by IAM.",
+  "metaDescription": "Introducing Naturopaths.io: sixteen source-linked guides for clearer health questions, checking credentials and understanding evidence. A division of Treatments.tv.",
+  "image": "/brand-journal/naturopaths-io-launch.jpg",
+  "ogImage": "/brand-journal/naturopaths-io-launch.jpg",
+  "imageAlt": "Naturopaths.io launch homepage with its original botanical illustration. Production-content preview captured by Industry Army Marketing; the image does not show a practitioner or treatment outcome.",
+  "ogImageAlt": "Naturopaths.io launch homepage and original botanical artwork. Industry Army Marketing production-content preview.",
+  "richContent": {
+    "intro": "What does a practitioner’s title mean? What did the research actually measure? What questions belong in a first appointment? [Naturopaths.io](https://naturopaths.io/) is a new educational site in our network, built to help readers begin with clear questions and visible sources.",
+    "sections": [
+      {
+        "heading": "Sixteen starting points for informed conversations",
+        "paragraphs": [
+          "The launch library includes sixteen original guides across understanding naturopathy, choosing care, reading evidence, product safety and everyday wellbeing. Readers can start with a question rather than a product pitch: how to check a credential, prepare for a first visit or read the study behind a headline.",
+          "Each article links its references, including information from NIH and NCCIH, CDC, FDA or NHS. The site discusses individual approaches and the evidence relevant to them. It does not treat a broad label as proof that every product or practice works."
+        ]
+      },
+      {
+        "heading": "Know who you are speaking with",
+        "paragraphs": [
+          "The [practitioner credential guide](https://naturopaths.io/guides/checking-practitioner-credentials/) focuses on the exact title, jurisdiction, regulator and permitted role. The [first-visit checklist](https://naturopaths.io/guides/questions-before-your-first-visit/) helps readers prepare questions about evidence, costs, consent and keeping their care connected.",
+          "Naturopaths.io publishes consumer education. It is not a clinical practice, a verified practitioner directory or a booking service. The launch does not establish any provider’s credentials or make a treatment recommendation for an individual reader."
+        ]
+      },
+      {
+        "heading": "A clear identity within Treatments.tv",
+        "paragraphs": [
+          "The site pairs warm cream and green with readable type and an original botanical illustration. The main navigation keeps consumer guides and choosing-care information close. Practitioner, contribution and marketing resources sit in the footer.",
+          "Naturopaths.io is a division of [Treatments.tv](https://treatments.tv/). Powered by Industry Army Marketing.",
+          "Practitioner applications and article contributions have information pages, but submissions are not open at launch. No practitioner admission, placement or response is promised."
+        ]
+      },
+      {
+        "heading": "Explore the questions that matter to you",
+        "paragraphs": [
+          "[Visit Naturopaths.io](https://naturopaths.io/), browse the sixteen guides and follow the references behind a subject. The publication’s purpose is to make the next conversation better informed, with evidence, uncertainty and the reader’s existing care team kept in view.",
+          "For IAM, this launch adds a focused health education resource to the network. Businesses interested in a clear website, brand or responsible publishing project can discuss their actual needs with IAM."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "Naturopaths.io — live educational site and attribution",
+        "href": "https://naturopaths.io/"
+      },
+      {
+        "label": "Editorial purpose and standards",
+        "href": "https://naturopaths.io/about/"
+      },
+      {
+        "label": "Practitioner information and current application status",
+        "href": "https://naturopaths.io/practitioners/"
+      },
+      {
+        "label": "Contribution information",
+        "href": "https://naturopaths.io/contribute/"
+      }
+    ]
+  },
+  "cta": {
+    "eyebrow": "INDUSTRY ARMY MARKETING",
+    "heading": "Give useful expertise a clear home",
+    "body": "Talk with IAM about a focused brand, website or educational publication grounded in what you actually offer.",
+    "buttonText": "Discuss your publishing project",
+    "buttonHref": "/contact?request=industry-publishing&ref_site=naturopaths.io"
+  }
+}

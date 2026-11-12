@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "publisher": "existing IAM sole cloud publisher",
+  "releases": [
+    {
+      "slug": "naturopaths-io-welcome-clearer-health-questions",
+      "kind": "user-authorized-launch",
+      "authorization": "Explicit user instruction to complete IAM network welcome posts for Naturopaths.io and Fireproofing.tv, November 11, 2026",
+      "reviewed": true,
+      "postSha256": "ade0d5073f4db7618d148e8e7728f06191bc221d2ef75a43deb302a346da32fe",
+      "sourceDomain": "naturopaths.io",
+      "parentBrand": "Treatments.tv",
+      "sourceUrls": [
+        "https://naturopaths.io/",
+        "https://naturopaths.io/about/",
+        "https://naturopaths.io/practitioners/"
+      ],
+      "requiredSourceText": [
+        "Naturopaths.io",
+        "Treatments.tv"
+      ]
+    },
+    {
+      "slug": "fireproofing-tv-welcome-owner-planning-guides",
+      "kind": "user-authorized-launch",
+      "authorization": "Explicit user instruction to complete IAM network welcome posts for Naturopaths.io and Fireproofing.tv, November 11, 2026",
+      "reviewed": true,
+      "postSha256": "682483353ac33e8d9a0dd99501f53332c2ae177c470cbb0e1018671fde1fbbed",
+      "sourceDomain": "fireproofing.tv",
+      "parentBrand": "BuildersHaus.com",
+      "sourceUrls": [
+        "https://fireproofing.tv/",
+        "https://fireproofing.tv/about/",
+        "https://fireproofing.tv/for-contractors/"
+      ],
+      "requiredSourceText": [
+        "Fireproofing",
+        "BuildersHaus.com"
+      ]
+    }
+  ]
+}

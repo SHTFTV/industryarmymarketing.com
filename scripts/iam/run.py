@@ -10,6 +10,7 @@ import time
 from runtime import read, save, stamp, reconcile, claim, block, complete, policy_context, digest, daily_due
 from source import fetch_source
 from writer import write_article
+from approved_launches import pending_launches, source_checked_post
 
 ROOT=pathlib.Path.cwd()
 STATE=ROOT/'operations/iam/state.json'
@@ -83,6 +84,8 @@ def main():
     owner=os.environ.get('GITHUB_RUN_ID','local-dryrun')+'-'+os.environ.get('GITHUB_RUN_ATTEMPT','1')
     state['lastRun']={'at':stamp(),'owner':owner,'trigger':os.environ.get('GITHUB_EVENT_NAME','local'),'status':'checking','policyDigest':policy_hash}
     pending=[a for a in read('docs/campaigns/construction-hourly/queue-baseline.json')['articles'] if state['rows'][a['slug']]['status'] in ('pending','retry')]
+    approved = pending_launches(ROOT, state, journal)
+    if approved: pending = approved + pending
     daily=False
     try:
         if state.get('lease') and dt.datetime.fromisoformat(state['lease']['until'])>dt.datetime.now(dt.timezone.utc) and state['lease']['owner']!=owner:
@@ -107,8 +110,8 @@ def main():
             if unresolved: raise RuntimeError('Remaining campaign is blocked, not complete')
             state['lastRun']['status']='finite-campaign-complete'
             return
-        if not os.environ.get('OPENAI_API_KEY'): raise RuntimeError('IAM_OPENAI_KEY_MISSING: install separate authorized repository secret; never copy another restricted key')
-        if not os.environ.get('OPENAI_MODEL'): raise RuntimeError('IAM_OPENAI_MODEL_MISSING: select model available to IAM key')
+        if not pending[0].get('approvedPost') and not os.environ.get('OPENAI_API_KEY'): raise RuntimeError('IAM_OPENAI_KEY_MISSING: install separate authorized repository secret; never copy another restricted key')
+        if not pending[0].get('approvedPost') and not os.environ.get('OPENAI_MODEL'): raise RuntimeError('IAM_OPENAI_MODEL_MISSING: select model available to IAM key')
         now=dt.datetime.now(dt.timezone.utc)
         if state.get('lastVerifiedAt') and (now-dt.datetime.fromisoformat(state['lastVerifiedAt'])).total_seconds()<3600:
             state['lastRun']['status']='cadence-not-due'; return
@@ -123,20 +126,31 @@ def main():
             media_ok(media)
             sources=[fetch_source(u) for u in article.get('primarySources',[])[:3]]
             if not sources: raise ValueError('No approved factual source')
-            context=policy_context(policy,sources)
-            context.update(intent=article['intent'],existingTitles=[p['title'] for p in journal],siteDomain=article['siteDomain'])
-            draft=write_article(context)
-            if digest(read('operations/iam/policy.json'))!=policy_hash: raise ValueError('Approved policy changed; discard stale draft')
-            post={**policy['postDefaults'],'slug':slug,'title':draft['title'],'cardTitle':draft['title'],
-                  'excerpt':draft['excerpt'],'metaDescription':draft['excerpt'],'publishedAt':stamp(),
-                  'date':now.astimezone(__import__('zoneinfo').ZoneInfo('America/Vancouver')).strftime('%B %d, %Y'),
-                  'image':media['hero']['path'],'ogImage':media['share']['path'],'imageAlt':media['hero']['credit'],
-                  'ogImageAlt':media['share']['credit'],'campaignSite':article['siteDomain'],'campaignLabel':article['intent'],
-                  'richContent':{'intro':draft['intro'],'sections':draft['sections'],'sources':[{'label':s['url'],'href':s['url']} for s in sources]},
-                  'cta':{'eyebrow':'INDUSTRY ARMY MARKETING','heading':'Explain your work clearly','body':'Discuss your branding and publishing with IAM. Project enquiries stay with the named source company.','buttonText':'Talk with IAM','buttonHref':article['requiredContact']}}
+            if article.get('approvedPost'):
+                post=source_checked_post(article,sources)
+                if post['image']!=media['hero']['path'] or post['ogImage']!=media['share']['path']:
+                    raise ValueError('Reviewed manuscript/media mismatch')
+                draft={'intro':post['richContent']['intro']}
+            else:
+                context=policy_context(policy,sources)
+                context.update(intent=article['intent'],existingTitles=[p['title'] for p in journal],siteDomain=article['siteDomain'])
+                draft=write_article(context)
+                if digest(read('operations/iam/policy.json'))!=policy_hash: raise ValueError('Approved policy changed; discard stale draft')
+                post={**policy['postDefaults'],'slug':slug,'title':draft['title'],'cardTitle':draft['title'],
+                      'excerpt':draft['excerpt'],'metaDescription':draft['excerpt'],'publishedAt':stamp(),
+                      'date':now.astimezone(__import__('zoneinfo').ZoneInfo('America/Vancouver')).strftime('%B %d, %Y'),
+                      'image':media['hero']['path'],'ogImage':media['share']['path'],'imageAlt':media['hero']['credit'],
+                      'ogImageAlt':media['share']['credit'],'campaignSite':article['siteDomain'],'campaignLabel':article['intent'],
+                      'richContent':{'intro':draft['intro'],'sections':draft['sections'],'sources':[{'label':s['url'],'href':s['url']} for s in sources]},
+                      'cta':{'eyebrow':'INDUSTRY ARMY MARKETING','heading':'Explain your work clearly','body':'Discuss your branding and publishing with IAM. Project enquiries stay with the named source company.','buttonText':'Talk with IAM','buttonHref':article['requiredContact']}}
+            if digest(read('operations/iam/policy.json'))!=policy_hash:
+                raise ValueError('Approved policy changed; discard stale draft')
+            post.update(publishedAt=stamp(),date=dt.datetime.now(dt.timezone.utc).astimezone(__import__('zoneinfo').ZoneInfo('America/Vancouver')).strftime('%B %d, %Y'))
             if any(p['slug']==slug for p in journal): raise ValueError('Duplicate existing canonical')
-            journal.insert(0,post);save(JOURNAL,journal);persist('IAM: publish one independently audited network article')
+            journal.insert(0,post);save(JOURNAL,journal);persist('IAM: publish reviewed authorized launch' if article.get('approvedPost') else 'IAM: publish one independently audited network article')
             evidence=live_check(post,draft['intro'],state,owner)
+            if article.get('approvedPost'):
+                evidence.update(authorship='user-authorized-manual',automaticAuthorship=False)
             complete(state,slug,owner,evidence,dt.datetime.now(dt.timezone.utc))
             if daily:
                 state['dailyJournalDate']=now.astimezone(__import__('zoneinfo').ZoneInfo('America/Vancouver')).date().isoformat()
@@ -155,3 +169,4 @@ def main():
         if os.environ.get('GITHUB_ACTIONS')=='true': persist('IAM: preserve run outcome and publication evidence')
 
 if __name__=='__main__': main()
+

@@ -1,0 +1,87 @@
+{
+  "brand": "Industry Army Marketing",
+  "trade": "Industry publishing",
+  "tradeShort": "industry publishing",
+  "plural": "businesses",
+  "video": null,
+  "imageKey": "build-journal",
+  "city": "Canada",
+  "province": "BC",
+  "category": "Build Journal",
+  "pain": "",
+  "detail": "",
+  "process": "",
+  "authorName": "Colin Hamilton",
+  "contactBusiness": "iam",
+  "faqs": [],
+  "slug": "fireproofing-tv-welcome-owner-planning-guides",
+  "campaignSite": "fireproofing.tv",
+  "campaignLabel": "New passive fire protection publication",
+  "title": "Industry Army Marketing Welcomes Fireproofing.tv",
+  "cardTitle": "Meet Fireproofing.tv",
+  "excerpt": "Fireproofing.tv joins the network with sixteen planning guides for building owners, managers and renovation teams. Powered by IAM, a division of BuildersHaus.com.",
+  "metaDescription": "Meet Fireproofing.tv: sixteen source-linked planning guides on passive fire protection, project records and professional review. Powered by Industry Army Marketing.",
+  "image": "/brand-journal/fireproofing-tv-launch.jpg",
+  "ogImage": "/brand-journal/fireproofing-tv-launch.jpg",
+  "imageAlt": "Fireproofing.tv launch homepage explaining its property-owner planning purpose and different protection systems. Production-content preview captured by Industry Army Marketing.",
+  "ogImageAlt": "Fireproofing.tv’s launch homepage. Industry Army Marketing production-content preview.",
+  "richContent": {
+    "intro": "A request to “fireproof the building” can leave the actual job unclear. [Fireproofing.tv](https://fireproofing.tv/) is a new publication in our network, helping building owners, property managers and renovation teams prepare a more useful conversation before they commission work.",
+    "sections": [
+      {
+        "heading": "Start with the building question",
+        "paragraphs": [
+          "The site launches with sixteen practical guides. Subjects include spray-applied fire-resistive materials, intumescent finishes, penetration firestopping, damaged protection, project records and the information to gather before requesting an estimate.",
+          "The opening guide explains why structural protection, firestopping and fire-resistance-rated assemblies need their own questions. Articles link primary references and keep planning information separate from the project-specific decisions that belong with qualified professionals and the relevant authority."
+        ]
+      },
+      {
+        "heading": "Bring better information to the next meeting",
+        "paragraphs": [
+          "The [estimate information checklist](https://fireproofing.tv/guides/fireproofing-estimate-information-checklist/) helps owners organise a project conversation. Other guides address records at handover, contractor questions and what needs review when a renovation changes service penetrations.",
+          "This is an educational publication. It does not certify a building, choose a rated system, prescribe a product thickness or provide safety-critical installation instructions. The useful next step is a clearer brief and a named professional review path."
+        ]
+      },
+      {
+        "heading": "A focused resource for the industry",
+        "paragraphs": [
+          "The main site keeps owner guidance first. Footer pages explain [contractor participation](https://fireproofing.tv/for-contractors/) and [guest posting](https://fireproofing.tv/guest-posting/), alongside a route to IAM for business enquiries.",
+          "Contractor applications and guest submissions are not open at launch. The site does not promise directory placement, approval badges or publication. Future contributions need clear commercial disclosure and supporting primary sources."
+        ]
+      },
+      {
+        "heading": "Welcome to the network",
+        "paragraphs": [
+          "Fireproofing.tv uses a restrained cream, deep-green and warm-orange identity, with straightforward navigation through the planning library. Its purpose is practical: help a property team understand what needs to be discussed before a quote or renovation decision.",
+          "Powered by Industry Army Marketing. A division of BuildersHaus.com.",
+          "[Explore Fireproofing.tv](https://fireproofing.tv/) and start with the guide closest to your project question. For branding, websites or industry publishing, follow the footer’s IAM link to discuss your business."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "Fireproofing.tv — live planning library and attribution",
+        "href": "https://fireproofing.tv/"
+      },
+      {
+        "label": "Fireproofing.tv — editorial purpose",
+        "href": "https://fireproofing.tv/about/"
+      },
+      {
+        "label": "Contractor participation status",
+        "href": "https://fireproofing.tv/for-contractors/"
+      },
+      {
+        "label": "Guest contribution status and standards",
+        "href": "https://fireproofing.tv/guest-posting/"
+      }
+    ]
+  },
+  "cta": {
+    "eyebrow": "INDUSTRY ARMY MARKETING",
+    "heading": "Explain the work before the first enquiry",
+    "body": "Discuss a clear brand, practical website or industry publication built around your actual services and expertise.",
+    "buttonText": "Talk with IAM",
+    "buttonHref": "/contact?request=industry-publishing&ref_site=fireproofing.tv"
+  }
+}

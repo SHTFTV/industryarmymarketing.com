@@ -3,6 +3,14 @@ on:
   schedule:
     - cron: '30 * * * *'
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/iam/approved_launches.py'
+      - 'scripts/iam/test_approved_launches.py'
+      - 'scripts/iam/run.py'
+      - 'operations/iam/approved-launches.json'
+      - 'operations/iam/approved-launches/**'
 permissions:
   contents: write
   actions: read
@@ -63,3 +71,4 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
           IAM_JOB_RESULT: ${{ needs.publish.result }}
         run: python scripts/iam/report_execution.py
+

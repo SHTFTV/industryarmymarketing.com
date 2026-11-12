@@ -24,5 +24,57 @@
       "rightsEvidence": "User explicitly authorized Irrigation.ltd launch, existing site brand assets and IAM announcement. Actual live site screenshot; original conceptual illustration is visibly labeled.",
       "visualReview": "Live homepage reviewed at native1600x900: logo, headline, garden artwork, labels and navigation readable; no stock or misleading physical project depiction."
     }
+  },
+  "naturopaths-io-welcome-clearer-health-questions": {
+    "hero": {
+      "path": "/brand-journal/naturopaths-io-launch.jpg",
+      "sha256": "d0098c8a10c70f5ad8921271e35fb5f18ee7c59b6a885255e21a9b0418fc76bc",
+      "nativeSize": [
+        1600,
+        900
+      ],
+      "upscaled": false,
+      "credit": "Industry Army Marketing — naturopaths.io launch homepage production-content preview, November 11, 2026",
+      "rightsEvidence": "Explicit user-authorized new site and IAM launch. Original brand assets and exact production homepage HTML/CSS fetched with normal domain TLS at fresh public DNS address. Native preview screenshot; no Shutterstock.",
+      "visualReview": "Original site layout, logo, headline and content reviewed at native1600x900 and390px phone; no overflow. This is a production-content preview, not a claim of browser custom-domain DNS QA."
+    },
+    "share": {
+      "path": "/brand-journal/naturopaths-io-launch.jpg",
+      "sha256": "d0098c8a10c70f5ad8921271e35fb5f18ee7c59b6a885255e21a9b0418fc76bc",
+      "nativeSize": [
+        1600,
+        900
+      ],
+      "upscaled": false,
+      "credit": "Industry Army Marketing — naturopaths.io launch homepage production-content preview, November 11, 2026",
+      "rightsEvidence": "Explicit user-authorized new site and IAM launch. Original brand assets and exact production homepage HTML/CSS fetched with normal domain TLS at fresh public DNS address. Native preview screenshot; no Shutterstock.",
+      "visualReview": "Original site layout, logo, headline and content reviewed at native1600x900 and390px phone; no overflow. This is a production-content preview, not a claim of browser custom-domain DNS QA."
+    }
+  },
+  "fireproofing-tv-welcome-owner-planning-guides": {
+    "hero": {
+      "path": "/brand-journal/fireproofing-tv-launch.jpg",
+      "sha256": "b7c5201e0788ab3ab73a9ee3918d636440fa6c1f9b9ead3016b966193df92e7b",
+      "nativeSize": [
+        1600,
+        900
+      ],
+      "upscaled": false,
+      "credit": "Industry Army Marketing — fireproofing.tv launch homepage production-content preview, November 11, 2026",
+      "rightsEvidence": "Explicit user-authorized new site and IAM launch. Original brand assets and exact production homepage HTML/CSS fetched with normal domain TLS at fresh public DNS address. Native preview screenshot; no Shutterstock.",
+      "visualReview": "Original site layout, logo, headline and content reviewed at native1600x900 and390px phone; no overflow. This is a production-content preview, not a claim of browser custom-domain DNS QA."
+    },
+    "share": {
+      "path": "/brand-journal/fireproofing-tv-launch.jpg",
+      "sha256": "b7c5201e0788ab3ab73a9ee3918d636440fa6c1f9b9ead3016b966193df92e7b",
+      "nativeSize": [
+        1600,
+        900
+      ],
+      "upscaled": false,
+      "credit": "Industry Army Marketing — fireproofing.tv launch homepage production-content preview, November 11, 2026",
+      "rightsEvidence": "Explicit user-authorized new site and IAM launch. Original brand assets and exact production homepage HTML/CSS fetched with normal domain TLS at fresh public DNS address. Native preview screenshot; no Shutterstock.",
+      "visualReview": "Original site layout, logo, headline and content reviewed at native1600x900 and390px phone; no overflow. This is a production-content preview, not a claim of browser custom-domain DNS QA."
+    }
   }
 }
