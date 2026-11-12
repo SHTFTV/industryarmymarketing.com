@@ -1,3 +1,4 @@
+import { trackEvent } from "@/lib/analytics";
 import { captureReferral, referralNote } from "@/lib/enquiryAttribution";
 import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
@@ -80,7 +81,7 @@ const ContactSection = ({
       ? "I would like to discuss Vancouver SEO and industry marketing.\nWebsite:\nIndustry and main service:\nCustomers I want to reach:\nWhat I want to improve:\n"
       : "I would like to discuss marketing for my business.",
     branding: "I would like to discuss branding, my website and a useful publishing plan. My business and priorities are:",
-    "guest-post": "I would like to discuss a guest post for this industry. My proposed topic is:",
+    "guest-post": "I understand article submissions are currently closed. I would like to ask about future contributions.\nCompany and public website:\nProposed topic and intended audience:\nOther industries or publications I work with:\nExchange/ticker (only if publicly traded):\nWould I like reopening updates? (optional yes/no):\n",
     partnership: "I would like to discuss a partnership with the IAM network.",
   };
   const prefillMessage = tier === "directory"
@@ -111,7 +112,7 @@ const ContactSection = ({
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const parsed = leadSchema.safeParse(form);
+    const parsed = leadSchema.safeParse(request === "guest-post" ? { ...form, trade: form.trade || "Other", city: form.city || "Not provided" } : form);
     if (!parsed.success) {
       const fieldErrors: Record<string, string> = {};
       for (const issue of parsed.error.issues) {
@@ -119,6 +120,7 @@ const ContactSection = ({
         if (k && !fieldErrors[k]) fieldErrors[k] = issue.message;
       }
       setErrors(fieldErrors);
+      trackEvent("enquiry_validation_failed", { request: request || "general", mode: leadStorageConfigured ? "stored-lead" : "email-draft" });
       toast({
         title: "Please fix the highlighted fields",
         description: "A few fields need your attention before we can send.",
@@ -138,6 +140,7 @@ const ContactSection = ({
           `Phone: ${clean.phone || "Not provided"}`, `Trade: ${clean.trade}`,
           `City: ${clean.city}`, `Source: ${leadSource}`, "", clean.message + context,
         ].join("\n");
+        trackEvent("enquiry_email_draft_prepared", { request: request || "general" });
         setEmailDraft("mailto:colin@industryarmymarketing.com?subject=" + encodeURIComponent(`IAM enquiry — ${clean.trade} — ${clean.city}`) + "&body=" + encodeURIComponent(body));
         toast({title: "Your email brief is ready", description: "Open the draft below and send it from your mail app. Nothing has been sent yet."});
         return;
@@ -153,10 +156,11 @@ const ContactSection = ({
         user_agent: typeof navigator !== "undefined" ? navigator.userAgent : null,
       });
       if (error) throw error;
+      trackEvent("enquiry_stored", { request: request || "general", deliveryConfirmed: false });
 
       toast({
-        title: "Message received",
-        description: successDescription,
+        title: "Enquiry saved",
+        description: "Your enquiry was saved. Email notification and recipient receipt have not been confirmed.",
       });
       setForm({ name: "", email: "", phone: "", trade: "", city: "", message: "", website: "" });
       setErrors({});
@@ -180,6 +184,7 @@ const ContactSection = ({
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-16"
         >
+          {request === "guest-post" && <p className="rounded-lg border border-primary p-4 mb-6 text-sm text-foreground">Article submissions are closed. This is an interest enquiry, with optional reopening updates. Include only public business information; do not send identity documents or confidential records.</p>}
           <p className="text-primary uppercase tracking-[0.3em] text-sm font-semibold mb-3">{eyebrow}</p>
           <h2 className="font-display text-5xl md:text-6xl text-foreground">{title}</h2>
         </motion.div>
@@ -252,7 +257,7 @@ const ContactSection = ({
               </div>
               <div>
                 <Input
-                  placeholder="City *"
+                  placeholder={request === "guest-post" ? "City (optional)" : "City *"}
                   value={form.city}
                   onChange={(e) => set("city", e.target.value)}
                   aria-invalid={!!errors.city}
@@ -269,7 +274,7 @@ const ContactSection = ({
                 aria-invalid={!!errors.trade}
                 className="w-full h-10 rounded-md bg-card border border-border focus:border-primary focus:outline-none px-3 text-sm text-foreground"
               >
-                <option value="">Select your trade *</option>
+                <option value="">{request === "guest-post" ? "Select your industry (optional)" : "Select your trade *"}</option>
                 {trades.map((t) => <option key={t} value={t}>{t}</option>)}
               </select>
               {errors.trade && <p className={errCls}>{errors.trade}</p>}
@@ -299,7 +304,7 @@ const ContactSection = ({
               {submitting ? <><Loader2 className="w-4 h-4 mr-2 animate-spin" />{leadStorageConfigured ? "Sending..." : "Preparing..."}</> : leadStorageConfigured ? submitLabel : "Prepare my email brief"}
             </Button>
           {!leadStorageConfigured && <p className="text-sm text-muted-foreground leading-relaxed mt-4">Preparing a brief does not submit a message. Open the draft and send it from your email app to contact IAM.</p>}
-            {emailDraft && <div className="mt-5 rounded-lg border border-primary p-4" role="status"><p className="text-sm mb-3">Your brief is ready. Nothing has been sent yet.</p><a href={emailDraft} className="inline-flex rounded-md bg-primary text-primary-foreground px-5 py-3 font-semibold">Open my draft email to Colin ↗</a><p className="text-xs text-muted-foreground mt-3">Review and send the message in your mail app. Prefer a new message? Email colin@industryarmymarketing.com.</p></div>}
+            {emailDraft && <div className="mt-5 rounded-lg border border-primary p-4" role="status"><p className="text-sm mb-3">Your brief is ready. Nothing has been sent yet.</p><a href={emailDraft} onClick={() => trackEvent("enquiry_email_draft_open_clicked", { request: request || "general" })} className="inline-flex rounded-md bg-primary text-primary-foreground px-5 py-3 font-semibold">Open my draft email to Colin ↗</a><p className="text-xs text-muted-foreground mt-3">Review and send the message in your mail app. Prefer a new message? Email colin@industryarmymarketing.com.</p></div>}
           </motion.form>
         </div>
       </div>

@@ -12,15 +12,15 @@ const includes = [
   { icon: PenSquare, title: "Your Practical Expertise", body: "Bring an original article, project story or useful industry lesson. Explain what readers can learn from your experience." },
   { icon: Link2, title: "Relevant Sources and Connections", body: "Use links where they help a reader understand the topic or find the business behind the work. Paid placements must disclose sponsorship and qualify commercial links." },
   { icon: Building2, title: "A Relevant Industry Home", body: "We review the topic and proposed hub together. The goal is useful content for that publication’s audience." },
-  { icon: Infinity, title: "Accessible Participation", body: "$10 CAD per accepted guest-post placement, separate from annual hub registration. Confirm the placement and terms before payment." },
+  { icon: Infinity, title: "Accessible Participation", body: "Article submissions and placement payments are currently closed while we set up the review systems. You can ask about future opportunities." },
   { icon: ShieldCheck, title: "Editorial Review", body: "Contributions are reviewed for relevance, accuracy and usefulness. Payment does not guarantee acceptance or search rankings." },
   { icon: Globe, title: "A Growing Catalog", body: "Explore specialist sites across the network and propose the audience your contribution can help." },
 ];
 const process = [
-  { n: "01", t: "Share Your Idea", b: "Send your topic, intended audience, original draft or project outline, and relevant examples." },
+  { n: "01", t: "Share Your Idea", b: "Tell us your proposed topic, intended audience and other industries or publications you work with. Please do not send a full article yet." },
   { n: "02", t: "Find the Right Fit", b: "Review the proposed industry hub, your contribution and any changes needed before agreeing to publication." },
-  { n: "03", t: "Agree the Details", b: "Confirm the placement, $10 CAD fee and timing. Writing or other hands-on content services are scoped separately." },
-  { n: "04", t: "Publish Useful Work", b: "After acceptance, prepare the agreed contribution for publication. Share the published resource with people who can use it." },
+  { n: "03", t: "Agree the Details", b: "When submissions reopen, editorial scope, disclosures, any fees and timing must be agreed before work or payment." },
+  { n: "04", t: "Publish Useful Work", b: "Future publication requires editorial acceptance. Company verification is a separate assessment; it does not guarantee publication or search rankings." },
 ];
 const rules = [
   "Help the host site’s actual industry audience",
@@ -34,7 +34,7 @@ const GuestPost = () => (
   <Layout>
     <Seo
       title="Share Your Expertise | Industry Guest Contributions | IAM"
-      description="Share original industry knowledge, project stories and useful guest articles with a relevant IAM hub. Contributions are reviewed for fit and usefulness."
+      description="Guest article submissions are currently closed. Ask about future IAM industry contributions, editorial review and public company verification."
       path="/guest-post"
       jsonLd={[
         {
@@ -45,7 +45,6 @@ const GuestPost = () => (
           areaServed: "Worldwide",
           description:
             "Reviewed guest contributions for relevant industry audiences.",
-          offers: { "@type": "Offer", price: "10", priceCurrency: "CAD" },
         },
         breadcrumbList([
           { name: "Home", path: "/" },
@@ -57,10 +56,10 @@ const GuestPost = () => (
       eyebrow="Useful Content · Industry Connections"
       title="Your Knowledge Belongs"
       highlight="With Your Industry"
-      description="We want your useful ideas, project experience and practical knowledge. Propose a contribution to a relevant industry hub and help build a resource your peers and customers can use."
+      description="Guest article submissions are currently closed while we set up our review systems. You can introduce your company and topic, ask about future opportunities, and optionally request reopening updates."
     >
       <div className="flex flex-wrap gap-3">
-        <Button variant="hero" asChild><Link to="/contact?request=guest-post">Propose a Contribution</Link></Button>
+        <Button variant="hero" asChild><Link to="/contact?request=guest-post">Ask About Future Contributions</Link></Button>
         <Button variant="heroOutline" asChild><Link to="/network">Browse Host Domains</Link></Button>
       </div>
     </PageHeader>
@@ -93,7 +92,7 @@ const GuestPost = () => (
       <div className="container mx-auto px-4 max-w-5xl">
         <div className="text-center mb-12">
           <p className="text-primary uppercase tracking-[0.3em] text-xs font-semibold mb-3">Process</p>
-          <h2 className="font-display text-4xl md:text-5xl text-foreground">From Pitch to Published</h2>
+          <h2 className="font-display text-4xl md:text-5xl text-foreground">How Future Review Will Work</h2>
         </div>
         <div className="grid md:grid-cols-2 gap-6">
           {process.map((s, i) => (
@@ -118,7 +117,7 @@ const GuestPost = () => (
         <div className="grid md:grid-cols-2 gap-10">
           <div>
             <p className="text-primary uppercase tracking-[0.3em] text-xs font-semibold mb-3">Editorial Standards</p>
-            <h2 className="font-display text-3xl md:text-4xl text-foreground mb-5">What We Accept</h2>
+            <h2 className="font-display text-3xl md:text-4xl text-foreground mb-5">What We Will Review</h2>
             <ul className="space-y-3">
               {rules.map((r) => (
                 <li key={r} className="flex gap-3 text-muted-foreground text-sm leading-relaxed">
@@ -130,23 +129,24 @@ const GuestPost = () => (
           </div>
           <div className="p-7 rounded-lg bg-card border border-border">
             <Mail className="w-8 h-8 text-primary mb-3" />
-            <h3 className="font-display text-2xl text-foreground mb-2">Submit Your Guest Post</h3>
+            <h3 className="font-display text-2xl text-foreground mb-2">Introduce Your Company and Topic</h3>
             <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-              Email your brief to <a className="text-primary hover:underline" href="mailto:colin@industryarmymarketing.com">colin@industryarmymarketing.com</a> with subject line <span className="text-foreground font-mono">"Guest Post"</span>. Include your topic, intended readers, original work or project examples, and any preferred timing. We will review the fit and next steps.
+              Email your brief to <a className="text-primary hover:underline" href="mailto:colin@industryarmymarketing.com">colin@industryarmymarketing.com</a> with subject line <span className="text-foreground font-mono">"Future guest contribution"</span>. Include your company’s public website, topic, intended readers and other work you do. If publicly traded, include the exchange and ticker. Tell us explicitly if you want reopening updates. Do not send identity documents, confidential records or article uploads.
             </p>
-            <Button variant="hero" asChild><Link to="/contact?request=guest-post">Start a Submission</Link></Button>
+            <Button variant="hero" asChild><Link to="/contact?request=guest-post">Prepare an Interest Enquiry</Link></Button>
           </div>
         </div>
       </div>
     </section>
 
+    <section className="py-12 bg-background border-t border-border"><div className="container mx-auto px-4 max-w-5xl"><h2 className="font-display text-3xl text-foreground mb-4">Company checks and editorial decisions are separate</h2><p className="text-muted-foreground leading-relaxed">We are building a public-source review process covering company identity, history, official websites and, where applicable, exchange and ticker records. A company that cannot be verified must not be presented as verified. Verification alone does not mean an article will be accepted; any future publication must explain the verification status honestly.</p></div></section>
     <section className="py-20 gradient-tactical border-t border-border">
       <div className="container mx-auto px-4">
         <div className="text-center mb-10">
           <p className="text-primary uppercase tracking-[0.3em] text-xs font-semibold mb-3">Sample Host Domains</p>
           <h2 className="font-display text-4xl md:text-5xl text-foreground">Where Your Post Could Live</h2>
           <p className="text-muted-foreground mt-3 max-w-2xl mx-auto text-sm">
-            Explore the catalog and suggest a relevant home for your contribution. Availability, editorial fit and placement are confirmed during review.
+            Explore the catalog for a possible audience. This is not a list of open submission slots. Availability and editorial fit will be reviewed when submissions reopen.
           </p>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
@@ -163,7 +163,7 @@ const GuestPost = () => (
                 <span className="text-xl">{d.emoji}</span>
               </div>
               <p className="text-foreground text-sm">{d.niche}</p>
-              <p className="text-muted-foreground text-xs mt-2">Industry contribution proposals welcome</p>
+              <p className="text-muted-foreground text-xs mt-2">Future opportunities subject to review</p>
             </motion.div>
           ))}
         </div>

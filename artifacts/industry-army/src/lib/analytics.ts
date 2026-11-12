@@ -21,6 +21,7 @@ const GA4_ID =
       ?.VITE_GA4_MEASUREMENT_ID) ||
   "";
 
+const storageConfigured = Boolean(import.meta.env.VITE_SUPABASE_URL && import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY) && !String(import.meta.env.VITE_SUPABASE_URL).includes("placeholder");
 let ga4Initialized = false;
 function ensureGa4() {
   if (ga4Initialized || !GA4_ID || typeof window === "undefined") return;
@@ -95,6 +96,7 @@ export async function track(
     ...(payload.meta ?? {}),
   });
   try {
+    if (!storageConfigured) return;
     await supabase.from("seo_events").insert({
       event,
       session_id: sessionId(),
@@ -201,6 +203,7 @@ export const BLOG_EVENTS = {
 export function trackEvent(name: string, meta: Record<string, unknown> = {}) {
   ga4Send(name, meta);
   try {
+    if (!storageConfigured) return;
     void supabase.from("seo_events").insert({
       event: name.slice(0, 80),
       session_id: sessionId(),
