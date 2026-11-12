@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-11-12T05:04:54.109682+00:00",
-  "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43158636901",
+  "checkedAt": "2026-11-12T10:22:33.471700+00:00",
+  "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43199356432",
   "event": "workflow_dispatch",
-  "startedAt": "2026-11-12T05:02:08Z",
-  "completedAt": "2026-11-12T05:04:43Z",
+  "startedAt": "2026-11-12T10:19:41Z",
+  "completedAt": "2026-11-12T10:22:21Z",
   "jobResult": "success",
   "failedSteps": [],
   "writerExecuted": true,
@@ -12,14 +12,11 @@
   "scheduledExecutionObserved": false,
   "automaticPublicationVerified": false,
   "automaticRecovery": {
-    "verified": true,
-    "kind": "verified-health-recovery",
-    "originRun": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43155109656",
-    "originEvent": "push",
-    "reason": "Actual same-repository health run and GitHub Actions bot verified"
+    "verified": false,
+    "reason": "Not an automatic health recovery dispatch"
   },
-  "unattendedRecoveryExecutionVerified": true,
-  "verifiedRecoveryPublication": true,
+  "unattendedRecoveryExecutionVerified": false,
+  "verifiedRecoveryPublication": false,
   "credentialAndMediaGates": "Independent requirements; successful infrastructure is not provider access or publication proof",
   "independentAlertDeliveryVerified": false,
   "persistentOpenBlockers": 22,
