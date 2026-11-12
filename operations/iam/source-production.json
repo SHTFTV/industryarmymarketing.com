@@ -1,13 +1,13 @@
 {
-  "checkedAt": "2026-11-12T01:46:41.798694+00:00",
+  "checkedAt": "2026-11-12T01:55:01.985620+00:00",
   "status": "verified",
-  "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43136727951",
+  "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43137675826",
   "url": "https://www.industryarmymarketing.com/source-version.json",
   "expectedJournalSha256": "f03704217a56847e32ac5dff82eb73812dc88c5c87af988835fdb599007d41c3",
   "production": {
     "schemaVersion": 1,
     "repository": "SHTFTV/industryarmymarketing.com",
-    "sourceCommit": "e6023a93e839bbb64bdf90238a2e9b1c29767c63",
+    "sourceCommit": "5fc30764d40b5c6d6675aa28e0805359250fa852",
     "sotSha256": "336b4ce78cb0e4bb3990ca9de406603f5128210bc19520f92db8c64cfd835574",
     "journalSha256": "f03704217a56847e32ac5dff82eb73812dc88c5c87af988835fdb599007d41c3"
   }

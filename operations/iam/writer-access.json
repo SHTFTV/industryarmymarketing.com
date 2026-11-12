@@ -1,14 +1,14 @@
 {
-  "checkedAt": "2026-11-12T01:47:12.874707+00:00",
-  "status": "verified",
+  "checkedAt": "2026-11-12T01:55:02.532594+00:00",
+  "status": "blocked",
   "configured": true,
   "modelConfigured": true,
   "model": "gpt-6.1-sol",
   "credentialsRecorded": false,
   "published": false,
-  "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43136727951",
+  "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43137675826",
   "rules": {
-    "sourceCommit": "e6023a93e839bbb64bdf90238a2e9b1c29767c63",
+    "sourceCommit": "56f843375db01183bd2a7c455cedac10e7b87e38",
     "hashes": {
       "docs/IAM-SOT.md": "336b4ce78cb0e4bb3990ca9de406603f5128210bc19520f92db8c64cfd835574",
       "operations/iam/policy.json": "15a61feccc19e28b6a28d884de19ec0acb818d399201d8e643edd8bd2240ad54",
@@ -16,9 +16,8 @@
     },
     "sotVersion": 2
   },
-  "generationAndIndependentAuditPassed": true,
-  "sourceUrl": "https://irrigation.ltd/",
-  "sourceSha256": "df989d207bc1f82b497d2f83cd02e35b8cbe712233b92f7d12e7ed38bd4eb06a",
-  "draftSha256": "3b500374216b577e9db5529597adaff38a7d247df60a9d071a8896096fb0fc9d",
-  "maximumProviderCalls": 2
+  "targetSlug": "fireproofing-tv-welcome-owner-planning-guides",
+  "templateDigest": "8418facb9c2e20e9a3f1e63d18bdb5f62ef5bb87880368b106db1ce89575df6e",
+  "reason": "Independent factual/editorial audit failed",
+  "errorType": "ValueError"
 }
