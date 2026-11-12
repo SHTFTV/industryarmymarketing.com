@@ -349,8 +349,8 @@
     {
       "eventId": "iam-notice-a41705a59e16055a23e8",
       "kind": "publishing_blocked",
-      "lifecycle": "open",
-      "deliveryStatus": "queued",
+      "lifecycle": "resolved",
+      "deliveryStatus": "superseded",
       "triggeredAt": "2026-11-12T04:31:39.538980+00:00",
       "deliveryAttempts": 0,
       "deliveryReceipt": null,
@@ -363,7 +363,8 @@
       "proof": {
         "blockedAt": null,
         "attempts": 1
-      }
+      },
+      "resolvedAt": "2026-11-12T05:05:09.378964+00:00"
     },
     {
       "eventId": "iam-notice-71c6b6c98facee0bd3c9",
@@ -520,8 +521,8 @@
     {
       "eventId": "iam-notice-61a4ec8350c73700b141",
       "kind": "publishing_failure",
-      "lifecycle": "open",
-      "deliveryStatus": "queued",
+      "lifecycle": "resolved",
+      "deliveryStatus": "superseded",
       "triggeredAt": "2026-11-12T04:41:11.740591+00:00",
       "deliveryAttempts": 0,
       "deliveryReceipt": null,
@@ -532,15 +533,38 @@
       "nextAction": "Inspect the exact retained run and issue; continue independent eligible work.",
       "proof": {
         "runUrl": "43156262803"
+      },
+      "resolvedAt": "2026-11-12T05:05:09.378964+00:00"
+    },
+    {
+      "eventId": "iam-notice-01513bd56d293ce948e9",
+      "kind": "publication_verified",
+      "lifecycle": "open",
+      "deliveryStatus": "queued",
+      "triggeredAt": "2026-11-12T05:05:09.378964+00:00",
+      "deliveryAttempts": 0,
+      "deliveryReceipt": null,
+      "siteDomain": "kongtractors.com",
+      "articleSlug": "kongtractors-com-industry-marketing-project-content-guide",
+      "articleUrl": "https://www.industryarmymarketing.com/blog/kongtractors-com-industry-marketing-project-content-guide",
+      "status": "verified",
+      "verifiedAt": "2026-11-12T05:04:38.651336+00:00",
+      "reconciled": false,
+      "summary": "kongtractors.com IAM article is verified live.",
+      "nextAction": "Read the verified article; no publication retry is needed.",
+      "proof": {
+        "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43158636901",
+        "publicationVerified": true,
+        "generatedAndAudited": true
       }
     }
   ],
   "producer": {
     "stage": "fired",
-    "firedAt": "2026-11-12T04:41:11.741225+00:00",
-    "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43156262803",
+    "firedAt": "2026-11-12T05:05:09.379183+00:00",
+    "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43158636901",
     "rules": {
-      "sourceCommit": "93146b0478f8ef2b1e68cde00c341340b09785cf",
+      "sourceCommit": "f7ae7d45dd538bc614c62f744636765c3a004c13",
       "hashes": {
         "docs/IAM-SOT.md": "bee6bafd970b63fd3a7cbb2faea7fb35fa900f1a2789fcf80ffc52bc55afd146",
         "operations/iam/policy.json": "15a61feccc19e28b6a28d884de19ec0acb818d399201d8e643edd8bd2240ad54",
