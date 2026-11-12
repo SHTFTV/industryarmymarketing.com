@@ -1019,7 +1019,7 @@
       }
     },
     "snowplow-tv-industry-marketing-project-content-guide": {
-      "status": "claimed",
+      "status": "blocked",
       "attempts": 1,
       "sourceDomain": "snowplow.tv",
       "canonical": "https://www.industryarmymarketing.com/blog/snowplow-tv-industry-marketing-project-content-guide",
@@ -1041,7 +1041,28 @@
             "sotVersion": 2
           }
         }
-      ]
+      ],
+      "stage": "media",
+      "nextAction": "Exact company/source media and actual visual review missing for snowplow.tv",
+      "lastFailure": {
+        "slug": "snowplow-tv-industry-marketing-project-content-guide",
+        "at": "2026-11-12T04:40:20.738738+00:00",
+        "stage": "media",
+        "status": "blocked",
+        "errorType": "ValueError",
+        "reason": "Exact company/source media and actual visual review missing for snowplow.tv",
+        "httpStatus": null,
+        "attempt": 1,
+        "rules": {
+          "sourceCommit": "485cf5f09142e5675aefbd3e23cadb63d701b732",
+          "hashes": {
+            "docs/IAM-SOT.md": "bee6bafd970b63fd3a7cbb2faea7fb35fa900f1a2789fcf80ffc52bc55afd146",
+            "operations/iam/policy.json": "15a61feccc19e28b6a28d884de19ec0acb818d399201d8e643edd8bd2240ad54",
+            "operations/iam/build-contract.json": "006ee864333b76530c16cc8d552e47f9dff6c74fbdade940d74f00efee7cb494"
+          },
+          "sotVersion": 2
+        }
+      }
     },
     "snowremoval-tv-industry-marketing-project-content-guide": {
       "status": "pending",
@@ -1264,7 +1285,7 @@
     "at": "2026-11-12T04:40:10.169244+00:00",
     "owner": "43156262803-1",
     "trigger": "workflow_dispatch",
-    "status": "checking",
+    "status": "item-held-continuing",
     "policyDigest": "ab1639931848bf2eb2000365da96649afcc031be8ca3f6230a993f0041888247",
     "rules": {
       "sourceCommit": "485cf5f09142e5675aefbd3e23cadb63d701b732",
@@ -1281,7 +1302,9 @@
       "originRun": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43155109656",
       "originEvent": "push",
       "reason": "Actual same-repository health run and GitHub Actions bot verified"
-    }
+    },
+    "error": "Item held: snowplow-tv-industry-marketing-project-content-guide",
+    "nextAction": "Resolve the exact recorded gate; do not reset attempts, reseed history or count zero as publication"
   },
   "lastExecution": {
     "checkedAt": "2026-11-12T04:31:22.271927+00:00",
@@ -1811,6 +1834,15 @@
       "stage": "media",
       "lastSeenAt": "2026-11-12T04:31:04.243971+00:00",
       "delivery": "unproven"
+    },
+    "iam:snowplow-tv-industry-marketing-project-content-guide:media": {
+      "id": "iam:snowplow-tv-industry-marketing-project-content-guide:media",
+      "slug": "snowplow-tv-industry-marketing-project-content-guide",
+      "status": "open",
+      "reason": "Exact company/source media and actual visual review missing for snowplow.tv",
+      "stage": "media",
+      "lastSeenAt": "2026-11-12T04:40:20.738738+00:00",
+      "delivery": "unproven"
     }
   },
   "attemptReceipts": [
@@ -2117,10 +2149,25 @@
         },
         "sotVersion": 2
       }
+    },
+    {
+      "slug": "snowplow-tv-industry-marketing-project-content-guide",
+      "at": "2026-11-12T04:40:20.738738+00:00",
+      "stage": "media",
+      "status": "blocked",
+      "errorType": "ValueError",
+      "reason": "Exact company/source media and actual visual review missing for snowplow.tv",
+      "httpStatus": null,
+      "attempt": 1,
+      "rules": {
+        "sourceCommit": "485cf5f09142e5675aefbd3e23cadb63d701b732",
+        "hashes": {
+          "docs/IAM-SOT.md": "bee6bafd970b63fd3a7cbb2faea7fb35fa900f1a2789fcf80ffc52bc55afd146",
+          "operations/iam/policy.json": "15a61feccc19e28b6a28d884de19ec0acb818d399201d8e643edd8bd2240ad54",
+          "operations/iam/build-contract.json": "006ee864333b76530c16cc8d552e47f9dff6c74fbdade940d74f00efee7cb494"
+        },
+        "sotVersion": 2
+      }
     }
-  ],
-  "lease": {
-    "owner": "43156262803-1",
-    "until": "2026-11-12T05:10:10.183001+00:00"
-  }
+  ]
 }
