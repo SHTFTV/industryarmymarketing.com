@@ -558,17 +558,17 @@
     }
   ],
   "lastRun": {
-    "at": "2026-11-12T01:37:01.129038+00:00",
-    "owner": "43135533487-1",
+    "at": "2026-11-12T01:47:55.440951+00:00",
+    "owner": "43136727951-1",
     "trigger": "push",
-    "status": "verified-publication",
+    "status": "cadence-not-due",
     "policyDigest": "ab1639931848bf2eb2000365da96649afcc031be8ca3f6230a993f0041888247",
     "rules": {
-      "sourceCommit": "c9c89065a422f13e0afed33f715d84ef32310038",
+      "sourceCommit": "a7cf871230a6da3096af832370d0d1fdb2829649",
       "hashes": {
-        "docs/IAM-SOT.md": "992b0abf9f9910da9034b1c7767cedae873710121a9e91694b66ca4ee4f5d7d0",
+        "docs/IAM-SOT.md": "336b4ce78cb0e4bb3990ca9de406603f5128210bc19520f92db8c64cfd835574",
         "operations/iam/policy.json": "15a61feccc19e28b6a28d884de19ec0acb818d399201d8e643edd8bd2240ad54",
-        "operations/iam/build-contract.json": "cbae7766fb73ee15f18c10b2f0ba43e07bd0d8cac623edddd55aa356fa3e4e91"
+        "operations/iam/build-contract.json": "006ee864333b76530c16cc8d552e47f9dff6c74fbdade940d74f00efee7cb494"
       },
       "sotVersion": 2
     }
@@ -741,11 +741,11 @@
   ],
   "approvedLaunchIssues": [],
   "loadedRules": {
-    "sourceCommit": "c9c89065a422f13e0afed33f715d84ef32310038",
+    "sourceCommit": "a7cf871230a6da3096af832370d0d1fdb2829649",
     "hashes": {
-      "docs/IAM-SOT.md": "992b0abf9f9910da9034b1c7767cedae873710121a9e91694b66ca4ee4f5d7d0",
+      "docs/IAM-SOT.md": "336b4ce78cb0e4bb3990ca9de406603f5128210bc19520f92db8c64cfd835574",
       "operations/iam/policy.json": "15a61feccc19e28b6a28d884de19ec0acb818d399201d8e643edd8bd2240ad54",
-      "operations/iam/build-contract.json": "cbae7766fb73ee15f18c10b2f0ba43e07bd0d8cac623edddd55aa356fa3e4e91"
+      "operations/iam/build-contract.json": "006ee864333b76530c16cc8d552e47f9dff6c74fbdade940d74f00efee7cb494"
     },
     "sotVersion": 2
   },
