@@ -1,0 +1,35 @@
+name: IAM sole-publisher health recovery
+on:
+  schedule:
+    - cron: '3-59/10 * * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/iam-health.yml'
+      - 'scripts/iam-health-recovery.py'
+      - 'scripts/test_iam_health_recovery.py'
+permissions:
+  contents: read
+  actions: write
+concurrency:
+  group: iam-health-recovery
+  cancel-in-progress: false
+jobs:
+  health:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Health dispatch regressions
+        run: python -m unittest discover -s scripts -p test_iam_health_recovery.py
+      - name: Check and recover the existing publisher only
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python scripts/iam-health-recovery.py
