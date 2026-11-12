@@ -574,15 +574,15 @@
     }
   },
   "lastExecution": {
-    "checkedAt": "2026-11-12T00:58:03.463808+00:00",
-    "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43131000603",
+    "checkedAt": "2026-11-12T01:39:03.441379+00:00",
+    "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43135533487",
     "event": "push",
-    "startedAt": "2026-11-12T00:56:53Z",
-    "completedAt": "2026-11-12T00:57:51Z",
+    "startedAt": "2026-11-12T01:35:25Z",
+    "completedAt": "2026-11-12T01:38:51Z",
     "jobResult": "success",
     "failedSteps": [],
     "writerExecuted": true,
-    "verifiedPublicationCount": 0,
+    "verifiedPublicationCount": 1,
     "scheduledExecutionObserved": false,
     "automaticPublicationVerified": false
   },
@@ -674,6 +674,19 @@
       "verifiedPublicationCount": 0,
       "scheduledExecutionObserved": false,
       "automaticPublicationVerified": false
+    },
+    {
+      "checkedAt": "2026-11-12T01:39:03.441379+00:00",
+      "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43135533487",
+      "event": "push",
+      "startedAt": "2026-11-12T01:35:25Z",
+      "completedAt": "2026-11-12T01:38:51Z",
+      "jobResult": "success",
+      "failedSteps": [],
+      "writerExecuted": true,
+      "verifiedPublicationCount": 1,
+      "scheduledExecutionObserved": false,
+      "automaticPublicationVerified": false
     }
   ],
   "lastWriterRun": {
@@ -735,5 +748,34 @@
       "operations/iam/build-contract.json": "cbae7766fb73ee15f18c10b2f0ba43e07bd0d8cac623edddd55aa356fa3e4e91"
     },
     "sotVersion": 2
+  },
+  "persistentBlockers": {
+    "iam:prebuild:5bbe71172ecb2fa9": {
+      "id": "iam:prebuild:5bbe71172ecb2fa9",
+      "kind": "prebuild",
+      "firstSeenAt": "2026-11-12T01:39:03.441379+00:00",
+      "delivery": "unproven",
+      "status": "open",
+      "lastSeenAt": "2026-11-12T01:39:03.441379+00:00",
+      "reason": "Minimal generated-and-audited production publication has not been verified"
+    },
+    "iam:prebuild:59e54ac854c3e0c4": {
+      "id": "iam:prebuild:59e54ac854c3e0c4",
+      "kind": "prebuild",
+      "firstSeenAt": "2026-11-12T01:39:03.441379+00:00",
+      "delivery": "unproven",
+      "status": "open",
+      "lastSeenAt": "2026-11-12T01:39:03.441379+00:00",
+      "reason": "Shared operating-standard v2 interface not yet verified/pinned"
+    },
+    "iam:prebuild:7e1910d7c6043aa9": {
+      "id": "iam:prebuild:7e1910d7c6043aa9",
+      "kind": "prebuild",
+      "firstSeenAt": "2026-11-12T01:39:03.441379+00:00",
+      "delivery": "unproven",
+      "status": "open",
+      "lastSeenAt": "2026-11-12T01:39:03.441379+00:00",
+      "reason": "Persistent blocker notification delivery unproven"
+    }
   }
 }

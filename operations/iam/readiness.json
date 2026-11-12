@@ -1,0 +1,10 @@
+{
+  "checkedAt": "2026-11-12T01:39:03.441448+00:00",
+  "dependentExtensionsAllowed": false,
+  "operationallyComplete": false,
+  "blockers": [
+    "Minimal generated-and-audited production publication has not been verified",
+    "Shared operating-standard v2 interface not yet verified/pinned",
+    "Persistent blocker notification delivery unproven"
+  ]
+}

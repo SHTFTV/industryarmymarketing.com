@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "site": "industryarmymarketing.com",
+  "checkedAt": "2026-11-12T01:39:03.441379+00:00",
+  "deliveryVerified": false,
+  "adapter": "shared-owner-interface-pending",
+  "issues": [
+    {
+      "id": "iam:prebuild:5bbe71172ecb2fa9",
+      "kind": "prebuild",
+      "firstSeenAt": "2026-11-12T01:39:03.441379+00:00",
+      "delivery": "unproven",
+      "status": "open",
+      "lastSeenAt": "2026-11-12T01:39:03.441379+00:00",
+      "reason": "Minimal generated-and-audited production publication has not been verified"
+    },
+    {
+      "id": "iam:prebuild:59e54ac854c3e0c4",
+      "kind": "prebuild",
+      "firstSeenAt": "2026-11-12T01:39:03.441379+00:00",
+      "delivery": "unproven",
+      "status": "open",
+      "lastSeenAt": "2026-11-12T01:39:03.441379+00:00",
+      "reason": "Shared operating-standard v2 interface not yet verified/pinned"
+    },
+    {
+      "id": "iam:prebuild:7e1910d7c6043aa9",
+      "kind": "prebuild",
+      "firstSeenAt": "2026-11-12T01:39:03.441379+00:00",
+      "delivery": "unproven",
+      "status": "open",
+      "lastSeenAt": "2026-11-12T01:39:03.441379+00:00",
+      "reason": "Persistent blocker notification delivery unproven"
+    }
+  ]
+}
