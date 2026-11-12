@@ -25,7 +25,6 @@ const Blog = () => {
   // Uniform grid: no featured card, no pinned override — every post appears
   // in the same left-to-right chronological roll (newest first).
   const rest = [...buildJournalPosts, ...overlayPosts.filter(p => p.category !== "Build Journal")];
-  const featured = rest[0] ?? blogPosts[0];
   // Persist search state in URL so filtered views are shareable and
   // survive page reloads. Empty/default values are stripped so the URL
   // stays clean ("/blog" instead of "/blog?q=&city=all&category=all").
@@ -224,7 +223,7 @@ const Blog = () => {
         title="The"
         highlight="Build Journal"
         description="Brand identities, websites, apps and rollouts. Follow the work, the decisions and what is actually live."
-      ><figure style={{maxWidth:760,margin:0}}><img src="/brand-journal/brand-board.jpg" width={1200} height={630} alt="IAM brand board with the approved IAM seal, Wow character and project media" style={{width:'100%',height:'auto',borderRadius:12}}/><figcaption className="text-xs text-muted-foreground mt-3">IAM artwork; AI-illustrated Wow. Rambo photo: Mason McKenzie. Illustrative mining photo: Mark Thomas / Pexels.</figcaption></figure></PageHeader>
+      />
       <section className="py-16">
         <div className="container mx-auto px-4 max-w-6xl">
           <p className="text-primary uppercase tracking-[0.3em] text-xs font-semibold mb-3">All Intel</p>
@@ -429,3 +428,4 @@ const Blog = () => {
 };
 
 export default Blog;
+

@@ -10,6 +10,10 @@ globalThis.localStorage={getItem:()=>null,setItem:()=>{},removeItem:()=>{}};
 const server=await createServer({server:{middlewareMode:true,hmr:false,ws:false},appType:'custom'});
 try {
  const {render}=await server.ssrLoadModule('/src/journal-prerender.tsx');
+ const {blogPosts}=await server.ssrLoadModule('/src/data/blogPosts.ts');
+ const {homepageJournal}=await server.ssrLoadModule('/src/lib/homepageJournal.mjs');
+ const cardKeys=['slug','title','brand','category','publishedAt','image','imageAlt','excerpt','pain'];
+ fs.writeFileSync(path.join(dist,'journal-index.json'),JSON.stringify({schemaVersion:1,posts:homepageJournal(blogPosts).map(p=>Object.fromEntries(cardKeys.filter(k=>p[k]!==undefined).map(k=>[k,p[k]])))}));
  for(const route of ['/', '/eyespyr', '/contractors', '/snow-removal-marketing', '/steel-stud-drywall-marketing', '/mission', '/blog', '/brand-creation-management-vancouver','/seo','/seo/united-states',...markets.map(m=>'/seo/'+m.slug),...journal.map(p=>'/blog/'+p.slug)]) {
   const {html,head}=render(route);
   const headHtml=['title','meta','link','script'].map(k=>head?.[k]?.toString()||'').join('');
@@ -32,4 +36,5 @@ try {
  fs.writeFileSync(path.join(dist,'source-version.json'),JSON.stringify({schemaVersion:1,repository:'SHTFTV/industryarmymarketing.com',sourceCommit:process.env.VERCEL_GIT_COMMIT_SHA||process.env.GITHUB_SHA||null,sotSha256:crypto.createHash('sha256').update(fs.readFileSync(path.join(root,'../../docs/IAM-SOT.md'))).digest('hex'),journalSha256:crypto.createHash('sha256').update(fs.readFileSync(path.join(root,'src/data/buildJournal.json'))).digest('hex')})+'\n');
  console.log('Prerendered IAM homepage, blog and '+journal.length+' build-journal articles.');
 } finally {await server.close();}
+
 
