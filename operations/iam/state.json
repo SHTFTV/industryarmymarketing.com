@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "lastVerifiedAt": "2026-11-12T02:41:39.664150+00:00",
+  "lastVerifiedAt": "2026-11-12T05:04:38.651336+00:00",
   "rows": {
     "buildershaus-contractor-project-story-submission-guide": {
       "status": "existing-publication",
@@ -743,7 +743,7 @@
       }
     },
     "kongtractors-com-industry-marketing-project-content-guide": {
-      "status": "claimed",
+      "status": "verified",
       "attempts": 2,
       "sourceDomain": "kongtractors.com",
       "canonical": "https://www.industryarmymarketing.com/blog/kongtractors-com-industry-marketing-project-content-guide",
@@ -780,8 +780,8 @@
           }
         }
       ],
-      "stage": "media-reviewed-awaiting-publisher",
-      "nextAction": "Existing sole publisher may retry this exact campaign item; retain independent factual audit and production checks.",
+      "stage": "verified",
+      "nextAction": "Verified; prior attempt evidence retained",
       "lastFailure": {
         "slug": "kongtractors-com-industry-marketing-project-content-guide",
         "at": "2026-11-12T04:30:17.740787+00:00",
@@ -810,7 +810,51 @@
           "mediaSha256": "dbc6e9a04b4fe783a773c5cc8dd5e9efa22020871de8b28a1fae1c37b026ced9"
         }
       ],
-      "nextRetryAt": "2026-11-12T04:49:56Z"
+      "sourceFailures": [],
+      "publicationAuthorship": "generated",
+      "sourceEvidence": [
+        {
+          "url": "https://kongtractors.com/",
+          "sha256": "9a7ded2ea18fee30b32a962d3d705e174e98060238bdef24d3b18a0ce14a30ac"
+        },
+        {
+          "url": "https://kongtractors.com/guest-post.html",
+          "sha256": "646bc7826fae56cf41dc6d7305bbeacd90118dfe9a3da07d0561b5b61d7096f5"
+        }
+      ],
+      "articleSha256": "facfadc161d7ca06c255933a7f94f481af742af7cf2a79c0cd1a77a1bb8768f3",
+      "verifiedAt": "2026-11-12T05:04:38.651336+00:00",
+      "evidence": {
+        "http": true,
+        "canonical": true,
+        "schema": true,
+        "discovery": true,
+        "desktop": true,
+        "phone": true,
+        "image": true,
+        "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43158636901",
+        "trigger": "workflow_dispatch",
+        "browserVersion": "156.0.8078.79",
+        "browserExecutable": "/usr/bin/google-chrome",
+        "rules": {
+          "sourceCommit": "c80796e7c407f63a9bdc0d1c29b03b22a218658c",
+          "hashes": {
+            "docs/IAM-SOT.md": "bee6bafd970b63fd3a7cbb2faea7fb35fa900f1a2789fcf80ffc52bc55afd146",
+            "operations/iam/policy.json": "15a61feccc19e28b6a28d884de19ec0acb818d399201d8e643edd8bd2240ad54",
+            "operations/iam/build-contract.json": "006ee864333b76530c16cc8d552e47f9dff6c74fbdade940d74f00efee7cb494"
+          },
+          "sotVersion": 2
+        },
+        "productionVerified": true,
+        "generatedAndAudited": true,
+        "automaticRecovery": {
+          "verified": true,
+          "kind": "verified-health-recovery",
+          "originRun": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43155109656",
+          "originEvent": "push",
+          "reason": "Actual same-repository health run and GitHub Actions bot verified"
+        }
+      }
     },
     "plow-ltd-industry-marketing-project-content-guide": {
       "status": "blocked",
@@ -1379,13 +1423,37 @@
         },
         "sotVersion": 2
       }
+    },
+    {
+      "slug": "kongtractors-com-industry-marketing-project-content-guide",
+      "verifiedAt": "2026-11-12T05:04:38.651336+00:00",
+      "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43158636901",
+      "trigger": "workflow_dispatch",
+      "generatedAndAudited": true,
+      "productionVerified": true,
+      "rules": {
+        "sourceCommit": "c80796e7c407f63a9bdc0d1c29b03b22a218658c",
+        "hashes": {
+          "docs/IAM-SOT.md": "bee6bafd970b63fd3a7cbb2faea7fb35fa900f1a2789fcf80ffc52bc55afd146",
+          "operations/iam/policy.json": "15a61feccc19e28b6a28d884de19ec0acb818d399201d8e643edd8bd2240ad54",
+          "operations/iam/build-contract.json": "006ee864333b76530c16cc8d552e47f9dff6c74fbdade940d74f00efee7cb494"
+        },
+        "sotVersion": 2
+      },
+      "automaticRecovery": {
+        "verified": true,
+        "kind": "verified-health-recovery",
+        "originRun": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43155109656",
+        "originEvent": "push",
+        "reason": "Actual same-repository health run and GitHub Actions bot verified"
+      }
     }
   ],
   "lastRun": {
     "at": "2026-11-12T05:02:33.706425+00:00",
     "owner": "43158636901-1",
     "trigger": "workflow_dispatch",
-    "status": "checking",
+    "status": "verified-publication",
     "policyDigest": "ab1639931848bf2eb2000365da96649afcc031be8ca3f6230a993f0041888247",
     "rules": {
       "sourceCommit": "c80796e7c407f63a9bdc0d1c29b03b22a218658c",
@@ -1911,11 +1979,13 @@
     "iam:kongtractors-com-industry-marketing-project-content-guide:media": {
       "id": "iam:kongtractors-com-industry-marketing-project-content-guide:media",
       "slug": "kongtractors-com-industry-marketing-project-content-guide",
-      "status": "open",
+      "status": "resolved",
       "reason": "Exact company/source media and actual visual review missing for kongtractors.com",
       "stage": "media",
       "lastSeenAt": "2026-11-12T04:30:17.740787+00:00",
-      "delivery": "unproven"
+      "delivery": "unproven",
+      "resolvedAt": "2026-11-12T05:04:38.651336+00:00",
+      "resolution": "Exact canonical verified"
     },
     "iam:plow-ltd-industry-marketing-project-content-guide:media": {
       "id": "iam:plow-ltd-industry-marketing-project-content-guide:media",
@@ -2352,9 +2422,5 @@
         "sotVersion": 2
       }
     }
-  ],
-  "lease": {
-    "owner": "43158636901-1",
-    "until": "2026-11-12T05:32:33.723239+00:00"
-  }
+  ]
 }
