@@ -433,6 +433,14 @@
       "canonical": "https://www.industryarmymarketing.com/blog/stratapropertyservices-com-industry-marketing-project-content-guide",
       "observedAt": "2026-11-11T07:40:16.454117+00:00",
       "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite"
+    },
+    "irrigation-ltd-launch-practical-guides-planning": {
+      "status": "claimed",
+      "attempts": 1,
+      "sourceDomain": "irrigation.ltd",
+      "canonical": "https://www.industryarmymarketing.com/blog/irrigation-ltd-launch-practical-guides-planning",
+      "owner": "iam-irrigation-manual-20261111-1794443165260",
+      "basis": "Explicitly authorized new network launch; manual factual article under existing shared writer lease"
     }
   },
   "receipts": [],
@@ -563,5 +571,9 @@
       },
       "automaticPublication": false
     }
-  ]
+  ],
+  "lease": {
+    "owner": "iam-irrigation-manual-20261111-1794443165260",
+    "until": "2026-11-12T00:56:05.260Z"
+  }
 }
