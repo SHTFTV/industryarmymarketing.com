@@ -16,14 +16,104 @@
   "sharedStandard": {
     "versionRequired": 2,
     "verifiedInterface": null,
-    "status": "blocked-required-v2-not-in-canonical-main",
-    "observedCanonicalVersion": 1,
+    "status": "available-v2-interface-inspected-runtime-adoption-unproven",
+    "observedCanonicalVersion": 2,
     "observedCanonicalRepository": "SHTFTV/markett-ca",
-    "observedCanonicalPath": "lib/site-job-standard.mjs"
+    "observedCanonicalPath": "lib/site-job-standard.mjs",
+    "availableInterface": {
+      "observedCommit": "68f190e92f1d0dc9cd3ad932104000f436192939",
+      "operatingContract": "docs/completion/OPERATING-STANDARD.md",
+      "runtimeAdapter": "lib/site-job-standard.mjs#executeSiteJob",
+      "roleEvaluator": "lib/four-role-evidence.mjs#evaluateFourRoles",
+      "operatingStandardVersion": 2,
+      "status": "source-interface-inspected; deployed-IAM-adoption-not-proven"
+    }
   },
   "alertDelivery": {
     "status": "unproven",
     "outboxIsDelivery": false
   },
-  "operationallyComplete": false
+  "operationallyComplete": false,
+  "roleSotRefs": {
+    "worker": "https://github.com/SHTFTV/industryarmymarketing.com/blob/main/docs/IAM-SOT.md#worker",
+    "visual-checker": "https://github.com/SHTFTV/industryarmymarketing.com/blob/main/docs/IAM-SOT.md#visual-checker",
+    "supervisor": "https://github.com/SHTFTV/industryarmymarketing.com/blob/main/docs/IAM-SOT.md#supervisor",
+    "independent-watchdog": "https://github.com/SHTFTV/industryarmymarketing.com/blob/main/docs/IAM-SOT.md#independent-watchdog"
+  },
+  "requiredIntegrations": [
+    {
+      "id": "github-canonical-iam",
+      "owner": "IAM source operator",
+      "scope": "SHTFTV/industryarmymarketing.com only; existing publisher contents write, checker contents read, supervisor existing actions recovery scope",
+      "roles": [
+        "worker",
+        "visual-checker",
+        "supervisor"
+      ],
+      "status": "source-access-verified; role runtime evidence separate",
+      "evidence": "Canonical main source and actual workflow run APIs read November12"
+    },
+    {
+      "id": "iam-writing-model",
+      "owner": "IAM publisher runtime owner",
+      "scope": "Existing IAM repository OPENAI_API_KEY and OPENAI_MODEL; no credential reuse by checker/supervisor/watchdog",
+      "roles": [
+        "worker"
+      ],
+      "status": "prior-real-generation-and-audit-receipt; fresh-rule-bound runtime recheck required",
+      "evidence": "operations/iam/writer-access.json; no secret values"
+    },
+    {
+      "id": "iam-vercel",
+      "owner": "IAM deployment owner",
+      "scope": "Existing project prj_kMHNECehkyI6R7zANWDzyXMOLrtP; source-to-production receipt and role-specific control-plane evidence",
+      "roles": [
+        "worker",
+        "supervisor"
+      ],
+      "status": "source release verified; supervisor scoped control-plane runtime access not proven",
+      "evidence": "Production /source-version.json and actual Vercel deployment/source identity; current rule revision needs fresh proof"
+    },
+    {
+      "id": "public-production-browser",
+      "owner": "IAM visual-checker runtime",
+      "scope": "Read-only www.industryarmymarketing.com, its same-origin assets and own artifacts; no lead submission",
+      "roles": [
+        "visual-checker"
+      ],
+      "status": "production desktop/phone manually reviewed; scheduled checker evidence pending new rule revision",
+      "evidence": "Exact-page screenshots and role receipt required; push cannot count as schedule"
+    },
+    {
+      "id": "original-iam-intake",
+      "owner": "Original IAM Supabase account/project owner; actual organization unknown",
+      "scope": "Existing xgqlbobmnsgxivzxcayi only; private IAM data and existing admin policies",
+      "roles": [
+        "supervisor"
+      ],
+      "status": "access-denied; hosted capture/storage unverified",
+      "evidence": "Canonical .migration-backup/supabase/config.toml; management and provider UI deny exact project"
+    },
+    {
+      "id": "iam-owner-notification",
+      "owner": "IAM notification operator",
+      "scope": "Original project Resend configuration, verified sender and fixed existing owner recipient; no visitor auto-reply or unrelated outreach",
+      "roles": [
+        "supervisor"
+      ],
+      "status": "original source integration identified; actual credentials/sender/delivery unverified",
+      "evidence": "Migration backup send-seo-proposal; actual enquiry delivery test required"
+    },
+    {
+      "id": "external-role-watchdog",
+      "owner": "Shared MarkEtt operations source owner",
+      "scope": "Worker AND supervisor run/heartbeat reads, isolated incident state and owner-only delivery; no IAM lead contents/model/publish access",
+      "roles": [
+        "independent-watchdog"
+      ],
+      "status": "shared activation and delivered-recovery gates unresolved",
+      "evidence": "Canonical shared four-role evaluator; native GitHub health schedule cannot prove GitHub-silence monitoring"
+    }
+  ],
+  "roleConnectionOwnership": "Declarations and observed proof boundaries only; functional production tests and per-role canonical SOT receipts required."
 }

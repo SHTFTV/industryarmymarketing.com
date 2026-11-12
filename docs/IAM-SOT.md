@@ -1,6 +1,6 @@
 # Industry Army Marketing — canonical operating source of truth
 
-Version 2, revision 2.2, November 11, 2026. Owner-authorized original-seven worker retrofit.
+Version 2, revision 2.3, November 12, 2026. Owner-authorized original-seven worker retrofit.
 
 Canonical source: SHTFTV/industryarmymarketing.com, main. Existing Vercel project industryarmymarketing, prj_kMHNECehkyI6R7zANWDzyXMOLrtP. Public canonical https://www.industryarmymarketing.com/. Preserve the current React/Vite journal, routes, customer enquiry ownership, existing services and publication dates.
 
@@ -32,3 +32,30 @@ Persistent blocker receipts are site-local until an actual shared alert adapter 
 
 ## Authorized generated welcome template
 A user-authorized launch explicitly marked generateAndAudit uses its reviewed exact template identity, source URLs, parent statement and approved image as constraints, then creates original source-grounded body copy and runs the independent factual audit before publication. Preserve the required welcome title and verified relationship in the audited article. This is automatic authorship and must be recorded separately from a directly published reviewed manuscript. It does not authorize a second post, a cadence exception or changed ownership.
+
+
+## Shared authority and four-role connection scope
+
+All IAM roles use this canonical site SOT and operations/iam/build-contract.json. Do not create a competing site SOT or publisher. The shared definition is SHTFTV/markett-ca docs/completion/OPERATING-STANDARD.md, observed at 68f190e92f1d0dc9cd3ad932104000f436192939, with executable role IDs from lib/four-role-evidence.mjs: worker, visual-checker, supervisor, independent-watchdog. The available shared adapter is executeSiteJob in lib/site-job-standard.mjs at that commit. Availability is not deployed IAM adoption; verifiedInterface and full operational completion remain unproven until actual equivalent enforcement and production receipts pass. Shared v3 release/monitor holds remain with the shared source owner and are not bypassed by this site change.
+
+Connection requirements and non-secret ownership/status are recorded in this existing build contract. No secret, customer lead, private account email or password belongs in public source. A provider login, declared secret name or observed organization name is not functional access proof. Every role records its own actual approved SOT source/revision/hash, observer commit/run, provider and trigger. Native schedule, push and recovery stay distinct. A task receipt is never whole-site completion.
+
+### Worker
+
+The existing .github/workflows/iam-publisher.yml and scripts/iam/run.py remain the sole publisher, with the existing finite state, shared lease and 3600-second release interval. Its repository-scoped writer credential and selected model are used only by that role. GitHub source mutation, actual generation/audit, Vercel source binding and live verification require their own evidence. Previous access receipts become stale when approved rule hashes change; the existing verifier must obtain fresh proof. Guest-interest intake is a separate promised application flow, not authority for another article writer.
+
+### Visual checker
+
+Use the existing .github/workflows/iam-runtime-smoke.yml for read-only scheduled desktop/phone checks, independent of the publisher job. Load this same latest approved SOT/build contract per run and fence changed rules before receipt. Public-page and image fetches, the runner browser and own-repository artifact retention are sufficient; no model key, lead-table read or publisher write access is required. Retain exact-page 1440/390 screenshots and failed checks independently. Automated layout/image checks are mechanical evidence pending attributable visual/editorial review, not a taste, media-rights or whole-site completion certificate.
+
+### Supervisor
+
+Use the existing .github/workflows/iam-health.yml and scripts/iam-health-recovery.py. Load the same latest approved site rules and retain actual worker-run identity, production source identity and precise mismatch/failure. Its existing repository action permission may recover only the existing publisher under the bounded spacing/active-lease checks. Public source checks do not prove Vercel control-plane access, private intake storage or recipient delivery. Failed or unavailable dependencies remain explicit; a successful health workflow or accepted dispatch is not a publication receipt.
+
+### Independent watchdog
+
+The canonical independent watchdog belongs to the shared MarkEtt operations system and must operate outside the GitHub scheduler it observes. It needs scoped worker AND supervisor heartbeat/run evidence, private incident state and an actual owner-delivery/recovery receipt. It does not need IAM lead contents, writer/model credentials or publication permission. No external monitor activation, new actor/key or shared source modification is authorized by a role declaration. The exact shared-source owner handoff must retain activation/transport gates until delivery and matching recovery are verified.
+
+### Original IAM intake dependency
+
+Original backend ref xgqlbobmnsgxivzxcayi is recovered from the canonical migration backup and existing Resend function; retain its data and policies. Current management connection and browser session explicitly deny access. Original owning organization is unknown; a different organization named IAM is not evidence of ownership. Existing notification destination is colin@industryarmymarketing.com, sourced from that function. Owner recovery authorization is already received; credentials and connection grants stay in secure provider UI. The reviewed repair package is prepared separately and inactive. Article uploads, company verification and publication remain closed/separate. Real durable storage, outbox, provider acceptance, delivery and recipient receipt must be tested independently before hosted intake is reported working. No unrelated database or paid duplicate is a fallback.

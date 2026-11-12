@@ -9,6 +9,7 @@ import urllib.request
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'scripts/iam'))
 from poll_due import should_execute
+from prebuild import rules
 
 REPO='SHTFTV/industryarmymarketing.com'
 WORKFLOW='iam-publisher.yml'
@@ -24,6 +25,7 @@ def decision(state,runs,now,probe=False):
 
 def main():
     if os.environ.get('GITHUB_REPOSITORY')!=REPO:raise RuntimeError('IAM recovery scope mismatch')
+    loaded=rules(ROOT,remote=os.environ.get('GITHUB_ACTIONS')=='true')
     token=os.environ['GITHUB_TOKEN']
     def api(path,method='GET',body=None):
         request=urllib.request.Request('https://api.github.com/repos/'+REPO+path,method=method,
@@ -37,12 +39,24 @@ def main():
     now=dt.datetime.now(dt.timezone.utc)
     state=json.loads((ROOT/'operations/iam/state.json').read_text())
     result=decision(state,runs,now,probe=os.environ.get('GITHUB_EVENT_NAME')=='push')
-    result.update(checkedAt=now.isoformat(),originRun='https://github.com/'+REPO+'/actions/runs/'+os.environ['GITHUB_RUN_ID'],publicationVerified=False)
+    result.update(role='supervisor',rules=loaded,observerSourceCommit=loaded['sourceCommit'],observerRunHeadSha=os.environ.get('GITHUB_SHA'),roleSotRef='https://github.com/'+REPO+'/blob/main/docs/IAM-SOT.md#supervisor',scope='Existing publisher run/recovery checks; full API/intake/delivery supervision unproven',checkedAt=now.isoformat(),originRun='https://github.com/'+REPO+'/actions/runs/'+os.environ['GITHUB_RUN_ID'],publicationVerified=False)
     if result['dispatch']:
         accepted=api('/actions/workflows/'+WORKFLOW+'/dispatches','POST',{'ref':'main','inputs':{'automatic_recovery':True,'recovery_origin_run':result['originRun']}})
         result['dispatchAccepted']=True
         result['acceptanceHttpStatus']=accepted.get('httpStatus',200)
         result['proof']='Dispatch acceptance only; child execution and publication require independent receipts'
+    try:
+        request=urllib.request.Request('https://www.industryarmymarketing.com/source-version.json',headers={'Accept':'application/json'})
+        with urllib.request.urlopen(request,timeout=20) as response:identity=json.load(response)
+        result['productionIdentity']={'repository':identity.get('repository'),'sourceCommit':identity.get('sourceCommit'),'sotSha256':identity.get('sotSha256'),'httpStatus':response.status}
+        result['productionSotMatches']=identity.get('sotSha256')==loaded['hashes']['docs/IAM-SOT.md']
+    except (OSError,ValueError) as exc:
+        result['productionIdentity']={'status':'unavailable','reason':type(exc).__name__}
+        result['productionSotMatches']=False
+    if rules(ROOT,remote=os.environ.get('GITHUB_ACTIONS')=='true')['hashes']!=loaded['hashes']:raise RuntimeError('Canonical approved SOT changed during supervisor run')
+    result['roleStatus']='partial; actual private intake/control-plane/delivered watchdog proof remains unresolved'
+    out=ROOT/'operations/iam/supervisor-proof';out.mkdir(parents=True,exist_ok=True)
+    (out/'result.json').write_text(json.dumps(result,indent=2)+'\n')
     print(json.dumps(result))
     summary=os.environ.get('GITHUB_STEP_SUMMARY')
     if summary:
