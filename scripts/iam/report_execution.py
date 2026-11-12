@@ -6,6 +6,8 @@ import pathlib
 import re
 import subprocess
 import urllib.request
+from prebuild import assess
+from blockers import observe
 
 def execution(jobs, state, context):
     publish=next((j for j in jobs if j['name']=='publish'),None)
@@ -48,14 +50,20 @@ def main():
     path=pathlib.Path('operations/iam/state.json');state=json.loads(path.read_text())
     receipt=execution(jobs,state,{'runUrl':f'https://github.com/{repository}/actions/runs/{run}',
         'checkedAt':dt.datetime.now(dt.timezone.utc).isoformat(),'event':os.environ['GITHUB_EVENT_NAME'],'jobResult':os.environ['IAM_JOB_RESULT']})
-    record(state,receipt);path.write_text(json.dumps(state,indent=2)+'\n')
+    record(state,receipt)
+    readiness=assess(pathlib.Path.cwd())
+    outbox=observe(state,readiness,receipt['checkedAt'])
+    pathlib.Path('operations/iam/alert-outbox.json').write_text(json.dumps(outbox,indent=2)+'\n')
+    pathlib.Path('operations/iam/readiness.json').write_text(json.dumps(readiness,indent=2)+'\n')
+    path.write_text(json.dumps(state,indent=2)+'\n')
     public=pathlib.Path('artifacts/industry-army/public/iam-publishing-status.json')
-    public.write_text(json.dumps({'schemaVersion':1,**receipt,'credentialAndMediaGates':'Independent requirements; successful infrastructure is not provider access or publication proof','independentAlertDeliveryVerified':False},indent=2)+'\n')
+    public.write_text(json.dumps({'schemaVersion':1,**receipt,'credentialAndMediaGates':'Independent requirements; successful infrastructure is not provider access or publication proof','independentAlertDeliveryVerified':False,'persistentOpenBlockers':len(outbox['issues']),'dependentExtensionsAllowed':readiness['dependentExtensionsAllowed']},indent=2)+'\n')
     subprocess.run(['git','config','user.name','IAM execution evidence'],check=True)
     subprocess.run(['git','config','user.email','iam-publisher@users.noreply.github.com'],check=True)
-    subprocess.run(['git','add',str(path),str(public)],check=True)
+    subprocess.run(['git','add',str(path),str(public),'operations/iam/alert-outbox.json','operations/iam/readiness.json'],check=True)
     subprocess.run(['git','commit','-m','IAM: record actual remote execution including prewriter failures'],check=True)
     subprocess.run(['git','push','origin','HEAD:main'],check=True)
     print(json.dumps(receipt))
 
 if __name__=='__main__':main()
+

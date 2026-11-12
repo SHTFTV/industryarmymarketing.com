@@ -51,6 +51,7 @@ def claim(state, slug, owner, now):
         raise ValueError('At least 3600 seconds since verified publication required')
     state['lease'] = {'owner': owner, 'until': (now + dt.timedelta(minutes=30)).isoformat()}
     row.update(status='claimed', owner=owner, attempts=row['attempts'] + 1)
+    row.setdefault('attemptHistory',[]).append({'attempt':row['attempts'],'owner':owner,'at':now.isoformat(),'rules':state.get('loadedRules')})
     return row
 
 def renew(state, owner, now):
@@ -67,7 +68,9 @@ def complete(state, slug, owner, evidence, now):
         raise ValueError('Complete live evidence and exact claim required')
     row.update(status='verified', verifiedAt=now.isoformat(), evidence=evidence)
     state['lastVerifiedAt'] = now.isoformat()
-    state['receipts'].append({'slug': slug, 'verifiedAt': now.isoformat(), 'runUrl': evidence['runUrl'], 'trigger': evidence['trigger']})
+    state['receipts'].append({'slug': slug, 'verifiedAt': now.isoformat(), 'runUrl': evidence['runUrl'], 'trigger': evidence['trigger'],'generatedAndAudited':evidence.get('generatedAndAudited',False),'productionVerified':True,'rules':evidence.get('rules')})
+    for issue in state.get('persistentBlockers',{}).values():
+        if issue.get('slug')==slug and issue.get('status')=='open':issue.update(status='resolved',resolvedAt=now.isoformat(),resolution='Exact canonical verified')
     state.pop('lease', None)
 
 def daily_due(now, state):
@@ -84,3 +87,4 @@ def block(state, slug, owner, stage, action):
 def policy_context(policy, evidence):
     # Untrusted source text is a separate data item, never instructions/policy.
     return {'policy': policy, 'policyDigest': digest(policy), 'sourceEvidence': evidence}
+

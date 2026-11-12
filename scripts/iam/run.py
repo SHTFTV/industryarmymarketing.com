@@ -10,6 +10,8 @@ import time
 from runtime import read, save, stamp, reconcile, claim, block, complete, policy_context, digest, daily_due
 from source import fetch_source
 from writer import write_article
+from prebuild import rules
+from recovery import ItemHold, eligible, recover_expired, fetch_all, retain_failure
 from approved_launches import pending_launches, source_checked_post
 
 ROOT=pathlib.Path.cwd()
@@ -76,16 +78,23 @@ def live_check(post, expected_text, state, owner):
                         runUrl=os.environ['IAM_RUN_URL'],trigger=os.environ.get('GITHUB_EVENT_NAME','unknown'))
         finally: browser.close()
 
-def main():
+def cycle(excluded):
+    loaded=rules(ROOT,remote=os.environ.get('GITHUB_ACTIONS')=='true')
     policy=read('operations/iam/policy.json')
     policy_hash=digest(policy)
     journal=read(JOURNAL)
     state=reconcile(read(STATE),journal,read('docs/campaigns/construction-hourly/queue-baseline.json'))
+    recover_expired(state,journal,dt.datetime.now(dt.timezone.utc))
+    state['loadedRules']=loaded
     owner=os.environ.get('GITHUB_RUN_ID','local-dryrun')+'-'+os.environ.get('GITHUB_RUN_ATTEMPT','1')
-    state['lastRun']={'at':stamp(),'owner':owner,'trigger':os.environ.get('GITHUB_EVENT_NAME','local'),'status':'checking','policyDigest':policy_hash}
+    state['lastRun']={'at':stamp(),'owner':owner,'trigger':os.environ.get('GITHUB_EVENT_NAME','local'),'status':'checking','policyDigest':policy_hash,'rules':loaded}
     pending=[a for a in read('docs/campaigns/construction-hourly/queue-baseline.json')['articles'] if state['rows'][a['slug']]['status'] in ('pending','retry')]
     approved = pending_launches(ROOT, state, journal)
     if approved: pending = approved + pending
+    existing={p['slug']:p for p in journal}
+    resumes=[{'slug':slug,'siteDomain':row['sourceDomain'],'resumePost':existing[slug]} for slug,row in state['rows'].items() if row.get('status')=='verification-pending' and slug in existing]
+    pending=resumes+pending
+    pending=[a for a in pending if a['slug'] not in excluded and eligible(state['rows'][a['slug']],dt.datetime.now(dt.timezone.utc))]
     daily=False
     try:
         if state.get('lease') and dt.datetime.fromisoformat(state['lease']['until'])>dt.datetime.now(dt.timezone.utc) and state['lease']['owner']!=owner:
@@ -110,22 +119,33 @@ def main():
             if unresolved: raise RuntimeError('Remaining campaign is blocked, not complete')
             state['lastRun']['status']='finite-campaign-complete'
             return
-        if not pending[0].get('approvedPost') and not os.environ.get('OPENAI_API_KEY'): raise RuntimeError('IAM_OPENAI_KEY_MISSING: install separate authorized repository secret; never copy another restricted key')
-        if not pending[0].get('approvedPost') and not os.environ.get('OPENAI_MODEL'): raise RuntimeError('IAM_OPENAI_MODEL_MISSING: select model available to IAM key')
+        if not (pending[0].get('approvedPost') or pending[0].get('resumePost')) and not os.environ.get('OPENAI_API_KEY'): raise RuntimeError('IAM_OPENAI_KEY_MISSING: install separate authorized repository secret; never copy another restricted key')
+        if not (pending[0].get('approvedPost') or pending[0].get('resumePost')) and not os.environ.get('OPENAI_MODEL'): raise RuntimeError('IAM_OPENAI_MODEL_MISSING: select model available to IAM key')
         now=dt.datetime.now(dt.timezone.utc)
         if state.get('lastVerifiedAt') and (now-dt.datetime.fromisoformat(state['lastVerifiedAt'])).total_seconds()<3600:
             state['lastRun']['status']='cadence-not-due'; return
         article=pending[0];slug=article['slug']
+        if article.get('resumePost'):state['rows'][slug]['status']='retry'
         claim(state,slug,owner,now);save(STATE,state);persist('IAM: claim sole hourly writer')
+        published=bool(article.get('resumePost'));stage='preflight'
         try:
+            if article.get('resumePost'):
+                post=article['resumePost'];evidence=live_check(post,'',state,owner)
+                evidence.update(rules=loaded,recoveredExistingCanonical=True,productionVerified=True,generatedAndAudited=state['rows'][slug].get('publicationAuthorship')=='generated')
+                complete(state,slug,owner,evidence,dt.datetime.now(dt.timezone.utc))
+                state['lastRun']['status']='verified-recovered-publication';return
             # Real shared-site regressions stop new publishing, even if the next draft is ready.
             for recent in sorted(journal,key=lambda p:p['publishedAt'],reverse=True)[:3]:
                 live_check(recent,'',state,owner)
+            stage='media'
             media=read('operations/iam/media.json').get(slug)
             if not media: raise ValueError('Exact company/source media and actual visual review missing for '+article['siteDomain'])
             media_ok(media)
-            sources=[fetch_source(u) for u in article.get('primarySources',[])[:3]]
-            if not sources: raise ValueError('No approved factual source')
+            stage='source'
+            sources,source_failures=fetch_all(article.get('primarySources',[]),fetch_source)
+            state['rows'][slug]['sourceFailures']=source_failures
+            if not sources: raise __import__('urllib.error',fromlist=['URLError']).URLError('All assigned sources failed')
+            stage='generation'
             if article.get('approvedPost'):
                 post=source_checked_post(article,sources)
                 if post['image']!=media['hero']['path'] or post['ogImage']!=media['share']['path']:
@@ -133,6 +153,7 @@ def main():
                 draft={'intro':post['richContent']['intro']}
             else:
                 context=policy_context(policy,sources)
+                context['policy']={**policy,'canonicalSot':(ROOT/'docs/IAM-SOT.md').read_text()}
                 context.update(intent=article['intent'],existingTitles=[p['title'] for p in journal],siteDomain=article['siteDomain'])
                 draft=write_article(context)
                 if digest(read('operations/iam/policy.json'))!=policy_hash: raise ValueError('Approved policy changed; discard stale draft')
@@ -146,9 +167,16 @@ def main():
             if digest(read('operations/iam/policy.json'))!=policy_hash:
                 raise ValueError('Approved policy changed; discard stale draft')
             post.update(publishedAt=stamp(),date=dt.datetime.now(dt.timezone.utc).astimezone(__import__('zoneinfo').ZoneInfo('America/Vancouver')).strftime('%B %d, %Y'))
+            if rules(ROOT,remote=os.environ.get('GITHUB_ACTIONS')=='true')['hashes']!=loaded['hashes']:
+                raise RuntimeError('Loaded canonical rules changed before publication')
+            stage='publication'
             if any(p['slug']==slug for p in journal): raise ValueError('Duplicate existing canonical')
+            state['rows'][slug].update(stage='uploading',publicationAuthorship='manual' if article.get('approvedPost') else 'generated',sourceEvidence=[{'url':v['url'],'sha256':v.get('sha256')} for v in sources],articleSha256=hashlib.sha256(json.dumps(post,sort_keys=True).encode()).hexdigest())
+            if not article.get('approvedPost'):save(ROOT/'operations/iam/drafts'/(slug+'.json'),draft)
             journal.insert(0,post);save(JOURNAL,journal);persist('IAM: publish reviewed authorized launch' if article.get('approvedPost') else 'IAM: publish one independently audited network article')
+            published=True;stage='verification'
             evidence=live_check(post,draft['intro'],state,owner)
+            evidence.update(rules=loaded,productionVerified=True,generatedAndAudited=not bool(article.get('approvedPost')))
             if article.get('approvedPost'):
                 evidence.update(authorship='user-authorized-manual',automaticAuthorship=False)
             complete(state,slug,owner,evidence,dt.datetime.now(dt.timezone.utc))
@@ -160,13 +188,27 @@ def main():
                 save('operations/iam/release-intake.json',intake)
             state['lastRun']['status']='verified-publication'
         except Exception as e:
-            block(state,slug,owner,'publication-gate',str(e)[:350]);raise
+            retain_failure(state,slug,stage,e,dt.datetime.now(dt.timezone.utc),published=published)
+            if stage in ('media','source') or (stage=='generation' and isinstance(e,ValueError)):
+                raise ItemHold(slug) from e
+            raise
     except Exception as e:
-        state['lastRun'].update(status='failed',error=str(e)[:350],nextAction='Resolve the exact recorded gate; do not reset attempts, reseed history or count zero as publication')
+        state['lastRun'].update(status='item-held-continuing' if isinstance(e,ItemHold) else 'failed',error=type(e).__name__ if hasattr(e,'headers') else str(e)[:350],nextAction='Resolve the exact recorded gate; do not reset attempts, reseed history or count zero as publication')
         raise
     finally:
         save(STATE,state)
         if os.environ.get('GITHUB_ACTIONS')=='true': persist('IAM: preserve run outcome and publication evidence')
 
+def main():
+    excluded=set();started=time.monotonic()
+    for _ in range(8):
+        if time.monotonic()-started>900:break
+        try:
+            cycle(excluded);return
+        except ItemHold as error:
+            excluded.add(error.slug)
+    raise RuntimeError('Bounded IAM invocation retained item holds; later candidates remain queued')
+
 if __name__=='__main__': main()
+
 

@@ -39,3 +39,9 @@ October 25 owner-authorised portfolio batch: 25 original brand stories are in bu
 Only new IAM construction campaign entries set `campaignSite` to the audited source hostname (for example `buildershaus.com` or `roofers.io`) and optionally `campaignLabel` to a short brand/industry label. Retain `contactBusiness: "iam"`. `CampaignContactCard` then supplies the shared native hide/reopen control with the stable summary `IAM · Construction marketing`; it links only to `https://www.industryarmymarketing.com/contact?request=guest-post&ref_site=ENCODED_HOSTNAME`. Do not supply a URL, path or query in `campaignSite`. Unflagged archive entries render no campaign card, and named client cards stay unchanged.
 
 The first BuildersHaus guide preserves its actual October 27 publication time and approved BuildersHaus visual strip. Future articles must supply relevant permission-cleared hero/share artwork and an appropriate narrow visual treatment; the shared card is not a substitute for topic-specific imagery or an excuse to clone the first story. One source brand and distinct useful contractor topic per campaign article. No source-site upload form, lead delivery, rankings or ownership transfer should be implied without evidence.
+
+
+## Canonical runtime and PREBUILD gate — version 2
+
+Read [IAM-SOT.md](IAM-SOT.md) before dependent work. Run `python scripts/iam/prebuild.py --require-ready` before substantial dependent extensions. Prove source-to-production, required service access and a minimal real production workflow first. Existing healthy service, prerequisite repairs and exact already authorized welcome manuscripts remain independent. Current cloud finite-state/shared lease authority is operations/iam/state.json; do not restart the historical SQLite writer or reseed it. Measured missing prerequisites are persistent blockers, not permission to borrow credentials or claim automation is ready.
+

@@ -9,6 +9,13 @@ on:
       - 'scripts/iam/approved_launches.py'
       - 'scripts/iam/test_approved_launches.py'
       - 'scripts/iam/run.py'
+      - 'scripts/iam/prebuild.py'
+      - 'scripts/iam/recovery.py'
+      - 'scripts/iam/verify_writer.py'
+      - 'scripts/iam/verify_production.py'
+      - 'scripts/iam/test_recovery.py'
+      - 'docs/IAM-SOT.md'
+      - 'operations/iam/build-contract.json'
       - 'operations/iam/approved-launches.json'
       - 'operations/iam/approved-launches/**'
 permissions:
@@ -37,6 +44,22 @@ jobs:
         run: |
           python -m pip install --retries 3 --timeout 30 pillow==12.0.0 playwright==1.56.0 tzdata
           python -c 'from playwright.sync_api import sync_playwright; p=sync_playwright().start(); b=p.chromium.launch(); print("Actual Chromium launch passed"); b.close(); p.stop()'
+      - name: Measure canonical source reaching actual production
+        continue-on-error: true
+        env:
+          IAM_RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: python scripts/iam/verify_production.py
+      - name: Measure installed IAM generation and independent factual audit
+        continue-on-error: true
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
+          IAM_RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: python scripts/iam/verify_writer.py
+      - name: Persist measured prerequisite evidence
+        if: always()
+        run: |
+          PYTHONPATH=scripts/iam python -c "from run import persist; persist('IAM: retain measured source and service prerequisite evidence')"
       - name: One source-to-verified-publication transaction
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
@@ -71,4 +94,5 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
           IAM_JOB_RESULT: ${{ needs.publish.result }}
         run: python scripts/iam/report_execution.py
+
 

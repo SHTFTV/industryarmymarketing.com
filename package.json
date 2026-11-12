@@ -7,7 +7,8 @@
     "build": "node scripts/release-media-check.mjs && pnpm --filter @workspace/industry-army build",
     "typecheck:libs": "tsc --build",
     "typecheck": "echo \"typecheck skipped on Vercel\"",
-    "test:site-audit": "node --test scripts/site-audit/*.test.mjs"
+    "test:site-audit": "node --test scripts/site-audit/*.test.mjs",
+    "build:dependent": "python3 scripts/iam/prebuild.py --require-ready && pnpm run build"
   },
   "private": true,
   "dependencies": {

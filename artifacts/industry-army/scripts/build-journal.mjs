@@ -1,4 +1,5 @@
 import fs from 'node:fs';
+import crypto from 'node:crypto';
 import path from 'node:path';
 import {createServer} from 'vite';
 const root=process.cwd(),dist=path.join(root,'dist');
@@ -28,5 +29,7 @@ try {
  const esc=s=>s.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
  const items=journal.filter(p=>!rss.includes('/blog/'+p.slug)).map(p=>`<item><title>${esc(p.title)}</title><link>https://www.industryarmymarketing.com/blog/${p.slug}</link><guid>https://www.industryarmymarketing.com/blog/${p.slug}</guid><pubDate>${new Date(p.publishedAt).toUTCString()}</pubDate><description>${esc(p.excerpt)}</description></item>`).join('');
  rss=rss.replace('<item>',items+'<item>');fs.writeFileSync(path.join(dist,'rss.xml'),rss);
+ fs.writeFileSync(path.join(dist,'source-version.json'),JSON.stringify({schemaVersion:1,repository:'SHTFTV/industryarmymarketing.com',sourceCommit:process.env.VERCEL_GIT_COMMIT_SHA||process.env.GITHUB_SHA||null,sotSha256:crypto.createHash('sha256').update(fs.readFileSync(path.join(root,'../../docs/IAM-SOT.md'))).digest('hex'),journalSha256:crypto.createHash('sha256').update(fs.readFileSync(path.join(root,'src/data/buildJournal.json'))).digest('hex')})+'\n');
  console.log('Prerendered IAM homepage, blog and '+journal.length+' build-journal articles.');
 } finally {await server.close();}
+

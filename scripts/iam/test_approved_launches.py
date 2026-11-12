@@ -51,20 +51,22 @@ class ApprovedLaunchTests(unittest.TestCase):
         post['title']='Changed after loading'
         self.assertNotEqual(post['title'],candidate['approvedPost']['title'])
 
-    def invoke_writer(self,last=None):
+    def invoke_writer(self,last=None,media_failure_first=False,initial=None,journal_records=None):
         import run
         journal=self.root/'artifacts/industry-army/src/data/buildJournal.json'
         journal.parent.mkdir(parents=True)
-        journal.write_text('[]')
+        journal.write_text(json.dumps(journal_records or []))
         baseline=self.root/'docs/campaigns/construction-hourly/queue-baseline.json'
         baseline.parent.mkdir(parents=True)
         baseline.write_text('{"articles":[]}')
+        (self.root/'docs/IAM-SOT.md').write_text('IAM canonical SOT version 2')
+        (self.ops/'build-contract.json').write_text('{}')
         (self.ops/'policy.json').write_text(json.dumps({'postDefaults':{}}))
-        (self.ops/'state.json').write_text(json.dumps({'rows':{},'receipts':[],**({'lastVerifiedAt':last} if last else {})}))
+        (self.ops/'state.json').write_text(json.dumps({'rows':{},'receipts':[],**({'lastVerifiedAt':last} if last else {}),**(initial or {})}))
         (self.ops/'media.json').write_text(json.dumps({e['slug']:{'hero':{'path':'/launch.jpg'},'share':{'path':'/launch.jpg'}} for e in self.entries}))
         evidence={k:True for k in ['http','canonical','schema','discovery','desktop','phone','image']}
         evidence.update(runUrl='https://github.com/example/run',trigger='schedule')
-        with patch.dict(os.environ,{},clear=True),patch.object(run,'ROOT',self.root),patch.object(run,'STATE',self.ops/'state.json'),patch.object(run,'JOURNAL',journal),patch.object(run,'persist'),patch.object(run,'media_ok'),patch.object(run,'fetch_source',return_value={'text':'Example Parent.tv','url':'https://example.com/'}),patch.object(run,'live_check',return_value=evidence),patch.object(run,'write_article',side_effect=AssertionError('Approved launch must not call generation')):
+        with patch.dict(os.environ,{},clear=True),patch.object(run,'ROOT',self.root),patch.object(run,'STATE',self.ops/'state.json'),patch.object(run,'JOURNAL',journal),patch.object(run,'persist'),patch.object(run,'media_ok',side_effect=[ValueError('Bad first media'),None] if media_failure_first else None),patch.object(run,'fetch_source',return_value={'text':'Example Parent.tv','url':'https://example.com/'}),patch.object(run,'live_check',return_value=evidence),patch.object(run,'write_article',side_effect=AssertionError('Approved launch must not call generation')):
             old=Path.cwd()
             try:
                 os.chdir(self.root);run.main()
@@ -87,3 +89,4 @@ class ApprovedLaunchTests(unittest.TestCase):
         self.assertNotIn('lease',state)
 
 if __name__=='__main__':unittest.main()
+
