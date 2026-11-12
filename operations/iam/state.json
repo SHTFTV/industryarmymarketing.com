@@ -1358,13 +1358,13 @@
     }
   ],
   "lastRun": {
-    "at": "2026-11-12T04:40:31.260991+00:00",
+    "at": "2026-11-12T04:40:40.212395+00:00",
     "owner": "43156262803-1",
     "trigger": "workflow_dispatch",
-    "status": "item-held-continuing",
+    "status": "failed",
     "policyDigest": "ab1639931848bf2eb2000365da96649afcc031be8ca3f6230a993f0041888247",
     "rules": {
-      "sourceCommit": "68c49610d4495e00a055a9ffd093cbb95224cdc2",
+      "sourceCommit": "a3f9d120a13d148c4aa1c639d4952704b3466a12",
       "hashes": {
         "docs/IAM-SOT.md": "bee6bafd970b63fd3a7cbb2faea7fb35fa900f1a2789fcf80ffc52bc55afd146",
         "operations/iam/policy.json": "15a61feccc19e28b6a28d884de19ec0acb818d399201d8e643edd8bd2240ad54",
@@ -1379,7 +1379,7 @@
       "originEvent": "push",
       "reason": "Actual same-repository health run and GitHub Actions bot verified"
     },
-    "error": "Item held: stratapropertyservices-com-industry-marketing-project-content-guide",
+    "error": "Remaining campaign is blocked, not complete",
     "nextAction": "Resolve the exact recorded gate; do not reset attempts, reseed history or count zero as publication"
   },
   "lastExecution": {
@@ -1700,7 +1700,7 @@
   ],
   "approvedLaunchIssues": [],
   "loadedRules": {
-    "sourceCommit": "68c49610d4495e00a055a9ffd093cbb95224cdc2",
+    "sourceCommit": "a3f9d120a13d148c4aa1c639d4952704b3466a12",
     "hashes": {
       "docs/IAM-SOT.md": "bee6bafd970b63fd3a7cbb2faea7fb35fa900f1a2789fcf80ffc52bc55afd146",
       "operations/iam/policy.json": "15a61feccc19e28b6a28d884de19ec0acb818d399201d8e643edd8bd2240ad54",
