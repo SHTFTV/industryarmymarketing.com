@@ -138,5 +138,59 @@
       "mediaType": "website-screenshot",
       "sourcePhotoSearchResult": "Existing site bitmaps1200×800 and1536×1024 are below required native width; not upscaled or presented as new installation photographs."
     }
+  },
+  "sprayinsulations-ca-industry-marketing-project-content-guide": {
+    "hero": {
+      "path": "/brand-journal/wesprayit-p0327-exposed-floor.jpg",
+      "sha256": "925d6aaab95c3777ebb13df0a30734d74c3e46c29232c69307dc4e82bd169a92",
+      "nativeSize": [
+        1920,
+        1440
+      ],
+      "derivativeSize": [
+        1600,
+        900
+      ],
+      "crop": [
+        0,
+        180,
+        1920,
+        1260
+      ],
+      "upscaled": false,
+      "credit": "WeSprayIt.ca archive, photo P0327, via SprayInsulations.ca. Product, installer, location and installation date are not confirmed; the photograph does not establish performance or compliance.",
+      "rightsEvidence": "Existing company/site-photo reuse authorized for the IAM network campaign. Exact photograph matched to the WeSprayIt project-archive P0327 attribution at SprayInsulations.ca/projects/ and existing source archive; source original retained unchanged. No new image generation or third-party stock substitution.",
+      "sourceUrl": "https://sprayinsulations.ca/projects/",
+      "originalUrl": "https://sprayinsulations.ca/images/wesprayit-exposed-floor-underside.jpg",
+      "originalSha256": "90b0a75c18d91215873c7f634ce7747961ed0b5abd173c314ff4ad31b7d8b635",
+      "visualReview": "Original1920×1440 photograph and exact1600×900 derivative visually reviewed. Source photo P0327 and attribution checked in actual desktop1440 and phone390 browser layouts. Framing retains exposed-floor assembly and railing; no overflow on phone. Actual IAM article still must pass its own production desktop/phone checks.",
+      "checkedAt": "2026-11-12T10:24:19.973Z"
+    },
+    "share": {
+      "path": "/brand-journal/wesprayit-p0327-exposed-floor.jpg",
+      "sha256": "925d6aaab95c3777ebb13df0a30734d74c3e46c29232c69307dc4e82bd169a92",
+      "nativeSize": [
+        1920,
+        1440
+      ],
+      "derivativeSize": [
+        1600,
+        900
+      ],
+      "crop": [
+        0,
+        180,
+        1920,
+        1260
+      ],
+      "upscaled": false,
+      "credit": "WeSprayIt.ca archive, photo P0327, via SprayInsulations.ca. Product, installer, location and installation date are not confirmed; the photograph does not establish performance or compliance.",
+      "rightsEvidence": "Existing company/site-photo reuse authorized for the IAM network campaign. Exact photograph matched to the WeSprayIt project-archive P0327 attribution at SprayInsulations.ca/projects/ and existing source archive; source original retained unchanged. No new image generation or third-party stock substitution.",
+      "sourceUrl": "https://sprayinsulations.ca/projects/",
+      "originalUrl": "https://sprayinsulations.ca/images/wesprayit-exposed-floor-underside.jpg",
+      "originalSha256": "90b0a75c18d91215873c7f634ce7747961ed0b5abd173c314ff4ad31b7d8b635",
+      "visualReview": "Original1920×1440 photograph and exact1600×900 derivative visually reviewed. Source photo P0327 and attribution checked in actual desktop1440 and phone390 browser layouts. Framing retains exposed-floor assembly and railing; no overflow on phone. Actual IAM article still must pass its own production desktop/phone checks.",
+      "checkedAt": "2026-11-12T10:24:19.973Z"
+    }
   }
 }

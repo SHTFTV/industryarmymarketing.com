@@ -272,7 +272,7 @@
       "recoveryHistory": [
         {
           "at": "2026-11-12T10:17:47.424Z",
-          "reason": "Exact first-party website screenshot now captured at native1600\u00d7900 with honest concept/source credit and desktop/phone source review; original undersized-photo hold retained",
+          "reason": "Exact first-party website screenshot now captured at native1600×900 with honest concept/source credit and desktop/phone source review; original undersized-photo hold retained",
           "previousStatus": "blocked",
           "previousAttempts": 1,
           "mediaSha256": "63ebddadf19ddc20f0a42774b55ea22b6b0e2616b8d949132bf4795283c8bfcb"
@@ -338,7 +338,7 @@
       }
     },
     "sprayinsulations-ca-industry-marketing-project-content-guide": {
-      "status": "blocked",
+      "status": "retry",
       "attempts": 1,
       "sourceDomain": "sprayinsulations.ca",
       "canonical": "https://www.industryarmymarketing.com/blog/sprayinsulations-ca-industry-marketing-project-content-guide",
@@ -347,7 +347,19 @@
       "owner": "43115291818-1",
       "blockedAt": "2026-11-11T22:53:22.574997+00:00",
       "stage": "publication-gate",
-      "nextAction": "Exact company/source media and actual visual review missing for sprayinsulations.ca"
+      "nextAction": "Existing sole writer verifies original factual copy and live article using credited P0327 photo; preserve one-hour minimum spacing and all prior failures",
+      "recoveryHistory": [
+        {
+          "at": "2026-11-12T10:24:19.973Z",
+          "reason": "Real WeSprayIt archive P0327 source matched; native1600×900 derivative without upscaling prepared and source reviewed on desktop/phone",
+          "previousStatus": "blocked",
+          "previousAttempts": 1,
+          "mediaSha256": "925d6aaab95c3777ebb13df0a30734d74c3e46c29232c69307dc4e82bd169a92",
+          "sourceUrl": "https://sprayinsulations.ca/projects/",
+          "originalSha256": "90b0a75c18d91215873c7f634ce7747961ed0b5abd173c314ff4ad31b7d8b635"
+        }
+      ],
+      "nextRetryAt": "2026-11-12T10:24:19.973Z"
     },
     "steelfencing-ca-industry-marketing-project-content-guide": {
       "status": "blocked",
