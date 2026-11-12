@@ -307,14 +307,166 @@
         "blockedAt": null,
         "attempts": 1
       }
+    },
+    {
+      "eventId": "iam-notice-f0bd68570f6a1d7e1e5f",
+      "kind": "publishing_blocked",
+      "lifecycle": "open",
+      "deliveryStatus": "queued",
+      "triggeredAt": "2026-11-12T04:31:39.538980+00:00",
+      "deliveryAttempts": 0,
+      "deliveryReceipt": null,
+      "siteDomain": "excavators.tv",
+      "articleSlug": "excavators-tv-industry-marketing-project-content-guide",
+      "status": "blocked",
+      "reasonCode": "media_review_missing",
+      "summary": "excavators.tv publishing item remains blocked.",
+      "nextAction": "Review the exact company image and provenance for this item; other eligible items can continue.",
+      "proof": {
+        "blockedAt": null,
+        "attempts": 1
+      }
+    },
+    {
+      "eventId": "iam-notice-4d91d0cdb5d1a933ab50",
+      "kind": "publishing_blocked",
+      "lifecycle": "open",
+      "deliveryStatus": "queued",
+      "triggeredAt": "2026-11-12T04:31:39.538980+00:00",
+      "deliveryAttempts": 0,
+      "deliveryReceipt": null,
+      "siteDomain": "hardscapes.io",
+      "articleSlug": "hardscapes-io-industry-marketing-project-content-guide",
+      "status": "blocked",
+      "reasonCode": "media_review_missing",
+      "summary": "hardscapes.io publishing item remains blocked.",
+      "nextAction": "Review the exact company image and provenance for this item; other eligible items can continue.",
+      "proof": {
+        "blockedAt": null,
+        "attempts": 1
+      }
+    },
+    {
+      "eventId": "iam-notice-a41705a59e16055a23e8",
+      "kind": "publishing_blocked",
+      "lifecycle": "open",
+      "deliveryStatus": "queued",
+      "triggeredAt": "2026-11-12T04:31:39.538980+00:00",
+      "deliveryAttempts": 0,
+      "deliveryReceipt": null,
+      "siteDomain": "kongtractors.com",
+      "articleSlug": "kongtractors-com-industry-marketing-project-content-guide",
+      "status": "blocked",
+      "reasonCode": "media_review_missing",
+      "summary": "kongtractors.com publishing item remains blocked.",
+      "nextAction": "Review the exact company image and provenance for this item; other eligible items can continue.",
+      "proof": {
+        "blockedAt": null,
+        "attempts": 1
+      }
+    },
+    {
+      "eventId": "iam-notice-71c6b6c98facee0bd3c9",
+      "kind": "publishing_blocked",
+      "lifecycle": "open",
+      "deliveryStatus": "queued",
+      "triggeredAt": "2026-11-12T04:31:39.538980+00:00",
+      "deliveryAttempts": 0,
+      "deliveryReceipt": null,
+      "siteDomain": "plow.ltd",
+      "articleSlug": "plow-ltd-industry-marketing-project-content-guide",
+      "status": "blocked",
+      "reasonCode": "media_review_missing",
+      "summary": "plow.ltd publishing item remains blocked.",
+      "nextAction": "Review the exact company image and provenance for this item; other eligible items can continue.",
+      "proof": {
+        "blockedAt": null,
+        "attempts": 1
+      }
+    },
+    {
+      "eventId": "iam-notice-55c3356395770e90faa2",
+      "kind": "publishing_blocked",
+      "lifecycle": "open",
+      "deliveryStatus": "queued",
+      "triggeredAt": "2026-11-12T04:31:39.538980+00:00",
+      "deliveryAttempts": 0,
+      "deliveryReceipt": null,
+      "siteDomain": "plow.news",
+      "articleSlug": "plow-news-industry-marketing-project-content-guide",
+      "status": "blocked",
+      "reasonCode": "media_review_missing",
+      "summary": "plow.news publishing item remains blocked.",
+      "nextAction": "Review the exact company image and provenance for this item; other eligible items can continue.",
+      "proof": {
+        "blockedAt": null,
+        "attempts": 1
+      }
+    },
+    {
+      "eventId": "iam-notice-5ffd105bc2cd8bfff43d",
+      "kind": "publishing_blocked",
+      "lifecycle": "open",
+      "deliveryStatus": "queued",
+      "triggeredAt": "2026-11-12T04:31:39.538980+00:00",
+      "deliveryAttempts": 0,
+      "deliveryReceipt": null,
+      "siteDomain": "plowinstallations.com",
+      "articleSlug": "plowinstallations-com-industry-marketing-project-content-guide",
+      "status": "blocked",
+      "reasonCode": "media_review_missing",
+      "summary": "plowinstallations.com publishing item remains blocked.",
+      "nextAction": "Review the exact company image and provenance for this item; other eligible items can continue.",
+      "proof": {
+        "blockedAt": null,
+        "attempts": 1
+      }
+    },
+    {
+      "eventId": "iam-notice-e8ea27e6b9436c7b71cf",
+      "kind": "publishing_blocked",
+      "lifecycle": "open",
+      "deliveryStatus": "queued",
+      "triggeredAt": "2026-11-12T04:31:39.538980+00:00",
+      "deliveryAttempts": 0,
+      "deliveryReceipt": null,
+      "siteDomain": "plowwow.com",
+      "articleSlug": "plowwow-com-industry-marketing-project-content-guide",
+      "status": "blocked",
+      "reasonCode": "media_review_missing",
+      "summary": "plowwow.com publishing item remains blocked.",
+      "nextAction": "Review the exact company image and provenance for this item; other eligible items can continue.",
+      "proof": {
+        "blockedAt": null,
+        "attempts": 1
+      }
+    },
+    {
+      "eventId": "iam-notice-e36ae7fe2cc3a0a4520d",
+      "kind": "publishing_blocked",
+      "lifecycle": "open",
+      "deliveryStatus": "queued",
+      "triggeredAt": "2026-11-12T04:31:39.538980+00:00",
+      "deliveryAttempts": 0,
+      "deliveryReceipt": null,
+      "siteDomain": "promows.com",
+      "articleSlug": "promows-com-industry-marketing-project-content-guide",
+      "status": "blocked",
+      "reasonCode": "media_review_missing",
+      "summary": "promows.com publishing item remains blocked.",
+      "nextAction": "Review the exact company image and provenance for this item; other eligible items can continue.",
+      "proof": {
+        "blockedAt": null,
+        "attempts": 1
+      }
     }
   ],
   "producer": {
     "stage": "fired",
-    "firedAt": "2026-11-12T04:18:00.516310+00:00",
-    "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43153625476",
+    "firedAt": "2026-11-12T04:31:39.539232+00:00",
+    "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43155109729",
     "rules": {
-      "sourceCommit": "2910295f053530825c63b427dde44c8db0e40c3c",
+      "sourceCommit": "6db9f4b7d92eb0d337401c30dd37bc63920b4505",
       "hashes": {
         "docs/IAM-SOT.md": "bee6bafd970b63fd3a7cbb2faea7fb35fa900f1a2789fcf80ffc52bc55afd146",
         "operations/iam/policy.json": "15a61feccc19e28b6a28d884de19ec0acb818d399201d8e643edd8bd2240ad54",
