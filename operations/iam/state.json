@@ -1634,27 +1634,26 @@
     }
   ],
   "lastRun": {
-    "at": "2026-11-12T13:08:13.469724+00:00",
-    "owner": "43224323290-1",
-    "trigger": "workflow_dispatch",
-    "status": "verified-publication",
+    "at": "2026-11-12T21:38:20.644239+00:00",
+    "owner": "43311956576-1",
+    "trigger": "push",
+    "status": "failed",
     "policyDigest": "ab1639931848bf2eb2000365da96649afcc031be8ca3f6230a993f0041888247",
     "rules": {
-      "sourceCommit": "f34e60bfa6649255d4f1c49efe1be7d2324ba73f",
+      "sourceCommit": "b0418f332ea8e1e4ea111e6743c078aa9ba21e98",
       "hashes": {
-        "docs/IAM-SOT.md": "bee6bafd970b63fd3a7cbb2faea7fb35fa900f1a2789fcf80ffc52bc55afd146",
+        "docs/IAM-SOT.md": "327c746c010100ad3fea5e2a6200aab04890d0579cc98ffddbf4df12fe95002e",
         "operations/iam/policy.json": "15a61feccc19e28b6a28d884de19ec0acb818d399201d8e643edd8bd2240ad54",
-        "operations/iam/build-contract.json": "006ee864333b76530c16cc8d552e47f9dff6c74fbdade940d74f00efee7cb494"
+        "operations/iam/build-contract.json": "82390b2923839a7126647c778b34fabb26035ae939d21c8ae5f888072d97a0b1"
       },
       "sotVersion": 2
     },
     "automaticRecovery": {
-      "verified": true,
-      "kind": "verified-health-recovery",
-      "originRun": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43224278654",
-      "originEvent": "schedule",
-      "reason": "Actual same-repository health run and GitHub Actions bot verified"
-    }
+      "verified": false,
+      "reason": "Not an automatic health recovery dispatch"
+    },
+    "error": "Remaining campaign is blocked, not complete",
+    "nextAction": "Resolve the exact recorded gate; do not reset attempts, reseed history or count zero as publication"
   },
   "lastExecution": {
     "checkedAt": "2026-11-12T13:10:59.034618+00:00",
@@ -2064,11 +2063,11 @@
   ],
   "approvedLaunchIssues": [],
   "loadedRules": {
-    "sourceCommit": "f34e60bfa6649255d4f1c49efe1be7d2324ba73f",
+    "sourceCommit": "b0418f332ea8e1e4ea111e6743c078aa9ba21e98",
     "hashes": {
-      "docs/IAM-SOT.md": "bee6bafd970b63fd3a7cbb2faea7fb35fa900f1a2789fcf80ffc52bc55afd146",
+      "docs/IAM-SOT.md": "327c746c010100ad3fea5e2a6200aab04890d0579cc98ffddbf4df12fe95002e",
       "operations/iam/policy.json": "15a61feccc19e28b6a28d884de19ec0acb818d399201d8e643edd8bd2240ad54",
-      "operations/iam/build-contract.json": "006ee864333b76530c16cc8d552e47f9dff6c74fbdade940d74f00efee7cb494"
+      "operations/iam/build-contract.json": "82390b2923839a7126647c778b34fabb26035ae939d21c8ae5f888072d97a0b1"
     },
     "sotVersion": 2
   },
