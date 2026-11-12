@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "site": "industryarmymarketing.com",
-  "checkedAt": "2026-11-12T04:31:22.271927+00:00",
+  "checkedAt": "2026-11-12T04:40:55.007910+00:00",
   "deliveryVerified": false,
   "adapter": "shared-owner-interface-pending",
   "issues": [
@@ -11,7 +11,7 @@
       "firstSeenAt": "2026-11-12T01:39:03.441379+00:00",
       "delivery": "unproven",
       "status": "open",
-      "lastSeenAt": "2026-11-12T04:31:22.271927+00:00",
+      "lastSeenAt": "2026-11-12T04:40:55.007910+00:00",
       "reason": "Shared operating-standard v2 interface not yet verified/pinned"
     },
     {
@@ -20,7 +20,7 @@
       "firstSeenAt": "2026-11-12T01:39:03.441379+00:00",
       "delivery": "unproven",
       "status": "open",
-      "lastSeenAt": "2026-11-12T04:31:22.271927+00:00",
+      "lastSeenAt": "2026-11-12T04:40:55.007910+00:00",
       "reason": "Persistent blocker notification delivery unproven"
     },
     {
@@ -29,7 +29,7 @@
       "firstSeenAt": "2026-11-12T01:48:13.376513+00:00",
       "delivery": "unproven",
       "status": "open",
-      "lastSeenAt": "2026-11-12T04:31:22.271927+00:00",
+      "lastSeenAt": "2026-11-12T04:40:55.007910+00:00",
       "reason": "Native scheduled generated publication not yet proven"
     },
     {
@@ -38,7 +38,7 @@
       "firstSeenAt": "2026-11-12T01:48:13.376513+00:00",
       "delivery": "unproven",
       "status": "open",
-      "lastSeenAt": "2026-11-12T04:31:22.271927+00:00",
+      "lastSeenAt": "2026-11-12T04:40:55.007910+00:00",
       "reason": "Live failure-isolation and recovery acceptance not yet proven; local tests are separate"
     },
     {
@@ -183,6 +183,33 @@
       "reason": "Exact company/source media and actual visual review missing for promows.com",
       "stage": "media",
       "lastSeenAt": "2026-11-12T04:31:04.243971+00:00",
+      "delivery": "unproven"
+    },
+    {
+      "id": "iam:snowplow-tv-industry-marketing-project-content-guide:media",
+      "slug": "snowplow-tv-industry-marketing-project-content-guide",
+      "status": "open",
+      "reason": "Exact company/source media and actual visual review missing for snowplow.tv",
+      "stage": "media",
+      "lastSeenAt": "2026-11-12T04:40:20.738738+00:00",
+      "delivery": "unproven"
+    },
+    {
+      "id": "iam:snowremoval-tv-industry-marketing-project-content-guide:media",
+      "slug": "snowremoval-tv-industry-marketing-project-content-guide",
+      "status": "open",
+      "reason": "Exact company/source media and actual visual review missing for snowremoval.tv",
+      "stage": "media",
+      "lastSeenAt": "2026-11-12T04:40:29.786713+00:00",
+      "delivery": "unproven"
+    },
+    {
+      "id": "iam:stratapropertyservices-com-industry-marketing-project-content-guide:media",
+      "slug": "stratapropertyservices-com-industry-marketing-project-content-guide",
+      "status": "open",
+      "reason": "Exact company/source media and actual visual review missing for stratapropertyservices.com",
+      "stage": "media",
+      "lastSeenAt": "2026-11-12T04:40:38.975932+00:00",
       "delivery": "unproven"
     }
   ]
