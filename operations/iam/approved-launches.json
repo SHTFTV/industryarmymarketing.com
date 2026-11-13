@@ -39,6 +39,24 @@
       ],
       "generateAndAudit": true,
       "requiredBrandStatement": "Powered by Industry Army Marketing. A division of BuildersHaus.com."
+    },
+    {
+      "slug": "builders-ltd-welcome-house-building-field-guide",
+      "kind": "user-authorized-launch",
+      "authorization": "Explicit owner instruction November 12, 2026 to publish IAM updates for newly live network sites, with Builders.ltd prioritized via the existing sole publisher.",
+      "reviewed": true,
+      "postSha256": "20cae64823fc214ac730b2b110335764db11bb5e37af7ea63506b84d4a4e0d28",
+      "sourceDomain": "builders.ltd",
+      "parentBrand": "Builders.ltd",
+      "sourceUrls": [
+        "https://builders.ltd/",
+        "https://builders.ltd/about/",
+        "https://builders.ltd/project-brief/"
+      ],
+      "requiredSourceText": [
+        "Builders.ltd",
+        "independent editorial resource"
+      ]
     }
   ]
 }

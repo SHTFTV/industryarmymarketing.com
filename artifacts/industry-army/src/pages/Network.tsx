@@ -78,6 +78,7 @@ export const groups = [
       ["rebar.tv", "Rebar"],
       ["remodelers.io", "Remodeling"],
       ["buildershaus.com", "Trade Hub"],
+      ["builders.ltd", "House-building Guides"],
       ["kongtractors.com", "Contracting"],
       ["logcabin.ltd", "Log Cabins"],
     ],
@@ -218,7 +219,11 @@ const Network = () => {
                   key={domain}
                   className="flex items-center justify-between p-4 rounded-md bg-card border border-border hover:border-primary/40 transition-colors"
                 >
-                  <span className="font-display text-lg text-primary">{domain}</span>
+                  {domain === "builders.ltd" ? (
+                    <a href="https://builders.ltd/" className="font-display text-lg text-primary underline-offset-4 hover:underline focus-visible:underline">Builders.ltd</a>
+                  ) : (
+                    <span className="font-display text-lg text-primary">{domain}</span>
+                  )}
                   <span className="text-muted-foreground text-xs uppercase tracking-widest">
                     {label}
                   </span>

@@ -1,0 +1,81 @@
+{
+  "brand": "Industry Army Marketing",
+  "trade": "Industry publishing",
+  "tradeShort": "industry publishing",
+  "plural": "businesses",
+  "video": null,
+  "imageKey": "build-journal",
+  "city": "Canada",
+  "province": "BC",
+  "category": "Build Journal",
+  "pain": "",
+  "detail": "",
+  "process": "",
+  "authorName": "Colin Hamilton",
+  "contactBusiness": "iam",
+  "faqs": [],
+  "slug": "builders-ltd-welcome-house-building-field-guide",
+  "campaignSite": "builders.ltd",
+  "campaignLabel": "A house-building field guide for better project conversations",
+  "title": "Industry Army Marketing Welcomes Builders.ltd",
+  "cardTitle": "Meet Builders.ltd",
+  "excerpt": "A new house-building field guide joins the IAM network with sixteen field notes, seven jurisdiction guides and a private, downloadable project brief.",
+  "metaDescription": "Meet Builders.ltd: sixteen house-building field notes, local authority guides and a downloadable project brief for homeowners and building professionals.",
+  "image": "/brand-journal/builders-ltd-welcome-v1.webp",
+  "ogImage": "/brand-journal/builders-ltd-welcome-v1.webp",
+  "imageAlt": "Industry Army Marketing welcomes Builders.ltd. Original AI welcome artwork with a pencil and planning sheets; not a photograph of a building project.",
+  "ogImageAlt": "Industry Army Marketing welcomes Builders.ltd. Original AI welcome artwork showing planning sheets and a pencil.",
+  "richContent": {
+    "intro": "A house project begins with decisions long before work starts on site. What should the home do for the people living there? What is known about the land? What should each builder include in a quote? Industry Army Marketing welcomes [Builders.ltd](https://builders.ltd/), a new editorial resource that helps homeowners and house-building professionals put those questions into a useful order.",
+    "sections": [
+      {
+        "heading": "Turn an idea into a brief you can discuss",
+        "paragraphs": [
+          "The [project brief tool](https://builders.ltd/project-brief/) starts with the household, building location and site status. It asks for three priorities, known scope, open questions about budget and timing, and the next decisions and who is responsible. Readers can download a text brief, revise it and share it themselves.",
+          "That distinction matters: the download happens in the reader’s browser. The tool does not send the entries to Builders.ltd or to a builder. It gives a first conversation a shared starting point; it does not arrange a referral, submit an application or create a building contract."
+        ]
+      },
+      {
+        "heading": "Sixteen field notes for the decisions around a home",
+        "paragraphs": [
+          "The launch library contains sixteen illustrated field notes. Practical topics include writing a brief, comparing builder quotes, keeping uncertainty visible in a budget, choosing a builder through evidence, coordinating design information, managing changes, keeping quality records and preparing for handover.",
+          "The useful thread is continuity. A scope question raised while comparing quotes should remain visible when the design changes. A decision made during construction should be understandable when the household receives the home. The guides help readers organize those conversations and records without pretending that a general article can decide a specific project."
+        ]
+      },
+      {
+        "heading": "Start with the place you are building",
+        "paragraphs": [
+          "Builders.ltd takes a Canada-first approach with selected Commonwealth coverage. Its initial jurisdiction guides cover British Columbia, Alberta, Manitoba, England, Scotland, New South Wales and New Zealand. Each identifies the relevant place and points readers toward primary authorities.",
+          "A builder licence, planning permission, a building permit and a warranty answer different questions. The site keeps those distinctions visible instead of applying one region’s rules everywhere. Readers can use the [jurisdiction guides](https://builders.ltd/regions/) to identify the authority and questions that belong to their own project."
+        ]
+      },
+      {
+        "heading": "A reading room for house-building professionals",
+        "paragraphs": [
+          "The [professional reading room](https://builders.ltd/professionals/) brings together guides on briefs, scope, design coordination, change control, records and handover. These are subjects that homeowners and professionals need to understand together, even when their responsibilities differ.",
+          "Builders.ltd is an independent editorial resource. It does not certify, rank or register builders, sell building services or operate a referral directory. Its original architectural illustrations represent ideas rather than completed homes or construction documents. The editorial approach is public, including the use of AI assistance and source checks for the launch field notes."
+        ]
+      },
+      {
+        "heading": "Explore Builders.ltd",
+        "paragraphs": [
+          "Start with a field note, check the guide for your jurisdiction or download a first project brief. The goal is a better prepared conversation: clearer priorities, visible unknowns and a record of what needs to happen next.",
+          "For Industry Army Marketing, this adds a focused house-building publication to the network. It gives a specific audience useful tools and a clear editorial purpose, with the site’s boundaries stated alongside its resources."
+        ]
+      }
+    ],
+    "sources": [
+      { "label": "Builders.ltd — live house-building field guide", "href": "https://builders.ltd/" },
+      { "label": "Editorial approach and scope", "href": "https://builders.ltd/about/" },
+      { "label": "Project brief tool and browser-only download", "href": "https://builders.ltd/project-brief/" },
+      { "label": "Professional reading room", "href": "https://builders.ltd/professionals/" }
+    ]
+  },
+  "cta": {
+    "eyebrow": "INDUSTRY ARMY MARKETING",
+    "heading": "Give your industry a useful resource",
+    "body": "Talk with IAM about a focused website or publication built around the questions your audience actually needs answered.",
+    "buttonText": "Discuss your publishing project",
+    "buttonHref": "/contact?request=industry-publishing&ref_site=builders.ltd"
+  }
+}
