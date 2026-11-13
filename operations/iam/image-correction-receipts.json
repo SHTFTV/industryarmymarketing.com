@@ -88,6 +88,29 @@
       ],
       "sourceCommit": "1062b5b737bd57f2b048ae23a1104628feb65750",
       "checkedAt": "2026-11-12T18:44:34.454479+00:00"
+    },
+    {
+      "site": "kongtractors-com",
+      "slug": "kongtractors-com-industry-marketing-project-content-guide",
+      "image": "/brand-journal/kongtractors-com-welcome-v4.webp",
+      "sha256": "3df35f294e4401ed18aac39db39cdbe6dc6240185557c1d98cd8c6adeb5192db",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "nativeSize": [
+        1672,
+        941
+      ],
+      "upscaled": false,
+      "imageType": "ai-illustration",
+      "credit": "Original AI welcome artwork for KongTractors.com, an existing IAM network company.",
+      "desktopVerified": false,
+      "phoneVerified": false,
+      "previewDesktopVerified": true,
+      "previewPhoneVerified": true,
+      "verificationStage": "prepared-and-preview-reviewed",
+      "publicationDatePreserved": "2026-11-12T05:03:24.556051+00:00"
     }
   ]
 }

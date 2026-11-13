@@ -79,30 +79,28 @@
   },
   "kongtractors-com-industry-marketing-project-content-guide": {
     "hero": {
-      "path": "/brand-journal/kong-original-approved-poster.jpg",
-      "sha256": "dbc6e9a04b4fe783a773c5cc8dd5e9efa22020871de8b28a1fae1c37b026ced9",
+      "path": "/brand-journal/kongtractors-com-welcome-v4.webp",
+      "sha256": "3df35f294e4401ed18aac39db39cdbe6dc6240185557c1d98cd8c6adeb5192db",
       "nativeSize": [
-        1600,
-        900
+        1672,
+        941
       ],
       "upscaled": false,
-      "credit": "Kong Tractors — illustrative poster from its owner-approved website artwork. Equipment model, ownership and field results are not verified by this image.",
-      "rightsEvidence": "Owner-approved original Kong website asset recovered byte-for-byte from the owner-provided source export; continued IAM company campaign explicitly authorizes use of relevant original approved company imagery. Exact live asset SHA256 matches reviewed source. No separate third-party licence or documentary claim is asserted.",
-      "sourceUrl": "https://kongtractors.com/assets/kong-original/kong-tractor-poster.jpg",
-      "visualReview": "Native 1600x900 asset inspected. Actual live image reviewed in browser at 1440x1000 and 390x844; decoded dimensions 1600x900, no overflow, full tractor retained. Actual IAM article desktop/phone verification remains required by sole publisher."
+      "credit": "Original AI welcome artwork for KongTractors.com, an existing IAM network company.",
+      "rightsEvidence": "Owner explicitly selected Kong Tractors for this existing-article welcome-artwork update. Original built-in AI artwork uses the existing owner-approved Kong brand identity; no third-party photograph or new-launch claim.",
+      "visualReview": "Native artwork and exact welcome wording inspected; local preview checked at 1440x1000 desktop and 390x844 phone. Domain and brand mark legible; no building or machinery scene. Production verification recorded separately."
     },
     "share": {
-      "path": "/brand-journal/kong-original-approved-poster.jpg",
-      "sha256": "dbc6e9a04b4fe783a773c5cc8dd5e9efa22020871de8b28a1fae1c37b026ced9",
+      "path": "/brand-journal/kongtractors-com-welcome-v4.webp",
+      "sha256": "3df35f294e4401ed18aac39db39cdbe6dc6240185557c1d98cd8c6adeb5192db",
       "nativeSize": [
-        1600,
-        900
+        1672,
+        941
       ],
       "upscaled": false,
-      "credit": "Kong Tractors — illustrative poster from its owner-approved website artwork. Equipment model, ownership and field results are not verified by this image.",
-      "rightsEvidence": "Owner-approved original Kong website asset recovered byte-for-byte from the owner-provided source export; continued IAM company campaign explicitly authorizes use of relevant original approved company imagery. Exact live asset SHA256 matches reviewed source. No separate third-party licence or documentary claim is asserted.",
-      "sourceUrl": "https://kongtractors.com/assets/kong-original/kong-tractor-poster.jpg",
-      "visualReview": "Native 1600x900 asset inspected. Actual live image reviewed in browser at 1440x1000 and 390x844; decoded dimensions 1600x900, no overflow, full tractor retained. Actual IAM article desktop/phone verification remains required by sole publisher."
+      "credit": "Original AI welcome artwork for KongTractors.com, an existing IAM network company.",
+      "rightsEvidence": "Owner explicitly selected Kong Tractors for this existing-article welcome-artwork update. Original built-in AI artwork uses the existing owner-approved Kong brand identity; no third-party photograph or new-launch claim.",
+      "visualReview": "Native artwork and exact welcome wording inspected; local preview checked at 1440x1000 desktop and 390x844 phone. Domain and brand mark legible; no building or machinery scene. Production verification recorded separately."
     }
   },
   "sparkys-tv-industry-marketing-project-content-guide": {
