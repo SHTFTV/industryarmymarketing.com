@@ -1,17 +1,15 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-11-13T03:36:44.137035+00:00",
-  "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43360052336",
-  "event": "schedule",
-  "startedAt": "2026-11-13T03:36:08Z",
-  "completedAt": "2026-11-13T03:36:30Z",
-  "jobResult": "failure",
-  "failedSteps": [
-    "One source-to-verified-publication transaction"
-  ],
+  "checkedAt": "2026-11-13T07:05:39.036705+00:00",
+  "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43382991392",
+  "event": "push",
+  "startedAt": "2026-11-13T07:03:34Z",
+  "completedAt": "2026-11-13T07:05:25Z",
+  "jobResult": "success",
+  "failedSteps": [],
   "writerExecuted": true,
-  "verifiedPublicationCount": 0,
-  "scheduledExecutionObserved": true,
+  "verifiedPublicationCount": 1,
+  "scheduledExecutionObserved": false,
   "automaticPublicationVerified": false,
   "automaticRecovery": {
     "verified": false,
