@@ -193,28 +193,30 @@
   },
   "builders-ltd-welcome-house-building-field-guide": {
     "hero": {
-      "path": "/brand-journal/builders-ltd-welcome-v1.webp",
-      "sha256": "527174b5f0385af65898498c1e36ab426752f01fbadb66f4e4504dad88d2568b",
+      "path": "/brand-journal/builders-ltd-welcome-v2.webp",
+      "sha256": "4dcbe12ca5ccde670b2ef5399ee00908e91f01e7b34138d51163513371c85794",
       "nativeSize": [
         1672,
         941
       ],
       "upscaled": false,
-      "credit": "Original AI welcome artwork: Industry Army Marketing welcomes Builders.ltd; planning sheets and pencil, not a photographed construction project.",
-      "rightsEvidence": "Owner authorized the new Builders.ltd IAM announcement and existing IAM welcome artwork style. Original built-in AI artwork based on the approved IAM layout; no third-party photo or invented building project.",
-      "visualReview": "Actual original 1672x941 artwork inspected: exact Industry Army Marketing welcomes Builders.ltd wording, clear domain, complete planning-sheet/pencil motif and no fictional project. Exact 1600x900 derivative preserves layout without upscaling. Production desktop/phone checks remain with the sole publisher before verified status."
+      "credit": "Industry Army Marketing welcomes Builders.ltd. Original AI editorial illustration adapted from Builders.ltd’s existing house artwork; concept, not a completed home.",
+      "sourceUrl": "https://builders.ltd/assets/home.png",
+      "rightsEvidence": "Owner directed correction of this existing IAM Builders.ltd article. Original built-in AI editorial composition uses the owned Builders.ltd homepage illustration and actual cream, green, terracotta and ochre brand palette as references; no third-party stock or documentary project claim.",
+      "visualReview": "Live original article and card inspected in native Chrome: generic document/pencil placard lacked Builders identity. Replacement native artwork inspected for correct welcome wording, brand colors, complete roof/facade, legibility and conceptual-art label. Exact 1600x900 export without upscaling; actual production desktop/phone verification follows in existing read-only checker."
     },
     "share": {
-      "path": "/brand-journal/builders-ltd-welcome-v1.webp",
-      "sha256": "527174b5f0385af65898498c1e36ab426752f01fbadb66f4e4504dad88d2568b",
+      "path": "/brand-journal/builders-ltd-welcome-v2.webp",
+      "sha256": "4dcbe12ca5ccde670b2ef5399ee00908e91f01e7b34138d51163513371c85794",
       "nativeSize": [
         1672,
         941
       ],
       "upscaled": false,
-      "credit": "Original AI welcome artwork: Industry Army Marketing welcomes Builders.ltd; planning sheets and pencil, not a photographed construction project.",
-      "rightsEvidence": "Owner authorized the new Builders.ltd IAM announcement and existing IAM welcome artwork style. Original built-in AI artwork based on the approved IAM layout; no third-party photo or invented building project.",
-      "visualReview": "Actual original 1672x941 artwork inspected: exact Industry Army Marketing welcomes Builders.ltd wording, clear domain, complete planning-sheet/pencil motif and no fictional project. Exact 1600x900 derivative preserves layout without upscaling. Production desktop/phone checks remain with the sole publisher before verified status."
+      "credit": "Industry Army Marketing welcomes Builders.ltd. Original AI editorial illustration adapted from Builders.ltd’s existing house artwork; concept, not a completed home.",
+      "sourceUrl": "https://builders.ltd/assets/home.png",
+      "rightsEvidence": "Owner directed correction of this existing IAM Builders.ltd article. Original built-in AI editorial composition uses the owned Builders.ltd homepage illustration and actual cream, green, terracotta and ochre brand palette as references; no third-party stock or documentary project claim.",
+      "visualReview": "Live original article and card inspected in native Chrome: generic document/pencil placard lacked Builders identity. Replacement native artwork inspected for correct welcome wording, brand colors, complete roof/facade, legibility and conceptual-art label. Exact 1600x900 export without upscaling; actual production desktop/phone verification follows in existing read-only checker."
     }
   }
 }

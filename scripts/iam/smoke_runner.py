@@ -12,6 +12,10 @@ from prebuild import rules
 ROOT=Path(__file__).resolve().parents[2]
 BASE='https://www.industryarmymarketing.com'
 ROUTES=['/','/blog','/guest-post','/contact?request=guest-post','/network','/how-it-works','/blog/naturopaths-io-welcome-clearer-health-questions']
+BUILDERS_SLUG='builders-ltd-welcome-house-building-field-guide'
+BUILDERS_ROUTE='/blog/'+BUILDERS_SLUG
+BUILDERS_IMAGE='/brand-journal/builders-ltd-welcome-v2.webp'
+ROUTES.append(BUILDERS_ROUTE)
 def canonical_for(route):
     return BASE+route.split('?',1)[0]
 def assert_scope(config):
@@ -35,7 +39,9 @@ def main():
         while True:
             try:
                 with urllib.request.urlopen(BASE+'/source-version.json',timeout=15) as response:identity=json.load(response)
-                if identity.get('repository')=='SHTFTV/industryarmymarketing.com' and identity.get('sotSha256')==result['loadedHash']:break
+                if identity.get('repository')=='SHTFTV/industryarmymarketing.com' and identity.get('sotSha256')==result['loadedHash']:
+                    with urllib.request.urlopen(BASE+BUILDERS_ROUTE,timeout=15) as article_response: builders_html=article_response.read().decode()
+                    if BUILDERS_IMAGE in builders_html:break
             except (OSError,ValueError):pass
             if time.monotonic()>=deadline:raise RuntimeError('Production approved SOT identity did not converge within150seconds')
             time.sleep(10)
@@ -63,6 +69,26 @@ def main():
                             if route.startswith('/contact'):
                                 check['enquiryMode']=page.locator('[data-enquiry-mode]').get_attribute('data-enquiry-mode')
                                 if 'Article submissions are closed' not in page.locator('body').inner_text():raise AssertionError('Guest interest notice missing')
+                            if route==BUILDERS_ROUTE:
+                                hero=page.locator('img[src="'+BUILDERS_IMAGE+'"]')
+                                if hero.count()!=1:raise AssertionError('Exact Builders hero missing')
+                                hero.scroll_into_view_if_needed()
+                                page.wait_for_function('''src => [...document.images].some(i=>i.getAttribute('src')===src&&i.complete&&i.naturalWidth===1600&&i.naturalHeight===900)''',arg=BUILDERS_IMAGE,timeout=15000)
+                                for selector in ['meta[property="og:image"]','meta[name="twitter:image"]']:
+                                    if page.locator(selector).get_attribute('content')!=BASE+BUILDERS_IMAGE:raise AssertionError('Builders sharing image mismatch')
+                                check['imageGeometry']=hero.evaluate('''i=>({native:[i.naturalWidth,i.naturalHeight],display:[i.clientWidth,i.clientHeight],alt:i.alt,src:i.src})''')
+                                if abs(check['imageGeometry']['display'][0]/check['imageGeometry']['display'][1]-16/9)>0.02:raise AssertionError('Distorted Builders hero')
+                                hero.screenshot(path=str(output/('builders-hero-'+str(width)+'.png')))
+                                page.screenshot(path=str(output/('builders-article-'+str(width)+'.png')))
+                                check['sharingImage']=BASE+BUILDERS_IMAGE
+                            if route=='/blog':
+                                card_image=page.locator('a[href="'+BUILDERS_ROUTE+'"] img').first
+                                card_image.scroll_into_view_if_needed()
+                                page.wait_for_function('''src=>[...document.images].some(i=>i.getAttribute('src')===src&&i.complete&&i.naturalWidth===1600)''',arg=BUILDERS_IMAGE,timeout=15000)
+                                if card_image.get_attribute('src')!=BUILDERS_IMAGE:raise AssertionError('Builders card uses stale image')
+                                card_image.locator('xpath=../..').screenshot(path=str(output/('builders-card-'+str(width)+'.png')))
+                                page.screenshot(path=str(output/('builders-listing-'+str(width)+'.png')))
+                                check['buildersCardImage']=BUILDERS_IMAGE
                             page.screenshot(path=str(output/(label+'-'+str(width)+'.png')))
                             check.update(status='passed',layout=layout,canonical=expected,screenshot=label+'-'+str(width)+'.png')
                         except Exception as exc:

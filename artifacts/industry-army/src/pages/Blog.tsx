@@ -343,7 +343,7 @@ const Blog = () => {
                 <Link to={`/blog/${p.slug}`} className="block">
                   <img
                     src={p.image}
-                    alt={`${p.trade} in ${p.city} — ${p.brand}`}
+                    alt={p.slug === "builders-ltd-welcome-house-building-field-guide" ? "Builders.ltd house-building field guide — original architectural editorial illustration" : `${p.trade} in ${p.city} — ${p.brand}`}
                     loading="lazy"
                     width={1280}
                     height={720}
