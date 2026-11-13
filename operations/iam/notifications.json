@@ -643,8 +643,8 @@
     {
       "eventId": "iam-notice-c4320e663fec4921f2d3",
       "kind": "publishing_failure",
-      "lifecycle": "open",
-      "deliveryStatus": "queued",
+      "lifecycle": "resolved",
+      "deliveryStatus": "superseded",
       "triggeredAt": "2026-11-13T03:36:59.575920+00:00",
       "deliveryAttempts": 0,
       "deliveryReceipt": null,
@@ -655,15 +655,38 @@
       "nextAction": "Inspect the exact retained run and issue; continue independent eligible work.",
       "proof": {
         "runUrl": "43360052336"
+      },
+      "resolvedAt": "2026-11-13T07:05:55.493394+00:00"
+    },
+    {
+      "eventId": "iam-notice-685249c3abcd34864b8c",
+      "kind": "publication_verified",
+      "lifecycle": "open",
+      "deliveryStatus": "queued",
+      "triggeredAt": "2026-11-13T07:05:55.493394+00:00",
+      "deliveryAttempts": 0,
+      "deliveryReceipt": null,
+      "siteDomain": "builders.ltd",
+      "articleSlug": "builders-ltd-welcome-house-building-field-guide",
+      "articleUrl": "https://www.industryarmymarketing.com/blog/builders-ltd-welcome-house-building-field-guide",
+      "status": "verified",
+      "verifiedAt": "2026-11-13T07:05:20.145982+00:00",
+      "reconciled": false,
+      "summary": "builders.ltd IAM article is verified live.",
+      "nextAction": "Read the verified article; no publication retry is needed.",
+      "proof": {
+        "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43382991392",
+        "publicationVerified": true,
+        "generatedAndAudited": false
       }
     }
   ],
   "producer": {
     "stage": "fired",
-    "firedAt": "2026-11-13T03:36:59.576160+00:00",
-    "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43360052336",
+    "firedAt": "2026-11-13T07:05:55.493779+00:00",
+    "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43382991392",
     "rules": {
-      "sourceCommit": "9400ed62ae03822b1b3ee16e0430ef5fb6c215ef",
+      "sourceCommit": "93231e0395088c954344b5736ea0c4e299a317e5",
       "hashes": {
         "docs/IAM-SOT.md": "327c746c010100ad3fea5e2a6200aab04890d0579cc98ffddbf4df12fe95002e",
         "operations/iam/policy.json": "15a61feccc19e28b6a28d884de19ec0acb818d399201d8e643edd8bd2240ad54",
