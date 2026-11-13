@@ -1634,13 +1634,13 @@
     }
   ],
   "lastRun": {
-    "at": "2026-11-12T21:41:58.043651+00:00",
-    "owner": "43312743890-1",
-    "trigger": "push",
+    "at": "2026-11-13T03:36:26.607563+00:00",
+    "owner": "43360052336-1",
+    "trigger": "schedule",
     "status": "failed",
     "policyDigest": "ab1639931848bf2eb2000365da96649afcc031be8ca3f6230a993f0041888247",
     "rules": {
-      "sourceCommit": "3580067ddf90d1e9ebd1629c156d8e596f444f74",
+      "sourceCommit": "23a7bd06a2599147aca9ab11199276b0f4341068",
       "hashes": {
         "docs/IAM-SOT.md": "327c746c010100ad3fea5e2a6200aab04890d0579cc98ffddbf4df12fe95002e",
         "operations/iam/policy.json": "15a61feccc19e28b6a28d884de19ec0acb818d399201d8e643edd8bd2240ad54",
@@ -2104,7 +2104,7 @@
   ],
   "approvedLaunchIssues": [],
   "loadedRules": {
-    "sourceCommit": "3580067ddf90d1e9ebd1629c156d8e596f444f74",
+    "sourceCommit": "23a7bd06a2599147aca9ab11199276b0f4341068",
     "hashes": {
       "docs/IAM-SOT.md": "327c746c010100ad3fea5e2a6200aab04890d0579cc98ffddbf4df12fe95002e",
       "operations/iam/policy.json": "15a61feccc19e28b6a28d884de19ec0acb818d399201d8e643edd8bd2240ad54",
@@ -2343,6 +2343,14 @@
       "stage": "media",
       "lastSeenAt": "2026-11-12T04:40:38.975932+00:00",
       "delivery": "unproven"
+    },
+    "iam:daily-release-intake": {
+      "id": "iam:daily-release-intake",
+      "kind": "daily-intake",
+      "status": "open",
+      "observedAt": "2026-11-13T03:36:26.625932+00:00",
+      "reason": "DAILY_RELEASE_INTAKE_STALE",
+      "nextAction": "Connect fresh verified release receipts; independent campaign items continue."
     }
   },
   "attemptReceipts": [
