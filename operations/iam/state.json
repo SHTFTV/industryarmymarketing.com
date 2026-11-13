@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "lastVerifiedAt": "2026-11-12T13:10:41.089647+00:00",
+  "lastVerifiedAt": "2026-11-13T07:05:20.145982+00:00",
   "rows": {
     "buildershaus-contractor-project-story-submission-guide": {
       "status": "existing-publication",
@@ -1522,7 +1522,7 @@
       "nextAction": "Verified; prior attempt evidence retained"
     },
     "builders-ltd-welcome-house-building-field-guide": {
-      "status": "claimed",
+      "status": "verified",
       "attempts": 1,
       "sourceDomain": "builders.ltd",
       "canonical": "https://www.industryarmymarketing.com/blog/builders-ltd-welcome-house-building-field-guide",
@@ -1543,7 +1543,57 @@
             "sotVersion": 2
           }
         }
-      ]
+      ],
+      "sourceFailures": [],
+      "stage": "verified",
+      "publicationAuthorship": "manual",
+      "sourceEvidence": [
+        {
+          "url": "https://builders.ltd/",
+          "sha256": "23d687be637c54d4507db79431fb4edbb1b8ed4129169b0e6bfdebb6092589f1"
+        },
+        {
+          "url": "https://builders.ltd/about/",
+          "sha256": "3d8c67541f5b02c0b66d4f42a51bc0d346cc1f3d6a8cfea02deaf1f355261a2b"
+        },
+        {
+          "url": "https://builders.ltd/project-brief/",
+          "sha256": "9b4055ecaca5d2a11a00bddf5774baeafa48f8cf0c15684db4b6693025563e39"
+        }
+      ],
+      "articleSha256": "6c9e108da6c4088ecf0aa467b1afc4bcec994582a3102c7cc23602ad3efd007c",
+      "verifiedAt": "2026-11-13T07:05:20.145982+00:00",
+      "evidence": {
+        "http": true,
+        "canonical": true,
+        "schema": true,
+        "discovery": true,
+        "desktop": true,
+        "phone": true,
+        "image": true,
+        "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43382991392",
+        "trigger": "push",
+        "browserVersion": "157.0.8103.50",
+        "browserExecutable": "/usr/bin/google-chrome",
+        "rules": {
+          "sourceCommit": "135212ac2c51828fb349686255a801badf23f0d8",
+          "hashes": {
+            "docs/IAM-SOT.md": "327c746c010100ad3fea5e2a6200aab04890d0579cc98ffddbf4df12fe95002e",
+            "operations/iam/policy.json": "15a61feccc19e28b6a28d884de19ec0acb818d399201d8e643edd8bd2240ad54",
+            "operations/iam/build-contract.json": "82390b2923839a7126647c778b34fabb26035ae939d21c8ae5f888072d97a0b1"
+          },
+          "sotVersion": 2
+        },
+        "productionVerified": true,
+        "generatedAndAudited": false,
+        "automaticRecovery": {
+          "verified": false,
+          "reason": "Not an automatic health recovery dispatch"
+        },
+        "authorship": "user-authorized-manual",
+        "automaticAuthorship": false
+      },
+      "nextAction": "Verified; prior attempt evidence retained"
     }
   },
   "receipts": [
@@ -1655,13 +1705,34 @@
         "originEvent": "schedule",
         "reason": "Actual same-repository health run and GitHub Actions bot verified"
       }
+    },
+    {
+      "slug": "builders-ltd-welcome-house-building-field-guide",
+      "verifiedAt": "2026-11-13T07:05:20.145982+00:00",
+      "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43382991392",
+      "trigger": "push",
+      "generatedAndAudited": false,
+      "productionVerified": true,
+      "rules": {
+        "sourceCommit": "135212ac2c51828fb349686255a801badf23f0d8",
+        "hashes": {
+          "docs/IAM-SOT.md": "327c746c010100ad3fea5e2a6200aab04890d0579cc98ffddbf4df12fe95002e",
+          "operations/iam/policy.json": "15a61feccc19e28b6a28d884de19ec0acb818d399201d8e643edd8bd2240ad54",
+          "operations/iam/build-contract.json": "82390b2923839a7126647c778b34fabb26035ae939d21c8ae5f888072d97a0b1"
+        },
+        "sotVersion": 2
+      },
+      "automaticRecovery": {
+        "verified": false,
+        "reason": "Not an automatic health recovery dispatch"
+      }
     }
   ],
   "lastRun": {
     "at": "2026-11-13T07:03:52.765723+00:00",
     "owner": "43382991392-1",
     "trigger": "push",
-    "status": "checking",
+    "status": "verified-publication",
     "policyDigest": "ab1639931848bf2eb2000365da96649afcc031be8ca3f6230a993f0041888247",
     "rules": {
       "sourceCommit": "135212ac2c51828fb349686255a801badf23f0d8",
@@ -2784,9 +2855,5 @@
       },
       "publicationVerified": true
     }
-  ],
-  "lease": {
-    "owner": "43382991392-1",
-    "until": "2026-11-13T07:33:52.782819+00:00"
-  }
+  ]
 }
