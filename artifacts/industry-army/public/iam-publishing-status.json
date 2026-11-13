@@ -1,17 +1,17 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-11-12T21:42:16.927066+00:00",
-  "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43312743890",
-  "event": "push",
-  "startedAt": "2026-11-12T21:41:38Z",
-  "completedAt": "2026-11-12T21:42:03Z",
+  "checkedAt": "2026-11-13T03:36:44.137035+00:00",
+  "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43360052336",
+  "event": "schedule",
+  "startedAt": "2026-11-13T03:36:08Z",
+  "completedAt": "2026-11-13T03:36:30Z",
   "jobResult": "failure",
   "failedSteps": [
     "One source-to-verified-publication transaction"
   ],
   "writerExecuted": true,
   "verifiedPublicationCount": 0,
-  "scheduledExecutionObserved": false,
+  "scheduledExecutionObserved": true,
   "automaticPublicationVerified": false,
   "automaticRecovery": {
     "verified": false,
@@ -21,6 +21,6 @@
   "verifiedRecoveryPublication": false,
   "credentialAndMediaGates": "Independent requirements; successful infrastructure is not provider access or publication proof",
   "independentAlertDeliveryVerified": false,
-  "persistentOpenBlockers": 22,
+  "persistentOpenBlockers": 23,
   "dependentExtensionsAllowed": false
 }
