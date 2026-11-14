@@ -271,10 +271,31 @@
       "visualApproval": {
         "status": "passed",
         "sha256": "ef27c0afd47ed16c52633a7585d3c1df1d58ed5cf330f477f2fd28dd432e179f",
-        "reviewedAt": "2026-11-14T02:24:00Z",
+        "reviewedAt": "2026-11-14T04:58:30Z",
         "desktopEvidence": "operations/iam/media-review/plow-source-desktop.png",
         "phoneEvidence": "operations/iam/media-review/plow-source-mobile.png",
         "scope": "Exact source photograph in company guide, not an advance approval of the new IAM article"
+      },
+      "productionReview": {
+        "status": "passed",
+        "checkedAt": "2026-11-14T04:58:30Z",
+        "canonical": "https://www.industryarmymarketing.com/blog/plowinstallations-com-industry-marketing-project-content-guide",
+        "sha256": "ef27c0afd47ed16c52633a7585d3c1df1d58ed5cf330f477f2fd28dd432e179f",
+        "viewports": [
+          [
+            1440,
+            1100
+          ],
+          [
+            390,
+            844
+          ]
+        ],
+        "desktopEvidence": "operations/iam/media-review/iam-plow-desktop.png",
+        "phoneEvidence": "operations/iam/media-review/iam-plow-mobile.png",
+        "reviewer": "Codex root actual CUA browser review",
+        "outcome": "Exact1600x900 BOSS photograph loaded; complete rear blade/wings/truck, readable manufacturer credit, no horizontal overflow. Product photograph does not imply Full Flow installation or dealer status.",
+        "publicationRun": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43554889504"
       }
     },
     "share": {
@@ -304,10 +325,31 @@
       "visualApproval": {
         "status": "passed",
         "sha256": "ef27c0afd47ed16c52633a7585d3c1df1d58ed5cf330f477f2fd28dd432e179f",
-        "reviewedAt": "2026-11-14T02:24:00Z",
+        "reviewedAt": "2026-11-14T04:58:30Z",
         "desktopEvidence": "operations/iam/media-review/plow-source-desktop.png",
         "phoneEvidence": "operations/iam/media-review/plow-source-mobile.png",
         "scope": "Exact source photograph in company guide, not an advance approval of the new IAM article"
+      },
+      "productionReview": {
+        "status": "passed",
+        "checkedAt": "2026-11-14T04:58:30Z",
+        "canonical": "https://www.industryarmymarketing.com/blog/plowinstallations-com-industry-marketing-project-content-guide",
+        "sha256": "ef27c0afd47ed16c52633a7585d3c1df1d58ed5cf330f477f2fd28dd432e179f",
+        "viewports": [
+          [
+            1440,
+            1100
+          ],
+          [
+            390,
+            844
+          ]
+        ],
+        "desktopEvidence": "operations/iam/media-review/iam-plow-desktop.png",
+        "phoneEvidence": "operations/iam/media-review/iam-plow-mobile.png",
+        "reviewer": "Codex root actual CUA browser review",
+        "outcome": "Exact1600x900 BOSS photograph loaded; complete rear blade/wings/truck, readable manufacturer credit, no horizontal overflow. Product photograph does not imply Full Flow installation or dealer status.",
+        "publicationRun": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43554889504"
       }
     }
   }
