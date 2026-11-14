@@ -193,30 +193,40 @@
   },
   "builders-ltd-welcome-house-building-field-guide": {
     "hero": {
-      "path": "/brand-journal/builders-ltd-welcome-v2.webp",
-      "sha256": "4dcbe12ca5ccde670b2ef5399ee00908e91f01e7b34138d51163513371c85794",
+      "path": "/brand-journal/builders-gatineau-house.jpg",
+      "sha256": "1bf9d21f6b2f4039f59e14216d458d002c2c471c22dd1dd4ce0cdedc294830a8",
       "nativeSize": [
-        1672,
-        941
+        3000,
+        1688
+      ],
+      "derivativeSize": [
+        1600,
+        900
       ],
       "upscaled": false,
-      "credit": "Industry Army Marketing welcomes Builders.ltd. Original AI editorial illustration adapted from Builders.ltd’s existing house artwork; concept, not a completed home.",
-      "sourceUrl": "https://builders.ltd/assets/home.png",
-      "rightsEvidence": "Owner directed correction of this existing IAM Builders.ltd article. Original built-in AI editorial composition uses the owned Builders.ltd homepage illustration and actual cream, green, terracotta and ochre brand palette as references; no third-party stock or documentary project claim.",
-      "visualReview": "Live original article and card inspected in native Chrome: generic document/pencil placard lacked Builders identity. Replacement native artwork inspected for correct welcome wording, brand colors, complete roof/facade, legibility and conceptual-art label. Exact 1600x900 export without upscaling; actual production desktop/phone verification follows in existing read-only checker."
+      "mediaType": "source-photograph",
+      "credit": "Eli Chamoun / Unsplash — actual house in Gatineau, Québec. Architectural example; no Builders.ltd project or affiliation claim.",
+      "sourceUrl": "https://unsplash.com/photos/a-modern-house-with-a-stylish-exterior-coqmBSuXOE4",
+      "rightsEvidence": "Photographer source page expressly lists free Unsplash License; https://unsplash.com/license permits free commercial editorial use and modification. Exact source checked2026-11-14; visible attribution links to photographer's photo.",
+      "visualReview": "Exact source3000×1688 and1600×900 export visually inspected: complete house roof/facade, photographic detail, no AI art, no placard or added text. Production desktop/phone acceptance pending."
     },
     "share": {
-      "path": "/brand-journal/builders-ltd-welcome-v2.webp",
-      "sha256": "4dcbe12ca5ccde670b2ef5399ee00908e91f01e7b34138d51163513371c85794",
+      "path": "/brand-journal/builders-gatineau-house.jpg",
+      "sha256": "1bf9d21f6b2f4039f59e14216d458d002c2c471c22dd1dd4ce0cdedc294830a8",
       "nativeSize": [
-        1672,
-        941
+        3000,
+        1688
+      ],
+      "derivativeSize": [
+        1600,
+        900
       ],
       "upscaled": false,
-      "credit": "Industry Army Marketing welcomes Builders.ltd. Original AI editorial illustration adapted from Builders.ltd’s existing house artwork; concept, not a completed home.",
-      "sourceUrl": "https://builders.ltd/assets/home.png",
-      "rightsEvidence": "Owner directed correction of this existing IAM Builders.ltd article. Original built-in AI editorial composition uses the owned Builders.ltd homepage illustration and actual cream, green, terracotta and ochre brand palette as references; no third-party stock or documentary project claim.",
-      "visualReview": "Live original article and card inspected in native Chrome: generic document/pencil placard lacked Builders identity. Replacement native artwork inspected for correct welcome wording, brand colors, complete roof/facade, legibility and conceptual-art label. Exact 1600x900 export without upscaling; actual production desktop/phone verification follows in existing read-only checker."
+      "mediaType": "source-photograph",
+      "credit": "Eli Chamoun / Unsplash — actual house in Gatineau, Québec. Architectural example; no Builders.ltd project or affiliation claim.",
+      "sourceUrl": "https://unsplash.com/photos/a-modern-house-with-a-stylish-exterior-coqmBSuXOE4",
+      "rightsEvidence": "Photographer source page expressly lists free Unsplash License; https://unsplash.com/license permits free commercial editorial use and modification. Exact source checked2026-11-14; visible attribution links to photographer's photo.",
+      "visualReview": "Exact source3000×1688 and1600×900 export visually inspected: complete house roof/facade, photographic detail, no AI art, no placard or added text. Production desktop/phone acceptance pending."
     }
   }
 }

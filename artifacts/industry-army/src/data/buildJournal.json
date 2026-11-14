@@ -22,10 +22,10 @@
     "cardTitle": "Meet Builders.ltd",
     "excerpt": "A new house-building field guide joins the IAM network with sixteen field notes, seven jurisdiction guides and a private, downloadable project brief.",
     "metaDescription": "Meet Builders.ltd: sixteen house-building field notes, local authority guides and a downloadable project brief for homeowners and building professionals.",
-    "image": "/brand-journal/builders-ltd-welcome-v2.webp",
-    "ogImage": "/brand-journal/builders-ltd-welcome-v2.webp",
-    "imageAlt": "Industry Army Marketing welcomes Builders.ltd. Original AI editorial illustration adapted from Builders.ltd’s existing house artwork; concept, not a completed home.",
-    "ogImageAlt": "Industry Army Marketing welcomes Builders.ltd. Original AI editorial illustration adapted from Builders.ltd’s existing house artwork; concept, not a completed home.",
+    "image": "/brand-journal/builders-gatineau-house.jpg",
+    "ogImage": "/brand-journal/builders-gatineau-house.jpg",
+    "imageAlt": "Contemporary house in Gatineau, Quebec. Photograph by Eli Chamoun / Unsplash, used as an architectural example; not a Builders.ltd project.",
+    "ogImageAlt": "Contemporary house in Gatineau, Quebec. Photograph by Eli Chamoun / Unsplash, used as an architectural example; not a Builders.ltd project.",
     "richContent": {
       "intro": "A house project begins with decisions long before work starts on site. What should the home do for the people living there? What is known about the land? What should each builder include in a quote? Industry Army Marketing welcomes [Builders.ltd](https://builders.ltd/), a new editorial resource that helps homeowners and house-building professionals put those questions into a useful order.",
       "sections": [
@@ -81,6 +81,10 @@
         {
           "label": "Professional reading room",
           "href": "https://builders.ltd/professionals/"
+        },
+        {
+          "label": "Featured photograph: Eli Chamoun, Gatineau, Québec (Unsplash License); illustrative architecture, unaffiliated with Builders.ltd",
+          "href": "https://unsplash.com/photos/a-modern-house-with-a-stylish-exterior-coqmBSuXOE4"
         }
       ]
     },
