@@ -409,8 +409,8 @@
     {
       "eventId": "iam-notice-5ffd105bc2cd8bfff43d",
       "kind": "publishing_blocked",
-      "lifecycle": "open",
-      "deliveryStatus": "queued",
+      "lifecycle": "resolved",
+      "deliveryStatus": "superseded",
       "triggeredAt": "2026-11-12T04:31:39.538980+00:00",
       "deliveryAttempts": 0,
       "deliveryReceipt": null,
@@ -423,7 +423,8 @@
       "proof": {
         "blockedAt": null,
         "attempts": 1
-      }
+      },
+      "resolvedAt": "2026-11-14T04:09:41.384469+00:00"
     },
     {
       "eventId": "iam-notice-e8ea27e6b9436c7b71cf",
@@ -683,8 +684,8 @@
     {
       "eventId": "iam-notice-38dc062342ac893f9cd3",
       "kind": "publishing_failure",
-      "lifecycle": "open",
-      "deliveryStatus": "queued",
+      "lifecycle": "resolved",
+      "deliveryStatus": "superseded",
       "triggeredAt": "2026-11-13T20:15:31.699224+00:00",
       "deliveryAttempts": 0,
       "deliveryReceipt": null,
@@ -695,18 +696,41 @@
       "nextAction": "Inspect the exact retained run and issue; continue independent eligible work.",
       "proof": {
         "runUrl": "43499614789"
+      },
+      "resolvedAt": "2026-11-14T04:09:41.384469+00:00"
+    },
+    {
+      "eventId": "iam-notice-628e5c55ab8d6f66052a",
+      "kind": "publication_verified",
+      "lifecycle": "open",
+      "deliveryStatus": "queued",
+      "triggeredAt": "2026-11-14T04:09:41.384469+00:00",
+      "deliveryAttempts": 0,
+      "deliveryReceipt": null,
+      "siteDomain": "plowinstallations.com",
+      "articleSlug": "plowinstallations-com-industry-marketing-project-content-guide",
+      "articleUrl": "https://www.industryarmymarketing.com/blog/plowinstallations-com-industry-marketing-project-content-guide",
+      "status": "verified",
+      "verifiedAt": "2026-11-14T04:08:52.874901+00:00",
+      "reconciled": false,
+      "summary": "plowinstallations.com IAM article is verified live.",
+      "nextAction": "Read the verified article; no publication retry is needed.",
+      "proof": {
+        "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43554889504",
+        "publicationVerified": true,
+        "generatedAndAudited": true
       }
     }
   ],
   "producer": {
     "stage": "fired",
-    "firedAt": "2026-11-13T20:15:31.699483+00:00",
-    "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43499614789",
+    "firedAt": "2026-11-14T04:09:41.384882+00:00",
+    "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43554889504",
     "rules": {
-      "sourceCommit": "eab718dbb90ac6a6fd3f0c6ab527c052ad577cdd",
+      "sourceCommit": "bdb70ce23751987f8741d29b91c6d89b2a6be604",
       "hashes": {
         "docs/IAM-SOT.md": "327c746c010100ad3fea5e2a6200aab04890d0579cc98ffddbf4df12fe95002e",
-        "operations/iam/policy.json": "15a61feccc19e28b6a28d884de19ec0acb818d399201d8e643edd8bd2240ad54",
+        "operations/iam/policy.json": "6193ee71499a485a825888ba95ec940ae7576fa44a9d2b4f3dc8670ea1c66044",
         "operations/iam/build-contract.json": "82390b2923839a7126647c778b34fabb26035ae939d21c8ae5f888072d97a0b1"
       },
       "sotVersion": 2
