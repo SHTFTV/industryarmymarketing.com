@@ -1088,13 +1088,13 @@
       }
     },
     "plowinstallations-com-industry-marketing-project-content-guide": {
-      "status": "blocked",
-      "attempts": 1,
+      "status": "claimed",
+      "attempts": 2,
       "sourceDomain": "plowinstallations.com",
       "canonical": "https://www.industryarmymarketing.com/blog/plowinstallations-com-industry-marketing-project-content-guide",
       "observedAt": "2026-11-11T07:40:16.454108+00:00",
       "basis": "versioned historical queue and current repository journal; not recovery of missing SQLite",
-      "owner": "43155109729-1",
+      "owner": "43554889504-1",
       "attemptHistory": [
         {
           "attempt": 1,
@@ -1109,10 +1109,24 @@
             },
             "sotVersion": 2
           }
+        },
+        {
+          "attempt": 2,
+          "owner": "43554889504-1",
+          "at": "2026-11-14T04:06:56.060460+00:00",
+          "rules": {
+            "sourceCommit": "79e7269d4f4abc3eecf1a0a10f9727541936210b",
+            "hashes": {
+              "docs/IAM-SOT.md": "327c746c010100ad3fea5e2a6200aab04890d0579cc98ffddbf4df12fe95002e",
+              "operations/iam/policy.json": "6193ee71499a485a825888ba95ec940ae7576fa44a9d2b4f3dc8670ea1c66044",
+              "operations/iam/build-contract.json": "82390b2923839a7126647c778b34fabb26035ae939d21c8ae5f888072d97a0b1"
+            },
+            "sotVersion": 2
+          }
         }
       ],
       "stage": "media",
-      "nextAction": "Exact company/source media and actual visual review missing for plowinstallations.com",
+      "nextAction": "Exact source photograph, byte hash and desktop/phone review now repair the retained media hold",
       "lastFailure": {
         "slug": "plowinstallations-com-industry-marketing-project-content-guide",
         "at": "2026-11-12T04:30:44.787973+00:00",
@@ -1131,7 +1145,35 @@
           },
           "sotVersion": 2
         }
-      }
+      },
+      "mediaRepairDigest": "5c35925970c4552ae2379553be5c33f95cc1bda12b71f6559d62ded1a49b1ef0",
+      "mediaRepairHistory": [
+        {
+          "at": "2026-11-14T04:06:56.044179+00:00",
+          "status": "retry",
+          "reason": "Exact source photograph, byte hash and desktop/phone review now repair the retained media hold",
+          "previousFailure": {
+            "slug": "plowinstallations-com-industry-marketing-project-content-guide",
+            "at": "2026-11-12T04:30:44.787973+00:00",
+            "stage": "media",
+            "status": "blocked",
+            "errorType": "ValueError",
+            "reason": "Exact company/source media and actual visual review missing for plowinstallations.com",
+            "httpStatus": null,
+            "attempt": 1,
+            "rules": {
+              "sourceCommit": "b0917cc862980329637d45fc17d07093cd5ca270",
+              "hashes": {
+                "docs/IAM-SOT.md": "bee6bafd970b63fd3a7cbb2faea7fb35fa900f1a2789fcf80ffc52bc55afd146",
+                "operations/iam/policy.json": "15a61feccc19e28b6a28d884de19ec0acb818d399201d8e643edd8bd2240ad54",
+                "operations/iam/build-contract.json": "006ee864333b76530c16cc8d552e47f9dff6c74fbdade940d74f00efee7cb494"
+              },
+              "sotVersion": 2
+            }
+          },
+          "mediaRepairDigest": "5c35925970c4552ae2379553be5c33f95cc1bda12b71f6559d62ded1a49b1ef0"
+        }
+      ]
     },
     "plowwow-com-industry-marketing-project-content-guide": {
       "status": "blocked",
@@ -1729,16 +1771,16 @@
     }
   ],
   "lastRun": {
-    "at": "2026-11-13T20:14:56.420576+00:00",
-    "owner": "43499614789-1",
+    "at": "2026-11-14T04:06:56.048212+00:00",
+    "owner": "43554889504-1",
     "trigger": "push",
-    "status": "failed",
-    "policyDigest": "ab1639931848bf2eb2000365da96649afcc031be8ca3f6230a993f0041888247",
+    "status": "checking",
+    "policyDigest": "f4d4e6c97658c3b248995e296acc54c7d5da1229cc89be7dc36abe11adaf55ca",
     "rules": {
-      "sourceCommit": "53b2d0b672b8539533d220fe0d82dc74c44025a5",
+      "sourceCommit": "79e7269d4f4abc3eecf1a0a10f9727541936210b",
       "hashes": {
         "docs/IAM-SOT.md": "327c746c010100ad3fea5e2a6200aab04890d0579cc98ffddbf4df12fe95002e",
-        "operations/iam/policy.json": "15a61feccc19e28b6a28d884de19ec0acb818d399201d8e643edd8bd2240ad54",
+        "operations/iam/policy.json": "6193ee71499a485a825888ba95ec940ae7576fa44a9d2b4f3dc8670ea1c66044",
         "operations/iam/build-contract.json": "82390b2923839a7126647c778b34fabb26035ae939d21c8ae5f888072d97a0b1"
       },
       "sotVersion": 2
@@ -1746,9 +1788,7 @@
     "automaticRecovery": {
       "verified": false,
       "reason": "Not an automatic health recovery dispatch"
-    },
-    "error": "Remaining campaign is blocked, not complete",
-    "nextAction": "Resolve the exact recorded gate; do not reset attempts, reseed history or count zero as publication"
+    }
   },
   "lastExecution": {
     "checkedAt": "2026-11-13T20:15:14.638749+00:00",
@@ -2260,10 +2300,10 @@
   ],
   "approvedLaunchIssues": [],
   "loadedRules": {
-    "sourceCommit": "53b2d0b672b8539533d220fe0d82dc74c44025a5",
+    "sourceCommit": "79e7269d4f4abc3eecf1a0a10f9727541936210b",
     "hashes": {
       "docs/IAM-SOT.md": "327c746c010100ad3fea5e2a6200aab04890d0579cc98ffddbf4df12fe95002e",
-      "operations/iam/policy.json": "15a61feccc19e28b6a28d884de19ec0acb818d399201d8e643edd8bd2240ad54",
+      "operations/iam/policy.json": "6193ee71499a485a825888ba95ec940ae7576fa44a9d2b4f3dc8670ea1c66044",
       "operations/iam/build-contract.json": "82390b2923839a7126647c778b34fabb26035ae939d21c8ae5f888072d97a0b1"
     },
     "sotVersion": 2
@@ -2897,5 +2937,9 @@
       },
       "publicationVerified": true
     }
-  ]
+  ],
+  "lease": {
+    "owner": "43554889504-1",
+    "until": "2026-11-14T04:36:56.060460+00:00"
+  }
 }
