@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "lastVerifiedAt": "2026-11-13T07:05:20.145982+00:00",
+  "lastVerifiedAt": "2026-11-14T04:08:52.874901+00:00",
   "rows": {
     "buildershaus-contractor-project-story-submission-guide": {
       "status": "existing-publication",
@@ -1088,7 +1088,7 @@
       }
     },
     "plowinstallations-com-industry-marketing-project-content-guide": {
-      "status": "claimed",
+      "status": "verified",
       "attempts": 2,
       "sourceDomain": "plowinstallations.com",
       "canonical": "https://www.industryarmymarketing.com/blog/plowinstallations-com-industry-marketing-project-content-guide",
@@ -1125,8 +1125,8 @@
           }
         }
       ],
-      "stage": "media",
-      "nextAction": "Exact source photograph, byte hash and desktop/phone review now repair the retained media hold",
+      "stage": "verified",
+      "nextAction": "Verified; prior attempt evidence retained",
       "lastFailure": {
         "slug": "plowinstallations-com-industry-marketing-project-content-guide",
         "at": "2026-11-12T04:30:44.787973+00:00",
@@ -1173,7 +1173,51 @@
           },
           "mediaRepairDigest": "5c35925970c4552ae2379553be5c33f95cc1bda12b71f6559d62ded1a49b1ef0"
         }
-      ]
+      ],
+      "sourceFailures": [
+        {
+          "url": "https://www.plowinstallations.com/",
+          "errorType": "ValueError",
+          "httpStatus": null
+        }
+      ],
+      "publicationAuthorship": "generated",
+      "sourceEvidence": [
+        {
+          "url": "https://www.plowinstallations.com/guides/boss-drag-pro-8-16-parking-lot-killer/",
+          "sha256": "8452291d4384a25d44a027105b38e9338efc59bb39e58b008c6b8f4ed13e9203"
+        }
+      ],
+      "articleSha256": "7ff044120d1ff963e65e8d6ea6d9c2da2914710d2cef29a9ba1dc2f6b4fb775e",
+      "verifiedAt": "2026-11-14T04:08:52.874901+00:00",
+      "evidence": {
+        "http": true,
+        "canonical": true,
+        "schema": true,
+        "discovery": true,
+        "desktop": true,
+        "phone": true,
+        "image": true,
+        "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43554889504",
+        "trigger": "push",
+        "browserVersion": "157.0.8103.50",
+        "browserExecutable": "/usr/bin/google-chrome",
+        "rules": {
+          "sourceCommit": "79e7269d4f4abc3eecf1a0a10f9727541936210b",
+          "hashes": {
+            "docs/IAM-SOT.md": "327c746c010100ad3fea5e2a6200aab04890d0579cc98ffddbf4df12fe95002e",
+            "operations/iam/policy.json": "6193ee71499a485a825888ba95ec940ae7576fa44a9d2b4f3dc8670ea1c66044",
+            "operations/iam/build-contract.json": "82390b2923839a7126647c778b34fabb26035ae939d21c8ae5f888072d97a0b1"
+          },
+          "sotVersion": 2
+        },
+        "productionVerified": true,
+        "generatedAndAudited": true,
+        "automaticRecovery": {
+          "verified": false,
+          "reason": "Not an automatic health recovery dispatch"
+        }
+      }
     },
     "plowwow-com-industry-marketing-project-content-guide": {
       "status": "blocked",
@@ -1768,13 +1812,34 @@
         "verified": false,
         "reason": "Not an automatic health recovery dispatch"
       }
+    },
+    {
+      "slug": "plowinstallations-com-industry-marketing-project-content-guide",
+      "verifiedAt": "2026-11-14T04:08:52.874901+00:00",
+      "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43554889504",
+      "trigger": "push",
+      "generatedAndAudited": true,
+      "productionVerified": true,
+      "rules": {
+        "sourceCommit": "79e7269d4f4abc3eecf1a0a10f9727541936210b",
+        "hashes": {
+          "docs/IAM-SOT.md": "327c746c010100ad3fea5e2a6200aab04890d0579cc98ffddbf4df12fe95002e",
+          "operations/iam/policy.json": "6193ee71499a485a825888ba95ec940ae7576fa44a9d2b4f3dc8670ea1c66044",
+          "operations/iam/build-contract.json": "82390b2923839a7126647c778b34fabb26035ae939d21c8ae5f888072d97a0b1"
+        },
+        "sotVersion": 2
+      },
+      "automaticRecovery": {
+        "verified": false,
+        "reason": "Not an automatic health recovery dispatch"
+      }
     }
   ],
   "lastRun": {
     "at": "2026-11-14T04:06:56.048212+00:00",
     "owner": "43554889504-1",
     "trigger": "push",
-    "status": "checking",
+    "status": "verified-publication",
     "policyDigest": "f4d4e6c97658c3b248995e296acc54c7d5da1229cc89be7dc36abe11adaf55ca",
     "rules": {
       "sourceCommit": "79e7269d4f4abc3eecf1a0a10f9727541936210b",
@@ -2489,11 +2554,13 @@
     "iam:plowinstallations-com-industry-marketing-project-content-guide:media": {
       "id": "iam:plowinstallations-com-industry-marketing-project-content-guide:media",
       "slug": "plowinstallations-com-industry-marketing-project-content-guide",
-      "status": "open",
+      "status": "resolved",
       "reason": "Exact company/source media and actual visual review missing for plowinstallations.com",
       "stage": "media",
       "lastSeenAt": "2026-11-12T04:30:44.787973+00:00",
-      "delivery": "unproven"
+      "delivery": "unproven",
+      "resolvedAt": "2026-11-14T04:08:52.874901+00:00",
+      "resolution": "Exact canonical verified"
     },
     "iam:plowwow-com-industry-marketing-project-content-guide:media": {
       "id": "iam:plowwow-com-industry-marketing-project-content-guide:media",
@@ -2547,6 +2614,18 @@
       "observedAt": "2026-11-13T03:36:26.625932+00:00",
       "reason": "DAILY_RELEASE_INTAKE_STALE",
       "nextAction": "Connect fresh verified release receipts; independent campaign items continue."
+    },
+    "iam:source:b69c0a55d6574ec1816d": {
+      "id": "iam:source:b69c0a55d6574ec1816d",
+      "kind": "source-feed",
+      "slug": "plowinstallations-com-industry-marketing-project-content-guide",
+      "sourceUrl": "https://www.plowinstallations.com/",
+      "firstSeenAt": "2026-11-14T04:07:06.395428+00:00",
+      "delivery": "unproven",
+      "status": "open",
+      "lastSeenAt": "2026-11-14T04:07:06.395428+00:00",
+      "reason": "ValueError",
+      "httpStatus": null
     }
   },
   "attemptReceipts": [
@@ -2937,9 +3016,5 @@
       },
       "publicationVerified": true
     }
-  ],
-  "lease": {
-    "owner": "43554889504-1",
-    "until": "2026-11-14T04:36:56.060460+00:00"
-  }
+  ]
 }
