@@ -208,7 +208,14 @@
       "credit": "Eli Chamoun / Unsplash — actual house in Gatineau, Québec. Architectural example; no Builders.ltd project or affiliation claim.",
       "sourceUrl": "https://unsplash.com/photos/a-modern-house-with-a-stylish-exterior-coqmBSuXOE4",
       "rightsEvidence": "Photographer source page expressly lists free Unsplash License; https://unsplash.com/license permits free commercial editorial use and modification. Exact source checked2026-11-14; visible attribution links to photographer's photo.",
-      "visualReview": "Exact source3000×1688 and1600×900 export visually inspected: complete house roof/facade, photographic detail, no AI art, no placard or added text. Production desktop/phone acceptance pending."
+      "visualReview": "Exact source3000x1688 and1600x900 export inspected. Root actual CUA verified live IAM article1440x1100 and390x844: full roof and facade, readable photo credit, loaded correct image, no overlap or horizontal overflow.",
+      "visualApproval": {
+        "status": "passed",
+        "sha256": "1bf9d21f6b2f4039f59e14216d458d002c2c471c22dd1dd4ce0cdedc294830a8",
+        "reviewedAt": "2026-11-14T02:24:00Z",
+        "desktopEvidence": "operations/iam/media-review/iam-builders-desktop.png",
+        "phoneEvidence": "operations/iam/media-review/iam-builders-mobile.png"
+      }
     },
     "share": {
       "path": "/brand-journal/builders-gatineau-house.jpg",
@@ -226,7 +233,82 @@
       "credit": "Eli Chamoun / Unsplash — actual house in Gatineau, Québec. Architectural example; no Builders.ltd project or affiliation claim.",
       "sourceUrl": "https://unsplash.com/photos/a-modern-house-with-a-stylish-exterior-coqmBSuXOE4",
       "rightsEvidence": "Photographer source page expressly lists free Unsplash License; https://unsplash.com/license permits free commercial editorial use and modification. Exact source checked2026-11-14; visible attribution links to photographer's photo.",
-      "visualReview": "Exact source3000×1688 and1600×900 export visually inspected: complete house roof/facade, photographic detail, no AI art, no placard or added text. Production desktop/phone acceptance pending."
+      "visualReview": "Exact source3000x1688 and1600x900 export inspected. Root actual CUA verified live IAM article1440x1100 and390x844: full roof and facade, readable photo credit, loaded correct image, no overlap or horizontal overflow.",
+      "visualApproval": {
+        "status": "passed",
+        "sha256": "1bf9d21f6b2f4039f59e14216d458d002c2c471c22dd1dd4ce0cdedc294830a8",
+        "reviewedAt": "2026-11-14T02:24:00Z",
+        "desktopEvidence": "operations/iam/media-review/iam-builders-desktop.png",
+        "phoneEvidence": "operations/iam/media-review/iam-builders-mobile.png"
+      }
+    }
+  },
+  "plowinstallations-com-industry-marketing-project-content-guide": {
+    "hero": {
+      "path": "/brand-journal/plowinstallations-boss-drag-pro-source.png",
+      "sha256": "ef27c0afd47ed16c52633a7585d3c1df1d58ed5cf330f477f2fd28dd432e179f",
+      "nativeSize": [
+        1600,
+        900
+      ],
+      "sourceOriginalSize": [
+        8256,
+        5504
+      ],
+      "derivativeSize": [
+        1600,
+        900
+      ],
+      "upscaled": false,
+      "mediaType": "source-photograph",
+      "subjectType": "manufacturer-product",
+      "sourceUrl": "https://www.plowinstallations.com/guides/boss-drag-pro-8-16-parking-lot-killer/",
+      "originalUrl": "https://www.plowinstallations.com/brand/boss-drag-pro-8-16-parking-lot-killer-expanded.png",
+      "manufacturerSourceUrl": "https://info.bossplow.com/drag-pro-rear-plow",
+      "credit": "BOSS Products / The Toro Company — DRAG PRO product photograph from PlowInstallations.com's sourced compatibility guide. Not a Full Flow Hydraulics installation, fitment approval or dealer-status claim.",
+      "rightsEvidence": "User authorized IAM's existing network company feature and reuse of its actual subject-specific site assets. Exact photograph and manufacturer credit already published by owned PlowInstallations.com; editorial reuse is limited to explaining that same published product guide. Original credited BOSS gallery retained; no assertion of company ownership, open licence or installed-work provenance.",
+      "visualReview": "Exact1600x900 source photograph inspected: complete rear blade and wings, truck and manufacturer marks remain visible. Root CUA reviewed the source guide at1440x1100 and390x844: full subject, readable manufacturer credit, no image crop or overflow. Native PNG bytes retained unchanged. New IAM article requires its own actual production checks.",
+      "visualApproval": {
+        "status": "passed",
+        "sha256": "ef27c0afd47ed16c52633a7585d3c1df1d58ed5cf330f477f2fd28dd432e179f",
+        "reviewedAt": "2026-11-14T02:24:00Z",
+        "desktopEvidence": "operations/iam/media-review/plow-source-desktop.png",
+        "phoneEvidence": "operations/iam/media-review/plow-source-mobile.png",
+        "scope": "Exact source photograph in company guide, not an advance approval of the new IAM article"
+      }
+    },
+    "share": {
+      "path": "/brand-journal/plowinstallations-boss-drag-pro-source.png",
+      "sha256": "ef27c0afd47ed16c52633a7585d3c1df1d58ed5cf330f477f2fd28dd432e179f",
+      "nativeSize": [
+        1600,
+        900
+      ],
+      "sourceOriginalSize": [
+        8256,
+        5504
+      ],
+      "derivativeSize": [
+        1600,
+        900
+      ],
+      "upscaled": false,
+      "mediaType": "source-photograph",
+      "subjectType": "manufacturer-product",
+      "sourceUrl": "https://www.plowinstallations.com/guides/boss-drag-pro-8-16-parking-lot-killer/",
+      "originalUrl": "https://www.plowinstallations.com/brand/boss-drag-pro-8-16-parking-lot-killer-expanded.png",
+      "manufacturerSourceUrl": "https://info.bossplow.com/drag-pro-rear-plow",
+      "credit": "BOSS Products / The Toro Company — DRAG PRO product photograph from PlowInstallations.com's sourced compatibility guide. Not a Full Flow Hydraulics installation, fitment approval or dealer-status claim.",
+      "rightsEvidence": "User authorized IAM's existing network company feature and reuse of its actual subject-specific site assets. Exact photograph and manufacturer credit already published by owned PlowInstallations.com; editorial reuse is limited to explaining that same published product guide. Original credited BOSS gallery retained; no assertion of company ownership, open licence or installed-work provenance.",
+      "visualReview": "Exact1600x900 source photograph inspected: complete rear blade and wings, truck and manufacturer marks remain visible. Root CUA reviewed the source guide at1440x1100 and390x844: full subject, readable manufacturer credit, no image crop or overflow. Native PNG bytes retained unchanged. New IAM article requires its own actual production checks.",
+      "visualApproval": {
+        "status": "passed",
+        "sha256": "ef27c0afd47ed16c52633a7585d3c1df1d58ed5cf330f477f2fd28dd432e179f",
+        "reviewedAt": "2026-11-14T02:24:00Z",
+        "desktopEvidence": "operations/iam/media-review/plow-source-desktop.png",
+        "phoneEvidence": "operations/iam/media-review/plow-source-mobile.png",
+        "scope": "Exact source photograph in company guide, not an advance approval of the new IAM article"
+      }
     }
   }
 }

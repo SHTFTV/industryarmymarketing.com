@@ -15,6 +15,7 @@ from preparation import prepared_draft
 from automatic_trigger import verify as verify_automatic_trigger
 from recovery import ItemHold, eligible, recover_expired, fetch_all, retain_failure, retain_source_results
 from approved_launches import pending_launches, source_checked_post
+from media_recovery import recover_reviewed_media
 
 ROOT=pathlib.Path.cwd()
 STATE=ROOT/'operations/iam/state.json'
@@ -39,6 +40,11 @@ def media_ok(media):
         m=media[key]
         if not m.get('rightsEvidence') or not m.get('credit') or not m.get('visualReview'):
             raise ValueError('Media lacks exact rights, credit or actual visual review')
+        review=m.get('visualApproval',{})
+        if m.get('mediaType')!='source-photograph' or review.get('status')!='passed' or review.get('sha256')!=m.get('sha256'):
+            raise ValueError('New publication requires a hash-bound review of actual subject photography; generic placards and decorative art fail')
+        if not all(review.get(k) for k in ('desktopEvidence','phoneEvidence','reviewedAt')):
+            raise ValueError('Exact desktop and phone source-photo review evidence required')
         p=PUBLIC/m['path'].lstrip('/')
         if not p.resolve().is_relative_to(PUBLIC.resolve()): raise ValueError('Media path escapes public root')
         if hashlib.sha256(p.read_bytes()).hexdigest()!=m['sha256']: raise ValueError('Changed media requires review')
@@ -88,6 +94,7 @@ def cycle(excluded):
     journal=read(JOURNAL)
     state=reconcile(read(STATE),journal,read('docs/campaigns/construction-hourly/queue-baseline.json'))
     recover_expired(state,journal,dt.datetime.now(dt.timezone.utc))
+    recover_reviewed_media(state,read('operations/iam/media.json'),PUBLIC,dt.datetime.now(dt.timezone.utc))
     automatic=verify_automatic_trigger()
     state['loadedRules']=loaded
     owner=os.environ.get('GITHUB_RUN_ID','local-dryrun')+'-'+os.environ.get('GITHUB_RUN_ATTEMPT','1')
@@ -232,5 +239,6 @@ def main():
     return {'status':'bounded-item-holds','heldSlugs':sorted(excluded),'publicationVerified':False}
 
 if __name__=='__main__': main()
+
 
 

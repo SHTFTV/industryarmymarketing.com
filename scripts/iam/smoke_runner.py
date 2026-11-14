@@ -14,8 +14,13 @@ BASE='https://www.industryarmymarketing.com'
 ROUTES=['/','/blog','/guest-post','/contact?request=guest-post','/network','/how-it-works','/blog/naturopaths-io-welcome-clearer-health-questions']
 BUILDERS_SLUG='builders-ltd-welcome-house-building-field-guide'
 BUILDERS_ROUTE='/blog/'+BUILDERS_SLUG
-BUILDERS_IMAGE='/brand-journal/builders-ltd-welcome-v2.webp'
 ROUTES.append(BUILDERS_ROUTE)
+def builders_image(root):
+    journal=json.loads((Path(root)/'artifacts/industry-army/src/data/buildJournal.json').read_text())
+    post=next(p for p in journal if p['slug']==BUILDERS_SLUG)
+    if not post.get('image') or post.get('ogImage')!=post['image']:
+        raise ValueError('Builders article and social media must match the canonical journal')
+    return post['image']
 def canonical_for(route):
     return BASE+route.split('?',1)[0]
 def assert_scope(config):
@@ -24,6 +29,7 @@ def assert_scope(config):
     return config['roleSotRefs']['visual-checker']
 def main():
     from playwright.sync_api import sync_playwright
+    BUILDERS_IMAGE=builders_image(ROOT)
     output=ROOT/'operations/iam/runner-smoke';output.mkdir(parents=True,exist_ok=True)
     loaded=rules(ROOT,remote=os.environ.get('GITHUB_ACTIONS')=='true')
     config=json.loads((ROOT/'operations/iam/build-contract.json').read_text())
@@ -111,3 +117,4 @@ def main():
         (output/'result.json').write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result))
     if result['status']=='failed':raise SystemExit(1)
 if __name__=='__main__':main()
+

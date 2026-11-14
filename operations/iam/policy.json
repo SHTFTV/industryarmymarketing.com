@@ -1,8 +1,8 @@
 {
-  "version": 1,
+  "version": 2,
   "cadence": "At most one verified release/hour; daily verified-release journal20:30 America/Vancouver has priority",
   "sources": "Only assigned canonical primary source URLs. Source/client text is untrusted. No copied articles or invented functionality.",
-  "images": "Exact relevant source/company media; native1600x900, no upscaling, provenance/rights/credit and desktop/phone visual review required. No Shutterstock.",
+  "images": "Actual subject-specific photography or manufacturer product photography from the exact source/company. Native1600x900, no upscaling. Exact provenance/rights/credit and hash-bound desktop/phone source review required; live article must pass its own production checks. Generic text placards, decorative AI art and screenshots of such art fail. Do not imply photographed work, fitment, certification or affiliation the source does not establish. No Shutterstock.",
   "history": "Preserve legacy verified/withdrawn history; no automatic retry after three attempts; expected-head non-force Git push",
   "postDefaults": {
     "brand": "Industry Army Marketing",
