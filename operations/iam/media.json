@@ -392,10 +392,35 @@
         "reviewer": "Codex root actual source and358x201asset-scale visual review"
       },
       "productionReview": {
-        "status": "review-pending",
-        "sha256": "17ad727715e71cf2c07a05757b422194e19262fc471d5cbce0b10cec278fe595",
+        "status": "passed",
+        "reviewKind": "production-page",
+        "canonical": "https://www.industryarmymarketing.com/blog/gasfitter-ca-industry-marketing-project-content-guide",
+        "deploymentSourceCommit": "5aee7df5148883a196c1d52e521cd82fe00b8a54",
+        "sourceJournalSha256": "55ddf2a2e999cd37a7a0549d9f2ed38fd3d3d96c2522bdb0112bdafee2d57f27",
         "postSha256": "67f0d8a053c708ee868b2f443deba261bd1e4bb5723fcc21749b450bef5dc756",
-        "scope": "Actual live desktop and phone article/credit/sharing review is required after deployment"
+        "sourcePostSha256": "67f0d8a053c708ee868b2f443deba261bd1e4bb5723fcc21749b450bef5dc756",
+        "reviewedAt": "2026-11-15T18:15:40.032135+00:00",
+        "desktopViewport": [
+          1280,
+          720
+        ],
+        "phoneViewport": [
+          390,
+          844
+        ],
+        "desktopEvidence": "operations/iam/media-review/iam-gasfitter-ca-production-desktop.png",
+        "phoneEvidence": "operations/iam/media-review/iam-gasfitter-ca-production-phone.png",
+        "evidenceSha256": {
+          "desktop": "a65d0d33910badc4ddaef3446c88a671f0df420deda04692bed96b44dfa368a5",
+          "phone": "248c5d692f513e1221ccd0c357e41258977613305315670d7578b31f597347fa"
+        },
+        "reviewer": "Codex root actual CUA browser review; child independent inspection of all four production captures",
+        "scope": "Actual production article hero, external manufacturer credit, sharing-image binding and removal of six decorative inline images. No full-body digest certification.",
+        "liveArticleBindingScope": "Title/caption/exact live hero-share bytes plus observed SVG removal and corrected.ca provenance paragraph; source article hash is not a computed live full-body digest.",
+        "outcome": "Complete.ca range/hood/kitchen and all.io gas burners/griddle/control knobs visible.12px credits readable on phone; no unwanted crop, overlay or horizontal overflow.",
+        "httpProof": "operations/iam/media-review/gasfitter-root-live-verification.json",
+        "mechanicalRun": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43745061505",
+        "sha256": "17ad727715e71cf2c07a05757b422194e19262fc471d5cbce0b10cec278fe595"
       }
     },
     "share": {
@@ -435,10 +460,35 @@
         "reviewer": "Codex root actual source and358x201asset-scale visual review"
       },
       "productionReview": {
-        "status": "review-pending",
-        "sha256": "17ad727715e71cf2c07a05757b422194e19262fc471d5cbce0b10cec278fe595",
+        "status": "passed",
+        "reviewKind": "production-page",
+        "canonical": "https://www.industryarmymarketing.com/blog/gasfitter-ca-industry-marketing-project-content-guide",
+        "deploymentSourceCommit": "5aee7df5148883a196c1d52e521cd82fe00b8a54",
+        "sourceJournalSha256": "55ddf2a2e999cd37a7a0549d9f2ed38fd3d3d96c2522bdb0112bdafee2d57f27",
         "postSha256": "67f0d8a053c708ee868b2f443deba261bd1e4bb5723fcc21749b450bef5dc756",
-        "scope": "Actual live desktop and phone article/credit/sharing review is required after deployment"
+        "sourcePostSha256": "67f0d8a053c708ee868b2f443deba261bd1e4bb5723fcc21749b450bef5dc756",
+        "reviewedAt": "2026-11-15T18:15:40.032135+00:00",
+        "desktopViewport": [
+          1280,
+          720
+        ],
+        "phoneViewport": [
+          390,
+          844
+        ],
+        "desktopEvidence": "operations/iam/media-review/iam-gasfitter-ca-production-desktop.png",
+        "phoneEvidence": "operations/iam/media-review/iam-gasfitter-ca-production-phone.png",
+        "evidenceSha256": {
+          "desktop": "a65d0d33910badc4ddaef3446c88a671f0df420deda04692bed96b44dfa368a5",
+          "phone": "248c5d692f513e1221ccd0c357e41258977613305315670d7578b31f597347fa"
+        },
+        "reviewer": "Codex root actual CUA browser review; child independent inspection of all four production captures",
+        "scope": "Actual production article hero, external manufacturer credit, sharing-image binding and removal of six decorative inline images. No full-body digest certification.",
+        "liveArticleBindingScope": "Title/caption/exact live hero-share bytes plus observed SVG removal and corrected.ca provenance paragraph; source article hash is not a computed live full-body digest.",
+        "outcome": "Complete.ca range/hood/kitchen and all.io gas burners/griddle/control knobs visible.12px credits readable on phone; no unwanted crop, overlay or horizontal overflow.",
+        "httpProof": "operations/iam/media-review/gasfitter-root-live-verification.json",
+        "mechanicalRun": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43745061505",
+        "sha256": "17ad727715e71cf2c07a05757b422194e19262fc471d5cbce0b10cec278fe595"
       }
     },
     "disallowInlineMedia": true,
@@ -485,10 +535,35 @@
         "reviewer": "Codex root actual source and358x201asset-scale visual review"
       },
       "productionReview": {
-        "status": "review-pending",
-        "sha256": "46518fb851036153b2dbd74025e4c03ce1c325f6a729de79d6c72ba3923bf74c",
+        "status": "passed",
+        "reviewKind": "production-page",
+        "canonical": "https://www.industryarmymarketing.com/blog/gasfitter-io-industry-marketing-project-content-guide",
+        "deploymentSourceCommit": "5aee7df5148883a196c1d52e521cd82fe00b8a54",
+        "sourceJournalSha256": "55ddf2a2e999cd37a7a0549d9f2ed38fd3d3d96c2522bdb0112bdafee2d57f27",
         "postSha256": "e52292468340cb0843fffe1dab0f159420aed0403406c646c8595b90b9db5f8b",
-        "scope": "Actual live desktop and phone article/credit/sharing review is required after deployment"
+        "sourcePostSha256": "e52292468340cb0843fffe1dab0f159420aed0403406c646c8595b90b9db5f8b",
+        "reviewedAt": "2026-11-15T18:15:40.032135+00:00",
+        "desktopViewport": [
+          1280,
+          720
+        ],
+        "phoneViewport": [
+          390,
+          844
+        ],
+        "desktopEvidence": "operations/iam/media-review/iam-gasfitter-io-production-desktop.png",
+        "phoneEvidence": "operations/iam/media-review/iam-gasfitter-io-production-phone.png",
+        "evidenceSha256": {
+          "desktop": "87921521e65086a08a1243e9199cbdffa4b58b5f833bfeb3025f7a0b2c60afcc",
+          "phone": "58dee59e1395ccc371eeae7aecb15128d6cbe46ed7b3ac548bfe138f43d4d691"
+        },
+        "reviewer": "Codex root actual CUA browser review; child independent inspection of all four production captures",
+        "scope": "Actual production article hero, external manufacturer credit, sharing-image binding and removal of six decorative inline images. No full-body digest certification.",
+        "liveArticleBindingScope": "Title/caption/exact live hero-share bytes plus observed SVG removal and corrected.ca provenance paragraph; source article hash is not a computed live full-body digest.",
+        "outcome": "Complete.ca range/hood/kitchen and all.io gas burners/griddle/control knobs visible.12px credits readable on phone; no unwanted crop, overlay or horizontal overflow.",
+        "httpProof": "operations/iam/media-review/gasfitter-root-live-verification.json",
+        "mechanicalRun": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43745061505",
+        "sha256": "46518fb851036153b2dbd74025e4c03ce1c325f6a729de79d6c72ba3923bf74c"
       }
     },
     "share": {
@@ -528,10 +603,35 @@
         "reviewer": "Codex root actual source and358x201asset-scale visual review"
       },
       "productionReview": {
-        "status": "review-pending",
-        "sha256": "46518fb851036153b2dbd74025e4c03ce1c325f6a729de79d6c72ba3923bf74c",
+        "status": "passed",
+        "reviewKind": "production-page",
+        "canonical": "https://www.industryarmymarketing.com/blog/gasfitter-io-industry-marketing-project-content-guide",
+        "deploymentSourceCommit": "5aee7df5148883a196c1d52e521cd82fe00b8a54",
+        "sourceJournalSha256": "55ddf2a2e999cd37a7a0549d9f2ed38fd3d3d96c2522bdb0112bdafee2d57f27",
         "postSha256": "e52292468340cb0843fffe1dab0f159420aed0403406c646c8595b90b9db5f8b",
-        "scope": "Actual live desktop and phone article/credit/sharing review is required after deployment"
+        "sourcePostSha256": "e52292468340cb0843fffe1dab0f159420aed0403406c646c8595b90b9db5f8b",
+        "reviewedAt": "2026-11-15T18:15:40.032135+00:00",
+        "desktopViewport": [
+          1280,
+          720
+        ],
+        "phoneViewport": [
+          390,
+          844
+        ],
+        "desktopEvidence": "operations/iam/media-review/iam-gasfitter-io-production-desktop.png",
+        "phoneEvidence": "operations/iam/media-review/iam-gasfitter-io-production-phone.png",
+        "evidenceSha256": {
+          "desktop": "87921521e65086a08a1243e9199cbdffa4b58b5f833bfeb3025f7a0b2c60afcc",
+          "phone": "58dee59e1395ccc371eeae7aecb15128d6cbe46ed7b3ac548bfe138f43d4d691"
+        },
+        "reviewer": "Codex root actual CUA browser review; child independent inspection of all four production captures",
+        "scope": "Actual production article hero, external manufacturer credit, sharing-image binding and removal of six decorative inline images. No full-body digest certification.",
+        "liveArticleBindingScope": "Title/caption/exact live hero-share bytes plus observed SVG removal and corrected.ca provenance paragraph; source article hash is not a computed live full-body digest.",
+        "outcome": "Complete.ca range/hood/kitchen and all.io gas burners/griddle/control knobs visible.12px credits readable on phone; no unwanted crop, overlay or horizontal overflow.",
+        "httpProof": "operations/iam/media-review/gasfitter-root-live-verification.json",
+        "mechanicalRun": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43745061505",
+        "sha256": "46518fb851036153b2dbd74025e4c03ce1c325f6a729de79d6c72ba3923bf74c"
       }
     },
     "disallowInlineMedia": true

@@ -90,6 +90,8 @@ class MediaContractTests(unittest.TestCase):
         self.assertEqual(report['status'], 'incomplete')
 
     def test_production_approval_must_bind_real_page_identity_viewports_post_and_photo(self):
+        Image.new('RGB', (1440,1100), '#204d3f').save(self.root / 'desktop.png')
+        Image.new('RGB', (390,844), '#204d3f').save(self.root / 'phone.png')
         for asset in (self.entry['hero'], self.entry['share']):
             asset['productionReview'] = dict(copy.deepcopy(asset['visualApproval']),
                 reviewKind='production-page', canonical='https://www.industryarmymarketing.com/blog/legacy-post',
@@ -102,6 +104,18 @@ class MediaContractTests(unittest.TestCase):
         self.entry['share']['productionReview']['canonical'] = 'https://www.industryarmymarketing.com/blog/a-different-post'
         report = inventory(self.root, [self.post], {self.post['slug']: self.entry})
         self.assertEqual(report['assetCounts']['reviewed'], 0)
+
+    def test_source_proof_names_and_missing_production_files_cannot_pass(self):
+        for asset in (self.entry['hero'], self.entry['share']):
+            asset['productionReview'] = dict(copy.deepcopy(asset['visualApproval']),
+                reviewKind='production-page', canonical='https://www.industryarmymarketing.com/blog/legacy-post',
+                deploymentSourceCommit='1' * 40, desktopViewport=[1440,1100], phoneViewport=[390,844])
+        self.assertEqual(inventory(self.root,[self.post],{self.post['slug']:self.entry})['assetCounts']['reviewed'],0)
+        Image.new('RGB',(1440,1100)).save(self.root/'source-desktop.png')
+        Image.new('RGB',(390,844)).save(self.root/'source-phone.png')
+        for asset in (self.entry['hero'], self.entry['share']):
+            asset['productionReview'].update(desktopEvidence='source-desktop.png',phoneEvidence='source-phone.png')
+        self.assertEqual(inventory(self.root,[self.post],{self.post['slug']:self.entry})['assetCounts']['reviewed'],0)
 
     def test_unregistered_large_photo_is_unknown_not_approved_or_assumed_bad(self):
         report = inventory(self.root, [self.post], {})

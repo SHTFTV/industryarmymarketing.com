@@ -48,16 +48,31 @@ def reviewed(review, asset_sha, post_sha):
             and all(review.get(k) for k in ('reviewedAt', 'desktopEvidence', 'phoneEvidence')))
 
 
-def production_reviewed(review, asset_sha, post_sha, canonical):
+def production_reviewed(root, review, asset_sha, post_sha, canonical):
     if not reviewed(review, asset_sha, post_sha):
         return False
     desktop, phone = review.get('desktopViewport'), review.get('phoneViewport')
     def viewport(value):
         return isinstance(value, list) and len(value) == 2 and all(isinstance(n, int) for n in value)
-    return (review.get('reviewKind') == 'production-page' and review.get('canonical') == canonical
+    valid = (review.get('reviewKind') == 'production-page' and review.get('canonical') == canonical
             and re.fullmatch(r'[0-9a-f]{40}', review.get('deploymentSourceCommit', '')) is not None
             and viewport(desktop) and desktop[0] >= 1024 and desktop[1] >= 700
             and viewport(phone) and 320 <= phone[0] <= 480 and phone[1] >= 600)
+    if not valid:
+        return False
+    from PIL import Image
+    repository = Path(root).resolve()
+    for key, expected in (('desktopEvidence', desktop), ('phoneEvidence', phone)):
+        proof = (repository / review[key]).resolve()
+        if not proof.is_relative_to(repository) or not proof.is_file() or 'source' in proof.name.lower():
+            return False
+        try:
+            with Image.open(proof) as image:
+                if list(image.size) != expected:
+                    return False
+        except OSError:
+            return False
+    return True
 
 
 def validate_contract(root, post, entry):
@@ -88,7 +103,7 @@ def validate_contract(root, post, entry):
         production = asset.get('productionReview', {})
         bindings[kind] = dict(actual, postSha256=post_sha,
                               sourceReviewStatus='passed',
-                              productionReviewStatus='passed' if production_reviewed(production, actual['sha256'], post_sha, 'https://www.industryarmymarketing.com/blog/' + post['slug']) else 'review-pending')
+                              productionReviewStatus='passed' if production_reviewed(root, production, actual['sha256'], post_sha, 'https://www.industryarmymarketing.com/blog/' + post['slug']) else 'review-pending')
     return bindings
 
 

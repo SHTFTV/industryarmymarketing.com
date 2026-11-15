@@ -1,0 +1,61 @@
+{
+  "checkedAt": "2026-11-15T18:15:40.032135+00:00",
+  "checks": [
+    {
+      "path": "/source-version.json",
+      "status": 200,
+      "sha256": "0c77b955728494c7d7ae527efd17cc8d350c10f15afba7d54ce3067af42d5219",
+      "bytes": 288,
+      "identity": {
+        "schemaVersion": 1,
+        "repository": "SHTFTV/industryarmymarketing.com",
+        "sourceCommit": "5aee7df5148883a196c1d52e521cd82fe00b8a54",
+        "sotSha256": "327c746c010100ad3fea5e2a6200aab04890d0579cc98ffddbf4df12fe95002e",
+        "journalSha256": "55ddf2a2e999cd37a7a0549d9f2ed38fd3d3d96c2522bdb0112bdafee2d57f27"
+      }
+    },
+    {
+      "path": "/brand-journal/gasfitter-ca-cafe-showroom-kitchen.jpg",
+      "status": 200,
+      "sha256": "17ad727715e71cf2c07a05757b422194e19262fc471d5cbce0b10cec278fe595",
+      "bytes": 227412
+    },
+    {
+      "path": "/brand-journal/gasfitter-io-cafe-gas-cooktop-detail.jpg",
+      "status": 200,
+      "sha256": "46518fb851036153b2dbd74025e4c03ce1c325f6a729de79d6c72ba3923bf74c",
+      "bytes": 168979
+    }
+  ],
+  "rootBrowser": {
+    "status": "passed",
+    "desktopViewport": [
+      1280,
+      720
+    ],
+    "phoneViewport": [
+      390,
+      844
+    ],
+    "desktopImage": [
+      864,
+      486.875
+    ],
+    "phoneImage": [
+      358,
+      202.25
+    ],
+    "nativeImages": [
+      1600,
+      900
+    ],
+    "phoneScrollWidth": 390,
+    "captionFontPixels": 12,
+    "screenshots": [
+      "iam-gasfitter-ca-live-desktop.png",
+      "iam-gasfitter-io-live-desktop.png",
+      "iam-gasfitter-ca-live-mobile.png",
+      "iam-gasfitter-io-live-mobile.png"
+    ]
+  }
+}
