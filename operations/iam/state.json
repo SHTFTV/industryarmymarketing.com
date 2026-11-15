@@ -1836,12 +1836,26 @@
     }
   ],
   "lastRun": {
-    "at": "2026-11-15T18:08:46Z",
+    "at": "2026-11-15T18:12:27.930871+00:00",
+    "owner": "43745312174-1",
     "trigger": "push",
-    "status": "prewriter-failed",
-    "error": "Runtime regressions",
-    "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43745061564",
-    "nextAction": "Inspect this exact run failure; preserve browser QA, queue history and separate credential/media gates."
+    "status": "failed",
+    "policyDigest": "f4d4e6c97658c3b248995e296acc54c7d5da1229cc89be7dc36abe11adaf55ca",
+    "rules": {
+      "sourceCommit": "c3ebc7cb4b4b3ff01bb9a60b651f91c9b1a416e5",
+      "hashes": {
+        "docs/IAM-SOT.md": "327c746c010100ad3fea5e2a6200aab04890d0579cc98ffddbf4df12fe95002e",
+        "operations/iam/policy.json": "6193ee71499a485a825888ba95ec940ae7576fa44a9d2b4f3dc8670ea1c66044",
+        "operations/iam/build-contract.json": "82390b2923839a7126647c778b34fabb26035ae939d21c8ae5f888072d97a0b1"
+      },
+      "sotVersion": 2
+    },
+    "automaticRecovery": {
+      "verified": false,
+      "reason": "Not an automatic health recovery dispatch"
+    },
+    "error": "Remaining campaign is blocked, not complete",
+    "nextAction": "Resolve the exact recorded gate; do not reset attempts, reseed history or count zero as publication"
   },
   "lastExecution": {
     "checkedAt": "2026-11-15T18:09:19.741825+00:00",
@@ -2393,7 +2407,7 @@
   ],
   "approvedLaunchIssues": [],
   "loadedRules": {
-    "sourceCommit": "79e7269d4f4abc3eecf1a0a10f9727541936210b",
+    "sourceCommit": "c3ebc7cb4b4b3ff01bb9a60b651f91c9b1a416e5",
     "hashes": {
       "docs/IAM-SOT.md": "327c746c010100ad3fea5e2a6200aab04890d0579cc98ffddbf4df12fe95002e",
       "operations/iam/policy.json": "6193ee71499a485a825888ba95ec940ae7576fa44a9d2b4f3dc8670ea1c66044",
