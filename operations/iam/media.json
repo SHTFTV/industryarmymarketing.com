@@ -352,5 +352,188 @@
         "publicationRun": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43554889504"
       }
     }
+  },
+  "gasfitter-ca-industry-marketing-project-content-guide": {
+    "contractVersion": 2,
+    "hero": {
+      "path": "/brand-journal/gasfitter-ca-cafe-showroom-kitchen.jpg",
+      "sha256": "17ad727715e71cf2c07a05757b422194e19262fc471d5cbce0b10cec278fe595",
+      "nativeSize": [
+        6402,
+        4268
+      ],
+      "derivativeSize": [
+        1600,
+        900
+      ],
+      "upscaled": false,
+      "mediaType": "source-photograph",
+      "subjectType": "manufacturer-product",
+      "sourceUrl": "https://pressroom.geappliances.com/file?fid=5c76d7482cfac258307a61ae",
+      "originalUrl": "https://pressroom.geappliances.com/_gallery/get_file/?file_id=5c76d7482cfac258307a61ae&album_id=",
+      "sourceSha256": "e7e88233c77800189f92cad8044a79f74faf3c5d024d0ca4ebcd3069fd476556",
+      "cropBox": [
+        96,
+        0,
+        6208,
+        3492
+      ],
+      "credit": "Café matte-white range in a manufacturer showroom kitchen. Credit: GE Appliances/Café pressroom, 2019 KBIS. Archival equipment example, not a Gasfitter.ca installation.",
+      "rightsEvidence": "User-directed editorial reuse of the exact manufacturer photograph already published by owned Gasfitter.ca. Official GE Appliances pressroom offers this archival image as a press download. No open licence, manufacturer partnership, endorsement or photographed Gasfitter.ca installation is asserted.",
+      "visualReview": "Actual6402x4268 original and existing1600x900 Gasfitter.ca source derivative inspected. Complete range, hood and kitchen setting visible; existing small Gasfitter.ca label retained. Clear visible manufacturer credit distinguishes the archival showroom from site work.",
+      "visualApproval": {
+        "status": "passed",
+        "sha256": "17ad727715e71cf2c07a05757b422194e19262fc471d5cbce0b10cec278fe595",
+        "postSha256": "67f0d8a053c708ee868b2f443deba261bd1e4bb5723fcc21749b450bef5dc756",
+        "reviewedAt": "2026-11-15T17:58:29.291618+00:00",
+        "desktopEvidence": "operations/iam/media-review/gasfitter-ca-source-desktop.jpg",
+        "phoneEvidence": "operations/iam/media-review/gasfitter-ca-source-phone.jpg",
+        "scope": "Exact source/photo/detail and358x201 phone-size source proof; not a production page approval",
+        "reviewer": "Codex root actual source and358x201asset-scale visual review"
+      },
+      "productionReview": {
+        "status": "review-pending",
+        "sha256": "17ad727715e71cf2c07a05757b422194e19262fc471d5cbce0b10cec278fe595",
+        "postSha256": "67f0d8a053c708ee868b2f443deba261bd1e4bb5723fcc21749b450bef5dc756",
+        "scope": "Actual live desktop and phone article/credit/sharing review is required after deployment"
+      }
+    },
+    "share": {
+      "path": "/brand-journal/gasfitter-ca-cafe-showroom-kitchen.jpg",
+      "sha256": "17ad727715e71cf2c07a05757b422194e19262fc471d5cbce0b10cec278fe595",
+      "nativeSize": [
+        6402,
+        4268
+      ],
+      "derivativeSize": [
+        1600,
+        900
+      ],
+      "upscaled": false,
+      "mediaType": "source-photograph",
+      "subjectType": "manufacturer-product",
+      "sourceUrl": "https://pressroom.geappliances.com/file?fid=5c76d7482cfac258307a61ae",
+      "originalUrl": "https://pressroom.geappliances.com/_gallery/get_file/?file_id=5c76d7482cfac258307a61ae&album_id=",
+      "sourceSha256": "e7e88233c77800189f92cad8044a79f74faf3c5d024d0ca4ebcd3069fd476556",
+      "cropBox": [
+        96,
+        0,
+        6208,
+        3492
+      ],
+      "credit": "Café matte-white range in a manufacturer showroom kitchen. Credit: GE Appliances/Café pressroom, 2019 KBIS. Archival equipment example, not a Gasfitter.ca installation.",
+      "rightsEvidence": "User-directed editorial reuse of the exact manufacturer photograph already published by owned Gasfitter.ca. Official GE Appliances pressroom offers this archival image as a press download. No open licence, manufacturer partnership, endorsement or photographed Gasfitter.ca installation is asserted.",
+      "visualReview": "Actual6402x4268 original and existing1600x900 Gasfitter.ca source derivative inspected. Complete range, hood and kitchen setting visible; existing small Gasfitter.ca label retained. Clear visible manufacturer credit distinguishes the archival showroom from site work.",
+      "visualApproval": {
+        "status": "passed",
+        "sha256": "17ad727715e71cf2c07a05757b422194e19262fc471d5cbce0b10cec278fe595",
+        "postSha256": "67f0d8a053c708ee868b2f443deba261bd1e4bb5723fcc21749b450bef5dc756",
+        "reviewedAt": "2026-11-15T17:58:29.291748+00:00",
+        "desktopEvidence": "operations/iam/media-review/gasfitter-ca-source-desktop.jpg",
+        "phoneEvidence": "operations/iam/media-review/gasfitter-ca-source-phone.jpg",
+        "scope": "Exact source/photo/detail and358x201 phone-size source proof; not a production page approval",
+        "reviewer": "Codex root actual source and358x201asset-scale visual review"
+      },
+      "productionReview": {
+        "status": "review-pending",
+        "sha256": "17ad727715e71cf2c07a05757b422194e19262fc471d5cbce0b10cec278fe595",
+        "postSha256": "67f0d8a053c708ee868b2f443deba261bd1e4bb5723fcc21749b450bef5dc756",
+        "scope": "Actual live desktop and phone article/credit/sharing review is required after deployment"
+      }
+    },
+    "disallowInlineMedia": true,
+    "requiredLiveParagraphs": [
+      "The featured image is an archival GE Appliances/Café showroom photograph, credited as an equipment example rather than Gasfitter.ca work. Genuine project material needs its own permissions, accurate work description and named contributor. A polished diagram should not be used as evidence of credentials, inspection results or completed service."
+    ]
+  },
+  "gasfitter-io-industry-marketing-project-content-guide": {
+    "contractVersion": 2,
+    "hero": {
+      "path": "/brand-journal/gasfitter-io-cafe-gas-cooktop-detail.jpg",
+      "sha256": "46518fb851036153b2dbd74025e4c03ce1c325f6a729de79d6c72ba3923bf74c",
+      "nativeSize": [
+        2400,
+        2500
+      ],
+      "derivativeSize": [
+        1600,
+        900
+      ],
+      "upscaled": false,
+      "mediaType": "source-photograph",
+      "subjectType": "manufacturer-product",
+      "sourceUrl": "https://pressroom.geappliances.com/news/cafe-appliances-launches-48-cooking-range-for-the-stylish-entertainer",
+      "originalUrl": "https://iprsoftwaremedia.com/112/files/20211/CAFE%20MB%20Pro%20Range.jpg",
+      "sourceSha256": "7c317e04597e001f821b0ff42792ccc91be175d798e349d1568bb7b7e29c03ac",
+      "cropBox": [
+        0,
+        0,
+        2400,
+        1350
+      ],
+      "credit": "Manufacturer product detail: CAFÉ 48-inch range gas cooktop and control panel. Credit: GE Appliances/Café pressroom. Editorial equipment reference, not Gasfitter.io work or an affiliation claim.",
+      "rightsEvidence": "User authorized a relevant, accurately credited manufacturer editorial product reference for this existing gas-trade marketing article. The official February9,2021 GE Appliances release supplies the exact image under Image Downloads. Use is limited to an attributed illustrative editorial reference, not a claim of open licensing, manufacturer endorsement, Gasfitter.io installed work or a dealer relationship.",
+      "visualReview": "Actual2400x2500 official manufacturer original and exact2400x1350 crop/downsample inspected. All gas burners, griddle and control knobs retained. The caption explicitly identifies a cooktop/control-panel detail rather than the complete appliance. No padding, upscaling, reconstruction or added brand label.",
+      "visualApproval": {
+        "status": "passed",
+        "sha256": "46518fb851036153b2dbd74025e4c03ce1c325f6a729de79d6c72ba3923bf74c",
+        "postSha256": "e52292468340cb0843fffe1dab0f159420aed0403406c646c8595b90b9db5f8b",
+        "reviewedAt": "2026-11-15T17:58:29.291751+00:00",
+        "desktopEvidence": "operations/iam/media-review/gasfitter-io-source-desktop.jpg",
+        "phoneEvidence": "operations/iam/media-review/gasfitter-io-source-phone.jpg",
+        "scope": "Exact source/photo/detail and358x201 phone-size source proof; not a production page approval",
+        "reviewer": "Codex root actual source and358x201asset-scale visual review"
+      },
+      "productionReview": {
+        "status": "review-pending",
+        "sha256": "46518fb851036153b2dbd74025e4c03ce1c325f6a729de79d6c72ba3923bf74c",
+        "postSha256": "e52292468340cb0843fffe1dab0f159420aed0403406c646c8595b90b9db5f8b",
+        "scope": "Actual live desktop and phone article/credit/sharing review is required after deployment"
+      }
+    },
+    "share": {
+      "path": "/brand-journal/gasfitter-io-cafe-gas-cooktop-detail.jpg",
+      "sha256": "46518fb851036153b2dbd74025e4c03ce1c325f6a729de79d6c72ba3923bf74c",
+      "nativeSize": [
+        2400,
+        2500
+      ],
+      "derivativeSize": [
+        1600,
+        900
+      ],
+      "upscaled": false,
+      "mediaType": "source-photograph",
+      "subjectType": "manufacturer-product",
+      "sourceUrl": "https://pressroom.geappliances.com/news/cafe-appliances-launches-48-cooking-range-for-the-stylish-entertainer",
+      "originalUrl": "https://iprsoftwaremedia.com/112/files/20211/CAFE%20MB%20Pro%20Range.jpg",
+      "sourceSha256": "7c317e04597e001f821b0ff42792ccc91be175d798e349d1568bb7b7e29c03ac",
+      "cropBox": [
+        0,
+        0,
+        2400,
+        1350
+      ],
+      "credit": "Manufacturer product detail: CAFÉ 48-inch range gas cooktop and control panel. Credit: GE Appliances/Café pressroom. Editorial equipment reference, not Gasfitter.io work or an affiliation claim.",
+      "rightsEvidence": "User authorized a relevant, accurately credited manufacturer editorial product reference for this existing gas-trade marketing article. The official February9,2021 GE Appliances release supplies the exact image under Image Downloads. Use is limited to an attributed illustrative editorial reference, not a claim of open licensing, manufacturer endorsement, Gasfitter.io installed work or a dealer relationship.",
+      "visualReview": "Actual2400x2500 official manufacturer original and exact2400x1350 crop/downsample inspected. All gas burners, griddle and control knobs retained. The caption explicitly identifies a cooktop/control-panel detail rather than the complete appliance. No padding, upscaling, reconstruction or added brand label.",
+      "visualApproval": {
+        "status": "passed",
+        "sha256": "46518fb851036153b2dbd74025e4c03ce1c325f6a729de79d6c72ba3923bf74c",
+        "postSha256": "e52292468340cb0843fffe1dab0f159420aed0403406c646c8595b90b9db5f8b",
+        "reviewedAt": "2026-11-15T17:58:29.291752+00:00",
+        "desktopEvidence": "operations/iam/media-review/gasfitter-io-source-desktop.jpg",
+        "phoneEvidence": "operations/iam/media-review/gasfitter-io-source-phone.jpg",
+        "scope": "Exact source/photo/detail and358x201 phone-size source proof; not a production page approval",
+        "reviewer": "Codex root actual source and358x201asset-scale visual review"
+      },
+      "productionReview": {
+        "status": "review-pending",
+        "sha256": "46518fb851036153b2dbd74025e4c03ce1c325f6a729de79d6c72ba3923bf74c",
+        "postSha256": "e52292468340cb0843fffe1dab0f159420aed0403406c646c8595b90b9db5f8b",
+        "scope": "Actual live desktop and phone article/credit/sharing review is required after deployment"
+      }
+    },
+    "disallowInlineMedia": true
   }
 }

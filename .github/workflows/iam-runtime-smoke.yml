@@ -8,6 +8,12 @@ on:
     paths:
       - '.github/workflows/iam-runtime-smoke.yml'
       - 'scripts/iam/smoke_runner.py'
+      - 'scripts/iam/media_contract.py'
+      - 'scripts/iam/test_media_contract.py'
+      - 'operations/iam/media-contract.json'
+      - 'operations/iam/media.json'
+      - 'artifacts/industry-army/src/data/buildJournal.json'
+      - 'artifacts/industry-army/public/brand-journal/**'
       - 'docs/IAM-SOT.md'
       - 'operations/iam/build-contract.json'
 permissions:
@@ -28,7 +34,9 @@ jobs:
         with:
           python-version: '3.12'
       - name: Install verifier library without container, browser download or apt
-        run: python -m pip install --retries 2 --timeout 30 playwright==1.56.0
+        run: python -m pip install --retries 2 --timeout 30 playwright==1.56.0 Pillow==12.0.0
+      - name: Verify legacy and changed-media contract regressions
+        run: python -m unittest discover -s scripts/iam -p test_media_contract.py
       - name: Verify actual IAM production with installed Chrome
         run: python scripts/iam/smoke_runner.py
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
@@ -38,3 +46,4 @@ jobs:
           path: operations/iam/runner-smoke/
           if-no-files-found: ignore
           retention-days: 7
+

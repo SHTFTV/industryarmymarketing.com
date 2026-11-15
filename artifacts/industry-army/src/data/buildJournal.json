@@ -3019,10 +3019,10 @@
     "cardTitle": "Build a trade story around relevant evidence.",
     "excerpt": "Original IAM guidance for a gas-trade contributor brief: establish the actual role, media permission, source support and a properly checked publishing destination.",
     "metaDescription": "Gasfitter.io contributor-content planning: relevant project roles, permitted media, supported claims and honest publication checks, with an IAM marketing route.",
-    "image": "/brand-journal/gasfitter-contributor-evidence-hero.svg",
-    "imageAlt": "Original IAM concept illustration of generic heating equipment, a camera and a contributor record. Not an installation photograph, technical plan or credential verification.",
-    "ogImage": "/brand-journal/gasfitter-contributor-evidence-share.jpg",
-    "ogImageAlt": "Original IAM editorial graphic: relevant work and verifiable evidence for gas-trade publishing.",
+    "image": "/brand-journal/gasfitter-io-cafe-gas-cooktop-detail.jpg",
+    "imageAlt": "Manufacturer product detail: CAFÉ 48-inch range gas cooktop and control panel. Credit: GE Appliances/Café pressroom. Editorial equipment reference, not Gasfitter.io work or an affiliation claim.",
+    "ogImage": "/brand-journal/gasfitter-io-cafe-gas-cooktop-detail.jpg",
+    "ogImageAlt": "Manufacturer product detail: CAFÉ 48-inch range gas cooktop and control panel. Credit: GE Appliances/Café pressroom. Editorial equipment reference, not Gasfitter.io work or an affiliation claim.",
     "faqHeading": "Gas-trade contributor questions",
     "faqs": [
       {
@@ -3053,12 +3053,7 @@
           "paragraphs": [
             "A strong trade story starts with a precise contribution. Ask what the business did, what material it supplied and which part of a project it is entitled to describe. A photograph alone cannot establish responsibility for the whole job. The editorial brief should make that boundary easy for a reader to understand.",
             "For a conceptual example, a contractor might contribute a project account about organising an equipment replacement. The useful story could describe the customer communication and documented project sequence. It should not become an equipment recommendation, a code interpretation or a claim that the contributor designed every related system. This example is editorial planning, not an actual customer project."
-          ],
-          "image": {
-            "src": "/brand-journal/gasfitter-contributor-topic.svg",
-            "alt": "Original IAM narrow diagram: actual work, specific role and reader question.",
-            "caption": "Original IAM editorial framework. Establish relevance before discussing distribution."
-          }
+          ]
         },
         {
           "heading": "Match the topic to the trade instead of filling a template",
@@ -3072,24 +3067,14 @@
           "paragraphs": [
             "Request an approved company name, a named editorial contact, the contributor’s project role and a short explanation of what the reader should learn. Keep an internal note of where each factual statement came from. If the supplied information does not support a detail, leave the detail out or ask for clarification before publication.",
             "For media, record who created it and who can grant publication permission. Ask whether the image can be cropped and credited, and remove private customer information from the material prepared for publication. Do not assume that a photo sent in a message can be reused everywhere or that it proves the condition of an installation."
-          ],
-          "image": {
-            "src": "/brand-journal/gasfitter-contributor-permission.svg",
-            "alt": "Original IAM narrow diagram: owner permission, clear attribution and private details removed.",
-            "caption": "Original IAM media checklist. Permission and attribution travel with the asset."
-          }
+          ]
         },
         {
           "heading": "Separate an observed fact from a professional claim",
           "paragraphs": [
             "A contributor can explain what its records show without turning the article into an unsupported guarantee. Statements about licensing, certification, compliance, insurance or inspection need their own current evidence and appropriate review. A website badge or an attractive illustration is not that evidence. IAM marketing preparation does not establish professional qualifications.",
             "When an article depends on a technical statement, identify the primary document and the person responsible for checking its application. Record the document’s version and the scope of the review. If that support is unavailable, keep the article within documented business communication and project description. This guide provides no installation, diagnostic or safety instructions."
-          ],
-          "image": {
-            "src": "/brand-journal/gasfitter-contributor-review.svg",
-            "alt": "Original IAM narrow diagram separating an observed fact, supporting document and named reviewer.",
-            "caption": "Original IAM publishing control. A review record is more useful than an unsupported badge."
-          }
+          ]
         },
         {
           "heading": "Check the contributor destination as carefully as the article",
@@ -3114,9 +3099,14 @@
         {
           "label": "Gasfitter.io contributor page — visible form only; delivery and distribution untested",
           "href": "https://www.gasfitter.io/guest-post"
+        },
+        {
+          "label": "Featured image: GE Appliances/Café — 2021 CAFÉ 48-inch range manufacturer product detail",
+          "href": "https://pressroom.geappliances.com/news/cafe-appliances-launches-48-cooking-range-for-the-stylish-entertainer"
         }
       ]
-    }
+    },
+    "mediaContractVersion": 2
   },
   {
     "brand": "Industry Army Marketing",
@@ -3142,10 +3132,10 @@
     "cardTitle": "Make the question, recipient and confirmed step clear.",
     "excerpt": "Original Gasfitter.ca marketing guidance: distinguish an assessment enquiry from a booking, explain email-draft behaviour and preserve the named service contact.",
     "metaDescription": "Gas-service marketing: clarify the visitor question, contact action and confirmed arrangement while preserving Gasfitter.ca’s named enquiry owner.",
-    "image": "/brand-journal/gasfitter-enquiry-stage-hero.svg",
-    "imageAlt": "Original IAM conceptual furnace and water-heater artwork explaining a gas-service enquiry. No specific equipment model, actual installation, technical connection or booking system is represented.",
-    "ogImage": "/brand-journal/gasfitter-enquiry-stage-share.jpg",
-    "ogImageAlt": "Original IAM graphic: an enquiry is not a confirmed visit; question, recipient and agreement.",
+    "image": "/brand-journal/gasfitter-ca-cafe-showroom-kitchen.jpg",
+    "imageAlt": "Café matte-white range in a manufacturer showroom kitchen. Credit: GE Appliances/Café pressroom, 2019 KBIS. Archival equipment example, not a Gasfitter.ca installation.",
+    "ogImage": "/brand-journal/gasfitter-ca-cafe-showroom-kitchen.jpg",
+    "ogImageAlt": "Café matte-white range in a manufacturer showroom kitchen. Credit: GE Appliances/Café pressroom, 2019 KBIS. Archival equipment example, not a Gasfitter.ca installation.",
     "faqHeading": "Gas-service marketing questions",
     "faqs": [
       {
@@ -3183,24 +3173,14 @@
           "paragraphs": [
             "A useful first step can distinguish an enquiry about existing equipment from a question about a proposed project. Let the visitor describe the topic in ordinary language. The page does not need to force a technical diagnosis or select a replacement before the responsible professional has reviewed the actual situation.",
             "For a conceptual marketing example, imagine a homeowner asking whether the next discussion concerns an assessment or a proposed replacement. That is not a real service call or advice about which option to choose. Its value is showing how the enquiry can state the question clearly while leaving the decision open."
-          ],
-          "image": {
-            "src": "/brand-journal/gasfitter-question-stage.svg",
-            "alt": "Original IAM marketing diagram separating an existing-equipment question, a planned change and a point for professional review.",
-            "caption": "Original IAM communications example. No equipment condition or required work is established."
-          }
+          ]
         },
         {
           "heading": "Name the contact action accurately",
           "paragraphs": [
             "A button that opens an email draft does not send the message, reserve a visit or dispatch a technician. The current Gasfitter.ca contact wording explains that the visitor sends the draft from their own email application. Keep that description close to the action so the visitor knows what still needs to happen.",
             "The next stage also needs care. A sent enquiry is not proof that a person has reviewed it or accepted the work. Avoid a confirmation message that implies a booking, fixed response time or emergency service unless the actual arrangement supports that statement. This is a marketing distinction, not a description of a tested Gasfitter.ca dispatch system."
-          ],
-          "image": {
-            "src": "/brand-journal/gasfitter-action-stage.svg",
-            "alt": "Original IAM contact-stage diagram separating an email draft, a sent enquiry and a separately confirmed arrangement.",
-            "caption": "Original IAM publishing diagram. No message delivery or appointment is represented."
-          }
+          ]
         },
         {
           "heading": "Let the location page explain its role",
@@ -3213,7 +3193,7 @@
           "heading": "Illustrations should explain the topic, not prove the work",
           "paragraphs": [
             "Gasfitter.ca labels its concept imagery rather than presenting it as completed installation photography. That is an important distinction for a service business: a visual can introduce a category without demonstrating who performed a job or what happened at a customer property.",
-            "The hero and narrow diagrams here are original IAM communications illustrations. They are not photographs, equipment designs, diagnostic guides or screenshots of a booking application. Genuine project material needs its own permissions, accurate work description and named contributor. A polished diagram should not be used as evidence of credentials, inspection results or completed service."
+            "The featured image is an archival GE Appliances/Café showroom photograph, credited as an equipment example rather than Gasfitter.ca work. Genuine project material needs its own permissions, accurate work description and named contributor. A polished diagram should not be used as evidence of credentials, inspection results or completed service."
           ]
         },
         {
@@ -3221,12 +3201,7 @@
           "paragraphs": [
             "The current [Gasfitter.ca homepage](https://www.gasfitter.ca/) identifies colin@gasfitter.ca and asks readers to confirm contractor availability and project scope directly. This article preserves that public route. It does not transfer these enquiries to BeeWarm, invent a service telephone number or imply that IAM’s marketing form accepts gas work.",
             "The relevant person still needs to confirm who will perform an assessment, what the agreed work includes and whether a visit is available. Those are later business arrangements, not outcomes established by reading a guide or opening an email. No enquiry was sent during this review and no inbox delivery was tested."
-          ],
-          "image": {
-            "src": "/brand-journal/gasfitter-owner-stage.svg",
-            "alt": "Original IAM ownership diagram distinguishing a planning publication, its named contact and the responsible service provider.",
-            "caption": "Original IAM marketing graphic. The actual provider and work arrangement require confirmation."
-          }
+          ]
         },
         {
           "heading": "Give the marketing page its own clear next step",
@@ -3248,9 +3223,14 @@
         {
           "label": "Furnace service page — actual topic and contact destination checked October28,2026",
           "href": "https://www.gasfitter.ca/furnaces/"
+        },
+        {
+          "label": "Featured image: GE Appliances/Café — 2019 KBIS manufacturer showroom photograph",
+          "href": "https://pressroom.geappliances.com/file?fid=5c76d7482cfac258307a61ae"
         }
       ]
-    }
+    },
+    "mediaContractVersion": 2
   },
   {
     "brand": "Industry Army Marketing",
