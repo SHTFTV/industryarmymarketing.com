@@ -724,8 +724,8 @@
     {
       "eventId": "iam-notice-64078f7105d0c2806e99",
       "kind": "publishing_failure",
-      "lifecycle": "open",
-      "deliveryStatus": "queued",
+      "lifecycle": "resolved",
+      "deliveryStatus": "superseded",
       "triggeredAt": "2026-11-15T18:09:39.348806+00:00",
       "deliveryAttempts": 0,
       "deliveryReceipt": null,
@@ -736,15 +736,33 @@
       "nextAction": "Inspect the exact retained run and issue; continue independent eligible work.",
       "proof": {
         "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43745061564"
+      },
+      "resolvedAt": "2026-11-15T18:13:03.672230+00:00"
+    },
+    {
+      "eventId": "iam-notice-b8445d4bc4ff66cedef8",
+      "kind": "publishing_failure",
+      "lifecycle": "open",
+      "deliveryStatus": "queued",
+      "triggeredAt": "2026-11-15T18:13:03.672230+00:00",
+      "deliveryAttempts": 0,
+      "deliveryReceipt": null,
+      "siteDomain": "industryarmymarketing.com",
+      "status": "failed",
+      "reasonCode": "publisher_run_failed",
+      "summary": "IAM cloud publication run failed; a green wrapper is not publication proof.",
+      "nextAction": "Inspect the exact retained run and issue; continue independent eligible work.",
+      "proof": {
+        "runUrl": "43745312174"
       }
     }
   ],
   "producer": {
     "stage": "fired",
-    "firedAt": "2026-11-15T18:09:39.349126+00:00",
-    "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43745061564",
+    "firedAt": "2026-11-15T18:13:03.672659+00:00",
+    "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43745312174",
     "rules": {
-      "sourceCommit": "4274beea4bba48ff7635cae1821e022c8cc71faa",
+      "sourceCommit": "eaf33119088e99be7bb4e3ce684ac8690a224901",
       "hashes": {
         "docs/IAM-SOT.md": "327c746c010100ad3fea5e2a6200aab04890d0579cc98ffddbf4df12fe95002e",
         "operations/iam/policy.json": "6193ee71499a485a825888ba95ec940ae7576fa44a9d2b4f3dc8670ea1c66044",
