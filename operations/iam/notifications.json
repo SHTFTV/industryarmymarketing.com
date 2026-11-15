@@ -720,14 +720,31 @@
         "publicationVerified": true,
         "generatedAndAudited": true
       }
+    },
+    {
+      "eventId": "iam-notice-64078f7105d0c2806e99",
+      "kind": "publishing_failure",
+      "lifecycle": "open",
+      "deliveryStatus": "queued",
+      "triggeredAt": "2026-11-15T18:09:39.348806+00:00",
+      "deliveryAttempts": 0,
+      "deliveryReceipt": null,
+      "siteDomain": "industryarmymarketing.com",
+      "status": "failed",
+      "reasonCode": "publisher_run_failed",
+      "summary": "IAM cloud publication run failed; a green wrapper is not publication proof.",
+      "nextAction": "Inspect the exact retained run and issue; continue independent eligible work.",
+      "proof": {
+        "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43745061564"
+      }
     }
   ],
   "producer": {
     "stage": "fired",
-    "firedAt": "2026-11-14T04:09:41.384882+00:00",
-    "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43554889504",
+    "firedAt": "2026-11-15T18:09:39.349126+00:00",
+    "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43745061564",
     "rules": {
-      "sourceCommit": "bdb70ce23751987f8741d29b91c6d89b2a6be604",
+      "sourceCommit": "4274beea4bba48ff7635cae1821e022c8cc71faa",
       "hashes": {
         "docs/IAM-SOT.md": "327c746c010100ad3fea5e2a6200aab04890d0579cc98ffddbf4df12fe95002e",
         "operations/iam/policy.json": "6193ee71499a485a825888ba95ec940ae7576fa44a9d2b4f3dc8670ea1c66044",
