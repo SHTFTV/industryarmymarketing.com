@@ -1836,35 +1836,25 @@
     }
   ],
   "lastRun": {
-    "at": "2026-11-14T04:06:56.048212+00:00",
-    "owner": "43554889504-1",
+    "at": "2026-11-15T18:08:46Z",
     "trigger": "push",
-    "status": "verified-publication",
-    "policyDigest": "f4d4e6c97658c3b248995e296acc54c7d5da1229cc89be7dc36abe11adaf55ca",
-    "rules": {
-      "sourceCommit": "79e7269d4f4abc3eecf1a0a10f9727541936210b",
-      "hashes": {
-        "docs/IAM-SOT.md": "327c746c010100ad3fea5e2a6200aab04890d0579cc98ffddbf4df12fe95002e",
-        "operations/iam/policy.json": "6193ee71499a485a825888ba95ec940ae7576fa44a9d2b4f3dc8670ea1c66044",
-        "operations/iam/build-contract.json": "82390b2923839a7126647c778b34fabb26035ae939d21c8ae5f888072d97a0b1"
-      },
-      "sotVersion": 2
-    },
-    "automaticRecovery": {
-      "verified": false,
-      "reason": "Not an automatic health recovery dispatch"
-    }
+    "status": "prewriter-failed",
+    "error": "Runtime regressions",
+    "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43745061564",
+    "nextAction": "Inspect this exact run failure; preserve browser QA, queue history and separate credential/media gates."
   },
   "lastExecution": {
-    "checkedAt": "2026-11-14T04:09:19.737403+00:00",
-    "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43554889504",
+    "checkedAt": "2026-11-15T18:09:19.741825+00:00",
+    "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43745061564",
     "event": "push",
-    "startedAt": "2026-11-14T04:05:34Z",
-    "completedAt": "2026-11-14T04:08:57Z",
-    "jobResult": "success",
-    "failedSteps": [],
-    "writerExecuted": true,
-    "verifiedPublicationCount": 1,
+    "startedAt": "2026-11-15T18:08:46Z",
+    "completedAt": "2026-11-15T18:09:03Z",
+    "jobResult": "failure",
+    "failedSteps": [
+      "Runtime regressions"
+    ],
+    "writerExecuted": false,
+    "verifiedPublicationCount": 0,
     "scheduledExecutionObserved": false,
     "automaticPublicationVerified": false,
     "automaticRecovery": {
@@ -2328,6 +2318,27 @@
       },
       "unattendedRecoveryExecutionVerified": false,
       "verifiedRecoveryPublication": false
+    },
+    {
+      "checkedAt": "2026-11-15T18:09:19.741825+00:00",
+      "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/43745061564",
+      "event": "push",
+      "startedAt": "2026-11-15T18:08:46Z",
+      "completedAt": "2026-11-15T18:09:03Z",
+      "jobResult": "failure",
+      "failedSteps": [
+        "Runtime regressions"
+      ],
+      "writerExecuted": false,
+      "verifiedPublicationCount": 0,
+      "scheduledExecutionObserved": false,
+      "automaticPublicationVerified": false,
+      "automaticRecovery": {
+        "verified": false,
+        "reason": "Not an automatic health recovery dispatch"
+      },
+      "unattendedRecoveryExecutionVerified": false,
+      "verifiedRecoveryPublication": false
     }
   ],
   "lastWriterRun": {
@@ -2408,7 +2419,7 @@
       "firstSeenAt": "2026-11-12T01:39:03.441379+00:00",
       "delivery": "unproven",
       "status": "open",
-      "lastSeenAt": "2026-11-14T04:09:19.737403+00:00",
+      "lastSeenAt": "2026-11-15T18:09:19.741825+00:00",
       "reason": "Shared operating-standard v2 interface not yet verified/pinned"
     },
     "iam:prebuild:7e1910d7c6043aa9": {
@@ -2417,7 +2428,7 @@
       "firstSeenAt": "2026-11-12T01:39:03.441379+00:00",
       "delivery": "unproven",
       "status": "open",
-      "lastSeenAt": "2026-11-14T04:09:19.737403+00:00",
+      "lastSeenAt": "2026-11-15T18:09:19.741825+00:00",
       "reason": "Persistent blocker notification delivery unproven"
     },
     "iam:prebuild:9dce8c88d1a3325f": {
@@ -2426,7 +2437,7 @@
       "firstSeenAt": "2026-11-12T01:48:13.376513+00:00",
       "delivery": "unproven",
       "status": "open",
-      "lastSeenAt": "2026-11-14T04:09:19.737403+00:00",
+      "lastSeenAt": "2026-11-15T18:09:19.741825+00:00",
       "reason": "Native scheduled generated publication not yet proven"
     },
     "iam:prebuild:698d3bdd18e30a56": {
@@ -2435,7 +2446,7 @@
       "firstSeenAt": "2026-11-12T01:48:13.376513+00:00",
       "delivery": "unproven",
       "status": "open",
-      "lastSeenAt": "2026-11-14T04:09:19.737403+00:00",
+      "lastSeenAt": "2026-11-15T18:09:19.741825+00:00",
       "reason": "Live failure-isolation and recovery acceptance not yet proven; local tests are separate"
     },
     "iam:prebuild:21f066a453f255be": {
@@ -2443,8 +2454,8 @@
       "kind": "prebuild",
       "firstSeenAt": "2026-11-12T01:56:02.711368+00:00",
       "delivery": "unproven",
-      "status": "resolved",
-      "lastSeenAt": "2026-11-12T02:01:19.846881+00:00",
+      "status": "open",
+      "lastSeenAt": "2026-11-15T18:09:19.741825+00:00",
       "reason": "Required writing-service access lacks a fresh real runtime receipt",
       "resolvedAt": "2026-11-12T02:11:15.963613+00:00",
       "resolution": "Required measured gate now passes"
@@ -2643,6 +2654,15 @@
       "lastSeenAt": "2026-11-14T04:07:06.395428+00:00",
       "reason": "ValueError",
       "httpStatus": null
+    },
+    "iam:prebuild:9cc743659a111253": {
+      "id": "iam:prebuild:9cc743659a111253",
+      "kind": "prebuild",
+      "firstSeenAt": "2026-11-15T18:09:19.741825+00:00",
+      "delivery": "unproven",
+      "status": "open",
+      "lastSeenAt": "2026-11-15T18:09:19.741825+00:00",
+      "reason": "Source-to-production lacks a fresh real runtime receipt"
     }
   },
   "attemptReceipts": [

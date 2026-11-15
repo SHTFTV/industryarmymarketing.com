@@ -1,8 +1,10 @@
 {
-  "checkedAt": "2026-11-14T04:09:19.737489+00:00",
+  "checkedAt": "2026-11-15T18:09:19.741917+00:00",
   "dependentExtensionsAllowed": false,
   "operationallyComplete": false,
   "blockers": [
+    "Source-to-production lacks a fresh real runtime receipt",
+    "Required writing-service access lacks a fresh real runtime receipt",
     "Native scheduled generated publication not yet proven",
     "Live failure-isolation and recovery acceptance not yet proven; local tests are separate",
     "Shared operating-standard v2 interface not yet verified/pinned",
