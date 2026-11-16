@@ -16,10 +16,10 @@
     "contactBusiness": "iam",
     "faqs": [],
     "slug": "plowinstallations-com-industry-marketing-project-content-guide",
-    "title": "Plow Installations: Put Compatibility Questions Before the Installation Price",
-    "cardTitle": "Plow Installations: Put Compatibility Questions Before the Installation Price",
-    "excerpt": "A rear-plow enquiry should identify the truck, exact blade and mounting requirements before asking for an installation figure. PlowInstallations’ BOSS guide shows how equipment publishing can prepare that conversation.",
-    "metaDescription": "A rear-plow enquiry should identify the truck, exact blade and mounting requirements before asking for an installation figure. PlowInstallations’ BOSS guide shows how equipment publishing can prepare that conversation.",
+    "title": "PlowInstallations.com: Marketing for Plow Installation Companies",
+    "cardTitle": "PlowInstallations.com: Marketing for Plow Installation Companies",
+    "excerpt": "Installation companies can discuss project stories and advertising with IAM through PlowInstallations.com, with PlowWow as the snow-removal marketing hub.",
+    "metaDescription": "Installation companies can discuss project stories and advertising with IAM through PlowInstallations.com, with PlowWow as the snow-removal marketing hub.",
     "publishedAt": "2026-11-14T04:07:39.601678+00:00",
     "date": "November 13, 2026",
     "image": "/brand-journal/plowinstallations-boss-drag-pro-source.png",
@@ -31,6 +31,13 @@
     "richContent": {
       "intro": "An installation price needs a defined installation behind it. For plow-installation publishing, the useful editorial task is to help readers establish what equipment they have, what vehicle it must fit and what remains to be confirmed. The [PlowInstallations guide to the BOSS DRAG PRO 8–16](https://www.plowinstallations.com/guides/boss-drag-pro-8-16-parking-lot-killer/) provides a concrete example. Its strongest lesson for marketing is not the blade’s headline width: it is the importance of putting compatibility questions ahead of a request for a number.",
       "sections": [
+        {
+          "heading": "Plow installation companies: ask about joining the platform",
+          "paragraphs": [
+            "Installers looking to reach people researching equipment and installation can explore [PlowInstallations.com](https://www.plowinstallations.com/) and [ask IAM about featuring their company](https://www.industryarmymarketing.com/contact?request=guest-post&ref_site=plowinstallations.com). Bring your service area, the work you actually perform and a project or equipment story you can substantiate. Discuss company content, banner or rectangle advertising and marketing support with IAM; scope and pricing are confirmed through that conversation.",
+            "The BOSS guide below shows the kind of useful equipment context that can support that conversation. A marketing enquiry does not create a listing, reserve an installation or establish equipment compatibility. The installer remains responsible for confirming the work it can accept."
+          ]
+        },
         {
           "heading": "Start with the model, not the nickname",
           "paragraphs": [
@@ -65,6 +72,12 @@
             "The source directs installation and transfer enquiries to Durand at Full Flow Hydraulics, with scope, parts, timing and availability to be confirmed directly. Its IAM-network advertising invitation is separate: plow-installation businesses are invited to ask about banners, rectangle ads and marketing support.",
             "Preserve that separation in the publishing. A truck owner needs the shop conversation; a business seeking promotion needs the marketing conversation. Neither invitation should suggest that reading the guide establishes compatibility, reserves an installation or confirms stock. The appropriate next step is a clearly scoped enquiry—not an installation promise disguised as a call to action."
           ]
+        },
+        {
+          "heading": "Snow-removal companies: connect through PlowWow",
+          "paragraphs": [
+            "[PlowWow](https://www.plowwow.com/) is our snow-removal marketing hub. Snow-removal companies can [discuss service-area content and advertising with IAM](https://www.industryarmymarketing.com/contact?request=guest-post&ref_site=plowwow.com). Explain where you work, which services you provide and which enquiries you want to receive. Keep that marketing discussion separate from a customer requesting snow-removal service and from a truck owner asking Full Flow Hydraulics about installation or fitment."
+          ]
         }
       ],
       "sources": [
@@ -76,9 +89,9 @@
     },
     "cta": {
       "eyebrow": "INDUSTRY ARMY MARKETING",
-      "heading": "Explain your work clearly",
-      "body": "Discuss your branding and publishing with IAM. Project enquiries stay with the named source company.",
-      "buttonText": "Talk with IAM",
+      "heading": "Promote your installation company",
+      "body": "Discuss your installation company’s content, project stories and advertising with IAM. Fitment and installation enquiries stay with the named source company.",
+      "buttonText": "Ask about joining the platform",
       "buttonHref": "https://www.industryarmymarketing.com/contact?request=guest-post&ref_site=plowinstallations.com"
     }
   },
