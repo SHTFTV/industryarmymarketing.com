@@ -48,3 +48,11 @@ class RuntimeTests(unittest.TestCase):
             self.assertFalse(daily_due(utc,{'dailyJournalDate':local.date().isoformat()}))
 
 if __name__ == '__main__': unittest.main()
+
+class DelayedJournalTests(unittest.TestCase):
+    def test_delayed_scheduler_keeps_journal_due_until_midnight(self):
+        for hour, minute in [(20,30),(21,0),(23,59)]:
+            local=dt.datetime(2026,11,16,hour,minute,tzinfo=ZoneInfo('America/Vancouver'))
+            self.assertTrue(daily_due(local,{}))
+            self.assertFalse(daily_due(local,{'dailyJournalDate':'2026-11-16'}))
+        self.assertFalse(daily_due(dt.datetime(2026,11,16,20,29,tzinfo=ZoneInfo('America/Vancouver')),{}))

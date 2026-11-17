@@ -76,7 +76,8 @@ def complete(state, slug, owner, evidence, now):
 
 def daily_due(now, state):
     local = now.astimezone(ZoneInfo('America/Vancouver'))
-    return local.hour == 20 and local.minute >= 30 and state.get('dailyJournalDate') != local.date().isoformat()
+    # A delayed scheduler must not lose the journal after the 20:30-20:59 window.
+    return (local.hour, local.minute) >= (20, 30) and state.get('dailyJournalDate') != local.date().isoformat()
 
 def block(state, slug, owner, stage, action):
     row = state['rows'][slug]
