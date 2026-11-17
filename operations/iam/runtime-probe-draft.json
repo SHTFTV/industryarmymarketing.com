@@ -1,124 +1,104 @@
 {
-  "title": "Introducing Irrigation.ltd: Start With the Landscape, Not the Hardware",
-  "excerpt": "Irrigation.ltd introduces a planning-first resource for understanding watering options, organizing property information and preparing better questions before installation.",
-  "intro": "The clearest introduction to [Irrigation.ltd](https://irrigation.ltd/) is its own opening proposition: \u201cBetter irrigation starts with better questions.\u201d The homepage presents an educational resource covering irrigation choices, project planning and landscape care. Its launch story is therefore about preparation: helping readers describe what they want to water, understand the options and identify questions for a professional conversation. It should not be read as an announcement of installation services or a verified project-enquiry system.",
+  "title": "Irrigation.ltd: A Planning-First Introduction to Landscape Watering",
+  "excerpt": "Irrigation.ltd puts site observations, plant needs and better project questions ahead of hardware selection. Here is the purpose and scope presented on its homepage.",
+  "intro": "Irrigation.ltd introduces its purpose with a straightforward proposition: better irrigation starts with better questions. Its homepage presents an educational resource for people considering anything from a first garden bed to a whole property. The emphasis is preparation: understand the landscape, explore watering approaches and gather useful information before choosing equipment. This introduction describes that published planning purpose; it does not establish that every linked service or enquiry pathway is operational.",
   "sections": [
     {
-      "heading": "A resource organized around the reader\u2019s setting",
+      "heading": "A starting point built around the landscape",
       "paragraphs": [
-        "The homepage identifies home gardens, lawns and landscapes, and shared properties as starting points. It also describes a scope extending from a first garden bed to a whole property. That gives the introduction a useful organizing principle: begin with the setting rather than assuming every reader needs the same equipment.",
-        "For someone approaching an unfamiliar project, the first task is not necessarily choosing a product. A more useful opening exercise is to describe the spaces involved, the planting and the questions still unanswered. That is the planning-first approach the site puts ahead of shopping."
+        "The homepage identifies home gardens, lawns and landscapes, and shared properties as its settings. That gives the resource a broader frame than a single type of installation. Its opening invitation is to make sense of irrigation through practical guides, with planning and care presented alongside the choice of watering method.",
+        "The editorial distinction is the order of decisions. Rather than beginning with a product list, Irrigation.ltd asks readers to start with the spaces and plants they want to water. For someone preparing a project conversation, that provides a concrete first task without pretending that a general guide is a finished design."
       ]
     },
     {
-      "heading": "Understand the options before choosing hardware",
+      "heading": "Different approaches, not one default answer",
       "paragraphs": [
-        "Irrigation.ltd groups its introductory material into drip irrigation, sprinkler systems, smarter watering, and care and troubleshooting. The descriptions point readers toward emitters and tubing, coverage and observation, soil and weather, and checks for leaks or uneven watering. These are presented as subjects to explore, not as a universal system specification.",
-        "The distinction matters when reading the launch page. An overview can help organize a decision without making that decision for a particular property. Use the categories to build a question list; do not treat a short description as a completed design or a recommendation for specific hardware."
+        "The site groups its introductory material into drip irrigation, sprinkler systems, smarter watering, and care and troubleshooting. Drip coverage introduces emitters, tubing, beds and containers. The sprinkler introduction centres on coverage, observation and questions to ask before installation.",
+        "The other two categories extend the discussion beyond equipment selection. Smarter watering is framed around soil, weather and plant needs rather than a fixed habit. Care and troubleshooting points readers toward leaks, uneven coverage and seasonal change. Together, these categories make selection only one part of the resource\u2019s stated scope."
       ]
     },
     {
-      "heading": "Build a brief before the first trench",
+      "heading": "A project brief before a shopping cart",
       "paragraphs": [
-        "The most concrete planning sequence on the homepage has four parts: map the spaces and plants; note slopes, shade, soil and existing problems; check local watering and backflow requirements; and discuss flow, pressure and design with a professional. Its project-brief description also calls for the water source and unanswered questions.",
-        "A useful way to apply that sequence is to separate observations from unknowns. Record what you can describe, then preserve the remaining questions for discussion. The objective is a clearer handoff\u2014not to imply that completing a checklist replaces site-specific professional advice."
+        "The clearest planning message appears under \u201cBefore the first trench\u201d: start with a plan, not a shopping cart. The proposed brief captures planting, the water source, site conditions and unanswered questions. Its stated purpose is to bring better information to the next conversation.",
+        "The homepage supplies four specific preparation steps: map the spaces and plants; note slopes, shade, soil and existing problems; check local watering and backflow requirements; and discuss flow, pressure and design with a professional. These are useful boundaries for the article\u2019s launch message. The brief is preparation for discussion, not evidence that a site-specific assessment has already happened."
       ]
     },
     {
-      "heading": "Read the guides as preparation, not promises",
+      "heading": "What the guide selection promises to explain",
       "paragraphs": [
-        "The homepage lists guides on choosing between drip, sprinklers and hand watering; planning drip irrigation for garden beds; and observing a vegetable garden before changing the timer. Their summaries emphasize landscape, soil, routine, filtration and delivery patterns. Together, those topics reinforce the resource\u2019s stated emphasis on understanding the setting.",
-        "For this introduction, those listings establish the advertised editorial direction. They do not establish the contents of every linked page, prove that a planning tool saves information, or demonstrate that an enquiry reaches a recipient. Keep those operational questions separate from what the homepage actually says."
+        "Three featured guide descriptions give the planning approach more definition. One introduces the choice between drip, sprinklers and hand watering around the landscape, soil and daily routine. Another outlines what belongs in a garden-bed drip plan, including emitters, filtration and checking root-zone coverage.",
+        "The vegetable-garden guide description asks readers to observe soil, plant stage and the delivery pattern before changing a timer. These are descriptions of the subjects presented on the homepage, not an independent assessment of the linked guides. They nevertheless show how the resource intends to turn its broad planning message into specific reading topics."
       ]
     },
     {
-      "heading": "Keep the network relationship and enquiry routes distinct",
+      "heading": "Keep the resource and enquiry purposes distinct",
       "paragraphs": [
-        "The footer states: \u201cPowered by Industry Army Marketing, a division of BuildersHaus.com.\u201d It also separates landscape-oriented navigation from industry links including contractor sign-up, marketing, guest posting and business guides. That attribution belongs in the launch account without expanding it into unsupported service or affiliation claims.",
-        "A marketing enquiry about Industry Army Marketing is different from a reader\u2019s irrigation-project enquiry. The presence of these links does not establish either route\u2019s operation. This private runtime account supports the site\u2019s published planning purpose and stated network relationship; it does not certify unpublished services, intake delivery or an automated publishing workflow."
+        "The footer separates landscape resources from industry-facing links, including contractor sign-up, marketing, guest posting and business guides. Its attribution reads: \u201cPowered by Industry Army Marketing, a division of BuildersHaus.com.\u201d",
+        "Those destinations should not be conflated. An IAM marketing enquiry is different from a property owner seeking irrigation advice or contractor assistance. The homepage establishes navigation and attribution; it does not, by itself, demonstrate working submissions, contractor matching or enquiry delivery. The supported introduction is therefore a focused one: Irrigation.ltd presents a planning-led information resource."
       ]
     }
   ],
   "claims": [
     {
-      "claim": "The homepage leads with \u201cBetter irrigation starts with better questions\u201d and presents irrigation education and planning.",
-      "sourceUrl": "https://irrigation.ltd/",
-      "exactSupportingExcerpt": "Better irrigation starts with better questions | Irrigation.ltd"
-    },
-    {
-      "claim": "The resource describes guidance spanning a first garden bed through a whole property.",
+      "claim": "Irrigation.ltd presents an educational resource spanning a first garden bed through a whole property, with practical guidance on planning and care.",
       "sourceUrl": "https://irrigation.ltd/",
       "exactSupportingExcerpt": "Make sense of irrigation, from your first garden bed to a whole property. Practical guides to help you plan, care for and get more from your landscape."
     },
     {
-      "claim": "The homepage identifies home gardens, lawns and landscapes, and shared properties as settings.",
+      "claim": "The homepage identifies home gardens, lawns and landscapes, and shared properties as relevant settings.",
       "sourceUrl": "https://irrigation.ltd/",
       "exactSupportingExcerpt": "Home gardens Lawns & landscapes Shared properties"
     },
     {
-      "claim": "The site explicitly encourages understanding options before selecting hardware.",
+      "claim": "The resource encourages readers to understand different approaches before choosing hardware.",
       "sourceUrl": "https://irrigation.ltd/",
       "exactSupportingExcerpt": "Different spaces need different approaches. Get to know the options before choosing the hardware."
     },
     {
-      "claim": "The drip irrigation introduction covers root-zone watering, emitters, tubing, beds and containers.",
+      "claim": "The drip and sprinkler introductions cover emitters, tubing, beds, containers, coverage, observation and pre-installation questions.",
       "sourceUrl": "https://irrigation.ltd/",
-      "exactSupportingExcerpt": "Drip irrigation Water at the root zone. Explore emitters, tubing, beds and containers."
+      "exactSupportingExcerpt": "Drip irrigation Water at the root zone. Explore emitters, tubing, beds and containers. \u2197 \u2197 Sprinkler systems Understand coverage, observation and the questions to ask before installation."
     },
     {
-      "claim": "The sprinkler introduction emphasizes coverage, observation and pre-installation questions.",
+      "claim": "Smarter watering and troubleshooting are presented around soil, weather, plant needs, leaks, uneven coverage and seasonal change.",
       "sourceUrl": "https://irrigation.ltd/",
-      "exactSupportingExcerpt": "Sprinkler systems Understand coverage, observation and the questions to ask before installation."
+      "exactSupportingExcerpt": "Smarter watering Work with soil, weather and plant needs instead of a fixed habit. \u2197 \u2733 Care & troubleshooting Find leaks, spot uneven coverage and prepare for seasonal change."
     },
     {
-      "claim": "The smarter-watering category discusses soil, weather and plant needs.",
+      "claim": "The proposed project brief captures planting, water source, site conditions and unanswered questions for a subsequent conversation.",
       "sourceUrl": "https://irrigation.ltd/",
-      "exactSupportingExcerpt": "Smarter watering Work with soil, weather and plant needs instead of a fixed habit."
+      "exactSupportingExcerpt": "Before the first trench Start with a plan, not a shopping cart. A useful project brief captures your planting, water source, site conditions and unanswered questions. Bring better information to your next conversation."
     },
     {
-      "claim": "The care category addresses leaks, uneven coverage and seasonal change.",
+      "claim": "The homepage lists four planning steps involving mapping, site observations, local requirements and professional discussion.",
       "sourceUrl": "https://irrigation.ltd/",
-      "exactSupportingExcerpt": "Care & troubleshooting Find leaks, spot uneven coverage and prepare for seasonal change."
+      "exactSupportingExcerpt": "01 Map the spaces and plants you want to water. 02 Note slopes, shade, soil and existing problems. 03 Check local watering and backflow requirements. 04 Discuss flow, pressure and design with a professional."
     },
     {
-      "claim": "The homepage prioritizes a project brief over shopping and identifies information to include.",
-      "sourceUrl": "https://irrigation.ltd/",
-      "exactSupportingExcerpt": "Start with a plan, not a shopping cart. A useful project brief captures your planting, water source, site conditions and unanswered questions. Bring better information to your next conversation."
-    },
-    {
-      "claim": "The planning sequence starts with mapping spaces and plants and noting site conditions.",
-      "sourceUrl": "https://irrigation.ltd/",
-      "exactSupportingExcerpt": "01 Map the spaces and plants you want to water. 02 Note slopes, shade, soil and existing problems."
-    },
-    {
-      "claim": "The planning sequence includes checking local requirements and discussing technical design questions with a professional.",
-      "sourceUrl": "https://irrigation.ltd/",
-      "exactSupportingExcerpt": "03 Check local watering and backflow requirements. 04 Discuss flow, pressure and design with a professional."
-    },
-    {
-      "claim": "A listed guide compares watering methods around landscape, soil and routine.",
+      "claim": "A featured guide introduces choosing among drip, sprinklers and hand watering around landscape, soil and routine.",
       "sourceUrl": "https://irrigation.ltd/",
       "exactSupportingExcerpt": "Drip, sprinklers or hand watering: start with the plants Choose a watering method around your landscape, soil and daily routine."
     },
     {
-      "claim": "A listed garden-bed drip guide introduces emitters, filtration and root-zone coverage.",
+      "claim": "A featured garden-bed drip guide introduces emitters, filtration and root-zone coverage checks.",
       "sourceUrl": "https://irrigation.ltd/",
       "exactSupportingExcerpt": "Drip irrigation for garden beds: what belongs in the plan A practical introduction to emitters, filtration and checking root-zone coverage."
     },
     {
-      "claim": "A listed vegetable-garden guide emphasizes observation before timer changes.",
+      "claim": "The vegetable-garden guide description emphasizes observation before changing a timer.",
       "sourceUrl": "https://irrigation.ltd/",
       "exactSupportingExcerpt": "Watering a vegetable garden without guessing Observe the soil, plant stage and delivery pattern before changing the timer."
     },
     {
-      "claim": "The footer attributes the resource to Industry Army Marketing, a division of BuildersHaus.com.",
-      "sourceUrl": "https://irrigation.ltd/",
-      "exactSupportingExcerpt": "Powered by Industry Army Marketing , a division of BuildersHaus.com"
-    },
-    {
-      "claim": "The footer separates landscape navigation from industry-oriented links.",
+      "claim": "The footer separates landscape resources from industry-facing navigation.",
       "sourceUrl": "https://irrigation.ltd/",
       "exactSupportingExcerpt": "For your landscape Irrigation guides Explore irrigation types Property planning brief About this resource For the industry Contractor sign-up Market with us Guest posting Business guides"
+    },
+    {
+      "claim": "The footer attributes the resource to Industry Army Marketing and identifies that organization as a division of BuildersHaus.com.",
+      "sourceUrl": "https://irrigation.ltd/",
+      "exactSupportingExcerpt": "Powered by Industry Army Marketing , a division of BuildersHaus.com"
     }
   ]
 }
