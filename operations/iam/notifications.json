@@ -778,8 +778,8 @@
     {
       "eventId": "iam-notice-b084b8da1cbdb33ec3bc",
       "kind": "publishing_failure",
-      "lifecycle": "open",
-      "deliveryStatus": "queued",
+      "lifecycle": "resolved",
+      "deliveryStatus": "superseded",
       "triggeredAt": "2026-11-17T03:48:36.286529+00:00",
       "deliveryAttempts": 0,
       "deliveryReceipt": null,
@@ -790,15 +790,38 @@
       "nextAction": "Inspect the exact retained run and issue; continue independent eligible work.",
       "proof": {
         "runUrl": "44012534248"
+      },
+      "resolvedAt": "2026-11-17T04:06:54.335817+00:00"
+    },
+    {
+      "eventId": "iam-notice-70bdde672d39e17eb75d",
+      "kind": "publication_verified",
+      "lifecycle": "open",
+      "deliveryStatus": "queued",
+      "triggeredAt": "2026-11-17T04:06:54.335817+00:00",
+      "deliveryAttempts": 0,
+      "deliveryReceipt": null,
+      "siteDomain": "cabins.ltd",
+      "articleSlug": "cabins-ltd-welcome-cabin-buying-selling-prefab",
+      "articleUrl": "https://www.industryarmymarketing.com/blog/cabins-ltd-welcome-cabin-buying-selling-prefab",
+      "status": "verified",
+      "verifiedAt": "2026-11-17T04:06:03.518662+00:00",
+      "reconciled": false,
+      "summary": "cabins.ltd IAM article is verified live.",
+      "nextAction": "Read the verified article; no publication retry is needed.",
+      "proof": {
+        "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/44014549349",
+        "publicationVerified": true,
+        "generatedAndAudited": false
       }
     }
   ],
   "producer": {
     "stage": "fired",
-    "firedAt": "2026-11-17T03:48:36.286820+00:00",
-    "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/44012534248",
+    "firedAt": "2026-11-17T04:06:54.336139+00:00",
+    "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/44014549349",
     "rules": {
-      "sourceCommit": "bb35d3d04385f5644367422037a30213eb69cde5",
+      "sourceCommit": "8a39313721968591b539cb19dab87849cb6ba86d",
       "hashes": {
         "docs/IAM-SOT.md": "327c746c010100ad3fea5e2a6200aab04890d0579cc98ffddbf4df12fe95002e",
         "operations/iam/policy.json": "6193ee71499a485a825888ba95ec940ae7576fa44a9d2b4f3dc8670ea1c66044",
