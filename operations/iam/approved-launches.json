@@ -57,6 +57,25 @@
         "Builders.ltd",
         "independent editorial resource"
       ]
+    },
+    {
+      "slug": "cabins-ltd-welcome-cabin-buying-selling-prefab",
+      "kind": "user-authorized-launch",
+      "authorization": "Owner November16 instruction to complete missing IAM announcements for the unfinished launch backlog; Cabins.ltd verified public launch first.",
+      "reviewed": true,
+      "postSha256": "2997231ad5840fc31b38637501f2bfc636c61832f6b72d3a64fd5972b804d3ec",
+      "sourceDomain": "cabins.ltd",
+      "parentBrand": "Cabins.ltd",
+      "sourceUrls": [
+        "https://cabins.ltd/",
+        "https://cabins.ltd/sell/",
+        "https://cabins.ltd/companies/"
+      ],
+      "requiredSourceText": [
+        "Cabins",
+        "prefab",
+        "seller"
+      ]
     }
   ]
 }
