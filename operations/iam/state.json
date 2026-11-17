@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "lastVerifiedAt": "2026-11-14T04:08:52.874901+00:00",
+  "lastVerifiedAt": "2026-11-17T04:06:03.518662+00:00",
   "rows": {
     "buildershaus-contractor-project-story-submission-guide": {
       "status": "existing-publication",
@@ -1682,7 +1682,7 @@
       "nextAction": "Verified; prior attempt evidence retained"
     },
     "cabins-ltd-welcome-cabin-buying-selling-prefab": {
-      "status": "claimed",
+      "status": "verified",
       "attempts": 1,
       "sourceDomain": "cabins.ltd",
       "canonical": "https://www.industryarmymarketing.com/blog/cabins-ltd-welcome-cabin-buying-selling-prefab",
@@ -1703,7 +1703,57 @@
             "sotVersion": 2
           }
         }
-      ]
+      ],
+      "sourceFailures": [],
+      "stage": "verified",
+      "publicationAuthorship": "manual",
+      "sourceEvidence": [
+        {
+          "url": "https://cabins.ltd/",
+          "sha256": "ac61eb64900c34b087112a146798518ebbd85d61d0d6e3903e82c66511cf768a"
+        },
+        {
+          "url": "https://cabins.ltd/sell/",
+          "sha256": "7fadd1854ac178fdde7186df05ef56ac2dda230edb70375d165723a9a600bdd9"
+        },
+        {
+          "url": "https://cabins.ltd/companies/",
+          "sha256": "e1d70a71ae665bddc0ebac2d485072f374b566945938a4c7ef604ad2a142e7f9"
+        }
+      ],
+      "articleSha256": "ddf8acffcc93bec04bbc1d90682004cb2c2a68fcd2535de2bc8efb751c8bef7c",
+      "verifiedAt": "2026-11-17T04:06:03.518662+00:00",
+      "evidence": {
+        "http": true,
+        "canonical": true,
+        "schema": true,
+        "discovery": true,
+        "desktop": true,
+        "phone": true,
+        "image": true,
+        "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/44014549349",
+        "trigger": "push",
+        "browserVersion": "157.0.8103.50",
+        "browserExecutable": "/usr/bin/google-chrome",
+        "rules": {
+          "sourceCommit": "dc451280e3ff06db8ef1ed269f49883ff6ecc458",
+          "hashes": {
+            "docs/IAM-SOT.md": "327c746c010100ad3fea5e2a6200aab04890d0579cc98ffddbf4df12fe95002e",
+            "operations/iam/policy.json": "6193ee71499a485a825888ba95ec940ae7576fa44a9d2b4f3dc8670ea1c66044",
+            "operations/iam/build-contract.json": "82390b2923839a7126647c778b34fabb26035ae939d21c8ae5f888072d97a0b1"
+          },
+          "sotVersion": 2
+        },
+        "productionVerified": true,
+        "generatedAndAudited": false,
+        "automaticRecovery": {
+          "verified": false,
+          "reason": "Not an automatic health recovery dispatch"
+        },
+        "authorship": "user-authorized-manual",
+        "automaticAuthorship": false
+      },
+      "nextAction": "Verified; prior attempt evidence retained"
     }
   },
   "receipts": [
@@ -1857,13 +1907,34 @@
         "verified": false,
         "reason": "Not an automatic health recovery dispatch"
       }
+    },
+    {
+      "slug": "cabins-ltd-welcome-cabin-buying-selling-prefab",
+      "verifiedAt": "2026-11-17T04:06:03.518662+00:00",
+      "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/44014549349",
+      "trigger": "push",
+      "generatedAndAudited": false,
+      "productionVerified": true,
+      "rules": {
+        "sourceCommit": "dc451280e3ff06db8ef1ed269f49883ff6ecc458",
+        "hashes": {
+          "docs/IAM-SOT.md": "327c746c010100ad3fea5e2a6200aab04890d0579cc98ffddbf4df12fe95002e",
+          "operations/iam/policy.json": "6193ee71499a485a825888ba95ec940ae7576fa44a9d2b4f3dc8670ea1c66044",
+          "operations/iam/build-contract.json": "82390b2923839a7126647c778b34fabb26035ae939d21c8ae5f888072d97a0b1"
+        },
+        "sotVersion": 2
+      },
+      "automaticRecovery": {
+        "verified": false,
+        "reason": "Not an automatic health recovery dispatch"
+      }
     }
   ],
   "lastRun": {
     "at": "2026-11-17T04:04:36.581951+00:00",
     "owner": "44014549349-1",
     "trigger": "push",
-    "status": "checking",
+    "status": "verified-publication",
     "policyDigest": "f4d4e6c97658c3b248995e296acc54c7d5da1229cc89be7dc36abe11adaf55ca",
     "rules": {
       "sourceCommit": "dc451280e3ff06db8ef1ed269f49883ff6ecc458",
@@ -3154,9 +3225,5 @@
       },
       "publicationVerified": true
     }
-  ],
-  "lease": {
-    "owner": "44014549349-1",
-    "until": "2026-11-17T04:34:36.594287+00:00"
-  }
+  ]
 }
