@@ -1931,13 +1931,13 @@
     }
   ],
   "lastRun": {
-    "at": "2026-11-17T04:04:36.581951+00:00",
-    "owner": "44014549349-1",
-    "trigger": "push",
-    "status": "verified-publication",
+    "at": "2026-11-18T03:54:08.825884+00:00",
+    "owner": "44233445573-1",
+    "trigger": "workflow_dispatch",
+    "status": "failed",
     "policyDigest": "f4d4e6c97658c3b248995e296acc54c7d5da1229cc89be7dc36abe11adaf55ca",
     "rules": {
-      "sourceCommit": "dc451280e3ff06db8ef1ed269f49883ff6ecc458",
+      "sourceCommit": "45982c5508fc83208105d484a0fc82bcdf61c0a3",
       "hashes": {
         "docs/IAM-SOT.md": "327c746c010100ad3fea5e2a6200aab04890d0579cc98ffddbf4df12fe95002e",
         "operations/iam/policy.json": "6193ee71499a485a825888ba95ec940ae7576fa44a9d2b4f3dc8670ea1c66044",
@@ -1946,9 +1946,14 @@
       "sotVersion": 2
     },
     "automaticRecovery": {
-      "verified": false,
-      "reason": "Not an automatic health recovery dispatch"
-    }
+      "verified": true,
+      "kind": "verified-health-recovery",
+      "originRun": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/44233414808",
+      "originEvent": "push",
+      "reason": "Actual same-repository health run and GitHub Actions bot verified"
+    },
+    "error": "Remaining campaign is blocked, not complete",
+    "nextAction": "Resolve the exact recorded gate; do not reset attempts, reseed history or count zero as publication"
   },
   "lastExecution": {
     "checkedAt": "2026-11-17T04:06:24.229773+00:00",
@@ -2580,7 +2585,7 @@
   ],
   "approvedLaunchIssues": [],
   "loadedRules": {
-    "sourceCommit": "dc451280e3ff06db8ef1ed269f49883ff6ecc458",
+    "sourceCommit": "45982c5508fc83208105d484a0fc82bcdf61c0a3",
     "hashes": {
       "docs/IAM-SOT.md": "327c746c010100ad3fea5e2a6200aab04890d0579cc98ffddbf4df12fe95002e",
       "operations/iam/policy.json": "6193ee71499a485a825888ba95ec940ae7576fa44a9d2b4f3dc8670ea1c66044",
@@ -2826,7 +2831,7 @@
       "id": "iam:daily-release-intake",
       "kind": "daily-intake",
       "status": "open",
-      "observedAt": "2026-11-17T04:04:36.594237+00:00",
+      "observedAt": "2026-11-18T03:54:08.837878+00:00",
       "reason": "DAILY_RELEASE_INTAKE_STALE",
       "nextAction": "Connect fresh verified release receipts; independent campaign items continue."
     },
