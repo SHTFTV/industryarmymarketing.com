@@ -2,6 +2,7 @@ import datetime as dt
 import importlib.util
 from pathlib import Path
 import unittest
+from zoneinfo import ZoneInfo
 
 spec=importlib.util.spec_from_file_location('iam_health',Path(__file__).parent/'iam-health-recovery.py')
 health=importlib.util.module_from_spec(spec);spec.loader.exec_module(health)
@@ -18,5 +19,12 @@ class HealthTests(unittest.TestCase):
         state={'rows':{'bad':{'status':'blocked'},'good':{'status':'pending','attempts':0}}}
         self.assertTrue(health.decision(state,[],NOW)['dispatch'])
     def test_no_work_no_dispatch_and_probe_does_not_claim_publication(self):
-        self.assertFalse(health.decision({'rows':{}},[],NOW)['dispatch'])
-        self.assertTrue(health.decision({'rows':{}},[],NOW,True)['dispatch'])
+        # An empty queue alone is not idle when the daily journal is still due.
+        state={'rows':{},'dailyJournalDate':NOW.astimezone(ZoneInfo('America/Vancouver')).date().isoformat()}
+        self.assertFalse(health.decision(state,[],NOW)['dispatch'])
+        self.assertTrue(health.decision(state,[],NOW,True)['dispatch'])
+    def test_unpublished_daily_journal_is_work_at_local_cadence(self):
+        local=dt.datetime(2026,11,12,20,30,tzinfo=ZoneInfo('America/Vancouver'))
+        self.assertFalse(health.decision({'rows':{}},[],(local-dt.timedelta(minutes=1)).astimezone(dt.timezone.utc))['dispatch'])
+        self.assertTrue(health.decision({'rows':{}},[],local.astimezone(dt.timezone.utc))['dispatch'])
+
