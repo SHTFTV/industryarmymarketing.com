@@ -1931,13 +1931,13 @@
     }
   ],
   "lastRun": {
-    "at": "2026-11-18T03:54:08.825884+00:00",
-    "owner": "44233445573-1",
+    "at": "2026-11-20T04:24:45.780126+00:00",
+    "owner": "44674059168-1",
     "trigger": "workflow_dispatch",
     "status": "failed",
     "policyDigest": "f4d4e6c97658c3b248995e296acc54c7d5da1229cc89be7dc36abe11adaf55ca",
     "rules": {
-      "sourceCommit": "45982c5508fc83208105d484a0fc82bcdf61c0a3",
+      "sourceCommit": "e9ddea95107a236ab5927e622796741d28e6f48e",
       "hashes": {
         "docs/IAM-SOT.md": "327c746c010100ad3fea5e2a6200aab04890d0579cc98ffddbf4df12fe95002e",
         "operations/iam/policy.json": "6193ee71499a485a825888ba95ec940ae7576fa44a9d2b4f3dc8670ea1c66044",
@@ -1948,8 +1948,8 @@
     "automaticRecovery": {
       "verified": true,
       "kind": "verified-health-recovery",
-      "originRun": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/44233414808",
-      "originEvent": "push",
+      "originRun": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/44674021853",
+      "originEvent": "schedule",
       "reason": "Actual same-repository health run and GitHub Actions bot verified"
     },
     "error": "Remaining campaign is blocked, not complete",
@@ -2614,7 +2614,7 @@
   ],
   "approvedLaunchIssues": [],
   "loadedRules": {
-    "sourceCommit": "45982c5508fc83208105d484a0fc82bcdf61c0a3",
+    "sourceCommit": "e9ddea95107a236ab5927e622796741d28e6f48e",
     "hashes": {
       "docs/IAM-SOT.md": "327c746c010100ad3fea5e2a6200aab04890d0579cc98ffddbf4df12fe95002e",
       "operations/iam/policy.json": "6193ee71499a485a825888ba95ec940ae7576fa44a9d2b4f3dc8670ea1c66044",
@@ -2860,7 +2860,7 @@
       "id": "iam:daily-release-intake",
       "kind": "daily-intake",
       "status": "open",
-      "observedAt": "2026-11-18T03:54:08.837878+00:00",
+      "observedAt": "2026-11-20T04:24:45.793400+00:00",
       "reason": "DAILY_RELEASE_INTAKE_STALE",
       "nextAction": "Connect fresh verified release receipts; independent campaign items continue."
     },
