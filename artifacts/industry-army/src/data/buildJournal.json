@@ -15,6 +15,93 @@
     "authorName": "Colin Hamilton",
     "contactBusiness": "iam",
     "faqs": [],
+    "slug": "local-seo-checks-before-rewriting-service-page",
+    "title": "Local SEO: What to Check Before Rewriting a Service Page",
+    "cardTitle": "Local SEO Checks Before Rewriting a Service Page",
+    "excerpt": "Find out whether your local service page is losing search visibility, clicks or enquiries, then choose what to fix.",
+    "metaDescription": "Use Google Search Console and a mobile enquiry test to diagnose local SEO problems before rewriting a service page.",
+    "campaignSite": "industryarmymarketing.com",
+    "campaignLabel": "Local SEO field guide",
+    "image": "/brand-journal/local-seo-snowplow-quebec.jpg",
+    "ogImage": "/brand-journal/local-seo-snowplow-quebec.jpg",
+    "imageAlt": "A tractor-mounted snowplow clearing a street in Quebec City",
+    "ogImageAlt": "A tractor-mounted snowplow clearing a street in Quebec City",
+    "publishedAt": "2026-11-23T22:53:24.040469+00:00",
+    "date": "November 23, 2026",
+    "richContent": {
+      "intro": "Your service page used to bring in calls. This month, the phone is quieter. Before you rewrite the page or build a batch of city pages, check where the drop happened. Search impressions, search clicks and customer enquiries can each fall for different reasons. Choose the fix that matches what changed.",
+      "sections": [
+        {
+          "heading": "Start with the page that brings in the work",
+          "paragraphs": [
+            "Open the Performance report in Google Search Console and filter to the service page's URL. Compare two complete periods of equal length. For a seasonal business, also compare with the equivalent period last year if you have the data. If you're checking a snow removal page in November, demand can move with the weather and the first period of sustained cold.",
+            "Look at the search terms behind the numbers. A page may lose impressions for a broad term while still reaching customers looking for a service you sell. Record the page, the queries with the largest changes and any site changes you made around the same time. [Google Search Central’s guide to investigating traffic drops](https://developers.google.com/search/docs/monitor-debug/debugging-search-traffic-drops)"
+          ]
+        },
+        {
+          "heading": "Match the fix to the change",
+          "paragraphs": [
+            "Impressions fell for several important terms. Check whether the affected page is still indexed, whether its URL or canonical changed and whether similar searches fell across the wider market.",
+            "Impressions stayed steady and clicks fell. Look at which queries and devices lost clicks. Compare the page title and search result with what a person needs to decide before clicking.",
+            "Clicks stayed steady and enquiries fell. Test the phone link, form and confirmation screen on a real mobile device. Confirm a test enquiry reaches the person who handles it.",
+            "Only one service or location lost visibility. Compare that page with other pages on the same site. Review its internal links, search terms and the service evidence on the page.",
+            "One metric can have several explanations. Use the next check to rule possibilities in or out before you spend time on a rewrite."
+          ]
+        },
+        {
+          "heading": "Give each service page a job",
+          "paragraphs": [
+            "Imagine a contractor offers commercial snow removal and parking lot plowing. The commercial page can explain what property managers need to compare quotes, including sidewalks, service triggers and visit records. A separate parking lot page earns its place if it can explain how the crew handles access lanes, curb markers and snow storage, with photos or a site plan the company can actually show.",
+            "Use the language customers would use when asking for that work. Put the service in the title and main heading, and include the location when it helps people understand where you work. Give each claim something concrete to stand on, such as a documented job, a checklist, a real service area or an explanation of how the work is quoted. [Google’s guidance on helpful content](https://developers.google.com/search/docs/fundamentals/creating-helpful-content)"
+          ]
+        },
+        {
+          "heading": "Follow one enquiry all the way through",
+          "paragraphs": [
+            "Pretend you're a customer on your phone. Find the service page, see if it answers your question, and send a test enquiry using the normal route. Check for a clear confirmation on the site and actual delivery on the business side. A working form should be verifiable by the person expected to answer it.",
+            "Record the change you make and what you expect to improve. A better title can be evaluated against clicks for the relevant searches. A form repair can be tested immediately and monitored against completed enquiries. Check the same page and the same comparison period after the change. That gives you a way to decide what to do next."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "label": "Google Search Central — Debugging drops in Google Search traffic",
+          "href": "https://developers.google.com/search/docs/monitor-debug/debugging-search-traffic-drops"
+        },
+        {
+          "label": "Google Search Central — Creating helpful, reliable, people-first content",
+          "href": "https://developers.google.com/search/docs/fundamentals/creating-helpful-content"
+        },
+        {
+          "label": "Featured photograph: Wilfredor, snow clearing in Quebec City, Wikimedia Commons (CC0 1.0), cropped for this article",
+          "href": "https://commons.wikimedia.org/wiki/File:Snowplow_clearing_snow_in_Quebec_City.jpg"
+        }
+      ]
+    },
+    "cta": {
+      "eyebrow": "INDUSTRY ARMY MARKETING",
+      "heading": "Find the next fix for your service page",
+      "body": "Talk to IAM about where your website is losing visibility or enquiries.",
+      "buttonText": "Talk with IAM",
+      "buttonHref": "/contact"
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
+    "trade": "Industry publishing",
+    "tradeShort": "industry publishing",
+    "plural": "businesses",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Canada",
+    "province": "BC",
+    "category": "Build Journal",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "contactBusiness": "iam",
+    "faqs": [],
     "slug": "cabins-ltd-welcome-cabin-buying-selling-prefab",
     "campaignSite": "cabins.ltd",
     "campaignLabel": "Cabin buying, selling and prefab research",
