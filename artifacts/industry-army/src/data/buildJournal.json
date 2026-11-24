@@ -29,20 +29,20 @@
     "date": "November 24, 2026",
     "faqs": [
       {
-        "question": "Should a drywall contractor have separate pages for repair and finishing?",
-        "answer": "Usually yes. Repair and finishing searches come from different customers with different needs, so separate pages let each one answer its own questions clearly."
+        "q": "Should a drywall contractor have separate pages for repair and finishing?",
+        "a": "Usually yes. Repair and finishing searches come from different customers with different needs, so separate pages let each one answer its own questions clearly."
       },
       {
-        "question": "Do photos help drywall contractors with SEO?",
-        "answer": "They can. Google's image documentation recommends descriptive filenames and alt text and says Google uses alt text and page content to understand images. Google also recommends adding photos to your Business Profile regularly."
+        "q": "Do photos help drywall contractors with SEO?",
+        "a": "They can. Google's image documentation recommends descriptive filenames and alt text and says Google uses alt text and page content to understand images. Google also recommends adding photos to your Business Profile regularly."
       },
       {
-        "question": "What services should a drywall contractor list on Google Business Profile?",
-        "answer": "List each specific service you offer, such as hole repair, water damage repair, taping, Level 5 finishing and texture matching. Google allows custom services when the one you need isn't suggested."
+        "q": "What services should a drywall contractor list on Google Business Profile?",
+        "a": "List each specific service you offer, such as hole repair, water damage repair, taping, Level 5 finishing and texture matching. Google allows custom services when the one you need isn't suggested."
       },
       {
-        "question": "Can SEO guarantee a drywall company ranks first?",
-        "answer": "No. No one can guarantee rankings. Good content, accurate profile information and real photos make it easier for Google and customers to match your business to relevant searches."
+        "q": "Can SEO guarantee a drywall company ranks first?",
+        "a": "No. No one can guarantee rankings. Good content, accurate profile information and real photos make it easier for Google and customers to match your business to relevant searches."
       }
     ],
     "richContent": {
