@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-11-20T04:24:02.981287+00:00",
+  "checkedAt": "2026-11-24T06:06:33.661207+00:00",
   "status": "verified",
   "configured": true,
   "modelConfigured": true,
@@ -8,9 +8,9 @@
   "runtimeAccessVerified": true,
   "maximumProviderCalls": 2,
   "published": false,
-  "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/44674059168",
+  "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/45337906535",
   "rules": {
-    "sourceCommit": "6688fc75cb83536f6e071b0512a764681db19194",
+    "sourceCommit": "f302fd4a28c774e7c4f9f460ceab806caee35a55",
     "hashes": {
       "docs/IAM-SOT.md": "327c746c010100ad3fea5e2a6200aab04890d0579cc98ffddbf4df12fe95002e",
       "operations/iam/policy.json": "6193ee71499a485a825888ba95ec940ae7576fa44a9d2b4f3dc8670ea1c66044",
@@ -25,5 +25,5 @@
   },
   "sourceFailures": [],
   "generationAndIndependentAuditPassed": true,
-  "draftSha256": "305336fc63ceb14ef5a8e7fce0680976b1e41c7033bfa48ff4c495529d1575de"
+  "draftSha256": "eee43803e531c3742e71d7ebd697e453652056db27b5bf1abb840ab88d11f03e"
 }
