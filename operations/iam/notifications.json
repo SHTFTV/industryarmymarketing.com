@@ -836,8 +836,8 @@
     {
       "eventId": "iam-notice-3d20edddec5abf5497e1",
       "kind": "publishing_failure",
-      "lifecycle": "open",
-      "deliveryStatus": "queued",
+      "lifecycle": "resolved",
+      "deliveryStatus": "superseded",
       "triggeredAt": "2026-11-20T04:25:22.993840+00:00",
       "deliveryAttempts": 0,
       "deliveryReceipt": null,
@@ -848,15 +848,33 @@
       "nextAction": "Inspect the exact retained run and issue; continue independent eligible work.",
       "proof": {
         "runUrl": "44674059168"
+      },
+      "resolvedAt": "2026-11-24T06:08:19.327789+00:00"
+    },
+    {
+      "eventId": "iam-notice-95fb83421144de52840f",
+      "kind": "publishing_failure",
+      "lifecycle": "open",
+      "deliveryStatus": "queued",
+      "triggeredAt": "2026-11-24T06:08:19.327789+00:00",
+      "deliveryAttempts": 0,
+      "deliveryReceipt": null,
+      "siteDomain": "industryarmymarketing.com",
+      "status": "failed",
+      "reasonCode": "publisher_run_failed",
+      "summary": "IAM cloud publication run failed; a green wrapper is not publication proof.",
+      "nextAction": "Inspect the exact retained run and issue; continue independent eligible work.",
+      "proof": {
+        "runUrl": "45337906535"
       }
     }
   ],
   "producer": {
     "stage": "fired",
-    "firedAt": "2026-11-20T04:25:22.994183+00:00",
-    "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/44674059168",
+    "firedAt": "2026-11-24T06:08:19.328128+00:00",
+    "runUrl": "https://github.com/SHTFTV/industryarmymarketing.com/actions/runs/45337906535",
     "rules": {
-      "sourceCommit": "7ed7e9dedf0a65d7fec5249ecc88adb398ac00e7",
+      "sourceCommit": "d315489cc394bafaac4e09a6b060890015d33729",
       "hashes": {
         "docs/IAM-SOT.md": "327c746c010100ad3fea5e2a6200aab04890d0579cc98ffddbf4df12fe95002e",
         "operations/iam/policy.json": "6193ee71499a485a825888ba95ec940ae7576fa44a9d2b4f3dc8670ea1c66044",
