@@ -37,6 +37,8 @@ concurrency:
   cancel-in-progress: false
 jobs:
   publish:
+    # Owner pause: Supabase is now the sole IAM publisher. Retain this workflow for rollback.
+    if: ${{ false }}
     outputs:
       executed: ${{ steps.decide.outputs.executed }}
     runs-on: ubuntu-24.04
@@ -104,7 +106,7 @@ jobs:
           if-no-files-found: ignore
   report:
     needs: publish
-    if: always() && (needs.publish.outputs.executed == 'true' || needs.publish.result != 'success' || github.event_name != 'schedule')
+    if: always() && needs.publish.result != 'skipped' && (needs.publish.outputs.executed == 'true' || needs.publish.result != 'success' || github.event_name != 'schedule')
     runs-on: ubuntu-24.04
     timeout-minutes: 5
     steps:
