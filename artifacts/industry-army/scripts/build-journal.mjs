@@ -2,8 +2,18 @@ import fs from 'node:fs';
 import crypto from 'node:crypto';
 import path from 'node:path';
 import {createServer} from 'vite';
+import {fetchNetworkPosts,mergePosts} from '../src/lib/networkPosts.mjs';
 const root=process.cwd(),dist=path.join(root,'dist');
-const journal=JSON.parse(fs.readFileSync(path.join(root,'src/data/buildJournal.json'),'utf8'));
+let journal=JSON.parse(fs.readFileSync(path.join(root,'src/data/buildJournal.json'),'utf8'));
+try {
+ const network=await fetchNetworkPosts();
+ const seen=new Set(journal.map(p=>p.slug));
+ const merged=mergePosts(journal,network);
+ if(merged.some(p=>!seen.has(p.slug))){
+  fs.writeFileSync(path.join(root,'src/data/buildJournal.json'),JSON.stringify(merged,null,2)+'\n');
+  journal=merged;
+ }
+} catch {}
 const markets=JSON.parse(fs.readFileSync(path.join(root,'src/data/seoMarkets.json'),'utf8'));
 const template=fs.readFileSync(path.join(dist,'index.html'),'utf8');
 globalThis.localStorage={getItem:()=>null,setItem:()=>{},removeItem:()=>{}};

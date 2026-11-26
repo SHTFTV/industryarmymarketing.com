@@ -7,6 +7,8 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { blogPosts, buildJournalPosts } from "@/data/blogPosts";
 import { useBlogPostsOverlay } from "@/hooks/useBlogPostsOverlay";
+import { useNetworkPosts } from "@/hooks/useNetworkPosts";
+import { mergePosts } from "@/lib/networkPosts.mjs";
 import { useMemo, useCallback, useEffect, useRef, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Search, X, ChevronLeft, ChevronRight } from "lucide-react";
@@ -22,9 +24,10 @@ const Blog = () => {
   // On first render (SSR/prerender/hydration), falls back to the static
   // list so crawler HTML matches what react-snap captured.
   const { posts: overlayPosts } = useBlogPostsOverlay();
+  const networkPosts = useNetworkPosts();
   // Uniform grid: no featured card, no pinned override — every post appears
   // in the same left-to-right chronological roll (newest first).
-  const rest = [...buildJournalPosts, ...overlayPosts.filter(p => p.category !== "Build Journal")];
+  const rest = [...mergePosts(buildJournalPosts, networkPosts), ...overlayPosts.filter(p => p.category !== "Build Journal")];
   // Persist search state in URL so filtered views are shareable and
   // survive page reloads. Empty/default values are stripped so the URL
   // stays clean ("/blog" instead of "/blog?q=&city=all&category=all").

@@ -11,7 +11,7 @@ import Layout from "@/components/Layout";
 import Seo, { SITE_URL } from "@/components/Seo";
 import { Button } from "@/components/ui/button";
 import { getPost, blogPosts, type BlogPost as BlogPostType } from "@/data/blogPosts";
-import { supabase } from "@/integrations/supabase/client";
+import { fetchNetworkPosts } from "@/lib/networkPosts.mjs";
 import BlogRichContentView from "@/components/BlogRichContent";
 import { DisambiguationSchema } from "@/components/DisambiguationSchema";
 import { BrandDefenseNoticeSchema } from "@/components/BrandDefenseNoticeSchema";
@@ -33,27 +33,27 @@ const BlogPost = () => {
     staticPost ? "ok" : "loading"
   );
 
-  // Fallback: when the slug isn't in the static bundle (e.g. a post created
-  // through the admin UI after the last deploy), fetch the row from the DB
-  // by slug and hydrate the page directly from `blog_posts.data`.
+  // Fallback: when the slug isn't in the static bundle, load due published
+  // posts from the network table and hydrate the matching article in place.
   useEffect(() => {
     if (staticPost || !slug) return;
     let alive = true;
     setDbStatus("loading");
     (async () => {
-      const { data, error } = await supabase
-        .from("blog_posts")
-        .select("data")
-        .eq("slug", slug)
-        .eq("is_published", true)
-        .maybeSingle();
-      if (!alive) return;
-      if (error || !data?.data) {
+      try {
+        const rows = await fetchNetworkPosts();
+        if (!alive) return;
+        const match = rows.find((row) => row.slug === slug);
+        if (!match) {
+          setDbStatus("missing");
+          return;
+        }
+        setDbPost(match as BlogPostType);
+        setDbStatus("ok");
+      } catch {
+        if (!alive) return;
         setDbStatus("missing");
-        return;
       }
-      setDbPost(data.data as unknown as BlogPostType);
-      setDbStatus("ok");
     })();
     return () => {
       alive = false;

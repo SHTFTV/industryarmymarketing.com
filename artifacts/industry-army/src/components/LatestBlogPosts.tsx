@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { blogPosts, type BlogPost } from "@/data/blogPosts";
 import { homepageJournal, homepagePublicationLabel } from "@/lib/homepageJournal.mjs";
+import { fetchNetworkPosts, mergePosts } from "@/lib/networkPosts.mjs";
 
 const LatestBlogPosts = () => {
   const [posts, setPosts] = useState<BlogPost[]>(() => homepageJournal(blogPosts));
@@ -18,7 +19,10 @@ const LatestBlogPosts = () => {
         if (!response.ok) return;
         const result = await response.json();
         if (alive && result.schemaVersion === 1 && Array.isArray(result.posts)) {
-          const eligible = homepageJournal(result.posts);
+          const base = result.posts;
+          const network = await fetchNetworkPosts(controller.signal);
+          if (!alive) return;
+          const eligible = homepageJournal(mergePosts(base, network));
           if (eligible.length) setPosts(eligible);
         }
       } catch { /* Keep the actual dated, prerendered canonical posts; never fake freshness. */ }
