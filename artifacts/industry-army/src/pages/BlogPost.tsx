@@ -1,3 +1,4 @@
+import JournalMediaBrand from "@/components/JournalMediaBrand";
 import CampaignContactCard from "@/components/CampaignContactCard";
 import { publicationDate } from "@/lib/publicationDate";
 import RamboContactCard from "@/components/RamboContactCard";
@@ -446,14 +447,17 @@ const BlogPost = () => {
             className="mb-8"
           />
 
-          <img
-            src={renderedHeroImage}
-            alt={heroImageAlt}
-            title={heroImageAlt}
-            width={1280}
-            height={720}
-            className="w-full rounded-lg border border-border mb-10"
-          />
+          <div className="relative mb-10">
+            <img
+              src={renderedHeroImage}
+              alt={heroImageAlt}
+              title={heroImageAlt}
+              width={1280}
+              height={720}
+              className="w-full rounded-lg border border-border"
+            />
+            <JournalMediaBrand />
+          </div>
 
           {post.category === "Build Journal" && <p className="text-xs text-muted-foreground mb-8 leading-relaxed">{post.imageAlt}</p>}
           {post.slug === "buildershaus-contractor-project-story-submission-guide" && <aside className="mb-8 flex flex-wrap items-center gap-4 rounded-lg border border-primary/30 bg-card px-4 py-3"><img src="/contractor-brands/buildershaus-mark.webp" width="64" height="64" alt="BuildersHaus construction network"/><div className="flex-1"><p className="text-xs uppercase tracking-widest text-primary">IAM / Construction marketing</p><p className="text-sm text-muted-foreground">Project stories, trade brands and a clear route back to your business.</p></div><a className="text-sm underline text-primary" href="/contact?request=guest-post&ref_site=buildershaus.com">Discuss your story →</a></aside>}

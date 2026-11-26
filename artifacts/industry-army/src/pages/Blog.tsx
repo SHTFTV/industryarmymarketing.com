@@ -1,3 +1,4 @@
+import JournalMediaBrand from "@/components/JournalMediaBrand";
 import Layout from "@/components/Layout";
 import Seo from "@/components/Seo";
 import { SITE_URL } from "@/components/Seo";
@@ -343,7 +344,7 @@ const Blog = () => {
                 transition={{ delay: Math.min(i * 0.03, 0.3) }}
                 className="rounded-lg bg-card border border-border hover:border-primary/40 transition-colors overflow-hidden flex flex-col"
               >
-                <Link to={`/blog/${p.slug}`} className="block">
+                <Link to={`/blog/${p.slug}`} className="relative block">
                   <img
                     src={p.image}
                     alt={p.slug === "builders-ltd-welcome-house-building-field-guide" ? "Builders.ltd house-building field guide — original architectural editorial illustration" : `${p.trade} in ${p.city} — ${p.brand}`}
@@ -352,6 +353,7 @@ const Blog = () => {
                     height={720}
                     className="w-full aspect-video object-cover"
                   />
+                  <JournalMediaBrand />
                 </Link>
                 <div className="p-5 flex flex-col flex-1">
                   <p className="text-primary text-xs uppercase tracking-widest mb-2">

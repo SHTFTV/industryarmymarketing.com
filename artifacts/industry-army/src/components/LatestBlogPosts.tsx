@@ -1,3 +1,4 @@
+import JournalMediaBrand from "@/components/JournalMediaBrand";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -55,8 +56,9 @@ const LatestBlogPosts = () => {
             {posts.map((p: BlogPost) => (
               <CarouselItem key={p.slug} className="basis-[92%] sm:basis-1/2 lg:basis-1/3">
                 <article data-published-at={p.publishedAt} className="h-full rounded-lg bg-card border border-border overflow-hidden flex flex-col">
-                  <Link to={`/blog/${p.slug}`} className="block" aria-label={p.title}>
+                  <Link to={`/blog/${p.slug}`} className="relative block" aria-label={p.title}>
                     <img src={p.image} alt={p.imageAlt || p.title} loading="lazy" width={1600} height={900} className="w-full aspect-video object-contain bg-black" />
+                    <JournalMediaBrand />
                   </Link>
                   <div className="p-5 flex flex-col flex-1">
                     <p className="text-primary text-xs uppercase tracking-widest mb-2">{p.category} · {p.brand}</p>

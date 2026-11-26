@@ -2,65 +2,7 @@ import { Link } from "react-router-dom";
 import type { BlogRichContent as RichContent } from "@/data/blogPosts";
 import { slugifyHeading } from "@/components/BlogToc";
 import BlogVideoBanner from "@/components/BlogVideoBanner";
-
-const FOOTNOTE_RE = /\[\^([a-z0-9_-]+)\]/gi;
-// Inline markdown link: [text](href)
-const LINK_RE = /\[([^\]^][^\]]*)\]\(([^)\s]+)\)/g;
-// Combined token pattern — footnote OR link
-const TOKEN_RE = /\[\^([a-z0-9_-]+)\]|\[([^\]^][^\]]*)\]\(([^)\s]+)\)/gi;
-
-const renderWithFootnotes = (text: string, ids: string[]) => {
-  const nodes: (string | JSX.Element)[] = [];
-  let lastIndex = 0;
-  let match: RegExpExecArray | null;
-  TOKEN_RE.lastIndex = 0;
-  while ((match = TOKEN_RE.exec(text)) !== null) {
-    if (match.index > lastIndex) nodes.push(text.slice(lastIndex, match.index));
-    if (match[1] !== undefined) {
-      // Footnote reference
-      const id = match[1];
-      const num = ids.indexOf(id) + 1;
-      if (num > 0) {
-        nodes.push(
-          <sup key={`fn-${id}-${match.index}`} className="text-primary">
-            <a
-              href={`#fn-${id}`}
-              id={`fnref-${id}`}
-              className="ml-0.5 px-1 rounded bg-primary/10 hover:bg-primary/20 no-underline text-xs"
-              aria-label={`Footnote ${num}`}
-            >
-              {num}
-            </a>
-          </sup>,
-        );
-      } else {
-        nodes.push(match[0]);
-      }
-    } else if (match[2] !== undefined && match[3] !== undefined) {
-      // Inline link
-      const label = match[2];
-      const href = match[3];
-      const external = /^https?:\/\//i.test(href);
-      nodes.push(
-        <a
-          key={`ln-${match.index}`}
-          href={href}
-          {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-          className="text-primary underline underline-offset-2 hover:text-primary/80"
-        >
-          {label}
-        </a>,
-      );
-    }
-    lastIndex = match.index + match[0].length;
-  }
-  if (lastIndex < text.length) nodes.push(text.slice(lastIndex));
-  return nodes;
-};
-
-// silence unused
-void LINK_RE;
-void FOOTNOTE_RE;
+import BlogMarkdown from "@/components/BlogMarkdown";
 
 const isExternal = (href: string) => /^https?:\/\//i.test(href);
 
@@ -106,9 +48,9 @@ const BlogRichContentView = ({
   return (
     <div className={`blog-rich-content ${content.theme === "hive" ? "rounded-xl bg-[#faf6eb] p-5 sm:p-8 [&_h2]:font-serif" : ""}`} style={content.theme === "hive" ? { "--foreground": "145 32% 17%", "--muted-foreground": "130 10% 34%", "--primary": "36 71% 33%", "--card": "48 40% 94%", "--border": "80 16% 80%" } as React.CSSProperties : undefined}>
       {content.intro && (
-        <p className="text-xl md:text-2xl text-foreground/90 leading-relaxed mb-12 font-medium">
-          {renderWithFootnotes(content.intro, ids)}
-        </p>
+        <div className="text-xl md:text-2xl text-foreground/90 leading-relaxed mb-12 font-medium">
+          <BlogMarkdown text={content.intro} footnoteIds={ids} />
+        </div>
       )}
 
       {topEvidenceSections.length > 0 && (
@@ -160,9 +102,9 @@ const BlogRichContentView = ({
             {section.heading}
           </h2>
           {section.paragraphs.map((p, j) => (
-            <p key={j} className="text-muted-foreground leading-relaxed mb-5 text-[1.05rem]">
-              {renderWithFootnotes(p, ids)}
-            </p>
+            <div key={j} className="text-muted-foreground leading-relaxed mb-5 text-[1.05rem]">
+              <BlogMarkdown text={p} footnoteIds={ids} />
+            </div>
           ))}
           {section.image && (
             <figure className="my-8">
