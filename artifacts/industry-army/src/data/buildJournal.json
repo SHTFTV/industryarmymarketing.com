@@ -15,6 +15,1696 @@
     "authorName": "Colin Hamilton",
     "contactBusiness": "iam",
     "campaignSite": "industryarmymarketing.com",
+    "slug": "pseo-city-service-pages-how-to-build-them-so-each-one-earns-its-place",
+    "title": "City Service Pages: How to Build Them So Each One Earns Its Place",
+    "cardTitle": "City Service Pages: How to Build Them So Each One Earns Its Place",
+    "excerpt": "A city service page earns its URL when it has its own jobs, photos, and limits. If a swapped city name stays true, the page does not earn a place.",
+    "metaDescription": "A checklist for city service pages that earn a URL with their own jobs, photos, and limits, instead of a swapped city name.",
+    "campaignLabel": "City service pages",
+    "image": "https://ppdnkogmsfwhhknayolb.supabase.co/storage/v1/object/public/post-images/industryarmymarketing.com/pseo-city-service-pages-how-to-build-them-so-each-one-earns-its-place.png",
+    "ogImage": "https://ppdnkogmsfwhhknayolb.supabase.co/storage/v1/object/public/post-images/industryarmymarketing.com/pseo-city-service-pages-how-to-build-them-so-each-one-earns-its-place.png",
+    "imageAlt": "A city service page checklist with spaces for local jobs, local photos, and the limits of what the crew will take",
+    "ogImageAlt": "A city service page checklist with spaces for local jobs, local photos, and the limits of what the crew will take",
+    "publishedAt": "2026-11-25T16:19:00-08:00",
+    "date": "November 25, 2026",
+    "faqs": [
+      {
+        "q": "What three things should a city page have before it goes live?",
+        "a": "A job fact that would be false in another city, a photo that belongs to the work, and a limit you will honour. If any of the three is missing, keep the city on a service-area list instead."
+      },
+      {
+        "q": "Can the same explanation of the service appear on every city page?",
+        "a": "Put the shared explanation on the main service page and link to it. The city URL should carry what is different. Repeating the identical pitch under many city names does not earn the extra pages."
+      },
+      {
+        "q": "What if we serve the city but have no photos yet?",
+        "a": "Say the scope honestly on the main service page, including travel limits. Add a city page when you can show the work or state a real local limit. Do not fill the gap with a stock image and a swapped name."
+      }
+    ],
+    "richContent": {
+      "intro": "A city service page earns its place when it carries jobs, photos, and limits that belong to that city. If you can swap the city name and the page is still true, it does not earn a URL. Use the checklist below before you publish the next one. A template can hold the page. It cannot supply the reasons the page exists.",
+      "sections": [
+        {
+          "heading": "A page needs its own jobs",
+          "paragraphs": [
+            "Name work you have actually done in that city, or work you are equipped and willing to do there with a crew you can send. 'Jobs' can mean the types of buildings, the systems you install there, or the route you already run. It should not mean a sentence that is equally true of every city in the province.",
+            "If you have no work there yet and no plan that would make the page different, do not publish a city URL. Put the city, if you truly serve it, on a service-area list attached to a page that has real depth. Add the city page later, after the first jobs give you something to say."
+          ]
+        },
+        {
+          "heading": "A page needs its own photos",
+          "paragraphs": [
+            "Use photos from that city or from jobs that are honestly representative of the same work, and say which. A photo of a different city with the caption changed is a false page. No photo is better than a stock crew, a stock skyline, or a picture that implies a specific person you do not have permission to identify.",
+            "Caption the useful part: the assembly, the room, the equipment, the site type. A caption that only repeats the city name does not make the image local. If every city page shares one hero image, you are decorating a template, not documenting a service."
+          ]
+        },
+        {
+          "heading": "A page needs its own limits",
+          "paragraphs": [
+            "Write what you will not do there. Travel time, property types, minimum scope, seasons, and systems you do not install are limits. They are also the sentences that make a page true. A page with no limits is a page that claims everyone.",
+            "When the limit is 'we will go there if we are already in the area,' say that. It is a respectable scope. It is not the same product as a dedicated local crew, and the page should not sound as if it is."
+          ]
+        },
+        {
+          "heading": "The template can stay; the facts cannot be shared",
+          "paragraphs": [
+            "Keep a stable structure so a returning customer recognizes the company: the service, the process, the exclusions, the contact path. Change the facts that belong to the place. If a paragraph survives a city swap, it belongs on the main service page, not duplicated under twenty URLs.",
+            "Google's spam policies describe doorway abuse as pages built to rank for similar queries, including pages targeted at cities that funnel people to one page, and substantially similar pages that are closer to a pile of search results than to a site someone can browse. A city page with its own jobs, photos, and limits is how you stay on the useful side of that description. A city page that exists only to catch the query and hand it to one form is the pattern the policy uses as an example."
+          ]
+        },
+        {
+          "heading": "Run the checklist before you publish",
+          "paragraphs": [
+            "Read the draft and mark three things: a job fact that would be false in another city, a photo that belongs to the work, and a limit you will honour on the phone. If you cannot mark all three, do not publish. Check the title, the first paragraph, and the contact path for the same city. A title that says one place and a form that books another is a page that has not earned its place.",
+            "Schedule a review when seasons change or when you drop a route. Delete or combine pages that no longer pass the checklist. A smaller set of true city pages is a marketing asset. A large set of swapped names is a cleanup project waiting for the week you can least afford it. Publishing carefully will not guarantee rankings. It will keep the site aligned with the work you can actually book."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "href": "https://developers.google.com/search/docs/essentials/spam-policies#scaled-content",
+          "label": "Google Search Central: Spam policies for Google web search"
+        }
+      ]
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
+    "trade": "Industry publishing",
+    "tradeShort": "industry publishing",
+    "plural": "businesses",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Canada",
+    "province": "BC",
+    "category": "Build Journal",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "contactBusiness": "iam",
+    "campaignSite": "industryarmymarketing.com",
+    "slug": "pseo-programmatic-seo-vs-spam-staying-on-the-right-side-of-googles-scaled-content-policy",
+    "title": "Programmatic SEO vs Spam: Staying on the Right Side of Google's Scaled Content Policy",
+    "cardTitle": "Programmatic SEO vs Spam: Staying on the Right Side of Google's Scaled Content Policy",
+    "excerpt": "Scaled pages with nothing original are the problem Google describes. A template can be legitimate. A template that only swaps names is the abuse.",
+    "metaDescription": "How programmatic SEO differs from scaled content abuse: original value on each page, not a pile of unoriginal URLs aimed at rankings.",
+    "campaignLabel": "Programmatic SEO and spam",
+    "image": "https://ppdnkogmsfwhhknayolb.supabase.co/storage/v1/object/public/post-images/industryarmymarketing.com/pseo-programmatic-seo-vs-spam-staying-on-the-right-side-of-googles-scaled-content-policy.png",
+    "ogImage": "https://ppdnkogmsfwhhknayolb.supabase.co/storage/v1/object/public/post-images/industryarmymarketing.com/pseo-programmatic-seo-vs-spam-staying-on-the-right-side-of-googles-scaled-content-policy.png",
+    "imageAlt": "A stack of near-identical pages beside one page with original local detail, contrasting scaled content with a useful template",
+    "ogImageAlt": "A stack of near-identical pages beside one page with original local detail, contrasting scaled content with a useful template",
+    "publishedAt": "2026-11-25T16:18:00-08:00",
+    "date": "November 25, 2026",
+    "faqs": [
+      {
+        "q": "Is programmatic SEO against Google's spam policies?",
+        "a": "No. The policies target scaled pages whose main purpose is manipulation and that provide little or no original value, however they were made. A template filled with real, page-specific facts is a different thing from a name-swapped pile of pages."
+      },
+      {
+        "q": "Does using AI to draft the page decide the question?",
+        "a": "Google's scaled-content section says the abuse does not depend on how the pages are created. A draft still needs original value before it is published. A human clicking publish does not add that value by itself."
+      },
+      {
+        "q": "What is a simple test before publishing a batch?",
+        "a": "Cover the place names and read several pages. If they have become the same page, do not publish them. A city URL that only funnels people to one generic form has the same problem."
+      }
+    ],
+    "richContent": {
+      "intro": "The line is not how many pages you published. Google's spam policies describe scaled content abuse as many pages generated mainly to manipulate search rankings rather than to help users, typically large amounts of unoriginal content that provides little or no value, no matter how it is produced. A template is compatible with a useful site. A template with nothing original on the page is the problem.",
+      "sections": [
+        {
+          "heading": "What the policy is pointing at",
+          "paragraphs": [
+            "On its spam policies page, Google says: 'Scaled content abuse is when many pages are generated for the primary purpose of manipulating search rankings and not helping users.' The same section says this is typically focused on creating large amounts of unoriginal content that provides little to no value to users, no matter how it is created. That is the test to keep on the wall: why the page exists, and whether a person learns something they could not have learned from the template alone.",
+            "The page lists examples that do not depend on which tool you used: generating many pages without adding value, scraping or lightly rewriting someone else's material, stitching pages together without adding anything, spinning up extra sites to hide the scale, and publishing pages that barely make sense but contain the keywords. Using a programmatic template does not put you in that list. Publishing from the template with nothing of your own does."
+          ]
+        },
+        {
+          "heading": "A template is not the violation",
+          "paragraphs": [
+            "Service businesses repeat themselves for good reasons. Every city page should say how to request a quote, what you will not do, and how to reach a person. Repeating that shell is fine. The violation in the policy's terms is scale plus a purpose of manipulation plus a lack of value. If you remove the place name and the page still teaches nothing specific, you are in the failure mode the policy describes.",
+            "You also do not get a pass because a person clicked publish, or a penalty because software drafted the first version. The policy is explicit that the problem does not depend on how the pages were created. Edit for value. If the value is not there, do not publish the row."
+          ]
+        },
+        {
+          "heading": "Original does not mean flowery",
+          "paragraphs": [
+            "Original, for a contractor or a local service, means the page carries something you are willing to say on the phone: a job you did there, a photo from your crew, a limit on the area, a detail of the building stock, a step in your process that changes in that place. Synonyms are not original. A paragraph about the city's history, dropped in to break duplication, is not original either if it does not help the person hiring you.",
+            "Do not invent a local fact to satisfy the test. A fabricated project, a fake review, or a statistic you did not measure is worse than a thin page, because it is a lie multiplied by the template. Leave the page unpublished until the fact is real."
+          ]
+        },
+        {
+          "heading": "Similar pages that only funnel people",
+          "paragraphs": [
+            "The same spam policies document describes doorway abuse as pages created to rank for specific, similar queries, leading people to intermediate pages that are less useful than the destination. One example is pages aimed at specific regions or cities that funnel users to one page. Another is substantially similar pages that behave more like search results than like a site a person can browse.",
+            "A city page that immediately tells the reader to go to a single generic form, and that has no content of its own, fits that description more than a city page that can stand alone. If every 'city' URL exists to catch a query and forward it, you have built the funnel the policy uses as an example. Give the page its own substance or do not give it a URL."
+          ]
+        },
+        {
+          "heading": "A practical line you can enforce",
+          "paragraphs": [
+            "Before a batch goes out, read five URLs at random with the place names covered. If you cannot tell which is which, stop the batch. Assign a person to delete pages when the underlying fact expires. Do not measure the program by the count of indexed URLs.",
+            "Nothing here guarantees that a careful site will rank, or that a careless one will be removed on a schedule you can predict. Google's document says sites that violate the policies may rank lower or not appear in results at all, and that detection can be automated or manual. The part you control is whether each page helps a person. Publish those. Do not publish the rest."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "href": "https://developers.google.com/search/docs/essentials/spam-policies#scaled-content",
+          "label": "Google Search Central: Spam policies for Google web search"
+        }
+      ]
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
+    "trade": "Industry publishing",
+    "tradeShort": "industry publishing",
+    "plural": "businesses",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Canada",
+    "province": "BC",
+    "category": "Build Journal",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "contactBusiness": "iam",
+    "campaignSite": "industryarmymarketing.com",
+    "slug": "pseo-what-is-programmatic-seo-a-plain-english-guide-for-service-businesses",
+    "title": "What Is Programmatic SEO? A Plain-English Guide for Service Businesses",
+    "cardTitle": "What Is Programmatic SEO? A Plain-English Guide for Service Businesses",
+    "excerpt": "For a service business, programmatic SEO means many pages from one solid template, each filled with facts that are true for that city or service. It is a production method, not a trick.",
+    "metaDescription": "Programmatic SEO explained for service businesses: one real template plus real local facts on every page, and where that method goes wrong.",
+    "campaignLabel": "Programmatic SEO",
+    "image": "https://ppdnkogmsfwhhknayolb.supabase.co/storage/v1/object/public/post-images/industryarmymarketing.com/pseo-what-is-programmatic-seo-a-plain-english-guide-for-service-businesses.png",
+    "ogImage": "https://ppdnkogmsfwhhknayolb.supabase.co/storage/v1/object/public/post-images/industryarmymarketing.com/pseo-what-is-programmatic-seo-a-plain-english-guide-for-service-businesses.png",
+    "imageAlt": "A service-page template beside a stack of real local facts, showing programmatic SEO as a template plus true local detail",
+    "ogImageAlt": "A service-page template beside a stack of real local facts, showing programmatic SEO as a template plus true local detail",
+    "publishedAt": "2026-11-25T16:17:00-08:00",
+    "date": "November 25, 2026",
+    "faqs": [
+      {
+        "q": "What is programmatic SEO in plain language?",
+        "a": "It is a way to publish many pages from one template, where each page also carries facts that are true only for that city or service. The template repeats. The facts should not."
+      },
+      {
+        "q": "Is a city-name swap programmatic SEO?",
+        "a": "No. If covering the city name leaves the page unchanged, it is a copy. Keep one page, or wait until you have jobs, photos, or limits that belong to that place."
+      },
+      {
+        "q": "Does programmatic SEO guarantee you will rank?",
+        "a": "No. It is a production method. Rankings are not something a template can promise. Pages that are not true are a liability, not an asset."
+      }
+    ],
+    "richContent": {
+      "intro": "Programmatic SEO, for a service business, means building many pages from one solid template and filling each page with facts that are true for that city, that service, or that job type. It is a production method. It is not a trick, and it does not replace having something real to say on each page. If the only thing that changes is the place name, you have not done it. You have copied a page.",
+      "sections": [
+        {
+          "heading": "The template is the repeating part",
+          "paragraphs": [
+            "The template is the set of questions every page should answer: who you serve, what you do, what you do not do, how the work is priced or scoped, and how to contact you. Design it once so the headings are stable and the customer can learn your site. A good template is a public service, because people in different cities ask the same kinds of questions.",
+            "The template is not the page. It is the shelf. The page is the shelf plus the facts that would be false if you moved them to the next city. Those facts are the part you cannot automate from a spreadsheet of place names."
+          ]
+        },
+        {
+          "heading": "The facts have to be real",
+          "paragraphs": [
+            "Real facts are things you can point to: jobs you have done in that city, photos from those jobs, a service limit, a drive-time limit, a licence that applies there, a material you use because of that climate, a process step that exists because of local access or local buildings. If you do not have a fact, the template should leave a blank, and a blank means you are not ready to publish.",
+            "Do not buy a list of population figures and call it local expertise. A population number the reader did not ask for does not make a roofing page true. Neither does a paragraph of weather copied from an encyclopedia. The reader is trying to hire someone."
+          ]
+        },
+        {
+          "heading": "What a service business can honestly templatize",
+          "paragraphs": [
+            "Service businesses can templatize the questions, the estimate steps, the safety rules you always follow, and the way you explain a product line. You can templatize the layout of a city page. You can even draft from a checklist so writers do not forget the exclusions.",
+            "You cannot templatize the claim that you work in a city where you have no crew, no photos, and no willingness to refuse the job. Publishing that page is not programmatic SEO. It is a brochure with the city swapped, produced at a volume that makes the swap obvious."
+          ]
+        },
+        {
+          "heading": "Where it goes wrong",
+          "paragraphs": [
+            "It goes wrong when the production target is a count of URLs. A hundred pages with the same three paragraphs and a new neighbourhood in the title do not become more useful in bulk. They become harder to fix when a route, a price, or a licence changes. Someone has to own the set and delete the pages that are no longer true.",
+            "It also goes wrong when the template includes a promise: that you are the fastest, that you will rank, that you cover every community the data file contains. A template multiplies whatever you put in it, including a sentence you should not have written once."
+          ]
+        },
+        {
+          "heading": "Test with a handful of pages first",
+          "paragraphs": [
+            "Publish a few pages where you genuinely have distinct facts. Read each one with the place name covered. If you can still tell where you are, the page earned the URL. If you cannot, stop and put those facts on a single service-area page instead.",
+            "Programmatic SEO will not guarantee rankings, leads, or a full calendar. Used plainly, it is how a real operation publishes more than one useful page without starting from a blank document every time. Used as a shortcut, it is how a site fills up with pages the business cannot defend on the phone."
+          ]
+        }
+      ],
+      "sources": []
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
+    "trade": "Industry publishing",
+    "tradeShort": "industry publishing",
+    "plural": "businesses",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Canada",
+    "province": "BC",
+    "category": "Build Journal",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "contactBusiness": "iam",
+    "campaignSite": "industryarmymarketing.com",
+    "slug": "iam-videographer-marketing-portfolios-for-weddings-and-business",
+    "title": "Videographer Marketing: Portfolios for Weddings and Business",
+    "cardTitle": "Videographer Marketing: Portfolios for Weddings and Business",
+    "excerpt": "Couples and companies do not hire from the same reel. One videographer site can hold both portfolios if the front door splits them and each portfolio speaks to its buyer.",
+    "metaDescription": "How videographers present two portfolios on one site: a wedding buyer and a business buyer, with navigation that does not mix the reels.",
+    "campaignLabel": "Wedding and business video",
+    "image": "https://ppdnkogmsfwhhknayolb.supabase.co/storage/v1/object/public/post-images/industryarmymarketing.com/iam-videographer-marketing-portfolios-for-weddings-and-business.png",
+    "ogImage": "https://ppdnkogmsfwhhknayolb.supabase.co/storage/v1/object/public/post-images/industryarmymarketing.com/iam-videographer-marketing-portfolios-for-weddings-and-business.png",
+    "imageAlt": "Two video portfolios on one website, one path for weddings and one path for business, each with its own kind of proof",
+    "ogImageAlt": "Two video portfolios on one website, one path for weddings and one path for business, each with its own kind of proof",
+    "publishedAt": "2026-11-25T16:16:00-08:00",
+    "date": "November 25, 2026",
+    "faqs": [
+      {
+        "q": "Can one videographer website serve weddings and business?",
+        "a": "Yes, if the first screen splits into two portfolios and each page shows only the proof that buyer needs. A mixed reel makes both of them sort your work for you."
+      },
+      {
+        "q": "What should a wedding sample include?",
+        "a": "A ceremony or speech a viewer can follow, a note about crew size and what was delivered, and no promise about drones or turnaround unless that is actually in the offer."
+      },
+      {
+        "q": "What should a business sample include?",
+        "a": "The deliverable and the use, plus the usage rights that were cleared. Label the industry. Do not present a wedding highlight as a commercial case study."
+      }
+    ],
+    "richContent": {
+      "intro": "A couple hiring a wedding videographer and a business hiring a commercial videographer are not looking for the same proof. One site can hold both portfolios if the front door splits them and each portfolio speaks to its buyer. A single mixed reel makes both audiences do the sorting you should have done.",
+      "sections": [
+        {
+          "heading": "Give each buyer a first screen",
+          "paragraphs": [
+            "The homepage should offer two doors in the first screen: weddings, and business video. Name them in the words each buyer uses. 'Films' and 'stories' make both of them guess. A sentence under each door can say what is inside: wedding days and speeches on one side, and brand, training, or product films on the other.",
+            "If you only want one kind of work, do not keep the other door because the clips are pretty. A door you do not want to open is how you spend your week quoting the wrong jobs."
+          ]
+        },
+        {
+          "heading": "What a wedding portfolio has to show",
+          "paragraphs": [
+            "Show full moments a couple recognizes: a ceremony they can follow, a speech that was allowed to finish, and coverage of people in a room that was not lit like a commercial. Three short films of complete weddings beat twenty highlight clips set to music. Include the practical facts next to each film: the rough length of the day, whether you were alone or with a second shooter, and what the couple received.",
+            "Say what you will not promise. You cannot promise a guest will not block a shot, and you should not imply that every wedding gets a drone or a same-week feature film unless that is in the offer. Do not caption a film with a couple's names unless you have permission. 'Outdoor ceremony, small guest count' is enough."
+          ]
+        },
+        {
+          "heading": "What a business portfolio has to show",
+          "paragraphs": [
+            "A business buyer wants the problem and the use: a homepage film, a recruiting piece, a training cut, a product demo. Show the deliverable they would receive, not only the prettiest twenty seconds. Next to it, say the usage you cleared and the usage you did not. A film they cannot legally run as an ad is not a sample of commercial work, even if the pictures are good.",
+            "If the business work is one industry, say so. A page of restaurants does not prove you can shoot a clinic or a factory, and pretending it does creates a painful first call. You can still show range if you actually have it, with a label on each clip."
+          ]
+        },
+        {
+          "heading": "Keep the navigation from mixing the reels",
+          "paragraphs": [
+            "Do not autoplay a wedding film on the business page or the reverse. Do not let a 'related work' module pull the other category in to fill space. The about page can say you do both and link to the two doors. The portfolio pages should stay pure.",
+            "Price or package pages should split the same way. A wedding collection and a commercial day-rate are different conversations. Putting them in one table invites the couple to ask for the corporate package and the company to ask why speeches are included."
+          ]
+        },
+        {
+          "heading": "Let the about page serve both without becoming a third reel",
+          "paragraphs": [
+            "Say who shoots, what city or region you work in, and how a buyer books. One photo of you at work is enough if it does not imply a credential you do not have. Skip the origin story that delays the doors. The about page is where a nervous couple and a marketing manager can both see that a person answers the email.",
+            "When a clip is old enough that you no longer work that way, take it down. A portfolio is a promise about the next job. Two honest doors, kept current, are the marketing. They do not guarantee a booking. They stop the wrong buyer from hiring you for the wrong film."
+          ]
+        }
+      ],
+      "sources": []
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
+    "trade": "Industry publishing",
+    "tradeShort": "industry publishing",
+    "plural": "businesses",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Canada",
+    "province": "BC",
+    "category": "Build Journal",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "contactBusiness": "iam",
+    "campaignSite": "industryarmymarketing.com",
+    "slug": "iam-snow-removal-marketing-in-the-bc-interior-customer-message-templates",
+    "title": "Snow Removal Marketing in the BC Interior: Customer Message Templates",
+    "cardTitle": "Snow Removal Marketing in the BC Interior: Customer Message Templates",
+    "excerpt": "A BC Interior crew needs three messages they can send: before the storm, while they are on the route, and after the site is done. Here is wording they can actually use.",
+    "metaDescription": "Storm-before, storm-during, and storm-after message templates a BC Interior snow crew can send without rewriting them on the route.",
+    "campaignLabel": "BC Interior snow messages",
+    "image": "https://ppdnkogmsfwhhknayolb.supabase.co/storage/v1/object/public/post-images/industryarmymarketing.com/iam-snow-removal-marketing-in-the-bc-interior-customer-message-templates.png",
+    "ogImage": "https://ppdnkogmsfwhhknayolb.supabase.co/storage/v1/object/public/post-images/industryarmymarketing.com/iam-snow-removal-marketing-in-the-bc-interior-customer-message-templates.png",
+    "imageAlt": "Three short customer message cards for a BC Interior snow crew: before the storm, during the route, and after the site is clear",
+    "ogImageAlt": "Three short customer message cards for a BC Interior snow crew: before the storm, during the route, and after the site is clear",
+    "publishedAt": "2026-11-25T16:15:00-08:00",
+    "date": "November 25, 2026",
+    "faqs": [
+      {
+        "q": "When should the before-storm message go out?",
+        "a": "When you have decided to roll and you can name a time window you are willing to update. A message for every forecast trains people to ignore you."
+      },
+      {
+        "q": "Can one text say the whole route is finished?",
+        "a": "Send the done message per site, and only for the work that site includes. A blast that says you are on site, sent to people you have not reached, is worse than silence."
+      },
+      {
+        "q": "Should the message include a review request?",
+        "a": "No. Storm messages are status. Ask for a review later, on a quiet day, if you ask at all."
+      }
+    ],
+    "richContent": {
+      "intro": "A crew in the BC Interior does not need a new slogan when the snow starts. They need three messages they can send: before the storm, while they are on the route, and after the site is done. The wording below is a template, not a quote from a customer. Change the blanks, delete a line that is not true for your company, and do not send a status you have not checked.",
+      "sections": [
+        {
+          "heading": "Before the storm",
+          "paragraphs": [
+            "Send this only when you have decided you are rolling, not when a forecast looks interesting. Use the channel the customer already agreed to.",
+            "Template: 'This is [Name] at [Company]. We are planning to clear [site or address] starting about [time window] if the snow develops the way the forecast is showing. We will text again if the start moves by more than an hour. Reply to this number if the site has a vehicle or a delivery we should know about.'"
+          ]
+        },
+        {
+          "heading": "During the storm",
+          "paragraphs": [
+            "Send this when you are actually on the way or on the site, not from the kitchen because the route is running late. If you are late, say you are late.",
+            "Template: 'This is [Company]. A crew is on [site or address] now, working on [lots / walks / both]. If we cannot finish a section safely we will note it in the done message. For an urgent access issue, call [number].'"
+          ]
+        },
+        {
+          "heading": "After the site is clear",
+          "paragraphs": [
+            "Send this when that site is done, not when the whole city is done. Name what you cleared and what you left.",
+            "Template: 'This is [Company]. We have cleared [lots / walks / entries] at [site] as of [time]. We did not clear [excluded area] because it is outside the agreement. Ice melt was [applied / not part of this visit]. Reply if a section still needs a look and we will tell you when we can return.'"
+          ]
+        },
+        {
+          "heading": "What every message leaves out",
+          "paragraphs": [
+            "Do not promise a bare pavement if you left packed snow by agreement. Do not blame the city, the forecast, or the customer. Do not name other clients. Do not add a promotion, a review link, or a joke. The person reading it may be a property owner who did not hire you and only sees the forward.",
+            "Do not send a during-storm message to every customer at once if only the first sites are underway. A blast that says 'we are on your site now' is a lie for everyone still in the queue. Segment the list by the order of the route, even if the segments are rough."
+          ]
+        },
+        {
+          "heading": "Store the templates where the crew will use them",
+          "paragraphs": [
+            "Put the three texts in the phone the driver actually has, in a note that works without signal once it is saved, and in the job file. The office version and the truck version should match. Review them once in the fall and strike any line you did not mean.",
+            "After a storm, fix the template if crews had to rewrite it every time. A sentence everyone deletes is a sentence that should not be there. The marketing value is consistency: customers learn what your messages mean, and your crew spends the storm driving."
+          ]
+        }
+      ],
+      "sources": []
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
+    "trade": "Industry publishing",
+    "tradeShort": "industry publishing",
+    "plural": "businesses",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Canada",
+    "province": "BC",
+    "category": "Build Journal",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "contactBusiness": "iam",
+    "campaignSite": "industryarmymarketing.com",
+    "slug": "iam-realtor-marketing-in-montreal-video-walkthrough-standards",
+    "title": "Realtor Marketing in Montreal: Video Walkthrough Standards",
+    "cardTitle": "Realtor Marketing in Montreal: Video Walkthrough Standards",
+    "excerpt": "A Montreal listing video is usable when a buyer can tell which room they are in and a colleague can publish it without cutting around a song. Set a simple standard and keep it.",
+    "metaDescription": "A simple standard for Montreal listing video: one path through the home, readable rooms, and captions that match the listing language.",
+    "campaignLabel": "Montreal listing video",
+    "image": "https://ppdnkogmsfwhhknayolb.supabase.co/storage/v1/object/public/post-images/industryarmymarketing.com/iam-realtor-marketing-in-montreal-video-walkthrough-standards.png",
+    "ogImage": "https://ppdnkogmsfwhhknayolb.supabase.co/storage/v1/object/public/post-images/industryarmymarketing.com/iam-realtor-marketing-in-montreal-video-walkthrough-standards.png",
+    "imageAlt": "A plain room-by-room listing walkthrough of a Montreal home, filmed to be usable rather than as a music montage",
+    "ogImageAlt": "A plain room-by-room listing walkthrough of a Montreal home, filmed to be usable rather than as a music montage",
+    "publishedAt": "2026-11-25T16:14:00-08:00",
+    "date": "November 25, 2026",
+    "faqs": [
+      {
+        "q": "What makes a listing video usable?",
+        "a": "One path through the home, rooms a viewer can identify with the sound off, and a file that does not depend on a music montage. A separate social cut can carry the mood."
+      },
+      {
+        "q": "Which language should on-screen text use in Montreal?",
+        "a": "The language of the listing. If the listing is in both French and English, label rooms in both or leave text off. Do not let a soundtrack decide it."
+      },
+      {
+        "q": "Do you need a drone for every listing?",
+        "a": "No. Film the rooms first. Add an exterior or drone view only when it explains the property and you are allowed to shoot it."
+      }
+    ],
+    "richContent": {
+      "intro": "A listing video is usable when a buyer can tell which room they are in and a colleague can put it on the listing without cutting around a music montage. A simple standard for Montreal walkthroughs keeps the footage plain enough to reuse. The song, the drone, and the title sequence are optional. The path through the home is not.",
+      "sections": [
+        {
+          "heading": "Walk one path through the home",
+          "paragraphs": [
+            "Start at the entrance a buyer would use, then move in an order a person can follow: living spaces, kitchen, bedrooms, bathrooms, and the outdoor space if it is part of the listing. Do not jump from a detail of a faucet to a rooftop and back to a bedroom. If you must cut, cut on a doorway so the viewer knows they changed rooms.",
+            "Say the room in the frame or in a lower-third the listing allows. A buyer on a phone, with the sound off, should still know they are looking at the second bedroom and not the den. Hold long enough to see the windows and the far wall. A two-second glimpse is a teaser, not a walkthrough."
+          ]
+        },
+        {
+          "heading": "Set light, sound, and length",
+          "paragraphs": [
+            "Turn on the lights you are allowed to use, open the blinds, and do not film into a window so the room becomes a silhouette. If the listing is brighter in the afternoon, book the afternoon. Say so in your internal standard so agents stop sending dusk clips and asking for a miracle.",
+            "Record clean sound or record no narration. A murmuring conversation with the seller, a television, and a song at the same time make the clip useless in an office. If there is narration, write it from the listing facts, not from adjectives. Keep the video as long as the path needs and no longer. A short, complete walk is easier to reuse than a four-minute montage."
+          ]
+        },
+        {
+          "heading": "Write captions that match the listing",
+          "paragraphs": [
+            "On-screen text should come from facts on the listing: the room name, the floor, a feature that is actually there. Do not add a renovation claim, a school claim, or a price claim that the listing does not carry. If the text and the listing disagree, the video is the thing that will be screenshotted.",
+            "Montreal listings are often in French, in English, or in both. Match the on-screen language to the listing you are publishing. If the listing is bilingual, the room labels should be too, or you should leave text off and let the listing page carry the words. Do not assume a song removes the need for that decision."
+          ]
+        },
+        {
+          "heading": "Leave the montage for another cut",
+          "paragraphs": [
+            "If the agent wants a mood piece for social, export a second file. Do not make the mood piece the only file. The walkthrough file has no letterboxing that hides the room, no fast zoom on a light fixture, and no intro card longer than the kitchen. Name the files so the person uploading can tell them apart.",
+            "Skip the drone unless the lot cannot be understood from the ground and you are allowed to fly. A rooftop view that does not show the rooms will not help a buyer who asked what the apartment feels like. Interior coverage first."
+          ]
+        },
+        {
+          "heading": "Give the listing team a checklist",
+          "paragraphs": [
+            "Before anyone travels, confirm access, occupied-tenant permission, and whether faces of occupants or neighbours will be in frame. After the shoot, watch the file once with the sound off and once with the sound on. If you cannot name every room, reshoot or recut. Publish the walkthrough on the listing, and keep the social cut in its own place.",
+            "A standard is a marketing tool because every listing starts faster. It does not guarantee views. It means the video you paid for can be used by a buyer, a colleague, and the next agent who inherits the file."
+          ]
+        }
+      ],
+      "sources": []
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
+    "trade": "Industry publishing",
+    "tradeShort": "industry publishing",
+    "plural": "businesses",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Canada",
+    "province": "BC",
+    "category": "Build Journal",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "contactBusiness": "iam",
+    "campaignSite": "industryarmymarketing.com",
+    "slug": "iam-roofing-marketing-in-canada-explaining-material-costs-honestly",
+    "title": "Roofing Marketing in Canada: Explaining Material Costs Honestly",
+    "cardTitle": "Roofing Marketing in Canada: Explaining Material Costs Honestly",
+    "excerpt": "Homeowners ask what a roof costs because the materials look simple from the street. Explain what moves the price of shingles, metal, and labour without publishing a fake price list.",
+    "metaDescription": "How Canadian roofers explain shingle, metal, and labour costs honestly, including what changes a price, without a fake national price list.",
+    "campaignLabel": "Roofing material costs",
+    "image": "https://ppdnkogmsfwhhknayolb.supabase.co/storage/v1/object/public/post-images/industryarmymarketing.com/iam-roofing-marketing-in-canada-explaining-material-costs-honestly.png",
+    "ogImage": "https://ppdnkogmsfwhhknayolb.supabase.co/storage/v1/object/public/post-images/industryarmymarketing.com/iam-roofing-marketing-in-canada-explaining-material-costs-honestly.png",
+    "imageAlt": "Asphalt shingles, metal roofing panels, and a labour note laid out to explain roofing cost without a fake price list",
+    "ogImageAlt": "Asphalt shingles, metal roofing panels, and a labour note laid out to explain roofing cost without a fake price list",
+    "publishedAt": "2026-11-25T16:13:00-08:00",
+    "date": "November 25, 2026",
+    "faqs": [
+      {
+        "q": "Should a roofer publish a price per square?",
+        "a": "Only if it is your price, for a scope you describe, with the variables that void it. A single national price per square ignores deck, access, flashing, and labour. Most companies are more honest with a list of what changes the quote."
+      },
+      {
+        "q": "How do you compare shingles and metal without fake numbers?",
+        "a": "Compare the products you actually install, the maintenance, and the look. Explain that both still depend on the deck and the details. Leave the dollars to a written quote."
+      },
+      {
+        "q": "Why not offer an instant online price?",
+        "a": "Square footage leaves out the reasons a roof price changes. An instant number becomes the argument. A clear process and a written scope become the quote."
+      }
+    ],
+    "richContent": {
+      "intro": "Homeowners ask what a roof costs because the materials look simple from the curb. Shingles, metal, and labour do not collapse into one number that is true for every house in Canada. You can explain what moves the price without publishing a price list you invented. The explanation is the marketing. A fake menu is how the phone call starts with an argument.",
+      "sections": [
+        {
+          "heading": "Separate material from labour",
+          "paragraphs": [
+            "Say, early, that a roof price is materials, the labour to install them, and the work that is neither: tear-off, disposal, deck repairs you cannot see yet, flashing, ventilation, and access. A homeowner comparing a bundle price at a lumber yard to your quote is missing most of the job. Your page can say that without mocking them for asking.",
+            "Keep labour visible. If your quote format hides labour inside a single 'system' price, explain on the page what the labour includes: the crew days, the flashing, the cleanup. You still do not have to post your payroll."
+          ]
+        },
+        {
+          "heading": "Explain what changes a shingle price",
+          "paragraphs": [
+            "Architectural and three-tab are different products. So are the underlayment, the starter, the ridge, and the warranty the manufacturer actually offers versus the workmanship warranty you offer. Pitch, height, layers already on the roof, a deck that needs board, and how far the crew carries material all change the job. Chimneys and skylights change it again.",
+            "You can say that these items move the price up or down without stating a national dollar figure. If you publish a range, label it as your recent quotes for a described house, in a described region, and date it. A range with no house attached is a billboard, not an explanation."
+          ]
+        },
+        {
+          "heading": "Explain what changes a metal price",
+          "paragraphs": [
+            "Metal is not one product. Panel profile, gauge, coating, colour, and whether the roof is standing seam or an exposed-fastener system are different quotes. So is the skill to flash a wall properly, which is where cheap metal jobs fail. Say which systems you install and which you do not.",
+            "Say what metal does not automatically do. It does not make a bad deck acceptable. It does not remove the need for ventilation. It does not have one price from Halifax to Victoria. If your page compares metal to shingles, compare the maintenance and the look in words, and send the dollars back to a site visit."
+          ]
+        },
+        {
+          "heading": "Talk about a range without a menu",
+          "paragraphs": [
+            "A honest sentence is: 'We price after we see the roof, because layers, deck, access, and flashing change the number.' Then list those variables. If you want to give a planning band, tie it to a scope you define, say it is not a quote, and say how long that band is valid. Take it down rather than leave last year's band up.",
+            "Do not publish a calculator that outputs a price from square footage alone. Square footage ignores the reasons the price moves. A calculator that asks for pitch, layers, and storeys and still pretends the output is a quote has the same problem with more fields."
+          ]
+        },
+        {
+          "heading": "Put the explanation next to the estimate process",
+          "paragraphs": [
+            "Tell them what happens after they read the page: photos they can send, what those photos can and cannot prove, and when you need to be on the roof. Say that a written quote names the product line, the flashing, and what is excluded. Encourage them to compare quotes on those lines, not on the largest number in the headline.",
+            "This approach will not capture every caller who wanted a number in thirty seconds. It will make the calls you do take shorter and more serious. You do not need a statistic to know which of those you can actually schedule."
+          ]
+        }
+      ],
+      "sources": []
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
+    "trade": "Industry publishing",
+    "tradeShort": "industry publishing",
+    "plural": "businesses",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Canada",
+    "province": "BC",
+    "category": "Build Journal",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "contactBusiness": "iam",
+    "campaignSite": "industryarmymarketing.com",
+    "slug": "iam-wedding-marketing-in-toronto-helping-couples-size-guest-lists",
+    "title": "Wedding Marketing in Toronto: Helping Couples Size Guest Lists",
+    "cardTitle": "Wedding Marketing in Toronto: Helping Couples Size Guest Lists",
+    "excerpt": "A useful Toronto wedding page helps a couple see how headcount changes the room, the meal, and the photo plan. Venues and planners can send that page instead of re-explaining it.",
+    "metaDescription": "A practical Toronto wedding page for sizing a guest list, and how a venue or planner uses it without pretending there is one right number.",
+    "campaignLabel": "Toronto wedding guest lists",
+    "image": "https://ppdnkogmsfwhhknayolb.supabase.co/storage/v1/object/public/post-images/industryarmymarketing.com/iam-wedding-marketing-in-toronto-helping-couples-size-guest-lists.png",
+    "ogImage": "https://ppdnkogmsfwhhknayolb.supabase.co/storage/v1/object/public/post-images/industryarmymarketing.com/iam-wedding-marketing-in-toronto-helping-couples-size-guest-lists.png",
+    "imageAlt": "A seating sketch and guest-count notes used to size a Toronto wedding room, meal, and photo plan",
+    "ogImageAlt": "A seating sketch and guest-count notes used to size a Toronto wedding room, meal, and photo plan",
+    "publishedAt": "2026-11-25T16:12:00-08:00",
+    "date": "November 25, 2026",
+    "faqs": [
+      {
+        "q": "Should a venue publish an average Toronto guest count?",
+        "a": "No. Publish the capacities of your rooms and explain what changes when the list grows. An average that is not from your bookings, clearly labelled, is not guidance."
+      },
+      {
+        "q": "When should a couple get this page?",
+        "a": "Before they tour, with a draft list sorted into must-invite, expected, and if-the-room-allows. The tour can then test a number against a real floor."
+      },
+      {
+        "q": "Can a planner use the page as a lead magnet?",
+        "a": "Give the explanation first. If you ask for an email, say what you will send. Do not require their guest list before they have received the advice."
+      }
+    ],
+    "richContent": {
+      "intro": "A couple planning a Toronto wedding often has a guest list that does not match the room. A useful page walks through how headcount changes the venue, the meal, and the photo plan, without pretending there is one correct number. A venue or a planner can send that page instead of re-explaining the same arithmetic on every tour.",
+      "sections": [
+        {
+          "heading": "Treat headcount as a planning page",
+          "paragraphs": [
+            "Open with the decision the couple is actually making: who is in the room, not which package you sell. Say that the right number is the number that fits the space, the budget they control, and the people they will regret leaving out. Do not publish a 'typical Toronto wedding size.' You do not have their families, and a borrowed average is not advice.",
+            "Tell them to bring a draft list in three rings: people they will not get married without, people they expect to invite, and people they would invite if the room allows. The page is a way to sort that list against a real room. It is not a lecture about whose wedding was too big."
+          ]
+        },
+        {
+          "heading": "Show what the number changes",
+          "paragraphs": [
+            "Walk through the items that move when ten people are added or cut: chairs and the dance floor, the meal and the dietary count, bar length if they are paying by consumption, stationery, and how long photographs take if they want formal groups. You do not need prices. You need the mechanism. Couples can ask the venue for the dollar figure that belongs to that room.",
+            "Mention Toronto-specific friction without inventing bylaws. A downtown room with a hard capacity, a venue that counts children the same as adults, and a photo plan that tries to shoot twenty groups in winter daylight are the kinds of constraints worth naming. Tell the couple to confirm capacity with the venue, not with a blog post."
+          ]
+        },
+        {
+          "heading": "How a venue uses the page",
+          "paragraphs": [
+            "Send the page before the tour, and walk the room with their draft number in mind. Show where that number sits, where it fails, and what a smaller number gives back, such as a dinner that finishes on time. Do not use the page to push the room you have empty on that Saturday. If their number does not fit, say so and suggest they ask a planner or another room, including rooms that are not yours.",
+            "Put your true capacities on your own site, in the same language as the planning page: seated dinner, ceremony only, cocktail. If those numbers disagree with what a salesperson says on the tour, the page has made you less trustworthy, not more."
+          ]
+        },
+        {
+          "heading": "How a planner uses the page",
+          "paragraphs": [
+            "Use it as the homework between the inquiry and the first meeting. Ask the couple to arrive with the three rings filled in, even roughly. The meeting can then match vendors to the number instead of collecting names you will throw away. Photo, video, and catering all quote more honestly from a range the couple understands.",
+            "If you are the planner, say on the page whether you are paid by the couple, by the vendors, or both. A headcount article that quietly feeds a preferred venue is a sales page. Label it as such, or keep the advice vendor-neutral and let your services page do the selling."
+          ]
+        },
+        {
+          "heading": "What the page should not do",
+          "paragraphs": [
+            "Do not shame large lists or small ones. Do not promise that cutting forty guests will save a specific dollar amount. Do not publish a worksheet full of sample prices you invented. Do not collect the guest list as a lead form before you have given them the explanation. The email capture, if you use one, comes after the useful part, and it should say what you will send.",
+            "A good page earns its place because a coordinator can forward it and not write the same four paragraphs again. Update it when your room counts change. Leave it up when it is still true. Take the fake precision out whenever you are tempted to add a statistic you do not have."
+          ]
+        }
+      ],
+      "sources": []
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
+    "trade": "Industry publishing",
+    "tradeShort": "industry publishing",
+    "plural": "businesses",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Canada",
+    "province": "BC",
+    "category": "Build Journal",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "contactBusiness": "iam",
+    "campaignSite": "industryarmymarketing.com",
+    "slug": "iam-roofing-reputation-in-toronto-responding-to-reviews",
+    "title": "Roofing Reputation in Toronto: Responding to Reviews",
+    "cardTitle": "Roofing Reputation in Toronto: Responding to Reviews",
+    "excerpt": "Answer a public roofing review without a fight and without admitting a fault you have not checked. Read the job file first. Keep private details off the page.",
+    "metaDescription": "How Toronto roofers reply to public reviews: check the job, skip the fight, and do not admit a fault you have not verified.",
+    "campaignLabel": "Toronto roofing reviews",
+    "image": "https://ppdnkogmsfwhhknayolb.supabase.co/storage/v1/object/public/post-images/industryarmymarketing.com/iam-roofing-reputation-in-toronto-responding-to-reviews.png",
+    "ogImage": "https://ppdnkogmsfwhhknayolb.supabase.co/storage/v1/object/public/post-images/industryarmymarketing.com/iam-roofing-reputation-in-toronto-responding-to-reviews.png",
+    "imageAlt": "A public roofing review on a screen beside a short, calm reply a Toronto contractor can post after checking the job",
+    "ogImageAlt": "A public roofing review on a screen beside a short, calm reply a Toronto contractor can post after checking the job",
+    "publishedAt": "2026-11-25T16:11:00-08:00",
+    "date": "November 25, 2026",
+    "faqs": [
+      {
+        "q": "Should a roofer reply the same hour a bad review appears?",
+        "a": "Reply after someone has matched the review to the job. A fast reply that admits an unchecked fault, or argues with the customer, is harder to undo than a short delay."
+      },
+      {
+        "q": "What should stay out of the public reply?",
+        "a": "Price, full address, interior photos, insurance opinions, and any cause you have not verified. Offer a phone or email path instead."
+      },
+      {
+        "q": "Can you ask customers for reviews?",
+        "a": "Yes, ask a real customer after a real job, once, without telling them what rating to give or paying them for stars. Do not invent reviewers."
+      }
+    ],
+    "richContent": {
+      "intro": "A public review of a Toronto roofing job is a conversation other homeowners will read. Answer it without a fight and without admitting a fault you have not checked. The reply can be short, specific about the process, and quiet about anything you have not confirmed. You do not need to win the thread.",
+      "sections": [
+        {
+          "heading": "Read the job file before you type",
+          "paragraphs": [
+            "Match the review to an address, a date, and a scope if you can. Look at the photos, the invoice, and who was on the crew. If you cannot match it, say you want to find the job and ask them to contact you at a channel you control. Do not invent a memory of the visit in order to sound responsive.",
+            "If several people at the company can reply, one person should be responsible so you do not post twice with two different stories. Speed matters less than reading the file. A same-hour reply that admits the wrong thing is the one that lasts."
+          ]
+        },
+        {
+          "heading": "Reply without picking a fight",
+          "paragraphs": [
+            "Thank them for writing, or acknowledge the frustration if thanks would sound sarcastic. State one process fact you have verified: when you were there, what the scope was, or that you have asked the crew to go back. Invite them to continue by phone or email. Stop. Do not argue about their tone. Do not correct their spelling. Do not explain their personality to future customers.",
+            "If the review describes a problem you have confirmed, say what you are doing about that problem. If you have not confirmed it, say you are looking. 'We stand by our work' as a reflex, posted under a specific complaint you have not opened, reads as a refusal to look."
+          ]
+        },
+        {
+          "heading": "Leave private details off the public reply",
+          "paragraphs": [
+            "Do not post the price, the customer's full address, photos of the interior, or a dispute about payment. Do not post your theory about their insurer, their tenant, or their neighbour. Those details feel like proof inside the office and feel like a breach on the page.",
+            "Do not admit a cause you have not checked. 'We leaked your roof' is not a sentence for a review box unless you know that is what happened. 'We are booking a return visit to look at the ceiling you described' is a sentence you can post while you find out."
+          ]
+        },
+        {
+          "heading": "Ask for reviews in a way you can defend",
+          "paragraphs": [
+            "The way to get more honest reviews is to ask customers you actually served, after the job, without a script that tells them what to write. Ask once. Do not offer a discount in exchange for a star rating. Do not post reviews yourself under someone else's name. A short page that explains how you handle a complaint will do more than a burst of identical five-star paragraphs.",
+            "If your platform has rules about who may post and what you may ask, follow those rules. You do not need to quote them on your website to behave as if the next reader can see both the review and your reply."
+          ]
+        },
+        {
+          "heading": "Know when to leave the thread",
+          "paragraphs": [
+            "One reply is usually enough. A second reply is for new facts, such as the date of a return visit, not for the last word. If the person is abusive, or if the thread is attracting strangers, stop typing and use the reporting tools the platform provides. A fight is a second piece of marketing, and it is the one people remember.",
+            "Some reviews will stand because the critic will not call you. Your reply still shows the next homeowner that you read the file and kept their business private. That is the reputation benefit. It is not a promise that the stars will move."
+          ]
+        }
+      ],
+      "sources": []
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
+    "trade": "Industry publishing",
+    "tradeShort": "industry publishing",
+    "plural": "businesses",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Canada",
+    "province": "BC",
+    "category": "Build Journal",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "contactBusiness": "iam",
+    "campaignSite": "industryarmymarketing.com",
+    "slug": "iam-snow-removal-seo-in-ottawa-neighbourhood-pages-and-route-density",
+    "title": "Snow Removal SEO in Ottawa: Neighbourhood Pages and Route Density",
+    "cardTitle": "Snow Removal SEO in Ottawa: Neighbourhood Pages and Route Density",
+    "excerpt": "An Ottawa neighbourhood page is useful when you clear that area and the page says something a swapped name would not. Otherwise one city page is enough.",
+    "metaDescription": "When an Ottawa snow removal neighbourhood page is worth publishing, and when it is only a city name swapped on the same paragraph.",
+    "campaignLabel": "Ottawa snow neighbourhood pages",
+    "image": "https://ppdnkogmsfwhhknayolb.supabase.co/storage/v1/object/public/post-images/industryarmymarketing.com/iam-snow-removal-seo-in-ottawa-neighbourhood-pages-and-route-density.png",
+    "ogImage": "https://ppdnkogmsfwhhknayolb.supabase.co/storage/v1/object/public/post-images/industryarmymarketing.com/iam-snow-removal-seo-in-ottawa-neighbourhood-pages-and-route-density.png",
+    "imageAlt": "An Ottawa snow removal route sketched across real neighbourhoods, showing where a crew is dense enough to justify a page",
+    "ogImageAlt": "An Ottawa snow removal route sketched across real neighbourhoods, showing where a crew is dense enough to justify a page",
+    "publishedAt": "2026-11-25T16:10:00-08:00",
+    "date": "November 25, 2026",
+    "faqs": [
+      {
+        "q": "When is an Ottawa neighbourhood page worth publishing?",
+        "a": "When you already work there in enough density to service it in a storm, and the page can say something that would be false if you swapped the neighbourhood name: property type, route limit, or equipment."
+      },
+      {
+        "q": "How many neighbourhood pages should a small crew have?",
+        "a": "Often one honest city page. Add another only when the area, the buyer, or the crew is actually different. A page per name is how sites fill up with copies."
+      },
+      {
+        "q": "Can the same paragraph be reused if the facts match?",
+        "a": "If the facts match, you do not need a second URL. Keep one page and list the area. A new URL should earn its place with its own jobs, photos, and limits."
+      }
+    ],
+    "richContent": {
+      "intro": "A neighbourhood page is useful when you actually clear that part of Ottawa and the page says something a swapped city name would not: the route, the property type, and how far you will deadhead. A page that only changes Kanata to Orleans is not a local page. It is the same page twice, and it does not help a property manager or a homeowner choose you.",
+      "sections": [
+        {
+          "heading": "Start from the route, not the map",
+          "paragraphs": [
+            "List the areas where you already have enough work to drive efficiently. That might be a suburban loop of driveways, a set of commercial lots along one arterial, or a downtown cluster you can walk between. The page follows the route. If you have one customer in a neighbourhood and a long drive between them and the next, you do not have a page. You have a favour.",
+            "Density is your own count. How many sites you can service there in one event, with the crew you really have, is the test. Do not publish a neighbourhood because a keyword tool suggested it."
+          ]
+        },
+        {
+          "heading": "What a useful neighbourhood page contains",
+          "paragraphs": [
+            "Say the property type you serve there. Barrhaven lots, a Centretown walk-up, and an industrial bay do not need the same paragraph. Mention the constraints that change the work: on-street parking, narrow walks, a hill, a school zone, a site that must be open before a shift. If you do not know those constraints, you are not ready to write the page.",
+            "Say the limit. 'We clear this area when it sits on our existing loop' is a useful sentence. 'We proudly serve every neighbourhood in Ottawa' is not. Include a photo from work you did in that area if you have one and permission to use the place. A photo of a different city with the caption changed is worse than no photo."
+          ]
+        },
+        {
+          "heading": "When one city page is enough",
+          "paragraphs": [
+            "If your whole operation is one crew and a tight area, one Ottawa page that names the area honestly will do more than fifteen thin ones. Link your service area in the text. Explain sidewalks versus driveways versus lots. Spend the writing on the work, not on neighbourhood names.",
+            "Add a second page only when the second area has different equipment, a different trigger, or a different crew. A residential driveway route and a commercial lot route can earn two pages because the buyer and the work differ. Two subdivisions you treat identically do not."
+          ]
+        },
+        {
+          "heading": "Do not swap the name and call it local",
+          "paragraphs": [
+            "Read the draft out loud with a different neighbourhood in the first sentence. If nothing else becomes false, do not publish it. The useful differences are boring and specific: where you stage, how long the drive is from your last site, whether you can do the walks, whether you are already there on storm mornings.",
+            "Menus of neighbourhoods in the footer, repeated on every page, do not create a local page either. If you service those areas, a single service-area list on the city page is the honest version. Publishing a URL for each name is a promise that each URL has its own facts."
+          ]
+        },
+        {
+          "heading": "Keep the set small enough to maintain",
+          "paragraphs": [
+            "Every page you publish has to be updated when you drop a route. A neighbourhood you no longer serve, left online because it once ranked for something, is a page that solicits the wrong call. Delete it or fold it back into the city page with a clear note about where you do work.",
+            "None of this is a ranking promise. A dense, true page gives a customer in that area a reason to trust the call. A thin page gives them a reason to wonder what else on the site was copied. Write the one you can keep true in January."
+          ]
+        }
+      ],
+      "sources": []
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
+    "trade": "Industry publishing",
+    "tradeShort": "industry publishing",
+    "plural": "businesses",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Canada",
+    "province": "BC",
+    "category": "Build Journal",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "contactBusiness": "iam",
+    "campaignSite": "industryarmymarketing.com",
+    "slug": "iam-drywall-marketing-in-vancouver-showcasing-level-5-work",
+    "title": "Drywall Marketing in Vancouver: Showcasing Level 5 Work",
+    "cardTitle": "Drywall Marketing in Vancouver: Showcasing Level 5 Work",
+    "excerpt": "Designers and builders ask for Level 5 when the light or the paint will show every joint. Show the finish and explain the levels in plain language.",
+    "metaDescription": "How Vancouver drywall contractors show a Level 5 finish to designers and builders with photos and a plain explanation of the finish levels.",
+    "campaignLabel": "Vancouver Level 5 drywall",
+    "image": "https://ppdnkogmsfwhhknayolb.supabase.co/storage/v1/object/public/post-images/industryarmymarketing.com/iam-drywall-marketing-in-vancouver-showcasing-level-5-work.png",
+    "ogImage": "https://ppdnkogmsfwhhknayolb.supabase.co/storage/v1/object/public/post-images/industryarmymarketing.com/iam-drywall-marketing-in-vancouver-showcasing-level-5-work.png",
+    "imageAlt": "A smooth Level 5 drywall wall under raking light, prepared to show the finish to Vancouver designers and builders",
+    "ogImageAlt": "A smooth Level 5 drywall wall under raking light, prepared to show the finish to Vancouver designers and builders",
+    "publishedAt": "2026-11-25T16:09:00-08:00",
+    "date": "November 25, 2026",
+    "faqs": [
+      {
+        "q": "What is a plain way to describe Level 5?",
+        "a": "Level 4 is the usual smooth finish for ordinary light and flat paint. Level 5 adds a skim coat so joints are less likely to show under raking light, dark paint, or higher sheen. Say what it does not fix, including framing and paint sheen."
+      },
+      {
+        "q": "How should a Level 5 photo be taken?",
+        "a": "In the light that will reveal the wall, with a wide frame and a close frame of a corner or bulkhead. Caption the level. Do not use stock interiors or claim the photo is a specific person."
+      },
+      {
+        "q": "Should every drywall page say Level 5?",
+        "a": "No. Keep it on the page for specified finish work and on the projects that were actually done to that level. Calling every smooth wall Level 5 is obvious to the people you want to hire you."
+      }
+    ],
+    "richContent": {
+      "intro": "Designers and builders in Vancouver ask for a Level 5 finish when the paint will be dark, the light rakes across the wall, or the wall is the point of the room. Your page can show that work and explain the levels in plain language, so the photo is not just a picture of a white wall. The explanation is what makes the photo mean something.",
+      "sections": [
+        {
+          "heading": "Explain the levels without a lecture",
+          "paragraphs": [
+            "Use the shorthand the specification already uses, in sentences a designer can repeat to a client. Lower levels are taped and coated for areas that will be hidden or heavily textured. A Level 4 finish is the usual smooth wall many projects accept under ordinary light and flat paint. A Level 5 finish adds a skim coat over that so joints are less likely to show under severe light, dark colour, or a higher sheen.",
+            "Say what you need from the rest of the team. Level 5 does not fix a bad frame, a wet board, or a painter who changes sheen after you leave. Put that in the same paragraph as the definition so the page is an explanation, not a boast."
+          ]
+        },
+        {
+          "heading": "Photograph the finish the way it will be judged",
+          "paragraphs": [
+            "Shoot the wall in the light that worried the designer: a window at an angle, a downlight, a dark paint sample on part of the wall if the painter has started. Include a wider frame so the joint lines, or the lack of them, can be seen, and a closer frame of an inside corner or a bulkhead, which is where the work shows.",
+            "Do not shoot only the hero wall in flattering shade. Do not use a stock interior. Caption the photo with the level, the paint condition if you know it, and the fact that it is an example of finish quality. Do not claim it shows a named designer or a named homeowner."
+          ]
+        },
+        {
+          "heading": "Put the photos where the specifier is looking",
+          "paragraphs": [
+            "The people who ask for Level 5 are often not the people who search 'drywall repair.' Give the finish its own page, and say it is for designers, builders, and painters planning a critical wall. Link it from the project pages that are actually Level 5, not from every patch job.",
+            "A short PDF of the same explanation, with two photos, is what a designer attaches to a drawing set. Make the PDF match the page. If your page says you skim coat to Level 5 and your PDF says you 'do premium finishing,' you have two products and no specification."
+          ]
+        },
+        {
+          "heading": "Say what Level 5 is not",
+          "paragraphs": [
+            "It is not a warranty that a gloss paint in direct sun will look like a stone slab. It is not a way to skip primer. It is not the same scope as a Level 4 wall with a heavy texture. Write the exclusions next to the photos so the price conversation starts from the same definition.",
+            "If you rarely do this work, do not lead the site with it. A single well-explained Level 5 page is credible. A homepage that calls every smooth wall Level 5 is how you lose the designer who knows the difference."
+          ]
+        },
+        {
+          "heading": "Give the builder a note they can file",
+          "paragraphs": [
+            "Offer a job note that records the level requested, the rooms, the date the board was ready, and the date you finished. That note is marketing because it is the thing a builder remembers when the next specification arrives. You do not need a testimonial with a client's full name to make the point.",
+            "When you are unsure what was specified, ask before you price. Quoting Level 5 for a Level 4 note, or the reverse, is a dispute the website cannot fix later. The page should invite that question rather than treat the level as a slogan."
+          ]
+        }
+      ],
+      "sources": []
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
+    "trade": "Industry publishing",
+    "tradeShort": "industry publishing",
+    "plural": "businesses",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Canada",
+    "province": "BC",
+    "category": "Build Journal",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "contactBusiness": "iam",
+    "campaignSite": "industryarmymarketing.com",
+    "slug": "iam-emergency-roofing-marketing-in-montreal-being-found-in-a-storm",
+    "title": "Emergency Roofing Marketing in Montreal: Being Found in a Storm",
+    "cardTitle": "Emergency Roofing Marketing in Montreal: Being Found in a Storm",
+    "excerpt": "In a Montreal storm the useful page is a phone path that is answered and a short description of what an emergency visit includes. It is not a promise you cannot keep at 2 a.m.",
+    "metaDescription": "What a Montreal emergency roofing page needs during a storm: a real phone path, a defined visit, and no promises you cannot keep at 2 a.m.",
+    "campaignLabel": "Montreal emergency roofing",
+    "image": "https://ppdnkogmsfwhhknayolb.supabase.co/storage/v1/object/public/post-images/industryarmymarketing.com/iam-emergency-roofing-marketing-in-montreal-being-found-in-a-storm.png",
+    "ogImage": "https://ppdnkogmsfwhhknayolb.supabase.co/storage/v1/object/public/post-images/industryarmymarketing.com/iam-emergency-roofing-marketing-in-montreal-being-found-in-a-storm.png",
+    "imageAlt": "A storm-damaged roof edge beside a clearly marked phone number for emergency roofing in Montreal",
+    "ogImageAlt": "A storm-damaged roof edge beside a clearly marked phone number for emergency roofing in Montreal",
+    "publishedAt": "2026-11-25T16:08:00-08:00",
+    "date": "November 25, 2026",
+    "faqs": [
+      {
+        "q": "Should a Montreal roofer advertise 24-hour service if the crew sometimes answers?",
+        "a": "Advertise the hours you actually answer. If overnight response is real, say what the caller hears and what the visit includes. If it is only sometimes, the honest page lists the hours and the morning callback."
+      },
+      {
+        "q": "What should an emergency visit include?",
+        "a": "A safe look, a temporary stop to active water where that is possible, photos or notes, and a clear price for the visit versus the later repair. It should not include a promise to replace the roof in the storm."
+      },
+      {
+        "q": "Where should the phone number go?",
+        "a": "In the first line of the storm page, on the number you have tested. A contact form is for leaks that can wait."
+      }
+    ],
+    "richContent": {
+      "intro": "At 2 a.m. in a Montreal storm, the person with water coming in needs a phone path that works and a page that says what you can do that night. They do not need a promise you cannot keep while the wind is still up. A storm page, a number that is answered, and a short list of what an emergency visit includes are the whole offer.",
+      "sections": [
+        {
+          "heading": "Build one storm page",
+          "paragraphs": [
+            "Give emergency work its own page and put the phone number in the first line. Say which roofs you will attend: flat, sloped, or both. Many Montreal buildings are flat-roofed, and a page that only shows shingle houses will send the wrong caller, or worse, send you to a roof you do not repair.",
+            "Say the area you will drive during a storm and the area you will not. A page that says you cover the whole island and every off-island suburb is a page you cannot honour when roads are bad. Name the limit in boroughs or in drive time you actually accept."
+          ]
+        },
+        {
+          "heading": "Make the phone path real",
+          "paragraphs": [
+            "The number on the page has to be the number that rings the person who can dispatch. If that is a forwarding service, say what the caller will hear and when a roofer calls back. If you do not answer overnight, do not write '24 hours' because it looks urgent. Write the hours you answer, including the overnight hours if they are real.",
+            "Test the path before a forecast, not during it. Call it from a phone that is not yours. If it goes to a full voicemail, fix that before you spend anything on being found. A form is not an emergency path. Keep the form off this page or place it under the phone number for people whose leak can wait until morning."
+          ]
+        },
+        {
+          "heading": "Define the emergency visit",
+          "paragraphs": [
+            "Say what you do on a storm call: stop active water if it can be stopped safely, cover an opening, document what you saw, and book the permanent repair for when the roof can be worked. Say what you do not do in the dark, in high wind, or on an icy deck. 'We will replace the roof tonight' is not a service. It is a sentence that will be repeated back to you.",
+            "Say how the visit is priced: a call-out to attend, a price for the temporary cover, and a separate price for the repair. People can accept a night visit that costs money. They cannot accept discovering the fee only after someone is on the roof."
+          ]
+        },
+        {
+          "heading": "What not to promise at 2 a.m.",
+          "paragraphs": [
+            "Do not promise you will arrive by a clock time you do not control. Do not promise the repair will be invisible. Do not promise insurance will treat the visit as covered. Do not promise you can work on every roof type you were asked about if your crew does one system.",
+            "Do not publish a stock photo of a dramatic rescue. Use a photo of the kind of temporary cover or edge detail you actually install, and describe it as an example of the work, not as a picture of a specific customer in a specific storm."
+          ]
+        },
+        {
+          "heading": "Change the page when the storm is over",
+          "paragraphs": [
+            "During the event, the page can say you are triaging active leaks and give the current wait. After the event, change that sentence. Leave the permanent explanation of what an emergency visit is. Add, if you have room, how to book the proper repair, how to dry the interior, and when a ceiling should wait for another trade.",
+            "Being found is a combination of a page that answers the question and a phone that answers the person. Neither one, by itself, is a plan. Neither one guarantees you will be the company they reach first. It does mean that the people who reach you get the truth about the night."
+          ]
+        }
+      ],
+      "sources": []
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
+    "trade": "Industry publishing",
+    "tradeShort": "industry publishing",
+    "plural": "businesses",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Canada",
+    "province": "BC",
+    "category": "Build Journal",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "contactBusiness": "iam",
+    "campaignSite": "industryarmymarketing.com",
+    "slug": "iam-snow-removal-recruiting-in-victoria-marketing-seasonal-jobs",
+    "title": "Snow Removal Recruiting in Victoria: Marketing Seasonal Jobs",
+    "cardTitle": "Snow Removal Recruiting in Victoria: Marketing Seasonal Jobs",
+    "excerpt": "Victoria snow work is occasional. Advertise the shift, the gear, and how the call goes out before the first storm, in places a real applicant will see.",
+    "metaDescription": "How Victoria snow contractors advertise seasonal shifts before the first storm so the posting reads as a real job, not spam.",
+    "campaignLabel": "Victoria snow recruiting",
+    "image": "https://ppdnkogmsfwhhknayolb.supabase.co/storage/v1/object/public/post-images/industryarmymarketing.com/iam-snow-removal-recruiting-in-victoria-marketing-seasonal-jobs.png",
+    "ogImage": "https://ppdnkogmsfwhhknayolb.supabase.co/storage/v1/object/public/post-images/industryarmymarketing.com/iam-snow-removal-recruiting-in-victoria-marketing-seasonal-jobs.png",
+    "imageAlt": "A seasonal snow-shift notice for Victoria listing the work, the gear, and how a worker gets the call before the first storm",
+    "ogImageAlt": "A seasonal snow-shift notice for Victoria listing the work, the gear, and how a worker gets the call before the first storm",
+    "publishedAt": "2026-11-25T16:07:00-08:00",
+    "date": "November 25, 2026",
+    "faqs": [
+      {
+        "q": "When should a Victoria contractor post seasonal snow shifts?",
+        "a": "Before the first storm, with an honest description of how occasional the work is. A same-day blast with no company name reads as spam and arrives too late to build a list."
+      },
+      {
+        "q": "What should the first lines of the ad say?",
+        "a": "The task, the report location, licence or lifting needs, how pay is structured, and how the call goes out. Sidewalk work and driving should not share a vague headline."
+      },
+      {
+        "q": "Should you keep the ad up all winter?",
+        "a": "Keep it up while you are still taking names, and take it down when the list is full. Reply to people you will not hire. A permanent 'always hiring' post that nobody answers is the spam look you are trying to avoid."
+      }
+    ],
+    "richContent": {
+      "intro": "Victoria does not get a long snow season, so the people you need are not sitting on a job board labelled snow. A clear posting, up before the first storm, works better than a last-minute blast that reads like spam. Say the shift, how pay is structured, the gear, and how someone gets the call. Leave out the exclamation marks.",
+      "sections": [
+        {
+          "heading": "Post before you need the crew",
+          "paragraphs": [
+            "Put the notice up while the ground is still clear. Say that the work is occasional, that shifts are called when a storm is likely, and that there may be winters with little to do. Pretending Victoria snow is a full-time winter job produces applicants who quit at the first quiet month, and it makes the posting look like a scam.",
+            "Tell them how much notice you typically give from your own practice: the night before, the morning of, or a standing window when a forecast looks serious. If you do not know yet, say the call comes when you decide to roll, and say how they confirm."
+          ]
+        },
+        {
+          "heading": "Say the shift in the first lines",
+          "paragraphs": [
+            "The first lines should answer: what the person will do, where they will report, what they must be able to lift or operate, and whether a driver's licence is required. Sidewalk shovelling and driving a plow are different ads. Do not hide the harder one inside a friendly headline.",
+            "Describe pay as a structure, not a teaser. Hourly, a call-out minimum, or a piece rate are all understandable if you say which one and what a short storm pays versus a long one. Do not advertise a rate you have not decided. Do not copy a rate from another city's posting and hope."
+          ]
+        },
+        {
+          "heading": "Put it where a serious applicant will see it",
+          "paragraphs": [
+            "Use your own website, a short post on the channels you already run, and local boards where hiring is normal. Say the company name, the city, and a way to reply that you actually read. A poster that is only a phone number in a Facebook group, repeated in ten groups the same hour, looks like spam even when the job is real.",
+            "Ask for a name, a phone number, whether they can lift and drive, and whether they already work outdoors. You do not need a resume portal. You do need enough to know they are a person you can schedule. Ignore replies that are only 'interested' with no name."
+          ]
+        },
+        {
+          "heading": "Say the gear and the safety rules up front",
+          "paragraphs": [
+            "List what you provide and what they bring: boots, a high-visibility layer, gloves, a shovel, a phone that receives the call. Say whether they are on foot, on a machine, or both. Say that the work is outside, in the dark, on ice. People who still apply after that paragraph are the people you wanted.",
+            "If you require a licence, insurance on their vehicle, or the right to work in Canada, say so in the posting. Discovering it in a message thread wastes the evening before a storm. Do not ask for a social insurance number in a public comment thread."
+          ]
+        },
+        {
+          "heading": "Keep a list for the next event",
+          "paragraphs": [
+            "When someone is a fit, tell them they are on the call list and what that means. When they are not, say so. A list you maintain in one place, with the date they confirmed, beats a pile of messenger threads you cannot search when the snow starts.",
+            "After a storm, note who showed up. The next posting can say you keep a returning crew and still take new names. That is more credible than a fresh desperate post every time the forecast changes. Delete or update the ad when the list is full so you are not collecting names you will never call."
+          ]
+        }
+      ],
+      "sources": []
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
+    "trade": "Industry publishing",
+    "tradeShort": "industry publishing",
+    "plural": "businesses",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Canada",
+    "province": "BC",
+    "category": "Build Journal",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "contactBusiness": "iam",
+    "campaignSite": "industryarmymarketing.com",
+    "slug": "iam-realtor-marketing-in-calgary-open-house-follow-up-that-converts",
+    "title": "Realtor Marketing in Calgary: Open House Follow-Up That Converts",
+    "cardTitle": "Realtor Marketing in Calgary: Open House Follow-Up That Converts",
+    "excerpt": "The useful part of a Calgary open house is the note you were given permission to send. Ask for one specific permission, then send only that.",
+    "metaDescription": "How Calgary realtors ask for open house follow-up permission and write a note that matches what the visitor agreed to receive.",
+    "campaignLabel": "Calgary open house follow-up",
+    "image": "https://ppdnkogmsfwhhknayolb.supabase.co/storage/v1/object/public/post-images/industryarmymarketing.com/iam-realtor-marketing-in-calgary-open-house-follow-up-that-converts.png",
+    "ogImage": "https://ppdnkogmsfwhhknayolb.supabase.co/storage/v1/object/public/post-images/industryarmymarketing.com/iam-realtor-marketing-in-calgary-open-house-follow-up-that-converts.png",
+    "imageAlt": "An open house sign-in sheet and a short follow-up note with a clear permission line for a Calgary realtor",
+    "ogImageAlt": "An open house sign-in sheet and a short follow-up note with a clear permission line for a Calgary realtor",
+    "publishedAt": "2026-11-25T16:06:00-08:00",
+    "date": "November 25, 2026",
+    "faqs": [
+      {
+        "q": "What should the open house sign-in ask for?",
+        "a": "One clear permission: the listing details, a note about a similar home, or no further contact. A blank email line with no description of the message is not enough."
+      },
+      {
+        "q": "How many follow-up messages should you send?",
+        "a": "Send the one you described, when you said you would. A further message needs a further yes. Do not add everyone to a newsletter because they walked through the house."
+      },
+      {
+        "q": "Does a good follow-up guarantee a client?",
+        "a": "No. It respects the conversation you had and gives a buyer or a neighbour exactly what they requested. Some people will reply. Many will not. That is still a successful note."
+      }
+    ],
+    "richContent": {
+      "intro": "The useful part of a Calgary open house is the note you are allowed to send afterward. A sign-in sheet that does not say what you will send, or a message that assumes everyone wants a market report, wastes the visit. Ask for one specific permission, then send only that. A careful note can start a real conversation. It cannot promise that a visitor becomes a client.",
+      "sections": [
+        {
+          "heading": "Ask for one permission, in plain words",
+          "paragraphs": [
+            "The sign-in sheet, or the conversation at the door, should name the message. For example: a note with the listing sheet for this house, or a note if a similar home comes up in this neighbourhood. One choice is easier to honour than a blanket 'yes, contact me.' If they decline, you still hosted them. You do not add them to a list.",
+            "Read the line out loud if you are not sure it is clear. If you would not want it sent to you, rewrite it. Permission that was buried under a paragraph of brokerage advertising is not something you can lean on later when someone asks why you wrote."
+          ]
+        },
+        {
+          "heading": "Write the note so it matches the permission",
+          "paragraphs": [
+            "If they asked for the listing sheet, send the listing sheet and one or two facts about the house they could not see in a walk-through, such as the parking arrangement or what you disclosed about the mechanicals. If they asked to hear about a similar home, do not also attach a canned newsletter.",
+            "Use their name, the address of the open house, and the day. Identify yourself and the brokerage in the way your board and your brokerage require. Keep it short enough to read on a phone. A long recap of the whole market is a different email they did not request."
+          ]
+        },
+        {
+          "heading": "Separate buyers, neighbours, and the curious",
+          "paragraphs": [
+            "Not everyone at an open house is a buyer. Neighbours often want the price and the condition, not a search. Your sheet can offer different notes: the listing details, a similar-home note, or nothing further. Let them tick one. Guessing from a postal code is how you send a buyer drip to someone who lives two doors down.",
+            "If you did not get a sheet, you do not have a follow-up. A remembered first name and a guess at an email is not permission. The marketing system is the sheet, not your memory in the car afterward."
+          ]
+        },
+        {
+          "heading": "Send it when you said you would",
+          "paragraphs": [
+            "Say on the sheet when the note will come, and send it then. The day after the open house is easy to understand. A message three weeks later, attached to a new listing they did not ask about, feels like the permission was a funnel. If the similar home they asked about never appears, you do not need to fill the silence with other product.",
+            "One follow-up that delivers the thing you named is the whole sequence. A second note is a new ask. Make that ask in the first note if you want it ('reply if you want me to keep an eye on this block') and wait for the reply."
+          ]
+        },
+        {
+          "heading": "Do not automate past the permission",
+          "paragraphs": [
+            "A customer-relationship tool is fine for remembering who asked for what. It is a poor substitute for the sentence. Do not drop every sign-in into a monthly campaign. Do not text a link to a valuation widget unless they asked for a valuation. Automation that ignores the ticked box is how a useful open house becomes spam.",
+            "None of this guarantees a buyer consultation or a listing appointment. It makes the next conversation possible with people who asked for it, and it leaves everyone else alone. That is the conversion that matters: permission into a relevant note, and a note into a reply if they still want one."
+          ]
+        }
+      ],
+      "sources": []
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
+    "trade": "Industry publishing",
+    "tradeShort": "industry publishing",
+    "plural": "businesses",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Canada",
+    "province": "BC",
+    "category": "Build Journal",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "contactBusiness": "iam",
+    "campaignSite": "industryarmymarketing.com",
+    "slug": "iam-snow-contract-marketing-to-vancouver-property-managers",
+    "title": "Snow Contract Marketing to Vancouver Property Managers",
+    "cardTitle": "Snow Contract Marketing to Vancouver Property Managers",
+    "excerpt": "Vancouver snow is irregular. Property managers need a one-pager that names the trigger, the sites, and what a light dusting means before the week it snows.",
+    "metaDescription": "What to put on a one-page seasonal snow contract for Vancouver property managers: trigger, sites, sidewalks, and an honest coastal scope.",
+    "campaignLabel": "Vancouver snow contracts",
+    "image": "https://ppdnkogmsfwhhknayolb.supabase.co/storage/v1/object/public/post-images/industryarmymarketing.com/iam-snow-contract-marketing-to-vancouver-property-managers.png",
+    "ogImage": "https://ppdnkogmsfwhhknayolb.supabase.co/storage/v1/object/public/post-images/industryarmymarketing.com/iam-snow-contract-marketing-to-vancouver-property-managers.png",
+    "imageAlt": "A one-page seasonal snow contract for Vancouver property managers, with sites and a trigger depth noted",
+    "ogImageAlt": "A one-page seasonal snow contract for Vancouver property managers, with sites and a trigger depth noted",
+    "publishedAt": "2026-11-25T16:05:00-08:00",
+    "date": "November 25, 2026",
+    "faqs": [
+      {
+        "q": "What should a Vancouver snow one-pager include?",
+        "a": "Legal name, sites or site type, season dates, the trigger for a visit, what is included and excluded, how you invoice, and the phone path during an event."
+      },
+      {
+        "q": "How should a coastal contract treat a light dusting?",
+        "a": "Say whether a dusting is a manager call, an automatic visit, or not a visit at all. 'As needed' is not a trigger a property manager can explain to an owner."
+      },
+      {
+        "q": "Should the one-pager list a citywide price?",
+        "a": "No. Explain the pricing method and what changes it. A single Vancouver average you cannot tie to your own quotes is a fake price list."
+      }
+    ],
+    "richContent": {
+      "intro": "Coastal snow is irregular, which is why a Vancouver property manager wants the seasonal terms in writing before the week it snows. A one-pager that names the trigger, the sites, and what happens on a light dusting is more useful than a brochure about being ready for winter. Market the contract you can perform on a rainy Tuesday that turns to slush, not a prairie story about week-long events.",
+      "sections": [
+        {
+          "heading": "What the one-pager has to answer",
+          "paragraphs": [
+            "One page, so a manager can forward it. Include your legal name, the sites or the type of site, the season dates, how a visit is triggered, what a visit includes, what it excludes, how you invoice, and how they reach a person during an event. If it does not fit, you are writing a brochure.",
+            "Use the words the manager uses: parkade ramps, loading areas, sidewalks the property is responsible for, stairs, and entries. 'Full service winter maintenance' does not tell them whether you salt, whether you plow, or whether you only shovel what the city did not touch."
+          ]
+        },
+        {
+          "heading": "Define the trigger without a fake precision",
+          "paragraphs": [
+            "Say what starts a visit. A depth at the site, a call from the manager, or a forecast you both agreed to watch are different products. Pick the one you actually run. If you use depth, say where it is measured and that drifting and slush will not match a ruler in the open.",
+            "Say what a trace of snow means. On the coast, many events are a slick hour rather than a cleanup day. If a dusting is a call-out only when the manager asks, write that. If you roll when the temperature and the moisture line up, write that instead. Do not leave it as 'as needed.'"
+          ]
+        },
+        {
+          "heading": "Name the sites you will not take",
+          "paragraphs": [
+            "A one-pager that implies you cover every tower from downtown to the valley is not a plan. State the area you can reach in an event and the property types that fit a short-notice crew. If you do not do steep driveways, parkades, or streets the city plows, say so in the exclusions.",
+            "Seasonal contracts fail when the route only works on a map. Describe how many sites you will put on one loop before you sell the next one. You do not need to publish other clients' names. You do need a number you can service when two sites call at once."
+          ]
+        },
+        {
+          "heading": "Say how the manager reaches you",
+          "paragraphs": [
+            "Put a phone path on the page: the number, who answers, and the hours. If the coastal pattern is a night of wet snow and a morning of ice, say whether that number is answered overnight or at a stated morning hour. A form on the website is not a storm channel.",
+            "Tell them what you will send during an event: a start text, a done text, or nothing unless there is a problem. Property managers forward those messages to owners. Write them as if an owner will read them. The templates can live on the one-pager in three lines."
+          ]
+        },
+        {
+          "heading": "Keep the price language honest",
+          "paragraphs": [
+            "Explain how you charge: a seasonal fee, a per-visit fee, or a seasonal fee plus extras for ice melt and extra pushes. Say what changes the price, such as stairs, a parkade, or a site that needs a truck the rest of the route does not. Do not publish a price list of invented averages, and do not call a starting number 'typical for Vancouver' unless it is your own quoted range and you say it is yours.",
+            "Offer the one-pager as the proposal, not as a teaser that hides the real terms in a later document. If salt is extra, the one-pager says salt is extra. The marketing is the clarity."
+          ]
+        }
+      ],
+      "sources": []
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
+    "trade": "Industry publishing",
+    "tradeShort": "industry publishing",
+    "plural": "businesses",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Canada",
+    "province": "BC",
+    "category": "Build Journal",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "contactBusiness": "iam",
+    "campaignSite": "industryarmymarketing.com",
+    "slug": "iam-roofing-marketing-in-calgary-earning-trust-on-hail-claims",
+    "title": "Roofing Marketing in Calgary: Earning Trust on Hail Claims",
+    "cardTitle": "Roofing Marketing in Calgary: Earning Trust on Hail Claims",
+    "excerpt": "Calgary homeowners need a hail inspection explained clearly. Describe what you look at, and do not promise what an insurer will pay.",
+    "metaDescription": "How Calgary roofers explain a hail inspection, document what they see, and avoid promising an insurance outcome.",
+    "campaignLabel": "Calgary hail roofing",
+    "image": "https://ppdnkogmsfwhhknayolb.supabase.co/storage/v1/object/public/post-images/industryarmymarketing.com/iam-roofing-marketing-in-calgary-earning-trust-on-hail-claims.png",
+    "ogImage": "https://ppdnkogmsfwhhknayolb.supabase.co/storage/v1/object/public/post-images/industryarmymarketing.com/iam-roofing-marketing-in-calgary-earning-trust-on-hail-claims.png",
+    "imageAlt": "Hail-marked asphalt shingles on a Calgary roof, presented as an inspection subject rather than a promised insurance outcome",
+    "ogImageAlt": "Hail-marked asphalt shingles on a Calgary roof, presented as an inspection subject rather than a promised insurance outcome",
+    "publishedAt": "2026-11-25T16:04:00-08:00",
+    "date": "November 25, 2026",
+    "faqs": [
+      {
+        "q": "Can a Calgary roofer promise that insurance will pay for a new roof?",
+        "a": "No. You can describe the condition you see and give a price for work the homeowner chooses. The insurer decides what the policy pays. Say that before you book the inspection."
+      },
+      {
+        "q": "Should hail photos go on the website?",
+        "a": "Use your own example photos to show what an inspection looks for. Do not publish a customer's roof, and do not caption a photo as a paid claim unless that is what happened and you have permission to say so."
+      },
+      {
+        "q": "What should the phone script say after a storm?",
+        "a": "That you will look and report what you see, that coverage is the insurer's decision, and when you can actually get there. If the schedule is full, say so."
+      }
+    ],
+    "richContent": {
+      "intro": "After a Calgary hailstorm, homeowners are trying to tell a bruise on a shingle from a mark that does not matter. A roofer can explain how an inspection works, what you photograph, and what you will not conclude. Trust comes from that explanation. It does not come from promising what an insurer will pay.",
+      "sections": [
+        {
+          "heading": "Describe the inspection, not the payout",
+          "paragraphs": [
+            "The page should say what a hail visit includes: whose roof you will walk, what you look for on shingles, metal, soft metal, and siding, and how long you are typically on site. Say whether you provide a written note or a photo set, and whether that note is an opinion about what you saw rather than a decision about coverage.",
+            "Say who is speaking. An inspection by the person who may later price the repair is not the same thing as an independent adjuster's report. You can still be useful. You cannot be both the advocate and the insurer. Write that distinction in the first screen, before any button to book."
+          ]
+        },
+        {
+          "heading": "Say what you can and cannot conclude",
+          "paragraphs": [
+            "You can describe bruises, granule loss, cracked mats, and dented flashing if that is what you see, and you can say when you do not see those things. You cannot honestly say 'insurance will replace this roof' from the curb, or from a single photo the homeowner texted. The page should use those words, because that is the sentence people wish you would say.",
+            "If the roof is too steep, too wet, or too damaged to walk safely, say you will not walk it and say what you can see from a ladder or the ground. A refused walk is a better marketing fact than a heroic one that gets someone hurt."
+          ]
+        },
+        {
+          "heading": "Use photos to document, not to sell a claim",
+          "paragraphs": [
+            "Publish example photos that teach: a bruise with a scale, a soft-metal dent, a mark that is not hail. Use your own photos. Caption them as examples of what an inspector looks for, not as proof that a particular Calgary claim was paid. Do not imply the photo shows a specific homeowner or a specific approved claim.",
+            "On a real inspection, photograph what you saw and store it with the address and the date. Offer the homeowner a copy. Do not post their roof on your site, and do not post it as a before-and-after of a 'successful claim,' unless you have permission and you are telling the truth about what was actually approved and installed."
+          ]
+        },
+        {
+          "heading": "Make the storm page easy to find and easy to trust",
+          "paragraphs": [
+            "When hail is in the forecast or on the ground, the page people need is the inspection page, not the general roofing page. Put the phone number, the area you will drive, and the lead time in the first paragraph. If you are booked up, say you are booked up. A wait list with an honest date beats a form that implies you will be there tomorrow.",
+            "Take the storm language down, or rewrite it, when you are back to ordinary reroofs. A permanent banner that says you are handling last month's hail reads as a company that lives on panic. The permanent page can stay. The urgent wording should match the week."
+          ]
+        },
+        {
+          "heading": "Answer the insurance question the same way every time",
+          "paragraphs": [
+            "Train everyone who answers the phone to use the same sentence: you can inspect and describe what you see, the insurer decides coverage, and you will price the work the homeowner wants priced. Do not coach a homeowner to say something they did not observe. Do not offer to 'get the whole roof approved.'",
+            "If you meet the adjuster on site, describe your role in advance on the page. Showing up unannounced as a surprise advocate is how these visits go sour. A calm explanation, repeated in the same words on the site and on the phone, is the marketing."
+          ]
+        }
+      ],
+      "sources": []
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
+    "trade": "Industry publishing",
+    "tradeShort": "industry publishing",
+    "plural": "businesses",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Canada",
+    "province": "BC",
+    "category": "Build Journal",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "contactBusiness": "iam",
+    "campaignSite": "industryarmymarketing.com",
+    "slug": "iam-roofing-marketing-in-edmonton-winning-new-build-contracts",
+    "title": "Roofing Marketing in Edmonton: Winning New-Build Contracts",
+    "cardTitle": "Roofing Marketing in Edmonton: Winning New-Build Contracts",
+    "excerpt": "An Edmonton builder adding a roofer to a bid list wants the assembly, the schedule, and recent work that looks like their houses. Put that in the packet.",
+    "metaDescription": "What Edmonton builders want to see before they add a roofer to a bid list: assembly, schedule, site contact, and recent comparable work.",
+    "campaignLabel": "Edmonton new-build roofing",
+    "image": "https://ppdnkogmsfwhhknayolb.supabase.co/storage/v1/object/public/post-images/industryarmymarketing.com/iam-roofing-marketing-in-edmonton-winning-new-build-contracts.png",
+    "ogImage": "https://ppdnkogmsfwhhknayolb.supabase.co/storage/v1/object/public/post-images/industryarmymarketing.com/iam-roofing-marketing-in-edmonton-winning-new-build-contracts.png",
+    "imageAlt": "A new-build roof assembly and job notes, the packet an Edmonton builder reviews before adding a roofer to a bid list",
+    "ogImageAlt": "A new-build roof assembly and job notes, the packet an Edmonton builder reviews before adding a roofer to a bid list",
+    "publishedAt": "2026-11-25T16:03:00-08:00",
+    "date": "November 25, 2026",
+    "faqs": [
+      {
+        "q": "What should an Edmonton roofer send a builder before asking to be on the bid list?",
+        "a": "A short packet: the building types you want, the assemblies you install, photos of those assemblies, how you book a start, who the site calls, and how warranty and insurance are handled."
+      },
+      {
+        "q": "Do new-build photos need to name the builder?",
+        "a": "No. Name the assembly and the stage. Publish a builder's name or a municipal address only with permission. The superintendent needs to see the detail, not a client's brand."
+      },
+      {
+        "q": "Can a service roofer get onto new-build lists with repair photos?",
+        "a": "Repair photos support repair work. For new build, show new-build details or be clear that you are asking to price a small phase while you document that work. Do not relabel a reroof as a production build."
+      }
+    ],
+    "richContent": {
+      "intro": "A builder adding a roofer to an Edmonton bid list is not shopping for a slogan. They want to see that you can meet a schedule, name the assembly you install, and show recent work that looks like their houses. The useful marketing is the same packet you would hand a superintendent, published as a page a project manager can forward.",
+      "sections": [
+        {
+          "heading": "What belongs in the bid-list packet",
+          "paragraphs": [
+            "Lead with the work you want: production houses, custom builds, townhomes, or a mix. Name the systems you install and the ones you do not. A builder cannot add you to a list from a gallery of finished roofs with no assembly and no area.",
+            "Include who receives the bid, who walks the site, and who answers when the schedule slips. A cell number that goes to the estimator during the day is a fact. A promise that someone always picks up is not, unless that is actually how the company runs."
+          ]
+        },
+        {
+          "heading": "Show the assembly, not a stock roof",
+          "paragraphs": [
+            "Photograph the work a builder recognizes: underlayment, flashing at a wall, valleys, penetrations, and the finished field. A drone shot of a completed suburb does not tell them how you treat a tricky detail. Caption each photo with the assembly and the stage, and do not caption it with a homeowner's name.",
+            "If your recent work is service and reroof rather than new build, say so and show that. Pretending a reroof portfolio is a production-build portfolio wastes the builder's time and yours. You can still ask to price a small phase while you build the photos that match."
+          ]
+        },
+        {
+          "heading": "Talk about schedule in the builder's language",
+          "paragraphs": [
+            "Builders care when you need the deck, when you can start after windows or stucco, and how weather in an Edmonton winter changes a start. Describe your lead time in the way you actually book crews, not as 'fast' or 'flexible.' If you need a confirmed date a certain number of working days out, say that number from your own calendar, not a number that sounds competitive.",
+            "Say what happens if the site is not ready. A sentence about dry-in priorities, phased buildings, and who calls whom is more persuasive than a claim that you have never missed a schedule. You do not need to invent a perfect record."
+          ]
+        },
+        {
+          "heading": "Put insurance, warranty, and the call list where they can be checked",
+          "paragraphs": [
+            "State the insurance you carry in the terms your broker uses, and offer the certificate rather than pasting a boast. Describe the workmanship warranty in plain language: what you come back for, how long, and what is the manufacturer's warranty instead. Do not blur those two.",
+            "Name the person a site super calls about a leak on an occupied new house, and the hours that phone is answered. If after-hours new-build service is not something you offer, say that the channel is the next business morning. A builder can plan around a true limit."
+          ]
+        },
+        {
+          "heading": "Keep the page matched to the work you want",
+          "paragraphs": [
+            "A new-build page that also tries to rank for emergency tarping will read as neither. Link to the service page for leaks and keep this one for bid-list readers. Use the same company name, the same crews, and the same phone so the builder who checks you elsewhere finds one business.",
+            "Update the page when you drop a system or add a crew. A bid list built from an old PDF is how you get invited to price work you no longer want. Date the packet. The website and the PDF should say the same thing."
+          ]
+        }
+      ],
+      "sources": []
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
+    "trade": "Industry publishing",
+    "tradeShort": "industry publishing",
+    "plural": "businesses",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Canada",
+    "province": "BC",
+    "category": "Build Journal",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "contactBusiness": "iam",
+    "campaignSite": "industryarmymarketing.com",
+    "slug": "iam-wedding-vendor-marketing-in-toronto-photo-and-video-partnerships",
+    "title": "Wedding Vendor Marketing in Toronto: Photo and Video Partnerships",
+    "cardTitle": "Wedding Vendor Marketing in Toronto: Photo and Video Partnerships",
+    "excerpt": "Toronto planners, photographers, and videographers already refer each other. The work falls apart when every detail lands in one inbox nobody owns.",
+    "metaDescription": "How Toronto wedding planners, photographers, and videographers refer work with a clear handoff instead of a messy shared inbox.",
+    "campaignLabel": "Toronto wedding vendors",
+    "image": "https://ppdnkogmsfwhhknayolb.supabase.co/storage/v1/object/public/post-images/industryarmymarketing.com/iam-wedding-vendor-marketing-in-toronto-photo-and-video-partnerships.png",
+    "ogImage": "https://ppdnkogmsfwhhknayolb.supabase.co/storage/v1/object/public/post-images/industryarmymarketing.com/iam-wedding-vendor-marketing-in-toronto-photo-and-video-partnerships.png",
+    "imageAlt": "Wedding planning notes, a photo shot list, and a video schedule arranged as a Toronto vendor handoff",
+    "ogImageAlt": "Wedding planning notes, a photo shot list, and a video schedule arranged as a Toronto vendor handoff",
+    "publishedAt": "2026-11-25T16:02:00-08:00",
+    "date": "November 25, 2026",
+    "faqs": [
+      {
+        "q": "Do wedding vendors need one shared email address?",
+        "a": "Only if one person owns it. A mailbox everyone can see and nobody answers is how referrals stall. Separate inboxes with a written handoff work just as well."
+      },
+      {
+        "q": "Should a planner publish photo and video prices?",
+        "a": "Publish your own fees and the shape of the partnership. Send the couple to the photographer or videographer for their price, unless you truly contract and deliver that work yourself."
+      },
+      {
+        "q": "What belongs in the referral note?",
+        "a": "The date, the place, what is already booked, the couple's question, and whether the couple knows you are making the introduction. Leave out gossip and leave out files that belong in the timeline."
+      }
+    ],
+    "richContent": {
+      "intro": "Planners, photographers, and videographers in Toronto already send each other work. The referral breaks when the date, the timeline, and the files land in one shared inbox that nobody owns. A partnership is a handoff with a named person responsible for the reply, plus a page on each site that tells couples what that partnership does and does not include.",
+      "sections": [
+        {
+          "heading": "Decide who owns the reply",
+          "paragraphs": [
+            "Before you announce a partnership, name the person who answers a referred couple and the hour by which they answer on a business day. 'We all watch the inbox' means the couple writes three vendors and gets silence or three conflicting replies. One owner, with a backup when that person is on a wedding day, is the whole system.",
+            "The owner does not have to be the same at each company. The planner can own planner referrals, and the photographer can own photographer referrals. What matters is that the couple can see, in the first reply, which business is speaking."
+          ]
+        },
+        {
+          "heading": "Write the handoff so nothing is guessed",
+          "paragraphs": [
+            "A referral message needs the date, the venue or neighbourhood, the rough guest count if the couple has one, what has already been booked, and the question the couple actually asked. It also needs a line that says whether the couple knows you are writing. Sending a stranger's wedding details to another business without telling the couple is how a partnership becomes a complaint.",
+            "Keep that message in a thread the owner can find later. A shared inbox with no subject line, mixed with albums and invoices, is where dates get crossed. A single shared mailbox can work if one person is assigned to it and the others do not treat it as a group chat."
+          ]
+        },
+        {
+          "heading": "Say what the partnership includes",
+          "paragraphs": [
+            "On each website, use a short paragraph, not a logo wall with no explanation. Say whether you recommend each other, package together, or simply introduce. Say whether the couple signs one contract or two. Say who delivers the photos and who delivers the film. Couples in Toronto are often comparing several teams. Ambiguous 'we partner' language makes the comparison harder, not easier.",
+            "If you do not offer a combined price, do not imply one. List the starting point for your own work and send the couple to the other vendor for theirs. A fake bundle is worse than two clear proposals."
+          ]
+        },
+        {
+          "heading": "Keep files out of the inbox",
+          "paragraphs": [
+            "Mood boards, timelines, and shot lists do not belong as attachments piled on an email chain. Put the current timeline in one place the planner updates, and let photo and video read that version. Email is for the decision and the introduction. The file is for the plan.",
+            "Agree on how you credit each other in public. A photographer posting a film still, or a videographer posting a photographer's frame, needs permission and a name. The partnership page can say that credit is part of working together."
+          ]
+        },
+        {
+          "heading": "Review the partnership after real weddings",
+          "paragraphs": [
+            "After a few events, ask one question: did the couple know who to write, and did the reply come from the person you named? If referrals are sitting, the fix is usually the handoff, not another Instagram post about the partnership.",
+            "End a partnership in public the same way you started it. Take the paragraph down when you no longer refer that business. Leaving a name up after you have stopped answering for each other sends couples into the messy inbox you were trying to avoid."
+          ]
+        }
+      ],
+      "sources": []
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
+    "trade": "Industry publishing",
+    "tradeShort": "industry publishing",
+    "plural": "businesses",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Canada",
+    "province": "BC",
+    "category": "Build Journal",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "contactBusiness": "iam",
+    "campaignSite": "industryarmymarketing.com",
+    "slug": "iam-drywall-repair-marketing-in-ottawa-small-jobs-that-grow",
+    "title": "Drywall Repair Marketing in Ottawa: Small Jobs That Grow",
+    "cardTitle": "Drywall Repair Marketing in Ottawa: Small Jobs That Grow",
+    "excerpt": "A small Ottawa drywall patch is often the first meeting. A specific page and a specific follow-up are what turn that patch into repaint or basement work.",
+    "metaDescription": "How Ottawa drywall repair pages and follow-up notes turn a small patch into repaint and basement work without a vague upsell.",
+    "campaignLabel": "Ottawa drywall repair",
+    "image": "https://ppdnkogmsfwhhknayolb.supabase.co/storage/v1/object/public/post-images/industryarmymarketing.com/iam-drywall-repair-marketing-in-ottawa-small-jobs-that-grow.png",
+    "ogImage": "https://ppdnkogmsfwhhknayolb.supabase.co/storage/v1/object/public/post-images/industryarmymarketing.com/iam-drywall-repair-marketing-in-ottawa-small-jobs-that-grow.png",
+    "imageAlt": "A small drywall patch and the surrounding wall, the kind of Ottawa repair that can lead to paint and basement work",
+    "ogImageAlt": "A small drywall patch and the surrounding wall, the kind of Ottawa repair that can lead to paint and basement work",
+    "publishedAt": "2026-11-25T16:01:00-08:00",
+    "date": "November 25, 2026",
+    "faqs": [
+      {
+        "q": "Should a drywall company hide small repairs so it only attracts big jobs?",
+        "a": "No. The small repair is how many larger jobs start. A page that describes the patch honestly attracts the right first call, and a specific follow-up is what opens the repaint or the basement conversation."
+      },
+      {
+        "q": "How soon should the follow-up go out?",
+        "a": "While both of you still remember the room. One note that names the wall and the next step you saw is enough. A later newsletter is a different ask and needs its own permission."
+      },
+      {
+        "q": "What if the customer only wanted the hole filled?",
+        "a": "Then the job is the hole. Say what you noticed, price nothing they did not ask about, and leave the door open. The larger job is theirs to start."
+      }
+    ],
+    "richContent": {
+      "intro": "A small drywall patch in Ottawa is often the first time a homeowner or a landlord meets you. Whether that call stays a one-hour repair or becomes a repaint and a basement depends on how specific the page was, and on what you say after you have seen the wall. The next job has to be a real observation from the visit, not a script you send to everyone.",
+      "sections": [
+        {
+          "heading": "Give the small job its own page",
+          "paragraphs": [
+            "People searching for a patch are not ready for a page about full basement finishing. Write a page for the small repair: holes, cracks, nail pops, a water stain after a leak, a dent from a move. Say what you do on that visit, how you match texture when the rest of the wall has texture, and what you need from the customer before you arrive, such as a dry wall and a cleared corner.",
+            "In the first paragraph, say who the page is for. A homeowner with one hole and a landlord turning a unit over are both small jobs, and they do not want the same timing. Name both if you do both, and say how booking differs."
+          ]
+        },
+        {
+          "heading": "Say what you look at while the patch is open",
+          "paragraphs": [
+            "The follow-up starts during the repair. While the mud is going on, you can see whether the paint will flash, whether the corner bead is loose, whether the ceiling stain is larger than the patch, and whether the basement board is soft. Those are observations, not a pitch. Write them down in words the customer used, so the note you send later is about their wall.",
+            "Tell the customer, before you leave, which of those items you are willing to price and which ones belong to another trade first. A stain that is still wet is a plumbing or roof problem before it is a paint problem. Saying so is how a small job grows without feeling like a bait."
+          ]
+        },
+        {
+          "heading": "Write the follow-up while the visit is fresh",
+          "paragraphs": [
+            "Send one note, soon enough that you both remember the room. Name the address, the wall you repaired, and the one or two next steps you actually saw. Offer to price the repaint of that room, or a look at the basement, as separate work with its own scope. Attach a photo of the patch if you took one and you have permission to keep it.",
+            "Do not send a general newsletter off the back of a repair call. The person who let you into the house agreed to a patch, not to a monthly list. If you want permission to send other notes later, ask for that separately and accept no."
+          ]
+        },
+        {
+          "heading": "Photograph patches, not only finished basements",
+          "paragraphs": [
+            "Your best marketing photo for this service is the repair itself: the damage, the taped patch, and the same spot ready for paint. A finished basement is a different service and belongs on that page. Mixing them teaches the wrong customer to call.",
+            "Label the photo with what was done and stop there. Do not claim the picture shows a named homeowner, and do not use a photo from a job you were not on. Ottawa customers are asking if you can fix a wall that looks like theirs. A real patch answers that. A stock wall does not."
+          ]
+        },
+        {
+          "heading": "Keep the next step optional and priced on its own",
+          "paragraphs": [
+            "The page can say that a patch often reveals paint that will not match, or board that should be replaced rather than skimmed. It should also say that the customer can stop at the patch. Growth comes from being the person who explained the wall clearly, then being easy to book when they are ready for the larger scope.",
+            "When you do price the larger work, separate labour, materials you will supply, and anything that has to wait on another trade. A single round number for 'the basement' is how a small-job customer decides you were fishing for a renovation the whole time."
+          ]
+        }
+      ],
+      "sources": []
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
+    "trade": "Industry publishing",
+    "tradeShort": "industry publishing",
+    "plural": "businesses",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Canada",
+    "province": "BC",
+    "category": "Build Journal",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "contactBusiness": "iam",
+    "campaignSite": "industryarmymarketing.com",
+    "slug": "iam-snow-removal-marketing-in-winnipeg-showing-equipment-capacity",
+    "title": "Snow Removal Marketing in Winnipeg: Showing Equipment Capacity",
+    "cardTitle": "Snow Removal Marketing in Winnipeg: Showing Equipment Capacity",
+    "excerpt": "A Winnipeg property manager needs to see the loaders, trucks, and sidewalk crews you can actually send. Show that capacity without inflating the fleet.",
+    "metaDescription": "How Winnipeg snow contractors show real equipment capacity on a site so a property manager can judge route coverage without an inflated fleet list.",
+    "campaignLabel": "Winnipeg snow equipment",
+    "image": "https://ppdnkogmsfwhhknayolb.supabase.co/storage/v1/object/public/post-images/industryarmymarketing.com/iam-snow-removal-marketing-in-winnipeg-showing-equipment-capacity.png",
+    "ogImage": "https://ppdnkogmsfwhhknayolb.supabase.co/storage/v1/object/public/post-images/industryarmymarketing.com/iam-snow-removal-marketing-in-winnipeg-showing-equipment-capacity.png",
+    "imageAlt": "Loaders, plow trucks, and sidewalk equipment shown as route capacity for a Winnipeg snow removal contractor",
+    "ogImageAlt": "Loaders, plow trucks, and sidewalk equipment shown as route capacity for a Winnipeg snow removal contractor",
+    "publishedAt": "2026-11-25T16:00:00-08:00",
+    "date": "November 25, 2026",
+    "faqs": [
+      {
+        "q": "Should a Winnipeg snow contractor list machines they could rent in a storm?",
+        "a": "List a rental only if you already know who you rent from and when you place the order. Say on the page that it is a rental. A machine you might be able to find is not capacity."
+      },
+      {
+        "q": "Do equipment photos replace the snow contract?",
+        "a": "No. Photos help a property manager see the operation. The contract still has to name the sites, the trigger, who walks the sidewalks, and what happens if a storm outruns the route."
+      },
+      {
+        "q": "What if the fleet is small?",
+        "a": "Show the small fleet and describe the route size it fits. A manager responsible for a handful of buildings often prefers a crew matched to those buildings over a lineup that cannot be sent."
+      }
+    ],
+    "richContent": {
+      "intro": "A Winnipeg property manager choosing a snow contractor is trying to answer one practical question: if the snow is still falling, can this crew cover the route. The page that helps shows the loaders, trucks, and sidewalk crews you can actually send, with a plain note about what each one is for. It does not help to photograph a lineup you could only assemble by borrowing machines you do not control.",
+      "sections": [
+        {
+          "heading": "Show the machines you can send on a storm night",
+          "paragraphs": [
+            "Photograph the equipment that is yours, or that you have under a standing arrangement you can call in without negotiating from scratch. Park it so a manager can count it: loaders, plow trucks, sidewalk machines, and the smaller tools a crew actually uses between the curb and the door. A wide shot of the yard plus a closer shot of each type is enough.",
+            "Write one line under each photo that says what the machine is for and where it fits on a route. A loader that stacks snow in a lot is not the same tool as a sidewalk machine that has to pass a doorway. If you only run two trucks, say two trucks. A manager with a defined set of sites would rather see a matched fleet than a borrowed parade."
+          ]
+        },
+        {
+          "heading": "Say what each piece of equipment covers",
+          "paragraphs": [
+            "Capacity is not a horsepower number. It is the kind of site the machine can finish. Note, in ordinary language, which pieces clear open lots, which pieces clear lanes and fire routes, and which pieces do sidewalks, stairs, and entrances. If a truck is a pickup with a blade rather than a dedicated plow, say that. The manager is comparing you to the work, not to a brochure.",
+            "If you rent extra iron for a large event, say it is rented and say when you book it. Leaving the rental off the page is more honest than implying it sits in your yard all winter. The same rule applies to subcontracted sidewalk crews: name them as crews you schedule, not as employees you do not have."
+          ]
+        },
+        {
+          "heading": "Sidewalk crews are part of the capacity",
+          "paragraphs": [
+            "In Winnipeg, a lot can look clear while the walks, ramps, and entrances are still the reason a tenant complains. Give the sidewalk work its own sentence and, if you have one, its own photo. Say how you staff it: a person with a blower and a shovel, a crew that follows the loader, or a separate walk team that starts at a different time.",
+            "Say what that crew does not do. If you clear the municipal sidewalk in front of the building but not the private courtyard, write that down. A property manager can accept a limit. They cannot accept discovering it at 7 a.m."
+          ]
+        },
+        {
+          "heading": "Put a route next to the photos",
+          "paragraphs": [
+            "Equipment without a route is a catalogue. Next to the photos, describe the kind of route those machines fit: a cluster of lots you can reach without a long deadhead, a mix of residential driveways and one commercial site, or a set of buildings on one loop. You do not need to publish client names. You do need to show that the machines and the geography belong together.",
+            "If last winter's route is the proof, describe it in counts you can stand behind from your own records: how many sites were on the loop, and whether the same trucks ran it. Do not borrow someone else's storm. If you do not have a log, start one before you claim a pattern."
+          ]
+        },
+        {
+          "heading": "Leave the inflated fleet off the site",
+          "paragraphs": [
+            "Do not list machines you have sold, machines a friend owns, or a dealer photo with the dealer name cropped out. Do not use a stock photo of a convoy. The first storm is the audit. A manager who was shown eight trucks and meets two will not argue about the wording. They will replace you.",
+            "A short page with real equipment, a sidewalk plan, and a route you can cover is a stronger sales tool than a long page that overstates the yard. Offer the one-page version as a PDF the manager can attach to the contract file, and keep that PDF identical to what the website says."
+          ]
+        }
+      ],
+      "sources": []
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
+    "trade": "Industry publishing",
+    "tradeShort": "industry publishing",
+    "plural": "businesses",
+    "video": null,
+    "imageKey": "build-journal",
+    "city": "Canada",
+    "province": "BC",
+    "category": "Build Journal",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "contactBusiness": "iam",
+    "campaignSite": "industryarmymarketing.com",
     "slug": "seo-for-drywall-contractors-repair-finishing",
     "title": "SEO for Drywall Contractors: Ranking for Repair and Finishing Jobs",
     "cardTitle": "SEO for Drywall Contractors: Ranking for Repair and Finishing Jobs",
