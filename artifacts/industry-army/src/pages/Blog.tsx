@@ -139,14 +139,8 @@ const Blog = () => {
       if (city !== "all" && p.city !== city) return false;
       if (category !== "all" && p.category !== category) return false;
       if (!q) return true;
-      return (
-        p.trade.toLowerCase().includes(q) ||
-        p.brand.toLowerCase().includes(q) ||
-        p.city.toLowerCase().includes(q) ||
-        p.category.toLowerCase().includes(q) ||
-        p.excerpt.toLowerCase().includes(q) ||
-        p.pain.toLowerCase().includes(q)
-      );
+      return [p.title, p.cardTitle, p.trade, p.brand, p.city, p.category, p.excerpt, p.pain]
+        .some((value) => typeof value === "string" && value.toLowerCase().includes(q));
     });
   }, [rest, query, city, category]);
 

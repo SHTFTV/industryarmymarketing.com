@@ -27,7 +27,7 @@
       "articles": [
         {
           "slug": "iam-snow-removal-marketing-in-winnipeg-showing-equipment-capacity",
-          "bodyWordsExcludingTocSourcesFaq": 2024,
+          "bodyWordsExcludingTocSourcesFaq": 2016,
           "title": [
             "Snow Removal Marketing in Winnipeg: Showing Equipment Capacity"
           ],
@@ -122,9 +122,9 @@
       "updatedAt": "2026-11-27T17:51:33Z",
       "image": "https://ppdnkogmsfwhhknayolb.supabase.co/storage/v1/object/public/post-images/industryarmymarketing.com/iam-snow-removal-marketing-in-winnipeg-showing-equipment-capacity.png",
       "sourceBodySha256": "cee4158a9c4413632d5caedde7c260214f14d4f2de22ab9365feddab347e1209",
-      "reviewedBodySha256": "cb46ea1612a3684590f7162f9278345a55f6e9bc7eff139ef162539fd68c1ea0",
+      "reviewedBodySha256": "0961f28676aac610614b36dddd769ad9e5c2f328ff98b95eb11e5586e96397f2",
       "previousRichContentCharacters": 3972,
-      "newRichContentCharacters": 15654,
+      "newRichContentCharacters": 15434,
       "sectionCount": 14,
       "faqCount": 6,
       "reviewNotes": [
@@ -132,7 +132,8 @@
         "Corrected obsolete5weekdayresidentialsidewalktarget to36hfromcommencement;differentiate municipal/private obligations",
         "Scoped windrow responsibility to sidewalk/back-lane wording",
         "Removed unverified PlowWow5hourtarget and unsupported contract-calendar/conversion assertions",
-        "Added practical evidence,staffing,standby and service-report evaluation without inventing results"
+        "Added practical evidence,staffing,standby and service-report evaluation without inventing results",
+        "Removed the unavailable SnowRemovalMarketing equipment-ROI deep-link recommendation after exact-target HTTP404 verification; retained practical equipment-planning guidance without inventing a route."
       ],
       "sources": [
         {
@@ -311,5 +312,18 @@
         }
       ]
     }
-  ]
+  ],
+  "followupCorrection": {
+    "checkedAt": "2026-11-27T18:02:02.664794+00:00",
+    "parentCommit": "045b7b7692d5d4832697dd5c518f87775a511d52",
+    "search": "A populated journal query crashed on missing optional text fields. Use a null-safe string predicate, include the article title, and preserve existing city/category filters.",
+    "relatedLink": "Removed the unavailable exact SnowRemovalMarketing equipment-ROI recommendation (HTTP404 in native URL check; root also observed403). No alternate route guessed.",
+    "dateAndImageFields": "Unchanged from the reviewed content import.",
+    "localBuild": {
+      "status": "passed",
+      "command": "pnpm run build",
+      "winnipegBodyWords": 2016,
+      "checkedAt": "2026-11-27T18:03:20.205926+00:00"
+    }
+  }
 }
