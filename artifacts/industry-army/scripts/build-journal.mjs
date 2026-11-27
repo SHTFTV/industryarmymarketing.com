@@ -49,7 +49,22 @@ try {
  let sitemap=fs.readFileSync(path.join(dist,'sitemap.xml'),'utf8');
  if(!sitemap.includes('https://www.industryarmymarketing.com/brand-creation-management-vancouver'))sitemap=sitemap.replace('</urlset>','<url><loc>https://www.industryarmymarketing.com/brand-creation-management-vancouver</loc></url></urlset>');
  for(const route of ['/eyespyr','/contractors','/snow-removal-marketing', '/steel-stud-drywall-marketing','/mission','/guest-post','/contact','/network','/how-it-works','/seo','/seo/united-states',...markets.map(m=>'/seo/'+m.slug)]){const u='https://www.industryarmymarketing.com'+route;if(!sitemap.includes('<loc>'+u+'</loc>'))sitemap=sitemap.replace('</urlset>',`<url><loc>${u}</loc></url></urlset>`);}
- for(const p of journal) {const u='https://www.industryarmymarketing.com/blog/'+p.slug;if(!sitemap.includes(u))sitemap=sitemap.replace('</urlset>',`<url><loc>${u}</loc><lastmod>${p.publishedAt.slice(0,10)}</lastmod></url></urlset>`);}
+ for(const p of journal) {
+  const u='https://www.industryarmymarketing.com/blog/'+p.slug;
+  const lastmod=(p.updatedAt||p.publishedAt).slice(0,10);
+  if(!sitemap.includes(u))sitemap=sitemap.replace('</urlset>',`<url><loc>${u}</loc><lastmod>${lastmod}</lastmod></url></urlset>`);
+  else if(p.updatedAt){
+   const loc=sitemap.indexOf(`<loc>${u}</loc>`);
+   if(loc>=0){
+    const start=sitemap.lastIndexOf('<url>',loc),end=sitemap.indexOf('</url>',loc)+6;
+    if(start>=0&&end>loc){
+     const old=sitemap.slice(start,end);
+     const updated=/<lastmod>[^<]*<\/lastmod>/.test(old)?old.replace(/<lastmod>[^<]*<\/lastmod>/,`<lastmod>${lastmod}</lastmod>`):old.replace('</url>',`<lastmod>${lastmod}</lastmod></url>`);
+     sitemap=sitemap.slice(0,start)+updated+sitemap.slice(end);
+    }
+   }
+  }
+ }
  fs.writeFileSync(path.join(dist,'sitemap.xml'),sitemap);
  let rss=fs.readFileSync(path.join(dist,'rss.xml'),'utf8');
  const esc=s=>s.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));

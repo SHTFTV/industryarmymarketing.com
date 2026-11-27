@@ -152,6 +152,7 @@ const BlogPost = () => {
   ];
 
   const isoDate = publicationDate(post.date, post.publishedAt);
+  const modifiedDate = post.updatedAt ?? isoDate;
   const FALLBACK_OG_IMAGE = "/og-image.jpg";
   const heroImage = post.image && post.image.trim() ? post.image : FALLBACK_OG_IMAGE;
   const renderedHeroImage = heroImage.startsWith("/__l5e/assets-v1/")
@@ -190,7 +191,7 @@ const BlogPost = () => {
       description: heroImageAlt,
     },
     datePublished: isoDate,
-    dateModified: isoDate,
+    dateModified: modifiedDate,
     author: post.authorName
       ? {
           "@type": "Person",
@@ -410,7 +411,7 @@ const BlogPost = () => {
         imageAlt={post.ogImageAlt ?? heroImageAlt}
         jsonLd={schemas}
         publishedTime={post.publishedAt}
-        modifiedTime={post.publishedAt}
+        modifiedTime={post.updatedAt ?? post.publishedAt}
         author={post.authorName ?? "Industry Army Marketing — Editorial"}
         section={post.category}
       />
@@ -438,6 +439,7 @@ const BlogPost = () => {
 
           <p className="text-muted-foreground text-xs uppercase tracking-widest mb-8">
             {post.date} · {post.category} · {post.brand} · {readMinutes} min read
+            {post.updatedAt && <> · Updated <time dateTime={post.updatedAt}>{new Date(post.updatedAt).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "America/Vancouver" })}</time></>}
           </p>
 
           <SocialShare
@@ -459,7 +461,7 @@ const BlogPost = () => {
             <JournalMediaBrand />
           </div>
 
-          {post.category === "Build Journal" && <p className="text-xs text-muted-foreground mb-8 leading-relaxed">{post.imageAlt}</p>}
+          {post.category === "Build Journal" && <p className="text-xs text-muted-foreground mb-8 leading-relaxed">{post.imageCaption ?? post.imageAlt}</p>}
           {post.slug === "buildershaus-contractor-project-story-submission-guide" && <aside className="mb-8 flex flex-wrap items-center gap-4 rounded-lg border border-primary/30 bg-card px-4 py-3"><img src="/contractor-brands/buildershaus-mark.webp" width="64" height="64" alt="BuildersHaus construction network"/><div className="flex-1"><p className="text-xs uppercase tracking-widest text-primary">IAM / Construction marketing</p><p className="text-sm text-muted-foreground">Project stories, trade brands and a clear route back to your business.</p></div><a className="text-sm underline text-primary" href="/contact?request=guest-post&ref_site=buildershaus.com">Discuss your story →</a></aside>}
 
           {post.category !== "Build Journal" && <aside className="mb-10 rounded-lg border border-primary/30 bg-primary/5 p-5 sm:p-6">

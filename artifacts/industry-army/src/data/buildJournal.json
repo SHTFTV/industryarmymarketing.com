@@ -1108,8 +1108,8 @@
     "plural": "businesses",
     "video": null,
     "imageKey": "build-journal",
-    "city": "Canada",
-    "province": "BC",
+    "city": "Calgary",
+    "province": "AB",
     "category": "Build Journal",
     "pain": "",
     "detail": "",
@@ -1120,70 +1120,191 @@
     "slug": "iam-realtor-marketing-in-calgary-open-house-follow-up-that-converts",
     "title": "Realtor Marketing in Calgary: Open House Follow-Up That Converts",
     "cardTitle": "Realtor Marketing in Calgary: Open House Follow-Up That Converts",
-    "excerpt": "The useful part of a Calgary open house is the note you were given permission to send. Ask for one specific permission, then send only that.",
-    "metaDescription": "How Calgary realtors ask for open house follow-up permission and write a note that matches what the visitor agreed to receive.",
+    "excerpt": "A practical seven-day plan for Calgary open-house follow-up, with clear consent records, useful messages and the Alberta privacy and advertising rules that shape the process.",
+    "metaDescription": "Plan useful Calgary open-house follow-up with a seven-day sequence, clear consent records, CASL and PIPA guidance, and current RECA advertising requirements.",
     "campaignLabel": "Calgary open house follow-up",
     "image": "https://ppdnkogmsfwhhknayolb.supabase.co/storage/v1/object/public/post-images/industryarmymarketing.com/iam-realtor-marketing-in-calgary-open-house-follow-up-that-converts.png",
     "ogImage": "https://ppdnkogmsfwhhknayolb.supabase.co/storage/v1/object/public/post-images/industryarmymarketing.com/iam-realtor-marketing-in-calgary-open-house-follow-up-that-converts.png",
-    "imageAlt": "An open house sign-in sheet and a short follow-up note with a clear permission line for a Calgary realtor",
-    "ogImageAlt": "An open house sign-in sheet and a short follow-up note with a clear permission line for a Calgary realtor",
+    "imageAlt": "Illustrative scene of property professionals using a laptop and tablet outside a Calgary open house.",
+    "ogImageAlt": "Illustrative scene of property professionals using a laptop and tablet outside a Calgary open house.",
     "publishedAt": "2026-11-25T16:06:00-08:00",
     "date": "November 25, 2026",
     "faqs": [
       {
-        "q": "What should the open house sign-in ask for?",
-        "a": "One clear permission: the listing details, a note about a similar home, or no further contact. A blank email line with no description of the message is not enough."
+        "q": "How soon should a realtor follow up after an open house?",
+        "a": "A requested response or properly authorized personal thank-you can go out the same evening, followed by verified answers within about 48 hours. Confirm the basis for any commercial message before sending it; speed does not replace permission."
       },
       {
-        "q": "How many follow-up messages should you send?",
-        "a": "Send the one you described, when you said you would. A further message needs a further yes. Do not add everyone to a newsletter because they walked through the house."
+        "q": "Can I email open house visitors in Alberta without asking permission?",
+        "a": "Attendance or a sign-in alone is not blanket permission. A qualifying inquiry can support time-limited implied consent when the legal conditions are met, but record the actual basis and expiry. Valid express consent is another option. Commercial messages generally need identification and an unsubscribe mechanism."
       },
       {
-        "q": "Does a good follow-up guarantee a client?",
-        "a": "No. It respects the conversation you had and gives a buyer or a neighbour exactly what they requested. Some people will reply. Many will not. That is still a successful note."
+        "q": "Is a shared open house sign-in sheet allowed in Alberta?",
+        "a": "A sheet that reveals previous visitors’ contact details creates a privacy risk. Use individual entries that other visitors cannot see, explain the collection purpose and follow the brokerage’s PIPA safeguards. The guidance does not make every possible shared-sheet format automatically unlawful."
+      },
+      {
+        "q": "What should a realtor send after an open house in Calgary?",
+        "a": "Send information the visitor requested, such as a feature sheet or verified answers about the property. Comparable listings and recurring market updates should fit the contact’s documented permission. Date market figures and distinguish property types rather than applying one citywide label to every listing."
+      },
+      {
+        "q": "Do RECA advertising rules apply to open house social posts?",
+        "a": "Yes. RECA’s current guidance includes social posts, listings, email campaigns and videos. Advertising must clearly identify the licensee and brokerage and be truthful. Keep the brokerage name readable rather than relying on a logo or franchise branding alone."
+      },
+      {
+        "q": "How do I follow up with open house visitors who already have an agent?",
+        "a": "Ask how requested information should be coordinated with their agent, respect the existing relationship and follow brokerage practice requirements. Do not turn a document request into unrelated marketing or pressure the visitor to change representation."
       }
     ],
     "richContent": {
-      "intro": "The useful part of a Calgary open house is the note you are allowed to send afterward. A sign-in sheet that does not say what you will send, or a message that assumes everyone wants a market report, wastes the visit. Ask for one specific permission, then send only that. A careful note can start a real conversation. It cannot promise that a visitor becomes a client.",
+      "intro": "Calgary realtors can improve open-house follow-up by responding promptly, answering the questions visitors actually asked, and keeping clear permission records. A useful sequence starts with a requested response or properly authorized thank-you, continues with relevant information, and stops when the recipient withdraws permission. Commercial emails and texts, personal information, advertising and telephone calls each have rules to consider.\n\nMost agents prepare carefully for the event itself. The coffee is on, the lights are bright, and the feature sheet is printed. The week afterwards needs the same attention. A stack of names is useful only when the agent knows what each person requested, how they may be contacted and what the next message should accomplish.",
       "sections": [
         {
-          "heading": "Ask for one permission, in plain words",
+          "heading": "Why follow-up matters in Calgary",
           "paragraphs": [
-            "The sign-in sheet, or the conversation at the door, should name the message. For example: a note with the listing sheet for this house, or a note if a similar home comes up in this neighbourhood. One choice is easier to honour than a blanket 'yes, contact me.' If they decline, you still hosted them. You do not add them to a list.",
-            "Read the line out loud if you are not sure it is clear. If you would not want it sent to you, rewrite it. Permission that was buried under a paragraph of brokerage advertising is not something you can lean on later when someone asks why you wrote."
+            "[CREB’s November 2, 2026 release for October](https://www.creb.com/News/Media_Releases/2026/November/October_2026_Stats/) reported 1,592 sales and 6,173 homes in inventory, with overall supply just below four months. Its assessment distinguished relatively balanced detached and semi-detached markets from apartment and row markets that tended to favour buyers. Row homes had 4.4 months of supply; apartments had more than five.",
+            "Those are dated monthly-release figures, not a forecast for a particular home. Use the relevant property type, neighbourhood and price range when preparing a comparison. A citywide label can hide different conditions between two listings.",
+            "Our practical interpretation is that visitors comparing several homes need useful answers more than pressure. A short comparison of layout, fees, condition and location can help someone make a decision. For the seller, an organized report of visitor feedback shows what the open house taught you about positioning the property."
           ]
         },
         {
-          "heading": "Write the note so it matches the permission",
+          "heading": "The rules that shape follow-up in Alberta",
           "paragraphs": [
-            "If they asked for the listing sheet, send the listing sheet and one or two facts about the house they could not see in a walk-through, such as the parking arrangement or what you disclosed about the mechanicals. If they asked to hear about a similar home, do not also attach a canned newsletter.",
-            "Use their name, the address of the open house, and the day. Identify yourself and the brokerage in the way your board and your brokerage require. Keep it short enough to read on a phone. A long recap of the whole market is a different email they did not request."
+            "Have your brokerage approve the collection form, message templates and contact process. The following is a practical starting point, not a substitute for advice about a particular transaction or uncertain consent record.",
+            "### CASL: a sign-in is not automatic marketing permission",
+            "[The CRTC explains](https://crtc.gc.ca/eng/com500/faq500.htm) that commercial electronic messages generally require consent, identification information and an unsubscribe mechanism. This includes promotional email and SMS. A message can be commercial even when its subject line says “thank you.”",
+            "[CRTC guidance on implied consent](https://crtc.gc.ca/eng/com500/guide.htm) describes a six-month window for a qualifying inquiry or application and a two-year window for specified business relationships, such as a qualifying purchase. Simply attending an open house or writing an email address on a sheet does not establish that every condition is met. Record the actual inquiry and confirm that the brokerage or sender has the required relationship before relying on it.",
+            "Express consent avoids relying on an inquiry expiry date, but it must be valid and provable. [ISED’s consent guidance](https://ised-isde.canada.ca/site/canada-anti-spam-legislation/en/getting-consent-send-email) explains that express consent continues until withdrawn. It also describes the contact information and unsubscribe requirements, including processing unsubscribe requests within 10 business days at no cost to the recipient.",
+            "Build permission checking into the workflow. Before scheduling a campaign, confirm the basis for contact, the agreed channel and any withdrawal. A requested factual reply can require different treatment from an ongoing promotional sequence; do not assume that one request authorizes both. Ask your brokerage about any exemption you intend to use.",
+            "### PIPA: reasonable collection and careful handling",
+            "[Alberta’s PIPA guidance](https://www.alberta.ca/collecting-personal-information) says to collect information for reasonable purposes and only to the extent needed. Explain the purposes before or during collection and identify someone who can answer privacy questions. Do not collect unnecessary financial details because a form happens to have space for them.",
+            "PIPA generally governs provincially regulated private-sector activity within Alberta. It does not make federal privacy law irrelevant: [the federal Privacy Commissioner explains](https://www.priv.gc.ca/en/privacy-topics/privacy-laws-in-canada/the-personal-information-protection-and-electronic-documents-act-pipeda/r_o_p/prov-pipeda/) that PIPEDA can still apply to commercial transactions involving personal information transferred across borders.",
+            "Keep sign-in entries private. In its [customer-list guidance](https://oipc.ab.ca/resource/customer-lists/), written for pandemic contact logs, Alberta’s Privacy Commissioner identifies the disclosure risk of a shared sign-in sheet. The same practical concern arises when open-house visitors can read previous entries. Individual cards or a form that clears after submission reduce that exposure. Restrict staff access and use the brokerage’s retention and secure-disposal policy.",
+            "### RECA: identify the licensee and brokerage clearly",
+            "[RECA’s current advertising guidance](https://www.reca.ca/advertising/) covers listings, social posts, email campaigns, signs and videos. Advertising must identify the licensee and brokerage and must be truthful. Make that identification easy to see on the recap page, message and social post; do not rely on a tiny logo alone.",
+            "Before asking for confidential information about a visitor’s finances or motivation, follow the brokerage’s disclosure process and explain whom you represent. [RECA’s Rules](https://www.reca.ca/rules/) distinguish an ordinary open-house visit from conversations that involve confidential information and additional disclosure duties."
           ]
         },
         {
-          "heading": "Separate buyers, neighbours, and the curious",
+          "heading": "Capture: make the sign-in process useful",
           "paragraphs": [
-            "Not everyone at an open house is a buyer. Neighbours often want the price and the condition, not a search. Your sheet can offer different notes: the listing details, a similar-home note, or nothing further. Let them tick one. Guessing from a postal code is how you send a buyer drip to someone who lives two doors down.",
-            "If you did not get a sheet, you do not have a follow-up. A remembered first name and a guess at an email is not permission. The marketing system is the sheet, not your memory in the car afterward."
+            "A workable process takes a visitor’s time seriously:",
+            "1. **Use individual entries.** Offer a private tablet form, QR code or individual card.\n2. **Explain the immediate purpose.** For example, collecting an email address to deliver a feature sheet the visitor requested is different from subscribing them to future listing alerts.\n3. **Make marketing a separate choice.** Use an optional, unchecked consent box with clear wording. Do not treat attendance or acceptance of a privacy notice as an affirmative marketing opt-in.\n4. **Ask about representation and preferences.** Find out whether the visitor has an agent and what information they want. Keep confidential qualification questions out of casual sign-in.\n5. **Record the evidence.** Save the listing, date, request, consent wording shown, chosen channel and affirmative action. If relying on a qualifying inquiry, record the basis and applicable expiry instead of automatically assigning six months to every visitor.",
+            "An opt-in sentence might say: “I agree to receive commercial emails about listings and market updates from [licensed name] on behalf of [brokerage]. I can withdraw my consent at any time.” Adapt it to the channels actually offered.",
+            "That sentence is only part of the form. [The federal consent-request regulations](https://laws-lois.justice.gc.ca/eng/regulations/SOR-2012-36/section-4.html) require the relevant identities, a mailing address and an additional contact method, together with the withdrawal statement. Put those details beside the request and have the completed form reviewed. Retain the version the person actually accepted; a bare “yes” field without context is poor evidence.",
+            "Consider two hypothetical visitors. One asks only for a floor plan; the other actively subscribes to monthly updates. Store those choices separately, even if both attended the same home. The first request should not silently become the second. Assign an owner and due date to each promised response so documents are delivered and visitors do not receive duplicate messages from several team members."
           ]
         },
         {
-          "heading": "Send it when you said you would",
+          "heading": "A useful seven-day follow-up sequence",
           "paragraphs": [
-            "Say on the sheet when the note will come, and send it then. The day after the open house is easy to understand. A message three weeks later, attached to a new listing they did not ask about, feels like the permission was a funnel. If the similar home they asked about never appears, you do not need to fill the silence with other product.",
-            "One follow-up that delivers the thing you named is the whole sequence. A second note is a new ask. Make that ask in the first note if you want it ('reply if you want me to keep an eye on this block') and wait for the reply."
+            "Use this as a planning example for contacts whose permissions and circumstances support each step. It is not a rule that every visitor should receive every message.",
+            "| When | Channel | What to send | Purpose |\n|---|---|---|---|\n| Same evening | Authorized email or text | Personal thank-you, requested feature sheet and one answer discussed at the event | Show you listened |\n| Within 48 hours | Authorized email | Verified answers about the home, documents or next steps | Resolve uncertainty |\n| Day 3 | Agreed callback, subject to applicable calling rules | Discuss the visitor’s remaining questions or a requested showing | Continue the conversation |\n| Day 4 | Seller report | Group counts and aggregated feedback about the property | Help the listing client assess results |\n| Days 5–7 | Authorized email | Relevant comparable listings, if this is within the contact’s permission | Offer a useful next step |\n| Afterwards | Optional recurring update | A dated, relevant market note for an appropriately consented subscriber | Maintain a useful relationship |",
+            "Check information before sending it. Confirm school boundaries with the responsible authority, distinguish advertised condo fees from reviewed documents, and attribute utility information to its source. If an answer is not available, say who will confirm it and when you expect an update.",
+            "Telephone calls need their own check. [CRTC guidance for real estate](https://crtc.gc.ca/eng/phone/telemarketing/tobligations/realestate-immobilier.htm) addresses brokerage registration, National Do Not Call List obligations and internal do-not-call records. Email consent does not automatically settle permission for a sales call. Confirm requested callbacks and apply your brokerage’s calling rules before dialling.",
+            "### Treat represented buyers differently",
+            "Ask how the visitor wants requested information coordinated with their agent. Respect the existing relationship and your brokerage’s practice requirements. Do not treat an open-house visit as an opportunity to pressure someone to change representation.",
+            "For example, if a visitor asks for a particular document, record the request and the agreed route for providing it. Keep unrelated listing promotions out of that response unless you have an appropriate basis for them. A helpful handoff can serve the seller without turning the visitor into a marketing-list entry.",
+            "### Neighbours may be future sellers",
+            "A neighbour may simply be curious. Offer useful information at the event without assuming they want future contact. If they choose to subscribe, agree on the type and frequency of updates.",
+            "There is no universal “one free thank-you” exception that permits an unsolicited commercial message. If the neighbour has not opted in, do not begin a promotional sequence unless the brokerage has confirmed another applicable basis. Respect a request to stop regardless of whether the contact once seemed promising."
           ]
         },
         {
-          "heading": "Do not automate past the permission",
+          "heading": "Make your website support the conversation",
           "paragraphs": [
-            "A customer-relationship tool is fine for remembering who asked for what. It is a poor substitute for the sentence. Do not drop every sign-in into a monthly campaign. Do not text a link to a valuation widget unless they asked for a valuation. Automation that ignores the ticked box is how a useful open house becomes spam.",
-            "None of this guarantees a buyer consultation or a listing appointment. It makes the next conversation possible with people who asked for it, and it leaves everyone else alone. That is the conversion that matters: permission into a relevant note, and a note into a reply if they still want one."
+            "Give visitors a destination that answers the questions raised at the event:",
+            "- **A listing or open-house page** with authorized photos, accurate property information and answers to recurring questions.\n- **Dated community information** that identifies the period, geography and property type behind any market figures.\n- **Clear identity and contact details** that match the agent’s approved name and brokerage.\n- **A straightforward next step**, such as requesting a document, asking a question or arranging a showing.",
+            "Keep availability and price information current. When a listing changes status, update the page and avoid continuing to promote an unavailable property as though nothing has changed. Obtain permission for photographs or video showing identifiable visitors; the event is not automatic permission to use their images in advertising.",
+            "A short walkthrough can answer layout questions, but it should represent the property accurately. For production planning, [Videographers.io](https://videographers.io/) is a network resource to explore. [Love Our Listings](https://loveourlistings.com/) provides another starting point for listing-marketing ideas. Choose resources that help the particular visitor rather than adding links for their own sake."
+          ]
+        },
+        {
+          "heading": "Measure what the follow-up achieves",
+          "paragraphs": [
+            "There is no conversion percentage we can promise for an individual Calgary open house. Track your own process consistently:",
+            "- Visitor groups and individual requests received\n- Contacts with documented marketing permission\n- Requested information delivered and questions answered\n- Replies and agreed callbacks completed\n- Private showings or appointments booked\n- Unsubscribes and requests for less frequent contact",
+            "Separate these counts. Attendance, consent, a reply and a booked appointment are different outcomes. A busy event with few opt-ins may still provide useful seller feedback; a quiet event may produce one serious inquiry.",
+            "Use a consistent event label so replies and appointments can be connected to the correct property without creating duplicate contact records.",
+            "Review results after several events and compare similar properties where possible. If replies are weak, inspect whether the messages answer real questions and reach the right people. If opt-outs increase, review relevance and frequency before sending more. Treat patterns as something to investigate, not proof of a single cause."
+          ]
+        },
+        {
+          "heading": "Open-house follow-up checklist",
+          "paragraphs": [
+            "- Individual sign-in entries are hidden from other visitors.\n- The form states each collection purpose and a privacy contact.\n- Marketing consent is optional, affirmative and properly documented.\n- Contact records distinguish requests, consent and expiry dates.\n- The first response is prepared for people who may lawfully receive it.\n- Commercial messages contain required identification and an easy unsubscribe method.\n- Brokerage identity is clear in advertising and recap pages.\n- Telephone follow-up passes the separate calling-rules check.\n- Represented visitors’ requests are coordinated appropriately.\n- Seller reports use relevant feedback without unnecessarily sharing personal information.\n- Marketing stops on withdrawal or when the relied-upon permission expires; records follow the brokerage’s retention policy."
+          ]
+        },
+        {
+          "heading": "Facts to keep separate",
+          "paragraphs": [
+            "CREB’s November 2 monthly release recorded **1,592 October sales** and described detached and semi-detached conditions as relatively balanced. Those observations concern the housing market, not open-house conversion rates.",
+            "CASL’s **six-month qualifying-inquiry window** is a possible basis for implied consent, not a blanket permission attached to every sign-in. Express consent lasts until withdrawn, while voice calls have separate requirements. A careful CRM distinguishes these situations instead of assigning one rule to everyone."
+          ]
+        },
+        {
+          "heading": "Make the next step useful",
+          "paragraphs": [
+            "Open houses create an opportunity to listen. Write down what the visitor asked, verify what you send, and make the next step easy to understand. A relevant answer delivered with proper permission gives someone a reason to continue the conversation. Consistent follow-up also gives your seller a clearer picture of the response to the home."
           ]
         }
       ],
-      "sources": []
-    }
+      "sources": [
+        {
+          "label": "CREB: October 2026 market report, released November 2, 2026",
+          "href": "https://www.creb.com/News/Media_Releases/2026/November/October_2026_Stats/"
+        },
+        {
+          "label": "CRTC: Frequently asked questions about CASL",
+          "href": "https://crtc.gc.ca/eng/com500/faq500.htm"
+        },
+        {
+          "label": "CRTC: CASL guidance on implied consent",
+          "href": "https://crtc.gc.ca/eng/com500/guide.htm"
+        },
+        {
+          "label": "ISED Canada: Getting consent to send email",
+          "href": "https://ised-isde.canada.ca/site/canada-anti-spam-legislation/en/getting-consent-send-email"
+        },
+        {
+          "label": "Justice Laws: Electronic Commerce Protection Regulations, section 4",
+          "href": "https://laws-lois.justice.gc.ca/eng/regulations/SOR-2012-36/section-4.html"
+        },
+        {
+          "label": "CRTC: Interpretation of consent and message requirements, Bulletin 2012-548",
+          "href": "https://crtc.gc.ca/eng/archive/2012/2012-548.htm"
+        },
+        {
+          "label": "Government of Alberta: Collecting personal information under PIPA",
+          "href": "https://www.alberta.ca/collecting-personal-information"
+        },
+        {
+          "label": "Office of the Privacy Commissioner of Canada: Provincial laws and PIPEDA",
+          "href": "https://www.priv.gc.ca/en/privacy-topics/privacy-laws-in-canada/the-personal-information-protection-and-electronic-documents-act-pipeda/r_o_p/prov-pipeda/"
+        },
+        {
+          "label": "OIPC Alberta: Customer-list privacy guidance, published for pandemic contact tracing",
+          "href": "https://oipc.ab.ca/resource/customer-lists/"
+        },
+        {
+          "label": "RECA: Current advertising guidance for licensees",
+          "href": "https://www.reca.ca/advertising/"
+        },
+        {
+          "label": "RECA: Clearly indicating the brokerage name",
+          "href": "https://www.reca.ca/wp-content/uploads/PDF/Advertising-Clearly-Indicated.pdf"
+        },
+        {
+          "label": "RECA: Real Estate Act Rules",
+          "href": "https://www.reca.ca/rules/"
+        },
+        {
+          "label": "CRTC: Telemarketing guidance for the real estate industry",
+          "href": "https://crtc.gc.ca/eng/phone/telemarketing/tobligations/realestate-immobilier.htm"
+        }
+      ]
+    },
+    "updatedAt": "2026-11-27T17:51:33Z",
+    "imageCaption": "Editorial image illustrating this article’s topic; it does not document a particular contractor’s fleet, project or client engagement."
   },
   {
     "brand": "Industry Army Marketing",
@@ -1592,8 +1713,8 @@
     "plural": "businesses",
     "video": null,
     "imageKey": "build-journal",
-    "city": "Canada",
-    "province": "BC",
+    "city": "Edmonton",
+    "province": "AB",
     "category": "Build Journal",
     "pain": "",
     "detail": "",
@@ -1604,70 +1725,207 @@
     "slug": "iam-roofing-marketing-in-edmonton-winning-new-build-contracts",
     "title": "Roofing Marketing in Edmonton: Winning New-Build Contracts",
     "cardTitle": "Roofing Marketing in Edmonton: Winning New-Build Contracts",
-    "excerpt": "An Edmonton builder adding a roofer to a bid list wants the assembly, the schedule, and recent work that looks like their houses. Put that in the packet.",
-    "metaDescription": "What Edmonton builders want to see before they add a roofer to a bid list: assembly, schedule, site contact, and recent comparable work.",
+    "excerpt": "The website and search side of winning Edmonton new-build roofing contracts: what builders check online, and how to make it easy for them.",
+    "metaDescription": "Build an Edmonton roofing proposal builders can assess with clear capacity, relevant project records, warranty details and an accurate Business Profile.",
     "campaignLabel": "Edmonton new-build roofing",
     "image": "https://ppdnkogmsfwhhknayolb.supabase.co/storage/v1/object/public/post-images/industryarmymarketing.com/iam-roofing-marketing-in-edmonton-winning-new-build-contracts.png",
     "ogImage": "https://ppdnkogmsfwhhknayolb.supabase.co/storage/v1/object/public/post-images/industryarmymarketing.com/iam-roofing-marketing-in-edmonton-winning-new-build-contracts.png",
-    "imageAlt": "A new-build roof assembly and job notes, the packet an Edmonton builder reviews before adding a roofer to a bid list",
-    "ogImageAlt": "A new-build roof assembly and job notes, the packet an Edmonton builder reviews before adding a roofer to a bid list",
+    "imageAlt": "Illustrative scene of roofers working on new houses with the Edmonton skyline behind them.",
+    "ogImageAlt": "Illustrative scene of roofers working on new houses with the Edmonton skyline behind them.",
     "publishedAt": "2026-11-25T16:03:00-08:00",
     "date": "November 25, 2026",
     "faqs": [
       {
-        "q": "What should an Edmonton roofer send a builder before asking to be on the bid list?",
-        "a": "A short packet: the building types you want, the assemblies you install, photos of those assemblies, how you book a start, who the site calls, and how warranty and insurance are handled."
+        "q": "How can roofing companies support new-build sales in Edmonton?",
+        "a": "Give builders a focused capability page with actual systems, current capacity, comparable project records, documentation and a named contact. Treat it as support for qualification and bidding, not a guarantee of contract awards."
       },
       {
-        "q": "Do new-build photos need to name the builder?",
-        "a": "No. Name the assembly and the stage. Publish a builder's name or a municipal address only with permission. The superintendent needs to see the detail, not a client's brand."
+        "q": "What should a roofing website show home builders?",
+        "a": "Show roof systems, crew availability and lead times, the real service area, workmanship terms, project records with permission, and the process for requesting current paperwork and a quotation."
       },
       {
-        "q": "Can a service roofer get onto new-build lists with repair photos?",
-        "a": "Repair photos support repair work. For new build, show new-build details or be clear that you are asking to price a small phase while you document that work. Do not relabel a reroof as a production build."
+        "q": "Does Alberta's new-home warranty cover the roof?",
+        "a": "The framework includes five-year building-envelope coverage and ten-year major structural coverage, including roof structural integrity. The particular defect, policy and claim requirements determine coverage; a contractor's workmanship promise is separate."
+      },
+      {
+        "q": "How many housing starts did the Edmonton area have in 2025?",
+        "a": "Alberta and CMHC report 21,337 starts in the Edmonton metropolitan series for 2025, compared with 18,384 in 2024. These are dwelling units, not a count of roofs or contracts within the municipal boundary alone."
+      },
+      {
+        "q": "Should a roofing company hide its address on Google Business Profile?",
+        "a": "Google says a business that visits customers but does not serve them at its own address should remove the address from its profile and list its service areas. Hybrid businesses have different criteria; describe the operation accurately."
+      },
+      {
+        "q": "What structured-data type describes a roofing contractor?",
+        "a": "Schema.org defines RoofingContractor as a LocalBusiness subtype. Use accurate visible business details and validate the markup; structured data does not guarantee search features or customer enquiries."
       }
     ],
     "richContent": {
-      "intro": "A builder adding a roofer to an Edmonton bid list is not shopping for a slogan. They want to see that you can meet a schedule, name the assembly you install, and show recent work that looks like their houses. The useful marketing is the same packet you would hand a superintendent, published as a page a project manager can forward.",
+      "intro": "Edmonton roofing contractors can support new-build sales by giving builders a website that answers practical questions: a dedicated builder page, proof of capacity, project records by community, a clear distinction between contractor warranty terms and Alberta's new-home warranty framework, and a clean Business Profile. Make the information easy to check without promising that a page alone will win a contract.\n\nThis post looks at the digital side of builder sales. The paperwork package itself (WCB clearance, safety certification, insurance) is covered in detail on our sister site; here we focus on the website, search presence and content that back that package up and get you onto the shortlist in the first place.",
       "sections": [
         {
-          "heading": "What belongs in the bid-list packet",
+          "heading": "Why Edmonton's new-build market is worth the marketing effort",
           "paragraphs": [
-            "Lead with the work you want: production houses, custom builds, townhomes, or a mix. Name the systems you install and the ones you do not. A builder cannot add you to a list from a gallery of finished roofs with no assembly and no area.",
-            "Include who receives the bid, who walks the site, and who answers when the schedule slips. A cell number that goes to the estimator during the day is a fact. A promise that someone always picks up is not, unless that is actually how the company runs."
+            "The [Government of Alberta's Regional Dashboard](https://regionaldashboard.alberta.ca/region/edmonton/housing-starts/) reports 21,337 starts in its Edmonton series for 2025, up 16.1% from 18,384 in 2024. The [CMHC year-end table](https://www.cmhc-schl.gc.ca/media-newsroom/news-releases/2026/housing-starts-december-2025) identifies these as metropolitan-area data. Do not present the count as construction within Edmonton's municipal boundary alone, or as 21,337 separate roofing contracts.",
+            "The dashboard reports 10,151 apartment starts, up 34.2%. Housing starts count dwelling units: an apartment building can contain many units beneath one roof. Townhouse, low-rise and single-family work also involve different systems, schedules and purchasing decisions. Explain which projects your crews can actually undertake instead of converting the total directly into a sales forecast.",
+            "Forecasts need dates too. [CMHC's July 22, 2026 summer outlook](https://www.cmhc-schl.gc.ca/observer/2026/summer-update-2026-housing-market-outlook) put Edmonton's 2026 starts at 16,000 in its baseline scenario and 15,500 in its alternative scenario, using information updated through June 23. Those are projections, not completed-year results. They supersede the wider winter range quoted in the original draft. Build your pipeline around named opportunities and your capacity, not a projection treated as booked work."
           ]
         },
         {
-          "heading": "Show the assembly, not a stock roof",
+          "heading": "How builders find and vet a roofing trade",
           "paragraphs": [
-            "Photograph the work a builder recognizes: underlayment, flashing at a wall, valleys, penetrations, and the finished field. A drone shot of a completed suburb does not tell them how you treat a tricky detail. Caption each photo with the assembly and the stage, and do not caption it with a homeowner's name.",
-            "If your recent work is service and reroof rather than new build, say so and show that. Pretending a reroof portfolio is a production-build portfolio wastes the builder's time and yours. You can still ask to price a small phase while you build the photos that match."
+            "The following is a practical sales workflow, not a measured ranking of how all Edmonton builders select trades. It organizes three questions your marketing should help answer:",
+            "1. Someone hears your name, often from another trade, a supplier or a site super.\n2. Someone looks you up. They search your company name, open your website and Business Profile, and check whether you look established.\n3. Someone asks for paperwork and a price.",
+            "A website built around homeowner quotes and a finished-roof gallery may leave a builder's questions unanswered. They can't tell whether you do production work, how many houses you can roof in a week, or whether you've worked in their communities. An incomplete page gives the reader more work to do before requesting a bid."
           ]
         },
         {
-          "heading": "Talk about schedule in the builder's language",
+          "heading": "Build a page just for builders",
           "paragraphs": [
-            "Builders care when you need the deck, when you can start after windows or stucco, and how weather in an Edmonton winter changes a start. Describe your lead time in the way you actually book crews, not as 'fast' or 'flexible.' If you need a confirmed date a certain number of working days out, say that number from your own calendar, not a number that sounds competitive.",
-            "Say what happens if the site is not ready. A sentence about dry-in priorities, phased buildings, and who calls whom is more persuasive than a claim that you have never missed a schedule. You do not need to invent a perfect record."
+            "Start with a focused page titled something like \"New-Home Roofing for Edmonton Builders\" and make it useful before expanding the site. Here's what to put on it.",
+            "| Section | What it answers | Notes |\n|---|---|---|\n| What you install | Roof systems you handle on new builds | Separate single-family from multi-family if you do both |\n| Capacity | Crews, typical houses per week, lead time | Only numbers you can meet in a busy month |\n| Areas served | Edmonton and surrounding municipalities you actually work in | Match your Business Profile service areas |\n| Warranty | Your workmanship warranty and how it fits the provincial warranty | Explain, don't overpromise |\n| Documentation | What paperwork you provide and how to request it | Link to the request form |\n| Project records | Recent builds by community, with dates and photos | Real projects only, with builder permission |\n| Contact | One named person for builder accounts | A direct line or email, not a generic form |",
+            "The capacity section is where many contractors are tempted to stretch. Don't. A builder who books you for twelve houses a week and gets eight will remember it longer than any ad."
           ]
         },
         {
-          "heading": "Put insurance, warranty, and the call list where they can be checked",
+          "heading": "Speak the language of Alberta's new home warranty",
           "paragraphs": [
-            "State the insurance you carry in the terms your broker uses, and offer the certificate rather than pasting a boast. Describe the workmanship warranty in plain language: what you come back for, how long, and what is the manufacturer's warranty instead. Do not blur those two.",
-            "Name the person a site super calls about a leak on an occupied new house, and the hours that phone is answered. If after-hours new-build service is not something you offer, say that the channel is the next business morning. A builder can plan around a true limit."
+            "Builders in Alberta live with the provincial warranty every day, so a roofer who understands it stands out. According to the [Government of Alberta](https://www.alberta.ca/new-home-warranty-overview), the New Home Buyer Protection Act requires minimum coverage of one year for labour and materials, two years for delivery and distribution systems, five years for the building envelope, and ten years for major structural components. The province's [maintenance guidance](https://www.alberta.ca/maintaining-your-new-home) describes the building envelope as the shell of the home, including the roof and walls, and it lists the roof's structural integrity under major structural components.",
+            "The province also notes that warranty providers must offer builders the option of buying two extra years of building envelope coverage. The requirements apply to qualifying new homes under the provincial framework, with exceptions such as valid owner-builder authorizations. Confirm the home's registration and policy rather than assuming every project has identical coverage.",
+            "What this means for your website:",
+            "- Explain how your workmanship warranty sits alongside the builder's provincial coverage. Keep it factual.\n- Describe what records you keep that help a builder answer a warranty claim, such as dated photos of underlayment, flashing and ventilation before the roof is closed in.\n- Distinguish your contractual workmanship promise, product-manufacturer terms and the home's insurance warranty. Do not imply every roof defect automatically receives five or ten years of coverage; the defect, applicable policy and claim requirements matter.",
+            "Use that section to show how you keep records and handle reported defects. A marketing page cannot decide a warranty claim or substitute for the actual contract and policy."
           ]
         },
         {
-          "heading": "Keep the page matched to the work you want",
+          "heading": "Project records that work as marketing",
           "paragraphs": [
-            "A new-build page that also tries to rank for emergency tarping will read as neither. Link to the service page for leaks and keep this one for bid-list readers. Use the same company name, the same crews, and the same phone so the builder who checks you elsewhere finds one business.",
-            "Update the page when you drop a system or add a crew. A bid list built from an old PDF is how you get invited to price work you no longer want. Date the packet. The website and the PDF should say the same thing."
+            "For builders, a project gallery is evidence, not decoration. Organize finished work by community and date rather than by pretty photos. A good project record has:",
+            "- The community or subdivision, and the year\n- Home type (single-family, duplex, townhouse, low-rise)\n- Roof system and main products used\n- Two or three photos: underlayment stage, flashing details, finished roof\n- The builder's name, only if they've agreed",
+            "Over a season, those records add up to a map of where you've worked. If comparable projects are relevant to the builder's planned work, make those records easy to find. Only state project counts that your own records support.",
+            "Specific project records also give readers and search systems useful local context. They do not guarantee a ranking or AI citation. Each record should add real information about the work. [Google's spam policies](https://developers.google.com/search/docs/essentials/spam-policies) identify doorway and scaled-content abuses; avoid multiplying nearly identical location pages to manipulate search results."
+          ]
+        },
+        {
+          "heading": "Get the Business Profile right for a service-area trade",
+          "paragraphs": [
+            "Roofing contractors usually work at the customer's site, which makes them service-area businesses in Google's terms. [Google's Business Profile help](https://support.google.com/business/answer/9157481) says a service-area business is one that visits or delivers to customers and doesn't serve them at its address. Google advises such businesses to hide their address and list the areas they serve instead.",
+            "A few rules from Google's help pages worth knowing:",
+            "- You can list up to 20 service areas, by city, postal code or similar area.\n- The overall service area shouldn't extend beyond roughly two hours of driving time from where the business is based.\n- Google says not to add whole countries or states as service areas.",
+            "Match those service areas to the municipalities on your builder page. If you list Spruce Grove on one and not the other, a careful builder will notice.",
+            "Photos matter here too. [Google's photo guidance](https://support.google.com/business/answer/6103862) says photos should be in focus, well lit and represent reality, without heavy filters. Crew shots on real new-build sites, with permission, beat stock imagery every time."
+          ]
+        },
+        {
+          "heading": "Structured data that describes what you do",
+          "paragraphs": [
+            "Schema markup won't win a builder by itself, but it helps search engines understand your business. [Google's local business structured data guidance](https://developers.google.com/search/docs/appearance/structured-data/local-business) says to use the most specific LocalBusiness sub-type available, and [schema.org defines RoofingContractor](https://schema.org/RoofingContractor) as a subtype of LocalBusiness. Correct markup does not itself guarantee a search feature or a lead. Google also notes you can add the markup to any page, though it makes most sense on a page about your business.",
+            "For a roofing company, that usually means RoofingContractor markup on your home or about page, with your name, service area, phone and hours, kept consistent with your Business Profile."
+          ]
+        },
+        {
+          "heading": "Content builders actually read",
+          "paragraphs": [
+            "Builders don't need blog posts about choosing shingle colours. They might read short, useful pieces such as:",
+            "- How you schedule around framing and inspections on production builds\n- What your crews need on site before they can start\n- How winter roofing works on new homes, and when you stop for weather\n- What photo records you hand over at closing\n- How you handle deficiency calls during the warranty period",
+            "Each of those answers a question a site super or purchasing manager has asked at some point. Write them once, link them from your builder page, and send them as links when a builder asks.",
+            "Publish the material before the particular builder's procurement deadline. Ask when bid lists are reviewed and which package they require. A useful link in November may support a spring conversation, but procurement dates vary; do not assume every builder follows one seasonal calendar."
+          ]
+        },
+        {
+          "heading": "Associations and the people who know builders",
+          "paragraphs": [
+            "Industry associations are where builders, suppliers and trades meet. [BILD Alberta](https://bildalberta.ca/) describes its membership across builders, developers, renovators, suppliers, trades and consultants. Use the association's current local-association information to find relevant opportunities; do not rely on an old membership count as evidence of access to buyers.",
+            "If you're a member, say so on your builder page and link to your listing. If you are not a member, do not imply membership or endorsement through their name or logo. Membership is something builders can check in a minute, and a false claim costs more than it gains.",
+            "Suppliers and other trades are just as important. Framing crews may share the same sites, so a clear handover and schedule relationship can support future introductions. Our sister site [framers.io](https://framers.io/) covers the framing side of new construction, which is useful background if you're coordinating schedules with framing contractors."
+          ]
+        },
+        {
+          "heading": "Measuring what's working",
+          "paragraphs": [
+            "You won't get builder-sales data from Google Analytics alone. Keep it simple:",
+            "- Add a \"Are you a builder or a homeowner?\" field to your contact form.\n- Track calls and emails that come through your builder page separately.\n- Ask every new builder account how they first heard of you, and write it down.\n- Review the list each spring before you plan next year's marketing.",
+            "After a season you'll know whether builders are finding you through referrals, search, associations or the builder page itself. That beats guessing."
+          ]
+        },
+        {
+          "heading": "Checklist: before you approach Edmonton builders this winter",
+          "paragraphs": [
+            "- Builder page published with capacity you can actually meet\n- Warranty section that explains how your coverage fits the provincial 1-2-5-10 rules\n- At least a handful of dated project records by community, with permission\n- Business Profile set as a service-area business with up to 20 accurate areas\n- RoofingContractor structured data consistent with your profile\n- Contact form that separates builders from homeowners\n- Paperwork package ready to send the same day it's requested\n- One named person for builder accounts",
+            "For the paperwork side, roofers.io has a detailed guide to [roofing marketing for new-home builders in Edmonton](https://roofers.io/blog/roofing-marketing-for-new-build-builders-in-edmonton) covering clearances, safety certification and warranty alignment. The wider [roofers.io](https://roofers.io/) site covers roofing across Canada for homeowners, property managers and contractors."
+          ]
+        },
+        {
+          "heading": "Turn the page into a repeatable bid process",
+          "paragraphs": [
+            "Give the builder one clear next step: request the current capability package or send the project information needed for a quotation. State which drawings, schedules, roof systems and access details help you assess the work. Avoid collecting unnecessary personal information or publishing confidential plans in a public portfolio. Keep the quotation process separate from the marketing examples.",
+            "Assign someone to check the public page and downloadable package together. If crew availability, contact details or accepted systems change, update both. Keep a version date so an estimator can confirm that an attachment remains current. A builder should not find one capacity figure on the website and a larger one in an old sales document.",
+            "Record the outcome of each genuine opportunity. Distinguish a page visit, a package request, an invitation to bid and an awarded scope. Count the awarded work only after the agreement supports that status. These stages help you see whether the page makes qualification easier without inventing a conversion rate or crediting every referral to search traffic.",
+            "Review unsuccessful bids for useful feedback. The reason may involve scope, timing, pricing or existing relationships rather than the quality of the website. Use that feedback to improve the relevant information. Marketing is strongest when it describes a reliable operating process and the evidence behind it, rather than promising demand that the company cannot control."
+          ]
+        },
+        {
+          "heading": "Key facts to keep in context",
+          "paragraphs": [
+            "- **21,337 housing starts in 2025**, versus 18,384 in 2024, describes the Edmonton metropolitan series, not separate roof jobs within the city boundary.\n- The Alberta dashboard reports **10,151 apartment starts**, up 34.2%; those are dwelling units, not buildings.\n- CMHC's **July 22, 2026 outlook** projected 16,000 starts in its baseline scenario and 15,500 in its alternative; these are dated forecasts.\n- Alberta's minimum warranty periods are commonly summarized as **1–2–5–10 years**. Roof-envelope and structural defects fall under different coverage provisions; check the policy and specific issue.\n- Google's current help permits **up to 20 service areas**, generally within about two hours of the business base. The actual service footprint and business eligibility still control what you list."
+          ]
+        },
+        {
+          "heading": "Give the builder a page worth forwarding",
+          "paragraphs": [
+            "A builder page should identify your scope, honest capacity, warranty process, dated project evidence and a person who can answer a bid enquiry. Keep it aligned with the actual business and the paperwork you send. When someone hears your name on a job site, the information they find should help them decide whether a further conversation is worthwhile."
           ]
         }
       ],
-      "sources": []
-    }
+      "sources": [
+        {
+          "label": "Government of Alberta: Edmonton housing starts",
+          "href": "https://regionaldashboard.alberta.ca/region/edmonton/housing-starts/"
+        },
+        {
+          "label": "CMHC: December 2025 housing starts, metropolitan-area table",
+          "href": "https://www.cmhc-schl.gc.ca/media-newsroom/news-releases/2026/housing-starts-december-2025"
+        },
+        {
+          "label": "CMHC: July 22, 2026 summer housing outlook",
+          "href": "https://www.cmhc-schl.gc.ca/observer/2026/summer-update-2026-housing-market-outlook"
+        },
+        {
+          "label": "Government of Alberta: new home warranty overview",
+          "href": "https://www.alberta.ca/new-home-warranty-overview"
+        },
+        {
+          "label": "Government of Alberta: maintaining your new home",
+          "href": "https://www.alberta.ca/maintaining-your-new-home"
+        },
+        {
+          "label": "Google Business Profile: service-area and hybrid businesses",
+          "href": "https://support.google.com/business/answer/9157481"
+        },
+        {
+          "label": "Google Business Profile: photos and videos",
+          "href": "https://support.google.com/business/answer/6103862"
+        },
+        {
+          "label": "Google Search Central: local business structured data",
+          "href": "https://developers.google.com/search/docs/appearance/structured-data/local-business"
+        },
+        {
+          "label": "Schema.org: RoofingContractor",
+          "href": "https://schema.org/RoofingContractor"
+        },
+        {
+          "label": "Google Search Central: spam policies",
+          "href": "https://developers.google.com/search/docs/essentials/spam-policies"
+        },
+        {
+          "label": "BILD Alberta: organization and local-association information",
+          "href": "https://bildalberta.ca/"
+        }
+      ]
+    },
+    "updatedAt": "2026-11-27T17:51:33Z",
+    "imageCaption": "Editorial image illustrating this article’s topic; it does not document a particular contractor’s fleet, project or client engagement."
   },
   {
     "brand": "Industry Army Marketing",
@@ -1975,8 +2233,8 @@
     "plural": "businesses",
     "video": null,
     "imageKey": "build-journal",
-    "city": "Canada",
-    "province": "BC",
+    "city": "Winnipeg",
+    "province": "MB",
     "category": "Build Journal",
     "pain": "",
     "detail": "",
@@ -1987,70 +2245,187 @@
     "slug": "iam-snow-removal-marketing-in-winnipeg-showing-equipment-capacity",
     "title": "Snow Removal Marketing in Winnipeg: Showing Equipment Capacity",
     "cardTitle": "Snow Removal Marketing in Winnipeg: Showing Equipment Capacity",
-    "excerpt": "A Winnipeg property manager needs to see the loaders, trucks, and sidewalk crews you can actually send. Show that capacity without inflating the fleet.",
-    "metaDescription": "How Winnipeg snow contractors show real equipment capacity on a site so a property manager can judge route coverage without an inflated fleet list.",
+    "excerpt": "How Winnipeg snow removal companies can show equipment capacity online so property managers trust them before the contract is signed.",
+    "metaDescription": "Help Winnipeg property managers assess snow-clearing capacity with verified fleet pages, backup plans, snow storage, service windows and storm records.",
     "campaignLabel": "Winnipeg snow equipment",
     "image": "https://ppdnkogmsfwhhknayolb.supabase.co/storage/v1/object/public/post-images/industryarmymarketing.com/iam-snow-removal-marketing-in-winnipeg-showing-equipment-capacity.png",
     "ogImage": "https://ppdnkogmsfwhhknayolb.supabase.co/storage/v1/object/public/post-images/industryarmymarketing.com/iam-snow-removal-marketing-in-winnipeg-showing-equipment-capacity.png",
-    "imageAlt": "Loaders, plow trucks, and sidewalk equipment shown as route capacity for a Winnipeg snow removal contractor",
-    "ogImageAlt": "Loaders, plow trucks, and sidewalk equipment shown as route capacity for a Winnipeg snow removal contractor",
+    "imageAlt": "Illustrative winter scene with loaders, a dump truck and snow-clearing workers in Winnipeg.",
+    "ogImageAlt": "Illustrative winter scene with loaders, a dump truck and snow-clearing workers in Winnipeg.",
     "publishedAt": "2026-11-25T16:00:00-08:00",
     "date": "November 25, 2026",
     "faqs": [
       {
-        "q": "Should a Winnipeg snow contractor list machines they could rent in a storm?",
-        "a": "List a rental only if you already know who you rent from and when you place the order. Say on the page that it is a rental. A machine you might be able to find is not capacity."
+        "q": "How do I show snow removal capacity to property managers in Winnipeg?",
+        "a": "Publish current equipment counts and actual photographs, explain staffing, backup arrangements, snow storage and response windows, and support those statements with dated service records. Match every claim to resources you can commit."
       },
       {
-        "q": "Do equipment photos replace the snow contract?",
-        "a": "No. Photos help a property manager see the operation. The contract still has to name the sites, the trigger, who walks the sidewalks, and what happens if a storm outruns the route."
+        "q": "Is 117.9 cm Winnipeg's current annual snowfall normal?",
+        "a": "No. The City reported 117.9 cm as the average for a 15-winter historical sample in a January 2022 article. Identify that period if using the figure; it is not a forecast for this winter."
       },
       {
-        "q": "What if the fleet is small?",
-        "a": "Show the small fleet and describe the route size it fits. A manager responsible for a handful of buildings often prefers a crew matched to those buildings over a lineup that cannot be sent."
+        "q": "How long does Winnipeg allow for residential sidewalk clearing?",
+        "a": "The current policy normally calls for Priority 3 sidewalk plowing to finish within 36 hours after work starts, with its stated accumulation, inspection and operating conditions. Older five-weekday wording should not be used as the current target."
+      },
+      {
+        "q": "Who removes a windrow left by a sidewalk or back-lane plow?",
+        "a": "The City's FAQ assigns those windrows to the property owner. Confirm the exact location and task; do not generalize that rule to every street-plowing circumstance."
+      },
+      {
+        "q": "Can a snow company advertise unlimited capacity?",
+        "a": "Only publish claims that are accurate and supportable. The Competition Bureau explains that materially false or misleading representations can include the overall impression created by photographs and text."
+      },
+      {
+        "q": "Can I use another property for snow storage?",
+        "a": "Do not assume vacant space is available. Confirm permission, applicable requirements and the current acceptance conditions of any disposal facility before including it in a service plan."
       }
     ],
     "richContent": {
-      "intro": "A Winnipeg property manager choosing a snow contractor is trying to answer one practical question: if the snow is still falling, can this crew cover the route. The page that helps shows the loaders, trucks, and sidewalk crews you can actually send, with a plain note about what each one is for. It does not help to photograph a lineup you could only assemble by borrowing machines you do not control.",
+      "intro": "Snow removal companies in Winnipeg can make their commercial proposals easier to assess by showing equipment capacity in terms buyers can verify: a fleet page with real machines and operators, backup plans, snow storage arrangements, honest response windows by service tier, and dated photos and video from actual storms. Show what you have; don't inflate it.\n\nA property manager comparing contractors needs to understand what each company can deliver during repeated storms. This post covers how to explain that capacity online before the contract is signed. Photographs support the proposal; staffing, route planning and the written service agreement determine the actual commitment.",
       "sections": [
         {
-          "heading": "Show the machines you can send on a storm night",
+          "heading": "Why capacity is the sales story in Winnipeg",
           "paragraphs": [
-            "Photograph the equipment that is yours, or that you have under a standing arrangement you can call in without negotiating from scratch. Park it so a manager can count it: loaders, plow trucks, sidewalk machines, and the smaller tools a crew actually uses between the curb and the door. A wide shot of the yard plus a closer shot of each type is enough.",
-            "Write one line under each photo that says what the machine is for and where it fits on a route. A loader that stacks snow in a lot is not the same tool as a sidewalk machine that has to pass a doorway. If you only run two trucks, say two trucks. A manager with a defined set of sites would rather see a matched fleet than a borrowed parade."
+            "Winnipeg's own reporting shows why one average is a weak capacity plan. In a [January 2022 snowfall review](https://www.winnipeg.ca/people-culture/our-city-our-stories/numbers-closer-look-all-snow-winnipeg-winter), the City reported an average of 117.9 centimetres over the preceding 15 winters, including five winters below 100 centimetres. That is a dated historical sample, not a current climate normal or a forecast for this winter. Use your own dated storm records to explain the conditions behind a performance example.",
+            "The [Snow Clearing and Ice Control Policy](https://legacy.winnipeg.ca/publicworks/snow/snow-clearing-policy.stm) gives Priority 1 streets a 36-hour target following the end of an average storm, with extreme-event qualifications. For Priority 3 residential sidewalks, the current policy normally calls for completion within 36 hours after work starts, following inspection and the relevant accumulation conditions. Older five-weekday wording should not be presented as the current target. The [2025–2026 Accessibility Plan](https://www.winnipeg.ca/city-governance/documents-reports/2025-2026-accessibility-plan) also records the improved sidewalk standard.",
+            "Municipal targets are context, not a private contractor's guarantee. The [City's FAQ](https://www.winnipeg.ca/services-programs/transportation-roads-parking/road-boulevard-maintenance/frequently-asked-questions) assigns windrows left by sidewalk and back-lane plowing to the property owner and says the City does not remove high piles at private approaches. Identify which entrances, private walks and return visits your contract covers instead of assuming every city or driveway task has the same responsibility."
           ]
         },
         {
-          "heading": "Say what each piece of equipment covers",
+          "heading": "What \"capacity\" means to the people who sign contracts",
           "paragraphs": [
-            "Capacity is not a horsepower number. It is the kind of site the machine can finish. Note, in ordinary language, which pieces clear open lots, which pieces clear lanes and fire routes, and which pieces do sidewalks, stairs, and entrances. If a truck is a pickup with a blade rather than a dedicated plow, say that. The manager is comparing you to the work, not to a brochure.",
-            "If you rent extra iron for a large event, say it is rented and say when you book it. Leaving the rental off the page is more honest than implying it sits in your yard all winter. The same rule applies to subcontracted sidewalk crews: name them as crews you schedule, not as employees you do not have."
+            "When a property manager asks whether you can handle their site, they usually mean several things at once. Break them out on your website so each is answered.",
+            "| Capacity element | What buyers want to know | What to show |\n|---|---|---|\n| Equipment | What machines you run and how many | Fleet list by type, with photos |\n| Operators | Who runs them, and on what shifts | Crew count per shift, training approach |\n| Backup | What happens when a machine breaks | Spare units, rental arrangements, repair partner |\n| Materials | Whether you'll run out of salt or sand | Storage on hand and resupply plan |\n| Snow storage | Where piles go when the lot fills | Hauling capacity, approved storage sites |\n| Response | How fast you start and finish | Windows by service tier, and when the clock starts |\n| Records | Proof of each visit | Timestamped photos, GPS logs, visit reports |",
+            "If your website covers only the first row, add the operational information needed to assess the rest. A fleet count alone cannot answer those questions."
           ]
         },
         {
-          "heading": "Sidewalk crews are part of the capacity",
+          "heading": "Build a fleet page that buyers can check",
           "paragraphs": [
-            "In Winnipeg, a lot can look clear while the walks, ramps, and entrances are still the reason a tenant complains. Give the sidewalk work its own sentence and, if you have one, its own photo. Say how you staff it: a person with a blower and a shovel, a crew that follows the loader, or a separate walk team that starts at a different time.",
-            "Say what that crew does not do. If you clear the municipal sidewalk in front of the building but not the private courtyard, write that down. A property manager can accept a limit. They cannot accept discovering it at 7 a.m."
+            "A fleet page doesn't need to be fancy. It needs to be specific and current.",
+            "- List each machine type you run: loaders, skid steers, plow trucks, sanders, sidewalk units.\n- Give real counts. If you have three loaders, say three.\n- Add a photo of each type, taken in your yard or on a job, not a manufacturer image.\n- Note attachments that matter to commercial sites, such as pushers, blowers or wing plows.\n- Say which machines are owned and which are on seasonal lease or rental standby. Buyers appreciate the honesty, and it matters if something breaks.\n- Date the page. \"Fleet as of November 2026\" tells a reader the information is current.",
+            "If you add equipment mid-season, update the page that week. Remove sold units and expired standby arrangements promptly. An old photograph may remain a valid project record, but its caption should not imply that the same equipment is currently available."
           ]
         },
         {
-          "heading": "Put a route next to the photos",
+          "heading": "Photos and video from real storms",
           "paragraphs": [
-            "Equipment without a route is a catalogue. Next to the photos, describe the kind of route those machines fit: a cluster of lots you can reach without a long deadhead, a mix of residential driveways and one commercial site, or a set of buildings on one loop. You do not need to publish client names. You do need to show that the machines and the geography belong together.",
-            "If last winter's route is the proof, describe it in counts you can stand behind from your own records: how many sites were on the loop, and whether the same trucks ran it. Do not borrow someone else's storm. If you do not have a log, start one before you claim a pattern."
+            "[Google's Business Profile photo guidance](https://support.google.com/business/answer/6103862) calls for clear, well-lit images that represent reality without significant alterations or excessive filters. For snow companies, that's an easy standard to meet and a strong one to market. Real photos from real storms do more than polished images ever will.",
+            "Ideas that show capacity without saying a word:",
+            "- A wide shot of three or four of your units staged in the yard before a forecast storm\n- A loader stacking snow at the back of a commercial lot at dawn\n- Sidewalk crews and machines working the same site at once\n- A short clip of a plow truck finishing a route as the sun comes up",
+            "Google's help pages list Business Profile videos at up to 30 seconds, so short clips fit well there. Longer footage can go on your website and YouTube.",
+            "Get permission before showing a client's property clearly, and avoid licence plates and faces of the public. Also, never stage anything unsafe for a photo."
           ]
         },
         {
-          "heading": "Leave the inflated fleet off the site",
+          "heading": "Write capacity claims that hold up",
           "paragraphs": [
-            "Do not list machines you have sold, machines a friend owns, or a dealer photo with the dealer name cropped out. Do not use a stock photo of a convoy. The first storm is the audit. A manager who was shown eight trucks and meets two will not argue about the wording. They will replace you.",
-            "A short page with real equipment, a sidewalk plan, and a route you can cover is a stronger sales tool than a long page that overstates the yard. Offer the one-page version as a PDF the manager can attach to the contract file, and keep that PDF identical to what the website says."
+            "Avoid capacity claims that outrun your evidence: \"unlimited capacity,\" \"we never miss,\" \"fastest response in Winnipeg.\" The [Competition Bureau](https://competition-bureau.canada.ca/en/deceptive-marketing-practices/types-deceptive-marketing-practices/false-or-misleading-representations) explains that materially false or misleading claims can raise concerns under the Competition Act. Both the words and the general impression matter. A borrowed fleet photograph can mislead even if a small caption technically describes its source.",
+            "Better ways to describe capacity:",
+            "- \"We run X loaders and Y plow trucks on night and day shifts\" rather than \"huge fleet.\"\n- \"Priority commercial sites are started within the window in your contract\" rather than \"always first.\"\n- \"If a machine breaks down, our standby unit is assigned within a set time\" rather than \"no downtime.\"",
+            "The pattern is simple: say what you have and what you commit to, in terms you'd be comfortable showing a client after a bad storm.",
+            "For a hypothetical commercial service tier, distinguish mobilization after a defined trigger from the time needed to complete a route. Explain how continuing snowfall, parked vehicles and agreed return visits are handled. Do not copy another contractor's response target onto your own page. Your actual agreement, assigned resources and operating records must support the promise."
+          ]
+        },
+        {
+          "heading": "Don't forget snow storage",
+          "paragraphs": [
+            "In a long, cold Winnipeg winter, where the snow goes is often the real limit. A lot can run out of room after a few storms, and hauling becomes part of the job.",
+            "Confirm where snow may be stored and whether a disposal facility accepts your load. The City's FAQ cautions against moving snow from one location and dumping it onto another property. Property boundaries, drainage, sightlines and the facility's current conditions need checking; an empty-looking parcel is not an available disposal site. Your website should explain, in general terms, how you handle storage and hauling, because experienced property managers will ask.",
+            "If you have hauling trucks, include them in the fleet page. If you subcontract hauling, say so and explain how it's scheduled."
+          ]
+        },
+        {
+          "heading": "Use your Business Profile to back up the website",
+          "paragraphs": [
+            "Your Business Profile is often the first thing a property manager sees. Keep it consistent with your capacity page:",
+            "- Same business name, phone and service area as your website\n- Category set to the closest match for snow removal\n- Photos of equipment and crews, refreshed during the season\n- Posts during storms, such as \"All commercial routes complete as of 7:40 a.m.\"\n- Replies to reviews that mention specific storms or sites, without sharing private details",
+            "Structured data helps search engines connect the dots. [Google's local business structured data guidance](https://developers.google.com/search/docs/appearance/structured-data/local-business) recommends the most specific appropriate LocalBusiness type. Keep markup and visible profile details consistent. Markup is a description of the business; it does not guarantee rankings, rich results or AI citations."
+          ]
+        },
+        {
+          "heading": "When to publish capacity content",
+          "paragraphs": [
+            "Tender and renewal dates vary by property. Ask your target buyers when they review contractors instead of assuming every Winnipeg contract follows one calendar. During an operating season, useful marketing work starts with documenting the service you actually deliver.",
+            "- **Now through March:** collect photos, clips and route records from every major snowfall.\n- **Spring:** turn the best material into a season summary page, with dates.\n- **Late summer:** update the fleet page and send it to property managers before tendering starts for next winter.",
+            "A company that walks into next season's bids with a full winter of dated evidence has a real advantage over one with a stock photo of a plow."
+          ]
+        },
+        {
+          "heading": "Measuring whether capacity marketing works",
+          "paragraphs": [
+            "Keep the tracking practical:",
+            "- Note on every commercial inquiry whether they mentioned the fleet page or storm photos.\n- Track renewals and the reasons clients give for renewing or leaving.\n- Watch which pages commercial prospects visit before contacting you, if your analytics allow it.\n- Ask lost bids why they went elsewhere; capacity doubts often show up here.",
+            "This guide does not claim a measured Winnipeg-wide conversion rate. Judge the material using your own qualified inquiries, proposal outcomes and renewals, with the reporting period stated."
+          ]
+        },
+        {
+          "heading": "Capacity marketing checklist",
+          "paragraphs": [
+            "- Fleet page with real counts, real photos and a current date\n- Operator and shift information that matches what you can staff\n- Backup plan for breakdowns, described plainly\n- Salt and sand storage and resupply explained\n- Snow storage and hauling approach described\n- Response windows by service tier, with the start point defined\n- Storm photos and short clips added through the season\n- Business Profile matching the website\n- No claims you couldn't defend after the worst storm of the year"
+          ]
+        },
+        {
+          "heading": "Related reading",
+          "paragraphs": [
+            "If you're thinking about adding a machine rather than just marketing the ones you have, snowremovalmarketing.com's guide to [snow removal equipment ROI in Winnipeg](https://snowremovalmarketing.com/blog/snow-removal-equipment-roi-in-winnipeg-when-a-new-machine-pays-off) covers when new equipment pays off and how to pre-sell the capacity. For truck-mounted plows and spreaders, [plowinstallations.com](https://plowinstallations.com/) covers mounting, compatibility and installation."
+          ]
+        },
+        {
+          "heading": "Verify the operational evidence before publishing",
+          "paragraphs": [
+            "Keep a simple internal register behind the public page. For each machine, record the unit identifier, current ownership or hire arrangement, normal assignment and review date. Keep that register private where it contains sensitive details. Publish only the information a buyer needs to evaluate the offer. A photograph of a unit on your yard does not establish that it is available for an additional route.",
+            "Build a corresponding staffing view. If two machines rely on the same operator at the same time, do not count them as two fully staffed units. Describe planned shifts and handovers without publishing employee personal details. Where subcontractors provide service, confirm what is committed before using their resources to support a capacity claim. An informal conversation about possible help is different from an agreed standby arrangement.",
+            "Use a redacted service report to show how completion is recorded. A useful example can identify the type of site, visit window, work performed and exceptions without exposing a customer's address, security arrangements or private contact details. Explain whether a timestamp means arrival, a photograph, completion or a later upload. These are different events, and an unclear label can exaggerate the evidence.",
+            "Before making a promise about spare equipment, consider competing obligations. A backup unit already reserved for another route is not unlimited protection for every customer. State how dispatch decisions are made and who provides updates during a delay. A named escalation process is more useful than a slogan about never missing service. Recheck the public page whenever these arrangements change."
+          ]
+        },
+        {
+          "heading": "Key facts to keep in context",
+          "paragraphs": [
+            "- The City's **117.9 cm** average described a **15-winter historical sample reported in January 2022**, not a current normal.\n- Priority 1 street plowing has a **36-hour target after an average storm ends**, subject to the policy's qualifications.\n- The current Priority 3 sidewalk policy normally targets **36 hours after work begins**; this differs from the starting point for the street target.\n- City guidance assigns windrows from **sidewalk and back-lane plowing** to the property owner; check the exact task and location.\n- Google's published Business Profile video limit is **30 seconds**.\n- Materially misleading impressions can come from pictures as well as written claims."
+          ]
+        },
+        {
+          "heading": "Turn evidence into a useful proposal",
+          "paragraphs": [
+            "A Winnipeg buyer needs to understand the equipment, the people, the backup arrangements and where the snow will go. Put each into plain language, support it with dated records and photographs, and match the public page to the actual contract. A small, accurately described operation gives a buyer a clearer basis for a decision than an impressive fleet image with no explanation of availability."
           ]
         }
       ],
-      "sources": []
-    }
+      "sources": [
+        {
+          "label": "City of Winnipeg: January 2022 historical snowfall review",
+          "href": "https://www.winnipeg.ca/people-culture/our-city-our-stories/numbers-closer-look-all-snow-winnipeg-winter"
+        },
+        {
+          "label": "City of Winnipeg: Snow Clearing and Ice Control Policy",
+          "href": "https://legacy.winnipeg.ca/publicworks/snow/snow-clearing-policy.stm"
+        },
+        {
+          "label": "City of Winnipeg: 2025–2026 Accessibility Plan",
+          "href": "https://www.winnipeg.ca/city-governance/documents-reports/2025-2026-accessibility-plan"
+        },
+        {
+          "label": "City of Winnipeg: snow clearing FAQ",
+          "href": "https://www.winnipeg.ca/services-programs/transportation-roads-parking/road-boulevard-maintenance/frequently-asked-questions"
+        },
+        {
+          "label": "Google Business Profile: photos and videos",
+          "href": "https://support.google.com/business/answer/6103862"
+        },
+        {
+          "label": "Google Search Central: local business structured data",
+          "href": "https://developers.google.com/search/docs/appearance/structured-data/local-business"
+        },
+        {
+          "label": "Competition Bureau: false or misleading representations",
+          "href": "https://competition-bureau.canada.ca/en/deceptive-marketing-practices/types-deceptive-marketing-practices/false-or-misleading-representations"
+        }
+      ]
+    },
+    "updatedAt": "2026-11-27T17:51:33Z",
+    "imageCaption": "Editorial image illustrating this article’s topic; it does not document a particular contractor’s fleet, project or client engagement."
   },
   {
     "brand": "Industry Army Marketing",

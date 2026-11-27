@@ -156,6 +156,8 @@ export interface BlogPost {
    *  ties by comparing this value, so same-month posts stay in true
    *  chronological order. */
   publishedAt?: string;
+  /** ISO timestamp of a substantive revision; preserves the original publication order. */
+  updatedAt?: string;
   excerpt: string;
   title: string;
   metaDescription: string;
@@ -168,6 +170,8 @@ export interface BlogPost {
   cardTitle?: string;
   /** Optional override alt/title text for the hero image. */
   imageAlt?: string;
+  /** Optional visible media provenance, separate from descriptive alternative text. */
+  imageCaption?: string;
   /** Optional dedicated Open Graph / Twitter share image override. When set,
    *  BlogPost.tsx uses this in <Seo> so social previews reflect a purpose-built
    *  1200x630 share card instead of the hero. */

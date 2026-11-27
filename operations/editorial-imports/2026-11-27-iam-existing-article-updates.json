@@ -1,0 +1,315 @@
+{
+  "schemaVersion": 1,
+  "type": "owner-directed-existing-article-content-import",
+  "clientDate": "2026-11-27",
+  "updatedAt": "2026-11-27T17:51:33Z",
+  "sourceRepositoryHead": "4388ebec3090227261c20b46e3339f0ea861c1a0",
+  "authorization": "The owner requested the existing Claude-prepared November 27 daily batch. These three source slugs already existed with shorter articles; import the reviewed full bodies into the same canonical records. This is a targeted owner-directed update, not three new scheduled releases.",
+  "publisherScope": "Preserve the sole Supabase publisher, owner-paused legacy workflow, leases, queue, cadence and historical receipts. No scheduler or publisher-state change is included.",
+  "preserved": [
+    "canonical slugs",
+    "titles and card titles",
+    "original November 25 publication dates",
+    "original featured-image and Open Graph image URLs",
+    "author and campaign ownership",
+    "all other journal records"
+  ],
+  "imageException": "The owner-directed import preserves the original prepared 1536x1024 images as instructed; no replacement, upscaling, crop or synthetic documentary claim. Descriptive alt text and a visible editorial-image caption clarify the retained media.",
+  "rendering": "Existing static articles take precedence over the public source feed. Replace only their richContent and FAQ, and add optional updatedAt metadata/visible date and matching sitemap lastmod. Existing publication order remains based on publishedAt.",
+  "verification": {
+    "localBuild": {
+      "status": "passed",
+      "command": "pnpm run build",
+      "checkedAt": "2026-11-27T17:54:50.996694+00:00",
+      "sourceRecordCount": 97,
+      "untouchedRecords": 94,
+      "existingBuildSync": "The existing build also includes 10 public-feed records in generated output. Their automatic source-file additions were excluded from this commit; the public-feed reader and publisher behavior are unchanged.",
+      "articles": [
+        {
+          "slug": "iam-snow-removal-marketing-in-winnipeg-showing-equipment-capacity",
+          "bodyWordsExcludingTocSourcesFaq": 2024,
+          "title": [
+            "Snow Removal Marketing in Winnipeg: Showing Equipment Capacity"
+          ],
+          "h1": [
+            "Snow Removal Marketing in Winnipeg: Showing Equipment Capacity"
+          ],
+          "canonical": [
+            "https://www.industryarmymarketing.com/blog/iam-snow-removal-marketing-in-winnipeg-showing-equipment-capacity"
+          ],
+          "published": "2026-11-25",
+          "modified": "2026-11-27T17:51:33Z",
+          "visibleUpdated": [
+            "2026-11-27T17:51:33Z"
+          ],
+          "faqs": 6,
+          "hero": [
+            "https://ppdnkogmsfwhhknayolb.supabase.co/storage/v1/object/public/post-images/industryarmymarketing.com/iam-snow-removal-marketing-in-winnipeg-showing-equipment-capacity.png"
+          ],
+          "h3": 0,
+          "table": 1,
+          "sitemapLastmod": "2026-11-27",
+          "discovery": "Homepage links, journal-index, RSS and sitemap passed. Blog index paginates 12 records; production filtered discovery check pending."
+        },
+        {
+          "slug": "iam-roofing-marketing-in-edmonton-winning-new-build-contracts",
+          "bodyWordsExcludingTocSourcesFaq": 2238,
+          "title": [
+            "Roofing Marketing in Edmonton: Winning New-Build Contracts"
+          ],
+          "h1": [
+            "Roofing Marketing in Edmonton: Winning New-Build Contracts"
+          ],
+          "canonical": [
+            "https://www.industryarmymarketing.com/blog/iam-roofing-marketing-in-edmonton-winning-new-build-contracts"
+          ],
+          "published": "2026-11-25",
+          "modified": "2026-11-27T17:51:33Z",
+          "visibleUpdated": [
+            "2026-11-27T17:51:33Z"
+          ],
+          "faqs": 6,
+          "hero": [
+            "https://ppdnkogmsfwhhknayolb.supabase.co/storage/v1/object/public/post-images/industryarmymarketing.com/iam-roofing-marketing-in-edmonton-winning-new-build-contracts.png"
+          ],
+          "h3": 0,
+          "table": 1,
+          "sitemapLastmod": "2026-11-27",
+          "discovery": "Homepage links, journal-index, RSS and sitemap passed. Blog index paginates 12 records; production filtered discovery check pending."
+        },
+        {
+          "slug": "iam-realtor-marketing-in-calgary-open-house-follow-up-that-converts",
+          "bodyWordsExcludingTocSourcesFaq": 2046,
+          "title": [
+            "Realtor Marketing in Calgary: Open House Follow-Up That Converts"
+          ],
+          "h1": [
+            "Realtor Marketing in Calgary: Open House Follow-Up That Converts"
+          ],
+          "canonical": [
+            "https://www.industryarmymarketing.com/blog/iam-realtor-marketing-in-calgary-open-house-follow-up-that-converts"
+          ],
+          "published": "2026-11-25",
+          "modified": "2026-11-27T17:51:33Z",
+          "visibleUpdated": [
+            "2026-11-27T17:51:33Z"
+          ],
+          "faqs": 6,
+          "hero": [
+            "https://ppdnkogmsfwhhknayolb.supabase.co/storage/v1/object/public/post-images/industryarmymarketing.com/iam-realtor-marketing-in-calgary-open-house-follow-up-that-converts.png"
+          ],
+          "h3": 5,
+          "table": 1,
+          "sitemapLastmod": "2026-11-27",
+          "discovery": "Homepage links, journal-index, RSS and sitemap passed. Blog index paginates 12 records; production filtered discovery check pending."
+        }
+      ],
+      "warnings": [
+        "Existing large client bundle warning",
+        "React child-key warning during journal prerender; rendered target content and schema verified"
+      ]
+    },
+    "production": "pending",
+    "desktopVisual": "pending",
+    "phoneVisual": "unavailable: no supported phone viewport setter; native resizing did not change viewport and organization policy blocked DevTools. No workaround attempted."
+  },
+  "articles": [
+    {
+      "sourceIndex": 6,
+      "slug": "iam-snow-removal-marketing-in-winnipeg-showing-equipment-capacity",
+      "canonical": "https://www.industryarmymarketing.com/blog/iam-snow-removal-marketing-in-winnipeg-showing-equipment-capacity",
+      "publishedAt": "2026-11-25T16:00:00-08:00",
+      "updatedAt": "2026-11-27T17:51:33Z",
+      "image": "https://ppdnkogmsfwhhknayolb.supabase.co/storage/v1/object/public/post-images/industryarmymarketing.com/iam-snow-removal-marketing-in-winnipeg-showing-equipment-capacity.png",
+      "sourceBodySha256": "cee4158a9c4413632d5caedde7c260214f14d4f2de22ab9365feddab347e1209",
+      "reviewedBodySha256": "cb46ea1612a3684590f7162f9278345a55f6e9bc7eff139ef162539fd68c1ea0",
+      "previousRichContentCharacters": 3972,
+      "newRichContentCharacters": 15654,
+      "sectionCount": 14,
+      "faqCount": 6,
+      "reviewNotes": [
+        "Dated snowfall sample to January2022;removed unsupported current114cmnormal and one-operation400machine statistic",
+        "Corrected obsolete5weekdayresidentialsidewalktarget to36hfromcommencement;differentiate municipal/private obligations",
+        "Scoped windrow responsibility to sidewalk/back-lane wording",
+        "Removed unverified PlowWow5hourtarget and unsupported contract-calendar/conversion assertions",
+        "Added practical evidence,staffing,standby and service-report evaluation without inventing results"
+      ],
+      "sources": [
+        {
+          "title": "City of Winnipeg: January 2022 historical snowfall review",
+          "url": "https://www.winnipeg.ca/people-culture/our-city-our-stories/numbers-closer-look-all-snow-winnipeg-winter"
+        },
+        {
+          "title": "City of Winnipeg: Snow Clearing and Ice Control Policy",
+          "url": "https://legacy.winnipeg.ca/publicworks/snow/snow-clearing-policy.stm"
+        },
+        {
+          "title": "City of Winnipeg: 2025–2026 Accessibility Plan",
+          "url": "https://www.winnipeg.ca/city-governance/documents-reports/2025-2026-accessibility-plan"
+        },
+        {
+          "title": "City of Winnipeg: snow clearing FAQ",
+          "url": "https://www.winnipeg.ca/services-programs/transportation-roads-parking/road-boulevard-maintenance/frequently-asked-questions"
+        },
+        {
+          "title": "Google Business Profile: photos and videos",
+          "url": "https://support.google.com/business/answer/6103862"
+        },
+        {
+          "title": "Google Search Central: local business structured data",
+          "url": "https://developers.google.com/search/docs/appearance/structured-data/local-business"
+        },
+        {
+          "title": "Competition Bureau: false or misleading representations",
+          "url": "https://competition-bureau.canada.ca/en/deceptive-marketing-practices/types-deceptive-marketing-practices/false-or-misleading-representations"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 8,
+      "slug": "iam-roofing-marketing-in-edmonton-winning-new-build-contracts",
+      "canonical": "https://www.industryarmymarketing.com/blog/iam-roofing-marketing-in-edmonton-winning-new-build-contracts",
+      "publishedAt": "2026-11-25T16:03:00-08:00",
+      "updatedAt": "2026-11-27T17:51:33Z",
+      "image": "https://ppdnkogmsfwhhknayolb.supabase.co/storage/v1/object/public/post-images/industryarmymarketing.com/iam-roofing-marketing-in-edmonton-winning-new-build-contracts.png",
+      "sourceBodySha256": "80893b89b1a24338c3d46e855a6190f7598e92b953608d19efc6d58944eadd94",
+      "reviewedBodySha256": "2bda488f14b0920e421c8b39a741d36b9aec15f8b5f14ab9da73b0913fc7bd39",
+      "previousRichContentCharacters": 3489,
+      "newRichContentCharacters": 17491,
+      "sectionCount": 14,
+      "faqCount": 6,
+      "reviewNotes": [
+        "Verified2025housingfigures withAlberta andCMHC; clarified metropolitanarea anddwellingunitsnotroofjobs",
+        "Replacedwinter2026forecastwithdatedJuly2026CMHCsummerbaseline/alternativefigures",
+        "Removedunsupported60percentmediumdensity and1300membershipfigures",
+        "Qualified1-2-5-10coverage andownerbuilderexceptions; separatecontractor/manufacturer/insurancewarranties",
+        "Removedinventedexperience, procurementcalendar, universalbuilderbehavior andsearchoutcomeclaims",
+        "Added practicalbid-process records without fabricatedperformance"
+      ],
+      "sources": [
+        {
+          "title": "Government of Alberta: Edmonton housing starts",
+          "url": "https://regionaldashboard.alberta.ca/region/edmonton/housing-starts/"
+        },
+        {
+          "title": "CMHC: December 2025 housing starts, metropolitan-area table",
+          "url": "https://www.cmhc-schl.gc.ca/media-newsroom/news-releases/2026/housing-starts-december-2025"
+        },
+        {
+          "title": "CMHC: July 22, 2026 summer housing outlook",
+          "url": "https://www.cmhc-schl.gc.ca/observer/2026/summer-update-2026-housing-market-outlook"
+        },
+        {
+          "title": "Government of Alberta: new home warranty overview",
+          "url": "https://www.alberta.ca/new-home-warranty-overview"
+        },
+        {
+          "title": "Government of Alberta: maintaining your new home",
+          "url": "https://www.alberta.ca/maintaining-your-new-home"
+        },
+        {
+          "title": "Google Business Profile: service-area and hybrid businesses",
+          "url": "https://support.google.com/business/answer/9157481"
+        },
+        {
+          "title": "Google Business Profile: photos and videos",
+          "url": "https://support.google.com/business/answer/6103862"
+        },
+        {
+          "title": "Google Search Central: local business structured data",
+          "url": "https://developers.google.com/search/docs/appearance/structured-data/local-business"
+        },
+        {
+          "title": "Schema.org: RoofingContractor",
+          "url": "https://schema.org/RoofingContractor"
+        },
+        {
+          "title": "Google Search Central: spam policies",
+          "url": "https://developers.google.com/search/docs/essentials/spam-policies"
+        },
+        {
+          "title": "BILD Alberta: organization and local-association information",
+          "url": "https://bildalberta.ca/"
+        }
+      ]
+    },
+    {
+      "sourceIndex": 9,
+      "slug": "iam-realtor-marketing-in-calgary-open-house-follow-up-that-converts",
+      "canonical": "https://www.industryarmymarketing.com/blog/iam-realtor-marketing-in-calgary-open-house-follow-up-that-converts",
+      "publishedAt": "2026-11-25T16:06:00-08:00",
+      "updatedAt": "2026-11-27T17:51:33Z",
+      "image": "https://ppdnkogmsfwhhknayolb.supabase.co/storage/v1/object/public/post-images/industryarmymarketing.com/iam-realtor-marketing-in-calgary-open-house-follow-up-that-converts.png",
+      "sourceBodySha256": "221465a06e4e50fac2106f5eee73b6e38327079ca8e0442489d37530d64347da",
+      "reviewedBodySha256": "a4436fa71a4ebdad4685ae34c47647832f9599df6adffeb92f986039d5240493",
+      "previousRichContentCharacters": 3630,
+      "newRichContentCharacters": 17420,
+      "sectionCount": 9,
+      "faqCount": 6,
+      "reviewNotes": [
+        "Used CREB’s dated November 2, 2026 October release directly: 1,592 sales, 6,173 inventory, just under four months overall; detached/semi-detached relatively balanced, row4.4 months and apartment over5. Removed the incorrect seller-market characterization and secondary-source price/percentage claims instead of mixing the monthly release with later revised daily totals.",
+        "Removed automatic six-month consent assumption for everyone who signs in; qualifying inquiry, sender relationship, consent evidence and expiry must be established.",
+        "Removed the false one-free-thank-you allowance. A commercial thank-you still requires an applicable consent basis or exemption.",
+        "Completed consent-form guidance with sender/brokerage identity, mailing/contact details, withdrawal statement and evidence of the affirmative choice. Clarified unsubscribe processing and distinct contact channels.",
+        "Added separate National DNCL/telemarketing checks for voice calls, using CRTC’s real-estate guidance.",
+        "Qualified PIPA/PIPEDA applicability for cross-border commercial information and identified the original OIPC shared-sign-in guidance as pandemic contact-log guidance, with a clearly explained privacy-risk application.",
+        "Replaced reliance on 2021 RECA case summaries with current advertising guidance and Rules; included representation/confidential-information considerations.",
+        "Removed the broken Videographers Calgary deep link (HTTP404), retained the verified network homepages, and removed unsupported marketing-experience and conversion-data claims."
+      ],
+      "sources": [
+        {
+          "title": "CREB: October 2026 market report, released November 2, 2026",
+          "url": "https://www.creb.com/News/Media_Releases/2026/November/October_2026_Stats/"
+        },
+        {
+          "title": "CRTC: Frequently asked questions about CASL",
+          "url": "https://crtc.gc.ca/eng/com500/faq500.htm"
+        },
+        {
+          "title": "CRTC: CASL guidance on implied consent",
+          "url": "https://crtc.gc.ca/eng/com500/guide.htm"
+        },
+        {
+          "title": "ISED Canada: Getting consent to send email",
+          "url": "https://ised-isde.canada.ca/site/canada-anti-spam-legislation/en/getting-consent-send-email"
+        },
+        {
+          "title": "Justice Laws: Electronic Commerce Protection Regulations, section 4",
+          "url": "https://laws-lois.justice.gc.ca/eng/regulations/SOR-2012-36/section-4.html"
+        },
+        {
+          "title": "CRTC: Interpretation of consent and message requirements, Bulletin 2012-548",
+          "url": "https://crtc.gc.ca/eng/archive/2012/2012-548.htm"
+        },
+        {
+          "title": "Government of Alberta: Collecting personal information under PIPA",
+          "url": "https://www.alberta.ca/collecting-personal-information"
+        },
+        {
+          "title": "Office of the Privacy Commissioner of Canada: Provincial laws and PIPEDA",
+          "url": "https://www.priv.gc.ca/en/privacy-topics/privacy-laws-in-canada/the-personal-information-protection-and-electronic-documents-act-pipeda/r_o_p/prov-pipeda/"
+        },
+        {
+          "title": "OIPC Alberta: Customer-list privacy guidance, published for pandemic contact tracing",
+          "url": "https://oipc.ab.ca/resource/customer-lists/"
+        },
+        {
+          "title": "RECA: Current advertising guidance for licensees",
+          "url": "https://www.reca.ca/advertising/"
+        },
+        {
+          "title": "RECA: Clearly indicating the brokerage name",
+          "url": "https://www.reca.ca/wp-content/uploads/PDF/Advertising-Clearly-Indicated.pdf"
+        },
+        {
+          "title": "RECA: Real Estate Act Rules",
+          "url": "https://www.reca.ca/rules/"
+        },
+        {
+          "title": "CRTC: Telemarketing guidance for the real estate industry",
+          "url": "https://crtc.gc.ca/eng/phone/telemarketing/tobligations/realestate-immobilier.htm"
+        }
+      ]
+    }
+  ]
+}
