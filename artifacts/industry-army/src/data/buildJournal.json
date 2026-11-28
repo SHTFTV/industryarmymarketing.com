@@ -6,6 +6,70 @@
     "plural": "businesses",
     "video": null,
     "imageKey": "build-journal",
+    "city": "Vancouver",
+    "province": "BC",
+    "category": "Build Journal",
+    "pain": "",
+    "detail": "",
+    "process": "",
+    "authorName": "Colin Hamilton",
+    "contactBusiness": "iam",
+    "campaignSite": "industryarmymarketing.com",
+    "slug": "vancouver-seo-case-study-checklist",
+    "title": "What a Vancouver SEO Case Study Should Show",
+    "cardTitle": "What a Vancouver SEO Case Study Should Show",
+    "excerpt": "Ask for dated search data, real project evidence, and a way to verify that enquiries reached the business.",
+    "metaDescription": "Ask for dated search data, real project evidence, and a way to verify that enquiries reached the business.",
+    "campaignLabel": "Vancouver SEO",
+    "image": "/brand-journal/exclusive-vancouver-seo-hero.jpg",
+    "ogImage": "/brand-journal/exclusive-vancouver-seo-share.jpg",
+    "imageAlt": "IAM editorial graphic: One industry. One region. Your corner.",
+    "ogImageAlt": "Industry Army Marketing — Vancouver SEO with exclusive client representation",
+    "publishedAt": "2026-11-28T16:30:00Z",
+    "date": "November 28, 2026",
+    "faqs": [
+      {
+        "q": "What should an SEO case study show?",
+        "a": "A reliable case study identifies the page, date range, actual work, and what changed in search and enquiry measurements."
+      }
+    ],
+    "richContent": {
+      "intro": "Before hiring an SEO provider, ask for a case study that resembles your business. A Vancouver contractor and a national retailer can both gain traffic, but they need different evidence to understand whether the work produced a useful enquiry.",
+      "sections": [
+        {
+          "heading": "Start with the page and date range",
+          "paragraphs": [
+            "Ask which service page changed and what the provider measured before the work began. Useful evidence includes the page URL, the dates, Search Console impressions and clicks, and an explanation of the work. Compare the same property and note changes in season, scope or service area."
+          ]
+        },
+        {
+          "heading": "Follow the enquiry through to receipt",
+          "paragraphs": [
+            "Check whether the page explains the work, shows a documented project and makes the next action clear. Ask what was measured after the click. A visitor opening an email draft, submitting a form and reaching the business are three different events. A useful report says which ones were verified."
+          ]
+        },
+        {
+          "heading": "Bring one service page to the first discussion",
+          "paragraphs": [
+            "Pick a service that can take more work. Write down the customers you want to reach and gather two examples you have permission to publish. Ask the provider to describe what they would change, how they would test the enquiry route and how the business will review results."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "href": "https://www.industryarmymarketing.com/seo/vancouver",
+          "label": "IAM Vancouver SEO services"
+        }
+      ]
+    }
+  },
+  {
+    "brand": "Industry Army Marketing",
+    "trade": "Industry publishing",
+    "tradeShort": "industry publishing",
+    "plural": "businesses",
+    "video": null,
+    "imageKey": "build-journal",
     "city": "Canada",
     "province": "BC",
     "category": "Build Journal",
